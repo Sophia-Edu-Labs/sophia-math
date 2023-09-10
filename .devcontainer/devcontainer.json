@@ -1,0 +1,33 @@
+{
+	"name": "Manim",
+	"build": {
+		"dockerfile": "../docker/Dockerfile",
+		"context": "..",
+		"target": "devcontainerbase"
+	},
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"remoteUser": "manimuser",
+	"overrideCommand": false,
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"python.pythonPath": "/usr/local/bin/python",
+				"python.defaultInterpreterPath": "/usr/local/bin/python"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"analytic-signal.preview-mp4",
+				"/downloads/manim-sideview-extension.vsix",
+				"GitHub.copilot"
+			]
+		}
+	},
+	// make AWS credentials link to the local aws folder (that shold be okay for our current development purposes)
+	"postCreateCommand": "ln -s '${containerWorkspaceFolder}/.aws' ~/.aws && pip install -e ${containerWorkspaceFolder}/sophialib && pip install -e ${containerWorkspaceFolder}/sophiarenderlib",
+
+	"features": {
+		"git": "latest"
+	}
+}

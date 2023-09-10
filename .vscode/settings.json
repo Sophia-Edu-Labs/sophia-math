@@ -1,0 +1,3 @@
+{
+    "manim-sideview.prePlaybackTerminalCommand": "ffmpeg -i \"{outputPath}\" -hide_banner -c:v copy -c:a libvorbis -f mp4 \"{outputPath}_with_vorbis\"   && mv --force \"{outputPath}_with_vorbis\" \"{outputPath}\""
+}
