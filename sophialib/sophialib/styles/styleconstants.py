@@ -49,15 +49,6 @@ class EmojiSVGMobject(SVGMobject):
         path_svg.unlink()  # delete downloaded svg again locally
 
 
-# emojifinger = EmojiSVGMobject("👆🏽").scale(0.2)
-ballpen = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "ballpen.png")).scale(0.25).rotate(270*DEGREES)
-ballpen_offset = np.array([0.45, -0.45, 0])
-finger = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "finger.png")).scale(0.1)
-mouse = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "mouse.png")).scale(0.1)
-pencil = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources"/"pencil.png")).scale(0.25).rotate(310*DEGREES).move_to([0,0,0])
-pencil_offset = np.array([0.365, -0.22, 0])
-backhand = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "backhand.png")).scale(0.5).rotate(-20*DEGREES).move_to([0,0,0])
-backhand_offset = np.array([-0.18, 0.04, 0])
 
 
 # nums = ["Null", "Eins", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun",
