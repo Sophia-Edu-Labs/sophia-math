@@ -1,4 +1,5 @@
-# 🧑‍🏫 Sophia Math 
+![Sophia Header](.github/video-curriculum-header.svg)
+
 This repository is a **video curriculum for teaching mathematics with computer-generated short videos**.
 The videos are rendered with [Manim](https://www.manim.community).
 Currently, this repository uses [Elevenlabs](https://elevenlabs.io) for ultra realistic voice synthesis. 
