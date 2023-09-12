@@ -7,7 +7,7 @@ Currently, this repository uses [Elevenlabs](https://elevenlabs.io) for ultra re
 **TL;DR:** Each of our short explanatory videos is a simple Python script. It's easy to improve them, iterate over them, or personalize them for your unique requirements!
 
 ## Examples / The current curriculum
-The entire structured curriculum with all videos can be found here: [Sophia Math Curriculum](https://opensource.sophiaedulabs.com/curriculum).
+The entire structured curriculum with all videos can be found here: [Sophia Math Curriculum](https://opensource.sophiaedulabs.com/syllabus).
 The existing content is primarily created and funded by [our Swiss-based startup Sophia Edu Labs](https://sophiaedulabs.com), which builds on videos in this repository to create a personalized learning experience for students.
 
 
