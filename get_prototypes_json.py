@@ -10,7 +10,7 @@ from typing import Type, Tuple
 def find_manim_scenes_in_directory():
     classes:list[Tuple[Path,Type[SophiaScene]]] = []
 
-    for pf in Path(SCENES_FOLDER).glob("*/*.py"):
+    for pf in Path(SCENES_FOLDER).glob("**/*.py"):
         scene_classes = get_module_manim_sophiascene_classes(pf, add_parent_folder_to_sys_path=True) # we need relative like imports from the same folder
         for scene_class in scene_classes:
             classes.append((pf, scene_class))
@@ -20,7 +20,7 @@ def find_manim_scenes_in_directory():
 def find_page_prototypes_in_directory():
     all_prototypes: list[Tuple[Path, Type[PagePrototype]]] = []
 
-    for pf in Path(SCENES_FOLDER).glob("*/*.py"):
+    for pf in Path(SCENES_FOLDER).glob("**/*.py"):
         prototypes = get_page_prototype_variables(pf, add_parent_folder_to_sys_path=True) # we need relative like imports from the same folder
         for pt in prototypes:
             all_prototypes.append((pf, pt))

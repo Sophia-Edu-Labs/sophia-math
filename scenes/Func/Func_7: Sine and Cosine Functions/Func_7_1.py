@@ -1766,7 +1766,6 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_1_I_2_d),
     PagePrototypeVideo.from_scene(Func_7_1_I_3),
     PagePrototypeVideo.from_scene(Func_7_1_I_4),
-    PagePrototypeVideo.from_scene(Func_7_1_I_4),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_q),
     PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_P_1_q, Func_7_1_P_1_q.__name__),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_a),
