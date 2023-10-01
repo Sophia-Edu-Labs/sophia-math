@@ -125,7 +125,7 @@ class ElevenlabsVoiceoverService(SpeechService):
 
         # text preprocessing
         input_text = remove_bookmarks(text)
-        input_text = remove_xml_tags(input_text)
+        input_text = remove_xml_tags(input_text, exclude_tags=["break"])
         input_text = "\n".join([line.strip() for line in input_text.split("\n")]) # remove all leading and trailing whitespaces from every line
 
 
