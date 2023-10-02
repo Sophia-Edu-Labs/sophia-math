@@ -1,0 +1,24 @@
+# .vscode/i18n-ally-custom-framework.yml
+
+# Add 'python' to languageIds
+languageIds:
+  - python
+
+# Adjust usageMatchRegex to match Python i18n function. E.g., using _() as a gettext function
+# You should unescape RegEx strings in order to fit in the YAML file
+# To help with this, you can use https://www.freeformatter.com/json-escape.html
+usageMatchRegex:
+  - "[^\\w\\d]self\\.translate\\(['\"]({key})['\"]\\)"
+  - "[^\\w\\d]self\\.translate\\(\"\"\"({key})\"\"\"\\)"
+  - "self\\.translate\\(\\\"\\\"\\\"([\\s\\S]*?)\\\"\\\"\\\"\\)" # Updated regex for Python multiline strings
+
+scopeRangeRegex: "self.translate\\(\\s*\\\"\\\"\\\"(.*?)\\\"\\\"\\\"\\)"
+
+  
+# You may or may not need to adjust the scopeRangeRegex and refactorTemplates, 
+# depending on your exact usage in Python
+# scopeRangeRegex: "use_translation\\(\\s*\\[?\\s*['\"`](.*?)['\"`]"
+# refactorTemplates:
+#  - gettext("$1")
+
+monopoly: true

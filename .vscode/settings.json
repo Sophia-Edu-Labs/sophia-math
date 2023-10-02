@@ -1,3 +1,13 @@
 {
-    "manim-sideview.prePlaybackTerminalCommand": "ffmpeg -i \"{outputPath}\" -hide_banner -c:v copy -c:a libvorbis -f mp4 \"{outputPath}_with_vorbis\"   && mv --force \"{outputPath}_with_vorbis\" \"{outputPath}\""
+    "manim-sideview.prePlaybackTerminalCommand": "ffmpeg -i \"{outputPath}\" -hide_banner -c:v copy -c:a libvorbis -f mp4 \"{outputPath}_with_vorbis\"   && mv --force \"{outputPath}_with_vorbis\" \"{outputPath}\"",
+
+    //i18n Ally config
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.enabledFrameworks": ["custom"], 
+    "i18n-ally.localesPaths": ["scenes/i18n", "scenes/i18n/locales"],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.extract.targetPickingStrategy": "most-similar",
+    "i18n-ally.enabledParsers": [
+        "json"
+    ]
 }

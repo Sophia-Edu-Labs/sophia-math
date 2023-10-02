@@ -28,7 +28,7 @@ FROM base as devcontainerbase
 
 # download custom version of manim sideview extension
 RUN mkdir /downloads
-RUN curl -L -o /downloads/manim-sideview-extension.vsix https://github.com/geroembser/manim-sideview/releases/download/v0.2.4-alpha/manim-sideview-0.2.4.vsix
+RUN curl -L -o /downloads/manim-sideview-extension.vsix https://github.com/geroembser/manim-sideview/releases/download/v0.2.5-alpha/manim-sideview-0.2.5.vsix
 
 USER manimuser
 

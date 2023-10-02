@@ -20,7 +20,8 @@
 				"ms-python.vscode-pylance",
 				"analytic-signal.preview-mp4",
 				"/downloads/manim-sideview-extension.vsix",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"lokalise.i18n-ally"
 			]
 		}
 	},

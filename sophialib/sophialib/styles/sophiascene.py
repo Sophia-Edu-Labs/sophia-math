@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 import os
 from typing import List, Literal, Optional, Callable, Union as UnionType
 from manim import *
@@ -15,6 +16,9 @@ from sophialib.sounds.dynamic_sounds import StretchedAudioFileConfig, create_com
 from sophialib.styles.styleconstants import *
 from sophialib.styles.PollyVoiceoverService import AWSPollyService
 from sophialib.styles.ElevenlabsVoiceoverService import ElevenlabsVoiceoverService
+from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.translation.currentlocale import CURRENT_LOCALE
+from sophialib.translation.translate import get_translation
 from sophialib.utils.xml import remove_xml_tags
 
 # class EmojiSVGMobject(SVGMobject):
@@ -30,6 +34,20 @@ aspect_ratio = 9/16
 sophia_radius_scale_factor_relative_to_height = 0.4*0.5
 sophia_center_as_percentage_of_height = 1-sophia_radius_scale_factor_relative_to_height*0.8
 
+# Define an "interface" that allows specific scenes to provide task defintion information
+class SophiaQuestionInfo(ABC):
+    @abstractmethod
+    def task_definition(self) -> SophiaTaskDefinition:
+        pass
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+
+        # Check if the subclass is also a subclass of SophiaScene
+        if not issubclass(cls, SophiaScene):
+            raise TypeError(f"{cls.__name__} must also inherit from SophiaScene!")
+
+
 class SophiaScene(VoiceoverScene):
     should_add_dev_rects = True
     prevlocs = [RIGHT, RIGHT, RIGHT]
@@ -37,6 +55,23 @@ class SophiaScene(VoiceoverScene):
     cx, cy = ValueTracker(0), ValueTracker(0)
     fill_opacity = 1
     blinking = 1
+
+    def current_locale(self) -> str:
+        return CURRENT_LOCALE
+
+    def translate(self, key: str, fallback: Optional[str] = None) -> str:
+        # use the translate helpers to search for the given key in the translation files
+        translation = get_translation(key, self.current_locale())
+
+        # if no translation was found, use the fallback if it was given, otherwise raise an error
+        if translation is None:
+            if fallback is not None:
+                return fallback
+            else:
+                raise Exception(f"Could not find translation for key {key} in locale {self.current_locale()}")
+            
+        return translation
+
 
     def add_wrapped_subcaption(
         self,
@@ -93,6 +128,12 @@ class SophiaScene(VoiceoverScene):
         
 
     def construct(self):
+    
+        # large debug print to debug which language this scene is rendered with
+        print("##################################################################")
+        print(f"\033[91mRendering scene {self.__class__.__name__} with locale \033[92m{self.current_locale()}\033[0m", flush=True)
+        print("##################################################################", flush=True)
+
         self.add_basic_rectangles()
         self.camera.background_color = c_bg
         

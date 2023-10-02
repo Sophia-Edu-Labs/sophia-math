@@ -3,9 +3,9 @@ import inspect
 import itertools
 from pathlib import Path
 import sys
-from typing import List, Literal, Union, Optional
+from typing import List, Literal, Type, Union, Optional
 
-from sophialib.styles.sophiascene import SophiaScene
+from sophialib.styles.sophiascene import SophiaQuestionInfo, SophiaScene
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 
 class PagePrototype:
@@ -71,6 +71,20 @@ class PagePrototypeQuestion(PagePrototype):
             answerOptions = task_definition.answerOptions,
             correctAnswerIndex = task_definition.correctAnswerIndex,
             questionText = task_definition.questionText
+        )
+    
+    # Factory method that will create a PagePrototypeQuestion from a SophiaScene
+    @staticmethod
+    def from_scene(sceneWithQuestionInfoType: Type[SophiaQuestionInfo]):
+
+        # instantiate such a question info
+        sceneWithQuestionInfo = sceneWithQuestionInfoType()
+        
+        task_def = sceneWithQuestionInfo.task_definition()
+
+        return PagePrototypeQuestion.from_task_definition(
+            task_definition = task_def,
+            unprefixed_prototypeID = sceneWithQuestionInfoType.__name__
         )
 
 
