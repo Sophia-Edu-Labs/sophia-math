@@ -5,8 +5,9 @@ from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
-                                          CursorResizeDefault, SophiaQuestionInfo, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          CursorResizeDefault, SophiaScene, Cursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *
@@ -21,14 +22,12 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 
 #####################################
 #####################################
-class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
-
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions = [self.translate("Func_6_1.1I1q.question.with-rice"), self.translate("Func_6_1.1I1q.question.with-gold")],
-            correctAnswerIndex = 1,
-            questionText = self.translate("Func_6_1.1I1q.question.how-do-you-pay-the-artist") 
-        )
+TASK_Func_6_1_I_1_q = SophiaTaskDefinition(
+    answerOptions = ["With Rice", "With Gold"],
+    correctAnswerIndex = 1,
+    questionText = "How do you pay the artist?"
+)
+class Func_6_1_I_1_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -36,7 +35,7 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title("Exponential Functions")
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -63,7 +62,21 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_1.1I1q.main.voiceover")
+                text="""
+                Imagine you're <bookmark mark="crown"/> the king or the queen of an ancient empire.
+                Whenever you're not busy ruling your kingdom, you like to play<bookmark mark="chess"/> chess with your friends.
+                So you ask the most talented artist of your empire to make you a chessboard.
+                When they come back with the chessboard, you are amazed by its beauty, so you decide to
+                reward them with a prize.
+                But you're a little short on cash, because you spent it all<bookmark mark="headphones"/> on a brand new pair of headphones,
+                so you ask them to name their price.
+                The artist offers you a choice:
+                You can either <bookmark mark="gold"/>pay them 1 gold coin for every square on the chessboard,
+                or you can <bookmark mark="rice"/>pay them 1 grain of rice for the first square, 2 grains of rice for the second square,
+                4 grains of rice for the third square, 8 grains of rice for the fourth square, and so on, until
+                you've paid them for all 64 squares. <bookmark mark="qmark"/>
+                Which option do you choose?
+                """
         ) as tracker:
 
             self.wait_until_bookmark("crown")
@@ -96,7 +109,7 @@ class Func_6_1_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title("Exponential Functions")
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -113,14 +126,31 @@ class Func_6_1_I_1_a(SophiaCursorScene):
         largeNumber = MathTex("18446744073709551615", color=c1t)
         largeNumber = largeNumber.scale(4/largeNumber.get_width()).shift(DOWN)
 
-        twentyfirst = VGroup(Tex(self.translate("Func_6_1.1I1a.main.21st-square"), color=c1t, font_size=fs2), Tex(f'$>1000000000$ {self.translate("Func_6_1.1I1a.main.grains-of-rice")}', color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).shift(DOWN)
-        fourtyfirst = VGroup(Tex(self.translate("Func_6_1.1I1a.main.41st-square"), color=c1t, font_size=fs2), Tex(f'$>1000000000000$ {self.translate("Func_6_1.1I1a.main.grains-of-rice")}', color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).next_to(twentyfirst, DOWN, buff=0.6)
+        twentyfirst = VGroup(Tex("$21$st square", color=c1t, font_size=fs2), Tex("$>1000000000$ grains of rice", color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).shift(DOWN)
+        fourtyfirst = VGroup(Tex("$41$st square", color=c1t, font_size=fs2), Tex("$>1000000000000$ grains of rice", color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).next_to(twentyfirst, DOWN, buff=0.6)
         twentyfirst.shift((twentyfirst.get_left()[0]-fourtyfirst.get_left()[0])*LEFT)
 
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_1.1I1a.main.voiceover")
+                text="""
+                Mhm I'm not sure that's a great idea.
+                Let's see, how much rice it will cost you.
+                For the first square, you pay <bookmark mark="one"/>1 grain of rice.
+                For the second square, you pay an additional<bookmark mark="two"/>2 grains of rice.
+                For the third square, you pay an additional<bookmark mark="four"/>4 grains of rice.
+                for the fourth square, you pay an additional<bookmark mark="eight"/>8 grains of rice.
+                and for the fifth square, you pay an additional<bookmark mark="sixteen"/>16 grains of rice.
+                Guess how many grains of rice you will have to pay, when you finish the first out of the
+                8 rows on the chessboard? One hundred and twenty eight.
+                That's a lot of rice. And you're not even done with the first row yet.
+                Once you've reached the <bookmark mark="twentyfirst"/>twenty-first square, you will have to pay more than a million grains of rice.
+                And once you've reached the <bookmark mark="fourtyfirst"/>forty-first square, you will have to pay more than a trillion grains of rice.
+                In the end, you will have to pay a total of<bookmark mark="largeNumber"/> eighteen quintillion,
+                four hundred forty-six quadrillion, seven hundred forty-four trillion, seventy-three billion,
+                seven hundred nine million, five hundred fifty-one thousand, six hundred and fifteen grains of rice.
+                I'm not sure about rice to gold conversion rates, but I'm pretty sure that gold is the cheaper option here...
+                """
         ) as tracker:
 
             self.wait_until_bookmark("one")
@@ -163,7 +193,7 @@ class Func_6_1_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title("Exponential Functions")
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -180,20 +210,31 @@ class Func_6_1_I_1_b(SophiaCursorScene):
         largeNumber = MathTex("18446744073709551615", color=c1t)
         largeNumber = largeNumber.scale(4/largeNumber.get_width()).shift(DOWN)
 
-        twentyfirst = VGroup(Tex(self.translate("Func_6_1.1I1a.main.21st-square"), color=c1t, font_size=fs2),
-                             Tex(f'$>1000000000$ {self.translate("Func_6_1.1I1a.main.grains-of-rice")}', color=c1t, font_size=fs3)).arrange(DOWN,
-                                                                                                                       aligned_edge=LEFT,
-                                                                                                                       buff=0.2).shift(
-            DOWN)
-        fourtyfirst = VGroup(Tex(self.translate("Func_6_1.1I1a.main.41st-square"), color=c1t, font_size=fs2),
-                             Tex(f'$>1000000000000$ {self.translate("Func_6_1.1I1a.main.grains-of-rice")}', color=c1t,
-                                 font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).next_to(twentyfirst, DOWN,
-                                                                                                    buff=0.6)
+        twentyfirst = VGroup(Tex("$21$st square", color=c1t, font_size=fs2), Tex("$>1000000000$ grains of rice", color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).shift(DOWN)
+        fourtyfirst = VGroup(Tex("$41$st square", color=c1t, font_size=fs2), Tex("$>1000000000000$ grains of rice", color=c1t, font_size=fs3)).arrange(DOWN, aligned_edge=LEFT, buff=0.2).next_to(twentyfirst, DOWN, buff=0.6)
         twentyfirst.shift((twentyfirst.get_left()[0]-fourtyfirst.get_left()[0])*LEFT)
+
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_1.1I1b.main.voiceover")
+                text="""
+                Yep, that seems to be the right idea.
+                For comparison, let's see, how much rice it would cost you.
+                For the first square, you pay <bookmark mark="one"/>1 grain of rice.
+                For the second square, you pay an additional<bookmark mark="two"/>2 grains of rice.
+                For the third square, you pay an additional<bookmark mark="four"/>4 grains of rice.
+                for the fourth square, you pay an additional<bookmark mark="eight"/>8 grains of rice.
+                and for the fifth square, you pay an additional<bookmark mark="sixteen"/>16 grains of rice.
+                Guess how many grains of rice you will have to pay, when you finish the first out of the
+                8 rows on the chessboard? One hundred and twenty eight.
+                That's a lot of rice. And you're not even done with the first row yet.
+                Once you've reached the <bookmark mark="twentyfirst"/>twenty-first square, you will have to pay more than a million grains of rice.
+                And once you've reached the <bookmark mark="fourtyfirst"/>forty-first square, you will have to pay more than a trillion grains of rice.
+                In the end, you will have to pay a total of<bookmark mark="largeNumber"/> eighteen quintillion,
+                four hundred forty-six quadrillion, seven hundred forty-four trillion, seventy-three billion,
+                seven hundred nine million, five hundred fifty-one thousand, six hundred and fifteen grains of rice.
+                I'm not sure about rice to gold conversion rates, but I'm pretty sure that gold is the cheaper option here...
+                """
         ) as tracker:
 
             self.wait_until_bookmark("one")
@@ -240,20 +281,20 @@ class Func_6_1_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I2.main.exponential-growth"))
+        self.add_title("Exponential Growth")
 
 
         # Create the coordinate system
         cords = self.add_cords([1, 64, 8], [1, 64, 8], x_ticks=[16,32, 48, 64], y_ticks=[16,32,48,64])
         plane = cords[0]
-        lin_growth = Tex(self.translate("Func_6_1.1I2.main.linear-growth"), color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
         
         f_gold = lambda x: x
         g_gold = plane.plot(f_gold, color=YELLOW_C, x_range=[1,60,0.01])
 
         cords_2 = self.add_cords([0, 4, 1], [0, 16, 2], x_ticks = [0,1,2,3], x_labels=[16,32, 48, 64], y_ticks=[8,16,24,32], y_labels=["", "", "", ""])
         plane_2 = cords_2[0]
-        exp_growth = Tex(self.translate("Func_6_1.1I2.main.exponential-growth"), color=c1t, font_size=fs2).next_to(cords_2, DOWN, buff=0.4)
+        exp_growth = Tex("Exponential Growth", color=c1t, font_size=fs2).next_to(cords_2, DOWN, buff=0.4)
         
         f_rice = lambda x: 2**x-1
         g_rice = plane_2.plot(f_rice, color=GREEN)
@@ -271,7 +312,37 @@ class Func_6_1_I_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_1.1I2.main.voiceover")
+                text="""
+                What is the reason that in the chessboard example, the number of grains of rice you have to pay
+                increases so fast? How does rice get so much more expensive than gold, so quickly?
+
+                The answer to both of these questions is the same: Exponential Growth.
+                Let's compare the two options, rice and gold, again. Specifically,
+                let's describe them <bookmark mark="cords"/> using functions.
+
+                We'll start with gold.
+                The function that describes the amount of gold you have to pay for a given number of squares is
+                <bookmark mark="f_gold"/> f of x equals x.
+                For the first square, you have to pay one gold coin. So f of 1 equals 1.
+                For the second square, you have to pay one gold coin as well. So f of 2 equals one for the first square,
+                plus one for the second square, which is two. And so on. As you can see, the amount you have to pay
+                increases linearly with the number of squares you have to pay for. One extra square costs exactly
+                as much as each of the previous squares, and the last square costs exactly as much as the first one.
+                We call this <bookmark mark="linear"/>linear growth...
+                
+                Now, let's <bookmark mark="clean"/> look at rice for comparison.
+                The <bookmark mark="cords_rice"/>function that describes the amount of rice you have to pay for a
+                given number of squares is <bookmark mark="f_rice"/> an exponential function
+                For the first square, you have to pay one grain of rice. So f of 1 equals 1.
+                For the second square, you have to pay two grains of rice. So f of 2 equals one for the first square,
+                plus two for the second square, which is three. 
+                For the third square, you have to pay four grains of rice. So f of 3 equals one for the first square,
+                plus two for the second square, plus four for the third square, which is seven.
+                And so on.
+                As you can see, the amount you have to pay increases rapidly with the number of squares you have to pay for,
+                because for each square, you have to pay twice as much as for the previous square.
+                We call this <bookmark mark="exponential"/>exponential growth...
+                """
         , subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
 
             self.wait_until_bookmark("cords")
@@ -1773,7 +1844,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_1_I_1_q),
-    PagePrototypeQuestion.from_scene(Func_6_1_I_1_q),
+    PagePrototypeQuestion.from_task_definition(TASK_Func_6_1_I_1_q, Func_6_1_I_1_q.__name__),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_b),
     PagePrototypeVideo.from_scene(Func_6_1_I_2),

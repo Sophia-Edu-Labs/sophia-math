@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 import os
 from typing import List, Literal, Optional, Callable, Union as UnionType
 from manim import *
@@ -11,14 +10,11 @@ from pathlib import Path
 import math
 
 from manim_voiceover import VoiceoverScene
-from sophialib.constants.directories import SCENES_ASSETS_FOLDER
+from sophialib.constants.directories import SCENES_ASSETS_FOLDER, SCENES_AVATARS_FOLDER, GENERATED_AVATARS_FOLDER
 from sophialib.sounds.dynamic_sounds import StretchedAudioFileConfig, create_combined_temporary_stretched_audio_file_from_configs, create_temporary_stretched_audio_file, create_temporary_stretched_audio_file_from_config
 from sophialib.styles.styleconstants import *
 from sophialib.styles.PollyVoiceoverService import AWSPollyService
 from sophialib.styles.ElevenlabsVoiceoverService import ElevenlabsVoiceoverService
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-from sophialib.translation.currentlocale import CURRENT_LOCALE
-from sophialib.translation.translate import get_translation
 from sophialib.utils.xml import remove_xml_tags
 
 # class EmojiSVGMobject(SVGMobject):
@@ -34,44 +30,14 @@ aspect_ratio = 9/16
 sophia_radius_scale_factor_relative_to_height = 0.4*0.5
 sophia_center_as_percentage_of_height = 1-sophia_radius_scale_factor_relative_to_height*0.8
 
-# Define an "interface" that allows specific scenes to provide task defintion information
-class SophiaQuestionInfo(ABC):
-    @abstractmethod
-    def task_definition(self) -> SophiaTaskDefinition:
-        pass
-
-    def __init_subclass__(cls, **kwargs):
-        super().__init_subclass__(**kwargs)
-
-        # Check if the subclass is also a subclass of SophiaScene
-        if not issubclass(cls, SophiaScene):
-            raise TypeError(f"{cls.__name__} must also inherit from SophiaScene!")
-
-
 class SophiaScene(VoiceoverScene):
     should_add_dev_rects = True
+    avatar_path: Path = None
     prevlocs = [RIGHT, RIGHT, RIGHT]
     cheight, cwidth = ValueTracker(0.2), ValueTracker(0.2)
     cx, cy = ValueTracker(0), ValueTracker(0)
     fill_opacity = 1
     blinking = 1
-
-    def current_locale(self) -> str:
-        return CURRENT_LOCALE
-
-    def translate(self, key: str, fallback: Optional[str] = None) -> str:
-        # use the translate helpers to search for the given key in the translation files
-        translation = get_translation(key, self.current_locale())
-
-        # if no translation was found, use the fallback if it was given, otherwise raise an error
-        if translation is None:
-            if fallback is not None:
-                return fallback
-            else:
-                raise Exception(f"Could not find translation for key {key} in locale {self.current_locale()}")
-            
-        return translation
-
 
     def add_wrapped_subcaption(
         self,
@@ -128,12 +94,6 @@ class SophiaScene(VoiceoverScene):
         
 
     def construct(self):
-    
-        # large debug print to debug which language this scene is rendered with
-        print("##################################################################")
-        print(f"\033[91mRendering scene {self.__class__.__name__} with locale \033[92m{self.current_locale()}\033[0m", flush=True)
-        print("##################################################################", flush=True)
-
         self.add_basic_rectangles()
         self.camera.background_color = c_bg
         
@@ -151,9 +111,9 @@ class SophiaScene(VoiceoverScene):
             ##################################################################
             ##################################################################
             ##################################################################
-            speechs = ElevenlabsVoiceoverService(should_use_history = True)
+            speechs = AWSPollyService()
             # optionally use this. 
-            # speechs = AWSPollyService()
+            # speechs = ElevenlabsVoiceoverService(should_use_history = True)
         
         # set speech service
         self.set_speech_service(speechs)
@@ -258,11 +218,11 @@ class SophiaScene(VoiceoverScene):
     def add_title(self, title="Title of a SophiaScene", tex=True):
         font_size = fs1 if len(title) < 12 else (fs2 if len(title) < 20 else fs3)
         title = Text(title, font_size=font_size, color=c1, font=font_0).to_edge(UP) if not tex else Tex(title, font_size=font_size, color=c1).to_edge(UP)
-        title = title.scale(min(3.2/title.get_width(), 0.5/title.get_height()))
+        title = title.scale(min(3.2/title.get_width(), 0.4/title.get_height()))
         self.add(title)
         return title
         
-    def add_cords(self, x_range = [-1,1,1], y_range = [-1,1,1], x_ticks=[-1,0,1], y_ticks=[-1,0,1], x_labels = None, y_labels = None, width=2.4, height=2.4, axisLabelX=None, axisLabelY=None):
+    def add_cords(self, x_range = [-1,1,1], y_range = [-1,1,1], x_ticks=[-1,0,1], y_ticks=[-1,0,1], x_labels = None, y_labels = None, width=2.4, height=2.4, axisLabelX='x', axisLabelY='y', tip_x=StealthTip, tip_y=StealthTip):
 
         if x_labels is None:
             x_labels = x_ticks
@@ -283,7 +243,7 @@ class SophiaScene(VoiceoverScene):
         if max_ticks == num_y_ticks:
             y_length = height
 
-        plane = NumberPlane(background_line_style={"stroke_opacity": 0}, x_range=x_range, y_range=y_range, x_length=x_length, y_length=y_length).move_to(np.array([0,1.4,0]))
+        plane = NumberPlane(x_range=x_range, y_range=y_range, x_length=x_length, y_length=y_length, background_line_style={"stroke_opacity": 0}, axis_config={"include_tip": True, 'tip_width': 0.15, 'tip_height': 0.1}).move_to(np.array([0,1.4,0]))
         plane.color=BLACK
         plane.x_axis.add_ticks()
         plane.y_axis.add_ticks()
@@ -299,14 +259,16 @@ class SophiaScene(VoiceoverScene):
             if tick != 0:
                 cords.add(MathTex(y_labels[idx], color=c1, font_size=fs3).move_to(plane.y_axis.n2p(tick)).shift(0.2*LEFT))
 
-        if axisLabelX is not None: 
-            xlabel = Tex(axisLabelX, color=c1t, font_size=fs3).next_to(plane.x_axis, DOWN, buff=0.2)
-            xlabel = xlabel.scale(min(1,0.6*plane.x_axis.get_width()/xlabel.get_width()))
-            cords.add(xlabel)
-        if axisLabelY is not None:
-            ylabel = Tex(axisLabelY, color=c1t, font_size=fs3).next_to(plane.y_axis, UP, buff=0.2)
-            ylabel = ylabel.scale(min(1,0.6*plane.y_axis.get_height()/ylabel.get_height()))
-            cords.add(ylabel)
+        cords.add(plane.get_x_axis_label(Tex(axisLabelX, color=c1, font_size=fs3))) if axisLabelX is not None else None
+        cords.add(plane.get_y_axis_label(Tex(axisLabelY, color=c1, font_size=fs3))) if axisLabelY is not None else None
+        # if axisLabelX is not None: 
+        #     xlabel = Tex(axisLabelX, color=c1t, font_size=fs3).next_to(plane.x_axis, DOWN, buff=0.2)
+        #     xlabel = xlabel.scale(min(1,0.6*plane.x_axis.get_width()/xlabel.get_width()))
+        #     cords.add(xlabel)
+        # if axisLabelY is not None:
+        #     ylabel = Tex(axisLabelY, color=c1t, font_size=fs3).next_to(plane.y_axis, UP, buff=0.2)
+        #     ylabel = ylabel.scale(min(1,0.6*plane.y_axis.get_height()/ylabel.get_height()))
+        #     cords.add(ylabel)
 
         return cords
 
@@ -513,108 +475,108 @@ class SophiaScene(VoiceoverScene):
 
     
 
-class Cursor(Mobject):
-    def __init__(self, scene, color=RED, bg_opacity=0.4, blinking=True, stroke_width=0, fill=True, **kwargs):
-        super().__init__(**kwargs)
-        self.scene = scene
-        self.cheight = ValueTracker(0.2)
-        self.cwidth = ValueTracker(0.2)
-        self.cx = ValueTracker(0)
-        self.cy = ValueTracker(0)
-        self.fill_opacity = 1
-        self.blinking = blinking
-        self.color = color
-        self.bg_opacity = bg_opacity
-        self.stroke_width = ValueTracker(stroke_width)
-        self.fill = fill
-        self.override_fill = ValueTracker(-1)
-        self.force_foreground=False
+# class Cursor(Mobject):
+#     def __init__(self, scene, color=RED, bg_opacity=0.4, blinking=True, stroke_width=0, fill=True, **kwargs):
+#         super().__init__(**kwargs)
+#         self.scene = scene
+#         self.cheight = ValueTracker(0.2)
+#         self.cwidth = ValueTracker(0.2)
+#         self.cx = ValueTracker(0)
+#         self.cy = ValueTracker(0)
+#         self.fill_opacity = 1
+#         self.blinking = blinking
+#         self.color = color
+#         self.bg_opacity = bg_opacity
+#         self.stroke_width = ValueTracker(stroke_width)
+#         self.fill = fill
+#         self.override_fill = ValueTracker(-1)
+#         self.force_foreground=False
 
-        #This function updates the values from which the rectangle is built
-        def updater(mob, dt):
-            if self.force_foreground:
-                scene.bring_to_front(mob)
-            #Deal with Larger Rectangles: Opacity depends on size
-            if self.override_fill.get_value() != -1:
-                self.fill_opacity = self.override_fill.get_value()
-                return
-            if max(mob.height, mob.width) >= 0.201:
-                self.fill_opacity = max(self.bg_opacity, math.exp(-2.5 * (max(mob.height, mob.width) - self.bg_opacity)))
-                if not self.force_foreground:
-                    scene.bring_to_back(mob)
-                return
-            #If it doesn't blink, it's filled
-            if not self.blinking:
-                self.fill_opacity = 1
-                mob.time_passed = 0
-                scene.bring_to_front(mob)
-                return
+#         #This function updates the values from which the rectangle is built
+#         def updater(mob, dt):
+#             if self.force_foreground:
+#                 scene.bring_to_front(mob)
+#             #Deal with Larger Rectangles: Opacity depends on size
+#             if self.override_fill.get_value() != -1:
+#                 self.fill_opacity = self.override_fill.get_value()
+#                 return
+#             if max(mob.height, mob.width) >= 0.201:
+#                 self.fill_opacity = max(self.bg_opacity, math.exp(-2.5 * (max(mob.height, mob.width) - self.bg_opacity)))
+#                 if not self.force_foreground:
+#                     scene.bring_to_back(mob)
+#                 return
+#             #If it doesn't blink, it's filled
+#             if not self.blinking:
+#                 self.fill_opacity = 1
+#                 mob.time_passed = 0
+#                 scene.bring_to_front(mob)
+#                 return
             
-            else:
-                mob.time_passed += dt
-                if mob.time_passed >= 0.6:
-                    mob.time_passed -= 0.6
-                    scene.bring_to_front(mob)
-                    self.fill_opacity = 1 if self.fill_opacity == 0 else 0
+#             else:
+#                 mob.time_passed += dt
+#                 if mob.time_passed >= 0.6:
+#                     mob.time_passed -= 0.6
+#                     scene.bring_to_front(mob)
+#                     self.fill_opacity = 1 if self.fill_opacity == 0 else 0
 
-        self.square = Square()
-        self.square = always_redraw(self.redraw_square)
-        self.square.time_passed = 0
-        self.square.add_updater(updater)
+#         self.square = Square()
+#         self.square = always_redraw(self.redraw_square)
+#         self.square.time_passed = 0
+#         self.square.add_updater(updater)
 
-        self.add(self.square)
+#         self.add(self.square)
 
-    def redraw_square(self):
-        rect = RoundedRectangle(
-            color=self.color,
-            height=self.cheight.get_value(),
-            width=self.cwidth.get_value(),
-            corner_radius = min(0.1, min(self.cheight.get_value(), self.cwidth.get_value())/2),
-            fill_opacity=self.fill_opacity*self.fill,
-            stroke_width=self.stroke_width.get_value()
-        ).move_to([self.cx.get_value(), self.cy.get_value(), 0])
-        return rect
+#     def redraw_square(self):
+#         rect = RoundedRectangle(
+#             color=self.color,
+#             height=self.cheight.get_value(),
+#             width=self.cwidth.get_value(),
+#             corner_radius = min(0.1, min(self.cheight.get_value(), self.cwidth.get_value())/2),
+#             fill_opacity=self.fill_opacity*self.fill,
+#             stroke_width=self.stroke_width.get_value()
+#         ).move_to([self.cx.get_value(), self.cy.get_value(), 0])
+#         return rect
     
     #DEPRECATED, DO NOT USE
-    def move_curved(self, t1, t2, dest, depth=0.25, run_time=0.4):
-        o1, o2 = t1.get_value(), t2.get_value()
-        dummy = Circle(stroke_width=0)
-        self.add(dummy) 
-        def updater(x):
-            eps = 0.0001
-            t2.set_value(o2 -depth*(1-(2*(t1.get_value() - (eps+dest+o1)/2)/(eps+dest-o1))**2))
-        dummy.add_updater(updater)
-        self.scene.play(t1.animate(run_time=run_time).set_value(dest))
-        self.remove(dummy)
+    # def move_curved(self, t1, t2, dest, depth=0.25, run_time=0.4):
+    #     o1, o2 = t1.get_value(), t2.get_value()
+    #     dummy = Circle(stroke_width=0)
+    #     self.add(dummy) 
+    #     def updater(x):
+    #         eps = 0.0001
+    #         t2.set_value(o2 -depth*(1-(2*(t1.get_value() - (eps+dest+o1)/2)/(eps+dest-o1))**2))
+    #     dummy.add_updater(updater)
+    #     self.scene.play(t1.animate(run_time=run_time).set_value(dest))
+    #     self.remove(dummy)
 
-    def curved_updater(self, dest, t1=None, t2=None, depth=0.25):
-        if t1==None:
-            t1 = self.cx
-        if t2==None:
-            t2 = self.cy
-        o1, o2 = t1.get_value(), t2.get_value()
-        dummy = Circle(stroke_width=0)
-        self.scene.add(dummy) 
-        def updater(x):
-            eps = 0.0001
-            t2.set_value(o2 -depth*(1-(2*(t1.get_value() - (eps+dest+o1)/2)/(eps+dest-o1))**2))
-        dummy.add_updater(updater)
-        return dummy
+    # def curved_updater(self, dest, t1=None, t2=None, depth=0.25):
+    #     if t1==None:
+    #         t1 = self.cx
+    #     if t2==None:
+    #         t2 = self.cy
+    #     o1, o2 = t1.get_value(), t2.get_value()
+    #     dummy = Circle(stroke_width=0)
+    #     self.scene.add(dummy) 
+    #     def updater(x):
+    #         eps = 0.0001
+    #         t2.set_value(o2 -depth*(1-(2*(t1.get_value() - (eps+dest+o1)/2)/(eps+dest-o1))**2))
+    #     dummy.add_updater(updater)
+    #     return dummy
 
 
-    def circle_updater(self, radius=0.2):
-        ## USAGE EXAMPLE: ##
-        # circ, angle = cursor.circle_updater(0.35)
-        # for idx in range(3):
-        #     self.play(angle.animate.set_value(2*(idx+1)*PI), run_time=0.5, rate_func=linear)
-        # self.remove(circ, angle)
-        ##  END OF EXAMPLE ##
-        x,y = self.cx.get_value()-radius, self.cy.get_value()
-        angle = ValueTracker(0)
-        self.scene.add(angle)
-        circ = Circle(stroke_width=0).add_updater(lambda m: self.cx.set_value(x+radius*np.cos(angle.get_value()))).add_updater(lambda m: self.cy.set_value(y+radius*np.sin(angle.get_value())))
-        self.scene.add(circ)
-        return circ, angle
+    # def circle_updater(self, radius=0.2):
+    #     ## USAGE EXAMPLE: ##
+    #     # circ, angle = cursor.circle_updater(0.35)
+    #     # for idx in range(3):
+    #     #     self.play(angle.animate.set_value(2*(idx+1)*PI), run_time=0.5, rate_func=linear)
+    #     # self.remove(circ, angle)
+    #     ##  END OF EXAMPLE ##
+    #     x,y = self.cx.get_value()-radius, self.cy.get_value()
+    #     angle = ValueTracker(0)
+    #     self.scene.add(angle)
+    #     circ = Circle(stroke_width=0).add_updater(lambda m: self.cx.set_value(x+radius*np.cos(angle.get_value()))).add_updater(lambda m: self.cy.set_value(y+radius*np.sin(angle.get_value())))
+    #     self.scene.add(circ)
+    #     return circ, angle
     
 class AltCursor(RoundedRectangle):
     DEFAULT_SIZE = 0.2
@@ -628,8 +590,10 @@ class AltCursor(RoundedRectangle):
                  y=0,
                  color=RED, 
                  fill_opacity=DEFAULT_CURSOR_OPACITY, 
-                 blinking=True,
-                 stroke_width=DEFAULT_STROKE_WIDTH,
+                 blinking=False,
+                 stroke_width=0,
+                 idle = False,
+                 autoFadeBackground = True,
                  **kwargs):
         
         super().__init__(corner_radius=corner_radius, 
@@ -642,9 +606,11 @@ class AltCursor(RoundedRectangle):
         self.move_to([x,y,0])
         self.blinking = blinking
         self.initial_fill_opcacity = fill_opacity
-        self._setup_blinking()
-        self.autoFadeBackground = True
+        # self._setup_blinking()
+        self._setup_idle()
+        self.autoFadeBackground = autoFadeBackground
         self.needSound = False
+        self.idle = idle
     
     def animationTo(self, dest, run_time=1, rate_func=linear):
         return ApplyMethod(self.move_to, dest, run_time=run_time, rate_func=rate_func)
@@ -658,6 +624,7 @@ class AltCursor(RoundedRectangle):
                 fill_opacity = None, 
                 color = None, 
                 stroke_width = None,
+                idle = None,
                 **kwargs
                 ):
         if corner_radius is None:
@@ -672,12 +639,14 @@ class AltCursor(RoundedRectangle):
             height = self.height
         if fill_opacity is None:
             fill_opacity = self.fill_opacity
-        if self.autoFadeBackground and fill_opacity!=0:
+        if self.autoFadeBackground and fill_opacity!=0 and not self.idle:
             fill_opacity = max(self.DEFAULT_CURSOR_OPACITY_IN_BACKGROUND, math.exp(-2.5 * (max(height, width) - self.DEFAULT_CURSOR_OPACITY_IN_BACKGROUND)))
         if color is None:
             color = self.color
         if stroke_width is None:
             stroke_width = self.stroke_width
+        if idle is None:
+            idle = self.idle
 
 
         newCursor = AltCursor(x=x, 
@@ -689,6 +658,7 @@ class AltCursor(RoundedRectangle):
                               color=color,
                               blinking=self.blinking,
                               stroke_width=stroke_width,
+                              idle = self.idle,
                               **kwargs,
                               )
         newCursor.initial_fill_opcacity = self.initial_fill_opcacity
@@ -715,6 +685,7 @@ class AltCursor(RoundedRectangle):
         self.isHidden = False
 
         def _blinking_updater(mob: AltCursor, dt: float):
+
             if mob.blinking:
                 mob.time_passed += dt
                 if mob.time_passed >= 0.6:
@@ -729,6 +700,39 @@ class AltCursor(RoundedRectangle):
                 mob.time_passed = 0
                 mob.isHidden = False
         self.add_updater(_blinking_updater)
+
+
+    def set_idle(self, idle):
+        self.idle = idle
+    
+    def _setup_idle(self):
+        self.time_passed = 0
+
+        last_idle_state = [False]  # Using a list to store the state
+
+        def _idle_updater(mob: AltCursor, dt: float):
+            idle_interval = 2  # Adjust as per your requirement
+
+            if mob.idle:
+                if not last_idle_state[0]:  # i.e., if mob.idle has been changed from False to True
+                    mob.time_passed = 0  # Resetting time_passed as mob.idle is True now
+                mob.time_passed += dt  # Incrementing time_passed
+                # Calculate the new fill_opacity
+                new_opacity = max(c_bg_opacity, c_fg_opacity - (c_fg_opacity - c_bg_opacity) * (mob.time_passed / idle_interval))
+                mob.changeForm(fill_opacity=new_opacity)
+            else:
+                mob.changeForm(fill_opacity=c_fg_opacity)
+
+            # Update the last_idle_state list with the current idle state of the mob.
+            last_idle_state[0] = mob.idle
+
+
+
+        self.add_updater(_idle_updater)
+
+
+
+
 
     def _start_fading(self, time):
 
@@ -959,9 +963,45 @@ class Bubble(VGroup):
     def get_center(self):
         return self.rect.get_center()
     
+class Updown_Arrow(Line):
+
+
+    ### TODO: Make it work with the tip
+    def __init__(self, origin_loc=ORIGIN, vert=True, **kwargs):
+        perturb = [0,0.0000001,0]
+        super().__init__(start=origin_loc+perturb, end=origin_loc, **kwargs)
+        self.vert = vert
+        # self.add_tip()
+        # tip = self.get_tip()
+        self.origin_loc = origin_loc
+        self.add_updater(self.update_color)
+        # self.add_updater(self.update_tip)
+
+    def update_color(self, dt, arrow):
+        if self.vert:
+            if self.get_y()>self.origin_loc[1]:
+                self.set_color(GREEN)
+            else:
+                self.set_color(RED)
+        else:
+            if self.get_x()<self.origin_loc[0]:
+                self.set_color(GREEN)
+            else:
+                self.set_color(RED)
+        # print(self.get_length())
+
+    def update_tip(self, dt, arrow):
+        if self.get_length()<0.05:
+            self.tip.length=self.get_length()
+            self.tip.move_to(self.get_end())
+        else:
+            self.tip.length=0.05
+            self.tip.move_to(self.get_end())
 
 
 
 
 # The folder where the assets are stored, include here for compatibility with the old version
 assets_folder = SCENES_ASSETS_FOLDER
+avatars_folder = SCENES_AVATARS_FOLDER
+generated_avatars_folder = GENERATED_AVATARS_FOLDER

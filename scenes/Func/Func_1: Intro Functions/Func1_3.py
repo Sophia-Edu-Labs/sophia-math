@@ -1,12 +1,7 @@
 # Import necessary libraries and modules
 from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, format_text_group)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -29,13 +24,9 @@ class Func_1_3_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
-
-        note = Notepad(texts=["Intersection with x-axis$\\rightarrow$Zero crossing", ["Where is the zero crossing", "of the red function?"]])
-        self.add(note)
 
         self.add_title("Intersections")
 
@@ -49,15 +40,15 @@ class Func_1_3_I_1_q(SophiaCursorScene):
             So, now we are learning something new about functions: intersections with the axes.
             Remember, there are two axes: The <bookmark mark='axis_x'/> x-axis and the <bookmark mark='axis_y'/>
             y axis.
-            
+            <break time="1s"/>
             First, we are interested in the intersection point of a function with the <bookmark mark='axis_x_2'/> x-axis. 
             This point is also called the "zero", or the "zero crossing", because the value of y is always zero there.
-            
+            <break time="1s"/>
             Look at the <bookmark mark="funcBlue"/> blue function. The intersection point with the x-axis is at the position
             <bookmark mark="x1"/> x equals three. This means the zero crossing is three.
-            
+            <break time="1s"/>
             Now look at the <bookmark mark="funcRed"/> red function.
-            
+            <break time="1s"/>
             What is the value of x at the zero crossing of this function?
             """
         ) as tracker:
@@ -93,44 +84,44 @@ class Func_1_3_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
-        note = Notepad(texts=["Zero crossing: Intersection with x-axis", ["$\\rightarrow$Zero crossing of the red function", "at $x=1$."]])
-        self.add(note)
-
-        self.add_title("Unfortunately Wrong!")
+        self.add_title("Zero Crossing")
 
         funcRed = lambda x: 2 * x - 2
         graphRed = plane.plot(funcRed, color=c2)
         self.add(graphRed)
 
+        b = Bubble(texts = ["Zero crossing", "at $x=1$"], center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
+
         with self.voiceover(
             text=f"""
-            Unfortunately, that's not quite right! <bookmark mark="noteSwitch1"/>
-            The zero crossing is the point where the graph <bookmark mark="axis_x"/> intersects the x-axis.
-            
-            As we can see from the graph, <bookmark mark="noteSwitch2"/>
-            the zero of the red function, which is the point where the graph of the red function intersects
+            That's not correct.
+            The zero crossing is the point where the graph intersects the<bookmark mark="axis_x"/> x-axis.
+            <break time="1s"/>
+            As we can see from the graph, the point where the graph of the red function intersects
             the x-axis, is at the position <bookmark mark="x1"/> x equals one.
+            <break time="1s"/>
+            <bookmark mark="bubble"/>
+            So the zero crossing of the red function is at the position x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("noteSwitch1")
-            note.change_colors([0])
+
 
             self.wait_until_bookmark("axis_x")
             plane.x_axis.set_color(RED)
             self.wait(1)
             plane.x_axis.set_color(c1)
 
-            self.wait_until_bookmark("noteSwitch2")
-            note.change_colors([0, 1])
-
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
             self.play(Write(circ))
+
+            self.wait_until_bookmark("bubble")
+            self.add_pencil_sound(1.5)
+            self.play(Create(b), Create(b.text))
 
         self.wait(4)
 
@@ -139,44 +130,44 @@ class Func_1_3_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
-        note = Notepad(texts=["Zero crossing: Intersection with x-axis", ["$\\rightarrow$Zero crossing of the red function", "at $x=1$."]])
-        self.add(note)
-
-        self.add_title("Unfortunately Wrong!")
+        self.add_title("Zero Crossing")
 
         funcRed = lambda x: 2 * x - 2
         graphRed = plane.plot(funcRed, color=c2)
         self.add(graphRed)
 
+        b = Bubble(texts = ["Zero crossing", "at $x=1$"], center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
+
         with self.voiceover(
             text=f"""
-            Unfortunately, that's not quite right! <bookmark mark="noteSwitch1"/>
-            The zero crossing is the point where the graph <bookmark mark="axis_x"/> intersects the x-axis.
-            
-            As we can see from the graph, <bookmark mark="noteSwitch2"/>
-            the zero of the red function, which is the point where the graph of the red function intersects
+            That's not correct.
+            The zero crossing is the point where the graph intersects the<bookmark mark="axis_x"/> x-axis.
+            <break time="1s"/>
+            As we can see from the graph, the point where the graph of the red function intersects
             the x-axis, is at the position <bookmark mark="x1"/> x equals one.
+            <break time="1s"/>
+            <bookmark mark="bubble"/>
+            So the zero crossing of the red function is at the position x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("noteSwitch1")
-            note.change_colors([0])
+
 
             self.wait_until_bookmark("axis_x")
             plane.x_axis.set_color(RED)
             self.wait(1)
             plane.x_axis.set_color(c1)
 
-            self.wait_until_bookmark("noteSwitch2")
-            note.change_colors([0, 1])
-
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
             self.play(Write(circ))
+
+            self.wait_until_bookmark("bubble")
+            self.add_pencil_sound(1.5)
+            self.play(Create(b), Create(b.text))
 
         self.wait(4)
 
@@ -185,36 +176,44 @@ class Func_1_3_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
-        note = Notepad(texts=["Zero crossing: Intersection with x-axis", ["$\\rightarrow$Zero crossing of the red function", "at $x=1$."]])
-        self.add(note)
-
-        self.add_title("Correct!")
+        self.add_title("Zero Crossing")
 
         funcRed = lambda x: 2 * x - 2
         graphRed = plane.plot(funcRed, color=c2)
         self.add(graphRed)
 
+        b = Bubble(texts = ["Zero crossing", "at $x=1$"], center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
+
         with self.voiceover(
             text=f"""
-            That's correct!
-            
-            As we can see from the graph, <bookmark mark="noteSwitch"/>
-            the zero of the red function is at the position <bookmark mark="x1"/> x equals one.
-            
-            Great job!
+            That's correct, nice job.
+            The zero crossing is the point where the graph intersects the<bookmark mark="axis_x"/> x-axis.
+            <break time="1s"/>
+            As we can see from the graph, the point where the graph of the red function intersects
+            the x-axis, is at the position <bookmark mark="x1"/> x equals one.
+            <break time="1s"/>
+            <bookmark mark="bubble"/>
+            So the zero crossing of the red function is at the position x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("noteSwitch")
-            note.change_colors([1])
+
+
+            self.wait_until_bookmark("axis_x")
+            plane.x_axis.set_color(RED)
+            self.wait(1)
+            plane.x_axis.set_color(c1)
 
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
             self.play(Write(circ))
+
+            self.wait_until_bookmark("bubble")
+            self.add_pencil_sound(1.5)
+            self.play(Create(b), Create(b.text))
 
         self.wait(4)
 
@@ -223,46 +222,47 @@ class Func_1_3_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
-        note = Notepad(texts=["Zero crossing: Intersection with x-axis", ["$\\rightarrow$Zero crossing of the red function", "at $x=1$."]])
-        self.add(note)
-
-        self.add_title("Unfortunately Wrong!")
+        self.add_title("Zero Crossing")
 
         funcRed = lambda x: 2 * x - 2
         graphRed = plane.plot(funcRed, color=c2)
         self.add(graphRed)
 
+        b = Bubble(texts = ["Zero crossing", "at $x=1$"], center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
+
         with self.voiceover(
             text=f"""
-            Unfortunately, that's not quite right! <bookmark mark="noteSwitch1"/>
-            The zero crossing is the point where the graph <bookmark mark="axis_x"/> intersects the x-axis.
-            
-            As we can see from the graph, <bookmark mark="noteSwitch2"/>
-            the zero of the red function, which is the point where the graph of the red function intersects
+            That's not correct.
+            The zero crossing is the point where the graph intersects the<bookmark mark="axis_x"/> x-axis.
+            <break time="1s"/>
+            As we can see from the graph, the point where the graph of the red function intersects
             the x-axis, is at the position <bookmark mark="x1"/> x equals one.
+            <break time="1s"/>
+            <bookmark mark="bubble"/>
+            So the zero crossing of the red function is at the position x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("noteSwitch1")
-            note.change_colors([0])
+
 
             self.wait_until_bookmark("axis_x")
             plane.x_axis.set_color(RED)
             self.wait(1)
             plane.x_axis.set_color(c1)
 
-            self.wait_until_bookmark("noteSwitch2")
-            note.change_colors([0, 1])
-
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
             self.play(Write(circ))
 
+            self.wait_until_bookmark("bubble")
+            self.add_pencil_sound(1.5)
+            self.play(Create(b), Create(b.text))
+
         self.wait(4)
+
 
 #####################################
 #####################################
@@ -272,13 +272,9 @@ class Func_1_3_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6],
-                               x_labels=[-3, -1, 1, 3], y_labels=[-6, -3, 3, 6])
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
-
-        note = Notepad(texts=["Straight lines usually have one zero crossing", ["Functions with curves can have", "multiple zero crossings"]])
-        self.add(note)
 
         self.add_title("Intersections")
         funcPink = lambda x: 2
@@ -295,17 +291,17 @@ class Func_1_3_I_2(SophiaCursorScene):
 
         with self.voiceover(
             text=f"""
-            So, the red and blue functions were both straight lines.
+            So, the red and blue functions were both straight lines, and
             Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.
-            
+            <break time="1s"/>
             <bookmark mark="funcPink"/> The pink function is parallel to the x-axis and therefore has no zero crossing.
-            
+            <break time="1s"/>
             Now, consider <bookmark mark="funcPurple"/> the purple function.
             The function is curved and has no zero crossing.
-            
+            <break time="1s"/>
             Or look at the <bookmark mark="funcGreen"/> green function.
             It's also curved, but it has two zero crossings.
-            So, as we can see: Functions can have zero, - one, - or multiple zero crossings.
+            So, as we can see: Functions can have zero,<break time=".5s"/> one, <break time=".5s"/>or multiple zero crossings.
             """
         ) as tracker:
             
@@ -331,13 +327,9 @@ class Func_1_3_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2, 2], y_ticks=[-3, -1, 1, 3],
-                               x_labels=[-2, 2], y_labels=[-3, -1, 1, 3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2, 2], y_ticks=[-3, -1, 1, 3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
-
-        note = Notepad(texts=["Finding Zero Crossings:", "1) Set function expression to zero", "2) Solve for $x$"])
-        self.add(note)
 
         self.add_title("Determining Zero Crossings")
 
@@ -370,8 +362,6 @@ class Func_1_3_I_3(SophiaCursorScene):
             As we can also verify graphically, <bookmark mark="showZero"/> this is our zero crossing.
             """
         ) as tracker:
-            self.wait_until_bookmark("findZeros")
-            note.change_colors([0])
 
             self.wait_until_bookmark("zeros")
             circ1 = Circle(radius=0.1, color=GREEN).move_to(plane.c2p(1, 0))
@@ -386,14 +376,8 @@ class Func_1_3_I_3(SophiaCursorScene):
             self.wait_until_bookmark("func")
             self.play(Write(graphBlue), Write(term0))
 
-            self.wait_until_bookmark("findZero1")
-            note.change_colors([0, 1])
-
             self.wait_until_bookmark("equal0")
             self.play(TransformMatchingTex(term0, term1))
-
-            self.wait_until_bookmark("findZero2")
-            note.change_colors([1, 2])
 
             self.wait_until_bookmark("findX")
             self.play(Write(xval))
@@ -419,33 +403,31 @@ class Func_1_3_I_4_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Consider the function", "$f(x)=x^2-1$"], ["Where is the zero crossing,", "or zero crossings?"]])
-        self.add(note)
-
         self.add_title("Determine Zero Crossings")
 
+        cursor = AltCursor(stroke_width=0.0, idle=False)
+
         mic = ImageMobject(assets_folder / "img" / "mic.png").scale(0.8).move_to([-5, 1.6, 0])
-        term0 = MathTex("f(x)=x^2-1", color=c1t, font_size=fs1).next_to(mic, DOWN).shift(RIGHT*5)
+        term0 = MathTex("f(x)=x^2-1", color=c1t, font_size=fs1).next_to(mic, DOWN, buff=.6).shift(RIGHT*5)
 
         with self.voiceover(
             text=f"""
-            Now, it's your turn. <bookmark mark="mic"/> YOU are in charge now.
-            We have the function <bookmark mark="func"/> f of x equals x squared minus one.
-            
-            <bookmark mark="ex"/>
-            Calculate the zero crossings mathematically.
-            Reminder: To do this, set the function equal to zero and solve for x.
+            Now, <bookmark mark="mic"/>it's your turn.
+            We're looking at the function <bookmark mark="func"/> f of x equals x squared minus one.
+            <break time="1s"/><bookmark mark="q"/>
+            What are the zero crossings of that function?<break time="1s"/>
+            Quick Reminder: To find the zero crossings, set the function equal to zero and solve for x.
             """
         ) as tracker:
             self.wait_until_bookmark("mic")
+            self.add_shift_sound(0.5)
             self.play(mic.animate.shift(RIGHT*5), run_time=0.5)
             
             self.wait_until_bookmark("func")
-            note.change_colors([0])
             self.play(Write(term0))
 
-            self.wait_until_bookmark("ex")
-            note.change_colors([0,1])
+            self.wait_until_bookmark("q")
+            self.draw_qmark(cursor, DOWN*2.4, run_time=3)
 
         self.wait(4)
     
@@ -455,11 +437,7 @@ class Func_1_3_I_4_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["1. Set function equal to $0$", "2. Solve for $x$", "$\\rightarrow$ Zero crossings at $x=-1$ and $x=1$"])
-        self.add(note)
-
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
-                               x_labels=[-2,2], y_labels=[-3,-1,1,3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
@@ -476,28 +454,26 @@ class Func_1_3_I_4_a(SophiaCursorScene):
 
         with self.voiceover(
             text=f"""
-            That's unfortunately not correct.
+            Hmm, that's not correct. But how do we get the right answer?
+            <break time="1s"/>
             First, we <bookmark mark="note1"/> set the function's expression equal to zero.
-            Then we have <bookmark mark="eq0"/> x squared minus one equals zero.
-            After that, we <bookmark mark="solveX"/> solve for x, and we directly obtain two values for x: <bookmark mark="xeq"/> x equals minus one or x equals one.
+            This gives us<bookmark mark="eq0"/> x squared minus one equals zero.
+            <break time="1s"/>
+            Next, we <bookmark mark="solveX"/> solve for x, and directly obtain two values for x:
+            <bookmark mark="xeq"/> x equals minus one or x equals one.
             <bookmark mark="zeros"/> These are the two zero crossings of the function.
-            When we look at the <bookmark mark="plot"/> graph of the function, we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
+            And that's our solution!
+            <break time="1s"/>
+            When we look at the <bookmark mark="plot"/> graph of the function,
+            we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("eq0")
             self.play(TransformMatchingTex(term0, term1))
 
-            self.wait_until_bookmark("solveX")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("xeq")
             self.play(Write(xval))
-
-            self.wait_until_bookmark("zeros")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("plot")
             self.play(Write(graphBlue))
@@ -516,11 +492,7 @@ class Func_1_3_I_4_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["1. Set function equal to $0$", "2. Solve for $x$", "$\\rightarrow$ Zero crossings at $x=-1$ and $x=1$"])
-        self.add(note)
-
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
-                               x_labels=[-2,2], y_labels=[-3,-1,1,3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
@@ -538,27 +510,25 @@ class Func_1_3_I_4_b(SophiaCursorScene):
         with self.voiceover(
             text=f"""
             Great, that's correct!
+            <break time="1s"/>
             First, we <bookmark mark="note1"/> set the function's expression equal to zero.
-            Then we have <bookmark mark="eq0"/> x squared minus one equals zero.
-            After that, we <bookmark mark="solveX"/> solve for x, and we directly obtain two values for x: <bookmark mark="xeq"/> x equals minus one or x equals one.
+            This gives us<bookmark mark="eq0"/> x squared minus one equals zero.
+            <break time="1s"/>
+            Next, we <bookmark mark="solveX"/> solve for x, and directly obtain two values for x:
+            <bookmark mark="xeq"/> x equals minus one or x equals one.
             <bookmark mark="zeros"/> These are the two zero crossings of the function.
-            When we look at the <bookmark mark="plot"/> graph of the function, we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
+            And that's our solution!
+            <break time="1s"/>
+            When we look at the <bookmark mark="plot"/> graph of the function,
+            we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("eq0")
             self.play(TransformMatchingTex(term0, term1))
 
-            self.wait_until_bookmark("solveX")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("xeq")
             self.play(Write(xval))
-
-            self.wait_until_bookmark("zeros")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("plot")
             self.play(Write(graphBlue))
@@ -570,6 +540,7 @@ class Func_1_3_I_4_b(SophiaCursorScene):
             self.play(Write(circ2))
 
         self.wait(4)
+
 
 class Func_1_3_I_4_c(SophiaCursorScene):
 
@@ -577,11 +548,7 @@ class Func_1_3_I_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["1. Set function equal to $0$", "2. Solve for $x$", "$\\rightarrow$ Zero crossings at $x=-1$ and $x=1$"])
-        self.add(note)
-
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
-                               x_labels=[-2,2], y_labels=[-3,-1,1,3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
@@ -598,28 +565,26 @@ class Func_1_3_I_4_c(SophiaCursorScene):
 
         with self.voiceover(
             text=f"""
-            That's unfortunately not correct.
+            Hmm, that's not correct. But how do we get the right answer?
+            <break time="1s"/>
             First, we <bookmark mark="note1"/> set the function's expression equal to zero.
-            Then we have <bookmark mark="eq0"/> x squared minus one equals zero.
-            After that, we <bookmark mark="solveX"/> solve for x, and we directly obtain two values for x: <bookmark mark="xeq"/> x equals minus one or x equals one.
+            This gives us<bookmark mark="eq0"/> x squared minus one equals zero.
+            <break time="1s"/>
+            Next, we <bookmark mark="solveX"/> solve for x, and directly obtain two values for x:
+            <bookmark mark="xeq"/> x equals minus one or x equals one.
             <bookmark mark="zeros"/> These are the two zero crossings of the function.
-            When we look at the <bookmark mark="plot"/> graph of the function, we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
+            And that's our solution!
+            <break time="1s"/>
+            When we look at the <bookmark mark="plot"/> graph of the function,
+            we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("eq0")
             self.play(TransformMatchingTex(term0, term1))
 
-            self.wait_until_bookmark("solveX")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("xeq")
             self.play(Write(xval))
-
-            self.wait_until_bookmark("zeros")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("plot")
             self.play(Write(graphBlue))
@@ -631,6 +596,7 @@ class Func_1_3_I_4_c(SophiaCursorScene):
             self.play(Write(circ2))
 
         self.wait(4)
+
 
 class Func_1_3_I_4_d(SophiaCursorScene):
 
@@ -638,11 +604,7 @@ class Func_1_3_I_4_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["1. Set function equal to $0$", "2. Solve for $x$", "$\\rightarrow$ Zero crossings at $x=-1$ and $x=1$"])
-        self.add(note)
-
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
-                               x_labels=[-2,2], y_labels=[-3,-1,1,3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
@@ -659,28 +621,26 @@ class Func_1_3_I_4_d(SophiaCursorScene):
 
         with self.voiceover(
             text=f"""
-            That's unfortunately not correct.
+            Hmm, that's not correct. But how do we get the right answer?
+            <break time="1s"/>
             First, we <bookmark mark="note1"/> set the function's expression equal to zero.
-            Then we have <bookmark mark="eq0"/> x squared minus one equals zero.
-            After that, we <bookmark mark="solveX"/> solve for x, and we directly obtain two values for x: <bookmark mark="xeq"/> x equals minus one or x equals one.
+            This gives us<bookmark mark="eq0"/> x squared minus one equals zero.
+            <break time="1s"/>
+            Next, we <bookmark mark="solveX"/> solve for x, and directly obtain two values for x:
+            <bookmark mark="xeq"/> x equals minus one or x equals one.
             <bookmark mark="zeros"/> These are the two zero crossings of the function.
-            When we look at the <bookmark mark="plot"/> graph of the function, we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
+            And that's our solution!
+            <break time="1s"/>
+            When we look at the <bookmark mark="plot"/> graph of the function,
+            we can confirm that the zero crossings are at <bookmark mark="visualZeros"/> x equals minus one and x equals one.
             """
         ) as tracker:
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("eq0")
             self.play(TransformMatchingTex(term0, term1))
 
-            self.wait_until_bookmark("solveX")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("xeq")
             self.play(Write(xval))
-
-            self.wait_until_bookmark("zeros")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("plot")
             self.play(Write(graphBlue))
@@ -692,7 +652,6 @@ class Func_1_3_I_4_d(SophiaCursorScene):
             self.play(Write(circ2))
 
         self.wait(4)
-
 
 #####################################
 #####################################
@@ -702,74 +661,80 @@ class Func_1_3_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Intersection point with the y axis:", "a) Plug $x=0$ into the function expression", "b) Read the intersection point graphically."])
-        self.add(note)
 
-        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
-                               x_labels=[-2,2], y_labels=[-3,-1,1,3])
+        cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3]).shift(0.4*DOWN)
         plane = cords[0]
         self.add(cords)
 
-        self.add_title("Intersection Point with y axis")
+        self.add_title("Intersection with y-axis")
 
         funcBlue = lambda x: x**2-1
         graphBlue = plane.plot(funcBlue, color=c3)
         funcGreen = lambda x: x+2
         graphGreen = plane.plot(funcGreen, color=GREEN)
 
-        termBlue = MathTex("f(x)=x^2-1", color=c1t, font_size=fs2).next_to(cords, DOWN)
-        termBlue2 = MathTex("f(x)=x^2-1", color=c1t, font_size=fs2).next_to(cords, DOWN)
-        termBlueZero = MathTex("f(0)=0^2-1=-1", color=c1t, font_size=fs2).next_to(cords, DOWN)
-        termGreen = MathTex("g(x)=x+2", color=c1t, font_size=fs2).next_to(cords, DOWN)
-        termGreen2 = MathTex("g(x)=x+2", color=c1t, font_size=fs2).next_to(cords, DOWN)
-        termGreenZero = MathTex("g(0)=0+2=2", color=c1t, font_size=fs2).next_to(cords, DOWN)
+        instruct = VGroup(Tex("a) Plug $x=0$ into the\\\\function expression", color=c1t, font_size=fs3, tex_environment="flushright"), Tex("b) Find the intersection\\\\graphically", color=c1t, font_size=fs3, tex_environment="flushright")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
+
+        # "", "b) Read the intersection point graphically."
+
+        termBlue = MathTex("f(x)=x^2-1", color=c1t, font_size=fs2)
+        termBlueZero = MathTex("f(0)=0^2-1=-1", color=c1t, font_size=fs2)
+        blue_terms = VGroup(termBlue, termBlueZero).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
+        termGreen = MathTex("g(x)=x+2", color=c1t, font_size=fs2)
+        termGreenZero = MathTex("g(0)=0+2=2", color=c1t, font_size=fs2)
+        green_terms = VGroup(termGreen, termGreenZero).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
 
         with self.voiceover(
             text=f"""
-            Now, let's focus on the <bookmark mark="note1"/> intersection points with the y axis.
-            We can find these easily: <bookmark mark="note2"/> We simply plug x equals zero into the function expression,
-            and we get the y-value of our intersection point with the y axis.
-            Alternatively, <bookmark mark="note3"/> we can read the intersection point directly from the graph. Let's look at two examples:
-            First, the function <bookmark mark="blue1"/> f of x equals x squared minus one.
-            Plugging in <bookmark mark="substitute"/> x equals zero gives us the value minus one, which is also the intersection point with the y axis.
-            Alternatively, <bookmark mark="blue2"/> we can visually confirm this: The graph intersects the y axis at <bookmark mark="cross1"/> y equals minus one.
-            
-            The next example is the function <bookmark mark="green1"/> g of x equals x plus two.
+            Now, let's focus on the intersection points with the y axis.
+            One way to find the intersection points with the y-axis is to <bookmark mark="instruct_1"/>plug x equals zero into the function expression.
+            <break time="1s"/>
+            Another way to find the intersection point with the y-axis is, <bookmark mark="instruct_2"/> to read it off from the graph.
+            <break time="1s"/>
+            Let's practice using two examples.
+            <break time="1s"/>Example Number one. <bookmark mark="clear"/>
+            Consider the function f of x equals x squared minus one.
+            To find the intersection point with the y axis, we simply plug in <bookmark mark="substitute"/> x equals zero.
+            We get f of zero equals zero squared minus one, which equals negative one. So the intersection point is at y equals minus one.
+            <bookmark mark="blue"/> We can confirm this visually: The graph intersects the y axis at <bookmark mark="cross1"/> y equals minus one.
+            <break time="1s"/>Example Number Two.
+            Look at the function <bookmark mark="green1"/> g of x equals x plus two.
             Plugging in <bookmark mark="subGreen"/> x equals zero gives us the value two, which is also the intersection point with the y axis.
             Again, we can <bookmark mark="green2"/> visually confirm this: The graph intersects the y axis at <bookmark mark="cross2"/> y equals two.
             """
         ) as tracker:
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            
+            self.wait_until_bookmark("instruct_1")
+            self.play(Write(instruct[0]))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
+            self.wait_until_bookmark("instruct_2")
+            self.play(Write(instruct[1]))
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
-
-            self.wait_until_bookmark("blue1")
-            note.change_colors([2])
+            self.wait_until_bookmark("clear")
+            self.play(Unwrite(instruct), run_time=.3)
+            self.wait(1)
             self.play(Write(termBlue))
 
             self.wait_until_bookmark("substitute")
-            self.play(ReplacementTransform(termBlue, termBlueZero))
-            
-            self.wait_until_bookmark("blue2")
-            self.play(Write(graphBlue), ReplacementTransform(termBlueZero, termBlue2))
+            self.play(Write(termBlueZero))
+
+            self.wait_until_bookmark("blue")
+            self.add_pencil_sound(1)
+            self.play(Write(graphBlue), run_time=1)
 
             self.wait_until_bookmark("cross1")
             circ = Circle(radius=0.1, color=BLUE).move_to(plane.c2p(0,-1))
             self.play(Write(circ))
 
             self.wait_until_bookmark("green1")
-            self.play(TransformMatchingTex(termBlue2, termGreen), Unwrite(graphBlue), Unwrite(circ))
+            self.play(TransformMatchingTex(termBlue, termGreen), Unwrite(graphBlue), Unwrite(termBlueZero), Unwrite(circ))
 
             self.wait_until_bookmark("subGreen")
-            self.play(ReplacementTransform(termGreen, termGreenZero))
+            self.play(Write(termGreenZero))
 
             self.wait_until_bookmark("green2")
-            self.play(Write(graphGreen), ReplacementTransform(termGreenZero, termGreen2))
+            self.add_pencil_sound(1)
+            self.play(Write(graphGreen), run_time=1)
 
             self.wait_until_bookmark("cross2")
             circ = Circle(radius=0.1, color=GREEN).move_to(plane.c2p(0,2))
@@ -795,28 +760,26 @@ class xCrossingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Consider the function", f"${self.funcTex}$"], ["Where is/are the zero crossing(s)?"]])
-        note.change_colors([0])
-        self.add(note)
-
         func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
 
-        self.add_title("Intersection Point with Axes")
+        self.add_title("Intersecting Axes")
 
         with self.voiceover(
             text=f"""
             {self.intro}
             Consider the function <bookmark mark="writeFunc"/> {self.funcText}.
             <bookmark mark="zero"/>
-            Where is the zero crossing of this function, or if there's more than one, where
-            are the zero crossings?
+            Where is the zero crossing of this function? If there's more than one:
+            Where are the zero crossings?
             """
         ) as tracker:
             self.wait_until_bookmark("writeFunc")
             self.play(Write(func))
 
             self.wait_until_bookmark("zero")
-            note.change_colors([0,1])
+            self.draw_qmark(cursor, DOWN*1.6, run_time=3)
+            
 
         self.wait(4)
 
@@ -827,57 +790,49 @@ class xCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Consider the function", f"${self.funcTex}$"], "Set the function equal to $0$", "Solve for $x$"])
-        self.add(note)
+        func = MathTex(self.funcTex, color=c1t, font_size=fs1)
+        setToZero = Tex("$\\rightarrow$ Set function equal to zero", color=RED, font_size=fs3)
+        func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs1)
+        solve = Tex("$\\rightarrow$ Solve for $x$", color=RED, font_size=fs3)
+        func_Zeros = MathTex(self.funcZeros, color=c1t, font_size=fs1)
+        explanation = VGroup(func, setToZero, func_Zeroed, solve, func_Zeros).arrange(DOWN, buff=.2, aligned_edge=LEFT)
 
-        func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP*2)
-        setToZero = Tex("$\\rightarrow$ Set function equal to zero", color=RED, font_size=fs3).next_to(func, DOWN)
-        func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs1).next_to(setToZero, DOWN)
-        solve = Tex("$\\rightarrow$ Solve for $x$", color=RED, font_size=fs3).next_to(func_Zeroed, DOWN)
-        func_Zeros = MathTex(self.funcZeros, color=c1t, font_size=fs1).next_to(solve, DOWN)
-
+        self.cords.shift(DOWN)
         plane = self.cords[0]
         plot = plane.plot(self.func, color=BLUE)
 
-        if self.isCorrect:
-            self.add_title("Correct!")
-        else:
-            self.add_title("Not quite...")
+        self.add_title("Intersecting Axes")
 
         with self.voiceover(
             text=f"""
             {self.intro}
             So, we start with the function <bookmark mark="writeFunc"/> {self.funcText}.
-            
+            <break time="1s"/>
             First, we <bookmark mark="setToZero1"/> set this function equal to zero, which gives us <bookmark mark="setToZero2"/> {self.ZeroText}.
             Then, <bookmark mark="solve1"/> we solve the equation for x, and <bookmark mark="solve2"/> we obtain {self.ZerosText}.
-            
+            <break time="1s"/>
             We can also <bookmark mark="clear"/> graphically verify this solution.
-            
-            Here <bookmark mark="plot"/> you can see the graph of our function.
-            And as you can see <bookmark mark="crossing"/>, the graph intersects the x-axis at {self.ZerosText}.
+            <break time="1s"/>
+            <bookmark mark="plot"/>Here's the graph of our function.
+            As you can see <bookmark mark="crossing"/>, the graph intersects the x-axis at {self.ZerosText}.
             """
         ) as tracker:
             self.wait_until_bookmark("writeFunc")
-            note.change_colors([0])
             self.play(Write(func))
 
             self.wait_until_bookmark("setToZero1")
-            note.change_colors([0,1])
             self.play(Write(setToZero), run_time=0.5)
 
             self.wait_until_bookmark("setToZero2")
             self.play(Write(func_Zeroed))
 
             self.wait_until_bookmark("solve1")
-            note.change_colors([1,2])
             self.play(Write(solve), run_time=0.5)
 
             self.wait_until_bookmark("solve2")
             self.play(Write(func_Zeros))
 
             self.wait_until_bookmark("clear")
-            note.change_colors([2])
             self.play(Unwrite(func), Unwrite(setToZero), Unwrite(func_Zeroed), Unwrite(solve), Unwrite(func_Zeros), run_time=0.5)
 
             self.wait_until_bookmark("plot")
@@ -910,7 +865,7 @@ class Func_1_3_P_1_1_q(xCrossingQuestionScene):
         self.funcTex = "f(x)=x^2-1"
         self.func = lambda x: x**2-1
         self.funcText = "f of x equals x squared minus one"
-        self.intro = "So, now let's practice with intersection points."
+        self.intro = "So, now let's practice intersection points."
 
         super().construct()
 
@@ -1567,20 +1522,12 @@ class yCrossingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider the function", f"${self.funcTex}$"], ["Where does the function", "cross the y-axis?"]])
-        note.change_colors([0])
-        self.add(note)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
 
         func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP)
 
         # Add title to the scene
         self.add_title("Intersection with the y-Axis")
-
-
-        # Initialize a cursor
-        # cursor = AltCursor(stroke_width=0.0, blinking=True).shift(LEFT)
-        # cursor.autoFadeBackground = True
 
         # Action Sequence
         with self.voiceover(
@@ -1596,7 +1543,7 @@ class yCrossingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(func))
 
             self.wait_until_bookmark("zero")
-            note.change_colors([0,1])
+            self.draw_qmark(cursor, DOWN)
 
         self.wait(4)
 
@@ -1611,13 +1558,11 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider the function", f"${self.funcTex}$"], "Substitute $0$ into the function", "Result is intersection with the y-axis"])
-        self.add(note)
 
-        func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP*2)
-        plugInZero = Tex("$\\rightarrow$ Substitute $x=0$", color=RED, font_size=fs2).next_to(func, DOWN)
-        func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs1).next_to(plugInZero, DOWN)
+        func = MathTex(self.funcTex, color=c1t, font_size=fs2)
+        plugInZero = Tex("$\\Rightarrow$ Substitute $x=0$", color=RED, font_size=fs3)
+        func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs2)
+        explanation = VGroup(func, plugInZero, func_Zeroed).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
 
         # Create the coordinate system
 
@@ -1626,13 +1571,8 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 
         # Add title to the scene
-        if self.isCorrect:
-            self.add_title("Correct!")
-        else:
-            self.add_title("Not quite...")   
+        self.add_title("Intersection with the y-Axis")
         
-
-
         # Initialize a cursor
         # cursor = AltCursor(stroke_width=0.0, blinking=True).shift(LEFT)
         # cursor.autoFadeBackground = True
@@ -1655,18 +1595,15 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         ) as tracker:
             
             self.wait_until_bookmark("writeFunc")
-            note.change_colors([0])
             self.play(Write(func))
 
             self.wait_until_bookmark("setToZero1")
-            note.change_colors([0,1])
             self.play(Write(plugInZero))
 
             self.wait_until_bookmark("setToZero2")
             self.play(Write(func_Zeroed))
 
             self.wait_until_bookmark("noteChange")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("clear")
             self.play(Unwrite(plugInZero), Unwrite(func_Zeroed), Unwrite(func), run_time=0.5)

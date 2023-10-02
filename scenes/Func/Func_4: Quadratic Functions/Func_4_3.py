@@ -6,7 +6,8 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *
@@ -22,7 +23,7 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 #####################################
 #####################################
 TASK_Func_4_3_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["The parabola remains the same", "The gets much flatter", "The parabola is reflected along the x-axis", "The parabola is shifted down"],
+    answerOptions = ["The parabola remains the same", "The parabola gets much flatter", "The parabola is reflected along the x-axis", "The parabola is shifted down"],
     correctAnswerIndex = 2,
     questionText = "What happens if we set a to $-1$?"
 )
@@ -63,7 +64,7 @@ class Func_4_3_I_1_q(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 Parabolas can also be modified by scaling them. For example, we<bookmark mark="cursorInPos"/> can make them <bookmark mark="steeper"/>steeper, so that they rise faster.
-                Or we can make them <bookmark mark="flatter"/>flatter, so that they rise more slowly. If we write the function as <bookmark mark="f"/>  f of <bookmark mark="x"/> x equals
+                Or we can make them <bookmark mark="flatter"/>flatter, so that they rise more slowly. If<bookmark mark="f"/> we write the function as f of <bookmark mark="x"/> x equals
                 <bookmark mark="a"/> a times <bookmark mark="xSquared"/>x squared, then the value of a determines how steep the<bookmark mark="cursorInPos2"/> parabola is.
                 For <bookmark mark="large"/> larger values of a, the parabola is steeper, and for <bookmark mark="small"/> smaller values of a, the parabola is flatter.
                 But what will happen, if a is below zero, like negative one for example?
@@ -83,7 +84,8 @@ class Func_4_3_I_1_q(SophiaCursorScene):
             x,y,_ = plane.c2p(2**0.5,2)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.blinking=True
-            cursor.add_updater(lambda m: m.move_to(plane.c2p((2/a.get_value())**0.5,2)))
+            cursor_updater = lambda m: m.move_to(plane.c2p((2/a.get_value())**0.5,2))
+            cursor.add_updater(cursor_updater)
 
             self.wait_until_bookmark("steeper")
             cursor.blinking=False
@@ -97,19 +99,20 @@ class Func_4_3_I_1_q(SophiaCursorScene):
             cursor.blinking=False
             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
             self.play(Create(funcTerm), a.animate(run_time=0.5).set_value(1))
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
+            cursor.remove_updater(cursor_updater)
+            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             
             self.wait_until_bookmark("x")
             x,y,_ = funcTerm[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("a")
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("xSquared")
             x,y,_ = funcTerm[4].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
             cursor.blinking=True
 
             self.wait_until_bookmark("cursorInPos2")
@@ -578,7 +581,7 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 TASK_Func_4_3_P_1_q = SophiaTaskDefinition(
     answerOptions = ["$-0.5$", "$0.5$", "$-2$", "$2$"],
     correctAnswerIndex = 0,
-    questionText = "What value do we choose for $a$??"
+    questionText = "What value do we choose for $a$, so that the function goes through the point $(2,-2)$?"
 )
 class Func_4_3_P_1_q(ScaleQuestionScene):
 

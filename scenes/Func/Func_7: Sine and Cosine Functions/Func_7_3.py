@@ -6,7 +6,8 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *
@@ -400,7 +401,7 @@ class Func_7_3_I_1_d(SophiaCursorScene):
 #####################################
 #####################################
 #####################################
-class Func_7_2_I_3(SophiaCursorScene):
+class Func_7_3_I_3(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -471,7 +472,7 @@ class Func_7_2_I_3(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_7_2_I_4(SophiaCursorScene):
+class Func_7_3_I_4(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -564,7 +565,7 @@ class Func_7_2_I_4(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_7_2_I_5(SophiaCursorScene):
+class Func_7_3_I_5(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1445,42 +1446,24 @@ class Func_7_3_P_2_d(SophiaCursorScene):
 
 
 
-# PROTOTYPES=[
-#     PagePrototypeVideo.from_scene(Func_7_3_I_1_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_I_1_q, Func_7_3_I_1_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_1_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_1_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_2_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_I_2_q, Func_7_3_I_2_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_2_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_2_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_2_c),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_2_d),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_3),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_4),
-#     PagePrototypeVideo.from_scene(Func_7_3_I_4),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_1_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_1_q, Func_7_3_P_1_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_1_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_1_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_1_c),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_1_d),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_2_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_2_q, Func_7_3_P_2_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_2_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_2_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_2_c),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_2_d),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_3_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_3_q, Func_7_3_P_3_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_3_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_3_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_3_c),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_3_d),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_4_q),
-#     PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_4_q, Func_7_3_P_4_q.__name__),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_4_a),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_4_b),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_4_c),
-#     PagePrototypeVideo.from_scene(Func_7_3_P_4_d),
-# ]
+PROTOTYPES=[
+    PagePrototypeVideo.from_scene(Func_7_3_I_1_q),
+    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_I_1_q, Func_7_3_I_1_q.__name__),
+    PagePrototypeVideo.from_scene(Func_7_3_I_1_a),
+    PagePrototypeVideo.from_scene(Func_7_3_I_1_b),
+    PagePrototypeVideo.from_scene(Func_7_3_I_3),
+    PagePrototypeVideo.from_scene(Func_7_3_I_4),
+    PagePrototypeVideo.from_scene(Func_7_3_I_5),
+    PagePrototypeVideo.from_scene(Func_7_3_P_1_q),
+    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_1_q, Func_7_3_P_1_q.__name__),
+    PagePrototypeVideo.from_scene(Func_7_3_P_1_a),
+    PagePrototypeVideo.from_scene(Func_7_3_P_1_b),
+    PagePrototypeVideo.from_scene(Func_7_3_P_1_c),
+    PagePrototypeVideo.from_scene(Func_7_3_P_1_d),
+    PagePrototypeVideo.from_scene(Func_7_3_P_2_q),
+    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_2_q, Func_7_3_P_2_q.__name__),
+    PagePrototypeVideo.from_scene(Func_7_3_P_2_a),
+    PagePrototypeVideo.from_scene(Func_7_3_P_2_b),
+    PagePrototypeVideo.from_scene(Func_7_3_P_2_c),
+    PagePrototypeVideo.from_scene(Func_7_3_P_2_d),
+]

@@ -5,7 +5,8 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *
@@ -464,7 +465,7 @@ class Func_4_2_I_1_d(SophiaCursorScene):
 #####################################
 #####################################
 TASK_Func_4_2_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x) = x^2+2x+3","$f(x) = x^2-6x-3", "$f(x) = x^2+2x-3","$f(x) = x^2-2x-3"],
+    answerOptions = ["$f(x) = x^2+2x+3$","$f(x) = x^2-6x-3$", "$f(x) = x^2+2x-3$","$f(x) = x^2-2x-3$"],
     correctAnswerIndex = 3,
     questionText = "What is the term of the shifted function?"
 )
@@ -1067,7 +1068,7 @@ class Func_4_2_I_3(SophiaCursorScene):
         t2 = MathTex("2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("$Shift right \\Rightarrow$ subtract from the $x$").next_to(t2, DOWN, buff=0.2)
+        t3 = (VGroup(Tex("Shift right", font_size=fs2, color=c1t), MathTex("\\Downarrow", font_size=fs2, color=PURPLE), Tex("subtract from $x$", font_size=fs2, color=c1t)).arrange(DOWN, buff=.1)).next_to(t2, DOWN, buff=0.6)
 
         # Action Sequence
         with self.voiceover(
@@ -1185,7 +1186,7 @@ class Func_4_2_I_3(SophiaCursorScene):
 
             self.wait_until_bookmark("t3")
             cursor.blinking=False
-            x,y,_ = t3.get_center()+0.4*DOWN
+            x,y,_ = t3[-1].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x, y), Write(t3), run_time=0.3)
             cursor.blinking=True
 
@@ -1308,8 +1309,8 @@ class Func_4_2_I_4_a(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("$Shift left \\Rightarrow$ Add two the $x$").next_to(t2, DOWN, buff=0.2)
-        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
+        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
+        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
@@ -1433,7 +1434,7 @@ class Func_4_2_I_4_b(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("$Shift left \\Rightarrow$ Add two the $x$").next_to(t2, DOWN, buff=0.2)
+        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
         funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
 
         # Action Sequence
@@ -1558,7 +1559,7 @@ class Func_4_2_I_4_c(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("$Shift left \\Rightarrow$ Add two the $x$").next_to(t2, DOWN, buff=0.2)
+        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
         funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
 
         # Action Sequence
@@ -1683,7 +1684,7 @@ class Func_4_2_I_4_d(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("$Shift left \\Rightarrow$ Add two the $x$").next_to(t2, DOWN, buff=0.2)
+        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
         funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
 
         # Action Sequence
@@ -1776,7 +1777,7 @@ class Func_4_2_I_4_d(SophiaCursorScene):
 TASK_Func_4_2_I_5_q = SophiaTaskDefinition(
     answerOptions = ["$f(x)=(x+1.5)^2-3x$", "$f(x)=(x+1.5)^2-3(x+1.5)$", "$f(x)=(x-1.5)^2-3x$", "$f(x)=(x-1.5)^2-3(x-1.5)$"],
     correctAnswerIndex = 3,
-    questionText = "What is the term of the shfited function?"
+    questionText = "What is the term of the shifted function? (1.5 to the right)"
 )
 class Func_4_2_I_5_q(SophiaCursorScene):
 

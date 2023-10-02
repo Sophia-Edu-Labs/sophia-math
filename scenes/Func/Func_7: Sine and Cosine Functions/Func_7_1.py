@@ -6,7 +6,8 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *
@@ -1426,7 +1427,7 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 #####################################
 #####################################
 TASK_Func_7_1_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["$2\\Pi$", "$90\Pi$", "$\frac{1}{2}\Pi$", "$\frac{1}{4}\Pi$"],
+    answerOptions = ["$2\\Pi$", "$90\Pi$", "$\\frac{1}{2}\Pi$", "$\\frac{1}{4}\Pi$"],
     correctAnswerIndex = 2,
     questionText = f"What angle in Radians corresponds to $90^\circ$?"
 )
@@ -1674,7 +1675,7 @@ class Func_7_1_P_3_d(RadToDegAnswerScene):
 #####################################
 #####################################
 TASK_Func_7_1_P_4_q = SophiaTaskDefinition(
-    answerOptions = ["$2\Pi$", "$\frac{1}{4}\Pi$", "$\frac{1}{2}\Pi$", "$\Pi$"],
+    answerOptions = ["$2\Pi$", "$\\frac{1}{4}\Pi$", "$\\frac{1}{2}\Pi$", "$\Pi$"],
     correctAnswerIndex = 1,
     questionText = f"What angle in Radians corresponds to $45^\circ$?"
 )
