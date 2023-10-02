@@ -25,7 +25,11 @@ fs3 = 24
 fs4 = 18
 fs5 = 12
 #Fonts
+manimpango.register_font(str(SOPHIALIB_FONT_FOLDER / "Futura.ttc"))
+manimpango.register_font(str(SOPHIALIB_FONT_FOLDER / "FiraSans-Light.ttf"))
 font_0 = ""
+font_1 = "Futura"
+font_2 = "Fira Sans"
 
 #Colors for the Background, delimiting Rectangles, Orientation lines and the Mathgrid
 c_bg = rgb_to_color([255/255, 252/255, 245/255])
@@ -49,7 +53,18 @@ class EmojiSVGMobject(SVGMobject):
         path_svg.unlink()  # delete downloaded svg again locally
 
 
+# emojifinger = EmojiSVGMobject("👆🏽").scale(0.2)
+ballpen = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "ballpen.png")).scale(0.25).rotate(270*DEGREES)
+ballpen_offset = np.array([0.45, -0.45, 0])
+finger = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "finger.png")).scale(0.1)
+mouse = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "mouse.png")).scale(0.1)
+pencil = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources"/"pencil.png")).scale(0.25).rotate(310*DEGREES).move_to([0,0,0])
+pencil_offset = np.array([0.365, -0.22, 0])
+backhand = ImageMobject(str(SOPHIALIB_MEDIA_FOLDER / "imageressources" / "backhand.png")).scale(0.5).rotate(-20*DEGREES).move_to([0,0,0])
+backhand_offset = np.array([-0.18, 0.04, 0])
 
+c_bg_opacity = .3
+c_fg_opacity = 1
 
 # nums = ["Null", "Eins", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun",
 # "Zehn", "Elf", "Zwölf", "Dreizehn", "Vierzehn", "Fünfzehn", "Sechzehn", "Siebzehn", "Achtzehn", "Neunzehn",

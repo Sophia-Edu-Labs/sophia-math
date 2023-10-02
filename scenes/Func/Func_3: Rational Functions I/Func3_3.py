@@ -5,7 +5,8 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis)
 from sophialib.styles.styleconstants import *
@@ -136,8 +137,8 @@ class Func_3_3_I_1(SophiaCursorScene):
 #####################################
 #####################################
 TASK_Func_3_3_I_2_q = SophiaTaskDefinition(
-    answerOptions=["It is stretched in y-Direction", "It is squashed in y-Direction", "It is shifted in x-Direction", "It is shifted in y-Direction"],
-    correctAnswerIndex=1,
+    answerOptions=["It is stretched in y-Direction", "It is shifted in x-Direction", "It is squashed in y-Direction",  "It is shifted in y-Direction"],
+    correctAnswerIndex=2,
     questionText="How does the graph change when it is multiplied with $a<1$?",
 )
 class Func_3_3_I_2_q(SophiaCursorScene):
@@ -513,7 +514,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
 #####################################
 TASK_Func_3_3_I_3_q = SophiaTaskDefinition(
     answerOptions=["It is stretched in y-Direction", "It is squashed in y-Direction", "It is shifted in x-Direction", "It is flipped around the x-axis"],
-    correctAnswerIndex=1,
+    correctAnswerIndex=3,
     questionText="How does the graph change when it is multiplied with $a<0$?",
 )
 class Func_3_3_I_3_q(SophiaCursorScene):
@@ -1001,7 +1002,7 @@ class Func_3_3_I_4(SophiaCursorScene):
 #####################################
 #####################################
 TASK_Func_3_3_I_5_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=\\tfrac{a+1}x$", "$f(x)=\\tfrac{a-1}x$", "$f(x)=\\tfrac ax+1$", "$f(x)=\\tfrac ax-1"],
+    answerOptions=["$f(x)=\\tfrac{a+1}x$", "$f(x)=\\tfrac{a-1}x$", "$f(x)=\\tfrac ax+1$", "$f(x)=\\tfrac ax-1$"],
     correctAnswerIndex=2,
     questionText="How do we modify the graph $f(x)=\\tfrac ax$ to shift it up by $1$?",
 )
@@ -1416,9 +1417,9 @@ class Func_3_3_I_5_d(SophiaCursorScene):
 #####################################
 #####################################
 TASK_Func_3_3_I_6_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=\\tfrac{2a}x$", "$f(x)=\\tfrac{a-2}x$", "$f(x)=\\tfrac a{2x}$", "$f(x)=\\tfrac ax-2"],
-    correctAnswerIndex=2,
-    questionText="How do we modify the graph $f(x)=\\tfrac ax$ to shift it up by $1$?",
+    answerOptions=["$f(x)=\\tfrac{2a}x$", "$f(x)=\\tfrac{a-2}x$", "$f(x)=\\tfrac a{2x}$", "$f(x)=\\tfrac ax-2$"],
+    correctAnswerIndex=3,
+    questionText="How do we modify the graph $f(x)=\\tfrac ax$ to shift it down by $2$?",
 )
 
 class Func_3_3_I_6_q(SophiaCursorScene):
@@ -1979,7 +1980,7 @@ class Func_3_3_I_7(SophiaCursorScene):
 #####################################
 #####################################
 TASK_Func_3_3_I_8_q = SophiaTaskDefinition(
-    answerOptions=["At $y=0", "At $y=2", "At $y=4", "At $y=-4"],
+    answerOptions=["At $y=0$", "At $y=2$", "At $y=4$", "At $y=-4$"],
     correctAnswerIndex=1,
     questionText="Where is the horizontal asymptote of the shifted function?",
 )

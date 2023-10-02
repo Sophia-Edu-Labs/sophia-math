@@ -3,10 +3,11 @@ from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
+                                          CursorResizeDefault, SophiaScene,
+                                          assets_folder, avatars_folder,
+                                          generated_avatars_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, Bubble)
+                                          CursorMoveResize, Notepad, Bubble, CursorMarkAxis)
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -48,7 +49,8 @@ def create_piecewise_linear(points):
     return piecewise_linear
 
 
-# Translated variables
+#####################################
+#####################################
 TASK_Func_1_1_I_1_q = SophiaTaskDefinition(
     answerOptions = ["The blue representation", "The red representation"],
     correctAnswerIndex = 0,
@@ -73,8 +75,6 @@ class Func_1_1_I_1_q(SophiaCursorScene):
         q = q.scale(2.5/q.get_width()).move_to([-5.2, 1, 0])
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Diagram describes temperature", "throughout the day"], "Which representation is correct?"])
-        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
@@ -91,19 +91,11 @@ class Func_1_1_I_1_q(SophiaCursorScene):
         func_plotted_wrong = plane.plot(func, color=RED).rotate(90 * DEGREES)
 
         # Initialize a cursor
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         xo, yo, _ = plane.x_axis.n2p(6)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0)
         cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
-
-        bRed = Bubble(texts = ["Red representation:", "Two temperatures","simultaneously"], center=np.array([-1,2.2, 0]), start_point=np.array([-.2,1,0]))
-
-
         cursor.move_to([xo, yo, 0])
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         # Action Sequence
         with self.voiceover(
@@ -115,7 +107,7 @@ class Func_1_1_I_1_q(SophiaCursorScene):
                 <bookmark mark="picnicIn"/>
                 picnic with your friends today.
                 
-                To have a great picnic, it is
+                To have a great picnic, it's
                 
                 <bookmark mark="picnicOut"/>
                 crucial that the temperature is just right.
@@ -137,12 +129,11 @@ class Func_1_1_I_1_q(SophiaCursorScene):
                 This helps you understand how the weather will change throughout the day.
                 Now, we're going to show you two possible representations.
                 
-                <bookmark mark="SwitchText"/>
                 Think about which one of them depicts a realistic temperature trend.
                 
                 <bookmark mark="BlueFuncIn"/>
                 Is it the blue representation?
-
+                <break time="1.4s"/>
                 <bookmark mark="RedFuncIn"/>
                 Or is it the red representation?
                 </prosody>
@@ -161,11 +152,6 @@ class Func_1_1_I_1_q(SophiaCursorScene):
             self.add_shift_sound(0.5)
             self.play(picnic.animate.shift(RIGHT*5), run_time=0.5)
 
-            # Animate the picnic image moving out.
-            # self.wait_until_bookmark("picnicOut")
-            # self.add_shift_sound(0.5)
-            # self.play(picnic.animate.shift(RIGHT*5), run_time=0.5)
-
             # Animate the wetter image moving to the right.
             self.wait_until_bookmark("WetterIn")
             self.add_shift_sound(0.5)
@@ -173,14 +159,13 @@ class Func_1_1_I_1_q(SophiaCursorScene):
 
             # Change note colors to highlight first Block and animate wetter image moving out while writing cords.
             self.wait_until_bookmark("CordsInWetterOut")
-            note.change_colors([0])
             self.add_shift_sound(0.5)
             self.play(wetter.animate(run_time=0.5).shift(RIGHT*5), Write(cords), run_time=0.8)
-            self.add(cursor)
+            cursor.idle = True
 
             # Highlight the x-axis using the cursor
             self.wait_until_bookmark("ShowXAxis")
-            cursor.blinking = False
+            cursor.idle = False
             self.add_move_sound("forward", duration = 0.5, target_volume=0.1)
             self.play(CursorMoveResize(cursor, plane.x_axis.n2p(15)[0], yo, 2.6, 0.3), run_time=0.5)
 
@@ -193,31 +178,34 @@ class Func_1_1_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("ResetCursor1")
             self.add_move_sound("backward", duration = 0.5, target_volume=0.1)
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2), run_time=0.5)
-            cursor.blinking = True
-
-            # Change the note colors after "SwitchText" bookmark: Highlight second block, de-highlight first block.
-            self.wait_until_bookmark("SwitchText")
-            note.change_colors([0, 1])
+            cursor.idle=True
 
             # Draw the blue function plot after "BlueFuncIn" bookmark.
             self.wait_until_bookmark("BlueFuncIn")
+            cursor.idle = False
+            x,y,_ = func_plotted.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(func_plotted.get_end()))._start_fading(1.5))
             self.add_pencil_sound(1)
-            self.play(Write(func_plotted), run_time=1)
+            cursor.set_opacity(c_bg_opacity)
+            self.play(Create(func_plotted), run_time=1)
 
             # Draw the red function plot (incorrect one) after "RedFuncIn" bookmark.
             self.wait_until_bookmark("RedFuncIn")
+            x,y,_ = func_plotted_wrong.get_start()
+            cursor.set_opacity(c_fg_opacity)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(func_plotted_wrong.get_end()))._start_fading(1.5))
             self.add_pencil_sound(1)
-            self.play(Write(func_plotted_wrong), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
+            self.play(Create(func_plotted_wrong), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 
 
-
-
-# Class for creating the animation scene
 class Func_1_1_I_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -228,8 +216,7 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
 
         # Create the coordinate system
-        cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
-                               x_labels=[6, 12, 18, 24], y_labels=[10, 15, 20, 25],
+        cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18], y_ticks=[10, 15, 20, 25],
                                axisLabelX="Time", axisLabelY="Temperature").shift(DOWN*1.4)
         plane = cords[0]
 
@@ -244,45 +231,43 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(6,9)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0)
         cursor.autoFadeBackground = True
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor.move_to([xo, yo, 0])
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         # Action Sequence
         with self.voiceover(
                 text="""
-                Exactly! <bookmark mark="BlueFuncIn"/> The blue representation is correct.
-
+                Exactly right! <bookmark mark="BlueFuncIn"/> The blue representation is correct...
+                <break time="1s"/>
                 On the left side of the x-axis, in the morning, the value of the blue representation is low.
-                <bookmark mark="MoveAlongFunc"/>
-                That makes sense because it's cooler in the morning.
-                As the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.
-                And in the evening, on the right side of the x-axis, the value of the blue representation is low again, as it gets colder.
-
+                That makes sense because it's cooler in the morning....
+                <break time="1s"/>
+                As <bookmark mark="MoveAlongFunc"/>the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.
+                And in the evening, on the right side of the x-axis, the value of the blue representation is low again as it gets colder.
                 <bookmark mark="RedFuncIn"/>
-                But why can't it be the red representation?
-                
-                
+                <break time="1s"/>
+                Now why can't it be the red representation?
+                <break time="1s"/>
                 Consider <bookmark mark="notRed"/> the temperature at two o'clock.
-
+                <break time="0.5s"/>
                 Let's draw a line
                 <bookmark mark="VertLine" /> from the x-axis, that is, from two o'clock, upwards.
-                This line intersects the red representation at exactly two points,
-                
+                This line intersects the red representation at exactly two points:
                 <bookmark mark="intersect1"/>
-                once at eight degrees and
+                Once at eight degrees and
                 <bookmark mark="intersect2"/>
-                once at sixteen point five degrees.
-
+                Once at sixteen point five degrees.
+                <break time="0.4s"/>
                 This would mean that it's both eight degrees and sixteen point five degrees at the same time.
                 But there can only be one temperature at a given time.
-                So, the red representation is not correct.
+                So, the red representation is not correct...
+                <break time="1s"/>
+                In summary: <bookmark mark="blueRecap"/>The blue representation is correct, because it assigns to each x-value, so to each
+                point in time one y-value, so one temperature.
+                The <bookmark mark="redRecap"/> red representation on the other hand is not correct, because there are x-value, so points
+                in time to which it assigns two y-values, so two temperatures. This is not possible.
                 """
         ) as tracker:
             
@@ -293,16 +278,15 @@ class Func_1_1_I_1_a(SophiaCursorScene):
             # Draw the blue function plot after "BlueFuncIn" bookmark.
             self.wait_until_bookmark("BlueFuncIn")
             self.add_pencil_sound(1.5)
-            cursor.blinking=False
+            cursor.idle=False
             c2 = cursor.copy().add_updater(lambda m: m.move_to(func_plotted.get_end()))._start_fading(1.5)
             self.add(c2)
             self.play(Write(func_plotted))
-            cursor.blinking=False
 
             # Follow the function with the cursor
             self.wait_until_bookmark("MoveAlongFunc")
-            self.play(MoveAlongPath(cursor, func_plotted), run_time=16, rate_func=linear)
-            cursor.blinking=True
+            self.play(MoveAlongPath(cursor, func_plotted), run_time=14, rate_func=linear)
+            cursor.idle=True
 
             # Draw the red function plot (incorrect one) after "RedFuncIn" bookmark.
             self.wait_until_bookmark("RedFuncIn")
@@ -313,9 +297,9 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
             self.wait_until_bookmark("notRed")
             x1, y1, _ = plane.c2p(14, 5)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("VertLine")
             l = Line([x1, y1, 0], [x1, y1 + 2.4, 0], stroke_width=1.5, color=BLACK)
@@ -324,28 +308,21 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
             self.wait_until_bookmark("intersect1")
             x1, y1, _ = plane.c2p(14, 8)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
 
             self.wait_until_bookmark("intersect2")
             x1, y1, _ = plane.c2p(14, 16.5)
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
             self.wait(.5)
-            cursor.blinking = True
+            cursor.idle = True
 
-        with self.voiceover(text="""
-                So in summary: <bookmark mark="blueRecap"/>The blue representation is correct, because it assigns to each x-value, so to each
-                point in time one y-value, so one temperature.
-                The <bookmark mark="redRecap"/> red representation on the other hand is not correct, because there are x-value, so points
-                in time to which it assigns two y-values, so two temperatures. This is not possible.
-                """
-        )as tracker:
             self.play(Unwrite(func_plotted_wrong), Unwrite(l), run_time=0.5)
             func_plotted = plane.plot(func, color=BLUE)
             func_plotted_wrong = plane.plot(func, color=RED).rotate(90 * DEGREES)
 
             self.wait_until_bookmark("blueRecap")
-            cursor.blinking=False
+            cursor.idle=False
             self.add_pencil_sound(0.5)
             self.play(Write(func_plotted), CursorMoveTo(cursor,0,1), run_time=0.5)
             b = Bubble(texts = ["Blue representation", "is correct"], center=np.array([0,2.3, 0]), start_point=np.array([0,1,0]), width=2.5, height = 0.8)
@@ -353,18 +330,18 @@ class Func_1_1_I_1_a(SophiaCursorScene):
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
             cursor.remove_updater(lambda m: m.move_to(b.get_end()))
 
             self.wait_until_bookmark("redRecap")
-            cursor.blinking=False
+            cursor.idle=False
             self.add_pencil_sound(0.5)
             self.play(Write(func_plotted_wrong), CursorMoveTo(cursor,-.2,-1), run_time=0.5)
             b = Bubble(texts = ["$2$ temperatures at once", "$\\Rightarrow$ incorrect"], center=np.array([-.5,-2.5, 0]), start_point=np.array([-.2,-1,0]), loc="t1", width=2.8, height=0.8)
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
             cursor.remove_updater(lambda m: m.move_to(b.get_end()))
 
 
@@ -373,8 +350,6 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
 
 
-
-# Class for creating the animation scene
 class Func_1_1_I_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -383,13 +358,9 @@ class Func_1_1_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Red representation:", "Two temperatures simultaneously"], "$\\rightarrow$ Red representation is incorrect",["Blue representation describes temperature", "$\\rightarrow$ Blue representation is correct"]], buff=0.25)
-        self.add(note)
-
         # Create the coordinate system
         cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
-                               x_labels=[6, 12, 18, 24], y_labels=[10, 15, 20, 25])
+                               axisLabelX="Time", axisLabelY="Temperature").shift(DOWN*1.4)
         plane = cords[0]
 
         # Add title to the scene
@@ -402,9 +373,9 @@ class Func_1_1_I_1_b(SophiaCursorScene):
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(6,9)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.autoFadeBackground = True
-        cursor.move_to([xo, yo, 0])
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         # Action Sequence
         with self.voiceover(
@@ -413,21 +384,15 @@ class Func_1_1_I_1_b(SophiaCursorScene):
                 Unfortunately, the answer was incorrect.
                 <bookmark mark="RedFuncIn"/>
                 Why can't it be the red representation??
-                
-                
                 Consider <bookmark mark="notRed"/> the temperature at two o'clock.
-
                 Let's draw a line
                 <bookmark mark="VertLine" /> from the x-axis, that is, from two o'clock, upwards.
                 This line intersects the red representation at exactly two points,
-                
                 <bookmark mark="intersect1"/>
                 once at eight degrees and
                 <bookmark mark="intersect2"/>
                 once at sixteen point five degrees.
-
                 This would mean that it's both eight degrees and sixteen point five degrees at the same time.
-                <bookmark mark="notTwo"/>
                 But there can only be one temperature at a given time.
                 So, the red representation is not <bookmark mark="BlueFuncIn"/> correct.
                 On the other hand, the blue representation describes the temperature throughout the day
@@ -448,44 +413,46 @@ class Func_1_1_I_1_b(SophiaCursorScene):
 
             # Draw the red function plot (incorrect one) after "RedFuncIn" bookmark.
             self.wait_until_bookmark("RedFuncIn")
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted_wrong))
 
             self.wait_until_bookmark("notRed")
             x1, y1, _ = plane.c2p(14, 5)
-            cursor.blinking = False
+            cursor.idle = False
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
 
             self.wait_until_bookmark("VertLine")
             l = Line([x1, y1, 0], [x1, y1 + 2.4, 0], stroke_width=1.5, color=BLACK)
+            self.add_pencil_sound(3)
             self.play(Write(l), run_time=3)
 
             self.wait_until_bookmark("intersect1")
             x1, y1, _ = plane.c2p(14, 8)
-            note.change_colors([0])
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
 
             self.wait_until_bookmark("intersect2")
             x1, y1, _ = plane.c2p(14, 16.5)
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
             self.wait(2)
-            cursor.blinking = True
-
-            self.wait_until_bookmark("notTwo")
-            note.change_colors([0, 1])
+            cursor.idle = True
 
             # Draw the blue function plot after "BlueFuncIn" bookmark.
             self.wait_until_bookmark("BlueFuncIn")
-            cursor.blinking=False
-            note.change_colors([1, 2])
+            cursor.idle=False
+            self.add_pencil_sound(1.5)
             self.play(Unwrite(func_plotted_wrong), Unwrite(l), Write(func_plotted), CursorMoveTo(cursor, xo, yo))
 
             # Follow the func with the cursor
             self.wait_until_bookmark("MoveAlongFunc")
             self.play(MoveAlongPath(cursor, func_plotted), run_time=13, rate_func=linear)
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+
+#####################################
+#####################################
 class Func_1_1_I_2(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -495,12 +462,8 @@ class Func_1_1_I_2(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=["Blue representation:$\\rightarrow$Function", "Red representation:$\\rightarrow$Not a function", ["A function assigns each x-value", "exactly one y-value."]])
-        self.add(note)
-
-        # Create the coordinate system
         cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
-                               x_labels=[6, 12, 18, 24], y_labels=[10, 15, 20, 25])
+                               axisLabelX="Time", axisLabelY="Temperature").shift(DOWN*1.4)
         plane = cords[0]
 
         # Add title to the scene
@@ -513,9 +476,9 @@ class Func_1_1_I_2(SophiaCursorScene):
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(6,9)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.autoFadeBackground = True
-        cursor.move_to([xo, yo, 0])
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
 
@@ -530,14 +493,14 @@ class Func_1_1_I_2(SophiaCursorScene):
                 <bookmark mark="MoveAlongFunc"/>
                 So, the blue representation assigns to each x-value, that is, each point in time, a y-value, which is a temperature.
                 This makes sense, as at each point in time, there's one temperature.
-                
-                <bookmark mark="RedFuncIn"/>
-                The fact, that it can only be one temperature at any given time is also the reason why the red representation is not a function.
+                <break time="1s"/>
+                The fact, that it can only be one temperature at any given time is also the reason why <bookmark mark="RedFuncIn"/>the red representation is not a function.
                 It assigns to an x-value, that is, a time, <bookmark mark="VertLine" /> for example, two y-values, which means two temperatures.
                 This can't be correct, as there's only one temperature at each time.
                 
                 <bookmark mark="Memorize"/>
-                So, we remember: - A function is a mapping that assigns exactly <bookmark mark="aY"/> one y-value to each <bookmark mark="aX"/> x-value.
+                So remember: <break time="1s"/>A function is a mapping that assigns exactly <bookmark mark="aY"/> one y-value to each
+                <bookmark mark="aX"/> x-value.
                 </prosody>
                 """
         ) as tracker:
@@ -548,36 +511,36 @@ class Func_1_1_I_2(SophiaCursorScene):
 
             # Draw the blue function plot after "BlueFuncIn" bookmark.
             self.wait_until_bookmark("BlueFuncIn")
-            note.change_colors([0])
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted))
             
             self.wait_until_bookmark("map1")
             self.play(Write(xToY[2]), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("map2")
             self.play(Write(xToY[0]), Write(xToY[1]), run_time=0.5)
 
             self.wait_until_bookmark("MoveAlongFunc")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(MoveAlongPath(cursor, func_plotted), run_time=12, rate_func=linear)
             self.wait(1)
-            cursor.blinking=True
+            cursor.idle=True
 
             # Follow the func with the cursor
             self.wait_until_bookmark("RedFuncIn")
-            note.change_colors([0,1])
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted_wrong), Unwrite(func_plotted))
 
             self.wait_until_bookmark("VertLine")
             x1, y1, _ = plane.c2p(14, 5)
             l = Line([x1, y1, 0], [x1, y1 + 2.4, 0], stroke_width=1.5, color=BLACK)
+            self.add_pencil_sound(3)
             self.play(Write(l), run_time=3)
 
             self.wait_until_bookmark("Memorize")
-            note.change_colors([1,2])
             self.wait(1)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("aY")
             x,y,_ = xToY[2].get_center()+0.4*DOWN
@@ -591,7 +554,8 @@ class Func_1_1_I_2(SophiaCursorScene):
         self.wait(4)
 
 
-
+#####################################
+#####################################
 class Func_1_1_I_3(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -600,12 +564,8 @@ class Func_1_1_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["A function assigns each x-value", "exactly one y-value."], "$\\rightarrow$Orange representation is a function", "$\\rightarrow$Green representation is not a function"])
-        self.add(note)
-
         # Create the coordinate system
-        cords = self.add_cords([-2,2,1], [0, 4, 1], x_ticks=[-2,2], x_labels=[-2,2], y_ticks=[2,4], y_labels=[2,4])
+        cords = self.add_cords([-2,2,1], [0, 4, 1], x_ticks=[-2,2], x_labels=[-2,2], y_ticks=[2,4], y_labels=[2,4]).shift(.6*DOWN)
         plane = cords[0]
 
         # Add title to the scene
@@ -620,11 +580,12 @@ class Func_1_1_I_3(SophiaCursorScene):
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.autoFadeBackground = True
-        cursor.move_to([xo, yo, 0])
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
+        func_def = Tex("A function assigns\\\\ exactly one y-value\\\\ to each x-value.", color=c3t, font_size=fs3, tex_environment="flushleft").next_to(xToY, DOWN, buff=.7)
 
         # Action Sequence
         with self.voiceover(
@@ -656,7 +617,7 @@ class Func_1_1_I_3(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("Memorize")
-            note.change_colors([0])
+            self.play(Create(func_def), run_time=.5)
 
             self.wait_until_bookmark("map1")
             self.play(Write(xToY[2]), run_time=0.5)
@@ -666,11 +627,11 @@ class Func_1_1_I_3(SophiaCursorScene):
 
             # Draw the blue function plot after "BlueFuncIn" bookmark.
             self.wait_until_bookmark("OrangeFuncIn")
-            note.change_colors([0,1])
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted))
 
             self.wait_until_bookmark("orangeX")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = xToY[0].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
 
@@ -680,21 +641,23 @@ class Func_1_1_I_3(SophiaCursorScene):
 
             self.wait_until_bookmark("MoveAlongFunc")
             xs, ys, _ = plane.c2p(-2, 4)
-            self.play(CursorMoveTo(cursor, xs, ys), run_time=1)
-            self.play(MoveAlongPath(cursor, func_plotted), run_time=5, rate_func=linear)
+            self.play(CursorMoveTo(cursor, xs, ys), run_time=.5)
+            self.play(MoveAlongPath(cursor, func_plotted), run_time=3.5, rate_func=linear)
             self.wait(1)
-            cursor.blinking=True
+            cursor.idle=True
 
             # Follow the func with the cursor
             self.wait_until_bookmark("GreenFuncIn")
-            note.change_colors([1,2])
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted_wrong), Unwrite(func_plotted))
             x1, y1, _ = plane.c2p(0, 0)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
+            cursor.idle=True
 
             self.wait_until_bookmark("VertLine")
             l = Line([x1, y1, 0], [x1, y1 + 2.4, 0], stroke_width=3, color=RED)
+            self.add_pencil_sound(2)
             self.play(Write(l), run_time=2)
             cx1, cy1, _ = plane.c2p(0, 0.6)
             cx2, cy2, _ = plane.c2p(0, 3.35)
@@ -702,11 +665,11 @@ class Func_1_1_I_3(SophiaCursorScene):
             self.play(Write(circ1), Write(circ2), run_time=2)
 
             self.wait_until_bookmark("TrueFct")
-            note.change_colors([0,2])
             self.play(Unwrite(l), Unwrite(circ1), Unwrite(circ2), Unwrite(func_plotted_wrong), Write(func_plotted2), run_time=0.8)
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, xs, ys), run_time=0.5)
             self.play(MoveAlongPath(cursor, func_plotted2), run_time=5, rate_func=linear)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -727,10 +690,6 @@ class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        # Create a notepad with texts
-        note = Notepad(texts=self.texts)
-        self.add(note)
 
         # Create the coordinate system
         plane = self.cords[0]
@@ -753,9 +712,8 @@ class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(*self.cursorStart)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.autoFadeBackground = True
-        cursor.move_to([xo, yo, 0])
 
         # Action Sequence
         with self.voiceover(
@@ -784,26 +742,28 @@ class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             
             # Highlight first Text
             self.wait_until_bookmark("action")
-            note.change_colors([0])
+            self.add_shift_sound(0.5)
             self.play(self.introImg.animate.shift(5*RIGHT), run_time=0.5)
 
             # Animate the coordinate system being created
             self.wait_until_bookmark("values")
-            note.change_colors([0,1])
             self.play(Write(tab))
 
             # Show the orange function
             self.wait_until_bookmark("orange")
-            note.change_colors([1,2])
+            self.add_shift_sound(0.5)
             self.play(self.introImg.animate.shift(5*RIGHT), Write(self.cords), run_time=0.5)
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted1))
 
             # Show the blue function
             self.wait_until_bookmark("blue")
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted2))
 
             # Show the green function
             self.wait_until_bookmark("green")
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted3))
 
         # Wait for 4 seconds at the end of animation
@@ -815,19 +775,10 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
     @abstractmethod
     def construct(self):
 
-        self.texts=[["Mark all points", "in the coordinate system"], "Connect the points to create a graph"]
-        if self.correcty != self.idx_selected:
-            self.texts.append("$\\rightarrow$Answer unfortunately incorrect")
-        else:
-            self.texts.append("$\\rightarrow$Answer correct!")
 
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        # Create a notepad with texts
-        note = Notepad(texts=self.texts)
-        self.add(note)
 
         # Create the coordinate system
         plane = self.cords[0]
@@ -844,21 +795,7 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         func_plotted2 = plane.plot(f2, color=BLUE)
         func_plotted3 = plane.plot(f3, color=GREEN)
         func_plotted_correct = plane.plot(fcorrect, color=RED)
-        nums = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-        "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen",
-        "Twenty", "Twenty-one", "Twenty-two", "Twenty-three", "Twenty-four", "Twenty-five", "Twenty-six",
-        "Twenty-seven", "Twenty-eight", "Twenty-nine", "Thirty", "Thirty-one", "Thirty-two", "Thirty-three",
-        "Thirty-four", "Thirty-five", "Thirty-six", "Thirty-seven", "Thirty-eight", "Thirty-nine",
-        "Forty", "Forty-one", "Forty-two", "Forty-three", "Forty-four", "Forty-five", "Forty-six",
-        "Forty-seven", "Forty-eight", "Forty-nine", "Fifty", "Fifty-one", "Fifty-two", "Fifty-three",
-        "Fifty-four", "Fifty-five", "Fifty-six", "Fifty-seven", "Fifty-eight", "Fifty-nine", "Sixty",
-        "Sixty-one", "Sixty-two", "Sixty-three", "Sixty-four", "Sixty-five", "Sixty-six", "Sixty-seven",
-        "Sixty-eight", "Sixty-nine", "Seventy", "Seventy-one", "Seventy-two", "Seventy-three",
-        "Seventy-four", "Seventy-five", "Seventy-six", "Seventy-seven", "Seventy-eight", "Seventy-nine",
-        "Eighty", "Eighty-one", "Eighty-two", "Eighty-three", "Eighty-four", "Eighty-five", "Eighty-six",
-        "Eighty-seven", "Eighty-eight", "Eighty-nine", "Ninety", "Ninety-one", "Ninety-two", "Ninety-three",
-        "Ninety-four", "Ninety-five", "Ninety-six", "Ninety-seven", "Ninety-eight", "Ninety-nine",
-        "One hundred"]
+
 
         colors = ["Orange", "Blue", "Green"]
         funcs = [func_plotted1, func_plotted2, func_plotted3]
@@ -866,27 +803,26 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         tab = Table([[str(val) for val in self.xvals], [str(val) for val in self.yvals[self.correcty]]],
                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
                     row_labels=[Text(self.labels[0], color=BLACK, font_size = fs1), Text(self.labels[1], color=BLACK, font_size = fs1)])
-        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=0.35)
+        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=0.6)
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(*self.cursorStart)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
-        finalBit = f"As we can see, the red function is the correct one and the {colors[self.idx_selected]} function is unfortunately not. Maybe next time it will work!"
+        first_bit = f"That's not correct. The {colors[self.idx_selected]} function is not the correct one."
         if self.idx_selected == self.correcty:
-            finalBit = f"And we see: You got it right, great job! The {colors[self.idx_selected]} function is identical to the red one and was the correct choice."
+            first_bit = f"That's correct, great job!"
 
         # Action Sequence
         with self.voiceover(
                 text=f"""
                 <prosody rate="110%">
-                So, your answer was: <bookmark mark="Func"/> The {colors[self.idx_selected]} function.
-                
-                Let's see if that's correct.
-                
-                To do this <bookmark mark="colorNote"/> we'll enter the values from the table into the coordinate system, one after the other.
-                In this example, the <bookmark mark="xaxis"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark="yaxis"/> y-axis represents {self.Textlabels[1]}.
+                {first_bit}
+                So you selected the <bookmark mark="Func"/>{colors[self.idx_selected]} function.
+                To check if this is correct, let's enter the values from the table into the coordinate system, one after the other.
+                In this example, the <bookmark mark="xaxis"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark="yaxis"/>
+                y-axis represents {self.Textlabels[1]}.
 
                 <bookmark mark="val1"/>
                 The first value has {nums[self.xvals[0]]} as its x-value and {nums[self.yvals[self.correcty][0]]} as its y-value.
@@ -903,10 +839,8 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
                 <bookmark mark="val5"/>
                 And the fifth value has coordinates {nums[self.xvals[4]]} and {nums[self.yvals[self.correcty][4]]}.
 
-                Let's now connect these values, <bookmark mark="TrueFunc"/>
-                to obtain the function.
-                
-                {finalBit}
+                If we connect these values, <bookmark mark="TrueFunc"/>we can see that the {colors[self.correcty]} function
+                is the correct one.
                 </prosody>
                 """
         ) as tracker:
@@ -919,12 +853,9 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(funcs[self.idx_selected]))
             self.add(cursor)
 
-            self.wait_until_bookmark("colorNote")
-            note.change_colors([0])
-
             # Highlight x-Axis
             self.wait_until_bookmark("xaxis")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMarkAxis(cursor, plane, 'x'), run_time=0.5)
 
             # Highlight y-Axis
@@ -965,12 +896,10 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(CursorMoveTo(cursor, x, y))
             c6 = cursor.copy()
             self.add(c6)
-            note.change_colors([0,1])
 
             # Create the function
             self.wait_until_bookmark("TrueFunc")
             self.play(Write(func_plotted_correct), run_time=3)
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -997,12 +926,12 @@ class Func_1_1_P_1_q(ValueTableQuestionScene):
         self.texts=[["Imagine this:", "We're hiking through the mountains"], "We measure our altitude hourly", "$\\rightarrow$Which function fits this scenario?"]
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
-        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.4*DOWN)
         self.title="Mountain Hike"
         self.cursorStart = [0,0]
         self.correcty = 0
         self.introImg = ImageMobject(assets_folder / "img" / "matterhorn.png")
-        self.introImg = self.introImg.scale(7/self.introImg.get_width()).move_to([-5, 1.7, 0])
+        self.introImg = self.introImg.scale(7/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels=["Time", "Altitude"]
         super().construct()
 
@@ -1015,7 +944,7 @@ class Func_1_1_P_1_a(ValueTableSolutionScene):
         self.idx_selected = 0
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
-        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.4*DOWN)
         self.title = "Mountain Hike"
         self.cursorStart = [0,0]
         self.labels = ["Time", "Altitude"]
@@ -1031,7 +960,7 @@ class Func_1_1_P_1_b(ValueTableSolutionScene):
         self.idx_selected = 1
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
-        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.4*DOWN)
         self.title = "Mountain Hike"
         self.cursorStart = [0,0]
         self.labels = ["Time", "Altitude"]
@@ -1047,7 +976,7 @@ class Func_1_1_P_1_c(ValueTableSolutionScene):
         self.idx_selected = 2
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
-        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([0,4,1], [0, 4, 1], x_ticks=[0,2,4], x_labels=[0,2,4], y_ticks=[2,4], y_labels=[2,4], height=2).shift(0.4*DOWN)
         self.title = "Mountain Hike"
         self.cursorStart = [0,0]
         self.labels = ["Time", "Altitude"]
@@ -1077,11 +1006,11 @@ class Func_1_1_P_2_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "It's raining heavily"], "We measure the amount of rain daily", "$\\rightarrow$Which function matches this?"]
         self.xvals = [1,2,3,4,5]
         self.yvals = [[10, 20, 30, 40, 20], [30, 10, 40, 20, 30], [20, 30, 10, 40, 30]]
-        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.4*DOWN)
         self.title = "Rainy Weather"
         self.cursorStart = [1,0]
         self.correcty = 2
-        self.introImg = ImageMobject(assets_folder / "img" / "rain.png").scale(0.35).move_to([-5, 1.6, 0])
+        self.introImg = ImageMobject(assets_folder / "img" / "rain.png").scale(0.35).move_to([-5, 1, 0])
         self.labels = ["Day", "mm"]
         super().construct()
 
@@ -1093,7 +1022,7 @@ class Func_1_1_P_2_a(ValueTableSolutionScene):
         self.idx_selected = 0
         self.xvals = [1,2,3,4,5]
         self.yvals = [[10, 20, 30, 40, 20], [30, 10, 40, 20, 30], [20, 30, 10, 40, 30]]
-        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.4*DOWN)
         self.title = "Rainy Weather"
         self.cursorStart = [1,0]
         self.Textlabels = ["The day, numbered from one to five", "The amount of rain in millimeters"]
@@ -1109,7 +1038,7 @@ class Func_1_1_P_2_b(ValueTableSolutionScene):
         self.idx_selected = 1
         self.xvals = [1,2,3,4,5]
         self.yvals = [[10, 20, 30, 40, 20], [30, 10, 40, 20, 30], [20, 30, 10, 40, 30]]
-        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.4*DOWN)
         self.title = "Rainy Weather"
         self.cursorStart = [1,0]
         self.Textlabels = ["The day, numbered from one to five", "The amount of rain in millimeters"]
@@ -1125,7 +1054,7 @@ class Func_1_1_P_2_c(ValueTableSolutionScene):
         self.idx_selected = 1
         self.xvals = [1,2,3,4,5]
         self.yvals = [[10, 20, 30, 40, 20], [30, 10, 40, 20, 30], [20, 30, 10, 40, 30]]
-        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.4*DOWN)
         self.title = "Rainy Weather"
         self.cursorStart = [1,0]
         self.Textlabels = ["The day, numbered from one to five", "The amount of rain in millimeters"]
@@ -1152,12 +1081,12 @@ class Func_1_1_P_3_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "It's snowing heavily"], "We measure the amount of snow daily", "$\\rightarrow$Which function matches this?"]
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[5, 10, 15, 10, 5], [10, 5, 15, 10, 15], [10, 15, 5, 15, 10]]
-        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.4*DOWN)
         self.title = "Snowy Weather"
         self.cursorStart = [1, 0]
         self.correcty = 1
         self.introImg = ImageMobject(assets_folder / "img" / "snow.png")
-        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1.6, 0])
+        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels = ["Day", "cm"]
         super().construct()
 
@@ -1168,12 +1097,12 @@ class Func_1_1_P_3_a(ValueTableSolutionScene):
         self.idx_selected = 0
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[5, 10, 15, 10, 5], [10, 5, 15, 10, 15], [10, 15, 5, 15, 10]]
-        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.4*DOWN)
         self.title = "Snowy Weather"
         self.cursorStart = [1, 0]
         self.correcty = 1
         self.introImg = ImageMobject(assets_folder / "img" / "snow.png")
-        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1.6, 0])
+        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels = ["Day", "cm"]
         self.Textlabels = ["The day, numbered from one to five", "The amount of snow in centimeters"]
 
@@ -1186,12 +1115,12 @@ class Func_1_1_P_3_b(ValueTableSolutionScene):
         self.idx_selected = 1
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[5, 10, 15, 10, 5], [10, 5, 15, 10, 15], [10, 15, 5, 15, 10]]
-        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.4*DOWN)
         self.title = "Snowy Weather"
         self.cursorStart = [1, 0]
         self.correcty = 1
         self.introImg = ImageMobject(assets_folder / "img" / "snow.png")
-        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1.6, 0])
+        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels = ["Day", "cm"]
         self.Textlabels = ["The day, numbered from one to five", "The amount of snow in centimeters"]
 
@@ -1204,12 +1133,12 @@ class Func_1_1_P_3_c(ValueTableSolutionScene):
         self.idx_selected = 2
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[5, 10, 15, 10, 5], [10, 5, 15, 10, 15], [10, 15, 5, 15, 10]]
-        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 15, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[5, 10, 15], y_labels=[5, 10, 15], height=2).shift(0.4*DOWN)
         self.title = "Snowy Weather"
         self.cursorStart = [1, 0]
         self.correcty = 1
         self.introImg = ImageMobject(assets_folder / "img" / "snow.png")
-        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1.6, 0])
+        self.introImg = self.introImg.scale(2.5/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels = ["Day", "cm"]
         self.Textlabels = ["The day, numbered from one to five", "The amount of snow in centimeters"]
 
@@ -1240,12 +1169,12 @@ class Func_1_1_P_4_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "The sun is shining all day"], "We measure the daily hours of sunshine", "$\\rightarrow$Which function fits this?"]
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[12, 10, 11, 12, 10], [10, 12, 10, 11, 12], [11, 12, 10, 12, 11]]
-        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.4*DOWN)
         self.title = "Sunshine Duration"
         self.cursorStart = [1, 0]
         self.correcty = 0
         self.introImg = ImageMobject(assets_folder / "img" / "sun.png")
-        self.introImg = self.introImg.scale(3/self.introImg.get_width()).move_to([-5, 1.6, 0])
+        self.introImg = self.introImg.scale(3/self.introImg.get_width()).move_to([-5, 1, 0])
         self.labels = ["Day", "Hours"]
         super().construct()
 
@@ -1255,7 +1184,7 @@ class Func_1_1_P_4_a(ValueTableSolutionScene):
 
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[12, 10, 11, 12, 10], [10, 12, 10, 11, 12], [11, 12, 10, 12, 11]]
-        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.4*DOWN)
         self.title = "Sunshine Duration"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1271,7 +1200,7 @@ class Func_1_1_P_4_b(ValueTableSolutionScene):
 
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[12, 10, 11, 12, 10], [10, 12, 10, 11, 12], [11, 12, 10, 12, 11]]
-        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.4*DOWN)
         self.title = "Sunshine Duration"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1287,7 +1216,7 @@ class Func_1_1_P_4_c(ValueTableSolutionScene):
 
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[12, 10, 11, 12, 10], [10, 12, 10, 11, 12], [11, 12, 10, 12, 11]]
-        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 12, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 11, 12], y_labels=[10, 11, 12], height=2).shift(0.4*DOWN)
         self.title = "Sunshine Duration"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1318,11 +1247,11 @@ class Func_1_1_P_5_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "The wind is blowing very strongly"], "We measure the wind speed hourly", "$\\rightarrow$Which function fits this?"]
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[20, 30, 40, 50, 40, 30], [30, 20, 50, 40, 30, 50], [30, 40, 20, 50, 40, 30]]
-        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.4*DOWN)
         self.title = "Wind Speed"
         self.cursorStart = [1, 20]
         self.correcty = 2
-        self.introImg = ImageMobject(assets_folder / "img" / "wind.png").scale(0.35).move_to([-5, 1.6, 0])
+        self.introImg = ImageMobject(assets_folder / "img" / "wind.png").scale(0.35).move_to([-5, 1, 0])
         self.labels = ["Hour", "km/h"]
         super().construct()
 
@@ -1331,7 +1260,7 @@ class Func_1_1_P_5_a(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[20, 30, 40, 50, 40, 30], [30, 20, 50, 40, 30, 50], [30, 40, 20, 50, 40, 30]]
-        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.4*DOWN)
         self.title = "Wind Speed"
         self.cursorStart = [1, 20]
         self.correcty = 2
@@ -1345,7 +1274,7 @@ class Func_1_1_P_5_b(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[20, 30, 40, 50, 40, 30], [30, 20, 50, 40, 30, 50], [30, 40, 20, 50, 40, 30]]
-        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.4*DOWN)
         self.title = "Wind Speed"
         self.cursorStart = [1, 20]
         self.correcty = 2
@@ -1359,7 +1288,7 @@ class Func_1_1_P_5_c(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[20, 30, 40, 50, 40, 30], [30, 20, 50, 40, 30, 50], [30, 40, 20, 50, 40, 30]]
-        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [0, 50, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[20, 30, 40, 50], y_labels=[20, 30, 40, 50], height=2).shift(0.4*DOWN)
         self.title = "Wind Speed"
         self.cursorStart = [1, 20]
         self.correcty = 2
@@ -1387,7 +1316,7 @@ class Func_1_1_P_6_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "The temperatures rise and fall"], "We measure the temperature daily", "$\\rightarrow$Which function fits this?"]
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[10, 15, 12, 14, 13], [15, 10, 14, 13, 15], [13, 14, 10, 15, 14]]
-        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.4*DOWN)
         self.title = "Temperature Change"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1400,7 +1329,7 @@ class Func_1_1_P_6_a(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[10, 15, 12, 14, 13], [15, 10, 14, 13, 15], [13, 14, 10, 15, 14]]
-        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.4*DOWN)
         self.title = "Temperature Change"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1414,7 +1343,7 @@ class Func_1_1_P_6_b(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[10, 15, 12, 14, 13], [15, 10, 14, 13, 15], [13, 14, 10, 15, 14]]
-        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.4*DOWN)
         self.title = "Temperature Change"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1428,7 +1357,7 @@ class Func_1_1_P_6_c(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[10, 15, 12, 14, 13], [15, 10, 14, 13, 15], [13, 14, 10, 15, 14]]
-        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [10, 15, 1], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 12, 14], y_labels=[10, 12, 14], height=2).shift(0.4*DOWN)
         self.title = "Temperature Change"
         self.cursorStart = [1, 10]
         self.correcty = 0
@@ -1456,7 +1385,7 @@ class Func_1_1_P_7_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "The humidity is very high"], "We measure the humidity hourly", "$\\rightarrow$Which function fits this?"]
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[70, 75, 80, 85, 80, 75], [75, 70, 85, 80, 75, 85], [75, 80, 70, 85, 80, 75]]
-        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.4*DOWN)
         self.title = "Humidity"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1469,7 +1398,7 @@ class Func_1_1_P_7_a(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[70, 75, 80, 85, 80, 75], [75, 70, 85, 80, 75, 85], [75, 80, 70, 85, 80, 75]]
-        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.4*DOWN)
         self.title = "Humidity"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1483,7 +1412,7 @@ class Func_1_1_P_7_b(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[70, 75, 80, 85, 80, 75], [75, 70, 85, 80, 75, 85], [75, 80, 70, 85, 80, 75]]
-        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.4*DOWN)
         self.title = "Humidity"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1497,7 +1426,7 @@ class Func_1_1_P_7_c(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5, 6]
         self.yvals = [[70, 75, 80, 85, 80, 75], [75, 70, 85, 80, 75, 85], [75, 80, 70, 85, 80, 75]]
-        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 6, 1], [70, 90, 10], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[70, 75, 80, 85], y_labels=[70, 75, 80, 85], height=2).shift(0.4*DOWN)
         self.title = "Humidity"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1525,11 +1454,11 @@ class Func_1_1_P_8_q(ValueTableQuestionScene):
         self.texts = [["Imagine:", "It's apple harvest time"], "We count the harvested apples daily", "$\\rightarrow$Which function fits this?"]
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[15, 30, 20, 25, 18], [20, 15, 25, 18, 30], [25, 20, 15, 30, 18]]
-        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.4*DOWN)
         self.title = "Apple Harvest"
         self.cursorStart = [1, 0]
         self.correcty = 1
-        self.introImg = ImageMobject(assets_folder / "img" / "apple.png").scale(0.5).move_to([-5, 1.6, 0])
+        self.introImg = ImageMobject(assets_folder / "img" / "apple.png").scale(0.5).move_to([-5, 1, 0])
         self.labels = ["Day", "Apples"]
         super().construct()
 
@@ -1538,7 +1467,7 @@ class Func_1_1_P_8_a(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[15, 30, 20, 25, 18], [20, 15, 25, 18, 30], [25, 20, 15, 30, 18]]
-        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.4*DOWN)
         self.title = "Apple Harvest"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1552,7 +1481,7 @@ class Func_1_1_P_8_b(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[15, 30, 20, 25, 18], [20, 15, 25, 18, 30], [25, 20, 15, 30, 18]]
-        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.4*DOWN)
         self.title = "Apple Harvest"
         self.cursorStart = [1, 0]
         self.correcty = 1
@@ -1566,7 +1495,7 @@ class Func_1_1_P_8_c(ValueTableSolutionScene):
     def construct(self):
         self.xvals = [1, 2, 3, 4, 5]
         self.yvals = [[15, 30, 20, 25, 18], [20, 15, 25, 18, 30], [25, 20, 15, 30, 18]]
-        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.2*UP)
+        self.cords = self.add_cords([1, 5, 1], [0, 30, 5], x_ticks=[1, 3, 5], x_labels=[1, 3, 5], y_ticks=[10, 20, 30], y_labels=[10, 20, 30], height=2).shift(0.4*DOWN)
         self.title = "Apple Harvest"
         self.cursorStart = [1, 0]
         self.correcty = 1
