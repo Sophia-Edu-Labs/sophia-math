@@ -1,0 +1,35 @@
+{
+  "Func_6_1": {
+    "1I1q": {
+      "main": {
+        "voiceover": "Stell dir vor, du bist <bookmark mark=\"crown\"/> der König oder die Königin eines alten Reiches.\nWenn du nicht damit beschäftigt bist, dein Reich zu regieren, spielst du gerne<bookmark mark=\"chess\"/> Schach mit deinen Freunden.\nAlso bittest du den begabtesten Künstler deines Reiches, dir ein Schachbrett anzufertigen.\nAls er mit dem Schachbrett zurückkommt, bist du von seiner Schönheit beeindruckt und beschließt,\nsie mit einem Preis zu belohnen.\nAber du bist knapp bei Kasse, denn du hast all dein Geld<bookmark mark=\"headphones\"/> für ein brandneues Paar Kopfhörer ausgegeben,\nalso bittest du den Künstler, seinen Preis zu nennen.\nDer Künstler stellt dich vor die Wahl:\nDu kannst entweder <bookmark mark=\"gold\"/>für jedes Feld auf dem Schachbrett eine Goldmünze zahlen,\noder du kannst <bookmark mark=\"rice\"/>ihm ein Reiskorn für das erste Feld, zwei Reiskörner für das zweite Feld,\nvier Reiskörner für das dritte Feld, acht Reiskörner für das vierte Feld, und so weiter, bis\ndu sie für alle 64 Quadrate bezahlt hast. <bookmark mark=\"qmark\"/>\nWelche Option wählst du?",
+        "exponential-functions": "Exponentialfunktionen"
+      },
+      "question": {
+        "with-rice": "Mit Reis",
+        "with-gold": "Mit Gold",
+        "how-do-you-pay-the-artist": "Wie bezahlst du den Künstler?"
+      }
+    },
+    "1I1a": {
+      "main": {
+        "grains-of-rice": "Reiskörner",
+        "21st-square": "21. Feld",
+        "41st-square": "41. Feld",
+        "voiceover": "Mhm, ich bin mir nicht sicher, ob das eine gute Idee ist.\nSchauen wir mal, wie viel Reis dich das kostet.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>ein Reiskorn.\nFür das zweite Quadrat zahlst du zusätzlich<bookmark mark=\"two\"/>zwei Reiskörner.\nFür das dritte Feld bezahlst du zusätzlich<bookmark mark=\"four\"/>vier Reiskörner.\nfür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>acht Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der acht Reihen auf dem Schachbrett füllen willst? Einhundertachtundzwanzig.\nDas ist eine Menge Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nSobald du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreicht hast, wirst du mehr als eine Million Reiskörner bezahlen müssen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreicht hast, musst du mehr als eine Billion Reiskörner bezahlen.\nAm Ende werden Sie insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen bezahlen müssen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner.\nIch bin mir nicht sicher über den Umrechnungskurs von Reis in Gold, aber ich bin mir ziemlich sicher, dass Gold hier die billigere Option ist..."
+      }
+    },
+    "1I1b": {
+      "main": {
+        "voiceover": "Ja, das scheint die richtige Idee zu sein.\nZum Vergleich, lass uns sehen, wie viel Reis es dich kosten würde.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>1 Reiskorn.\nFür das zweite Feld zahlst du zusätzlich<bookmark mark=\"two\"/>2 Reiskörner.\nFür das dritte Feld zahlst du zusätzlich<bookmark mark=\"four\"/>4 Reiskörner.\nFür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>8 Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der\n8 Reihen auf dem Schachbrett beendet hast? Einhundertachtundzwanzig.\nDas ist viel Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nWenn du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreichst, musst du mehr als eine Million Reiskörner zahlen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreichst, musst du mehr als eine Billion Reiskörner zahlen.\nAm Ende musst du insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner zahlen.\nIch bin mir nicht sicher über die Reis-zu-Gold-Umrechnungskurse, aber ich bin ziemlich sicher, dass Gold hier die günstigere Option ist..."
+      }
+    },
+    "1I2": {
+      "main": {
+        "exponential-growth": "Exponentielles Wachstum",
+        "linear-growth": "Lineares Wachstum",
+        "voiceover": "Was ist der Grund dafür, dass im Beispiel des Schachbretts die Anzahl der Reiskörner, die Sie bezahlen müssen\nso schnell ansteigt? Wie kann Reis so schnell so viel teurer werden als Gold?\nDie Antwort auf diese beiden Fragen ist die gleiche: Exponentielles Wachstum.\nVergleichen wir die beiden Optionen, Reis und Gold, noch einmal. Genauer gesagt,\nlassen Sie uns die beiden <bookmark mark=\"cords\"/> mit Hilfe von Funktionen beschreiben.\nBeginnen wir mit Gold.\nDie Funktion, die die Menge an Gold beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, lautet\n<bookmark mark=\"f_gold\"/> f von x ist gleich x.\nFür das erste Feld muss man eine Goldmünze bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Feld musst du ebenfalls eine Goldmünze bezahlen. Also ist f von 2 gleich eins für das erste Feld,\nplus eins für das zweite Feld, also zwei. Und so weiter. Wie Sie sehen, steigt der Betrag, den Sie zahlen müssen\nlinear mit der Anzahl der zu zahlenden Quadrate ansteigt. Ein zusätzliches Quadrat kostet genau\nso viel wie jedes der vorherigen Quadrate, und das letzte Quadrat kostet genau so viel wie das erste.\nWir nennen dies <bookmark mark=\"linear\"/>lineares Wachstum...\n\nBetrachten wir nun <bookmark mark=\"clean\"/> zum Vergleich Reis.\nDie <bookmark mark=\"cords_rice\"/>Funktion, die die Menge an Reis beschreibt, die man für eine\nDie <bookmark mark=\"f_rice\"/>-Funktion, die die Menge an Reis beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, ist eine Exponentialfunktion\nFür das erste Quadrat muss man ein Reiskorn bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Quadrat muss man zwei Reiskörner bezahlen. Also ist f von 2 gleich eins für das erste Quadrat,\nplus zwei für das zweite Feld, also drei. \nFür das dritte Feld musst du vier Reiskörner bezahlen. Also ist f von 3 gleich eins für das erste Feld,\nplus zwei für das zweite Feld, plus vier für das dritte Feld, also sieben.\nUnd so weiter.\nWie Sie sehen, steigt der Betrag, den Sie zahlen müssen, schnell mit der Anzahl der Quadrate, für die Sie zahlen müssen,\ndenn für jedes Feld müssen Sie doppelt so viel bezahlen wie für das vorherige Feld.\nWir nennen dies <bookmark mark=\"exponential\"/>exponentielles Wachstum..."
+      }
+    }
+  }
+}
