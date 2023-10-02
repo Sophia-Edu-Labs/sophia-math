@@ -27,8 +27,9 @@ RUN /tmp/install_requirements.sh /tmp/requirements.txt
 FROM base as devcontainerbase
 
 # download custom version of manim sideview extension
-RUN mkdir /downloads
-RUN curl -L -o /downloads/manim-sideview-extension.vsix https://github.com/geroembser/manim-sideview/releases/download/v0.2.5-alpha/manim-sideview-0.2.5.vsix
+COPY ./docker/download_manimsideview.sh /tmp/download_manimsideview.sh
+RUN chmod +x /tmp/download_manimsideview.sh
+RUN /tmp/download_manimsideview.sh
 
 USER manimuser
 
