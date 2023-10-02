@@ -4,8 +4,7 @@ from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PageProto
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
                                           CursorResizeDefault, SophiaScene,
-                                          assets_folder, avatars_folder,
-                                          generated_avatars_folder, AltCursor,
+                                          assets_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, Bubble, CursorMarkAxis)
 from sophialib.styles.styleconstants import *

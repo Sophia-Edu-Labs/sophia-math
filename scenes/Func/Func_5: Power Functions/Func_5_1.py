@@ -5,9 +5,8 @@ from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
                                           CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene, Cursor,
-                                          assets_folder, avatars_folder,
-                                          generated_avatars_folder, AltCursor,
+                                          CursorResizeDefault, SophiaScene,
+                                          assets_folder, AltCursor,
                                           SophiaCursorScene, CursorMoveTo,
                                           CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
 from sophialib.styles.styleconstants import *

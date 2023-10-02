@@ -5,7 +5,7 @@
 # from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 # from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
 #                                           CursorPositionTracking,
-#                                           CursorResizeDefault, SophiaScene, Cursor,
+#                                           CursorResizeDefault, SophiaScene,
 #                                           assets_folder, avatars_folder,
 #                                           generated_avatars_folder, AltCursor,
 #                                           SophiaCursorScene, CursorMoveTo,
