@@ -1143,8 +1143,8 @@ class Func_2_1_I_5_q(SophiaCursorScene):
                 text="""
                 So, let's take a closer look at the function term of linear functions.
                 The <bookmark mark="f"/> general term for linear functions <bookmark mark="tf"/> 
-                is f <bookmark mark="tx"/>of x<bookmark mark="tax"/> equals
-                "a" times x <bookmark mark="tb"/>plus b.
+                is f of <bookmark mark="tx"/>x equals <bookmark mark="tax"/>"a" times x
+                plus<bookmark mark="tb"/> b.
                 <break time="0.5s"/>
                 What role does the <bookmark mark="a"/>value of "a" play, and what role does the <bookmark mark="b"/>value of b play?
                 To find out, let's consider a specific example,
@@ -1162,39 +1162,39 @@ class Func_2_1_I_5_q(SophiaCursorScene):
             self.play(Write(func))
 
             self.wait_until_bookmark("tf")
-            x, y, _ = func.submobjects[0].get_center() + DOWN * 0.4
+            x, y, _ = func[0].get_center() + DOWN * 0.4
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tx")
-            x, y, _ = func.submobjects[1].get_center() + DOWN * 0.4
+            x, y, _ = func[1].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tax")
-            x, y, _ = func.submobjects[2].get_center() + DOWN * 0.4
+            x, y, _ = func[2].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tb")
-            x, y, _ = func.submobjects[3].get_center() + DOWN * 0.4 + LEFT * 0.1
+            x, y, _ = func[3].get_center() + DOWN * 0.4 + LEFT * 0.1
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("a")
-            x, y, _ = func.submobjects[2].get_center() + DOWN * 0.4
+            x, y, _ = func[2].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("b")
-            x, y, _ = func.submobjects[3].get_center() + DOWN * 0.4
+            x, y, _ = func[3].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("example")
-            x, y, _ = func_2.submobjects[0].get_center() + DOWN * 0.4
+            x, y, _ = func_2[0].get_center() + DOWN * 0.4
             self.play(TransformMatchingTex(func, func_2), CursorMoveTo(cursor, x, y))
 
             self.wait_until_bookmark("ex1")
-            x, y, _ = func_2.submobjects[1].get_center() + DOWN * 0.4
+            x, y, _ = func_2[1].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("ex2")
-            x, y, _ = func_2.submobjects[3].get_center() + DOWN * 0.4
+            x, y, _ = func_2[3].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("plot")
@@ -1205,7 +1205,7 @@ class Func_2_1_I_5_q(SophiaCursorScene):
 
             self.wait_until_bookmark("qmark")
             cursor.idle = False
-            func_3 = Tex("$f(x)=ax$, $a>1$", color=c1t, font_size=fs2).next_to(cords, DOWN).shift(UP * 1.5)
+            func_3 = Tex("$f(x)=ax$, $a>1$", color=c1t, font_size=fs2).next_to(cords, DOWN).move_to(func_2)
             self.play(Transform(func_2, func_3), run_time=1)
             self.draw_qmark(cursor, DOWN*2.6, run_time=3)
 
@@ -1530,7 +1530,7 @@ class Func_2_1_I_6_q(SophiaCursorScene):
 
         # Create and plot piecewise linear function
         func = MathTex("f", "(x)", "=ax+", "b", color=c1t, font_size=fs2).next_to(cords, DOWN).shift(UP * 1.5)
-        func_2 = MathTex("f", "(x)", "=", "x", color=c1t, font_size=fs2).next_to(cords, DOWN).shift(UP * 1.5)
+        func_2 = MathTex("f", "(x)", "=", "1\\cdot x", "+","b", color=c1t, font_size=fs2).next_to(cords, DOWN).shift(UP * 1.5)
         a, b = ValueTracker(1), ValueTracker(0)
         a_decimal = DecimalNumber(1, font_size=fs2, num_decimal_places=1).next_to(func, LEFT, buff=0.5)
 
@@ -1542,8 +1542,12 @@ class Func_2_1_I_6_q(SophiaCursorScene):
         # Sine function that is updated
         updated_f = always_redraw(redraw_f)
 
+        a_high = Tex("$a>>1\\Rightarrow$ steeper line", color=c1t, font_size=fs3)
+        a_low = Tex("$a<<1\\Rightarrow$ flatter line", color=c1t, font_size=fs3)
+        a_high_low = VGroup(a_high, a_low).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(func, DOWN, buff=.8)
+
         # Initialize a cursor
-        cursor = AltCursor(stroke_width=0.0, idle=True)
+        cursor = AltCursor(idle=True)
         cursor.autoFadeBackground = True
 
         # Action Sequence
@@ -1551,21 +1555,22 @@ class Func_2_1_I_6_q(SophiaCursorScene):
                 text="""
                 Let's take another look at the function term of linear functions.
                 We're again looking at the general form of linear <bookmark mark="f"/> functions,
-                which <bookmark mark="tf"/>is f <bookmark mark="tx"/>of x<bookmark mark="tax"/> equals "a" times x
-                <bookmark mark="tb"/>plus b. <break time="0.5s"/>
+                which is <bookmark mark="tf"/>f of<bookmark mark="tx"/> x equals <bookmark mark="tax"/>"a" times x
+                plus <bookmark mark="tb"/> b. <break time="0.5s"/>
                 As we have seen earlier, the value <bookmark mark="a"/> of "a" determines the slope of the line.
-                <break time="0.5s"/><bookmark mark="ahigh"/>
+                <break time="0.5s"/><bookmark mark="a_high"/>
                 High values of "a" mean that the line becomes steeper.
-                <break time="0.5s"/><bookmark mark="alow"/>
+                <break time="0.5s"/><bookmark mark="a_low"/>
                 On the other hand, low values of "a" mean that the line becomes flatter.
                 <break time="0.5s"/>
                 Now, the only question left is: What role does the value <bookmark mark="b"/> of b play?
                 To find out, let's look at our example again,
-                that is <bookmark mark="example"/> the function <bookmark mark="ef"/> f of <bookmark mark="ex1"/> x equals <bookmark mark="ex2"/> x,
-                So, a is one again, and b is zero again. The function looks like <bookmark mark="plot"/>
+                that is <bookmark mark="example"/> the function <bookmark mark="ef"/> f of <bookmark mark="ex1"/> x
+                equals <bookmark mark="ex2"/>one time x plus <bookmark mark="plus_b_final"/> b.
+                So, a is one again, and the function looks like <bookmark mark="plot"/>
                 this.
                 <break time="0.5s"/>
-                Now, what happens if we change the value of b?
+                Now, what happens if we <bookmark mark="b_change"/>change the value of b?
                 <break time="0.5s"/>
                 For example: What happens when we set a value for b that is greater than zero?
                 """
@@ -1575,44 +1580,65 @@ class Func_2_1_I_6_q(SophiaCursorScene):
             self.play(Write(func))
 
             self.wait_until_bookmark("tf")
-            x, y, _ = func.submobjects[0].get_center() + DOWN * 0.4
+            cursor.idle=False
+            x, y, _ = func[0].get_center() + DOWN * 0.4
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tx")
-            x, y, _ = func.submobjects[1].get_center() + DOWN * 0.4
+            x, y, _ = func[1].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tax")
-            x, y, _ = func.submobjects[2].get_center() + DOWN * 0.4
+            x, y, _ = func[2].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("tb")
-            x, y, _ = func.submobjects[3].get_center() + DOWN * 0.4 + LEFT * 0.1
+            x, y, _ = func[3].get_center() + DOWN * 0.4 + LEFT * 0.1
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("a")
-            x, y, _ = func.submobjects[2].get_center() + DOWN * 0.4
+            x, y, _ = func[2].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
+
+            self.wait_until_bookmark("a_high")
+            x, y, _ = a_high.get_center() + DOWN * 0.4
+            self.play(Write(a_high), CursorMoveTo(cursor, x, y), run_time=0.3)
+
+            self.wait_until_bookmark("a_low")
+            x, y, _ = a_low.get_center() + DOWN * 0.4
+            self.play(Write(a_low), CursorMoveTo(cursor, x, y), run_time=0.3)
+            cursor.idle=True
 
             self.wait_until_bookmark("b")
-            x, y, _ = func.submobjects[3].get_center() + DOWN * 0.4
-            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
+            cursor.idle=False
+            x, y, _ = func[3].get_center() + DOWN * 0.4
+            self.play(Unwrite(a_high_low), CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("example")
-            x, y, _ = func_2.submobjects[0].get_center() + DOWN * 0.4
+            x, y, _ = func_2[0].get_center() + DOWN * 0.4
             self.play(TransformMatchingTex(func, func_2), CursorMoveTo(cursor, x, y))
 
             self.wait_until_bookmark("ex1")
-            x, y, _ = func_2.submobjects[1].get_center() + DOWN * 0.4
+            x, y, _ = func_2[1].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("ex2")
-            x, y, _ = func_2.submobjects[3].get_center() + DOWN * 0.4
+            x, y, _ = func_2[3].get_center() + DOWN * 0.4
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
+
+            self.wait_until_bookmark("plus_b_final")
+            x, y, _ = func_2[-1].get_center() + DOWN * 0.4
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
 
             self.wait_until_bookmark("plot")
             x, y, _ = plane.c2p(0, 0)
             self.play(func_2.animate.shift(DOWN * 1.5), Write(cords), CursorMoveTo(cursor, x, y), Write(updated_f), run_time=1)
+            cursor.idle = True
+
+            self.wait_until_bookmark("b_change")
+            cursor.idle = False
+            x, y, _ = func_2[-1].get_center() + DOWN * 0.4
+            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             cursor.idle = True
 
         # Wait for 4 seconds at the end of animation
@@ -1627,23 +1653,19 @@ class Func_2_1_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider linear function:", "$f(x)=ax+b=x+0$"], ["Increasing $b$", "$\\rightarrow$ Function shifted upwards"], ["Decreasing $b$","$\\rightarrow$ Function shifted downwards"]], buff=0.2, buff_inner=0.05)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Focus on Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2).next_to(cords, DOWN)
+        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2)
         a, b = ValueTracker(1), ValueTracker(0)
         a_decimal = DecimalNumber(0, font_size=fs2, color=c1t, include_sign=True, num_decimal_places=1).next_to(func[-1], RIGHT, buff=0.1).add_updater(lambda d: d.set_value(b.get_value()))
+        func_a_decimal = VGroup(func, a_decimal).arrange(RIGHT, buff=0.1).next_to(cords, DOWN)
         self.add(func)
 
         def redraw_f():
@@ -1657,27 +1679,27 @@ class Func_2_1_I_6_a(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
+        cursor.add_updater(lambda c: self.bring_to_front(cursor))
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-                Hey great, that's correct!
-                
+                That's correct, great job!
+                <break time="0.5s"/>
                 We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
                 Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
                 The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                <bookmark mark="note01"/> If we increase b, let's say to two, <bookmark mark="increaseB"/> the value of f of x will increase everywhere, and the function will be shifted upwards.
-                
-                On the other hand, it's similar in reverse: <bookmark mark="note12"/> If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
+                If we increase b, let's say to two, <bookmark mark="increaseB"/>
+                the value of f of x will increase everywhere, and the function will be shifted upwards.
+                <break time="1.5s"/>
+                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
                 Here you can see what happens when we set a to minus two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
-            note.change_colors([0])
             self.play(Write(a_decimal), run_time=1)
 
             self.wait_until_bookmark("x")
@@ -1690,23 +1712,20 @@ class Func_2_1_I_6_a(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
 
-            self.wait_until_bookmark("note01")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("increaseB")
             duration = 2
             start = plane.c2p(0,0)
             self.add_move_sound("forward", duration=duration, rate_func=smooth)
-            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+0.0000000001*DOWN, [x, cursor.get_y(),0])))
+            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+[0,0,1], [x, cursor.get_y(),0])))
             self.play(b.animate.set_value(2), run_time=duration)
-
-            self.wait_until_bookmark("note12")
-            note.change_colors([1,2])
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
+            cursor.idle=False
             duration = 2
             self.add_move_sound("backward", duration=duration, rate_func=smooth)
             self.play(b.animate.set_value(-2), run_time=2)
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -1720,23 +1739,19 @@ class Func_2_1_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider linear function:", "$f(x)=ax+b=x+0$"], ["Increasing $b$", "$\\rightarrow$ Function shifted upwards"], ["Decreasing $b$","$\\rightarrow$ Function shifted downwards"]], buff=0.2, buff_inner=0.05)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Focus on Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2).next_to(cords, DOWN)
+        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2)
         a, b = ValueTracker(1), ValueTracker(0)
         a_decimal = DecimalNumber(0, font_size=fs2, color=c1t, include_sign=True, num_decimal_places=1).next_to(func[-1], RIGHT, buff=0.1).add_updater(lambda d: d.set_value(b.get_value()))
+        func_a_decimal = VGroup(func, a_decimal).arrange(RIGHT, buff=0.1).next_to(cords, DOWN)
         self.add(func)
 
         def redraw_f():
@@ -1750,27 +1765,27 @@ class Func_2_1_I_6_b(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
+        cursor.add_updater(lambda c: self.bring_to_front(cursor))
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-                Oh, too bad, that's unfortunately incorrect.
-                
+                That's not right, unfortunately.
+                <break time="0.5s"/>
                 We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
                 Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
                 The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                <bookmark mark="note01"/> If we increase b, let's say to two, <bookmark mark="increaseB"/> the value of f of x will increase everywhere, and the function will be shifted upwards.
-                
-                On the other hand, it's similar in reverse: <bookmark mark="note12"/> If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
+                If we increase b, let's say to two, <bookmark mark="increaseB"/>
+                the value of f of x will increase everywhere, and the function will be shifted upwards.
+                <break time="1.5s"/>
+                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
                 Here you can see what happens when we set a to minus two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
-            note.change_colors([0])
             self.play(Write(a_decimal), run_time=1)
 
             self.wait_until_bookmark("x")
@@ -1783,26 +1798,25 @@ class Func_2_1_I_6_b(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
 
-            self.wait_until_bookmark("note01")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("increaseB")
             duration = 2
             start = plane.c2p(0,0)
             self.add_move_sound("forward", duration=duration, rate_func=smooth)
-            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+0.0000000001*DOWN, [x, cursor.get_y(),0])))
+            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+[0,0,1], [x, cursor.get_y(),0])))
             self.play(b.animate.set_value(2), run_time=duration)
-
-            self.wait_until_bookmark("note12")
-            note.change_colors([1,2])
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
+            cursor.idle=False
             duration = 2
             self.add_move_sound("backward", duration=duration, rate_func=smooth)
             self.play(b.animate.set_value(-2), run_time=2)
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
+
+
 
 class Func_2_1_I_6_c(SophiaCursorScene):
 
@@ -1812,23 +1826,19 @@ class Func_2_1_I_6_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider linear function:", "$f(x)=ax+b=x+0$"], ["Increasing $b$", "$\\rightarrow$ Function shifted upwards"], ["Decreasing $b$","$\\rightarrow$ Function shifted downwards"]], buff=0.2, buff_inner=0.05)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Focus on Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2).next_to(cords, DOWN)
+        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2)
         a, b = ValueTracker(1), ValueTracker(0)
         a_decimal = DecimalNumber(0, font_size=fs2, color=c1t, include_sign=True, num_decimal_places=1).next_to(func[-1], RIGHT, buff=0.1).add_updater(lambda d: d.set_value(b.get_value()))
+        func_a_decimal = VGroup(func, a_decimal).arrange(RIGHT, buff=0.1).next_to(cords, DOWN)
         self.add(func)
 
         def redraw_f():
@@ -1842,27 +1852,27 @@ class Func_2_1_I_6_c(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
+        cursor.add_updater(lambda c: self.bring_to_front(cursor))
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-                Oh, too bad, that's unfortunately incorrect.
-                
+                That's not right, unfortunately.
+                <break time="0.5s"/>
                 We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
                 Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
                 The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                <bookmark mark="note01"/> If we increase b, let's say to two, <bookmark mark="increaseB"/> the value of f of x will increase everywhere, and the function will be shifted upwards.
-                
-                On the other hand, it's similar in reverse: <bookmark mark="note12"/> If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
+                If we increase b, let's say to two, <bookmark mark="increaseB"/>
+                the value of f of x will increase everywhere, and the function will be shifted upwards.
+                <break time="1.5s"/>
+                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
                 Here you can see what happens when we set a to minus two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
-            note.change_colors([0])
             self.play(Write(a_decimal), run_time=1)
 
             self.wait_until_bookmark("x")
@@ -1875,26 +1885,25 @@ class Func_2_1_I_6_c(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
 
-            self.wait_until_bookmark("note01")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("increaseB")
             duration = 2
             start = plane.c2p(0,0)
             self.add_move_sound("forward", duration=duration, rate_func=smooth)
-            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+0.0000000001*DOWN, [x, cursor.get_y(),0])))
+            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+[0,0,1], [x, cursor.get_y(),0])))
             self.play(b.animate.set_value(2), run_time=duration)
-
-            self.wait_until_bookmark("note12")
-            note.change_colors([1,2])
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
+            cursor.idle=False
             duration = 2
             self.add_move_sound("backward", duration=duration, rate_func=smooth)
             self.play(b.animate.set_value(-2), run_time=2)
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
+
+
 
 class Func_2_1_I_6_d(SophiaCursorScene):
 
@@ -1904,23 +1913,19 @@ class Func_2_1_I_6_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Consider linear function:", "$f(x)=ax+b=x+0$"], ["Increasing $b$", "$\\rightarrow$ Function shifted upwards"], ["Decreasing $b$","$\\rightarrow$ Function shifted downwards"]], buff=0.2, buff_inner=0.05)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Focus on Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2).next_to(cords, DOWN)
+        func = MathTex("f","(x)","=","x", color=c1t, font_size=fs2)
         a, b = ValueTracker(1), ValueTracker(0)
         a_decimal = DecimalNumber(0, font_size=fs2, color=c1t, include_sign=True, num_decimal_places=1).next_to(func[-1], RIGHT, buff=0.1).add_updater(lambda d: d.set_value(b.get_value()))
+        func_a_decimal = VGroup(func, a_decimal).arrange(RIGHT, buff=0.1).next_to(cords, DOWN)
         self.add(func)
 
         def redraw_f():
@@ -1934,27 +1939,27 @@ class Func_2_1_I_6_d(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
+        cursor.add_updater(lambda c: self.bring_to_front(cursor))
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-                Oh, too bad, that's unfortunately incorrect.
-                
+                That's not right, unfortunately.
+                <break time="0.5s"/>
                 We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
                 Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
                 The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                <bookmark mark="note01"/> If we increase b, let's say to two, <bookmark mark="increaseB"/> the value of f of x will increase everywhere, and the function will be shifted upwards.
-                
-                On the other hand, it's similar in reverse: <bookmark mark="note12"/> If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
+                If we increase b, let's say to two, <bookmark mark="increaseB"/>
+                the value of f of x will increase everywhere, and the function will be shifted upwards.
+                <break time="1.5s"/>
+                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
                 Here you can see what happens when we set a to minus two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
-            note.change_colors([0])
             self.play(Write(a_decimal), run_time=1)
 
             self.wait_until_bookmark("x")
@@ -1967,28 +1972,28 @@ class Func_2_1_I_6_d(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
 
-            self.wait_until_bookmark("note01")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("increaseB")
             duration = 2
             start = plane.c2p(0,0)
             self.add_move_sound("forward", duration=duration, rate_func=smooth)
-            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+0.0000000001*DOWN, [x, cursor.get_y(),0])))
+            self.add(Updown_Arrow(start, color=c3, stroke_width=5, vert=True).add_updater(lambda m: m.put_start_and_end_on(start+[0,0,1], [x, cursor.get_y(),0])))
             self.play(b.animate.set_value(2), run_time=duration)
-
-            self.wait_until_bookmark("note12")
-            note.change_colors([1,2])
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
+            cursor.idle=False
             duration = 2
             self.add_move_sound("backward", duration=duration, rate_func=smooth)
             self.play(b.animate.set_value(-2), run_time=2)
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 
+
+#####################################
+#####################################
 class Func_2_1_I_7(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -1997,16 +2002,11 @@ class Func_2_1_I_7(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["General expression for a linear function:", "$f(x)=ax+b$"], ["$a$ determines the slope", "$a>1$ $\\rightarrow$ Function steeper"], ["$b$ determines the shift","$b>0$ $\\rightarrow$ Shift upwards"]], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Note: Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4])
         plane = cords[0]
         self.add(cords)
 
@@ -2014,6 +2014,11 @@ class Func_2_1_I_7(SophiaCursorScene):
         func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs2).next_to(cords, DOWN)
         a, b = ValueTracker(1), ValueTracker(0)
 
+
+        # Create a notepad with texts
+        notes = VGroup(Tex("$a$ determines the slope\\\\$a>1$ $\\rightarrow$ Function steeper", color=c1t, font_size=fs3, tex_environment="flushleft"), Tex("$b$ determines the shift\\\\$b>0$ $\\rightarrow$ Shift upwards", color=c1t, font_size=fs3, tex_environment="flushleft")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(func, DOWN, buff=.6)
+
+        
         def redraw_f():
             # Define the sine function
             func = lambda x: a.get_value()*x+b.get_value()
@@ -2025,7 +2030,7 @@ class Func_2_1_I_7(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
+        cursor.add_updater(lambda c: self.bring_to_front(cursor))
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
@@ -2033,28 +2038,26 @@ class Func_2_1_I_7(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 So, let's review again:
-                
+                <break time="0.5s"/>
                 The general expression for a linear function is <bookmark mark="funcTerm"/> f of x equals "a" times x plus b.
-                
+                <break time="0.5s"/>
                 The value <bookmark mark="a"/> of a determines the slope here: <bookmark mark="goToOne"/>
                 With a high value of a, <bookmark mark="ahigh"/> the function becomes steeper, -
                 <bookmark mark="alow"/> with a low value of a, it becomes flatter. <bookmark mark="reset"/>
-                
-                On the other hand, the value <bookmark mark="b"/> of b determines the shift upwards and downwards. <bookmark mark="goToZero"/>
+                <break time="0.5s"/>
+                The value <bookmark mark="b"/> of b on the other hand determines the shift upwards and downwards. <bookmark mark="goToZero"/>
                 With a high value of b <bookmark mark="bhigh"/>, the function is shifted upwards, -
                 <bookmark mark="blow"/> with a low value of b, it is shifted downwards.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("funcTerm")
-            note.change_colors([0])
             self.play(Write(func))
 
             self.wait_until_bookmark("a")
-            note.change_colors([0,1])
             x,y,_ = func[1].get_center()+DOWN*0.4
             cursor.idle=False
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
+            self.play(Write(notes[0]), CursorMoveTo(cursor, x, y), run_time=0.8)
 
             self.wait_until_bookmark("goToOne")
             x,y,_ = plane.c2p(1,1)
@@ -2075,10 +2078,9 @@ class Func_2_1_I_7(SophiaCursorScene):
             self.play(a.animate.set_value(1), run_time=0.4)
 
             self.wait_until_bookmark("b")
-            note.change_colors([1,2])
             x,y,_ = func[3].get_center()+DOWN*0.4
             cursor.clear_updaters()
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
+            self.play(Write(notes[1]), CursorMoveTo(cursor, x, y), run_time=0.8)
 
             self.wait_until_bookmark("goToZero")
             x,y,_ = plane.c2p(0,0)
@@ -2103,6 +2105,9 @@ class Func_2_1_I_7(SophiaCursorScene):
         self.wait(4)
 
 
+
+#####################################
+#####################################
 TASK_Func_2_1_I_8_q = SophiaTaskDefinition(
     answerOptions = ["We can directly read $a$: $f(0)=a$", "We can directly read $b$: $f(0)=b$", "We can directly read $a+b$: $f(0)=a+b"],
     correctAnswerIndex = 1,
@@ -2117,20 +2122,15 @@ class Func_2_1_I_8_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["General expression for a linear function:", "$f(x)=ax+b$"], ["How do we determine the function term", "when the graph is given?"], "What happens when we substitute $0$?"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Note: Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
 
         # Create and plot piecewise linear function
-        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(title, DOWN, buff=1.5)
+        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(title, DOWN, buff=1.5).shift(DOWN)
                 
         a, b = ValueTracker(1), ValueTracker(2)
 
@@ -2144,7 +2144,6 @@ class Func_2_1_I_8_q(SophiaCursorScene):
 
         # Initialize a cursor
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
         cursor.move_to(plane.c2p(0,0))
         self.add(cursor)
 
@@ -2152,23 +2151,22 @@ class Func_2_1_I_8_q(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 So, now we know: A linear function always has the form <bookmark mark="f"/> f of x equals "a" times x plus b.
-                
+                <break time="0.5s"/>
                 Let's say <bookmark mark="cords"/> we have a function, <bookmark mark="func"/> that looks like this.
-                
+                <break time="0.5s"/>
                 How do we determine the term of the function?
-                
+                <break time="0.5s"/>
                 <bookmark mark="cursor"/>
                 We need to know two values to determine <bookmark mark="cursorA"/> the function: a <bookmark mark="cursorB"/> and b.
-                
-                So, let's start by figuring out how to find <bookmark mark="circleB"/> b.
-                
+                <break time="0.5s"/>
+                We'll start by figuring out how to find <bookmark mark="circleB"/> b.
+                <break time="0.5s"/>
                 There's a simple trick for that. Let's substitute <bookmark mark="plugInZero"/> zero into the function term.
-                <bookmark mark="q"/> What happens?
+                <bookmark mark="q"/><break time="0.5s"/>What happens?
                 """
         ) as tracker:
             
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(func))
 
             self.wait_until_bookmark("cords")
@@ -2176,7 +2174,6 @@ class Func_2_1_I_8_q(SophiaCursorScene):
 
             self.wait_until_bookmark("func")
             self.play(Write(updated_f), run_time=1)
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("cursor")
             self.wait_until_bookmark("cursorA")
@@ -2194,7 +2191,6 @@ class Func_2_1_I_8_q(SophiaCursorScene):
             self.play(CursorMoveToCurved(cursor, x, y, path_arc=PI), run_time=0.4, rate_func=linear)
 
             self.wait_until_bookmark("plugInZero")
-            note.change_colors([1,2])
             func0 = MathTex("f(","0",")=","?", color=c1t, font_size=fs1).move_to(func)
             self.play(ReplacementTransform(func, func0), run_time=0.5)
             x,y,_ = func0[1].get_center()+DOWN*0.4
@@ -2207,6 +2203,8 @@ class Func_2_1_I_8_q(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+
+
 class Func_2_1_I_8_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -2215,22 +2213,17 @@ class Func_2_1_I_8_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We substitute $x=0$", "The function value is equal to b: $f(0)=b$", "So, $b=2$"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Note: Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
-        func2 = MathTex("f","(0)","=","a","0","+", "b", "=","b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
+        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
+        func2 = MathTex("f","(0)","=","a\\cdot","0","+", "b", "=","b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
         func2_a = func2[:-1]
         func2_b = func2[-1]
         sol = MathTex("\\rightarrow b=2", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
@@ -2255,23 +2248,23 @@ class Func_2_1_I_8_a(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Hmm, unfortunately not. We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
+                Hmm, that's not right...
+                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
                 of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
                 plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                
+                <break time="0.5s"/>
                 Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                
-                We find this out by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                
+                <break time="0.5s"/>
+                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
+                <break time="0.5s"/>
                 In this case, it does so at <bookmark mark="f0"/> y equals two.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq2"/> b is equal to two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
             cursor.idle=False
-            note.change_colors([0])
             x,y,_ = func2[1].get_center()+DOWN*0.4
             self.play(ReplacementTransform(func, func2_a), run_time=0.5)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
@@ -2292,7 +2285,6 @@ class Func_2_1_I_8_a(SophiaCursorScene):
             self.play(Write(func2_b), run_time=0.5)
 
             self.wait_until_bookmark("eqb")
-            note.change_colors([0,1])
             x,y,_ = func2[-1].get_center()+DOWN*0.4
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
 
@@ -2304,7 +2296,6 @@ class Func_2_1_I_8_a(SophiaCursorScene):
             self.play(CursorMarkAxis(cursor, plane, axis='y'), run_time=0.5)
 
             self.wait_until_bookmark("f0")
-            note.change_colors([1,2])
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveResize(cursor, x, y, 0.2, 0.2), run_time=0.4)
 
@@ -2313,7 +2304,6 @@ class Func_2_1_I_8_a(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
-
 
 class Func_2_1_I_8_b(SophiaCursorScene):
 
@@ -2323,22 +2313,17 @@ class Func_2_1_I_8_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We substitute $x=0$", "The function value is equal to b: $f(0)=b$", "So, $b=2$"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Note: Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
-        func2 = MathTex("f","(0)","=","a","0","+", "b", "=","b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
+        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
+        func2 = MathTex("f","(0)","=","a\\cdot","0","+", "b", "=","b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
         func2_a = func2[:-1]
         func2_b = func2[-1]
         sol = MathTex("\\rightarrow b=2", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
@@ -2363,23 +2348,23 @@ class Func_2_1_I_8_b(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Exactly right. We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
+                Yes, that's correct. Good job!
+                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
                 of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
                 plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                
+                <break time="0.5s"/>
                 Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                
-                We find this out by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                
+                <break time="0.5s"/>
+                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
+                <break time="0.5s"/>
                 In this case, it does so at <bookmark mark="f0"/> y equals two.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq2"/> b is equal to two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
             cursor.idle=False
-            note.change_colors([0])
             x,y,_ = func2[1].get_center()+DOWN*0.4
             self.play(ReplacementTransform(func, func2_a), run_time=0.5)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
@@ -2400,7 +2385,6 @@ class Func_2_1_I_8_b(SophiaCursorScene):
             self.play(Write(func2_b), run_time=0.5)
 
             self.wait_until_bookmark("eqb")
-            note.change_colors([0,1])
             x,y,_ = func2[-1].get_center()+DOWN*0.4
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
 
@@ -2412,7 +2396,6 @@ class Func_2_1_I_8_b(SophiaCursorScene):
             self.play(CursorMarkAxis(cursor, plane, axis='y'), run_time=0.5)
 
             self.wait_until_bookmark("f0")
-            note.change_colors([1,2])
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveResize(cursor, x, y, 0.2, 0.2), run_time=0.4)
 
@@ -2421,6 +2404,7 @@ class Func_2_1_I_8_b(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 
 class Func_2_1_I_8_c(SophiaCursorScene):
@@ -2431,22 +2415,17 @@ class Func_2_1_I_8_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We substitute $x=0$", "The function value is equal to b: $f(0)=b$", "So, $b=2$"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Note: Function Term")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
 
         # Create and plot piecewise linear function
-        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
-        func2 = MathTex("f","(0)","=","a","0","+", "b", "=","b", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
+        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
+        func2 = MathTex("f","(0)","=","a\\cdot","0","+", "b", "=","b", color=c1t, font_size=fs2).move_to(cords.get_bottom()+0.5*DOWN)
         func2_a = func2[:-1]
         func2_b = func2[-1]
         sol = MathTex("\\rightarrow b=2", color=c1t, font_size=fs1).move_to(cords.get_bottom()+0.5*DOWN)
@@ -2471,23 +2450,23 @@ class Func_2_1_I_8_c(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Hmm, unfortunately not. We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
+                Hmm, that's not right...
+                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
                 of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
                 plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                
+                <break time="0.5s"/>
                 Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                
-                We find this out by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                
+                <break time="0.5s"/>
+                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
+                <break time="0.5s"/>
                 In this case, it does so at <bookmark mark="f0"/> y equals two.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq2"/> b is equal to two.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
             cursor.idle=False
-            note.change_colors([0])
             x,y,_ = func2[1].get_center()+DOWN*0.4
             self.play(ReplacementTransform(func, func2_a), run_time=0.5)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
@@ -2508,7 +2487,6 @@ class Func_2_1_I_8_c(SophiaCursorScene):
             self.play(Write(func2_b), run_time=0.5)
 
             self.wait_until_bookmark("eqb")
-            note.change_colors([0,1])
             x,y,_ = func2[-1].get_center()+DOWN*0.4
             self.play(CursorMoveTo(cursor, x, y), run_time=0.4)
 
@@ -2520,7 +2498,6 @@ class Func_2_1_I_8_c(SophiaCursorScene):
             self.play(CursorMarkAxis(cursor, plane, axis='y'), run_time=0.5)
 
             self.wait_until_bookmark("f0")
-            note.change_colors([1,2])
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveResize(cursor, x, y, 0.2, 0.2), run_time=0.4)
 
@@ -2531,10 +2508,13 @@ class Func_2_1_I_8_c(SophiaCursorScene):
         self.wait(4)
 
 
+
+#####################################
+#####################################
 TASK_Func_2_1_I_9_q = SophiaTaskDefinition(
-    answerOptions = ["We can directly read $a$: $f(0)=a$", "We can directly read $b$: $f(0)=b$", "We can directly read $a+b$: $f(0)=a+b"],
-    correctAnswerIndex = 1,
-    questionText = "What happens when we substitute $x=0$ into the function $f(x)=ax+b$?"
+    answerOptions = ["b=-2", "b=-1", "b=0", "b=2"],
+    correctAnswerIndex = 3,
+    questionText = "If the function is described by $f(x)=ax+b$, what is the value of $b$?"
 )
 
 class Func_2_1_I_9_q(SophiaCursorScene):
@@ -2545,16 +2525,11 @@ class Func_2_1_I_9_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["Consider the displayed function", ["General expression for a linear function:", "$f(x)=ax+b$"], "What is the value of $b$?"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Linear Function: Determine b")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
         plane = cords[0]
 
         # Create and plot piecewise linear function
@@ -2579,10 +2554,9 @@ class Func_2_1_I_9_q(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 Here we now see <bookmark mark="plot"/> another linear function.
-                
-                <bookmark mark="note2"/>
-                If the function is described by <bookmark mark="func"/> f of x equals "a" times x plus b, -
-                <bookmark mark="lastNote"/>
+                <break time="1s"/>
+                If the term that describes the function is<bookmark mark="func"/> f of x equals "a" times x plus b,
+                <break time="0.5s"/>
                 what is the value of b?
                 """
         ) as tracker:
@@ -2590,17 +2564,10 @@ class Func_2_1_I_9_q(SophiaCursorScene):
             self.play(Write(cords), run_time=0.5)
 
             self.wait_until_bookmark("plot")
-            note.change_colors([0])
             self.play(Write(updated_f), run_time=0.5)
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("func")
             self.play(Write(func), run_time=0.5)
-
-            self.wait_until_bookmark("lastNote")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -2613,10 +2580,6 @@ class Func_2_1_I_9_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We know: $b=f(0)$","$\\rightarrow$ Substitute $x=0$ into the function $f$.", ["We get: $f(0)=2$","$\\rightarrow b=2$"]], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Linear Function: Determine b")
 
@@ -2628,7 +2591,7 @@ class Func_2_1_I_9_a(SophiaCursorScene):
         # Create and plot piecewise linear function
         func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5)
         func_0 = MathTex("f(0)=","a","\\cdot 0+", "b", "=b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).scale(0.9)
-        b_eq = MathTex("f(0)=2","\\rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
+        b_eq = MathTex("f(0)=2","\\Rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
         self.add(func)
                 
         a, b = ValueTracker(1), ValueTracker(2)
@@ -2651,23 +2614,19 @@ class Func_2_1_I_9_a(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 Mhm, not quite.
-                
-                We know that <bookmark mark="note1"/> the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                
-                So we read from the graph, <bookmark mark="note2"/> what the value of the function is at the point x equals zero.
-                
-                <bookmark mark="note3"/>
+                <break time="0.5s"/>
+                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
+                <break time="0.5s"/>
+                So we read from the graph what the value of the function is at the point x equals zero.
+                <break time="0.5s"/>
                 In this case, f of zero equals two <bookmark mark="y0"/>.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq"/> b is equal to two.
                 """
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
             self.play(Write(updated_f), run_time=0.5)
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("x0")
             x,y,_ = plane.c2p(0,0)
@@ -2676,17 +2635,11 @@ class Func_2_1_I_9_a(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
             cursor.idle=True
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("y0")
             cursor.idle=False
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveTo(cursor, x,y),ReplacementTransform(func_0, b_eq[0]),  run_time=1)
             cursor.idle=True
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("beq")
             self.play(Write(b_eq[1]), run_time=1)
@@ -2703,10 +2656,6 @@ class Func_2_1_I_9_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We know: $b=f(0)$","$\\rightarrow$ Substitute $x=0$ into the function $f$.", ["We get: $f(0)=2$","$\\rightarrow b=2$"]], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Linear Function: Determine b")
 
@@ -2718,7 +2667,7 @@ class Func_2_1_I_9_b(SophiaCursorScene):
         # Create and plot piecewise linear function
         func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5)
         func_0 = MathTex("f(0)=","a","\\cdot 0+", "b", "=b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).scale(0.9)
-        b_eq = MathTex("f(0)=2","\\rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
+        b_eq = MathTex("f(0)=2","\\Rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
         self.add(func)
                 
         a, b = ValueTracker(1), ValueTracker(2)
@@ -2740,24 +2689,20 @@ class Func_2_1_I_9_b(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Yep, exactly.
-                
-                We know that <bookmark mark="note1"/> the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                
-                So we read from the graph, <bookmark mark="note2"/> what the value of the function is at the point x equals zero.
-                
-                <bookmark mark="note3"/>
+                Mhm, not quite.
+                <break time="0.5s"/>
+                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
+                <break time="0.5s"/>
+                So we read from the graph what the value of the function is at the point x equals zero.
+                <break time="0.5s"/>
                 In this case, f of zero equals two <bookmark mark="y0"/>.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq"/> b is equal to two.
                 """
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
             self.play(Write(updated_f), run_time=0.5)
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("x0")
             x,y,_ = plane.c2p(0,0)
@@ -2766,17 +2711,11 @@ class Func_2_1_I_9_b(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
             cursor.idle=True
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("y0")
             cursor.idle=False
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveTo(cursor, x,y),ReplacementTransform(func_0, b_eq[0]),  run_time=1)
             cursor.idle=True
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("beq")
             self.play(Write(b_eq[1]), run_time=1)
@@ -2794,10 +2733,6 @@ class Func_2_1_I_9_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=["We know: $b=f(0)$","$\\rightarrow$ Substitute $x=0$ into the function $f$.", ["We get: $f(0)=2$","$\\rightarrow b=2$"]], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Linear Function: Determine b")
 
@@ -2809,7 +2744,7 @@ class Func_2_1_I_9_c(SophiaCursorScene):
         # Create and plot piecewise linear function
         func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5)
         func_0 = MathTex("f(0)=","a","\\cdot 0+", "b", "=b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).scale(0.9)
-        b_eq = MathTex("f(0)=2","\\rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
+        b_eq = MathTex("f(0)=2","\\Rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
         self.add(func)
                 
         a, b = ValueTracker(1), ValueTracker(2)
@@ -2832,23 +2767,19 @@ class Func_2_1_I_9_c(SophiaCursorScene):
         with self.voiceover(
                 text="""
                 Mhm, not quite.
-                
-                We know that <bookmark mark="note1"/> the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                
-                So we read from the graph, <bookmark mark="note2"/> what the value of the function is at the point x equals zero.
-                
-                <bookmark mark="note3"/>
+                <break time="0.5s"/>
+                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
+                <break time="0.5s"/>
+                So we read from the graph what the value of the function is at the point x equals zero.
+                <break time="0.5s"/>
                 In this case, f of zero equals two <bookmark mark="y0"/>.
-                
+                <break time="0.5s"/>
                 Therefore, <bookmark mark="beq"/> b is equal to two.
                 """
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
             self.play(Write(updated_f), run_time=0.5)
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("x0")
             x,y,_ = plane.c2p(0,0)
@@ -2857,17 +2788,11 @@ class Func_2_1_I_9_c(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
             cursor.idle=True
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("y0")
             cursor.idle=False
             x,y,_ = plane.c2p(0,2)
             self.play(CursorMoveTo(cursor, x,y),ReplacementTransform(func_0, b_eq[0]),  run_time=1)
             cursor.idle=True
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("beq")
             self.play(Write(b_eq[1]), run_time=1)
@@ -2875,6 +2800,84 @@ class Func_2_1_I_9_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+class Func_2_1_I_9_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title("Linear Function: Determine b")
+
+        # Create the coordinate system
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
+                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        plane = cords[0]
+
+        # Create and plot piecewise linear function
+        func = MathTex("f(x)=","a","x+", "b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5)
+        func_0 = MathTex("f(0)=","a","\\cdot 0+", "b", "=b", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).scale(0.9)
+        b_eq = MathTex("f(0)=2","\\Rightarrow b=2", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=0.5).next_to(cords, DOWN, buff=0.5)
+        self.add(func)
+                
+        a, b = ValueTracker(1), ValueTracker(2)
+
+        def redraw_f():
+            # Define the sine function
+            func = lambda x: a.get_value()*x+b.get_value()
+            return plane.plot(func, color=BLUE)
+
+        # Sine function that is updated
+        updated_f = always_redraw(redraw_f)
+
+        # Initialize a cursor
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        cursor.autoFadeBackground = True
+        cursor.move_to(plane.c2p(0,-5.5))
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                That's right, well done!
+                <break time="0.5s"/>
+                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
+                <break time="0.5s"/>
+                So we read from the graph what the value of the function is at the point x equals zero.
+                <break time="0.5s"/>
+                In this case, f of zero equals two <bookmark mark="y0"/>.
+                <break time="0.5s"/>
+                Therefore, <bookmark mark="beq"/> b is equal to two.
+                """
+        ) as tracker:
+            
+            self.play(Write(cords), run_time=0.5)
+            self.play(Write(updated_f), run_time=0.5)
+
+            self.wait_until_bookmark("x0")
+            x,y,_ = plane.c2p(0,0)
+            cursor.idle=False
+            self.play(TransformMatchingTex(func, func_0))
+            self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("y0")
+            cursor.idle=False
+            x,y,_ = plane.c2p(0,2)
+            self.play(CursorMoveTo(cursor, x,y),ReplacementTransform(func_0, b_eq[0]),  run_time=1)
+            cursor.idle=True
+
+            self.wait_until_bookmark("beq")
+            self.play(Write(b_eq[1]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+#####################################
+#####################################
 TASK_Func_2_1_I_10_q = SophiaTaskDefinition(
     answerOptions = ["a: Shift in x-Direction, b: Shift in y-Direction", "a: Shift in y-Direction, b: Shift in x-Direction", "a: Slope of the function, b: Shift in y-Direction", "a: Slope of the function, b: Shift in x-Direction"],
     correctAnswerIndex = 2,
@@ -2889,16 +2892,11 @@ class Func_2_1_I_10_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Create a notepad with texts
-        note = Notepad(texts=[["Given the graph of a function","We want to determine it's term"], "We can find $b$ by plugging in $x=0$", "Remember: What do $a$ and $b$ describe?"], buff=0.2, buff_inner=0)
-        self.add(note)
-
         # Add title to the scene
         title = self.add_title("Role of a and b")
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
-                               x_labels=[-3,-1,0,1,3], y_labels=[-4,-2,0,2,4])
+        cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4])
         plane = cords[0]
         self.add(cords)
 
@@ -2924,35 +2922,24 @@ class Func_2_1_I_10_q(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Ok, so we wanted <bookmark mark="note1"/> to find out how we determine the term of a function,
+                Ok, so we wanted to find out how we determine the term of a function,
                 when we are given <bookmark mark="graph"/> the graph of that function.
                 And we also know that the term of a linear function f of x has <bookmark mark="funcTerm"/> the structure f of x is equal to "a" times x plus b.
                 
-                aaaand, <bookmark mark="note2"/> we just learned, how to determine "b": We simply plug in zero for x, and the value of f of zero is equal to the value of b.
+                aaaand, we just learned, how to determine "b": We simply plug in zero for x, and the value of f of zero is equal to the value of b.
                 
                 Now, how do we obtain "a"?
                 
-                Before we figure that out: <bookmark mark="note3"/> Let's think back to what "a" and "b" actually describe.
+                Before we figure that out: Let's think back to what "a" and "b" actually describe.
                 Do you remember, what aspect of the graph "a" and "b" describe?
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
-
             
             self.wait_until_bookmark("graph")
             self.play(Write(updated_f))
             
             self.wait_until_bookmark("funcTerm")
             self.play(Write(func))
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -3367,6 +3354,10 @@ class Func_2_1_I_10_d(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+
+
+#####################################
+#####################################
 class Func_2_1_I_11(SophiaCursorScene):
 
     # Main method for constructing the animation

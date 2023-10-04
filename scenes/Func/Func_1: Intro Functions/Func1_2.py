@@ -14,6 +14,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 
 # Function to create piecewise linear function based on given points
@@ -60,7 +61,7 @@ class Func_1_2_I_1(SophiaCursorScene):
         apple = ImageMobject(assets_folder / "img" / "apple.png").scale(0.4).shift(UP*1.2+LEFT*1.2)
 
         # Add title to the scene
-        self.add_title("Terms")
+        self.add_title(self.translate("Func_1_2.1I1q.main.title"))
 
         term1 = MathTex("2x+3", color=c1t).shift(UP*1.5)
         term2 = MathTex("x^2-2", color=c1t).next_to(term1, DOWN)
@@ -69,29 +70,13 @@ class Func_1_2_I_1(SophiaCursorScene):
         top, bottom = term3.get_top()[1], term3.get_bottom()[1]
         strikeA = Line([left, bottom, 0], [right, top, 0], color=RED, stroke_width=5)
         strikeB = Line([left, top, 0], [right, bottom, 0], color=RED, stroke_width=5)
-        appleCost = Tex(": $2$ Euro/Piece", color=c1t, font_size=fs2).next_to(apple, RIGHT).shift(DOWN*0.3+LEFT*0.4)
+        appleCost = Tex(self.translate("Func_1_2.1I1q.main.apple-cost"), color=c1t, font_size=fs2).next_to(apple, RIGHT).shift(DOWN*0.3+LEFT*0.4)
 
-        explainers = format_text_group(["$x$: Number of apples", ["$\\rightarrow$ The term $2x$", "describes total cost"]], font_size=fs3)
+        explainers = format_text_group(ast.literal_eval(self.translate("Func_1_2.1I1q.main.explainers")), font_size=fs3)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <prosody rate="110%">
-                Quick reminder: Do you remember what a term is?
-                A term is an expression that consists of numbers, variables, and operators.
-                For example, <bookmark mark="term1"/>two times x plus three is a term,
-                <bookmark mark="term2"/> or x squared minus two.<bookmark mark="term3"/>
-                However, the expression x plus three equals seven is not a term, because it contains an equals sign.
-                Terms are useful because they can be used to describe relationships.
-                <bookmark mark="unwriteTerms"/>
-                For instance, if we buy <bookmark mark="apple"/> x apples for two euros each, we can
-                <bookmark mark="appleCost"/>calculate the total cost using the term two times x.
-                This assigns a cost to each value of x, which represents the quantity of purchased apples.
-                We calculate this cost using two times x.
-                Functions work in a similar way.
-                Just like terms, functions assign a value of y to each value of x.
-                </prosody>
-                """
+                text=self.translate("Func_1_2.1I1q.main.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("term1")
@@ -130,7 +115,7 @@ class Func_1_2_I_2(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        self.add_title("From Term to Function")
+        self.add_title(self.translate("Func_1_2.1I2.main.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
@@ -154,32 +139,7 @@ class Func_1_2_I_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <prosody rate="110%">
-                So, now we're learning how to go from a term to a function.
-                 <bookmark mark="term"/>
-                Consider the term two times x minus two.
-                
-                First, we choose a set on which we want to examine the function.
-                This set is called the domain. <bookmark mark="domain"/>
-                For example, here we choose all values that lie <bookmark mark="xaxis"/> on the x-axis. So, all values between minus three and three.
-                
-                <bookmark mark="plot"/>
-                Now we substitute each value of x into the term to get a value for y.
-                We then plot this value on a coordinate plane.
-                
-                <bookmark mark="func"/>
-                Connecting the points, we obtain a representation of a function, because the line assigns a point
-                on the x-axis to a point on the y-axis.
-
-                To get the y-value corresponding to an x-value, we can either substitute the x-value <bookmark mark="xTerm"/> into the term,
-                <bookmark mark="xFunc"/> or we can locate the x-value on the x-axis and then read the y-value on the y-axis.
-                
-                In this case, since the term describes a function, we call it a function term.
-                <bookmark mark="termToFunc"/>
-                We also write it as f of x equals two times x minus two, so we put f of x equals in front of the term.
-                </prosody>
-                """
+                text=self.translate("Func_1_2.1I2.main.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("term")
@@ -239,7 +199,7 @@ class FuncTermQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add_mathgrid()
 
         # Add title to the scene
-        self.add_title("Term \& Function")
+        self.add_title(self.translate("Func_1_2.1I2q.main.title"))
 
         # Create the coordinate system
         plane = self.cords[0]
@@ -257,17 +217,7 @@ class FuncTermQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                We're starting with a function term and we want to find the corresponding graph.
-                The term we want to find the graph for <bookmark mark="term"/>is {self.termInWords}.
-                Now tell me: <bookmark mark="findGraph"/>
-                Which of the following graphs describes the function of the given term?
-                <bookmark mark="blue"/> Is it the blue graph?<break time="1s"/>
-
-                <bookmark mark="orange"/> Or is it the orange graph?<break time="1s"/>
-
-                <bookmark mark="lila"/> Or is it the purple graph?<break time="1s"/>
-                """
+                text=self.translate("Func_1_2.1I2.func-term-q-scene.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("term")
@@ -303,7 +253,7 @@ class FuncTermAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add_mathgrid()
 
         # Add title to the scene
-        self.add_title("Term \& Function")
+        self.add_title(self.translate("Func_1_2.1I2a.main.title"))
 
         # Create the coordinate system
         self.cords.shift(DOWN)
@@ -324,34 +274,21 @@ class FuncTermAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         plugInTexts = ""
         for i in range(len(self.vals)):
             if i < 2:
-                plugInTexts += f"""<bookmark mark="val{i+1}"/> The {nums_ordinal[i+1]} value we plug in is {get_num(self.vals[i])}, and the value of the function at this point is {get_num(self.fs[self.idx_correct](self.vals[i]))} -"""
+                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-1")
             elif i < len(self.vals) - 1:
-                plugInTexts += f"""<bookmark mark="val{i+1}"/> For the x-value {get_num(self.vals[i])}, we obtain the y-value {get_num(self.fs[self.idx_correct](self.vals[i]))}, """
+                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-2")
             else:
-                plugInTexts += f"""<bookmark mark="val{i+1}"/> and for the x-value {get_num(self.vals[i])}, we finally get the y-value {get_num(self.fs[self.idx_correct](self.vals[i]))}."""
+                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-3")
 
         introText = ""
         if self.idx_selected == self.idx_correct:
-            introText = "Great, that's correct!"
+            introText = self.translate("Func_1_2.1I2a.main.intro-text-correct")
         else:
-            introText = "Unfortunately, that's incorrect."
+            introText = self.translate("Func_1_2.1I2a.main.intro-text-incorrect")
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {introText}
-                We want to determine the function graph for the <bookmark mark="show_term"/>term {self.termInWords}.
-                We proceed as follows:
-                <bookmark mark="plugIn"/>
-                We consider points from our domain one by one.
-                Then, we plug these points into the term and obtain the corresponding function values.
-                And then, we <bookmark mark="addPoints"/> plot these points in a coordinate system.
-                So, let's turn to our example:
-                {plugInTexts}
-                Now, we connect the points we've plotted
-                <bookmark mark="connect"/>
-                and thus obtain the function graph.
-                """
+                text= self.translate("Func_1_2.1I2a.func-term-answer.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("show_term")
@@ -383,18 +320,19 @@ class FuncTermAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 ###########################################
 ###########################################
-TASK_Func_1_2_I_2_1_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The orange graph", "The purple graph"],
-    correctAnswerIndex = 1,
-    questionText = "Which of these graphs describes the corresponding function?"
-)
-
 class Func_1_2_I_2_1_q(FuncTermQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
+        )
+
     def construct(self):
         self.term = "f(x)=-x"
-        self.termInWords = "f of x equals negative x"
-        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
-                        x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
+        self.termInWords = self.translate("Func_1_2.1I2_1q.main.term-in-words")
+        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10])
         def f1(x):
             return x/2 - 2
         def f2(x):
@@ -409,9 +347,8 @@ class Func_1_2_I_2_1_a(FuncTermAnswerScene):
 
     def construct(self):
         self.term = "f(x)=-x"
-        self.termInWords = "f of x equals negative x"
-        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
-                        x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
+        self.termInWords = self.translate("Func_1_2.1I2_1q.main.term-in-words")
+        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10])
         def f1(x):
             return x/2 - 2
         def f2(x):
@@ -428,7 +365,7 @@ class Func_1_2_I_2_1_b(FuncTermAnswerScene):
 
     def construct(self):
         self.term = "f(x)=-x"
-        self.termInWords = "f of x equals negative x"
+        self.termInWords = self.translate("Func_1_2.1I2_1q.main.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
         def f1(x):
@@ -447,9 +384,8 @@ class Func_1_2_I_2_1_c(FuncTermAnswerScene):
 
     def construct(self):
         self.term = "f(x)=-x"
-        self.termInWords = "f of x equals negative x"
-        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
-                        x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
+        self.termInWords = self.translate("Func_1_2.1I2_1q.main.term-in-words")
+        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10])
         def f1(x):
             return x/2 - 2
         def f2(x):
@@ -475,11 +411,10 @@ class Func_1_2_I_3(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        self.add_title("Functions: Concepts")
+        self.add_title(self.translate("Func_1_2.1I3.main.title"))
 
         # Create the coordinate system
-        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6]).shift(DOWN)
+        cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6]).shift(DOWN)
         plane = cords[0]
         redx = plane.x_axis.copy().set_color(RED).set_stroke(width=4)
         self.add(cords)
@@ -498,27 +433,7 @@ class Func_1_2_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <prosody rate="110%">
-                Now, let's talk about some important concepts related to functions.
-                <bookmark mark="term"/>
-                Let's start with the concept of the function term...
-                <break time="1s"/>
-                As we already know, the term of a function describes how we go from an x-value to a y-value.
-                <break time="1s"/>
-                That means, we plug each value of x into the term to obtain the corresponding y-value.
-                <bookmark mark="show_term"/>
-                The function term is typically written as "f of x equals", followed by the term. For example, here it is written as f of x equals x squared minus three.
-                <break time="1s"/>
-                <bookmark mark="graph"/>
-                The next concept is that of the graph of a function.
-                <break time="1s"/>
-                The graph of a function describes how the function looks.
-                To obtain a function's graph, we simply plot some points that we can calculate using the function term onto a coordinate plane.
-                And because we don't have the time to plot an infinite number of points, we typically choose just a few points
-                Then, we connect the points to obtain the graph. Sometimes, we need to draw many points to get an accurate graph, other times only a few points are enough.
-                </prosody>
-                """
+                text=self.translate("Func_1_2.1I3.main.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("term")
@@ -551,7 +466,7 @@ class Func_1_2_I_4(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        self.add_title("Function - Concepts")
+        self.add_title(self.translate("Func_1_2.1I4.main.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
@@ -574,33 +489,14 @@ class Func_1_2_I_4(SophiaCursorScene):
             return x**2-3
         f_plotted = plane.plot(f, color=c3)
 
-        domain = Tex("Domain:\\\\ All values that we can \\\\ plug in for $x$.", color=c3t, font_size=fs3, tex_environment="flushleft").next_to(func, DOWN, buff=.6)
-        range = Tex("Range:\\\\ All values that we \\\\ obtain for $y$.", color=c3t, font_size=fs3, tex_environment="flushleft").next_to(func, DOWN, buff=.6)
+        domain = Tex(self.translate("Func_1_2.1I4.main.domain"), color=c3t, font_size=fs3, tex_environment="flushleft").next_to(func, DOWN, buff=.6)
+        range = Tex(self.translate("Func_1_2.1I4.main.range"), color=c3t, font_size=fs3, tex_environment="flushleft").next_to(func, DOWN, buff=.6)
         range.shift(LEFT*(range.get_left()-domain.get_left()))
         self.add(func, f_plotted)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <prosody rate="110%">
-                Two more important concepts related to functions: The domain and the range.
-                <break time="1s"/>
-                The domain <bookmark mark="domain_in"/>is the set of all values that we can substitute for x.
-                So, it's the set of all x-values that we can use for the function.
-                <bookmark mark="show_def"/>
-                <break time="1s"/>
-                In this case, the domain is the interval which includes all values between negative three and three.
-                <break time="1s"/>
-                The next concept is that<bookmark mark="range_in"/> of the range.
-                <break time="1s"/>
-                The range is the set of all values that we can obtain for y.
-                <bookmark mark="show_val"/> 
-                In this case, the range is the interval that includes all values between minus three and six.
-                <break time="1s"/>
-                Because we get the lowest value at x equals zero, which is minus three.
-                And we get the highest value at x equals three, which is six. So, the range is the interval between minus three and six.
-                </prosody>
-                """
+                text=self.translate("Func_1_2.1I4.main.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("domain_in")
@@ -628,16 +524,14 @@ class Func_1_2_I_4(SophiaCursorScene):
 ##### Exercises ############################
 ############################################
 ############################################
-
-
-
-TASK_Func_1_2_P_1_1_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The orange graph", "The purple graph"],
-    correctAnswerIndex = 0,
-    questionText = "Which of these graphs describes the corresponding function?"
-)
-
 class Func_1_2_P_1_1_q(FuncTermQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
+        )
 
     def construct(self):
 
@@ -720,13 +614,15 @@ class Func_1_2_P_1_1_c(FuncTermAnswerScene):
 #################################################
 #################################################
 
-
-TASK_Func_1_2_P_1_2_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The orange graph", "The purple graph"],
-    correctAnswerIndex = 1,
-    questionText = "Which of these graphs describes the corresponding function?"
-)
 class Func_1_2_P_1_2_q(FuncTermQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
+        )
+
     def construct(self):
         self.term = "f(x)=x^3"
         self.termInWords = "f of x is equal to x cubed"
@@ -798,19 +694,19 @@ class Func_1_2_P_1_2_c(FuncTermAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_1_3_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The orange graph", "The purple graph"],
-    correctAnswerIndex = 0,
-    questionText = "Which of these graphs describes the corresponding function?"
-)
-
 class Func_1_2_P_1_3_q(FuncTermQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
+        )
+
     def construct(self):
         self.term = "f(x)=2x^2 + 1"
-        self.termInWords = "f of x equals two times x squared plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
-                        x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
+        self.termInWords = self.translate("Func_1_2.P13.term-in-words")
+        self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10])
         def f1(x):
             return 2*x**2 + 1
         def f2(x):
@@ -824,7 +720,7 @@ class Func_1_2_P_1_3_q(FuncTermQuestionScene):
 class Func_1_2_P_1_3_a(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=2x^2 + 1"
-        self.termInWords = "f of x is equal to two times x squared plus one"
+        self.termInWords = self.translate("Func_1_2.P13.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
         def f1(x):
@@ -842,7 +738,7 @@ class Func_1_2_P_1_3_a(FuncTermAnswerScene):
 class Func_1_2_P_1_3_b(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=2x^2 + 1"
-        self.termInWords = "f of x is equal to two times x squared plus one"
+        self.termInWords = self.translate("Func_1_2.P13.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
         def f1(x):
@@ -860,7 +756,7 @@ class Func_1_2_P_1_3_b(FuncTermAnswerScene):
 class Func_1_2_P_1_3_c(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=2x^2 + 1"
-        self.termInWords = "f of x is equal to two times x squared plus one"
+        self.termInWords = self.translate("Func_1_2.P13.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 10],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 10])
         def f1(x):
@@ -877,17 +773,18 @@ class Func_1_2_P_1_3_c(FuncTermAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_1_4_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The orange graph", "The purple graph"],
-    correctAnswerIndex = 2,
-    questionText = "Which of these graphs describes the corresponding function?"
-)
-
 class Func_1_2_P_1_4_q(FuncTermQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
+        )
+
     def construct(self):
         self.term = "f(x)=3x^2 - x"
-        self.termInWords = "f of x is equal to three times x squared minus x"
+        self.termInWords = self.translate("Func_1_2.P14.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 18, 3], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 6, 12, 18],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 6, 12, 18])
         def f3(x):
@@ -903,7 +800,7 @@ class Func_1_2_P_1_4_q(FuncTermQuestionScene):
 class Func_1_2_P_1_4_a(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=3x^2 - x"
-        self.termInWords = "f of x is equal to three times x squared minus x"
+        self.termInWords = self.translate("Func_1_2.P14.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 18, 3], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 6, 12, 18],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 6, 12, 18])
         def f3(x):
@@ -921,7 +818,7 @@ class Func_1_2_P_1_4_a(FuncTermAnswerScene):
 class Func_1_2_P_1_4_b(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=3x^2 - x"
-        self.termInWords = "f of x is equal to three times x squared minus x"
+        self.termInWords = self.translate("Func_1_2.P14.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 18, 3], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 6, 12, 18],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 6, 12, 18])
         def f3(x):
@@ -939,7 +836,7 @@ class Func_1_2_P_1_4_b(FuncTermAnswerScene):
 class Func_1_2_P_1_4_c(FuncTermAnswerScene):
     def construct(self):
         self.term = "f(x)=3x^2 - x"
-        self.termInWords = "f of x is equal to three times x squared minus x"
+        self.termInWords = self.translate("Func_1_2.P14.term-in-words")
         self.cords = self.add_cords([-2, 2, 1], [-6, 18, 3], x_ticks=[-2, 0, 2], y_ticks=[-6, 0, 6, 12, 18],
                         x_labels=[-2, 0, 2], y_labels=[-6, 0, 6, 12, 18])
         def f3(x):
@@ -977,7 +874,7 @@ class FuncDefinitionsQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
 
         # Add title to the scene
-        self.add_title("Domain \& Range")
+        self.add_title(self.translate("Func_1_2.func-def-q-scene"))
 
         # Create the coordinate system
         self.cords.shift(DOWN*0.4)
@@ -994,20 +891,14 @@ class FuncDefinitionsQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         f_plotted = plane.plot(self.f, color=c3)
         self.add(func)
 
-        domain = Tex("$\\Rightarrow$ What's the domain?", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.6)
-        range = Tex("$\\Rightarrow$ What's the range?", color=c3t, font_size=fs3).next_to(domain, DOWN, buff=.2)
+
+
+        domain = Tex(self.translate("Func_1_2.func-def-q.domain"), color=c3t, font_size=fs3).next_to(func, DOWN, buff=.6)
+        range = Tex(self.translate("Func_1_2.func-def-q-range"), color=c3t, font_size=fs3).next_to(domain, DOWN, buff=.2)
 
         # Action Sequence
         with self.voiceover(
-            text=f"""
-            <prosody rate="110%">
-            Alright. We're now looking at the <bookmark mark="Func"/> function {self.funcSpoken}.
-            Specifically, we're examining it on the given coordinate system here.
-            Now, here's the question for you:
-            In this example, what is the <bookmark mark="domain"/> domain of the function?
-            And, what is the <bookmark mark="range"/> range?
-            </prosody>
-            """
+            text=self.translate("Func_1_2.func-def-q-scene-voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("Func")
@@ -1040,12 +931,8 @@ class FuncDefinitionsAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             else:
                 return nums[x]
 
-        
-        # Add title to the scene
-        title = "Incorrect!"
-        if self.isTrue:
-            title = "Correct!"
-        self.add_title("Domain \& Range")
+
+        self.add_title(self.translate("Func_1_2.func-def.title"))
 
         # Create the coordinate system
         plane = self.cords[0]
@@ -1064,31 +951,16 @@ class FuncDefinitionsAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         func = MathTex(self.funcTex, color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.5)
         f_plotted = plane.plot(self.f, color=c3)
         self.add(func, f_plotted)
-        domain = VGroup(Tex("Domain: Input x-values", color=c3t, font_size=fs3), Tex(f"$\\rightarrow[{self.domain[0]},{self.domain[1]}]$.", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=RIGHT)
-        range = VGroup(Tex("Range: Output y-values", color=c3t, font_size=fs3), Tex(f"$\\rightarrow[{self.range[0]},{self.range[1]}]$.", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=RIGHT)
+        domain = VGroup(Tex(self.translate("Func_1_2.func-def.domain"), color=c3t, font_size=fs3), Tex(f"$\\rightarrow[{self.domain[0]},{self.domain[1]}]$.", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=RIGHT)
+        range = VGroup(Tex(self.translate("Func_1_2.func-def.range"), color=c3t, font_size=fs3), Tex(f"$\\rightarrow[{self.range[0]},{self.range[1]}]$.", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=RIGHT)
         dr = VGroup(domain, range).arrange(DOWN, buff=.6, aligned_edge=RIGHT).next_to(func, DOWN, buff=.6)
 
-        intro = "Unfortunately, that's incorrect!"
+        intro = self.translate("Func_1_2.func-def.intro-incorrect")
         if self.isTrue:
-            intro = "Great job, that's correct!"
+            intro = self.translate("Func_1_2.func-def.intro-correct")
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                <prosody rate="110%">
-                {intro}
-                <bookmark mark="define_domain"/>
-                The domain is the set of all x-values we plug into the function.
-                <break time="1s"/>
-                In this example, we plug in all values on the x-axis, so all values from <bookmark mark="domain"/> {get_num(self.domain[0])} to {get_num(self.domain[1])}.
-                So this is our domain.
-                <break time="1s"/><bookmark mark="define_range"/>
-                The range on the other hand is the set of all y-values we get from the function.
-                <break time="1s"/>
-                We can simply read off the values we get on the y-axis.
-                From the graph, we can see that we get all values from <bookmark mark="range"/> {get_num(self.range[0])} to {get_num(self.range[1])},
-                so that is the range of the function.
-                </prosody>
-                """
+                text=self.translate("Func_1_2.func-def.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("define_domain")
@@ -1112,23 +984,22 @@ class FuncDefinitionsAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_1_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-3,3],\,W=[-3,6]$", "$D=[-3,6],\,W=[-3,6]$", "$D=[-3,3],\,W=[-3,3]$", "$D=[-3,6],\,W=[-3,3]$"],
-    correctAnswerIndex = 0,
-    questionText = "What are the domain D and range W?"
-)
-
 class Func_1_2_P_2_1_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = self.translate("Func_1_2.P21.q.answer-options"),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
 
         # Setting up the specific function
         self.funcTex = "f(x)=x^2-3"
         self.f = lambda x: x**2-3
-        self.funcSpoken = "f of x equals x squared minus three"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6])
+        self.funcSpoken = self.translate("Func_1_2.P21.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6])
 
         # Adding initial components to the scene
         super().construct()
@@ -1138,9 +1009,8 @@ class Func_1_2_P_2_1_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2-3"
         self.f = lambda x: x**2-3
-        self.funcSpoken = "f of x equals x squared minus three"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6])
+        self.funcSpoken = self.translate("Func_1_2.P21.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6])
         self.isTrue = True
         self.domain = [-3,3]
         self.range = [-3,6]
@@ -1151,9 +1021,8 @@ class Func_1_2_P_2_1_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2-3"
         self.f = lambda x: x**2-3
-        self.funcSpoken = "f of x equals x squared minus three"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6])
+        self.funcSpoken = self.translate("Func_1_2.P21.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,6]
@@ -1164,9 +1033,8 @@ class Func_1_2_P_2_1_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2-3"
         self.f = lambda x: x**2-3
-        self.funcSpoken = "f of x equals x squared minus three"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6])
+        self.funcSpoken = self.translate("Func_1_2.P21.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,6]
@@ -1177,9 +1045,8 @@ class Func_1_2_P_2_1_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2-3"
         self.f = lambda x: x**2-3
-        self.funcSpoken = "f of x equals x squared minus three"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 6])
+        self.funcSpoken = self.translate("Func_1_2.P21.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 6])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,6]
@@ -1189,22 +1056,21 @@ class Func_1_2_P_2_1_d(FuncDefinitionsAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_2_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-10,6],\,W=[-2,2]$", "$D=[-1,2],\,W=[1,3]$", "$D=[-2,2],\,W=[-6,10]$", "$D=[-2,2],\,W=[-10,6]$"],
-    correctAnswerIndex = 2,
-    questionText = "What are the domain D and range W?"
-)
-
 class Func_1_2_P_2_2_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P22.q.answer-options")),
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
         # Setting up the specific function
         self.funcTex = "f(x)=x^3+2"
         self.f = lambda x: x**3+2
-        self.funcSpoken = "f of x equals x cubed plus two"
-        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-8, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P22.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10])
         # Adding initial components to the scene
         super().construct()
 
@@ -1213,9 +1079,8 @@ class Func_1_2_P_2_2_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^3+2"
         self.f = lambda x: x**3+2
-        self.funcSpoken = "f of x equals x cubed plus two"
-        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-8, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P22.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10])
         self.isTrue = False
         self.domain = [-1,9]
         self.range = [-2,2]
@@ -1226,9 +1091,8 @@ class Func_1_2_P_2_2_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^3+2"
         self.f = lambda x: x**3+2
-        self.funcSpoken = "f of x equals x cubed plus two"
-        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-8, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P22.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10])
         self.isTrue = False
         self.domain = [-1,9]
         self.range = [-2,2]
@@ -1239,9 +1103,8 @@ class Func_1_2_P_2_2_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^3+2"
         self.f = lambda x: x**3+2
-        self.funcSpoken = "f of x equals x cubed plus two"
-        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-8, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P22.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10])
         self.isTrue = True
         self.domain = [-1,9]
         self.range = [-2,2]
@@ -1252,9 +1115,8 @@ class Func_1_2_P_2_2_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^3+2"
         self.f = lambda x: x**3+2
-        self.funcSpoken = "f of x equals x cubed plus two"
-        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-8, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P22.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-8, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-8, 0, 10])
         self.isTrue = False
         self.domain = [-1,9]
         self.range = [-2,2]
@@ -1262,22 +1124,21 @@ class Func_1_2_P_2_2_d(FuncDefinitionsAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_3_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-3,3],\,W=[-4,4]$", "$D=[-2,2],\,W=[-4,4]$", "$D=[-4,4],\,W=[-2,2]$", "$D=[-4,4],\,W=[-3,3]$"],
-    correctAnswerIndex = 1,
-    questionText = "What are the domain D and range W?"
-)
-
 class Func_1_2_P_2_3_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P23.q.answer-options")),
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
         # Setting up the specific function
         self.funcTex = "f(x)=2x"
         self.f = lambda x: 2*x
-        self.funcSpoken = "f of x equals two times x"
-        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4],
-                               x_labels=[-2, 0, 2], y_labels=[-4, 0, 4])
+        self.funcSpoken = self.translate("Func_1_2.P23.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4])
         # Adding initial components to the scene
         super().construct()
 
@@ -1286,9 +1147,8 @@ class Func_1_2_P_2_3_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=2x"
         self.f = lambda x: 2*x
-        self.funcSpoken = "f of x equals two times x"
-        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4],
-                               x_labels=[-2, 0, 2], y_labels=[-4, 0, 4])
+        self.funcSpoken = self.translate("Func_1_2.P23.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4])
         self.isTrue = True  # Set to True for the correct answer
         self.domain = [-2,2]
         self.range = [-4,4]
@@ -1299,9 +1159,8 @@ class Func_1_2_P_2_3_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=2x"
         self.f = lambda x: 2*x
-        self.funcSpoken = "f of x equals two times x"
-        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4],
-                               x_labels=[-2, 0, 2], y_labels=[-4, 0, 4])
+        self.funcSpoken = self.translate("Func_1_2.P23.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4])
         self.isTrue = False
         self.domain = [-2,2]
         self.range = [-4,4]
@@ -1312,9 +1171,8 @@ class Func_1_2_P_2_3_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=2x"
         self.f = lambda x: 2*x
-        self.funcSpoken = "f of x equals two times x"
-        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4],
-                               x_labels=[-2, 0, 2], y_labels=[-4, 0, 4])
+        self.funcSpoken = self.translate("Func_1_2.P23.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4])
         self.isTrue = False
         self.domain = [-2,2]
         self.range = [-4,4]
@@ -1325,9 +1183,8 @@ class Func_1_2_P_2_3_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=2x"
         self.f = lambda x: 2*x
-        self.funcSpoken = "f of x equals two times x"
-        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4],
-                               x_labels=[-2, 0, 2], y_labels=[-4, 0, 4])
+        self.funcSpoken = self.translate("Func_1_2.P23.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-4, 4, 1], x_ticks=[-2, 0, 2], y_ticks=[-4, 0, 4])
         self.isTrue = False
         self.domain = [-2,2]
         self.range = [-4,4]
@@ -1336,22 +1193,21 @@ class Func_1_2_P_2_3_d(FuncDefinitionsAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_4_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-3,3],\,W=[-17,7]$", "$D=[-17,7],\,W=[-3,3]$", "$D=[-3,3],\,W=[-3,3]$", "$D=[-17,17],\,W=[-3,3]$"],
-    correctAnswerIndex = 0,
-    questionText = "What are the domain D and range W?"
-)
-
 class Func_1_2_P_2_4_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P24.q.answer-options")),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
         # Setting up the specific function
         self.funcTex = "f(x)=4x-5"
         self.f = lambda x: 4*x - 5
-        self.funcSpoken = "f of x equals four times x minus five"
-        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12],
-                               x_labels=[-3, 0, 3], y_labels=[-12, 0, 12])
+        self.funcSpoken = self.translate("Func_1_2.P24.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12])
         # Adding initial components to the scene
         super().construct()
 
@@ -1360,9 +1216,8 @@ class Func_1_2_P_2_4_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=4x-5"
         self.f = lambda x: 4*x - 5
-        self.funcSpoken = "f of x equals four times x minus five"
-        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12],
-                               x_labels=[-3, 0, 3], y_labels=[-12, 0, 12])
+        self.funcSpoken = self.translate("Func_1_2.P24.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12])
         self.isTrue = True  # Set to True for the correct answer
         self.domain = [-3,3]
         self.range = [-17,7]
@@ -1373,9 +1228,8 @@ class Func_1_2_P_2_4_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=4x-5"
         self.f = lambda x: 4*x - 5
-        self.funcSpoken = "f of x equals four times x minus five"
-        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12],
-                               x_labels=[-3, 0, 3], y_labels=[-12, 0, 12])
+        self.funcSpoken = self.translate("Func_1_2.P24.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,3]
@@ -1386,9 +1240,8 @@ class Func_1_2_P_2_4_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=4x-5"
         self.f = lambda x: 4*x - 5
-        self.funcSpoken = "f of x equals four times x minus five"
-        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12],
-                               x_labels=[-3, 0, 3], y_labels=[-12, 0, 12])
+        self.funcSpoken = self.translate("Func_1_2.P24.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,3]
@@ -1399,9 +1252,8 @@ class Func_1_2_P_2_4_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=4x-5"
         self.f = lambda x: 4*x - 5
-        self.funcSpoken = "f of x equals four times x minus five"
-        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12],
-                               x_labels=[-3, 0, 3], y_labels=[-12, 0, 12])
+        self.funcSpoken = self.translate("Func_1_2.P24.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-12, 12, 4], x_ticks=[-3, 0, 3], y_ticks=[-12, 0, 12])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,3]
@@ -1410,22 +1262,21 @@ class Func_1_2_P_2_4_d(FuncDefinitionsAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_5_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-3,3],\,W=[-10,10]$", "$D=[-10,10],\,W=[-4,4]$", "$D=[-3,10],\,W=[4,10]$", "$D=[-3,3],\,W=[-4,10]$"],
-    correctAnswerIndex = 3,
-    questionText = "What are the domain D and range W?"   
-)
-
 class Func_1_2_P_2_5_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P25.q.answer-options")),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
         # Setting up the specific function
         self.funcTex = "f(x)=x^2+x-2"
         self.f = lambda x: x**2 + x - 2
-        self.funcSpoken = "f of x equals x squared plus x minus two"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P25.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10])
         # Adding initial components to the scene
         super().construct()
 
@@ -1434,9 +1285,8 @@ class Func_1_2_P_2_5_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2+x-2"
         self.f = lambda x: x**2 + x - 2
-        self.funcSpoken = "f of x equals x squared plus x minus two"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P25.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-10,10]
@@ -1447,9 +1297,8 @@ class Func_1_2_P_2_5_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2+x-2"
         self.f = lambda x: x**2 + x - 2
-        self.funcSpoken = "f of x equals x squared plus x minus two"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P25.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,10]
@@ -1460,9 +1309,8 @@ class Func_1_2_P_2_5_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2+x-2"
         self.f = lambda x: x**2 + x - 2
-        self.funcSpoken = "f of x equals x squared plus x minus two"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P25.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10])
         self.isTrue = False
         self.domain = [-3,3]
         self.range = [-3,10]
@@ -1473,9 +1321,8 @@ class Func_1_2_P_2_5_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=x^2+x-2"
         self.f = lambda x: x**2 + x - 2
-        self.funcSpoken = "f of x equals x squared plus x minus two"
-        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10],
-                               x_labels=[-3, 0, 3], y_labels=[-6, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P25.q.func-spoken")
+        self.cords = self.add_cords([-3, 3, 1], [-6, 10, 2], x_ticks=[-3, 0, 3], y_ticks=[-6, 0, 10])
         self.isTrue = True  # Set to True for the correct answer
         self.domain = [-3,3]
         self.range = [-4,10]
@@ -1484,22 +1331,21 @@ class Func_1_2_P_2_5_d(FuncDefinitionsAnswerScene):
 
 #################################################
 #################################################
-
-TASK_Func_1_2_P_2_6_q = SophiaTaskDefinition(
-    answerOptions = ["$D=[-2,3],\,W=[9,17]$", "$D=[-2,2],\,W=[-1,12]$", "$D=[-10,10],\,W=[9,17]$", "$D=[0,10],\,W=[-3,3]$"],
-    correctAnswerIndex = 0,
-    questionText = "What are the domain D and range W?"
-)
-
 class Func_1_2_P_2_6_q(FuncDefinitionsQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P26.q.answer-options")),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.P21.q.question-text") 
+        )
 
     def construct(self):
         # Setting up the specific function
         self.funcTex = "f(x)=3x^2-2x+1"
         self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P26.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10])
         # Adding initial components to the scene
         super().construct()
 
@@ -1508,9 +1354,8 @@ class Func_1_2_P_2_6_a(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=3x^2-2x+1"
         self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P26.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10])
         self.isTrue = True  # Set to True for the correct answer
         self.domain = [-2,3]
         self.range = [9,17]
@@ -1521,9 +1366,8 @@ class Func_1_2_P_2_6_b(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=3x^2-2x+1"
         self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P26.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10])
         self.isTrue = False
         self.domain = [-2,3]
         self.range = [-1,12]
@@ -1534,9 +1378,8 @@ class Func_1_2_P_2_6_c(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=3x^2-2x+1"
         self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P26.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10])
         self.isTrue = False
         self.domain = [-2,3]
         self.range = [9,17]
@@ -1547,9 +1390,8 @@ class Func_1_2_P_2_6_d(FuncDefinitionsAnswerScene):
     def construct(self):
         self.funcTex = "f(x)=3x^2-2x+1"
         self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.funcSpoken = self.translate("Func_1_2.P26.q.func-spoken")
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10])
         self.isTrue = False
         self.domain = [-2,3]
         self.range = [-3,3]
@@ -1562,70 +1404,89 @@ class Func_1_2_P_2_6_d(FuncDefinitionsAnswerScene):
 
 
 # Add the scene to prototypes
-PROTOTYPES = [
-    PagePrototypeVideo.from_scene(Func_1_2_I_1),
-    PagePrototypeVideo.from_scene(Func_1_2_I_2),
-    PagePrototypeVideo.from_scene(Func_1_2_I_2_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_I_2_1_q, Func_1_2_I_2_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_I_2_1_a),
-    PagePrototypeVideo.from_scene(Func_1_2_I_2_1_b),
-    PagePrototypeVideo.from_scene(Func_1_2_I_2_1_c),
-    PagePrototypeVideo.from_scene(Func_1_2_I_3),
-    PagePrototypeVideo.from_scene(Func_1_2_I_4),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_1_q, Func_1_2_P_1_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_1_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_1_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_1_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_2_q, Func_1_2_P_1_2_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_2_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_2_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_2_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_3_q, Func_1_2_P_1_3_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_3_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_3_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_3_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_4_q, Func_1_2_P_1_4_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_4_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_4_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_1_4_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_1_q, Func_1_2_P_2_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_1_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_1_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_1_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_1_d),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_2_q, Func_1_2_P_2_2_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_2_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_2_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_2_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_2_d),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_3_q, Func_1_2_P_2_3_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_3_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_3_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_3_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_3_d),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_4_q, Func_1_2_P_2_4_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_4_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_4_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_4_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_4_d),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_5_q, Func_1_2_P_2_5_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_5_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_5_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_5_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_5_d),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_6_q, Func_1_2_P_2_6_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_6_a),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_6_b),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_6_c),
-    PagePrototypeVideo.from_scene(Func_1_2_P_2_6_d),
-]
+# PROTOTYPES = [
+#     PagePrototypeVideo.from_scene(Func_1_2_I_1),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_2),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_2_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_I_2_1_q, Func_1_2_I_2_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_2_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_2_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_2_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_3),
+#     PagePrototypeVideo.from_scene(Func_1_2_I_4),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_1_q, Func_1_2_P_1_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_2_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_2_q, Func_1_2_P_1_2_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_2_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_2_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_2_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_3_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_3_q, Func_1_2_P_1_3_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_3_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_3_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_3_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_4_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_1_4_q, Func_1_2_P_1_4_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_4_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_4_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_1_4_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_1_q, Func_1_2_P_2_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_1_d),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_2_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_2_q, Func_1_2_P_2_2_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_2_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_2_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_2_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_2_d),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_3_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_3_q, Func_1_2_P_2_3_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_3_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_3_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_3_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_3_d),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_4_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_4_q, Func_1_2_P_2_4_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_4_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_4_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_4_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_4_d),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_5_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_5_q, Func_1_2_P_2_5_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_5_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_5_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_5_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_5_d),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_2_P_2_6_q, Func_1_2_P_2_6_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_a),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_b),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_c),
+#     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_d),
+# ]
+
+
+
+class Func_1_2_P_2_6_e(FuncDefinitionsAnswerScene):
+
+    def construct(self):
+        self.funcTex = "f(x)=3x^2-2x+1"
+        self.f = lambda x: 3*x**2 - 2*x + 1
+        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
+        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
+                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
+        self.isTrue = False
+        self.domain = [-2,3]
+        self.range = [-3,3]
+
+        translation = self.translate("test-key")
+        print(type(translation), translation)
+
+        super().construct()

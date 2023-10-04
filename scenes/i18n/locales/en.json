@@ -16,7 +16,8 @@
         "grains-of-rice": "grains of rice",
         "21st-square": "$21$st square",
         "41st-square": "$41$st square",
-        "voiceover": "Mhm I'm not sure that's a great idea.\nLet's see, how much rice it will cost you.\nFor the first square, you pay <bookmark mark=\"one\"/>1 grain of rice.\nFor the second square, you pay an additional<bookmark mark=\"two\"/>2 grains of rice.\nFor the third square, you pay an additional<bookmark mark=\"four\"/>4 grains of rice.\nfor the fourth square, you pay an additional<bookmark mark=\"eight\"/>8 grains of rice.\nand for the fifth square, you pay an additional<bookmark mark=\"sixteen\"/>16 grains of rice.\nGuess how many grains of rice you will have to pay, when you finish the first out of the\n8 rows on the chessboard? One hundred and twenty eight.\nThat's a lot of rice. And you're not even done with the first row yet.\nOnce you've reached the <bookmark mark=\"twentyfirst\"/>twenty-first square, you will have to pay more than a million grains of rice.\nAnd once you've reached the <bookmark mark=\"fourtyfirst\"/>forty-first square, you will have to pay more than a trillion grains of rice.\nIn the end, you will have to pay a total of<bookmark mark=\"largeNumber\"/> eighteen quintillion,\nfour hundred forty-six quadrillion, seven hundred forty-four trillion, seventy-three billion,\nseven hundred nine million, five hundred fifty-one thousand, six hundred and fifteen grains of rice.\nI'm not sure about rice to gold conversion rates, but I'm pretty sure that gold is the cheaper option here..."
+        "voiceover": "Mhm I'm not sure that's a great idea.\nLet's see, how much rice it will cost you.\nFor the first square, you pay <bookmark mark=\"one\"/>1 grain of rice.\nFor the second square, you pay an additional<bookmark mark=\"two\"/>2 grains of rice.\nFor the third square, you pay an additional<bookmark mark=\"four\"/>4 grains of rice.\nfor the fourth square, you pay an additional<bookmark mark=\"eight\"/>8 grains of rice.\nand for the fifth square, you pay an additional<bookmark mark=\"sixteen\"/>16 grains of rice.\nGuess how many grains of rice you will have to pay, when you finish the first out of the\n8 rows on the chessboard? One hundred and twenty eight.\nThat's a lot of rice. And you're not even done with the first row yet.\nOnce you've reached the <bookmark mark=\"twentyfirst\"/>twenty-first square, you will have to pay more than a million grains of rice.\nAnd once you've reached the <bookmark mark=\"fourtyfirst\"/>forty-first square, you will have to pay more than a trillion grains of rice.\nIn the end, you will have to pay a total of<bookmark mark=\"largeNumber\"/> eighteen quintillion,\nfour hundred forty-six quadrillion, seven hundred forty-four trillion, seventy-three billion,\nseven hundred nine million, five hundred fifty-one thousand, six hundred and fifteen grains of rice.\nI'm not sure about rice to gold conversion rates, but I'm pretty sure that gold is the cheaper option here...",
+        "test_key": "my test key"
       }
     },
     "1I1b": {
@@ -30,6 +31,282 @@
         "linear-growth": "Linear Growth",
         "voiceover": "What is the reason that in the chessboard example, the number of grains of rice you have to pay\nincreases so fast? How does rice get so much more expensive than gold, so quickly?\nThe answer to both of these questions is the same: Exponential Growth.\nLet's compare the two options, rice and gold, again. Specifically,\nlet's describe them <bookmark mark=\"cords\"/> using functions.\nWe'll start with gold.\nThe function that describes the amount of gold you have to pay for a given number of squares is\n<bookmark mark=\"f_gold\"/> f of x equals x.\nFor the first square, you have to pay one gold coin. So f of 1 equals 1.\nFor the second square, you have to pay one gold coin as well. So f of 2 equals one for the first square,\nplus one for the second square, which is two. And so on. As you can see, the amount you have to pay\nincreases linearly with the number of squares you have to pay for. One extra square costs exactly\nas much as each of the previous squares, and the last square costs exactly as much as the first one.\nWe call this <bookmark mark=\"linear\"/>linear growth...\n\nNow, let's <bookmark mark=\"clean\"/> look at rice for comparison.\nThe <bookmark mark=\"cords_rice\"/>function that describes the amount of rice you have to pay for a\ngiven number of squares is <bookmark mark=\"f_rice\"/> an exponential function\nFor the first square, you have to pay one grain of rice. So f of 1 equals 1.\nFor the second square, you have to pay two grains of rice. So f of 2 equals one for the first square,\nplus two for the second square, which is three. \nFor the third square, you have to pay four grains of rice. So f of 3 equals one for the first square,\nplus two for the second square, plus four for the third square, which is seven.\nAnd so on.\nAs you can see, the amount you have to pay increases rapidly with the number of squares you have to pay for,\nbecause for each square, you have to pay twice as much as for the previous square.\nWe call this <bookmark mark=\"exponential\"/>exponential growth..."
       }
+    }
+  },
+  "Func_1_1": {
+    "1I1q": {
+      "question": {
+        "the-blue-representation": "The blue representation",
+        "the-red-representation": "The red representation",
+        "which-representation-describes-a-realistic-temperature-trend": "Which representation describes a realistic temperature trend?"
+      },
+      "main": {
+        "title": "Functions",
+        "voiceover": "                \"\"\"\n                <prosody rate=\"110%\">\n                So, what is a function? <bookmark mark=\"qOut\"/>\n                \n                Imagine you're planning a\n                <bookmark mark=\"picnicIn\"/>\n                picnic with your friends today.\n                \n                To have a great picnic, it's\n                \n                <bookmark mark=\"picnicOut\"/>\n                crucial that the temperature is just right.\n\n                <bookmark mark=\"WetterIn\"/>\n                So you check the weather report.\n                \n\n                <bookmark mark=\"CordsInWetterOut\"/>\n                This report consists of a representation where\n                \n                <bookmark mark=\"ShowXAxis\"/>\n                the x-axis represents the time in hours, and\n\n                <bookmark mark=\"ShowYAxis\"/>\n                the y-axis represents the temperature in degrees Celsius.\n\n                <bookmark mark=\"ResetCursor1\"/>\n                This helps you understand how the weather will change throughout the day.\n                Now, we're going to show you two possible representations.\n                \n                Think about which one of them depicts a realistic temperature trend.\n                \n                <bookmark mark=\"BlueFuncIn\"/>\n                Is it the blue representation?\n                <break time=\"1.4s\"/>\n                <bookmark mark=\"RedFuncIn\"/>\n                Or is it the red representation?\n                </prosody>\n                \"\"\""
+      }
+    },
+    "1I1a": {
+      "main": {
+        "x-axis": "\"Time\"",
+        "y-axis": "\"Temperature\"",
+        "title": "\"Correct!\"",
+        "voiceover": "\"\"\"\n                Exactly right! <bookmark mark=\"BlueFuncIn\"/> The blue representation is correct...\n                <break time=\"1s\"/>\n                On the left side of the x-axis, in the morning, the value of the blue representation is low.\n                That makes sense because it's cooler in the morning....\n                <break time=\"1s\"/>\n                As <bookmark mark=\"MoveAlongFunc\"/>the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.\n                And in the evening, on the right side of the x-axis, the value of the blue representation is low again as it gets colder.\n                <bookmark mark=\"RedFuncIn\"/>\n                <break time=\"1s\"/>\n                Now why can't it be the red representation?\n                <break time=\"1s\"/>\n                Consider <bookmark mark=\"notRed\"/> the temperature at two o'clock.\n                <break time=\"0.5s\"/>\n                Let's draw a line\n                <bookmark mark=\"VertLine\" /> from the x-axis, that is, from two o'clock, upwards.\n                This line intersects the red representation at exactly two points:\n                <bookmark mark=\"intersect1\"/>\n                Once at eight degrees and\n                <bookmark mark=\"intersect2\"/>\n                Once at sixteen point five degrees.\n                <break time=\"0.4s\"/>\n                This would mean that it's both eight degrees and sixteen point five degrees at the same time.\n                But there can only be one temperature at a given time.\n                So, the red representation is not correct...\n                <break time=\"1s\"/>\n                In summary: <bookmark mark=\"blueRecap\"/>The blue representation is correct, because it assigns to each x-value, so to each\n                point in time one y-value, so one temperature.\n                The <bookmark mark=\"redRecap\"/> red representation on the other hand is not correct, because there are x-value, so points\n                in time to which it assigns two y-values, so two temperatures. This is not possible.\n                \"\"\""
+      },
+      "bubble_1a": "\"Blue representation\"",
+      "bubble_1b": "is correct",
+      "bubble_2a": "\"$2$ temperatures at once\"",
+      "bubble_2b": "\"$\\\\Rightarrow$ incorrect\""
+    },
+    "1I1_correct": {
+      "main": {
+        "voiceover": "\"\"\"\n                Exactly right! <bookmark mark=\"BlueFuncIn\"/> The blue representation is correct...\n                <break time=\"1s\"/>\n                On the left side of the x-axis, in the morning, the value of the blue representation is low.\n                That makes sense because it's cooler in the morning....\n                <break time=\"1s\"/>\n                As <bookmark mark=\"MoveAlongFunc\"/>the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.\n                And in the evening, on the right side of the x-axis, the value of the blue representation is low again as it gets colder.\n                <bookmark mark=\"RedFuncIn\"/>\n                <break time=\"1s\"/>\n                Now why can't it be the red representation?\n                <break time=\"1s\"/>\n                Consider <bookmark mark=\"notRed\"/> the temperature at two o'clock.\n                <break time=\"0.5s\"/>\n                Let's draw a line\n                <bookmark mark=\"VertLine\" /> from the x-axis, that is, from two o'clock, upwards.\n                This line intersects the red representation at exactly two points:\n                <bookmark mark=\"intersect1\"/>\n                Once at eight degrees and\n                <bookmark mark=\"intersect2\"/>\n                Once at sixteen point five degrees.\n                <break time=\"0.4s\"/>\n                This would mean that it's both eight degrees and sixteen point five degrees at the same time.\n                But there can only be one temperature at a given time.\n                So, the red representation is not correct...\n                <break time=\"1s\"/>\n                In summary: <bookmark mark=\"blueRecap\"/>The blue representation is correct, because it assigns to each x-value, so to each\n                point in time one y-value, so one temperature.\n                The <bookmark mark=\"redRecap\"/> red representation on the other hand is not correct, because there are x-value, so points\n                in time to which it assigns two y-values, so two temperatures. This is not possible.\n                \"\"\""
+      }
+    },
+    "1I1b": {
+      "main": {
+        "title": "\"Careful!\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Unfortunately, the answer was incorrect.\n                <bookmark mark=\"RedFuncIn\"/>\n                Why can't it be the red representation??\n                Consider <bookmark mark=\"notRed\"/> the temperature at two o'clock.\n                Let's draw a line\n                <bookmark mark=\"VertLine\" /> from the x-axis, that is, from two o'clock, upwards.\n                This line intersects the red representation at exactly two points,\n                <bookmark mark=\"intersect1\"/>\n                once at eight degrees and\n                <bookmark mark=\"intersect2\"/>\n                once at sixteen point five degrees.\n                This would mean that it's both eight degrees and sixteen point five degrees at the same time.\n                But there can only be one temperature at a given time.\n                So, the red representation is not <bookmark mark=\"BlueFuncIn\"/> correct.\n                On the other hand, the blue representation describes the temperature throughout the day\n                and is therefore correct.\n                On the left side of the x-axis, in the morning, the value of the blue representation is low.\n                This makes sense, as the temperature is also low in the morning.\n                <bookmark mark=\"MoveAlongFunc\"/>\n                As the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.\n                And in the evening, on the right side of the x-axis, the value of the blue representation is low again, as it gets colder.\n                Therefore, the blue representation is correct.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "1I2": {
+      "main": {
+        "title": "\"The Function\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                <bookmark mark=\"BlueFuncIn\"/>\n                Ok... now the blue representation is a great example of a function.\n                A function is a mapping that assigns <bookmark mark=\"map1\"/> exactly  one <bookmark mark=\"map2\"/> y-value to each x-value.\n                \n                <bookmark mark=\"MoveAlongFunc\"/>\n                So, the blue representation assigns to each x-value, that is, each point in time, a y-value, which is a temperature.\n                This makes sense, as at each point in time, there's one temperature.\n                <break time=\"1s\"/>\n                The fact, that it can only be one temperature at any given time is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\n                It assigns to an x-value, that is, a time, <bookmark mark=\"VertLine\" /> for example, two y-values, which means two temperatures.\n                This can't be correct, as there's only one temperature at each time.\n                \n                <bookmark mark=\"Memorize\"/>\n                So remember: <break time=\"1s\"/>A function is a mapping that assigns exactly <bookmark mark=\"aY\"/> one y-value to each\n                <bookmark mark=\"aX\"/> x-value.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "1I3": {
+      "main": {
+        "title": "\"The Function\"",
+        "func_def": "\"A function assigns\\\\\\\\ exactly one y-value\\\\\\\\ to each x-value.\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Remember: <bookmark mark=\"Memorize\"/>\n                A function is a mapping that assigns <bookmark mark=\"map1\"/> exactly one <bookmark mark=\"map2\"/> y-value to each x-value.\n                \n                <bookmark mark=\"OrangeFuncIn\"/>\n                So, the orange representation is an example of a function.\n                \n                It <bookmark mark=\"orangeX\"/> assigns to each x-value <bookmark mark=\"orangeY\"/>\n                exactly one y-value. <bookmark mark=\"MoveAlongFunc\"/>\n                \n                This means, that each x-value has a corresponding y-value assigned to it.\n                \n                <bookmark mark=\"GreenFuncIn\"/>\n                That's also the reason why the green representation is not a function.\n                It assigns to some x-values, for example, <bookmark mark=\"VertLine\" /> to the x value x equals zero, two y-values.\n                \n                So, we remember: <bookmark mark=\"TrueFct\"/>\n                A function is a mapping that assigns exactly one y-value to each x-value.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "ValueTableQuestionScene": {
+      "voiceover": "f\"\"\"\n                <prosody rate=\"110%\">\n                Imagine, <bookmark mark=\"action\"/>\n                {self.intro}. <bookmark mark=\"values\"/>\n                \n                The values are entered in this table.\n                \n                Now the question is:\n                Which function corresponds to the values in the table?\n\n                <bookmark mark=\"orange\"/>\n                Is it the orange function?\n\n                <bookmark mark=\"blue\"/>\n                Or is it the blue function?\n\n                <bookmark mark=\"green\"/>\n                Or perhaps the green function?\n\n                </prosody>\n                \"\"\""
+    },
+    "ValueTableSolutionScene": {
+      "color-1": "\"Orange\"",
+      "color-2": "\"Blue\"",
+      "color-3": "\"Green\"",
+      "first_bit": "f\"That's not correct. The {colors[self.idx_selected]} function is not the correct one.\"",
+      "first_bit_correct": "f\"That's correct, great job!\"",
+      "voiceover": "f\"\"\"\n                <prosody rate=\"110%\">\n                {first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{colors[self.idx_selected]} function.\n                To check if this is correct, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n\n                <bookmark mark=\"val1\"/>\n                The first value has {nums[self.xvals[0]]} as its x-value and {nums[self.yvals[self.correcty][0]]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {nums[self.xvals[1]]} as its x-value and {nums[self.yvals[self.correcty][1]]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {nums[self.xvals[2]]} and {nums[self.yvals[self.correcty][2]]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {nums[self.xvals[3]]} and {nums[self.yvals[self.correcty][3]]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {nums[self.xvals[4]]} and {nums[self.yvals[self.correcty][4]]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {colors[self.correcty]} function\n                is the correct one.\n                </prosody>\n                \"\"\""
+    },
+    "P_color-1": "\"The orange function\"",
+    "P_color-2": "\"The blue function\"",
+    "P_color-3": "\"The green function\"",
+    "P_question-1": "\"Which function matches the values?\"",
+    "P_intro": "\"\"\"We're going on a mountain hike.\n                \n                During this, we measure our altitude at each full hour.\"\"\"",
+    "P_title": "\"Mountain Hike\"",
+    "P_x": "\"Time\"",
+    "P_y": "\"Altitude\"",
+    "P_x_text": "\"The time\"",
+    "P_y_text": "The Altitude",
+    "P_2_intro": "\"\"\"It's rainy season.\n                \n                We want to know how much precipitation there is and measure the amount of rain daily.\"\"\"",
+    "P_2_title": "\"Rainy Weather\"",
+    "P_2_x_text": "\"The day, numbered from one to five\"",
+    "P_2_y_text": "\"The amount of rain in millimeters\"",
+    "P_2_x": "\"Day\"",
+    "P_2_y": "\"mm\"",
+    "P_3_intro": "\"\"\"It's winter time.\n                \n                We want to know how much snow is falling and measure the amount of snow daily.\"\"\"",
+    "P_3_title": "\"Snowy Weather\"",
+    "P_3_x": "\"Day\"",
+    "P_3_y": "\"cm\"",
+    "P_3_x_text": "The day, numbered from one to five",
+    "P_3_y_text": "The amount of snow in centimeters",
+    "P_4_intro": "\"\"\"It's summer time.\n                \n                We want to know how many hours of sunshine we get, so we measure the number of hours of sunshine daily.\"\"\"",
+    "P_4_title": "\"Sunshine Duration\"",
+    "P_4_x": "\"Day\"",
+    "P_4_y": "\"Hours\"",
+    "P_4_x_text": "\"The day, numbered from one to five\"",
+    "P_4_y_text": "\"The amount of hours of sunshine\"",
+    "P_5_intro": "\"\"\"It's a stormy day.\n                \n                That's great news for us, because we operate a park with wind turbines that produce renewable energy.\n                We want to know how fast the wind is blowing and measure the wind speed hourly.\"\"\"",
+    "P_5_title": "\"Wind Speed\"",
+    "P_5_labels": "[\"Hour\", \"km/h\"]",
+    "P_5_textlabels": "[\"The hour, numbered from one to six\", \"The wind speed in kilometers per hour\"]",
+    "P_6_intro": "\"\"\"It's spring.\n                \n                We want to know how the temperature changes and measure the temperature daily.\"\"\"",
+    "P_6_title": "\"Temperature Change\"",
+    "P_6_labels": "[\"Day\", \"°C\"]",
+    "P_6_textlabels": "[\"The day\", \"The temperature in degrees Celsius\"]",
+    "P_7_intro": "\"\"\"It's a humid day.\n                \n                We want to know how high the humidity is and measure it hourly.\"\"\"",
+    "P_7_title": "\"Humidity\"",
+    "P_7_labels": "[\"Hour\", \"%\"]",
+    "P_7_textlabels": "[\"The hour\", \"The humidity in percentage\"]",
+    "P_8_intro": "\"\"\"It's harvest time.\n                \n                We want to know how many apples we collect and count the number of picked apples daily.\"\"\"",
+    "P_8_title": "\"Apple Harvest\"",
+    "P_8_labels": "[\"Day\", \"Apples\"]",
+    "P_8_textlabels": "[\"The day\", \"The number of harvested apples\"]"
+  },
+  "Func_1_2": {
+    "1I1q": {
+      "main": {
+        "title": "Terms",
+        "apple-cost": "\": $2$ Euro/Piece\"",
+        "explainers": "[\"$x$: Number of apples\", [\"$\\\\rightarrow$ The term $2x$\", \"describes total cost\"]]",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Quick reminder: Do you remember what a term is?\n                A term is an expression that consists of numbers, variables, and operators.\n                For example, <bookmark mark=\"term1\"/>two times x plus three is a term,\n                <bookmark mark=\"term2\"/> or x squared minus two.<bookmark mark=\"term3\"/>\n                However, the expression x plus three equals seven is not a term, because it contains an equals sign.\n                Terms are useful because they can be used to describe relationships.\n                <bookmark mark=\"unwriteTerms\"/>\n                For instance, if we buy <bookmark mark=\"apple\"/> x apples for two euros each, we can\n                <bookmark mark=\"appleCost\"/>calculate the total cost using the term two times x.\n                This assigns a cost to each value of x, which represents the quantity of purchased apples.\n                We calculate this cost using two times x.\n                Functions work in a similar way.\n                Just like terms, functions assign a value of y to each value of x.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "1I2": {
+      "main": {
+        "title": "\"From Term to Function\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                So, now we're learning how to go from a term to a function.\n                 <bookmark mark=\"term\"/>\n                Consider the term two times x minus two.\n                \n                First, we choose a set on which we want to examine the function.\n                This set is called the domain. <bookmark mark=\"domain\"/>\n                For example, here we choose all values that lie <bookmark mark=\"xaxis\"/> on the x-axis. So, all values between minus three and three.\n                \n                <bookmark mark=\"plot\"/>\n                Now we substitute each value of x into the term to get a value for y.\n                We then plot this value on a coordinate plane.\n                \n                <bookmark mark=\"func\"/>\n                Connecting the points, we obtain a representation of a function, because the line assigns a point\n                on the x-axis to a point on the y-axis.\n\n                To get the y-value corresponding to an x-value, we can either substitute the x-value <bookmark mark=\"xTerm\"/> into the term,\n                <bookmark mark=\"xFunc\"/> or we can locate the x-value on the x-axis and then read the y-value on the y-axis.\n                \n                In this case, since the term describes a function, we call it a function term.\n                <bookmark mark=\"termToFunc\"/>\n                We also write it as f of x equals two times x minus two, so we put f of x equals in front of the term.\n                </prosody>\n                \"\"\""
+      },
+      "func-term-q-scene": {
+        "voiceover": "f\"\"\"\n                We're starting with a function term and we want to find the corresponding graph.\n                The term we want to find the graph for <bookmark mark=\"term\"/>is {self.termInWords}.\n                Now tell me: <bookmark mark=\"findGraph\"/>\n                Which of the following graphs describes the function of the given term?\n                <bookmark mark=\"blue\"/> Is it the blue graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"orange\"/> Or is it the orange graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"lila\"/> Or is it the purple graph?<break time=\"1s\"/>\n                \"\"\""
+      }
+    },
+    "1I2q": {
+      "main": {
+        "title": "\"Term \\& Function\""
+      }
+    },
+    "1I2a": {
+      "main": {
+        "title": "\"Term \\& Function\"",
+        "plug-in-texts-1": "f\"\"\"<bookmark mark=\"val{i+1}\"/> The {nums_ordinal[i+1]} value we plug in is {get_num(self.vals[i])}, and the value of the function at this point is {get_num(self.fs[self.idx_correct](self.vals[i]))} -\"\"\"",
+        "plug-in-texts-2": "f\"\"\"<bookmark mark=\"val{i+1}\"/> For the x-value {get_num(self.vals[i])}, we obtain the y-value {get_num(self.fs[self.idx_correct](self.vals[i]))}, \"\"\"",
+        "plug-in-texts-3": "f\"\"\"<bookmark mark=\"val{i+1}\"/> and for the x-value {get_num(self.vals[i])}, we finally get the y-value {get_num(self.fs[self.idx_correct](self.vals[i]))}.\"\"\"",
+        "intro-text-correct": "\"Great, that's correct!\"",
+        "intro-text-incorrect": "\"Unfortunately, that's incorrect.\""
+      },
+      "func-term-answer": {
+        "voiceover": "f\"\"\"\n                {introText}\n                We want to determine the function graph for the <bookmark mark=\"show_term\"/>term {self.termInWords}.\n                We proceed as follows:\n                <bookmark mark=\"plugIn\"/>\n                We consider points from our domain one by one.\n                Then, we plug these points into the term and obtain the corresponding function values.\n                And then, we <bookmark mark=\"addPoints\"/> plot these points in a coordinate system.\n                So, let's turn to our example:\n                {plugInTexts}\n                Now, we connect the points we've plotted\n                <bookmark mark=\"connect\"/>\n                and thus obtain the function graph.\n                \"\"\""
+      }
+    },
+    "1I2_1q": {
+      "question": {
+        "which-graph-belongs": "\"Which of these graphs describes the corresponding function?\""
+      },
+      "main": {
+        "term-in-words": "\"f of x equals negative x\""
+      }
+    },
+    "1I21q": {
+      "answer-options": "[\"The blue graph\", \"The orange graph\", \"The purple graph\"]"
+    },
+    "1I3": {
+      "main": {
+        "title": "\"Functions: Concepts\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Now, let's talk about some important concepts related to functions.\n                <bookmark mark=\"term\"/>\n                Let's start with the concept of the function term...\n                <break time=\"1s\"/>\n                As we already know, the term of a function describes how we go from an x-value to a y-value.\n                <break time=\"1s\"/>\n                That means, we plug each value of x into the term to obtain the corresponding y-value.\n                <bookmark mark=\"show_term\"/>\n                The function term is typically written as \"f of x equals\", followed by the term. For example, here it is written as f of x equals x squared minus three.\n                <break time=\"1s\"/>\n                <bookmark mark=\"graph\"/>\n                The next concept is that of the graph of a function.\n                <break time=\"1s\"/>\n                The graph of a function describes how the function looks.\n                To obtain a function's graph, we simply plot some points that we can calculate using the function term onto a coordinate plane.\n                And because we don't have the time to plot an infinite number of points, we typically choose just a few points\n                Then, we connect the points to obtain the graph. Sometimes, we need to draw many points to get an accurate graph, other times only a few points are enough.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "1I4": {
+      "main": {
+        "title": "\"Function - Concepts\"",
+        "range": "\"Range:\\\\\\\\ All values that we \\\\\\\\ obtain for $y$.\"",
+        "domain": "\"Domain:\\\\\\\\ All values that we can \\\\\\\\ plug in for $x$.\"",
+        "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Two more important concepts related to functions: The domain and the range.\n                <break time=\"1s\"/>\n                The domain <bookmark mark=\"domain_in\"/>is the set of all values that we can substitute for x.\n                So, it's the set of all x-values that we can use for the function.\n                <bookmark mark=\"show_def\"/>\n                <break time=\"1s\"/>\n                In this case, the domain is the interval which includes all values between negative three and three.\n                <break time=\"1s\"/>\n                The next concept is that<bookmark mark=\"range_in\"/> of the range.\n                <break time=\"1s\"/>\n                The range is the set of all values that we can obtain for y.\n                <bookmark mark=\"show_val\"/> \n                In this case, the range is the interval that includes all values between minus three and six.\n                <break time=\"1s\"/>\n                Because we get the lowest value at x equals zero, which is minus three.\n                And we get the highest value at x equals three, which is six. So, the range is the interval between minus three and six.\n                </prosody>\n                \"\"\""
+      }
+    },
+    "P13": {
+      "term-in-words": "\"f of x equals two times x squared plus one\""
+    },
+    "P14": {
+      "term-in-words": "\"f of x is equal to three times x squared minus x\""
+    },
+    "func-def-q-scene": "\"Domain \\& Range\"",
+    "func-def-q-scene-voiceover": "f\"\"\"\n            <prosody rate=\"110%\">\n            Alright. We're now looking at the <bookmark mark=\"Func\"/> function {self.funcSpoken}.\n            Specifically, we're examining it on the given coordinate system here.\n            Now, here's the question for you:\n            In this example, what is the <bookmark mark=\"domain\"/> domain of the function?\n            And, what is the <bookmark mark=\"range\"/> range?\n            </prosody>\n            \"\"\"",
+    "func-def-q": {
+      "domain": "\"$\\\\Rightarrow$ What's the domain?\""
+    },
+    "func-def-q-range": "\"$\\\\Rightarrow$ What's the range?\"",
+    "func-def-a": {
+      "title-incorrect": "\"Incorrect!\"",
+      "title-correct": "\"Correct!\""
+    },
+    "func-def": {
+      "title": "\"Domain \\& Range\"",
+      "domain": "\"Domain: Input x-values\"",
+      "range": "\"Range: Output y-values\"",
+      "intro-incorrect": "\"Unfortunately, that's incorrect!\"",
+      "intro-correct": "\"Great job, that's correct!\"",
+      "voiceover": "f\"\"\"\n                <prosody rate=\"110%\">\n                {intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {get_num(self.domain[0])} to {get_num(self.domain[1])}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {get_num(self.range[0])} to {get_num(self.range[1])},\n                so that is the range of the function.\n                </prosody>\n                \"\"\""
+    },
+    "P21": {
+      "q": {
+        "question-text": "\"What are the domain D and range W?\"",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-3,6]$\", \"$D=[-3,6],\\,W=[-3,6]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-3,6],\\,W=[-3,3]$\"]",
+        "func-spoken": "\"f of x equals x squared minus three\""
+      }
+    },
+    "P22": {
+      "q": {
+        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$D=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
+        "func-spoken": "f of x equals x cubed plus two"
+      }
+    },
+    "P23": {
+      "q": {
+        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \"$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
+        "func-spoken": "\"f of x equals two times x\""
+      }
+    },
+    "P24": {
+      "q": {
+        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
+        "func-spoken": "\"f of x equals four times x minus five\""
+      }
+    },
+    "P25": {
+      "q": {
+        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \"$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
+        "func-spoken": "f of x equals x squared plus x minus two"
+      }
+    },
+    "P26": {
+      "q": {
+        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$D=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
+        "func-spoken": "f of x equals three times x squared minus two times x plus one"
+      }
+    }
+  },
+  "test-key": "[“1\", \"2\", \"3\"]",
+  "Func_1_3": {
+    "1I1q": {
+      "answer-options": "[\"$-1$\", \"$0$\", \"$1$\", \"$2$\"]"
+    },
+    "I1q": {
+      "question": {
+        "at-which-x": "At which $x$ value is the zero crossing of the red function?"
+      },
+      "title": "Intersections",
+      "voiceover": "f\"\"\"\n            So, now we are learning something new about functions: intersections with the axes.\n            Remember, there are two axes: The <bookmark mark='axis_x'/> x-axis and the <bookmark mark='axis_y'/>\n            y axis.\n            <break time=\"1s\"/>\n            First, we are interested in the intersection point of a function with the <bookmark mark='axis_x_2'/> x-axis. \n            This point is also called the \"zero\", or the \"zero crossing\", because the value of y is always zero there.\n            <break time=\"1s\"/>\n            Look at the <bookmark mark=\"funcBlue\"/> blue function. The intersection point with the x-axis is at the position\n            <bookmark mark=\"x1\"/> x equals three. This means the zero crossing is three.\n            <break time=\"1s\"/>\n            Now look at the <bookmark mark=\"funcRed\"/> red function.\n            <break time=\"1s\"/>\n            What is the value of x at the zero crossing of this function?\n            \"\"\""
+    },
+    "I1a": {
+      "title": "Zero Crossing",
+      "voiceover": "f\"\"\"\n            That's not correct.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one.\n            \"\"\"",
+      "bubble": "[\"Zero crossing\", \"at $x=1$\"]"
+    },
+    "I1c": {
+      "voiceover": "f\"\"\"\n            That's correct, nice job.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one.\n            \"\"\""
+    },
+    "I2": {
+      "title": "Intersections",
+      "voiceover": "f\"\"\"\n            So, the red and blue functions were both straight lines, and\n            Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.\n            <break time=\"1s\"/>\n            <bookmark mark=\"funcPink\"/> The pink function is parallel to the x-axis and therefore has no zero crossing.\n            <break time=\"1s\"/>\n            Now, consider <bookmark mark=\"funcPurple\"/> the purple function.\n            The function is curved and has no zero crossing.\n            <break time=\"1s\"/>\n            Or look at the <bookmark mark=\"funcGreen\"/> green function.\n            It's also curved, but it has two zero crossings.\n            So, as we can see: Functions can have zero,<break time=\".5s\"/> one, <break time=\".5s\"/>or multiple zero crossings.\n            \"\"\""
+    },
+    "I3": {
+      "title": "Determining Zero Crossings",
+      "voiceover": "f\"\"\"\n            So, the question now is: <bookmark mark=\"findZeros\"/> How do I find the zero crossings of a function?\n            \n            We have already learned how to do this graphically.\n            We simply look for all the points where the graph <bookmark mark=\"zeros\"/> intersects the x-axis.\n            Those are the points where the function value is equal to zero.\n            \n            The other way is: We set the function expression equal to zero and calculate the value of x.\n            <bookmark mark=\"clear\"/>\n            For example, consider the function <bookmark mark=\"func\"/> f of x equals x minus one.\n            \n            Then we follow two steps:\n            <bookmark mark=\"findZero1\"/> First, we set the function expression equal to zero. <bookmark mark=\"equal0\"/>\n            This gives us x minus one equals zero.\n            <bookmark mark=\"findZero2\"/> Then we solve the equation for x <bookmark mark=\"findX\"/> and obtain x equals one.\n            As we can also verify graphically, <bookmark mark=\"showZero\"/> this is our zero crossing.\n            \"\"\""
+    },
+    "1I4q": {
+      "answer-options": "[\"$-2,\\\\,2$\", \"$-1,\\\\,1$\", \"$1$\", \"$2$\"]"
+    },
+    "I4q": {
+      "question": {
+        "at-which-x": "At which $x$ value is/are the zero crossing(s)?"
+      },
+      "title": "Determine Zero Crossings",
+      "voiceover": "f\"\"\"\n            Now, <bookmark mark=\"mic\"/>it's your turn.\n            We're looking at the function <bookmark mark=\"func\"/> f of x equals x squared minus one.\n            <break time=\"1s\"/><bookmark mark=\"q\"/>\n            What are the zero crossings of that function?<break time=\"1s\"/>\n            Quick Reminder: To find the zero crossings, set the function equal to zero and solve for x.\n            \"\"\""
+    },
+    "I4a": {
+      "title": "Determine Zero Crossings",
+      "voiceover": "f\"\"\"\n            Hmm, that's not correct. But how do we get the right answer?\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one.\n            \"\"\""
+    },
+    "I4b": {
+      "voiceover": "f\"\"\"\n            Great, that's correct!\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one.\n            \"\"\""
+    },
+    "I5": {
+      "title": "Intersection with y-axis"
     }
   }
 }
