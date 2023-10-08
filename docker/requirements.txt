@@ -11,6 +11,8 @@ pydantic==1.*
 opencv-python==4.7.0.72
 boto3==1.26.95
 manim-voiceover[azure,gtts,transcribe]==0.3.3
+torch==2.0.1
+torchaudio==2.0.2
 moviepy==1.0.3
 
 # install ipdb which sometimes help if bugs appear in manim-voiceover (manim-voiceover uses ipdb somewhere and if this is not installed it throws an error that the ipdb cannot be found, but if we install it, we can see a better error and better traceback what happens in manim-voiceover)
