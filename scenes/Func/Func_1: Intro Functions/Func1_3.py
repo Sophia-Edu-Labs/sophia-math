@@ -1449,20 +1449,21 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 #Concrete Questions
 #####################################
 #####################################
-TASK_Func_1_3_P_2_1_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
-    correctAnswerIndex = 2,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_1_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^2-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.intro = "So, now we practice with intersections."
+        self.funcText = self.translate("Func_1_3.P2_1q.func")
+        self.intro = self.translate("Func_1_3.P2_1q.intro")
         super().construct()
 
 class Func_1_3_P_2_1_a(yCrossingAnswerScene):
@@ -1472,13 +1473,12 @@ class Func_1_3_P_2_1_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2-1"
         self.funcZero = "f(0)=0^2-1=-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "f of zero equals zero squared minus one equals minus one"
-
-        self.intro = "Unfortunately, that's incorrect."
+        self.funcText = self.translate("Func_1_3.P2_1q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_1q.zero")
+        self.intro = self.translate("Func_1_3.P2_1a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_1a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "negative one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
                                x_labels=[-2,2], y_labels=[-3,-1,1,3])
         
@@ -1492,13 +1492,12 @@ class Func_1_3_P_2_1_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2-1"
         self.funcZero = "f(0)=0^2-1=-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "f of zero equals zero squared minus one equals minus one"
-
-        self.intro = "Unfortunately, that's incorrect."
+        self.funcText = self.translate("Func_1_3.P2_1q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_1q.zero")
+        self.intro = self.translate("Func_1_3.P2_1a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_1a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "negative one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
                                x_labels=[-2,2], y_labels=[-3,-1,1,3])
         
@@ -1512,13 +1511,12 @@ class Func_1_3_P_2_1_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2-1"
         self.funcZero = "f(0)=0^2-1=-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "f of zero equals zero squared minus one equals minus one"
-
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P2_1q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_1q.zero")
+        self.intro = self.translate("Func_1_3.P2_1c.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_1a.y_cross")
         self.isCorrect = True
         self.y_cross = -1
-        self.y_cross_text = "negative one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
                                x_labels=[-2,2], y_labels=[-3,-1,1,3])
         
@@ -1531,13 +1529,12 @@ class Func_1_3_P_2_1_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2-1"
         self.funcZero = "f(0)=0^2-1=-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "f of zero equals zero squared minus one equals minus one"
-
-        self.intro = "Unfortunately, that's incorrect."
+        self.funcText = self.translate("Func_1_3.P2_1q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_1q.zero")
+        self.intro = self.translate("Func_1_3.P2_1a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_1a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "negative one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
                                x_labels=[-2,2], y_labels=[-3,-1,1,3])
         
@@ -1545,20 +1542,21 @@ class Func_1_3_P_2_1_d(yCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_2_2_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
-    correctAnswerIndex = 0,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_2_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^2"
         self.func = lambda x: x**2
-        self.funcText = "f of x equals x squared"
-        self.intro = "Let's continue practicing with intersections."
+        self.funcText = self.translate("Func_1_3.P2_2q.func")
+        self.intro = self.translate("Func_1_3.P2_2q.intro")
         super().construct()
 
 class Func_1_3_P_2_2_a(yCrossingAnswerScene):
@@ -1568,13 +1566,12 @@ class Func_1_3_P_2_2_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2"
         self.funcZero = "f(0)=0^2=0"
         self.func = lambda x: x**2
-        self.funcText = "f of x equals x squared"
-        self.ZeroText = "f of zero equals zero squared equals zero"
-
-        self.intro = "That's correct, excellent job."
         self.isCorrect = True
         self.y_cross = 0
-        self.y_cross_text = "zero"
+        self.funcText = self.translate("Func_1_3.P2_2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_2q.zero")
+        self.intro = self.translate("Func_1_3.P2_2a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_2a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,0,1,3],
                                x_labels=[-2,2], y_labels=[-3,0,1,3])
         
@@ -1587,13 +1584,12 @@ class Func_1_3_P_2_2_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2"
         self.funcZero = "f(0)=0^2=0"
         self.func = lambda x: x**2
-        self.funcText = "f of x equals x squared"
-        self.ZeroText = "f of zero equals zero squared equals zero"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_2q.zero")
+        self.intro = self.translate("Func_1_3.P2_2b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_2a.y_cross")
         self.isCorrect = False
         self.y_cross = 0
-        self.y_cross_text = "zero"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,0,1,3],
                                x_labels=[-2,2], y_labels=[-3,0,1,3])
         
@@ -1606,13 +1602,12 @@ class Func_1_3_P_2_2_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2"
         self.funcZero = "f(0)=0^2=0"
         self.func = lambda x: x**2
-        self.funcText = "f of x equals x squared"
-        self.ZeroText = "f of zero equals zero squared equals zero"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_2q.zero")
+        self.intro = self.translate("Func_1_3.P2_2b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_2a.y_cross")
         self.isCorrect = False
         self.y_cross = 0
-        self.y_cross_text = "zero"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,0,1,3],
                                x_labels=[-2,2], y_labels=[-3,0,1,3])
         
@@ -1625,13 +1620,12 @@ class Func_1_3_P_2_2_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2"
         self.funcZero = "f(0)=0^2=0"
         self.func = lambda x: x**2
-        self.funcText = "f of x equals x squared"
-        self.ZeroText = "f of zero equals zero squared equals zero"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_2q.zero")
+        self.intro = self.translate("Func_1_3.P2_2b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_2a.y_cross")
         self.isCorrect = False
         self.y_cross = 0
-        self.y_cross_text = "zero"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,0,1,3],
                                x_labels=[-2,2], y_labels=[-3,0,1,3])
         
@@ -1642,20 +1636,21 @@ class Func_1_3_P_2_2_d(yCrossingAnswerScene):
 #####################################
 #####################################
 #####################################
-TASK_Func_1_3_P_2_3_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
-    correctAnswerIndex = 1,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_3_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x+1"
         self.func = lambda x: x+1
-        self.funcText = "f of x equals x plus one"
-        self.intro = "Let's keep going with intersections."
+        self.funcText = self.translate("Func_1_3.P2_3q.func")
+        self.intro = self.translate("Func_1_3.P2_3q.intro")
         super().construct()
 
 class Func_1_3_P_2_3_a(yCrossingAnswerScene):
@@ -1665,13 +1660,12 @@ class Func_1_3_P_2_3_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x+1"
         self.funcZero = "f(0)=0+1=1"
         self.func = lambda x: x+1
-        self.funcText = "f of x equals x plus one"
-        self.ZeroText = "f of zero equals zero plus one equals one"
-
-        self.intro = "Unfortunately, that's incorrect."
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
+        self.funcText = self.translate("Func_1_3.P2_3q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_3q.zero")
+        self.intro = self.translate("Func_1_3.P2_3a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_3a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,1,3],
                                x_labels=[-2,2], y_labels=[-3,1,3])
         
@@ -1684,13 +1678,12 @@ class Func_1_3_P_2_3_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x+1"
         self.funcZero = "f(0)=0+1=1"
         self.func = lambda x: x+1
-        self.funcText = "f of x equals x plus one"
-        self.ZeroText = "f of zero equals zero plus one equals one"
-
-        self.intro = "Correct, well done."
+        self.funcText = self.translate("Func_1_3.P2_3q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_3q.zero")
+        self.intro = self.translate("Func_1_3.P2_3b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_3a.y_cross")
         self.isCorrect = True
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,1,3],
                                x_labels=[-2,2], y_labels=[-3,1,3])
         
@@ -1703,13 +1696,12 @@ class Func_1_3_P_2_3_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x+1"
         self.funcZero = "f(0)=0+1=1"
         self.func = lambda x: x+1
-        self.funcText = "f of x equals x plus one"
-        self.ZeroText = "f of zero equals zero plus one equals one"
-
-        self.intro = "Unfortunately, that's incorrect."
+        self.funcText = self.translate("Func_1_3.P2_3q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_3q.zero")
+        self.intro = self.translate("Func_1_3.P2_3a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_3a.y_cross")
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,1,3],
                                x_labels=[-2,2], y_labels=[-3,1,3])
         
@@ -1722,13 +1714,12 @@ class Func_1_3_P_2_3_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x+1"
         self.funcZero = "f(0)=0+1=1"
         self.func = lambda x: x+1
-        self.funcText = "f of x equals x plus one"
-        self.ZeroText = "f of zero equals zero plus one equals one"
-
-        self.intro = "Unfortunately, that's incorrect."
+        self.funcText = self.translate("Func_1_3.P2_3q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_3q.zero")
+        self.intro = self.translate("Func_1_3.P2_3a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_3a.y_cross")
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,1,3],
                                x_labels=[-2,2], y_labels=[-3,1,3])
         
@@ -1736,20 +1727,21 @@ class Func_1_3_P_2_3_d(yCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_2_4_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
-    correctAnswerIndex = 3,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_4_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$", "$-1$", "$2$"],
+            correctAnswerIndex = 3,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^2+2"
         self.func = lambda x: x**2+2
-        self.funcText = "f of x equals x squared plus two"
-        self.intro = "Let's continue with intersections."
+        self.funcText = self.translate("Func_1_3.P2_4q.func")
+        self.intro = self.translate("Func_1_3.P2_4q.intro")
         super().construct()
 
 class Func_1_3_P_2_4_a(yCrossingAnswerScene):
@@ -1759,13 +1751,12 @@ class Func_1_3_P_2_4_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2"
         self.funcZero = "f(0)=0^2+2=2"
         self.func = lambda x: x**2+2
-        self.funcText = "f of x equals x squared plus two"
-        self.ZeroText = "f of zero equals zero squared plus two equals two"
-
-        self.intro = "Unfortunately, that's not correct."
         self.isCorrect = False
         self.y_cross = 2
-        self.y_cross_text = "two"
+        self.funcText = self.translate("Func_1_3.P2_4q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_4q.zero")
+        self.intro = self.translate("Func_1_3.P2_4a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_4a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,2,3],
                                x_labels=[-2,2], y_labels=[-3,2,3])
         
@@ -1778,13 +1769,12 @@ class Func_1_3_P_2_4_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2"
         self.funcZero = "f(0)=0^2+2=2"
         self.func = lambda x: x**2+2
-        self.funcText = "f of x equals x squared plus two"
-        self.ZeroText = "f of zero equals zero squared plus two equals two"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_4q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_4q.zero")
+        self.intro = self.translate("Func_1_3.P2_4a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_4a.y_cross")
         self.isCorrect = False
         self.y_cross = 2
-        self.y_cross_text = "two"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,2,3],
                                x_labels=[-2,2], y_labels=[-3,2,3])
         
@@ -1797,13 +1787,12 @@ class Func_1_3_P_2_4_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2"
         self.funcZero = "f(0)=0^2+2=2"
         self.func = lambda x: x**2+2
-        self.funcText = "f of x equals x squared plus two"
-        self.ZeroText = "f of zero equals zero squared plus two equals two"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_4q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_4q.zero")
+        self.intro = self.translate("Func_1_3.P2_4a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_4a.y_cross")
         self.isCorrect = False
         self.y_cross = 2
-        self.y_cross_text = "two"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,2,3],
                                x_labels=[-2,2], y_labels=[-3,2,3])
         
@@ -1816,13 +1805,12 @@ class Func_1_3_P_2_4_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2"
         self.funcZero = "f(0)=0^2+2=2"
         self.func = lambda x: x**2+2
-        self.funcText = "f of x equals x squared plus two"
-        self.ZeroText = "f of zero equals zero squared plus two equals two"
-
-        self.intro = "Very good, that's correct."
+        self.funcText = self.translate("Func_1_3.P2_4q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_4q.zero")
+        self.intro = self.translate("Func_1_3.P2_4d.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_4a.y_cross")
         self.isCorrect = True
         self.y_cross = 2
-        self.y_cross_text = "two"
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,2,3],
                                x_labels=[-2,2], y_labels=[-3,2,3])
         
@@ -1831,20 +1819,21 @@ class Func_1_3_P_2_4_d(yCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_2_5_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$1$", "$-2$", "$3$"],
-    correctAnswerIndex = 2,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_5_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$", "$-2$", "$3$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^3+x^2-2"
         self.func = lambda x: x**3 + x**2 - 2
-        self.funcText = "f of x equals x cubed plus x squared minus two"
-        self.intro = "Let's move on to more complex intersections."
+        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.intro = self.translate("Func_1_3.P2_5q.intro")
         super().construct()
 
 class Func_1_3_P_2_5_a(yCrossingAnswerScene):
@@ -1854,13 +1843,12 @@ class Func_1_3_P_2_5_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^3+x^2-2"
         self.funcZero = "f(0)=0^3+0^2-2=-2"
         self.func = lambda x: x**3 + x**2 - 2
-        self.funcText = "f of x equals x cubed plus x squared minus two"
-        self.ZeroText = "f of zero equals zero cubed plus zero squared minus two equals minus two"
-
-        self.intro = "Unfortunately, that's not correct."
         self.isCorrect = False
         self.y_cross = -2
-        self.y_cross_text = "minus two"
+        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_5q.zero")
+        self.intro = self.translate("Func_1_3.P2_5a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_5a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-10, 10, 2], x_ticks=[-2,2], y_ticks=[-6,-2,2,6],
                                x_labels=[-2,2], y_labels=[-6,-2,2,6])
         
@@ -1873,13 +1861,12 @@ class Func_1_3_P_2_5_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^3+x^2-2"
         self.funcZero = "f(0)=0^3+0^2-2=-2"
         self.func = lambda x: x**3 + x**2 - 2
-        self.funcText = "f of x equals x cubed plus x squared minus two"
-        self.ZeroText = "f of zero equals zero cubed plus zero squared minus two equals minus two"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_5q.zero")
+        self.intro = self.translate("Func_1_3.P2_5a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_5a.y_cross")
         self.isCorrect = False
         self.y_cross = -2
-        self.y_cross_text = "minus two"
         self.cords = self.add_cords([-2, 2, 1], [-10, 10, 2], x_ticks=[-2,2], y_ticks=[-6,-2,2,6],
                                x_labels=[-2,2], y_labels=[-6,-2,2,6])
         
@@ -1891,14 +1878,12 @@ class Func_1_3_P_2_5_c(yCrossingAnswerScene):
 
         self.funcTex = "f(x)=x^3+x^2-2"
         self.funcZero = "f(0)=0^3+0^2-2=-2"
-        self.func = lambda x: x**3 + x**2 - 2
-        self.funcText = "f of x equals x cubed plus x squared minus two"
-        self.ZeroText = "f of zero equals zero cubed plus zero squared minus two equals minus two"
-
-        self.intro = "That's correct, excellent!"
+        self.func = lambda x: x**3 + x**2 - 2        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_5q.zero")
+        self.intro = self.translate("Func_1_3.P2_5c.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_5a.y_cross")
         self.isCorrect = True
         self.y_cross = -2
-        self.y_cross_text = "minus two"
         self.cords = self.add_cords([-2, 2, 1], [-10, 10, 2], x_ticks=[-2,2], y_ticks=[-6,-2,2,6],
                                x_labels=[-2,2], y_labels=[-6,-2,2,6])
         
@@ -1911,13 +1896,12 @@ class Func_1_3_P_2_5_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^3+x^2-2"
         self.funcZero = "f(0)=0^3+0^2-2=-2"
         self.func = lambda x: x**3 + x**2 - 2
-        self.funcText = "f of x equals x cubed plus x squared minus two"
-        self.ZeroText = "f of zero equals zero cubed plus zero squared minus two equals minus two"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_5q.zero")
+        self.intro = self.translate("Func_1_3.P2_5a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_5a.y_cross")
         self.isCorrect = False
         self.y_cross = -2
-        self.y_cross_text = "minus two"
         self.cords = self.add_cords([-2, 2, 1], [-10, 10, 2], x_ticks=[-2,2], y_ticks=[-6,-2,2,6],
                                x_labels=[-2,2], y_labels=[-6,-2,2,6])
         
@@ -1925,20 +1909,21 @@ class Func_1_3_P_2_5_d(yCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_2_6_q = SophiaTaskDefinition(
-    answerOptions = ["$-1$", "$1$", "$0$", "$2$"],
-    correctAnswerIndex = 0,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_6_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-1$", "$1$", "$0$", "$2$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^4-1"
         self.func = lambda x: x**4 - 1
-        self.funcText = "f of x equals x to the power of four minus one"
-        self.intro = "Let's consider a more challenging function."
+        self.funcText = self.translate("Func_1_3.P2_6q.func")
+        self.intro = self.translate("Func_1_3.P2_6q.intro")
         super().construct()
 
 class Func_1_3_P_2_6_a(yCrossingAnswerScene):
@@ -1948,13 +1933,12 @@ class Func_1_3_P_2_6_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^4-1"
         self.funcZero = "f(0)=0^4-1=-1"
         self.func = lambda x: x**4 - 1
-        self.funcText = "f of x equals x to the power of four minus one"
-        self.ZeroText = "f of zero equals zero to the power of four minus one equals minus one"
-
-        self.intro = "Absolutely correct, well done!"
         self.isCorrect = True
         self.y_cross = -1
-        self.y_cross_text = "minus one"
+        self.funcText = self.translate("Func_1_3.P2_6q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_6q.zero")
+        self.intro = self.translate("Func_1_3.P2_6a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_6a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-16, 16,4], x_ticks=[-2,2], y_ticks=[-12,-4,4,12],
                                x_labels=[-2,2], y_labels=[-12,-4,4,12])
         
@@ -1967,13 +1951,12 @@ class Func_1_3_P_2_6_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^4-1"
         self.funcZero = "f(0)=0^4-1=-1"
         self.func = lambda x: x**4 - 1
-        self.funcText = "f of x equals x to the power of four minus one"
-        self.ZeroText = "f of zero equals zero to the power of four minus one equals minus one"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_6q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_6q.zero")
+        self.intro = self.translate("Func_1_3.P2_6b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_6a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "minus one"
         self.cords = self.add_cords([-2, 2, 1], [-16, 16,4], x_ticks=[-2,2], y_ticks=[-12,-4,4,12],
                                x_labels=[-2,2], y_labels=[-12,-4,4,12])
         
@@ -1986,13 +1969,12 @@ class Func_1_3_P_2_6_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^4-1"
         self.funcZero = "f(0)=0^4-1=-1"
         self.func = lambda x: x**4 - 1
-        self.funcText = "f of x equals x to the power of four minus one"
-        self.ZeroText = "f of zero equals zero to the power of four minus one equals minus one"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_6q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_6q.zero")
+        self.intro = self.translate("Func_1_3.P2_6b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_6a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "minus one"
         self.cords = self.add_cords([-2, 2, 1], [-16, 16,4], x_ticks=[-2,2], y_ticks=[-12,-4,4,12],
                                x_labels=[-2,2], y_labels=[-12,-4,4,12])
         
@@ -2005,13 +1987,12 @@ class Func_1_3_P_2_6_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^4-1"
         self.funcZero = "f(0)=0^4-1=-1"
         self.func = lambda x: x**4 - 1
-        self.funcText = "f of x equals x to the power of four minus one"
-        self.ZeroText = "f of zero equals zero to the power of four minus one equals minus one"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_6q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_6q.zero")
+        self.intro = self.translate("Func_1_3.P2_6b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_6a.y_cross")
         self.isCorrect = False
         self.y_cross = -1
-        self.y_cross_text = "minus one"
         self.cords = self.add_cords([-2, 2, 1], [-16, 16,4], x_ticks=[-2,2], y_ticks=[-12,-4,4,12],
                                x_labels=[-2,2], y_labels=[-12,-4,4,12])
         
@@ -2019,20 +2000,21 @@ class Func_1_3_P_2_6_d(yCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_2_7_q = SophiaTaskDefinition(
-    answerOptions = ["$-1$", "$1$", "$2$", "$3$"],
-    correctAnswerIndex = 1,
-    questionText = "Where does the function intersect the $y$-axis?"   
-)
-
 class Func_1_3_P_2_7_q(yCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-1$", "$1$", "$2$", "$3$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_3.P2q.question")
+        )
     
     def construct(self):
 
         self.funcTex = "f(x)=x^2+2x+1"
         self.func = lambda x: x**2 + 2*x + 1
-        self.funcText = "f of x equals x squared plus two x plus one"
-        self.intro = "Here's another complex function."
+        self.funcText = self.translate("Func_1_3.P2_7q.func")
+        self.intro = self.translate("Func_1_3.P2_7q.intro")
         super().construct()
 
 class Func_1_3_P_2_7_a(yCrossingAnswerScene):
@@ -2042,13 +2024,12 @@ class Func_1_3_P_2_7_a(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2x+1"
         self.funcZero = "f(0)=0^2+2*0+1=1"
         self.func = lambda x: x**2 + 2*x + 1
-        self.funcText = "f of x equals x squared plus two x plus one"
-        self.ZeroText = "f of zero equals zero squared plus two times zero plus one equals one"
-
-        self.intro = "Unfortunately, that's not correct."
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
+        self.funcText = self.translate("Func_1_3.P2_7q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_7q.zero")
+        self.intro = self.translate("Func_1_3.P2_7a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_7a.y_cross")
         self.cords = self.add_cords([-2, 2, 1], [-4, 8, 2], x_ticks=[-2,2], y_ticks=[-2,2,6],
                                x_labels=[-2,2], y_labels=[-2,2,6])
         
@@ -2061,13 +2042,12 @@ class Func_1_3_P_2_7_b(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2x+1"
         self.funcZero = "f(0)=0^2+2*0+1=1"
         self.func = lambda x: x**2 + 2*x + 1
-        self.funcText = "f of x equals x squared plus two x plus one"
-        self.ZeroText = "f of zero equals zero squared plus two times zero plus one equals one"
-
-        self.intro = "Exactly, that's correct."
+        self.funcText = self.translate("Func_1_3.P2_7q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_7q.zero")
+        self.intro = self.translate("Func_1_3.P2_7b.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_7a.y_cross")
         self.isCorrect = True
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-4, 8, 2], x_ticks=[-2,2], y_ticks=[-2,2,6],
                                x_labels=[-2,2], y_labels=[-2,2,6])
         
@@ -2080,13 +2060,12 @@ class Func_1_3_P_2_7_c(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2x+1"
         self.funcZero = "f(0)=0^2+2*0+1=1"
         self.func = lambda x: x**2 + 2*x + 1
-        self.funcText = "f of x equals x squared plus two x plus one"
-        self.ZeroText = "f of zero equals zero squared plus two times zero plus one equals one"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_7q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_7q.zero")
+        self.intro = self.translate("Func_1_3.P2_7a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_7a.y_cross")
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-4, 8, 2], x_ticks=[-2,2], y_ticks=[-2,2,6],
                                x_labels=[-2,2], y_labels=[-2,2,6])
         
@@ -2099,13 +2078,12 @@ class Func_1_3_P_2_7_d(yCrossingAnswerScene):
         self.funcTex = "f(x)=x^2+2x+1"
         self.funcZero = "f(0)=0^2+2*0+1=1"
         self.func = lambda x: x**2 + 2*x + 1
-        self.funcText = "f of x equals x squared plus two x plus one"
-        self.ZeroText = "f of zero equals zero squared plus two times zero plus one equals one"
-
-        self.intro = "Unfortunately, that's not correct."
+        self.funcText = self.translate("Func_1_3.P2_7q.func")
+        self.ZeroText = self.translate("Func_1_3.P2_7q.zero")
+        self.intro = self.translate("Func_1_3.P2_7a.intro")
+        self.y_cross_text = self.translate("Func_1_3.P2_7a.y_cross")
         self.isCorrect = False
         self.y_cross = 1
-        self.y_cross_text = "one"
         self.cords = self.add_cords([-2, 2, 1], [-4, 8, 2], x_ticks=[-2,2], y_ticks=[-2,2,6],
                                x_labels=[-2,2], y_labels=[-2,2,6])
         

@@ -1471,22 +1471,3 @@ class Func_1_2_P_2_6_d(FuncDefinitionsAnswerScene):
 #     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_c),
 #     PagePrototypeVideo.from_scene(Func_1_2_P_2_6_d),
 # ]
-
-
-
-class Func_1_2_P_2_6_e(FuncDefinitionsAnswerScene):
-
-    def construct(self):
-        self.funcTex = "f(x)=3x^2-2x+1"
-        self.f = lambda x: 3*x**2 - 2*x + 1
-        self.funcSpoken = "f of x equals three times x squared minus two times x plus one"
-        self.cords = self.add_cords([-2, 2, 1], [-2, 10, 2], x_ticks=[-2, 0, 2], y_ticks=[-2, 0, 10],
-                               x_labels=[-2, 0, 2], y_labels=[-2, 0, 10])
-        self.isTrue = False
-        self.domain = [-2,3]
-        self.range = [-3,3]
-
-        translation = self.translate("test-key")
-        print(type(translation), translation)
-
-        super().construct()

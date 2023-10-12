@@ -338,7 +338,8 @@
       "func": "f of x equals x squared minus four",
       "intro": "Let's try again with a different function.",
       "zero": "x squared minus four equals zero",
-      "zeros": "x equals minus two and x equals two"
+      "zeros": "x equals minus two and x equals two",
+      "question": "Where does the function intersect the $y$-axis?"
     },
     "P2a": {
       "intro": "Unfortunately, that's not quite right..."
@@ -415,6 +416,242 @@
       "plugInZero": "$\\\\Rightarrow$ Substitute $x=0$",
       "title": "Intersection with the y-Axis",
       "intro": "                {self.intro}\n                So, we are considering the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n                To obtain the intersection point with the y axis <bookmark mark=\"setToZero1\"/>,\n                we simply plug x equals 0 into the function term.\n                Then we get <bookmark mark=\"setToZero2\"/> {self.ZeroText}. <bookmark mark=\"noteChange\"/>\n                And then we already have the y-value of the intersection point with the y-axis.\n                \n                Now, let's verify this using <bookmark mark=\"clear\"/> the graph.\n                Here's the graph of the function. <bookmark mark=\"plot\"/>\n                We can see that the intersection point with the y-axis <bookmark mark=\"ycirc\"/>\n                lies at  y equal to {self.y_cross_text}."
+    },
+    "P2_1q": {
+      "func": "f of x equals x squared minus one",
+      "intro": "So, now we practice with intersections.",
+      "zero": "f of zero equals zero squared minus one equals minus one"
+    },
+    "P2_1a": {
+      "intro": "Unfortunately, that's incorrect.",
+      "y_cross": "negative one"
+    },
+    "P2_1c": {
+      "intro": "That's correct. Well done."
+    },
+    "P2_2q": {
+      "func": "f of x equals x squared",
+      "intro": "Let's continue practicing with intersections.",
+      "zero": "f of zero equals zero squared equals zero"
+    },
+    "P2_3q": {
+      "func": "f of x equals x plus one",
+      "intro": "Let's keep going with intersections.",
+      "zero": "f of zero equals zero plus one equals one"
+    },
+    "P2_4q": {
+      "func": "f of x equals x squared plus two",
+      "intro": "Let's continue with intersections.",
+      "zero": "f of zero equals zero squared plus two equals two"
+    },
+    "P2_5q": {
+      "func": "f of x equals x cubed plus x squared minus two",
+      "intro": "Let's move on to more complex intersections.",
+      "zero": "f of zero equals zero cubed plus zero squared minus two equals minus two"
+    },
+    "P2_6q": {
+      "func": "f of x equals x to the power of four minus one",
+      "intro": "Let's consider a more challenging function.",
+      "zero": "f of zero equals zero to the power of four minus one equals minus one"
+    },
+    "P2_7q": {
+      "func": "f of x equals x squared plus two x plus one",
+      "intro": "Here's another complex function.",
+      "zero": "f of zero equals zero squared plus two times zero plus one equals one"
+    },
+    "P2_7a": {
+      "intro": "Unfortunately, that's not correct.",
+      "y_cross": "one"
+    },
+    "P2_7b": {
+      "intro": "Exactly, that's correct."
+    },
+    "P2_2a": {
+      "intro": "That's correct, excellent job.",
+      "y_cross": "zero"
+    },
+    "P2_2b": {
+      "intro": "Unfortunately, that's not correct."
+    },
+    "P2_3a": {
+      "intro": "Unfortunately, that's incorrect.",
+      "y_cross": "one"
+    },
+    "P2_3b": {
+      "intro": "Correct, well done."
+    },
+    "P2_4a": {
+      "intro": "Unfortunately, that's not correct.",
+      "y_cross": "two"
+    },
+    "P2_4d": {
+      "intro": "Very good, that's correct."
+    },
+    "P2_5a": {
+      "intro": "Unfortunately, that's not correct.",
+      "y_cross": "negative two"
+    },
+    "P2_5c": {
+      "intro": "That's correct. Excellent job."
+    },
+    "P2_6a": {
+      "intro": "Absolutely correct, well done!",
+      "y_cross": "minus one"
+    },
+    "P2_6b": {
+      "intro": "That's not correct."
+    }
+  },
+  "Func_2_1": {
+    "I1": {
+      "q": {
+        "question-text": "Which function describes the fill level over time?",
+        "answer-options": "[\"The red function\", \"The blue function\", \"The green function\"]"
+      },
+      "title": "Linear Functions",
+      "voiceover": "                We're now going to learn about a specific type of functions: - Linear Functions.\n                <break time=\"1s\"/>\n                Let's start with an example. Suppose we want to enjoy <bookmark mark=\"lemonade\"/> a cold sweet drink.\n                We go to the drink dispenser and pour at a steady rate.\n                This means that the glass is filled at a constant speed. <bookmark mark=\"cords\"/>\n                <break time=\"1s\"/>\n                If we plot time on  <bookmark mark=\"xaxis\"/>the x-axis and the fill amount on <bookmark mark=\"yaxis\"/>the y-axis ,\n                then we get a function that assigns the fill amount to each point in time.\n                <break time=\"1s\"/>\n                What does this function look like if the filling speed is constant?\n                <break time=\"1s\"/>\n                Does it look like the red function? <bookmark mark=\"red\"/>\n                <break time=\"1s\"/>\n                Or does it look like the blue function? <bookmark mark=\"blue\"/>\n                <break time=\"1s\"/>\n                Or does it look like the green function? <bookmark mark=\"green\"/>"
+    },
+    "I1a": {
+      "voiceover": "\n                That's not correct - It's actually the <bookmark mark=\"green\"/> green function.\n                But why does it have to be the green function?\n                Let's consider the time period between <bookmark mark=\"sec12\"/> second twelve and second <bookmark mark=\"sec18\"/> eighteen.\n                The <bookmark mark=\"dashed\"/> dashed lines show us how much is in the glass at each of the two time points.\n                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark=\"triangle\"/>\n                upwards to create a <bookmark mark=\"slopeTriangle\"/> so-called slope triangle.\n                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,\n                horizontal side indicates how much time has elapsed.\n                Since we are pouring the drink uniformly, the filling rate is constant.\n                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,\n                then the height, which is the fill amount, must also be the same. <bookmark mark=\"moreTriangles\"/>\n                As we can see, this works for the green function.\n\n                However, if we look at <bookmark mark=\"moreFunctions\"/> the red and blue functions, we see that this does not work.\n                If we draw a slope triangle <bookmark mark=\"redTriangle\"/> on the red function and move it, we can see that the slope is not constant.\n                This means that the filling rate is not constant.\n                The same applies to the blue function. <bookmark mark=\"blueTriangle\"/>, if we construct a slope triangle there,\n                and then move it, we can see that the slope is not constant there either.\n                \n                <bookmark mark=\"end\"/> This means: Only the green function can be the correct solution."
+    },
+    "I1b": {
+      "voiceover": "That's not correct - It's actually the <bookmark mark=\"green\"/> green function.\n                But why does it have to be the green function?\n                Let's consider the time period between <bookmark mark=\"sec12\"/> second twelve and second <bookmark mark=\"sec18\"/> eighteen.\n                The <bookmark mark=\"dashed\"/> dashed lines show us how much is in the glass at each of the two time points.\n                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark=\"triangle\"/>\n                upwards to create a <bookmark mark=\"slopeTriangle\"/> so-called slope triangle.\n                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,\n                horizontal side indicates how much time has elapsed.\n                Since we are pouring the drink uniformly, the filling rate is constant.\n                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,\n                then the height, which is the fill amount, must also be the same. <bookmark mark=\"moreTriangles\"/>\n                As we can see, this works for the green function.\n\n                However, if we look at <bookmark mark=\"moreFunctions\"/> the red and blue functions, we see that this does not work.\n                If we draw a slope triangle <bookmark mark=\"redTriangle\"/> on the red function and move it, we can see that the slope is not constant.\n                This means that the filling rate is not constant.\n                The same applies to the blue function. <bookmark mark=\"blueTriangle\"/>, if we construct a slope triangle there,\n                and then move it, we can see that the slope is not constant there either.\n                \n                <bookmark mark=\"end\"/> This means: Only the green function can be the correct solution.\n                "
+    },
+    "I1c": {
+      "voiceover": "\n                That's correct, well done! - It's the <bookmark mark=\"green\"/> green function.\n                But why does it have to be the green function?\n                Let's consider the time period between <bookmark mark=\"sec12\"/> second twelve and second <bookmark mark=\"sec18\"/> eighteen.\n                The <bookmark mark=\"dashed\"/> dashed lines show us how much is in the glass at each of the two time points.\n                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark=\"triangle\"/>\n                upwards to create a <bookmark mark=\"slopeTriangle\"/> so-called slope triangle.\n                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,\n                horizontal side indicates how much time has elapsed.\n                Since we are pouring the drink uniformly, the filling rate is constant.\n                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,\n                then the height, which is the fill amount, must also be the same. <bookmark mark=\"moreTriangles\"/>\n                As we can see, this works for the green function.\n\n                However, if we look at <bookmark mark=\"moreFunctions\"/> the red and blue functions, we see that this does not work.\n                If we draw a slope triangle <bookmark mark=\"redTriangle\"/> on the red function and move it, we can see that the slope is not constant.\n                This means that the filling rate is not constant.\n                The same applies to the blue function. <bookmark mark=\"blueTriangle\"/>, if we construct a slope triangle there,\n                and then move it, we can see that the slope is not constant there either.\n                \n                <bookmark mark=\"end\"/> This means: Only the green function can be the correct solution."
+    },
+    "I2": {
+      "title": "Linear Functions",
+      "e1": "1. The slope is constant",
+      "e2": "2. The graph is a straight line",
+      "e3": "3. The function has the form\\\\\\\\$f(x)=ax+b$",
+      "voiceover": "Let's formally define: What is a linear function?\n                <break time=\"0.5s\"/>\n                There are three ways to explain it.\n                <bookmark mark=\"constant\"/> First: A linear function is a function with a constant slope.\n                We just discussed that. That means, and this is the second way to explain linear \n                functions, <bookmark mark=\"straight\"/> the graph is a straight line.\n                <break time=\"0.5s\"/>\n                Both of these conditions are met when the function has the form <bookmark mark=\"term\"/>\n                f of x equals \"a\" times \"x\" plus \"b\", where we can plug in any number for \"a\" and \"b\". That's the third\n                way to define linear functions."
+    },
+    "I3": {
+      "q": {
+        "answer-options": "[\"The green function\", \"The purple function\", \"The orange function\"]",
+        "question-text": "Which of the three is a linear function?"
+      },
+      "title": "Linear Functions",
+      "voiceover": "Ok, so the red function was a linear function.\nIt has a constant slope, so its graph is a straight line.\n<break time=\"1s\"/>\n<bookmark mark=\"blue\"/> the blue function is also a linear function.\nBecause it also has a constant slope, and its graph is also a straight line.\n<break time=\"1.5s\"/>\nNow, consider <bookmark mark=\"green\"/> the green, <bookmark mark=\"purple\"/>the purple,\nand <bookmark mark=\"orange\"/>the orange functions.<break time=\"1.5s\"/>\nOnly one of these three functions is a linear function.\n<break time=\"0.5s\"/>\nWhich one is it?"
+    },
+    "I3c": {
+      "voiceover": "That's not right: Only <bookmark mark=\"green\"/> the green function is a linear function.\nIt has a constant slope, so its graph is a straight line.\n<break time=\"1s\"/>\nThe <bookmark mark=\"purple\"/> purple and <bookmark mark=\"orange\"/> orange functions\nare not linear functions because their graphs are not straight lines, and their slopes\nare not constant."
+    },
+    "I3a": {
+      "voiceover": "That's correct: Only <bookmark mark=\"green\"/> the green function is a linear function.\nIt has a constant slope, so its graph is a straight line.\n<break time=\"1s\"/>\nThe <bookmark mark=\"purple\"/> purple and <bookmark mark=\"orange\"/> orange functions\nare not linear functions because their graphs are not straight lines, and their slopes\nare not constant."
+    },
+    "I4": {
+      "q": {
+        "question-text": "Which of the functions is linear?"
+      },
+      "title": "Linear Functions"
+    },
+    "I4q": {
+      "voiceover": "So, now we have seen what a linear function is by looking at the functions graph.\n<break time=\"0.5s\"/>\nBut we can <bookmark mark=\"unplot\"/>also recognize whether a function is linear based on its terms.\nNow I will show you three functions. <bookmark mark=\"note2\"/> Which of them is linear?\n<break time=\"1s\"/>\nIs it the <bookmark mark=\"f\"/> function f of x equals two x squared minus four?\n<break time=\"1s\"/>\nOr the <bookmark mark=\"g\"/> function g of x equals two x minus four?\n<break time=\"1s\"/>\nOr the <bookmark mark=\"h\"/> function h of x equals two over x minus four?"
+    },
+    "I4a": {
+      "voiceover": "                That's not right.\n                <break time=\"0.5s\"/> But which one is linear?\n                Let's go through the functions one by one:\n                <break time=\"0.5s\"/>\n                <bookmark mark=\"f\"/> The function f of x equals two x squared minus four is <bookmark mark=\"not1\"/> not linear\n                because the exponent of x is not equal to one.\n                Specifically, functions that contain x squared, x cubed, or similar terms are not linear!\n                <break time=\"0.5s\"/>\n                <bookmark mark=\"g\"/> The function g of x equals two x minus four is <bookmark mark=\"yes\"/> linear!\n                It only contains x and simple numbers. It has the structure \"a\" times x plus b, and in this case, a is two and b is minus four.\n                <break time=\"0.5s\"/>\n                <bookmark mark=\"h\"/> The function h of x equals two over x minus four is <bookmark mark=\"not2\"/> not linear\n                because it involves dividing by x. If there's division by x, the function is not linear!"
+    },
+    "I4b": {
+      "voiceover": "That's right, well done.\n<break time=\"0.5s\"/> But which one is linear?\nLet's go through the functions one by one:\n<break time=\"0.5s\"/>\n<bookmark mark=\"f\"/> The function f of x equals two x squared minus four is <bookmark mark=\"not1\"/> not linear\nbecause the exponent of x is not equal to one.\nSpecifically, functions that contain x squared, x cubed, or similar terms are not linear!\n<break time=\"0.5s\"/>\n<bookmark mark=\"g\"/> The function g of x equals two x minus four is <bookmark mark=\"yes\"/> linear!\nIt only contains x and simple numbers. It has the structure \"a\" times x plus b, and in this case, a is two and b is minus four.\n<break time=\"0.5s\"/>\n<bookmark mark=\"h\"/> The function h of x equals two over x minus four is <bookmark mark=\"not2\"/> not linear\nbecause it involves dividing by x. If there's division by x, the function is not linear!"
+    },
+    "I5": {
+      "q": {
+        "answer-options": "[\"The line moves upwards\", \"The line moves downwards\", \"The line becomes flatter\", \"The line becomes steeper\"]",
+        "question-text": "What happens when we choose $a>1$?"
+      },
+      "title": "Focus on Function Term"
+    },
+    "I5q": {
+      "voiceover": "So, let's take a closer look at the function term of linear functions.\nThe <bookmark mark=\"f\"/> general term for linear functions <bookmark mark=\"tf\"/> \nis f of <bookmark mark=\"tx\"/>x equals <bookmark mark=\"tax\"/>\"a\" times x\nplus<bookmark mark=\"tb\"/> b.\n<break time=\"0.5s\"/>\nWhat role does the <bookmark mark=\"a\"/>value of \"a\" play, and what role does the <bookmark mark=\"b\"/>value of b play?\nTo find out, let's consider a specific example,\n<bookmark mark=\"example\"/>namely the <bookmark mark=\"ef\"/>function f <bookmark mark=\"ex1\"/>of x <bookmark mark=\"ex2\"/>equals x,\nwhich means \"a\" is equal to 1 and b is 0. The function <bookmark mark=\"plot\"/>looks like this.\n<break time=\"0.5s\"/>\nNow, what happens when we change the value of \"a\"?<bookmark mark=\"qmark\"/>\n<break time=\"0.5s\"/>\nSpecifically, what happens when we substitute a value greater than 1 for \"a\"?"
+    },
+    "I5a": {
+      "voiceover": "That's not right.\nWe can write the function f of x equals x as <bookmark mark=\"ftransform\"/> f of x equals one times x.\nLet's consider an example, at the point <bookmark mark=\"x\"/>x equals one.\nThe value of the function f of x is also <bookmark mark=\"fx\"/>equal to one.\nIf we increase the value of \"a\", let's say to two, <bookmark mark=\"increaseA\"/>the value\nof f of x also increases, and the function becomes steeper.\nThis is because we multiply every value of the function by a number greater than one, so they all increase."
+    },
+    "I5d": {
+      "voiceover": "That's right, well done!\nWe can write the function f of x equals x as <bookmark mark=\"ftransform\"/> f of x equals one times x.\nLet's consider an example, at the point <bookmark mark=\"x\"/>x equals one.\nThe value of the function f of x is also <bookmark mark=\"fx\"/>equal to one.\nIf we increase the value of \"a\", let's say to two, <bookmark mark=\"increaseA\"/>the value\nof f of x also increases, and the function becomes steeper.\nThis is because we multiply every value of the function by a number greater than one, so they all increase."
+    },
+    "I6": {
+      "q": {
+        "question-text": "What happens when we choose $b>0$?",
+        "answer-options": "[\"The line is shifted upwards\", \"The line is shifted downwards\", \"The line becomes flatter\", \"The line becomes steeper\"]"
+      },
+      "title": "Focus on Function Term",
+      "a_high": "$a>>1\\\\Rightarrow$ steeper line",
+      "a_low": "$a<<1\\\\Rightarrow$ flatter line"
+    },
+    "I6q": {
+      "voiceover": "                Let's take another look at the function term of linear functions.\n                We're again looking at the general form of linear <bookmark mark=\"f\"/> functions,\n                which is <bookmark mark=\"tf\"/>f of<bookmark mark=\"tx\"/> x equals <bookmark mark=\"tax\"/>\"a\" times x\n                plus <bookmark mark=\"tb\"/> b. <break time=\"0.5s\"/>\n                As we have seen earlier, the value <bookmark mark=\"a\"/> of \"a\" determines the slope of the line.\n                <break time=\"0.5s\"/><bookmark mark=\"a_high\"/>\n                High values of \"a\" mean that the line becomes steeper.\n                <break time=\"0.5s\"/><bookmark mark=\"a_low\"/>\n                On the other hand, low values of \"a\" mean that the line becomes flatter.\n                <break time=\"0.5s\"/>\n                Now, the only question left is: What role does the value <bookmark mark=\"b\"/> of b play?\n                To find out, let's look at our example again,\n                that is <bookmark mark=\"example\"/> the function <bookmark mark=\"ef\"/> f of <bookmark mark=\"ex1\"/> x\n                equals <bookmark mark=\"ex2\"/>one time x plus <bookmark mark=\"plus_b_final\"/> b.\n                So, a is one again, and the function looks like <bookmark mark=\"plot\"/>\n                this.\n                <break time=\"0.5s\"/>\n                Now, what happens if we <bookmark mark=\"b_change\"/>change the value of b?\n                <break time=\"0.5s\"/>\n                For example: What happens when we set a value for b that is greater than zero?"
+    },
+    "I6a": {
+      "voiceover": "That's correct, great job!\n<break time=\"0.5s\"/>\nWe can write the function f of x equals x as <bookmark mark=\"ftransform\"/> f of x equals x plus zero.\nNow let's consider the point <bookmark mark=\"x\"/> x equals zero as an example.\nThe value of the function f of x is also <bookmark mark=\"fx\"/> equals zero at this point.\nIf we increase b, let's say to two, <bookmark mark=\"increaseB\"/>\nthe value of f of x will increase everywhere, and the function will be shifted upwards.\n<break time=\"1.5s\"/>\nAnd it's similar in reverse: If we decrease a <bookmark mark=\"decreaseB\"/>, the function will be shifted downwards.\nHere you can see what happens when we set a to minus two."
+    },
+    "I6b": {
+      "voiceover": "That's not right, unfortunately.\n<break time=\"0.5s\"/>\nWe can write the function f of x equals x as <bookmark mark=\"ftransform\"/> f of x equals x plus zero.\nNow let's consider the point <bookmark mark=\"x\"/> x equals zero as an example.\nThe value of the function f of x is also <bookmark mark=\"fx\"/> equals zero at this point.\nIf we increase b, let's say to two, <bookmark mark=\"increaseB\"/>\nthe value of f of x will increase everywhere, and the function will be shifted upwards.\n<break time=\"1.5s\"/>\nAnd it's similar in reverse: If we decrease a <bookmark mark=\"decreaseB\"/>, the function will be shifted downwards.\nHere you can see what happens when we set a to minus two."
+    },
+    "I7": {
+      "title": "Note: Function Term",
+      "note_1": "$a$ determines the slope\\\\\\\\$a>1$ $\\\\rightarrow$ Function steeper",
+      "note_2": "$b$ determines the shift\\\\\\\\$b>0$ $\\\\rightarrow$ Shift upwards",
+      "voiceover": "                So, let's review again:\n                <break time=\"0.5s\"/>\n                The general expression for a linear function is <bookmark mark=\"funcTerm\"/> f of x equals \"a\" times x plus b.\n                <break time=\"0.5s\"/>\n                The value <bookmark mark=\"a\"/> of a determines the slope here: <bookmark mark=\"goToOne\"/>\n                With a high value of a, <bookmark mark=\"ahigh\"/> the function becomes steeper, -\n                <bookmark mark=\"alow\"/> with a low value of a, it becomes flatter. <bookmark mark=\"reset\"/>\n                <break time=\"0.5s\"/>\n                The value <bookmark mark=\"b\"/> of b on the other hand determines the shift upwards and downwards. <bookmark mark=\"goToZero\"/>\n                With a high value of b <bookmark mark=\"bhigh\"/>, the function is shifted upwards, -\n                <bookmark mark=\"blow\"/> with a low value of b, it is shifted downwards."
+    },
+    "I8": {
+      "q": {
+        "answer-options": "[\"We can directly read $a$: $f(0)=a$\", \"We can directly read $b$: $f(0)=b$\", \"We can directly read $a+b$: $f(0)=a+b\"]",
+        "question-text": "What happens when we substitute $x=0$ into the function $f(x)=ax+b$?",
+        "title": "Note: Function Term",
+        "voiceover": "So, now we know: A linear function always has the form <bookmark mark=\"f\"/> f of x equals \"a\" times x plus b.\n<break time=\"0.5s\"/>\nLet's say <bookmark mark=\"cords\"/> we have a function, <bookmark mark=\"func\"/> that looks like this.\n<break time=\"0.5s\"/>\nHow do we determine the term of the function?\n<break time=\"0.5s\"/>\n<bookmark mark=\"cursor\"/>\nWe need to know two values to determine <bookmark mark=\"cursorA\"/> the function: a <bookmark mark=\"cursorB\"/> and b.\n<break time=\"0.5s\"/>\nWe'll start by figuring out how to find <bookmark mark=\"circleB\"/> b.\n<break time=\"0.5s\"/>\nThere's a simple trick for that. Let's substitute <bookmark mark=\"plugInZero\"/> zero into the function term.\n<bookmark mark=\"q\"/><break time=\"0.5s\"/>What happens?"
+      },
+      "a": {
+        "voiceover": "Hmm, that's not right...\nWe substitute <bookmark mark=\"plugInZero\"/> zero into the function term and get f\nof zero equals <bookmark mark=\"a\"/> \"a\" times <bookmark mark=\"times0\"/> zero  <bookmark mark=\"plusb\"/>\nplus b. <bookmark mark=\"b\"/> That is <bookmark mark=\"eqb\"/> equal to b.\n<break time=\"0.5s\"/>\nGraphically, this means: We can determine b by looking at the value of the function at <bookmark mark=\"origin\"/> x equals zero.\n<break time=\"0.5s\"/>\nThis means, that we can find the value of b by looking at where the graph <bookmark mark=\"yaxis\"/> intersects the y-axis.\n<break time=\"0.5s\"/>\nIn this case, it does so at <bookmark mark=\"f0\"/> y equals two.\n<break time=\"0.5s\"/>\nTherefore, <bookmark mark=\"beq2\"/> b is equal to two."
+      },
+      "b": {
+        "voiceover": "Yes, that's correct. Good job!\nWe substitute <bookmark mark=\"plugInZero\"/> zero into the function term and get f\nof zero equals <bookmark mark=\"a\"/> \"a\" times <bookmark mark=\"times0\"/> zero  <bookmark mark=\"plusb\"/>\nplus b. <bookmark mark=\"b\"/> That is <bookmark mark=\"eqb\"/> equal to b.\n<break time=\"0.5s\"/>\nGraphically, this means: We can determine b by looking at the value of the function at <bookmark mark=\"origin\"/> x equals zero.\n<break time=\"0.5s\"/>\nThis means, that we can find the value of b by looking at where the graph <bookmark mark=\"yaxis\"/> intersects the y-axis.\n<break time=\"0.5s\"/>\nIn this case, it does so at <bookmark mark=\"f0\"/> y equals two.\n<break time=\"0.5s\"/>\nTherefore, <bookmark mark=\"beq2\"/> b is equal to two."
+      }
+    },
+    "I9": {
+      "q": {
+        "answer-options": "[\"b=-2\", \"b=-1\", \"b=0\", \"b=2\"]",
+        "question-text": "If the function is described by $f(x)=ax+b$, what is the value of $b$?",
+        "title": "Linear Function: Determine b",
+        "voiceover": "Here we now see <bookmark mark=\"plot\"/> another linear function.\n<break time=\"1s\"/>\nIf the term that describes the function is<bookmark mark=\"func\"/> f of x equals \"a\" times x plus b,\n<break time=\"0.5s\"/>\nwhat is the value of b?"
+      },
+      "a": {
+        "voiceover": "Mhm, not quite.\n<break time=\"0.5s\"/>\nWe know that the value of b is equal to the value of f at the point <bookmark mark=\"x0\"/> x equals zero.\n<break time=\"0.5s\"/>\nSo we read from the graph what the value of the function is at the point x equals zero.\n<break time=\"0.5s\"/>\nIn this case, f of zero equals two <bookmark mark=\"y0\"/>.\n<break time=\"0.5s\"/>\nTherefore, <bookmark mark=\"beq\"/> b is equal to two."
+      },
+      "b": {
+        "voiceover": "Mhm, not quite.\n<break time=\"0.5s\"/>\nWe know that the value of b is equal to the value of f at the point <bookmark mark=\"x0\"/> x equals zero.\n<break time=\"0.5s\"/>\nSo we read from the graph what the value of the function is at the point x equals zero.\n<break time=\"0.5s\"/>\nIn this case, f of zero equals two <bookmark mark=\"y0\"/>.\n<break time=\"0.5s\"/>\nTherefore, <bookmark mark=\"beq\"/> b is equal to two."
+      },
+      "d": {
+        "voiceover": "That's right, well done!\n<break time=\"0.5s\"/>\nWe know that the value of b is equal to the value of f at the point <bookmark mark=\"x0\"/> x equals zero.\n<break time=\"0.5s\"/>\nSo we read from the graph what the value of the function is at the point x equals zero.\n<break time=\"0.5s\"/>\nIn this case, f of zero equals two <bookmark mark=\"y0\"/>.\n<break time=\"0.5s\"/>\nTherefore, <bookmark mark=\"beq\"/> b is equal to two."
+      }
+    },
+    "I10": {
+      "q": {
+        "answer-options": "[\"a: Shift in x-Direction, b: Shift in y-Direction\", \"a: Shift in y-Direction, b: Shift in x-Direction\", \"a: Slope of the function, b: Shift in y-Direction\", \"a: Slope of the function, b: Shift in x-Direction\"]",
+        "question-text": "What aspects of the function do $a$ and $b$ describe?",
+        "voiceover": "Ok, so we wanted to find out how we determine the term of a function,\nwhen we are given <bookmark mark=\"graph\"/> the graph of that function.\nAnd we also know that the term of a linear function f of x has <bookmark mark=\"funcTerm\"/> the structure f of x is equal to \"a\" times x plus b.\n\naaaand, we just learned, how to determine \"b\": We simply plug in zero for x, and the value of f of zero is equal to the value of b.\n\nNow, how do we obtain \"a\"?\n\nBefore we figure that out: Let's think back to what \"a\" and \"b\" actually describe.\nDo you remember, what aspect of the graph \"a\" and \"b\" describe?",
+        "title": "Role of a and b"
+      },
+      "a": {
+        "voiceover": "Mhmmm, that's not quite right!\n\n<bookmark mark=\"note1\"/>\n\"a\" describes the slope of the function. <bookmark mark=\"cursorA\"/> Remember: <bookmark mark=\"aH\"/> high values of \"a\" mean a steep slope, <bookmark mark=\"aL\"/> low values of \"a\" mean a flat slope. <bookmark mark=\"a1\"/>\n\n\"b\" describes the shift of the function in y-Direction. Remember: <bookmark mark=\"bH\"/> positive values of \"b\" lead to an upwards shift, <bookmark mark=\"bL\"/> negative values of \"b\" lead to a downwards shift. <bookmark mark=\"b1\"/>"
+      },
+      "c": {
+        "voiceover": "Great job, that's exactly right!!!\n\n<bookmark mark=\"note1\"/>\n\"a\" describes the slope of the function. <bookmark mark=\"cursorA\"/> Remember: <bookmark mark=\"aH\"/> high values of \"a\" mean a steep slope, <bookmark mark=\"aL\"/> low values of \"a\" mean a flat slope. <bookmark mark=\"a1\"/>\n\n\"b\" describes the shift of the function in y-Direction. Remember: <bookmark mark=\"bH\"/> positive values of \"b\" lead to an upwards shift, <bookmark mark=\"bL\"/> negative values of \"b\" lead to a downwards shift. <bookmark mark=\"b1\"/>"
+      }
+    },
+    "I11": {
+      "title": "Slope of a linear function",
+      "slope_triangle_text": "Slope Triangle",
+      "voiceover": "Ok, so we now <bookmark mark=\"note1\"/> want to determine \"a\" from the graph of a function.\n\nAs we just saw, that means we want to determine the slope of the function.\n\nIn order to do that, we are revisiting a tool from earlier: <bookmark mark=\"note2\"/> the slope triangle.\n\n<bookmark mark=\"writeCords\"/>\n\nConsider this linear function and look at the line between the <bookmark mark=\"sec1\"/> point x equals 1 and the point <bookmark mark=\"sec3\"/> x equals 3.\n\nJust like earlier, we are drawing <bookmark mark=\"dashed\"/> a vertical line from these points to the graph of the function.\n\nThese lines intersect the graph at the values of <bookmark mark=\"circ1\"/> f of one and <bookmark mark=\"circ2\"/> f of three.\n\nWe can shift <bookmark mark=\"triangle\"/> the line between the two points up, to the lower of the two function values and connect it to\nthe higher of the two values using a vertical line <bookmark mark=\"slopeTriangle\"/> to form a triangle.\n\nThis triangle is called <bookmark mark=\"highlight\"/> the slope triangle."
+    },
+    "I12": {
+      "title": "Slope Triangle",
+      "height": "height",
+      "width": "width",
+      "voiceover": "Trust me, it's really important to understand the slope triangle well.\n\nFor that reason, let's analyze it step by step.\n\nFirst, let's look at <bookmark mark=\"hor\"/> the horizontal line.\n\nAs we can see, it describes the width of the triangle.\n\nIf we connect the endpoints of that part of the triangle to the x-axis\n<bookmark mark=\"dashed\"/> using vertical lines, we can then read off\nthe width of the triangle from the x-axis. In this case,\n<bookmark mark=\"width\"/> the width is 2. <bookmark mark=\"unDashed\"/>\n\nNext, let's look at <bookmark mark=\"vert\"/> the vertical line.\n\nThe vertical line describes the height of the triangle.\n\nIf we connect the endpoints of that part of the triangle to the y-axis,\n<bookmark mark=\"dashedh\"/> using horizontal lines, we can then read off\nthe height of the triangle, similar to how we've read of the width earlier.\nIn this example, <bookmark mark=\"height\"/> the height is 4. <bookmark mark=\"unDashedH\"/>\n\nFinally, and most importantly, we want to know what the slope of the triangle is.\n\nThe slope is also described by the <bookmark mark=\"slopeLine\"/> third line, which is at an angle.",
+      "voiceover2": "But how do we compute the slope? And by computing the slope, we also mean: how do we <bookmark mark=\"a\"/>\ncompute \"a\"?\n\nWe compute the slope by dividing the <bookmark mark=\"height2\"/> height of the triangle\nby the <bookmark mark=\"width2\"/> triangle's width.\n\nIn this case, it means dividing <bookmark mark=\"final\"/> 4 by 2, which is 2.\n\nThis means, that \"a\" is also 2.\n\nGreat, we just learned how to use the slope triangle to compute the slope of a function:\n\nWe compute the height and the width of the triangle, and then obtain the slope by dividing\nthe height by the width."
     }
   }
 }

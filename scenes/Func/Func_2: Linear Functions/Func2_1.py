@@ -10,16 +10,19 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_2_1_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["The red function", "The blue function", "The green function"],
-    correctAnswerIndex = 2,
-    questionText = "Which function describes the fill level over time?"
-)
 class Func_2_1_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_2_1.I1.q.answer-options")),
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_2_1.I1.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -36,7 +39,7 @@ class Func_2_1_I_1_q(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I1.title"))
 
         # Create and plot piecewise linear function
         func1 = lambda x: x**2/5
@@ -55,24 +58,7 @@ class Func_2_1_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                We're now going to learn about a specific type of functions: - Linear Functions.
-                <break time="1s"/>
-                Let's start with an example. Suppose we want to enjoy <bookmark mark="lemonade"/> a cold sweet drink.
-                We go to the drink dispenser and pour at a steady rate.
-                This means that the glass is filled at a constant speed. <bookmark mark="cords"/>
-                <break time="1s"/>
-                If we plot time on  <bookmark mark="xaxis"/>the x-axis and the fill amount on <bookmark mark="yaxis"/>the y-axis ,
-                then we get a function that assigns the fill amount to each point in time.
-                <break time="1s"/>
-                What does this function look like if the filling speed is constant?
-                <break time="1s"/>
-                Does it look like the red function? <bookmark mark="red"/>
-                <break time="1s"/>
-                Or does it look like the blue function? <bookmark mark="blue"/>
-                <break time="1s"/>
-                Or does it look like the green function? <bookmark mark="green"/>
-                """
+                text=self.translate("Func_2_1.I1.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("lemonade")
@@ -127,7 +113,7 @@ class Func_2_1_I_1_a(SophiaCursorScene):
         self.add(cords)
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I1.title"))
 
         # Create and plot piecewise linear function
         func = lambda x: 6 * x
@@ -149,28 +135,7 @@ class Func_2_1_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not correct - It's actually the <bookmark mark="green"/> green function.
-                But why does it have to be the green function?
-                Let's consider the time period between <bookmark mark="sec12"/> second twelve and second <bookmark mark="sec18"/> eighteen.
-                The <bookmark mark="dashed"/> dashed lines show us how much is in the glass at each of the two time points.
-                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark="triangle"/>
-                upwards to create a <bookmark mark="slopeTriangle"/> so-called slope triangle.
-                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,
-                horizontal side indicates how much time has elapsed.
-                Since we are pouring the drink uniformly, the filling rate is constant.
-                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,
-                then the height, which is the fill amount, must also be the same. <bookmark mark="moreTriangles"/>
-                As we can see, this works for the green function.
-
-                However, if we look at <bookmark mark="moreFunctions"/> the red and blue functions, we see that this does not work.
-                If we draw a slope triangle <bookmark mark="redTriangle"/> on the red function and move it, we can see that the slope is not constant.
-                This means that the filling rate is not constant.
-                The same applies to the blue function. <bookmark mark="blueTriangle"/>, if we construct a slope triangle there,
-                and then move it, we can see that the slope is not constant there either.
-                
-                <bookmark mark="end"/> This means: Only the green function can be the correct solution.
-                """
+                text=self.translate("Func_2_1.I1a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("green")
@@ -249,7 +214,7 @@ class Func_2_1_I_1_b(SophiaCursorScene):
         self.add(cords)
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I1.title"))
 
         # Create and plot piecewise linear function
         func = lambda x: 6 * x
@@ -271,28 +236,7 @@ class Func_2_1_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not correct - It's actually the <bookmark mark="green"/> green function.
-                But why does it have to be the green function?
-                Let's consider the time period between <bookmark mark="sec12"/> second twelve and second <bookmark mark="sec18"/> eighteen.
-                The <bookmark mark="dashed"/> dashed lines show us how much is in the glass at each of the two time points.
-                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark="triangle"/>
-                upwards to create a <bookmark mark="slopeTriangle"/> so-called slope triangle.
-                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,
-                horizontal side indicates how much time has elapsed.
-                Since we are pouring the drink uniformly, the filling rate is constant.
-                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,
-                then the height, which is the fill amount, must also be the same. <bookmark mark="moreTriangles"/>
-                As we can see, this works for the green function.
-
-                However, if we look at <bookmark mark="moreFunctions"/> the red and blue functions, we see that this does not work.
-                If we draw a slope triangle <bookmark mark="redTriangle"/> on the red function and move it, we can see that the slope is not constant.
-                This means that the filling rate is not constant.
-                The same applies to the blue function. <bookmark mark="blueTriangle"/>, if we construct a slope triangle there,
-                and then move it, we can see that the slope is not constant there either.
-                
-                <bookmark mark="end"/> This means: Only the green function can be the correct solution.
-                """
+                text=self.translate("Func_2_1.I1b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("green")
@@ -373,7 +317,7 @@ class Func_2_1_I_1_c(SophiaCursorScene):
         self.add(cords)
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I1.title"))
 
         # Create and plot piecewise linear function
         func = lambda x: 6 * x
@@ -395,28 +339,7 @@ class Func_2_1_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, well done! - It's the <bookmark mark="green"/> green function.
-                But why does it have to be the green function?
-                Let's consider the time period between <bookmark mark="sec12"/> second twelve and second <bookmark mark="sec18"/> eighteen.
-                The <bookmark mark="dashed"/> dashed lines show us how much is in the glass at each of the two time points.
-                And the red line on the x-axis tells us the time between the two points. We can move the red line <bookmark mark="triangle"/>
-                upwards to create a <bookmark mark="slopeTriangle"/> so-called slope triangle.
-                The right, vertical side of the slope triangle indicates how much the function has changed, and the bottom,
-                horizontal side indicates how much time has elapsed.
-                Since we are pouring the drink uniformly, the filling rate is constant.
-                When we construct a slope triangle and consider the same time between two points, that is, the width is the same,
-                then the height, which is the fill amount, must also be the same. <bookmark mark="moreTriangles"/>
-                As we can see, this works for the green function.
-
-                However, if we look at <bookmark mark="moreFunctions"/> the red and blue functions, we see that this does not work.
-                If we draw a slope triangle <bookmark mark="redTriangle"/> on the red function and move it, we can see that the slope is not constant.
-                This means that the filling rate is not constant.
-                The same applies to the blue function. <bookmark mark="blueTriangle"/>, if we construct a slope triangle there,
-                and then move it, we can see that the slope is not constant there either.
-                
-                <bookmark mark="end"/> This means: Only the green function can be the correct solution.
-                """
+                text=self.translate("Func_2_1.I1c.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("green")
@@ -499,7 +422,7 @@ class Func_2_1_I_2(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I2.title"))
 
         # Create and plot piecewise linear function
         func1 = lambda x:  2/3*x + 1
@@ -516,25 +439,14 @@ class Func_2_1_I_2(SophiaCursorScene):
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
         self.add(cursor)
-        e1 = Tex("1. The slope is constant", color=c1t, font_size=fs3)
-        e2 = Tex("2. The graph is a straight line", color=c1t, font_size=fs3)
-        e3 = Tex("3. The function has the form\\\\$f(x)=ax+b$", tex_environment="flushright", color=c1t, font_size=fs3)
+        e1 = Tex(self.translate("Func_2_1.I2.e1"), color=c1t, font_size=fs3)
+        e2 = Tex(self.translate("Func_2_1.I2.e2"), color=c1t, font_size=fs3)
+        e3 = Tex(self.translate("Func_2_1.I2.e3"), tex_environment="flushright", color=c1t, font_size=fs3)
         explanations = VGroup(e1, e2, e3).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(funcTex, DOWN, buff=.6)
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's formally define: What is a linear function?
-                <break time="0.5s"/>
-                There are three ways to explain it.
-                <bookmark mark="constant"/> First: A linear function is a function with a constant slope.
-                We just discussed that. That means, and this is the second way to explain linear 
-                functions, <bookmark mark="straight"/> the graph is a straight line.
-                <break time="0.5s"/>
-                Both of these conditions are met when the function has the form <bookmark mark="term"/>
-                f of x equals "a" times "x" plus "b", where we can plug in any number for "a" and "b". That's the third
-                way to define linear functions.
-                """
+                text=self.translate("Func_2_1.I2.voiceover")
         ) as tracker:
 
             self.play(Write(cords))
@@ -556,13 +468,15 @@ class Func_2_1_I_2(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_3_q = SophiaTaskDefinition(
-    answerOptions=["The green function", "The purple function", "The orange function"],
-    correctAnswerIndex=0,
-    questionText="Which of the three is a linear function?"
-)
-
 class Func_2_1_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_2_1.I3.q.answer-options")),
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_2_1.I3.q.question-text") 
+        )
+
 
     # Main method for constructing the animation
     def construct(self):
@@ -575,7 +489,7 @@ class Func_2_1_I_3_q(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I3.title"))
 
         # Create and plot piecewise linear function
         func1 = lambda x: 2/3*x + 1
@@ -599,19 +513,7 @@ class Func_2_1_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so the red function was a linear function.
-                It has a constant slope, so its graph is a straight line.
-                <break time="1s"/>
-                <bookmark mark="blue"/> the blue function is also a linear function.
-                Because it also has a constant slope, and its graph is also a straight line.
-                <break time="1.5s"/>
-                Now, consider <bookmark mark="green"/> the green, <bookmark mark="purple"/>the purple,
-                and <bookmark mark="orange"/>the orange functions.<break time="1.5s"/>
-                Only one of these three functions is a linear function.
-                <break time="0.5s"/>
-                Which one is it?
-                """
+                text=self.translate("Func_2_1.I3.voiceover")
         ) as tracker:
 
             self.play(Write(cords))
@@ -653,7 +555,7 @@ class Func_2_1_I_3_a(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I3.title"))
 
         # Create and plot piecewise linear function
         func3 = lambda x: 0.5*x - 1
@@ -669,14 +571,7 @@ class Func_2_1_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct: Only <bookmark mark="green"/> the green function is a linear function.
-                It has a constant slope, so its graph is a straight line.
-                <break time="1s"/>
-                The <bookmark mark="purple"/> purple and <bookmark mark="orange"/> orange functions
-                are not linear functions because their graphs are not straight lines, and their slopes
-                are not constant.
-                """
+                text=self.translate("Func_2_1.I3a.voiceover")
         ) as tracker:
 
             self.play(Write(cords))
@@ -711,7 +606,7 @@ class Func_2_1_I_3_b(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I3.title"))
 
         # Create and plot piecewise linear function
         func3 = lambda x: 0.5*x - 1
@@ -727,14 +622,7 @@ class Func_2_1_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right: Only <bookmark mark="green"/> the green function is a linear function.
-                It has a constant slope, so its graph is a straight line.
-                <break time="1s"/>
-                The <bookmark mark="purple"/> purple and <bookmark mark="orange"/> orange functions
-                are not linear functions because their graphs are not straight lines, and their slopes
-                are not constant.
-                """
+                text=self.translate("Func_2_1.I3c.voiceover")
         ) as tracker:
 
             self.play(Write(cords))
@@ -770,7 +658,7 @@ class Func_2_1_I_3_c(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Linear Functions")
+        self.add_title(self.translate("Func_2_1.I3.title"))
 
         # Create and plot piecewise linear function
         func3 = lambda x: 0.5*x - 1
@@ -786,14 +674,7 @@ class Func_2_1_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right: Only <bookmark mark="green"/> the green function is a linear function.
-                It has a constant slope, so its graph is a straight line.
-                <break time="1s"/>
-                The <bookmark mark="purple"/> purple and <bookmark mark="orange"/> orange functions
-                are not linear functions because their graphs are not straight lines, and their slopes
-                are not constant.
-                """
+                text=self.translate("Func_2_1.I3c.voiceover")
         ) as tracker:
 
             self.play(Write(cords))
@@ -817,14 +698,15 @@ class Func_2_1_I_3_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_4_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=2x^2-4$", "$g(x)=2x-4$", "$h(x)=2/x-4$"],
-    correctAnswerIndex=1,
-    questionText="Which of the functions is linear?"
-)
 
-# Class for creating the animation scene
 class Func_2_1_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$f(x)=2x^2-4$", "$g(x)=2x-4$", "$h(x)=2/x-4$"],
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_2_1.I4.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -833,7 +715,7 @@ class Func_2_1_I_4_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Functions")
+        title = self.add_title(self.translate("Func_2_1.I4.title"))
 
         # Create and plot piecewise linear function
         func1 = MathTex("f(x)=2x^2-4", color=c1t, font_size=fs1)
@@ -854,18 +736,7 @@ class Func_2_1_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, now we have seen what a linear function is by looking at the functions graph.
-                <break time="0.5s"/>
-                But we can <bookmark mark="unplot"/>also recognize whether a function is linear based on its terms.
-                Now I will show you three functions. <bookmark mark="note2"/> Which of them is linear?
-                <break time="1s"/>
-                Is it the <bookmark mark="f"/> function f of x equals two x squared minus four?
-                <break time="1s"/>
-                Or the <bookmark mark="g"/> function g of x equals two x minus four?
-                <break time="1s"/>
-                Or the <bookmark mark="h"/> function h of x equals two over x minus four?
-                """
+                text=self.translate("Func_2_1.I4q.voiceover")
         ) as tracker:
             
             self.play(Write(cords))
@@ -904,7 +775,7 @@ class Func_2_1_I_4_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Functions")
+        title = self.add_title(self.translate("Func_2_1.I4.title"))
 
         # Create and plot piecewise linear function
         func1 = MathTex("f(x)=2x^2-4", color=c1t, font_size=fs1)
@@ -919,21 +790,7 @@ class Func_2_1_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                <break time="0.5s"/> But which one is linear?
-                Let's go through the functions one by one:
-                <break time="0.5s"/>
-                <bookmark mark="f"/> The function f of x equals two x squared minus four is <bookmark mark="not1"/> not linear
-                because the exponent of x is not equal to one.
-                Specifically, functions that contain x squared, x cubed, or similar terms are not linear!
-                <break time="0.5s"/>
-                <bookmark mark="g"/> The function g of x equals two x minus four is <bookmark mark="yes"/> linear!
-                It only contains x and simple numbers. It has the structure "a" times x plus b, and in this case, a is two and b is minus four.
-                <break time="0.5s"/>
-                <bookmark mark="h"/> The function h of x equals two over x minus four is <bookmark mark="not2"/> not linear
-                because it involves dividing by x. If there's division by x, the function is not linear!
-                """
+                text=self.translate("Func_2_1.I4a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -971,7 +828,7 @@ class Func_2_1_I_4_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Functions")
+        title = self.add_title(self.translate("Func_2_1.I4.title"))
 
         # Create and plot piecewise linear function
         func1 = MathTex("f(x)=2x^2-4", color=c1t, font_size=fs1)
@@ -986,21 +843,7 @@ class Func_2_1_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's right, well done.
-                <break time="0.5s"/> But which one is linear?
-                Let's go through the functions one by one:
-                <break time="0.5s"/>
-                <bookmark mark="f"/> The function f of x equals two x squared minus four is <bookmark mark="not1"/> not linear
-                because the exponent of x is not equal to one.
-                Specifically, functions that contain x squared, x cubed, or similar terms are not linear!
-                <break time="0.5s"/>
-                <bookmark mark="g"/> The function g of x equals two x minus four is <bookmark mark="yes"/> linear!
-                It only contains x and simple numbers. It has the structure "a" times x plus b, and in this case, a is two and b is minus four.
-                <break time="0.5s"/>
-                <bookmark mark="h"/> The function h of x equals two over x minus four is <bookmark mark="not2"/> not linear
-                because it involves dividing by x. If there's division by x, the function is not linear!
-                """
+                text=self.translate("Func_2_1.I4b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1037,7 +880,7 @@ class Func_2_1_I_4_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Functions")
+        title = self.add_title(self.translate("Func_2_1.I4.title"))
 
         # Create and plot piecewise linear function
         func1 = MathTex("f(x)=2x^2-4", color=c1t, font_size=fs1)
@@ -1052,21 +895,7 @@ class Func_2_1_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                <break time="0.5s"/> But which one is linear?
-                Let's go through the functions one by one:
-                <break time="0.5s"/>
-                <bookmark mark="f"/> The function f of x equals two x squared minus four is <bookmark mark="not1"/> not linear
-                because the exponent of x is not equal to one.
-                Specifically, functions that contain x squared, x cubed, or similar terms are not linear!
-                <break time="0.5s"/>
-                <bookmark mark="g"/> The function g of x equals two x minus four is <bookmark mark="yes"/> linear!
-                It only contains x and simple numbers. It has the structure "a" times x plus b, and in this case, a is two and b is minus four.
-                <break time="0.5s"/>
-                <bookmark mark="h"/> The function h of x equals two over x minus four is <bookmark mark="not2"/> not linear
-                because it involves dividing by x. If there's division by x, the function is not linear!
-                """
+                text=self.translate("Func_2_1.I4a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1098,13 +927,14 @@ class Func_2_1_I_4_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_5_q = SophiaTaskDefinition(
-    answerOptions=["The line moves upwards", "The line moves downwards", "The line becomes flatter", "The line becomes steeper"],
-    correctAnswerIndex=3,
-    questionText="What happens when we choose $a>1$?"
-)
-
 class Func_2_1_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_2_1.I5.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText = self.translate("Func_2_1.I5.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1113,7 +943,7 @@ class Func_2_1_I_5_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I5.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-4, 4, 1], [-4, 4, 1], x_ticks=[-4, -2, 0, 2, 4], y_ticks=[-4, -2, 0, 2, 4]).shift(DOWN*.6)
@@ -1140,21 +970,7 @@ class Func_2_1_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, let's take a closer look at the function term of linear functions.
-                The <bookmark mark="f"/> general term for linear functions <bookmark mark="tf"/> 
-                is f of <bookmark mark="tx"/>x equals <bookmark mark="tax"/>"a" times x
-                plus<bookmark mark="tb"/> b.
-                <break time="0.5s"/>
-                What role does the <bookmark mark="a"/>value of "a" play, and what role does the <bookmark mark="b"/>value of b play?
-                To find out, let's consider a specific example,
-                <bookmark mark="example"/>namely the <bookmark mark="ef"/>function f <bookmark mark="ex1"/>of x <bookmark mark="ex2"/>equals x,
-                which means "a" is equal to 1 and b is 0. The function <bookmark mark="plot"/>looks like this.
-                <break time="0.5s"/>
-                Now, what happens when we change the value of "a"?<bookmark mark="qmark"/>
-                <break time="0.5s"/>
-                Specifically, what happens when we substitute a value greater than 1 for "a"?
-                """
+                text = self.translate("Func_2_1.I5q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1223,7 +1039,7 @@ class Func_2_1_I_5_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I5.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3, -1, 0, 1, 3], y_ticks=[-4, -2, 0, 2, 4])
@@ -1253,15 +1069,7 @@ class Func_2_1_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals one times x.
-                Let's consider an example, at the point <bookmark mark="x"/>x equals one.
-                The value of the function f of x is also <bookmark mark="fx"/>equal to one.
-                If we increase the value of "a", let's say to two, <bookmark mark="increaseA"/>the value
-                of f of x also increases, and the function becomes steeper.
-                This is because we multiply every value of the function by a number greater than one, so they all increase.
-                """
+                text = self.translate("Func_2_1.I5a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("ftransform")
@@ -1296,7 +1104,7 @@ class Func_2_1_I_5_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I5.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3, -1, 0, 1, 3], y_ticks=[-4, -2, 0, 2, 4])
@@ -1326,15 +1134,7 @@ class Func_2_1_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals one times x.
-                Let's consider an example, at the point <bookmark mark="x"/>x equals one.
-                The value of the function f of x is also <bookmark mark="fx"/>equal to one.
-                If we increase the value of "a", let's say to two, <bookmark mark="increaseA"/>the value
-                of f of x also increases, and the function becomes steeper.
-                This is because we multiply every value of the function by a number greater than one, so they all increase.
-                """
+                text = self.translate("Func_2_1.I5a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("ftransform")
@@ -1368,7 +1168,7 @@ class Func_2_1_I_5_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I5.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3, -1, 0, 1, 3], y_ticks=[-4, -2, 0, 2, 4])
@@ -1398,15 +1198,7 @@ class Func_2_1_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals one times x.
-                Let's consider an example, at the point <bookmark mark="x"/>x equals one.
-                The value of the function f of x is also <bookmark mark="fx"/>equal to one.
-                If we increase the value of "a", let's say to two, <bookmark mark="increaseA"/>the value
-                of f of x also increases, and the function becomes steeper.
-                This is because we multiply every value of the function by a number greater than one, so they all increase.
-                """
+                text = self.translate("Func_2_1.I5a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("ftransform")
@@ -1440,7 +1232,7 @@ class Func_2_1_I_5_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I5.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3, -1, 0, 1, 3], y_ticks=[-4, -2, 0, 2, 4])
@@ -1470,15 +1262,7 @@ class Func_2_1_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's right, well done!
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals one times x.
-                Let's consider an example, at the point <bookmark mark="x"/>x equals one.
-                The value of the function f of x is also <bookmark mark="fx"/>equal to one.
-                If we increase the value of "a", let's say to two, <bookmark mark="increaseA"/>the value
-                of f of x also increases, and the function becomes steeper.
-                This is because we multiply every value of the function by a number greater than one, so they all increase.
-                """
+                text = self.translate("Func_2_1.I5d.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("ftransform")
@@ -1507,13 +1291,14 @@ class Func_2_1_I_5_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_6_q = SophiaTaskDefinition(
-    answerOptions=["The line is shifted upwards", "The line is shifted downwards", "The line becomes flatter", "The line becomes steeper"],
-    correctAnswerIndex=0,
-    questionText="What happens when we choose $b>0$?"
-)
-
 class Func_2_1_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_2_1.I6.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Func_2_1.I6.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1522,7 +1307,7 @@ class Func_2_1_I_6_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I6.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-4, 4, 1], [-4, 4, 1], x_ticks=[-4, -2, 0, 2, 4], y_ticks=[-4, -2, 0, 2, 4])
@@ -1542,8 +1327,8 @@ class Func_2_1_I_6_q(SophiaCursorScene):
         # Sine function that is updated
         updated_f = always_redraw(redraw_f)
 
-        a_high = Tex("$a>>1\\Rightarrow$ steeper line", color=c1t, font_size=fs3)
-        a_low = Tex("$a<<1\\Rightarrow$ flatter line", color=c1t, font_size=fs3)
+        a_high = Tex(self.translate("Func_2_1.I6.a_high"), color=c1t, font_size=fs3)
+        a_low = Tex(self.translate("Func_2_1.I6.a_low"), color=c1t, font_size=fs3)
         a_high_low = VGroup(a_high, a_low).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(func, DOWN, buff=.8)
 
         # Initialize a cursor
@@ -1552,28 +1337,7 @@ class Func_2_1_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's take another look at the function term of linear functions.
-                We're again looking at the general form of linear <bookmark mark="f"/> functions,
-                which is <bookmark mark="tf"/>f of<bookmark mark="tx"/> x equals <bookmark mark="tax"/>"a" times x
-                plus <bookmark mark="tb"/> b. <break time="0.5s"/>
-                As we have seen earlier, the value <bookmark mark="a"/> of "a" determines the slope of the line.
-                <break time="0.5s"/><bookmark mark="a_high"/>
-                High values of "a" mean that the line becomes steeper.
-                <break time="0.5s"/><bookmark mark="a_low"/>
-                On the other hand, low values of "a" mean that the line becomes flatter.
-                <break time="0.5s"/>
-                Now, the only question left is: What role does the value <bookmark mark="b"/> of b play?
-                To find out, let's look at our example again,
-                that is <bookmark mark="example"/> the function <bookmark mark="ef"/> f of <bookmark mark="ex1"/> x
-                equals <bookmark mark="ex2"/>one time x plus <bookmark mark="plus_b_final"/> b.
-                So, a is one again, and the function looks like <bookmark mark="plot"/>
-                this.
-                <break time="0.5s"/>
-                Now, what happens if we <bookmark mark="b_change"/>change the value of b?
-                <break time="0.5s"/>
-                For example: What happens when we set a value for b that is greater than zero?
-                """
+                text=self.translate("Func_2_1.I6q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1654,7 +1418,7 @@ class Func_2_1_I_6_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I6.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -1685,18 +1449,7 @@ class Func_2_1_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, great job!
-                <break time="0.5s"/>
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
-                Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
-                The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                If we increase b, let's say to two, <bookmark mark="increaseB"/>
-                the value of f of x will increase everywhere, and the function will be shifted upwards.
-                <break time="1.5s"/>
-                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
-                Here you can see what happens when we set a to minus two.
-                """
+                text=self.translate("Func_2_1.I6a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
@@ -1740,7 +1493,7 @@ class Func_2_1_I_6_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I6.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -1771,18 +1524,7 @@ class Func_2_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right, unfortunately.
-                <break time="0.5s"/>
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
-                Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
-                The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                If we increase b, let's say to two, <bookmark mark="increaseB"/>
-                the value of f of x will increase everywhere, and the function will be shifted upwards.
-                <break time="1.5s"/>
-                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
-                Here you can see what happens when we set a to minus two.
-                """
+                text=self.translate("Func_2_1.I6b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
@@ -1827,7 +1569,7 @@ class Func_2_1_I_6_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I6.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -1858,18 +1600,7 @@ class Func_2_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right, unfortunately.
-                <break time="0.5s"/>
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
-                Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
-                The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                If we increase b, let's say to two, <bookmark mark="increaseB"/>
-                the value of f of x will increase everywhere, and the function will be shifted upwards.
-                <break time="1.5s"/>
-                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
-                Here you can see what happens when we set a to minus two.
-                """
+                text=self.translate("Func_2_1.I6b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
@@ -1914,7 +1645,7 @@ class Func_2_1_I_6_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Focus on Function Term")
+        title = self.add_title(self.translate("Func_2_1.I6.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -1945,18 +1676,7 @@ class Func_2_1_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right, unfortunately.
-                <break time="0.5s"/>
-                We can write the function f of x equals x as <bookmark mark="ftransform"/> f of x equals x plus zero.
-                Now let's consider the point <bookmark mark="x"/> x equals zero as an example.
-                The value of the function f of x is also <bookmark mark="fx"/> equals zero at this point.
-                If we increase b, let's say to two, <bookmark mark="increaseB"/>
-                the value of f of x will increase everywhere, and the function will be shifted upwards.
-                <break time="1.5s"/>
-                And it's similar in reverse: If we decrease a <bookmark mark="decreaseB"/>, the function will be shifted downwards.
-                Here you can see what happens when we set a to minus two.
-                """
+                text=self.translate("Func_2_1.I6b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ftransform")
@@ -2003,7 +1723,7 @@ class Func_2_1_I_7(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Note: Function Term")
+        title = self.add_title(self.translate("Func_2_1.I7.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4])
@@ -2015,8 +1735,8 @@ class Func_2_1_I_7(SophiaCursorScene):
         a, b = ValueTracker(1), ValueTracker(0)
 
 
-        # Create a notepad with texts
-        notes = VGroup(Tex("$a$ determines the slope\\\\$a>1$ $\\rightarrow$ Function steeper", color=c1t, font_size=fs3, tex_environment="flushleft"), Tex("$b$ determines the shift\\\\$b>0$ $\\rightarrow$ Shift upwards", color=c1t, font_size=fs3, tex_environment="flushleft")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(func, DOWN, buff=.6)
+        # Create a notepad with texts 
+        notes = VGroup(Tex(self.translate("Func_2_1.I7.note_1"), color=c1t, font_size=fs3, tex_environment="flushleft"), Tex(self.translate("Func_2_1.I7.note_2"), color=c1t, font_size=fs3, tex_environment="flushleft")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(func, DOWN, buff=.6)
 
         
         def redraw_f():
@@ -2036,19 +1756,7 @@ class Func_2_1_I_7(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, let's review again:
-                <break time="0.5s"/>
-                The general expression for a linear function is <bookmark mark="funcTerm"/> f of x equals "a" times x plus b.
-                <break time="0.5s"/>
-                The value <bookmark mark="a"/> of a determines the slope here: <bookmark mark="goToOne"/>
-                With a high value of a, <bookmark mark="ahigh"/> the function becomes steeper, -
-                <bookmark mark="alow"/> with a low value of a, it becomes flatter. <bookmark mark="reset"/>
-                <break time="0.5s"/>
-                The value <bookmark mark="b"/> of b on the other hand determines the shift upwards and downwards. <bookmark mark="goToZero"/>
-                With a high value of b <bookmark mark="bhigh"/>, the function is shifted upwards, -
-                <bookmark mark="blow"/> with a low value of b, it is shifted downwards.
-                """
+                text=self.translate("Func_2_1.I7.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcTerm")
@@ -2108,13 +1816,14 @@ class Func_2_1_I_7(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_8_q = SophiaTaskDefinition(
-    answerOptions = ["We can directly read $a$: $f(0)=a$", "We can directly read $b$: $f(0)=b$", "We can directly read $a+b$: $f(0)=a+b"],
-    correctAnswerIndex = 1,
-    questionText = "What happens when we substitute $x=0$ into the function $f(x)=ax+b$?"
-)
-
 class Func_2_1_I_8_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_2_1.I8.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_2_1.I8.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2123,7 +1832,7 @@ class Func_2_1_I_8_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Note: Function Term")
+        title = self.add_title(self.translate("Func_2_1.I8.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -2149,21 +1858,7 @@ class Func_2_1_I_8_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, now we know: A linear function always has the form <bookmark mark="f"/> f of x equals "a" times x plus b.
-                <break time="0.5s"/>
-                Let's say <bookmark mark="cords"/> we have a function, <bookmark mark="func"/> that looks like this.
-                <break time="0.5s"/>
-                How do we determine the term of the function?
-                <break time="0.5s"/>
-                <bookmark mark="cursor"/>
-                We need to know two values to determine <bookmark mark="cursorA"/> the function: a <bookmark mark="cursorB"/> and b.
-                <break time="0.5s"/>
-                We'll start by figuring out how to find <bookmark mark="circleB"/> b.
-                <break time="0.5s"/>
-                There's a simple trick for that. Let's substitute <bookmark mark="plugInZero"/> zero into the function term.
-                <bookmark mark="q"/><break time="0.5s"/>What happens?
-                """
+                text=self.translate("Func_2_1.I8.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2214,7 +1909,7 @@ class Func_2_1_I_8_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Note: Function Term")
+        title = self.add_title(self.translate("Func_2_1.I8.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -2247,20 +1942,7 @@ class Func_2_1_I_8_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Hmm, that's not right...
-                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
-                of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
-                plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                <break time="0.5s"/>
-                Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                <break time="0.5s"/>
-                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                <break time="0.5s"/>
-                In this case, it does so at <bookmark mark="f0"/> y equals two.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq2"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I8.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
@@ -2314,7 +1996,7 @@ class Func_2_1_I_8_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Note: Function Term")
+        title = self.add_title(self.translate("Func_2_1.I8.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -2347,20 +2029,7 @@ class Func_2_1_I_8_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's correct. Good job!
-                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
-                of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
-                plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                <break time="0.5s"/>
-                Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                <break time="0.5s"/>
-                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                <break time="0.5s"/>
-                In this case, it does so at <bookmark mark="f0"/> y equals two.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq2"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I8.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
@@ -2416,7 +2085,7 @@ class Func_2_1_I_8_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Note: Function Term")
+        title = self.add_title(self.translate("Func_2_1.I8.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -2449,20 +2118,7 @@ class Func_2_1_I_8_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Hmm, that's not right...
-                We substitute <bookmark mark="plugInZero"/> zero into the function term and get f
-                of zero equals <bookmark mark="a"/> "a" times <bookmark mark="times0"/> zero  <bookmark mark="plusb"/>
-                plus b. <bookmark mark="b"/> That is <bookmark mark="eqb"/> equal to b.
-                <break time="0.5s"/>
-                Graphically, this means: We can determine b by looking at the value of the function at <bookmark mark="origin"/> x equals zero.
-                <break time="0.5s"/>
-                This means, that we can find the value of b by looking at where the graph <bookmark mark="yaxis"/> intersects the y-axis.
-                <break time="0.5s"/>
-                In this case, it does so at <bookmark mark="f0"/> y equals two.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq2"/> b is equal to two.
-                """
+                text = self.translate("Func_2_1.I8.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plugInZero")
@@ -2511,13 +2167,15 @@ class Func_2_1_I_8_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_9_q = SophiaTaskDefinition(
-    answerOptions = ["b=-2", "b=-1", "b=0", "b=2"],
-    correctAnswerIndex = 3,
-    questionText = "If the function is described by $f(x)=ax+b$, what is the value of $b$?"
-)
 
 class Func_2_1_I_9_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_2_1.I9.q.answer-options")),
+            correctAnswerIndex = 3,
+            questionText = self.translate("Func_2_1.I9.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2526,7 +2184,7 @@ class Func_2_1_I_9_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Function: Determine b")
+        title = self.add_title(self.translate("Func_2_1.I9.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4]).shift(DOWN)
@@ -2552,13 +2210,7 @@ class Func_2_1_I_9_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here we now see <bookmark mark="plot"/> another linear function.
-                <break time="1s"/>
-                If the term that describes the function is<bookmark mark="func"/> f of x equals "a" times x plus b,
-                <break time="0.5s"/>
-                what is the value of b?
-                """
+                text=self.translate("Func_2_1.I9.q.voiceover")
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
@@ -2581,7 +2233,7 @@ class Func_2_1_I_9_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Function: Determine b")
+        title = self.add_title(self.translate("Func_2_1.I9.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -2612,17 +2264,7 @@ class Func_2_1_I_9_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, not quite.
-                <break time="0.5s"/>
-                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                <break time="0.5s"/>
-                So we read from the graph what the value of the function is at the point x equals zero.
-                <break time="0.5s"/>
-                In this case, f of zero equals two <bookmark mark="y0"/>.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I9.a.voiceover")
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
@@ -2657,7 +2299,7 @@ class Func_2_1_I_9_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Function: Determine b")
+        title = self.add_title(self.translate("Func_2_1.I9.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -2688,17 +2330,7 @@ class Func_2_1_I_9_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, not quite.
-                <break time="0.5s"/>
-                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                <break time="0.5s"/>
-                So we read from the graph what the value of the function is at the point x equals zero.
-                <break time="0.5s"/>
-                In this case, f of zero equals two <bookmark mark="y0"/>.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I9.a.voiceover")
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
@@ -2765,17 +2397,7 @@ class Func_2_1_I_9_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, not quite.
-                <break time="0.5s"/>
-                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                <break time="0.5s"/>
-                So we read from the graph what the value of the function is at the point x equals zero.
-                <break time="0.5s"/>
-                In this case, f of zero equals two <bookmark mark="y0"/>.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I9.a.voiceover")
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
@@ -2809,7 +2431,7 @@ class Func_2_1_I_9_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Linear Function: Determine b")
+        title = self.add_title(self.translate("Func_2_1.I9.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -2840,17 +2462,7 @@ class Func_2_1_I_9_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's right, well done!
-                <break time="0.5s"/>
-                We know that the value of b is equal to the value of f at the point <bookmark mark="x0"/> x equals zero.
-                <break time="0.5s"/>
-                So we read from the graph what the value of the function is at the point x equals zero.
-                <break time="0.5s"/>
-                In this case, f of zero equals two <bookmark mark="y0"/>.
-                <break time="0.5s"/>
-                Therefore, <bookmark mark="beq"/> b is equal to two.
-                """
+                text=self.translate("Func_2_1.I9.d.voiceover")
         ) as tracker:
             
             self.play(Write(cords), run_time=0.5)
@@ -2878,13 +2490,15 @@ class Func_2_1_I_9_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_1_I_10_q = SophiaTaskDefinition(
-    answerOptions = ["a: Shift in x-Direction, b: Shift in y-Direction", "a: Shift in y-Direction, b: Shift in x-Direction", "a: Slope of the function, b: Shift in y-Direction", "a: Slope of the function, b: Shift in x-Direction"],
-    correctAnswerIndex = 2,
-    questionText = "What aspects of the function do $a$ and $b$ describe?"
-)
 
 class Func_2_1_I_10_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_2_1.I10.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_2_1.I10.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2893,7 +2507,7 @@ class Func_2_1_I_10_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Add title to the scene
-        title = self.add_title("Role of a and b")
+        title = self.add_title(self.translate("Func_2_1.I10.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4])
@@ -2921,18 +2535,7 @@ class Func_2_1_I_10_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so we wanted to find out how we determine the term of a function,
-                when we are given <bookmark mark="graph"/> the graph of that function.
-                And we also know that the term of a linear function f of x has <bookmark mark="funcTerm"/> the structure f of x is equal to "a" times x plus b.
-                
-                aaaand, we just learned, how to determine "b": We simply plug in zero for x, and the value of f of zero is equal to the value of b.
-                
-                Now, how do we obtain "a"?
-                
-                Before we figure that out: Let's think back to what "a" and "b" actually describe.
-                Do you remember, what aspect of the graph "a" and "b" describe?
-                """
+                text=self.translate("Func_2_1.I10.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("graph")
@@ -2953,11 +2556,11 @@ class Func_2_1_I_10_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
-        self.add(note)
+        # note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
+        # self.add(note)
 
         # Add title to the scene
-        title = self.add_title("Not quite...")
+        title = self.add_title(self.translate("Func_2_1.I10.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -2988,18 +2591,11 @@ class Func_2_1_I_10_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right!
-                
-                <bookmark mark="note1"/>
-                "a" describes the slope of the function. <bookmark mark="cursorA"/> Remember: <bookmark mark="aH"/> high values of "a" mean a steep slope, <bookmark mark="aL"/> low values of "a" mean a flat slope. <bookmark mark="a1"/>
-                
-                "b" describes the shift of the function in y-Direction. Remember: <bookmark mark="bH"/> positive values of "b" lead to an upwards shift, <bookmark mark="bL"/> negative values of "b" lead to a downwards shift. <bookmark mark="b1"/>
-                """
+                text=self.translate("Func_2_1.I10.a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            # self.wait_until_bookmark("note1")
+            # note.change_colors([0])
 
             self.wait_until_bookmark("cursorA")
             x, y, _ = plane.c2p(1, 1)
@@ -3023,7 +2619,7 @@ class Func_2_1_I_10_a(SophiaCursorScene):
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
-            note.change_colors([0,1])
+            # note.change_colors([0,1])
 
             self.wait_until_bookmark("bH")
             duration = 1
@@ -3055,11 +2651,11 @@ class Func_2_1_I_10_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
-        self.add(note)
+        # note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
+        # self.add(note)
 
         # Add title to the scene
-        title = self.add_title("Not quite...")
+        title = self.add_title(self.translate("Func_2_1.I10.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -3090,18 +2686,12 @@ class Func_2_1_I_10_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right!
+                text=self.translate("Func_2_1.I10.a.voiceover")
                 
-                <bookmark mark="note1"/>
-                "a" describes the slope of the function. <bookmark mark="cursorA"/> Remember: <bookmark mark="aH"/> high values of "a" mean a steep slope, <bookmark mark="aL"/> low values of "a" mean a flat slope. <bookmark mark="a1"/>
-                
-                "b" describes the shift of the function in y-Direction. Remember: <bookmark mark="bH"/> positive values of "b" lead to an upwards shift, <bookmark mark="bL"/> negative values of "b" lead to a downwards shift. <bookmark mark="b1"/>
-                """
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            # self.wait_until_bookmark("note1")
+            # note.change_colors([0])
 
             self.wait_until_bookmark("cursorA")
             x, y, _ = plane.c2p(1, 1)
@@ -3125,7 +2715,7 @@ class Func_2_1_I_10_b(SophiaCursorScene):
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
-            note.change_colors([0,1])
+            # note.change_colors([0,1])
 
             self.wait_until_bookmark("bH")
             duration = 1
@@ -3158,11 +2748,11 @@ class Func_2_1_I_10_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
-        self.add(note)
+        # note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
+        # self.add(note)
 
         # Add title to the scene
-        title = self.add_title("Correct!")
+        title = self.add_title(self.translate("Func_2_1.I10.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -3193,18 +2783,11 @@ class Func_2_1_I_10_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Great job, that's exactly right!!!
-                
-                <bookmark mark="note1"/>
-                "a" describes the slope of the function. <bookmark mark="cursorA"/> Remember: <bookmark mark="aH"/> high values of "a" mean a steep slope, <bookmark mark="aL"/> low values of "a" mean a flat slope. <bookmark mark="a1"/>
-                
-                "b" describes the shift of the function in y-Direction. Remember: <bookmark mark="bH"/> positive values of "b" lead to an upwards shift, <bookmark mark="bL"/> negative values of "b" lead to a downwards shift. <bookmark mark="b1"/>
-                """
+                text=self.translate("Func_2_1.I10.c.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            # self.wait_until_bookmark("note1")
+            # note.change_colors([0])
 
             self.wait_until_bookmark("cursorA")
             x, y, _ = plane.c2p(1, 1)
@@ -3228,7 +2811,7 @@ class Func_2_1_I_10_c(SophiaCursorScene):
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
-            note.change_colors([0,1])
+            # note.change_colors([0,1])
 
             self.wait_until_bookmark("bH")
             duration = 1
@@ -3261,11 +2844,11 @@ class Func_2_1_I_10_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
-        self.add(note)
+        # note = Notepad(texts=[["a describes the slope","$a$ large$\\rightarrow$ function steep"], ["$b$ describes shift in y-direction", "$b>0\\rightarrow$ shift upwards"]], buff=0.2, buff_inner=0)
+        # self.add(note)
 
         # Add title to the scene
-        title = self.add_title("Not quite...")
+        title = self.add_title(self.translate("Func_2_1.I10.q.title"))
 
         # Create the coordinate system
         cords = self.add_cords([-3, 3, 1], [-4, 4, 1], x_ticks=[-3,-1,0,1,3], y_ticks=[-4,-2,0,2,4],
@@ -3296,18 +2879,11 @@ class Func_2_1_I_10_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right!
-                
-                <bookmark mark="note1"/>
-                "a" describes the slope of the function. <bookmark mark="cursorA"/> Remember: <bookmark mark="aH"/> high values of "a" mean a steep slope, <bookmark mark="aL"/> low values of "a" mean a flat slope. <bookmark mark="a1"/>
-                
-                "b" describes the shift of the function in y-Direction. Remember: <bookmark mark="bH"/> positive values of "b" lead to an upwards shift, <bookmark mark="bL"/> negative values of "b" lead to a downwards shift. <bookmark mark="b1"/>
-                """
+                text=self.translate("Func_2_1.I10.a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            # self.wait_until_bookmark("note1")
+            # note.change_colors([0])
 
             self.wait_until_bookmark("cursorA")
             x, y, _ = plane.c2p(1, 1)
@@ -3331,7 +2907,7 @@ class Func_2_1_I_10_d(SophiaCursorScene):
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.8)
             cursor.add_updater(lambda c: c.move_to(plane.c2p(0, a.get_value()*0+b.get_value())))
-            note.change_colors([0,1])
+            # note.change_colors([0,1])
 
             self.wait_until_bookmark("bH")
             duration = 1
@@ -3367,8 +2943,8 @@ class Func_2_1_I_11(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=[["We want to determine $a$","$\\rightarrow$We want to find the slope of a function"], "Create slope triangle to find slope"])
-        self.add(note)
+        # note = Notepad(texts=[["We want to determine $a$","$\\rightarrow$We want to find the slope of a function"], "Create slope triangle to find slope"])
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4,4, 1], [-8, 8, 2], x_ticks=[-4,-2,0,2,4], y_ticks=[-8,-4,0,4,8],
@@ -3376,7 +2952,7 @@ class Func_2_1_I_11(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title("Slope of a linear function")
+        self.add_title(self.translate("Func_2_1.I11.title"))
 
         # Create and plot piecewise linear function
         func = lambda x: 2*x
@@ -3389,37 +2965,18 @@ class Func_2_1_I_11(SophiaCursorScene):
         cursor.move_to([xo, yo, 0])
         # self.add(cursor)
 
-        slopeTriangleText = Text("Slope Triangle", color=c1).scale(0.8).next_to(cords, DOWN, buff=0.5)
+        slopeTriangleText = Text(self.translate("Func_2_1.I11.slope_triangle_text"), color=c1).scale(0.8).next_to(cords, DOWN, buff=0.5)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so we now <bookmark mark="note1"/> want to determine "a" from the graph of a function.
-                
-                As we just saw, that means we want to determine the slope of the function.
-                
-                In order to do that, we are revisiting a tool from earlier: <bookmark mark="note2"/> the slope triangle.
-                
-                <bookmark mark="writeCords"/>
-                
-                Consider this linear function and look at the line between the <bookmark mark="sec1"/> point x equals 1 and the point <bookmark mark="sec3"/> x equals 3.
-                
-                Just like earlier, we are drawing <bookmark mark="dashed"/> a vertical line from these points to the graph of the function.
-                
-                These lines intersect the graph at the values of <bookmark mark="circ1"/> f of one and <bookmark mark="circ2"/> f of three.
-                
-                We can shift <bookmark mark="triangle"/> the line between the two points up, to the lower of the two function values and connect it to
-                the higher of the two values using a vertical line <bookmark mark="slopeTriangle"/> to form a triangle.
-                
-                This triangle is called <bookmark mark="highlight"/> the slope triangle.
-                """
+                text=self.translate("Func_2_1.I11.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+            # self.wait_until_bookmark("note1")
+            # note.change_colors([0])
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
+            # self.wait_until_bookmark("note2")
+            # note.change_colors([0,1])
             
             self.wait_until_bookmark("writeCords")
             self.play(Write(cords), run_time=0.5)
@@ -3473,8 +3030,8 @@ class Func_2_1_I_12(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create a notepad with texts
-        note = Notepad(texts=["$1.$Compute width of Triangle", "$2.$Compute height of Triangle", "3. Compute $a$ by dividing height by width"])
-        self.add(note)
+        # note = Notepad(texts=["$1.$Compute width of Triangle", "$2.$Compute height of Triangle", "3. Compute $a$ by dividing height by width"])
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4,4, 2], [-8, 8, 2], x_ticks=[-4,-2,0,4], y_ticks=[-8,-4,0,4,8],
@@ -3483,7 +3040,7 @@ class Func_2_1_I_12(SophiaCursorScene):
         self.add(cords)
 
         # Add title to the scene
-        self.add_title("Slope Triangle")
+        self.add_title(self.translate("Func_2_1.I12.title"))
 
         # Create and plot piecewise linear function
         func = lambda x: 2*x+1
@@ -3516,37 +3073,14 @@ class Func_2_1_I_12(SophiaCursorScene):
         dh1 = DashedLine(start=Right, end=Right+shift, color=BLACK)
         dh2 = DashedLine(start=Top, end=Top+shift, color=BLACK)
 
-        aTerm = MathTex("a=", "{{height}","\\over{width}}","=\\frac42=2", color=BLACK).scale(0.7).next_to(plane, DOWN, buff=0.4)
+        height_str = f"{self.translate('Func_2_1.I12.height')}"
+        width_str = f"{self.translate('Func_2_1.I12.width')}"
+
+        aTerm = MathTex("a=", "{{", height_str, "}","\\over{", width_str, "}}","=\\frac42=2", color=BLACK).scale(0.7).next_to(plane, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Trust me, it's really important to understand the slope triangle well.
-                
-                For that reason, let's analyze it step by step.
-                
-                First, let's look at <bookmark mark="hor"/> the horizontal line.
-                -
-                As we can see, it describes the width of the triangle.
-                
-                If we connect the endpoints of that part of the triangle to the x-axis
-                <bookmark mark="dashed"/> using vertical lines, we can then read off
-                the width of the triangle from the x-axis. In this case,
-                <bookmark mark="width"/> the width is 2. <bookmark mark="unDashed"/>
-                
-                Next, let's look at <bookmark mark="vert"/> the vertical line.
-                
-                The vertical line describes the height of the triangle.
-                
-                If we connect the endpoints of that part of the triangle to the y-axis,
-                <bookmark mark="dashedh"/> using horizontal lines, we can then read off
-                the height of the triangle, similar to how we've read of the width earlier.
-                In this example, <bookmark mark="height"/> the height is 4. <bookmark mark="unDashedH"/>
-                
-                Finally, and most importantly, we want to know what the slope of the triangle is.
-                
-                The slope is also described by the <bookmark mark="slopeLine"/> third line, which is at an angle.
-                """
+                text=self.translate("Func_2_1.I12.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("hor")
@@ -3554,7 +3088,6 @@ class Func_2_1_I_12(SophiaCursorScene):
 
             self.wait_until_bookmark("dashed")
             self.play(Write(d1), Write(d2))
-            note.change_colors([0])
 
             self.wait_until_bookmark("width")
             self.play(Write(width))
@@ -3567,7 +3100,6 @@ class Func_2_1_I_12(SophiaCursorScene):
 
             self.wait_until_bookmark("dashedh")
             self.play(Write(dh1), Write(dh2))
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("height")
             self.play(Write(height))
@@ -3579,36 +3111,20 @@ class Func_2_1_I_12(SophiaCursorScene):
             self.play(Write(slopeLine))
 
         with self.voiceover(
-                text="""
-                But how do we compute the slope? And by computing the slope, we also mean: how do we <bookmark mark="a"/>
-                compute "a"?
-                
-                We compute the slope by dividing the <bookmark mark="height2"/> height of the triangle
-                by the <bookmark mark="width2"/> triangle's width.
-                
-                In this case, it means dividing <bookmark mark="final"/> 4 by 2, which is 2.
-                
-                This means, that "a" is also 2.
-                
-                Great, we just learned how to use the slope triangle to compute the slope of a function:
-                
-                We compute the height and the width of the triangle, and then obtain the slope by dividing
-                the height by the width.
-                """
+                text=self.translate("Func_2_1.I12.voiceover2")
         ) as tracker:
 
             self.wait_until_bookmark("a")
             self.play(Write(aTerm[0]))
 
             self.wait_until_bookmark("height2")
-            note.change_colors([1,2])
-            self.play(Write(aTerm[1]), run_time=0.5)
+            self.play(Write(aTerm[1]), Write(aTerm[2]), Write(aTerm[3]), run_time=0.5)
 
             self.wait_until_bookmark("width2")
-            self.play(Write(aTerm[2]), run_time=0.5)
+            self.play(Write(aTerm[4]), Write(aTerm[5]), Write(aTerm[6]), run_time=0.5)
 
             self.wait_until_bookmark("final")
-            self.play(Write(aTerm[3]))
+            self.play(Write(aTerm[-1]))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
