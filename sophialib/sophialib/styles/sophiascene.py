@@ -9,6 +9,7 @@ import numpy as np
 import urllib.request
 from pathlib import Path
 import math
+import re
 
 from manim_voiceover import VoiceoverScene
 from sophialib.constants.directories import SCENES_ASSETS_FOLDER
@@ -125,6 +126,25 @@ class SophiaScene(VoiceoverScene):
     def add_divider(self):
         line = DashedLine([-2.2,-1,0], [2.2,-1,0], color=BLACK, stroke_width=1)
         self.add(line)
+
+    def evaluate_string(self, s):
+        # This regex pattern finds 'self.' followed by any word characters
+        pattern_self = re.compile(r'self\.(\w+)')
+        # Replace 'self.XXX' with 'XXX'
+        s = pattern_self.sub(r'\1', s)
+        
+        # This regex pattern finds expressions enclosed in curly braces
+        pattern_expr = re.compile(r'{(.*?)}')
+        
+        def replacer(match):
+            # Evaluate the expression within the context of this class instance
+            expression = match.group(1)
+            return str(eval(expression, vars(self)))
+        
+        # Replace expressions in the string with their evaluated values
+        evaluated_string = pattern_expr.sub(replacer, s)
+        return evaluated_string
+
         
 
     def construct(self):
@@ -908,8 +928,6 @@ class SophiaCursorScene(SophiaScene):
         if run_time is not None:
             animation = animation.set_run_time(run_time)
         turn_animation_into_updater(animation)
-
-
 
 def format_text_group(texts, color = c1t, buff=0.4, buff_inner = 0.1, font_size=fs4):
     texts_formatted = []

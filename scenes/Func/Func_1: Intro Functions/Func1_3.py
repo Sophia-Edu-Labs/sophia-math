@@ -541,7 +541,7 @@ class Func_1_3_I_5(SophiaCursorScene):
         funcGreen = lambda x: x+2
         graphGreen = plane.plot(funcGreen, color=GREEN)
 
-        instruct = VGroup(Tex("a) Plug $x=0$ into the\\\\function expression", color=c1t, font_size=fs3, tex_environment="flushright"), Tex("b) Find the intersection\\\\graphically", color=c1t, font_size=fs3, tex_environment="flushright")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
+        instruct = VGroup(Tex(self.translate("Func_1_3.I5.instruct-1"), color=c1t, font_size=fs3, tex_environment="flushright"), Tex(self.translate("Func_1_3.I5.instruct-2"), color=c1t, font_size=fs3, tex_environment="flushright")).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
 
         # "", "b) Read the intersection point graphically."
 
@@ -553,23 +553,7 @@ class Func_1_3_I_5(SophiaCursorScene):
         green_terms = VGroup(termGreen, termGreenZero).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=.6)
 
         with self.voiceover(
-            text=f"""
-            Now, let's focus on the intersection points with the y axis.
-            One way to find the intersection points with the y-axis is to <bookmark mark="instruct_1"/>plug x equals zero into the function expression.
-            <break time="1s"/>
-            Another way to find the intersection point with the y-axis is, <bookmark mark="instruct_2"/> to read it off from the graph.
-            <break time="1s"/>
-            Let's practice using two examples.
-            <break time="1s"/>Example Number one. <bookmark mark="clear"/>
-            Consider the function f of x equals x squared minus one.
-            To find the intersection point with the y axis, we simply plug in <bookmark mark="substitute"/> x equals zero.
-            We get f of zero equals zero squared minus one, which equals negative one. So the intersection point is at y equals minus one.
-            <bookmark mark="blue"/> We can confirm this visually: The graph intersects the y axis at <bookmark mark="cross1"/> y equals minus one.
-            <break time="1s"/>Example Number Two.
-            Look at the function <bookmark mark="green1"/> g of x equals x plus two.
-            Plugging in <bookmark mark="subGreen"/> x equals zero gives us the value two, which is also the intersection point with the y axis.
-            Again, we can <bookmark mark="green2"/> visually confirm this: The graph intersects the y axis at <bookmark mark="cross2"/> y equals two.
-            """
+            text=self.translate("Func_1_3.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("instruct_1")
@@ -631,16 +615,13 @@ class xCrossingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP)
         cursor = AltCursor(stroke_width=0.0, idle=False)
 
-        self.add_title("Intersecting Axes")
+        self.add_title(self.translate("Func_1_3.x_crossing_question_scene.title"))
+
+        text = self.evaluate_string(self.translate("Func_1_3.x_crossing_question_scene.voiceover"))
+        print(text)
 
         with self.voiceover(
-            text=f"""
-            {self.intro}
-            Consider the function <bookmark mark="writeFunc"/> {self.funcText}.
-            <bookmark mark="zero"/>
-            Where is the zero crossing of this function? If there's more than one:
-            Where are the zero crossings?
-            """
+            text = text
         ) as tracker:
             self.wait_until_bookmark("writeFunc")
             self.play(Write(func))
@@ -657,11 +638,10 @@ class xCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
     def construct(self):
         super().construct()
         self.add_mathgrid()
-
         func = MathTex(self.funcTex, color=c1t, font_size=fs1)
-        setToZero = Tex("$\\rightarrow$ Set function equal to zero", color=RED, font_size=fs3)
+        setToZero = Tex(self.translate("Func_1_3.x_crossing_answer_scene.setToZero"), color=RED, font_size=fs3)
         func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs1)
-        solve = Tex("$\\rightarrow$ Solve for $x$", color=RED, font_size=fs3)
+        solve = Tex(self.translate("Func_1_3.x_crossing_answer_scene.solve"), color=RED, font_size=fs3)
         func_Zeros = MathTex(self.funcZeros, color=c1t, font_size=fs1)
         explanation = VGroup(func, setToZero, func_Zeroed, solve, func_Zeros).arrange(DOWN, buff=.2, aligned_edge=LEFT)
 
@@ -669,21 +649,10 @@ class xCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         plane = self.cords[0]
         plot = plane.plot(self.func, color=BLUE)
 
-        self.add_title("Intersecting Axes")
+        self.add_title(self.translate("Func_1_3.x_crossing_answer_scene.title"))
 
         with self.voiceover(
-            text=f"""
-            {self.intro}
-            So, we start with the function <bookmark mark="writeFunc"/> {self.funcText}.
-            <break time="1s"/>
-            First, we <bookmark mark="setToZero1"/> set this function equal to zero, which gives us <bookmark mark="setToZero2"/> {self.ZeroText}.
-            Then, <bookmark mark="solve1"/> we solve the equation for x, and <bookmark mark="solve2"/> we obtain {self.ZerosText}.
-            <break time="1s"/>
-            We can also <bookmark mark="clear"/> graphically verify this solution.
-            <break time="1s"/>
-            <bookmark mark="plot"/>Here's the graph of our function.
-            As you can see <bookmark mark="crossing"/>, the graph intersects the x-axis at {self.ZerosText}.
-            """
+            text=self.evaluate_string(self.translate("Func_1_3.x_crossing_answer_scene.voiceover"))
         ) as tracker:
             self.wait_until_bookmark("writeFunc")
             self.play(Write(func))
@@ -720,20 +689,22 @@ class xCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 #####################################
 #####################################
 
-TASK_Func_1_3_P_1_1_q = SophiaTaskDefinition(
-    answerOptions = ["$-1", "$1$", "$-1,\\,0,\\,1$", "$-1,\\,1$"],
-    correctAnswerIndex = 3,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^2-1$?"
-)
 
 class Func_1_3_P_1_1_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-1", "$1$", "$-1,\\,0,\\,1$", "$-1,\\,1$"],
+            correctAnswerIndex = 3,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x^2-1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.intro = "So, now let's practice intersection points."
+        self.funcText = self.translate("Func_1_3.P1q.func")
+        self.intro = self.translate("Func_1_3.P1q.intro")
 
         super().construct()
 
@@ -744,10 +715,10 @@ class Func_1_3_P_1_1_a(xCrossingAnswerScene):
         self.funcZero = "x^2-1=0"
         self.funcZeros = "x=-1,\\, x=1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "x squared minus one equals zero"
-        self.ZerosText = "x equals minus one and x equals one"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P1q.func")
+        self.ZeroText = self.translate("Func_1_3.P1q.zero")
+        self.ZerosText = self.translate("Func_1_3.P1q.zeros")
+        self.intro = self.translate("Func_1_3.P1a.intro")
         self.isCorrect = False
         self.zeros = [-1,1]
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
@@ -762,10 +733,10 @@ class Func_1_3_P_1_1_b(xCrossingAnswerScene):
         self.funcZero = "x^2-1=0"
         self.funcZeros = "x=-1,\\, x=1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "x squared minus one equals zero"
-        self.ZerosText = "x equals minus one and x equals one"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P1q.func")
+        self.ZeroText = self.translate("Func_1_3.P1q.zero")
+        self.ZerosText = self.translate("Func_1_3.P1q.zeros")
+        self.intro = self.translate("Func_1_3.P1a.intro")
         self.isCorrect = False
         self.zeros = [-1,1]
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
@@ -780,10 +751,10 @@ class Func_1_3_P_1_1_c(xCrossingAnswerScene):
         self.funcZero = "x^2-1=0"
         self.funcZeros = "x=-1,\\, x=1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "x squared minus one equals zero"
-        self.ZerosText = "x equals minus one and x equals one"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P1q.func")
+        self.ZeroText = self.translate("Func_1_3.P1q.zero")
+        self.ZerosText = self.translate("Func_1_3.P1q.zeros")
+        self.intro = self.translate("Func_1_3.P1a.intro")
         self.isCorrect = False
         self.zeros = [-1,1]
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
@@ -798,10 +769,10 @@ class Func_1_3_P_1_1_d(xCrossingAnswerScene):
         self.funcZero = "x^2-1=0"
         self.funcZeros = "x=-1,\\, x=1"
         self.func = lambda x: x**2-1
-        self.funcText = "f of x equals x squared minus one"
-        self.ZeroText = "x squared minus one equals zero"
-        self.ZerosText = "x equals minus one and x equals one"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P1q.func")
+        self.ZeroText = self.translate("Func_1_3.P1q.zero")
+        self.ZerosText = self.translate("Func_1_3.P1q.zeros")
+        self.intro = self.translate("Func_1_3.P1d.intro")
         self.isCorrect = True
         self.zeros = [-1,1]
         self.cords = self.add_cords([-2, 2, 1], [-3, 3, 1], x_ticks=[-2,2], y_ticks=[-3,-1,1,3],
@@ -814,21 +785,22 @@ class Func_1_3_P_1_1_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-
-TASK_Func_1_3_P_1_2_q = SophiaTaskDefinition(
-    answerOptions = ["$-2$", "$2$", "$-2,\\,2$", "$-2,\\,0,\\,2$"],
-    correctAnswerIndex = 2,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^2-4$?"
-)
-
 class Func_1_3_P_1_2_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-2$", "$2$", "$-2,\\,2$", "$-2,\\,0,\\,2$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
+
 
     def construct(self):
 
         self.funcTex = "f(x)=x^2-4"
         self.func = lambda x: x**2-4
-        self.funcText = "f of x equals x squared minus four"
-        self.intro = "Let's try again with a different function."
+        self.funcText = self.translate("Func_1_3.P2q.func")
+        self.intro = self.translate("Func_1_3.P2q.intro")
 
         super().construct()
 
@@ -839,10 +811,10 @@ class Func_1_3_P_1_2_a(xCrossingAnswerScene):
         self.funcZero = "x^2-4=0"
         self.funcZeros = "x=-2,\\, x=2"
         self.func = lambda x: x**2-4
-        self.funcText = "f of x equals x squared minus four"
-        self.ZeroText = "x squared minus four equals zero"
-        self.ZerosText = "x equals minus two and x equals two"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2q.zero")
+        self.ZerosText = self.translate("Func_1_3.P2q.zeros")
+        self.intro = self.translate("Func_1_3.P2a.intro")
         self.isCorrect = False
         self.zeros = [-2,2]
         self.cords = self.add_cords([-3, 3, 1], [-5, 5, 1], x_ticks=[-3,3], y_ticks=[-5,0,5],
@@ -857,10 +829,10 @@ class Func_1_3_P_1_2_b(xCrossingAnswerScene):
         self.funcZero = "x^2-4=0"
         self.funcZeros = "x=-2,\\, x=2"
         self.func = lambda x: x**2-4
-        self.funcText = "f of x equals x squared minus four"
-        self.ZeroText = "x squared minus four equals zero"
-        self.ZerosText = "x equals minus two and x equals two"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2q.zero")
+        self.ZerosText = self.translate("Func_1_3.P2q.zeros")
+        self.intro = self.translate("Func_1_3.P2a.intro")
         self.isCorrect = False
         self.zeros = [-2,2]
         self.cords = self.add_cords([-3, 3, 1], [-5, 5, 1], x_ticks=[-3,3], y_ticks=[-5,0,5],
@@ -875,10 +847,10 @@ class Func_1_3_P_1_2_c(xCrossingAnswerScene):
         self.funcZero = "x^2-4=0"
         self.funcZeros = "x=-2,\\, x=2"
         self.func = lambda x: x**2-4
-        self.funcText = "f of x equals x squared minus four"
-        self.ZeroText = "x squared minus four equals zero"
-        self.ZerosText = "x equals minus two and x equals two"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2q.zero")
+        self.ZerosText = self.translate("Func_1_3.P2q.zeros")
+        self.intro = self.translate("Func_1_3.P2c.intro")
         self.isCorrect = True
         self.zeros = [-2,2]
         self.cords = self.add_cords([-3, 3, 1], [-5, 5, 1], x_ticks=[-3,3], y_ticks=[-5,0,5],
@@ -893,10 +865,10 @@ class Func_1_3_P_1_2_d(xCrossingAnswerScene):
         self.funcZero = "x^2-4=0"
         self.funcZeros = "x=-2,\\, x=2"
         self.func = lambda x: x**2-4
-        self.funcText = "f of x equals x squared minus four"
-        self.ZeroText = "x squared minus four equals zero"
-        self.ZerosText = "x equals minus two and x equals two"
-        self.intro = "Unfortunately, that's not quite right..."
+        self.funcText = self.translate("Func_1_3.P2q.func")
+        self.ZeroText = self.translate("Func_1_3.P2q.zero")
+        self.ZerosText = self.translate("Func_1_3.P2q.zeros")
+        self.intro = self.translate("Func_1_3.P2a.intro")
         self.isCorrect = False
         self.zeros = [-2,2]
         self.cords = self.add_cords([-3, 3, 1], [-5, 5, 1], x_ticks=[-3,3], y_ticks=[-5,0,5],
@@ -907,20 +879,21 @@ class Func_1_3_P_1_2_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_1_3_q = SophiaTaskDefinition(
-    answerOptions = ["$0$", "$2$", "$-2,\\,2$", "$-2,\\,0,\\,2$"],
-    correctAnswerIndex = 0,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^3$?"   
-)
-
 class Func_1_3_P_1_3_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$2$", "$-2,\\,2$", "$-2,\\,0,\\,2$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x^3"
         self.func = lambda x: x**3
-        self.funcText = "function f of x equals x cubed"
-        self.intro = "Let's move on to a cubic function."
+        self.funcText = self.translate("Func_1_3.P3q.func")
+        self.intro = self.translate("Func_1_3.P3q.intro")
 
         super().construct()
 
@@ -931,10 +904,10 @@ class Func_1_3_P_1_3_a(xCrossingAnswerScene):
         self.funcZero = "x^3=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x**3
-        self.funcText = "function f of x equals x cubed"
-        self.ZeroText = "x cubed equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P3q.func")
+        self.ZeroText = self.translate("Func_1_3.P3q.zero")
+        self.ZerosText = self.translate("Func_1_3.P3q.zeros")
+        self.intro = self.translate("Func_1_3.P3a.intro")
         self.isCorrect = True
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-8, 8, 1], x_ticks=[-3,0,3], y_ticks=[-8,0,8],
@@ -950,10 +923,10 @@ class Func_1_3_P_1_3_b(xCrossingAnswerScene):
         self.funcZero = "x^3=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x**3
-        self.funcText = "function f of x equals x cubed"
-        self.ZeroText = "x cubed equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P3q.func")
+        self.ZeroText = self.translate("Func_1_3.P3q.zero")
+        self.ZerosText = self.translate("Func_1_3.P3q.zeros")
+        self.intro = self.translate("Func_1_3.P3b.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-8, 8, 1], x_ticks=[-3,0,3], y_ticks=[-8,0,8],
@@ -969,10 +942,10 @@ class Func_1_3_P_1_3_c(xCrossingAnswerScene):
         self.funcZero = "x^3=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x**3
-        self.funcText = "function f of x equals x cubed"
-        self.ZeroText = "x cubed equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P3q.func")
+        self.ZeroText = self.translate("Func_1_3.P3q.zero")
+        self.ZerosText = self.translate("Func_1_3.P3q.zeros")
+        self.intro = self.translate("Func_1_3.P3b.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-8, 8, 1], x_ticks=[-3,0,3], y_ticks=[-8,0,8],
@@ -988,10 +961,10 @@ class Func_1_3_P_1_3_d(xCrossingAnswerScene):
         self.funcZero = "x^3=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x**3
-        self.funcText = "function f of x equals x cubed"
-        self.ZeroText = "x cubed equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P3q.func")
+        self.ZeroText = self.translate("Func_1_3.P3q.zero")
+        self.ZerosText = self.translate("Func_1_3.P3q.zeros")
+        self.intro = self.translate("Func_1_3.P3b.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-8, 8, 1], x_ticks=[-3,0,3], y_ticks=[-8,0,8],
@@ -1001,20 +974,21 @@ class Func_1_3_P_1_3_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_1_4_q = SophiaTaskDefinition(
-    answerOptions = ["$-1$", "$0$", "$-1,\\,0$", "$0,\\,1$"],
-    correctAnswerIndex = 1,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x$?"   
-)
-
 class Func_1_3_P_1_4_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-1$", "$0$", "$-1,\\,0$", "$0,\\,1$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x"
         self.func = lambda x: x
-        self.funcText = "function f of x equals x"
-        self.intro = "And now we move on to the linear function."
+        self.funcText = self.translate("Func_1_3.P4q.func")
+        self.intro = self.translate("Func_1_3.P4q.intro")
 
         super().construct()
 
@@ -1026,10 +1000,10 @@ class Func_1_3_P_1_4_a(xCrossingAnswerScene):
         self.funcZero = "x=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x
-        self.funcText = "function f of x equals x"
-        self.ZeroText = "x equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P4q.func")
+        self.ZeroText = self.translate("Func_1_3.P4q.zero")
+        self.ZerosText = self.translate("Func_1_3.P4q.zeros")
+        self.intro = self.translate("Func_1_3.P4a.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-3, 3, 1], x_ticks=[-3,0,3], y_ticks=[-3,0,3],
@@ -1044,10 +1018,10 @@ class Func_1_3_P_1_4_b(xCrossingAnswerScene):
         self.funcZero = "x=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x
-        self.funcText = "function f of x equals x"
-        self.ZeroText = "x equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P4q.func")
+        self.ZeroText = self.translate("Func_1_3.P4q.zero")
+        self.ZerosText = self.translate("Func_1_3.P4q.zeros")
+        self.intro = self.translate("Func_1_3.P4b.intro")
         self.isCorrect = True
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-3, 3, 1], x_ticks=[-3,0,3], y_ticks=[-3,0,3],
@@ -1063,10 +1037,10 @@ class Func_1_3_P_1_4_c(xCrossingAnswerScene):
         self.funcZero = "x=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x
-        self.funcText = "function f of x equals x"
-        self.ZeroText = "x equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P4q.func")
+        self.ZeroText = self.translate("Func_1_3.P4q.zero")
+        self.ZerosText = self.translate("Func_1_3.P4q.zeros")
+        self.intro = self.translate("Func_1_3.P4a.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-3, 3, 1], x_ticks=[-3,0,3], y_ticks=[-3,0,3],
@@ -1082,10 +1056,10 @@ class Func_1_3_P_1_4_d(xCrossingAnswerScene):
         self.funcZero = "x=0"
         self.funcZeros = "x=0"
         self.func = lambda x: x
-        self.funcText = "function f of x equals x"
-        self.ZeroText = "x equals zero"
-        self.ZerosText = "x equals zero"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P4q.func")
+        self.ZeroText = self.translate("Func_1_3.P4q.zero")
+        self.ZerosText = self.translate("Func_1_3.P4q.zeros")
+        self.intro = self.translate("Func_1_3.P4a.intro")
         self.isCorrect = False
         self.zeros = [0]
         self.cords = self.add_cords([-3, 3, 1], [-3, 3, 1], x_ticks=[-3,0,3], y_ticks=[-3,0,3],
@@ -1095,20 +1069,21 @@ class Func_1_3_P_1_4_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_1_3_P_1_5_q = SophiaTaskDefinition(
-    answerOptions = ["$-3$", "$3$", "$-3,\\,3$", "$-3,\\,0,\\,3$"],
-    correctAnswerIndex = 2,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^2-9$?"   
-)
-
 class Func_1_3_P_1_5_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-3$", "$3$", "$-3,\\,3$", "$-3,\\,0,\\,3$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x^2-9"
         self.func = lambda x: x**2-9
-        self.funcText = "function f of x equals x squared minus nine"
-        self.intro = "Let's try this with another function."
+        self.funcText = self.translate("Func_1_3.P5q.func")
+        self.intro = self.translate("Func_1_3.P5q.intro")
 
         super().construct()
 
@@ -1119,10 +1094,10 @@ class Func_1_3_P_1_5_a(xCrossingAnswerScene):
         self.funcZero = "x^2-9=0"
         self.funcZeros = "x=-3,\\, x=3"
         self.func = lambda x: x**2-9
-        self.funcText = "function f of x equals x squared minus nine"
-        self.ZeroText = "x squared minus nine equals zero"
-        self.ZerosText = "x equals minus three and x equals three"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P5q.func")
+        self.ZeroText = self.translate("Func_1_3.P5q.zero")
+        self.ZerosText = self.translate("Func_1_3.P5q.zeros")
+        self.intro = self.translate("Func_1_3.P5a.intro")
         self.isCorrect = False
         self.zeros = [-3,3]
         self.cords = self.add_cords([-4, 4, 1], [-10, 10, 1], x_ticks=[-4,4], y_ticks=[-10,0,10],
@@ -1137,10 +1112,10 @@ class Func_1_3_P_1_5_b(xCrossingAnswerScene):
         self.funcZero = "x^2-9=0"
         self.funcZeros = "x=-3,\\, x=3"
         self.func = lambda x: x**2-9
-        self.funcText = "function f of x equals x squared minus nine"
-        self.ZeroText = "x squared minus nine equals zero"
-        self.ZerosText = "x equals minus three and x equals three"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P5q.func")
+        self.ZeroText = self.translate("Func_1_3.P5q.zero")
+        self.ZerosText = self.translate("Func_1_3.P5q.zeros")
+        self.intro = self.translate("Func_1_3.P5a.intro")
         self.isCorrect = False
         self.zeros = [-3,3]
         self.cords = self.add_cords([-4, 4, 1], [-10, 10, 1], x_ticks=[-4,4], y_ticks=[-10,0,10],
@@ -1155,10 +1130,10 @@ class Func_1_3_P_1_5_c(xCrossingAnswerScene):
         self.funcZero = "x^2-9=0"
         self.funcZeros = "x=-3,\\, x=3"
         self.func = lambda x: x**2-9
-        self.funcText = "function f of x equals x squared minus nine"
-        self.ZeroText = "x squared minus nine equals zero"
-        self.ZerosText = "x equals minus three and x equals three"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P5q.func")
+        self.ZeroText = self.translate("Func_1_3.P5q.zero")
+        self.ZerosText = self.translate("Func_1_3.P5q.zeros")
+        self.intro = self.translate("Func_1_3.P5c.intro")
         self.isCorrect = True
         self.zeros = [-3,3]
         self.cords = self.add_cords([-4, 4, 1], [-10, 10, 1], x_ticks=[-4,4], y_ticks=[-10,0,10],
@@ -1173,10 +1148,10 @@ class Func_1_3_P_1_5_d(xCrossingAnswerScene):
         self.funcZero = "x^2-9=0"
         self.funcZeros = "x=-3,\\, x=3"
         self.func = lambda x: x**2-9
-        self.funcText = "function f of x equals x squared minus nine"
-        self.ZeroText = "x squared minus nine equals zero"
-        self.ZerosText = "x equals minus three and x equals three"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P5q.func")
+        self.ZeroText = self.translate("Func_1_3.P5q.zero")
+        self.ZerosText = self.translate("Func_1_3.P5q.zeros")
+        self.intro = self.translate("Func_1_3.P5a.intro")
         self.isCorrect = False
         self.zeros = [-3,3]
         self.cords = self.add_cords([-4, 4, 1], [-10, 10, 1], x_ticks=[-4,4], y_ticks=[-10,0,10],
@@ -1186,21 +1161,21 @@ class Func_1_3_P_1_5_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-
-TASK_Func_1_3_P_1_6_q = SophiaTaskDefinition(
-    answerOptions = ["$-4$", "$4$", "$-4,\\,4$", "$-4,\\,0,\\,4$"],
-    correctAnswerIndex = 2,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^2-16$?"   
-)
-
 class Func_1_3_P_1_6_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-4$", "$4$", "$-4,\\,4$", "$-4,\\,0,\\,4$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x^2-16"
         self.func = lambda x: x**2-16
-        self.funcText = "function f of x equals x squared minus sixteen"
-        self.intro = "Let's consider another function."
+        self.funcText = self.translate("Func_1_3.P6q.func")
+        self.intro = self.translate("Func_1_3.P6q.intro")
 
         super().construct()
 
@@ -1212,10 +1187,10 @@ class Func_1_3_P_1_6_a(xCrossingAnswerScene):
         self.funcZero = "x^2-16=0"
         self.funcZeros = "x=-4,\\, x=4"
         self.func = lambda x: x**2-16
-        self.funcText = "function f of x equals x squared minus sixteen"
-        self.ZeroText = "x squared minus sixteen equals zero"
-        self.ZerosText = "x equals minus four and x equals four"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P6q.func")
+        self.ZeroText = self.translate("Func_1_3.P6q.zero")
+        self.ZerosText = self.translate("Func_1_3.P6q.zeros")
+        self.intro = self.translate("Func_1_3.P6a.intro")
         self.isCorrect = False
         self.zeros = [-4,4]
         self.cords = self.add_cords([-5, 5, 1], [-17, 17, 1], x_ticks=[-5,5], y_ticks=[-17,0,17],
@@ -1231,10 +1206,10 @@ class Func_1_3_P_1_6_b(xCrossingAnswerScene):
         self.funcZero = "x^2-16=0"
         self.funcZeros = "x=-4,\\, x=4"
         self.func = lambda x: x**2-16
-        self.funcText = "function f of x equals x squared minus sixteen"
-        self.ZeroText = "x squared minus sixteen equals zero"
-        self.ZerosText = "x equals minus four and x equals four"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P6q.func")
+        self.ZeroText = self.translate("Func_1_3.P6q.zero")
+        self.ZerosText = self.translate("Func_1_3.P6q.zeros")
+        self.intro = self.translate("Func_1_3.P6a.intro")
         self.isCorrect = False
         self.zeros = [-4,4]
         self.cords = self.add_cords([-5, 5, 1], [-17, 17, 1], x_ticks=[-5,5], y_ticks=[-17,0,17],
@@ -1249,10 +1224,10 @@ class Func_1_3_P_1_6_c(xCrossingAnswerScene):
         self.funcZero = "x^2-16=0"
         self.funcZeros = "x=-4,\\, x=4"
         self.func = lambda x: x**2-16
-        self.funcText = "function f of x equals x squared minus sixteen"
-        self.ZeroText = "x squared minus sixteen equals zero"
-        self.ZerosText = "x equals minus four and x equals four"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P6q.func")
+        self.ZeroText = self.translate("Func_1_3.P6q.zero")
+        self.ZerosText = self.translate("Func_1_3.P6q.zeros")
+        self.intro = self.translate("Func_1_3.P6c.intro")
         self.isCorrect = True
         self.zeros = [-4,4]
         self.cords = self.add_cords([-5, 5, 1], [-17, 17, 1], x_ticks=[-5,5], y_ticks=[-17,0,17],
@@ -1268,10 +1243,10 @@ class Func_1_3_P_1_6_d(xCrossingAnswerScene):
         self.funcZero = "x^2-16=0"
         self.funcZeros = "x=-4,\\, x=4"
         self.func = lambda x: x**2-16
-        self.funcText = "function f of x equals x squared minus sixteen"
-        self.ZeroText = "x squared minus sixteen equals zero"
-        self.ZerosText = "x equals minus four and x equals four"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P6q.func")
+        self.ZeroText = self.translate("Func_1_3.P6q.zero")
+        self.ZerosText = self.translate("Func_1_3.P6q.zeros")
+        self.intro = self.translate("Func_1_3.P6a.intro")
         self.isCorrect = False
         self.zeros = [-4,4]
         self.cords = self.add_cords([-5, 5, 1], [-17, 17, 1], x_ticks=[-5,5], y_ticks=[-17,0,17],
@@ -1281,21 +1256,21 @@ class Func_1_3_P_1_6_d(xCrossingAnswerScene):
 
 #####################################
 #####################################
-
-TASK_Func_1_3_P_1_7_q = SophiaTaskDefinition(
-    answerOptions = ["$-5$", "$5$", "$-5,\\,5$", "$-5,\\,0,\\,5$"],
-    correctAnswerIndex = 2,
-    questionText = "What is/are the zero crossing(s) of the function $f(x)=x^2-25$?"   
-)
-
 class Func_1_3_P_1_7_q(xCrossingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-5$", "$5$", "$-5,\\,5$", "$-5,\\,0,\\,5$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_3.P1q.question")
+        )
 
     def construct(self):
 
         self.funcTex = "f(x)=x^2-25"
         self.func = lambda x: x**2-25
-        self.funcText = "function f of x equals x squared minus twenty-five"
-        self.intro = "Let's try another function."
+        self.funcText = self.translate("Func_1_3.P7q.func")
+        self.intro = self.translate("Func_1_3.P7q.intro")
 
         super().construct()
 
@@ -1307,10 +1282,10 @@ class Func_1_3_P_1_7_a(xCrossingAnswerScene):
         self.funcZero = "x^2-25=0"
         self.funcZeros = "x=-5,\\, x=5"
         self.func = lambda x: x**2-25
-        self.funcText = "function f of x equals x squared minus twenty-five"
-        self.ZeroText = "x squared minus twenty-five equals zero"
-        self.ZerosText = "x equals minus five and x equals five"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P7q.func")
+        self.ZeroText = self.translate("Func_1_3.P7q.zero")
+        self.ZerosText = self.translate("Func_1_3.P7q.zeros")
+        self.intro = self.translate("Func_1_3.P7a.intro")
         self.isCorrect = False
         self.zeros = [-5,5]
         self.cords = self.add_cords([-6, 6, 1], [-26, 26, 1], x_ticks=[-6,6], y_ticks=[-26,0,26],
@@ -1326,10 +1301,10 @@ class Func_1_3_P_1_7_b(xCrossingAnswerScene):
         self.funcZero = "x^2-25=0"
         self.funcZeros = "x=-5,\\, x=5"
         self.func = lambda x: x**2-25
-        self.funcText = "function f of x equals x squared minus twenty-five"
-        self.ZeroText = "x squared minus twenty-five equals zero"
-        self.ZerosText = "x equals minus five and x equals five"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P7q.func")
+        self.ZeroText = self.translate("Func_1_3.P7q.zero")
+        self.ZerosText = self.translate("Func_1_3.P7q.zeros")
+        self.intro = self.translate("Func_1_3.P7a.intro")
         self.isCorrect = False
         self.zeros = [-5,5]
         self.cords = self.add_cords([-6, 6, 1], [-26, 26, 1], x_ticks=[-6,6], y_ticks=[-26,0,26],
@@ -1344,10 +1319,10 @@ class Func_1_3_P_1_7_c(xCrossingAnswerScene):
         self.funcZero = "x^2-25=0"
         self.funcZeros = "x=-5,\\, x=5"
         self.func = lambda x: x**2-25
-        self.funcText = "function f of x equals x squared minus twenty-five"
-        self.ZeroText = "x squared minus twenty-five equals zero"
-        self.ZerosText = "x equals minus five and x equals five"
-        self.intro = "That's correct, well done."
+        self.funcText = self.translate("Func_1_3.P7q.func")
+        self.ZeroText = self.translate("Func_1_3.P7q.zero")
+        self.ZerosText = self.translate("Func_1_3.P7q.zeros")
+        self.intro = self.translate("Func_1_3.P7c.intro")
         self.isCorrect = True
         self.zeros = [-5,5]
         self.cords = self.add_cords([-6, 6, 1], [-26, 26, 1], x_ticks=[-6,6], y_ticks=[-26,0,26],
@@ -1363,10 +1338,10 @@ class Func_1_3_P_1_7_d(xCrossingAnswerScene):
         self.funcZero = "x^2-25=0"
         self.funcZeros = "x=-5,\\, x=5"
         self.func = lambda x: x**2-25
-        self.funcText = "function f of x equals x squared minus twenty-five"
-        self.ZeroText = "x squared minus twenty-five equals zero"
-        self.ZerosText = "x equals minus five and x equals five"
-        self.intro = "Unfortunately, that's incorrect. Too bad."
+        self.funcText = self.translate("Func_1_3.P7q.func")
+        self.ZeroText = self.translate("Func_1_3.P7q.zero")
+        self.ZerosText = self.translate("Func_1_3.P7q.zeros")
+        self.intro = self.translate("Func_1_3.P7a.intro")
         self.isCorrect = False
         self.zeros = [-5,5]
         self.cords = self.add_cords([-6, 6, 1], [-26, 26, 1], x_ticks=[-6,6], y_ticks=[-26,0,26],
@@ -1395,16 +1370,11 @@ class yCrossingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         func = MathTex(self.funcTex, color=c1t, font_size=fs1).shift(UP)
 
         # Add title to the scene
-        self.add_title("Intersection with the y-Axis")
+        self.add_title(self.translate("Func_1_3.y_crossing_question_scene.title"))
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                Consider the function <bookmark mark="writeFunc"/> {self.funcText}.
-                <bookmark mark="zero"/>
-                Where is the intersection of the function with the y axis?
-                """
+                text=self.evaluate_string(self.translate("Func_1_3.y_crossing_question_scene.intro"))
         ) as tracker:
             
             self.wait_until_bookmark("writeFunc")
@@ -1426,9 +1396,8 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-
         func = MathTex(self.funcTex, color=c1t, font_size=fs2)
-        plugInZero = Tex("$\\Rightarrow$ Substitute $x=0$", color=RED, font_size=fs3)
+        plugInZero = Tex(self.translate("Func_1_3.y_crossing_answer_scene.plugInZero"), color=RED, font_size=fs3)
         func_Zeroed = MathTex(self.funcZero, color=c1t, font_size=fs2)
         explanation = VGroup(func, plugInZero, func_Zeroed).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
 
@@ -1439,7 +1408,7 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 
         # Add title to the scene
-        self.add_title("Intersection with the y-Axis")
+        self.add_title(self.translate("Func_1_3.y_crossing_answer_scene.title"))
         
         # Initialize a cursor
         # cursor = AltCursor(stroke_width=0.0, blinking=True).shift(LEFT)
@@ -1447,19 +1416,7 @@ class yCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                So, we are considering the function <bookmark mark="writeFunc"/> {self.funcText}.
-                To obtain the intersection point with the y axis <bookmark mark="setToZero1"/>,
-                we simply plug x equals 0 into the function term.
-                Then we get <bookmark mark="setToZero2"/> {self.ZeroText}. <bookmark mark="noteChange"/>
-                And then we already have the y-value of the intersection point with the y-axis.
-                
-                Now, let's verify this using <bookmark mark="clear"/> the graph.
-                Here's the graph of the function. <bookmark mark="plot"/>
-                We can see that the intersection point with the y-axis <bookmark mark="ycirc"/>
-                lies at  y equal to {self.y_cross_text}.
-                """
+                text=self.evaluate_string(self.translate("Func_1_3.y_crossing_answer_scene.intro"))
         ) as tracker:
             
             self.wait_until_bookmark("writeFunc")
@@ -2156,104 +2113,104 @@ class Func_1_3_P_2_7_d(yCrossingAnswerScene):
 
 
 
-PROTOTYPES = [
-    PagePrototypeVideo.from_scene(Func_1_3_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_I_1_q, Func_1_3_I_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_I_1_a),
-    PagePrototypeVideo.from_scene(Func_1_3_I_1_b),
-    PagePrototypeVideo.from_scene(Func_1_3_I_1_c),
-    PagePrototypeVideo.from_scene(Func_1_3_I_1_d),
-    PagePrototypeVideo.from_scene(Func_1_3_I_2),
-    PagePrototypeVideo.from_scene(Func_1_3_I_3),
-    PagePrototypeVideo.from_scene(Func_1_3_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_I_4_q, Func_1_3_I_4_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_I_4_a),
-    PagePrototypeVideo.from_scene(Func_1_3_I_4_b),
-    PagePrototypeVideo.from_scene(Func_1_3_I_4_c),
-    PagePrototypeVideo.from_scene(Func_1_3_I_4_d),
-    PagePrototypeVideo.from_scene(Func_1_3_I_5),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_1_q, Func_1_3_P_1_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_1_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_1_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_1_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_1_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_2_q, Func_1_3_P_1_2_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_2_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_2_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_2_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_2_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_3_q, Func_1_3_P_1_3_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_3_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_3_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_3_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_3_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_4_q, Func_1_3_P_1_4_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_4_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_4_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_4_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_4_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_5_q, Func_1_3_P_1_5_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_5_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_5_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_5_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_5_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_6_q, Func_1_3_P_1_6_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_6_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_6_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_6_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_6_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_7_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_7_q, Func_1_3_P_1_7_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_7_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_7_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_7_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_1_7_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_1_q, Func_1_3_P_2_1_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_1_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_1_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_1_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_1_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_2_q, Func_1_3_P_2_2_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_2_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_2_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_2_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_2_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_3_q, Func_1_3_P_2_3_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_3_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_3_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_3_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_3_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_4_q, Func_1_3_P_2_4_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_4_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_4_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_4_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_4_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_5_q, Func_1_3_P_2_5_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_5_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_5_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_5_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_5_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_6_q, Func_1_3_P_2_6_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_6_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_6_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_6_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_6_d),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_7_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_7_q, Func_1_3_P_2_7_q.__name__),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_7_a),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_7_b),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_7_c),
-    PagePrototypeVideo.from_scene(Func_1_3_P_2_7_d),
-]
+# PROTOTYPES = [
+#     PagePrototypeVideo.from_scene(Func_1_3_I_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_I_1_q, Func_1_3_I_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_1_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_2),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_3),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_4_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_I_4_q, Func_1_3_I_4_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_4_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_4_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_4_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_4_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_I_5),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_1_q, Func_1_3_P_1_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_1_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_2_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_2_q, Func_1_3_P_1_2_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_2_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_2_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_2_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_2_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_3_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_3_q, Func_1_3_P_1_3_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_3_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_3_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_3_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_3_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_4_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_4_q, Func_1_3_P_1_4_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_4_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_4_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_4_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_4_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_5_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_5_q, Func_1_3_P_1_5_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_5_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_5_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_5_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_5_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_6_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_6_q, Func_1_3_P_1_6_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_6_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_6_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_6_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_6_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_7_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_1_7_q, Func_1_3_P_1_7_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_7_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_7_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_7_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_1_7_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_1_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_1_q, Func_1_3_P_2_1_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_1_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_1_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_1_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_1_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_2_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_2_q, Func_1_3_P_2_2_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_2_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_2_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_2_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_2_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_3_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_3_q, Func_1_3_P_2_3_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_3_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_3_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_3_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_3_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_4_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_4_q, Func_1_3_P_2_4_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_4_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_4_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_4_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_4_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_5_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_5_q, Func_1_3_P_2_5_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_5_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_5_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_5_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_5_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_6_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_6_q, Func_1_3_P_2_6_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_6_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_6_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_6_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_6_d),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_7_q),
+#     PagePrototypeQuestion.from_task_definition(TASK_Func_1_3_P_2_7_q, Func_1_3_P_2_7_q.__name__),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_7_a),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_7_b),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_7_c),
+#     PagePrototypeVideo.from_scene(Func_1_3_P_2_7_d),
+# ]

@@ -306,7 +306,115 @@
       "voiceover": "f\"\"\"\n            Great, that's correct!\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one.\n            \"\"\""
     },
     "I5": {
-      "title": "Intersection with y-axis"
+      "title": "Intersection with y-axis",
+      "instruct-1": "a) Plug $x=0$ into the\\\\\\\\function expression",
+      "instruct-2": "b) Find the intersection\\\\\\\\graphically",
+      "voiceover": "f\"\"\"\n            Now, let's focus on the intersection points with the y axis.\n            One way to find the intersection points with the y-axis is to <bookmark mark=\"instruct_1\"/>plug x equals zero into the function expression.\n            <break time=\"1s\"/>\n            Another way to find the intersection point with the y-axis is, <bookmark mark=\"instruct_2\"/> to read it off from the graph.\n            <break time=\"1s\"/>\n            Let's practice using two examples.\n            <break time=\"1s\"/>Example Number one. <bookmark mark=\"clear\"/>\n            Consider the function f of x equals x squared minus one.\n            To find the intersection point with the y axis, we simply plug in <bookmark mark=\"substitute\"/> x equals zero.\n            We get f of zero equals zero squared minus one, which equals negative one. So the intersection point is at y equals minus one.\n            <bookmark mark=\"blue\"/> We can confirm this visually: The graph intersects the y axis at <bookmark mark=\"cross1\"/> y equals minus one.\n            <break time=\"1s\"/>Example Number Two.\n            Look at the function <bookmark mark=\"green1\"/> g of x equals x plus two.\n            Plugging in <bookmark mark=\"subGreen\"/> x equals zero gives us the value two, which is also the intersection point with the y axis.\n            Again, we can <bookmark mark=\"green2\"/> visually confirm this: The graph intersects the y axis at <bookmark mark=\"cross2\"/> y equals two.\n            \"\"\""
+    },
+    "x_crossing_question_scene": {
+      "voiceover": "            {self.intro}\n            Consider the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n            <bookmark mark=\"zero\"/>\n            Where is the zero crossing of this function? If there's more than one:\n            Where are the zero crossings?",
+      "title": "Intersecting Axes"
+    },
+    "P1q": {
+      "func": "f of x equals x squared minus one",
+      "intro": "So, now let's practice intersection points.",
+      "question": "What is/are the zero crossing(s) of the function $f(x)=x^2-1$?",
+      "zero": "x squared minus one equals zero",
+      "zeros": "x equals minus one and x equals one"
+    },
+    "x_crossing_answer_scene": {
+      "setToZero": "$\\\\rightarrow$ Set function equal to zero",
+      "solve": "$\\\\rightarrow$ Solve for $x$",
+      "title": "Intersecting Axes",
+      "voiceover": "{self.intro}\n            So, we start with the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"setToZero1\"/> set this function equal to zero, which gives us <bookmark mark=\"setToZero2\"/> {self.ZeroText}.\n            Then, <bookmark mark=\"solve1\"/> we solve the equation for x, and <bookmark mark=\"solve2\"/> we obtain {self.ZerosText}.\n            <break time=\"1s\"/>\n            We can also <bookmark mark=\"clear\"/> graphically verify this solution.\n            <break time=\"1s\"/>\n            <bookmark mark=\"plot\"/>Here's the graph of our function.\n            As you can see <bookmark mark=\"crossing\"/>, the graph intersects the x-axis at {self.ZerosText}."
+    },
+    "P1a": {
+      "intro": "Unfortunately, that's not quite right..."
+    },
+    "P1d": {
+      "intro": "That's correct. Well done!"
+    },
+    "P2q": {
+      "func": "f of x equals x squared minus four",
+      "intro": "Let's try again with a different function.",
+      "zero": "x squared minus four equals zero",
+      "zeros": "x equals minus two and x equals two"
+    },
+    "P2a": {
+      "intro": "Unfortunately, that's not quite right..."
+    },
+    "P2c": {
+      "intro": "That's correct, well done."
+    },
+    "P3q": {
+      "question": "What is/are the zero crossing(s) of the function $f(x)=x^3$?",
+      "func": "function f of x equals x cubed",
+      "intro": "Let's move on to a cubic function.",
+      "zero": "x cubed equals zero",
+      "zeros": "x equals zero"
+    },
+    "P3a": {
+      "intro": "That's correct, well done"
+    },
+    "P3b": {
+      "intro": "Unfortunately, that's incorrect."
+    },
+    "P7q": {
+      "func": "function f of x equals x squared minus twenty-five",
+      "intro": "Let's try another function.",
+      "zero": "x squared minus twenty-five equals zero",
+      "zeros": "x equals minus five and x equals five"
+    },
+    "P6q": {
+      "func": "function f of x equals x squared minus sixteen",
+      "intro": "Let's consider another function.",
+      "zero": "x squared minus sixteen equals zero",
+      "zeros": "x equals minus four and x equals four"
+    },
+    "P5q": {
+      "func": "function f of x equals x squared minus nine",
+      "intro": "Let's try this with another function.",
+      "zero": "x squared minus nine equals zero",
+      "zeros": "x equals minus three and x equals three"
+    },
+    "P4q": {
+      "func": "function f of x equals x",
+      "intro": "And now we move on to the linear function.",
+      "zero": "x equals zero",
+      "zeros": "x equals zero"
+    },
+    "P4a": {
+      "intro": "Unfortunately, that's incorrect."
+    },
+    "P4b": {
+      "intro": "That's correct. Well done."
+    },
+    "P5a": {
+      "intro": "Unfortunately, that's incorrect."
+    },
+    "P5c": {
+      "intro": "That's correct. Well done."
+    },
+    "P6a": {
+      "intro": "That's not right..."
+    },
+    "P6c": {
+      "intro": "that's right. well done!"
+    },
+    "P7a": {
+      "intro": "Unfortunately, that's incorrect. Too bad."
+    },
+    "P7c": {
+      "intro": "That's correct. Great job!"
+    },
+    "y_crossing_question_scene": {
+      "title": "Intersection with the y-Axis",
+      "intro": "                {self.intro}\n                Consider the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n                <bookmark mark=\"zero\"/>\n                Where is the intersection of the function with the y axis?"
+    },
+    "y_crossing_answer_scene": {
+      "plugInZero": "$\\\\Rightarrow$ Substitute $x=0$",
+      "title": "Intersection with the y-Axis",
+      "intro": "                {self.intro}\n                So, we are considering the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n                To obtain the intersection point with the y axis <bookmark mark=\"setToZero1\"/>,\n                we simply plug x equals 0 into the function term.\n                Then we get <bookmark mark=\"setToZero2\"/> {self.ZeroText}. <bookmark mark=\"noteChange\"/>\n                And then we already have the y-value of the intersection point with the y-axis.\n                \n                Now, let's verify this using <bookmark mark=\"clear\"/> the graph.\n                Here's the graph of the function. <bookmark mark=\"plot\"/>\n                We can see that the intersection point with the y-axis <bookmark mark=\"ycirc\"/>\n                lies at  y equal to {self.y_cross_text}."
     }
   }
 }
