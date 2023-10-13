@@ -653,5 +653,199 @@
       "voiceover": "Trust me, it's really important to understand the slope triangle well.\n\nFor that reason, let's analyze it step by step.\n\nFirst, let's look at <bookmark mark=\"hor\"/> the horizontal line.\n\nAs we can see, it describes the width of the triangle.\n\nIf we connect the endpoints of that part of the triangle to the x-axis\n<bookmark mark=\"dashed\"/> using vertical lines, we can then read off\nthe width of the triangle from the x-axis. In this case,\n<bookmark mark=\"width\"/> the width is 2. <bookmark mark=\"unDashed\"/>\n\nNext, let's look at <bookmark mark=\"vert\"/> the vertical line.\n\nThe vertical line describes the height of the triangle.\n\nIf we connect the endpoints of that part of the triangle to the y-axis,\n<bookmark mark=\"dashedh\"/> using horizontal lines, we can then read off\nthe height of the triangle, similar to how we've read of the width earlier.\nIn this example, <bookmark mark=\"height\"/> the height is 4. <bookmark mark=\"unDashedH\"/>\n\nFinally, and most importantly, we want to know what the slope of the triangle is.\n\nThe slope is also described by the <bookmark mark=\"slopeLine\"/> third line, which is at an angle.",
       "voiceover2": "But how do we compute the slope? And by computing the slope, we also mean: how do we <bookmark mark=\"a\"/>\ncompute \"a\"?\n\nWe compute the slope by dividing the <bookmark mark=\"height2\"/> height of the triangle\nby the <bookmark mark=\"width2\"/> triangle's width.\n\nIn this case, it means dividing <bookmark mark=\"final\"/> 4 by 2, which is 2.\n\nThis means, that \"a\" is also 2.\n\nGreat, we just learned how to use the slope triangle to compute the slope of a function:\n\nWe compute the height and the width of the triangle, and then obtain the slope by dividing\nthe height by the width."
     }
+  },
+  "Func_2_2": {
+    "I1": {
+      "q": {
+        "question-text": "Which function describes our total expenses?",
+        "answer-options": "[\"$f(x)=x$\", \"$f(x)=10\\cdot x$\", \"$f(x)=10+x$\"]",
+        "title": "Drawing Functions",
+        "term": "Term",
+        "graph": "Graph",
+        "ticket": "Admission",
+        "lemPrice": "Lemonade",
+        "voiceover": "Okay, let's continue and learn something new!\n\nSpecifically, we want to learn the following: <bookmark mark=\"ttg\"/> We are given <bookmark mark=\"term\"/> the term of a function, and we want to <bookmark mark=\"graph\"/> draw the corresponding graph.\nWe'll start with an example: We are at <bookmark mark=\"concert\"/> a concert and <bookmark mark=\"lemonade\"/> drinking lemonade. We want to know how much money we are spending.\n\nWe pay <bookmark mark=\"ticket\"/> ten dollars for admission and then one dollar for <bookmark mark=\"lemPrice\"/> each lemonade.\n<bookmark mark=\"note\"/>\nWhich term describes, in dollars, how much we spend if x represents the number of lemonades?\n\nIs it <bookmark mark=\"t1\"/> the term f of x equals one times x?\n\nOr is it <bookmark mark=\"t2\"/> the term f of x equals ten times x?\n\nOr is it <bookmark mark=\"t3\"/> the term f of x equals ten plus x?"
+      },
+      "a": {
+        "voiceover": "Unfortunately, that's incorrect.  \nThe correct solution is the function <bookmark mark=\"f\"/> f of x equals ten plus x, as this function describes our total expenses.\n\nBut how do we arrive at this? And what does it mean?\nIt's like this:\nWe pay <bookmark mark=\"firstTen\"/> ten dollars for admission, no matter how many lemonades we drink. So, we start with the term <bookmark mark=\"ff\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"ten\"/> ten.\n\n<bookmark mark=\"lemonadeNote\"/>\nSince each lemonade costs one dollar, for each lemonade we drink, an additional dollar is added. The variable <bookmark mark=\"varX\"/> x represents the number of lemonades\nwe have drunk.\nSo, we add <bookmark mark=\"x\"/> x to the function that describes our total expenses.\n\n<bookmark mark=\"finalNote\"/>\nAnd there you have it, the correct solution, the function <bookmark mark=\"ff2\"/> f of <bookmark mark=\"fx2\"/> x equals <bookmark mark=\"ten2\"/> ten plus <bookmark mark=\"varX2\"/> x."
+      },
+      "c": {
+        "voiceover": "That's correct.  The function <bookmark mark=\"f\"/> f of x equals ten plus x describes our total expenses.\n\nBut how do we arrive at this? And what does it mean?\nIt's like this:\nWe pay <bookmark mark=\"firstTen\"/> ten dollars for admission, no matter how many lemonades we drink. So, we start with the term <bookmark mark=\"ff\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"ten\"/> ten.\n\n<bookmark mark=\"lemonadeNote\"/>\nSince each lemonade costs one dollar, for each lemonade we drink, an additional dollar is added. The variable <bookmark mark=\"varX\"/> x represents the number of lemonades\nwe have drunk.\nSo, we add <bookmark mark=\"x\"/> x to the function that describes our total expenses.\n\n<bookmark mark=\"finalNote\"/>\nAnd there you have it, the correct solution, the function <bookmark mark=\"ff2\"/> f of <bookmark mark=\"fx2\"/> x equals <bookmark mark=\"ten2\"/> ten plus <bookmark mark=\"varX2\"/> x."
+      }
+    },
+    "I2": {
+      "title": "Drawing Functions",
+      "voiceover": "    So now, we have the expression that describes our expenses.\n\n    The question now is: <bookmark mark=\"cords\"/> How do we draw the corresponding graph?\n\n    We know that the graph is a straight line because our function is linear.\n    And to draw a straight line, <bookmark mark=\"note1\"/> we need two points.\n\n    For the first point, we always set x to zero. <bookmark mark=\"x0\"/>\n    This gives us the value <bookmark mark=\"ten\"/> ten here.\n    That's also the intersection point with the upsilon axis...\n    Anyway, <bookmark mark=\"mark1\"/> we mark this point.\n\n    Next, we set any other value for x.\n    Here, for example, we use x equal to <bookmark mark=\"xten\"/> ten because it's easy to calculate.\n    By the way, it's always a good idea to use a value that's easy to calculate!\n\n    This gives us <bookmark mark=\"twenty\"/> twenty. We also <bookmark mark=\"mark2\"/> mark this point.\n\n    So, most of the work is done now. We just need to connect the two points, <bookmark mark=\"connect\"/>\n    and the graph is done.\n\n    So, in summary: To determine the graph of a linear function, we first set x to zero and\n    plot the point. Then we set a different value for x and plot the second point.\n    Then we just need to connect the two points, and the graph is done."
+    },
+    "P1": {
+      "plot_linear_function_question": {
+        "title": "Drawing Functions",
+        "voiceover": "                {self.introText} <bookmark mark=\"func\"/>\n                {self.funcText} <bookmark mark=\"graph\"/> \n                {self.qText} \n                \n                Is it <bookmark mark=\"o1\"/> the blue graph? \n                Or is it <bookmark mark=\"o2\"/> the green graph? \n                Or is it <bookmark mark=\"o3\"/> the orange graph?"
+      },
+      "plot_linear_function_answer": {
+        "introtextcorrect": "Great, that's correct",
+        "introtextincorrect": "Unfortunately, that's incorrect.",
+        "blue": "blue",
+        "green": "green",
+        "orange": "orange",
+        "voiceover": "                {self.introText} <bookmark mark=\"func\"/>\n                The function is {self.funcText}.\n                \n                To determine the graph, <bookmark mark=\"note1\"/> we need to plug in two x-values. <bookmark mark=\"cords\"/>\n                For the first x-value, we use <bookmark mark=\"x0\"/> x equals zero, and we get <bookmark mark=\"fx0\"/> f of Zero equals {get_num(self.f_correct(0))}.\n                And for the second value, we plug in <bookmark mark=\"x\"/> x equals {get_num(self.x)}, resulting in <bookmark mark=\"fx\"/> f of {get_num(self.x)} equals {get_num(self.f_correct(self.x))}.\n                \n                Now, <bookmark mark=\"graph\"/> we connect the two points to obtain the graph of the function, the {self.c_correct} graph."
+      },
+      "q": {
+        "question-text": "Which of the graphs matches the function?",
+        "answer-options": "[\"Blue\", \"Green\", \"Orange\"]",
+        "introtext": "Now it's your turn. Consider the function",
+        "functext": "f of x equals two times x plus one.",
+        "qtext": "I am going to show you three different graphs. Which of them matches the term of the function?"
+      }
+    },
+    "P2": {
+      "q": {
+        "introtext": "Consider the following function",
+        "functext": "f of x equals negative three times x plus two.",
+        "qtext": "I will now show you three graphs. Which of them corresponds to the function?"
+      }
+    },
+    "P3": {
+      "q": {
+        "introtext": "Time for another function exercise. Let's examine the following function:",
+        "functext": "The function f of x is given by four times x plus three.",
+        "qtext": "Three graphs will be displayed. Which one matches the function?"
+      }
+    },
+    "P4": {
+      "q": {
+        "introtext": "Let's delve into another function puzzle. Consider this equation",
+        "functext": "The function f(x) is defined as five times x plus four.",
+        "qtext": "Three graphs will be shown. Which one corresponds to the function?"
+      }
+    }
+  },
+  "Func_2_3": {
+    "I1": {
+      "q": {
+        "question-text": "Which function describes the distances you and your friend have traveled?",
+        "title": "Functions and Linear Equations",
+        "f1": "Your Friend:",
+        "f2a": "$5$km Head start",
+        "f2b": "$15$km/h speed",
+        "y1": "You:",
+        "y2": "$20$km/h speed",
+        "voiceover": "Neww topic! In this chapter, we are looking at linear functions and linear equations,\nand what these two have to do with each other.\n\nAnd what better way to find out, what the connection is, than to look at a real world example.\n\nThis is the scenario: You and your friend are both <bookmark mark=\"bike\"/> cycling to the beach from your house.\n\n<bookmark mark=\"f1\"/>\nYour friend has a <bookmark mark=\"f2\"/> head start of 5 kilometers, and she is cycling <bookmark mark=\"f3\"/> at a speed of 15 kilometers per hour.\n\n<bookmark mark=\"y1\"/>\nYou on the other hand are cycling at <bookmark mark=\"y2\"/> a speed of 20 kilometers per hour, but you get no head start.\n\nQuestion Number one, and this is mainly about functions: What functions f and g describe the distance your friend and you have traveled?"
+      },
+      "a": {
+        "voiceover": "Mhmmm, that's not quite right. Let's solve this together.\n\n<bookmark mark=\"friend\"/>\nYour friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,\nwe can write her function as <bookmark mark=\"friendfunc1\"/> f of x equals fifteen times x.\n\nAnd since she also has a head start of 5 kilometers, we have to <bookmark mark=\"friendfunc2\"/> add 5 to the function.\nSo the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.\n\nNext, let's look at your function. <bookmark mark=\"you\"/>\nYou cycle at a speed of 20 kilometers per hour.\n\nSince you have no head start, your function is simply <bookmark mark=\"yourfunc\"/> g of x equals twenty times x."
+      },
+      "c": {
+        "voiceover": "That's right. Well done.\n<bookmark mark=\"friend\"/>\nYour friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,\nwe can write her function as <bookmark mark=\"friendfunc1\"/> f of x equals fifteen times x.\n\nAnd since she also has a head start of 5 kilometers, we have to <bookmark mark=\"friendfunc2\"/> add 5 to the function.\nSo the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.\n\nNext, let's look at your function. <bookmark mark=\"you\"/>\nYou cycle at a speed of 20 kilometers per hour.\n\nSince you have no head start, your function is simply <bookmark mark=\"yourfunc\"/> g of x equals twenty times x."
+      }
+    },
+    "I2": {
+      "title": "When will you meet?",
+      "Q1": "→ At what point in time",
+      "Q2": "will you have traveled",
+      "Q3": "the same distance?",
+      "voiceover": "Ok, so why are we doing this? And what does it have to do with equations?\n\nThink about this: <bookmark mark=\"race\"/> Since you're both cycling in the same direction, but your friend had a head start,\nyou two will meet at some point - because you are cycling faster than her.\n\nBut when <bookmark mark=\"meet\"/> will you two meet?\n\nClearly, you'll meet at the point in time when both of you have traveled the exact same distance.\n<bookmark mark=\"Q\"/>\n\nThink about how we can find that point in time using the two functions we just wrote."
+    },
+    "I3": {
+      "title": "When will you meet?",
+      "tf1": "→Describes the distance",
+      "tf2": "your friend has traveled",
+      "ty1": "→Describes the distance",
+      "ty2": "you have traveled",
+      "tb1": "→Describes the time",
+      "tb2": "when you meet",
+      "voiceover": "Let's think back to what we already know.\n\nThe function <bookmark mark=\"f\"/> f of x describes the distance your friend has traveled at time x.\n\nThe function <bookmark mark=\"g\"/> g of x on the other hand describes the distance YOU have traveled\nat time x.\n\n<bookmark mark=\"youLeave\"/>\nSince you and your friend meet, when you have traveled the same distance, we can say that\n<bookmark mark=\"both\"/> you meet when f of x is equal to g of x."
+    },
+    "I4": {
+      "title": "When will you meet?",
+      "voiceover": "Ok, now we know how to find the time when you meet your friend: We just compute\nthe value of x where <bookmark mark=\"both\"/> f of x is equal to g of x, because f describes the distance\nyour friend has traveled and g describes the distance YOU have traveled.\n\nRemember: f of x is <bookmark mark=\"f\"/> equal to fifteen times x plus five, -\nand g of x is <bookmark mark=\"g\"/> equal to twenty times x.\n\nNow we want to find the value of x where <bookmark mark=\"calculate\"/>\nf of x is equal to g of x.\n\nThe first step <bookmark mark=\"step1a\"/> is to <bookmark mark=\"step1b\"/> plug in the terms of f and g.\nWe get the equation 15x plus 5 is equal to 20x.\n\nNext, <bookmark mark=\"step2a\"/> we subtract 15x from both sides, which leaves\nus with <bookmark mark=\"step2b\"/> the equation 5 equals 5x.\n\nFinally, <bookmark mark=\"step3a\"/> we divide both sides by 5, which results in\nthe final solution, <bookmark mark=\"step3b\"/> that x is equal to 1.\n\nWe can now say that you and your friend meet after one hour.\n\nPuh, that was intense. Let's take a deeeeeep breath."
+    },
+    "I5": {
+      "title": "Functions \\& Equations",
+      "voiceover": "So, let's recap <bookmark mark=\"qmark\"/> what we just did, and what it has to do with functions and equations.\n\n<bookmark mark=\"functions\"/> Functions are often used to describe real world scenarios. For example, a function can describe\nthe distance you have traveled after some time.\n\n<bookmark mark=\"equation\"/>\nEquations are used to find the value of a variable. For example, an equation can be used to\ndetermine the point in time at which you have traveled twenty kilometers.\n\nNow, we can <bookmark mark=\"handshake\"/> put these two concepts together to determine at what point in time\ntwo real world scenarios, that are both described by functions, are equal.\n\nIn the example we just looked at, we had two functions, describing the distance you and your friend\nhave traveled at any point in time. We then used an equation to determine at what point in time\nyou and your friend have traveled the same distance.\n\nWe do this, by simply setting the terms of the two functions equal to each other,\nand then solving the equation for the variable, in our case for x.",
+      "functions": "Functions",
+      "tf1": "→ Used to describe",
+      "tf2": "real world scenarios",
+      "equations": "Equations",
+      "te1": "→ Used to find specific",
+      "te2": "value of a variable",
+      "ts1": "→ Combine the two to",
+      "ts2": "compare real world",
+      "ts3": "scenarios"
+    },
+    "I6": {
+      "q": {
+        "question-text": "Where do the functions intersect?",
+        "title": "Graphical solution",
+        "voiceover": "There is another way we can solve these kinds of problems: Visually, by using the\n<bookmark mark=\"cords\"/> graph of the functions.\n\nRemember, we want to find the values of x for which two functions are equal.\n\nWe can do this by looking at the graph of the two functions, and finding the point at which\nthe two functions have the same y-value, so the point at which the two functions meet.\n\nLet's return to our bike example, for the last time, i promise!!!\n\nRemember, the function describing the distance your friend has traveled is given by\n<bookmark mark=\"f\"/> f of x equals fifteen times x plus five,\nand the function describing the distance you have traveled is given by\n<bookmark mark=\"g\"/> g of x equals twenty times x.\n\nNow, let's <bookmark mark=\"plot\"/> plot the two functions. Where do the two functions intersect?"
+      },
+      "a": {
+        "voiceover": "Yes! That's correct, very good!\n\nIf we follow one of the graphs <bookmark mark=\"intersectLoc\"/> until it intersects the other graph, we can see that\nthe graphs of the two functions intersect at the point 1,20.\n\n<bookmark mark=\"cursorBack\"/>\nThe interpretation of that - as we already saw in a previous video - is that\nyou and your friends meet after x equals one hour. The y value - twenty - means that by that time\nyou have traveled twenty kilometers, and your friend has traveled twenty kilometers as well."
+      },
+      "b": {
+        "voiceover": "Mhm, that's not quite right. I'll show you the correct solution.\n\nIf we follow one of the graphs <bookmark mark=\"intersectLoc\"/> until it intersects the other graph, we can see that\nthe graphs of the two functions intersect at the point 1,20.\n\n<bookmark mark=\"cursorBack\"/>\nThe interpretation of that - as we already saw in a previous video - is that\nyou and your friends meet after x equals one hour. The y value - twenty - means that by that time\nyou have traveled twenty kilometers, and your friend has traveled twenty kilometers as well."
+      }
+    },
+    "LinearFunctionEqualityQuestionScene": {
+      "title": "Linear Functions & Equalities",
+      "voiceover": "    Consider the following two linear functions:\n    <bookmark mark=\"f\"/>\n    {fText}.\n    <bookmark mark=\"g\"/>\n    {gText}.\n\n    Where do the two functions intersect?\n    That is, <bookmark mark=\"handshake\"/> where does f equal g?",
+      "fText": "f of x equals {get_num(self.fParams[0])} times x {get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g of x equals {get_num(self.gParams[0])} times x {get_num(self.gParams[1], negation='minus', pos='plus')}"
+    },
+    "LinearFunctionEqualityAnswerScene": {
+      "title": "Linear Functions \\& Equalities",
+      "op1a": "[\"add\", \"to\"]",
+      "op1b": "[\"subtract\", \"from\"]",
+      "fText": "f of x is equal to {get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g of x is equal to {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}\"\n        fEqGText = f\"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} equals {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "eqAText": "{get_num(self.fParams[0])} x equals {get_num(self.gParams[0])} x {get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='plus')}",
+      "stepA": "Next, <bookmark mark=\"shiftUp\"/> we {op1[0]} <bookmark mark=\"add\"/> {abs(self.fParams[1])} {op1[1]} both sides, - and obtain {eqAText}.",
+      "stepB": "Then, we {op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} both sides, - and obtain {eqBText}.",
+      "stepC": "Finally, we divide both sides by {self.fParams[0]-self.gParams[0]} to get <bookmark mark=\"final\"/> {eqCText}.",
+      "voiceover": "{self.tfIntro}\nRemember: <bookmark mark=\"f\"/>\n{fText} and <bookmark mark=\"g\"/>\n{gText}.\n\nSo now, the first thing we do is set <bookmark mark=\"fEqG\"/> f of x equal to g of x.\n\nThis gives us <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n\n{stepA}\n\n{stepB}\n\n{stepC}.\n\nWe can also verify this, by <bookmark mark=\"cords\"/> plotting the graph of <bookmark mark=\"plotF\"/> f and the graph  <bookmark mark=\"plotG\"/> of g.\n\nLooking at the two graphs, we can <bookmark mark=\"confirm\"/> confirm that the two graphs intersect at the point x equals {get_num(x_sol)}. "
+    },
+    "P1": {
+      "q": {
+        "question-text": "Where do $f(x)$ and $g(x)$ intersect?"
+      },
+      "a": {
+        "tfIntro": "Mhm, that's not quite right. Let me show you:"
+      },
+      "d": {
+        "tfIntro": "Great job, that's exactly right!"
+      }
+    },
+    "P2": {
+      "a": {
+        "tfIntro": "Great job, that's exactly right!"
+      },
+      "b": {
+        "tfIntro": "Mhm, that's not quite right. Let me show you:"
+      }
+    },
+    "P3": {
+      "a": {
+        "tfIntro": "Mhm, that's not quite right. Let me show you:"
+      },
+      "c": {
+        "tfIntro": "Great job, that's exactly right!"
+      }
+    },
+    "P4": {
+      "a": {
+        "tfIntro": "Mhm, that's not it... I'll explain:"
+      },
+      "b": {
+        "tfIntro": "Great job, that's it!"
+      }
+    },
+    "P5": {
+      "a": {
+        "tfIntro": "No, that's not correct. Let's solve it together"
+      },
+      "c": {
+        "tfIntro": "Great job, you got it right!"
+      }
+    }
   }
 }

@@ -16,17 +16,19 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_2_3_I_1_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=5x+15, \,g(x)=20x$", "$f(x)=15x+15, \,g(x)=20x$","$f(x)=15x+5, \,g(x)=20x$", "$f(x)=15x+15, \,g(x)=20+x$"],
-    correctAnswerIndex=2,
-    questionText="Which function describes the distances you and your friend have traveled?"
-)
-
 class Func_2_3_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$f(x)=5x+15, \,g(x)=20x$", "$f(x)=15x+15, \,g(x)=20x$","$f(x)=15x+5, \,g(x)=20x$", "$f(x)=15x+15, \,g(x)=20+x$"],
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_2_3.I1.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -34,35 +36,20 @@ class Func_2_3_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Functions and Linear Equations")
+        self.add_title(self.translate("Func_2_3.I1.q.title"))
 
         bike = ImageMobject(assets_folder / "img" / "bike.jpg")
         bike = bike.scale(3.2/bike.get_width()).move_to([-5, 1, 0])
 
-        f1 = Tex("Your Friend:", color=c1t, font_size=fs2).next_to(bike, DOWN, buff=0.6).shift(5*RIGHT)
-        f2 = BulletedList("$5$km Head start", "$15$km/h speed", buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
-        y1 = Tex("You:", color=c1t, font_size=fs2).next_to(f2, DOWN)
-        y2 = BulletedList("$20$km/h speed", color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(bike, DOWN, buff=0.6).shift(5*RIGHT)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(f2, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
         comparison = VGroup(f1, f2, y1, y2).arrange(DOWN, center=False, aligned_edge=LEFT).shift(0.2*LEFT)
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Neww topic! In this chapter, we are looking at linear functions and linear equations,
-                and what these two have to do with each other.
-                
-                And what better way to find out, what the connection is, than to look at a real world example.
-                
-                This is the scenario: You and your friend are both <bookmark mark="bike"/> cycling to the beach from your house.
-                
-                <bookmark mark="f1"/>
-                Your friend has a <bookmark mark="f2"/> head start of 5 kilometers, and she is cycling <bookmark mark="f3"/> at a speed of 15 kilometers per hour.
-                
-                <bookmark mark="y1"/>
-                You on the other hand are cycling at <bookmark mark="y2"/> a speed of 20 kilometers per hour, but you get no head start.
-                
-                Question Number one, and this is mainly about functions: What functions f and g describe the distance your friend and you have traveled?
-                """
+                text=self.translate("Func_2_3.I1.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("bike")
@@ -94,15 +81,15 @@ class Func_2_3_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Not quite right...")
+        self.add_title(self.translate("Func_2_3.I1.q.title"))
 
-        f1 = Tex("Your Friend:", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList("$5$km Head start", "$15$km/h speed", buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
-        y1 = Tex("You:", color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList("$20$km/h speed", color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -112,21 +99,7 @@ class Func_2_3_I_1_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right. Let's solve this together.
-                
-                <bookmark mark="friend"/>
-                Your friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,
-                we can write her function as <bookmark mark="friendfunc1"/> f of x equals fifteen times x.
-                
-                And since she also has a head start of 5 kilometers, we have to <bookmark mark="friendfunc2"/> add 5 to the function.
-                So the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.
-                
-                Next, let's look at your function. <bookmark mark="you"/>
-                You cycle at a speed of 20 kilometers per hour.
-                
-                Since you have no head start, your function is simply <bookmark mark="yourfunc"/> g of x equals twenty times x.
-                """
+                text=self.translate("Func_2_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("friend")
@@ -156,15 +129,15 @@ class Func_2_3_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Not quite right...")
+        self.add_title(self.translate("Func_2_3.I1.q.title"))
 
-        f1 = Tex("Your Friend:", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList("$5$km Head start", "$15$km/h speed", buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
-        y1 = Tex("You:", color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList("$20$km/h speed", color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -174,21 +147,7 @@ class Func_2_3_I_1_b(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right. Let's solve this together.
-                
-                <bookmark mark="friend"/>
-                Your friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,
-                we can write her function as <bookmark mark="friendfunc1"/> f of x equals fifteen times x.
-                
-                And since she also has a head start of 5 kilometers, we have to <bookmark mark="friendfunc2"/> add 5 to the function.
-                So the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.
-                
-                Next, let's look at your function. <bookmark mark="you"/>
-                You cycle at a speed of 20 kilometers per hour.
-                
-                Since you have no head start, your function is simply <bookmark mark="yourfunc"/> g of x equals twenty times x.
-                """
+                text=self.translate("Func_2_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("friend")
@@ -219,15 +178,15 @@ class Func_2_3_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Correct!")
+        self.add_title(self.translate("Func_2_3.I1.q.title"))
 
-        f1 = Tex("Your Friend:", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList("$5$km Head start", "$15$km/h speed", buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
-        y1 = Tex("You:", color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList("$20$km/h speed", color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -237,21 +196,7 @@ class Func_2_3_I_1_c(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's right, good job!
-                
-                <bookmark mark="friend"/>
-                Your friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,
-                we can write her function as <bookmark mark="friendfunc1"/> f of x equals fifteen times x.
-                
-                And since she has a head start of 5 kilometers, we have to <bookmark mark="friendfunc2"/> add 5 to the function.
-                So the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.
-                
-                Next, let's look at your function. <bookmark mark="you"/>
-                You cycle at a speed of 20 kilometers per hour.
-                
-                Since you have no head start, your function is simply <bookmark mark="yourfunc"/> g of x equals twenty times x.
-                """
+                text=self.translate("Func_2_3.I1.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("friend")
@@ -281,15 +226,15 @@ class Func_2_3_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Not quite right...")
+        self.add_title(self.translate("Func_2_3.I1.q.title"))
 
-        f1 = Tex("Your Friend:", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList("$5$km Head start", "$15$km/h speed", buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
-        y1 = Tex("You:", color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList("$20$km/h speed", color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -299,21 +244,7 @@ class Func_2_3_I_1_d(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhmmm, that's not quite right. Let's solve this together.
-                
-                <bookmark mark="friend"/>
-                Your friend cycles at a speed of 15 kilometers per hour, and if x stands for the number of hours cycled,
-                we can write her function as <bookmark mark="friendfunc1"/> f of x equals fifteen times x.
-                
-                And since she also has a head start of 5 kilometers, we have to <bookmark mark="friendfunc2"/> add 5 to the function.
-                So the function describing the distance your friend has traveled is f of x equals fifteen times x plus five.
-                
-                Next, let's look at your function. <bookmark mark="you"/>
-                You cycle at a speed of 20 kilometers per hour.
-                
-                Since you have no head start, your function is simply <bookmark mark="yourfunc"/> g of x equals twenty times x.
-                """
+                text=self.translate("Func_2_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("friend")
@@ -346,7 +277,7 @@ class Func_2_3_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("When will you meet?")
+        title = self.add_title(self.translate("Func_2_3.I2.title"))
 
         bikeMeet = ImageMobject(assets_folder / "img" / "cyclistsmeet.png")
         bikeRace = ImageMobject(assets_folder / "img" / "cyclistsrace.png")
@@ -357,25 +288,13 @@ class Func_2_3_I_2(SophiaCursorScene):
         # funcFriend = MathTex("f(x)=15x","+5", color=c1t, font_size=fs2).next_to(f3, DOWN)
         # funcYou = MathTex("g(x)=20x", color=c1t, font_size=fs2).next_to(y3, DOWN)
         
-        Q1 = Text("→ At what point in time", color=RED, font_size=fs3, weight=BOLD).next_to(bikeMeet, DOWN, buff=0.6).shift(RIGHT*5)
-        Q2 = Text("will you have traveled", color=RED, font_size=fs3, weight=BOLD).next_to(Q1, DOWN, buff=0.1)
-        Q3 = Text("the same distance?", color=RED, font_size=fs3, weight=BOLD).next_to(Q2, DOWN, buff=0.1)        
+        Q1 = Text(self.translate("Func_2_3.I2.Q1"), color=RED, font_size=fs3, weight=BOLD).next_to(bikeMeet, DOWN, buff=0.6).shift(RIGHT*5)
+        Q2 = Text(self.translate("Func_2_3.I2.Q2"), color=RED, font_size=fs3, weight=BOLD).next_to(Q1, DOWN, buff=0.1)
+        Q3 = Text(self.translate("Func_2_3.I2.Q3"), color=RED, font_size=fs3, weight=BOLD).next_to(Q2, DOWN, buff=0.1)        
         Q = VGroup(Q1, Q2, Q3).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(LEFT*0.1)
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so why are we doing this? And what does it have to do with equations?
-                
-                Think about this: <bookmark mark="race"/> Since you're both cycling in the same direction, but your friend had a head start,
-                you two will meet at some point - because you are cycling faster than her.
-                
-                But when <bookmark mark="meet"/> will you two meet?
-                
-                Clearly, you'll meet at the point in time when both of you have traveled the exact same distance.
-                <bookmark mark="Q"/>
-                
-                Think about how we can find that point in time using the two functions we just wrote.
-                """
+                text=self.translate("Func_2_3.I2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("race")
@@ -401,26 +320,26 @@ class Func_2_3_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("When will you meet?")
+        title = self.add_title(self.translate("Func_2_3.I3.title"))
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
 
         funcFriend = MathTex("f(x)=15x","+5", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
-        textFriend1 = Text("→Describes the distance", color=RED, font_size=fs3, slant=ITALIC).next_to(funcFriend, DOWN, buff=0.2)
-        textFriend2 = Text("your friend has traveled", color=RED, font_size=fs3, slant=ITALIC).next_to(textFriend1, DOWN, buff=0.1)
+        textFriend1 = Text(self.translate("Func_2_3.I3.tf1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcFriend, DOWN, buff=0.2)
+        textFriend2 = Text(self.translate("Func_2_3.I3.tf2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textFriend1, DOWN, buff=0.1)
         textFriend = VGroup(textFriend1, textFriend2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
 
         funcYou = MathTex("g(x)=20x", color=c1t, font_size=fs2).next_to(textFriend, DOWN)
         funcYou = funcYou.shift(LEFT*(funcYou.get_left()[0]-funcFriend.get_left()[0]))
-        textYou1 = Text("→Describes the distance", color=RED, font_size=fs3, slant=ITALIC).next_to(funcYou, DOWN, buff=0.2)
-        textYou2 = Text("you have traveled", color=RED, font_size=fs3, slant=ITALIC).next_to(textYou1, DOWN, buff=0.1)
+        textYou1 = Text(self.translate("Func_2_3.I3.ty1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcYou, DOWN, buff=0.2)
+        textYou2 = Text(self.translate("Func_2_3.I3.ty2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textYou1, DOWN, buff=0.1)
         textYou = VGroup(textYou1, textYou2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         textYou = textYou.shift(LEFT*(textYou.get_left()[0]-textFriend.get_left()[0]))
 
         funcBoth = MathTex("f(x)=g(x)", color=c1t, font_size=fs2).next_to(textYou, DOWN, buff=1)
         funcBoth = funcBoth.shift(LEFT*(funcBoth.get_left()[0]-funcFriend.get_left()[0]))
-        textBoth1 = Text("→Describes the time", color=RED, font_size=fs3, slant=ITALIC).next_to(funcBoth, DOWN, buff=0.2)
-        textBoth2 = Text("when you meet", color=RED, font_size=fs3, slant=ITALIC).next_to(textBoth1, DOWN, buff=0.1)
+        textBoth1 = Text(self.translate("Func_2_3.I3.tb1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcBoth, DOWN, buff=0.2)
+        textBoth2 = Text(self.translate("Func_2_3.I3.tb2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textBoth1, DOWN, buff=0.1)
         textBoth = VGroup(textBoth1, textBoth2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         textBoth = textBoth.shift(LEFT*(textBoth.get_left()[0]-textFriend.get_left()[0]))
 
@@ -431,18 +350,7 @@ class Func_2_3_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's think back to what we already know.
-                
-                The function <bookmark mark="f"/> f of x describes the distance your friend has traveled at time x.
-                
-                The function <bookmark mark="g"/> g of x on the other hand describes the distance YOU have traveled
-                at time x.
-                
-                <bookmark mark="youLeave"/>
-                Since you and your friend meet, when you have traveled the same distance, we can say that
-                <bookmark mark="both"/> you meet when f of x is equal to g of x.
-                """
+                text=self.translate("Func_2_3.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -477,7 +385,7 @@ class Func_2_3_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("When will you meet?")
+        title = self.add_title(self.translate("Func_2_3.I4.title"))
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
 
@@ -499,30 +407,7 @@ class Func_2_3_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, now we know how to find the time when you meet your friend: We just compute
-                the value of x where <bookmark mark="both"/> f of x is equal to g of x, because f describes the distance
-                your friend has traveled and g describes the distance YOU have traveled.
-                
-                Remember: f of x is <bookmark mark="f"/> equal to fifteen times x plus five, -
-                and g of x is <bookmark mark="g"/> equal to twenty times x.
-                
-                Now we want to find the value of x where <bookmark mark="calculate"/>
-                f of x is equal to g of x.
-                
-                The first step <bookmark mark="step1a"/> is to <bookmark mark="step1b"/> plug in the terms of f and g.
-                We get the equation 15x plus 5 is equal to 20x.
-                
-                Next, <bookmark mark="step2a"/> we subtract 15x from both sides, which leaves
-                us with <bookmark mark="step2b"/> the equation 5 equals 5x.
-                
-                Finally, <bookmark mark="step3a"/> we divide both sides by 5, which results in
-                the final solution, <bookmark mark="step3b"/> that x is equal to 1.
-                
-                We can now say that you and your friend meet after one hour.
-                
-                Puh, that was intense. Let's take a deeeeeep breath.
-                """
+                text=self.translate("Func_2_3.I4.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("both")
@@ -572,57 +457,38 @@ class Func_2_3_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Functions & Equations")
+        title = self.add_title(self.translate("Func_2_3.I5.title"))
 
         qmark = ImageMobject(assets_folder / "img" / "qmark.png")
         qmark = qmark.scale(3.2/qmark.get_width()).move_to([-5, 1, 0])
 
-        function = Text("Functions", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1).shift(LEFT*0.4)
-        tf1 = Text("→ Used to describe", color=RED, font_size=fs3, slant=ITALIC).next_to(function, DOWN, buff=0.2)
-        tf2 = Text("real world scenarios", color=RED, font_size=fs3, slant=ITALIC).next_to(tf1, DOWN, buff=0.1)
+        function = Text(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=1).shift(LEFT*0.4)
+        tf1 = Text(self.translate("Func_2_3.I5.tf1"), color=RED, font_size=fs3, slant=ITALIC).next_to(function, DOWN, buff=0.2)
+        tf2 = Text(self.translate("Func_2_3.I5.tf2"), color=RED, font_size=fs3, slant=ITALIC).next_to(tf1, DOWN, buff=0.1)
         tf = VGroup(tf1, tf2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.4)
 
-        equation = Text("Equations", color=c1t, font_size=fs2).next_to(tf, DOWN)
+        equation = Text(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs2).next_to(tf, DOWN)
         equation = equation.shift(LEFT*(equation.get_left()[0]-function.get_left()[0]))
-        te1 = Text("→ Used to find specific", color=RED, font_size=fs3, slant=ITALIC).next_to(equation, DOWN, buff=0.2)
-        te2 = Text("value of a variable", color=RED, font_size=fs3, slant=ITALIC).next_to(te1, DOWN, buff=0.1)
+        te1 = Text(self.translate("Func_2_3.I5.te1"), color=RED, font_size=fs3, slant=ITALIC).next_to(equation, DOWN, buff=0.2)
+        te2 = Text(self.translate("Func_2_3.I5.te2"), color=RED, font_size=fs3, slant=ITALIC).next_to(te1, DOWN, buff=0.1)
         te = VGroup(te1, te2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         te = te.shift(LEFT*(te.get_left()[0]-tf.get_left()[0]))
 
         handshake = ImageMobject(assets_folder / "img" / "handshake.png")
         handshake = handshake.scale(1.2/handshake.get_width()).move_to([-5, 1, 0])
-        fLeft = Text("Functions", color=c1t, font_size=fs3).next_to(handshake, LEFT, buff=0.1)
-        eRight = Text("Equations", color=c1t, font_size=fs3).next_to(handshake, RIGHT, buff=0.1)
+        fLeft = Text(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs3).next_to(handshake, LEFT, buff=0.1)
+        eRight = Text(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs3).next_to(handshake, RIGHT, buff=0.1)
         shakeGroup = Group(handshake, fLeft, eRight).scale(0.8).next_to(te, DOWN, buff=0.5)
-        ts1 = Text("→ Combine the two to", color=RED, font_size=fs3, slant=ITALIC).next_to(shakeGroup, DOWN, buff=0.2)
-        ts2 = Text("compare real world", color=RED, font_size=fs3, slant=ITALIC).next_to(ts1, DOWN, buff=0.1)
-        ts3 = Text("scenarios", color=RED, font_size=fs3, slant=ITALIC).next_to(ts2, DOWN, buff=0.1)
+        ts1 = Text(self.translate("Func_2_3.I5.ts1"), color=RED, font_size=fs3, slant=ITALIC).next_to(shakeGroup, DOWN, buff=0.2)
+        ts2 = Text(self.translate("Func_2_3.I5.ts2"), color=RED, font_size=fs3, slant=ITALIC).next_to(ts1, DOWN, buff=0.1)
+        ts3 = Text(self.translate("Func_2_3.I5.ts3"), color=RED, font_size=fs3, slant=ITALIC).next_to(ts2, DOWN, buff=0.1)
         ts = VGroup(ts1, ts2, ts3).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         ts = ts.shift(LEFT*(ts.get_left()[0]-te.get_left()[0]))
         shakeGroup.shift(3*RIGHT)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, let's recap <bookmark mark="qmark"/> what we just did, and what it has to do with functions and equations.
-                
-                <bookmark mark="functions"/> Functions are often used to describe real world scenarios. For example, a function can describe
-                the distance you have traveled after some time.
-                
-                <bookmark mark="equation"/>
-                Equations are used to find the value of a variable. For example, an equation can be used to
-                determine the point in time at which you have traveled twenty kilometers.
-                
-                Now, we can <bookmark mark="handshake"/> put these two concepts together to determine at what point in time
-                two real world scenarios, that are both described by functions, are equal.
-                
-                In the example we just looked at, we had two functions, describing the distance you and your friend
-                have traveled at any point in time. We then used an equation to determine at what point in time
-                you and your friend have traveled the same distance.
-                
-                We do this, by simply setting the terms of the two functions equal to each other,
-                and then solving the equation for the variable, in our case for x.
-                """
+                text=self.translate("Func_2_3.I5.voiceover")
         ) as tracker:
 
 
@@ -647,13 +513,14 @@ class Func_2_3_I_5(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_2_3_I_6_q = SophiaTaskDefinition(
-    answerOptions=["(1,20)", "(0,5)", "(20,20)", "(1,1)"],
-    correctAnswerIndex=0,
-    questionText="Where do the functions intersect?"
-)
-
 class Func_2_3_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["(1,20)", "(0,5)", "(20,20)", "(1,1)"],
+            correctAnswerIndex=0,
+            questionText = self.translate("Func_2_3.I6.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -662,13 +529,13 @@ class Func_2_3_I_6_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Graphical solution")
+        title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
         cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
         plane = cords[0]
 
-        note = Notepad(texts=["Problem can also be solved graphically", "Consider the plots of $g$ and $f$","Where do the two functions intersect?"])
-        self.add(note)
+        # note = Notepad(texts=["Problem can also be solved graphically", "Consider the plots of $g$ and $f$","Where do the two functions intersect?"])
+        # self.add(note)
 
         funcTexf = MathTex("f(x) = 15x + 5", color=c1t, font_size=fs1).next_to(plane, DOWN, buff=0.5)
         funcTexg = MathTex("g(x) = 20x", color=c2t, font_size=fs1).move_to(funcTexf)
@@ -687,28 +554,9 @@ class Func_2_3_I_6_q(SophiaCursorScene):
         cursor.move_to([xo, yo, 0])
 
         with self.voiceover(
-                text="""
-                There is another way we can solve these kinds of problems: <bookmark mark="note1"/> Visually, by using the
-                <bookmark mark="cords"/> graph of the functions.
-                
-                Remember, we want to find the values of x for which two functions are equal.
-                
-                We can do this by looking at the graph of the two functions, and finding the point at which
-                the two functions have the same y-value, so the point at which the two functions meet.
-                
-                Let's return to our bike example, for the last time, i promise!!!
-                
-                Remember, the function describing the distance your friend has traveled is given by
-                <bookmark mark="f"/> f of x equals fifteen times x plus five,
-                and the function describing the distance you have traveled is given by
-                <bookmark mark="g"/> g of x equals twenty times x.
-                
-                Now, let's <bookmark mark="plot"/> plot the two functions. <bookmark mark="note2"/> Where do the two functions intersect?
-                """
+                text=self.translate("Func_2_3.I6.q.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords))
@@ -721,14 +569,11 @@ class Func_2_3_I_6_q(SophiaCursorScene):
             self.play(ReplacementTransform(funcTexf, funcTexg))
 
             self.wait_until_bookmark("plot")
-            note.change_colors([0,1])
             self.play(Write(plot_f), Write(plot_g))
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 class Func_2_3_I_6_a(SophiaCursorScene):
 
@@ -739,13 +584,13 @@ class Func_2_3_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Graphical solution")
+        title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
         cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
         plane = cords[0]
 
-        note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
-        self.add(note)
+        # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
+        # self.add(note)
 
         funcTexf = MathTex("f(x) = 15x + 5", color=c1t, font_size=fs1).next_to(plane, DOWN, buff=0.5)
         funcTexg = MathTex("g(x) = 20x", color=c2t, font_size=fs1).move_to(funcTexf)
@@ -772,25 +617,11 @@ class Func_2_3_I_6_a(SophiaCursorScene):
         dashed2 = DashedLine([ix, ydown, 0], [ix, iy, 0], color=c2t)
 
         with self.voiceover(
-                text="""
-                Yes! That's correct, very good!
-                
-                If we <bookmark mark="note1"/> follow one of the graphs <bookmark mark="intersectLoc"/> until it intersects the other graph, we can see that
-                the graphs of the two functions intersect at the point 1,20.
-                
-                <bookmark mark="cursorBack"/>
-                The interpretation of that - as we already saw in a previous video - <bookmark mark="note2"/> is that
-                you and your friends meet after x equals one hour. The y value - twenty - means that by that time
-                you have traveled twenty kilometers, and your friend has traveled twenty kilometers as well.
-                """
+                text=self.translate("Func_2_3.I6.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("intersectLoc")
             cursor.blinking=False
-            note.change_colors([0,1])
             self.play(CursorMoveTo(cursor, ix, iy))
             interCirc = Circle(radius=0.2, color=RED).move_to([ix, iy, 0])
             self.play(Write(interCirc), Write(dashed1), Write(dashed2))
@@ -800,8 +631,6 @@ class Func_2_3_I_6_a(SophiaCursorScene):
             self.wait(0.2)
             cursor.blinking=True
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -815,13 +644,13 @@ class Func_2_3_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Graphical solution")
+        title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
         cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
         plane = cords[0]
 
-        note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
-        self.add(note)
+        # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
+        # self.add(note)
 
         funcTexf = MathTex("f(x) = 15x + 5", color=c1t, font_size=fs1).next_to(plane, DOWN, buff=0.5)
         funcTexg = MathTex("g(x) = 20x", color=c2t, font_size=fs1).move_to(funcTexf)
@@ -848,25 +677,12 @@ class Func_2_3_I_6_b(SophiaCursorScene):
         dashed2 = DashedLine([ix, ydown, 0], [ix, iy, 0], color=c2t)
 
         with self.voiceover(
-                text="""
-                Mhm, that's not quite right. I'll show you the correct solution.
-                
-                If we <bookmark mark="note1"/> follow one of the graphs <bookmark mark="intersectLoc"/> until it intersects the other graph, we can see that
-                the graphs of the two functions intersect at the point 1,20.
-                
-                <bookmark mark="cursorBack"/>
-                The interpretation of that - as we already saw in a previous video - <bookmark mark="note2"/> is that
-                you and your friends meet after x equals one hour. The y value - twenty - means that by that time
-                you have traveled twenty kilometers, and your friend has traveled twenty kilometers as well.
-                """
+                text=self.translate("Func_2_3.I6.b.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+
             
             self.wait_until_bookmark("intersectLoc")
             cursor.blinking=False
-            note.change_colors([0,1])
             self.play(CursorMoveTo(cursor, ix, iy))
             interCirc = Circle(radius=0.2, color=RED).move_to([ix, iy, 0])
             self.play(Write(interCirc), Write(dashed1), Write(dashed2))
@@ -875,9 +691,6 @@ class Func_2_3_I_6_b(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, xo, yo))
             self.wait(0.2)
             cursor.blinking=True
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -893,13 +706,13 @@ class Func_2_3_I_6_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Graphical solution")
+        title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
         cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
         plane = cords[0]
 
-        note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
-        self.add(note)
+        # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
+        # self.add(note)
 
         funcTexf = MathTex("f(x) = 15x + 5", color=c1t, font_size=fs1).next_to(plane, DOWN, buff=0.5)
         funcTexg = MathTex("g(x) = 20x", color=c2t, font_size=fs1).move_to(funcTexf)
@@ -926,25 +739,12 @@ class Func_2_3_I_6_c(SophiaCursorScene):
         dashed2 = DashedLine([ix, ydown, 0], [ix, iy, 0], color=c2t)
 
         with self.voiceover(
-                text="""
-                Mhm, that's not quite right. I'll show you the correct solution.
-                
-                If we <bookmark mark="note1"/> follow one of the graphs <bookmark mark="intersectLoc"/> until it intersects the other graph, we can see that
-                the graphs of the two functions intersect at the point 1,20.
-                
-                <bookmark mark="cursorBack"/>
-                The interpretation of that - as we already saw in a previous video - <bookmark mark="note2"/> is that
-                you and your friends meet after x equals one hour. The y value - twenty - means that by that time
-                you have traveled twenty kilometers, and your friend has traveled twenty kilometers as well.
-                """
+                text=self.translate("Func_2_3.I6.b.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+
             
             self.wait_until_bookmark("intersectLoc")
             cursor.blinking=False
-            note.change_colors([0,1])
             self.play(CursorMoveTo(cursor, ix, iy))
             interCirc = Circle(radius=0.2, color=RED).move_to([ix, iy, 0])
             self.play(Write(interCirc), Write(dashed1), Write(dashed2))
@@ -953,9 +753,6 @@ class Func_2_3_I_6_c(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, xo, yo))
             self.wait(0.2)
             cursor.blinking=True
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -970,13 +767,13 @@ class Func_2_3_I_6_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Graphical solution")
+        title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
         cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
         plane = cords[0]
 
-        note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
-        self.add(note)
+        # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
+        # self.add(note)
 
         funcTexf = MathTex("f(x) = 15x + 5", color=c1t, font_size=fs1).next_to(plane, DOWN, buff=0.5)
         funcTexg = MathTex("g(x) = 20x", color=c2t, font_size=fs1).move_to(funcTexf)
@@ -1003,25 +800,12 @@ class Func_2_3_I_6_d(SophiaCursorScene):
         dashed2 = DashedLine([ix, ydown, 0], [ix, iy, 0], color=c2t)
 
         with self.voiceover(
-                text="""
-                Mhm, that's not quite right. I'll show you the correct solution.
-                
-                If we <bookmark mark="note1"/> follow one of the graphs <bookmark mark="intersectLoc"/> until it intersects the other graph, we can see that
-                the graphs of the two functions intersect at the point 1,20.
-                
-                <bookmark mark="cursorBack"/>
-                The interpretation of that - as we already saw in a previous video - <bookmark mark="note2"/> is that
-                you and your friends meet after x equals one hour. The y value - twenty - means that by that time
-                you have traveled twenty kilometers, and your friend has traveled twenty kilometers as well.
-                """
+                text=self.translate("Func_2_3.I6.b.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
+
             
             self.wait_until_bookmark("intersectLoc")
             cursor.blinking=False
-            note.change_colors([0,1])
             self.play(CursorMoveTo(cursor, ix, iy))
             interCirc = Circle(radius=0.2, color=RED).move_to([ix, iy, 0])
             self.play(Write(interCirc), Write(dashed1), Write(dashed2))
@@ -1030,9 +814,6 @@ class Func_2_3_I_6_d(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, xo, yo))
             self.wait(0.2)
             cursor.blinking=True
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1053,10 +834,10 @@ class linearFunctionEqualityQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Linear Functions & Equalities")
+        title = self.add_title(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.title"))
 
-        fText = f"f of x equals {get_num(self.fParams[0])} times x {get_num(self.fParams[1], negation='minus', pos='plus')}"
-        gText = f"g of x equals {get_num(self.gParams[0])} times x {get_num(self.gParams[1], negation='minus', pos='plus')}"
+        fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.fText"))
+        gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
         gTex = f"g(x) = {str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
 
@@ -1071,17 +852,7 @@ class linearFunctionEqualityQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         shakeGroup = Group(handshake, fLeft, gRight, equal).scale(0.8).next_to(g, DOWN, buff=1.5).shift(3*RIGHT)
 
         with self.voiceover(
-                text=f"""
-                Consider the following two linear functions:
-                <bookmark mark="f"/>
-                {fText}.
-                <bookmark mark="g"/>
-                {gText}.
-                
-                Where do the two functions intersect?
-                That is, <bookmark mark="handshake"/> where does f equal g?
-                
-                """
+                text=self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1109,17 +880,16 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Linear Functions & Equalities")
+        title = self.add_title(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.title"))
 
         upshift = 2
 
-        op1 = ["add", "to"] if self.fParams[1] < 0 else ["subtract", "from"]
-        op2 = ["add", "to"] if self.gParams[0] < 0 else ["subtract", "from"]
+        op1 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.fParams[1] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
+        op2 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.gParams[0] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
         plane = self.cords[0]
 
-        fText = f"f of x is equal to {get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')}"
-        gText = f"g of x is equal to {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}"
-        fEqGText = f"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} equals {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}"
+        fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.fText"))
+        gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
         gTex = f"g(x) = {str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
         fEqGTex = f"{str(self.fParams[0])}x {get_texNum(self.fParams[1])}={str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
@@ -1135,11 +905,11 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         downArrow2 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqATex = f"{str(self.fParams[0])}x ={str(self.gParams[0])}x {get_texNum(self.gParams[1]-self.fParams[1])}"
-        eqAText = f"{get_num(self.fParams[0])} x equals {get_num(self.gParams[0])} x {get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='plus')}"
+        eqAText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.eqAText"))
         eqA = MathTex(eqATex, color=c2t, font_size=fs2).next_to(downArrow2, DOWN, buff=0.2)
         stepA="""<bookmark mark="shiftUp"/><bookmark mark="add"/>"""
         if abs(self.fParams[1])!=0:
-            stepA = f"""Next, <bookmark mark="shiftUp"/> we {op1[0]} <bookmark mark="add"/> {abs(self.fParams[1])} {op1[1]} both sides, - and obtain {eqAText}."""
+            stepA = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.stepA"))
             prev = eqA
             finalG.add(downArrow2, eqA)
 
@@ -1149,7 +919,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         eqB = MathTex(eqBTex, color=c2t, font_size=fs2).next_to(downArrow3, DOWN, buff=0.2)
         stepB = """<bookmark mark="addx"/>"""
         if abs(self.gParams[0])!=0:
-            stepB = f"""Then, we {op2[0]} <bookmark mark="addx"/> {abs(self.gParams[0])} x {op2[1]} both sides, - and obtain {eqBText}."""
+            stepB = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.stepB"))
             prev = eqB
             finalG.add(downArrow3, eqB)
         
@@ -1159,7 +929,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         eqC = MathTex(eqCTex, color=c2t, font_size=fs2).next_to(downArrow4, DOWN, buff=0.2)
         stepC = """<bookmark mark="final"/>"""
         if (self.fParams[0]-self.gParams[0])!=1:
-            stepC = f"""Finally, we divide both sides by {self.fParams[0]-self.gParams[0]} to get <bookmark mark="final"/> {eqCText}."""
+            stepC = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.stepC"))
             finalG.add(downArrow4, eqC)
 
 
@@ -1181,26 +951,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         circ = Circle(radius=0.1, color=RED).move_to([x,y,0])
 
         with self.voiceover(
-                text=f"""
-                {self.tfIntro}
-                Remember: <bookmark mark="f"/>
-                {fText} and <bookmark mark="g"/>
-                {gText}.
-                
-                So now, the first thing we do is set <bookmark mark="fEqG"/> f of x equal to g of x.
-                
-                This gives us <bookmark mark="fEqGNums"/> {fEqGText}.
-                
-                {stepA}
-                
-                {stepB}
-                
-                {stepC}.
-                
-                We can also verify this, by <bookmark mark="cords"/> plotting the graph of <bookmark mark="plotF"/> f and the graph  <bookmark mark="plotG"/> of g.
-                
-                Looking at the two graphs, we can <bookmark mark="confirm"/> confirm that the two graphs intersect at the point x equals {get_num(x_sol)}. 
-                """
+                text=self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1250,13 +1001,14 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 #####################################
 #####################################
-
-TASK_Func_2_3_P_1_q = SophiaTaskDefinition(
-    answerOptions=["$x=2$", "$x=0$","$x=-2$", "$x=-2.5$"],
-    correctAnswerIndex=3,
-    questionText="Where do $f(x)$ and $g(x)$ intersect?"
-)
 class Func_2_3_P_1_q(linearFunctionEqualityQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$x=2$", "$x=0$","$x=-2$", "$x=-2.5$"],
+            correctAnswerIndex=3,
+            questionText = self.translate("Func_2_3.P1.q.question-text") 
+        )
         
     def construct(self):
         self.fParams = [4, -2]
@@ -1269,7 +1021,7 @@ class Func_2_3_P_1_a(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [4, -2]
         self.gParams = [6, 3]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P1.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1278,7 +1030,7 @@ class Func_2_3_P_1_b(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [4, -2]
         self.gParams = [6, 3]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P1.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1287,7 +1039,7 @@ class Func_2_3_P_1_c(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [4, -2]
         self.gParams = [6, 3]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P1.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1297,18 +1049,21 @@ class Func_2_3_P_1_d(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [4, -2]
         self.gParams = [6, 3]
-        self.tfIntro = "Great job, that's exactly right!"
+        self.tfIntro = self.translate("Func_2_3.P1.d.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
 #####################################
 #####################################$
-TASK_Func_2_3_P_2_q = SophiaTaskDefinition(
-    answerOptions=["$x=2$", "$x=0$","$x=-2$", "$x=-2.5$"],
-    correctAnswerIndex=0,
-    questionText="Where do $f(x)$ and $g(x)$ intersect?"
-)
 class Func_2_3_P_2_q(linearFunctionEqualityQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$x=2$", "$x=0$","$x=-2$", "$x=-2.5$"],
+            correctAnswerIndex=0,
+            questionText = self.translate("Func_2_3.P1.q.question-text") 
+        )
+
         
     def construct(self):
         self.fParams = [3, -1]
@@ -1322,7 +1077,7 @@ class Func_2_3_P_2_a(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [3, -1]
         self.gParams = [6, -7]
-        self.tfIntro = "Great job, that's exactly right!"
+        self.tfIntro = self.translate("Func_2_3.P2.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1331,7 +1086,7 @@ class Func_2_3_P_2_b(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [3, -1]
         self.gParams = [6, -7]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P2.b.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1340,7 +1095,7 @@ class Func_2_3_P_2_c(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [3, -1]
         self.gParams = [6, -7]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P2.b.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
     
@@ -1349,18 +1104,20 @@ class Func_2_3_P_2_d(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [3, -1]
         self.gParams = [6, -7]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P2.b.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_2_3_P_3_q = SophiaTaskDefinition(
-    answerOptions=["$x=2/3$", "$x=-1/3$", "$x=8/3$", "$x=5/3$"],
-    correctAnswerIndex=2,
-    questionText="Where do $f(x)$ and $g(x)$ intersect?"
-)
 class Func_2_3_P_3_q(linearFunctionEqualityQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$x=2/3$", "$x=-1/3$", "$x=8/3$", "$x=5/3$"],
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_2_3.P1.q.question-text") 
+        )
         
     def construct(self):
         self.fParams = [2, 3]
@@ -1373,7 +1130,7 @@ class Func_2_3_P_3_a(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, 3]
         self.gParams = [5, -5]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P3.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1382,7 +1139,7 @@ class Func_2_3_P_3_b(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, 3]
         self.gParams = [5, -5]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P3.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1391,7 +1148,7 @@ class Func_2_3_P_3_c(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, 3]
         self.gParams = [5, -5]
-        self.tfIntro = "Great job, that's exactly right!"
+        self.tfIntro = self.translate("Func_2_3.P3.c.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1400,19 +1157,20 @@ class Func_2_3_P_3_d(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, 3]
         self.gParams = [5, -5]
-        self.tfIntro = "Mhm, that's not quite right. Let me show you:"
+        self.tfIntro = self.translate("Func_2_3.P3.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_2_3_P_4_q = SophiaTaskDefinition(
-    answerOptions=["$x=0$", "$x=0.25$", "$x=0.5$", "$x=-0.5$"],
-    correctAnswerIndex=1,
-    questionText="Where do $f(x)$ and $g(x)$ intersect?"
-)
-
 class Func_2_3_P_4_q(linearFunctionEqualityQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$x=0$", "$x=0.25$", "$x=0.5$", "$x=-0.5$"],
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_2_3.P1.q.question-text") 
+        )
         
     def construct(self):
         self.fParams = [1, 4]
@@ -1425,7 +1183,7 @@ class Func_2_3_P_4_a(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [1, 4]
         self.gParams = [-3, 5]
-        self.tfIntro = "Mhm, that's not it... I'll explain:"
+        self.tfIntro = self.translate("Func_2_3.P4.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1434,7 +1192,7 @@ class Func_2_3_P_4_b(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [1, 4]
         self.gParams = [-3, 5]
-        self.tfIntro = "Great job, that's it!"
+        self.tfIntro = self.translate("Func_2_3.P4.b.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1443,7 +1201,7 @@ class Func_2_3_P_4_c(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [1, 4]
         self.gParams = [-3, 5]
-        self.tfIntro = "Mhm, that's not it... I'll explain:"
+        self.tfIntro = self.translate("Func_2_3.P4.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1452,19 +1210,20 @@ class Func_2_3_P_4_d(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [1, 4]
         self.gParams = [-3, 5]
-        self.tfIntro = "Mhm, that's not it... I'll explain:"
+        self.tfIntro = self.translate("Func_2_3.P4.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_2_3_P_5_q = SophiaTaskDefinition(
-    answerOptions=["$x=2/3$", "$x=4/3$", "$x=-2/3$", "$x=8/3$"],
-    correctAnswerIndex=2,
-    questionText="Where do $f(x)$ and $g(x)$ intersect?"
-)
-
 class Func_2_3_P_5_q(linearFunctionEqualityQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$x=2/3$", "$x=4/3$", "$x=-2/3$", "$x=8/3$"],
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_2_3.P1.q.question-text") 
+        )
         
     def construct(self):
         self.fParams = [2, -3]
@@ -1477,7 +1236,7 @@ class Func_2_3_P_5_a(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, -3]
         self.gParams = [5, -1]
-        self.tfIntro = "No, that's not correct. Let's solve it together"
+        self.tfIntro = self.translate("Func_2_3.P5.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1486,7 +1245,7 @@ class Func_2_3_P_5_b(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, -3]
         self.gParams = [5, -1]
-        self.tfIntro = "No, that's not correct. Let's solve it together"
+        self.tfIntro = self.translate("Func_2_3.P5.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1495,7 +1254,7 @@ class Func_2_3_P_5_c(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, -3]
         self.gParams = [5, -1]
-        self.tfIntro = "Great job, you got it right!"
+        self.tfIntro = self.translate("Func_2_3.P5.c.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1504,7 +1263,7 @@ class Func_2_3_P_5_d(linearFunctionEqualityAnswerScene):
     def construct(self):
         self.fParams = [2, -3]
         self.gParams = [5, -1]
-        self.tfIntro = "No, that's not correct. Let's solve it together"
+        self.tfIntro = self.translate("Func_2_3.P5.a.tfIntro")
         self.cords = self.add_cords([-4, 4, 2], [-24, 24, 6], x_ticks=[-4,-2,2,4], y_ticks=[-24,-12,12,24])
         super().construct()
 
@@ -1517,7 +1276,7 @@ class Func_2_3_P_5_d(linearFunctionEqualityAnswerScene):
 #####################################
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_2_3_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_I_1_q, Func_2_3_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_I_1_q),
     PagePrototypeVideo.from_scene(Func_2_3_I_1_a),
     PagePrototypeVideo.from_scene(Func_2_3_I_1_b),
     PagePrototypeVideo.from_scene(Func_2_3_I_1_c),
@@ -1527,37 +1286,37 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_2_3_I_4),
     PagePrototypeVideo.from_scene(Func_2_3_I_5),
     PagePrototypeVideo.from_scene(Func_2_3_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_I_6_q, Func_2_3_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_I_6_q),
     PagePrototypeVideo.from_scene(Func_2_3_I_6_a),
     PagePrototypeVideo.from_scene(Func_2_3_I_6_b),
     PagePrototypeVideo.from_scene(Func_2_3_I_6_c),
     PagePrototypeVideo.from_scene(Func_2_3_I_6_d),
     PagePrototypeVideo.from_scene(Func_2_3_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_P_1_q, Func_2_3_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_P_1_q),
     PagePrototypeVideo.from_scene(Func_2_3_P_1_a),
     PagePrototypeVideo.from_scene(Func_2_3_P_1_b),
     PagePrototypeVideo.from_scene(Func_2_3_P_1_c),
     PagePrototypeVideo.from_scene(Func_2_3_P_1_d),
     PagePrototypeVideo.from_scene(Func_2_3_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_P_2_q, Func_2_3_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_P_2_q),
     PagePrototypeVideo.from_scene(Func_2_3_P_2_a),
     PagePrototypeVideo.from_scene(Func_2_3_P_2_b),
     PagePrototypeVideo.from_scene(Func_2_3_P_2_c),
     PagePrototypeVideo.from_scene(Func_2_3_P_2_d),
     PagePrototypeVideo.from_scene(Func_2_3_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_P_3_q, Func_2_3_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_P_3_q),
     PagePrototypeVideo.from_scene(Func_2_3_P_3_a),
     PagePrototypeVideo.from_scene(Func_2_3_P_3_b),
     PagePrototypeVideo.from_scene(Func_2_3_P_3_c),
     PagePrototypeVideo.from_scene(Func_2_3_P_3_d),
     PagePrototypeVideo.from_scene(Func_2_3_P_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_P_4_q, Func_2_3_P_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_P_4_q),
     PagePrototypeVideo.from_scene(Func_2_3_P_4_a),
     PagePrototypeVideo.from_scene(Func_2_3_P_4_b),
     PagePrototypeVideo.from_scene(Func_2_3_P_4_c),
     PagePrototypeVideo.from_scene(Func_2_3_P_4_d),
     PagePrototypeVideo.from_scene(Func_2_3_P_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_2_3_P_5_q, Func_2_3_P_5_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_2_3_P_5_q),
     PagePrototypeVideo.from_scene(Func_2_3_P_5_a),
     PagePrototypeVideo.from_scene(Func_2_3_P_5_b),
     PagePrototypeVideo.from_scene(Func_2_3_P_5_c),
