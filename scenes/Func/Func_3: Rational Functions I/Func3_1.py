@@ -15,7 +15,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
@@ -28,11 +28,11 @@ class Func_3_1_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Functions")
+        self.add_title(self.translate("Func_3_1.I1.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Function describes", "Fill level over time"], "$\\rightarrow$Which representation is correct?"])
-        self.add(note)
+        # note = Notepad(texts=[["Function describes", "Fill level over time"], "$\\rightarrow$Which representation is correct?"])
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4,4, 1], [-3, 3, 1], x_ticks=[-4,-2,2,4],y_ticks=[-3,-2,-1,1,2,3])
@@ -53,22 +53,7 @@ class Func_3_1_I_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so I'm now assuming you already know what a function is.
-                If you don't, go back to the section on functions, and I'll be happy to explain it to you.
-                
-                Now, the type of functions we've mainly looked at were <bookmark mark="linear"/> linear functions.
-                
-                They have the form <bookmark mark="funcTerm"/> f of x equals "a" times x plus b, where a and b are constants.
-                
-                For example, the term of this function is <bookmark mark="thisFunc"/> f of x equals zero point five times x.
-                
-                We're multiplying "a", in this case zero point five by x, and a is positive, so the function increases when x increases,
-                
-                and it decreases, when x decreases.
-                
-                Now take a moment to think about this: What would happen, if instead of multiplying "a" by x, we would divide "a" by x?
-                """
+                text=self.translate("Func_3_1.I1.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("linear")
@@ -94,11 +79,11 @@ class Func_3_1_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Functions")
+        self.add_title(self.translate("Func_3_1.I2.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=["Consider function $f(x)=\\tfrac1x$", "Plug in several values",["f decreases fast at first", "and then decreases more slowly"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=["Consider function $f(x)=\\tfrac1x$", "Plug in several values",["f decreases fast at first", "and then decreases more slowly"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
@@ -117,42 +102,11 @@ class Func_3_1_I_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So, we want to know what a function of the form <bookmark mark="funcA"/> f of x equals "a" divided by x looks like.
-                
-                As an example, let's look at the function f of x <bookmark mark="note1"/> equals <bookmark mark="funcG"/> one over x.
-                
-                And, let's start by looking at the positive values only.
-                
-                To learn more, <bookmark mark="cords"/> let's plug in some values.
-                
-                If we plug in one, <bookmark mark="plugIn1"/> we get one divided by one, which is one.
-                
-                If we plug in two, <bookmark mark="plugIn2"/> we get one divided by two, which is one half.
-                
-                If we plug in four, <bookmark mark="plugIn4"/> we get one divided by four, which is one quarter.
-                
-                And so on.
-                
-                Let's also plug in some values that are smaller than one:
-                
-                If we plug in <bookmark mark="plugInHalf"/> zero point five, we get one divided by zero point five, which is two,
-                
-                And if we plug in <bookmark mark="plugInQuarter"/> zero point two five, we get one divided by zero point two five, which is four.
-                
-                Now that we've plugged in some values, let's <bookmark mark="plot"/> connect them on the coordinate system and <bookmark mark="note3"/> see what the function looks like.
-                
-                As we can see, the function starts <bookmark mark="moveAlongFunc"/> with very high values for low x, and decreases as x gets larger.
-                
-                At first, it decreases very quickly, but then it decreases slower and slower.
-                """
+                text=self.translate("Func_3_1.I2.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("funcA")
             self.play(Write(func_general))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("funcG")
             self.play(ReplacementTransform(func_general, func_ex))
@@ -160,7 +114,6 @@ class Func_3_1_I_2(SophiaCursorScene):
             self.wait_until_bookmark("cords")
             self.play(Write(cords))
             self.add(cursor)
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("plugIn1")
             cursor.blinking = False
@@ -201,9 +154,6 @@ class Func_3_1_I_2(SophiaCursorScene):
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
             
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(0.25,4)
@@ -218,12 +168,14 @@ class Func_3_1_I_2(SophiaCursorScene):
     
 #####################################
 #####################################
-TASK_Func_3_1_I_3_q = SophiaTaskDefinition(
-    answerOptions=["The result is $0$", "The result is $\infty$","The result is undefined", "The result is $1$"],
-    correctAnswerIndex=2,
-    questionText="What happens if we plug in $x=0$?"
-)
 class Func_3_1_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_1.I3.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_3_1.I3.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -231,11 +183,11 @@ class Func_3_1_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Functions")
+        self.add_title(self.translate("Func_3_1.I3.q.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=[["$x$ gets closer to zero","$\\rightarrow f(x)$ increases quickly"], ["$\\rightarrow$ What will happen,","     if we plug in $x=0$"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=[["$x$ gets closer to zero","$\\rightarrow f(x)$ increases quickly"], ["$\\rightarrow$ What will happen,","     if we plug in $x=0$"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         func = lambda x: 1/x
@@ -260,24 +212,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so <bookmark mark="closerTo0"/> we've seen that <bookmark mark="note1"/> as x gets closer to zero, the values for f of x get larger and larger.
-                
-                <bookmark mark="cordsAway"/> Now, let's take a closer look at the behavior of f for small values of x.
-                
-                We've already seen that <bookmark mark="f1"/> f of one is equal to one, that <bookmark mark="f2"/> f of one half is equal
-                to 2, and that <bookmark mark="f4"/> f of one quarter is equal to 4.
-                
-                If we now plug in <bookmark mark="f10"/> f of one tenth, we get 10, and if we plug in <bookmark mark="f20"/> f of one twentieth,
-                we get 20.
-                
-                This doesn't even fit on the screen anymore, but when you <bookmark mark="func"/> connect the points, you can see that the values are still getting larger, and that they're getting
-                larger fast.
-                
-                So we know, that the value of f of x increases, as x gets closer to zero.
-                
-                Now, <bookmark mark="note2"/> what will happen, if we plug x equals zero into our function?
-                """
+                text=self.translate("Func_3_1.I3.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("closerTo0")
@@ -286,9 +221,6 @@ class Func_3_1_I_3_q(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(MoveAlongPath(cursor, func_plotted_Old), run_time=5)
             cursor.blinking=True
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("cordsAway")
             cursor.blinking=False
@@ -331,9 +263,6 @@ class Func_3_1_I_3_q(SophiaCursorScene):
             self.play(Write(func_plotted))
             self.play(Unwrite(circ1), Unwrite(circHalf), Unwrite(circQuarter), Unwrite(circTenth), Unwrite(circTwentieth))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
@@ -345,14 +274,14 @@ class Func_3_1_I_3_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Watch out!")
+        self.add_title(self.translate("Func_3_1.I3.a.title"))
 
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
+        # self.add(note)
 
 
 
@@ -373,27 +302,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="warning"/>
-                Careful!!!
-                
-                Remember, our function is defined as <bookmark mark="func"/> f of x equals one over x.
-                If we were to <bookmark mark="note1"/> plug x equals zero into our function, the expression would be
-                <bookmark mark="f0"/> f of zero equals one over zero.
-                
-                But it's <bookmark mark="cross"/> not possible to divide by zero, so the result of one over zero is undefined.
-                
-                This means, that <bookmark mark="domain"/> we're not allowed to plug x equals zero into our function!
-                
-                So, just to recap: the function f of x equals one over x is defined for all x except zero.
-                
-                <bookmark mark="cords"/>
-                As the values of x get closer to zero, the values of f of x get bigger and bigger.
-                
-                But we can't plug x equals zero into our function.
-                
-                The point x equals zero is also called a singularity.
-                """
+                text=self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -404,19 +313,15 @@ class Func_3_1_I_3_a(SophiaCursorScene):
             self.wait_until_bookmark("func")
             self.play(Write(func))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("f0")
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
-            note.change_colors([0,1])
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
             self.play(zero.animate.shift(UP*1.5), run_time=0.5)
-            warning1 = Tex("Only defined for values", color=c1t, font_size=fs2)
+            warning1 = Tex(self.translate("Func_3_1.I3.a.warning"), color=c1t, font_size=fs2)
             warning2 = MathTex("x\\neq0", color=c1t, font_size=fs2).next_to(warning1, DOWN, buff=0.1)
             warning = VGroup(warning1, warning2).arrange(DOWN).next_to(zero, DOWN, buff=0.4)
             self.play(Write(warning), run_time=0.8)
@@ -437,14 +342,14 @@ class Func_3_1_I_3_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Watch out!")
+        self.add_title(self.translate("Func_3_1.I3.a.title"))
 
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
+        # self.add(note)
 
 
 
@@ -465,27 +370,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="warning"/>
-                Careful!!!
-                
-                Remember, our function is defined as <bookmark mark="func"/> f of x equals one over x.
-                If we were to <bookmark mark="note1"/> plug x equals zero into our function, the expression would be
-                <bookmark mark="f0"/> f of zero equals one over zero.
-                
-                But it's <bookmark mark="cross"/> not possible to divide by zero, so the result of one over zero is undefined.
-                
-                This means, that <bookmark mark="domain"/> we're not allowed to plug x equals zero into our function!
-                
-                So, just to recap: the function f of x equals one over x is defined for all x except zero.
-                
-                <bookmark mark="cords"/>
-                As the values of x get closer to zero, the values of f of x get bigger and bigger.
-                
-                But we can't plug x equals zero into our function.
-                
-                The point x equals zero is also called a singularity.
-                """
+                text=self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -496,19 +381,15 @@ class Func_3_1_I_3_b(SophiaCursorScene):
             self.wait_until_bookmark("func")
             self.play(Write(func))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("f0")
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
-            note.change_colors([0,1])
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
             self.play(zero.animate.shift(UP*1.5), run_time=0.5)
-            warning1 = Tex("Only defined for values", color=c1t, font_size=fs2)
+            warning1 = Tex(self.translate("Func_3_1.I3.a.warning"), color=c1t, font_size=fs2)
             warning2 = MathTex("x\\neq0", color=c1t, font_size=fs2).next_to(warning1, DOWN, buff=0.1)
             warning = VGroup(warning1, warning2).arrange(DOWN).next_to(zero, DOWN, buff=0.4)
             self.play(Write(warning), run_time=0.8)
@@ -530,14 +411,14 @@ class Func_3_1_I_3_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Watch out!")
+        self.add_title(self.translate("Func_3_1.I3.a.title"))
 
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
+        # self.add(note)
 
 
 
@@ -558,28 +439,7 @@ class Func_3_1_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right. We have to be
-                <bookmark mark="warning"/>
-                careful here!
-                
-                Remember, our function is defined as <bookmark mark="func"/> f of x equals one over x.
-                If we were to <bookmark mark="note1"/> plug x equals zero into our function, the expression would be
-                <bookmark mark="f0"/> f of zero equals one over zero.
-                
-                But it's <bookmark mark="cross"/> not possible to divide by zero, so the result of one over zero is undefined.
-                
-                This means, that <bookmark mark="domain"/> we're not allowed to plug x equals zero into our function!
-                
-                So, just to recap: the function f of x equals one over x is defined for all x except zero.
-                
-                <bookmark mark="cords"/>
-                As the values of x get closer to zero, the values of f of x get bigger and bigger.
-                
-                But we can't plug x equals zero into our function.
-                
-                The point x equals zero is also called a singularity.
-                """
+                text=self.translate("Func_3_1.I3.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -590,19 +450,15 @@ class Func_3_1_I_3_c(SophiaCursorScene):
             self.wait_until_bookmark("func")
             self.play(Write(func))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("f0")
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
-            note.change_colors([0,1])
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
             self.play(zero.animate.shift(UP*1.5), run_time=0.5)
-            warning1 = Tex("Only defined for values", color=c1t, font_size=fs2)
+            warning1 = Tex(self.translate("Func_3_1.I3.a.warning"), color=c1t, font_size=fs2)
             warning2 = MathTex("x\\neq0", color=c1t, font_size=fs2).next_to(warning1, DOWN, buff=0.1)
             warning = VGroup(warning1, warning2).arrange(DOWN).next_to(zero, DOWN, buff=0.4)
             self.play(Write(warning), run_time=0.8)
@@ -617,20 +473,20 @@ class Func_3_1_I_3_c(SophiaCursorScene):
 
 class Func_3_1_I_3_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Watch out!")
+        self.add_title(self.translate("Func_3_1.I3.a.title"))
 
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         # Create a notepad with texts
-        note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
+        # self.add(note)
 
 
 
@@ -651,27 +507,7 @@ class Func_3_1_I_3_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="warning"/>
-                Careful!!!
-                
-                Remember, our function is defined as <bookmark mark="func"/> f of x equals one over x.
-                If we were to <bookmark mark="note1"/> plug x equals zero into our function, the expression would be
-                <bookmark mark="f0"/> f of zero equals one over zero.
-                
-                But it's <bookmark mark="cross"/> not possible to divide by zero, so the result of one over zero is undefined.
-                
-                This means, that <bookmark mark="domain"/> we're not allowed to plug x equals zero into our function!
-                
-                So, just to recap: the function f of x equals one over x is defined for all x except zero.
-                
-                <bookmark mark="cords"/>
-                As the values of x get closer to zero, the values of f of x get bigger and bigger.
-                
-                But we can't plug x equals zero into our function.
-                
-                The point x equals zero is also called a singularity.
-                """
+                text=self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -682,19 +518,15 @@ class Func_3_1_I_3_d(SophiaCursorScene):
             self.wait_until_bookmark("func")
             self.play(Write(func))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("f0")
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
-            note.change_colors([0,1])
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
             self.play(zero.animate.shift(UP*1.5), run_time=0.5)
-            warning1 = Tex("Only defined for values", color=c1t, font_size=fs2)
+            warning1 = Tex(self.translate("Func_3_1.I3.a.warning"), color=c1t, font_size=fs2)
             warning2 = MathTex("x\\neq0", color=c1t, font_size=fs2).next_to(warning1, DOWN, buff=0.1)
             warning = VGroup(warning1, warning2).arrange(DOWN).next_to(zero, DOWN, buff=0.4)
             self.play(Write(warning), run_time=0.8)
@@ -708,14 +540,17 @@ class Func_3_1_I_3_d(SophiaCursorScene):
         self.wait(4)
 
 
+
 #####################################
 #####################################
-TASK_Func_3_1_I_4_q = SophiaTaskDefinition(
-    answerOptions=["$x=0$", "There is no singularity","$x=2$", "$x=-2$"],
-    correctAnswerIndex=2,
-    questionText="What is the point of the singularity of $g$?"
-)
 class Func_3_1_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_1.I4.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText = self.translate("Func_3_1.I4.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -723,35 +558,24 @@ class Func_3_1_I_4_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Singularities")
+        self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(stroke_width=0.0, blinking=True)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
-        # self.add(cursor)
+        # self.add(cursor)   
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1)
         f0 = MathTex("f(0) = \\tfrac 10", color=c1t, font_size=fs1)
         f_f = f.copy()
-        f1 = Tex("Not defined for $x=0$", color=c1t, font_size=fs2)
-        f2 = Tex("$\\rightarrow$ Singularity at $x=0$", color=c1t, font_size=fs2)
+        f1 = Tex(self.translate("Func_3_1.I4.q.f1"), color=c1t, font_size=fs2)
+        f2 = Tex(self.translate("Func_3_1.I4.q.f2"), color=c1t, font_size=fs2)
         f12 = VGroup(f1, f2).arrange(DOWN, aligned_edge=RIGHT, buff=0.2).next_to(f, DOWN, buff=0.2)
         g = MathTex("g(x) = \\tfrac 2{x+2}", color=RED, font_size=fs1).shift(DOWN*0.6)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Remember, for the <bookmark mark="f"/> function f of x equals one over x, <bookmark mark="f1"/> we're not allowed to plug x equals zero into our function.
-                This is because we cannot divide by zero, and if we were to plug <bookmark mark="f0"/> x equals zero into our function, the expression would be one over zero.
-                
-                We called the point x equals <bookmark mark="f2"/> zero a singularity, because our function is undefined at this point.
-                
-                Now, <bookmark mark="shift"/> consider the function <bookmark mark="g"/> g of x equals two divided by x+2.
-                
-                Does it also have a singularity? That means: is there a point x for which the function g is undefined?
-                
-                And if such a point exists, what is it?
-                """
+                text=self.translate("Func_3_1.I4.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -785,18 +609,17 @@ class Func_3_1_I_4_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Singularities")
+        self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
 
-        
-        S1 = Tex("Singularity at $x$", color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
-        S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex("Plugging in $x$ leads to", color=c1t, font_size=fs2)
-        S3b = Tex("division by zero", color=c1t, font_size=fs2)
+        S1 = Tex(self.translate("Func_3_1.I4.q.S1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
+        S2 = Tex(self.translate("Func_3_1.I4.q.S2"), color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
+        S3a = Tex(self.translate("Func_3_1.I4.q.S3a"), color=c1t, font_size=fs2)
+        S3b = Tex(self.translate("Func_3_1.I4.q.S3b"), color=c1t, font_size=fs2)
         S3 = VGroup(S3a, S3b).arrange(DOWN, buff=0.1).next_to(S2, DOWN, buff=0.2)
         S = VGroup(S1, S2, S3)
 
@@ -808,22 +631,7 @@ class Func_3_1_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right...
-                
-                There's a <bookmark mark="singularity"/> singularity at x, <bookmark mark="whenever"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.
-                
-                So, <bookmark mark="out"/> looking at <bookmark mark="g"/> g of x equals two over x plus two, we can already suspect, <bookmark mark="cursor"/> that there will be a singularity,
-                because <bookmark mark="denom1"/> we're dividing by a sum involving x.
-                
-                To now find the value of x, where <bookmark mark="c2g"/>  g has a singularity, we must find the value of x for which the denominator is zero.
-                
-                This means, finding the value for which <bookmark mark="step1"/> x plus two equals zero. Clearly, this value is <bookmark mark="step23"/> x equals negative two.
-                
-                <bookmark mark="moveUp"/>
-                This is how we find out, that g <bookmark mark="final"/> has a singularity at x equals negative two.
-                
-                """
+                text=self.translate("Func_3_1.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -886,18 +694,17 @@ class Func_3_1_I_4_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Singularities")
+        self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
 
-        
-        S1 = Tex("Singularity at $x$", color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
-        S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex("Plugging in $x$ leads to", color=c1t, font_size=fs2)
-        S3b = Tex("division by zero", color=c1t, font_size=fs2)
+        S1 = Tex(self.translate("Func_3_1.I4.q.S1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
+        S2 = Tex(self.translate("Func_3_1.I4.q.S2"), color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
+        S3a = Tex(self.translate("Func_3_1.I4.q.S3a"), color=c1t, font_size=fs2)
+        S3b = Tex(self.translate("Func_3_1.I4.q.S3b"), color=c1t, font_size=fs2)
         S3 = VGroup(S3a, S3b).arrange(DOWN, buff=0.1).next_to(S2, DOWN, buff=0.2)
         S = VGroup(S1, S2, S3)
 
@@ -909,22 +716,7 @@ class Func_3_1_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right...
-                
-                There's a <bookmark mark="singularity"/> singularity at x, <bookmark mark="whenever"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.
-                
-                So, <bookmark mark="out"/> looking at <bookmark mark="g"/> g of x equals two over x plus two, we can already suspect, <bookmark mark="cursor"/> that there will be a singularity,
-                because <bookmark mark="denom1"/> we're dividing by a sum involving x.
-                
-                To now find the value of x, where <bookmark mark="c2g"/>  g has a singularity, we must find the value of x for which the denominator is zero.
-                
-                This means, finding the value for which <bookmark mark="step1"/> x plus two equals zero. Clearly, this value is <bookmark mark="step23"/> x equals negative two.
-                
-                <bookmark mark="moveUp"/>
-                This is how we find out, that g <bookmark mark="final"/> has a singularity at x equals negative two.
-                
-                """
+                text=self.translate("Func_3_1.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -982,24 +774,23 @@ class Func_3_1_I_4_b(SophiaCursorScene):
 
 class Func_3_1_I_4_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Singularities")
+        self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
 
-        
-        S1 = Tex("Singularity at $x$", color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
-        S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex("Plugging in $x$ leads to", color=c1t, font_size=fs2)
-        S3b = Tex("division by zero", color=c1t, font_size=fs2)
+        S1 = Tex(self.translate("Func_3_1.I4.q.S1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
+        S2 = Tex(self.translate("Func_3_1.I4.q.S2"), color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
+        S3a = Tex(self.translate("Func_3_1.I4.q.S3a"), color=c1t, font_size=fs2)
+        S3b = Tex(self.translate("Func_3_1.I4.q.S3b"), color=c1t, font_size=fs2)
         S3 = VGroup(S3a, S3b).arrange(DOWN, buff=0.1).next_to(S2, DOWN, buff=0.2)
         S = VGroup(S1, S2, S3)
 
@@ -1011,22 +802,7 @@ class Func_3_1_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right...
-                
-                There's a <bookmark mark="singularity"/> singularity at x, <bookmark mark="whenever"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.
-                
-                So, <bookmark mark="out"/> looking at <bookmark mark="g"/> g of x equals two over x plus two, we can already suspect, <bookmark mark="cursor"/> that there will be a singularity,
-                because <bookmark mark="denom1"/> we're dividing by a sum involving x.
-                
-                To now find the value of x, where <bookmark mark="c2g"/>  g has a singularity, we must find the value of x for which the denominator is zero.
-                
-                This means, finding the value for which <bookmark mark="step1"/> x plus two equals zero. Clearly, this value is <bookmark mark="step23"/> x equals negative two.
-                
-                <bookmark mark="moveUp"/>
-                This is how we find out, that g <bookmark mark="final"/> has a singularity at x equals negative two.
-                
-                """
+                text=self.translate("Func_3_1.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -1083,24 +859,23 @@ class Func_3_1_I_4_c(SophiaCursorScene):
 
 class Func_3_1_I_4_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Singularities")
+        self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
 
-        
-        S1 = Tex("Singularity at $x$", color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
-        S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex("Plugging in $x$ leads to", color=c1t, font_size=fs2)
-        S3b = Tex("division by zero", color=c1t, font_size=fs2)
+        S1 = Tex(self.translate("Func_3_1.I4.q.S1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
+        S2 = Tex(self.translate("Func_3_1.I4.q.S2"), color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
+        S3a = Tex(self.translate("Func_3_1.I4.q.S3a"), color=c1t, font_size=fs2)
+        S3b = Tex(self.translate("Func_3_1.I4.q.S3b"), color=c1t, font_size=fs2)
         S3 = VGroup(S3a, S3b).arrange(DOWN, buff=0.1).next_to(S2, DOWN, buff=0.2)
         S = VGroup(S1, S2, S3)
 
@@ -1112,21 +887,7 @@ class Func_3_1_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, you got it!
-                There's a <bookmark mark="singularity"/> singularity at x, <bookmark mark="whenever"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.
-                
-                So, <bookmark mark="out"/> looking at <bookmark mark="g"/> g of x equals two over x plus two, we can already suspect, <bookmark mark="cursor"/> that there will be a singularity,
-                because <bookmark mark="denom1"/> we're dividing by a sum involving x.
-                
-                To now find the value of x, where <bookmark mark="c2g"/>  g has a singularity, we must find the value of x for which the denominator is zero.
-                
-                This means, finding the value for which <bookmark mark="step1"/> x plus two equals zero. Clearly, this value is <bookmark mark="step23"/> x equals negative two.
-                
-                <bookmark mark="moveUp"/>
-                This is how we find out, that g <bookmark mark="final"/> has a singularity at x equals negative two.
-                
-                """
+                text=self.translate("Func_3_1.I4.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -1180,7 +941,6 @@ class Func_3_1_I_4_d(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
 #####################################
 #####################################
 class Func_3_1_I_5(SophiaCursorScene):
@@ -1191,7 +951,7 @@ class Func_3_1_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("1/x for large x")
+        self.add_title(self.translate("Func_3_1.I5.title"))
 
        
         cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
@@ -1220,23 +980,7 @@ class Func_3_1_I_5(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, now let's return to our function <bookmark mark="f"/>f of x equals one over x.
-                
-                We've already seen  what happens to this function, <bookmark mark="f0"/>when we plug in values that get closer and closer to zero:
-                <bookmark mark="f1"/>the function gets larger and larger.
-                
-                Next, we want to see what happens to the function, if we plug in numbers that are much <bookmark mark="oldCords"/> larger than one.
-                
-                For this, let's <bookmark mark="newCords"/> look at values of x up to one hundred.
-                
-                So we've already plugged in the value  <bookmark mark="fOf1"/> f of one, which is one over one, so one.
-                
-                If we plug in the value two, we get <bookmark mark="fOf2"/> f of two equals one divided by two, which is one half, or zero point five.
-                
-                Next, let's plug in the value ten. We get <bookmark mark="fOf10"/> f of ten equals one divided by ten,
-                which is one tenth, or zero point 1.
-                """
+                text=self.translate("Func_3_1.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1285,17 +1029,7 @@ class Func_3_1_I_5(SophiaCursorScene):
 
 
         with self.voiceover(
-                text="""       
-                Ok, now let's plug in the value x equals fifty. If we do that, we get <bookmark mark="fOf50"/>  f of fifty equals one divided by fifty,
-                which is one fiftieth, or zero point zero two.
-                
-                And finally, we'll plug in the value one hundred. We get <bookmark mark="fOf100"/> f of one hundred equals one divided by one hundred,
-                which is one hundredth, or zero point zero one.
-                <bookmark mark="fEnd"/>
-                
-                Connecting the dots to see the graph of the function, <bookmark mark="plot"/> we can see that the function gets smaller and smaller,
-                as we plug in x-values that get larger.
-                """
+                text=self.translate("Func_3_1.I5.voiceover2")
             ) as tracker:
 
             self.wait_until_bookmark("fOf50")
@@ -1330,12 +1064,14 @@ class Func_3_1_I_5(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_1_I_6_q = SophiaTaskDefinition(
-    answerOptions=["Yes, $x=0.000001$", "Yes, $x=0.001$","No", "Yes, $x=0.00000001$"],
-    correctAnswerIndex=2,
-    questionText="Is there a positive number, that is smaller than the smallest value, that $f(x)$ can reach?"
-)
 class Func_3_1_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_1.I6.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_3_1.I6.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1343,10 +1079,10 @@ class Func_3_1_I_6_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$\\frac1x$ is positive for $x>0$", "f(x) gets smaller for large values of $x$", ["Is there a positive number, that is smaller than", "the smallest value $f(x)$ can have?"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=["$\\frac1x$ is positive for $x>0$", "f(x) gets smaller for large values of $x$", ["Is there a positive number, that is smaller than", "the smallest value $f(x)$ can have?"]], buff=0.28)
+        # self.add(note)
 
-        self.add_title("1/x for large x")
+        self.add_title(self.translate("Func_3_1.I6.q.title"))
 
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
@@ -1366,18 +1102,15 @@ class Func_3_1_I_6_q(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Ok, so we know, <bookmark mark="note1"/> that for the function <bookmark mark="f"/> f of x equals one divided by x, the values don't get <bookmark mark="cords"/> negative for larger x, because one divided by something positive is always positive.
+                Ok, so we know, that for the function <bookmark mark="f"/> f of x equals one divided by x, the values don't get <bookmark mark="cords"/> negative for larger x, because one divided by something positive is always positive.
                 
-                We've also seen, <bookmark mark="note2"/>that <bookmark mark="plot"/> the function values get closer and closer to zero, as we plug in larger and larger x-values.
+                We've also seen, that <bookmark mark="plot"/> the function values get closer and closer to zero, as we plug in larger and larger x-values.
                 
-                Now I have a question for you but it's a bit tricky: <bookmark mark="note3"/>Is there a positive number, that is smaller than the smallest value, that f of x can reach?
+                Now I have a question for you but it's a bit tricky: Is there a positive number, that is smaller than the smallest value, that f of x can reach?
                 
                 I mean, is there a positive number, that is smaller than one divided by 100 and smaller than 1 over 1000 and smaller than 1 over ten thousand and so on?
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("f")
             self.play(Write(f), run_time=1)
@@ -1385,14 +1118,8 @@ class Func_3_1_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("cords")
             self.play(Write(cords), f.animate.shift(DOWN*0.6), run_time=1)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("plot")
             self.play(Write(f_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1406,7 +1133,7 @@ class Func_3_1_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\tfrac1x$ for large $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I6.a.title"))
 
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
@@ -1417,26 +1144,26 @@ class Func_3_1_I_6_a(SophiaCursorScene):
         cursor.move_to([x,y,0])
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs2)
-        t1a = Tex("which is smaller than", color=c1t, font_size=fs3).next_to(f, UP)
-        t1b = Tex("There is no positive number $a$,", color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
-        t2 = Tex("for large positive x.", color=c1t, font_size=fs3).next_to(f, DOWN)
+        t1a = Tex(self.translate("Func_3_1.I6.a.t1a"), color=c1t, font_size=fs3).next_to(f, UP)
+        t1b = Tex(self.translate("Func_3_1.I6.a.t1b"), color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
+        t2 = Tex(self.translate("Func_3_1.I6.a.t2"), color=c1t, font_size=fs3).next_to(f, DOWN)
         t1a = t1a.shift(LEFT*(t1a.get_left()[0]-t1b.get_left()[0]))
         t = VGroup(t1b, t1a, t2)
         t2 = t2.shift(LEFT*(t2.get_left()[0]-t1b.get_left()[0]))
         self.add(f)
 
-        s1 = Tex("1. Choose a tiny number $a$", color=RED, font_size=fs3).next_to(f, UP)
-        e1 = Tex("Example: $a=0.001$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        s1 = Tex(self.translate("Func_3_1.I6.a.s1"), color=RED, font_size=fs3).next_to(f, UP)
+        e1 = Tex(self.translate("Func_3_1.I6.a.e1"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s2 = Tex("2. Write $a$ as a fraction", color=RED, font_size=fs3).next_to(f, UP)
+        s2 = Tex(self.translate("Func_3_1.I6.a.s2"), color=RED, font_size=fs3).next_to(f, UP)
         s2 = s2.shift(LEFT*(s2.get_left()[0]-s1.get_left()[0]))
-        e2 = Tex("Our example: $a=\\frac{1}{1000}$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        e2 = Tex(self.translate("Func_3_1.I6.a.e2"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s3 = Tex("3. Double the denominator", color=RED, font_size=fs3).next_to(f, UP)
+        s3 = Tex(self.translate("Func_3_1.I6.a.s3"), color=RED, font_size=fs3).next_to(f, UP)
         s3 = s3.shift(LEFT*(s3.get_left()[0]-s1.get_left()[0]))
         e3 = MathTex("\\hat a=\\frac{1}{2000}","=f(2000)","<a", color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        pbc = Tex("Proof by contradiction", color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
+        pbc = Tex(self.translate("Func_3_1.I6.a.pbc"), color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
 
         func = lambda x: 1/x
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
@@ -1445,28 +1172,7 @@ class Func_3_1_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Nope, that's not right. <bookmark mark="preach"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.
-                
-                But why? I'll show you using a method that mathematicians call <bookmark mark="pbc"/>proof by contradiction.
-                
-                First, <bookmark mark="step1"/> think about a super super tiny positive number, and call that number "a".
-                <bookmark mark="e1"/> For example, we could pick the number zero point zero zero one.
-                
-                Second<bookmark mark="step2"/>, write that number as a fraction.
-                In our example,<bookmark mark="e2"/> we would write "a" as one over one hundred.
-                
-                Third<bookmark mark="step3"/>, take the fraction and double the denominator.
-                In our example, <bookmark mark="e3"/>we would get "a" hat equal to one over two hundred.
-                
-                Now, <bookmark mark="meaning"/>let's think about what this means. <bookmark mark="meaningA"/>
-                First, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x
-                
-                <bookmark mark="meaningB"/>We can also see, that the number is a smaller number than "a".
-                
-                This means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number.
-                
-                """
+                text=self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1513,7 +1219,7 @@ class Func_3_1_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\tfrac1x$ for large $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I6.a.title"))
 
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
@@ -1524,26 +1230,26 @@ class Func_3_1_I_6_b(SophiaCursorScene):
         cursor.move_to([x,y,0])
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs2)
-        t1a = Tex("which is smaller than", color=c1t, font_size=fs3).next_to(f, UP)
-        t1b = Tex("There is no positive number $a$,", color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
-        t2 = Tex("for large positive x.", color=c1t, font_size=fs3).next_to(f, DOWN)
+        t1a = Tex(self.translate("Func_3_1.I6.a.t1a"), color=c1t, font_size=fs3).next_to(f, UP)
+        t1b = Tex(self.translate("Func_3_1.I6.a.t1b"), color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
+        t2 = Tex(self.translate("Func_3_1.I6.a.t2"), color=c1t, font_size=fs3).next_to(f, DOWN)
         t1a = t1a.shift(LEFT*(t1a.get_left()[0]-t1b.get_left()[0]))
         t = VGroup(t1b, t1a, t2)
         t2 = t2.shift(LEFT*(t2.get_left()[0]-t1b.get_left()[0]))
         self.add(f)
 
-        s1 = Tex("1. Choose a tiny number $a$", color=RED, font_size=fs3).next_to(f, UP)
-        e1 = Tex("Example: $a=0.001$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        s1 = Tex(self.translate("Func_3_1.I6.a.s1"), color=RED, font_size=fs3).next_to(f, UP)
+        e1 = Tex(self.translate("Func_3_1.I6.a.e1"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s2 = Tex("2. Write $a$ as a fraction", color=RED, font_size=fs3).next_to(f, UP)
+        s2 = Tex(self.translate("Func_3_1.I6.a.s2"), color=RED, font_size=fs3).next_to(f, UP)
         s2 = s2.shift(LEFT*(s2.get_left()[0]-s1.get_left()[0]))
-        e2 = Tex("Our example: $a=\\frac{1}{1000}$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        e2 = Tex(self.translate("Func_3_1.I6.a.e2"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s3 = Tex("3. Double the denominator", color=RED, font_size=fs3).next_to(f, UP)
+        s3 = Tex(self.translate("Func_3_1.I6.a.s3"), color=RED, font_size=fs3).next_to(f, UP)
         s3 = s3.shift(LEFT*(s3.get_left()[0]-s1.get_left()[0]))
         e3 = MathTex("\\hat a=\\frac{1}{2000}","=f(2000)","<a", color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        pbc = Tex("Proof by contradiction", color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
+        pbc = Tex(self.translate("Func_3_1.I6.a.pbc"), color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
 
         func = lambda x: 1/x
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
@@ -1552,28 +1258,7 @@ class Func_3_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Nope, that's not right. <bookmark mark="preach"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.
-                
-                But why? I'll show you using a method that mathematicians call <bookmark mark="pbc"/>proof by contradiction.
-                
-                First, <bookmark mark="step1"/> think about a super super tiny positive number, and call that number "a".
-                <bookmark mark="e1"/> For example, we could pick the number zero point zero zero one.
-                
-                Second<bookmark mark="step2"/>, write that number as a fraction.
-                In our example,<bookmark mark="e2"/> we would write "a" as one over one hundred.
-                
-                Third<bookmark mark="step3"/>, take the fraction and double the denominator.
-                In our example, <bookmark mark="e3"/>we would get "a" hat equal to one over two hundred.
-                
-                Now, <bookmark mark="meaning"/>let's think about what this means. <bookmark mark="meaningA"/>
-                First, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x
-                
-                <bookmark mark="meaningB"/>We can also see, that the number is a smaller number than "a".
-                
-                This means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number.
-                
-                """
+                text=self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1620,7 +1305,7 @@ class Func_3_1_I_6_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\tfrac1x$ for large $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I6.a.title"))
 
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
@@ -1631,26 +1316,26 @@ class Func_3_1_I_6_c(SophiaCursorScene):
         cursor.move_to([x,y,0])
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs2)
-        t1a = Tex("which is smaller than", color=c1t, font_size=fs3).next_to(f, UP)
-        t1b = Tex("There is no positive number $a$,", color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
-        t2 = Tex("for large positive x.", color=c1t, font_size=fs3).next_to(f, DOWN)
+        t1a = Tex(self.translate("Func_3_1.I6.a.t1a"), color=c1t, font_size=fs3).next_to(f, UP)
+        t1b = Tex(self.translate("Func_3_1.I6.a.t1b"), color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
+        t2 = Tex(self.translate("Func_3_1.I6.a.t2"), color=c1t, font_size=fs3).next_to(f, DOWN)
         t1a = t1a.shift(LEFT*(t1a.get_left()[0]-t1b.get_left()[0]))
         t = VGroup(t1b, t1a, t2)
         t2 = t2.shift(LEFT*(t2.get_left()[0]-t1b.get_left()[0]))
         self.add(f)
 
-        s1 = Tex("1. Choose a tiny number $a$", color=RED, font_size=fs3).next_to(f, UP)
-        e1 = Tex("Example: $a=0.001$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        s1 = Tex(self.translate("Func_3_1.I6.a.s1"), color=RED, font_size=fs3).next_to(f, UP)
+        e1 = Tex(self.translate("Func_3_1.I6.a.e1"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s2 = Tex("2. Write $a$ as a fraction", color=RED, font_size=fs3).next_to(f, UP)
+        s2 = Tex(self.translate("Func_3_1.I6.a.s2"), color=RED, font_size=fs3).next_to(f, UP)
         s2 = s2.shift(LEFT*(s2.get_left()[0]-s1.get_left()[0]))
-        e2 = Tex("Our example: $a=\\frac{1}{1000}$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        e2 = Tex(self.translate("Func_3_1.I6.a.e2"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s3 = Tex("3. Double the denominator", color=RED, font_size=fs3).next_to(f, UP)
+        s3 = Tex(self.translate("Func_3_1.I6.a.s3"), color=RED, font_size=fs3).next_to(f, UP)
         s3 = s3.shift(LEFT*(s3.get_left()[0]-s1.get_left()[0]))
         e3 = MathTex("\\hat a=\\frac{1}{2000}","=f(2000)","<a", color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        pbc = Tex("Proof by contradiction", color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
+        pbc = Tex(self.translate("Func_3_1.I6.a.pbc"), color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
 
         func = lambda x: 1/x
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
@@ -1659,28 +1344,7 @@ class Func_3_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's correct. <bookmark mark="preach"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.
-                
-                But why? I'll show you using a method that mathematicians call <bookmark mark="pbc"/>proof by contradiction.
-                
-                First, <bookmark mark="step1"/> think about a super super tiny positive number, and call that number "a".
-                <bookmark mark="e1"/> For example, we could pick the number zero point zero zero one.
-                
-                Second<bookmark mark="step2"/>, write that number as a fraction.
-                In our example,<bookmark mark="e2"/> we would write "a" as one over one hundred.
-                
-                Third<bookmark mark="step3"/>, take the fraction and double the denominator.
-                In our example, <bookmark mark="e3"/>we would get "a" hat equal to one over two hundred.
-                
-                Now, <bookmark mark="meaning"/>let's think about what this means. <bookmark mark="meaningA"/>
-                First, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x
-                
-                <bookmark mark="meaningB"/>We can also see, that the number is a smaller number than "a".
-                
-                This means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number.
-                
-                """
+                text=self.translate("Func_3_1.I6.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1722,13 +1386,13 @@ class Func_3_1_I_6_c(SophiaCursorScene):
 
 class Func_3_1_I_6_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\tfrac1x$ for large $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I6.a.title"))
 
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
@@ -1739,26 +1403,26 @@ class Func_3_1_I_6_d(SophiaCursorScene):
         cursor.move_to([x,y,0])
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs2)
-        t1a = Tex("which is smaller than", color=c1t, font_size=fs3).next_to(f, UP)
-        t1b = Tex("There is no positive number $a$,", color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
-        t2 = Tex("for large positive x.", color=c1t, font_size=fs3).next_to(f, DOWN)
+        t1a = Tex(self.translate("Func_3_1.I6.a.t1a"), color=c1t, font_size=fs3).next_to(f, UP)
+        t1b = Tex(self.translate("Func_3_1.I6.a.t1b"), color=c1t, font_size=fs3).next_to(t1a, UP, buff=0.1)
+        t2 = Tex(self.translate("Func_3_1.I6.a.t2"), color=c1t, font_size=fs3).next_to(f, DOWN)
         t1a = t1a.shift(LEFT*(t1a.get_left()[0]-t1b.get_left()[0]))
         t = VGroup(t1b, t1a, t2)
         t2 = t2.shift(LEFT*(t2.get_left()[0]-t1b.get_left()[0]))
         self.add(f)
 
-        s1 = Tex("1. Choose a tiny number $a$", color=RED, font_size=fs3).next_to(f, UP)
-        e1 = Tex("Example: $a=0.001$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        s1 = Tex(self.translate("Func_3_1.I6.a.s1"), color=RED, font_size=fs3).next_to(f, UP)
+        e1 = Tex(self.translate("Func_3_1.I6.a.e1"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s2 = Tex("2. Write $a$ as a fraction", color=RED, font_size=fs3).next_to(f, UP)
+        s2 = Tex(self.translate("Func_3_1.I6.a.s2"), color=RED, font_size=fs3).next_to(f, UP)
         s2 = s2.shift(LEFT*(s2.get_left()[0]-s1.get_left()[0]))
-        e2 = Tex("Our example: $a=\\frac{1}{1000}$", color=BLUE, font_size=fs3).next_to(f,DOWN)
+        e2 = Tex(self.translate("Func_3_1.I6.a.e2"), color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        s3 = Tex("3. Double the denominator", color=RED, font_size=fs3).next_to(f, UP)
+        s3 = Tex(self.translate("Func_3_1.I6.a.s3"), color=RED, font_size=fs3).next_to(f, UP)
         s3 = s3.shift(LEFT*(s3.get_left()[0]-s1.get_left()[0]))
         e3 = MathTex("\\hat a=\\frac{1}{2000}","=f(2000)","<a", color=BLUE, font_size=fs3).next_to(f,DOWN)
 
-        pbc = Tex("Proof by contradiction", color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
+        pbc = Tex(self.translate("Func_3_1.I6.a.pbc"), color=RED, font_size=fs3).next_to(title, DOWN, buff=0.4)
 
         func = lambda x: 1/x
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
@@ -1767,28 +1431,7 @@ class Func_3_1_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Nope, that's not right. <bookmark mark="preach"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.
-                
-                But why? I'll show you using a method that mathematicians call <bookmark mark="pbc"/>proof by contradiction.
-                
-                First, <bookmark mark="step1"/> think about a super super tiny positive number, and call that number "a".
-                <bookmark mark="e1"/> For example, we could pick the number zero point zero zero one.
-                
-                Second<bookmark mark="step2"/>, write that number as a fraction.
-                In our example,<bookmark mark="e2"/> we would write "a" as one over one hundred.
-                
-                Third<bookmark mark="step3"/>, take the fraction and double the denominator.
-                In our example, <bookmark mark="e3"/>we would get "a" hat equal to one over two hundred.
-                
-                Now, <bookmark mark="meaning"/>let's think about what this means. <bookmark mark="meaningA"/>
-                First, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x
-                
-                <bookmark mark="meaningB"/>We can also see, that the number is a smaller number than "a".
-                
-                This means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number.
-                
-                """
+                text=self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1838,10 +1481,10 @@ class Func_3_1_I_7(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$x>0\\Rightarrow f(x)>0$", "Shape of f(x)", "Singularities"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=["$x>0\\Rightarrow f(x)>0$", "Shape of f(x)", "Singularities"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Rational Functions")
+        title = self.add_title(self.translate("Func_3_1.I7.title"))
 
         cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
         plane = cords[0]
@@ -1859,36 +1502,22 @@ class Func_3_1_I_7(SophiaCursorScene):
         cond = Tex("for $x\\geq0$", color=c3t, font_size=fs2)
         Group(f,cond).arrange(DOWN, buff=0.05, aligned_edge=LEFT).shift(DOWN*0.4)
 
-        xsmall = Tex("$x$ small", " $\\Rightarrow$ ", "$f(x)$ large", color=RED, font_size=fs2).next_to(title, DOWN, buff=1)
-        xlarge = Tex("$x$ large", " $\\Rightarrow$ ", "$f(x)$ small", color=RED, font_size=fs2).next_to(xsmall, DOWN, buff=0.4)
+        small = self.translate("Func_3_1.I7.small")
+        large = self.translate("Func_3_1.I7.large")
+        xsmall = Tex(f"$x$ {small}", " $\\Rightarrow$ ", f"$f(x)$ {large}", color=RED, font_size=fs2).next_to(title, DOWN, buff=1)
+        xlarge = Tex(f"$x$ {large}", " $\\Rightarrow$ ", f"$f(x)$ {small}", color=RED, font_size=fs2).next_to(xsmall, DOWN, buff=0.4)
         sL = VGroup(xsmall, xlarge)
 
-        S1 = Tex("Singularity at $x$", color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
+
+        S1 = Tex(self.translate("Func_3_1.I7.s1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
         S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex("Plugging in $x$ leads to", color=c1t, font_size=fs2)
-        S3b = Tex("division by zero", color=c1t, font_size=fs2)
+        S3a = Tex(self.translate("Func_3_1.I7.s3a"), color=c1t, font_size=fs2)
+        S3b = Tex(self.translate("Func_3_1.I7.s3b"), color=c1t, font_size=fs2)
         S = VGroup(S1, S2, S3a, S3b).arrange(DOWN, buff=0.2).next_to(title, DOWN, buff=1)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, let's recap what we have learned so far about functions where we divide something by x.
-                Again, let's stick to our example <bookmark mark="f"/> f of x equals one over x, and let's
-                also <bookmark mark="cond"/> restrict ourselves to numbers that aren't negative.
-                
-                <bookmark mark="note1"/>
-                First, we know that <bookmark mark="fPos"/>f of x is positive for all positive values of x.
-                
-                <bookmark mark="note2"/>
-                Then, we also learned how the function behaves for<bookmark mark="smallLarge"/> very small and very large values of x:
-                If x gets very large, we divide one by a very large number, <bookmark mark="xlarge"/>and the result gets very small.
-                
-                If on the other hand x gets very small, we divide one by a very small number, <bookmark mark="xsmall"/>and the result gets very large.
-                
-                If we combine these two insights, we can <bookmark mark="cords"/> determine what the graph looks like:
-                <bookmark mark="graph"/> Starting from one, the graph gets smaller and smaller, as we move to the right.
-                <bookmark mark="left"/> When moving to the left on the other hand, the graph increases rapidly, as we get closer to zero.                
-                """
+                text=self.translate("Func_3_1.I7.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1897,11 +1526,7 @@ class Func_3_1_I_7(SophiaCursorScene):
             self.wait_until_bookmark("cond")
             self.play(Write(cond))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("fPos")
-            note.change_colors([0,1])
             f[1].set_color(RED)
             self.play(Write(f[1]))
 
@@ -1933,17 +1558,9 @@ class Func_3_1_I_7(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(Write(plotted_left), MoveAlongPath(cursor, plotted_left), run_time=5)
 
-        with self.voiceover(text=
-            """
-                <bookmark mark="note3"/>
-                We also learned about <bookmark mark="out"/> singularities: As x gets closer to zero, the value of f of x gets really large.
-                But <bookmark mark="sing"/>we can't actually plug in zero, because that would mean dividing by zero, which is not allowed.
-                This is why we call <bookmark mark="singDef"/> zero a singularity of the function.
-            """
+        with self.voiceover(text=self.translate("Func_3_1.I7.voiceover2")
             ) as tracker:
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("out")
             self.play(Unwrite(cursor), cords.animate.shift(5*RIGHT), sL.animate.shift(5*RIGHT), plotted_left.animate.shift(5*RIGHT), plotted_right.animate.shift(5*RIGHT))
@@ -1960,15 +1577,14 @@ class Func_3_1_I_7(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_1_I_8_q = SophiaTaskDefinition(
-    answerOptions=["x close to zero -> large negative values,\n x far from zero -> small negative values", 
-                   "x close to zero -> large negative values,\n x far from zero -> small positive values", 
-                   "x close to zero -> small negative values,\n x far from zero -> large negative values", 
-                   "x close to zero -> small negative values,\n x far from zero -> large positive values", ],
-    correctAnswerIndex=0,
-    questionText="How does f behave for negative values of x?"
-)
 class Func_3_1_I_8_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_1.I8.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Func_3_1.I8.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1976,10 +1592,10 @@ class Func_3_1_I_8_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Positive x:", "$x$ small $\\Rightarrow f(x)$ large", "$x$ large $\\Rightarrow f(x)$ small"], ["How does $f$ behave for","negative values of $x$?"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Positive x:", "$x$ small $\\Rightarrow f(x)$ large", "$x$ large $\\Rightarrow f(x)$ small"], ["How does $f$ behave for","negative values of $x$?"]], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("$\\frac1x$ for negative $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
         cords = self.add_cords([-4,0, 1], [-4,0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
         plane = cords[0]
@@ -1993,29 +1609,14 @@ class Func_3_1_I_8_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now, let's think about <bookmark mark="neg"/> the negative values of x.
-                <bookmark mark="note1"/>
-                Remember, for positive x the function was very high for small x and got smaller for larger x.
-                
-                <bookmark mark="cords"/>Now, <bookmark mark="note2"/>how <bookmark mark="Q"/>does f behave for small negative values of x?
-                
-                And how does it behave for large negative values of x?
-                
-                """
+                text=self.translate("Func_3_1.I8.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("neg")
             self.play(Write(f[0]), Write(cond))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("cords")
             self.play(Write(cords))
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("Q")
             self.play(qmark.animate.shift(5*RIGHT))
@@ -2031,11 +1632,11 @@ class Func_3_1_I_8_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\frac1x$ for negative $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
@@ -2056,33 +1657,16 @@ class Func_3_1_I_8_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's correct!
-                So, we want to know what the function <bookmark mark="f"/> f of x equals one over x looks like
-                for <bookmark mark="cond"/> negative values of x.
-                
-                Like we did for positive values of x, let's analyze the function by <bookmark mark="cords"/> plugging in some values.
-                
-                If we plug in negative one, <bookmark mark="plugIn1"/> we get one divided by negative one, which is negative one.
-                
-                If we plug in negative two, <bookmark mark="plugIn2"/> we get one divided by negative two, which is negative one half.
-                
-                If we plug in negative four, <bookmark mark="plugIn4"/> we get one divided by negative four, which is negative one quarter.
-                
-                And so on.
-                
-                """
+                text=self.translate("Func_3_1.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f))
 
             self.wait_until_bookmark("cond")
             self.play(Write(cond))
 
             self.wait_until_bookmark("cords")
-            note.change_colors([0,1])
             self.play(Write(cords))
             self.add(cursor)
 
@@ -2107,19 +1691,7 @@ class Func_3_1_I_8_a(SophiaCursorScene):
             cursor.blinking=True
 
         with self.voiceover(
-                text="""
-                Let's also plug in some values that are larger than negative one:
-                
-                If we plug in <bookmark mark="plugInHalf"/> negative zero point five, we get one divided by negative zero point five, which is negative two,
-                
-                And if we plug in <bookmark mark="plugInQuarter"/> negative zero point two five, we get one divided by negative zero point two five, which is negative four.
-                
-                Now that we've plugged in some values, let's <bookmark mark="plot"/> connect them on the coordinate system and see what the function looks like.
-                
-                As we can see, <bookmark mark="note"/> the function starts <bookmark mark="moveAlongFunc"/> with values close to zero for low x, and  then decreases as x gets larger.
-                
-                At first, it decreases very slowly, but then it decreases faster and faster...
-                """
+                text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
@@ -2141,9 +1713,6 @@ class Func_3_1_I_8_a(SophiaCursorScene):
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
-
-            self.wait_until_bookmark("note")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
@@ -2164,11 +1733,11 @@ class Func_3_1_I_8_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\frac1x$ for negative $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
@@ -2189,33 +1758,16 @@ class Func_3_1_I_8_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, that's not right!
-                So, we want to know what the function <bookmark mark="f"/> f of x equals one over x looks like
-                for <bookmark mark="cond"/> negative values of x.
-                
-                Like we did for positive values of x, let's analyze the function by <bookmark mark="cords"/> plugging in some values.
-                
-                If we plug in negative one, <bookmark mark="plugIn1"/> we get one divided by negative one, which is negative one.
-                
-                If we plug in negative two, <bookmark mark="plugIn2"/> we get one divided by negative two, which is negative one half.
-                
-                If we plug in negative four, <bookmark mark="plugIn4"/> we get one divided by negative four, which is negative one quarter.
-                
-                And so on.
-                
-                """
+                text=self.translate("Func_3_1.I8.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f))
 
             self.wait_until_bookmark("cond")
             self.play(Write(cond))
 
             self.wait_until_bookmark("cords")
-            note.change_colors([0,1])
             self.play(Write(cords))
             self.add(cursor)
 
@@ -2240,19 +1792,7 @@ class Func_3_1_I_8_b(SophiaCursorScene):
             cursor.blinking=True
 
         with self.voiceover(
-                text="""
-                Let's also plug in some values that are larger than negative one:
-                
-                If we plug in <bookmark mark="plugInHalf"/> negative zero point five, we get one divided by negative zero point five, which is negative two,
-                
-                And if we plug in <bookmark mark="plugInQuarter"/> negative zero point two five, we get one divided by negative zero point two five, which is negative four.
-                
-                Now that we've plugged in some values, let's <bookmark mark="plot"/> connect them on the coordinate system and see what the function looks like.
-                
-                As we can see, <bookmark mark="note"/> the function starts <bookmark mark="moveAlongFunc"/> with values close to zero for low x, and  then decreases as x gets larger.
-                
-                At first, it decreases very slowly, but then it decreases faster and faster...
-                """
+                text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
@@ -2274,9 +1814,6 @@ class Func_3_1_I_8_b(SophiaCursorScene):
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
-
-            self.wait_until_bookmark("note")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
@@ -2297,11 +1834,11 @@ class Func_3_1_I_8_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\frac1x$ for negative $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
@@ -2322,33 +1859,16 @@ class Func_3_1_I_8_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, that's not right!
-                So, we want to know what the function <bookmark mark="f"/> f of x equals one over x looks like
-                for <bookmark mark="cond"/> negative values of x.
-                
-                Like we did for positive values of x, let's analyze the function by <bookmark mark="cords"/> plugging in some values.
-                
-                If we plug in negative one, <bookmark mark="plugIn1"/> we get one divided by negative one, which is negative one.
-                
-                If we plug in negative two, <bookmark mark="plugIn2"/> we get one divided by negative two, which is negative one half.
-                
-                If we plug in negative four, <bookmark mark="plugIn4"/> we get one divided by negative four, which is negative one quarter.
-                
-                And so on.
-                
-                """
+                text=self.translate("Func_3_1.I8.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f))
 
             self.wait_until_bookmark("cond")
             self.play(Write(cond))
 
             self.wait_until_bookmark("cords")
-            note.change_colors([0,1])
             self.play(Write(cords))
             self.add(cursor)
 
@@ -2373,19 +1893,7 @@ class Func_3_1_I_8_c(SophiaCursorScene):
             cursor.blinking=True
 
         with self.voiceover(
-                text="""
-                Let's also plug in some values that are larger than negative one:
-                
-                If we plug in <bookmark mark="plugInHalf"/> negative zero point five, we get one divided by negative zero point five, which is negative two,
-                
-                And if we plug in <bookmark mark="plugInQuarter"/> negative zero point two five, we get one divided by negative zero point two five, which is negative four.
-                
-                Now that we've plugged in some values, let's <bookmark mark="plot"/> connect them on the coordinate system and see what the function looks like.
-                
-                As we can see, <bookmark mark="note"/> the function starts <bookmark mark="moveAlongFunc"/> with values close to zero for low x, and  then decreases as x gets larger.
-                
-                At first, it decreases very slowly, but then it decreases faster and faster...
-                """
+                text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
@@ -2407,9 +1915,6 @@ class Func_3_1_I_8_c(SophiaCursorScene):
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
-
-            self.wait_until_bookmark("note")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
@@ -2429,11 +1934,11 @@ class Func_3_1_I_8_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("$\\frac1x$ for negative $x$", tex=True)
+        title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
         # Create a notepad with texts
-        note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        self.add(note)
+        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
+        # self.add(note)
 
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
@@ -2454,33 +1959,16 @@ class Func_3_1_I_8_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, that's not right!
-                So, we want to know what the function <bookmark mark="f"/> f of x equals one over x looks like
-                for <bookmark mark="cond"/> negative values of x.
-                
-                Like we did for positive values of x, let's analyze the function by <bookmark mark="cords"/> plugging in some values.
-                
-                If we plug in negative one, <bookmark mark="plugIn1"/> we get one divided by negative one, which is negative one.
-                
-                If we plug in negative two, <bookmark mark="plugIn2"/> we get one divided by negative two, which is negative one half.
-                
-                If we plug in negative four, <bookmark mark="plugIn4"/> we get one divided by negative four, which is negative one quarter.
-                
-                And so on.
-                
-                """
+                text=self.translate("Func_3_1.I8.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f))
 
             self.wait_until_bookmark("cond")
             self.play(Write(cond))
 
             self.wait_until_bookmark("cords")
-            note.change_colors([0,1])
             self.play(Write(cords))
             self.add(cursor)
 
@@ -2505,19 +1993,7 @@ class Func_3_1_I_8_d(SophiaCursorScene):
             cursor.blinking=True
 
         with self.voiceover(
-                text="""
-                Let's also plug in some values that are larger than negative one:
-                
-                If we plug in <bookmark mark="plugInHalf"/> negative zero point five, we get one divided by negative zero point five, which is negative two,
-                
-                And if we plug in <bookmark mark="plugInQuarter"/> negative zero point two five, we get one divided by negative zero point two five, which is negative four.
-                
-                Now that we've plugged in some values, let's <bookmark mark="plot"/> connect them on the coordinate system and see what the function looks like.
-                
-                As we can see, <bookmark mark="note"/> the function starts <bookmark mark="moveAlongFunc"/> with values close to zero for low x, and  then decreases as x gets larger.
-                
-                At first, it decreases very slowly, but then it decreases faster and faster...
-                """
+                text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
@@ -2540,9 +2016,6 @@ class Func_3_1_I_8_d(SophiaCursorScene):
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
 
-            self.wait_until_bookmark("note")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
             cursor.blinking=False
@@ -2552,6 +2025,8 @@ class Func_3_1_I_8_d(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
+
 
 #####################################
 #####################################
@@ -2563,10 +2038,10 @@ class Func_3_1_I_9(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Consider our function $f(x)=\\tfrac1x$", "for positive and negative $x$"], ["Function forms two rounded edges","around x- and y-axis"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Consider our function $f(x)=\\tfrac1x$", "for positive and negative $x$"], ["Function forms two rounded edges","around x- and y-axis"]], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Rational Functions")
+        title = self.add_title(self.translate("Func_3_1.I9.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2586,35 +2061,10 @@ class Func_3_1_I_9(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Well, now that we've analyzed the function <bookmark mark="f"/> f of x equals one over x for positive and for negative
-                values of x, let's now get a good look <bookmark mark="cords"/> at the function itself.
-                
-                Let's first look at negative values of x<bookmark mark="fNeg"/>.
-                
-                So as we just saw, for large negative values of x, the function is slightly below zero, <bookmark mark="moveNeg"/>but as
-                the values of x get closer and closer to zero, the function values decrease very quickly.
-                
-                Now, let's turn to positive x values.<bookmark mark="fPos"/>
-                
-                <bookmark mark="xLarge"/>For large values of x, the function values
-                are very small but positive. <bookmark mark="movePos"/>As the x values get closer to zero on the other hand,
-                the function values seem to explode, getting larger and larger very fast.
-                
-                Now, this is what the entire function f of x equals one over x looks like.
-                
-                <bookmark mark="note"/>
-                See how the function is structured around a cross
-                formed by the <bookmark mark="x"/> x axis and the <bookmark mark="y"/> y axis?
-                
-                It seems to consist of two rounded corners, one on the <bookmark mark="tR"/> top right of that cross,
-                and one on the <bookmark mark="bL"/> bottom left of that cross.
-                
-                """
+                text=self.translate("Func_3_1.I9.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f))
             
             self.wait_until_bookmark("cords")
@@ -2650,9 +2100,6 @@ class Func_3_1_I_9(SophiaCursorScene):
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
             cursor.blinking=True
 
-            self.wait_until_bookmark("note")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("x")
             self.play(Write(x_ax), run_time=0.7)
 
@@ -2678,27 +2125,27 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_3_1_I_1),
     PagePrototypeVideo.from_scene(Func_3_1_I_2),
     PagePrototypeVideo.from_scene(Func_3_1_I_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_1_I_3_q, Func_3_1_I_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_1_I_3_q),
     PagePrototypeVideo.from_scene(Func_3_1_I_3_a),
     PagePrototypeVideo.from_scene(Func_3_1_I_3_b),
     PagePrototypeVideo.from_scene(Func_3_1_I_3_c),
     PagePrototypeVideo.from_scene(Func_3_1_I_3_d),
     PagePrototypeVideo.from_scene(Func_3_1_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_1_I_4_q, Func_3_1_I_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_1_I_4_q),
     PagePrototypeVideo.from_scene(Func_3_1_I_4_a),
     PagePrototypeVideo.from_scene(Func_3_1_I_4_b),
     PagePrototypeVideo.from_scene(Func_3_1_I_4_c),
     PagePrototypeVideo.from_scene(Func_3_1_I_4_d),
     PagePrototypeVideo.from_scene(Func_3_1_I_5),
     PagePrototypeVideo.from_scene(Func_3_1_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_1_I_6_q, Func_3_1_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_1_I_6_q),
     PagePrototypeVideo.from_scene(Func_3_1_I_6_a),
     PagePrototypeVideo.from_scene(Func_3_1_I_6_b),
     PagePrototypeVideo.from_scene(Func_3_1_I_6_c),
     PagePrototypeVideo.from_scene(Func_3_1_I_6_d),
     PagePrototypeVideo.from_scene(Func_3_1_I_7),
     PagePrototypeVideo.from_scene(Func_3_1_I_8_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_1_I_8_q, Func_3_1_I_8_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_1_I_8_q),
     PagePrototypeVideo.from_scene(Func_3_1_I_8_a),
     PagePrototypeVideo.from_scene(Func_3_1_I_8_b),
     PagePrototypeVideo.from_scene(Func_3_1_I_8_c),

@@ -15,6 +15,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 #####################################
 #####################################
@@ -42,10 +43,10 @@ class Func_3_3_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptotes are lines that a function","gets arbitrarily close to but never touches."], ["Singularities are points where", "the function is  undefined,"], ["A hyperbola is the curve describing the", "graph of a fractional rational function."]], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptotes are lines that a function","gets arbitrarily close to but never touches."], ["Singularities are points where", "the function is  undefined,"], ["A hyperbola is the curve describing the", "graph of a fractional rational function."]], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Fractional rational functions")
+        title = self.add_title(self.translate("Func_3_3.I1.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -66,34 +67,11 @@ class Func_3_3_I_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Before we start diving into a new topic, let's review some of the vocabulary related to
-                <bookmark mark="cords"/>fractional rational functions. We've already covered what an <bookmark mark="note1"/>asymptote is:
-                Asymptotes are lines that a function gets arbitrarily close to but never touches.
-                
-                There are vertical asymptotes, like the <bookmark mark="x"/>x-axis in this example,
-                and there are horizontal asymptotes, like the <bookmark mark="y"/>y-axis in this example.
-                
-                <bookmark mark="singularities1"/>
-                Then there are singularities, that is points where the function is not defined,
-                because the denominator would be zero. In our example, the singularity is at <bookmark mark="singularities2"/>x equals zero.
-                
-                <bookmark mark="note2"/>
-                Now, a new term: Hyperbola.
-                
-                A hyperbola is the graph of a fractional rational function. Hyperbolas are easily recognizable,
-                because they have two branches, one on each side of the asymptotes.
-                
-                So in our example, the hyperbola is the graph consisting of <bookmark mark="leftCurve"/>the left curve 
-                and <bookmark mark="rightCurve"/>the right curve.
-                """
+                text = self.translate("Func_3_3.I1.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(plotted_right), Write(plotted_left), Write(cursor))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
 
             self.wait_until_bookmark("x")
             cursor.blinking=False
@@ -103,7 +81,6 @@ class Func_3_3_I_1(SophiaCursorScene):
             self.play(CursorMarkAxis(cursor, plane, axis="y"))
 
             self.wait_until_bookmark("singularities1")
-            note.change_colors([0,1])
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
             cursor.blinking=True
 
@@ -113,9 +90,6 @@ class Func_3_3_I_1(SophiaCursorScene):
             self.wait(1)
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
             cursor.blinking=True
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("leftCurve")
             x,y,_ = plane.c2p(-1,-1)
@@ -135,12 +109,14 @@ class Func_3_3_I_1(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_3_I_2_q = SophiaTaskDefinition(
-    answerOptions=["It is stretched in y-Direction", "It is shifted in x-Direction", "It is squashed in y-Direction",  "It is shifted in y-Direction"],
-    correctAnswerIndex=2,
-    questionText="How does the graph change when it is multiplied with $a<1$?",
-)
 class Func_3_3_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_3.I2.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_3_3.I2.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -148,10 +124,10 @@ class Func_3_3_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Consider function $f(x)=\\tfrac{1}{x}$", ["Scale the function by multilpying", "with factor $a\\rightarrow f(x)=\\tfrac a x$"], "How does the graph change when $a<1$?"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Consider function $f(x)=\\tfrac{1}{x}$", ["Scale the function by multilpying", "with factor $a\\rightarrow f(x)=\\tfrac a x$"], "How does the graph change when $a<1$?"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Scaling the function")
+        title = self.add_title(self.translate("Func_3_3.I2.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -174,36 +150,17 @@ class Func_3_3_I_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Look at <bookmark mark="graph"/> this graph.
-                
-                It's a hyperbola, and it shows the graph of the function <bookmark mark="f0"/>f of x equals one over x.
-                
-                Let's now explore how we can transform this function.
-                <bookmark mark="note1"/>
-                One thing we can do, is scale the function. If we multiply the function by a, we can write <bookmark mark="f1"/>f of x equals a over x.
-                Then we are scaling the function by a factor of a.
-                <bookmark mark="note2"/>
-                But what does this change? Let's say that <bookmark mark="aLessOne"/>a is smaller than one. What happens to the function?
-
-                """
+                text=self.translate("Func_3_3.I2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("graph")
-            note.change_colors([0])
             self.play(Write(cords), Write(plotted_right), Write(plotted_left), Write(cursor))
             
             self.wait_until_bookmark("f0")
             self.play(Write(f0))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("f1")
             self.play(ReplacementTransform(f0, f1))
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -216,10 +173,9 @@ class Func_3_3_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        self.add(note)
-
-        title = self.add_title("Scaling the function")
+        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
+        title = self.add_title(self.translate("Func_3_3.I2.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -244,18 +200,7 @@ class Func_3_3_I_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                
-                So we're going from the function <bookmark mark="f1"/> f of x equals one over x to the function
-                <bookmark mark="f2"/> f of x equals a over x, <bookmark mark="note1"/> where a is smaller than one.
-                
-                Since a is smaller than one, this we're means <bookmark mark="note2"/>multiplying one over x by a value that is smaller than one.
-                
-                That in turn, means that we're multiplying each value of the function by <bookmark mark="decimalNumber"/>something than one.
-                <bookmark mark="note3"/>So we're kind of squashing the function in the y-direction.
-                
-                """
+                text=self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -264,21 +209,12 @@ class Func_3_3_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("f2")
             self.play(ReplacementTransform(f0, f1[0]))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -291,10 +227,9 @@ class Func_3_3_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        self.add(note)
-
-        title = self.add_title("Scaling the function")
+        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
+        title = self.add_title(self.translate("Func_3_3.I2.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -319,18 +254,7 @@ class Func_3_3_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                
-                So we're going from the function <bookmark mark="f1"/> f of x equals one over x to the function
-                <bookmark mark="f2"/> f of x equals a over x, <bookmark mark="note1"/> where a is smaller than one.
-                
-                Since a is smaller than one, this we're means <bookmark mark="note2"/>multiplying one over x by a value that is smaller than one.
-                
-                That in turn, means that we're multiplying each value of the function by <bookmark mark="decimalNumber"/>something than one.
-                <bookmark mark="note3"/>So we're kind of squashing the function in the y-direction.
-                
-                """
+                text=self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -339,21 +263,12 @@ class Func_3_3_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("f2")
             self.play(ReplacementTransform(f0, f1[0]))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -366,10 +281,9 @@ class Func_3_3_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        self.add(note)
-
-        title = self.add_title("Scaling the function")
+        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
+        title = self.add_title(self.translate("Func_3_3.I2.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -394,18 +308,7 @@ class Func_3_3_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                You got it! Nice!
-                
-                So we're going from the function <bookmark mark="f1"/> f of x equals one over x to the function
-                <bookmark mark="f2"/> f of x equals a over x, <bookmark mark="note1"/> where a is smaller than one.
-                
-                Since a is smaller than one, this we're means <bookmark mark="note2"/>multiplying one over x by a value that is smaller than one.
-                
-                That in turn, means that we're multiplying each value of the function by <bookmark mark="decimalNumber"/>something than one.
-                <bookmark mark="note3"/>So we're kind of squashing the function in the y-direction.
-                
-                """
+                text=self.translate("Func_3_3.I2.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -414,37 +317,27 @@ class Func_3_3_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("f2")
             self.play(ReplacementTransform(f0, f1[0]))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
 class Func_3_3_I_2_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        self.add(note)
-
-        title = self.add_title("Scaling the function")
+        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
+        title = self.add_title(self.translate("Func_3_3.I2.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -469,18 +362,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                
-                So we're going from the function <bookmark mark="f1"/> f of x equals one over x to the function
-                <bookmark mark="f2"/> f of x equals a over x, <bookmark mark="note1"/> where a is smaller than one.
-                
-                Since a is smaller than one, this we're means <bookmark mark="note2"/>multiplying one over x by a value that is smaller than one.
-                
-                That in turn, means that we're multiplying each value of the function by <bookmark mark="decimalNumber"/>something than one.
-                <bookmark mark="note3"/>So we're kind of squashing the function in the y-direction.
-                
-                """
+                text=self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -489,12 +371,6 @@ class Func_3_3_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("f2")
             self.play(ReplacementTransform(f0, f1[0]))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
@@ -502,21 +378,20 @@ class Func_3_3_I_2_d(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
-
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
 
 #####################################
 #####################################
-TASK_Func_3_3_I_3_q = SophiaTaskDefinition(
-    answerOptions=["It is stretched in y-Direction", "It is squashed in y-Direction", "It is shifted in x-Direction", "It is flipped around the x-axis"],
-    correctAnswerIndex=3,
-    questionText="How does the graph change when it is multiplied with $a<0$?",
-)
 class Func_3_3_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_3.I3.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText = self.translate("Func_3_3.I3.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -524,10 +399,10 @@ class Func_3_3_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Consider $f(x)=\\tfrac ax$", ["$a<1\\Rightarrow$ f is squashed","$a>1\\Rightarrow$ f is stretched"], "What happens for $a=-1$?"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Consider $f(x)=\\tfrac ax$", ["$a<1\\Rightarrow$ f is squashed","$a>1\\Rightarrow$ f is stretched"], "What happens for $a=-1$?"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Fractional rational functions")
+        title = self.add_title(self.translate("Func_3_3.I3.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -551,25 +426,10 @@ class Func_3_3_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so we're looking at <bookmark mark="f"/> f of x equals a over x and we can see <bookmark mark="moveCursor"/>
-                that for <bookmark mark="smallA1"/>small a, the function is squashed in the y-direction.
-                
-                For <bookmark mark="largeA1"/>large values of a on the other hand, the function is stretched in the y-direction.
-                
-                This makes intuitive sense: We multiply with large values, so the function gets stretched,
-                because both positive and negative values get larger.
-                
-                If we multiply with <bookmark mark="smallA2"/>small values, the function gets squashed, because both positive and negative
-                values get smaller.
-                
-                <bookmark mark="resetA"/>Now, those were all positive values.
-                What happens, if we plug in something negative for "a"? For example, what will happen if we set <bookmark mark="neg1"/>"a" to minus one?
-                """
+                text=self.translate("Func_3_3.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
-            note.change_colors([0])
             self.play(Write(f1), Write(a_tex))
 
             self.wait_until_bookmark("moveCursor")
@@ -578,7 +438,6 @@ class Func_3_3_I_3_q(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y))
 
             self.wait_until_bookmark("smallA1")
-            note.change_colors([0,1])
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=5, rate_func=linear)
 
@@ -589,7 +448,6 @@ class Func_3_3_I_3_q(SophiaCursorScene):
             self.play(a.animate.set_value(0.1), run_time=2, rate_func=linear)
 
             self.wait_until_bookmark("resetA")
-            note.change_colors([1,2])
             self.play(a.animate.set_value(1), run_time=1, rate_func=linear)
             cursor.clear_updaters()
 
@@ -609,10 +467,10 @@ class Func_3_3_I_3_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Flipping the function")
+        title = self.add_title(self.translate("Func_3_3.I3.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -637,20 +495,8 @@ class Func_3_3_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                <bookmark mark="note1"/>
-                Take any point on the function, for example the point <bookmark mark="oneOne"/>1 1.
-                Now if we go from <bookmark mark="a1"/>"a" equals one to <bookmark mark="a2"/>a equals negative one,
-                <bookmark mark="note2"/>
-                that's the same as multiplying the function by minus one.
-                This means, that <bookmark mark="func1"/>each value of the function gets multiplied by negative one, <bookmark mark="func2"/> so the function gets flipped
-                across the x-axis.
-                """
+                text=self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("oneOne")
             cursor.blinking=False
@@ -663,14 +509,10 @@ class Func_3_3_I_3_a(SophiaCursorScene):
             self.wait_until_bookmark("a2")
             self.play(Write(a1n1[1]), Write(a1n1[2]), run_time=0.5)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("func1")
             self.play(ReplacementTransform(a1n1, f1), Write(a_tex))
 
             self.wait_until_bookmark("func2")
-            note.change_colors([1,2])
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
@@ -688,10 +530,10 @@ class Func_3_3_I_3_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Flipping the function")
+        title = self.add_title(self.translate("Func_3_3.I3.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -716,20 +558,8 @@ class Func_3_3_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                <bookmark mark="note1"/>
-                Take any point on the function, for example the point <bookmark mark="oneOne"/>1 1.
-                Now if we go from <bookmark mark="a1"/>"a" equals one to <bookmark mark="a2"/>a equals negative one,
-                <bookmark mark="note2"/>
-                that's the same as multiplying the function by minus one.
-                This means, that <bookmark mark="func1"/>each value of the function gets multiplied by negative one, <bookmark mark="func2"/> so the function gets flipped
-                across the x-axis.
-                """
+                text=self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("oneOne")
             cursor.blinking=False
@@ -742,14 +572,10 @@ class Func_3_3_I_3_b(SophiaCursorScene):
             self.wait_until_bookmark("a2")
             self.play(Write(a1n1[1]), Write(a1n1[2]), run_time=0.5)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("func1")
             self.play(ReplacementTransform(a1n1, f1), Write(a_tex))
 
             self.wait_until_bookmark("func2")
-            note.change_colors([1,2])
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
@@ -761,16 +587,15 @@ class Func_3_3_I_3_b(SophiaCursorScene):
 
 class Func_3_3_I_3_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Flipping the function")
+        title = self.add_title(self.translate("Func_3_3.I3.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -795,20 +620,8 @@ class Func_3_3_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it.
-                <bookmark mark="note1"/>
-                Take any point on the function, for example the point <bookmark mark="oneOne"/>1 1.
-                Now if we go from <bookmark mark="a1"/>"a" equals one to <bookmark mark="a2"/>a equals negative one,
-                <bookmark mark="note2"/>
-                that's the same as multiplying the function by minus one.
-                This means, that <bookmark mark="func1"/>each value of the function gets multiplied by negative one, <bookmark mark="func2"/> so the function gets flipped
-                across the x-axis.
-                """
+                text=self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("oneOne")
             cursor.blinking=False
@@ -821,14 +634,10 @@ class Func_3_3_I_3_c(SophiaCursorScene):
             self.wait_until_bookmark("a2")
             self.play(Write(a1n1[1]), Write(a1n1[2]), run_time=0.5)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("func1")
             self.play(ReplacementTransform(a1n1, f1), Write(a_tex))
 
             self.wait_until_bookmark("func2")
-            note.change_colors([1,2])
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
@@ -838,18 +647,18 @@ class Func_3_3_I_3_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+
 class Func_3_3_I_3_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
-        self.add(note)
+        # note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
+        # self.add(note)
 
-        title = self.add_title("Flipping the function")
+        title = self.add_title(self.translate("Func_3_3.I3.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -874,20 +683,8 @@ class Func_3_3_I_3_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's right. Nice!
-                <bookmark mark="note1"/>
-                Take any point on the function, for example the point <bookmark mark="oneOne"/>1 1.
-                Now if we go from <bookmark mark="a1"/>"a" equals one to <bookmark mark="a2"/>a equals negative one,
-                <bookmark mark="note2"/>
-                that's the same as multiplying the function by minus one.
-                This means, that <bookmark mark="func1"/>each value of the function gets multiplied by negative one, <bookmark mark="func2"/> so the function gets flipped
-                across the x-axis.
-                """
+                text=self.translate("Func_3_3.I3.d.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("oneOne")
             cursor.blinking=False
@@ -900,14 +697,10 @@ class Func_3_3_I_3_d(SophiaCursorScene):
             self.wait_until_bookmark("a2")
             self.play(Write(a1n1[1]), Write(a1n1[2]), run_time=0.5)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("func1")
             self.play(ReplacementTransform(a1n1, f1), Write(a_tex))
 
             self.wait_until_bookmark("func2")
-            note.change_colors([1,2])
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
@@ -929,10 +722,10 @@ class Func_3_3_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Modify $f$ by varying $a$:","increase $a\\rightarrow f$ is stretched","decrease $a\\rightarrow f$ is squashed","$a$ negative $\\rightarrow f$ is flipped"], buff=0.1, buff_inner=0)
-        self.add(note)
+        # note = Notepad(texts=["Modify $f$ by varying $a$:","increase $a\\rightarrow f$ is stretched","decrease $a\\rightarrow f$ is squashed","$a$ negative $\\rightarrow f$ is flipped"], buff=0.1, buff_inner=0)
+        # self.add(note)
 
-        title = self.add_title("Scaling the function")
+        title = self.add_title(self.translate("Func_3_3.I4.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -957,16 +750,8 @@ class Func_3_3_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so now we've seen <bookmark mark="note1"/>what we can do to the function <bookmark mark="f"/>f of x equals a over x, when we vary the parameter <bookmark mark="a"/> "a":
-                <bookmark mark="note2"/>If we <bookmark mark="increase"/> increase "a", the function gets stretched in the y-direction.
-                <bookmark mark="note3"/>If we <bookmark mark="decrease"/> decrease "a", the function gets squashed in the y-direction.
-                <bookmark mark="note4"/>And if we <bookmark mark="negate"/> make "a" negative, the function gets flipped across the x-axis.
-                """
+                text=self.translate("Func_3_3.I4.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("f")
             self.play(Write(f1[0]))
@@ -978,20 +763,11 @@ class Func_3_3_I_4(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("increase")
             self.play(a.animate.set_value(3), rate_func=linear)
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("decrease")
             self.play(a.animate.set_value(0.1), rate_func=linear)
-
-            self.wait_until_bookmark("note4")
-            note.change_colors([2,3])
 
             self.wait_until_bookmark("negate")
             self.play(a.animate.set_value(-1), rate_func=linear)
@@ -1000,13 +776,14 @@ class Func_3_3_I_4(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_3_I_5_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=\\tfrac{a+1}x$", "$f(x)=\\tfrac{a-1}x$", "$f(x)=\\tfrac ax+1$", "$f(x)=\\tfrac ax-1$"],
-    correctAnswerIndex=2,
-    questionText="How do we modify the graph $f(x)=\\tfrac ax$ to shift it up by $1$?",
-)
-
 class Func_3_3_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_3.I5.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_3_3.I5.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1014,11 +791,11 @@ class Func_3_3_I_5_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Function can be squashed, stretched,","or flipped by varying the factor $a$"],"Next: Shifting the function in y-direction", ["How do we modify $f$,","to shift it up by $1$?"]], buff=0.2, buff_inner=0)
-        note.change_colors([0])
-        self.add(note)
+        # note = Notepad(texts=[["Function can be squashed, stretched,","or flipped by varying the factor $a$"],"Next: Shifting the function in y-direction", ["How do we modify $f$,","to shift it up by $1$?"]], buff=0.2, buff_inner=0)
+        # note.change_colors([0])
+        # self.add(note)
 
-        title = self.add_title("Shifting the function up")
+        title = self.add_title(self.translate("Func_3_3.I5.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1043,19 +820,9 @@ class Func_3_3_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now that we know <bookmark mark="resolve"/> how to squash, stretch and flip the function,
-                let us do something new: <bookmark mark="note1"/>Shift the function in y-direction.
-                That means either <bookmark mark="cursorBack"/> moving the function <bookmark mark="up"/> up,
-                or it means moving the function <bookmark mark="down"/> down.
-                <bookmark mark="note2"/>Now tell me: <bookmark mark="back"/> How do we modify the term f of x equals a over x,
-                so that the function gets <bookmark mark="upOne"/>shifted up by one?
-                """
+                text=self.translate("Func_3_3.I5.q.voiceover")
         ) as tracker:
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
-        
             self.wait_until_bookmark("cursorBack")
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
@@ -1068,9 +835,6 @@ class Func_3_3_I_5_q(SophiaCursorScene):
             self.wait_until_bookmark("down")
             self.play(c.animate.set_value(-2), run_time=0.5)
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("back")
             self.play(c.animate.set_value(0), run_time=0.5)
             cursor.blinking=True
@@ -1079,8 +843,6 @@ class Func_3_3_I_5_q(SophiaCursorScene):
             cursor.blinking=False
             self.play(c.animate.set_value(1))
 
-
-            
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
@@ -1092,10 +854,10 @@ class Func_3_3_I_5_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function up")
+        title = self.add_title(self.translate("Func_3_3.I5.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1120,21 +882,10 @@ class Func_3_3_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function up by one,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted up by one.
-                We shift an individual point up by one by simply adding one,<bookmark mark="note2"/> so to shift the entire function up,
-                we need to add one to each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>plus one. By adding one in the end here, we add one to each value of the function.
-                """
+                text=self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1143,9 +894,6 @@ class Func_3_3_I_5_a(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1168,16 +916,16 @@ class Func_3_3_I_5_a(SophiaCursorScene):
 
 class Func_3_3_I_5_b(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function up")
+        title = self.add_title(self.translate("Func_3_3.I5.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1202,21 +950,10 @@ class Func_3_3_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function up by one,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted up by one.
-                We shift an individual point up by one by simply adding one,<bookmark mark="note2"/> so to shift the entire function up,
-                we need to add one to each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>plus one. By adding one in the end here, we add one to each value of the function.
-                """
+                text=self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1225,9 +962,6 @@ class Func_3_3_I_5_b(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1251,16 +985,16 @@ class Func_3_3_I_5_b(SophiaCursorScene):
 
 class Func_3_3_I_5_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function up")
+        title = self.add_title(self.translate("Func_3_3.I5.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1285,21 +1019,10 @@ class Func_3_3_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right.
-                <bookmark mark="note1"/>
-                If we want to shift the function up by one,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted up by one.
-                We shift an individual point up by one by simply adding one,<bookmark mark="note2"/> so to shift the entire function up,
-                we need to add one to each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>plus one. By adding one in the end here, we add one to each value of the function.
-                """
+                text=self.translate("Func_3_3.I5.c.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1308,9 +1031,6 @@ class Func_3_3_I_5_c(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1330,19 +1050,23 @@ class Func_3_3_I_5_c(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+    
+
+
 
 class Func_3_3_I_5_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+    
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function up")
+        title = self.add_title(self.translate("Func_3_3.I5.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1367,21 +1091,10 @@ class Func_3_3_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function up by one,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted up by one.
-                We shift an individual point up by one by simply adding one,<bookmark mark="note2"/> so to shift the entire function up,
-                we need to add one to each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>plus one. By adding one in the end here, we add one to each value of the function.
-                """
+                text=self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
+
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1390,9 +1103,6 @@ class Func_3_3_I_5_d(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1415,13 +1125,14 @@ class Func_3_3_I_5_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_3_I_6_q = SophiaTaskDefinition(
-    answerOptions=["$f(x)=\\tfrac{2a}x$", "$f(x)=\\tfrac{a-2}x$", "$f(x)=\\tfrac a{2x}$", "$f(x)=\\tfrac ax-2$"],
-    correctAnswerIndex=3,
-    questionText="How do we modify the graph $f(x)=\\tfrac ax$ to shift it down by $2$?",
-)
-
 class Func_3_3_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$f(x)=\\tfrac{2a}x$", "$f(x)=\\tfrac{a-2}x$", "$f(x)=\\tfrac a{2x}$", "$f(x)=\\tfrac ax-2$"],
+            correctAnswerIndex=3,
+            questionText = self.translate("Func_3_3.I6.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1429,11 +1140,11 @@ class Func_3_3_I_6_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Consider the function $f(x)=\\tfrac ax$", "We want to shift it down by $2$", "How does the term of the function change?"], buff=0.2, buff_inner=0)
-        note.change_colors([0])
-        self.add(note)
+        # note = Notepad(texts=["Consider the function $f(x)=\\tfrac ax$", "We want to shift it down by $2$", "How does the term of the function change?"], buff=0.2, buff_inner=0)
+        # note.change_colors([0])
+        # self.add(note)
 
-        title = self.add_title("Shifting the function down")
+        title = self.add_title(self.translate("Func_3_3.I6.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1458,12 +1169,7 @@ class Func_3_3_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, back with our favorite <bookmark mark="f"/>function f <bookmark mark="x"/>of x equals <bookmark mark="ax"/>
-                a over x. <bookmark mark="note1"/> Now let us shift the function <bookmark mark="db2"/> down by two.
-                <bookmark mark="note2"/>So tell me: <bookmark mark="back"/> How do we modify the term f of x equals a over x,
-                to <bookmark mark="downTwo"/>shift the function down by two?
-                """
+                text=self.translate("Func_3_3.I6.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1481,7 +1187,6 @@ class Func_3_3_I_6_q(SophiaCursorScene):
             cursor.blinking=True
 
             self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1492,9 +1197,6 @@ class Func_3_3_I_6_q(SophiaCursorScene):
             self.wait(1)
             self.play(c.animate.set_value(0), run_time=.5)
             cursor.blinking = True
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("downTwo")
             cursor.blinking=False
@@ -1514,10 +1216,10 @@ class Func_3_3_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function down")
+        title = self.add_title(self.translate("Func_3_3.I6.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1542,21 +1244,10 @@ class Func_3_3_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function down by two,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted down by two.
-                We shift an individual point down by two by simply subtracting two,<bookmark mark="note2"/> so to shift the entire function down,
-                we need to subtract two from each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>minus two. By subtracting two in the end here, we subtract two from each value of the function.
-                """
+                text=self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1565,9 +1256,6 @@ class Func_3_3_I_6_a(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1596,10 +1284,10 @@ class Func_3_3_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function down")
+        title = self.add_title(self.translate("Func_3_3.I6.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1624,21 +1312,10 @@ class Func_3_3_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function down by two,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted down by two.
-                We shift an individual point down by two by simply subtracting two,<bookmark mark="note2"/> so to shift the entire function down,
-                we need to subtract two from each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>minus two. By subtracting two in the end here, we subtract two from each value of the function.
-                """
+                text=self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1647,9 +1324,6 @@ class Func_3_3_I_6_b(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1669,6 +1343,7 @@ class Func_3_3_I_6_b(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 class Func_3_3_I_6_c(SophiaCursorScene):
 
@@ -1678,10 +1353,10 @@ class Func_3_3_I_6_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function down")
+        title = self.add_title(self.translate("Func_3_3.I6.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1706,21 +1381,10 @@ class Func_3_3_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                <bookmark mark="note1"/>
-                If we want to shift the function down by two,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted down by two.
-                We shift an individual point down by two by simply subtracting two,<bookmark mark="note2"/> so to shift the entire function down,
-                we need to subtract two from each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>minus two. By subtracting two in the end here, we subtract two from each value of the function.
-                """
+                text=self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1729,9 +1393,6 @@ class Func_3_3_I_6_c(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1752,18 +1413,19 @@ class Func_3_3_I_6_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+
 class Func_3_3_I_6_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting the function down")
+        title = self.add_title(self.translate("Func_3_3.I6.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1788,21 +1450,10 @@ class Func_3_3_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's it.
-                <bookmark mark="note1"/>
-                If we want to shift the function down by two,<bookmark mark="cursor"/> every point on the function needs to be <bookmark mark="upOne"/> shifted down by two.
-                We shift an individual point down by two by simply subtracting two,<bookmark mark="note2"/> so to shift the entire function down,
-                we need to subtract two from each value of the function. So the new function will be <bookmark mark="funcNew"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/>a over x <bookmark mark="plusOne"/>minus two. By subtracting two in the end here, we subtract two from each value of the function.
-                """
+                text=self.translate("Func_3_3.I6.d.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-            
             self.wait_until_bookmark("cursor")
-            note.change_colors([0,1])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1811,9 +1462,6 @@ class Func_3_3_I_6_d(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
@@ -1844,10 +1492,10 @@ class Func_3_3_I_7(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We're shifting hyperbolas along the y-axis", "Formalization as $f(x)=\\tfrac a x+c$", "$c>0\\Rightarrow$ shift up", "$c<0\\Rightarrow$ shift down",], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We're shifting hyperbolas along the y-axis", "Formalization as $f(x)=\\tfrac a x+c$", "$c>0\\Rightarrow$ shift up", "$c<0\\Rightarrow$ shift down",], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I7.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -1872,22 +1520,10 @@ class Func_3_3_I_7(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so let's formalize this a bit. <bookmark mark="note1"/>
-                What we've been doing now is shifting the <bookmark mark="up1"/>hyperbola up and<bookmark mark="down1"/> down, so we shifted the function
-                along <bookmark mark="y"/>the y-axis.
-                <bookmark mark="backInPos"/>
-                To shift it <bookmark mark="up2"/>up, we added a constant to the function, so that every point on the function was shifted up by that constant.
-                And to shift it <bookmark mark="down2"/> down on the other hand, we subtracted a constant from the function, so that every point on the function
-                was shifted down by that constant. <bookmark mark="note2"/> In general, we can now write the function as <bookmark mark="func"/> f of
-                <bookmark mark="x"/> x equals <bookmark mark="ax"/> a over x plus <bookmark mark="c"/> c. Here, c is the constant that we add to the function.
-                <bookmark mark="notePos"/>If c is positive, we <bookmark mark="resetCursorFinal"/>shift the function up, <bookmark mark="noteNeg"/>and if c is
-                <bookmark mark="cNeg"/>negative, we shift the function down.<bookmark mark="resetC"/>
-                """
+                text=self.translate("Func_3_3.I7.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("note1")
-            note.change_colors([0])
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1925,7 +1561,6 @@ class Func_3_3_I_7(SophiaCursorScene):
             cursor.blinking=True
 
             self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
             x,y,_ = plane.c2p(0,0)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, x, y), c.animate.set_value(0), run_time=0.5)
@@ -1949,18 +1584,12 @@ class Func_3_3_I_7(SophiaCursorScene):
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
             cursor.blinking=True
 
-            self.wait_until_bookmark("notePos")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("resetCursorFinal")
             x,y,_ = plane.c2p(1,1)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
             self.play(c.animate.set_value(2))
-
-            self.wait_until_bookmark("noteNeg")
-            note.change_colors([2,3])
 
             self.wait_until_bookmark("cNeg")
             self.play(c.animate.set_value(-2))
@@ -1981,9 +1610,16 @@ class Func_3_3_I_7(SophiaCursorScene):
 TASK_Func_3_3_I_8_q = SophiaTaskDefinition(
     answerOptions=["At $y=0$", "At $y=2$", "At $y=4$", "At $y=-4$"],
     correctAnswerIndex=1,
-    questionText="Where is the horizontal asymptote of the shifted function?",
+    questionText="",
 )
 class Func_3_3_I_8_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_3.I8.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_3_3.I8.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1991,10 +1627,10 @@ class Func_3_3_I_8_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["We're shifting hyperbolas up or down", "Shifted function: $f(x)=\\tfrac 1 x+2$", ["Where is the horizontal asymptote", "of the shifted function"],], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=["We're shifting hyperbolas up or down", "Shifted function: $f(x)=\\tfrac 1 x+2$", ["Where is the horizontal asymptote", "of the shifted function"],], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I8.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2019,17 +1655,10 @@ class Func_3_3_I_8_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, now let's say, <bookmark mark="setupCursor"/>we're shifting the <bookmark mark="up"/> function up <bookmark mark="down"/>or down.
-                But if we do that, what happens to the horizontal asymptotes?
-                So to make this more specific, let's take the example <bookmark mark="func"/> f of x equals one over x. <bookmark mark="note2"/>
-                And let's shift it <bookmark mark="upByTwo"/>up by two, so the shifted function is <bookmark mark="funcNew"/> f of <bookmark mark="x"/>x equals <bookmark mark="one"/>one over x plus <bookmark mark="two"/>two.
-                <bookmark mark="noteLast"/>Where is the horizontal asymptote of the shifted function?
-                """
+                text=self.translate("Func_3_3.I8.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("setupCursor")
-            note.change_colors([0])
             cursor.blinking=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -2046,9 +1675,6 @@ class Func_3_3_I_8_q(SophiaCursorScene):
 
             self.wait_until_bookmark("func")
             self.play(Write(f1[0]), Write(f1[1]), Write(f1[2]), Write(f1[3]), run_time=0.5)
-
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("upByTwo")
             cursor.blinking=False
@@ -2073,10 +1699,6 @@ class Func_3_3_I_8_q(SophiaCursorScene):
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
             cursor.blinking=True
 
-            self.wait_until_bookmark("noteLast")
-            note.change_colors([1,2])
-
-
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
@@ -2089,10 +1711,10 @@ class Func_3_3_I_8_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I8.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2122,26 +1744,11 @@ class Func_3_3_I_8_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite...
-                First, let us remind ourselves of the definition of an asymptote.
-                <bookmark mark="asymptote"/>An asymptote is a line that the function approaches, but never reaches.
-                We know that the asymptote of the original function is the <bookmark mark="as0"/>horizontal line at y equals zero.
-                Now, let's look at the shifted function. <bookmark mark="note1"/>The shifted function <bookmark mark="func"/>is the function
-                <bookmark mark="f"/>f of <bookmark mark="x"/> x equals <bookmark mark="oneOverX"/>one over x <bookmark mark="plusTwo"/>plus two, so it's <bookmark mark="shiftUp"/> the original function
-                shifted up by two. <bookmark mark="note3"/>This means that the asymptote of the shifted function is <bookmark mark="cursorBack"/> the asymptote of
-                the original function shifted up by two. This means, that the horizontal asymptote is at y equals two.
-                """
+                text=self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("asymptote")
-            note.change_colors([0])
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("func")
             cursor.blinking=False
@@ -2173,9 +1780,6 @@ class Func_3_3_I_8_a(SophiaCursorScene):
             cursor.clear_updaters()
             cursor._setup_blinking()
             cursor.blinking=True
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("cursorBack")
             cursor.blinking=False
@@ -2199,10 +1803,10 @@ class Func_3_3_I_8_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I8.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2232,26 +1836,11 @@ class Func_3_3_I_8_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it!
-                First, let us remind ourselves of the definition of an asymptote.
-                <bookmark mark="asymptote"/>An asymptote is a line that the function approaches, but never reaches.
-                We know that the asymptote of the original function is the <bookmark mark="as0"/>horizontal line at y equals zero.
-                Now, let's look at the shifted function. <bookmark mark="note1"/>The shifted function <bookmark mark="func"/>is the function
-                <bookmark mark="f"/>f of <bookmark mark="x"/> x equals <bookmark mark="oneOverX"/>one over x <bookmark mark="plusTwo"/>plus two, so it's <bookmark mark="shiftUp"/> the original function
-                shifted up by two. <bookmark mark="note3"/>This means that the asymptote of the shifted function is <bookmark mark="cursorBack"/> the asymptote of
-                the original function shifted up by two. This means, that the horizontal asymptote is at y equals two.
-                """
+                text=self.translate("Func_3_3.I8.b.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("asymptote")
-            note.change_colors([0])
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("func")
             cursor.blinking=False
@@ -2284,9 +1873,6 @@ class Func_3_3_I_8_b(SophiaCursorScene):
             cursor._setup_blinking()
             cursor.blinking=True
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("cursorBack")
             cursor.blinking=False
             x,y,_ = plane.c2p(0,0)
@@ -2299,6 +1885,7 @@ class Func_3_3_I_8_b(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 class Func_3_3_I_8_c(SophiaCursorScene):
 
@@ -2308,10 +1895,10 @@ class Func_3_3_I_8_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I8.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2341,26 +1928,11 @@ class Func_3_3_I_8_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite...
-                First, let us remind ourselves of the definition of an asymptote.
-                <bookmark mark="asymptote"/>An asymptote is a line that the function approaches, but never reaches.
-                We know that the asymptote of the original function is the <bookmark mark="as0"/>horizontal line at y equals zero.
-                Now, let's look at the shifted function. <bookmark mark="note1"/>The shifted function <bookmark mark="func"/>is the function
-                <bookmark mark="f"/>f of <bookmark mark="x"/> x equals <bookmark mark="oneOverX"/>one over x <bookmark mark="plusTwo"/>plus two, so it's <bookmark mark="shiftUp"/> the original function
-                shifted up by two. <bookmark mark="note3"/>This means that the asymptote of the shifted function is <bookmark mark="cursorBack"/> the asymptote of
-                the original function shifted up by two. This means, that the horizontal asymptote is at y equals two.
-                """
+                text=self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("asymptote")
-            note.change_colors([0])
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("func")
             cursor.blinking=False
@@ -2393,9 +1965,6 @@ class Func_3_3_I_8_c(SophiaCursorScene):
             cursor._setup_blinking()
             cursor.blinking=True
 
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
-
             self.wait_until_bookmark("cursorBack")
             cursor.blinking=False
             x,y,_ = plane.c2p(0,0)
@@ -2408,6 +1977,7 @@ class Func_3_3_I_8_c(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 
 class Func_3_3_I_8_d(SophiaCursorScene):
@@ -2418,10 +1988,10 @@ class Func_3_3_I_8_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
+        # self.add(note)
 
-        title = self.add_title("Shifting hyperbolas")
+        title = self.add_title(self.translate("Func_3_3.I8.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -2451,26 +2021,11 @@ class Func_3_3_I_8_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite...
-                First, let us remind ourselves of the definition of an asymptote.
-                <bookmark mark="asymptote"/>An asymptote is a line that the function approaches, but never reaches.
-                We know that the asymptote of the original function is the <bookmark mark="as0"/>horizontal line at y equals zero.
-                Now, let's look at the shifted function. <bookmark mark="note1"/>The shifted function <bookmark mark="func"/>is the function
-                <bookmark mark="f"/>f of <bookmark mark="x"/> x equals <bookmark mark="oneOverX"/>one over x <bookmark mark="plusTwo"/>plus two, so it's <bookmark mark="shiftUp"/> the original function
-                shifted up by two. <bookmark mark="note3"/>This means that the asymptote of the shifted function is <bookmark mark="cursorBack"/> the asymptote of
-                the original function shifted up by two. This means, that the horizontal asymptote is at y equals two.
-                """
+                text=self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("asymptote")
-            note.change_colors([0])
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
-
-            self.wait_until_bookmark("note1")
-            note.change_colors([0,1])
 
             self.wait_until_bookmark("func")
             cursor.blinking=False
@@ -2502,9 +2057,6 @@ class Func_3_3_I_8_d(SophiaCursorScene):
             cursor.clear_updaters()
             cursor._setup_blinking()
             cursor.blinking=True
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("cursorBack")
             cursor.blinking=False
@@ -2542,33 +2094,33 @@ class Func_3_3_I_8_d(SophiaCursorScene):
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_3_3_I_1),
     PagePrototypeVideo.from_scene(Func_3_3_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_3_I_2_q, Func_3_3_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_3_I_2_q),
     PagePrototypeVideo.from_scene(Func_3_3_I_2_a),
     PagePrototypeVideo.from_scene(Func_3_3_I_2_b),
     PagePrototypeVideo.from_scene(Func_3_3_I_2_c),
     PagePrototypeVideo.from_scene(Func_3_3_I_2_d),
     PagePrototypeVideo.from_scene(Func_3_3_I_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_3_I_3_q, Func_3_3_I_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_3_I_3_q),
     PagePrototypeVideo.from_scene(Func_3_3_I_3_a),
     PagePrototypeVideo.from_scene(Func_3_3_I_3_b),
     PagePrototypeVideo.from_scene(Func_3_3_I_3_c),
     PagePrototypeVideo.from_scene(Func_3_3_I_3_d),
     PagePrototypeVideo.from_scene(Func_3_3_I_4),
     PagePrototypeVideo.from_scene(Func_3_3_I_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_3_I_5_q, Func_3_3_I_5_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_3_I_5_q),
     PagePrototypeVideo.from_scene(Func_3_3_I_5_a),
     PagePrototypeVideo.from_scene(Func_3_3_I_5_b),
     PagePrototypeVideo.from_scene(Func_3_3_I_5_c),
     PagePrototypeVideo.from_scene(Func_3_3_I_5_d),
     PagePrototypeVideo.from_scene(Func_3_3_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_3_I_6_q, Func_3_3_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_3_I_6_q),
     PagePrototypeVideo.from_scene(Func_3_3_I_6_a),
     PagePrototypeVideo.from_scene(Func_3_3_I_6_b),
     PagePrototypeVideo.from_scene(Func_3_3_I_6_c),
     PagePrototypeVideo.from_scene(Func_3_3_I_6_d),
     PagePrototypeVideo.from_scene(Func_3_3_I_7),
     PagePrototypeVideo.from_scene(Func_3_3_I_8_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_3_I_8_q, Func_3_3_I_8_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_3_I_8_q),
     PagePrototypeVideo.from_scene(Func_3_3_I_8_a),
     PagePrototypeVideo.from_scene(Func_3_3_I_8_b),
     PagePrototypeVideo.from_scene(Func_3_3_I_8_c),

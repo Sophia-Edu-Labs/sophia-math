@@ -847,5 +847,242 @@
         "tfIntro": "Great job, you got it right!"
       }
     }
+  },
+  "Func_3_1": {
+    "I1": {
+      "title": "Functions",
+      "voiceover": "Ok, so I'm now assuming you already know what a function is.\nIf you don't, go back to the section on functions, and I'll be happy to explain it to you.\n\nNow, the type of functions we've mainly looked at were <bookmark mark=\"linear\"/> linear functions.\n\nThey have the form <bookmark mark=\"funcTerm\"/> f of x equals \"a\" times x plus b, where a and b are constants.\n\nFor example, the term of this function is <bookmark mark=\"thisFunc\"/> f of x equals zero point five times x.\n\nWe're multiplying \"a\", in this case zero point five by x, and a is positive, so the function increases when x increases,\n\nand it decreases, when x decreases.\n\nNow take a moment to think about this: What would happen, if instead of multiplying \"a\" by x, we would divide \"a\" by x?"
+    },
+    "I2": {
+      "title": "Functions",
+      "voiceover": "So, we want to know what a function of the form <bookmark mark=\"funcA\"/> f of x equals \"a\" divided by x looks like.\n\nAs an example, let's look at the function f of x equals <bookmark mark=\"funcG\"/> one over x.\n\nAnd, let's start by looking at the positive values only.\n\nTo learn more, <bookmark mark=\"cords\"/> let's plug in some values.\n\nIf we plug in one, <bookmark mark=\"plugIn1\"/> we get one divided by one, which is one.\n\nIf we plug in two, <bookmark mark=\"plugIn2\"/> we get one divided by two, which is one half.\n\nIf we plug in four, <bookmark mark=\"plugIn4\"/> we get one divided by four, which is one quarter.\n\nAnd so on.\n\nLet's also plug in some values that are smaller than one:\n\nIf we plug in <bookmark mark=\"plugInHalf\"/> zero point five, we get one divided by zero point five, which is two,\n\nAnd if we plug in <bookmark mark=\"plugInQuarter\"/> zero point two five, we get one divided by zero point two five, which is four.\n\nNow that we've plugged in some values, let's <bookmark mark=\"plot\"/> connect them on the coordinate system and see what the function looks like.\n\nAs we can see, the function starts <bookmark mark=\"moveAlongFunc\"/> with very high values for low x, and decreases as x gets larger.\n\nAt first, it decreases very quickly, but then it decreases slower and slower."
+    },
+    "I3": {
+      "q": {
+        "answer-options": "[\"The result is $0$\", \"The result is $\\infty$\",\"The result is undefined\", \"The result is $1$\"]",
+        "question-text": "What happens if we plug in $x=0$?",
+        "voiceover": "Ok, so <bookmark mark=\"closerTo0\"/> we've seen that <bookmark mark=\"note1\"/> as x gets closer to zero, the values for f of x get larger and larger.\n\n<bookmark mark=\"cordsAway\"/> Now, let's take a closer look at the behavior of f for small values of x.\n\nWe've already seen that <bookmark mark=\"f1\"/> f of one is equal to one, that <bookmark mark=\"f2\"/> f of one half is equal\nto 2, and that <bookmark mark=\"f4\"/> f of one quarter is equal to 4.\n\nIf we now plug in <bookmark mark=\"f10\"/> f of one tenth, we get 10, and if we plug in <bookmark mark=\"f20\"/> f of one twentieth,\nwe get 20.\n\nThis doesn't even fit on the screen anymore, but when you <bookmark mark=\"func\"/> connect the points, you can see that the values are still getting larger, and that they're getting\nlarger fast.\n\nSo we know, that the value of f of x increases, as x gets closer to zero.\n\nNow, <bookmark mark=\"note2\"/> what will happen, if we plug x equals zero into our function?",
+        "title": "Functions"
+      },
+      "a": {
+        "title": "Watch out!",
+        "voiceover": "<bookmark mark=\"warning\"/>\nCareful!!!\n\nRemember, our function is defined as <bookmark mark=\"func\"/> f of x equals one over x.\nIf we were to plug x equals zero into our function, the expression would be\n<bookmark mark=\"f0\"/> f of zero equals one over zero.\n\nBut it's <bookmark mark=\"cross\"/> not possible to divide by zero, so the result of one over zero is undefined.\n\nThis means, that <bookmark mark=\"domain\"/> we're not allowed to plug x equals zero into our function!\n\nSo, just to recap: the function f of x equals one over x is defined for all x except zero.\n\n<bookmark mark=\"cords\"/>\nAs the values of x get closer to zero, the values of f of x get bigger and bigger.\n\nBut we can't plug x equals zero into our function.\n\nThe point x equals zero is also called a singularity.",
+        "warning": "Only defined for values"
+      },
+      "c": {
+        "voiceover": "Yep, that's right. We have to be\n<bookmark mark=\"warning\"/>\ncareful here!\n\nRemember, our function is defined as <bookmark mark=\"func\"/> f of x equals one over x.\nIf we were to plug x equals zero into our function, the expression would be\n<bookmark mark=\"f0\"/> f of zero equals one over zero.\n\nBut it's <bookmark mark=\"cross\"/> not possible to divide by zero, so the result of one over zero is undefined.\n\nThis means, that <bookmark mark=\"domain\"/> we're not allowed to plug x equals zero into our function!\n\nSo, just to recap: the function f of x equals one over x is defined for all x except zero.\n\n<bookmark mark=\"cords\"/>\nAs the values of x get closer to zero, the values of f of x get bigger and bigger.\n\nBut we can't plug x equals zero into our function.\n\nThe point x equals zero is also called a singularity."
+      }
+    },
+    "I4": {
+      "q": {
+        "question-text": "What is the point of the singularity of $g$?",
+        "answer-options": "[\"$x=0$\", \"There is no singularity\",\"$x=2$\", \"$x=-2$\"]",
+        "title": "Singularities",
+        "voiceover": "Remember, for the <bookmark mark=\"f\"/> function f of x equals one over x, <bookmark mark=\"f1\"/> we're not allowed to plug x equals zero into our function.\nThis is because we cannot divide by zero, and if we were to plug <bookmark mark=\"f0\"/> x equals zero into our function, the expression would be one over zero.\n\nWe called the point x equals <bookmark mark=\"f2\"/> zero a singularity, because our function is undefined at this point.\n\nNow, <bookmark mark=\"shift\"/> consider the function <bookmark mark=\"g\"/> g of x equals two divided by x+2.\n\nDoes it also have a singularity? That means: is there a point x for which the function g is undefined?\n\nAnd if such a point exists, what is it?",
+        "f1": "Not defined for $x=0$",
+        "f2": "$\\rightarrow$ Singularity at $x=0$",
+        "S1": "Singularity at $x$",
+        "S2": "$\\Leftrightarrow$",
+        "S3a": "Plugging in $x$ leads to",
+        "S3b": "division by zero"
+      },
+      "a": {
+        "voiceover": "No, that's not quite right...\n\nThere's a <bookmark mark=\"singularity\"/> singularity at x, <bookmark mark=\"whenever\"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.\n\nSo, <bookmark mark=\"out\"/> looking at <bookmark mark=\"g\"/> g of x equals two over x plus two, we can already suspect, <bookmark mark=\"cursor\"/> that there will be a singularity,\nbecause <bookmark mark=\"denom1\"/> we're dividing by a sum involving x.\n\nTo now find the value of x, where <bookmark mark=\"c2g\"/>  g has a singularity, we must find the value of x for which the denominator is zero.\n\nThis means, finding the value for which <bookmark mark=\"step1\"/> x plus two equals zero. Clearly, this value is <bookmark mark=\"step23\"/> x equals negative two.\n\n<bookmark mark=\"moveUp\"/>\nThis is how we find out, that g <bookmark mark=\"final\"/> has a singularity at x equals negative two."
+      },
+      "d": {
+        "voiceover": "Yep, you got it!\nThere's a <bookmark mark=\"singularity\"/> singularity at x, <bookmark mark=\"whenever\"/> whenever plugging in x would lead to dividing by zero, which as we know is not allowed.\n\nSo, <bookmark mark=\"out\"/> looking at <bookmark mark=\"g\"/> g of x equals two over x plus two, we can already suspect, <bookmark mark=\"cursor\"/> that there will be a singularity,\nbecause <bookmark mark=\"denom1\"/> we're dividing by a sum involving x.\n\nTo now find the value of x, where <bookmark mark=\"c2g\"/>  g has a singularity, we must find the value of x for which the denominator is zero.\n\nThis means, finding the value for which <bookmark mark=\"step1\"/> x plus two equals zero. Clearly, this value is <bookmark mark=\"step23\"/> x equals negative two.\n\n<bookmark mark=\"moveUp\"/>\nThis is how we find out, that g <bookmark mark=\"final\"/> has a singularity at x equals negative two."
+      }
+    },
+    "I5": {
+      "title": "1/x for large x",
+      "voiceover": "    Ok, now let's return to our function <bookmark mark=\"f\"/>f of x equals one over x.\n\n    We've already seen  what happens to this function, <bookmark mark=\"f0\"/>when we plug in values that get closer and closer to zero:\n    <bookmark mark=\"f1\"/>the function gets larger and larger.\n\n    Next, we want to see what happens to the function, if we plug in numbers that are much <bookmark mark=\"oldCords\"/> larger than one.\n\n    For this, let's <bookmark mark=\"newCords\"/> look at values of x up to one hundred.\n\n    So we've already plugged in the value  <bookmark mark=\"fOf1\"/> f of one, which is one over one, so one.\n\n    If we plug in the value two, we get <bookmark mark=\"fOf2\"/> f of two equals one divided by two, which is one half, or zero point five.\n\n    Next, let's plug in the value ten. We get <bookmark mark=\"fOf10\"/> f of ten equals one divided by ten,\n    which is one tenth, or zero point 1.",
+      "voiceover2": "Ok, now let's plug in the value x equals fifty. If we do that, we get <bookmark mark=\"fOf50\"/>  f of fifty equals one divided by fifty,\nwhich is one fiftieth, or zero point zero two.\n\nAnd finally, we'll plug in the value one hundred. We get <bookmark mark=\"fOf100\"/> f of one hundred equals one divided by one hundred,\nwhich is one hundredth, or zero point zero one.\n<bookmark mark=\"fEnd\"/>\n\nConnecting the dots to see the graph of the function, <bookmark mark=\"plot\"/> we can see that the function gets smaller and smaller,\nas we plug in x-values that get larger."
+    },
+    "I6": {
+      "q": {
+        "answer-options": "[\"Yes, $x=0.000001$\", \"Yes, $x=0.001$\",\"No\", \"Yes, $x=0.00000001$\"]",
+        "question-text": "Is there a positive number, that is smaller than the smallest value, that $f(x)$ can reach?",
+        "title": "1/x for large x"
+      },
+      "a": {
+        "title": "$\\tfrac1x$ for large $x$",
+        "voiceover": "Nope, that's not right. <bookmark mark=\"preach\"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.\n\nBut why? I'll show you using a method that mathematicians call <bookmark mark=\"pbc\"/>proof by contradiction.\n\nFirst, <bookmark mark=\"step1\"/> think about a super super tiny positive number, and call that number \"a\".\n<bookmark mark=\"e1\"/> For example, we could pick the number zero point zero zero one.\n\nSecond<bookmark mark=\"step2\"/>, write that number as a fraction.\nIn our example,<bookmark mark=\"e2\"/> we would write \"a\" as one over one hundred.\n\nThird<bookmark mark=\"step3\"/>, take the fraction and double the denominator.\nIn our example, <bookmark mark=\"e3\"/>we would get \"a\" hat equal to one over two hundred.\n\nNow, <bookmark mark=\"meaning\"/>let's think about what this means. <bookmark mark=\"meaningA\"/>\nFirst, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x\n\n<bookmark mark=\"meaningB\"/>We can also see, that the number is a smaller number than \"a\".\n\nThis means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number.",
+        "t1a": "which is smaller than",
+        "t1b": "There is no positive number $a$,",
+        "t2": "for large positive x.",
+        "s1": "1. Choose a tiny number $a$",
+        "e1": "Example: $a=0.001$",
+        "s2": "2. Write $a$ as a fraction",
+        "e2": "Our example: $a=\\\\frac{1}{1000}$",
+        "s3": "3. Double the denominator",
+        "pbc": "Proof by contradiction"
+      },
+      "c": {
+        "voiceover": "Yep, that is correct. <bookmark mark=\"preach\"/> There is no positive number that is smaller than the smallest value that f of x equals one over x can obtain.\n\nBut why? I'll show you using a method that mathematicians call <bookmark mark=\"pbc\"/>proof by contradiction.\n\nFirst, <bookmark mark=\"step1\"/> think about a super super tiny positive number, and call that number \"a\".\n<bookmark mark=\"e1\"/> For example, we could pick the number zero point zero zero one.\n\nSecond<bookmark mark=\"step2\"/>, write that number as a fraction.\nIn our example,<bookmark mark=\"e2\"/> we would write \"a\" as one over one hundred.\n\nThird<bookmark mark=\"step3\"/>, take the fraction and double the denominator.\nIn our example, <bookmark mark=\"e3\"/>we would get \"a\" hat equal to one over two hundred.\n\nNow, <bookmark mark=\"meaning\"/>let's think about what this means. <bookmark mark=\"meaningA\"/>\nFirst, note that f of x is equal to that number, if we plug in the value of the doubled denominator for x\n\n<bookmark mark=\"meaningB\"/>We can also see, that the number is a smaller number than \"a\".\n\nThis means, that no matter which positive number we pick, we can always find a value of x, for which f of x is smaller than that number."
+      }
+    },
+    "I7": {
+      "title": "Rational Functions",
+      "small": "small",
+      "large": "large",
+      "s1": "Singularity at $x$",
+      "s3a": "Plugging in $x$ leads to",
+      "s3b": "division by zero",
+      "voiceover": "                Ok, let's recap what we have learned so far about functions where we divide something by x.\n                Again, let's stick to our example <bookmark mark=\"f\"/> f of x equals one over x, and let's\n                also <bookmark mark=\"cond\"/> restrict ourselves to numbers that aren't negative.\n                \n                First, we know that <bookmark mark=\"fPos\"/>f of x is positive for all positive values of x.\n                \n                Then, we also learned how the function behaves for<bookmark mark=\"smallLarge\"/> very small and very large values of x:\n                If x gets very large, we divide one by a very large number, <bookmark mark=\"xlarge\"/>and the result gets very small.\n                \n                If on the other hand x gets very small, we divide one by a very small number, <bookmark mark=\"xsmall\"/>and the result gets very large.\n                \n                If we combine these two insights, we can <bookmark mark=\"cords\"/> determine what the graph looks like:\n                <bookmark mark=\"graph\"/> Starting from one, the graph gets smaller and smaller, as we move to the right.\n                <bookmark mark=\"left\"/> When moving to the left on the other hand, the graph increases rapidly, as we get closer to zero.    ",
+      "voiceover2": "We also learned about <bookmark mark=\"out\"/> singularities: As x gets closer to zero, the value of f of x gets really large.\nBut <bookmark mark=\"sing\"/>we can't actually plug in zero, because that would mean dividing by zero, which is not allowed.\nThis is why we call <bookmark mark=\"singDef\"/> zero a singularity of the function."
+    },
+    "I8": {
+      "q": {
+        "answer-options": "[\"x close to zero -> large negative values,\\n x far from zero -> small negative values\", \n                   \"x close to zero -> large negative values,\\n x far from zero -> small positive values\", \n                   \"x close to zero -> small negative values,\\n x far from zero -> large negative values\", \n                   \"x close to zero -> small negative values,\\n x far from zero -> large positive values\"]",
+        "question-text": "How does f behave for negative values of x?",
+        "title": "$\\\\frac1x$ for negative $x$",
+        "voiceover": "Now, let's think about <bookmark mark=\"neg\"/> the negative values of x.\nRemember, for positive x the function was very high for small x and got smaller for larger x.\n\n<bookmark mark=\"cords\"/>Now, how <bookmark mark=\"Q\"/>does f behave for small negative values of x?\n\nAnd how does it behave for large negative values of x?"
+      },
+      "a": {
+        "voiceover": "Yes, that's correct!\nSo, we want to know what the function <bookmark mark=\"f\"/> f of x equals one over x looks like\nfor <bookmark mark=\"cond\"/> negative values of x.\n\nLike we did for positive values of x, let's analyze the function by <bookmark mark=\"cords\"/> plugging in some values.\n\nIf we plug in negative one, <bookmark mark=\"plugIn1\"/> we get one divided by negative one, which is negative one.\n\nIf we plug in negative two, <bookmark mark=\"plugIn2\"/> we get one divided by negative two, which is negative one half.\n\nIf we plug in negative four, <bookmark mark=\"plugIn4\"/> we get one divided by negative four, which is negative one quarter.\n\nAnd so on.",
+        "voiceover2": "Let's also plug in some values that are larger than negative one:\n\nIf we plug in <bookmark mark=\"plugInHalf\"/> negative zero point five, we get one divided by negative zero point five, which is negative two,\n\nAnd if we plug in <bookmark mark=\"plugInQuarter\"/> negative zero point two five, we get one divided by negative zero point two five, which is negative four.\n\nNow that we've plugged in some values, let's <bookmark mark=\"plot\"/> connect them on the coordinate system and see what the function looks like.\n\nAs we can see, the function starts <bookmark mark=\"moveAlongFunc\"/> with values close to zero for low x, and  then decreases as x gets larger.\n\nAt first, it decreases very slowly, but then it decreases faster and faster..."
+      },
+      "b": {
+        "voiceover": "Mhmm, that's not right...\nSo, we want to know what the function <bookmark mark=\"f\"/> f of x equals one over x looks like\nfor <bookmark mark=\"cond\"/> negative values of x.\n\nLike we did for positive values of x, let's analyze the function by <bookmark mark=\"cords\"/> plugging in some values.\n\nIf we plug in negative one, <bookmark mark=\"plugIn1\"/> we get one divided by negative one, which is negative one.\n\nIf we plug in negative two, <bookmark mark=\"plugIn2\"/> we get one divided by negative two, which is negative one half.\n\nIf we plug in negative four, <bookmark mark=\"plugIn4\"/> we get one divided by negative four, which is negative one quarter.\n\nAnd so on."
+      }
+    },
+    "I9": {
+      "title": "Rational Functions",
+      "voiceover": "Well, now that we've analyzed the function <bookmark mark=\"f\"/> f of x equals one over x for positive and for negative\nvalues of x, let's now get a good look <bookmark mark=\"cords\"/> at the function itself.\n\nLet's first look at negative values of x<bookmark mark=\"fNeg\"/>.\n\nSo as we just saw, for large negative values of x, the function is slightly below zero, <bookmark mark=\"moveNeg\"/>but as\nthe values of x get closer and closer to zero, the function values decrease very quickly.\n\nNow, let's turn to positive x values.<bookmark mark=\"fPos\"/>\n\n<bookmark mark=\"xLarge\"/>For large values of x, the function values\nare very small but positive. <bookmark mark=\"movePos\"/>As the x values get closer to zero on the other hand,\nthe function values seem to explode, getting larger and larger very fast.\n\nNow, this is what the entire function f of x equals one over x looks like.\n\nSee how the function is structured around a cross\nformed by the <bookmark mark=\"x\"/> x axis and the <bookmark mark=\"y\"/> y axis?\n\nIt seems to consist of two rounded corners, one on the <bookmark mark=\"tR\"/> top right of that cross,\nand one on the <bookmark mark=\"bL\"/> bottom left of that cross."
+    }
+  },
+  "Func_3_2": {
+    "I1": {
+      "title": "Asymptotes",
+      "voiceover": "Ok now, I have a new concept for you. Asymptotes.\n\nAgain, our favorite function <bookmark mark=\"f\"/> f of x equals one over x.\n\n<bookmark mark=\"pos\"/>\nWhen analyzing this function, we can see that for large positive values of x, the function values are very small but positive.\nThey get closer and closer to zero, but never reach zero.\n\n<bookmark mark=\"neg\"/>\nFor large negative values of x, the function values are very small but negative. Again, as the values of x get more and more negative,\nthe function values get closer and closer to zero from below, but never reach zero.\n\nIf you look at the graph, it looks like it is <bookmark mark=\"hug\"/>hugging the x-axis.\n\nBut we're doing Mathematics here, so we need to find a complicated sounding word to describe this.\n\nSo, we say that the \"x\"-axis is an Asymptote of the function f of x.\n\nTo be precise, the \"x\"-axis is a horizontal Asymptote of our function f."
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"The orange line\", \"The green Line\", \"The purple line\"]",
+        "question-text": "Which of the lines describes the horizontal asymptote of the function?"
+      },
+      "title": "Asymptotes",
+      "voiceover": "Here's a question for you and to be fair, you can't really know this, but try to make a guess: <bookmark mark=\"cords\"/>\n\nLook at the <bookmark mark=\"f\"/> function that is shown on this graph.\n\nWhich of the following three lines describes the horizontal Asymptote of this function?\n\n<bookmark mark=\"OrangeLine\"/>\nIs it the orange line?\n\n<bookmark mark=\"GreenLine\"/>\nIs it the green line?\n\n<bookmark mark=\"PurpleLine\"/>\nOr is it the purple line?",
+      "a": {
+        "voiceover": "                Mhm, that's not right. I admit, it was a bit tricky, so no worries!\n                <bookmark mark=\"cords\"/>\n                \n                So now, why is it indeed the green line that describes the vertical asymptote?\n                When we look at the <bookmark mark=\"f\"/>function, we can see that there are two lines that\n                the function \"hugs\", so there are two lines that the function gets really close to, but never reaches:\n                One is <bookmark mark=\"GreenLine\"/>the green line,\n                and the other one is <bookmark mark=\"PurpleLine\"/>the purple line.\n                \n                That's also <bookmark mark=\"note1\"/>the reason it can't be the<bookmark mark=\"OrangeLine\"/> orange line: Because the function\n                crosses that line.\n                \n                So now we know, that it has to be <bookmark mark=\"noOrange\"/> either the green line or the purple line\n                that describes the horizontal asymptote.\n                \n                But how do we know which one it is? Easy: <bookmark mark=\"note2\"/>The purple line is a vertical line, and the green line is a horizontal line.\n                Since we're looking for a horizontal asymptote, it <bookmark mark=\"solution\"/> has to be the green line."
+      },
+      "b": {
+        "voiceover": "Wow, that's correct. I admit, it was a bit tricky, so great job for getting it right!\n<bookmark mark=\"cords\"/>\n\nSo now, why is it indeed the green line that describes the vertical asymptote?\nWhen we look at the <bookmark mark=\"f\"/>function, we can see that there are two lines that\nthe function \"hugs\", so there are two lines that the function gets really close to, but never reaches:\nOne is <bookmark mark=\"GreenLine\"/>the green line,\nand the other one is <bookmark mark=\"PurpleLine\"/>the purple line.\n\nThat's also <bookmark mark=\"note1\"/>the reason it can't be the<bookmark mark=\"OrangeLine\"/> orange line: Because the function\ncrosses that line.\n\nSo now we know, that it has to be <bookmark mark=\"noOrange\"/> either the green line or the purple line\nthat describes the horizontal asymptote.\n\nBut how do we know which one it is? Easy: <bookmark mark=\"note2\"/>The purple line is a vertical line, and the green line is a horizontal line.\nSince we're looking for a horizontal asymptote, it <bookmark mark=\"solution\"/> has to be the green line."
+      }
+    },
+    "I3": {
+      "title": "Asymptotes",
+      "voiceover": "Ok, now let's define what an asymptote actually is. Listen up:\n\nAn asymptote of <bookmark mark=\"cords\"/>a function f, is a line that the function gets arbitrarily close to, but never reaches.\n\nWe are considering two types of asymptotes: <bookmark mark=\"horizontal\"/> Horizontal asymptotes, and<bookmark mark=\"vertical\"/> vertical asymptotes.\n\nA horizontal asymptote is simply an asymptote that is parallel to <bookmark mark=\"x\"/>the x-axis, so a horizontal line that\nthe function gets arbitrarily close to, but never reaches.\n\n<bookmark mark=\"cursorReset\"/>\nIn this example, the green line is a horizontal asymptote.\n\nA vertical asymptote on the other hand, is an asymptote that is parallel to <bookmark mark=\"y\"/>the y-axis, so a vertical line that\nthe function gets arbitrarily close to, but never reaches. <bookmark mark=\"fin\"/>\n\nIn this example, the purple line is a vertical asymptote."
+    },
+    "horizontalAsymptoteQuestionScene": {
+      "title": "Asymptotes",
+      "voiceover": "{self.introText}\nConsider the function <bookmark mark=\"cords\"/> f that belongs to the graph,\nwhich is <bookmark mark=\"f\"/>shown here.\n\nIs the <bookmark mark=\"green\"/>green line a horizontal asymptote of the function?\n\nAnd what about the purple line, is the <bookmark mark=\"purple\"/>purple line a horizontal asymptote of the function?"
+    },
+    "horizontalAsymptoteAnswerScene": {
+      "title": "Asymptotes",
+      "voiceover": "{self.introText}\nAn asymptote of a function f, is a line that the function gets arbitrarily close to, but never reaches.\n\nThis means the <bookmark mark=\"green\"/>green line is {self.greenText}\n\nIt also implies that the <bookmark mark=\"purple\"/>purple line {self.purpleText}"
+    },
+    "verticalAsymptoteQuestionScene": {
+      "title": "Asymptotes",
+      "voiceover": "{self.introText}\nConsider the function <bookmark mark=\"cords\"/> f that belongs to the graph,\nwhich is <bookmark mark=\"f\"/>shown here.\nIs the <bookmark mark=\"green\"/>green line a vertical asymptote of the function?\nAnd what about the purple line, is the <bookmark mark=\"purple\"/>purple line a vertical asymptote of the function?"
+    },
+    "verticalAsymptoteAnswerScene": {
+      "title": "Asymptotes",
+      "voiceover": "{self.introText}\nAn asymptote of a function f, is a line that the function gets arbitrarily close to, but never reaches.\n\nThis means the <bookmark mark=\"green\"/>green line is {self.greenText}\n\nIt also implies that the <bookmark mark=\"purple\"/>purple line {self.purpleText}"
+    },
+    "P1": {
+      "q": {
+        "answer-options": "[\"The Purple line\", \"The green Line\", \"Both lines\", \"neither of the lines\"]",
+        "question-text": "Which of the lines describes a horizontal asymptote of the function?"
+      }
+    },
+    "P2": {
+      "q": {
+        "question-text": "Which of the lines describes a horizontal asymptote of the function?"
+      }
+    }
+  },
+  "Func_3_3": {
+    "I1": {
+      "title": "Fractional rational functions",
+      "voiceover": "Before we start diving into a new topic, let's review some of the vocabulary related to\n<bookmark mark=\"cords\"/>fractional rational functions. We've already covered what an asymptote is:\nAsymptotes are lines that a function gets arbitrarily close to but never touches.\n\nThere are vertical asymptotes, like the <bookmark mark=\"x\"/>x-axis in this example,\nand there are horizontal asymptotes, like the <bookmark mark=\"y\"/>y-axis in this example.\n\n<bookmark mark=\"singularities1\"/>\nThen there are singularities, that is points where the function is not defined,\nbecause the denominator would be zero. In our example, the singularity is at <bookmark mark=\"singularities2\"/>x equals zero.\n\nNow, a new term: Hyperbola.\n\nA hyperbola is the graph of a fractional rational function. Hyperbolas are easily recognizable,\nbecause they have two branches, one on each side of the asymptotes.\n\nSo in our example, the hyperbola is the graph consisting of <bookmark mark=\"leftCurve\"/>the left curve \nand <bookmark mark=\"rightCurve\"/>the right curve."
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"It is stretched in y-Direction\", \"It is shifted in x-Direction\", \"It is squashed in y-Direction\",  \"It is shifted in y-Direction\"]",
+        "question-text": "How does the graph change when it is multiplied with $a<1$?"
+      },
+      "title": "Scaling the function",
+      "voiceover": "Look at <bookmark mark=\"graph\"/> this graph.\n\nIt's a hyperbola, and it shows the graph of the function <bookmark mark=\"f0\"/>f of x equals one over x.\n\nLet's now explore how we can transform this function.\nOne thing we can do, is scale the function. If we multiply the function by a, we can write <bookmark mark=\"f1\"/>f of x equals a over x.\nThen we are scaling the function by a factor of a.\nBut what does this change? Let's say that <bookmark mark=\"aLessOne\"/>a is smaller than one. What happens to the function?",
+      "a": {
+        "voiceover": "No, that's not it.\n\nSo we're going from the function <bookmark mark=\"f1\"/> f of x equals one over x to the function\n<bookmark mark=\"f2\"/> f of x equals a over x, where a is smaller than one.\n\nSince a is smaller than one, this we're means multiplying one over x by a value that is smaller than one.\n\nThat in turn, means that we're multiplying each value of the function by <bookmark mark=\"decimalNumber\"/>something than one.\nSo we're kind of squashing the function in the y-direction."
+      },
+      "c": {
+        "voiceover": "You got it! nice!\nSo we're going from the function <bookmark mark=\"f1\"/> f of x equals one over x to the function\n<bookmark mark=\"f2\"/> f of x equals a over x, where a is smaller than one.\n\nSince a is smaller than one, this we're means multiplying one over x by a value that is smaller than one.\n\nThat in turn, means that we're multiplying each value of the function by <bookmark mark=\"decimalNumber\"/>something than one.\nSo we're kind of squashing the function in the y-direction."
+      }
+    },
+    "I3": {
+      "q": {
+        "answer-options": "[\"It is stretched in y-Direction\", \"It is squashed in y-Direction\", \"It is shifted in x-Direction\", \"It is flipped around the x-axis\"]",
+        "question-text": "How does the graph change when it is multiplied with $a<0$?"
+      },
+      "title": "Fractional rational functions",
+      "voiceover": "Ok, so we're looking at <bookmark mark=\"f\"/> f of x equals a over x and we can see <bookmark mark=\"moveCursor\"/>\nthat for <bookmark mark=\"smallA1\"/>small a, the function is squashed in the y-direction.\n\nFor <bookmark mark=\"largeA1\"/>large values of a on the other hand, the function is stretched in the y-direction.\n\nThis makes intuitive sense: We multiply with large values, so the function gets stretched,\nbecause both positive and negative values get larger.\n\nIf we multiply with <bookmark mark=\"smallA2\"/>small values, the function gets squashed, because both positive and negative\nvalues get smaller.\n\n<bookmark mark=\"resetA\"/>Now, those were all positive values.\nWhat happens, if we plug in something negative for \"a\"? For example, what will happen if we set <bookmark mark=\"neg1\"/>\"a\" to minus one?",
+      "a": {
+        "voiceover": "No, that's not it.\nTake any point on the function, for example the point <bookmark mark=\"oneOne\"/>1 1.\nNow if we go from <bookmark mark=\"a1\"/>\"a\" equals one to <bookmark mark=\"a2\"/>a equals negative one,\nthat's the same as multiplying the function by minus one.\nThis means, that <bookmark mark=\"func1\"/>each value of the function gets multiplied by negative one, <bookmark mark=\"func2\"/> so the function gets flipped\nacross the x-axis."
+      },
+      "d": {
+        "voiceover": "Yes, that's right. Nice!\nTake any point on the function, for example the point <bookmark mark=\"oneOne\"/>1 1.\nNow if we go from <bookmark mark=\"a1\"/>\"a\" equals one to <bookmark mark=\"a2\"/>a equals negative one,\nthat's the same as multiplying the function by minus one.\nThis means, that <bookmark mark=\"func1\"/>each value of the function gets multiplied by negative one, <bookmark mark=\"func2\"/> so the function gets flipped\nacross the x-axis."
+      }
+    },
+    "I4": {
+      "title": "Scaling the function",
+      "voiceover": "Ok, so now we've seen what we can do to the function <bookmark mark=\"f\"/>f of x equals a over x, when we vary the parameter <bookmark mark=\"a\"/> \"a\":\nIf we <bookmark mark=\"increase\"/> increase \"a\", the function gets stretched in the y-direction.\nIf we <bookmark mark=\"decrease\"/> decrease \"a\", the function gets squashed in the y-direction.\nAnd if we <bookmark mark=\"negate\"/> make \"a\" negative, the function gets flipped across the x-axis."
+    },
+    "I5": {
+      "q": {
+        "answer-options": "[\"$f(x)=\\\\tfrac{a+1}x$\", \"$f(x)=\\\\tfrac{a-1}x$\", \"$f(x)=\\\\tfrac ax+1$\", \"$f(x)=\\\\tfrac ax-1$\"]",
+        "question-text": "How do we modify the graph $f(x)=\\\\tfrac ax$ to shift it up by $1$?",
+        "voiceover": "Now that we know <bookmark mark=\"resolve\"/> how to squash, stretch and flip the function,\nlet us do something new: Shift the function in y-direction.\nThat means either <bookmark mark=\"cursorBack\"/> moving the function <bookmark mark=\"up\"/> up,\nor it means moving the function <bookmark mark=\"down\"/> down.\nNow tell me: <bookmark mark=\"back\"/> How do we modify the term f of x equals a over x,\nso that the function gets <bookmark mark=\"upOne\"/>shifted up by one?"
+      },
+      "title": "Shifting the function up",
+      "a": {
+        "voiceover": "No, not quite.\nIf we want to shift the function up by one,<bookmark mark=\"cursor\"/> every point on the function needs to be <bookmark mark=\"upOne\"/> shifted up by one.\nWe shift an individual point up by one by simply adding one, so to shift the entire function up,\nwe need to add one to each value of the function. So the new function will be <bookmark mark=\"funcNew\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/>a over x <bookmark mark=\"plusOne\"/>plus one. By adding one in the end here, we add one to each value of the function."
+      },
+      "c": {
+        "voiceover": "Yep, that's right.\nIf we want to shift the function up by one,<bookmark mark=\"cursor\"/> every point on the function needs to be <bookmark mark=\"upOne\"/> shifted up by one.\nWe shift an individual point up by one by simply adding one, so to shift the entire function up,\nwe need to add one to each value of the function. So the new function will be <bookmark mark=\"funcNew\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/>a over x <bookmark mark=\"plusOne\"/>plus one. By adding one in the end here, we add one to each value of the function.\n"
+      }
+    },
+    "I6": {
+      "q": {
+        "question-text": "How do we modify the graph $f(x)=\\\\tfrac ax$ to shift it down by $2$?",
+        "voiceover": "Ok, back with our favorite <bookmark mark=\"f\"/>function f <bookmark mark=\"x\"/>of x equals <bookmark mark=\"ax\"/>\na over x. <bookmark mark=\"note1\"/> Now let us shift the function <bookmark mark=\"db2\"/> down by two.\nSo tell me: <bookmark mark=\"back\"/> How do we modify the term f of x equals a over x,\nto <bookmark mark=\"downTwo\"/>shift the function down by two?"
+      },
+      "title": "Shifting the function down",
+      "a": {
+        "voiceover": "No, not quite.\nIf we want to shift the function down by two,<bookmark mark=\"cursor\"/> every point on the function needs to be <bookmark mark=\"upOne\"/> shifted down by two.\nWe shift an individual point down by two by simply subtracting two, so to shift the entire function down,\nwe need to subtract two from each value of the function. So the new function will be <bookmark mark=\"funcNew\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/>a over x <bookmark mark=\"plusOne\"/>minus two. By subtracting two in the end here, we subtract two from each value of the function."
+      },
+      "d": {
+        "voiceover": "Yes, that's it. Well done.\nIf we want to shift the function down by two,<bookmark mark=\"cursor\"/> every point on the function needs to be <bookmark mark=\"upOne\"/> shifted down by two.\nWe shift an individual point down by two by simply subtracting two, so to shift the entire function down,\nwe need to subtract two from each value of the function. So the new function will be <bookmark mark=\"funcNew\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/>a over x <bookmark mark=\"plusOne\"/>minus two. By subtracting two in the end here, we subtract two from each value of the function."
+      }
+    },
+    "I7": {
+      "title": "Shifting hyperbolas",
+      "voiceover": "Ok, so let's formalize this a bit. <bookmark mark=\"note1\"/>\nWhat we've been doing now is shifting the <bookmark mark=\"up1\"/>hyperbola up and<bookmark mark=\"down1\"/> down, so we shifted the function\nalong <bookmark mark=\"y\"/>the y-axis.\n<bookmark mark=\"backInPos\"/>\nTo shift it <bookmark mark=\"up2\"/>up, we added a constant to the function, so that every point on the function was shifted up by that constant.\nAnd to shift it <bookmark mark=\"down2\"/> down on the other hand, we subtracted a constant from the function, so that every point on the function\nwas shifted down by that constant. <bookmark mark=\"note2\"/> In general, we can now write the function as <bookmark mark=\"func\"/> f of\n<bookmark mark=\"x\"/> x equals <bookmark mark=\"ax\"/> a over x plus <bookmark mark=\"c\"/> c. Here, c is the constant that we add to the function.\nIf c is positive, we <bookmark mark=\"resetCursorFinal\"/>shift the function up, and if c is\n<bookmark mark=\"cNeg\"/>negative, we shift the function down.<bookmark mark=\"resetC\"/>"
+    },
+    "I8": {
+      "q": {
+        "answer-options": "[\"At $y=0$\", \"At $y=2$\", \"At $y=4$\", \"At $y=-4$\"]",
+        "question-text": "Where is the horizontal asymptote of the shifted function?"
+      },
+      "title": "Shifting hyperbolas",
+      "voiceover": "Ok, now let's say, <bookmark mark=\"setupCursor\"/>we're shifting the <bookmark mark=\"up\"/> function up <bookmark mark=\"down\"/>or down.\nBut if we do that, what happens to the horizontal asymptotes?\nSo to make this more specific, let's take the example <bookmark mark=\"func\"/> f of x equals one over x.\nAnd let's shift it <bookmark mark=\"upByTwo\"/>up by two, so the shifted function is <bookmark mark=\"funcNew\"/> f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"one\"/>one over x plus <bookmark mark=\"two\"/>two.\nWhere is the horizontal asymptote of the shifted function?",
+      "a": {
+        "voiceover": "No, not quite...\nFirst, let us remind ourselves of the definition of an asymptote.\nAn asymptote is a line that the function approaches, but never reaches.\nWe know that the asymptote of the original function is the <bookmark mark=\"as0\"/>horizontal line at y equals zero.\nNow, let's look at the shifted function. The shifted function <bookmark mark=\"func\"/>is the function\n<bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/> x equals <bookmark mark=\"oneOverX\"/>one over x <bookmark mark=\"plusTwo\"/>plus two, so it's <bookmark mark=\"shiftUp\"/> the original function\nshifted up by two. This means that the asymptote of the shifted function is <bookmark mark=\"cursorBack\"/> the asymptote of\nthe original function shifted up by two. This means, that the horizontal asymptote is at y equals two."
+      },
+      "b": {
+        "voiceover": "Yep, that's it...\nFirst, let us remind ourselves of the definition of an asymptote.\nAn asymptote is a line that the function approaches, but never reaches.\nWe know that the asymptote of the original function is the <bookmark mark=\"as0\"/>horizontal line at y equals zero.\nNow, let's look at the shifted function. The shifted function <bookmark mark=\"func\"/>is the function\n<bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/> x equals <bookmark mark=\"oneOverX\"/>one over x <bookmark mark=\"plusTwo\"/>plus two, so it's <bookmark mark=\"shiftUp\"/> the original function\nshifted up by two. This means that the asymptote of the shifted function is <bookmark mark=\"cursorBack\"/> the asymptote of\nthe original function shifted up by two. This means, that the horizontal asymptote is at y equals two."
+      }
+    }
   }
 }

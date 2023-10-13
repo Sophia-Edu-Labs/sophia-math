@@ -16,6 +16,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 #####################################
 #####################################
@@ -35,10 +36,9 @@ class Func_3_2_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
-        self.add(note)
-
-        title = self.add_title("Asymptotes")
+        # note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
+        # self.add(note)
+        title = self.add_title(self.translate("Func_3_2.I1.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -58,41 +58,19 @@ class Func_3_2_I_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok now, I have a new concept for you. Asymptotes.
-                
-                Again, our favorite function <bookmark mark="f"/> f of x equals one over x.
-                
-                <bookmark mark="pos"/>
-                When analyzing this function, we can see that for large positive values of x, the function values are very small but positive.
-                They get closer and closer to zero, but never reach zero.
-                
-                <bookmark mark="neg"/>
-                For large negative values of x, the function values are very small but negative. Again, as the values of x get more and more negative,
-                the function values get closer and closer to zero from below, but never reach zero.
-                
-                If you look at the graph, it looks like it is <bookmark mark="hug"/>hugging the x-axis.
-                
-                But we're doing Mathematics here, so we need to find a complicated sounding word to describe this.
-                
-                So, we say that the <bookmark mark="note"/>"x"-axis is an Asymptote of the function f of x.
-                
-                To be precise, the "x"-axis is a horizontal Asymptote of our function f.
-                """
+                text=self.translate("Func_3_2.I1.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
             self.play(Write(f), Write(cords), Write(plotted_left), Write(plotted_right), Write(cursor))
 
             self.wait_until_bookmark("pos")
-            note.change_colors([0])
             x,y,_ = plane.c2p(8,0)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, x, y), run_time=5)
             cursor.blinking=True
 
             self.wait_until_bookmark("neg")
-            note.change_colors([0,1])
             x,y,_ = plane.c2p(-8,0)
             cursor.blinking=False
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
@@ -103,8 +81,6 @@ class Func_3_2_I_1(SophiaCursorScene):
             cursor.blinking=False
             self.play(CursorMarkAxis(cursor, plane), run_time=0.8)
 
-            self.wait_until_bookmark("note")
-            note.change_colors([1,2])
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -189,12 +165,14 @@ class Func_3_2_I_1(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_3_2_I_2_q = SophiaTaskDefinition(
-    answerOptions=["The orange line", "The green Line", "The purple line"],
-    correctAnswerIndex=1,
-    questionText="Which of the lines describes the horizontal asymptote of the function?",
-)
 class Func_3_2_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_2.I2.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_3_2.I2.q.question-text") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -202,10 +180,10 @@ class Func_3_2_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.I2.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -227,22 +205,7 @@ class Func_3_2_I_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here's a question for you and to be fair, you can't really know this, but try to make a guess: <bookmark mark="cords"/>
-                
-                Look at the <bookmark mark="f"/> function that is shown on this graph.
-                
-                Which of the following three lines describes the horizontal Asymptote of this function?
-                
-                <bookmark mark="OrangeLine"/>
-                Is it the orange line?
-                
-                <bookmark mark="GreenLine"/>
-                Is it the green line?
-                
-                <bookmark mark="PurpleLine"/>
-                Or is it the purple line?
-                """
+                text=self.translate("Func_3_2.I2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -271,10 +234,10 @@ class Func_3_2_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.I2.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -296,25 +259,7 @@ class Func_3_2_I_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, that's not right. I admit, it was a bit tricky, so no worries!
-                <bookmark mark="cords"/>
-                
-                So now, why is it indeed the green line that describes the vertical asymptote?
-                When we look at the <bookmark mark="f"/>function, we can see that there are two lines that
-                the function "hugs", so there are two lines that the function gets really close to, but never reaches:
-                One is <bookmark mark="GreenLine"/>the green line,
-                and the other one is <bookmark mark="PurpleLine"/>the purple line.
-                
-                That's also <bookmark mark="note1"/>the reason it can't be the<bookmark mark="OrangeLine"/> orange line: Because the function
-                crosses that line.
-                
-                So now we know, that it has to be <bookmark mark="noOrange"/> either the green line or the purple line
-                that describes the horizontal asymptote.
-                
-                But how do we know which one it is? Easy: <bookmark mark="note2"/>The purple line is a vertical line, and the green line is a horizontal line.
-                Since we're looking for a horizontal asymptote, it <bookmark mark="solution"/> has to be the green line.
-                """
+                text=self.translate("Func_3_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -329,20 +274,13 @@ class Func_3_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("PurpleLine")
             self.play(Write(LinePurple))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("OrangeLine")
             self.play(Write(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("solution")
-            note.change_colors([1,2])
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(10), run_time=1)
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(4), run_time=1)
 
@@ -354,16 +292,16 @@ class Func_3_2_I_2_a(SophiaCursorScene):
 
 class Func_3_2_I_2_b(SophiaCursorScene):
 
-    # Main method for constructing the animation
+# Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.I2.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -385,25 +323,7 @@ class Func_3_2_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Wow, that's correct. I admit, it was a bit tricky, so great job for getting it right!
-                <bookmark mark="cords"/>
-                
-                So now, why is it indeed the green line that describes the vertical asymptote?
-                When we look at the <bookmark mark="f"/>function, we can see that there are two lines that
-                the function "hugs", so there are two lines that the function gets really close to, but never reaches:
-                One is <bookmark mark="GreenLine"/>the green line,
-                and the other one is <bookmark mark="PurpleLine"/>the purple line.
-                
-                That's also <bookmark mark="note1"/>the reason it can't be the<bookmark mark="OrangeLine"/> orange line: Because the function
-                crosses that line.
-                
-                So now we know, that it has to be <bookmark mark="noOrange"/> either the green line or the purple line
-                that describes the horizontal asymptote.
-                
-                But how do we know which one it is? Easy: <bookmark mark="note2"/>The purple line is a vertical line, and the green line is a horizontal line.
-                Since we're looking for a horizontal asymptote, it <bookmark mark="solution"/> has to be the green line.
-                """
+                text=self.translate("Func_3_2.I2.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -418,20 +338,13 @@ class Func_3_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("PurpleLine")
             self.play(Write(LinePurple))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("OrangeLine")
             self.play(Write(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("solution")
-            note.change_colors([1,2])
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(10), run_time=1)
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(4), run_time=1)
 
@@ -447,10 +360,10 @@ class Func_3_2_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.I2.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -472,25 +385,7 @@ class Func_3_2_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Mhm, that's not right. I admit, it was a bit tricky, so no worries!
-                <bookmark mark="cords"/>
-                
-                So now, why is it indeed the green line that describes the vertical asymptote?
-                When we look at the <bookmark mark="f"/>function, we can see that there are two lines that
-                the function "hugs", so there are two lines that the function gets really close to, but never reaches:
-                One is <bookmark mark="GreenLine"/>the green line,
-                and the other one is <bookmark mark="PurpleLine"/>the purple line.
-                
-                That's also <bookmark mark="note1"/>the reason it can't be the<bookmark mark="OrangeLine"/> orange line: Because the function
-                crosses that line.
-                
-                So now we know, that it has to be <bookmark mark="noOrange"/> either the green line or the purple line
-                that describes the horizontal asymptote.
-                
-                But how do we know which one it is? Easy: <bookmark mark="note2"/>The purple line is a vertical line, and the green line is a horizontal line.
-                Since we're looking for a horizontal asymptote, it <bookmark mark="solution"/> has to be the green line.
-                """
+                text=self.translate("Func_3_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -505,20 +400,13 @@ class Func_3_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("PurpleLine")
             self.play(Write(LinePurple))
 
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
-
             self.wait_until_bookmark("OrangeLine")
             self.play(Write(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("solution")
-            note.change_colors([1,2])
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(10), run_time=1)
             self.play(FadeOut(LinePurple), LineGreen.animate.set_stroke_width(4), run_time=1)
 
@@ -535,10 +423,10 @@ class Func_3_2_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.I3.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         plane = cords[0]
@@ -559,24 +447,7 @@ class Func_3_2_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, now let's define what an asymptote actually is. Listen up:
-                
-                An asymptote of <bookmark mark="cords"/>a function f, is a line that the function gets arbitrarily close to, but never reaches.
-                
-                We are considering two types of asymptotes: <bookmark mark="horizontal"/> Horizontal asymptotes, and<bookmark mark="vertical"/> vertical asymptotes.
-                
-                A horizontal asymptote is simply an asymptote that is parallel to <bookmark mark="x"/>the x-axis, so a horizontal line that
-                the function gets arbitrarily close to, but never reaches.
-                
-                <bookmark mark="cursorReset"/>
-                In this example, the green line is a horizontal asymptote.
-                
-                A vertical asymptote on the other hand, is an asymptote that is parallel to <bookmark mark="y"/>the y-axis, so a vertical line that
-                the function gets arbitrarily close to, but never reaches. <bookmark mark="fin"/>
-                
-                In this example, the purple line is a vertical asymptote.
-                """
+                text=self.translate("Func_3_2.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -632,10 +503,10 @@ class horizontalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Consider the function shown here", "Is the green line a horizontal asymptote?", "Is the purple line a horizontal asymptote?"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=["Consider the function shown here", "Is the green line a horizontal asymptote?", "Is the purple line a horizontal asymptote?"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.horizontalAsymptoteQuestionScene.title"))
 
         cords = self.cords
         plane = cords[0]
@@ -652,19 +523,8 @@ class horizontalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.introText}
-                <bookmark mark="note1"/>Consider the function <bookmark mark="cords"/> f that belongs to the graph,
-                which is <bookmark mark="f"/>shown here.
-                
-                <bookmark mark="note2"/>Is the <bookmark mark="green"/>green line a horizontal asymptote of the function?
-                
-                <bookmark mark="note3"/>And what about the purple line, is the <bookmark mark="purple"/>purple line a horizontal asymptote of the function?
-                """
+                text=self.evaluate_string(self.translate("Func_3_2.horizontalAsymptoteQuestionScene.voiceover"))
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(cursor))
@@ -672,14 +532,8 @@ class horizontalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("f")
             self.play(Write(plots))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("green")
             self.play(Write(LineGreen))
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("purple")
             self.play(Write(LinePurple))
@@ -697,10 +551,10 @@ class horizontalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.horizontalAsymptoteAnswerScene.title"))
 
         cords = self.cords
         plane = cords[0]
@@ -719,14 +573,7 @@ class horizontalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.introText}
-                An asymptote of a function f, is a line that the function gets arbitrarily close to, but never reaches.
-                
-                This means the <bookmark mark="green"/>green line is {self.greenText}
-                
-                It also implies that the <bookmark mark="purple"/>purple line {self.purpleText}
-                """
+                text=self.evaluate_string(self.translate("Func_3_2.horizontalAsymptoteAnswerScene.voiceover"))
         ) as tracker:
             
             self.play(Write(cords), Write(cursor), Write(plots))
@@ -751,10 +598,10 @@ class verticalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=["Consider the function shown here", "Is the green line a vertical asymptote?", "Is the purple line a vertical asymptote?"], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=["Consider the function shown here", "Is the green line a vertical asymptote?", "Is the purple line a vertical asymptote?"], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.verticalAsymptoteQuestionScene.title"))
 
         cords = self.cords
         plane = cords[0]
@@ -771,19 +618,8 @@ class verticalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.introText}
-                <bookmark mark="note1"/>Consider the function <bookmark mark="cords"/> f that belongs to the graph,
-                which is <bookmark mark="f"/>shown here.
-                
-                <bookmark mark="note2"/>Is the <bookmark mark="green"/>green line a vertical asymptote of the function?
-                
-                <bookmark mark="note3"/>And what about the purple line, is the <bookmark mark="purple"/>purple line a vertical asymptote of the function?
-                """
+                text=self.evaluate_string(self.translate("Func_3_2.verticalAsymptoteQuestionScene.voiceover"))
         ) as tracker:
-            
-            self.wait_until_bookmark("note1")
-            note.change_colors([0])
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(cursor))
@@ -791,14 +627,8 @@ class verticalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("f")
             self.play(Write(plots))
 
-            self.wait_until_bookmark("note2")
-            note.change_colors([0,1])
-
             self.wait_until_bookmark("green")
             self.play(Write(LineGreen))
-
-            self.wait_until_bookmark("note3")
-            note.change_colors([1,2])
 
             self.wait_until_bookmark("purple")
             self.play(Write(LinePurple))
@@ -816,10 +646,10 @@ class verticalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
-        self.add(note)
+        # note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
+        # self.add(note)
 
-        title = self.add_title("Asymptotes")
+        title = self.add_title(self.translate("Func_3_2.verticalAsymptoteAnswerScene.title"))
 
         cords = self.cords
         plane = cords[0]
@@ -838,14 +668,7 @@ class verticalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.introText}
-                An asymptote of a function f, is a line that the function gets arbitrarily close to, but never reaches.
-                
-                This means the <bookmark mark="green"/>green line is {self.greenText}
-                
-                It also implies that the <bookmark mark="purple"/>purple line {self.purpleText}
-                """
+                text=self.evaluate_string(self.translate("Func_3_2.verticalAsymptoteAnswerScene.voiceover"))
         ) as tracker:
             
             self.play(Write(cords), Write(cursor), Write(plots))
@@ -868,12 +691,14 @@ class verticalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 #####################################
 #####################################
-TASK_Func_3_2_P_1_q = SophiaTaskDefinition(
-    answerOptions=["The Purple line", "The green Line", "Both lines", "neither of the lines"],
-    correctAnswerIndex=1,
-    questionText="Which of the lines describes a horizontal asymptote of the function?",
-)
 class Func_3_2_P_1_q(horizontalAsymptoteQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_2.P1.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Func_3_2.P1.q.question-text") 
+        )
 
     def construct(self):
 
@@ -948,12 +773,14 @@ class Func_3_2_P_1_d(horizontalAsymptoteAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_3_2_P_2_q = SophiaTaskDefinition(
-    answerOptions=["The purple line", "The green Line", "Both lines", "neither of the lines"],
-    correctAnswerIndex=0,
-    questionText="Which of the lines describes a horizontal asymptote of the function?",
-)
 class Func_3_2_P_2_q(verticalAsymptoteQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_2.P1.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Func_3_2.P2.q.question-text") 
+        )
 
     def construct(self):
 
@@ -1030,13 +857,14 @@ class Func_3_2_P_2_d(verticalAsymptoteAnswerScene):
 
 #####################################
 #####################################
-
-TASK_Func_3_2_P_3_q = SophiaTaskDefinition(
-    answerOptions=["The purple line", "The green Line", "Both lines", "neither of the lines"],
-    correctAnswerIndex=2,
-    questionText="Which of the lines describes a horizontal asymptote of the function?",
-)
 class Func_3_2_P_3_q(verticalAsymptoteQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_3_2.P1.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText = self.translate("Func_3_2.P1.q.question-text") 
+        )
 
     def construct(self):
 
@@ -1114,25 +942,25 @@ class Func_3_2_P_3_d(verticalAsymptoteAnswerScene):
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_3_2_I_1),
     PagePrototypeVideo.from_scene(Func_3_2_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_2_I_2_q, Func_3_2_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_2_I_2_q),
     PagePrototypeVideo.from_scene(Func_3_2_I_2_a),
     PagePrototypeVideo.from_scene(Func_3_2_I_2_b),
     PagePrototypeVideo.from_scene(Func_3_2_I_2_c),
     PagePrototypeVideo.from_scene(Func_3_2_I_3),
     PagePrototypeVideo.from_scene(Func_3_2_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_2_P_1_q, Func_3_2_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_2_P_1_q),
     PagePrototypeVideo.from_scene(Func_3_2_P_1_a),
     PagePrototypeVideo.from_scene(Func_3_2_P_1_b),
     PagePrototypeVideo.from_scene(Func_3_2_P_1_c),
     PagePrototypeVideo.from_scene(Func_3_2_P_1_d),
     PagePrototypeVideo.from_scene(Func_3_2_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_2_P_2_q, Func_3_2_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_2_P_2_q),
     PagePrototypeVideo.from_scene(Func_3_2_P_2_a),
     PagePrototypeVideo.from_scene(Func_3_2_P_2_b),
     PagePrototypeVideo.from_scene(Func_3_2_P_2_c),
     PagePrototypeVideo.from_scene(Func_3_2_P_2_d),
     PagePrototypeVideo.from_scene(Func_3_2_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_3_2_P_3_q, Func_3_2_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_3_2_P_3_q),
     PagePrototypeVideo.from_scene(Func_3_2_P_3_a),
     PagePrototypeVideo.from_scene(Func_3_2_P_3_b),
     PagePrototypeVideo.from_scene(Func_3_2_P_3_c),
