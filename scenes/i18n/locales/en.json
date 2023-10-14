@@ -993,12 +993,43 @@
     "P1": {
       "q": {
         "answer-options": "[\"The Purple line\", \"The green Line\", \"Both lines\", \"neither of the lines\"]",
-        "question-text": "Which of the lines describes a horizontal asymptote of the function?"
+        "question-text": "Which of the lines describes a horizontal asymptote of the function?",
+        "intro-text": "Let's practice!"
+      },
+      "a": {
+        "intro-text": "Nope, not quite right! Remember the definition of an Asymptote:",
+        "green-text": "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it.",
+        "purple-text": "is not an asymptote of the function, because the function crosses it."
+      },
+      "c": {
+        "intro-text": "Yep, you got it! Remember the definition of an Asymptote:"
       }
     },
     "P2": {
       "q": {
-        "question-text": "Which of the lines describes a horizontal asymptote of the function?"
+        "question-text": "Which of the lines describes a horizontal asymptote of the function?",
+        "intro-text": "Let's look at vertical asymptotes now."
+      },
+      "a": {
+        "intro-text": "Yep, that is correct! Excellent! Remember the definition of an Asymptote:",
+        "green-text": "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it.",
+        "purple-text": "is not an asymptote of the function, because the function crosses it."
+      },
+      "b": {
+        "intro-text": "Nope, not quite right! Remember the definition of an Asymptote:"
+      }
+    },
+    "P3": {
+      "q": {
+        "intro-text": "Let's look at vertical asymptotes once more."
+      },
+      "a": {
+        "intro-text": "That's not correct. Remember: We defined asymptotes like this:",
+        "green-text": "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it.",
+        "purple-text": "is also an asymptote of the function, again because the function gets arbitrarily close to it, but never reaches it."
+      },
+      "c": {
+        "intro-text": "Yep, that is correct! Excellent! Remember the definition of an Asymptote:"
       }
     }
   },
@@ -1082,6 +1113,248 @@
       },
       "b": {
         "voiceover": "Yep, that's it...\nFirst, let us remind ourselves of the definition of an asymptote.\nAn asymptote is a line that the function approaches, but never reaches.\nWe know that the asymptote of the original function is the <bookmark mark=\"as0\"/>horizontal line at y equals zero.\nNow, let's look at the shifted function. The shifted function <bookmark mark=\"func\"/>is the function\n<bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/> x equals <bookmark mark=\"oneOverX\"/>one over x <bookmark mark=\"plusTwo\"/>plus two, so it's <bookmark mark=\"shiftUp\"/> the original function\nshifted up by two. This means that the asymptote of the shifted function is <bookmark mark=\"cursorBack\"/> the asymptote of\nthe original function shifted up by two. This means, that the horizontal asymptote is at y equals two."
+      }
+    }
+  },
+  "Func_4_1": {
+    "I1": {
+      "q": {
+        "question-text": "Which is not a quadratic function",
+        "title": "Quadratic Functions",
+        "bubble": "[\"One of these\", \"is not a quadratic function!\"]",
+        "voiceover": "So apparently, we're now supposed to learn about quadratic functions.\nIn order to do that, I think it doesn't hurt to find out, what exactly a quadratic function is.\nSo, let's start by looking at three examples.\nThe first example is <bookmark mark=\"f\"/>f of x equals x squared minus one.\nThe second example is <bookmark mark=\"g\"/>g of x equals 0.5 times x squared minus x minus one.\nAnd the third example is <bookmark mark=\"h\"/>h of x equals x cubed minus x squared plus one.\nOut of these three examples, \ntwo are quadratic functions, <bookmark mark=\"moveCursor\"/>and <bookmark mark=\"bubble\"/> one is not a quadratic function. Which one is it?"
+      },
+      "a": {
+        "bubble": "[\"h is not a quadratic function\", \"because it contains $x^3$\"]",
+        "voiceover": "No, that's not correct. <bookmark mark=\"funcWrong\"/> f of x equals x squared minus one is indeed a quadratic function,\nbecause it only contains a quadratic term and a constant. <bookmark mark=\"funcWrong2\"/>\nSo a quadratic function is only allowed to have an <bookmark mark=\"a1\"/>x squared term, an <bookmark mark=\"a2\"/>x term and a <bookmark mark=\"a3\"/>constant term.\nThat means, that <bookmark mark=\"f\"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.\nLikewise, <bookmark mark=\"g\"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.\nFinally, <bookmark mark=\"h\"/>h is not a quadratic function, <bookmark mark=\"xcubed\"/> because it has an x cubed term. <bookmark mark=\"bubble\"/>"
+      },
+      "c": {
+        "voiceover": "Yep, that's right. <bookmark mark=\"funcWrong\"/> h of x equals x cubed minus x squared plus one is not a quadratic function,\nbecause it contains x cubed.<bookmark mark=\"funcWrong2\"/>\nSo a quadratic function is only allowed to have an <bookmark mark=\"a1\"/>x squared term, an <bookmark mark=\"a2\"/>x term and a <bookmark mark=\"a3\"/>constant term.\nThat means, that <bookmark mark=\"f\"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.\nLikewise, <bookmark mark=\"g\"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.\nFinally, <bookmark mark=\"h\"/>h is not a quadratic function, <bookmark mark=\"xcubed\"/> because it has an x cubed term. <bookmark mark=\"bubble\"/>"
+      },
+      "b": {
+        "voiceover": "No, that's not correct. <bookmark mark=\"funcWrong\"/> g of x equals zero point five x squared minus x minus one is indeed a quadratic function,\nbecause it only contains a quadratic term, an x term and a constant term.<bookmark mark=\"funcWrong2\"/>\nSo a quadratic function is only allowed to have an <bookmark mark=\"a1\"/>x squared term, an <bookmark mark=\"a2\"/>x term and a <bookmark mark=\"a3\"/>constant term.\nThat means, that <bookmark mark=\"f\"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.\nLikewise, <bookmark mark=\"g\"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.\nFinally, <bookmark mark=\"h\"/>h is not a quadratic function, <bookmark mark=\"xcubed\"/> because it has an x cubed term. <bookmark mark=\"bubble\"/>"
+      }
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"The blue graph\", \"The purple graph\", \"The green graph\"]",
+        "question-text": "Which of the graphs does not correspond to a quadratic function?",
+        "title": "Quadratic Graphs",
+        "tQ": "Two graphs are quadratic",
+        "fQ": "One is not",
+        "voiceover": "I really like graphs, so now let's look at the graphs of quadratic functions.\nAgain, I have prepared three examples of <bookmark mark=\"cords\"/> graphs.\nAnd again, <bookmark mark=\"two\"/>two of them are graphs of quadratic functions, and <bookmark mark=\"one\"/>one is not a graph of a quadratic function.\nWhich one is not a graph of a quadratic function?\nIs it <bookmark mark=\"blue\"/>the blue graph?\nIs it <bookmark mark=\"purple\"/>the purple graph?\nOr is it <bookmark mark=\"green\"/>the green graph?"
+      },
+      "a": {
+        "bubble": "[\"ends point in opposite directions\", \"$\\\\Rightarrow$ purple graph not quadratic\"]",
+        "voiceover": "No, that's not right.\nQuadratic graphs are always shaped like a U or an upside down U.\nThis means, that the <bookmark mark=\"blue\"/>blue graph is a quadratic graph, because it is shaped like a U.\nThe <bookmark mark=\"purple\"/>purple graph is not a quadratic graph, because it's not shaped like a U.\nAnd the <bookmark mark=\"green\"/>green graph is a quadratic graph again, because it is shaped like a U.\n<bookmark mark=\"Unwrite\"/>Another good way of recognizing that the purple graph is not a quadratic graph,\nis by checking where the two ends are pointing. The right end <bookmark mark=\"right\"/>of the purple graph\nis pointing up, while the left end <bookmark mark=\"left\"/> is pointing down.\nSince the <bookmark mark=\"bubble\"/>two ends are pointing in different directions, the purple graph is not a quadratic graph."
+      },
+      "b": {
+        "voiceover": "Yep, you got it.\nQuadratic graphs are always shaped like a U or an upside down U.\nThis means, that the <bookmark mark=\"blue\"/>blue graph is a quadratic graph, because it is shaped like a U.\nThe <bookmark mark=\"purple\"/>purple graph is not a quadratic graph, because it's not shaped like a U.\nAnd the <bookmark mark=\"green\"/>green graph is a quadratic graph again, because it is shaped like a U.\n<bookmark mark=\"Unwrite\"/>Another good way of recognizing that the purple graph is not a quadratic graph,\nis by checking where the two ends are pointing. The right end <bookmark mark=\"right\"/>of the purple graph\nis pointing up, while the left end <bookmark mark=\"left\"/> is pointing down.\nSince the <bookmark mark=\"bubble\"/>two ends are pointing in different directions, the purple graph is not a quadratic graph."
+      }
+    },
+    "I3": {
+      "title": "Quadratic Functions",
+      "bubble": "[\"$\\\\Rightarrow$ not quadratic\", \"because of $x^3$\"]",
+      "voiceover": "Now, let's formally define quadratic functions.\nA quadratic function is a function of the form <bookmark mark=\"func_general\"/> f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"ax\"/>a\nx squared plus <bookmark mark=\"bx\"/>b x plus <bookmark mark=\"c\"/>c.\nWe call <bookmark mark=\"aa\"/>a, <bookmark mark=\"bb\"/>b and <bookmark mark=\"cc\"/>c the coefficients of the quadratic function.\nThey can be any real numbers, the only restriction is that a <bookmark mark=\"aNot0\"/> cannot be zero.\nSo, for example, <bookmark mark=\"f\"/> f of x equals x squared minus one is a quadratic function with<bookmark mark=\"fExplained\"/>\na equals one, <bookmark mark=\"eb\"/>b equals zero and <bookmark mark=\"ec\"/>c equals minus one.\nA counterexample, so an example that is not a quadratic function is <bookmark mark=\"g\"/> g of x equals 0.5 x cubed minus two x.\ng is <bookmark mark=\"gnot\"/>not a quadratic function, because it contains an <bookmark mark=\"cube\"/>x cubed term.\n<bookmark mark=\"bubble\"/>This is not allowed for quadratic functions."
+    },
+    "I4": {
+      "title": "Parabolas",
+      "voiceover": "The graph of a quadratic function is called a parabola.\nParabolas always have the <bookmark mark=\"plot\"/>shape of a curve, like in our example a curve that looks like an upside down U.\nThey can also have the shape of a slightly tilted U, like the <bookmark mark=\"purple\"/> purple graph.\nThe point where the parabola turns is called the vertex.\nThe vertex of the <bookmark mark=\"blueVertex\"/> blue graph is at the top of the parabola.\nIt is called a <bookmark mark=\"max\"/> maximum, because the function value is the highest at this point.\nThe vertex<bookmark mark=\"purpleVertex\"/> of the purple graph is at the bottom of the parabola.\nIt is called a <bookmark mark=\"min\"/> minimum, because the function value is the lowest at this point.",
+      "tQ": "Two graphs are quadratic",
+      "fQ": "One is not",
+      "bMax": "[\"This vertex\", \"is a maximum\"]",
+      "bMin": "[\"This vertex\", \"is a minimum\"]"
+    },
+    "I5": {
+      "title": "Unit Parabola",
+      "b": "[\"Unit Parabola:\", \"Vertex at the origin\"]",
+      "voiceover": "Now for a special kind of parabola, the <bookmark mark=\"cords\"/>unit parabola.\nThe <bookmark mark=\"unit\"/>unit parabola is the parabola that is created by the function <bookmark mark=\"funcTerm\"/>\nf of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xsquared\"/>x squared.\nIt allows us to study the properties of parabolas and helps us\nrecognize other quadratic functions.\nThe unit parabola is <bookmark mark=\"origin\"/> shaped like a U and has <bookmark mark=\"vertexBubble\"/> its vertex at the origin.\nThe unit parabola has two special properties.\nFirst, it is <bookmark mark=\"posLine\"/> always above or on the x-axis. This means,\nthat <bookmark mark=\"geq0\"/>the function value is always greater or equal to zero.\nSecond, it is <bookmark mark=\"symLine\"/> symmetric to the y-axis. This means, that the function value\nat <bookmark mark=\"symTex\"/> minus x is the same as the <bookmark mark=\"sym2\"/>function value at x."
+    },
+    "I6": {
+      "q": {
+        "answer-options": "[\"The graph moves up\", \"The graph moves down\", \"The graph gets flatter\", \"The graph gets steeper\"]",
+        "title": "Function Term",
+        "voiceover": "    Ok, let's go back to the term of quadratic functions.\n    As we've seen before, the term of a quadratic function has the form <bookmark mark=\"term\"/>f of\n    <bookmark mark=\"x\"/>x equals <bookmark mark=\"xsquared\"/>a x squared plus <bookmark mark=\"bx\"/>b x plus <bookmark mark=\"c\"/>c.\n    But what do the <bookmark mark=\"aa\"/>parameters a, <bookmark mark=\"bb\"/>b and <bookmark mark=\"cc\"/>c mean for the <bookmark mark='graph' />graph of the function?\n    Let's start with the parameter <bookmark mark=\"aaa\"/>a, what happens if we<bookmark mark=\"increaseA\"/> increase a?",
+        "question-text": "What happens, if we increase the value of $a$?"
+      },
+      "a": {
+        "increase-decrease": "[\"Large a\", \"steep graph\", \"Small a\", \"flat graph\"]",
+        "voiceover": "No, that's not quite right.\nNote that in the term of the function, the parameter <bookmark mark=\"a\"/>a is multiplied with x squared. Let's see what that implies.\nWe'll start with <bookmark mark=\"a1\"/> the value of a equals 1 and <bookmark mark=\"a2\"/> slowly start\nincreasing it. As you can see, the graph gets steeper and steeper.\nSo, if we increase the value of a, the graph <bookmark mark=\"a4\"/> gets steeper. If we <bookmark mark=\"decreaseA\"/> decrease a on the other hand,\nthe graph gets flatter. So quick summary: <bookmark mark=\"largeA\"/>large a, steep graph, <bookmark mark=\"smallA\"/>small a, flat graph."
+      },
+      "d": {
+        "voiceover": "Yep, that's right. Well done.\nNote that in the term of the function, the parameter <bookmark mark=\"a\"/>a is multiplied with x squared. Let's see what that implies.\nWe'll start with <bookmark mark=\"a1\"/> the value of a equals 1 and <bookmark mark=\"a2\"/> slowly start\nincreasing it. As you can see, the graph gets steeper and steeper.\nSo, if we increase the value of a, the graph <bookmark mark=\"a4\"/> gets steeper. If we <bookmark mark=\"decreaseA\"/> decrease a on the other hand,\nthe graph gets flatter. So quick summary: <bookmark mark=\"largeA\"/>large a, steep graph, <bookmark mark=\"smallA\"/>small a, flat graph."
+      }
+    },
+    "I7": {
+      "q": {
+        "answer-options": "[\"The graph gets tilted left\", \"The graph gets tilted right\", \"The graph is shifted up\", \"The graph is shifted down\"]",
+        "question-text": "What happens, if we increase the value of $b$?",
+        "title": "Function Term",
+        "voiceover": "Ok, so we're still looking at a <bookmark mark=\"plot\"/> quadratic function with the form <bookmark mark=\"term\"/>f of\n<bookmark mark=\"x\"/>x equals <bookmark mark=\"xsquared\"/>\"a\" x squared plus <bookmark mark=\"bx\"/>b x plus <bookmark mark=\"c\"/>c.\nNow, let's analyze the parameter <bookmark mark=\"bbb\"/>b. What happens to the graph, if we<bookmark mark=\"increaseB\"/> increase b?\nHow will it change?"
+      },
+      "a": {
+        "tl": "graph is tilted left",
+        "tr": "graph is tilted right",
+        "voiceover": "That's correct, nicely done!\nWe can see that in the term of the function, the parameter <bookmark mark=\"b\"/>b is multiplied with x. Let's look at the effects it has on the graph.\nWe'll start with <bookmark mark=\"b1\"/> the value of b equals 0 and <bookmark mark=\"b2\"/> slowly start\nincreasing it. As you can see, the graph gets higher on the right, and lower on the left.\nSo, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark=\"decreaseB\"/> decrease b on the other hand,\nso that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark=\"posB\"/>positive b, graph is tilted left,\n<bookmark mark=\"negB\"/>negative b, graph is tilted right."
+      },
+      "b": {
+        "voiceover": "No, that's not quite right.\nWe can see that in the term of the function, the parameter <bookmark mark=\"b\"/>b is multiplied with x. Let's look at the effects it has on the graph.\nWe'll start with <bookmark mark=\"b1\"/> the value of b equals 0 and <bookmark mark=\"b2\"/> slowly start\nincreasing it. As you can see, the graph gets higher on the right, and lower on the left.\nSo, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark=\"decreaseB\"/> decrease b on the other hand,\nso that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark=\"posB\"/>positive b, graph is tilted left,\n<bookmark mark=\"negB\"/>negative b, graph is tilted right."
+      }
+    }
+  },
+  "Func_X_X": {
+    "I1": {
+      "q": {
+        "question-text": ""
+      }
+    }
+  },
+  "Func_4_2": {
+    "I1": {
+      "q": {
+        "question-text": "How do we shift the unit parabola up?",
+        "answer-options": "[\"$f(x) = x^2 +c,\\, c<0$\", \"$f(x) = x^2 +c,\\, c>0$\", \"$f(x) = (x+c)^2,\\, c>0$\", \"$f(x) = (x+c)^2,\\, c<0$\"]",
+        "title": "Shifting Parabolas",
+        "voiceover": "Like all other functions<bookmark mark=\"f\"/>, quadratic functions can be modified in various ways, for example:\n<bookmark mark=\"origin\"/>They can be shifted <bookmark mark=\"up\"/> up, they can be shifted\n<bookmark mark=\"down\"/>down, they can <bookmark mark=\"reset\"/> be shifted <bookmark mark=\"left\"/>left, and they\ncan be shifted <bookmark mark=\"right\"/>right.\nNow let's take the <bookmark mark=\"unit\"/>unit parabola <bookmark mark=\"f2\"/>f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"xSquared\"/>x squared as an example. <bookmark mark=\"origin2\"/>How do we shift it\n<bookmark mark=\"up2\"/> up? What does the term of the function look like, after we shifted it up?"
+      },
+      "a": {
+        "voiceover": "No, that's not right!\nTo shift the <bookmark mark=\"up\"/>function up, we need every value to be higher by the same amount, so we add\na positive constant c to the function term. The term of the shifted function is therefore <bookmark mark=\"f\"/>f of\n<bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared plus <bookmark mark=\"c\"/>c, where <bookmark mark=\"cGeq0\"/>\nc is greater than zero."
+      },
+      "b": {
+        "voiceover": "Exactly right!\nTo shift the <bookmark mark=\"up\"/>function up, we need every value to be higher by the same amount, so we add\na positive constant c to the function term. The term of the shifted function is therefore <bookmark mark=\"f\"/>f of\n<bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared plus <bookmark mark=\"c\"/>c, where <bookmark mark=\"cGeq0\"/>\nc is greater than zero."
+      }
+    },
+    "I2": {
+      "q": {
+        "question-text": "What is the term of the shifted function?",
+        "voiceover": "Ok, so knowing that to <bookmark mark=\"unitUP\"/>shift the unit parabola up by two, we need to add two to the function term, let's now try to shift\na slightly more <bookmark mark=\"graph\"/>complex quadratic function down: What is the term of the function <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x\nequals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"2x\"/>2x plus <bookmark mark=\"1\"/>1, after we <bookmark mark=\"cursor\"/>shift\nthe graph <bookmark mark=\"down\"/> down by four?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\nWe saw that to shift a function up, we add a positive constant to the entire function term.\nSo to shift the function<bookmark mark=\"down\"/> down, we need to add a negative constant to the entire function term.\nSince we want to shift the function down by four, we subtract four from the function term.\nThis means, the function <bookmark mark=\"fOld\"/>f of <bookmark mark=\"xOld\"/>x equals <bookmark mark=\"xSquaredOld\"/>x\nsquared minus <bookmark mark=\"2xOld\"/>two x plus <bookmark mark=\"oneOldOld\"/>one  turns into  <bookmark mark=\"f\"/>\nf of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"2x\"/>2x minus\n<bookmark mark=\"3\"/>3. As you can see, the <bookmark mark=\"plusOne\"/>plus one from the original term turned into a\n<bookmark mark=\"minusThree\"/>minus three."
+      },
+      "d": {
+        "voiceover": "Yep, that's it. Good work!\nWe saw that to shift a function up, we add a positive constant to the entire function term.\nSo to shift the function<bookmark mark=\"down\"/> down, we need to add a negative constant to the entire function term.\nSince we want to shift the function down by four, we subtract four from the function term.\nThis means, the function <bookmark mark=\"fOld\"/>f of <bookmark mark=\"xOld\"/>x equals <bookmark mark=\"xSquaredOld\"/>x\nsquared minus <bookmark mark=\"2xOld\"/>two x plus <bookmark mark=\"oneOldOld\"/>one  turns into  <bookmark mark=\"f\"/>\nf of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"2x\"/>2x minus\n<bookmark mark=\"3\"/>3. As you can see, the <bookmark mark=\"plusOne\"/>plus one from the original term turned into a\n<bookmark mark=\"minusThree\"/>minus three."
+      }
+    },
+    "I3": {
+      "title": "Shifting sideways",
+      "voiceover": "Shifting <bookmark mark=\"parabola\"/>parabolas up and down is not too difficult. <bookmark mark=\"origin\"/>\nShifting them <bookmark mark=\"sideWays\"/> sideways however is a bit harder. But worry not! Together,\nwe'll learn it in no time. Before we start with an example, let's build a bit of intuition using our\nfavorite function <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"xSquared\"/>x squared. Now we want to shift the function <bookmark mark=\"origin2\"/>to\nthe side, say <bookmark mark=\"twoRight\"/>by two units to the right. That means, that every point on\nthe parabola is shifted two points to the right. So the point <bookmark mark=\"f0\"/>f of zero is shifted\nto the point <bookmark mark=\"f2\"/>f of two. The point <bookmark mark=\"f1\"/>f of one is shifted to the point\n<bookmark mark=\"f3\"/>f of three and so on.\nSo we see, that the value <bookmark mark=\"t10\"/> f of two after the shift is what used to be the point\n<bookmark mark=\"t11\"/>f of zero before the shift. So we can say, that the value <bookmark mark=\"t20\"/>\nx equals two after the shift is what used to be the value <bookmark mark=\"t21\"/>x equals zero before the\nshift. To achieve this, we need to <bookmark mark=\"t3\"/> subtract two from the x value. So we can say, that the function\nis shifted two units to the right, if we subtract two from the x value..."
+    },
+    "I4": {
+      "q": {
+        "question-text": "What is the term of the shfited function?",
+        "voiceover": "Now we want to shift the function <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two\nto <bookmark mark=\"shift\"/>the left by two. What is the term of the shifted function?"
+      },
+      "a": {
+        "voiceover": "No. So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?"
+      },
+      "c": {
+        "voiceover": "Yes, you got it right! So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?"
+      }
+    },
+    "I5": {
+      "q": {
+        "question-text": "What is the term of the shifted function? (1.5 to the right)",
+        "voiceover": "Shifting a parabola <bookmark mark=\"left\"/>left is achieved by adding a number to what we plug in for x. Shifting a parabola <bookmark mark=\"right\"/>right is\nachieved by subtracting a number from what we plug in for x. <bookmark mark=\"reset\"/>  Now let's apply this insight to a slightly harder function.\nWe want to shift the function <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusThree\"/>three x\nto <bookmark mark=\"shift\"/>the right by one point five. What is the term of the shifted function?"
+      },
+      "a": {
+        "voiceover": "No, that's wrong. We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
+      },
+      "d": {
+        "voiceover": "Yep, that's it. well done. We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
+      }
+    }
+  },
+  "Func_4_3": {
+    "I1": {
+      "q": {
+        "answer-options": "[\"The parabola remains the same\", \"The parabola gets much flatter\", \"The parabola is reflected along the x-axis\", \"The parabola is shifted down\"]",
+        "question-text": "What happens if we set a to $-1$?",
+        "title": "Scaling Parabolas",
+        "voiceover": "Parabolas can also be modified by scaling them. For example, we<bookmark mark=\"cursorInPos\"/> can make them <bookmark mark=\"steeper\"/>steeper, so that they rise faster.\nOr we can make them <bookmark mark=\"flatter\"/>flatter, so that they rise more slowly. If<bookmark mark=\"f\"/> we write the function as f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/> a times <bookmark mark=\"xSquared\"/>x squared, then the value of a determines how steep the<bookmark mark=\"cursorInPos2\"/> parabola is.\nFor <bookmark mark=\"large\"/> larger values of a, the parabola is steeper, and for <bookmark mark=\"small\"/> smaller values of a, the parabola is flatter.\nBut what will happen, if a is below zero, like negative one for example?"
+      },
+      "a": {
+        "voiceover": "No, that's not it. If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
+      },
+      "c": {
+        "voiceover": "Yep, that's it, very good. If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
+      }
+    },
+    "ScaleQuestionScene": {
+      "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nNow, we want to<bookmark mark=\"scale\"/> scale it, so that it goes through the point <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]}.\n{self.question}"
+    },
+    "ScaleAnswerScene": {
+      "voiceover": "If we plug {xx} into the unit parabola, we obtain <bookmark mark=\"square\"/>the value {xx**2}.\nThat means<bookmark mark=\"cursorInPos\"/>, we have to <bookmark mark=\"scale\"/>scale it by a factor of a equals {np.abs(yy)} over {xx**2},\nwhich equals {abs}. <bookmark mark=\"flip\"/>{self.flip}\nThat means, <bookmark mark=\"final\"/> the correct factor is <bookmark mark=\"af\"/>a equals <bookmark mark=\"afrac\"/>{yy} over {xx**2} which is equal to <bookmark mark=\"ff\"/>{sign*abs}"
+    },
+    "P1": {
+      "q": {
+        "question-text": "What value do we choose for $a$, so that the function goes through the point $(2,-2)$?",
+        "intro": "Okay, so we're starting with the Unit Parabola",
+        "question": "How do we scale it, so that it goes through the point (2,-2)?"
+      },
+      "a": {
+        "intro": "That's correct.",
+        "question": "How do we scale it, so that it goes through the point (2,-2)?",
+        "flip": "And we also have to flip it, because the point is below the x-axis."
+      },
+      "b": {
+        "intro": "No, that's not it."
+      }
+    },
+    "P2": {
+      "q": {
+        "question-text": "What value do we choose for $a$??",
+        "intro": "Again, starting from the Unit Parabola",
+        "question": "How do we scale it, so that it goes through the point (-2,-4)?"
+      },
+      "a": {
+        "intro": "no, that's not right...",
+        "flip": "And we have to flip it too, because the point is negative."
+      },
+      "d": {
+        "intro": "Congrats, you got it right"
+      }
+    },
+    "P3": {
+      "q": {
+        "question-text": "What value do we choose for $a$?",
+        "intro": "Like previously, we're starting with f of x equals x squared",
+        "question": "How do we scale it, so that it goes through the point (1,0.5)?"
+      },
+      "a": {
+        "intro": "Yep, that's right, well done."
+      },
+      "b": {
+        "intro": "no, that's not right..."
+      }
+    }
+  },
+  "Func_4_5": {
+    "I1": {
+      "q": {
+        "question-text": "Which is not a quadratic function?",
+        "title": "Quadratic Functions",
+        "voiceover": "What can quadratic functions look like?\nAnd what do quadratic functions never look like?\nLet's start with these three functions:\nThe first is <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fx2\"/> x squared minus <bookmark mark=\"f2\"/> 2.\nThe second is <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gx2\"/> x squared times open bracket\n<bookmark mark=\"gxb\"/> x minus<bookmark mark=\"g1\"/> one close bracket.\nAnd the third is <bookmark mark=\"h\"/> h of x<bookmark mark=\"hx\"/> equals open bracket <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>two close bracket\ntimes open bracket <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>two close bracket.\nNow which of the three is not a quadratic function?"
+      },
+      "a": {
+        "voiceover": "No, that's wrong.\nThis question was about the structures of quadratic functions.\nThe first function, <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fx2\"/> x squared minus <bookmark mark=\"f2\"/> 2\nis clearly a quadratic function. It is a unit parabola, shifted down by two.\nThe second one, <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gx2\"/> x squared times open bracket\n<bookmark mark=\"gxb\"/> x minus<bookmark mark=\"g1\"/> one close bracket is tricky. At first glance, you might think it's a quadratic function, because\nit has an x squared term. But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark=\"m1\"/>\nyou get x to the power of three. So g is not a quadratic function.\nFinally, <bookmark mark=\"h\"/> h of x<bookmark mark=\"hx\"/> equals open bracket <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>two close bracket\ntimes open bracket <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>two close bracket is also tricky. Why? Because at first glance, you might be\ntempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark=\"m2\"/>\nthe two brackets, you get x squared. So h is also a quadratic function."
+      },
+      "b": {
+        "voiceover": "You got it! Nice...\nThis question was about the structures of quadratic functions.\nThe first function, <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fx2\"/> x squared minus <bookmark mark=\"f2\"/> 2\nis clearly a quadratic function. It is a unit parabola, shifted down by two.\nThe second one, <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gx2\"/> x squared times open bracket\n<bookmark mark=\"gxb\"/> x minus<bookmark mark=\"g1\"/> one close bracket is tricky. At first glance, you might think it's a quadratic function, because\nit has an x squared term. But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark=\"m1\"/>\nyou get x to the power of three. So g is not a quadratic function.\nFinally, <bookmark mark=\"h\"/> h of x<bookmark mark=\"hx\"/> equals open bracket <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>two close bracket\ntimes open bracket <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>two close bracket is also tricky. Why? Because at first glance, you might be\ntempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark=\"m2\"/>\nthe two brackets, you get x squared. So h is also a quadratic function."
+      }
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"We can easily determine the location of the vertex\", \"We can easily determine the location of the zeros\", \"We can easily determine the location of the y-intercept\"]",
+        "question-text": "What is the advantage of the vertex form?",
+        "title": "Vertex Form",
+        "voiceover": "Why do we want to write quadratic functions in different forms? Isn't it enough to have them in the shape\n<bookmark mark=\"funcTerm\"/> f of <bookmark mark=\"funcTermX\"/>x equals <bookmark mark=\"funcTermAx2\"/> a\nx squared plus <bookmark mark=\"funcTermB\"/> b x <bookmark mark=\"funcTermC\"/>plus c?\nWell, like always, the answer is: it depends! <bookmark mark=\"fOut\"/>Sometimes, it's easier to understand the structure of a function\nif it's written in a different form. Let's look at an example: <bookmark mark=\"1f\"/>f of <bookmark mark=\"1x\"/>x equals <bookmark mark=\"1neg2\"/> negative\ntwo times open bracket <bookmark mark=\"1x2\"/>x minus<bookmark mark=\"1xM2\"/> two close bracket squared plus\n<bookmark mark=\"13\"/> three. This is a quadratic function. But it's not written in the form we just talked about.\nInstead, it's written in the so-called <bookmark mark=\"vertexForm\"/>Vertex Form. Now look at the <bookmark mark=\"graph\"/> graph of this function\nand try to tell me: What is the advantage of using the vertex form? I'll give you a hint: Think about the name of the form."
+      },
+      "a": {
+        "voiceover": "Yep, that's it. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.\nSo, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark=\"vertex\"/>vertex is the point where\nthe function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.\nNow look at the term of the function. It consists of two parts: The part that is <bookmark mark=\"square\"/>squared, and the <bookmark mark=\"3\"/>three that is added.\nNow, we want to find the value of <bookmark mark=\"x\"/>x for which the value of f is the highest, and we want to find that highest value.\nNow look at the two parts again. The <bookmark mark=\"square2\"/>squared part is multiplied with negative two, so we want it to be as small as possible.\nSince it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.\nNow all that is left is <bookmark mark=\"three\"/> the second part, which only consists of a three. <bookmark mark=\"sol\"/> That means, that the highest value of f is three.\nIn summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.\nWe found this, because we started from the vertex form and then first, read off how to get<bookmark mark=\"square3\"/> the squared term to zero, and then looked at\nthe<bookmark mark=\"33\"/> second part."
+      },
+      "b": {
+        "voiceover": "Nope, that's wrong. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.\nSo, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark=\"vertex\"/>vertex is the point where\nthe function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.\nNow look at the term of the function. It consists of two parts: The part that is <bookmark mark=\"square\"/>squared, and the <bookmark mark=\"3\"/>three that is added.\nNow, we want to find the value of <bookmark mark=\"x\"/>x for which the value of f is the highest, and we want to find that highest value.\nNow look at the two parts again. The <bookmark mark=\"square2\"/>squared part is multiplied with negative two, so we want it to be as small as possible.\nSince it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.\nNow all that is left is <bookmark mark=\"three\"/> the second part, which only consists of a three. <bookmark mark=\"sol\"/> That means, that the highest value of f is three.\nIn summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.\nWe found this, because we started from the vertex form and then first, read off how to get<bookmark mark=\"square3\"/> the squared term to zero, and then looked at\nthe<bookmark mark=\"33\"/> second part."
       }
     }
   }

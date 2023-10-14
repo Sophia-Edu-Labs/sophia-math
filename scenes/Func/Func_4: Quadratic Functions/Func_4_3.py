@@ -16,25 +16,29 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_4_3_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["The parabola remains the same", "The parabola gets much flatter", "The parabola is reflected along the x-axis", "The parabola is shifted down"],
-    correctAnswerIndex = 2,
-    questionText = "What happens if we set a to $-1$?"
-)
-
 class Func_4_3_I_1_q(SophiaCursorScene):
+    
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_3.I1.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText=self.translate("Func_4_3.I1.q.question-text")
+        )
+
+
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -61,13 +65,7 @@ class Func_4_3_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Parabolas can also be modified by scaling them. For example, we<bookmark mark="cursorInPos"/> can make them <bookmark mark="steeper"/>steeper, so that they rise faster.
-                Or we can make them <bookmark mark="flatter"/>flatter, so that they rise more slowly. If<bookmark mark="f"/> we write the function as f of <bookmark mark="x"/> x equals
-                <bookmark mark="a"/> a times <bookmark mark="xSquared"/>x squared, then the value of a determines how steep the<bookmark mark="cursorInPos2"/> parabola is.
-                For <bookmark mark="large"/> larger values of a, the parabola is steeper, and for <bookmark mark="small"/> smaller values of a, the parabola is flatter.
-                But what will happen, if a is below zero, like negative one for example?
-                """
+                text=self.translate("Func_4_3.I1.q.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -141,7 +139,7 @@ class Func_4_3_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -168,10 +166,7 @@ class Func_4_3_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. If we set a to negative one, we multiply every value with <bookmark mark="cursorInPos"/>negative one.
-                That means every value,<bookmark mark="flip"/> and thus the entire function is reflected along the x-axis.
-                """
+                text=self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -202,7 +197,7 @@ class Func_4_3_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -229,10 +224,7 @@ class Func_4_3_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. If we set a to negative one, we multiply every value with <bookmark mark="cursorInPos"/>negative one.
-                That means every value,<bookmark mark="flip"/> and thus the entire function is reflected along the x-axis.
-                """
+                text=self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -263,7 +255,7 @@ class Func_4_3_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -290,10 +282,7 @@ class Func_4_3_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it, very good. If we set a to negative one, we multiply every value with <bookmark mark="cursorInPos"/>negative one.
-                That means every value,<bookmark mark="flip"/> and thus the entire function is reflected along the x-axis.
-                """
+                text=self.translate("Func_4_3.I1.c.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -325,7 +314,7 @@ class Func_4_3_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -352,10 +341,7 @@ class Func_4_3_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. If we set a to negative one, we multiply every value with <bookmark mark="cursorInPos"/>negative one.
-                That means every value,<bookmark mark="flip"/> and thus the entire function is reflected along the x-axis.
-                """
+                text=self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -401,7 +387,7 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -429,11 +415,7 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}<bookmark mark="cursorInPos"/>
-                Now, we want to<bookmark mark="scale"/> scale it, so that it goes through the point <bookmark mark="markPoint"/>{self.point[0], self.point[1]}.
-                {self.question}
-                """
+                text=self.evaluate_string(self.translate("Func_4_3.ScaleQuestionScene.voiceover"))
         ) as tracker:
 
             cursor.blinking=False
@@ -472,7 +454,7 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Scaling Parabolas")
+        self.add_title(self.translate("Func_4_3.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -505,12 +487,7 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                If we plug {xx} into the unit parabola, we obtain <bookmark mark="square"/>the value {xx**2}.
-                That means<bookmark mark="cursorInPos"/>, we have to <bookmark mark="scale"/>scale it by a factor of a equals {np.abs(yy)} over {xx**2},
-                which equals {abs}. <bookmark mark="flip"/>{self.flip}
-                That means, <bookmark mark="final"/> the correct factor is <bookmark mark="af"/>a equals <bookmark mark="afrac"/>{yy} over {xx**2} which is equal to <bookmark mark="ff"/>{sign*abs}
-                """
+                text=self.evaluate_string(self.translate("Func_4_3.ScaleAnswerScene.voiceover"))
         ) as tracker:
 
             cursor.blinking=False
@@ -577,18 +554,20 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 #####################################
 #####################################
-TASK_Func_4_3_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["$-0.5$", "$0.5$", "$-2$", "$2$"],
-    correctAnswerIndex = 0,
-    questionText = "What value do we choose for $a$, so that the function goes through the point $(2,-2)$?"
-)
 class Func_4_3_P_1_q(ScaleQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-0.5$", "$0.5$", "$-2$", "$2$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_4_3.P1.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Okay, so we're starting with the Unit Parabola"
+        self.intro = self.translate("Func_4_3.P1.q.intro")
         self.point = [2,-2]
-        self.question = "How do we scale it, so that it goes through the point (2,-2)?"
+        self.question = self.translate("Func_4_3.P1.q.question")
         super().construct()
 
 
@@ -596,10 +575,10 @@ class Func_4_3_P_1_a(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "That's correct."
         self.point = [2,-2]
-        self.question = "How do we scale it, so that it goes through the point (2,-2)?"
-        self.flip = "And we also have to flip it, because the point is below the x-axis."
+        self.intro = self.translate("Func_4_3.P1.a.intro")
+        self.question = self.translate("Func_4_3.P1.a.question")
+        self.flip = self.translate("Func_4_3.P1.a.flip")
         super().construct()
 
 
@@ -607,46 +586,48 @@ class Func_4_3_P_1_b(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
         self.point = [2,-2]
-        self.question = "How do we scale it, so that it goes through the point (2,-2)?"
-        self.flip = "And we also have to flip it, because the point is below the x-axis."
+        self.intro = self.translate("Func_4_3.P1.b.intro")
+        self.question = self.translate("Func_4_3.P1.a.question")
+        self.flip = self.translate("Func_4_3.P1.a.flip")
         super().construct()
 
 class Func_4_3_P_1_c(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
         self.point = [2,-2]
-        self.question = "How do we scale it, so that it goes through the point (2,-2)?"
-        self.flip = "And we also have to flip it, because the point is below the x-axis."
+        self.intro = self.translate("Func_4_3.P1.b.intro")
+        self.question = self.translate("Func_4_3.P1.a.question")
+        self.flip = self.translate("Func_4_3.P1.a.flip")
         super().construct()
 
 class Func_4_3_P_1_d(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
         self.point = [2,-2]
-        self.question = "How do we scale it, so that it goes through the point (2,-2)?"
-        self.flip = "And we also have to flip it, because the point is below the x-axis."
+        self.intro = self.translate("Func_4_3.P1.b.intro")
+        self.question = self.translate("Func_4_3.P1.a.question")
+        self.flip = self.translate("Func_4_3.P1.a.flip")
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_4_3_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["$\\tfrac 12$", "$-\\tfrac 12$", "$1$", "$-1$"],
-    correctAnswerIndex = 3,
-    questionText = "What value do we choose for $a$??"
-)
 class Func_4_3_P_2_q(ScaleQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\tfrac 12$", "$-\\tfrac 12$", "$1$", "$-1$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_4_3.P2.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Again, starting from the Unit Parabola"
+        self.intro = self.translate("Func_4_3.P2.q.intro")
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (-2,-4)?"
+        self.question = self.translate("Func_4_3.P2.q.question")
         super().construct()
 
 
@@ -654,56 +635,58 @@ class Func_4_3_P_2_a(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (-2,-4)?"
-        self.flip = "And we have to flip it too, because the point is negative."
+        self.intro = self.translate("Func_4_3.P2.a.intro")
+        self.question = self.translate("Func_4_3.P2.q.question")
+        self.flip = self.translate("Func_4_3.P2.a.flip")
         super().construct()
 
 class Func_4_3_P_2_b(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (-2,-4)?"
-        self.flip = "And we have to flip it too, because the point is negative."
+        self.intro = self.translate("Func_4_3.P2.a.intro")
+        self.question = self.translate("Func_4_3.P2.q.question")
+        self.flip = self.translate("Func_4_3.P2.a.flip")
         super().construct()
 
 class Func_4_3_P_2_c(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (-2,-4)?"
-        self.flip = "And we have to flip it too, because the point is negative."
+        self.intro = self.translate("Func_4_3.P2.a.intro")
+        self.question = self.translate("Func_4_3.P2.q.question")
+        self.flip = self.translate("Func_4_3.P2.a.flip")
         super().construct()
 
 class Func_4_3_P_2_d(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "Congrats, you got it right"
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (-2,-4)?"
-        self.flip = "And we have to flip it too, because the point is negative."
+        self.intro = self.translate("Func_4_3.P2.d.intro")
+        self.question = self.translate("Func_4_3.P2.q.question")
+        self.flip = self.translate("Func_4_3.P2.a.flip")
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_4_3_P_3_q = SophiaTaskDefinition(
-    answerOptions = ["$\\tfrac 12$", "$-\\tfrac 12$", "$1$", "$-1$"],
-    correctAnswerIndex = 0,
-    questionText = "What value do we choose for $a$??"
-)
 class Func_4_3_P_3_q(ScaleQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\tfrac 12$", "$-\\tfrac 12$", "$1$", "$-1$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_4_3.P3.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Like previously, we're starting with f of x equals x squared"
         self.point = [1,0.5]
-        self.question = "How do we scale it, so that it goes through the point (1,0.5)?"
+        self.intro = self.translate("Func_4_3.P3.q.intro")
+        self.question = self.translate("Func_4_3.P3.q.question")
         super().construct()
 
 
@@ -711,9 +694,9 @@ class Func_4_3_P_3_a(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "Yep, that's right, well done."
+        self.intro = self.translate("Func_4_3.P3.a.intro")
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (1,0.5)?"
+        self.question = self.translate("Func_4_3.P3.q.question")
         self.flip = ""
         super().construct()
 
@@ -721,9 +704,9 @@ class Func_4_3_P_3_b(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (1,0.5)?"
+        self.intro = self.translate("Func_4_3.P3.b.intro")
+        self.question = self.translate("Func_4_3.P3.q.question")
         self.flip = ""
         super().construct()
 
@@ -731,9 +714,9 @@ class Func_4_3_P_3_c(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (1,0.5)?"
+        self.intro = self.translate("Func_4_3.P3.b.intro")
+        self.question = self.translate("Func_4_3.P3.q.question")
         self.flip = ""
         super().construct()
 
@@ -741,34 +724,34 @@ class Func_4_3_P_3_d(ScaleAnswerScene):
 
     def construct(self):
 
-        self.intro = "no, that's not right..."
         self.point = [-2,-4]
-        self.question = "How do we scale it, so that it goes through the point (1,0.5)?"
+        self.intro = self.translate("Func_4_3.P3.b.intro")
+        self.question = self.translate("Func_4_3.P3.q.question")
         self.flip = ""
         super().construct()
 
 
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_4_3_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_3_I_1_q, Func_4_3_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_3_I_1_q),
     PagePrototypeVideo.from_scene(Func_4_3_I_1_a),
     PagePrototypeVideo.from_scene(Func_4_3_I_1_b),
     PagePrototypeVideo.from_scene(Func_4_3_I_1_c),
     PagePrototypeVideo.from_scene(Func_4_3_I_1_d),
     PagePrototypeVideo.from_scene(Func_4_3_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_3_P_1_q, Func_4_3_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_3_P_1_q),
     PagePrototypeVideo.from_scene(Func_4_3_P_1_a),
     PagePrototypeVideo.from_scene(Func_4_3_P_1_b),
     PagePrototypeVideo.from_scene(Func_4_3_P_1_c),
     PagePrototypeVideo.from_scene(Func_4_3_P_1_d),
     PagePrototypeVideo.from_scene(Func_4_3_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_3_P_2_q, Func_4_3_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_3_P_2_q),
     PagePrototypeVideo.from_scene(Func_4_3_P_2_a),
     PagePrototypeVideo.from_scene(Func_4_3_P_2_b),
     PagePrototypeVideo.from_scene(Func_4_3_P_2_c),
     PagePrototypeVideo.from_scene(Func_4_3_P_2_d),
     PagePrototypeVideo.from_scene(Func_4_3_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_3_P_3_q, Func_4_3_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_3_P_3_q),
     PagePrototypeVideo.from_scene(Func_4_3_P_3_a),
     PagePrototypeVideo.from_scene(Func_4_3_P_3_b),
     PagePrototypeVideo.from_scene(Func_4_3_P_3_c),

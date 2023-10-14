@@ -16,18 +16,19 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_4_1_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x) = x^2 - 1$", "$g(x) = 0.5x^2 - x - 1$", "$h(x) = x^3 - x^2 + 1$"],
-    correctAnswerIndex = 2,
-    questionText = "Which is not a quadratic function?"
-)
-
 class Func_4_1_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$f(x) = x^2 - 1$", "$g(x) = 0.5x^2 - x - 1$", "$h(x) = x^3 - x^2 + 1$"],
+            correctAnswerIndex=2,
+            questionText=self.translate("Func_4_1.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -35,7 +36,7 @@ class Func_4_1_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -53,21 +54,12 @@ class Func_4_1_I_1_q(SophiaCursorScene):
         func3 = MathTex("h(x)", " = x^3 - x^2 + 1", color=c1t, font_size=fs2)
         funcs = VGroup(func1, func2, func3).arrange(DOWN, buff=0.5, aligned_edge=LEFT)
         start_point = func3[0].get_center()+0.4*DOWN
-        b = Bubble(["One of these", "is not a quadratic function!"], width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I1.q.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So apparently, we're now supposed to learn about quadratic functions.
-                In order to do that, I think it doesn't hurt to find out, what exactly a quadratic function is.
-                So, let's start by looking at three examples.
-                The first example is <bookmark mark="f"/>f of x equals x squared minus one.
-                The second example is <bookmark mark="g"/>g of x equals 0.5 times x squared minus x minus one.
-                And the third example is <bookmark mark="h"/>h of x equals x cubed minus x squared plus one.
-                Out of these three examples, 
-                two are quadratic functions, <bookmark mark="moveCursor"/>and <bookmark mark="bubble"/> one is not a quadratic function. Which one is it?
-                """
+                text=self.translate("Func_4_1.I1.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -112,7 +104,7 @@ class Func_4_1_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -133,20 +125,13 @@ class Func_4_1_I_1_a(SophiaCursorScene):
         func3 = MathTex("h(x)", " =" ,"x^3","- x^2 + 1", color=c1t, font_size=fs2)
         funcs = VGroup(func1, func2, func3).arrange(DOWN, buff=0.5, aligned_edge=LEFT)
         start_point = func3[2].get_center()+0.4*DOWN
-        b = Bubble(["h is not a quadratic function", "because it contains $x^3$"], width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I1.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
         funcWrong = MathTex("f(x) = x^2 - 1", color=c1t, font_size=fs2)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not correct. <bookmark mark="funcWrong"/> f of x equals x squared minus one is indeed a quadratic function,
-                because it only contains a quadratic term and a constant. <bookmark mark="funcWrong2"/>
-                So a quadratic function is only allowed to have an <bookmark mark="a1"/>x squared term, an <bookmark mark="a2"/>x term and a <bookmark mark="a3"/>constant term.
-                That means, that <bookmark mark="f"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.
-                Likewise, <bookmark mark="g"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.
-                Finally, <bookmark mark="h"/>h is not a quadratic function, <bookmark mark="xcubed"/> because it has an x cubed term. <bookmark mark="bubble"/>
-                """
+                text=self.translate("Func_4_1.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
@@ -213,7 +198,7 @@ class Func_4_1_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -240,14 +225,7 @@ class Func_4_1_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not correct. <bookmark mark="funcWrong"/> g of x equals zero point five x squared minus x minus one is indeed a quadratic function,
-                because it only contains a quadratic term, an x term and a constant term.<bookmark mark="funcWrong2"/>
-                So a quadratic function is only allowed to have an <bookmark mark="a1"/>x squared term, an <bookmark mark="a2"/>x term and a <bookmark mark="a3"/>constant term.
-                That means, that <bookmark mark="f"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.
-                Likewise, <bookmark mark="g"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.
-                Finally, <bookmark mark="h"/>h is not a quadratic function, <bookmark mark="xcubed"/> because it has an x cubed term. <bookmark mark="bubble"/>
-                """
+                text=self.translate("Func_4_1.I1.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
@@ -313,7 +291,7 @@ class Func_4_1_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -339,14 +317,7 @@ class Func_4_1_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right. <bookmark mark="funcWrong"/> h of x equals x cubed minus x squared plus one is not a quadratic function,
-                because it contains x cubed.<bookmark mark="funcWrong2"/>
-                So a quadratic function is only allowed to have an <bookmark mark="a1"/>x squared term, an <bookmark mark="a2"/>x term and a <bookmark mark="a3"/>constant term.
-                That means, that <bookmark mark="f"/>f of x equals x squared minus one is a quadratic function, because it has an x squared term and a constant term.
-                Likewise, <bookmark mark="g"/>g of  x is also a quadratic function, because it has an x squared term, an x term and a constant term.
-                Finally, <bookmark mark="h"/>h is not a quadratic function, <bookmark mark="xcubed"/> because it has an x cubed term. <bookmark mark="bubble"/>
-                """
+                text=self.translate("Func_4_1.I1.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
@@ -408,12 +379,14 @@ class Func_4_1_I_1_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_1_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The purple graph", "The green graph"],
-    correctAnswerIndex = 1,
-    questionText = "Which of the graphs does not correspond to a quadratic function?"
-)
 class Func_4_1_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_1.I2.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_4_1.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -421,7 +394,7 @@ class Func_4_1_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Quadratic Graphs")
+        self.add_title(self.translate("Func_4_1.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -445,21 +418,14 @@ class Func_4_1_I_2_q(SophiaCursorScene):
         g2 = plane.plot(f2, color=PURPLE)
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
-        tQ = Tex("Two graphs are quadratic", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=1)
-        fQ = Tex("One is not", color=RED, font_size=fs2).next_to(tQ, DOWN, buff=0.2)
+        
+        tQ = Tex(self.translate("Func_4_1.I2.q.tQ"), color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=1)
+        fQ = Tex(self.translate("Func_4_1.I2.q.fQ"), color=RED, font_size=fs2).next_to(tQ, DOWN, buff=0.2)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                I really like graphs, so now let's look at the graphs of quadratic functions.
-                Again, I have prepared three examples of <bookmark mark="cords"/> graphs.
-                And again, <bookmark mark="two"/>two of them are graphs of quadratic functions, and <bookmark mark="one"/>one is not a graph of a quadratic function.
-                Which one is not a graph of a quadratic function?
-                Is it <bookmark mark="blue"/>the blue graph?
-                Is it <bookmark mark="purple"/>the purple graph?
-                Or is it <bookmark mark="green"/>the green graph?
-                """
+                text=self.translate("Func_4_1.I2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -509,15 +475,9 @@ class Func_4_1_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Quadratic Graphs")
+        self.add_title(self.translate("Func_4_1.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor()
         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
         self.add(cursor)
 
@@ -535,22 +495,12 @@ class Func_4_1_I_2_a(SophiaCursorScene):
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
         start_point = g2.get_start()+0.2*DOWN
-        b = Bubble(["ends point in opposite directions", "$\\Rightarrow$ purple graph not quadratic"], width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                Quadratic graphs are always shaped like a U or an upside down U.
-                This means, that the <bookmark mark="blue"/>blue graph is a quadratic graph, because it is shaped like a U.
-                The <bookmark mark="purple"/>purple graph is not a quadratic graph, because it's not shaped like a U.
-                And the <bookmark mark="green"/>green graph is a quadratic graph again, because it is shaped like a U.
-                <bookmark mark="Unwrite"/>Another good way of recognizing that the purple graph is not a quadratic graph,
-                is by checking where the two ends are pointing. The right end <bookmark mark="right"/>of the purple graph
-                is pointing up, while the left end <bookmark mark="left"/> is pointing down.
-                Since the <bookmark mark="bubble"/>two ends are pointing in different directions, the purple graph is not a quadratic graph.
-                """
+                text=self.translate("Func_4_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -616,15 +566,9 @@ class Func_4_1_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Quadratic Graphs")
+        self.add_title(self.translate("Func_4_1.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor()
         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
         self.add(cursor)
 
@@ -642,22 +586,12 @@ class Func_4_1_I_2_b(SophiaCursorScene):
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
         start_point = g2.get_start()+0.2*DOWN
-        b = Bubble(["ends point in opposite directions", "$\\Rightarrow$ purple graph not quadratic"], width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, you got it.
-                Quadratic graphs are always shaped like a U or an upside down U.
-                This means, that the <bookmark mark="blue"/>blue graph is a quadratic graph, because it is shaped like a U.
-                The <bookmark mark="purple"/>purple graph is not a quadratic graph, because it's not shaped like a U.
-                And the <bookmark mark="green"/>green graph is a quadratic graph again, because it is shaped like a U.
-                <bookmark mark="Unwrite"/>Another good way of recognizing that the purple graph is not a quadratic graph,
-                is by checking where the two ends are pointing. The right end <bookmark mark="right"/>of the purple graph
-                is pointing up, while the left end <bookmark mark="left"/> is pointing down.
-                Since the <bookmark mark="bubble"/>two ends are pointing in different directions, the purple graph is not a quadratic graph.
-                """
+                text=self.translate("Func_4_1.I2.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -722,15 +656,9 @@ class Func_4_1_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Quadratic Graphs")
+        self.add_title(self.translate("Func_4_1.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor()
         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
         self.add(cursor)
 
@@ -748,22 +676,12 @@ class Func_4_1_I_2_c(SophiaCursorScene):
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
         start_point = g2.get_start()+0.2*DOWN
-        b = Bubble(["ends point in opposite directions", "$\\Rightarrow$ purple graph not quadratic"], width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                Quadratic graphs are always shaped like a U or an upside down U.
-                This means, that the <bookmark mark="blue"/>blue graph is a quadratic graph, because it is shaped like a U.
-                The <bookmark mark="purple"/>purple graph is not a quadratic graph, because it's not shaped like a U.
-                And the <bookmark mark="green"/>green graph is a quadratic graph again, because it is shaped like a U.
-                <bookmark mark="Unwrite"/>Another good way of recognizing that the purple graph is not a quadratic graph,
-                is by checking where the two ends are pointing. The right end <bookmark mark="right"/>of the purple graph
-                is pointing up, while the left end <bookmark mark="left"/> is pointing down.
-                Since the <bookmark mark="bubble"/>two ends are pointing in different directions, the purple graph is not a quadratic graph.
-                """
+                text=self.translate("Func_4_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -842,7 +760,7 @@ class Func_4_1_I_3(SophiaCursorScene):
         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
         self.add(cursor)
 
-        title = self.add_title("Quadratic Functions")
+        title = self.add_title(self.translate("Func_4_1.I3.title"))
 
         func_general = MathTex("f","(x)", "=", "ax^2", "+bx+","c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.5)
         aNotZero = MathTex("a", "\\neq", "0", color=c1t, font_size=fs2).next_to(func_general, DOWN, buff=0.2)
@@ -856,23 +774,12 @@ class Func_4_1_I_3(SophiaCursorScene):
         g = MathTex("g","(x)", "=", "0.5x^3", "-2x", color=c1t, font_size=fs2).next_to(fExplained, DOWN, buff=0.5)
 
         startpoint = g[3].get_center()+0.4*DOWN
-        b = Bubble(["$\\Rightarrow$ not quadratic", "because of $x^3$"], width=3, height=1, start_point = startpoint, center=[0,-2.4,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I3.bubble")), width=3, height=1, start_point = startpoint, center=[0,-2.4,0], loc="t1")
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now, let's formally define quadratic functions.
-                A quadratic function is a function of the form <bookmark mark="func_general"/> f of <bookmark mark="x"/>x equals <bookmark mark="ax"/>a
-                x squared plus <bookmark mark="bx"/>b x plus <bookmark mark="c"/>c.
-                We call <bookmark mark="aa"/>a, <bookmark mark="bb"/>b and <bookmark mark="cc"/>c the coefficients of the quadratic function.
-                They can be any real numbers, the only restriction is that a <bookmark mark="aNot0"/> cannot be zero.
-                So, for example, <bookmark mark="f"/> f of x equals x squared minus one is a quadratic function with<bookmark mark="fExplained"/>
-                a equals one, <bookmark mark="eb"/>b equals zero and <bookmark mark="ec"/>c equals minus one.
-                A counterexample, so an example that is not a quadratic function is <bookmark mark="g"/> g of x equals 0.5 x cubed minus two x.
-                g is <bookmark mark="gnot"/>not a quadratic function, because it contains an <bookmark mark="cube"/>x cubed term.
-                <bookmark mark="bubble"/>This is not allowed for quadratic functions.
-                """
+                text=self.translate("Func_4_1.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_general")
@@ -973,7 +880,7 @@ class Func_4_1_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Parabolas")
+        self.add_title(self.translate("Func_4_1.I4.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -998,22 +905,13 @@ class Func_4_1_I_4(SophiaCursorScene):
         g2 = plane.plot(f2, color=PURPLE)
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
-        tQ = Tex("Two graphs are quadratic", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=1)
-        fQ = Tex("One is not", color=RED, font_size=fs2).next_to(tQ, DOWN, buff=0.2)
+        tQ = Tex(self.translate("Func_4_1.I4.tQ"), color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=1)
+        fQ = Tex(self.translate("Func_4_1.I4.fQ"), color=RED, font_size=fs2).next_to(tQ, DOWN, buff=0.2)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                The graph of a quadratic function is called a parabola.
-                Parabolas always have the <bookmark mark="plot"/>shape of a curve, like in our example a curve that looks like an upside down U.
-                They can also have the shape of a slightly tilted U, like the <bookmark mark="purple"/> purple graph.
-                The point where the parabola turns is called the vertex.
-                The vertex of the <bookmark mark="blueVertex"/> blue graph is at the top of the parabola.
-                It is called a <bookmark mark="max"/> maximum, because the function value is the highest at this point.
-                The vertex<bookmark mark="purpleVertex"/> of the purple graph is at the bottom of the parabola.
-                It is called a <bookmark mark="min"/> minimum, because the function value is the lowest at this point.
-                """
+                text=self.translate("Func_4_1.I4.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plot")
@@ -1044,7 +942,8 @@ class Func_4_1_I_4(SophiaCursorScene):
             cursor.blinking=False
             x,y,_ = plane.c2p(0,4)+0.2*UP
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            bMax = Bubble(["This vertex", "is a maximum"], width=2.2, height=0.8, start_point = plane.c2p(0,4)+0.2*UP, center=[-0.6,2.4,0], loc="b2")
+            
+            bMax = Bubble(ast.literal_eval(self.translate("Func_4_1.I4.bMax")), width=2.2, height=0.8, start_point = plane.c2p(0,4)+0.2*UP, center=[-0.6,2.4,0], loc="b2")
             self.add_bubble_sound(1.5)
             bUpdater = lambda m: m.move_to(bMax.get_end())
             cursor.add_updater(bUpdater)
@@ -1062,7 +961,7 @@ class Func_4_1_I_4(SophiaCursorScene):
             cursor.blinking=False
             x,y,_ = plane.c2p(0.5,-4.25)+0.2*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            bMin = Bubble(["This vertex", "is a minimum"], width=2.2, height=0.8, start_point = plane.c2p(0.5,-4.25)+0.2*DOWN, center=[0.6,-2.6,0], loc="t2")
+            bMin = Bubble(ast.literal_eval(self.translate("Func_4_1.I4.bMin")), width=2.2, height=0.8, start_point = plane.c2p(0.5,-4.25)+0.2*DOWN, center=[0.6,-2.6,0], loc="t2")
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(bMin.get_end()))
             self.play(Create(bMin), Create(bMin.text))
@@ -1082,7 +981,7 @@ class Func_4_1_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Unit Parabola")
+        self.add_title(self.translate("Func_4_1.I5.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1109,25 +1008,13 @@ class Func_4_1_I_5(SophiaCursorScene):
         g1 = plane.plot(f1, color=BLUE)
 
         startpoint = plane.c2p(-0.5,-0.5)
-        b = Bubble(["Unit Parabola:", "Vertex at the origin"], width=3, height=1, start_point = startpoint, center=[0,-1.7,0], loc="t1")
+        b = Bubble(ast.literal_eval(self.translate("Func_4_1.I5.b")), width=3, height=1, start_point = startpoint, center=[0,-1.7,0], loc="t1")
         
         funcTerm = MathTex("f","(x)", "=", "x^2", color=c1t, font_size=fs2).next_to(b, DOWN, buff=0.5)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now for a special kind of parabola, the <bookmark mark="cords"/>unit parabola.
-                The <bookmark mark="unit"/>unit parabola is the parabola that is created by the function <bookmark mark="funcTerm"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>x squared.
-                It allows us to study the properties of parabolas and helps us
-                recognize other quadratic functions.
-                The unit parabola is <bookmark mark="origin"/> shaped like a U and has <bookmark mark="vertexBubble"/> its vertex at the origin.
-                The unit parabola has two special properties.
-                First, it is <bookmark mark="posLine"/> always above or on the x-axis. This means,
-                that <bookmark mark="geq0"/>the function value is always greater or equal to zero.
-                Second, it is <bookmark mark="symLine"/> symmetric to the y-axis. This means, that the function value
-                at <bookmark mark="symTex"/> minus x is the same as the <bookmark mark="sym2"/>function value at x.
-                """
+                text=self.translate("Func_4_1.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -1214,159 +1101,161 @@ class Func_4_1_I_5(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_4_1_I_5(SophiaCursorScene):
+# class Func_4_1_I_5(SophiaCursorScene):
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        self.add_title("Unit Parabola")
+#         self.add_title(self.translate("Func_4_1.I5.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
-        self.add(cursor)
+#         def cursor_sound_updater(mob, dt):
+#             if mob.needSound:
+#                 mob.needSound = False
+#                 self.add_cursor_sound()
+#         cursor = AltCursor(stroke_width=0.0, blinking=True)
+#         cursor.autoFadeBackground = True
+#         cursor.add_updater(cursor_sound_updater)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         self.add(cursor)
 
-        #Create the coordinate system
-        cords = self.add_cords([-2,2, 1], [-2, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-2,2,4]).shift(DOWN)
-        plane = cords[0]
+#         #Create the coordinate system
+#         cords = self.add_cords([-2,2, 1], [-2, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-2,2,4]).shift(DOWN)
+#         plane = cords[0]
 
-        f1 = lambda x: x**2
+#         f1 = lambda x: x**2
         
-        posLine = Line(plane.c2p(2.5,0), plane.c2p(2.5,4), color=GREEN, stroke_width=6)
-        posTex = MathTex("\\geq0", color=GREEN, font_size=fs3).next_to(posLine, RIGHT, buff=0.1)
+#         posLine = Line(plane.c2p(2.5,0), plane.c2p(2.5,4), color=GREEN, stroke_width=6)
+#         posTex = MathTex("\\geq0", color=GREEN, font_size=fs3).next_to(posLine, RIGHT, buff=0.1)
 
-        symLine = Line(plane.c2p(0,-2), plane.c2p(0,4), color=PURPLE, stroke_width=6)
-        symTex = MathTex("f(-x)","=", "f(x)", color=BLUE, font_size=fs2).next_to(symLine, UP, buff=0.4)
+#         symLine = Line(plane.c2p(0,-2), plane.c2p(0,4), color=PURPLE, stroke_width=6)
+#         symTex = MathTex("f(-x)","=", "f(x)", color=BLUE, font_size=fs2).next_to(symLine, UP, buff=0.4)
 
-        g1 = plane.plot(f1, color=BLUE)
+#         g1 = plane.plot(f1, color=BLUE)
 
-        startpoint = plane.c2p(-0.5,-0.5)
-        b = Bubble(["Unit Parabola:", "Vertex at the origin"], width=3, height=1, start_point = startpoint, center=[0,-1.7,0], loc="t1")
+#         startpoint = plane.c2p(-0.5,-0.5)
+#         b = Bubble(["Unit Parabola:", "Vertex at the origin"], width=3, height=1, start_point = startpoint, center=[0,-1.7,0], loc="t1")
         
-        funcTerm = MathTex("f","(x)", "=", "x^2", color=c1t, font_size=fs2).next_to(b, DOWN, buff=0.5)
+#         funcTerm = MathTex("f","(x)", "=", "x^2", color=c1t, font_size=fs2).next_to(b, DOWN, buff=0.5)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-                Now for a special kind of parabola, the <bookmark mark="cords"/>unit parabola.
-                The <bookmark mark="unit"/>unit parabola is the parabola that is created by the function <bookmark mark="funcTerm"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>x squared.
-                It allows us to study the properties of parabolas and helps us
-                recognize other quadratic functions.
-                The unit parabola is <bookmark mark="origin"/> shaped like a U and has <bookmark mark="vertexBubble"/> its vertex at the origin.
-                The unit parabola has two special properties.
-                First, it is <bookmark mark="posLine"/> always above or on the x-axis. This means,
-                that <bookmark mark="geq0"/>the function value is always greater or equal to zero.
-                Second, it is <bookmark mark="symLine"/> symmetric to the y-axis. This means, that the function value
-                at <bookmark mark="symTex"/> minus x is the same as the <bookmark mark="sym2"/>function value at x.
-                """
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+#                 Now for a special kind of parabola, the <bookmark mark="cords"/>unit parabola.
+#                 The <bookmark mark="unit"/>unit parabola is the parabola that is created by the function <bookmark mark="funcTerm"/>
+#                 f of <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>x squared.
+#                 It allows us to study the properties of parabolas and helps us
+#                 recognize other quadratic functions.
+#                 The unit parabola is <bookmark mark="origin"/> shaped like a U and has <bookmark mark="vertexBubble"/> its vertex at the origin.
+#                 The unit parabola has two special properties.
+#                 First, it is <bookmark mark="posLine"/> always above or on the x-axis. This means,
+#                 that <bookmark mark="geq0"/>the function value is always greater or equal to zero.
+#                 Second, it is <bookmark mark="symLine"/> symmetric to the y-axis. This means, that the function value
+#                 at <bookmark mark="symTex"/> minus x is the same as the <bookmark mark="sym2"/>function value at x.
+#                 """
+#         ) as tracker:
             
-            self.wait_until_bookmark("cords")
-            self.play(Create(cords), run_time=1)
+#             self.wait_until_bookmark("cords")
+#             self.play(Create(cords), run_time=1)
 
-            self.wait_until_bookmark("unit")
-            cursor.blinking=False
-            x,y,_ = g1.get_start()
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            self.add_pencil_sound(0.8)
-            self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
-            self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+#             self.wait_until_bookmark("unit")
+#             cursor.blinking=False
+#             x,y,_ = g1.get_start()
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             self.add_pencil_sound(0.8)
+#             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
+#             self.play(Create(g1), run_time=0.8)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("funcTerm")
-            cursor.blinking=False
-            x,y,_ = funcTerm[0].get_center()+0.4*DOWN
-            self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             self.wait_until_bookmark("funcTerm")
+#             cursor.blinking=False
+#             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
+#             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
 
-            self.wait_until_bookmark("x")
-            x,y,_ = funcTerm[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
+#             self.wait_until_bookmark("x")
+#             x,y,_ = funcTerm[1].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
 
-            self.wait_until_bookmark("xsquared")
-            x,y,_ = funcTerm[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+#             self.wait_until_bookmark("xsquared")
+#             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("origin")
-            cursor.blinking=False
-            x,y,_ = plane.c2p(0,0)
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            cursor.blinking=True
+#             self.wait_until_bookmark("origin")
+#             cursor.blinking=False
+#             x,y,_ = plane.c2p(0,0)
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("vertexBubble")
-            cursor.blinking=False
-            x,y,_ = startpoint
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            self.add_bubble_sound(1.5)
-            bUpdater = lambda m: m.move_to(b.get_end())
-            cursor.add_updater(bUpdater)
-            self.play(Create(b), Create(b.text))
-            cursor.remove_updater(bUpdater)
-            cursor.blinking=True
+#             self.wait_until_bookmark("vertexBubble")
+#             cursor.blinking=False
+#             x,y,_ = startpoint
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             self.add_bubble_sound(1.5)
+#             bUpdater = lambda m: m.move_to(b.get_end())
+#             cursor.add_updater(bUpdater)
+#             self.play(Create(b), Create(b.text))
+#             cursor.remove_updater(bUpdater)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("posLine")
-            cursor.blinking=False
-            x,y,_ = posLine.get_bottom()
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            self.add(cursor.copy().add_updater(lambda m: m.move_to(posLine.get_end()))._start_fading(1))
-            self.add_pencil_sound(0.8)
-            self.play(Create(posLine), run_time=0.8)
-            cursor.blinking=True
+#             self.wait_until_bookmark("posLine")
+#             cursor.blinking=False
+#             x,y,_ = posLine.get_bottom()
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             self.add(cursor.copy().add_updater(lambda m: m.move_to(posLine.get_end()))._start_fading(1))
+#             self.add_pencil_sound(0.8)
+#             self.play(Create(posLine), run_time=0.8)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("geq0")
-            cursor.blinking=False
-            x,y,_ = posTex.get_center()+0.4*DOWN
-            self.play(Write(posTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+#             self.wait_until_bookmark("geq0")
+#             cursor.blinking=False
+#             x,y,_ = posTex.get_center()+0.4*DOWN
+#             self.play(Write(posTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("symLine")
-            cursor.blinking=False
-            x,y,_ = symLine.get_start()
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            self.add(cursor.copy().add_updater(lambda m: m.move_to(symLine.get_end()))._start_fading(1))
-            self.add_pencil_sound(0.8)
-            self.play(Create(symLine), run_time=0.8)
-            cursor.blinking=True
+#             self.wait_until_bookmark("symLine")
+#             cursor.blinking=False
+#             x,y,_ = symLine.get_start()
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             self.add(cursor.copy().add_updater(lambda m: m.move_to(symLine.get_end()))._start_fading(1))
+#             self.add_pencil_sound(0.8)
+#             self.play(Create(symLine), run_time=0.8)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("symTex")
-            cursor.blinking=False
-            x,y,_ = symTex[0].get_center()+0.4*DOWN
-            self.play(Write(symTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+#             self.wait_until_bookmark("symTex")
+#             cursor.blinking=False
+#             x,y,_ = symTex[0].get_center()+0.4*DOWN
+#             self.play(Write(symTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("sym2")
-            cursor.blinking=False
-            x,y,_ = symTex[2].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+#             self.wait_until_bookmark("sym2")
+#             cursor.blinking=False
+#             x,y,_ = symTex[2].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
+#             cursor.blinking=True
             
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
+#         # Wait for 4 seconds at the end of the animation
+#         self.wait(4)
 
 #####################################
 #####################################
-TASK_Func_4_1_I_6_q = SophiaTaskDefinition(
-    answerOptions = ["The graph moves up", "The graph moves down", "The graph gets flatter", "The graph gets steeper"],
-    correctAnswerIndex = 3,
-    questionText = "What happens, if we increase the value of $a$?"
-)
 class Func_4_1_I_6_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_1.I6.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_4_1.I6.q.question-text")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1391,13 +1280,7 @@ class Func_4_1_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, let's go back to the term of quadratic functions.
-                As we've seen before, the term of a quadratic function has the form <bookmark mark="term"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>a x squared plus <bookmark mark="bx"/>b x plus <bookmark mark="c"/>c.
-                But what do the <bookmark mark="aa"/>parameters a, <bookmark mark="bb"/>b and <bookmark mark="cc"/>c mean for the <bookmark mark='graph' />graph of the function?
-                Let's start with the parameter <bookmark mark="aaa"/>a, what happens if we<bookmark mark="increaseA"/> increase a?
-                """
+                text=self.translate("Func_4_1.I6.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("term")
@@ -1466,7 +1349,7 @@ class Func_4_1_I_6_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1488,9 +1371,10 @@ class Func_4_1_I_6_a(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2,-2**(1/a.get_value())), min(2,2**(1/a.get_value())), 0.001]))
         self.add(g1)
+        a_increase_decrease = ast.literal_eval(self.translate("Func_4_1.I6.a.increase-decrease"))
         funcTerm = MathTex("f","(x)", "=", "\\,a\\,","x^2", "+bx", "+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("Large a", "$\\,\\,\\Rightarrow\\,\\,$", "steep graph", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("Small a", "$\\,\\,\\Rightarrow\\,\\,$", "flat graph", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex(a_increase_decrease[0], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[1], color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex(a_increase_decrease[2], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[3], color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(1, color=c1t, num_decimal_places=1).move_to(funcTerm[3]).add_updater(lambda m: m.set_value(a.get_value())).shift(0.08*LEFT)
         aTracked.scale(2*funcTerm[3].get_width()/aTracked.get_width())
@@ -1498,14 +1382,7 @@ class Func_4_1_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                Note that in the term of the function, the parameter <bookmark mark="a"/>a is multiplied with x squared. Let's see what that implies.
-                We'll start with <bookmark mark="a1"/> the value of a equals 1 and <bookmark mark="a2"/> slowly start
-                increasing it. As you can see, the graph gets steeper and steeper.
-                So, if we increase the value of a, the graph <bookmark mark="a4"/> gets steeper. If we <bookmark mark="decreaseA"/> decrease a on the other hand,
-                the graph gets flatter. So quick summary: <bookmark mark="largeA"/>large a, steep graph, <bookmark mark="smallA"/>small a, flat graph.
-                """
+                text=self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
@@ -1558,7 +1435,7 @@ class Func_4_1_I_6_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1580,9 +1457,10 @@ class Func_4_1_I_6_b(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2,-2**(1/a.get_value())), min(2,2**(1/a.get_value())), 0.001]))
         self.add(g1)
+        a_increase_decrease = ast.literal_eval(self.translate("Func_4_1.I6.a.increase-decrease"))
         funcTerm = MathTex("f","(x)", "=", "\\,a\\,","x^2", "+bx", "+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("Large a", "$\\,\\,\\Rightarrow\\,\\,$", "steep graph", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("Small a", "$\\,\\,\\Rightarrow\\,\\,$", "flat graph", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex(a_increase_decrease[0], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[1], color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex(a_increase_decrease[2], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[3], color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(1, color=c1t, num_decimal_places=1).move_to(funcTerm[3]).add_updater(lambda m: m.set_value(a.get_value())).shift(0.08*LEFT)
         aTracked.scale(2*funcTerm[3].get_width()/aTracked.get_width())
@@ -1590,14 +1468,7 @@ class Func_4_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                Note that in the term of the function, the parameter <bookmark mark="a"/>a is multiplied with x squared. Let's see what that implies.
-                We'll start with <bookmark mark="a1"/> the value of a equals 1 and <bookmark mark="a2"/> slowly start
-                increasing it. As you can see, the graph gets steeper and steeper.
-                So, if we increase the value of a, the graph <bookmark mark="a4"/> gets steeper. If we <bookmark mark="decreaseA"/> decrease a on the other hand,
-                the graph gets flatter. So quick summary: <bookmark mark="largeA"/>large a, steep graph, <bookmark mark="smallA"/>small a, flat graph.
-                """
+                text=self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
@@ -1650,7 +1521,7 @@ class Func_4_1_I_6_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1672,9 +1543,10 @@ class Func_4_1_I_6_c(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2,-2**(1/a.get_value())), min(2,2**(1/a.get_value())), 0.001]))
         self.add(g1)
+        a_increase_decrease = ast.literal_eval(self.translate("Func_4_1.I6.a.increase-decrease"))
         funcTerm = MathTex("f","(x)", "=", "\\,a\\,","x^2", "+bx", "+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("Large a", "$\\,\\,\\Rightarrow\\,\\,$", "steep graph", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("Small a", "$\\,\\,\\Rightarrow\\,\\,$", "flat graph", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex(a_increase_decrease[0], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[1], color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex(a_increase_decrease[2], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[3], color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(1, color=c1t, num_decimal_places=1).move_to(funcTerm[3]).add_updater(lambda m: m.set_value(a.get_value())).shift(0.08*LEFT)
         aTracked.scale(2*funcTerm[3].get_width()/aTracked.get_width())
@@ -1682,14 +1554,7 @@ class Func_4_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                Note that in the term of the function, the parameter <bookmark mark="a"/>a is multiplied with x squared. Let's see what that implies.
-                We'll start with <bookmark mark="a1"/> the value of a equals 1 and <bookmark mark="a2"/> slowly start
-                increasing it. As you can see, the graph gets steeper and steeper.
-                So, if we increase the value of a, the graph <bookmark mark="a4"/> gets steeper. If we <bookmark mark="decreaseA"/> decrease a on the other hand,
-                the graph gets flatter. So quick summary: <bookmark mark="largeA"/>large a, steep graph, <bookmark mark="smallA"/>small a, flat graph.
-                """
+                text=self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
@@ -1742,7 +1607,7 @@ class Func_4_1_I_6_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1764,9 +1629,10 @@ class Func_4_1_I_6_d(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2,-2**(1/a.get_value())), min(2,2**(1/a.get_value())), 0.001]))
         self.add(g1)
+        a_increase_decrease = ast.literal_eval(self.translate("Func_4_1.I6.a.increase-decrease"))
         funcTerm = MathTex("f","(x)", "=", "\\,a\\,","x^2", "+bx", "+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("Large a", "$\\,\\,\\Rightarrow\\,\\,$", "steep graph", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("Small a", "$\\,\\,\\Rightarrow\\,\\,$", "flat graph", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex(a_increase_decrease[0], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[1], color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex(a_increase_decrease[2], "$\\,\\,\\Rightarrow\\,\\,$", a_increase_decrease[3], color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(1, color=c1t, num_decimal_places=1).move_to(funcTerm[3]).add_updater(lambda m: m.set_value(a.get_value())).shift(0.08*LEFT)
         aTracked.scale(2*funcTerm[3].get_width()/aTracked.get_width())
@@ -1774,14 +1640,7 @@ class Func_4_1_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it.
-                Note that in the term of the function, the parameter <bookmark mark="a"/>a is multiplied with x squared. Let's see what that implies.
-                We'll start with <bookmark mark="a1"/> the value of a equals 1 and <bookmark mark="a2"/> slowly start
-                increasing it. As you can see, the graph gets steeper and steeper.
-                So, if we increase the value of a, the graph <bookmark mark="a4"/> gets steeper. If we <bookmark mark="decreaseA"/> decrease a on the other hand,
-                the graph gets flatter. So quick summary: <bookmark mark="largeA"/>large a, steep graph, <bookmark mark="smallA"/>small a, flat graph.
-                """
+                text=self.translate("Func_4_1.I6.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
@@ -1826,22 +1685,24 @@ class Func_4_1_I_6_d(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+#####################################
+#####################################
 
-#####################################
-#####################################
-TASK_Func_4_1_I_7_q = SophiaTaskDefinition(
-    answerOptions = ["The graph gets tilted left", "The graph gets tilted right", "The graph is shifted up", "The graph is shifted down"],
-    correctAnswerIndex = 0,
-    questionText = "What happens, if we increase the value of $b$?"
-)
 class Func_4_1_I_7_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_1.I7.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_4_1.I7.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1866,12 +1727,7 @@ class Func_4_1_I_7_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so we're still looking at a <bookmark mark="plot"/> quadratic function with the form <bookmark mark="term"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>"a" x squared plus <bookmark mark="bx"/>b x plus <bookmark mark="c"/>c.
-                Now, let's analyze the parameter <bookmark mark="bbb"/>b. What happens to the graph, if we<bookmark mark="increaseB"/> increase b?
-                How will it change?
-                """
+                text=self.translate("Func_4_1.I7.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plot")
@@ -1926,7 +1782,7 @@ class Func_4_1_I_7_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -1948,9 +1804,10 @@ class Func_4_1_I_7_a(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
         self.add(g1)
+        tl, tr = self.translate("Func_4_1.I7.a.tl"), self.translate("Func_4_1.I7.a.tr")
         funcTerm = MathTex("f","(x)", "=", "a","x^2", "\\,\\,+b\\,\\,", "x+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted left", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted right", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", tl, color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", tr, color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[5]).add_updater(lambda m: m.set_value(b.get_value())).shift(0.08*LEFT)
         aTracked.scale(4*funcTerm[3].get_width()/aTracked.get_width())
@@ -1958,15 +1815,7 @@ class Func_4_1_I_7_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, nicely done!
-                We can see that in the term of the function, the parameter <bookmark mark="b"/>b is multiplied with x. Let's look at the effects it has on the graph.
-                We'll start with <bookmark mark="b1"/> the value of b equals 0 and <bookmark mark="b2"/> slowly start
-                increasing it. As you can see, the graph gets higher on the right, and lower on the left.
-                So, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark="decreaseB"/> decrease b on the other hand,
-                so that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark="posB"/>positive b, graph is tilted left,
-                <bookmark mark="negB"/>negative b, graph is tilted right.
-                """
+                text=self.translate("Func_4_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
@@ -2018,7 +1867,7 @@ class Func_4_1_I_7_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2040,9 +1889,10 @@ class Func_4_1_I_7_b(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
         self.add(g1)
+        tl, tr = self.translate("Func_4_1.I7.a.tl"), self.translate("Func_4_1.I7.a.tr")
         funcTerm = MathTex("f","(x)", "=", "a","x^2", "\\,\\,+b\\,\\,", "x+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted left", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted right", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", tl, color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", tr, color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[5]).add_updater(lambda m: m.set_value(b.get_value())).shift(0.08*LEFT)
         aTracked.scale(4*funcTerm[3].get_width()/aTracked.get_width())
@@ -2050,15 +1900,7 @@ class Func_4_1_I_7_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We can see that in the term of the function, the parameter <bookmark mark="b"/>b is multiplied with x. Let's look at the effects it has on the graph.
-                We'll start with <bookmark mark="b1"/> the value of b equals 0 and <bookmark mark="b2"/> slowly start
-                increasing it. As you can see, the graph gets higher on the right, and lower on the left.
-                So, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark="decreaseB"/> decrease b on the other hand,
-                so that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark="posB"/>positive b, graph is tilted left,
-                <bookmark mark="negB"/>negative b, graph is tilted right.
-                """
+                text=self.translate("Func_4_1.I7.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
@@ -2110,7 +1952,7 @@ class Func_4_1_I_7_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2132,9 +1974,10 @@ class Func_4_1_I_7_c(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
         self.add(g1)
+        tl, tr = self.translate("Func_4_1.I7.a.tl"), self.translate("Func_4_1.I7.a.tr")
         funcTerm = MathTex("f","(x)", "=", "a","x^2", "\\,\\,+b\\,\\,", "x+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted left", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted right", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", tl, color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", tr, color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[5]).add_updater(lambda m: m.set_value(b.get_value())).shift(0.08*LEFT)
         aTracked.scale(4*funcTerm[3].get_width()/aTracked.get_width())
@@ -2142,15 +1985,7 @@ class Func_4_1_I_7_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We can see that in the term of the function, the parameter <bookmark mark="b"/>b is multiplied with x. Let's look at the effects it has on the graph.
-                We'll start with <bookmark mark="b1"/> the value of b equals 0 and <bookmark mark="b2"/> slowly start
-                increasing it. As you can see, the graph gets higher on the right, and lower on the left.
-                So, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark="decreaseB"/> decrease b on the other hand,
-                so that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark="posB"/>positive b, graph is tilted left,
-                <bookmark mark="negB"/>negative b, graph is tilted right.
-                """
+                text=self.translate("Func_4_1.I7.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
@@ -2190,7 +2025,6 @@ class Func_4_1_I_7_c(SophiaCursorScene):
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
             cursor.blinking=True
-
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2203,7 +2037,7 @@ class Func_4_1_I_7_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Function Term")
+        self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2225,9 +2059,10 @@ class Func_4_1_I_7_d(SophiaCursorScene):
         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
         self.add(g1)
+        tl, tr = self.translate("Func_4_1.I7.a.tl"), self.translate("Func_4_1.I7.a.tr")
         funcTerm = MathTex("f","(x)", "=", "a","x^2", "\\,\\,+b\\,\\,", "x+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted left", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is tilted right", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+        aIncreased = Tex("$b>0$", "$\\,\\,\\Rightarrow\\,\\,$", tl, color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+        aDecreased = Tex("$b<0$", "$\\,\\,\\Rightarrow\\,\\,$", tr, color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
         self.add(funcTerm)
         aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[5]).add_updater(lambda m: m.set_value(b.get_value())).shift(0.08*LEFT)
         aTracked.scale(4*funcTerm[3].get_width()/aTracked.get_width())
@@ -2235,15 +2070,7 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We can see that in the term of the function, the parameter <bookmark mark="b"/>b is multiplied with x. Let's look at the effects it has on the graph.
-                We'll start with <bookmark mark="b1"/> the value of b equals 0 and <bookmark mark="b2"/> slowly start
-                increasing it. As you can see, the graph gets higher on the right, and lower on the left.
-                So, if we increase the value of b, the graph gets tilted to the left. If we <bookmark mark="decreaseB"/> decrease b on the other hand,
-                so that it's negative, the graph gets tilted to the right. So quick summary: <bookmark mark="posB"/>positive b, graph is tilted left,
-                <bookmark mark="negB"/>negative b, graph is tilted right.
-                """
+                text=self.translate("Func_4_1.I7.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
@@ -2284,186 +2111,185 @@ class Func_4_1_I_7_d(SophiaCursorScene):
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
             cursor.blinking=True
 
-
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
 
 #####################################
 #####################################
-TASK_Func_4_1_I_8_q = SophiaTaskDefinition(
-    answerOptions = ["The graph is shifted down", "The graph is shifted up", "The graph is flipped along the x-axis", "The graph is flipped along the x-axis"],
-    correctAnswerIndex = 0,
-    questionText = "What happens, if we increase the value of $c$?"
-)
-class Func_4_1_I_8_q(SophiaCursorScene):
+# TASK_Func_4_1_I_8_q = SophiaTaskDefinition(
+#     answerOptions = ["The graph is shifted down", "The graph is shifted up", "The graph is flipped along the x-axis", "The graph is flipped along the x-axis"],
+#     correctAnswerIndex = 0,
+#     questionText = "What happens, if we increase the value of $c$?"
+# )
+# class Func_4_1_I_8_q(SophiaCursorScene):
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-        self.add_title("Function Term")
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+#         self.add_title("Function Term")
         
-        #Create the coordinate system
-        cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
-        plane = cords[0]
-        self.add(cords)
+#         #Create the coordinate system
+#         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
+#         plane = cords[0]
+#         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
-        self.add(cursor)
+#         def cursor_sound_updater(mob, dt):
+#             if mob.needSound:
+#                 mob.needSound = False
+#                 self.add_cursor_sound()
+#         x,y,_ = plane.c2p(0,0)
+#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+#         cursor.autoFadeBackground = False
+#         cursor.add_updater(cursor_sound_updater)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         self.add(cursor)
 
-        a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
-        f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
-        g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[-2/a.get_value(), 2/a.get_value(), 0.001]))
-        funcTerm = MathTex("f","(x)", "=", "ax^2", "+bx", "+","c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
+#         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
+#         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
+#         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[-2/a.get_value(), 2/a.get_value(), 0.001]))
+#         funcTerm = MathTex("f","(x)", "=", "ax^2", "+bx", "+","c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-                Now we're almost done analyzing the <bookmark mark="plot"/>quadratic function with the form <bookmark mark="term"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>"a" x squared plus <bookmark mark="bx"/>b x plus <bookmark mark="c"/>c.
-                The last parameter, we still need to analyze is <bookmark mark="ccc"/>c. What happens to the graph, if we<bookmark mark="increaseC"/> increase c?
-                How will it change?
-                """
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+#                 Now we're almost done analyzing the <bookmark mark="plot"/>quadratic function with the form <bookmark mark="term"/>f of
+#                 <bookmark mark="x"/>x equals <bookmark mark="xsquared"/>"a" x squared plus <bookmark mark="bx"/>b x plus <bookmark mark="c"/>c.
+#                 The last parameter, we still need to analyze is <bookmark mark="ccc"/>c. What happens to the graph, if we<bookmark mark="increaseC"/> increase c?
+#                 How will it change?
+#                 """
+#         ) as tracker:
             
-            self.wait_until_bookmark("plot")
-            x,y,_ = g1.get_start()
-            cursor.blinking=False
-            self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(g1))
+#             self.wait_until_bookmark("plot")
+#             x,y,_ = g1.get_start()
+#             cursor.blinking=False
+#             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
+#             self.add_pencil_sound(1.5)
+#             self.play(Create(g1))
             
-            self.wait_until_bookmark("term")
-            cursor.blinking=False
-            x,y,_ = funcTerm[0].get_center()+0.4*DOWN
-            self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             self.wait_until_bookmark("term")
+#             cursor.blinking=False
+#             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
+#             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
             
-            self.wait_until_bookmark("x")
-            x,y,_ = funcTerm[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
+#             self.wait_until_bookmark("x")
+#             x,y,_ = funcTerm[1].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
 
-            self.wait_until_bookmark("xsquared")
-            x,y,_ = funcTerm[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
+#             self.wait_until_bookmark("xsquared")
+#             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
 
-            self.wait_until_bookmark("bx")
-            x,y,_ = funcTerm[4].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
+#             self.wait_until_bookmark("bx")
+#             x,y,_ = funcTerm[4].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
 
-            self.wait_until_bookmark("c")
-            x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
-            cursor.blinking=True
+#             self.wait_until_bookmark("c")
+#             x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
+#             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("increaseC")
-            cursor.blinking=False
-            cc = cursor.copy()._start_fading(1)
-            self.play(cc.animate.scale(3))
-            cursor.blinking=True
+#             self.wait_until_bookmark("increaseC")
+#             cursor.blinking=False
+#             cc = cursor.copy()._start_fading(1)
+#             self.play(cc.animate.scale(3))
+#             cursor.blinking=True
             
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
+#         # Wait for 4 seconds at the end of the animation
+#         self.wait(4)
 
-class Func_4_1_I_8_a(SophiaCursorScene):
+# class Func_4_1_I_8_a(SophiaCursorScene):
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-        self.add_title("Function Term")
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+#         self.add_title("Function Term")
         
-        #Create the coordinate system
-        cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
-        plane = cords[0]
-        self.add(cords)
+#         #Create the coordinate system
+#         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
+#         plane = cords[0]
+#         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
-        self.add(cursor)
+#         def cursor_sound_updater(mob, dt):
+#             if mob.needSound:
+#                 mob.needSound = False
+#                 self.add_cursor_sound()
+#         x,y,_ = plane.c2p(0,0)
+#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+#         cursor.autoFadeBackground = False
+#         cursor.add_updater(cursor_sound_updater)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         self.add(cursor)
 
-        a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
-        f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
-        g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
-        self.add(g1)
-        funcTerm = MathTex("f","(x)", "=", "a","x^2", "+bx", "\\,\\,+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
-        aIncreased = Tex("$c>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is shifted up", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
-        aDecreased = Tex("$c<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is shifted down", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
-        self.add(funcTerm)
-        aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[-1]).add_updater(lambda m: m.set_value(c.get_value())).shift(0.08*LEFT)
-        aTracked.scale(1.4*funcTerm[-1].get_width()/aTracked.get_width())
-        aTracked.shift((funcTerm[-1].get_bottom()[1]-aTracked.get_bottom()[1])*UP)
+#         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
+#         f1 = lambda x: a.get_value()*x**2+b.get_value()*x+c.get_value()
+#         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE))
+#         self.add(g1)
+#         funcTerm = MathTex("f","(x)", "=", "a","x^2", "+bx", "\\,\\,+c", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.5)
+#         aIncreased = Tex("$c>0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is shifted up", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=1)
+#         aDecreased = Tex("$c<0$", "$\\,\\,\\Rightarrow\\,\\,$", "graph is shifted down", color=c1t, font_size=fs3).next_to(aIncreased, DOWN, buff=0.2)
+#         self.add(funcTerm)
+#         aTracked = DecimalNumber(0, color=c1t, num_decimal_places=1, include_sign=True).move_to(funcTerm[-1]).add_updater(lambda m: m.set_value(c.get_value())).shift(0.08*LEFT)
+#         aTracked.scale(1.4*funcTerm[-1].get_width()/aTracked.get_width())
+#         aTracked.shift((funcTerm[-1].get_bottom()[1]-aTracked.get_bottom()[1])*UP)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-                That's correct, nicely done!
-                We can see that in the term of the function, the parameter <bookmark mark="c"/>c is added to the function. Let's look at the effects it has on the graph.
-                We'll start with <bookmark mark="c1"/> the value of c equals 0 and <bookmark mark="c2"/> increase it. As you can see, the graph moves up.
-                So, if we increase the value of c, the graph is shifted up. If we <bookmark mark="decreaseC"/> decrease c on the other hand,
-                so that it's negative, the graph is shifted down. So quick summary: <bookmark mark="posC"/>positive c, graph is shifted up,
-                <bookmark mark="negC"/>negative c, graph is shifted down.
-                """
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+#                 That's correct, nicely done!
+#                 We can see that in the term of the function, the parameter <bookmark mark="c"/>c is added to the function. Let's look at the effects it has on the graph.
+#                 We'll start with <bookmark mark="c1"/> the value of c equals 0 and <bookmark mark="c2"/> increase it. As you can see, the graph moves up.
+#                 So, if we increase the value of c, the graph is shifted up. If we <bookmark mark="decreaseC"/> decrease c on the other hand,
+#                 so that it's negative, the graph is shifted down. So quick summary: <bookmark mark="posC"/>positive c, graph is shifted up,
+#                 <bookmark mark="negC"/>negative c, graph is shifted down.
+#                 """
+#         ) as tracker:
             
-            self.wait_until_bookmark("c")
-            cursor.blinking=False
-            x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+#             self.wait_until_bookmark("c")
+#             cursor.blinking=False
+#             x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
+#             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("c1")
-            self.play(Unwrite(funcTerm[-1]), Write(aTracked), run_time=1)
+#             self.wait_until_bookmark("c1")
+#             self.play(Unwrite(funcTerm[-1]), Write(aTracked), run_time=1)
 
-            self.wait_until_bookmark("c2")
-            cursor.blinking=False
-            x,y,_ = plane.c2p(0,0)
-            self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            funcDater = lambda m: m.move_to(plane.c2p(0,f1(0)))
-            cursor.add_updater(funcDater)
-            self.play(c.animate.set_value(2), run_time=4)
-            cursor.blinking=True
+#             self.wait_until_bookmark("c2")
+#             cursor.blinking=False
+#             x,y,_ = plane.c2p(0,0)
+#             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
+#             funcDater = lambda m: m.move_to(plane.c2p(0,f1(0)))
+#             cursor.add_updater(funcDater)
+#             self.play(c.animate.set_value(2), run_time=4)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("decreaseC")
-            cursor.blinking=False
-            x,y,_ = aDecreased.get_left()+0.2*LEFT
-            self.play(c.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+#             self.wait_until_bookmark("decreaseC")
+#             cursor.blinking=False
+#             x,y,_ = aDecreased.get_left()+0.2*LEFT
+#             self.play(c.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("posC")
-            cursor.blinking=False
-            cursor.remove_updater(funcDater)
-            x,y,_ = aIncreased.get_left()+0.2*LEFT
-            self.play(CursorMoveTo(cursor, x, y), c.animate.set_value(0), run_time=0.3)
-            self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+#             self.wait_until_bookmark("posC")
+#             cursor.blinking=False
+#             cursor.remove_updater(funcDater)
+#             x,y,_ = aIncreased.get_left()+0.2*LEFT
+#             self.play(CursorMoveTo(cursor, x, y), c.animate.set_value(0), run_time=0.3)
+#             self.play(Write(aIncreased), run_time=1)
+#             cursor.blinking=True
 
-            self.wait_until_bookmark("negC")
-            cursor.blinking=False
-            x,y,_ = aDecreased.get_left()+0.2*LEFT
-            self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+#             self.wait_until_bookmark("negC")
+#             cursor.blinking=False
+#             x,y,_ = aDecreased.get_left()+0.2*LEFT
+#             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
+#             cursor.blinking=True
 
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
+#         # Wait for 4 seconds at the end of the animation
+#         self.wait(4)
 
 #####################################
 #####################################
@@ -2479,12 +2305,12 @@ class Func_4_1_I_8_a(SophiaCursorScene):
 
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_4_1_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_1_q, Func_4_1_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_1_I_1_q),
     PagePrototypeVideo.from_scene(Func_4_1_I_1_a),
     PagePrototypeVideo.from_scene(Func_4_1_I_1_b),
     PagePrototypeVideo.from_scene(Func_4_1_I_1_c),
     PagePrototypeVideo.from_scene(Func_4_1_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_2_q, Func_4_1_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_1_I_2_q),
     PagePrototypeVideo.from_scene(Func_4_1_I_2_a),
     PagePrototypeVideo.from_scene(Func_4_1_I_2_b),
     PagePrototypeVideo.from_scene(Func_4_1_I_2_c),
@@ -2492,19 +2318,19 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_4_1_I_4),
     PagePrototypeVideo.from_scene(Func_4_1_I_5),
     PagePrototypeVideo.from_scene(Func_4_1_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_6_q, Func_4_1_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_1_I_6_q),
     PagePrototypeVideo.from_scene(Func_4_1_I_6_a),
     PagePrototypeVideo.from_scene(Func_4_1_I_6_b),
     PagePrototypeVideo.from_scene(Func_4_1_I_6_c),
     PagePrototypeVideo.from_scene(Func_4_1_I_6_d),
     PagePrototypeVideo.from_scene(Func_4_1_I_7_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_7_q, Func_4_1_I_7_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_1_I_7_q),
     PagePrototypeVideo.from_scene(Func_4_1_I_7_a),
     PagePrototypeVideo.from_scene(Func_4_1_I_7_b),
     PagePrototypeVideo.from_scene(Func_4_1_I_7_c),
     PagePrototypeVideo.from_scene(Func_4_1_I_7_d),
-    PagePrototypeVideo.from_scene(Func_4_1_I_8_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_8_q, Func_4_1_I_8_q.__name__),
-    PagePrototypeVideo.from_scene(Func_4_1_I_8_a),
 
 ]
+    # PagePrototypeVideo.from_scene(Func_4_1_I_8_q),
+    # PagePrototypeQuestion.from_task_definition(TASK_Func_4_1_I_8_q, Func_4_1_I_8_q.__name__),
+    # PagePrototypeVideo.from_scene(Func_4_1_I_8_a),

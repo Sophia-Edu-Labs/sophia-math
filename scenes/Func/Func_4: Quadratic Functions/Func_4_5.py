@@ -16,24 +16,26 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_4_5_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=x^2-2$", "g(x)=x^2(x-1)", "h(x)=(x-2)(x+2)"],
-    correctAnswerIndex = 1,
-    questionText = "Which is not a quadratic function?"
-)
 class Func_4_5_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=x^2-2$", "g(x)=x^2(x-1)", "h(x)=(x-2)(x+2)"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_4_5.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_5.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -60,17 +62,7 @@ class Func_4_5_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                What can quadratic functions look like?
-                And what do quadratic functions never look like?
-                Let's start with these three functions:
-                The first is <bookmark mark="f"/> f of <bookmark mark="fx"/>x equals <bookmark mark="fx2"/> x squared minus <bookmark mark="f2"/> 2.
-                The second is <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gx2"/> x squared times open bracket
-                <bookmark mark="gxb"/> x minus<bookmark mark="g1"/> one close bracket.
-                And the third is <bookmark mark="h"/> h of x<bookmark mark="hx"/> equals open bracket <bookmark mark="hb1x"/>x minus <bookmark mark="hb12"/>two close bracket
-                times open bracket <bookmark mark="hb2x"/> x plus <bookmark mark="hb22"/>two close bracket.
-                Now which of the three is not a quadratic function?
-                """
+                text=self.translate("Func_4_5.I1.q.voiceover")
         ) as tracker:
 
             cursor.blinking=False
@@ -158,7 +150,7 @@ class Func_4_5_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Quadratic Functions")
+        title = self.add_title(self.translate("Func_4_5.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -179,23 +171,8 @@ class Func_4_5_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's wrong.
-                This question was about the structures of quadratic functions.
-                The first function, <bookmark mark="f"/> f of <bookmark mark="fx"/>x equals <bookmark mark="fx2"/> x squared minus <bookmark mark="f2"/> 2
-                is clearly a quadratic function. It is a unit parabola, shifted down by two.
-                The second one, <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gx2"/> x squared times open bracket
-                <bookmark mark="gxb"/> x minus<bookmark mark="g1"/> one close bracket is tricky. At first glance, you might think it's a quadratic function, because
-                it has an x squared term. But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark="m1"/>
-                you get x to the power of three. So g is not a quadratic function.
-                Finally, <bookmark mark="h"/> h of x<bookmark mark="hx"/> equals open bracket <bookmark mark="hb1x"/>x minus <bookmark mark="hb12"/>two close bracket
-                times open bracket <bookmark mark="hb2x"/> x plus <bookmark mark="hb22"/>two close bracket is also tricky. Why? Because at first glance, you might be
-                tempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark="m2"/>
-                the two brackets, you get x squared. So h is also a quadratic function.
-                """
+                text=self.translate("Func_4_5.I1.a.voiceover")
         ) as tracker:
-
-
 
             self.wait_until_bookmark("f")
             x,y,_ = f[0].get_center()+0.4*DOWN
@@ -286,7 +263,7 @@ class Func_4_5_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_5.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -307,20 +284,7 @@ class Func_4_5_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                You got it! Nice...
-                This question was about the structures of quadratic functions.
-                The first function, <bookmark mark="f"/> f of <bookmark mark="fx"/>x equals <bookmark mark="fx2"/> x squared minus <bookmark mark="f2"/> 2
-                is clearly a quadratic function. It is a unit parabola, shifted down by two.
-                The second one, <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gx2"/> x squared times open bracket
-                <bookmark mark="gxb"/> x minus<bookmark mark="g1"/> one close bracket is tricky. At first glance, you might think it's a quadratic function, because
-                it has an x squared term. But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark="m1"/>
-                you get x to the power of three. So g is not a quadratic function.
-                Finally, <bookmark mark="h"/> h of x<bookmark mark="hx"/> equals open bracket <bookmark mark="hb1x"/>x minus <bookmark mark="hb12"/>two close bracket
-                times open bracket <bookmark mark="hb2x"/> x plus <bookmark mark="hb22"/>two close bracket is also tricky. Why? Because at first glance, you might be
-                tempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark="m2"/>
-                the two brackets, you get x squared. So h is also a quadratic function.
-                """
+                text=self.translate("Func_4_5.I1.b.voiceover")
         ) as tracker:
 
 
@@ -414,7 +378,7 @@ class Func_4_5_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Quadratic Functions")
+        self.add_title(self.translate("Func_4_5.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -435,20 +399,7 @@ class Func_4_5_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's wrong.
-                This question was about the structures of quadratic functions.
-                The first function, <bookmark mark="f"/> f of <bookmark mark="fx"/>x equals <bookmark mark="fx2"/> x squared minus <bookmark mark="f2"/> 2
-                is clearly a quadratic function. It is a unit parabola, shifted down by two.
-                The second one, <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gx2"/> x squared times open bracket
-                <bookmark mark="gxb"/> x minus<bookmark mark="g1"/> one close bracket is tricky. At first glance, you might think it's a quadratic function, because
-                it has an x squared term. But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark="m1"/>
-                you get x to the power of three. So g is not a quadratic function.
-                Finally, <bookmark mark="h"/> h of x<bookmark mark="hx"/> equals open bracket <bookmark mark="hb1x"/>x minus <bookmark mark="hb12"/>two close bracket
-                times open bracket <bookmark mark="hb2x"/> x plus <bookmark mark="hb22"/>two close bracket is also tricky. Why? Because at first glance, you might be
-                tempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark="m2"/>
-                the two brackets, you get x squared. So h is also a quadratic function.
-                """
+                text=self.translate("Func_4_5.I1.a.voiceover")
         ) as tracker:
 
 
@@ -536,19 +487,22 @@ class Func_4_5_I_1_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_5_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["We can easily determine the location of the vertex", "We can easily determine the location of the zeros", "We can easily determine the location of the y-intercept"],
-    correctAnswerIndex = 0,
-    questionText = "What is the advantage of the vertex form?"
-)
 class Func_4_5_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_5.I2.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_4_5.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([0,4, 1], [-5, 5, 1], x_ticks=[0,1,2,3,4],y_ticks=[-5,-3,-1,1,3,5]).shift(DOWN*0.6)
@@ -574,17 +528,7 @@ class Func_4_5_I_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Why do we want to write quadratic functions in different forms? Isn't it enough to have them in the shape
-                <bookmark mark="funcTerm"/> f of <bookmark mark="funcTermX"/>x equals <bookmark mark="funcTermAx2"/> a
-                x squared plus <bookmark mark="funcTermB"/> b x <bookmark mark="funcTermC"/>plus c?
-                Well, like always, the answer is: it depends! <bookmark mark="fOut"/>Sometimes, it's easier to understand the structure of a function
-                if it's written in a different form. Let's look at an example: <bookmark mark="1f"/>f of <bookmark mark="1x"/>x equals <bookmark mark="1neg2"/> negative
-                two times open bracket <bookmark mark="1x2"/>x minus<bookmark mark="1xM2"/> two close bracket squared plus
-                <bookmark mark="13"/> three. This is a quadratic function. But it's not written in the form we just talked about.
-                Instead, it's written in the so-called <bookmark mark="vertexForm"/>Vertex Form. Now look at the <bookmark mark="graph"/> graph of this function
-                and try to tell me: What is the advantage of using the vertex form? I'll give you a hint: Think about the name of the form.
-                """
+                text=self.translate("Func_4_5.I2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcTerm")
@@ -664,7 +608,7 @@ class Func_4_5_I_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([0,4, 1], [-5, 5, 1], x_ticks=[0,1,2,3,4],y_ticks=[-5,-3,-1,1,3,5]).shift(DOWN*0.6)
@@ -692,19 +636,7 @@ class Func_4_5_I_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.
-                So, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark="vertex"/>vertex is the point where
-                the function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.
-                Now look at the term of the function. It consists of two parts: The part that is <bookmark mark="square"/>squared, and the <bookmark mark="3"/>three that is added.
-                Now, we want to find the value of <bookmark mark="x"/>x for which the value of f is the highest, and we want to find that highest value.
-                Now look at the two parts again. The <bookmark mark="square2"/>squared part is multiplied with negative two, so we want it to be as small as possible.
-                Since it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.
-                Now all that is left is <bookmark mark="three"/> the second part, which only consists of a three. <bookmark mark="sol"/> That means, that the highest value of f is three.
-                In summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.
-                We found this, because we started from the vertex form and then first, read off how to get<bookmark mark="square3"/> the squared term to zero, and then looked at
-                the<bookmark mark="33"/> second part.
-                """
+                text=self.translate("Func_4_5.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("vertex")
@@ -771,7 +703,7 @@ class Func_4_5_I_2_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([0,4, 1], [-5, 5, 1], x_ticks=[0,1,2,3,4],y_ticks=[-5,-3,-1,1,3,5]).shift(DOWN*0.6)
@@ -799,19 +731,7 @@ class Func_4_5_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Nope, that's wrong. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.
-                So, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark="vertex"/>vertex is the point where
-                the function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.
-                Now look at the term of the function. It consists of two parts: The part that is <bookmark mark="square"/>squared, and the <bookmark mark="3"/>three that is added.
-                Now, we want to find the value of <bookmark mark="x"/>x for which the value of f is the highest, and we want to find that highest value.
-                Now look at the two parts again. The <bookmark mark="square2"/>squared part is multiplied with negative two, so we want it to be as small as possible.
-                Since it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.
-                Now all that is left is <bookmark mark="three"/> the second part, which only consists of a three. <bookmark mark="sol"/> That means, that the highest value of f is three.
-                In summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.
-                We found this, because we started from the vertex form and then first, read off how to get<bookmark mark="square3"/> the squared term to zero, and then looked at
-                the<bookmark mark="33"/> second part.
-                """
+                text=self.translate("Func_4_5.I2.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("vertex")
@@ -877,7 +797,7 @@ class Func_4_5_I_2_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([0,4, 1], [-5, 5, 1], x_ticks=[0,1,2,3,4],y_ticks=[-5,-3,-1,1,3,5]).shift(DOWN*0.6)
@@ -905,19 +825,7 @@ class Func_4_5_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Nope, that's wrong. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.
-                So, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark="vertex"/>vertex is the point where
-                the function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.
-                Now look at the term of the function. It consists of two parts: The part that is <bookmark mark="square"/>squared, and the <bookmark mark="3"/>three that is added.
-                Now, we want to find the value of <bookmark mark="x"/>x for which the value of f is the highest, and we want to find that highest value.
-                Now look at the two parts again. The <bookmark mark="square2"/>squared part is multiplied with negative two, so we want it to be as small as possible.
-                Since it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.
-                Now all that is left is <bookmark mark="three"/> the second part, which only consists of a three. <bookmark mark="sol"/> That means, that the highest value of f is three.
-                In summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.
-                We found this, because we started from the vertex form and then first, read off how to get<bookmark mark="square3"/> the squared term to zero, and then looked at
-                the<bookmark mark="33"/> second part.
-                """
+                text=self.translate("Func_4_5.I2.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("vertex")
@@ -991,7 +899,7 @@ class Func_4_5_I_3_q(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1050,7 +958,7 @@ class Func_4_5_I_3_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1167,7 +1075,7 @@ class Func_4_5_I_3_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1285,7 +1193,7 @@ class Func_4_5_I_3_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1402,7 +1310,7 @@ class Func_4_5_I_3_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1529,7 +1437,7 @@ class Func_4_5_I_4_q(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1594,7 +1502,7 @@ class Func_4_5_I_4_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1715,7 +1623,7 @@ class Func_4_5_I_4_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1836,7 +1744,7 @@ class Func_4_5_I_4_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1957,7 +1865,7 @@ class Func_4_5_I_4_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Vertex Form")
+        title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:

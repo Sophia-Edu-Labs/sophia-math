@@ -15,25 +15,26 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_4_2_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x) = x^2 +c,\, c<0$", "$f(x) = x^2 +c,\, c>0$", "$f(x) = (x+c)^2,\, c>0$", "$f(x) = (x+c)^2,\, c<0$"],
-    correctAnswerIndex = 1,
-    questionText = "How do we shift the unit parabola up?"
-)
-
 class Func_4_2_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions="Func_4_2.I1.q.answer-options",
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_4_2.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -59,15 +60,7 @@ class Func_4_2_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Like all other functions<bookmark mark="f"/>, quadratic functions can be modified in various ways, for example:
-                <bookmark mark="origin"/>They can be shifted <bookmark mark="up"/> up, they can be shifted
-                <bookmark mark="down"/>down, they can <bookmark mark="reset"/> be shifted <bookmark mark="left"/>left, and they
-                can be shifted <bookmark mark="right"/>right.
-                Now let's take the <bookmark mark="unit"/>unit parabola <bookmark mark="f2"/>f of <bookmark mark="x"/>x equals
-                <bookmark mark="xSquared"/>x squared as an example. <bookmark mark="origin2"/>How do we shift it
-                <bookmark mark="up2"/> up? What does the term of the function look like, after we shifted it up?
-                """
+                text=self.translate("Func_4_2.I1.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -161,7 +154,7 @@ class Func_4_2_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -188,13 +181,7 @@ class Func_4_2_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right!
-                To shift the <bookmark mark="up"/>function up, we need every value to be higher by the same amount, so we add
-                a positive constant c to the function term. The term of the shifted function is therefore <bookmark mark="f"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared plus <bookmark mark="c"/>c, where <bookmark mark="cGeq0"/>
-                c is greater than zero.
-                """
+                text=self.translate("Func_4_2.I1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("up")
@@ -237,7 +224,7 @@ class Func_4_2_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -264,13 +251,7 @@ class Func_4_2_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Exactly right!
-                To shift the <bookmark mark="up"/>function up, we need every value to be higher by the same amount, so we add
-                a positive constant c to the function term. The term of the shifted function is therefore <bookmark mark="f"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared plus <bookmark mark="c"/>c, where <bookmark mark="cGeq0"/>
-                c is greater than zero.
-                """
+                text=self.translate("Func_4_2.I1.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("up")
@@ -314,7 +295,7 @@ class Func_4_2_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -341,13 +322,7 @@ class Func_4_2_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right!
-                To shift the <bookmark mark="up"/>function up, we need every value to be higher by the same amount, so we add
-                a positive constant c to the function term. The term of the shifted function is therefore <bookmark mark="f"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared plus <bookmark mark="c"/>c, where <bookmark mark="cGeq0"/>
-                c is greater than zero.
-                """
+                text=self.translate("Func_4_2.I1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("up")
@@ -391,7 +366,7 @@ class Func_4_2_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -418,13 +393,7 @@ class Func_4_2_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right!
-                To shift the <bookmark mark="up"/>function up, we need every value to be higher by the same amount, so we add
-                a positive constant c to the function term. The term of the shifted function is therefore <bookmark mark="f"/>f of
-                <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared plus <bookmark mark="c"/>c, where <bookmark mark="cGeq0"/>
-                c is greater than zero.
-                """
+                text=self.translate("Func_4_2.I1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("up")
@@ -463,20 +432,21 @@ class Func_4_2_I_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_2_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x) = x^2+2x+3$","$f(x) = x^2-6x-3$", "$f(x) = x^2+2x-3$","$f(x) = x^2-2x-3$"],
-    correctAnswerIndex = 3,
-    questionText = "What is the term of the shifted function?"
-)
-
 class Func_4_2_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x) = x^2+2x+3$","$f(x) = x^2-6x-3$", "$f(x) = x^2+2x-3$","$f(x) = x^2-2x-3$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_4_2.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-6, 6, 2], x_ticks=[-2,-1,1,2],y_ticks=[-6,-4,-2,2,4,6]).shift(DOWN*0.6)
@@ -509,12 +479,7 @@ class Func_4_2_I_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so knowing that to <bookmark mark="unitUP"/>shift the unit parabola up by two, we need to add two to the function term, let's now try to shift
-                a slightly more <bookmark mark="graph"/>complex quadratic function down: What is the term of the function <bookmark mark="f"/>f of <bookmark mark="x"/>x
-                equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="2x"/>2x plus <bookmark mark="1"/>1, after we <bookmark mark="cursor"/>shift
-                the graph <bookmark mark="down"/> down by four?
-                """
+                text=self.translate("Func_4_2.I2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("unitUP")
@@ -580,7 +545,7 @@ class Func_4_2_I_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-6, 6, 2], x_ticks=[-2,-1,1,2],y_ticks=[-6,-4,-2,2,4,6]).shift(DOWN*0.6)
@@ -609,17 +574,7 @@ class Func_4_2_I_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                We saw that to shift a function up, we add a positive constant to the entire function term.
-                So to shift the function<bookmark mark="down"/> down, we need to add a negative constant to the entire function term.
-                Since we want to shift the function down by four, we subtract four from the function term.
-                This means, the function <bookmark mark="fOld"/>f of <bookmark mark="xOld"/>x equals <bookmark mark="xSquaredOld"/>x
-                squared minus <bookmark mark="2xOld"/>two x plus <bookmark mark="oneOldOld"/>one  turns into  <bookmark mark="f"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="2x"/>2x minus
-                <bookmark mark="3"/>3. As you can see, the <bookmark mark="plusOne"/>plus one from the original term turned into a
-                <bookmark mark="minusThree"/>minus three.
-                """
+                text=self.translate("Func_4_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("down")
@@ -692,7 +647,7 @@ class Func_4_2_I_2_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-6, 6, 2], x_ticks=[-2,-1,1,2],y_ticks=[-6,-4,-2,2,4,6]).shift(DOWN*0.6)
@@ -721,17 +676,7 @@ class Func_4_2_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                We saw that to shift a function up, we add a positive constant to the entire function term.
-                So to shift the function<bookmark mark="down"/> down, we need to add a negative constant to the entire function term.
-                Since we want to shift the function down by four, we subtract four from the function term.
-                This means, the function <bookmark mark="fOld"/>f of <bookmark mark="xOld"/>x equals <bookmark mark="xSquaredOld"/>x
-                squared minus <bookmark mark="2xOld"/>two x plus <bookmark mark="oneOldOld"/>one  turns into  <bookmark mark="f"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="2x"/>2x minus
-                <bookmark mark="3"/>3. As you can see, the <bookmark mark="plusOne"/>plus one from the original term turned into a
-                <bookmark mark="minusThree"/>minus three.
-                """
+                text=self.translate("Func_4_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("down")
@@ -804,7 +749,7 @@ class Func_4_2_I_2_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-6, 6, 2], x_ticks=[-2,-1,1,2],y_ticks=[-6,-4,-2,2,4,6]).shift(DOWN*0.6)
@@ -833,17 +778,7 @@ class Func_4_2_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                We saw that to shift a function up, we add a positive constant to the entire function term.
-                So to shift the function<bookmark mark="down"/> down, we need to add a negative constant to the entire function term.
-                Since we want to shift the function down by four, we subtract four from the function term.
-                This means, the function <bookmark mark="fOld"/>f of <bookmark mark="xOld"/>x equals <bookmark mark="xSquaredOld"/>x
-                squared minus <bookmark mark="2xOld"/>two x plus <bookmark mark="oneOldOld"/>one  turns into  <bookmark mark="f"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="2x"/>2x minus
-                <bookmark mark="3"/>3. As you can see, the <bookmark mark="plusOne"/>plus one from the original term turned into a
-                <bookmark mark="minusThree"/>minus three.
-                """
+                text=self.translate("Func_4_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("down")
@@ -916,7 +851,7 @@ class Func_4_2_I_2_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting Parabolas")
+        self.add_title(self.translate("Func_4_2.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-6, 6, 2], x_ticks=[-2,-1,1,2],y_ticks=[-6,-4,-2,2,4,6]).shift(DOWN*0.6)
@@ -945,18 +880,9 @@ class Func_4_2_I_2_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it. Good work!
-                We saw that to shift a function up, we add a positive constant to the entire function term.
-                So to shift the function<bookmark mark="down"/> down, we need to add a negative constant to the entire function term.
-                Since we want to shift the function down by four, we subtract four from the function term.
-                This means, the function <bookmark mark="fOld"/>f of <bookmark mark="xOld"/>x equals <bookmark mark="xSquaredOld"/>x
-                squared minus <bookmark mark="2xOld"/>two x plus <bookmark mark="oneOldOld"/>one  turns into  <bookmark mark="f"/>
-                f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="2x"/>2x minus
-                <bookmark mark="3"/>3. As you can see, the <bookmark mark="plusOne"/>plus one from the original term turned into a
-                <bookmark mark="minusThree"/>minus three.
-                """
+                text=self.translate("Func_4_2.I2.d.voiceover")
         ) as tracker:
+
             
             self.wait_until_bookmark("down")
             cursor.blinking=False
@@ -1035,7 +961,7 @@ class Func_4_2_I_3(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1071,22 +997,7 @@ class Func_4_2_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Shifting <bookmark mark="parabola"/>parabolas up and down is not too difficult. <bookmark mark="origin"/>
-                Shifting them <bookmark mark="sideWays"/> sideways however is a bit harder. But worry not! Together,
-                we'll learn it in no time. Before we start with an example, let's build a bit of intuition using our
-                favorite function <bookmark mark="f"/>f of <bookmark mark="x"/>x equals
-                <bookmark mark="xSquared"/>x squared. Now we want to shift the function <bookmark mark="origin2"/>to
-                the side, say <bookmark mark="twoRight"/>by two units to the right. That means, that every point on
-                the parabola is shifted two points to the right. So the point <bookmark mark="f0"/>f of zero is shifted
-                to the point <bookmark mark="f2"/>f of two. The point <bookmark mark="f1"/>f of one is shifted to the point
-                <bookmark mark="f3"/>f of three and so on.
-                So we see, that the value <bookmark mark="t10"/> f of two after the shift is what used to be the point
-                <bookmark mark="t11"/>f of zero before the shift. So we can say, that the value <bookmark mark="t20"/>
-                x equals two after the shift is what used to be the value <bookmark mark="t21"/>x equals zero before the
-                shift. To achieve this, we need to <bookmark mark="t3"/> subtract two from the x value. So we can say, that the function
-                is shifted two units to the right, if we subtract two from the x value...
-                """
+                text=self.translate("Func_4_2.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("parabola")
@@ -1195,19 +1106,21 @@ class Func_4_2_I_3(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_2_I_4_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=(x-2)^2-2$", "$f(x)=x^2-4$", "$f(x)=(x+2)^2-2$", "$f(x)=x^2$"],
-    correctAnswerIndex = 2,
-    questionText = "What is the term of the shfited function?"
-)
 class Func_4_2_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=(x-2)^2-2$", "$f(x)=x^2-4$", "$f(x)=(x+2)^2-2$", "$f(x)=x^2$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_4_2.I4.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1233,10 +1146,8 @@ class Func_4_2_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now we want to shift the function <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusTwo"/>two
-                to <bookmark mark="shift"/>the left by two. What is the term of the shifted function?
-                """
+                text=self.translate("Func_4_2.I4.q.voiceover")
+
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1278,7 +1189,7 @@ class Func_4_2_I_4_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1313,13 +1224,7 @@ class Func_4_2_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No. So we're starting with <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusTwo"/>two. 
-                To shift it to <bookmark mark="shift"/>the left by two, we need the new function for <bookmark mark="lNeg2"/>f of <bookmark mark="explain1"/>negative two to have the same value as the old function 
-                <bookmark mark="l0"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark="explainTwo"/> negative two into the value zero, before applying the new function,
-                so before squaring x, <bookmark mark="explain3"/>we need to add two. This means, that the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="twoNew"/>two close bracket squared, <bookmark mark="minusTwoNew"/>minus two. See how instead of squaring two, we now square x plus two?
-                """
+                text=self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1391,8 +1296,6 @@ class Func_4_2_I_4_a(SophiaCursorScene):
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
             cursor.blinking=True
 
-
-
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
@@ -1403,7 +1306,7 @@ class Func_4_2_I_4_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1438,13 +1341,7 @@ class Func_4_2_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No. So we're starting with <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusTwo"/>two. 
-                To shift it to <bookmark mark="shift"/>the left by two, we need the new function for <bookmark mark="lNeg2"/>f of <bookmark mark="explain1"/>negative two to have the same value as the old function 
-                <bookmark mark="l0"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark="explainTwo"/> negative two into the value zero, before applying the new function,
-                so before squaring x, <bookmark mark="explain3"/>we need to add two. This means, that the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="twoNew"/>two close bracket squared, <bookmark mark="minusTwoNew"/>minus two. See how instead of squaring two, we now square x plus two?
-                """
+                text=self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1528,7 +1425,7 @@ class Func_4_2_I_4_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1563,13 +1460,7 @@ class Func_4_2_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, you got it right! So we're starting with <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusTwo"/>two. 
-                To shift it to <bookmark mark="shift"/>the left by two, we need the new function for <bookmark mark="lNeg2"/>f of <bookmark mark="explain1"/>negative two to have the same value as the old function 
-                <bookmark mark="l0"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark="explainTwo"/> negative two into the value zero, before applying the new function,
-                so before squaring x, <bookmark mark="explain3"/>we need to add two. This means, that the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="twoNew"/>two close bracket squared, <bookmark mark="minusTwoNew"/>minus two. See how instead of squaring two, we now square x plus two?
-                """
+                text=self.translate("Func_4_2.I4.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1653,7 +1544,7 @@ class Func_4_2_I_4_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1688,13 +1579,7 @@ class Func_4_2_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No. So we're starting with <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusTwo"/>two. 
-                To shift it to <bookmark mark="shift"/>the left by two, we need the new function for <bookmark mark="lNeg2"/>f of <bookmark mark="explain1"/>negative two to have the same value as the old function 
-                <bookmark mark="l0"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark="explainTwo"/> negative two into the value zero, before applying the new function,
-                so before squaring x, <bookmark mark="explain3"/>we need to add two. This means, that the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="twoNew"/>two close bracket squared, <bookmark mark="minusTwoNew"/>minus two. See how instead of squaring two, we now square x plus two?
-                """
+                text=self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1773,19 +1658,21 @@ class Func_4_2_I_4_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_2_I_5_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=(x+1.5)^2-3x$", "$f(x)=(x+1.5)^2-3(x+1.5)$", "$f(x)=(x-1.5)^2-3x$", "$f(x)=(x-1.5)^2-3(x-1.5)$"],
-    correctAnswerIndex = 3,
-    questionText = "What is the term of the shifted function? (1.5 to the right)"
-)
 class Func_4_2_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=(x+1.5)^2-3x$", "$f(x)=(x+1.5)^2-3(x+1.5)$", "$f(x)=(x-1.5)^2-3x$", "$f(x)=(x-1.5)^2-3(x-1.5)$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_4_2.I5.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1812,12 +1699,7 @@ class Func_4_2_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Shifting a parabola <bookmark mark="left"/>left is achieved by adding a number to what we plug in for x. Shifting a parabola <bookmark mark="right"/>right is
-                achieved by subtracting a number from what we plug in for x. <bookmark mark="reset"/>  Now let's apply this insight to a slightly harder function.
-                We want to shift the function <bookmark mark="f"/>f of <bookmark mark="x"/>x equals <bookmark mark="xSquared"/>x squared minus <bookmark mark="minusThree"/>three x
-                to <bookmark mark="shift"/>the right by one point five. What is the term of the shifted function?
-                """
+                text=self.translate("Func_4_2.I5.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("left")
@@ -1871,7 +1753,7 @@ class Func_4_2_I_5_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1899,15 +1781,7 @@ class Func_4_2_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's wrong. We know that to shift a function right, we need to subtract a number from what we plug in for x.
-                We want to shift the function <bookmark mark="shiftRight"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is
-                that there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark="f"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="xSquared"/> x squared <bookmark mark="minusThreeX"/>minus three x. We then add one point five to both occurences of x and put brackets around it.
-                Then, the term of the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="onePointFive"/>one point five close bracket squared, <bookmark mark="minusThreeNew"/>minus three times open bracket <bookmark mark="xNew2"/>
-                x plus one point five close bracket.
-                """
+                text=self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
@@ -1967,7 +1841,7 @@ class Func_4_2_I_5_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1995,15 +1869,7 @@ class Func_4_2_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's wrong. We know that to shift a function right, we need to subtract a number from what we plug in for x.
-                We want to shift the function <bookmark mark="shiftRight"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is
-                that there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark="f"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="xSquared"/> x squared <bookmark mark="minusThreeX"/>minus three x. We then add one point five to both occurences of x and put brackets around it.
-                Then, the term of the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="onePointFive"/>one point five close bracket squared, <bookmark mark="minusThreeNew"/>minus three times open bracket <bookmark mark="xNew2"/>
-                x plus one point five close bracket.
-                """
+                text=self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
@@ -2063,7 +1929,7 @@ class Func_4_2_I_5_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2091,15 +1957,7 @@ class Func_4_2_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's wrong. We know that to shift a function right, we need to subtract a number from what we plug in for x.
-                We want to shift the function <bookmark mark="shiftRight"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is
-                that there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark="f"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="xSquared"/> x squared <bookmark mark="minusThreeX"/>minus three x. We then add one point five to both occurences of x and put brackets around it.
-                Then, the term of the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="onePointFive"/>one point five close bracket squared, <bookmark mark="minusThreeNew"/>minus three times open bracket <bookmark mark="xNew2"/>
-                x plus one point five close bracket.
-                """
+                text=self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
@@ -2159,7 +2017,7 @@ class Func_4_2_I_5_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Shifting sideways")
+        self.add_title(self.translate("Func_4_2.I3.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2187,15 +2045,7 @@ class Func_4_2_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it. well done. We know that to shift a function right, we need to subtract a number from what we plug in for x.
-                We want to shift the function <bookmark mark="shiftRight"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is
-                that there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark="f"/> f of <bookmark mark="x"/> x equals
-                <bookmark mark="xSquared"/> x squared <bookmark mark="minusThreeX"/>minus three x. We then add one point five to both occurences of x and put brackets around it.
-                Then, the term of the shifted function is <bookmark mark="fNew"/>f of <bookmark mark="xNew"/>x equals open bracket
-                <bookmark mark="xSquaredNew"/>x plus <bookmark mark="onePointFive"/>one point five close bracket squared, <bookmark mark="minusThreeNew"/>minus three times open bracket <bookmark mark="xNew2"/>
-                x plus one point five close bracket.
-                """
+                text=self.translate("Func_4_2.I5.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")

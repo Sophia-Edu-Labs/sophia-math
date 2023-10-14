@@ -110,13 +110,12 @@ class Func_3_3_I_1(SophiaCursorScene):
 #####################################
 #####################################
 class Func_3_3_I_2_q(SophiaCursorScene):
-
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions=ast.literal_eval(self.translate("Func_3_3.I2.q.answer-options")),
             correctAnswerIndex=2,
             questionText = self.translate("Func_3_3.I2.q.question-text") 
-        )
+        )        
 
     # Main method for constructing the animation
     def construct(self):

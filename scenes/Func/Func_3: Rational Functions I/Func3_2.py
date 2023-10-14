@@ -702,7 +702,7 @@ class Func_3_2_P_1_q(horizontalAsymptoteQuestionScene):
 
     def construct(self):
 
-        self.introText = "Let's practice!"
+        self.introText = self.translate("Func_3_2.P1.q.intro-text")
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -715,14 +715,14 @@ class Func_3_2_P_1_a(horizontalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.yGreen = 2
         self.yPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P1.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P1.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P1.a.purple-text")
 
         super().construct()
 
@@ -730,14 +730,14 @@ class Func_3_2_P_1_b(horizontalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.yGreen = 2
         self.yPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P1.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P1.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P1.a.purple-text")
 
         super().construct()
 
@@ -745,14 +745,14 @@ class Func_3_2_P_1_c(horizontalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Yep, you got it! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.yGreen = 2
         self.yPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P1.c.intro-text")
+        self.greenText = self.translate("Func_3_2.P1.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P1.a.purple-text")
 
         super().construct()
 
@@ -760,14 +760,14 @@ class Func_3_2_P_1_d(horizontalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.yGreen = 2
         self.yPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P1.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P1.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P1.a.purple-text")
 
         super().construct()
 
@@ -784,7 +784,7 @@ class Func_3_2_P_2_q(verticalAsymptoteQuestionScene):
 
     def construct(self):
 
-        self.introText = "Let's look at vertical asymptotes now."
+        self.introText = self.translate("Func_3_2.P2.q.intro-text")
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -797,14 +797,14 @@ class Func_3_2_P_2_a(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Yep, that is correct! Excellent! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 0
         self.xPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P2.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P2.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P2.a.purple-text")
 
 
         super().construct()
@@ -813,14 +813,14 @@ class Func_3_2_P_2_b(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 0
         self.xPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P2.b.intro-text")
+        self.greenText = self.translate("Func_3_2.P2.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P2.a.purple-text")
 
         super().construct()
 
@@ -828,14 +828,14 @@ class Func_3_2_P_2_c(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 0
         self.xPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P2.b.intro-text")
+        self.greenText = self.translate("Func_3_2.P2.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P2.a.purple-text")
 
         super().construct()
 
@@ -843,14 +843,14 @@ class Func_3_2_P_2_d(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Nope, not quite right! Remember the definition of an Asymptote:"
         self.funcs = [lambda x: 1/x+2, lambda x: 1/x+2]
         self.funcRanges = [[0.5, 8, 0.01], [-8, -1/6, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 0
         self.xPurple = -2
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is not an asymptote of the function, because the function crosses it."
+        self.introText = self.translate("Func_3_2.P2.b.intro-text")
+        self.greenText = self.translate("Func_3_2.P2.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P2.a.purple-text")
 
         super().construct()
 
@@ -868,7 +868,7 @@ class Func_3_2_P_3_q(verticalAsymptoteQuestionScene):
 
     def construct(self):
 
-        self.introText = "Let's look at vertical asymptotes once more."
+        self.introText = self.translate("Func_3_2.P3.q.intro-text")
         self.funcs = 3*[lambda x: 1/((x-1)*(x+1))+1]
         self.funcRanges = [[-8, -1.1547, 0.01], [-0.89442, 0.89442, 0.01], [1.1547, 8, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -881,14 +881,14 @@ class Func_3_2_P_3_a(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "That's not correct. Remember: We defined asymptotes like this:"
         self.funcs = 3*[lambda x: 1/((x-1)*(x+1))+1]
         self.funcRanges = [[-8, -1.1547, 0.01], [-0.89442, 0.89442, 0.01], [1.1547, 8, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 1
         self.xPurple = -1
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is also an asymptote of the function, again because the function gets arbitrarily close to it, but never reaches it."
+        self.introText = self.translate("Func_3_2.P3.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P3.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P3.a.purple-text")
 
         super().construct()
 
@@ -896,14 +896,14 @@ class Func_3_2_P_3_b(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "That's not correct. Remember: We defined asymptotes like this:"
         self.funcs = 3*[lambda x: 1/((x-1)*(x+1))+1]
         self.funcRanges = [[-8, -1.1547, 0.01], [-0.89442, 0.89442, 0.01], [1.1547, 8, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 1
         self.xPurple = -1
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is also an asymptote of the function, again because the function gets arbitrarily close to it, but never reaches it."
+        self.introText = self.translate("Func_3_2.P3.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P3.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P3.a.purple-text")
 
         super().construct()
 
@@ -911,14 +911,14 @@ class Func_3_2_P_3_c(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "Yep, that is correct! Excellent! Remember the definition of an Asymptote:"
         self.funcs = 3*[lambda x: 1/((x-1)*(x+1))+1]
         self.funcRanges = [[-8, -1.1547, 0.01], [-0.89442, 0.89442, 0.01], [1.1547, 8, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 1
         self.xPurple = -1
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is also an asymptote of the function, again because the function gets arbitrarily close to it, but never reaches it."
+        self.introText = self.translate("Func_3_2.P3.c.intro-text")
+        self.greenText = self.translate("Func_3_2.P3.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P3.a.purple-text")
 
 
         super().construct()
@@ -927,14 +927,14 @@ class Func_3_2_P_3_d(verticalAsymptoteAnswerScene):
 
     def construct(self):
 
-        self.introText = "That's not correct. Remember: We defined asymptotes like this:"
         self.funcs = 3*[lambda x: 1/((x-1)*(x+1))+1]
         self.funcRanges = [[-8, -1.1547, 0.01], [-0.89442, 0.89442, 0.01], [1.1547, 8, 0.01]]
         self.cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
         self.xGreen = 1
         self.xPurple = -1
-        self.greenText = "an asymptote of the function, because the function gets arbitrarily close to it, but never reaches it."
-        self.purpleText = "is also an asymptote of the function, again because the function gets arbitrarily close to it, but never reaches it."
+        self.introText = self.translate("Func_3_2.P3.a.intro-text")
+        self.greenText = self.translate("Func_3_2.P3.a.green-text")
+        self.purpleText = self.translate("Func_3_2.P3.a.purple-text")
 
         super().construct()
 
