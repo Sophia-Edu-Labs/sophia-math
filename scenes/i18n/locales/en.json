@@ -31,6 +31,74 @@
         "linear-growth": "Linear Growth",
         "voiceover": "What is the reason that in the chessboard example, the number of grains of rice you have to pay\nincreases so fast? How does rice get so much more expensive than gold, so quickly?\nThe answer to both of these questions is the same: Exponential Growth.\nLet's compare the two options, rice and gold, again. Specifically,\nlet's describe them <bookmark mark=\"cords\"/> using functions.\nWe'll start with gold.\nThe function that describes the amount of gold you have to pay for a given number of squares is\n<bookmark mark=\"f_gold\"/> f of x equals x.\nFor the first square, you have to pay one gold coin. So f of 1 equals 1.\nFor the second square, you have to pay one gold coin as well. So f of 2 equals one for the first square,\nplus one for the second square, which is two. And so on. As you can see, the amount you have to pay\nincreases linearly with the number of squares you have to pay for. One extra square costs exactly\nas much as each of the previous squares, and the last square costs exactly as much as the first one.\nWe call this <bookmark mark=\"linear\"/>linear growth...\n\nNow, let's <bookmark mark=\"clean\"/> look at rice for comparison.\nThe <bookmark mark=\"cords_rice\"/>function that describes the amount of rice you have to pay for a\ngiven number of squares is <bookmark mark=\"f_rice\"/> an exponential function\nFor the first square, you have to pay one grain of rice. So f of 1 equals 1.\nFor the second square, you have to pay two grains of rice. So f of 2 equals one for the first square,\nplus two for the second square, which is three. \nFor the third square, you have to pay four grains of rice. So f of 3 equals one for the first square,\nplus two for the second square, plus four for the third square, which is seven.\nAnd so on.\nAs you can see, the amount you have to pay increases rapidly with the number of squares you have to pay for,\nbecause for each square, you have to pay twice as much as for the previous square.\nWe call this <bookmark mark=\"exponential\"/>exponential growth..."
       }
+    },
+    "1I3": {
+      "main": {
+        "title": "Linear Growth",
+        "voiceover": "Meet <bookmark mark=\"tom_in_1\"/> Tom.\nTom is a <bookmark mark=\"chicken_in_1\"/> chicken farmer.\nHe has <bookmark mark=\"two_chickens\"/>two chickens. Every day, each of them lays\n<bookmark mark=\"one_egg_per_day\"/>one egg.\nBecause Tom likes eggs so much, he collects them every day\nand counts <bookmark mark=\"calendar\"/>how many eggs he has collected over time.\n\nLet's help tom by describing the number of eggs he has collected using a function.\nWe'll describe the function using a <bookmark mark=\"cords\"/>graph.\n\nSo after <bookmark mark=\"one_day\"/>one day, tom has <bookmark mark=\"two_eggs\"/>\ntwo eggs, because each of the two chickens has laid one egg.\nAfter <bookmark mark=\"two_days\"/>two days, tom has <bookmark mark=\"four_eggs\"/>\nfour eggs, because each of the two chickens has laid one egg on the first day,\nand one egg on the second day.\nAnd after <bookmark mark=\"three_days\"/>three days, tom has <bookmark mark=\"six_eggs\"/>\nsix eggs, because each of the two chickens has laid one egg on the first day,\none egg on the second day, and one egg on the third day. and so it continues...\n\nSo <bookmark mark=\"plot\"/> every day, tom gets two extra eggs.\nThis means, that we can describe the number of eggs tom has collected using a\n<bookmark mark=\"func\"/>function f <bookmark mark=\"fx\"/> of x equals \n<bookmark mark=\"two_times\"/>two times <bookmark mark=\"x\"/>x, where x is the\nnumber of days that have passed.\n\nIf you look at the plot of this function, you can see that it is a straight line,\nbecause the number of eggs increases by the same amount every day.\nThis is called <bookmark mark=\"linear\"/>linear growth."
+      }
+    },
+    "1I4": {
+      "main": {
+        "title": "Exponential Growth",
+        "two_chickens": "2\\\\times",
+        "one_egg": "$1/$week",
+        "voiceover": "Meet <bookmark mark=\"Sophie_in_1\"/> Sophie.\nSophie loves <bookmark mark=\"chicken_in_1\"/> chickens.\nShe currently has <bookmark mark=\"two_chickens_1\"/>two chickens, but she wants\nmany more. Each of her two chickens lays <bookmark mark=\"one_egg_per_week\"/>\none egg per week, and at the end of the week, the  chicken from the egg is\nhatched and old enough to lay eggs itself. Those are some fast chickens!\n\nLet's describe the number of chickens Sophie has using the <bookmark mark=\"graph\"/>\ngraph of a function.\nSo in the <bookmark mark=\"one_week\"/>first week, sophie has two chickens<bookmark mark=\"two_chickens\"/>\nOne week <bookmark mark=\"two_weeks\"/>later, Sophie has <bookmark mark=\"four_chickens\"/>\nfour chickens. The two chickens she started with, and the two chickens that hatched from the eggs.\n\nIn the <bookmark mark=\"three_weeks\"/>next week, Sophie has four chickens that lay one egg each,\nso she gets four eggs. This means that the total number of chickens after the second week is\n<bookmark mark=\"eight_chickens\"/>eight: the four chickens from the first week, and the four chickens\nthat hatched from the eggs.\n\nIn the <bookmark mark=\"four_weeks\"/>fourth week, Sophie has eight chickens that lay one\negg each, so she gets eight eggs. So the total number of chickens after the third week is\n<bookmark mark=\"sixteen_chickens\"/>sixteen: the eight chickens from the second week, and the\neight chickens that hatched from the eggs.\n\nAs you can see, <bookmark mark=\"plot\"/>the number of chickens increases really fast, and this is what we call\nexponential growth. The number of chickens doubles every week, because each of your\nchickens lays one egg per week. This means, that the number of chickens you have after\nx weeks is described by <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"two\"/>\ntwo to the <bookmark mark=\"power\"/> power of x. Because you start with two chickens, and each time x\nincreases by one, the number of chickens doubles.\n\nThis is what we call <bookmark mark=\"exponential\"/>exponential growth."
+      }
+    },
+    "I5": {
+      "q": {
+        "answer-options": "[\"exponentially\", \"linearly\"]",
+        "question-text": "Does the number of bacteria grow exponentially or linearly?"
+      },
+      "main": {
+        "title": "Exponential or Linear?",
+        "bacteria_double2": "$20$ minutes",
+        "bacteria_double1": "$\\\\Uparrow$ Duplicate every",
+        "voiceover": "My friend <bookmark mark=\"sarah\"/>Sarah is a doctor and she does research on\n<bookmark mark=\"bacteria\"/>bacteria.\nDid you know, that bacteria grow, by simply duplicating themselves?\nThe bacteria that Sarah is studying for example <bookmark mark=\"bacteria_double\"/>\nduplicate once every twenty minutes. This means, that every twenty minutes, each\nof the bacteria sarah is studying, turns into<bookmark mark=\"show_double\"/> two bacteria...\nNow Sarah wants to know: Does the number of bacteria she is analyzing grow\n<bookmark mark=\"linear\"/>linearly, or does it grow <bookmark mark=\"exponential\"/> exponentially?",
+        "eg1": "$\\\\Rightarrow$ The number of bacteria",
+        "eg2": "grows exponentially"
+      },
+      "a": {
+        "voiceover": "That's correct, well done.\nLet's look at the number of bacteria step by step.\nAt first, there's one <bookmark mark=\"one\"/> bacteria.\nAfter twenty minutes, the bacteria duplicates, so there are<bookmark mark=\"two\"/> two bacteria.\nAfter another twenty minutes, each of the two bacteria duplicates, so there are <bookmark mark=\"four\"/>four bacteria.\nAnd after another twenty minutes, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n\nSo you see, how at each of the timesteps, we get twice as many bacteria as in the previous timestep:<bookmark mark=\"step0\"/>\nIn the first timestep, we get <bookmark mark=\"step1\"/>one bacteria, in the second timestep, we get <bookmark mark=\"step2\"/>two bacteria\nand in the third timestep, we get <bookmark mark=\"step3\"/>four bacteria...\nThis means, that the number of bacteria grows <bookmark mark=\"exponential\"/>exponentially, because at each timestep we get\ntwice as many additional bacteria as in the previous timestep."
+      },
+      "b": {
+        "voiceover": "No, that's not right.\nLet's look at the number of bacteria step by step.\nAt first, there's one <bookmark mark=\"one\"/> bacteria.\nAfter twenty minutes, the bacteria duplicates, so there are<bookmark mark=\"two\"/> two bacteria.\nAfter another twenty minutes, each of the two bacteria duplicates, so there are <bookmark mark=\"four\"/>four bacteria.\nAnd after another twenty minutes, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n\nSo you see, how at each of the timesteps, we get twice as many bacteria as in the previous timestep:<bookmark mark=\"step0\"/>\nIn the first timestep, we get <bookmark mark=\"step1\"/>one bacteria, in the second timestep, we get <bookmark mark=\"step2\"/>two bacteria\nand in the third timestep, we get <bookmark mark=\"step3\"/>four bacteria...\nThis means, that the number of bacteria grows <bookmark mark=\"exponential\"/>exponentially, because at each timestep we get\ntwice as many additional bacteria as in the previous timestep."
+      }
+    },
+    "I6": {
+      "q": {
+        "question-text": "Which function describes the number of bacteria at time x?",
+        "bacteria_double_a": "$\\\\Uparrow$ Duplicate every",
+        "bacteria_double_b": "$20$ minutes",
+        "bacteria_time": "time",
+        "bacteria_minutes": "Minutes",
+        "voiceover": "<bookmark mark=\"sarah\"/>Sarah knows, that the <bookmark mark=\"bacteria\"/>bacteria she is studying duplicate every twenty minutes.\nNow she wants to describe the number of bacteria she is studying using a function.\nLet x<bookmark mark=\"table\"/> be the time that is passed in units of twenty minutes, so <bookmark mark=\"row_1\"/>x equals one means\ntwenty minutes, <bookmark mark=\"row_2\"/>x equals two means forty minutes,<bookmark mark=\"rowsss\"/> and so on.\n<bookmark mark=\"clean\"/>Which of these functions describe the number of bacteria at time x?\nIs it<bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"ftwo\"/>2 times <bookmark mark=\"fxx\"/> x?\nOr is it<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nOr is it<bookmark mark=\"h\"/> h of <bookmark mark=\"hx\"/>x equals <bookmark mark=\"hxx\"/>x squared?"
+      },
+      "a": {
+        "title": "Exponential growth",
+        "voiceover": "That's not it.\nAgain, let's look at how many bacteria we have at each step.\nWhen we beginn, at x equals zero, there's one <bookmark mark=\"one\"/> bacteria.\nAfter twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark=\"two\"/> two bacteria.\nAfter another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark=\"four\"/>four bacteria.\nAnd after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n\nSo you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark=\"step0\"/>\nIn the first timestep, we go from <bookmark mark=\"step1\"/>one bacteria to two so we multiply the number of bacteria that we have by two.\nIn the second timestep, we go from two <bookmark mark=\"step2\"/> bacteria to four, so we double the number of bacteria again.\nand in the third timestep, we go from four <bookmark mark=\"step3\"/> bacteria to eight, again multiplying the number of bacteria by two.\n\nThis means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.\nThis means, that the function describing the number of bacteria is<bookmark mark=\"exponential\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x."
+      },
+      "b": {
+        "bacteria": "Bacteria",
+        "voiceover": "That's correct, well done.\nAgain, let's look at how many bacteria we have at each step.\nWhen we beginn, at x equals zero, there's one <bookmark mark=\"one\"/> bacteria.\nAfter twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark=\"two\"/> two bacteria.\nAfter another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark=\"four\"/>four bacteria.\nAnd after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n\nSo you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark=\"step0\"/>\nIn the first timestep, we go from <bookmark mark=\"step1\"/>one bacteria to two so we multiply the number of bacteria that we have by two.\nIn the second timestep, we go from two <bookmark mark=\"step2\"/> bacteria to four, so we double the number of bacteria again.\nand in the third timestep, we go from four <bookmark mark=\"step3\"/> bacteria to eight, again multiplying the number of bacteria by two.\n\nThis means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.\nThis means, that the function describing the number of bacteria is<bookmark mark=\"exponential\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x."
+      }
+    },
+    "I7": {
+      "q": {
+        "answer-options": "[\"The blue graph\", \"The green graph\", \"The purple graph\"],",
+        "question-text": "Which of the graphs belongs to the function?",
+        "lin-growth": "Linear Growth",
+        "voiceover": "Look at the function<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nWhich of the following <bookmark mark=\"cords\"/> graphs belongs to the function?\nThe <bookmark mark=\"blue\"/> blue graph? Or the <bookmark mark=\"green\"/> green graph? Or is it the <bookmark mark=\"purple\"/> purple graph?"
+      },
+      "a": {
+        "double-t1": "$\\\\Uparrow$ Duplicate every",
+        "double-t2": "$20$ minutes",
+        "voiceover": "No, that's not right.\nFor the function <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x,\nthe number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark=\"cords\"/>\nThe <bookmark mark=\"blue\"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're\nlooking for.\nThe <bookmark mark=\"purple\"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark=\"clear_cords\"/> either.\nThe <bookmark mark=\"green\"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,\nit doubles at every timestep, so it must be the right one."
+      },
+      "b": {
+        "voiceover": "Yep, that's it!\nFor the function <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x,\nthe number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark=\"cords\"/>\nThe <bookmark mark=\"blue\"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're\nlooking for.\nThe <bookmark mark=\"purple\"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark=\"clear_cords\"/> either.\nThe <bookmark mark=\"green\"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,\nit doubles at every timestep, so it must be the right one."
+      }
     }
   },
   "Func_1_1": {
@@ -1355,6 +1423,651 @@
       },
       "b": {
         "voiceover": "Nope, that's wrong. Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.\nSo, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark=\"vertex\"/>vertex is the point where\nthe function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.\nNow look at the term of the function. It consists of two parts: The part that is <bookmark mark=\"square\"/>squared, and the <bookmark mark=\"3\"/>three that is added.\nNow, we want to find the value of <bookmark mark=\"x\"/>x for which the value of f is the highest, and we want to find that highest value.\nNow look at the two parts again. The <bookmark mark=\"square2\"/>squared part is multiplied with negative two, so we want it to be as small as possible.\nSince it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.\nNow all that is left is <bookmark mark=\"three\"/> the second part, which only consists of a three. <bookmark mark=\"sol\"/> That means, that the highest value of f is three.\nIn summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.\nWe found this, because we started from the vertex form and then first, read off how to get<bookmark mark=\"square3\"/> the squared term to zero, and then looked at\nthe<bookmark mark=\"33\"/> second part."
+      }
+    },
+    "I3": {
+      "q": {
+        "question-text": "What are the coordinates of the vertex?",
+        "voiceover": "Now your turn. Take the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"one\"/> one close bracket squared\n<bookmark mark=\"two\"/>minus two. Luckily for you, it's already in vertex form. Now what is\nthe location of the vertex? What is the x value, that we need to plug in, and what is the \ny value of the vertex?"
+      },
+      "a": {
+        "voiceover": "That is correct! Nice work! \nSo our function is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"one\"/> one close bracket squared\n<bookmark mark=\"two\"/>minus two.\nFirst, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark=\"moveUp\"/>\nNow, we want to find the value of<bookmark mark=\"ofX\"/> x for which the value of f is the lowest, and we want to find that lowest value.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative one for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a negative two.\n<bookmark mark=\"sol\"/> That means, that the lowest value of f is negative two.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two."
+      },
+      "b": {
+        "voiceover": "No, that's not right. \nSo our function is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"one\"/> one close bracket squared\n<bookmark mark=\"two\"/>minus two.\nFirst, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark=\"moveUp\"/>\nNow, we want to find the value of<bookmark mark=\"ofX\"/> x for which the value of f is the lowest, and we want to find that lowest value.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative one for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a negative two.\n<bookmark mark=\"sol\"/> That means, that the lowest value of f is negative two.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two."
+      }
+    },
+    "I4": {
+      "q": {
+        "question-text": "What are the coordinates of the vertex?",
+        "voiceover": "Ok, let's make our lives easy now.\nConsider a quadratic function in the vertex form: <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"a\"/> \"a\" times open bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"b\"/> b close bracket squared\n<bookmark mark=\"c\"/>plus c.\nLet me tell you: Just by looking at this function, you can tell the coordinates of the vertex.\nWhat are they?"
+      },
+      "a": {
+        "voiceover": "No, that's not right. \nSo the general vertex form is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"a\"/> \"a\" times open bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"b\"/> b close bracket squared\n<bookmark mark=\"c\"/>plus c. \nWe don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark=\"moveUp\"/>\nBut that doesn't matter, since in both cases, we want to find the <bookmark mark=\"ofX\"/>x value that makes the squared term be as small as possible.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative b for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a constant c.\n<bookmark mark=\"sol\"/> That means, that the extreme value of f is equal to c.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to\nthe constant c."
+      },
+      "d": {
+        "voiceover": "Correct, well done, well done. \nSo the general vertex form is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"a\"/> \"a\" times open bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"b\"/> b close bracket squared\n<bookmark mark=\"c\"/>plus c. \nWe don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark=\"moveUp\"/>\nBut that doesn't matter, since in both cases, we want to find the <bookmark mark=\"ofX\"/>x value that makes the squared term be as small as possible.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative b for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a constant c.\n<bookmark mark=\"sol\"/> That means, that the extreme value of f is equal to c.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to\nthe constant c.",
+        "vertex": "Vertex: "
+      }
+    },
+    "I5": {
+      "q": {
+        "title": "Factored Form",
+        "answer-options": "[\"We can easily determine the location of the vertex\", \"We can easily determine the location of the zeros\", \"We can easily determine the location of the y-intercept\"]",
+        "question-text": "What is the advantage of the factored form?",
+        "voiceover": "New Video, new form of quadratic functions. Now we're looking at the factored form.\nConsider the following example: <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\n<bookmark mark=\"cords\"/> If you look at <bookmark mark=\"plot\"/>the plot of this function,\nand compare it with the factored form of its term, can you think of what the advantage\nof the factored form might be?"
+      },
+      "a": {
+        "if_statement": "if",
+        "voiceover": "No, that's not what the factored form is good for.\nLet's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1.",
+        "sol1a": "Zeros at ",
+        "sol1b": "and"
+      },
+      "b": {
+        "voiceover": "Yes, that's exactly what the factored form is good for.\nLet's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1."
+      }
+    },
+    "I6": {
+      "q": {
+        "question-text": "Where are the two zeros of $f(x)=(x+2)(x-3)$?",
+        "voiceover": "Look at this quadratic function in factored form <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x minus <bookmark mark=\"3\"/>3 close bracket.\nWhat are the zeroes of this function?"
+      },
+      "a": {
+        "voiceover": "No, those are not the two zeros.\nSo look at the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x minus <bookmark mark=\"3\"/>3 close bracket.\nSay we want to determine the zeros of that function. f is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x plus 2, and the second is the <bookmark mark=\"b2\"/> bracket x minus 3.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals negative 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals 3.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals negative 2 and\n<bookmark mark=\"z2\"/> at x equals 3.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals negative 2, and the other one is at<bookmark mark=\"zg2\"/> x equals 3.",
+        "sol1a": "Zeros at ",
+        "sol1b": " and "
+      },
+      "c": {
+        "voiceover": "Exactly, those are the two zeros.\nSo look at the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x minus <bookmark mark=\"3\"/>3 close bracket.\nSay we want to determine the zeros of that function. f is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x plus 2, and the second is the <bookmark mark=\"b2\"/> bracket x minus 3.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals negative 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals 3.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals negative 2 and\n<bookmark mark=\"z2\"/> at x equals 3.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals negative 2, and the other one is at<bookmark mark=\"zg2\"/> x equals 3."
+      }
+    },
+    "I7": {
+      "q": {
+        "question-text": "Where are the two zeros of $f(x)=(x+a)(x+b)$?",
+        "voiceover": "Now look at the general case of the factored form: <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"a\"/>\"a\" close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"b\"/>b close bracket.\nWhat are the zeroes of this function?"
+      },
+      "a": {
+        "voiceover": "No, those are not the two zeros.\nSo look at the function<bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"a\"/>\"a\" close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"b\"/>b close bracket.\nSay we want to determine the zeros of that function. f is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x plus \"a\", and the second is the <bookmark mark=\"b2\"/> bracket x plus b.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals negative a, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative b.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals negative \"a\" and\n<bookmark mark=\"z2\"/> at x equals negative b.\nNow you can easily read off the zeros from the factored form. Cool, right?"
+      },
+      "d": {
+        "voiceover": "That is correct, great job!\nSo look at the function<bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"a\"/>\"a\" close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"b\"/>b close bracket.\nSay we want to determine the zeros of that function. f is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x plus \"a\", and the second is the <bookmark mark=\"b2\"/> bracket x plus b.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals negative a, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative b.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals negative \"a\" and\n<bookmark mark=\"z2\"/> at x equals negative b.\nNow you can easily read off the zeros from the factored form. Cool, right?"
+      }
+    },
+    "I8": {
+      "q": {
+        "title": "Forms of Quadratic Functions",
+        "voiceover": "Ok, quick recap of the forms of quadratic functions we have seen thus far.\nFirst, there is the standard form <bookmark mark=\"f1\"/> f of <bookmark mark=\"x1\"/>x equals\n<bookmark mark=\"a1\"/>a times x squared <bookmark mark=\"b1\"/>plus b times x <bookmark mark=\"c1\"/>plus c.\nIt is useful for quickly recognizing the coefficients of the x squared term, the x term and the constant.\nThen there is the vertex form <bookmark mark=\"f2\"/> f of <bookmark mark=\"x2\"/>x equals\n<bookmark mark=\"a2\"/>a times open <bookmark mark=\"x21\"/>bracket x <bookmark mark=\"b2\"/>plus b close bracket squared <bookmark mark=\"c2\"/>plus c.\nIt is used, because you can easily read of the location of the vertex from it.\nAnd finally, there is the factored form <bookmark mark=\"f3\"/> f of <bookmark mark=\"x3\"/>x equals\nopen <bookmark mark=\"x31\"/>bracket x <bookmark mark=\"a3\"/>minus a close bracket times\nopen <bookmark mark=\"x32\"/>bracket x <bookmark mark=\"b3\"/>minus b close bracket. The factored form is useful,\nbecause it allows you to quickly read off the zeros of the function. So three different forms, three different\nsets of advantages and disadvantages."
+      }
+    }
+  },
+  "Func_5_1": {
+    "I1": {
+      "q": {
+        "title": "Power Functions",
+        "voiceover": "Let's jump into powerfunctions with the definition:\nA power function is a function of the form<bookmark mark=\"form\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"a\"/> a\ntimes <bookmark mark=\"x\"/>x to the power of n, where <bookmark mark=\"real\"/>a is a real number and n is an <bookmark mark=\"int\"/>integer.\nNow you've probably already seen at least two <bookmark mark=\"shiftDown\"/> examples of power functions.\nIf you choose <bookmark mark=\"n1\"/> n equals 1, you get a linear function f of x equals a times x.\nIf you choose <bookmark mark=\"n2\"/> n equals 2, you get a quadratic function f of x equals a times x squared.\nIf you choose <bookmark mark=\"n3\"/> n equals 3, you get a cubic function f of x equals a times x cubed.\nNow for a bit of <bookmark mark=\"cleanUp\"/> vocabulary. The value that is raised to a power is called the base.\nIn our example, since we're dealing with x to the power of n, <bookmark mark=\"base\"/>x is the base.\nThe power to which the base is raised is called the exponent.\nIn our example, since we're dealing with x to the power of <bookmark mark=\"exponent\"/>n, n is the exponent."
+      },
+      "a": {
+        "voiceover": "quick check to make sure you keep the definitions in mind.\nLook at the expression<bookmark mark=\"three\"/> 3 times <bookmark mark=\"y\"/>y to the power of <bookmark mark=\"4\"/>4.\nIn this example, what <bookmark mark=\"base\"/>is the base, and <bookmark mark=\"exponent\"/>what is the exponent."
+      },
+      "voiceover": "Let's jump into powerfunctions with the definition:\nA power function is a function of the form<bookmark mark=\"form\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"a\"/> a\ntimes <bookmark mark=\"x\"/>x to the power of n, where <bookmark mark=\"real\"/>a is a real number and n is an <bookmark mark=\"int\"/>integer.\nNow you've probably already seen at least two <bookmark mark=\"shiftDown\"/> examples of power functions.\nIf you choose <bookmark mark=\"n1\"/> n equals 1, you get a linear function f of x equals a times x.\nIf you choose <bookmark mark=\"n2\"/> n equals 2, you get a quadratic function f of x equals a times x squared.\nIf you choose <bookmark mark=\"n3\"/> n equals 3, you get a cubic function f of x equals a times x cubed.\nNow for a bit of <bookmark mark=\"cleanUp\"/> vocabulary. The value that is raised to a power is called the base.\nIn our example, since we're dealing with x to the power of n, <bookmark mark=\"base\"/>x is the base.\nThe power to which the base is raised is called the exponent.\nIn our example, since we're dealing with x to the power of <bookmark mark=\"exponent\"/>n, n is the exponent."
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"Base: $3$, Exponent: $4$\", \"Base: $y$, Exponent: $3$\", \"Base: $y$, Exponent: $4$\", \"Base: $4$, Exponent: $y$\"]",
+        "question-text": "Considering the expression $3y^4$, which is the base, and which is the exponent?",
+        "voiceover": "quick check to make sure you keep the definitions in mind.\nLook at the expression<bookmark mark=\"three\"/> 3 times <bookmark mark=\"y\"/>y to the power of <bookmark mark=\"4\"/>4.\nIn this example, what <bookmark mark=\"base\"/>is the base, and <bookmark mark=\"exponent\"/>what is the exponent."
+      },
+      "a": {
+        "voiceover": "No, not quite.\nThe base is whatever we raise to a power, so in this case, the base is <bookmark mark=\"y\"/> y.\nThe exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark=\"4\"/> 4.",
+        "bbase": "y is the Base",
+        "bexponent": "4 is the Exponent"
+      },
+      "c": {
+        "voiceover": "Yep, that's right.\nThe base is whatever we raise to a power, so in this case, the base is <bookmark mark=\"y\"/> y.\nThe exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark=\"4\"/> 4."
+      }
+    },
+    "I3": {
+      "q": {
+        "answer-options": "[\"Functions with an even degree are always positive, while functions with an odd degree can be negative.\", \"Functions with an even degree are always negative, while functions with an odd degree can be positive.\", \"Functions with an even degree are always positive, while functions with an odd degree can be positive or negative.\", \"Functions with an even degree are always negative, while functions with an odd degree can be positive or negative.\"]",
+        "voiceover": "Back to power functions with the general structure <bookmark mark=\"form\"/> f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"a\"/> a\ntimes <bookmark mark=\"x\"/>x to the power of n, and quick reminder, <bookmark mark=\"real\"/>a is a real number and n is an <bookmark mark=\"int\"/>integer.\nIf we now take another look at the <bookmark mark=\"shiftDown\"/> examples of power functions that we've seen, namely\nthe <bookmark mark=\"n1\"/>linear function f of x equals a times x n equals 1,\nthe <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared.\nand the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed...\n<bookmark mark=\"shift\"/>\nWe'll also add the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four.\nNow here's a question for you: What is the main difference between functions with an even number of degree,\nlike the quadratic function, and functions with an odd number of degree, like the cubic function?",
+        "question-text": "What's the difference between functions with an even degree and functions with an odd degree?"
+      },
+      "a": {
+        "voiceover": "Yes, well done!\nLet's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...\nFirst, we have  <bookmark mark=\"n1\"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,\nthe function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.\nNext, there is the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.\nSo they are sometimes positive and sometimes negative.\nNow, <bookmark mark=\"unWriteOdd\"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...\nSo first we have the <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,\nboth for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.\nAnd finally, there is the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.\nSo, <bookmark mark=\"unWriteEven\"/>to sum up, functions with an <bookmark mark=\"even\"/> even degree are always positive, while functions with an <bookmark mark=\"odd\"/>odd degree can be positive or negative."
+      },
+      "b": {
+        "voiceover": "No, that's not right...\nLet's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...\nFirst, we have  <bookmark mark=\"n1\"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,\nthe function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.\nNext, there is the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.\nSo they are sometimes positive and sometimes negative.\nNow, <bookmark mark=\"unWriteOdd\"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...\nSo first we have the <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,\nboth for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.\nAnd finally, there is the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.\nSo, <bookmark mark=\"unWriteEven\"/>to sum up, functions with an <bookmark mark=\"even\"/> even degree are always positive, while functions with an <bookmark mark=\"odd\"/>odd degree can be positive or negative."
+      }
+    },
+    "I4": {
+      "q": {
+        "answer-options": "[\"Blue: Odd, Orange: Even\", \"Blue: Even, Orange: Even\", \"Blue: Odd, Orange: Odd\", \"Blue: Even, Orange: Odd\"]",
+        "question-text": "Do the blue and the orange function have an even or an odd degree?",
+        "voiceover": "Ok, here comes the next question:\nLook at the <bookmark mark=\"n2\"/> blue function, and look at the <bookmark mark=\"n3\"/> orange function.\nDo they each have an even degree, or an odd degree?"
+      },
+      "a": {
+        "voiceover": "No, that's not right...\nThe <bookmark mark=\"n2\"/> blue function belongs to the <bookmark mark=\"blueTerm\"/> Term negative one times <bookmark mark=\"x2\"/>\nx squared. This means, that the<bookmark mark=\"degE\"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,\nthe function values are always negative, instead of always positive.\nThe <bookmark mark=\"n3\"/> orange function belongs to the <bookmark mark=\"orangeTerm\"/> Term 0.5 times <bookmark mark=\"x3\"/>\nx cubed. This means, that the <bookmark mark=\"degO\"/>degree of the orange function is odd, because it has degree three."
+      },
+      "d": {
+        "voiceover": "Yes, that's it!\nThe <bookmark mark=\"n2\"/> blue function belongs to the <bookmark mark=\"blueTerm\"/> Term negative one times <bookmark mark=\"x2\"/>\nx squared. This means, that the<bookmark mark=\"degE\"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,\nthe function values are always negative, instead of always positive.\nThe <bookmark mark=\"n3\"/> orange function belongs to the <bookmark mark=\"orangeTerm\"/> Term 0.5 times <bookmark mark=\"x3\"/>\nx cubed. This means, that the <bookmark mark=\"degO\"/>degree of the orange function is odd, because it has degree three."
+      }
+    },
+    "I5": {
+      "q": {
+        "voiceover": "Now we've seen the difference between functions of even and odd degree: Functions of <bookmark mark=\"even\"/>even degree\nare always positive or always negative, while functions of <bookmark mark=\"odd\"/>odd degree can be both positive and negative.\nThere is a cool way to visually describe this, by using symmetry.\nLet's start with <bookmark mark=\"odd2\"/> odd functions. \nLooking at the orange function, see how the function value of a number x is the same as the negative value of negative x?\nSo for example, f of <bookmark mark=\"p1\"/>one is one, and f of<bookmark mark=\"n1\"/>negative one is negative one.\nSo f of negative one is the same as negative f of one.\nAnother example: The value of f at <bookmark mark=\"p2\"/> two is two times two times two, which is eight, and the\nvalue of f at <bookmark mark=\"n2\"/>negative two is  negative two times negative two times negative two, which is negative eight.\nSo the rule that we can observe here is that <bookmark mark=\"odd3\"/> f of negative x is equal to negative f of x.\nGraphically, this means that there is a <bookmark mark=\"rotate\"/> rotational symmetry around the origin.\nIf you <bookmark mark=\"rotate2\"/> rotate the function around the origin by 180 degrees, you get the same function again.\nAnd since this is true for all functions of odd degrees, for example x to the power of five, we call all functions that have this property\n\"odd functions\"."
+      }
+    },
+    "I6": {
+      "q": {
+        "voiceover": "The symmetry of power functions with an <bookmark mark=\"even\"/>even degree is this:\n<bookmark mark=\"even2\"/>f of negative x is equal to f of x.\nSo looking at the function f of x equals x squared for example, we see that <bookmark mark=\"p1\"/>\nf of one is one, and <bookmark mark=\"n1\"/>f of negative one is also one.\nOr that <bookmark mark=\"p2\"/>f of two is four, and <bookmark mark=\"n2\"/>f of negative two is also four.\nGraphically, this means that the function is <bookmark mark=\"sym1\"/>symmetrical around the y-axis.\nThis means, that we can <bookmark mark=\"sym2\"/>reflect the function at the y-axis, and get the same function again.\nAnd since this is true for all functions of even degrees, for example x to the power of four, we call all functions that have this property\n\"even functions\".",
+        "even1": "Even functions:",
+        "even2": "$\\\\Rightarrow$ symmetrical",
+        "even3": "around the y-axis"
+      }
+    },
+    "I7": {
+      "title": "Even and Odd Functions",
+      "even": "Even functions:",
+      "odd": "Odd functions:",
+      "voiceover": "Summary of even and odd functions:\n\nFor <bookmark mark=\"even\"/>even functions, it holds that <bookmark mark=\"even2\"/>f of negative x is equal to f of x.\nGraphically, this means that the function is <bookmark mark=\"sym1\"/>symmetrical around the y-axis.\nAll power functions with an even degree, like x squared, x to the power of four and so on\nare even functions, but there are other examples of even functions.\n\nFor <bookmark mark=\"odd\"/>odd functions on the other hand, it holds that <bookmark mark=\"odd2\"/>f of negative x is equal to negative f of x.\nGraphically, this means that the function is <bookmark mark=\"rotate\"/>rotational symmetrical around the origin.\nAll power functions with an odd degree, like x, x cubed and so on are odd functions, but there are other examples of odd functions as well."
+    },
+    "EvenOddQuestionScene": {
+      "voiceover": "{self.intro}\nLook at the <bookmark mark=\"n2\"/> {self.c1[1]} function, and look at the <bookmark mark=\"n3\"/> {self.c2[1]} function.\nAre they even functions, odd functions, or neither?"
+    },
+    "EvenOddAnswerScene": {
+      "even": "even",
+      "odd": "odd",
+      "neither": "neither even nor odd",
+      "text1": "The {self.c1[1]} function is neither even nor odd, because it's neither symmetric <bookmark mark=\"r11\"/> around the origin, nor is it <bookmark mark=\"r12\"/>symmetric around the y-axis.",
+      "text2": "The {self.c2[1]} function is neither even nor odd, because it's neither symmetric <bookmark mark=\"r21\"/> around the origin, nor is it <bookmark mark=\"r22\"/>symmetric around the y-axis.",
+      "text1_even": "The {self.c1[1]} function is even, because it is symmetric <bookmark mark=\"r12\"/> around the y-axis.",
+      "text1_odd": "The {self.c1[1]} function is odd, because it is symmetric <bookmark mark=\"r11\"/> around the origin.",
+      "text2_even": "The {self.c2[1]} function is even, because it is symmetric <bookmark mark=\"r22\"/> around the y-axis.",
+      "text2_odd": "The {self.c2[1]} function is odd, because it is symmetric <bookmark mark=\"r21\"/> around the origin.",
+      "voiceover": "{self.intro}\nLet's first look at <bookmark mark=\"f1\"/>the {self.c1[1]} function.\n{text1} <bookmark mark=\"unWrite\"/>\nAnd now let's look at <bookmark mark=\"f2\"/>the {self.c2[1]} function.\n{text2}\nSo: The {self.c1[1]} function is <bookmark mark=\"r1\"/>{s1}, and the {self.c2[1]} function is <bookmark mark=\"r2\"/>{s2}.",
+      "funcTerm2": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Even degree",
+      "funcTerm3": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Odd degree",
+      "r1": "The {self.c1[1]} function is",
+      "r2": "The {self.c2[1]} function is"
+    },
+    "P1": {
+      "q": {
+        "answer-options": "[\"Blue: Even, Orange: Neither\", \"Blue: Even, Orange: Even\", \"Blue: Odd, Orange: Neither\", \"Blue: Even, Orange: Odd\"]",
+        "question-text": "Do the blue and the orange function have an even or an odd degree?",
+        "intro": "Ok, let's practice the concept of even and odd functions:",
+        "c1": "blue",
+        "c2": "orange"
+      },
+      "a": {
+        "intro": "Yep, that is correct!"
+      },
+      "b": {
+        "intro": "No, that's not right..."
+      }
+    },
+    "P2": {
+      "q": {
+        "answer-options": "[\"Purple: Even, Green: Neither\", \"Purple: Neither, Green: Odd\", \"Purple: Even, Green: Even\", \"Purple: Odd, Green: Neither\"]",
+        "question-text": "Do the purple and the green function have an even or an odd degree?",
+        "c1": "purple",
+        "c2": "green",
+        "intro": "Two more examples:"
+      },
+      "a": {
+        "intro": "No, that's not it"
+      },
+      "b": {
+        "intro": "Correct, well done!"
+      }
+    },
+    "P3": {
+      "q": {
+        "answer-options": "[\"Red: Even, Yellow: Odd\", \"Red: Odd, Yellow: Even\", \"Red: Odd, Yellow: Neither\", \"Red: Even, Yellow: Neither\"]",
+        "question-text": "Do the red and the yellow function have an even or an odd degree?",
+        "c1": "red",
+        "c2": "yellow",
+        "intro": "Next set of examples:"
+      },
+      "a": {
+        "intro": "No, that's incorrect."
+      },
+      "d": {
+        "intro": "Yes, you're correct!"
+      }
+    },
+    "P4": {
+      "q": {
+        "c1": "Pink",
+        "c2": "teal",
+        "answer-options": "[\"Pink: Odd, Teal: Odd\", \"Pink: Even, Teal: Odd\", \"Pink: Odd, Teal: Even\", \"Pink: Even, Teal: Even\"]",
+        "question-text": "Do the Pink and the teal function have an even or an odd degree?",
+        "intro": "Last example for today:"
+      },
+      "a": {
+        "intro": "No, that's incorrect."
+      },
+      "b": {
+        "intro": "Yes, you're correct!"
+      }
+    }
+  },
+  "Func_5_2": {
+    "I1": {
+      "q": {
+        "question-text": "What is $\\sqrt[3]{8}$",
+        "title": "n-th Roots",
+        "voiceover": "Remember the concept of a square root?\nThe square root of a number x is the number that you have to multiply by itself to get x.\nSo <bookmark mark=\"rootx1\"/>the square root of x times<bookmark mark=\"rootx2\"/> the square\nroot of x is equal<bookmark mark=\"rootx3\"/> to x.\n\nFor example, the square root of <bookmark mark=\"root4\"/>four is two, because two times two is four.\nAnd the square root of <bookmark mark=\"root9\"/>nine is three, because three times three is nine.\n\nThe reason we call square roots square roots is because we want to know what number we have to\nsquare to get the number under the root, so the number we have to multiply by itself two times.\nThe concept of the square is often signified by <bookmark mark=\"2root\"/>writing a two on the\nleft side of the root symbol. And again, the two means that we're looking for the number that\nwe have to multiply by itself two times to get the number under the root. <bookmark mark=\"deco\"/>\n\nNow that there are square roots, you might be wondering if there are also other roots, and the\nanswer is yes. For example, there's cube roots, which are the numbers that you have to multiply\nby itself three times to get the number under the root. So <bookmark mark=\"Crootx1\"/>the cube\nroot of x times<bookmark mark=\"Crootx2\"/> the cube root of x times <bookmark mark=\"Crootx3\"/>\nthe cube root of x is <bookmark mark=\"Crootx4\"/>equal to x. \n\nFollowing that pattern, <bookmark mark=\"q\"/>can you tell me what the cube root of eight is?"
+      },
+      "a": {
+        "voiceover": "No, that's not it.\nWe're <bookmark mark=\"intro\"/>looking for the cube root of 8, also known as the third root of 8.\nThat means, we're looking for the number that we can cube, or multiply by itself three times to get 8.\nYou can easily <bookmark mark=\"two1\"/>check that 2 <bookmark mark=\"two2\"/>times 2\n<bookmark mark=\"two3\"/>times 2, or <bookmark mark=\"twoCubed\"/>2 to the power of 3<bookmark mark=\"eight\"/>\nequals 8.\nTherefore, <bookmark mark=\"sol\"/>the cube root of 8 <bookmark mark=\"sol2\"/>is 2."
+      },
+      "b": {
+        "voiceover": "Nice, you got it!\nWe're <bookmark mark=\"intro\"/>looking for the cube root of 8, also known as the third root of 8.\nThat means, we're looking for the number that we can cube, or multiply by itself three times to get 8.\nYou can easily <bookmark mark=\"two1\"/>check that 2 <bookmark mark=\"two2\"/>times 2\n<bookmark mark=\"two3\"/>times 2, or <bookmark mark=\"twoCubed\"/>2 to the power of 3<bookmark mark=\"eight\"/>\nequals 8.\nTherefore, <bookmark mark=\"sol\"/>the cube root of 8 <bookmark mark=\"sol2\"/>is 2."
+      }
+    },
+    "I2": {
+      "q": {
+        "question-text": "What is $\\sqrt[4]{16}$?",
+        "voiceover": "Square roots or second roots are the numbers that you have to multiply by itself two times to get the number under the root.\n<bookmark mark=\"cube\"/>Cube roots or third roots are the numbers that you have to multiply by itself three times to get the\nnumber under the root.\nAnd so <bookmark mark=\"dots\"/>it continues for any number, so the fourth root of a number is the number that you have to\nmultiply by itself 4 times to get the number under the root, the fifth root of a number is the number that you have to\nmultiply by itself 5 times to get the number under the root, and so on. So <bookmark mark=\"n\"/>the nth root of a number is\nthe number that you have to multiply by itself n times to get the number under the root.\n\nNow, with that in mind, <bookmark mark=\"q\"/>can you tell me what the fourth root of 16 is?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\nWe're looking <bookmark mark=\"root4\"/>for the fourth root of sixteen, so we're looking for the number that we can multiply by itself\nfour times to get 16.\nYou can easily check, that if you multiply <bookmark mark=\"rootTwo\"/>two by itself four times, you get 16. So <bookmark mark=\"two1\"/>\nsince two <bookmark mark=\"two2\"/>times two<bookmark mark=\"two3\"/> times two<bookmark mark=\"two4\"/> times two <bookmark mark=\"sxtn1\"/>\nequals 16, <bookmark mark=\"sol\"/>the fourth root of 16 <bookmark mark=\"sol2\"/>is 2.\nYou can also <bookmark  mark=\"rootNegTwo\"/> check that if you multiply -2 by itself four times, you also get 16.\nSo <bookmark mark=\"negTwo1\"/> since negative 2 <bookmark mark=\"negTwo2\"/>times negative 2<bookmark mark=\"negTwo3\"/> times negative 2\n<bookmark mark=\"negTwo4\"/> times negative 2 <bookmark mark=\"sxtn2\"/> equals 16, <bookmark mark=\"sol3\"/>the fourth root of 16\n<bookmark mark=\"sol4\"/>is either negative 2 or <bookmark mark=\"sol5\"/>2."
+      },
+      "c": {
+        "voiceover": "Yes, that's correct, well done.\nWe're looking <bookmark mark=\"root4\"/>for the fourth root of sixteen, so we're looking for the number that we can multiply by itself\nfour times to get 16.\nYou can easily check, that if you multiply <bookmark mark=\"rootTwo\"/>two by itself four times, you get 16. So <bookmark mark=\"two1\"/>\nsince two <bookmark mark=\"two2\"/>times two<bookmark mark=\"two3\"/> times two<bookmark mark=\"two4\"/> times two <bookmark mark=\"sxtn1\"/>\nequals 16, <bookmark mark=\"sol\"/>the fourth root of 16 <bookmark mark=\"sol2\"/>is 2.\nYou can also <bookmark  mark=\"rootNegTwo\"/> check that if you multiply -2 by itself four times, you also get 16.\nSo <bookmark mark=\"negTwo1\"/> since negative 2 <bookmark mark=\"negTwo2\"/>times negative 2<bookmark mark=\"negTwo3\"/> times negative 2\n<bookmark mark=\"negTwo4\"/> times negative 2 <bookmark mark=\"sxtn2\"/> equals 16, <bookmark mark=\"sol3\"/>the fourth root of 16\n<bookmark mark=\"sol4\"/>is either negative 2 or <bookmark mark=\"sol5\"/>2."
+      }
+    },
+    "I3": {
+      "voiceover": "Ok, so for power functions, there's a difference between even and odd functions:\n<bookmark mark=\"even\"/>Even functions are functions where the exponent is an even number, like 2, 4, 6, and\nthey are <bookmark mark=\"evenSymmetry\"/>symmetric around the y-axis.\n<bookmark mark=\"odd\"/>Odd functions are functions where the exponent is an odd number, like 1, 3, 5, and\nthey are <bookmark mark=\"oddSymmetry\"/>symmetric around the origin.\n\nThe core <bookmark mark=\"cleanUp\"/>difference between the two comes from this:\n\nIf you raise a negative number to an even power, the result is always positive.\nSo <bookmark mark=\"neg_1_to_2\"/>negative one squared is one, or <bookmark mark=\"neg_1_to_4\"/>negative one to\nthe power of four is also one, because each two negatives cancel each other out\n\nIf you raise a negative number to an odd power however, the result is always negative.\nSo <bookmark mark=\"neg_1_to_3\"/>negative one to the power of three is negative one, because the two negatives\ncancel each other out, but the third one remains.\nAnd <bookmark mark=\"neg_1_to_5\"/>negative one to the power of five is also negative, and <bookmark mark=\"so_on\"/>so on...\n\nThis also has important implications for the roots of these functions.\nThe <bookmark mark=\"one_root_2\"/>square root of one is always both one and negative one, because both of them squared is one.\nThe same goes for <bookmark mark=\"one_root_4\"/>the fourth root of one, the sixth root of one, and so on...\nSo for all even roots of a positive number, there are two solutions: one positive and one negative.\n\nThe <bookmark mark=\"one_root_3\"/>cube root of one however, is only one, because one to the power of three is one, but\nnegative one to the power of three is negative one. The same goes for <bookmark mark=\"one_root_5\"/>the fifth root of one, and so on...\n\nBut now, what about negative numbers?\nWell, the<bookmark mark=\"neg_1_root_2\"/> square root of negative one doesn't exist, because there is no number that you can\nmultiply by itself to get negative one. This is, because negative times negative is always positive.\nThe same goes for <bookmark mark=\"neg_1_root_4\"/>the fourth root of negative one, the sixth root of negative one, and so on...\n\nThe <bookmark mark=\"neg_1_root_3\"/>cube root of negative one however, exists and is equal to negative one,\nbecause negative one to the power of three is negative one. The same goes for <bookmark mark=\"neg_1_root_5\"/>the fifth root\nof negative one, and so on...\n\nSo for all odd roots of a negative number, there is only a solution, and it's negative. For all even roots of a negative\nnumber, there is no solution.",
+      "even": "even exponent",
+      "odd": "odd exponent"
+    },
+    "I4": {
+      "q": {
+        "title": "Even Roots",
+        "answer-options": "[\"$x<0$: no solution, $x>0$: two solutions\", \"$x<0$: two solutions, $x>0$: no solution\", \"$x>0$: one solution, $x<0$: one solution\", \"$x>0$: no solutions, $x<0$: no solutions\"]",
+        "question-text": "Consider $\\\\sqrt[k]{x}$, where k is an even number. How many solutions are there for $x>0$, and how many for $x<0$?",
+        "root_general": "k is even",
+        "Q1": "How many solutions...",
+        "Q2a": "if x is positive..?",
+        "Q2b": "if x is negative..?",
+        "voiceover": "Let's say we're taking <bookmark mark=\"root\"/>an even root of a number x, like the square root, or the fourth root.\n<bookmark mark=\"Q1\"/>How many solutions do we get, <bookmark mark=\"Q2a\"/>if the number x that we're taking the root\nof is positive?\nAnd how many solutions do we get, <bookmark mark=\"Q2b\"/>if the number x that we're taking the root of is negative?"
+      },
+      "a": {
+        "title": "$\\\\sqrt[k]{x}$, k is even",
+        "xpos": "x positive",
+        "xneg": "x negative",
+        "twosol": "Two solutions",
+        "nosol": "No solution",
+        "voiceover": "That's correct. Well done!!!\nIf x is positive, then we're taking an even root of a positive number.\nFor example, <bookmark mark=\"posEx1a\"/>the square root of 4, or\n<bookmark mark=\"posEx2a\"/>the fourth root of 16.\nIn that case, there are always two solutions: one positive and one negative.\nFor example, <bookmark mark=\"posEx1b\"/>the square root of 4 is 2, but also negative 2.\nAnd <bookmark mark=\"posEx2b\"/>the fourth root of 16 is 2, but also negative 2.\nSo, <bookmark mark=\"result_pos_1\"/>if x is positive, <bookmark mark=\"result_pos_3\"/>\nthere are always two solutions.\n\nIf <bookmark mark=\"xNeg\"/>x is negative however, then we're taking an even root of a negative number.\nFor example, <bookmark mark=\"negEx1a\"/>the square root of negative 4, or\n<bookmark mark=\"negEx2a\"/>the fourth root of negative 16.\nIn these cases, there are <bookmark mark=\"strike_out\"/>no solutions,\nbecause whenever you multiply a negative number by itself an even number of times,\nthe result is always positive.\nSo, <bookmark mark=\"result_neg_1\"/>if x is negative, <bookmark mark=\"result_neg_3\"/>\nthere are no solutions. <bookmark mark=\"default\"/>\n\nSo quick summary, if we're taking an even root of a number x, then\nthere are <bookmark mark=\"summary_two\"/>two solutions if x is positive,\nand <bookmark mark=\"summary_no\"/>no solutions if x is negative."
+      },
+      "b": {
+        "voiceover": "That's not right...\nIf x is positive, then we're taking an even root of a positive number.\nFor example, <bookmark mark=\"posEx1a\"/>the square root of 4, or\n<bookmark mark=\"posEx2a\"/>the fourth root of 16.\nIn that case, there are always two solutions: one positive and one negative.\nFor example, <bookmark mark=\"posEx1b\"/>the square root of 4 is 2, but also negative 2.\nAnd <bookmark mark=\"posEx2b\"/>the fourth root of 16 is 2, but also negative 2.\nSo, <bookmark mark=\"result_pos_1\"/>if x is positive, <bookmark mark=\"result_pos_3\"/>\nthere are always two solutions.\n\nIf <bookmark mark=\"xNeg\"/>x is negative however, then we're taking an even root of a negative number.\nFor example, <bookmark mark=\"negEx1a\"/>the square root of negative 4, or\n<bookmark mark=\"negEx2a\"/>the fourth root of negative 16.\nIn these cases, there are <bookmark mark=\"strike_out\"/>no solutions,\nbecause whenever you multiply a negative number by itself an even number of times,\nthe result is always positive.\nSo, <bookmark mark=\"result_neg_1\"/>if x is negative, <bookmark mark=\"result_neg_3\"/>\nthere are no solutions. <bookmark mark=\"default\"/>\n\nSo quick summary, if we're taking an even root of a number x, then\nthere are <bookmark mark=\"summary_two\"/>two solutions if x is positive,\nand <bookmark mark=\"summary_no\"/>no solutions if x is negative."
+      }
+    },
+    "I5": {
+      "q": {
+        "answer-options": "[\"$x<0$: no solution, $x>0$: two solutions\", \"$x<0$: two solutions, $x>0$: no solution\", \"$x>0$: one solution, $x<0$: one solution\", \"$x>0$: no solutions, $x<0$: no solutions\"]",
+        "question-text": "Consider $\\\\sqrt[k]{x}$, where k is an odd number. How many solutions are there for $x>0$, and how many for $x<0$?",
+        "title": "Odd Roots",
+        "Q1": "How many solutions...",
+        "Q2a": "if x is positive..?",
+        "Q2b": "if x is negative..?",
+        "root_general": "k is odd",
+        "voiceover": "Now we want to take <bookmark mark=\"root\"/>an odd root of a number x, like the cube root, or the fifth root.\n<bookmark mark=\"Q1\"/>How many solutions do we get, <bookmark mark=\"Q2a\"/>if we're taking an odd root of a positive\nnumber x?\nAnd how many solutions do we get, <bookmark mark=\"Q2b\"/>if we take an odd root of a negative number x?"
+      },
+      "a": {
+        "title": "$\\\\sqrt[k]{x}$, k is odd",
+        "xpos": "x positive",
+        "xneg": "x negative",
+        "onesol": "One solution",
+        "voiceover": "That's not right...\nIf x is positive, then we're taking an odd root of a positive number.\nFor example, <bookmark mark=\"posEx1a\"/>the cube root of 8, or\n<bookmark mark=\"posEx2a\"/>the fifth root of 32.\nIn that case, there is always one solution, and it is positive.\nFor example, <bookmark mark=\"posEx1b\"/>the square root of 8 is 2.\nAnd <bookmark mark=\"posEx2b\"/>the fifth root of 32 is 2 as well.\nSo, <bookmark mark=\"result_pos_1\"/>if x is positive, <bookmark mark=\"result_pos_3\"/>\nthere is always one solution, and it's positive.\n\nIf <bookmark mark=\"xNeg\"/>x is negative however, then we're taking an odd root of a negative number.\nFor example, <bookmark mark=\"negEx1a\"/>the cube root of negative 8, or\n<bookmark mark=\"negEx2a\"/>the fifth root of negative 32.\nIn these cases, there is always one solution, and it is negative.\nFor example, <bookmark mark=\"negEx1b\"/>the cube root of negative 8 is negative 2.\nAnd <bookmark mark=\"negEx2b\"/>the fifth root of negative 32 is negative 2 as well.\nSo, <bookmark mark=\"result_neg_1\"/>if x is negative, <bookmark mark=\"result_neg_3\"/>\nthere is always one solution, and it's negative. <bookmark mark=\"default\"/>\n\nSo quick summary, if we're taking an odd root of a number x, then\nthere is <bookmark mark=\"summary_a\"/>one solution if x is positive,\nand <bookmark mark=\"summary_b\"/>one solution if x is negative."
+      },
+      "c": {
+        "voiceover": "You got it. Excellent job!\nIf x is positive, then we're taking an odd root of a positive number.\nFor example, <bookmark mark=\"posEx1a\"/>the cube root of 8, or\n<bookmark mark=\"posEx2a\"/>the fifth root of 32.\nIn that case, there is always one solution, and it is positive.\nFor example, <bookmark mark=\"posEx1b\"/>the square root of 8 is 2.\nAnd <bookmark mark=\"posEx2b\"/>the fifth root of 32 is 2 as well.\nSo, <bookmark mark=\"result_pos_1\"/>if x is positive, <bookmark mark=\"result_pos_3\"/>\nthere is always one solution, and it's positive.\n\nIf <bookmark mark=\"xNeg\"/>x is negative however, then we're taking an odd root of a negative number.\nFor example, <bookmark mark=\"negEx1a\"/>the cube root of negative 8, or\n<bookmark mark=\"negEx2a\"/>the fifth root of negative 32.\nIn these cases, there is always one solution, and it is negative.\nFor example, <bookmark mark=\"negEx1b\"/>the cube root of negative 8 is negative 2.\nAnd <bookmark mark=\"negEx2b\"/>the fifth root of negative 32 is negative 2 as well.\nSo, <bookmark mark=\"result_neg_1\"/>if x is negative, <bookmark mark=\"result_neg_3\"/>\nthere is always one solution, and it's negative. <bookmark mark=\"default\"/>\n\nSo quick summary, if we're taking an odd root of a number x, then\nthere is <bookmark mark=\"summary_a\"/>one solution if x is positive,\nand <bookmark mark=\"summary_b\"/>one solution if x is negative."
+      }
+    },
+    "I6": {
+      "voiceover": "Let's get an overview of the situation when we compute roots.\nFirst, we can take two kinds of roots: <bookmark mark=\"even\"/>even roots, and\n<bookmark mark=\"odd\"/>odd roots. <bookmark mark=\"default1\"/> An even root is when we take\nthe square root, the fourth root, the sixth root, and so on. And an odd root is when we take\nthe cube root, the fifth root, the seventh root, and so on.\n\nAnd we can take roots of two kinds of numbers: <bookmark mark=\"pos\"/>positive numbers, and\n<bookmark mark=\"neg\"/>negative numbers. <bookmark mark=\"default2\"/> That makes for a total of\nfour cases. Let's look at each of them.\n\nLet's start with <bookmark mark=\"even_positive\"/> even roots of positive numbers.\nFor example, <bookmark mark=\"evenEx1a\"/>the square root of 4, or\n<bookmark mark=\"evenEx2a\"/>the fourth root of 16.\nIn these cases, there are always <bookmark mark=\"even_pos_sol\"/>two solutions, and they are both positive.\n\nNow let's look at <bookmark mark=\"even_negative\"/> even roots of negative numbers.\nFor example, <bookmark mark=\"evenEx1b\"/>the square root of negative 4, or\n<bookmark mark=\"evenEx2b\"/>the fourth root of negative 16.\nIn these cases, <bookmark mark=\"even_neg_sol\"/>there are no solutions. <bookmark mark=\"default3\"/>\n\nSo quick summary, if we're taking an even root of a number x, then there are\n<bookmark mark=\"even_pos_sol2\"/>two solutions if x is positive, and\n<bookmark mark=\"even_neg_sol2\"/>no solutions if x is negative.\n\nNow let's look at <bookmark mark=\"odd_positive\"/> odd roots of positive numbers.\nFor example, <bookmark mark=\"oddEx1a\"/>the cube root of 8, or\n<bookmark mark=\"oddEx2a\"/>the fifth root of 32.\nIn these cases, there is always <bookmark mark=\"odd_pos_sol\"/>one solution, and it is positive.\n\nFinally, let's look at <bookmark mark=\"odd_negative\"/> odd roots of negative numbers.\nFor example, <bookmark mark=\"oddEx1b\"/>the cube root of negative 8, or\n<bookmark mark=\"oddEx2b\"/>the fifth root of negative 32.\nIn these cases, there is always <bookmark mark=\"odd_neg_sol\"/>one solution, and it is negative.\n\nSo, final summary, if we're taking an odd root of a number x, then\nthere is <bookmark mark=\"odd_pos_sol2\"/>one solution if x is positive,\nand <bookmark mark=\"odd_neg_sol2\"/>one solution if x is negative. <bookmark mark=\"default4\"/>\n\nSo those were the four cases. Try to memorize them well!",
+      "pos": "x positive",
+      "neg": "x negative",
+      "even": "k even",
+      "odd": "k odd",
+      "twosol": "$\\\\Rightarrow$Two solutions",
+      "nosol": "$\\\\Rightarrow$No solution",
+      "onesol": "$\\\\Rightarrow$One solution",
+      "title": "\"Roots $\\\\underset{\\\\text{inverse}}{\\\\Leftrightarrow}$ Powers\""
+    },
+    "I7": {
+      "voiceover": "Now we're true experts on roots. So, let's talk about the relationship of\nroots and the power function.\n\n<bookmark mark=\"title\"/>Roots and power functions are inverse functions of each other.\nWhat that means, is that if we take a number, and raise it to a power, and then take the\nroot of that number, we get back the original number.\n\nFor example, if we take <bookmark mark=\"example1a\"/>2 and take the square root of it, and then\n<bookmark mark=\"example1b\"/>square that number, we <bookmark mark=\"example1c\"/>get back 2. <bookmark mark=\"example2\"/>\nIf we take <bookmark mark=\"example2a\"/>3 and take the fourth root of it, and then <bookmark mark=\"example2b\"/>raise\nthat number to the fourth power, we <bookmark mark=\"example2c\"/>get back 3.\n\nThis also works the other way around: if we take a number, and take the kth root of it, and then raise\nthat root to the kth power, we get back the original number.\n\nSo for example, if we start with <bookmark mark=\"example3a\"/>4 and square it, and then\n<bookmark mark=\"example3b\"/>take the square root of that, we <bookmark mark=\"example3c\"/>get back 4.\nOr if we start with <bookmark mark=\"example4a\"/>5 and square it, and then <bookmark mark=\"example4b\"/>take\nthe square root, we <bookmark mark=\"example4c\"/>get back 5.\n\nFor this reason, there is another way of writing roots:\nInstead of writing <bookmark mark=\"root_k_1\"/>the kth root of x, we can write\n<bookmark mark=\"root_k_2\"/>x to the power of 1 over k.\nSo for example, <bookmark mark=\"root_3_1\"/>the cube root of x can be written as\n<bookmark mark=\"root_3_2\"/>x to the power of 1 third.\nAnd <bookmark mark=\"root_5_1\"/>the fifth root of x can be written as\n<bookmark mark=\"root_5_2\"/>x to the power of 1 fifth, and so on..."
+    }
+  },
+  "Func_6_2": {
+    "I1": {
+      "title": "Exponential Function",
+      "voiceover": "Quick Overview of exponential functions.\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe plot of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
+    },
+    "I2": {
+      "q": {
+        "question-text": "Given the exponential function $f(x)=a^x$, which value of $a$ describes the amount of pizza left after x minutes?",
+        "minutes": "Minutes",
+        "voiceover": "My friends cooked pizza <bookmark mark=\"full_pizza\"/> for dinner, and I am running<bookmark mark=\"late\"/> late!\nThey hate it, when I'm late, so they decided to start eating without me.\nEvery Minute, they will eat half of the remaining pizza.\nSo after one minute, only <bookmark mark=\"full\"/> half of the pizza is left.\nAfter two minutes, only <bookmark mark=\"half\"/> one quarter of the pizza is left.\nAfter three minutes, only <bookmark mark=\"quarter\"/> one eighth of the pizza is left, and so on...\n\nNow since they're already annoyed at me, I might as well annoy them a bit more, so I'll\ntell them how to describe the amount of pizza that is left for me using an exponential <bookmark mark=\"f\"/>function\n<bookmark mark=\"fx\"/>f of x <bookmark mark=\"fa\"/>equals a to the <bookmark mark=\"fxx\"/>power of  x.\n\nNow all I need to know is this: <bookmark mark=\"qmark\"/>Which value do I plug in for a, <bookmark mark=\"x_minutes\"/>\nif x is the number <bookmark mark=\"minutes\"/>of minutes that have passed?"
+      },
+      "a": {
+        "pizza-left": "Remaining Pizza",
+        "voiceover": "No, that's not correct.\nEvery time a <bookmark mark=\"minute\"/>minute passes, my friends eat <bookmark mark=\"half_1\"/>half of the remaining pizza.\nThat means every time x increases by one (which happens every minute), the amount of pizza left is <bookmark mark=\"half_2\"/>\nmultiplied by a half. This means, <bookmark mark=\"row_1\"/>that after one minute, we multiply the original amount of pizza  by a half.\n<bookmark mark=\"row_2\"/>After two minutes, we multiply the amount of pizza left by a half squared.\n<bookmark mark=\"row_3\"/>After three minutes, we multiply the amount of pizza left by a half cubed, <bookmark mark=\"row_4\"/>and so on...\nThis means, that the amount of pizza left after x minutes is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>one half to the power of <bookmark mark=\"fxx\"/> x.\n<bookmark mark=\"sol_a\"/>So a <bookmark mark=\"sol_half\"/>is one half."
+      },
+      "c": {
+        "voiceover": "Yes, that's right!\nEvery time a <bookmark mark=\"minute\"/>minute passes, my friends eat <bookmark mark=\"half_1\"/>half of the remaining pizza.\nThat means every time x increases by one (which happens every minute), the amount of pizza left is <bookmark mark=\"half_2\"/>\nmultiplied by a half. This means, <bookmark mark=\"row_1\"/>that after one minute, we multiply the original amount of pizza  by a half.\n<bookmark mark=\"row_2\"/>After two minutes, we multiply the amount of pizza left by a half squared.\n<bookmark mark=\"row_3\"/>After three minutes, we multiply the amount of pizza left by a half cubed, <bookmark mark=\"row_4\"/>and so on...\nThis means, that the amount of pizza left after x minutes is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>one half to the power of <bookmark mark=\"fxx\"/> x.\n<bookmark mark=\"sol_a\"/>So a <bookmark mark=\"sol_half\"/>is one half."
+      }
+    },
+    "I3": {
+      "title": "Growth factor",
+      "voiceover": "Another quick note on the function term of exponential functions.\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nNow the value<bookmark mark=\"a\"/>a is called <bookmark mark=\"growth\"/>the <bookmark mark=\"factor\"/>growth factor.\nIt is called that, because it determines how fast the function grows, or decreases.\n\nIf <bookmark mark=\"a_g1\"/>\"a\" is greater than one, the function<bookmark mark=\"plot_1\"/> increases by the factor of \"a\"\nat every timestep. If \"a\" is two, it doubles at every timestep, if \"a\" is three, it triples at every timestep, and so on.\n\nIf a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases by the factor of \"a\" at every timestep.\nIf \"a\" is a half, it halves at every timestep, if \"a\" is a third, it reduces to a third at every timestep, and so on...",
+      "x-minutes_1": "What is the valuef of",
+      "x-minutes_2": "the growth factor",
+      "verify": "Verify:"
+    },
+    "GraphToGrowthFactorQuestionScene": {
+      "voiceover": "{self.intro}<bookmark mark=\"plot\"/> this plot, which belongs to an exponential <bookmark mark=\"function\"/>function f \n<bookmark mark=\"fx\"/> of x <bookmark mark=\"fa\"/> equals a to the <bookmark mark=\"xx\"/>power of x.\n<bookmark mark=\"q\"/>What is the value of the growth<bookmark mark=\"q_a\"/> factor \"a\", that leads to this graph?"
+    },
+    "GraphToGrowthFactorAnswerScene": {
+      "voiceover": "{self.intro}\nIf we look at the graph, we can see that <bookmark mark=\"x_one\"/>at x equals one, it is <bookmark mark=\"f_x_one\"/> at {self.a}.\nSo that means that a to the power of one equals {self.a}.<bookmark mark=\"sol\"/> So \"a\" must be {self.a}.\n\nWe can also <bookmark mark=\"verify\"/>verify this, by computing <bookmark mark=\"x_max\"/>f of {self.x_max}.\nBy looking at the graph, we can see that <bookmark mark=\"x_max_graph\"/>\nit has to be {self.a**self.x_max}. So to verify, we compute \"a\" to the power of {self.x_max} for \"a\" equals {self.a}.\n<bookmark mark=\"verify_2\"/>This is {self.a} to the power of {self.x_max}, <bookmark mark=\"verify_3\"/>which equals {self.a**self.x_max}.\nThis fits to the value on the graph."
+    },
+    "GrowthFactorToGraphQuestionScene": {
+      "x-minutes_1": "Which of the graphs",
+      "x-minutes_2": "describes the function?",
+      "voiceover": "{self.intro}<bookmark mark=\"f\"/> equal to f <bookmark mark=\"fx\"/> of x <bookmark mark=\"fa\"/> equals {self.a} to the <bookmark mark=\"xx\"/>power of x.\n<bookmark mark=\"which\"/>Which of the<bookmark mark=\"cords_in\"/> following graphs describes the function?\n<bookmark mark=\"plot_1\"/>\nIs it the {self.color_1_name} graph?\n\nOr <bookmark mark=\"plot_2\"/> is it the {self.color_2_name} graph?\n\nOr <bookmark mark=\"plot_3\"/> is it the {self.color_3_name} graph?"
+    },
+    "GrowthFactorToGraphAnswerScene": {
+      "i1": "Since the growth factor a is greater than one, the function increases by the factor of a at every timestep.",
+      "i2": "Since the growth factor a is between zero and one, the function decreases by the factor of a at every timestep.",
+      "eg": "exponential growth",
+      "ed": "exponential decay",
+      "voiceover": "{self.intro} <bookmark mark=\"intro_auto\"/> {intro_auto} <bookmark mark=\"cords_in\"/>\nThis means that <bookmark mark=\"x_one\"/>at x equals one, the graph has to be\n<bookmark mark=\"f_x_one\"/> at {self.a}, because {self.a} to the power of one is {self.a}.\nNext, we can check other values, for example <bookmark mark=\"x_two\"/>at x equals two,\nthe value has to be equal to {self.a} to the power of two, <bookmark mark=\"f_x_two\"/>which is {self.a**2},\nand <bookmark mark=\"x_max\"/> at x equals {self.x_max}, the value has to be equal to {self.a} to the power of {self.x_max},\n<bookmark mark=\"f_x_max\"/>which is {self.a**self.x_max}.\n\nIf we <bookmark mark=\"plot\"/> look at all three graphs, we can clearly see that it has to be <bookmark mark=\"erase\"/>\nthe {color_correct} graph."
+    },
+    "P2": {
+      "q": {
+        "answer-options": "[\"The purple graph\", \"The blue graph\", \"The green graph\"]",
+        "questionText": "Which of the graph corresponds to the function $f(x)=2^x$?"
+      }
+    },
+    "P3": {
+      "q": {
+        "question-text": "Given the GREEN graph, what is the value of a?"
+      }
+    },
+    "P4": {
+      "q": {
+        "answer-options": "[\"The blue graph\", \"The green graph\", \"The orange graph\"]",
+        "question-text": "Which of the graph corresponds to the function $f(x)=\\\\frac{1}{2}^x$?"
+      }
+    },
+    "P5": {
+      "q": {
+        "question-text": "Given the pink graph, what is the value of a?"
+      }
+    },
+    "P6": {
+      "q": {
+        "answer-options": "[\"The purple graph\", \"The blue graph\", \"The pink graph\"]",
+        "question-text": "Which of the graph corresponds to the function $f(x)=3^x$?"
+      }
+    }
+  },
+  "Func_6_2_P_1_q": {
+    "questionText": "Given the purple graph, what is the value of a?",
+    "intro": "Look at"
+  },
+  "Func_6_2_P_1_a": {
+    "intro": "Yep, that is correct."
+  },
+  "Func_6_2_P_1_b": {
+    "intro": "No, that's not right."
+  },
+  "Func_6_2_P_2_q": {
+    "intro": "Let's say we're considering a growth factor of a equals two,so your function is",
+    "color_1_name": "purple",
+    "color_2_name": "blue",
+    "color_3_name": "green"
+  },
+  "Func_6_2_P_2_a": {
+    "intro": "Yep, that is correct."
+  },
+  "Func_6_2_P_2_b": {
+    "intro": "No, that's not right."
+  },
+  "Func_6_2_P_3_q": {
+    "intro": "Check out"
+  },
+  "Func_6_2_P_3_a": {
+    "intro": "No, that's not right."
+  },
+  "Func_6_2_P_3_b": {
+    "intro": "Yes, that's it. Well done."
+  },
+  "Func_6_2_P_4_q": {
+    "intro": "Let's say we're considering a growth factor of a equals one half,so your function is",
+    "color_1_name": "blue",
+    "color_2_name": "green",
+    "color_3_name": "orange"
+  },
+  "Func_6_2_P_4_a": {
+    "intro": "That's not right."
+  },
+  "Func_6_2_P_4_c": {
+    "intro": "Yes! That's correct."
+  },
+  "Func_6_2_P_5_q": {
+    "intro": "Have a look at"
+  },
+  "Func_6_2_P_5_a": {
+    "intro": "Yep, that is correct."
+  },
+  "Func_6_2_P_5_b": {
+    "intro": "No, that's not right."
+  },
+  "Func_6_2_P_6_q": {
+    "intro": "Let's say we're considering a growth factor of a equals three,so your function is",
+    "color_1_name": "purple",
+    "color_2_name": "blue",
+    "color_3_name": "pink"
+  },
+  "Func_6_2_P_6_a": {
+    "intro": "No, that's wrong."
+  },
+  "Func_6_2_P_6_b": {
+    "intro": "Yep, that is right."
+  },
+  "Func_6_3": {
+    "I1": {
+      "q": {
+        "answer-options": "[\"Applying the square again $(\\Box^2)^2$\", \"Taking the root $\\sqrt{\\Box^2}$\", \"Dividing by two $\\Box/2$\", \"Multiplying by two $\\Box\\times 2$\"]",
+        "question-text": "What operation can we apply to undo the squaring ($\\Box^2$)?",
+        "title": "Inverse Functions",
+        "voiceover": "If we think about different mathematical operations, they always come in pairs, that can cancel each other out.\nFor example, there's addition and subtraction. If you<bookmark mark=\"two_add_1\"/>take a number, say two, and add something, say\ntwo <bookmark mark=\"two_add_2\"/>to the original number,\nyou can then <bookmark mark=\"two_add_3\"/> subtract 2 from the result and get the original number back.\n\n<bookmark mark=\"clear_1\"/>\nAnother example is multiplication and division.\nAgain, if you take a <bookmark mark=\"three_mul_1\"/>number, like three, and multiply it by something, <bookmark mark=\"three_mul_2\"/>say three,\n<bookmark mark=\"three_mul_3\"/>you can then divide the result by three and get the original number back.\n\n<bookmark mark=\"clear_2\"/>\nDo you know the inverse operation for raising something to a power?\nIf we raise<bookmark mark=\"four_pow_1\"/> a number, say four, to a power, like <bookmark mark=\"four_pow_2\"/>two for example,\n<bookmark mark=\"four_pow_3\"/>\nWhat operation do we need to apply to undo the squaring?"
+      },
+      "a": {
+        "voiceover": "Unfortunately, that's not right.\nThe inverse operation <bookmark mark=\"raise\"/>for raising something to a power <bookmark mark=\"root\"/>is taking the root.\nIf we raise <bookmark mark=\"sol_raise\"/>a number like four to the second power, we can undo that operation\nby <bookmark mark=\"sol_root\"/>taking the second root of the result.\n\nSo the inverse operation of raising a number to a power is taking the root."
+      },
+      "b": {
+        "voiceover": "Yes, that is correct!\nThe inverse operation <bookmark mark=\"raise\"/>for raising something to a power <bookmark mark=\"root\"/>is taking the root.\nIf we raise <bookmark mark=\"sol_raise\"/>a number like four to the second power, we can undo that operation\nby <bookmark mark=\"sol_root\"/>taking the second root of the result.\n\nSo the inverse operation of raising a number to a power is taking the root."
+      }
+    },
+    "I2": {
+      "title": "Logarithm",
+      "voiceover": "Now similarly, you might ask yourself: What is the inverse operation for exponential functions?\n\nFor example, I take <bookmark mark=\"take_number\"/>a number, say three, and <bookmark mark=\"raise_4\"/>raise four to the power of three.\nThen I will have 64. But what operation can I use, to get back to three? What is the inverse operation of raising something to a power?\n\nThe answer is: <bookmark mark=\"take_log\"/>Taking the logarithm. So if I raise four to the power of three I get 64.\nIf I then take the base four logarithm of 64, I get three back. So <bookmark mark=\"inverse_raise\"/>the inverse operation of raising a\nnumber k to a <bookmark mark=\"inverse_log\"/>power is taking the base k logarithm.\n\nWhat exactly that means, we will see in the next video."
+    },
+    "I3": {
+      "voiceover": "So what does the logarithm actually do.\n\nWe take a number,<bookmark mark=\"two_1\"/> say two, and multiply it by itself one,\n<bookmark mark=\"two_2\"/>two, <bookmark mark=\"two_3\"/>three <bookmark mark=\"two_4\"/>four,\n<bookmark mark=\"two_5\"/>five times, to <bookmark mark=\"two_pow_5\"/> get two to the power\nof five<bookmark mark=\"two_32\"/>, which equals 32.\n\nBut what if we want to go in the opposite direction?\nSo say we <bookmark mark=\"thirtytwo_1\"/> have 32, and we want to know\nhow many times we have to multiply <bookmark mark=\"thirtytwo_2\"/>two by itself to get 32.\n\nWe can find this number by computing the<bookmark mark=\"sol_1\"/> base two logarithm of 32.\nThe base two logarithm of 32 is the number, to which we have to raise two\nto get 32. <bookmark mark=\"sol_2\"/>And that number is five..."
+    },
+    "I4": {
+      "q": {
+        "question-text": "For what value of x does $5^x=625$ hold?",
+        "voiceover": "Let's try to use the logarithm ourself!\nWe'll start with the <bookmark mark=\"sixtwofive_1\"/>number 625.\nWe want to know, to what power we have to raise <bookmark mark=\"sixtwofive_2\"/>the number five to get 625.\n<bookmark mark=\"qmark\"/>How do we find that number using the logarithm?"
+      },
+      "a": {
+        "voiceover": "That's not right.\nSo we want to know to what power we have to raise five to get 625.\nWe can reformulate this as the equation <bookmark mark=\"sol_1\"/>five to the power of x <bookmark mark=\"sol_2\"/>equals 625.\nThis can then be solved as <bookmark mark=\"sol_3\"/>x is equal to the base five logarithm of 625.\nThe base of the logarithm is the number, which is the base of the power, in this case five.\nAnd the number which we take the logarithm of is the number we want to get, in this case 625."
+      },
+      "d": {
+        "voiceover": "Yes, that is correct!\nSo we want to know to what power we have to raise five to get 625.\nWe can reformulate this as the equation <bookmark mark=\"sol_1\"/>five to the power of x <bookmark mark=\"sol_2\"/>equals 625.\nThis can then be solved as <bookmark mark=\"sol_3\"/>x is equal to the base five logarithm of 625.\nThe base of the logarithm is the number, which is the base of the power, in this case five.\nAnd the number which we take the logarithm of is the number we want to get, in this case 625."
+      }
+    },
+    "I5": {
+      "base": "a: Base of the logarithm",
+      "log": "b: Number we want to get",
+      "voiceover": "Now a bit more formally: Logarithms.\nWe have a <bookmark mark=\"intro_1\"/>base a, and we want to raise it to some power to get \n<bookmark mark=\"intro_2\"/>the number b as a result.\nNow that number x is what we're looking for.\n\nThis is where the logarithm comes in. The <bookmark mark=\"sol_in\"/>logarithm tells us, to what number we have to\nraise the base a, if we want to get the number b.\n\nThe logarithm has two parts.\n<bookmark mark=\"base\"/> The base \"a\", which is written as an index, which describes the base of the power,\nso the number that we want to raise to some power.\n<bookmark mark=\"log\"/> And the number b, which is written in brackets, which is the number we want to get..."
+    },
+    "findLogExpressionQuestionScene": {
+      "voiceover": "{self.intro}\nWe'll start with the <bookmark mark=\"result_1\"/>number {self.result}.\nWe want to know, to what power we have to raise <bookmark mark=\"result_2\"/>the number {self.base} to get {self.result}.\n<bookmark mark=\"qmark\"/>How do we find that number using the logarithm?"
+    },
+    "Func_6_3": {
+      "I2": {
+        "title": {
+          "base": "{self.base}: Base of the logarithm",
+          "log": "{self.result}: Number we want to get"
+        }
+      }
+    },
+    "findLogExpressionAnswerScene": {
+      "voiceover": "{self.intro}\nSo we want to know to what power we have to raise {self.base} to get {self.result}.\nWe can reformulate this as the equation <bookmark mark=\"sol_1\"/>{self.base} to the power of x\n<bookmark mark=\"sol_2\"/>equals {self.result}. This can then be solved as\n<bookmark mark=\"sol_3\"/>x is equal to the base {self.base} logarithm of {self.result}. <bookmark mark=\"clean\"/>\nThe <bookmark mark=\"bubble_1\"/>base of the logarithm is the number, which is the base of the power, in this case {self.base}.\nAnd the <bookmark mark=\"bubble_2\"/>number which we take the logarithm of is the number we want to get, in this case {self.result}."
+    },
+    "P1": {
+      "q": {
+        "question-text": "For what value of x does $4^x=256$ hold?",
+        "intro": "Another example to practice:"
+      },
+      "a": {
+        "intro": "No, that's not right..."
+      },
+      "b": {
+        "intro": "Yes, you got it!"
+      }
+    },
+    "P2": {
+      "q": {
+        "question-text": "For what value of x does $\\frac12^x=\\frac{1}{16}$ hold?",
+        "intro": "Another example to practice:"
+      },
+      "a": {
+        "intro": "Yes, you got it!"
+      },
+      "b": {
+        "intro": "No, that's not right..."
+      }
+    }
+  },
+  "Func_7_1": {
+    "I1": {
+      "q": {
+        "question-text": "How many degrees does this $\\\\tfrac{3}{4}$ circle have?",
+        "title": "Degrees",
+        "voiceover": "Whenever two lines meet, we get an angle.\nAnd the most commonly known method to measure angles is by <bookmark mark=\"degrees\"/>using degrees.\n\n<bookmark mark=\"full_circle\"/>A full circle has 360 degrees.\n<bookmark mark=\"half_circle\"/>A half circle has 180 degrees.\n<bookmark mark=\"quarter_circle\"/>A quarter circle has 90 degrees.\nAnd so on...\n\nHow many degrees does <bookmark mark=\"threequartercircle\"/>this angle have,\nwhich reaches three quarters around the circle?"
+      },
+      "a": {
+        "three_quarter": "Here: $\\\\tfrac{3}{4}$ of a full circle",
+        "full_circle": "Full circle: $360^\\\\circ$",
+        "voiceover": "That's wrong, unfortunately.\n\nWe have <bookmark mark=\"three_quarter\"/> three quarters of a circle here.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 360 degrees.\nSo the angle we're looking for is three quarters of 360 degrees.\nSo our angle is <bookmark mark=\"equation_1\"/> three quarters <bookmark mark=\"equation_2\"/>\ntimes 360 degrees, which <bookmark mark=\"equation_3\"/>is 270 degrees."
+      },
+      "c": {
+        "voiceover": "That's right, congrats!\n\nWe have <bookmark mark=\"three_quarter\"/> three quarters of a circle here.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 360 degrees.\nSo the angle we're looking for is three quarters of 360 degrees.\nSo our angle is <bookmark mark=\"equation_1\"/> three quarters <bookmark mark=\"equation_2\"/>\ntimes 360 degrees, which <bookmark mark=\"equation_3\"/>is 270 degrees."
+      }
+    },
+    "I2": {
+      "q": {
+        "question-text": "How many degrees does this $\\\\tfrac{3}{4}$ circle have?",
+        "title": "Radians",
+        "deg": "Degrees:",
+        "rad": "Radians:",
+        "full": "Full",
+        "half": "Half",
+        "voiceover": "In addition to degrees, there is one more way to describe angles:\nRadians. And just like a full circle <bookmark mark=\"degrees\"/>has 360 degrees,\nin radians the angle of a full circle<bookmark mark=\"radians\"/> is 2 pi.\n\nNow, knowing that a full circle is 2 pi radians, how many radians\n<bookmark mark=\"half_circle\"/>is a half circle?\n\nA little hint: As mentioned, a <bookmark mark=\"full_circle_fin\"/> full circle has 360 degrees.\nAnd <bookmark mark=\"half_circle_fin\"/>a half circle has 180 degrees.\n\nNow we also know that a full circle <bookmark mark=\"radians_fin\"/>is 2 pi radians.\nSo <bookmark mark=\"radians_fin_half\"/>how many radians is a half circle?"
+      },
+      "a": {
+        "half": "Here: $\\\\tfrac{1}{2}$ of a full circle",
+        "full": "Full circle: $2\\\\Pi$",
+        "voiceover": "That's wrong, unfortunately.\n\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
+      },
+      "d": {
+        "voiceover": "That is correct, well done!\n\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
+      }
+    },
+    "I3": {
+      "title": "Measuring Angles",
+      "voiceover": "Ever wondered why a full <bookmark mark=\"degrees\"/>circle has 360 degrees?\nIt seems to be such a random number, doesn't it? Why not 72? Or 420?\n\nWell, the reason that it is 360 is that it has always been that way.\n<bookmark mark=\"temple\"/>The Babylonians, who lived in the area of today's Iraq,\nused a number system with <bookmark mark=\"base\"/>a base of 60. This means that\nthey counted in 60s instead of tens like we do today. And they used this number\nsystem to measure angles as well. So imagine, to them, 360 was kind of like\n100 is to us today. It was a nice round number that was easy to work with.\n<bookmark mark=\"degrees_switch\"/> There is also a reason why <bookmark mark=\"rad\"/>\nin Radians, a full circle is 2 Pi. And it's not historical, but mathematical.\n<bookmark mark=\"qmark\"/>\nTake a moment and think: Why do we say that a full circle is 2 Pi Radians?\nIf you want a hint: Think about the circumference of a circle."
+    },
+    "I4": {
+      "voiceover": "Here it goes:\nRecall the formula <bookmark mark=\"around\"/>for the circumference of a circle:\nThe <bookmark mark=\"circ_1\"/> circumference c of a circle is equal <bookmark mark=\"two\"/>\nto 2 <bookmark mark=\"pi\"/> times Pie times <bookmark mark=\"r\"/>the radius r of the circle.\n\nIf we look at the unit circle,<bookmark mark=\"unit\"/> which is a circle with the radius\nof 1, we can see that the circumference of the unit circle is <bookmark mark=\"two_pi\"/>\nsimply equal to two times Pie.\n\nSo in the unit circle, the angle in radians is <bookmark mark=\"rad_1\"/> equal to\nthe circumference of the unit circle.\n\n<bookmark mark=\"red_circle\"/> And this holds true for other angles as well: A quarter\nof the unit circle has both a circumference and an angle of 0.5 Pie. <bookmark mark=\"half\"/>\nAnd a half of the unit circle has both a circumference and an angle of Pie."
+    },
+    "DegToRadQuestionScene": {
+      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} circle. Measured in Degrees, it <bookmark mark=\"degrees\"/>\nhas an angle of {deg} degrees.\nWhat is the equivalent angle, when we <bookmark mark=\"rad\"/>describe it in Radians, instead of Degrees?",
+      "deg": "Degrees: ",
+      "rad": "Radians: "
+    },
+    "DegToRadAnswerScene": {
+      "voiceover": "{self.intro} The <bookmark mark=\"red_circle\"/> angle of the {self.color_string} circle is <bookmark mark=\"degrees\"/>\n{deg} degrees, which is {self.angle_frac_string} of a full circle.\n\nSo the angle in Radians is also {self.angle_frac_string} of a full circle, which <bookmark mark=\"eq_1\"/>\nis {self.angle_frac_string} <bookmark mark=\"eq_2\"/> times 2 Pi, which <bookmark mark=\"eq_3\"/> equals\n{self.angle_rad_string}Pi Radians."
+    },
+    "RadToDegQuestionScene": {
+      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} circle. Measured in Radians, it <bookmark mark=\"rad\"/>\nhas an angle of {self.angle_rad_string} Pi.\nWhat is the equivalent angle, when we <bookmark mark=\"degrees\"/>describe it in Degrees, instead of Radians?"
+    },
+    "RadToDegAnswerScene": {
+      "voiceover": "{self.intro} The <bookmark mark=\"red_circle\"/> angle of the {self.color_string} circle is <bookmark mark=\"radians\"/>\n{self.angle_rad_string} Pi, which is {self.angle_frac_string} of a full circle.\n\nSo the angle in Degrees is also {self.angle_frac_string} of a full circle, which <bookmark mark=\"eq_1\"/>\nis {self.angle_frac_string} <bookmark mark=\"eq_2\"/> times 360 Degrees, which <bookmark mark=\"eq_3\"/> equals\n{deg}degrees."
+    },
+    "P1": {
+      "q": {
+        "question-text": "What angle in Radians corresponds to $90^\\circ$?",
+        "intro": "Look at the",
+        "angle-frac-string": "one quarter",
+        "angle-rad-string": "one half",
+        "color-string": "purple"
+      },
+      "a": {
+        "intro": "That's not it..."
+      },
+      "c": {
+        "intro": "That's correct, well done."
+      }
+    },
+    "P2": {
+      "q": {
+        "question-text": "What angle in degrees corresponds to $\\tfrac{\\Pi}{2}$?",
+        "intro": "Look at the",
+        "color-string": "green"
+      },
+      "b": {
+        "intro": "No, that's not right."
+      },
+      "a": {
+        "intro": "That's correct, well done."
+      }
+    },
+    "P3": {
+      "q": {
+        "question-text": "What angle in degrees corresponds to $\\tfrac{3\\Pi}{2}$?",
+        "intro": "Look at the",
+        "angle-frac-string": "three quarter",
+        "angle-rad-string": "one and a half",
+        "color-string": "orange"
+      },
+      "a": {
+        "intro": "No, that's not it."
+      },
+      "c": {
+        "intro": "Yep, you got it."
+      }
+    },
+    "P4": {
+      "q": {
+        "question-text": "What angle in Radians corresponds to $45^\\circ$?",
+        "intro": "Check out the",
+        "angle-frac-string": "one eigth",
+        "color-string": "pink"
+      },
+      "a": {
+        "intro": "Yes, that's right."
+      },
+      "b": {
+        "intro": "No, that's not it."
       }
     }
   }

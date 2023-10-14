@@ -16,7 +16,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
@@ -326,7 +326,7 @@ class Func_6_1_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Linear Growth")
+        self.add_title(self.translate("Func_6_1.1I3.main.title"))
 
         chicken = ImageMobject(assets_folder / "img" / "chicken.png")
         chicken = chicken.scale(1.5/chicken.get_width()).move_to([-4, -1, 0])
@@ -350,7 +350,7 @@ class Func_6_1_I_3(SophiaCursorScene):
         
         f_eggs = lambda x: 2*x
         f_tex_eggs = MathTex("f","(x)", "=", "2","x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
-        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(f_tex_eggs, DOWN, buff=0.8)
+        lin_growth = Tex(self.translate("Func_6_1.1I3.main.title"), color=c1t, font_size=fs2).next_to(f_tex_eggs, DOWN, buff=0.8)
         g_eggs = plane.plot(f_eggs, color=BLUE)
 
         def cursor_sound_updater(mob, dt):
@@ -366,37 +366,7 @@ class Func_6_1_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Meet <bookmark mark="tom_in_1"/> Tom.
-                Tom is a <bookmark mark="chicken_in_1"/> chicken farmer.
-                He has <bookmark mark="two_chickens"/>two chickens. Every day, each of them lays
-                <bookmark mark="one_egg_per_day"/>one egg.
-                Because Tom likes eggs so much, he collects them every day
-                and counts <bookmark mark="calendar"/>how many eggs he has collected over time.
-
-                Let's help tom by describing the number of eggs he has collected using a function.
-                We'll describe the function using a <bookmark mark="cords"/>graph.
-
-                So after <bookmark mark="one_day"/>one day, tom has <bookmark mark="two_eggs"/>
-                two eggs, because each of the two chickens has laid one egg.
-                After <bookmark mark="two_days"/>two days, tom has <bookmark mark="four_eggs"/>
-                four eggs, because each of the two chickens has laid one egg on the first day,
-                and one egg on the second day.
-                And after <bookmark mark="three_days"/>three days, tom has <bookmark mark="six_eggs"/>
-                six eggs, because each of the two chickens has laid one egg on the first day,
-                one egg on the second day, and one egg on the third day. and so it continues...
-
-                So <bookmark mark="plot"/> every day, tom gets two extra eggs.
-                This means, that we can describe the number of eggs tom has collected using a
-                <bookmark mark="func"/>function f <bookmark mark="fx"/> of x equals 
-                <bookmark mark="two_times"/>two times <bookmark mark="x"/>x, where x is the
-                number of days that have passed.
-
-                If you look at the plot of this function, you can see that it is a straight line,
-                because the number of eggs increases by the same amount every day.
-                This is called <bookmark mark="linear"/>linear growth.
-
-                """
+                text=self.translate("Func_6_1.1I3.main.voiceover")
     ) as tracker:
             
             self.wait_until_bookmark("tom_in_1")
@@ -498,15 +468,15 @@ class Func_6_1_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Exponential Growth")
+        self.add_title(self.translate("Func_6_1.1I4.main.title"))
 
         chicken = ImageMobject(assets_folder / "img" / "chicken.png")
         chicken = chicken.scale(1.5/chicken.get_width()).move_to([-4, -1, 0])
-        two_chickens = MathTex("2\\times", color=c1t).next_to(chicken, LEFT, buff=0.6).shift(RIGHT*5)
+        two_chickens = MathTex(self.translate("Func_6_1.1I4.main.two_chickens"), color=c1t).next_to(chicken, LEFT, buff=0.6).shift(RIGHT*5)
 
         egg = ImageMobject(assets_folder / "img" / "egg.png")
         egg = egg.scale(1.5/egg.get_width()).next_to(chicken, DOWN, buff=0.6).shift(0.2*LEFT)
-        one_egg = Tex("$1/$week", color=c1t).next_to(egg, LEFT, buff=0.2).scale(0.8)
+        one_egg = Tex(self.translate("Func_6_1.1I4.main.one_egg"), color=c1t).next_to(egg, LEFT, buff=0.2).scale(0.8)
         one_egg.shift((two_chickens.get_left()-one_egg.get_left())*np.array([1,0,0]))
 
         farmer_female = ImageMobject(assets_folder / "img" / "farmer_female.png")
@@ -518,7 +488,7 @@ class Func_6_1_I_4(SophiaCursorScene):
         
         f_eggs = lambda x: 2**x
         f_tex_eggs = MathTex("f","(x)", "=", "2","^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
-        exp_growth = Tex("Exponential Growth", color=c1t, font_size=fs2).next_to(f_tex_eggs, DOWN, buff=0.8)
+        exp_growth = Tex(self.translate("Func_6_1.1I4.main.title"), color=c1t, font_size=fs2).next_to(f_tex_eggs, DOWN, buff=0.8)
         g_eggs = plane.plot(f_eggs, color=BLUE)
 
         def cursor_sound_updater(mob, dt):
@@ -534,39 +504,7 @@ class Func_6_1_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Meet <bookmark mark="Sophie_in_1"/> Sophie.
-                Sophie loves <bookmark mark="chicken_in_1"/> chickens.
-                She currently has <bookmark mark="two_chickens_1"/>two chickens, but she wants
-                many more. Each of her two chickens lays <bookmark mark="one_egg_per_week"/>
-                one egg per week, and at the end of the week, the  chicken from the egg is
-                hatched and old enough to lay eggs itself. Those are some fast chickens!
-
-                Let's describe the number of chickens Sophie has using the <bookmark mark="graph"/>
-                graph of a function.
-                So in the <bookmark mark="one_week"/>first week, sophie has two chickens<bookmark mark="two_chickens"/>
-                One week <bookmark mark="two_weeks"/>later, Sophie has <bookmark mark="four_chickens"/>
-                four chickens. The two chickens she started with, and the two chickens that hatched from the eggs.
-
-                In the <bookmark mark="three_weeks"/>next week, Sophie has four chickens that lay one egg each,
-                so she gets four eggs. This means that the total number of chickens after the second week is
-                <bookmark mark="eight_chickens"/>eight: the four chickens from the first week, and the four chickens
-                that hatched from the eggs.
-
-                In the <bookmark mark="four_weeks"/>fourth week, Sophie has eight chickens that lay one
-                egg each, so she gets eight eggs. So the total number of chickens after the third week is
-                <bookmark mark="sixteen_chickens"/>sixteen: the eight chickens from the second week, and the
-                eight chickens that hatched from the eggs.
-
-                As you can see, <bookmark mark="plot"/>the number of chickens increases really fast, and this is what we call
-                exponential growth. The number of chickens doubles every week, because each of your
-                chickens lays one egg per week. This means, that the number of chickens you have after
-                x weeks is described by <bookmark mark="f"/> f of <bookmark mark="fx"/> x equals <bookmark mark="two"/>
-                two to the <bookmark mark="power"/> power of x. Because you start with two chickens, and each time x
-                increases by one, the number of chickens doubles.
-                
-                This is what we call <bookmark mark="exponential"/>exponential growth.
-                """
+                text=self.translate("Func_6_1.1I4.main.voiceover")
         , subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
             
             self.wait_until_bookmark("Sophie_in_1")
@@ -675,28 +613,28 @@ class Func_6_1_I_4(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_6_1_I_5_q = SophiaTaskDefinition(
-    answerOptions = ["exponentially", "linearly"],
-    correctAnswerIndex = 0,
-    questionText = "Does the number of bacteria grow exponentially or linearly?"
-)
-
 class Func_6_1_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_6_1.I5.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_6_1.I5.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        bacteria_double = VGroup(Tex(self.translate("Func_6_1.I5.main.bacteria_double1"), color=c1t, font_size=fs2), Tex(self.translate("Func_6_1.I5.main.bacteria_double2"), color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         clock = ImageMobject(assets_folder / "img" / "clock.png")
         clock = clock.scale(1.5/clock.get_width()).move_to([-5, -1, 0])
@@ -719,16 +657,7 @@ class Func_6_1_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                My friend <bookmark mark="sarah"/>Sarah is a doctor and she does research on
-                <bookmark mark="bacteria"/>bacteria.
-                Did you know, that bacteria grow, by simply duplicating themselves?
-                The bacteria that Sarah is studying for example <bookmark mark="bacteria_double"/>
-                duplicate once every twenty minutes. This means, that every twenty minutes, each
-                of the bacteria sarah is studying, turns into<bookmark mark="show_double"/> two bacteria...
-                Now Sarah wants to know: Does the number of bacteria she is analyzing grow
-                <bookmark mark="linear"/>linearly, or does it grow <bookmark mark="exponential"/> exponentially?
-                """
+                text=self.translate("Func_6_1.I5.main.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("sarah")
@@ -766,31 +695,19 @@ class Func_6_1_I_5_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
 
-        exponential_growth1 = Tex("$\\Rightarrow$ The number of bacteria", color=c1t, font_size=fs3)
-        exponential_growth2 = Tex("grows exponentially", color=c1t, font_size=fs3)
+        
+        exponential_growth1 = Tex(self.translate("Func_6_1.I5.main.eg1"), color=c1t, font_size=fs3)
+        exponential_growth2 = Tex(self.translate("Func_6_1.I5.main.eg2"), color=c1t, font_size=fs3)
         exponential_growth = VGroup(exponential_growth1, exponential_growth2).arrange(DOWN, buff=0.2).next_to(bacteria, DOWN, buff=0.8).shift(5.6*RIGHT)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, well done.
-                Let's look at the number of bacteria step by step.
-                At first, there's one <bookmark mark="one"/> bacteria.
-                After twenty minutes, the bacteria duplicates, so there are<bookmark mark="two"/> two bacteria.
-                After another twenty minutes, each of the two bacteria duplicates, so there are <bookmark mark="four"/>four bacteria.
-                And after another twenty minutes, they each duplicate <bookmark mark="eight"/>again, and we get four more bacteria, to get us to eight.
-
-                So you see, how at each of the timesteps, we get twice as many bacteria as in the previous timestep:<bookmark mark="step0"/>
-                In the first timestep, we get <bookmark mark="step1"/>one bacteria, in the second timestep, we get <bookmark mark="step2"/>two bacteria
-                and in the third timestep, we get <bookmark mark="step3"/>four bacteria...
-                This means, that the number of bacteria grows <bookmark mark="exponential"/>exponentially, because at each timestep we get
-                twice as many additional bacteria as in the previous timestep.
-                """
+                text=self.translate("Func_6_1.I5.a.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -839,31 +756,18 @@ class Func_6_1_I_5_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
 
-        exponential_growth1 = Tex("$\\Rightarrow$ The number of bacteria", color=c1t, font_size=fs3)
-        exponential_growth2 = Tex("grows exponentially", color=c1t, font_size=fs3)
+        exponential_growth1 = Tex(self.translate("Func_6_1.I5.main.eg1"), color=c1t, font_size=fs3)
+        exponential_growth2 = Tex(self.translate("Func_6_1.I5.main.eg2"), color=c1t, font_size=fs3)
         exponential_growth = VGroup(exponential_growth1, exponential_growth2).arrange(DOWN, buff=0.2).next_to(bacteria, DOWN, buff=0.8).shift(5.6*RIGHT)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                Let's look at the number of bacteria step by step.
-                At first, there's one <bookmark mark="one"/> bacteria.
-                After twenty minutes, the bacteria duplicates, so there are<bookmark mark="two"/> two bacteria.
-                After another twenty minutes, each of the two bacteria duplicates, so there are <bookmark mark="four"/>four bacteria.
-                And after another twenty minutes, they each duplicate <bookmark mark="eight"/>again, and we get four more bacteria, to get us to eight.
-
-                So you see, how at each of the timesteps, we get twice as many bacteria as in the previous timestep:<bookmark mark="step0"/>
-                In the first timestep, we get <bookmark mark="step1"/>one bacteria, in the second timestep, we get <bookmark mark="step2"/>two bacteria
-                and in the third timestep, we get <bookmark mark="step3"/>four bacteria...
-                This means, that the number of bacteria grows <bookmark mark="exponential"/>exponentially, because at each timestep we get
-                twice as many additional bacteria as in the previous timestep.
-                """
+                text=self.translate("Func_6_1.I5.b.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -905,13 +809,14 @@ class Func_6_1_I_5_b(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_6_1_I_6_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=2\\cdot x$", "$g(x)=2^x$", "$h(x)=x^2$"],
-    correctAnswerIndex = 0,
-    questionText = "Which function describes the number of bacteria at time x?"
-)
-
 class Func_6_1_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=2\\cdot x$", "$g(x)=2^x$", "$h(x)=x^2$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_1.I6.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -919,14 +824,14 @@ class Func_6_1_I_6_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        bacteria_double = VGroup(Tex(self.translate("Func_6_1.I6.q.bacteria_double_a"), color=c1t, font_size=fs2), Tex(self.translate("Func_6_1.I6.q.bacteria_double_b"), color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -943,9 +848,9 @@ class Func_6_1_I_6_q(SophiaCursorScene):
         funcs = VGroup(f_tex, g_tex, h_tex).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN)
 
         t = Table(
-            [["x", "time"],
-            ["1", "20 Minutes"],
-            ["2", "40 Minutes"],
+            [["x", self.translate("Func_6_1.I6.q.bacteria_time")],
+            ["1", f"20 {self.translate('Func_6_1.I6.q.bacteria_minutes')}"],
+            ["2", f"20 {self.translate('Func_6_1.I6.q.bacteria_minutes')}"],
             ["...", "..."]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, RIGHT, buff=0.2).shift(RIGHT*5)
         rows = t.get_rows()
         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines())
@@ -953,16 +858,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="sarah"/>Sarah knows, that the <bookmark mark="bacteria"/>bacteria she is studying duplicate every twenty minutes.
-                Now she wants to describe the number of bacteria she is studying using a function.
-                Let x<bookmark mark="table"/> be the time that is passed in units of twenty minutes, so <bookmark mark="row_1"/>x equals one means
-                twenty minutes, <bookmark mark="row_2"/>x equals two means forty minutes,<bookmark mark="rowsss"/> and so on.
-                <bookmark mark="clean"/>Which of these functions describe the number of bacteria at time x?
-                Is it<bookmark mark="f"/> f of <bookmark mark="fx"/>x equals <bookmark mark="ftwo"/>2 times <bookmark mark="fxx"/> x?
-                Or is it<bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x?
-                Or is it<bookmark mark="h"/> h of <bookmark mark="hx"/>x equals <bookmark mark="hxx"/>x squared?
-                """
+                text=self.translate("Func_6_1.I6.q.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("sarah")
@@ -1047,14 +943,16 @@ class Func_6_1_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential growth")
+        title = self.add_title(self.translate("Func_6_1.I6.a.title"))
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -0.4, 0])
+    
+        bacteria_translated = self.translate("Func_6_1.I6.b.bacteria")
 
         t = MathTable(
             [["x", "0", "1", "2", "3", "..."],
-            ["\\text{Bacteria}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
+            [f"\\text{{{bacteria_translated}}}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
 
         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines())
         cols = t.get_columns()
@@ -1071,22 +969,7 @@ class Func_6_1_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not it.
-                Again, let's look at how many bacteria we have at each step.
-                When we beginn, at x equals zero, there's one <bookmark mark="one"/> bacteria.
-                After twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark="two"/> two bacteria.
-                After another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark="four"/>four bacteria.
-                And after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark="eight"/>again, and we get four more bacteria, to get us to eight.
-
-                So you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark="step0"/>
-                In the first timestep, we go from <bookmark mark="step1"/>one bacteria to two so we multiply the number of bacteria that we have by two.
-                In the second timestep, we go from two <bookmark mark="step2"/> bacteria to four, so we double the number of bacteria again.
-                and in the third timestep, we go from four <bookmark mark="step3"/> bacteria to eight, again multiplying the number of bacteria by two.
-
-                This means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.
-                This means, that the function describing the number of bacteria is<bookmark mark="exponential"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x.
-                """
+                text=self.translate("Func_6_1.I6.a.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -1155,14 +1038,16 @@ class Func_6_1_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential growth")
+        title = self.add_title(self.translate("Func_6_1.I6.a.title"))
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -0.4, 0])
 
+        bacteria_translated = self.translate("Func_6_1.I6.b.bacteria")
+
         t = MathTable(
             [["x", "0", "1", "2", "3", "..."],
-            ["\\text{Bacteria}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
+            [f"\\text{{{bacteria_translated}}}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
 
         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines())
         cols = t.get_columns()
@@ -1179,22 +1064,7 @@ class Func_6_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, well done.
-                Again, let's look at how many bacteria we have at each step.
-                When we beginn, at x equals zero, there's one <bookmark mark="one"/> bacteria.
-                After twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark="two"/> two bacteria.
-                After another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark="four"/>four bacteria.
-                And after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark="eight"/>again, and we get four more bacteria, to get us to eight.
-
-                So you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark="step0"/>
-                In the first timestep, we go from <bookmark mark="step1"/>one bacteria to two so we multiply the number of bacteria that we have by two.
-                In the second timestep, we go from two <bookmark mark="step2"/> bacteria to four, so we double the number of bacteria again.
-                and in the third timestep, we go from four <bookmark mark="step3"/> bacteria to eight, again multiplying the number of bacteria by two.
-
-                This means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.
-                This means, that the function describing the number of bacteria is<bookmark mark="exponential"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x.
-                """
+                text=self.translate("Func_6_1.I6.b.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -1257,20 +1127,21 @@ class Func_6_1_I_6_b(SophiaCursorScene):
 
 class Func_6_1_I_6_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential growth")
+        title = self.add_title(self.translate("Func_6_1.I6.a.title"))
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -0.4, 0])
+    
+        bacteria_translated = self.translate("Func_6_1.I6.b.bacteria")
 
         t = MathTable(
             [["x", "0", "1", "2", "3", "..."],
-            ["\\text{Bacteria}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
+            [f"\\text{{{bacteria_translated}}}", "1", "2", "2\\cdot 2", "2\\cdot2\\cdot2", "..." ]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, DOWN, buff=0.4).shift(6*RIGHT)
 
         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines())
         cols = t.get_columns()
@@ -1287,22 +1158,7 @@ class Func_6_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not it.
-                Again, let's look at how many bacteria we have at each step.
-                When we beginn, at x equals zero, there's one <bookmark mark="one"/> bacteria.
-                After twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark="two"/> two bacteria.
-                After another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark="four"/>four bacteria.
-                And after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark="eight"/>again, and we get four more bacteria, to get us to eight.
-
-                So you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark="step0"/>
-                In the first timestep, we go from <bookmark mark="step1"/>one bacteria to two so we multiply the number of bacteria that we have by two.
-                In the second timestep, we go from two <bookmark mark="step2"/> bacteria to four, so we double the number of bacteria again.
-                and in the third timestep, we go from four <bookmark mark="step3"/> bacteria to eight, again multiplying the number of bacteria by two.
-
-                This means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.
-                This means, that the function describing the number of bacteria is<bookmark mark="exponential"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x.
-                """
+                text=self.translate("Func_6_1.I6.a.voiceover")
          ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -1366,13 +1222,14 @@ class Func_6_1_I_6_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_6_1_I_7_q = SophiaTaskDefinition(
-    answerOptions = ["The blue graph", "The green graph", "The purple graph"],
-    correctAnswerIndex = 1,
-    questionText = "Which of the graphs belongs to the function?"
-)
-
 class Func_6_1_I_7_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_6_1.I7.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_6_1.I7.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1380,14 +1237,15 @@ class Func_6_1_I_7_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
+        bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1400,7 +1258,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
 
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
-        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        lin_growth = Tex(self.translate("Func_6_1.I7.q.lin-growth"), color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
         
@@ -1414,11 +1272,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Look at the function<bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x?
-                Which of the following <bookmark mark="cords"/> graphs belongs to the function?
-                The <bookmark mark="blue"/> blue graph? Or the <bookmark mark="green"/> green graph? Or is it the <bookmark mark="purple"/> purple graph?
-                """
+                text=self.translate("Func_6_1.I7.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1475,14 +1329,15 @@ class Func_6_1_I_7_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
+        bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1495,7 +1350,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
 
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
-        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        lin_growth = Tex(self.translate("Func_6_1.I7.q.lin-growth"), color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
         
@@ -1509,16 +1364,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                For the function <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x,
-                the number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark="cords"/>
-                The <bookmark mark="blue"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're
-                looking for.
-                The <bookmark mark="purple"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark="clear_cords"/> either.
-                The <bookmark mark="green"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,
-                it doubles at every timestep, so it must be the right one.
-                """
+                text=self.translate("Func_6_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1577,14 +1423,15 @@ class Func_6_1_I_7_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
+        bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1597,7 +1444,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
 
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
-        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        lin_growth = Tex(self.translate("Func_6_1.I7.q.lin-growth"), color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
         
@@ -1611,16 +1458,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it!
-                For the function <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x,
-                the number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark="cords"/>
-                The <bookmark mark="blue"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're
-                looking for.
-                The <bookmark mark="purple"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark="clear_cords"/> either.
-                The <bookmark mark="green"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,
-                it doubles at every timestep, so it must be the right one.
-                """
+                text=self.translate("Func_6_1.I7.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1679,14 +1517,15 @@ class Func_6_1_I_7_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Exponential or Linear?")
+        title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
         sarah = sarah.scale(2.5/sarah.get_width()).move_to([-5, 1.4, 0])
 
         bacteria = ImageMobject(assets_folder / "img" / "bacteria.png")
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
-        bacteria_double = VGroup(Tex("$\\Uparrow$ Duplicate every", color=c1t, font_size=fs2), Tex("$20$ minutes", color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
+        double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
+        bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1699,7 +1538,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
 
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
-        lin_growth = Tex("Linear Growth", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        lin_growth = Tex(self.translate("Func_6_1.I7.q.lin-growth"), color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
         
@@ -1713,16 +1552,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                For the function <bookmark mark="g"/> g of <bookmark mark="gx"/>x equals <bookmark mark="gtwo"/>two to the power of <bookmark mark="gxx"/> x,
-                the number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark="cords"/>
-                The <bookmark mark="blue"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're
-                looking for.
-                The <bookmark mark="purple"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark="clear_cords"/> either.
-                The <bookmark mark="green"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,
-                it doubles at every timestep, so it must be the right one.
-                """
+                text=self.translate("Func_6_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1782,16 +1612,16 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_1_I_3),
     PagePrototypeVideo.from_scene(Func_6_1_I_4),
     PagePrototypeVideo.from_scene(Func_6_1_I_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_1_I_5_q, Func_6_1_I_5_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_5_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_5_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_5_b),
     PagePrototypeVideo.from_scene(Func_6_1_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_1_I_6_q, Func_6_1_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_6_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_6_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_6_b),
     PagePrototypeVideo.from_scene(Func_6_1_I_6_c),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_1_I_7_q, Func_6_1_I_7_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_7_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_b),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_c)

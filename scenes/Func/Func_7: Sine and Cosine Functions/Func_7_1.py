@@ -19,19 +19,21 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 
 #####################################
 #####################################
-TASK_Func_7_1_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
-    correctAnswerIndex = 2,
-    questionText = "How many degrees does this $\\tfrac{3}{4}$ circle have?"
-)
 class Func_7_1_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_7_1.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Degrees")
+        self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -58,18 +60,7 @@ class Func_7_1_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Whenever two lines meet, we get an angle.
-                And the most commonly known method to measure angles is by <bookmark mark="degrees"/>using degrees.
-
-                <bookmark mark="full_circle"/>A full circle has 360 degrees.
-                <bookmark mark="half_circle"/>A half circle has 180 degrees.
-                <bookmark mark="quarter_circle"/>A quarter circle has 90 degrees.
-                And so on...
-
-                How many degrees does <bookmark mark="threequartercircle"/>this angle have,
-                which reaches three quarters around the circle?
-                """
+                text=self.translate("Func_7_1.I1.q.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -116,7 +107,7 @@ class Func_7_1_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Degrees")
+        self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -137,8 +128,8 @@ class Func_7_1_I_1_a(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        three_quarter = Tex("Here: $\\tfrac{3}{4}$ of a full circle", color=c1t, font_size=fs3)
-        full_circle = Tex("Full circle: $360^\\circ$", color=c1t, font_size=fs3)
+        three_quarter = Tex(self.translate("Func_7_1.I1.a.three_quarter"), color=c1t, font_size=fs3)
+        full_circle = Tex(self.translate("Func_7_1.I1.a.full_circle"), color=c1t, font_size=fs3)
         explanations = VGroup(three_quarter, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{3}{4}", "\\cdot",  "360^\\circ", "=", "270^\\circ", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -146,15 +137,7 @@ class Func_7_1_I_1_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We have <bookmark mark="three_quarter"/> three quarters of a circle here.
-                And we know that <bookmark mark="full_circle"/>a full circle has 360 degrees.
-                So the angle we're looking for is three quarters of 360 degrees.
-                So our angle is <bookmark mark="equation_1"/> three quarters <bookmark mark="equation_2"/>
-                times 360 degrees, which <bookmark mark="equation_3"/>is 270 degrees.
-                """
+                text=self.translate("Func_7_1.I1.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -191,7 +174,7 @@ class Func_7_1_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Degrees")
+        self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -212,8 +195,8 @@ class Func_7_1_I_1_b(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        three_quarter = Tex("Here: $\\tfrac{3}{4}$ of a full circle", color=c1t, font_size=fs3)
-        full_circle = Tex("Full circle: $360^\\circ$", color=c1t, font_size=fs3)
+        three_quarter = Tex(self.translate("Func_7_1.I1.a.three_quarter"), color=c1t, font_size=fs3)
+        full_circle = Tex(self.translate("Func_7_1.I1.a.full_circle"), color=c1t, font_size=fs3)
         explanations = VGroup(three_quarter, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{3}{4}", "\\cdot",  "360^\\circ", "=", "270^\\circ", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -221,15 +204,7 @@ class Func_7_1_I_1_b(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We have <bookmark mark="three_quarter"/> three quarters of a circle here.
-                And we know that <bookmark mark="full_circle"/>a full circle has 360 degrees.
-                So the angle we're looking for is three quarters of 360 degrees.
-                So our angle is <bookmark mark="equation_1"/> three quarters <bookmark mark="equation_2"/>
-                times 360 degrees, which <bookmark mark="equation_3"/>is 270 degrees.
-                """
+                text=self.translate("Func_7_1.I1.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -266,7 +241,7 @@ class Func_7_1_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Degrees")
+        self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -287,8 +262,8 @@ class Func_7_1_I_1_c(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        three_quarter = Tex("Here: $\\tfrac{3}{4}$ of a full circle", color=c1t, font_size=fs3)
-        full_circle = Tex("Full circle: $360^\\circ$", color=c1t, font_size=fs3)
+        three_quarter = Tex(self.translate("Func_7_1.I1.a.three_quarter"), color=c1t, font_size=fs3)
+        full_circle = Tex(self.translate("Func_7_1.I1.a.full_circle"), color=c1t, font_size=fs3)
         explanations = VGroup(three_quarter, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{3}{4}", "\\cdot",  "360^\\circ", "=", "270^\\circ", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -296,15 +271,7 @@ class Func_7_1_I_1_c(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's right, congrats!
-
-                We have <bookmark mark="three_quarter"/> three quarters of a circle here.
-                And we know that <bookmark mark="full_circle"/>a full circle has 360 degrees.
-                So the angle we're looking for is three quarters of 360 degrees.
-                So our angle is <bookmark mark="equation_1"/> three quarters <bookmark mark="equation_2"/>
-                times 360 degrees, which <bookmark mark="equation_3"/>is 270 degrees.
-                """
+                text=self.translate("Func_7_1.I1.c.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -341,7 +308,7 @@ class Func_7_1_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Degrees")
+        self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -362,8 +329,8 @@ class Func_7_1_I_1_d(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        three_quarter = Tex("Here: $\\tfrac{3}{4}$ of a full circle", color=c1t, font_size=fs3)
-        full_circle = Tex("Full circle: $360^\\circ$", color=c1t, font_size=fs3)
+        three_quarter = Tex(self.translate("Func_7_1.I1.a.three_quarter"), color=c1t, font_size=fs3)
+        full_circle = Tex(self.translate("Func_7_1.I1.a.full_circle"), color=c1t, font_size=fs3)
         explanations = VGroup(three_quarter, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{3}{4}", "\\cdot",  "360^\\circ", "=", "270^\\circ", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -371,15 +338,7 @@ class Func_7_1_I_1_d(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We have <bookmark mark="three_quarter"/> three quarters of a circle here.
-                And we know that <bookmark mark="full_circle"/>a full circle has 360 degrees.
-                So the angle we're looking for is three quarters of 360 degrees.
-                So our angle is <bookmark mark="equation_1"/> three quarters <bookmark mark="equation_2"/>
-                times 360 degrees, which <bookmark mark="equation_3"/>is 270 degrees.
-                """
+                text=self.translate("Func_7_1.I1.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -408,23 +367,26 @@ class Func_7_1_I_1_d(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
-
-
+        
+        
+        
 #####################################
 #####################################
-TASK_Func_7_1_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
-    correctAnswerIndex = 3,
-    questionText = "How many degrees does this $\\tfrac{3}{4}$ circle have?"
-)
 class Func_7_1_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_7_1.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Radians")
+        title = self.add_title(self.translate("Func_7_1.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -445,8 +407,8 @@ class Func_7_1_I_2_q(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        degrees = Tex("Degrees:", color=c1t, font_size=fs2)
-        radians = Tex("Radians:", color=c1t, font_size=fs2)
+        degrees = Tex(self.translate("Func_7_1.I2.q.deg"), color=c1t, font_size=fs2)
+        radians = Tex(self.translate("Func_7_1.I2.q.rad"), color=c1t, font_size=fs2)
         measures = VGroup(degrees, radians).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.8+LEFT)
         degrees_val_1 = MathTex("360^\\circ", color=c1t, font_size=fs2)
         radians_val_1 = MathTex("2\\Pi", color=c1t, font_size=fs2)
@@ -454,26 +416,13 @@ class Func_7_1_I_2_q(SophiaCursorScene):
         degrees_val_2 = MathTex("180^\\circ", color=c1t, font_size=fs2)
         radians_val_2 = MathTex("?", color=c1t, font_size=fs2)
         values_2 = VGroup(degrees_val_2, radians_val_2).arrange(DOWN, buff=0.4, aligned_edge=LEFT).next_to(values_1, RIGHT, buff=0.4)
-        full = Tex("Full", color=c1t, font_size=fs2).next_to(degrees_val_1, UP, buff=0.4)
-        half = Tex("Half", color=c1t, font_size=fs2).next_to(degrees_val_2, UP, buff=0.4)
+        full = Tex(self.translate("Func_7_1.I2.q.full"), color=c1t, font_size=fs2).next_to(degrees_val_1, UP, buff=0.4)
+        half = Tex(self.translate("Func_7_1.I2.q.half"), color=c1t, font_size=fs2).next_to(degrees_val_2, UP, buff=0.4)
 
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                In addition to degrees, there is one more way to describe angles:
-                Radians. And just like a full circle <bookmark mark="degrees"/>has 360 degrees,
-                in radians the angle of a full circle<bookmark mark="radians"/> is 2 pi.
-
-                Now, knowing that a full circle is 2 pi radians, how many radians
-                <bookmark mark="half_circle"/>is a half circle?
-                
-                A little hint: As mentioned, a <bookmark mark="full_circle_fin"/> full circle has 360 degrees.
-                And <bookmark mark="half_circle_fin"/>a half circle has 180 degrees.
-
-                Now we also know that a full circle <bookmark mark="radians_fin"/>is 2 pi radians.
-                So <bookmark mark="radians_fin_half"/>how many radians is a half circle?
-                """
+                text=self.translate("Func_7_1.I2.q.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -534,7 +483,9 @@ class Func_7_1_I_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Radians")
+
+        self.add_title(self.translate("Func_7_1.I2.q.title"))
+
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -556,8 +507,9 @@ class Func_7_1_I_2_a(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        half = Tex("Here: $\\tfrac{1}{2}$ of a full circle", color=c1t, font_size=fs2)
-        full_circle = Tex("Full circle: $2\\Pi$", color=c1t, font_size=fs2)
+        
+        half = Tex(self.translate("Func_7_1.I2.a.half"), color=c1t, font_size=fs2)
+        full_circle = Tex(self.translate("Func_7_1.I2.a.full"), color=c1t, font_size=fs2)
         explanations = VGroup(half, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{1}{2}", "\\cdot",  "2\\Pi", "=", "\\Pi", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -565,15 +517,7 @@ class Func_7_1_I_2_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We're considering <bookmark mark="half"/> a half circle in this example.
-                And we know that <bookmark mark="full_circle"/>a full circle has 2 Pi Radians.
-                This means that our angle is <bookmark mark="equation_1"/> one half
-                <bookmark mark="equation_2"/> times 2 Pi, which
-                <bookmark mark="equation_3"/>equals Pi.
-                """
+                text=self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -617,7 +561,9 @@ class Func_7_1_I_2_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Radians")
+
+        self.add_title(self.translate("Func_7_1.I2.q.title"))
+
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -639,8 +585,9 @@ class Func_7_1_I_2_b(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        half = Tex("Here: $\\tfrac{1}{2}$ of a full circle", color=c1t, font_size=fs2)
-        full_circle = Tex("Full circle: $2\\Pi$", color=c1t, font_size=fs2)
+        
+        half = Tex(self.translate("Func_7_1.I2.a.half"), color=c1t, font_size=fs2)
+        full_circle = Tex(self.translate("Func_7_1.I2.a.full"), color=c1t, font_size=fs2)
         explanations = VGroup(half, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{1}{2}", "\\cdot",  "2\\Pi", "=", "\\Pi", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -648,15 +595,7 @@ class Func_7_1_I_2_b(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We're considering <bookmark mark="half"/> a half circle in this example.
-                And we know that <bookmark mark="full_circle"/>a full circle has 2 Pi Radians.
-                This means that our angle is <bookmark mark="equation_1"/> one half
-                <bookmark mark="equation_2"/> times 2 Pi, which
-                <bookmark mark="equation_3"/>equals Pi.
-                """
+                text=self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -700,7 +639,9 @@ class Func_7_1_I_2_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Radians")
+
+        self.add_title(self.translate("Func_7_1.I2.q.title"))
+
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -722,8 +663,9 @@ class Func_7_1_I_2_c(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        half = Tex("Here: $\\tfrac{1}{2}$ of a full circle", color=c1t, font_size=fs2)
-        full_circle = Tex("Full circle: $2\\Pi$", color=c1t, font_size=fs2)
+        
+        half = Tex(self.translate("Func_7_1.I2.a.half"), color=c1t, font_size=fs2)
+        full_circle = Tex(self.translate("Func_7_1.I2.a.full"), color=c1t, font_size=fs2)
         explanations = VGroup(half, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{1}{2}", "\\cdot",  "2\\Pi", "=", "\\Pi", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -731,15 +673,7 @@ class Func_7_1_I_2_c(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's wrong, unfortunately.
-
-                We're considering <bookmark mark="half"/> a half circle in this example.
-                And we know that <bookmark mark="full_circle"/>a full circle has 2 Pi Radians.
-                This means that our angle is <bookmark mark="equation_1"/> one half
-                <bookmark mark="equation_2"/> times 2 Pi, which
-                <bookmark mark="equation_3"/>equals Pi.
-                """
+                text=self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -783,7 +717,8 @@ class Func_7_1_I_2_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Radians")
+        self.add_title(self.translate("Func_7_1.I2.q.title"))
+
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -805,8 +740,8 @@ class Func_7_1_I_2_d(SophiaCursorScene):
         line_end = always_redraw(get_line_end)
         self.add(arc, line_start, line_end)
 
-        half = Tex("Here: $\\tfrac{1}{2}$ of a full circle", color=c1t, font_size=fs2)
-        full_circle = Tex("Full circle: $2\\Pi$", color=c1t, font_size=fs2)
+        half = Tex(self.translate("Func_7_1.I2.a.half"), color=c1t, font_size=fs2)
+        full_circle = Tex(self.translate("Func_7_1.I2.a.full"), color=c1t, font_size=fs2)
         explanations = VGroup(half, full_circle).arrange(DOWN, buff=0.2, aligned_edge=LEFT).shift(DOWN*1.2)
 
         equation = MathTex("\\tfrac{1}{2}", "\\cdot",  "2\\Pi", "=", "\\Pi", color=c1t, font_size=fs2).shift(2.2*DOWN)
@@ -814,15 +749,7 @@ class Func_7_1_I_2_d(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                That is correct, well done!
-
-                We're considering <bookmark mark="half"/> a half circle in this example.
-                And we know that <bookmark mark="full_circle"/>a full circle has 2 Pi Radians.
-                This means that our angle is <bookmark mark="equation_1"/> one half
-                <bookmark mark="equation_2"/> times 2 Pi, which
-                <bookmark mark="equation_3"/>equals Pi.
-                """
+                text=self.translate("Func_7_1.I2.d.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -868,7 +795,7 @@ class Func_7_1_I_3(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I3.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -895,22 +822,7 @@ class Func_7_1_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ever wondered why a full <bookmark mark="degrees"/>circle has 360 degrees?
-                It seems to be such a random number, doesn't it? Why not 72? Or 420?
-
-                Well, the reason that it is 360 is that it has always been that way.
-                <bookmark mark="temple"/>The Babylonians, who lived in the area of today's Iraq,
-                used a number system with <bookmark mark="base"/>a base of 60. This means that
-                they counted in 60s instead of tens like we do today. And they used this number
-                system to measure angles as well. So imagine, to them, 360 was kind of like
-                100 is to us today. It was a nice round number that was easy to work with.
-                <bookmark mark="degrees_switch"/> There is also a reason why <bookmark mark="rad"/>
-                in Radians, a full circle is 2 Pi. And it's not historical, but mathematical.
-                <bookmark mark="qmark"/>
-                Take a moment and think: Why do we say that a full circle is 2 Pi Radians?
-                If you want a hint: Think about the circumference of a circle.
-                """
+                text=self.translate("Func_7_1.I3.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -965,7 +877,7 @@ class Func_7_1_I_4(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I3.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1001,23 +913,7 @@ class Func_7_1_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here it goes:
-                Recall the formula <bookmark mark="around"/>for the circumference of a circle:
-                The <bookmark mark="circ_1"/> circumference c of a circle is equal <bookmark mark="two"/>
-                to 2 <bookmark mark="pi"/> times Pie times <bookmark mark="r"/>the radius r of the circle.
-
-                If we look at the unit circle,<bookmark mark="unit"/> which is a circle with the radius
-                of 1, we can see that the circumference of the unit circle is <bookmark mark="two_pi"/>
-                simply equal to two times Pie.
-
-                So in the unit circle, the angle in radians is <bookmark mark="rad_1"/> equal to
-                the circumference of the unit circle.
-
-                <bookmark mark="red_circle"/> And this holds true for other angles as well: A quarter
-                of the unit circle has both a circumference and an angle of 0.5 Pie. <bookmark mark="half"/>
-                And a half of the unit circle has both a circumference and an angle of Pie.
-                """
+                text=self.translate("Func_7_1.I4.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("around")
@@ -1106,7 +1002,7 @@ class DegToRadQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         deg = int(self.angle_frac*360)
 
@@ -1131,17 +1027,13 @@ class DegToRadQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         arc_2 = always_redraw(get_arc_2)
         line_end_2 = always_redraw(get_line_end_2)
         
-        label_deg = Tex("Degrees: ", f"${deg}$", "$^\\circ$", color=c1t, font_size=fs1)
-        label_rad = Tex("Radians: ", "  ?", color=c1t, font_size=fs1)
+        label_deg = Tex(self.translate("Func_7_1.DegToRadQuestionScene.deg"), f"${deg}$", "$^\\circ$", color=c1t, font_size=fs1)
+        label_rad = Tex(self.translate("Func_7_1.DegToRadQuestionScene.rad"), "  ?", color=c1t, font_size=fs1)
         labels = VGroup(label_deg, label_rad).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(circ, DOWN, buff=0.6)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro} <bookmark mark="red_circle"/> {self.color_string} circle. Measured in Degrees, it <bookmark mark="degrees"/>
-                has an angle of {deg} degrees.
-                What is the equivalent angle, when we <bookmark mark="rad"/>describe it in Radians, instead of Degrees?
-                """
+                text=self.evaluate_string(self.translate("Func_7_1.DegToRadQuestionScene.voiceover"))
         ) as tracker:
 
 
@@ -1179,7 +1071,7 @@ class DegToRadAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         deg = int(self.angle_frac*360)
 
@@ -1204,19 +1096,12 @@ class DegToRadAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         arc_2 = always_redraw(get_arc_2)
         line_end_2 = always_redraw(get_line_end_2)
         
-        label_deg = Tex("Degrees: ", f"${deg}$", "$^\\circ$", color=c1t, font_size=fs1).next_to(circ, DOWN, buff=0.6)
+        label_deg = Tex(self.translate("Func_7_1.DegToRadQuestionScene.deg"), f"${deg}$", "$^\\circ$", color=c1t, font_size=fs1).next_to(circ, DOWN, buff=0.6)
         eq = MathTex(f"{self.angle_frac_tex}", "\\cdot", "2\\Pi", "=", f"{2*self.angle_frac}\\Pi", color=c1t, font_size=fs1).next_to(label_deg, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro} The <bookmark mark="red_circle"/> angle of the {self.color_string} circle is <bookmark mark="degrees"/>
-                {deg} degrees, which is {self.angle_frac_string} of a full circle.
-
-                So the angle in Radians is also {self.angle_frac_string} of a full circle, which <bookmark mark="eq_1"/>
-                is {self.angle_frac_string} <bookmark mark="eq_2"/> times 2 Pi, which <bookmark mark="eq_3"/> equals
-                {self.angle_rad_string}Pi Radians.
-                """
+                text=self.evaluate_string(self.translate("Func_7_1.DegToRadAnswerScene.voiceover"))
         ) as tracker:
 
 
@@ -1268,7 +1153,7 @@ class RadToDegQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         deg = int(self.angle_frac*360)
 
@@ -1293,17 +1178,13 @@ class RadToDegQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         arc_2 = always_redraw(get_arc_2)
         line_end_2 = always_redraw(get_line_end_2)
         
-        label_rad = Tex("Radians: ", f"${2*self.angle_frac}\\Pi$", color=c1t, font_size=fs1)
-        label_deg = Tex("Degrees: ", "$?^\\circ$", color=c1t, font_size=fs1)
+        label_rad = Tex(self.translate("Func_7_1.DegToRadQuestionScene.rad"), f"${2*self.angle_frac}\\Pi$", color=c1t, font_size=fs1)
+        label_deg = Tex(self.translate("Func_7_1.DegToRadQuestionScene.deg"), "$?^\\circ$", color=c1t, font_size=fs1)
         labels = VGroup(label_rad, label_deg).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(circ, DOWN, buff=0.6)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro} <bookmark mark="red_circle"/> {self.color_string} circle. Measured in Radians, it <bookmark mark="rad"/>
-                has an angle of {self.angle_rad_string} Pi.
-                What is the equivalent angle, when we <bookmark mark="degrees"/>describe it in Degrees, instead of Radians?
-                """
+                text=self.evaluate_string(self.translate("Func_7_1.RadToDegQuestionScene.voiceover"))
         ) as tracker:
 
 
@@ -1341,7 +1222,7 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Measuring Angles")
+        title = self.add_title(self.translate("Func_7_1.I1.q.title"))
 
         deg = int(self.angle_frac*360)
 
@@ -1366,19 +1247,12 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         arc_2 = always_redraw(get_arc_2)
         line_end_2 = always_redraw(get_line_end_2)
         
-        label_rad = Tex("Radians: ", f"${2*self.angle_frac}\\Pi$", color=c1t, font_size=fs1).next_to(circ, DOWN, buff=0.6)
+        label_rad = Tex(self.translate("Func_7_1.DegToRadQuestionScene.rad"), f"${2*self.angle_frac}\\Pi$", color=c1t, font_size=fs1).next_to(circ, DOWN, buff=0.6)
         eq = MathTex(f"{self.angle_frac_tex}", "\\cdot", "360^\\circ", "=", f"{360*self.angle_frac}^\\circ", color=c1t, font_size=fs1).next_to(label_rad, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro} The <bookmark mark="red_circle"/> angle of the {self.color_string} circle is <bookmark mark="radians"/>
-                {self.angle_rad_string} Pi, which is {self.angle_frac_string} of a full circle.
-
-                So the angle in Degrees is also {self.angle_frac_string} of a full circle, which <bookmark mark="eq_1"/>
-                is {self.angle_frac_string} <bookmark mark="eq_2"/> times 360 Degrees, which <bookmark mark="eq_3"/> equals
-                {deg}degrees.
-                """
+                text=self.evaluate_string(self.translate("Func_7_1.RadToDegAnswerScene.voiceover"))
         ) as tracker:
 
 
@@ -1425,21 +1299,23 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 ######## Specific Qs ################
 #####################################
 #####################################
-TASK_Func_7_1_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["$2\\Pi$", "$90\Pi$", "$\\frac{1}{2}\Pi$", "$\\frac{1}{4}\Pi$"],
-    correctAnswerIndex = 2,
-    questionText = f"What angle in Radians corresponds to $90^\circ$?"
-)
 class Func_7_1_P_1_q(DegToRadQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2\\Pi$", "$90\Pi$", "$\\frac{1}{2}\Pi$", "$\\frac{1}{4}\Pi$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_7_1.P1.q.question-text")
+        )
 
     def construct(self):
         
-        self.intro = "Look at the"
+        self.intro = self.translate("Func_7_1.P1.q.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "purple"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P1.q.color-string")
         self.color = PURPLE
 
         super().construct()
@@ -1449,12 +1325,12 @@ class Func_7_1_P_1_a(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "That's not it..."
+        self.intro = self.translate("Func_7_1.P1.a.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "purple"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P1.q.color-string")
         self.color = PURPLE
 
         super().construct()
@@ -1464,12 +1340,12 @@ class Func_7_1_P_1_b(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "That's not it..."
+        self.intro = self.translate("Func_7_1.P1.a.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "purple"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P1.q.color-string")
         self.color = PURPLE
 
         super().construct()
@@ -1479,12 +1355,12 @@ class Func_7_1_P_1_c(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "That's correct, well done."
+        self.intro = self.translate("Func_7_1.P1.c.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "purple"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P1.q.color-string")
         self.color = PURPLE
 
         super().construct()
@@ -1494,12 +1370,12 @@ class Func_7_1_P_1_d(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "That's not it..."
+        self.intro = self.translate("Func_7_1.P1.a.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "purple"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P1.q.color-string")
         self.color = PURPLE
 
         super().construct()
@@ -1507,21 +1383,23 @@ class Func_7_1_P_1_d(DegToRadAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_7_1_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
-    correctAnswerIndex = 0,
-    questionText = "What angle in degrees corresponds to $\tfrac{\Pi}{2}$?"
-)
 class Func_7_1_P_2_q(RadToDegQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_7_1.P2.q.question-text")
+        )
 
     def construct(self):
         
-        self.intro = "Look at the"
+        self.intro = self.translate("Func_7_1.P2.q.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "green"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P2.q.color-string")
         self.color = GREEN
 
         super().construct()
@@ -1532,12 +1410,12 @@ class Func_7_1_P_2_a(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "That's correct, well done."
+        self.intro = self.translate("Func_7_1.P2.a.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "green"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P2.q.color-string")
         self.color = GREEN
 
         super().construct()
@@ -1547,12 +1425,12 @@ class Func_7_1_P_2_b(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_1.P2.b.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "green"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P2.q.color-string")
         self.color = GREEN
 
         super().construct()
@@ -1562,12 +1440,12 @@ class Func_7_1_P_2_c(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_1.P2.b.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "green"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P2.q.color-string")
         self.color = GREEN
 
         super().construct()
@@ -1577,12 +1455,12 @@ class Func_7_1_P_2_d(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_1.P2.b.intro")
         self.angle_frac = 1/4
         self.angle_frac_tex = "\\tfrac{1}{4}"
-        self.angle_frac_string = "one quarter"
-        self.angle_rad_string = "one half"
-        self.color_string = "green"
+        self.angle_frac_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P2.q.color-string")
         self.color = GREEN
 
         super().construct()
@@ -1590,21 +1468,23 @@ class Func_7_1_P_2_d(RadToDegAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_7_1_P_3_q = SophiaTaskDefinition(
-    answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
-    correctAnswerIndex = 2,
-    questionText = "What angle in degrees corresponds to $\tfrac{3\Pi}{2}$?"
-)
 class Func_7_1_P_3_q(RadToDegQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_7_1.P3.q.question-text")
+        )
 
     def construct(self):
         
-        self.intro = "Look at the"
+        self.intro = self.translate("Func_7_1.P3.q.intro")
         self.angle_frac = 3/4
         self.angle_frac_tex = "\\tfrac{3}{4}"
-        self.angle_frac_string = "three quarter"
-        self.angle_rad_string = "one and a half"
-        self.color_string = "orange"
+        self.angle_frac_string = self.translate("Func_7_1.P3.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P3.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P3.q.color-string")
         self.color = ORANGE
 
         super().construct()
@@ -1615,12 +1495,12 @@ class Func_7_1_P_3_a(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P3.a.intro")
         self.angle_frac = 3/4
         self.angle_frac_tex = "\\tfrac{3}{4}"
-        self.angle_frac_string = "three quarter"
-        self.angle_rad_string = "one and a half"
-        self.color_string = "orange"
+        self.angle_frac_string = self.translate("Func_7_1.P3.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P3.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P3.q.color-string")
         self.color = ORANGE
 
         super().construct()
@@ -1630,12 +1510,12 @@ class Func_7_1_P_3_b(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P3.a.intro")
         self.angle_frac = 3/4
         self.angle_frac_tex = "\\tfrac{3}{4}"
-        self.angle_frac_string = "three quarter"
-        self.angle_rad_string = "one and a half"
-        self.color_string = "orange"
+        self.angle_frac_string = self.translate("Func_7_1.P3.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P3.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P3.q.color-string")
         self.color = ORANGE
 
         super().construct()
@@ -1645,12 +1525,12 @@ class Func_7_1_P_3_c(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "Yep, you got it."
+        self.intro = self.translate("Func_7_1.P3.c.intro")
         self.angle_frac = 3/4
         self.angle_frac_tex = "\\tfrac{3}{4}"
-        self.angle_frac_string = "three quarter"
-        self.angle_rad_string = "one and a half"
-        self.color_string = "orange"
+        self.angle_frac_string = self.translate("Func_7_1.P3.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P3.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P3.q.color-string")
         self.color = ORANGE
 
         super().construct()
@@ -1660,12 +1540,12 @@ class Func_7_1_P_3_d(RadToDegAnswerScene):
 
     def construct(self):
 
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P3.a.intro")
         self.angle_frac = 3/4
         self.angle_frac_tex = "\\tfrac{3}{4}"
-        self.angle_frac_string = "three quarter"
-        self.angle_rad_string = "one and a half"
-        self.color_string = "orange"
+        self.angle_frac_string = self.translate("Func_7_1.P3.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P3.q.angle-rad-string")
+        self.color_string = self.translate("Func_7_1.P3.q.color-string")
         self.color = ORANGE
 
         super().construct()
@@ -1673,21 +1553,23 @@ class Func_7_1_P_3_d(RadToDegAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_7_1_P_4_q = SophiaTaskDefinition(
-    answerOptions = ["$2\Pi$", "$\\frac{1}{4}\Pi$", "$\\frac{1}{2}\Pi$", "$\Pi$"],
-    correctAnswerIndex = 1,
-    questionText = f"What angle in Radians corresponds to $45^\circ$?"
-)
 class Func_7_1_P_4_q(DegToRadQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2\Pi$", "$\\frac{1}{4}\Pi$", "$\\frac{1}{2}\Pi$", "$\Pi$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_7_1.P4.q.question-text")
+        )
 
     def construct(self):
         
-        self.intro = "Check out the"
+        self.intro = self.translate("Func_7_1.P4.q.intro")
         self.angle_frac = 1/8
         self.angle_frac_tex = "\\tfrac{1}{8}"
-        self.angle_frac_string = "one eigth"
-        self.angle_rad_string = "one quarter"
-        self.color_string = "pink"
+        self.angle_frac_string = self.translate("Func_7_1.P4.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.color_string = self.translate("Func_7_1.P4.q.color-string")
         self.color = PINK
 
         super().construct()
@@ -1697,12 +1579,12 @@ class Func_7_1_P_4_a(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "Yes, that's right."
+        self.intro = self.translate("Func_7_1.P4.a.intro")
         self.angle_frac = 1/8
         self.angle_frac_tex = "\\tfrac{1}{8}"
-        self.angle_frac_string = "one eigth"
-        self.angle_rad_string = "one quarter"
-        self.color_string = "pink"
+        self.angle_frac_string = self.translate("Func_7_1.P4.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.color_string = self.translate("Func_7_1.P4.q.color-string")
         self.color = PINK
 
 
@@ -1712,12 +1594,12 @@ class Func_7_1_P_4_b(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P4.b.intro")
         self.angle_frac = 1/8
         self.angle_frac_tex = "\\tfrac{1}{8}"
-        self.angle_frac_string = "one eigth"
-        self.angle_rad_string = "one quarter"
-        self.color_string = "pink"
+        self.angle_frac_string = self.translate("Func_7_1.P4.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.color_string = self.translate("Func_7_1.P4.q.color-string")
         self.color = PINK
 
 
@@ -1727,12 +1609,12 @@ class Func_7_1_P_4_c(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P4.b.intro")
         self.angle_frac = 1/8
         self.angle_frac_tex = "\\tfrac{1}{8}"
-        self.angle_frac_string = "one eigth"
-        self.angle_rad_string = "one quarter"
-        self.color_string = "pink"
+        self.angle_frac_string = self.translate("Func_7_1.P4.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.color_string = self.translate("Func_7_1.P4.q.color-string")
         self.color = PINK
 
 
@@ -1742,12 +1624,12 @@ class Func_7_1_P_4_d(DegToRadAnswerScene):
 
     def construct(self):
         
-        self.intro = "No, that's not it."
+        self.intro = self.translate("Func_7_1.P4.b.intro")
         self.angle_frac = 1/8
         self.angle_frac_tex = "\\tfrac{1}{8}"
-        self.angle_frac_string = "one eigth"
-        self.angle_rad_string = "one quarter"
-        self.color_string = "pink"
+        self.angle_frac_string = self.translate("Func_7_1.P4.q.angle-frac-string")
+        self.angle_rad_string = self.translate("Func_7_1.P1.q.angle-frac-string")
+        self.color_string = self.translate("Func_7_1.P4.q.color-string")
         self.color = PINK
 
 
@@ -1755,11 +1637,11 @@ class Func_7_1_P_4_d(DegToRadAnswerScene):
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_1_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_I_1_q, Func_7_1_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_I_1_q),
     PagePrototypeVideo.from_scene(Func_7_1_I_1_a),
     PagePrototypeVideo.from_scene(Func_7_1_I_1_b),
     PagePrototypeVideo.from_scene(Func_7_1_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_I_2_q, Func_7_1_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_I_2_q),
     PagePrototypeVideo.from_scene(Func_7_1_I_2_a),
     PagePrototypeVideo.from_scene(Func_7_1_I_2_b),
     PagePrototypeVideo.from_scene(Func_7_1_I_2_c),
@@ -1767,25 +1649,25 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_1_I_3),
     PagePrototypeVideo.from_scene(Func_7_1_I_4),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_P_1_q, Func_7_1_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_P_1_q),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_a),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_b),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_c),
     PagePrototypeVideo.from_scene(Func_7_1_P_1_d),
     PagePrototypeVideo.from_scene(Func_7_1_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_P_2_q, Func_7_1_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_P_2_q),
     PagePrototypeVideo.from_scene(Func_7_1_P_2_a),
     PagePrototypeVideo.from_scene(Func_7_1_P_2_b),
     PagePrototypeVideo.from_scene(Func_7_1_P_2_c),
     PagePrototypeVideo.from_scene(Func_7_1_P_2_d),
     PagePrototypeVideo.from_scene(Func_7_1_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_P_3_q, Func_7_1_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_P_3_q),
     PagePrototypeVideo.from_scene(Func_7_1_P_3_a),
     PagePrototypeVideo.from_scene(Func_7_1_P_3_b),
     PagePrototypeVideo.from_scene(Func_7_1_P_3_c),
     PagePrototypeVideo.from_scene(Func_7_1_P_3_d),
     PagePrototypeVideo.from_scene(Func_7_1_P_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_1_P_4_q, Func_7_1_P_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_1_P_4_q),
     PagePrototypeVideo.from_scene(Func_7_1_P_4_a),
     PagePrototypeVideo.from_scene(Func_7_1_P_4_b),
     PagePrototypeVideo.from_scene(Func_7_1_P_4_c),

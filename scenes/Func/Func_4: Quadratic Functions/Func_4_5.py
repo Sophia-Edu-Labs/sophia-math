@@ -887,12 +887,14 @@ class Func_4_5_I_2_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_5_I_3_q = SophiaTaskDefinition(
-    answerOptions = ["(-1,-2)", "(1,2)", "(1,-2)", "(-1,2)"],
-    correctAnswerIndex = 0,
-    questionText = "What are the coordinates of the vertex?"
-)
 class Func_4_5_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["(-1,-2)", "(1,2)", "(1,-2)", "(-1,2)"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_4_5.I3.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -916,13 +918,7 @@ class Func_4_5_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now your turn. Take the function <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="one"/> one close bracket squared
-                <bookmark mark="two"/>minus two. Luckily for you, it's already in vertex form. Now what is
-                the location of the vertex? What is the x value, that we need to plug in, and what is the 
-                y value of the vertex?
-                """
+                text=self.translate("Func_4_5.I3.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -983,19 +979,7 @@ class Func_4_5_I_3_a(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                That is correct! Nice work! 
-                So our function is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="one"/> one close bracket squared
-                <bookmark mark="two"/>minus two.
-                First, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark="moveUp"/>
-                Now, we want to find the value of<bookmark mark="ofX"/> x for which the value of f is the lowest, and we want to find that lowest value.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative one for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a negative two.
-                <bookmark mark="sol"/> That means, that the lowest value of f is negative two.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two.
-                """
+                text=self.translate("Func_4_5.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1100,19 +1084,7 @@ class Func_4_5_I_3_b(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. 
-                So our function is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="one"/> one close bracket squared
-                <bookmark mark="two"/>minus two.
-                First, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark="moveUp"/>
-                Now, we want to find the value of<bookmark mark="ofX"/> x for which the value of f is the lowest, and we want to find that lowest value.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative one for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a negative two.
-                <bookmark mark="sol"/> That means, that the lowest value of f is negative two.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two.
-                """
+                text=self.translate("Func_4_5.I3.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1218,19 +1190,7 @@ class Func_4_5_I_3_c(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                So our function is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="one"/> one close bracket squared
-                <bookmark mark="two"/>minus two.
-                First, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark="moveUp"/>
-                Now, we want to find the value of<bookmark mark="ofX"/> x for which the value of f is the lowest, and we want to find that lowest value.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative one for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a negative two.
-                <bookmark mark="sol"/> That means, that the lowest value of f is negative two.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two.
-                """
+                text=self.translate("Func_4_5.I3.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1335,19 +1295,7 @@ class Func_4_5_I_3_d(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. 
-                So our function is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="one"/> one close bracket squared
-                <bookmark mark="two"/>minus two.
-                First, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark="moveUp"/>
-                Now, we want to find the value of<bookmark mark="ofX"/> x for which the value of f is the lowest, and we want to find that lowest value.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative one for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a negative two.
-                <bookmark mark="sol"/> That means, that the lowest value of f is negative two.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two.
-                """
+                text=self.translate("Func_4_5.I3.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1425,12 +1373,14 @@ class Func_4_5_I_3_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_5_I_4_q = SophiaTaskDefinition(
-    answerOptions = ["(a,c)", "(b,c)", "(a+b,c)", "(-b,c)"],
-    correctAnswerIndex = 3,
-    questionText = "What are the coordinates of the vertex?"
-)
 class Func_4_5_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["(a,c)", "(b,c)", "(a+b,c)", "(-b,c)"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_4_5.I4.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1454,14 +1404,7 @@ class Func_4_5_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, let's make our lives easy now.
-                Consider a quadratic function in the vertex form: <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                <bookmark mark="a"/> "a" times open bracket <bookmark mark="x1"/>x plus <bookmark mark="b"/> b close bracket squared
-                <bookmark mark="c"/>plus c.
-                Let me tell you: Just by looking at this function, you can tell the coordinates of the vertex.
-                What are they?
-                """
+                text=self.translate("Func_4_5.I4.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1521,25 +1464,13 @@ class Func_4_5_I_4_a(SophiaCursorScene):
         a1 = Tex("$\\Downarrow$\\,\\,", "\\,\\,x=-b", font_size=fs2, color=c1t).next_to(f1, DOWN, buff=0.8)
         f3 = MathTex("f(-b)=a\\cdot(-b+b)^2+c=c", color=c1t, font_size=fs2).scale(0.9).next_to(a1, DOWN, buff=0.5)
         a2 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f3, DOWN, buff=0.5)
-        f4 = Tex("Vertex: (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
+        vertex = self.translate("Func_4_5.I4.d.vertex")
+        f4 = Tex(f"{vertex} (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
 
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. 
-                So the general vertex form is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                <bookmark mark="a"/> "a" times open bracket <bookmark mark="x1"/>x plus <bookmark mark="b"/> b close bracket squared
-                <bookmark mark="c"/>plus c. 
-                We don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark="moveUp"/>
-                But that doesn't matter, since in both cases, we want to find the <bookmark mark="ofX"/>x value that makes the squared term be as small as possible.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative b for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a constant c.
-                <bookmark mark="sol"/> That means, that the extreme value of f is equal to c.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to
-                the constant c.
-                """
+                text=self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1642,25 +1573,13 @@ class Func_4_5_I_4_b(SophiaCursorScene):
         a1 = Tex("$\\Downarrow$\\,\\,", "\\,\\,x=-b", font_size=fs2, color=c1t).next_to(f1, DOWN, buff=0.8)
         f3 = MathTex("f(-b)=a\\cdot(-b+b)^2+c=c", color=c1t, font_size=fs2).scale(0.9).next_to(a1, DOWN, buff=0.5)
         a2 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f3, DOWN, buff=0.5)
-        f4 = Tex("Vertex: (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
+        vertex = self.translate("Func_4_5.I4.d.vertex")
+        f4 = Tex(f"{vertex} (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
 
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. 
-                So the general vertex form is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                <bookmark mark="a"/> "a" times open bracket <bookmark mark="x1"/>x plus <bookmark mark="b"/> b close bracket squared
-                <bookmark mark="c"/>plus c. 
-                We don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark="moveUp"/>
-                But that doesn't matter, since in both cases, we want to find the <bookmark mark="ofX"/>x value that makes the squared term be as small as possible.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative b for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a constant c.
-                <bookmark mark="sol"/> That means, that the extreme value of f is equal to c.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to
-                the constant c.
-                """
+                text=self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1763,25 +1682,13 @@ class Func_4_5_I_4_c(SophiaCursorScene):
         a1 = Tex("$\\Downarrow$\\,\\,", "\\,\\,x=-b", font_size=fs2, color=c1t).next_to(f1, DOWN, buff=0.8)
         f3 = MathTex("f(-b)=a\\cdot(-b+b)^2+c=c", color=c1t, font_size=fs2).scale(0.9).next_to(a1, DOWN, buff=0.5)
         a2 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f3, DOWN, buff=0.5)
-        f4 = Tex("Vertex: (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
+        vertex = self.translate("Func_4_5.I4.d.vertex")
+        f4 = Tex(f"{vertex} (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
 
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. 
-                So the general vertex form is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                <bookmark mark="a"/> "a" times open bracket <bookmark mark="x1"/>x plus <bookmark mark="b"/> b close bracket squared
-                <bookmark mark="c"/>plus c. 
-                We don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark="moveUp"/>
-                But that doesn't matter, since in both cases, we want to find the <bookmark mark="ofX"/>x value that makes the squared term be as small as possible.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative b for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a constant c.
-                <bookmark mark="sol"/> That means, that the extreme value of f is equal to c.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to
-                the constant c.
-                """
+                text=self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1884,25 +1791,13 @@ class Func_4_5_I_4_d(SophiaCursorScene):
         a1 = Tex("$\\Downarrow$\\,\\,", "\\,\\,x=-b", font_size=fs2, color=c1t).next_to(f1, DOWN, buff=0.8)
         f3 = MathTex("f(-b)=a\\cdot(-b+b)^2+c=c", color=c1t, font_size=fs2).scale(0.9).next_to(a1, DOWN, buff=0.5)
         a2 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f3, DOWN, buff=0.5)
-        f4 = Tex("Vertex: (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
+        vertex = self.translate("Func_4_5.I4.d.vertex")
+        f4 = Tex(f"{vertex} (-b,c)", color=c1t, font_size=fs2).next_to(a2, DOWN, buff=0.5)
 
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text="""
-                Correct, well done, well done. 
-                So the general vertex form is <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                <bookmark mark="a"/> "a" times open bracket <bookmark mark="x1"/>x plus <bookmark mark="b"/> b close bracket squared
-                <bookmark mark="c"/>plus c. 
-                We don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark="moveUp"/>
-                But that doesn't matter, since in both cases, we want to find the <bookmark mark="ofX"/>x value that makes the squared term be as small as possible.
-                Again, look at the two parts of the function. The <bookmark mark="square"/>squared part is always greater than or equal to zero, so the best we can do is zero.
-                And we reach the zero, <bookmark mark="a1"/>if we plug in negative b for x.
-                Now all that is left is <bookmark mark="negTwo"/> the second part, which only consists of a constant c.
-                <bookmark mark="sol"/> That means, that the extreme value of f is equal to c.
-                <bookmark mark="summary"/>In summary, we found that<bookmark mark="sum2"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to
-                the constant c.
-                """
+                text=self.translate("Func_4_5.I4.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1981,19 +1876,21 @@ class Func_4_5_I_4_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_5_I_5_q = SophiaTaskDefinition(
-    answerOptions = ["We can easily determine the location of the vertex", "We can easily determine the location of the zeros", "We can easily determine the location of the y-intercept"],
-    correctAnswerIndex = 1,
-    questionText = "What is the advantage of the factored form?"
-)
 class Func_4_5_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_4_5.I5.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_4_5.I5.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2015,15 +1912,7 @@ class Func_4_5_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                New Video, new form of quadratic functions. Now we're looking at the factored form.
-                Consider the following example: <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x minus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="1"/>1 close bracket.
-                <bookmark mark="cords"/> If you look at <bookmark mark="plot"/>the plot of this function,
-                and compare it with the factored form of its term, can you think of what the advantage
-                of the factored form might be?
-                """
+                text=self.translate("Func_4_5.I5.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2076,7 +1965,8 @@ class Func_4_5_I_5_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2096,12 +1986,14 @@ class Func_4_5_I_5_a(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x-2)}_{=0\\text{ if }x=2}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+1)}_{=0\\text{ if }x=-1}", color=c1t, font_size=fs2).move_to(b2)
+        if_statement = self.translate("Func_4_5.I5.a.if_statement")
+        b1b = MathTex(f"\\underbrace{{(x-2)}}_{{=0\\text{{ {if_statement} }}x=2}}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex(f"\\underbrace{{(x+1)}}_{{=0\\text{{ {if_statement} }}x=-1}}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=2$", " and ", "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol1a, sol1b = self.translate("Func_4_5.I5.a.sol1a"), self.translate("Func_4_5.I5.a.sol1b")
+        sol = Tex(sol1a, "$x=2$", sol1b, "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2110,21 +2002,7 @@ class Func_4_5_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not what the factored form is good for.
-                Let's go back to our example function. <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x minus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="1"/>1 close bracket.
-                Say we want to determine the zeros of that function. F is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x minus 2, and the second is the <bookmark mark="b2"/> bracket x plus 1.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative 1.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals 2 and
-                <bookmark mark="z2"/> at x equals negative 1.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals 2, and the other one is at<bookmark mark="zg2"/> x equals negative 1.
-                """
+                text=self.translate("Func_4_5.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2226,7 +2104,7 @@ class Func_4_5_I_5_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2246,12 +2124,14 @@ class Func_4_5_I_5_b(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x-2)}_{=0\\text{ if }x=2}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+1)}_{=0\\text{ if }x=-1}", color=c1t, font_size=fs2).move_to(b2)
+        if_statement = self.translate("Func_4_5.I5.a.if_statement")
+        b1b = MathTex(f"\\underbrace{{(x-2)}}_{{=0\\text{{ {if_statement} }}x=2}}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex(f"\\underbrace{{(x+1)}}_{{=0\\text{{ {if_statement} }}x=-1}}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=2$", " and ", "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol1a, sol1b = self.translate("Func_4_5.I5.a.sol1a"), self.translate("Func_4_5.I5.a.sol1b")
+        sol = Tex(sol1a, "$x=2$", sol1b, "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2260,21 +2140,7 @@ class Func_4_5_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's exactly what the factored form is good for.
-                Let's go back to our example function. <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x minus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="1"/>1 close bracket.
-                Say we want to determine the zeros of that function. F is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x minus 2, and the second is the <bookmark mark="b2"/> bracket x plus 1.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative 1.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals 2 and
-                <bookmark mark="z2"/> at x equals negative 1.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals 2, and the other one is at<bookmark mark="zg2"/> x equals negative 1.
-                """
+                text=self.translate("Func_4_5.I5.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2377,7 +2243,7 @@ class Func_4_5_I_5_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2397,12 +2263,14 @@ class Func_4_5_I_5_c(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x-2)}_{=0\\text{ if }x=2}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+1)}_{=0\\text{ if }x=-1}", color=c1t, font_size=fs2).move_to(b2)
+        if_statement = self.translate("Func_4_5.I5.a.if_statement")
+        b1b = MathTex(f"\\underbrace{{(x-2)}}_{{=0\\text{{ {if_statement} }}x=2}}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex(f"\\underbrace{{(x+1)}}_{{=0\\text{{ {if_statement} }}x=-1}}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=2$", " and ", "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol1a, sol1b = self.translate("Func_4_5.I5.a.sol1a"), self.translate("Func_4_5.I5.a.sol1b")
+        sol = Tex(sol1a, "$x=2$", sol1b, "$x=-1$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2411,21 +2279,7 @@ class Func_4_5_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not what the factored form is good for.
-                Let's go back to our example function. <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x minus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="1"/>1 close bracket.
-                Say we want to determine the zeros of that function. F is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x minus 2, and the second is the <bookmark mark="b2"/> bracket x plus 1.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative 1.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals 2 and
-                <bookmark mark="z2"/> at x equals negative 1.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals 2, and the other one is at<bookmark mark="zg2"/> x equals negative 1.
-                """
+                text=self.translate("Func_4_5.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2523,19 +2377,21 @@ class Func_4_5_I_5_c(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_4_5_I_6_q = SophiaTaskDefinition(
-    answerOptions = ["(-2,-3)", "(2,-3)", "(-2,3)", "(2,3)"],
-    correctAnswerIndex = 2,
-    questionText = "Where are the two zeros of $f(x)=(x+2)(x-3)$?"
-)
 class Func_4_5_I_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["(-2,-3)", "(2,-3)", "(-2,3)", "(2,3)"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_4_5.I6.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -2551,12 +2407,7 @@ class Func_4_5_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Look at this quadratic function in factored form <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x minus <bookmark mark="3"/>3 close bracket.
-                What are the zeroes of this function?
-                """
+                text=self.translate("Func_4_5.I6.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2595,7 +2446,7 @@ class Func_4_5_I_6_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2620,7 +2471,8 @@ class Func_4_5_I_6_a(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-2$", " and ", "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-2$", solb, "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2629,21 +2481,7 @@ class Func_4_5_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x minus <bookmark mark="3"/>3 close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus 2, and the second is the <bookmark mark="b2"/> bracket x minus 3.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals 3.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative 2 and
-                <bookmark mark="z2"/> at x equals 3.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals negative 2, and the other one is at<bookmark mark="zg2"/> x equals 3.
-                """
+                text=self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2746,7 +2584,7 @@ class Func_4_5_I_6_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2771,7 +2609,8 @@ class Func_4_5_I_6_b(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-2$", " and ", "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-2$", solb, "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2780,21 +2619,7 @@ class Func_4_5_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x minus <bookmark mark="3"/>3 close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus 2, and the second is the <bookmark mark="b2"/> bracket x minus 3.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals 3.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative 2 and
-                <bookmark mark="z2"/> at x equals 3.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals negative 2, and the other one is at<bookmark mark="zg2"/> x equals 3.
-                """
+                text=self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2898,7 +2723,7 @@ class Func_4_5_I_6_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2923,7 +2748,8 @@ class Func_4_5_I_6_c(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-2$", " and ", "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-2$", solb, "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -2932,21 +2758,7 @@ class Func_4_5_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Exactly, those are the two zeros.
-                So look at the function <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x minus <bookmark mark="3"/>3 close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus 2, and the second is the <bookmark mark="b2"/> bracket x minus 3.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals 3.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative 2 and
-                <bookmark mark="z2"/> at x equals 3.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals negative 2, and the other one is at<bookmark mark="zg2"/> x equals 3.
-                """
+                text=self.translate("Func_4_5.I6.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3049,7 +2861,7 @@ class Func_4_5_I_6_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -3074,7 +2886,8 @@ class Func_4_5_I_6_d(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-2$", " and ", "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-2$", solb, "$x=3$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         calcs = Group(f1, b1b, b2b, a, sol)
 
@@ -3083,21 +2896,7 @@ class Func_4_5_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="2"/>2 close bracket times
-                open bracket <bookmark mark="x2"/>x minus <bookmark mark="3"/>3 close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus 2, and the second is the <bookmark mark="b2"/> bracket x minus 3.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative 2, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals 3.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative 2 and
-                <bookmark mark="z2"/> at x equals 3.
-                We can<bookmark mark="cords"/> also verify this graphically: When we look at the <bookmark mark="plot"/>plot of the function,
-                we can see that one of the zeros is at<bookmark mark="zg1"/> x equals negative 2, and the other one is at<bookmark mark="zg2"/> x equals 3.
-                """
+                text=self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3195,19 +2994,21 @@ class Func_4_5_I_6_d(SophiaCursorScene):
     
 #####################################
 #####################################
-TASK_Func_4_5_I_7_q = SophiaTaskDefinition(
-    answerOptions = ["(a,b)", "(0,b)", "(a,0)", "(-a,-b)"],
-    correctAnswerIndex = 3,
-    questionText = "Where are the two zeros of $f(x)=(x+a)(x+b)$?"
-)
 class Func_4_5_I_7_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["(a,b)", "(0,b)", "(a,0)", "(-a,-b)"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_4_5.I7.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -3223,12 +3024,7 @@ class Func_4_5_I_7_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now look at the general case of the factored form: <bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="a"/>"a" close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="b"/>b close bracket.
-                What are the zeroes of this function?
-                """
+                text=self.translate("Func_4_5.I7.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3268,7 +3064,7 @@ class Func_4_5_I_7_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
         def cursor_sound_updater(mob, dt):
@@ -3290,24 +3086,12 @@ class Func_4_5_I_7_a(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-a$", " and ", "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function<bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="a"/>"a" close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="b"/>b close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus "a", and the second is the <bookmark mark="b2"/> bracket x plus b.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative a, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative b.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative "a" and
-                <bookmark mark="z2"/> at x equals negative b.
-                Now you can easily read off the zeros from the factored form. Cool, right?
-                """
+                text=self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3383,7 +3167,7 @@ class Func_4_5_I_7_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
         def cursor_sound_updater(mob, dt):
@@ -3405,24 +3189,12 @@ class Func_4_5_I_7_b(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-a$", " and ", "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function<bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="a"/>"a" close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="b"/>b close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus "a", and the second is the <bookmark mark="b2"/> bracket x plus b.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative a, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative b.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative "a" and
-                <bookmark mark="z2"/> at x equals negative b.
-                Now you can easily read off the zeros from the factored form. Cool, right?
-                """
+                text=self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3498,7 +3270,7 @@ class Func_4_5_I_7_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
         def cursor_sound_updater(mob, dt):
@@ -3520,24 +3292,12 @@ class Func_4_5_I_7_c(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-a$", " and ", "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, those are not the two zeros.
-                So look at the function<bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="a"/>"a" close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="b"/>b close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus "a", and the second is the <bookmark mark="b2"/> bracket x plus b.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative a, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative b.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative "a" and
-                <bookmark mark="z2"/> at x equals negative b.
-                Now you can easily read off the zeros from the factored form. Cool, right?
-                """
+                text=self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3613,7 +3373,7 @@ class Func_4_5_I_7_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Factored Form")
+        title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
         def cursor_sound_updater(mob, dt):
@@ -3635,24 +3395,12 @@ class Func_4_5_I_7_d(SophiaCursorScene):
         b1b.shift(b1.get_top()-b1b.get_top())
         b2b.shift(b2.get_top()-b2b.get_top())
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
-        sol = Tex("Zeros at ", "$x=-a$", " and ", "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
+        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That is correct, great job!
-                So look at the function<bookmark mark="f"/> f of <bookmark mark="x"/>x equals
-                open bracket <bookmark mark="x1"/>x plus <bookmark mark="a"/>"a" close bracket times
-                open bracket <bookmark mark="x2"/>x plus <bookmark mark="b"/>b close bracket.
-                Say we want to determine the zeros of that function. f is written as a product of two factors.
-                The first is the <bookmark mark="b1"/> bracket x plus "a", and the second is the <bookmark mark="b2"/> bracket x plus b.
-                Now for the function to be zero, we need the product to be zero, which is the case if at least
-                one of the factors is zero. The first factor is zero <bookmark mark="b1b"/>if x equals negative a, an the second factor is zero
-                <bookmark mark="b2b"/>if x equals negative b.
-                This means <bookmark mark="arrow"/> that the zeros of the function are at<bookmark mark="z1"/> x equals negative "a" and
-                <bookmark mark="z2"/> at x equals negative b.
-                Now you can easily read off the zeros from the factored form. Cool, right?
-                """
+                text=self.translate("Func_4_5.I7.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3729,7 +3477,7 @@ class Func_4_5_I_8(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Forms of Quadratic Functions")
+        title = self.add_title(self.translate("Func_4_5.I8.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -3747,20 +3495,7 @@ class Func_4_5_I_8(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, quick recap of the forms of quadratic functions we have seen thus far.
-                First, there is the standard form <bookmark mark="f1"/> f of <bookmark mark="x1"/>x equals
-                <bookmark mark="a1"/>a times x squared <bookmark mark="b1"/>plus b times x <bookmark mark="c1"/>plus c.
-                It is useful for quickly recognizing the coefficients of the x squared term, the x term and the constant.
-                Then there is the vertex form <bookmark mark="f2"/> f of <bookmark mark="x2"/>x equals
-                <bookmark mark="a2"/>a times open <bookmark mark="x21"/>bracket x <bookmark mark="b2"/>plus b close bracket squared <bookmark mark="c2"/>plus c.
-                It is used, because you can easily read of the location of the vertex from it.
-                And finally, there is the factored form <bookmark mark="f3"/> f of <bookmark mark="x3"/>x equals
-                open <bookmark mark="x31"/>bracket x <bookmark mark="a3"/>minus a close bracket times
-                open <bookmark mark="x32"/>bracket x <bookmark mark="b3"/>minus b close bracket. The factored form is useful,
-                because it allows you to quickly read off the zeros of the function. So three different forms, three different
-                sets of advantages and disadvantages.
-                """
+                text=self.translate("Func_4_5.I8.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -3839,40 +3574,40 @@ class Func_4_5_I_8(SophiaCursorScene):
 #####################################
 PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_4_5_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_1_q, Func_4_5_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(TASK_Func_4_5_I_1_q, Func_4_5_I_1_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_1_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_1_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_1_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_2_q, Func_4_5_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_2_q, Func_4_5_I_2_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_2_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_2_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_2_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_3_q, Func_4_5_I_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_3_q, Func_4_5_I_3_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_3_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_3_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_3_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_3_d),
     PagePrototypeVideo.from_scene(Func_4_5_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_4_q, Func_4_5_I_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_4_q, Func_4_5_I_4_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_4_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_4_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_4_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_4_d),
     PagePrototypeVideo.from_scene(Func_4_5_I_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_5_q, Func_4_5_I_5_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_5_q, Func_4_5_I_5_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_5_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_5_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_5_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_6_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_6_q, Func_4_5_I_6_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_6_q, Func_4_5_I_6_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_6_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_6_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_6_c),
     PagePrototypeVideo.from_scene(Func_4_5_I_6_d),
     PagePrototypeVideo.from_scene(Func_4_5_I_7_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_4_5_I_7_q, Func_4_5_I_7_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_4_5_I_7_q, Func_4_5_I_7_q.__name__),
     PagePrototypeVideo.from_scene(Func_4_5_I_7_a),
     PagePrototypeVideo.from_scene(Func_4_5_I_7_b),
     PagePrototypeVideo.from_scene(Func_4_5_I_7_c),

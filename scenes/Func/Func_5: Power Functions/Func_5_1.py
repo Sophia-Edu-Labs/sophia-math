@@ -16,7 +16,7 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
@@ -29,7 +29,7 @@ class Func_5_1_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -66,19 +66,7 @@ class Func_5_1_I_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's jump into powerfunctions with the definition:
-                A power function is a function of the form<bookmark mark="form"/> f of <bookmark mark="fx"/>x equals <bookmark mark="a"/> a
-                times <bookmark mark="x"/>x to the power of n, where <bookmark mark="real"/>a is a real number and n is an <bookmark mark="int"/>integer.
-                Now you've probably already seen at least two <bookmark mark="shiftDown"/> examples of power functions.
-                If you choose <bookmark mark="n1"/> n equals 1, you get a linear function f of x equals a times x.
-                If you choose <bookmark mark="n2"/> n equals 2, you get a quadratic function f of x equals a times x squared.
-                If you choose <bookmark mark="n3"/> n equals 3, you get a cubic function f of x equals a times x cubed.
-                Now for a bit of <bookmark mark="cleanUp"/> vocabulary. The value that is raised to a power is called the base.
-                In our example, since we're dealing with x to the power of n, <bookmark mark="base"/>x is the base.
-                The power to which the base is raised is called the exponent.
-                In our example, since we're dealing with x to the power of <bookmark mark="exponent"/>n, n is the exponent.
-                """
+                text=self.translate("Func_5_1.I1.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("form")
@@ -170,12 +158,14 @@ class Func_5_1_I_1(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_5_1_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["Base: $3$, Exponent: $4$", "Base: $y$, Exponent: $3$", "Base: $y$, Exponent: $4$", "Base: $4$, Exponent: $y$"],
-    correctAnswerIndex = 2,
-    questionText = "Considering the expression $3y^4$, which is the base, and which is the exponent?"
-)
 class Func_5_1_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.I2.q.answer-options")),
+            correctAnswerIndex=2,
+            questionText=self.translate("Func_5_1.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -183,7 +173,7 @@ class Func_5_1_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -205,11 +195,7 @@ class Func_5_1_I_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                quick check to make sure you keep the definitions in mind.
-                Look at the expression<bookmark mark="three"/> 3 times <bookmark mark="y"/>y to the power of <bookmark mark="4"/>4.
-                In this example, what <bookmark mark="base"/>is the base, and <bookmark mark="exponent"/>what is the exponent.
-                """
+                text = self.translate("Func_5_1.I2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("three")
@@ -250,7 +236,7 @@ class Func_5_1_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -267,16 +253,13 @@ class Func_5_1_I_2_a(SophiaCursorScene):
 
         func1 = MathTex("3","y","^4", color=c1t, font_size=fs1)
         self.add(func1)
-        bubbleBase = Bubble(["y is the Base"], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
-        bubbleExponent = Bubble(["4 is the Exponent"], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
+        bbase, bexponent = self.translate("Func_5_1.I2.a.bbase"), self.translate("Func_5_1.I2.a.bexponent")
+        bubbleBase = Bubble([bbase], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
+        bubbleExponent = Bubble([bexponent], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                The base is whatever we raise to a power, so in this case, the base is <bookmark mark="y"/> y.
-                The exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark="4"/> 4.
-                """
+                text=self.translate("Func_5_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y")
@@ -309,7 +292,7 @@ class Func_5_1_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -326,16 +309,13 @@ class Func_5_1_I_2_b(SophiaCursorScene):
 
         func1 = MathTex("3","y","^4", color=c1t, font_size=fs1)
         self.add(func1)
-        bubbleBase = Bubble(["y is the Base"], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
-        bubbleExponent = Bubble(["4 is the Exponent"], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
+        bbase, bexponent = self.translate("Func_5_1.I2.a.bbase"), self.translate("Func_5_1.I2.a.bexponent")
+        bubbleBase = Bubble([bbase], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
+        bubbleExponent = Bubble([bexponent], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                The base is whatever we raise to a power, so in this case, the base is <bookmark mark="y"/> y.
-                The exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark="4"/> 4.
-                """
+                text=self.translate("Func_5_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y")
@@ -368,7 +348,7 @@ class Func_5_1_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -385,16 +365,13 @@ class Func_5_1_I_2_c(SophiaCursorScene):
 
         func1 = MathTex("3","y","^4", color=c1t, font_size=fs1)
         self.add(func1)
-        bubbleBase = Bubble(["y is the Base"], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
-        bubbleExponent = Bubble(["4 is the Exponent"], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
+        bbase, bexponent = self.translate("Func_5_1.I2.a.bbase"), self.translate("Func_5_1.I2.a.bexponent")
+        bubbleBase = Bubble([bbase], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
+        bubbleExponent = Bubble([bexponent], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right.
-                The base is whatever we raise to a power, so in this case, the base is <bookmark mark="y"/> y.
-                The exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark="4"/> 4.
-                """
+                text=self.translate("Func_5_1.I2.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y")
@@ -427,7 +404,7 @@ class Func_5_1_I_2_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -444,16 +421,13 @@ class Func_5_1_I_2_d(SophiaCursorScene):
 
         func1 = MathTex("3","y","^4", color=c1t, font_size=fs1)
         self.add(func1)
-        bubbleBase = Bubble(["y is the Base"], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
-        bubbleExponent = Bubble(["4 is the Exponent"], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
+        bbase, bexponent = self.translate("Func_5_1.I2.a.bbase"), self.translate("Func_5_1.I2.a.bexponent")
+        bubbleBase = Bubble([bbase], width=1.8, height=0.6, start_point = func1[1].get_center()+0.4*DOWN, center=[1,-2.4,0], loc="t2")
+        bubbleExponent = Bubble([bexponent], width=2.2, height=0.5, start_point = func1[2].get_center()+0.2*UP, center=[-1,2.4,0], loc="b1")
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, not quite.
-                The base is whatever we raise to a power, so in this case, the base is <bookmark mark="y"/> y.
-                The exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark="4"/> 4.
-                """
+                text=self.translate("Func_5_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y")
@@ -481,12 +455,14 @@ class Func_5_1_I_2_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_5_1_I_3_q = SophiaTaskDefinition(
-    answerOptions = ["Functions with an even degree are always positive, while functions with an odd degree can be negative.", "Functions with an even degree are always negative, while functions with an odd degree can be positive.", "Functions with an even degree are always positive, while functions with an odd degree can be positive or negative.", "Functions with an even degree are always negative, while functions with an odd degree can be positive or negative."],
-    correctAnswerIndex = 0,
-    questionText = "What's the difference between functions with an even degree and functions with an odd degree?"
-)
 class Func_5_1_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.I3.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_5_1.I3.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -494,7 +470,7 @@ class Func_5_1_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -532,18 +508,7 @@ class Func_5_1_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Back to power functions with the general structure <bookmark mark="form"/> f of <bookmark mark="fx"/>x equals <bookmark mark="a"/> a
-                times <bookmark mark="x"/>x to the power of n, and quick reminder, <bookmark mark="real"/>a is a real number and n is an <bookmark mark="int"/>integer.
-                If we now take another look at the <bookmark mark="shiftDown"/> examples of power functions that we've seen, namely
-                the <bookmark mark="n1"/>linear function f of x equals a times x n equals 1,
-                the <bookmark mark="n2"/>quadratic function f of x equals a times x squared.
-                and the <bookmark mark="n3"/>cubic function f of x equals a times x cubed...
-                <bookmark mark="shift"/>
-                We'll also add the <bookmark mark="n4"/> function f of x equals a times x to the power of 4, which is of degree four.
-                Now here's a question for you: What is the main difference between functions with an even number of degree,
-                like the quadratic function, and functions with an odd number of degree, like the cubic function?
-                """
+                text=self.translate("Func_5_1.I3.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("form")
@@ -627,7 +592,7 @@ class Func_5_1_I_3_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -665,19 +630,7 @@ class Func_5_1_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, well done!
-                Let's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...
-                First, we have  <bookmark mark="n1"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,
-                the function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.
-                Next, there is the <bookmark mark="n3"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.
-                So they are sometimes positive and sometimes negative.
-                Now, <bookmark mark="unWriteOdd"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...
-                So first we have the <bookmark mark="n2"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,
-                both for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.
-                And finally, there is the <bookmark mark="n4"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.
-                So, <bookmark mark="unWriteEven"/>to sum up, functions with an <bookmark mark="even"/> even degree are always positive, while functions with an <bookmark mark="odd"/>odd degree can be positive or negative.
-                """
+                text=self.translate("Func_5_1.I3.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("n1")
@@ -737,7 +690,7 @@ class Func_5_1_I_3_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -775,19 +728,7 @@ class Func_5_1_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                Let's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...
-                First, we have  <bookmark mark="n1"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,
-                the function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.
-                Next, there is the <bookmark mark="n3"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.
-                So they are sometimes positive and sometimes negative.
-                Now, <bookmark mark="unWriteOdd"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...
-                So first we have the <bookmark mark="n2"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,
-                both for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.
-                And finally, there is the <bookmark mark="n4"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.
-                So, <bookmark mark="unWriteEven"/>to sum up, functions with an <bookmark mark="even"/> even degree are always positive, while functions with an <bookmark mark="odd"/>odd degree can be positive or negative.
-                """
+                text=self.translate("Func_5_1.I3.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("n1")
@@ -846,7 +787,7 @@ class Func_5_1_I_3_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -884,19 +825,7 @@ class Func_5_1_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                Let's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...
-                First, we have  <bookmark mark="n1"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,
-                the function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.
-                Next, there is the <bookmark mark="n3"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.
-                So they are sometimes positive and sometimes negative.
-                Now, <bookmark mark="unWriteOdd"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...
-                So first we have the <bookmark mark="n2"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,
-                both for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.
-                And finally, there is the <bookmark mark="n4"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.
-                So, <bookmark mark="unWriteEven"/>to sum up, functions with an <bookmark mark="even"/> even degree are always positive, while functions with an <bookmark mark="odd"/>odd degree can be positive or negative.
-                """
+            text=self.translate("Func_5_1.I3.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("n1")
@@ -955,7 +884,7 @@ class Func_5_1_I_3_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -993,20 +922,8 @@ class Func_5_1_I_3_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                Let's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...
-                First, we have  <bookmark mark="n1"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,
-                the function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.
-                Next, there is the <bookmark mark="n3"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.
-                So they are sometimes positive and sometimes negative.
-                Now, <bookmark mark="unWriteOdd"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...
-                So first we have the <bookmark mark="n2"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,
-                both for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.
-                And finally, there is the <bookmark mark="n4"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.
-                So, <bookmark mark="unWriteEven"/>to sum up, functions with an <bookmark mark="even"/> even degree are always positive, while functions with an <bookmark mark="odd"/>odd degree can be positive or negative.
-                """
-        ) as tracker:
+                text=self.translate("Func_5_1.I3.b.voiceover")
+            ) as tracker:
 
             self.wait_until_bookmark("n1")
             cursor.blinking=False
@@ -1059,12 +976,14 @@ class Func_5_1_I_3_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_5_1_I_4_q = SophiaTaskDefinition(
-    answerOptions = ["Blue: Odd, Orange: Even", "Blue: Even, Orange: Even", "Blue: Odd, Orange: Odd", "Blue: Even, Orange: Odd"],
-    correctAnswerIndex = 3,
-    questionText = "Do the blue and the orange function have an even or an odd degree?"
-)
 class Func_5_1_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.I4.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_5_1.I4.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1072,7 +991,7 @@ class Func_5_1_I_4_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1100,11 +1019,7 @@ class Func_5_1_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, here comes the next question:
-                Look at the <bookmark mark="n2"/> blue function, and look at the <bookmark mark="n3"/> orange function.
-                Do they each have an even degree, or an odd degree?
-                """
+                text=self.translate("Func_5_1.I4.q.voiceover")
         ) as tracker:
 
 
@@ -1137,7 +1052,7 @@ class Func_5_1_I_4_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1168,14 +1083,7 @@ class Func_5_1_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                The <bookmark mark="n2"/> blue function belongs to the <bookmark mark="blueTerm"/> Term negative one times <bookmark mark="x2"/>
-                x squared. This means, that the<bookmark mark="degE"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,
-                the function values are always negative, instead of always positive.
-                The <bookmark mark="n3"/> orange function belongs to the <bookmark mark="orangeTerm"/> Term 0.5 times <bookmark mark="x3"/>
-                x cubed. This means, that the <bookmark mark="degO"/>degree of the orange function is odd, because it has degree three.
-                """
+                text=self.translate("Func_5_1.I4.a.voiceover")
         ) as tracker:
 
 
@@ -1238,7 +1146,7 @@ class Func_5_1_I_4_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1269,14 +1177,7 @@ class Func_5_1_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                The <bookmark mark="n2"/> blue function belongs to the <bookmark mark="blueTerm"/> Term negative one times <bookmark mark="x2"/>
-                x squared. This means, that the<bookmark mark="degE"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,
-                the function values are always negative, instead of always positive.
-                The <bookmark mark="n3"/> orange function belongs to the <bookmark mark="orangeTerm"/> Term 0.5 times <bookmark mark="x3"/>
-                x cubed. This means, that the <bookmark mark="degO"/>degree of the orange function is odd, because it has degree three.
-                """
+                text=self.translate("Func_5_1.I4.a.voiceover")
         ) as tracker:
 
 
@@ -1339,7 +1240,7 @@ class Func_5_1_I_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1370,14 +1271,7 @@ class Func_5_1_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right...
-                The <bookmark mark="n2"/> blue function belongs to the <bookmark mark="blueTerm"/> Term negative one times <bookmark mark="x2"/>
-                x squared. This means, that the<bookmark mark="degE"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,
-                the function values are always negative, instead of always positive.
-                The <bookmark mark="n3"/> orange function belongs to the <bookmark mark="orangeTerm"/> Term 0.5 times <bookmark mark="x3"/>
-                x cubed. This means, that the <bookmark mark="degO"/>degree of the orange function is odd, because it has degree three.
-                """
+                text=self.translate("Func_5_1.I4.a.voiceover")
         ) as tracker:
 
 
@@ -1440,7 +1334,7 @@ class Func_5_1_I_4_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1471,14 +1365,7 @@ class Func_5_1_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's it!
-                The <bookmark mark="n2"/> blue function belongs to the <bookmark mark="blueTerm"/> Term negative one times <bookmark mark="x2"/>
-                x squared. This means, that the<bookmark mark="degE"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,
-                the function values are always negative, instead of always positive.
-                The <bookmark mark="n3"/> orange function belongs to the <bookmark mark="orangeTerm"/> Term 0.5 times <bookmark mark="x3"/>
-                x cubed. This means, that the <bookmark mark="degO"/>degree of the orange function is odd, because it has degree three.
-                """
+                text=self.translate("Func_5_1.I4.d.voiceover")
         ) as tracker:
 
 
@@ -1543,7 +1430,7 @@ class Func_5_1_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1580,22 +1467,7 @@ class Func_5_1_I_5(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now we've seen the difference between functions of even and odd degree: Functions of <bookmark mark="even"/>even degree
-                are always positive or always negative, while functions of <bookmark mark="odd"/>odd degree can be both positive and negative.
-                There is a cool way to visually describe this, by using symmetry.
-                Let's start with <bookmark mark="odd2"/> odd functions. 
-                Looking at the orange function, see how the function value of a number x is the same as the negative value of negative x?
-                So for example, f of <bookmark mark="p1"/>one is one, and f of<bookmark mark="n1"/>negative one is negative one.
-                So f of negative one is the same as negative f of one.
-                Another example: The value of f at <bookmark mark="p2"/> two is two times two times two, which is eight, and the
-                value of f at <bookmark mark="n2"/>negative two is  negative two times negative two times negative two, which is negative eight.
-                So the rule that we can observe here is that <bookmark mark="odd3"/> f of negative x is equal to negative f of x.
-                Graphically, this means that there is a <bookmark mark="rotate"/> rotational symmetry around the origin.
-                If you <bookmark mark="rotate2"/> rotate the function around the origin by 180 degrees, you get the same function again.
-                And since this is true for all functions of odd degrees, for example x to the power of five, we call all functions that have this property
-                "odd functions".
-                """
+                text=self.translate("Func_5_1.I5.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("even")
@@ -1662,7 +1534,7 @@ class Func_5_1_I_6(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1690,26 +1562,16 @@ class Func_5_1_I_6(SophiaCursorScene):
         g3 = plane.plot(f3, color=ORANGE)
         g3c = g3.copy()
 
-        even1 = Tex("Even functions:", font_size=fs2, color=c1t)
+        even1 = Tex(self.translate("Func_5_1.I6.q.even1"), font_size=fs2, color=c1t)
         even2 = Tex("$f(-x) = f(x)$", font_size=fs2, color=c1t)
-        even3 = Tex("$\\Rightarrow$ symmetrical", font_size=fs3, color=c1t)
-        even4 = Tex("around the y-axis", font_size=fs3, color=c1t)
+        even3 = Tex(self.translate("Func_5_1.I6.q.even2"), font_size=fs3, color=c1t)
+        even4 = Tex(self.translate("Func_5_1.I6.q.even3"), font_size=fs3, color=c1t)
         even = VGroup(even1, even2, even3, even4).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(plane, DOWN, buff=0.4)
 
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                The symmetry of power functions with an <bookmark mark="even"/>even degree is this:
-                <bookmark mark="even2"/>f of negative x is equal to f of x.
-                So looking at the function f of x equals x squared for example, we see that <bookmark mark="p1"/>
-                f of one is one, and <bookmark mark="n1"/>f of negative one is also one.
-                Or that <bookmark mark="p2"/>f of two is four, and <bookmark mark="n2"/>f of negative two is also four.
-                Graphically, this means that the function is <bookmark mark="sym1"/>symmetrical around the y-axis.
-                This means, that we can <bookmark mark="sym2"/>reflect the function at the y-axis, and get the same function again.
-                And since this is true for all functions of even degrees, for example x to the power of four, we call all functions that have this property
-                "even functions".
-                """
+                text = self.translate("Func_5_1.I6.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("even")
@@ -1768,7 +1630,7 @@ class Func_5_1_I_7(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Even and Odd Functions")
+        self.add_title(self.translate("Func_5_1.I7.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1796,9 +1658,9 @@ class Func_5_1_I_7(SophiaCursorScene):
         g3 = plane.plot(f3, color=ORANGE, x_range=[-4**(1/3),4**(1/3), 0.01])
         g3c = g3.copy()
 
-        even1 = Tex("Even functions:", font_size=fs2, color=BLUE)
+        even1 = Tex(self.translate("Func_5_1.I7.even"), font_size=fs2, color=BLUE)
         even2 = Tex("$f(-x) = f(x)$", font_size=fs2, color=BLUE)
-        odd1 = Tex("Odd functions:", font_size=fs2, color=ORANGE)
+        odd1 = Tex(self.translate("Func_5_1.I7.odd"), font_size=fs2, color=ORANGE)
         odd2 = Tex("$f(-x) = -f(x)$", font_size=fs2, color=ORANGE)
         odd = VGroup(odd1, odd2)
         all = VGroup(even1, even2, odd1, odd2).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(plane, DOWN, buff=0.4)
@@ -1808,18 +1670,7 @@ class Func_5_1_I_7(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Summary of even and odd functions:
-
-                For <bookmark mark="even"/>even functions, it holds that <bookmark mark="even2"/>f of negative x is equal to f of x.
-                Graphically, this means that the function is <bookmark mark="sym1"/>symmetrical around the y-axis.
-                All power functions with an even degree, like x squared, x to the power of four and so on
-                are even functions, but there are other examples of even functions.
-
-                For <bookmark mark="odd"/>odd functions on the other hand, it holds that <bookmark mark="odd2"/>f of negative x is equal to negative f of x.
-                Graphically, this means that the function is <bookmark mark="rotate"/>rotational symmetrical around the origin.
-                All power functions with an odd degree, like x, x cubed and so on are odd functions, but there are other examples of odd functions as well.
-                """
+                text=self.translate("Func_5_1.I7.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("even")
@@ -1885,7 +1736,7 @@ class EvenOddQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1911,11 +1762,7 @@ class EvenOddQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                Look at the <bookmark mark="n2"/> {self.c1[1]} function, and look at the <bookmark mark="n3"/> {self.c2[1]} function.
-                Are they even functions, odd functions, or neither?
-                """
+                text=self.evaluate_string(self.translate("Func_5_1.EvenOddQuestionScene.voiceover"))
         ) as tracker:
 
 
@@ -1951,7 +1798,7 @@ class EvenOddAnswerScene(SophiaCursorScene, metaclass = ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Power Functions")
+        self.add_title(self.translate("Func_5_1.I1.q.title"))
 
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1969,43 +1816,38 @@ class EvenOddAnswerScene(SophiaCursorScene, metaclass = ABCMeta):
         self.add(cursor)
 
         testVals = np.array([0.8,1.332, 1.4135,12.41412])
-        s1 = "even" if np.all(self.f2(testVals) == self.f2(-testVals)) else "odd" if np.all(self.f2(testVals) == -self.f2(-testVals)) else "neither even nor odd"
-        s2 = "even" if np.all(self.f3(testVals) == self.f3(-testVals)) else "odd" if np.all(self.f3(testVals) == -self.f3(-testVals)) else "neither even nor odd"
+        even, odd, neither = self.translate("Func_5_1.EvenOddAnswerScene.even"), self.translate("Func_5_1.EvenOddAnswerScene.odd"), self.translate("Func_5_1.EvenOddAnswerScene.neither")
+        s1 = even if np.all(self.f2(testVals) == self.f2(-testVals)) else odd if np.all(self.f2(testVals) == -self.f2(-testVals)) else neither
+        s2 = even if np.all(self.f3(testVals) == self.f3(-testVals)) else odd if np.all(self.f3(testVals) == -self.f3(-testVals)) else neither
 
-        text1 = f"""The {self.c1[1]} function is neither even nor odd, because it's neither symmetric <bookmark mark="r11"/> around the origin, nor is it <bookmark mark="r12"/>symmetric around the y-axis."""
-        text2 = f"""The {self.c2[1]} function is neither even nor odd, because it's neither symmetric <bookmark mark="r21"/> around the origin, nor is it <bookmark mark="r22"/>symmetric around the y-axis."""
+        text1 = self.evaluate_string(self.translate("Func_5_1.EvenOddAnswerScene.text1"))
+        text2 = self.evaluate_string(self.translate("Func_5_1.EvenOddAnswerScene.text2"))
         
         if s1 == "even":
-            text1 = f"""The {self.c1[1]} function is even, because it is symmetric <bookmark mark="r12"/> around the y-axis."""
+            text1 = self.translate("Func_5_1.EvenOddAnswerScene.text1_even")
         elif s1 == "odd":
-            text1 = f"""The {self.c1[1]} function is odd, because it is symmetric <bookmark mark="r11"/> around the origin."""
+            text1 = self.translate("Func_5_1.EvenOddAnswerScene.text1_odd")
 
         if s2 == "even":
-            text2 = f"""The {self.c2[1]} function is even, because it is symmetric <bookmark mark="r22"/> around the y-axis."""
+            text2 = self.translate("Func_5_1.EvenOddAnswerScene.text2_even")
         elif s2 == "odd":
-            text2 = f"""The {self.c2[1]} function is odd, because it is symmetric <bookmark mark="r21"/> around the origin."""
+            text2 = self.translate("Func_5_1.EvenOddAnswerScene.text2_odd")
 
 
         g2 = plane.plot(self.f2, color=self.c1[0])
         g3 = plane.plot(self.f3, color=self.c2[0])
 
-        funcTerm2 = Tex("$-1$", "$\\cdot$","$x^2$", "$\\,\\,\\,\\,\\Rightarrow$ Even degree", color=BLUE, font_size=fs2).next_to(plane, DOWN, buff=0.6)
-        funcTerm3 = Tex("$0.5$", "$\\cdot$","$x^3$", "$\\,\\,\\,\\,\\Rightarrow$ Odd degree", color=ORANGE, font_size=fs2).next_to(funcTerm2, DOWN, buff=0.2)
 
-        r1 = VGroup(Tex(f"The {self.c1[1]} function is", color=self.c1[0], font_size=fs3), Tex(s1, color=self.c1[0], font_size=fs3)).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
-        r2 = VGroup(Tex(f"The {self.c2[1]} function is", color=self.c2[0], font_size=fs3), Tex(s2, color=self.c2[0], font_size=fs3)).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
+        funcTerm2 = Tex("$-1$", "$\\cdot$","$x^2$", self.translate("Func_5_1.EvenOddAnswerScene.funcTerm2"), color=BLUE, font_size=fs2).next_to(plane, DOWN, buff=0.6)
+        funcTerm3 = Tex("$0.5$", "$\\cdot$","$x^3$", self.translate("Func_5_1.EvenOddAnswerScene.funcTerm3"), color=ORANGE, font_size=fs2).next_to(funcTerm2, DOWN, buff=0.2)
+
+        r1 = VGroup(Tex(self.evaluate_string(self.translate("Func_5_1.EvenOddAnswerScene.r1")), color=self.c1[0], font_size=fs3), Tex(s1, color=self.c1[0], font_size=fs3)).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
+        r2 = VGroup(Tex(self.evaluate_string(self.translate("Func_5_1.EvenOddAnswerScene.r2")), color=self.c2[0], font_size=fs3), Tex(s2, color=self.c2[0], font_size=fs3)).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
         r = VGroup(r1, r2).arrange(DOWN, buff=0.4, aligned_edge=LEFT).next_to(plane, DOWN, buff=0.6)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                Let's first look at <bookmark mark="f1"/>the {self.c1[1]} function.
-                {text1} <bookmark mark="unWrite"/>
-                And now let's look at <bookmark mark="f2"/>the {self.c2[1]} function.
-                {text2}
-                So: The {self.c1[1]} function is <bookmark mark="r1"/>{s1}, and the {self.c2[1]} function is <bookmark mark="r2"/>{s2}.
-                """
+                text=self.translate("Func_5_1.EvenOddAnswerScene.voiceover")
         ) as tracker:
 
 
@@ -2100,18 +1942,20 @@ class EvenOddAnswerScene(SophiaCursorScene, metaclass = ABCMeta):
 
 #####################################
 #####################################
-TASK_Func_5_1_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["Blue: Even, Orange: Neither", "Blue: Even, Orange: Even", "Blue: Odd, Orange: Neither", "Blue: Even, Orange: Odd"],
-    correctAnswerIndex = 0,
-    questionText = "Do the blue and the orange function have an even or an odd degree?"
-)
 class Func_5_1_P_1_q(EvenOddQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.P1.q.answer-options")),
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_5_1.P1.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Ok, let's practice the concept of even and odd functions:"
-        self.c1 = [BLUE, "blue"]
-        self.c2 = [ORANGE, "orange"]
+        self.intro = self.translate("Func_5_1.P1.q.intro")
+        self.c1 = [BLUE, self.translate("Func_5_1.P1.q.c1")]
+        self.c2 = [ORANGE, self.translate("Func_5_1.P1.q.c2")]
 
         self.f2 = lambda x: x**2+1
         self.f3 = lambda x: 0.5*x**3+1
@@ -2121,14 +1965,14 @@ class Func_5_1_P_1_q(EvenOddQuestionScene):
 class Func_5_1_P_1_a(EvenOddAnswerScene):
 
     def construct(self):
-
-        self.c1 = [BLUE, "blue"]
-        self.c2 = [ORANGE, "orange"]
+        
+        self.c1 = [BLUE, self.translate("Func_5_1.P1.q.c1")]
+        self.c2 = [ORANGE, self.translate("Func_5_1.P1.q.c2")]
 
         self.f2 = lambda x: -x**2
         self.f3 = lambda x: 0.5*x**3+1
 
-        self.intro = "Yep, that is correct!"
+        self.intro = self.translate("Func_5_1.P1.a.intro")
 
         super().construct()
 
@@ -2136,13 +1980,13 @@ class Func_5_1_P_1_b(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [BLUE, "blue"]
-        self.c2 = [ORANGE, "orange"]
+        self.c1 = [BLUE, self.translate("Func_5_1.P1.q.c1")]
+        self.c2 = [ORANGE, self.translate("Func_5_1.P1.q.c2")]
 
         self.f2 = lambda x: -x**2
         self.f3 = lambda x: 0.5*x**3+1
 
-        self.intro = "No, that's not right..."
+        self.intro = self.translate("Func_5_1.P1.b.intro")
 
         super().construct()
     
@@ -2150,13 +1994,13 @@ class Func_5_1_P_1_c(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [BLUE, "blue"]
-        self.c2 = [ORANGE, "orange"]
+        self.c1 = [BLUE, self.translate("Func_5_1.P1.q.c1")]
+        self.c2 = [ORANGE, self.translate("Func_5_1.P1.q.c2")]
 
         self.f2 = lambda x: -x**2
         self.f3 = lambda x: 0.5*x**3+1
 
-        self.intro = "No, that's not right..."
+        self.intro = self.translate("Func_5_1.P1.b.intro")
 
         super().construct()
 
@@ -2164,30 +2008,32 @@ class Func_5_1_P_1_d(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [BLUE, "blue"]
-        self.c2 = [ORANGE, "orange"]
+        self.c1 = [BLUE, self.translate("Func_5_1.P1.q.c1")]
+        self.c2 = [ORANGE, self.translate("Func_5_1.P1.q.c2")]
 
         self.f2 = lambda x: -x**2
         self.f3 = lambda x: 0.5*x**3+1
 
-        self.intro = "No, that's not right..."
+        self.intro = self.translate("Func_5_1.P1.b.intro")
 
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_5_1_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["Purple: Even, Green: Neither", "Purple: Neither, Green: Odd", "Purple: Even, Green: Even", "Purple: Odd, Green: Neither"],
-    correctAnswerIndex = 1,
-    questionText = "Do the purple and the green function have an even or an odd degree?"
-)
 class Func_5_1_P_2_q(EvenOddQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.P2.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_5_1.P2.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Two more examples:"
-        self.c1 = [PURPLE, "purple"]
-        self.c2 = [GREEN, "green"]
+        self.intro = self.translate("Func_5_1.P2.q.intro")
+        self.c1 = [PURPLE, self.translate("Func_5_1.P2.q.c1")]
+        self.c2 = [GREEN, self.translate("Func_5_1.P2.q.c2")]
 
         self.f2 = lambda x: (x**2-2*x)/2
         self.f3 = lambda x: 2*x
@@ -2198,13 +2044,13 @@ class Func_5_1_P_2_a(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PURPLE, "purple"]
-        self.c2 = [GREEN, "green"]
+        self.c1 = [PURPLE, self.translate("Func_5_1.P2.q.c1")]
+        self.c2 = [GREEN, self.translate("Func_5_1.P2.q.c2")]
 
         self.f2 = lambda x: (x**2-2*x)/2
         self.f3 = lambda x: 2*x
 
-        self.intro = "No, that's not it"
+        self.intro = self.translate("Func_5_1.P2.a.intro")
 
         super().construct()
 
@@ -2212,13 +2058,13 @@ class Func_5_1_P_2_b(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PURPLE, "purple"]
-        self.c2 = [GREEN, "green"]
+        self.c1 = [PURPLE, self.translate("Func_5_1.P2.q.c1")]
+        self.c2 = [GREEN, self.translate("Func_5_1.P2.q.c2")]
 
         self.f2 = lambda x: (x**2-2*x)/2
         self.f3 = lambda x: 2*x
 
-        self.intro = "Correct, well done!"
+        self.intro = self.translate("Func_5_1.P2.b.intro")
 
         super().construct()
 
@@ -2226,13 +2072,13 @@ class Func_5_1_P_2_c(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PURPLE, "purple"]
-        self.c2 = [GREEN, "green"]
+        self.c1 = [PURPLE, self.translate("Func_5_1.P2.q.c1")]
+        self.c2 = [GREEN, self.translate("Func_5_1.P2.q.c2")]
 
         self.f2 = lambda x: (x**2-2*x)/2
         self.f3 = lambda x: 2*x
 
-        self.intro = "No, that's not it"
+        self.intro = self.translate("Func_5_1.P2.a.intro")
 
         super().construct()
 
@@ -2240,31 +2086,33 @@ class Func_5_1_P_2_d(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PURPLE, "purple"]
-        self.c2 = [GREEN, "green"]
+        self.c1 = [PURPLE, self.translate("Func_5_1.P2.q.c1")]
+        self.c2 = [GREEN, self.translate("Func_5_1.P2.q.c2")]
 
         self.f2 = lambda x: (x**2-2*x)/2
         self.f3 = lambda x: 2*x
 
-        self.intro = "No, that's not it"
+        self.intro = self.translate("Func_5_1.P2.a.intro")
 
         super().construct()
 
 
 #####################################
 #####################################
-TASK_Func_5_1_P_3_q = SophiaTaskDefinition(
-    answerOptions = ["Red: Even, Yellow: Odd", "Red: Odd, Yellow: Even", "Red: Odd, Yellow: Neither", "Red: Even, Yellow: Neither"],
-    correctAnswerIndex = 3,
-    questionText = "Do the red and the yellow function have an even or an odd degree?"
-)
 class Func_5_1_P_3_q(EvenOddQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.P3.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_5_1.P3.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Next set of examples:"
-        self.c1 = [RED, "red"]
-        self.c2 = [YELLOW, "yellow"]
+        self.intro = self.translate("Func_5_1.P3.q.intro")
+        self.c1 = [RED, self.translate("Func_5_1.P3.q.c1")]
+        self.c2 = [YELLOW, self.translate("Func_5_1.P3.q.c2")]
 
         self.f2 = lambda x: (x**4)/2 - 1
         self.f3 = lambda x: x + 2
@@ -2275,27 +2123,26 @@ class Func_5_1_P_3_a(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [RED, "red"]
-        self.c2 = [YELLOW, "yellow"]
+        self.c1 = [RED, self.translate("Func_5_1.P3.q.c1")]
+        self.c2 = [YELLOW, self.translate("Func_5_1.P3.q.c2")]
 
         self.f2 = lambda x: (x**4)/2 - 1
         self.f3 = lambda x: x + 2
 
-        self.intro = "No, that's incorrect."
-
+        self.intro = self.translate("Func_5_1.P3.a.intro")
         super().construct()
 
 class Func_5_1_P_3_b(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [RED, "red"]
-        self.c2 = [YELLOW, "yellow"]
+        self.c1 = [RED, self.translate("Func_5_1.P3.q.c1")]
+        self.c2 = [YELLOW, self.translate("Func_5_1.P3.q.c2")]
 
         self.f2 = lambda x: (x**4)/2 - 1
         self.f3 = lambda x: x + 2
 
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_5_1.P3.a.intro")
 
         super().construct()
 
@@ -2303,13 +2150,13 @@ class Func_5_1_P_3_c(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [RED, "red"]
-        self.c2 = [YELLOW, "yellow"]
+        self.c1 = [RED, self.translate("Func_5_1.P3.q.c1")]
+        self.c2 = [YELLOW, self.translate("Func_5_1.P3.q.c2")]
 
         self.f2 = lambda x: (x**4)/2 - 1
         self.f3 = lambda x: x + 2
 
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_5_1.P3.a.intro")
 
         super().construct()
 
@@ -2317,30 +2164,32 @@ class Func_5_1_P_3_d(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [RED, "red"]
-        self.c2 = [YELLOW, "yellow"]
+        self.c1 = [RED, self.translate("Func_5_1.P3.q.c1")]
+        self.c2 = [YELLOW, self.translate("Func_5_1.P3.q.c2")]
 
         self.f2 = lambda x: (x**4)/2 - 1
         self.f3 = lambda x: x + 2
 
-        self.intro = "Yes, you're correct!"
+        self.intro = self.translate("Func_5_1.P3.d.intro")
 
         super().construct()
 
 #####################################
 #####################################
-TASK_Func_5_1_P_4_q = SophiaTaskDefinition(
-    answerOptions = ["PINK: Odd, Teal: Odd", "PINK: Even, Teal: Odd", "PINK: Odd, Teal: Even", "PINK: Even, Teal: Even"],
-    correctAnswerIndex = 1,
-    questionText = "Do the PINK and the teal function have an even or an odd degree?"
-)
 class Func_5_1_P_4_q(EvenOddQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_5_1.P4.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_5_1.P4.q.question-text")
+        )
 
     def construct(self):
 
-        self.intro = "Last example for today:"
-        self.c1 = [PINK, "PINK"]
-        self.c2 = [TEAL, "teal"]
+        self.intro = self.translate("Func_5_1.P4.q.intro")
+        self.c1 = [PINK, self.translate("Func_5_1.P4.q.c1")]
+        self.c2 = [TEAL, self.translate("Func_5_1.P4.q.c2")]
 
         self.f2 = lambda x: (x**4 + 2)/6
         self.f3 = lambda x: (x**3 + x)/2.5
@@ -2351,13 +2200,13 @@ class Func_5_1_P_4_a(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PINK, "PINK"]
-        self.c2 = [TEAL, "teal"]
+        self.c1 = [PINK, self.translate("Func_5_1.P4.q.c1")]
+        self.c2 = [TEAL, self.translate("Func_5_1.P4.q.c2")]
 
         self.f2 = lambda x: (x**4 + 2)/6
         self.f3 = lambda x: (x**3 + x)/2.5
 
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_5_1.P4.a.intro")
 
         super().construct()
 
@@ -2365,13 +2214,13 @@ class Func_5_1_P_4_b(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PINK, "PINK"]
-        self.c2 = [TEAL, "teal"]
+        self.c1 = [PINK, self.translate("Func_5_1.P4.q.c1")]
+        self.c2 = [TEAL, self.translate("Func_5_1.P4.q.c2")]
 
         self.f2 = lambda x: (x**4 + 2)/6
         self.f3 = lambda x: (x**3 + x)/2.5
 
-        self.intro = "Yes, you're correct!"
+        self.intro = self.translate("Func_5_1.P4.b.intro")
 
         super().construct()
 
@@ -2379,13 +2228,13 @@ class Func_5_1_P_4_c(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PINK, "PINK"]
-        self.c2 = [TEAL, "teal"]
+        self.c1 = [PINK, self.translate("Func_5_1.P4.q.c1")]
+        self.c2 = [TEAL, self.translate("Func_5_1.P4.q.c2")]
 
         self.f2 = lambda x: (x**4 + 2)/6
         self.f3 = lambda x: (x**3 + x)/2.5
 
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_5_1.P4.a.intro")
 
         super().construct()
 
@@ -2393,13 +2242,13 @@ class Func_5_1_P_4_d(EvenOddAnswerScene):
 
     def construct(self):
 
-        self.c1 = [PINK, "PINK"]
-        self.c2 = [TEAL, "teal"]
+        self.c1 = [PINK, self.translate("Func_5_1.P4.q.c1")]
+        self.c2 = [TEAL, self.translate("Func_5_1.P4.q.c2")]
 
         self.f2 = lambda x: (x**4 + 2)/6
         self.f3 = lambda x: (x**3 + x)/2.5
 
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_5_1.P4.a.intro")
 
         super().construct()
 
@@ -2408,19 +2257,19 @@ class Func_5_1_P_4_d(EvenOddAnswerScene):
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_5_1_I_1),
     PagePrototypeVideo.from_scene(Func_5_1_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_I_2_q, Func_5_1_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_I_2_q),
     PagePrototypeVideo.from_scene(Func_5_1_I_2_a),
     PagePrototypeVideo.from_scene(Func_5_1_I_2_b),
     PagePrototypeVideo.from_scene(Func_5_1_I_2_c),
     PagePrototypeVideo.from_scene(Func_5_1_I_2_d),
     PagePrototypeVideo.from_scene(Func_5_1_I_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_I_3_q, Func_5_1_I_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_I_3_q),
     PagePrototypeVideo.from_scene(Func_5_1_I_3_a),
     PagePrototypeVideo.from_scene(Func_5_1_I_3_b),
     PagePrototypeVideo.from_scene(Func_5_1_I_3_c),
     PagePrototypeVideo.from_scene(Func_5_1_I_3_d),
     PagePrototypeVideo.from_scene(Func_5_1_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_I_4_q, Func_5_1_I_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_I_4_q),
     PagePrototypeVideo.from_scene(Func_5_1_I_4_a),
     PagePrototypeVideo.from_scene(Func_5_1_I_4_b),
     PagePrototypeVideo.from_scene(Func_5_1_I_4_c),
@@ -2429,25 +2278,25 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_5_1_I_6),
     PagePrototypeVideo.from_scene(Func_5_1_I_7),
     PagePrototypeVideo.from_scene(Func_5_1_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_P_1_q, Func_5_1_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_P_1_q),
     PagePrototypeVideo.from_scene(Func_5_1_P_1_a),
     PagePrototypeVideo.from_scene(Func_5_1_P_1_b),
     PagePrototypeVideo.from_scene(Func_5_1_P_1_c),
     PagePrototypeVideo.from_scene(Func_5_1_P_1_d),
     PagePrototypeVideo.from_scene(Func_5_1_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_P_2_q, Func_5_1_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_P_2_q),
     PagePrototypeVideo.from_scene(Func_5_1_P_2_a),
     PagePrototypeVideo.from_scene(Func_5_1_P_2_b),
     PagePrototypeVideo.from_scene(Func_5_1_P_2_c),
     PagePrototypeVideo.from_scene(Func_5_1_P_2_d),
     PagePrototypeVideo.from_scene(Func_5_1_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_P_3_q, Func_5_1_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_P_3_q),
     PagePrototypeVideo.from_scene(Func_5_1_P_3_a),
     PagePrototypeVideo.from_scene(Func_5_1_P_3_b),
     PagePrototypeVideo.from_scene(Func_5_1_P_3_c),
     PagePrototypeVideo.from_scene(Func_5_1_P_3_d),
     PagePrototypeVideo.from_scene(Func_5_1_P_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_5_1_P_4_q, Func_5_1_P_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_5_1_P_4_q),
     PagePrototypeVideo.from_scene(Func_5_1_P_4_a),
     PagePrototypeVideo.from_scene(Func_5_1_P_4_b),
     PagePrototypeVideo.from_scene(Func_5_1_P_4_c),

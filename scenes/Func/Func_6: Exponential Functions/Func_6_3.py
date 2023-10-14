@@ -16,17 +16,19 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
-
+import ast
 
 
 #####################################
 #####################################
-TASK_Func_6_3_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["Applying the square again $(\Box^2)^2$", "Taking the root $\sqrt{\Box^2}$", "Dividing by two $\Box/2$", "Multiplying by two $\Box\times 2$"],
-    correctAnswerIndex = 1,
-    questionText = "What operation can we apply to undo the squaring ($\Box^2$)?"
-)
 class Func_6_3_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_6_3.I1.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_6_3.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -34,7 +36,7 @@ class Func_6_3_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Inverse Functions")
+        self.add_title(self.translate("Func_6_3.I1.q.title"))
 
         two_add = MathTex("2", color=c1t, font_size=fs1).move_to([-1,1,0])
         four_add = MathTex("4", color=c1t, font_size=fs1).move_to([1,1,0])
@@ -83,23 +85,7 @@ class Func_6_3_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                If we think about different mathematical operations, they always come in pairs, that can cancel each other out.
-                For example, there's addition and subtraction. If you<bookmark mark="two_add_1"/>take a number, say two, and add something, say
-                two <bookmark mark="two_add_2"/>to the original number,
-                you can then <bookmark mark="two_add_3"/> subtract 2 from the result and get the original number back.
-                
-                <bookmark mark="clear_1"/>
-                Another example is multiplication and division.
-                Again, if you take a <bookmark mark="three_mul_1"/>number, like three, and multiply it by something, <bookmark mark="three_mul_2"/>say three,
-                <bookmark mark="three_mul_3"/>you can then divide the result by three and get the original number back.
-
-                <bookmark mark="clear_2"/>
-                Do you know the inverse operation for raising something to a power?
-                If we raise<bookmark mark="four_pow_1"/> a number, say four, to a power, like <bookmark mark="four_pow_2"/>two for example,
-                <bookmark mark="four_pow_3"/>
-                What operation do we need to apply to undo the squaring?
-                """
+                text=self.translate("Func_6_3.I1.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("two_add_1")
@@ -162,7 +148,7 @@ class Func_6_3_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Inverse Functions")
+        self.add_title(self.translate("Func_6_3.I1.q.title"))
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -190,14 +176,7 @@ class Func_6_3_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Unfortunately, that's not right.
-                The inverse operation <bookmark mark="raise"/>for raising something to a power <bookmark mark="root"/>is taking the root.
-                If we raise <bookmark mark="sol_raise"/>a number like four to the second power, we can undo that operation
-                by <bookmark mark="sol_root"/>taking the second root of the result.
-
-                So the inverse operation of raising a number to a power is taking the root.
-                """
+                text=self.translate("Func_6_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("raise")
@@ -231,7 +210,7 @@ class Func_6_3_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Inverse Functions")
+        self.add_title(self.translate("Func_6_3.I1.q.title"))
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -259,14 +238,7 @@ class Func_6_3_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that is correct!
-                The inverse operation <bookmark mark="raise"/>for raising something to a power <bookmark mark="root"/>is taking the root.
-                If we raise <bookmark mark="sol_raise"/>a number like four to the second power, we can undo that operation
-                by <bookmark mark="sol_root"/>taking the second root of the result.
-
-                So the inverse operation of raising a number to a power is taking the root.
-                """
+                text=self.translate("Func_6_3.I1.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("raise")
@@ -300,7 +272,7 @@ class Func_6_3_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Inverse Functions")
+        self.add_title(self.translate("Func_6_3.I1.q.title"))
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -328,14 +300,7 @@ class Func_6_3_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Unfortunately, that's not right.
-                The inverse operation <bookmark mark="raise"/>for raising something to a power <bookmark mark="root"/>is taking the root.
-                If we raise <bookmark mark="sol_raise"/>a number like four to the second power, we can undo that operation
-                by <bookmark mark="sol_root"/>taking the second root of the result.
-
-                So the inverse operation of raising a number to a power is taking the root.
-                """
+                text=self.translate("Func_6_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("raise")
@@ -369,7 +334,7 @@ class Func_6_3_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Inverse Functions")
+        self.add_title(self.translate("Func_6_3.I1.q.title"))
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -397,14 +362,7 @@ class Func_6_3_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Unfortunately, that's not right.
-                The inverse operation <bookmark mark="raise"/>for raising something to a power <bookmark mark="root"/>is taking the root.
-                If we raise <bookmark mark="sol_raise"/>a number like four to the second power, we can undo that operation
-                by <bookmark mark="sol_root"/>taking the second root of the result.
-
-                So the inverse operation of raising a number to a power is taking the root.
-                """
+                text=self.translate("Func_6_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("raise")
@@ -440,7 +398,7 @@ class Func_6_3_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         four_pow = MathTex("3", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("64", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -467,18 +425,7 @@ class Func_6_3_I_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now similarly, you might ask yourself: What is the inverse operation for exponential functions?
-
-                For example, I take <bookmark mark="take_number"/>a number, say three, and <bookmark mark="raise_4"/>raise four to the power of three.
-                Then I will have 64. But what operation can I use, to get back to three? What is the inverse operation of raising something to a power?
-
-                The answer is: <bookmark mark="take_log"/>Taking the logarithm. So if I raise four to the power of three I get 64.
-                If I then take the base four logarithm of 64, I get three back. So <bookmark mark="inverse_raise"/>the inverse operation of raising a
-                number k to a <bookmark mark="inverse_log"/>power is taking the base k logarithm.
-
-                What exactly that means, we will see in the next video.
-                """
+                text=self.translate("Func_6_3.I2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("take_number")
@@ -519,7 +466,7 @@ class Func_6_3_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -537,22 +484,7 @@ class Func_6_3_I_3(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So what does the logarithm actually do.
-
-                We take a number,<bookmark mark="two_1"/> say two, and multiply it by itself one,
-                <bookmark mark="two_2"/>two, <bookmark mark="two_3"/>three <bookmark mark="two_4"/>four,
-                <bookmark mark="two_5"/>five times, to <bookmark mark="two_pow_5"/> get two to the power
-                of five<bookmark mark="two_32"/>, which equals 32.
-
-                But what if we want to go in the opposite direction?
-                So say we <bookmark mark="thirtytwo_1"/> have 32, and we want to know
-                how many times we have to multiply <bookmark mark="thirtytwo_2"/>two by itself to get 32.
-
-                We can find this number by computing the<bookmark mark="sol_1"/> base two logarithm of 32.
-                The base two logarithm of 32 is the number, to which we have to raise two
-                to get 32. <bookmark mark="sol_2"/>And that number is five...
-                """
+                text=self.translate("Func_6_3.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("two_1")
@@ -610,12 +542,14 @@ class Func_6_3_I_3(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_6_3_I_4_q = SophiaTaskDefinition(
-    answerOptions = ["x=\sqrt[5]{625}", "x=\sqrt[625]{5}", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    correctAnswerIndex = 3,
-    questionText = "For what value of x does $5^x=625$ hold?"
-)
 class Func_6_3_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["x=\sqrt[5]{625}", "x=\sqrt[625]{5}", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_6_3.I4.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -623,7 +557,7 @@ class Func_6_3_I_4_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -642,12 +576,7 @@ class Func_6_3_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's try to use the logarithm ourself!
-                We'll start with the <bookmark mark="sixtwofive_1"/>number 625.
-                We want to know, to what power we have to raise <bookmark mark="sixtwofive_2"/>the number five to get 625.
-                <bookmark mark="qmark"/>How do we find that number using the logarithm?
-                """
+                text=self.translate("Func_6_3.I4.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sixtwofive_1")
@@ -676,7 +605,7 @@ class Func_6_3_I_4_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -696,14 +625,7 @@ class Func_6_3_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                So we want to know to what power we have to raise five to get 625.
-                We can reformulate this as the equation <bookmark mark="sol_1"/>five to the power of x <bookmark mark="sol_2"/>equals 625.
-                This can then be solved as <bookmark mark="sol_3"/>x is equal to the base five logarithm of 625.
-                The base of the logarithm is the number, which is the base of the power, in this case five.
-                And the number which we take the logarithm of is the number we want to get, in this case 625.
-                """
+                text=self.translate("Func_6_3.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sol_1")
@@ -730,7 +652,7 @@ class Func_6_3_I_4_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -750,14 +672,7 @@ class Func_6_3_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                So we want to know to what power we have to raise five to get 625.
-                We can reformulate this as the equation <bookmark mark="sol_1"/>five to the power of x <bookmark mark="sol_2"/>equals 625.
-                This can then be solved as <bookmark mark="sol_3"/>x is equal to the base five logarithm of 625.
-                The base of the logarithm is the number, which is the base of the power, in this case five.
-                And the number which we take the logarithm of is the number we want to get, in this case 625.
-                """
+                text=self.translate("Func_6_3.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sol_1")
@@ -784,7 +699,7 @@ class Func_6_3_I_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -804,14 +719,7 @@ class Func_6_3_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                So we want to know to what power we have to raise five to get 625.
-                We can reformulate this as the equation <bookmark mark="sol_1"/>five to the power of x <bookmark mark="sol_2"/>equals 625.
-                This can then be solved as <bookmark mark="sol_3"/>x is equal to the base five logarithm of 625.
-                The base of the logarithm is the number, which is the base of the power, in this case five.
-                And the number which we take the logarithm of is the number we want to get, in this case 625.
-                """
+                text=self.translate("Func_6_3.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sol_1")
@@ -838,7 +746,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -858,14 +766,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that is correct!
-                So we want to know to what power we have to raise five to get 625.
-                We can reformulate this as the equation <bookmark mark="sol_1"/>five to the power of x <bookmark mark="sol_2"/>equals 625.
-                This can then be solved as <bookmark mark="sol_3"/>x is equal to the base five logarithm of 625.
-                The base of the logarithm is the number, which is the base of the power, in this case five.
-                And the number which we take the logarithm of is the number we want to get, in this case 625.
-                """
+                text=self.translate("Func_6_3.I4.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sol_1")
@@ -895,7 +796,7 @@ class Func_6_3_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -913,26 +814,13 @@ class Func_6_3_I_5(SophiaCursorScene):
 
         start_base = np.array([.4,-1.4,0])
         start_log = np.array([1,-0.7,0])
-        base = Bubble(texts = ["a: Base of the logarithm"], center=np.array([0.4,-2.8, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
-        log = Bubble(texts = ["b: Number we want to get"], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
+        base = Bubble(texts = [self.translate("Func_6_3.I5.base")], center=np.array([0.4,-2.8, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
+        log = Bubble(texts = [self.translate("Func_6_3.I5.log")], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
 
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now a bit more formally: Logarithms.
-                We have a <bookmark mark="intro_1"/>base a, and we want to raise it to some power to get 
-                <bookmark mark="intro_2"/>the number b as a result.
-                Now that number x is what we're looking for.
-
-                This is where the logarithm comes in. The <bookmark mark="sol_in"/>logarithm tells us, to what number we have to
-                raise the base a, if we want to get the number b.
-
-                The logarithm has two parts.
-                <bookmark mark="base"/> The base "a", which is written as an index, which describes the base of the power,
-                so the number that we want to raise to some power.
-                <bookmark mark="log"/> And the number b, which is written in brackets, which is the number we want to get...
-                """
+                text=self.translate("Func_6_3.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("intro_1")
@@ -1000,7 +888,7 @@ class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1019,12 +907,7 @@ class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                We'll start with the <bookmark mark="result_1"/>number {self.result}.
-                We want to know, to what power we have to raise <bookmark mark="result_2"/>the number {self.base} to get {self.result}.
-                <bookmark mark="qmark"/>How do we find that number using the logarithm?
-                """
+                text=self.evaluate_string(self.translate("Func_6_3.findLogExpressionQuestionScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("result_1")
@@ -1055,7 +938,7 @@ class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Logarithm")
+        self.add_title(self.translate("Func_6_3.I2.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -1076,20 +959,12 @@ class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         start_base = np.array([.4,-1.2,0])
         start_log = np.array([1,-0.5,0])
 
-        base = Bubble(texts = [f"{self.base}: Base of the logarithm"], center=np.array([.6,-2.6, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
-        log = Bubble(texts = [f"{self.result}: Number we want to get"], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
+        base = Bubble(texts = [self.evaluate_string(self.translate("Func_6_3.Func_6_3.I2.title.base"))], center=np.array([.6,-2.6, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
+        log = Bubble(texts = [self.evaluate_string(self.translate("Func_6_3.Func_6_3.I2.title.log"))], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}
-                So we want to know to what power we have to raise {self.base} to get {self.result}.
-                We can reformulate this as the equation <bookmark mark="sol_1"/>{self.base} to the power of x
-                <bookmark mark="sol_2"/>equals {self.result}. This can then be solved as
-                <bookmark mark="sol_3"/>x is equal to the base {self.base} logarithm of {self.result}. <bookmark mark="clean"/>
-                The <bookmark mark="bubble_1"/>base of the logarithm is the number, which is the base of the power, in this case {self.base}.
-                And the <bookmark mark="bubble_2"/>number which we take the logarithm of is the number we want to get, in this case {self.result}.
-                """
+                text=self.evaluate_string(self.translate("Func_6_3.findLogExpressionAnswerScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("sol_1")
@@ -1133,22 +1008,23 @@ class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
 #####################################
 #####################################
-TASK_Func_6_3_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["$x=\log_{256}{4}$", "$x=\log_4{256}$", "x=\sqrt[4]{256}", "x=\sqrt[256]{4}"],
-    correctAnswerIndex = 1,
-    questionText = "For what value of x does $4^x=256$ hold?"
-)
-
 class Func_6_3_P_1_q(findLogExpressionQuestionScene):
+        
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$x=\log_{256}{4}$", "$x=\log_4{256}$", "x=\sqrt[4]{256}", "x=\sqrt[256]{4}"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_3.P1.q.question-text")
+        )
     
-        # Main method for constructing the animation
-        def construct(self):
+    # Main method for constructing the animation
+    def construct(self):
 
-            self.result = 256
-            self.base = 4
-            self.intro = "Another example to practice:"
+        self.result = 256
+        self.base = 4
+        self.intro = self.translate("Func_6_3.P1.q.intro")
 
-            super().construct()
+        super().construct()
 
 
 class Func_6_3_P_1_a(findLogExpressionAnswerScene):
@@ -1158,7 +1034,7 @@ class Func_6_3_P_1_a(findLogExpressionAnswerScene):
 
             self.result = 256
             self.base = 4
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P1.a.intro")
 
             super().construct()
 
@@ -1169,7 +1045,7 @@ class Func_6_3_P_1_b(findLogExpressionAnswerScene):
 
             self.result = 256
             self.base = 4
-            self.intro = "Yes, you got it!"
+            self.intro = self.translate("Func_6_3.P1.b.intro")
 
             super().construct()
 
@@ -1180,7 +1056,7 @@ class Func_6_3_P_1_c(findLogExpressionAnswerScene):
 
             self.result = 256
             self.base = 4
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P1.a.intro")
 
             super().construct()
 
@@ -1192,29 +1068,30 @@ class Func_6_3_P_1_d(findLogExpressionAnswerScene):
 
             self.result = 256
             self.base = 4
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P1.a.intro")
 
             super().construct()
 
 
 #####################################
 #####################################
-TASK_Func_6_3_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["$x=\log_\frac12{\\frac{1}{16}}$", "$x=\log_{\frac{1}{16}}{\frac12}$", "x=\sqrt[\frac12]{\frac{1}{16}}", "x=\sqrt[25\frac{1}{16}]{\frac12}"],
-    correctAnswerIndex = 1,
-    questionText = "For what value of x does $\frac12^x=\frac{1}{16}$ hold?"
-)
-
 class Func_6_3_P_2_q(findLogExpressionQuestionScene):
+        
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$x=\log_\frac12{\\frac{1}{16}}$", "$x=\log_{\frac{1}{16}}{\frac12}$", "x=\sqrt[\frac12]{\frac{1}{16}}", "x=\sqrt[25\frac{1}{16}]{\frac12}"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_3.P2.q.question-text")
+        )
     
         # Main method for constructing the animation
-        def construct(self):
+    def construct(self):
 
-            self.result = 1/16
-            self.base = 1/2
-            self.intro = "Another example to practice:"
+        self.result = 1/16
+        self.base = 1/2
+        self.intro = self.translate("Func_6_3.P2.q.intro")
 
-            super().construct()
+        super().construct()
 
 
 class Func_6_3_P_2_a(findLogExpressionAnswerScene):
@@ -1224,7 +1101,7 @@ class Func_6_3_P_2_a(findLogExpressionAnswerScene):
 
             self.result = 1/16
             self.base = 1/2
-            self.intro = "Yes, you got it!"
+            self.intro = self.translate("Func_6_3.P2.a.intro")
 
             super().construct()
 
@@ -1235,7 +1112,7 @@ class Func_6_3_P_2_b(findLogExpressionAnswerScene):
 
             self.result = 1/16
             self.base = 1/2
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P2.b.intro")
 
             super().construct()
 
@@ -1246,7 +1123,7 @@ class Func_6_3_P_2_c(findLogExpressionAnswerScene):
 
             self.result = 1/16
             self.base = 1/2
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P2.b.intro")
 
             super().construct()
 
@@ -1258,13 +1135,13 @@ class Func_6_3_P_2_d(findLogExpressionAnswerScene):
 
             self.result = 256
             self.base = 4
-            self.intro = "No, that's not right..."
+            self.intro = self.translate("Func_6_3.P2.b.intro")
 
             super().construct()
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_3_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_3_I_1_q, Func_6_3_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_3_I_1_q),
     PagePrototypeVideo.from_scene(Func_6_3_I_1_a),
     PagePrototypeVideo.from_scene(Func_6_3_I_1_b),
     PagePrototypeVideo.from_scene(Func_6_3_I_1_c),
@@ -1272,20 +1149,20 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_3_I_2),
     PagePrototypeVideo.from_scene(Func_6_3_I_3),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_3_I_4_q, Func_6_3_I_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_3_I_4_q),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_a),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_b),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_c),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_d),
     PagePrototypeVideo.from_scene(Func_6_3_I_5),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_3_P_1_q, Func_6_3_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_3_P_1_q),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_a),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_b),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_c),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_d),
     PagePrototypeVideo.from_scene(Func_6_3_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_6_3_P_2_q, Func_6_3_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_6_3_P_2_q),
     PagePrototypeVideo.from_scene(Func_6_3_P_2_a),
     PagePrototypeVideo.from_scene(Func_6_3_P_2_b),
     PagePrototypeVideo.from_scene(Func_6_3_P_2_c),
