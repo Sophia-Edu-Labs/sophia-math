@@ -2005,7 +2005,7 @@
       "rad": "Radians: "
     },
     "DegToRadAnswerScene": {
-      "voiceover": "{self.intro} The <bookmark mark=\"red_circle\"/> angle of the {self.color_string} circle is <bookmark mark=\"degrees\"/>\n{deg} degrees, which is {self.angle_frac_string} of a full circle.\n\nSo the angle in Radians is also {self.angle_frac_string} of a full circle, which <bookmark mark=\"eq_1\"/>\nis {self.angle_frac_string} <bookmark mark=\"eq_2\"/> times 2 Pi, which <bookmark mark=\"eq_3\"/> equals\n{self.angle_rad_string}Pi Radians."
+      "voiceover": "{self.intro} The <bookmark mark=\"red_circle\"/> angle of the {self.color_string} circle is <bookmark mark=\"degrees\"/>\n{self.deg} degrees, which is {self.angle_frac_string} of a full circle.\n\nSo the angle in Radians is also {self.angle_frac_string} of a full circle, which <bookmark mark=\"eq_1\"/>\nis {self.angle_frac_string} <bookmark mark=\"eq_2\"/> times 2 Pi, which <bookmark mark=\"eq_3\"/> equals\n{self.angle_rad_string}Pi Radians."
     },
     "RadToDegQuestionScene": {
       "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} circle. Measured in Radians, it <bookmark mark=\"rad\"/>\nhas an angle of {self.angle_rad_string} Pi.\nWhat is the equivalent angle, when we <bookmark mark=\"degrees\"/>describe it in Degrees, instead of Radians?"
