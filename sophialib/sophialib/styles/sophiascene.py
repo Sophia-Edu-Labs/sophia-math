@@ -874,6 +874,28 @@ class CursorMarkAxis(ApplyMethod):
         
         super().__init__(cursor.changeForm, width, height, None, x, y, self.fill_opacity, None, None, **kwargs)
 
+class CursorUnderline(ApplyMethod):
+    def __init__(self, cursor: AltCursor, target:Mobject, autoFadeBackground=False, moveToBackground=False, **kwargs):
+
+        x,y,_ = target.get_bottom()
+        y -= 0.1
+        width = target.get_width()+0.2
+        height = 0.1
+
+        self.cursor = cursor
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.autoFadeBackground = autoFadeBackground
+        self.moveToBackground = moveToBackground
+
+        self.fill_opacity = cursor.DEFAULT_CURSOR_OPACITY
+        if self.autoFadeBackground and max(self.height, self.width) >= 0.201:
+            self.fill_opacity = max(cursor.DEFAULT_CURSOR_OPACITY_IN_BACKGROUND, math.exp(-2.5 * (max(self.height, self.width) - cursor.DEFAULT_CURSOR_OPACITY_IN_BACKGROUND)))
+        
+        super().__init__(cursor.changeForm, width, height, None, x, y, self.fill_opacity, None, None, **kwargs)
+
 class CursorMoveResize(ApplyMethod):
     def __init__(self, cursor: AltCursor, x,y, width, height, autoFadeBackground=False, moveToBackground=False, **kwargs):
         if x is None:

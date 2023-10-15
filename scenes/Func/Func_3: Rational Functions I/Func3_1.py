@@ -2,12 +2,7 @@
 
 # Import necessary libraries and modules
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, CursorMarkAxis)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -30,20 +25,14 @@ class Func_3_1_I_1(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I1.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=[["Function describes", "Fill level over time"], "$\\rightarrow$Which representation is correct?"])
-        # self.add(note)
-
         # Create the coordinate system
-        cords = self.add_cords([-4,4, 1], [-3, 3, 1], x_ticks=[-4,-2,2,4],y_ticks=[-3,-2,-1,1,2,3])
+        cords = self.add_cords([-4,4, 1], [-3, 3, 1], x_ticks=[-4,-2,2,4],y_ticks=[-3,-2,-1,1,2,3]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
-
+        
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.move_to([xo, yo, 0])
-        self.add(cords)
+        cursor = AltCursor(idle=True, x=xo, y=yo, autoFadeBackground=False)
+        self.add(cursor)
 
         func = lambda x: x/2
         func_plotted = plane.plot(func, color=RED)
@@ -57,13 +46,19 @@ class Func_3_1_I_1(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("linear")
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted))
 
             self.wait_until_bookmark("funcTerm")
             self.play(Write(func_general))
 
             self.wait_until_bookmark("thisFunc")
-            self.play(ReplacementTransform(func_general, func_ex))
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func_ex), ReplacementTransform(func_general, func_ex))
+
+            self.wait_until_bookmark("reset_cursor")
+            self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -86,7 +81,7 @@ class Func_3_1_I_2(SophiaCursorScene):
         # self.add(note)
 
         # Create the coordinate system
-        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
@@ -191,13 +186,13 @@ class Func_3_1_I_3_q(SophiaCursorScene):
 
         # Create the coordinate system
         func = lambda x: 1/x
-        cordsOld = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cordsOld = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         planeOld = cordsOld[0]
         func_plotted_Old = planeOld.plot(func, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
         self.add(func_plotted_Old, cordsOld)
 
 
-        cords = self.add_cords([0,1, 0.2], [0, 10, 2], x_ticks=[0.2*(x+1) for x in range(5)],y_ticks=[2,4,6,8,10], x_labels=[*[np.round(0.2*(x+1),1) for x in range(4)],'1'],)
+        cords = self.add_cords([0,1, 0.2], [0, 10, 2], x_ticks=[0.2*(x+1) for x in range(5)],y_ticks=[2,4,6,8,10], x_labels=[*[np.round(0.2*(x+1),1) for x in range(4)],'1'],).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(func, color=RED, x_range=[0.001, 1, 0.001], use_smoothing=False).reverse_points()
 
@@ -296,7 +291,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
         zero = Group(func_0, cross_0)
 
         f = lambda x: 1/x
-        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
@@ -327,7 +322,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
-            anims = [Write(cords), warning1.animate.shift(DOWN*0.55), warning2.animate.shift(DOWN*0.35), zero.animate.shift(5*RIGHT)]
+            anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
@@ -364,7 +359,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
         zero = Group(func_0, cross_0)
 
         f = lambda x: 1/x
-        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
@@ -395,7 +390,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
-            anims = [Write(cords), warning1.animate.shift(DOWN*0.55), warning2.animate.shift(DOWN*0.35), zero.animate.shift(5*RIGHT)]
+            anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
@@ -433,7 +428,7 @@ class Func_3_1_I_3_c(SophiaCursorScene):
         zero = Group(func_0, cross_0)
 
         f = lambda x: 1/x
-        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
@@ -464,7 +459,7 @@ class Func_3_1_I_3_c(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
-            anims = [Write(cords), warning1.animate.shift(DOWN*0.55), warning2.animate.shift(DOWN*0.35), zero.animate.shift(5*RIGHT)]
+            anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
@@ -501,7 +496,7 @@ class Func_3_1_I_3_d(SophiaCursorScene):
         zero = Group(func_0, cross_0)
 
         f = lambda x: 1/x
-        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4])
+        cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
@@ -532,7 +527,7 @@ class Func_3_1_I_3_d(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
-            anims = [Write(cords), warning1.animate.shift(DOWN*0.55), warning2.animate.shift(DOWN*0.35), zero.animate.shift(5*RIGHT)]
+            anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 

@@ -35,8 +35,8 @@ except ImportError:
 
 
 # DEFAULT_MODEL = "eleven_multilingual_v1"
-# DEFAULT_MODEL = "eleven_multilingual_v2"
-DEFAULT_MODEL = "eleven_monolingual_v1"
+DEFAULT_MODEL = "eleven_multilingual_v2"
+# DEFAULT_MODEL = "eleven_monolingual_v1"
 # DEFAULT_MODEL = "eleven_english_v2"
 
 
