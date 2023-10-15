@@ -178,7 +178,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_3_1.I3.q.title"))
+        self.add_title(self.translate(""))
 
         # Create a notepad with texts
         # note = Notepad(texts=[["$x$ gets closer to zero","$\\rightarrow f(x)$ increases quickly"], ["$\\rightarrow$ What will happen,","     if we plug in $x=0$"]], buff=0.3)
@@ -604,7 +604,7 @@ class Func_3_1_I_4_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_3_1.I4.q.title"))
+        title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
@@ -689,7 +689,7 @@ class Func_3_1_I_4_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_3_1.I4.q.title"))
+        title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
@@ -775,7 +775,7 @@ class Func_3_1_I_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_3_1.I4.q.title"))
+        title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
@@ -860,7 +860,7 @@ class Func_3_1_I_4_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_3_1.I4.q.title"))
+        title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
         cursor = AltCursor(blinking=False, stroke_width=0)
         cursor.autoFadeBackground = True
