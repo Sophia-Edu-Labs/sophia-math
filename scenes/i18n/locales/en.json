@@ -2070,5 +2070,389 @@
         "intro": "No, that's not it."
       }
     }
-  }
+  },
+  "Func_7_2": {
+    "I1": {
+      "q": {
+        "answer-options": "[\"blue line / green line\", \"pink line / blue line\", \"pink line / green line\", \"green line / pink line\"]",
+        "question-text": "Which of the lines do we have two divide by which to get the sine of the bottom left corner?",
+        "title": "Sine Function",
+        "voiceover": "Check out<bookmark mark=\"show_triangle\"/> this beautiful triangle.\n\nYou know what's just as beautiful? <bookmark mark=\"sine\"/> The sine function. Well, at least\nonce you really understand it.\n\nLet's start slowly though. Which line do we divide by which other line,\nto get the sine of the angle <bookmark mark=\"angle\"/>in the bottom\nleft corner?"
+      },
+      "a": {
+        "opposite": "opposite",
+        "hypothenuse": "hypothenuse",
+        "voiceover": "No, that's not right.\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe opposite is the side opposite to the angle. In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
+      },
+      "b": {
+        "voiceover": "Yep, that's correct.\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe opposite is the side opposite to the angle. In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
+      }
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"It has the length $\\cos(1)$\",\"It has length $\\sin(1)$\"\"It has length $\\sqrt{2}$\",\"It has length $1$\"]",
+        "question-text": "What can we say about the hypothenuse (the blue line) for the inscribed triangle?",
+        "voiceover": "Now what if we <bookmark mark=\"circle\"/>inscribe the triangle into a circle, with the radius of one?\nIf the top left corner is in the center of the circle, what can we say\nabout <bookmark mark=\"hypothenuse\"/> the hypothenuse, meaning the blue line?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\nThe blue line goes <bookmark mark=\"center\"/>from the center of the circle to the\nedge<bookmark mark=\"circle\"/> of the circle. Since the radius of the circle is one, the length of the\nblue line is<bookmark mark=\"write_one\"/> also one.\n\nNote that we can <bookmark mark=\"vary\"/> vary the angle alpha and the length of the blue line will\nstill be one, as long as it is inscribed into the unit circle"
+      },
+      "d": {
+        "voiceover": "Yes, that's right. Well done.\nThe blue line goes <bookmark mark=\"center\"/>from the center of the circle to the\nedge<bookmark mark=\"circle\"/> of the circle. Since the radius of the circle is one, the length of the\nblue line is<bookmark mark=\"write_one\"/> also one.\n\nNote that we can <bookmark mark=\"vary\"/> vary the angle alpha and the length of the blue line will\nstill be one, as long as it is inscribed into the unit circle"
+      }
+    },
+    "I3": {
+      "voiceover": "So <bookmark mark=\"sine\"/> the sine of the angle alpha <bookmark mark=\"opposite\"/>is the opposite divided \n<bookmark mark=\"hypothenuse\"/>by the hypothenuse.\nIn our example, that means the <bookmark mark=\"pink_line\"/>length of the pink line divided by the <bookmark mark=\"blue_line\"/>\nlength of the blue line. And we know that <bookmark mark=\"vary\"/> the length of the blue line is always one, as long as it is\ninscribed into the unit circle. This means, that the sine of the angle alpha is <bookmark mark=\"sine_one\"/> always equal to\nthe length of the pink line,  <bookmark mark=\"hypothenuse_2\"/>because the hypothenuse that we're dividing by is always one.\n\nSo for the expression, that means that if we inscribe the triangle into the unit circle, the <bookmark mark=\"sine_term\"/>\nsine of the inner angle is equal to the <bookmark mark=\"opposite_term\"/>length of the opposite side."
+    },
+    "I4": {
+      "angle": "Angle: ",
+      "sine": "Sine: ",
+      "voiceover": "Now we can <bookmark mark=\"sine_function_title\"/>use the sine-function to describe the relationship between\nthe angle of the triangle and the sine of the angle, which in this case is equal to the length of the\nopposite side, so the pink line.\n\nWhen we change the angle, let us keep track<bookmark mark=\"track_angle\"/> of the angle alpha and\n<bookmark mark=\"track_length\"/>the length of the pink line, which is the sine of the angle.\n\nNow, <bookmark mark=\"vary\"/>vary the angle alpha and observe how the length of the pink line changes.\nAlso look at how the sine changes together with the angle."
+    },
+    "I5": {
+      "voiceover": "I already announced that we will use the sine function to describe the relationship between\nthe angle of the triangle and the sine of the angle. <bookmark mark=\"reorder\"/>\n\nLet's do that graphically.\n\nOn this graph, <bookmark mark=\"x_axis\"/>the x-axis describes the angle alpha,\n<bookmark mark=\"y_axis\"/>and the y-axis describes the sine of the\nangle alpha. \n\nNow let's <bookmark mark=\"reset\"/>start at zero\n\n<bookmark mark=\"increase_1\"/>and increase the angle alpha. See how the sine of the angle\nincreases in parallel to the opposite side of the triangle?\n\nAnyway, this is the sine function... The value of the sine function at a certain angle alpha\nis equal to the length of the opposite side of the triangle. It also has this cool wave shape."
+    },
+    "I6": {
+      "voiceover": "Here are three important facts about the sign function:\n\n<bookmark mark=\"one\"/>FACT NUMBER ONE: The maximum value of the sign function is one.\nIt is <bookmark mark=\"max\"/> reached at the angle alpha equals half pi.\nSimilarly, the minimum value of the sign function is negative one,\n<bookmark mark=\"min\"/>and it is reached at the angle alpha equals\nthree half pie.\n\nLook how in both cases<bookmark mark=\"switch\"/>, the triangle is not really a triangle?\nIt looks much more like a line."
+    },
+    "I7": {
+      "voiceover": "<bookmark mark=\"two\"/>FACT NUMBER TWO: The sine function is periodic. This means, that it repeats itself\nevery 2 pie.\n\nWhat does that mean?\n\nSo we already know what the function looks <bookmark mark=\"zero_to_two_pi\"/> like from zero to two pie.\nIt starts at zero and then goes up to one, back to zero, down to negative one and back to zero.\n\nNow notice that this all happened while the triangle went around the circle fully, so after two pie,\nwe're back at where we started.\n\nSo naturally, the function will look exactly the way it does at x equals zero:\n<bookmark mark=\"continue_1\"/> Up to one, back to zero, down to negative one, and back to zero again.\n\nAnd at four pie, it repeats itself again!"
+    },
+    "I8": {
+      "voiceover": "<bookmark mark=\"three\"/>FACT NUMBER THREE: The sine function is an odd function.\n\nWhat does that mean?\n\nLet's <bookmark mark=\"draw_1\"/>first draw the function from negative two pi to zero.\nFrom fact number two, we know that the function looks exactly the same from negative two pie to zero\nas it does from zero to two pie.\n\n<bookmark mark=\"draw_2\"/>\nNow let's draw the function from zero to two pie as well.\n\nLook <bookmark mark=\"y_axis\"/> at the y-axis and compare the values of the function on\nthe left and on the right side of the y-axis.\n\nSee how the values are the same, but the sign is different? That's what it means to be an odd function.\n<bookmark mark=\"clean_circle\"/> Specifically, <bookmark mark=\"odd_1_a\"/>that f of negative x is\n<bookmark mark=\"odd_1_b\"/>equal to negative f of x.\n\nYou can easily check that this is true here. This means <bookmark mark=\"odd_2_a\"/>that the sine of negative x\n<bookmark mark=\"odd_2_b\"/>is equal to negative sine of  x.\n\nSo the sine function is an odd function."
+    }
+  },
+  "Func_7_3": {
+    "I1": {
+      "q": {
+        "answer-options": "[\"blue line / green line\", \"pink line / blue line\", \"pink line / green line\", \"green line / blue line\"]",
+        "question-text": "Which of the lines do we have two divide by which to get the sine of the bottom left corner?",
+        "voiceover": "Look at <bookmark mark=\"show_triangle\"/> this triangle.\n\nFrom it, we now want to learn about<bookmark mark=\"cosine\"/> the cosine function.\n\nLet's start with the definition of the cosine. Which line do we divide by which other line,\nto get the cosine of the angle <bookmark mark=\"angle\"/>in the bottom\nleft corner?"
+      },
+      "title": "Cosine Function",
+      "a": {
+        "adj": "adjacent",
+        "hyp": "hypothenuse",
+        "voiceover": "No, that's not right. <bookmark mark=\"show_formula\"/>\nThe cosine is equal to <bookmark mark=\"adjacent\"/> the length of the adjacent divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark=\"adjacent_plot\"/> it's the green line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left\ncorner."
+      },
+      "b": {
+        "voiceover": "No, that's not right. <bookmark mark=\"show_formula\"/>\nThe cosine is equal to <bookmark mark=\"adjacent\"/> the length of the adjacent divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark=\"adjacent_plot\"/> it's the green line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left\ncorner."
+      },
+      "d": {
+        "voiceover": "Yep, that's correct. Nice Job! <bookmark mark=\"show_formula\"/>\nThe cosine is equal to <bookmark mark=\"adjacent\"/> the length of the adjacent divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark=\"adjacent_plot\"/> it's the green line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left\ncorner."
+      }
+    },
+    "I4": {
+      "angle": "Angle: ",
+      "cos": "Cosine: ",
+      "voiceover": "Now we can <bookmark mark=\"sine_function_title\"/>use the cosine-function to describe the relationship between\nthe angle of the triangle and the sine of the angle, which in this case is equal to the length of the\nadjacent side, so the green line.\n\nWhen we change the angle, let us keep track<bookmark mark=\"track_angle\"/> of the angle alpha and\n<bookmark mark=\"track_length\"/>the length of the green line, which is the cosine of the angle.\n\nNow, <bookmark mark=\"vary\"/>vary the angle alpha and observe how the length of the green line changes.\nAlso look at how the cosine changes together with the angle."
+    },
+    "I5": {
+      "voiceover": "Let's describe the relationship between the cosine of an angle and the value of that angle\n<bookmark mark=\"reorder\"/> using a function and its corresponding graph.\n\nThe <bookmark mark=\"x_axis\"/> x-axis describes the angle alpha,\n<bookmark mark=\"y_axis\"/>and the y-axis describes the cosine of the\nangle alpha. \n\nWe'll <bookmark mark=\"reset\"/>start at zero\n\n<bookmark mark=\"increase_1\"/>and increase the angle alpha. As we increase the angle alpha,\nthe length of the green line decreases. This means, that the cosine of the angle alpha\ndecreases, until we reach negative one. Then, the cosine of the angle alpha starts to increase\nagain, until it's back at one."
+    },
+    "P1": {
+      "q": {
+        "answer-options": "[\"blue: sine, pink: none\", \"blue: cosine, pink: sine\", \"blue: sine, pink: cosine\", \"blue: none, pink: sine\"]",
+        "question-text": "Does one of the lines describe the sine function? Or the cosine function?",
+        "voiceover": "Look at <bookmark mark=\"cords\"/> this coordinate system and <bookmark mark=\"blue\"/> the blue as well\nas <bookmark mark=\"purple\"/> the purple line.\n\nDoes one of the lines describe the sine function?\nAnd does one of them describe the cosine function?"
+      },
+      "title": "Sine \\& Cosine",
+      "a": {
+        "voiceover": "No, that's not quite right.\n\n<bookmark mark=\"blue\"/> The blue line describes the cosine function One way to see this, is that\nat <bookmark mark=\"blue_0\"/> x equals zero, the cosine is one. This is satisfied by the blue\nline.\n\n<bookmark mark=\"pink\"/> The purple line describes the sine function. One way to see this, is that\nat <bookmark mark=\"pink_0\"/> x equals pi over two, the sine is one. This is satisfied by the purple\nline.",
+        "bubbleblue": "$\\\\Rightarrow$cosine",
+        "bubblepink": "$\\\\Rightarrow$sine"
+      },
+      "b": {
+        "voiceover": "Yes, that's correct.\n\n<bookmark mark=\"blue\"/> The blue line describes the cosine function One way to see this, is that\nat <bookmark mark=\"blue_0\"/> x equals zero, the cosine is one. This is satisfied by the blue\nline.\n\n<bookmark mark=\"pink\"/> The purple line describes the sine function. One way to see this, is that\nat <bookmark mark=\"pink_0\"/> x equals pi over two, the sine is one. This is satisfied by the purple\nline."
+      }
+    },
+    "P2": {
+      "q": {
+        "answer-options": "[\"Cosine: Even, Sine: Even\", \"Cosine: Even, Sine: Odd\", \"Cosine: Odd, Sine: Even\", \"Cosine: Odd, Sine: Odd\"]",
+        "question-text": "Is the cosine function even or odd? What about the sine function?",
+        "voiceover": "The <bookmark mark=\"blue\"/> blue graph corresponds to the cosine function and\nthe<bookmark mark=\"purple\"/> purple graph corresponds to the sine function. By\nlooking at the two graphs, can you tell me if the sine function is an even or an odd function?\n\nAnd what about the cosine function?\n\nIs it even, or odd?"
+      },
+      "a": {
+        "voiceover": "That's not right.\nThe <bookmark mark=\"blue\"/> cosine function is an even function, because it is <bookmark mark=\"y_axis\"/> symmetric\nto the y-axis. <bookmark mark=\"bubble_cosine\"/>Formally, a function is even if f of minus x is equal to f of x.\nThis holds true for the cosine function.\n\nThe<bookmark mark=\"purple\"/> purple graph corresponds to the sine function. The sine function is an odd function,\nbecause it is <bookmark mark=\"origin\"/> symmetric to the origin. <bookmark mark=\"bubble_sine\"/>Formally, a\nfunction is odd if f of minus x is equal to minus f of x. This holds true for the sine function.\n\nSo in summary, the sine function is an odd function and the cosine function is an even function.",
+        "bubbleodd": "$\\\\Rightarrow$Sine function is odd",
+        "bubbleeven": "$\\\\Rightarrow$Cosine function is even"
+      },
+      "b": {
+        "voiceover": "That's correct, well done.\nThe <bookmark mark=\"blue\"/> cosine function is an even function, because it is <bookmark mark=\"y_axis\"/> symmetric\nto the y-axis. <bookmark mark=\"bubble_cosine\"/>Formally, a function is even if f of minus x is equal to f of x.\nThis holds true for the cosine function.\n\nThe<bookmark mark=\"purple\"/> purple graph corresponds to the sine function. The sine function is an odd function,\nbecause it is <bookmark mark=\"origin\"/> symmetric to the origin. <bookmark mark=\"bubble_sine\"/>Formally, a\nfunction is odd if f of minus x is equal to minus f of x. This holds true for the sine function.\n\nSo in summary, the sine function is an odd function and the cosine function is an even function."
+      }
+    }
+  },
+  "Func_7_4": {
+    "I1": {
+      "q": {
+        "answer-options": "[\"Add $2$: $f(x)=\\sin(x)+2$\", \"Multiply by $2$: $f(x)=2\\sin(x)$\", \"Multiply by $\\\\tfrac{1}{2}$: $f(x)=\\\\tfrac{1}{2}\\sin(x)$\", \"Add $\\\\tfrac{1}{2}$: $f(x)=\\sin(x)+\\\\tfrac{1}{2}$\"]",
+        "question-text": "How do we change the function $f(x)=\\sin(x)$, so that its values reach from $-2$ to $2$?",
+        "title": "Sine \\& Cosine: Scaling",
+        "voiceover": "This is a graph of the sine function.\nThe values of the sine function range<bookmark mark=\"neg_1\"/> from negative <bookmark mark=\"pos_1\"/>one to one.\n\nNow we want to change the function, so that its values <bookmark mark=\"neg_2\"/>range from negative\n<bookmark mark=\"pos_2\"/>two to two.\n\nHow do we change the <bookmark mark=\"f\"/> term f <bookmark mark=\"fx\"/> of x<bookmark mark=\"sin\"/> equals sine\n<bookmark mark=\"x\"/> of x, so that the values of the function range from negative\ntwo to two?"
+      },
+      "a": {
+        "voiceover": "No, that's not quite right.\nWe want the values of the function to range from negative two to two, instead of from negative one to one.\nThis means, that wherever the function<bookmark mark=\"row_1_a\"/> has a value of one, we want it\n<bookmark mark=\"row_1_b\"/>to have a value of two instead.\n\nAnd wherever the function<bookmark mark=\"row_2_a\"/> has a value of negative one, we want it <bookmark mark=\"row_2_b\"/>\nto have a value of negative two instead.\n\nClearly, we can achieve this by <bookmark mark=\"transform_term\"/> multiplying the function by two.\nIf we do that, <bookmark mark=\"stretch_func\"/> the function will be stretched vertically by a factor of two.\nAnd that's exactly what we want."
+      },
+      "b": {
+        "voiceover": "Yep, that's it!\nWe want the values of the function to range from negative two to two, instead of from negative one to one.\nThis means, that wherever the function<bookmark mark=\"row_1_a\"/> has a value of one, we want it\n<bookmark mark=\"row_1_b\"/>to have a value of two instead.\n\nAnd wherever the function<bookmark mark=\"row_2_a\"/> has a value of negative one, we want it <bookmark mark=\"row_2_b\"/>\nto have a value of negative two instead.\n\nClearly, we can achieve this by <bookmark mark=\"transform_term\"/> multiplying the function by two.\nIf we do that, <bookmark mark=\"stretch_func\"/> the function will be stretched vertically by a factor of two.\nAnd that's exactly what we want."
+      }
+    },
+    "I2": {
+      "voiceover": "In general, we can scale the sine function <bookmark mark=\"y_axis\"/> in y-direction by simply\nmultiplying the entire function <bookmark mark=\"scale_a\"/> by a constant factor a.<bookmark mark=\"move_cursor\"/>\nIf <bookmark mark=\"a_1\"/>a is greater than one, the function will be stretched vertically.\nAnd if <bookmark mark=\"a_2\"/>a is less than one, the function will be compressed vertically.\nWe can also reflect the function at the x-axis by <bookmark mark=\"a_3\"/>choosing a negative value for a."
+    },
+    "P1": {
+      "q": {
+        "question-text": "What value do we choose for $a$, to stretch the function vertically by a factor of two and reflect it at the x-axis?",
+        "voiceover": "Here's the sine <bookmark mark=\"f\"/> function f <bookmark mark=\"fx\"/> of x <bookmark mark=\"a\"/>\nequals a <bookmark mark=\"sin\"/> times sine <bookmark mark=\"x\"/> of x.\nNow <bookmark mark=\"move_cursor\"/>say we want to stretch the function <bookmark mark=\"a_1\"/>by a factor of two,\nand <bookmark mark=\"a_2\"/>reflect it at the x-axis.\n\nWhat <bookmark mark=\"a_mark\"/>value of a do we need to choose, to make this happen?"
+      },
+      "a": {
+        "voiceover": "No, that's not it. So we start with the <bookmark mark=\"f\"/> function f\n<bookmark mark=\"fx\"/> of x <bookmark mark=\"a\"/> equals a <bookmark mark=\"sin\"/>\ntimes sine <bookmark mark=\"x\"/> of x.\nNow to <bookmark mark=\"move_cursor_1\"/>stretch the function <bookmark mark=\"a_1\"/>by a factor of two,\nwe <bookmark mark=\"a_term_1\"/>multiply the function by a factor of a equals two.\n\n<bookmark mark=\"move_cursor_2\"/>Next, to <bookmark mark=\"a_2\"/>reflect the function at the x-axis,\nwe multiply the entire function by negative one, which means <bookmark mark=\"a_term_2\"/>choosing\na value of \"a\" equals negative two.\n\nSo the answer is \"a\" equals negative two."
+      },
+      "c": {
+        "voiceover": "Yep, that's right. So we start with the <bookmark mark=\"f\"/> function f\n<bookmark mark=\"fx\"/> of x <bookmark mark=\"a\"/> equals a <bookmark mark=\"sin\"/>\ntimes sine <bookmark mark=\"x\"/> of x.\nNow to <bookmark mark=\"move_cursor_1\"/>stretch the function <bookmark mark=\"a_1\"/>by a factor of two,\nwe <bookmark mark=\"a_term_1\"/>multiply the function by a factor of a equals two.\n\n<bookmark mark=\"move_cursor_2\"/>Next, to <bookmark mark=\"a_2\"/>reflect the function at the x-axis,\nwe multiply the entire function by negative one, which means <bookmark mark=\"a_term_2\"/>choosing\na value of \"a\" equals negative two.\n\nSo the answer is \"a\" equals negative two."
+      }
+    },
+    "I3": {
+      "q": {
+        "answer-options": "[\"Add $b$ to $x$: $f(x)=\\sin(x+b)$\", \"Multiply $f$ by $b$: $f(x)=b\\sin(x)$\", \"Add $b$ to $f$: $f(x)=\\sin(x)+b$\", \"Multiply x by $b$: $f(x)=\\sin(bx)$\"]",
+        "question-text": "How do we change the function $f(x)=\\sin(x)$, so that it is scaled in x-Direction?",
+        "voiceover": "<bookmark mark=\"start\"/>\nWe can scale the sine function <bookmark mark=\"y_axis\"/> in y-direction by simply\nmultiplying the entire function by a <bookmark mark=\"scale_a\"/>constant factor a.\n<bookmark mark=\"move_cursor\"/>\n\n\nNow, what if we want to scale the <bookmark mark=\"x_axis\"/> function in x-direction?\nHow do we change the <bookmark mark=\"f\"/> function term f <bookmark mark=\"fx\"/> of x <bookmark mark=\"sin\"/>equals\nsine <bookmark mark=\"x\"/> of x, so that <bookmark mark=\"scale_b\"/>f is scaled in x-direction?"
+      },
+      "a": {
+        "voiceover": "That's not correct.\n\n<bookmark mark=\"scale_b\"/>We can scale the sine function in x-direction by simply\nmultiplying the value of x by a <bookmark mark=\"term_1\"/>constant factor b.\n\nThis way we scale all the values we plug in for x, which means we scale the entire\n<bookmark mark=\"x_axis\"/>function in x-direction."
+      },
+      "d": {
+        "voiceover": "Yep, that's right. Nice job.\n\n<bookmark mark=\"scale_b\"/>We can scale the sine function in x-direction by simply\nmultiplying the value of x by a <bookmark mark=\"term_1\"/>constant factor b.\n\nThis way we scale all the values we plug in for x, which means we scale the entire\n<bookmark mark=\"x_axis\"/>function in x-direction."
+      }
+    },
+    "I4": {
+      "q": {
+        "answer-options": "[\"$b<1$: squash, $b>1$: stretch\", \"$b<1$: stretch, $b>1$: squash\", \"$b<0$: squash, $b>0$: stretch\", \"$b<0$: squash, $b>0$: stretch\"]",
+        "voiceover": "Looking at the function <bookmark mark=\"f\"/> term f <bookmark mark=\"fx\"/> of x <bookmark mark=\"sin\"/>equals\nsine <bookmark mark=\"b_1\"/> of <bookmark mark=\"x\"/> b times x, what values of\nb <bookmark mark=\"stretch\"/>would  stretch the function in x-direction?\n\nAnd: which values of <bookmark mark =\"compress\"/>b would squash the function\nin x direction?",
+        "question-text": "Which values of $b$ would stretch the function, and which values would squash it?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\nTo understand these dynamics, let's look at the <bookmark mark=\"point\"/> point x equals 1.5 pie.\nHere, the sine function <bookmark mark=\"line_1\"/>has the value negative one.\n\nNow if we want to <bookmark mark=\"squash\"/>squash the function in x-direction, for example by a factor of three, we need\nthe point where the function has the value negative one to <bookmark mark=\"line_2\"/>be at x equals 0.5 pie, instead of 1.5 pie.\nTo achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5\npi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark=\"clean\"/>\n\n<bookmark mark=\"point_2\"/>Now let's look at the point x <bookmark mark=\"line_3\"/>equals 0.5 pie. Here, the sine function\nhas the value one. If we want<bookmark mark=\"stretch\"/> to stretch the function in x-direction, for example by a factor of two,\nwe need the point where the function has the value one to be <bookmark mark=\"line_4\"/>at x equals pie, instead of 0.5 pie.\nTo achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.\n<bookmark mark=\"clean_final\"/>\n\nSo in summary, for b greater <bookmark mark=\"squash_final\"/>than one, we SQUASH the function in x-direction,\nand for b smaller than one, we <bookmark mark=\"stretch_final\"/>STRETCH the function in x-direction."
+      },
+      "b": {
+        "voiceover": "Yes, that's correct.\nTo understand these dynamics, let's look at the <bookmark mark=\"point\"/> point x equals 1.5 pie.\nHere, the sine function <bookmark mark=\"line_1\"/>has the value negative one.\n\nNow if we want to <bookmark mark=\"squash\"/>squash the function in x-direction, for example by a factor of three, we need\nthe point where the function has the value negative one to <bookmark mark=\"line_2\"/>be at x equals 0.5 pie, instead of 1.5 pie.\nTo achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5\npi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark=\"clean\"/>\n\n<bookmark mark=\"point_2\"/>Now let's look at the point x <bookmark mark=\"line_3\"/>equals 0.5 pie. Here, the sine function\nhas the value one. If we want<bookmark mark=\"stretch\"/> to stretch the function in x-direction, for example by a factor of two,\nwe need the point where the function has the value one to be <bookmark mark=\"line_4\"/>at x equals pie, instead of 0.5 pie.\nTo achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.\n<bookmark mark=\"clean_final\"/>\n\nSo in summary, for b greater <bookmark mark=\"squash_final\"/>than one, we SQUASH the function in x-direction,\nand for b smaller than one, we <bookmark mark=\"stretch_final\"/>STRETCH the function in x-direction."
+      }
+    },
+    "I5": {
+      "q": {
+        "question-text": "What happens if we plug in $b=-1$?",
+        "answer-options": "[\"The function is stretched in $x$-direction\", \"The function is stretched in $y$-direction\", \"The function is reflected at the $x$-axis\", \"The function is reflected at the $y$-axis\"]",
+        "voiceover": "Now, we know what happens for b greater than one and for b smaller than one.\nBut <bookmark mark=\"qmark\"/>what about negative values of b?\n\nWhat happens if we <bookmark mark=\"b\"/>plug in b equals<bookmark mark=\"neg_one\"/> negative one?"
+      },
+      "a": {
+        "voiceover": "No, that's not quite right. If we plug in <bookmark mark=\"b\"/>b equals <bookmark mark=\"neg_one\"/>negative one, we\nbasically switch negative values with positive values, which amounts <bookmark mark=\"reflect\"/> to reflecting the\nfunction at the y-axis."
+      },
+      "d": {
+        "voiceover": "Yep, that's right. If we plug in <bookmark mark=\"b\"/>b equals <bookmark mark=\"neg_one\"/>negative one, we\nbasically switch negative values with positive values, which amounts <bookmark mark=\"reflect\"/> to reflecting the\nfunction at the y-axis."
+      }
+    },
+    "SineCosineScalingQuestionScene": {
+      "cosinetitle": "Cosine-function: Scaling",
+      "sinetitle": "Sine-function: Scaling",
+      "sine": "sign",
+      "cosine": "cosine",
+      "voiceover": "{self.intro}<bookmark mark=\"f_intro\"/>\nf <bookmark mark=\"fx_intro\"/>of x<bookmark mark=\"sin_cos_intro\"/> equals {func_speech_string} <bookmark mark=\"x_intro\"/>of x.\n{self.a_text}\n{self.b_text}\n{self.q_text}",
+      "up": "up",
+      "down": "down"
+    },
+    "SineCosineScalingAnswerScene": {
+      "a_xplain": "This means we have to multiply the <bookmark mark=\"a_explained\"/>entire function by {self.a_factor}.",
+      "b_xplain": "This means we have to multiply the <bookmark mark=\"b_explained\"/>argument x by {self.b_factor}.",
+      "title_sine": "Sine-function: Scaling",
+      "title_cosine": "Cosine-function: Scaling",
+      "voiceover": "{self.intro}. We're working with the<bookmark mark=\"f_intro\"/> function\nf <bookmark mark=\"fx_intro\"/>of x <bookmark mark=\"a_intro\"/>equals \"a\"<bookmark mark=\"sincos_intro\"/>\ntimes <bookmark mark=\"b_intro\"/>{func_speech_string} of b <bookmark mark=\"x_intro\"/>times x.\n{self.a_text}. {self.a_xplain}\n{self.b_text}. {self.b_xplain}.\nSo, the term of the shifted <bookmark mark=\"f\"/> function is f <bookmark mark=\"fx\"/> of x\n<bookmark mark=\"a_term\"/> equals {self.a_factor} <bookmark mark=\"sine_cosine\"/>times {func_speech_string}\n<bookmark mark=\"b_term\"/> of {self.b_factor} <bookmark mark=\"x\"/>times x."
+    },
+    "P2": {
+      "q": {
+        "question-text": "What is the term of the sine function, if we stretch it by 2 in y direction and squash it by 3 in x direction?",
+        "intro": "Let's practice scaling now. Consider the function",
+        "a_text": "We want to <bookmark mark=\"a\"/>stretch the function in y-direction by a factor of 2.",
+        "b_text": "and want to <bookmark mark=\"b\"/>squash the function in x-direction by a factor of 3.",
+        "q_text": "What is the term of the scaled function?"
+      },
+      "a": {
+        "intro": "No, that's not right.",
+        "a_text": "We want to <bookmark mark=\"a\"/>stretch the function in y-direction by a factor of 2.",
+        "b_text": "We also want to <bookmark mark=\"b\"/>squash the function in x-direction by a factor of 3."
+      },
+      "c": {
+        "intro": "That is correct, great job."
+      }
+    },
+    "P3": {
+      "q": {
+        "question-text": "What is the term of the cosine function, if we stretch it by 2 in x direction?",
+        "intro": "Ok, now consider the function",
+        "b_text": "We now want to <bookmark mark=\"b\"/>stretch the function in x-direction by a factor of 2.",
+        "q_text": "What is the term of the function, after we scale it?"
+      },
+      "a": {
+        "intro": "No, that's not right.",
+        "b_text": "We want to <bookmark mark=\"b\"/>stretch the function in x-direction by a factor of 2."
+      },
+      "d": {
+        "intro": "Yep, that's correct. Well done"
+      }
+    },
+    "P4": {
+      "q": {
+        "question-text": "What is the term of the sine function, if we squash it by 0.5 in y direction?",
+        "intro": "Next exercise. Look at the function",
+        "a_text": "We want to <bookmark mark=\"a\"/>squash the function in y-direction by a factor of one half.",
+        "q_text": "What is the term of the scaled function?"
+      },
+      "a": {
+        "intro": "Correct! Well done.",
+        "a_text": "So we want to <bookmark mark=\"a\"/>stretch the function in y-direction by a factor of one half."
+      },
+      "b": {
+        "intro": "No, that's incorrect."
+      }
+    }
+  },
+  "Func_8_1": {
+    "I1": {
+      "q": {
+        "question-text": "What is a linear function we could use to model a roller coaster?",
+        "title": "Polynomial Functions",
+        "voiceover": "We're now combining the knowledge of functions that we've obtained so far, to cover a new\ntopic: Polynomial Functions.\n\nWe'll start with an example. <bookmark mark=\"gero_in\"/>\nMeet Gero. Gero loves nothing more <bookmark mark=\"rollercoaster_in\"/> than rollercoasters,\nso he decides to build one for his friends.\n<bookmark mark=\"phone_gero\"/>\nHe talked to a rollercoaster construction company, and they told him, that all he needs to\ndo is tell them the term of a function, and they'll build a rollercoaster that follows that\n<bookmark mark=\"phone_out\"/>function.\n\nGero hasn't been using the sophia math app enough, so he only knows about\nlinear functions. <bookmark mark=\"linear_func\"/>What is a linear function he could use\nto model a rollercoaster?"
+      },
+      "a": {
+        "voiceover": "No, that's not a linear function.\n<bookmark mark=\"linear_func\"/>\nA linear function is a function that has a constant slope. This means, it\ncan only contain terms of the <bookmark mark=\"ax\"/> form a\ntimes x <bookmark mark=\"b\"/>plus b, where a and b are constants.\n<bookmark mark=\"sine\"/>So the sine and the<bookmark mark=\"not_sine\"/> cosine\naren't linear, <bookmark mark=\"x_squared\"/>and x squared <bookmark mark=\"not_x_squared\"/>\nisn't linear either.\n<bookmark mark=\"sol\"/> one half times x on the other hand, is linear,\n<bookmark mark=\"checkmark\"/> so that is the correct answer."
+      },
+      "c": {
+        "voiceover": "Yep, that's right.\n<bookmark mark=\"linear_func\"/>\nA linear function is a function that has a constant slope. This means, it\ncan only contain terms of the <bookmark mark=\"ax\"/> form a\ntimes x <bookmark mark=\"b\"/>plus b, where a and b are constants.\n<bookmark mark=\"sine\"/>So the sine and the<bookmark mark=\"not_sine\"/> cosine\naren't linear, <bookmark mark=\"x_squared\"/>and x squared <bookmark mark=\"not_x_squared\"/>\nisn't linear either.\n<bookmark mark=\"sol\"/> one half times x on the other hand, is linear,\n<bookmark mark=\"checkmark\"/> so that is the correct answer."
+      }
+    },
+    "I2": {
+      "q": {
+        "answer-options": "[\"Multiply $f$ with $a>0$\", \"Remove the $\\\\tfrac{1}{2}x$ term from $f$\", \"Add a constant $c$ to $f$\", \"Add terms like $x^3, x^4$,... to $f$\"]",
+        "question-text": "How can we add more curves to the rollercoaster?",
+        "voiceover": "Ok, now admittedly, that's a pretty boring rollercoaster.\n\nTo make it more fun, we could <bookmark mark=\"add_square\"/> add an\nx squared to the function. The function would then be of degree two,\nand contain a nice curve.\n\nNow that's a little better, but not much better. <bookmark mark=\"qmark\"/>\nHow could we add more curves to the rollercoaster? More ups and downs,\nto make it more fun?"
+      },
+      "a": {
+        "voiceover": "No, that's not the right solution.\n\nIf we <bookmark mark=\"square_only\"/>remove the x term from the function,\nit barely changes.<bookmark mark=\"reset_1\"/>\nSo that's not the right solution.\n\nIf <bookmark mark=\"add\"/> we add a constant to the function, or\n<bookmark mark=\"multiply\"/> if we multiply the function with a constant,\nthe function will only move up or down, or get stretched or compressed.\nBut <bookmark mark=\"reset_2\"/> we want to add more curves to the rollercoaster,\nso that's not the right solution either.\n\nWhat we can do however is add terms containing<bookmark mark=\"add_terms\"/> x cubed\nor x to the power of four to the function. That way, the function will have\nmore ups and downs, and the rollercoaster will be more fun.\nSo the right solution is to add terms like x cubed or x to the power of four"
+      },
+      "d": {
+        "voiceover": "Yes! That's right...\n\nIf we <bookmark mark=\"square_only\"/>remove the x term from the function,\nit barely changes.<bookmark mark=\"reset_1\"/>\nSo that's not the right solution.\n\nIf <bookmark mark=\"add\"/> we add a constant to the function, or\n<bookmark mark=\"multiply\"/> if we multiply the function with a constant,\nthe function will only move up or down, or get stretched or compressed.\nBut <bookmark mark=\"reset_2\"/> we want to add more curves to the rollercoaster,\nso that's not the right solution either.\n\nWhat we can do however is add terms containing<bookmark mark=\"add_terms\"/> x cubed\nor x to the power of four to the function. That way, the function will have\nmore ups and downs, and the rollercoaster will be more fun.\nSo the right solution is to add terms like x cubed or x to the power of four"
+      }
+    },
+    "I3": {
+      "q": {
+        "question-text": "What is the degree of the function $f(x)=-2x^6+3x^4-2x^3+x^2+3x$?",
+        "voiceover": "The function we have here\nis described by the <bookmark mark=\"term_in\"/> term f of x equals\n<bookmark mark=\"sixth_degree\"/>negative two times x to the power\nof six<bookmark mark=\"fourth_degree\"/>  plus three times x to the power\nof four<bookmark mark=\"third_degree\"/>  minus two times x to the power\nof three<bookmark mark=\"second_degree\"/> plus x squared\n<bookmark mark=\"first_degree\"/>plus three times x.\n\nThis is a polynomial function. Let's take a closer look at the term.\n\nWe'll start with the degree.\n<bookmark mark=\"degree\"/>the degree of a polynomial function is the highest power of x,\nthat appears in the function.\n<bookmark mark=\"qmark\"/>\nWhat is the degree of the function that is shown here?",
+        "deg": "Degree:",
+        "pow": "Highest power of x"
+      },
+      "a": {
+        "voiceover": "Yep, that's it...\n\nWe're looking for <bookmark mark=\"degree\"/> the degree of the function,\nso we need to <bookmark mark=\"highest\"/>find the highest power of x that appears in the function.\n\nSo let's go through the parts of the function one by one.\n\n\nThe first part is<bookmark mark=\"sixth_degree\"/> negative two times x to the power\nof six, which is the power of six.\nWe then have<bookmark mark=\"fourth_degree\"/> three times x to the power\nof four, which is the power of four.\nNext, we have <bookmark mark=\"third_degree\"/>  minus two times x to the power\nof three, which is third degree, <bookmark mark=\"second_degree\"/> x squared,\nso the power of two and <bookmark mark=\"first_degree\"/>lastly three times x,\nwhich is the power of one.\n\nSo the highest power of x that appears in the function is\n<bookmark mark=\"final\"/> six, because we have the component negative two times x to the power\nof six."
+      },
+      "b": {
+        "voiceover": "No, that's wrong.\n\nWe're looking for <bookmark mark=\"degree\"/> the degree of the function,\nso we need to <bookmark mark=\"highest\"/>find the highest power of x that appears in the function.\n\nSo let's go through the parts of the function one by one.\n\n\nThe first part is<bookmark mark=\"sixth_degree\"/> negative two times x to the power\nof six, which is the power of six.\nWe then have<bookmark mark=\"fourth_degree\"/> three times x to the power\nof four, which is the power of four.\nNext, we have <bookmark mark=\"third_degree\"/>  minus two times x to the power\nof three, which is third degree, <bookmark mark=\"second_degree\"/> x squared,\nso the power of two and <bookmark mark=\"first_degree\"/>lastly three times x,\nwhich is the power of one.\n\nSo the highest power of x that appears in the function is\n<bookmark mark=\"final\"/> six, because we have the component negative two times x to the power\nof six."
+      }
+    },
+    "I4": {
+      "q": {
+        "question-text": "What are the coefficients of $x^3$ and $x$??",
+        "title": "Coefficients",
+        "voiceover": "Moving on <bookmark mark=\"title\"/>to: Coefficients:\n\nEach polynomial contains different expressions, like the ones, the exes, the x squareds and so on.\n\nEach of these expressions is multiplied by a number, which is called the coefficient of the expression.\n<bookmark mark=\"example\"/>\nFor example, for the <bookmark mark=\"function\"/> function f <bookmark mark=\"fx\"/> of x equals two\n<bookmark mark=\"x_sq\"/>times x squared <bookmark mark=\"minus_x\"/> minus x, the\ncoefficient of the expression x squared <bookmark mark=\"x_sq_c\"/>is two,\nand the coefficient of the expression x <bookmark mark=\"minus_x_c\"/>is negative one.\n<bookmark mark=\"clean\"/>\nNow consider<bookmark mark=\"example_2\"/> the function f <bookmark mark=\"fx_2\"/> of x equals\n<bookmark mark=\"x_cubed\"/>x cubed <bookmark mark=\"minus_x_2\"/>minus x.\n<bookmark mark=\"qmark\"/>What is the coefficient of the <bookmark mark=\"c1_final\"/>\nexpression x cubed? And what is the <bookmark mark=\"c2_final\"/>coefficient of x?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\n\nWe're looking at<bookmark mark=\"example_2\"/> the function f <bookmark mark=\"fx_2\"/> of x equals\n<bookmark mark=\"x_cubed\"/>x cubed <bookmark mark=\"minus_x_2\"/>minus x.\n\nThe coefficient of the expression x cubed is <bookmark mark=\"c1_final\"/>one,\nbecause we have the component x cubed and don't multiply it with anything, which\nis the same as multiplying it with one.\n\nThe coefficient of the expression x is <bookmark mark=\"c2_final\"/>negative one,\nbecause we simply have the component x, but we subtract it, and don't add it.\nThis is the same as adding negative one times x."
+      },
+      "b": {
+        "voiceover": "Oui! Excuse my french. Yes, that's correct.\n\nWe're looking at<bookmark mark=\"example_2\"/> the function f <bookmark mark=\"fx_2\"/> of x equals\n<bookmark mark=\"x_cubed\"/>x cubed <bookmark mark=\"minus_x_2\"/>minus x.\n\nThe coefficient of the expression x cubed is <bookmark mark=\"c1_final\"/>one,\nbecause we have the component x cubed and don't multiply it with anything, which\nis the same as multiplying it with one.\n\nThe coefficient of the expression x is <bookmark mark=\"c2_final\"/>negative one,\nbecause we simply have the component x, but we subtract it, and don't add it.\nThis is the same as adding negative one times x."
+      }
+    },
+    "I5": {
+      "q": {
+        "question-text": "What are the coefficients of $x^3$ and $x$??",
+        "voiceover": "Another example:\nLook at the <bookmark mark=\"f\"/> function f <bookmark mark=\"fx\"/> of x \n<bookmark mark=\"x_squared\"/>equals x squared <bookmark mark=\"minus_three\"/>minus three.\n<bookmark mark=\"draw_qmark\"/>\nIn this example, what is the coefficient of x?\nAnd what is the coefficient of one?"
+      },
+      "a": {
+        "nox1": "No x-term",
+        "nox2": "$\\\\Rightarrow$ $x$-coefficient $=0$",
+        "voiceover": "No, that's not right.\n\nFirst, what is the degree of x?\nThis one's a bit tricky: We have an <bookmark mark=\"x_squared\"/> x squared term,\nand <bookmark mark=\"const\"/> minus three, which is a constant term or\na \"one\" term. So <bookmark mark=\"no_x\"/>since we have no x term, the coefficient of x is zero.\n\nThe coefficient of the constant term is <bookmark mark=\"c_final\"/>negative three,\nbecause we have the component minus three and don't multiply it with anything."
+      },
+      "b": {
+        "voiceover": "Yep, that's right.\nBut why?\nFirst, what is the degree of x?\nThis one's a bit tricky: We have an <bookmark mark=\"x_squared\"/> x squared term,\nand <bookmark mark=\"const\"/> minus three, which is a constant term or\na \"one\" term. So <bookmark mark=\"no_x\"/>since we have no x term, the coefficient of x is zero.\n\nThe coefficient of the constant term is <bookmark mark=\"c_final\"/>negative three,\nbecause we have the component minus three and don't multiply it with anything."
+      }
+    },
+    "PolynomialQuestionScene": {
+      "voiceover": "<bookmark mark=\"start\"/>\n{self.intro}\n{self.func_text}\n<bookmark mark=\"qmark\"/>\nWhat is the degree of that polynomial function?\nAnd what is the coefficient of {self.coefficient_text}?"
+    },
+    "PolynomialAnswerScene": {
+      "voiceover": "<bookmark mark=\"start\"/>\n{self.intro}\nWe're looking at the function\n{self.func_text}\n\nThe <bookmark mark=\"show_coefficient\"/>coefficient of {self.coefficient_text} is {self.coefficient},\nbecause the component {self.coefficient_text} is multiplied by {self.coefficient}.\n\nAnd the degree of the function <bookmark mark=\"show_degree\"/> is {self.deg},\nbecause the highest exponent of x is {self.deg}, which we have for the expression {self.highest_term}.",
+      "coefficient": "Coefficient:",
+      "dg2": "$\\\\Rightarrow f$ has degree {self.deg}",
+      "dg1": "Highest power of x: {self.deg}"
+    },
+    "P1": {
+      "q": {
+        "answer-options": "[\"degree: $2$, coefficient: $2$\", \"degree: $1$, coefficient: $-3$\", \"degree: $2$, coefficient: $1$\", \"degree: $1$, coefficient: $2$\"]",
+        "question-text": "What is the degree of the function $f(x)=2x-3\\cdot x^2+1$? And what is the coefficient of $x$?",
+        "intro": "Now, consider the function",
+        "func-text": "f<bookmark mark=\"fx\"/> of x equals <bookmark mark=\"el_1\"/>\ntwo x<bookmark mark=\"el_2\"/> minus three x squared <bookmark mark=\"el_3\"/>\nplus one.",
+        "coefficient-text": "x squared",
+        "highest-term": "3 times x squared"
+      },
+      "a": {
+        "intro": "Yep, that's right."
+      },
+      "b": {
+        "intro": "No, that's not it."
+      }
+    },
+    "P2": {
+      "q": {
+        "answer-options": "[\"degree: $0$, coefficient: $2$\", \"degree: $1$, coefficient: $-3$\", \"degree: $4$, coefficient: $-3$\", \"degree: $4$, coefficient: $\\\\tfrac{1}{2}$\"]",
+        "question-text": "What is the degree of the function $f(x)=2-3\\cdot x+\\\\tfrac{1}{2}x^4$? And what is the coefficient of $x$?",
+        "intro": "Next, look at the function",
+        "func-text": "f<bookmark mark=\"fx\"/> of x equals <bookmark mark=\"el_1\"/> two\n<bookmark mark=\"el_2\"/> minus three x<bookmark mark=\"el_3\"/>\nplus one half times x to the power of four.",
+        "highest-term": "x to the power of four."
+      },
+      "a": {
+        "intro": "No, that's not correct."
+      },
+      "c": {
+        "intro": "Yep, that's right."
+      }
+    }
+  },
+  "Func_8_2": {
+    "I1": {
+      "q": {
+        "question-text": "What are the zeros of the polynomial function $f(x)=x^2-1$?",
+        "title": "Polynomial Functions: Zeros",
+        "voiceover": "In this chapter, we'll learn how to determine the zeros of a polynomial function.\n\nLet's start with a simple example, a squared function.\n<bookmark mark=\"draw_graph\"/>\nWhat are the zeros of the <bookmark mark=\"func\"/> function f <bookmark mark=\"fx\"/>\nof x <bookmark mark=\"x_squared\"/> equals x squared <bookmark mark=\"minus_one\"/> minus one?"
+      },
+      "a": {
+        "voiceover": "No, that's not right.\n\nTo find the zeros of a function, we need to find the x values for which the function equals zero.\nSo <bookmark mark=\"set_to_zero\"/> we set the function equal to zero, and solve for x.\n\nHere, we <bookmark mark=\"zero\"/> get zero <bookmark mark=\"x_squared\"/>equals x squared\n<bookmark mark=\"minus_one\"/> minus one.\n\nWe can then add one on both sides to<bookmark mark=\"sol_1\"/> obtain x squared <bookmark mark=\"sol_2\"/>\nequals one. We can then take the root to get the first <bookmark mark=\"sol_3\"/> solution x equals\nnegative one, as well as the second <bookmark mark=\"sol_4\"/> solution x equals one.\n\nSo the two zeros are <bookmark mark=\"show_sol\"/> at x equals negative one and x equals one."
+      },
+      "d": {
+        "voiceover": "Yep, that's correct.\n\nTo find the zeros of a function, we need to find the x values for which the function equals zero.\nSo <bookmark mark=\"set_to_zero\"/> we set the function equal to zero, and solve for x.\n\nHere, we <bookmark mark=\"zero\"/> get zero <bookmark mark=\"x_squared\"/>equals x squared\n<bookmark mark=\"minus_one\"/> minus one.\n\nWe can then add one on both sides to<bookmark mark=\"sol_1\"/> obtain x squared <bookmark mark=\"sol_2\"/>\nequals one. We can then take the root to get the first <bookmark mark=\"sol_3\"/> solution x equals\nnegative one, as well as the second <bookmark mark=\"sol_4\"/> solution x equals one.\n\nSo the two zeros are <bookmark mark=\"show_sol\"/> at x equals negative one and x equals one."
+      }
+    },
+    "I2": {
+      "simple": "Simple",
+      "solution": "Solution",
+      "voiceover": "Ok, so more generally speaking: <bookmark mark=\"qmark\"/>How do we find\nthe zeros of polynomial functions?\n\nThe tricky thing is that polynomials can contain expressions <bookmark mark=\"x\"/>\nwith x, expressions <bookmark mark=\"x_squared\"/> with x squared, expressions\n<bookmark mark=\"x_cubed\"/> with x cubed, expressions with x to the fourth power,\nand so on...\n\nSo we will differentiate three cases:\n\nPolynomials <bookmark mark=\"degree_one\"/>of degree one, which have one zero,\nand we can find it by solving the equation for x.\n\nPolynomials <bookmark mark=\"degree_two\"/>of degree two, which have up to two zeros,\nand we can find them using the quadratic formula.\n\nAnd finally polynomials <bookmark mark=\"many\"/>of degree three or higher, which can have many\nzeros. Now the key difference is that <bookmark mark=\"leq_2\"/> we can solve polynomial\nequations of degree one and two using relatively simple techniques. But <bookmark mark=\"greater_2\"/>\nfinding the zeros for polynomials of degree three or higher can be more difficult."
+    },
+    "I3": {
+      "q": {
+        "question-text": "What are the zeros of the polynomial function $f(x)=x^2-1$?",
+        "title": "Degree one Functions",
+        "voiceover": "First, let's talk about finding the zero of a polynomial function of degree one.\n\nImagine you have a bunch of friends <bookmark mark=\"friends_in\"/> who have the\ncoolest hairstyles. Now since you're such a talented artist, they ask you to\n<bookmark mark=\"scissors_in\"/>cut their hair.\n\nLet's say you <bookmark mark=\"ten_bucks\"/> paid ten bucks for the scissors.\nAnd then you <bookmark mark=\"five_bucks\"/> charge your friends five bucks per haircut.\n<bookmark mark=\"qmark\"/>\nWhat is the term of the function describing the amount of money you've made after\ncutting x friends' hair?"
+      },
+      "a": {
+        "voiceover": "No, not quite.\n\n<bookmark mark=\"cords_in\"/>\nAt x equals zero, we've paid ten bucks for the scissors, but we haven't made any money yet.\n\nSo the value of the function <bookmark mark=\"x_zero\"/>at zero has to be negative ten.\n\nFrom there, for each increase in x, <bookmark mark=\"start_drawing\"/> we make five bucks,\nso the function increases by five.\n\nThis means the term of the <bookmark mark=\"f\"/> function is f <bookmark mark=\"fx\"/>of x\nequals <bookmark mark=\"five_x\"/>five x <bookmark mark=\"minus_ten\"/> minus ten.\n\nThe minus ten correspond to the cost of the scissors,\n<bookmark mark=\"five_corresponds\"/> and the five x corresponds to the\nfive bucks we make per haircut."
+      }
+    }
+  },
+  "degree": "Degree"
 }

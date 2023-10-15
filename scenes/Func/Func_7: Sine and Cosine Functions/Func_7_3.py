@@ -16,22 +16,26 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 #####################################
 #####################################
-TASK_Func_7_3_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["blue line / green line", "pink line / blue line", "pink line / green line", "green line / blue line"],
-    correctAnswerIndex = 3,
-    questionText = "Which of the lines do we have two divide by which to get the sine of the bottom left corner?"
-)
 class Func_7_3_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_3.I1.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_7_3.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -55,15 +59,7 @@ class Func_7_3_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Look at <bookmark mark="show_triangle"/> this triangle.
-
-                From it, we now want to learn about<bookmark mark="cosine"/> the cosine function.
-
-                Let's start with the definition of the cosine. Which line do we divide by which other line,
-                to get the cosine of the angle <bookmark mark="angle"/>in the bottom
-                left corner?
-                """
+                text=self.translate("Func_7_3.I1.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("show_triangle")
@@ -90,7 +86,7 @@ class Func_7_3_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -112,21 +108,14 @@ class Func_7_3_I_1_a(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        cosine_formula = MathTex("\\cos(\\alpha) =", "\\frac{\\text{adjacent}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+
+        adj, hyp = self.translate("Func_7_3.I1.a.adj"), self.translate("Func_7_3.I1.a.hyp")
+        cosine_formula = MathTex("\\cos(\\alpha) =", f"\\frac{{\\text{{{adj}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. <bookmark mark="show_formula"/>
-                The cosine is equal to <bookmark mark="adjacent"/> the length of the adjacent divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark="adjacent_plot"/> it's the green line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_3.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("show_formula")
@@ -168,7 +157,7 @@ class Func_7_3_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -190,21 +179,13 @@ class Func_7_3_I_1_b(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        cosine_formula = MathTex("\\cos(\\alpha) =", "\\frac{\\text{adjacent}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        adj, hyp = self.translate("Func_7_3.I1.a.adj"), self.translate("Func_7_3.I1.a.hyp")
+        cosine_formula = MathTex("\\cos(\\alpha) =", f"\\frac{{\\text{{{adj}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. <bookmark mark="show_formula"/>
-                The cosine is equal to <bookmark mark="adjacent"/> the length of the adjacent divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark="adjacent_plot"/> it's the green line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_3.I1.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("show_formula")
@@ -246,7 +227,7 @@ class Func_7_3_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -268,21 +249,13 @@ class Func_7_3_I_1_c(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        cosine_formula = MathTex("\\cos(\\alpha) =", "\\frac{\\text{adjacent}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        adj, hyp = self.translate("Func_7_3.I1.a.adj"), self.translate("Func_7_3.I1.a.hyp")
+        cosine_formula = MathTex("\\cos(\\alpha) =", f"\\frac{{\\text{{{adj}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right. <bookmark mark="show_formula"/>
-                The cosine is equal to <bookmark mark="adjacent"/> the length of the adjacent divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark="adjacent_plot"/> it's the green line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_3.I1.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("show_formula")
@@ -324,7 +297,7 @@ class Func_7_3_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -346,21 +319,13 @@ class Func_7_3_I_1_d(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        cosine_formula = MathTex("\\cos(\\alpha) =", "\\frac{\\text{adjacent}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        adj, hyp = self.translate("Func_7_3.I1.a.adj"), self.translate("Func_7_3.I1.a.hyp")
+        cosine_formula = MathTex("\\cos(\\alpha) =", f"\\frac{{\\text{{{adj}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's correct. Nice Job! <bookmark mark="show_formula"/>
-                The cosine is equal to <bookmark mark="adjacent"/> the length of the adjacent divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The adjacent is the shorter side adjacent to the angle. In this case,<bookmark mark="adjacent_plot"/> it's the green line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the green line by the blue line to get the cosine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_3.I1.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("show_formula")
@@ -407,7 +372,7 @@ class Func_7_3_I_3(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -429,7 +394,8 @@ class Func_7_3_I_3(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        cosine_formula = MathTex("\\cos(\\alpha) =", "\\frac{\\text{adjacent}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        adj, hyp = self.translate("Func_7_3.I1.a.adj"), self.translate("Func_7_3.I1.a.hyp")
+        cosine_formula = MathTex("\\cos(\\alpha) =", f"\\frac{{\\text{{{adj}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         self.add(cosine_formula)
 
         # Action Sequence
@@ -478,7 +444,7 @@ class Func_7_3_I_4(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -502,12 +468,13 @@ class Func_7_3_I_4(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        angle_intro = Tex("Angle: ", color=c1t, font_size=fs2)
+        
+        angle_intro = Tex(self.translate("Func_7_3.I4.angle"), color=c1t, font_size=fs2)
         angle_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value((a.get_value()/np.pi)%2))
         angle_label = MathTex("\\Pi", color=c1t, font_size=fs2)
         angle = VGroup(angle_intro, angle_num, angle_label).arrange(RIGHT, buff=0.3)
 
-        cosine_intro = Tex("Cosine: ", color=c1t, font_size=fs2)
+        cosine_intro = Tex(self.translate("Func_7_3.I4.cos"), color=c1t, font_size=fs2)
         cosine_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(cosine()))
         cosine_group = VGroup(cosine_intro, cosine_num).arrange(RIGHT, buff=0.3)
 
@@ -517,17 +484,7 @@ class Func_7_3_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now we can <bookmark mark="sine_function_title"/>use the cosine-function to describe the relationship between
-                the angle of the triangle and the sine of the angle, which in this case is equal to the length of the
-                adjacent side, so the green line.
-
-                When we change the angle, let us keep track<bookmark mark="track_angle"/> of the angle alpha and
-                <bookmark mark="track_length"/>the length of the green line, which is the cosine of the angle.
-
-                Now, <bookmark mark="vary"/>vary the angle alpha and observe how the length of the green line changes.
-                Also look at how the cosine changes together with the angle.
-                """
+                text=self.translate("Func_7_3.I4.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sine_function_title")
@@ -571,7 +528,7 @@ class Func_7_3_I_5(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Cosine Function")
+        title = self.add_title(self.translate("Func_7_3.I1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -618,22 +575,7 @@ class Func_7_3_I_5(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Let's describe the relationship between the cosine of an angle and the value of that angle
-                <bookmark mark="reorder"/> using a function and its corresponding graph.
-
-                The <bookmark mark="x_axis"/> x-axis describes the angle alpha,
-                <bookmark mark="y_axis"/>and the y-axis describes the cosine of the
-                angle alpha. 
-
-                We'll <bookmark mark="reset"/>start at zero
-
-                <bookmark mark="increase_1"/>and increase the angle alpha. As we increase the angle alpha,
-                the length of the green line decreases. This means, that the cosine of the angle alpha
-                decreases, until we reach negative one. Then, the cosine of the angle alpha starts to increase
-                again, until it's back at one.
-
-                """
+                text=self.translate("Func_7_3.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("reorder")
@@ -671,19 +613,21 @@ class Func_7_3_I_5(SophiaCursorScene):
 ######## Practice Part ##############
 #####################################
 #####################################
-TASK_Func_7_3_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["blue: sine, pink: none", "blue: cosine, pink: sine", "blue: sine, pink: cosine", "blue: none, pink: sine"],
-    correctAnswerIndex = 1,
-    questionText = "Does one of the lines describe the sine function? Or the cosine function?"
-)
 class Func_7_3_P_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_3.P1.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_7_3.P1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -702,13 +646,7 @@ class Func_7_3_P_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Look at <bookmark mark="cords"/> this coordinate system and <bookmark mark="blue"/> the blue as well
-                as <bookmark mark="purple"/> the purple line.
-
-                Does one of the lines describe the sine function?
-                And does one of them describe the cosine function?
-                """
+                text=self.translate("Func_7_3.P1.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
@@ -730,7 +668,7 @@ class Func_7_3_P_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -749,28 +687,18 @@ class Func_7_3_P_1_a(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), x_range=[0,2*np.pi,0.001], color=PURPLE)
 
         startpoint_blue = plane.c2p(0,1)+0.1*UP
-        bubble_blue = Bubble(["$\\cos(0)=1$", "$\\Rightarrow$cosine"], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
+        bubble_blue = Bubble(["$\\cos(0)=1$", self.translate("Func_7_3.P1.a.bubbleblue")], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
         blue_updater = lambda m: m.move_to(bubble_blue.get_end())
 
         startpoint_pink = plane.c2p(np.pi/2,1)+0.1*UP
-        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", "$\\Rightarrow$sine"], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
+        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", self.translate("Func_7_3.P1.a.bubblepink")], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
         pink_updater = lambda m: m.move_to(bubble_pink.get_end())
 
         self.add(cords)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-
-                <bookmark mark="blue"/> The blue line describes the cosine function One way to see this, is that
-                at <bookmark mark="blue_0"/> x equals zero, the cosine is one. This is satisfied by the blue
-                line.
-
-                <bookmark mark="pink"/> The purple line describes the sine function. One way to see this, is that
-                at <bookmark mark="pink_0"/> x equals pi over two, the sine is one. This is satisfied by the purple
-                line.
-                """
+                text=self.translate("Func_7_3.P1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("blue")
@@ -809,7 +737,7 @@ class Func_7_3_P_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -828,28 +756,18 @@ class Func_7_3_P_1_b(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), x_range=[0,2*np.pi,0.001], color=PURPLE)
 
         startpoint_blue = plane.c2p(0,1)+0.1*UP
-        bubble_blue = Bubble(["$\\cos(0)=1$", "$\\Rightarrow$cosine"], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
+        bubble_blue = Bubble(["$\\cos(0)=1$", self.translate("Func_7_3.P1.a.bubbleblue")], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
         blue_updater = lambda m: m.move_to(bubble_blue.get_end())
 
         startpoint_pink = plane.c2p(np.pi/2,1)+0.1*UP
-        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", "$\\Rightarrow$sine"], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
+        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", self.translate("Func_7_3.P1.a.bubblepink")], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
         pink_updater = lambda m: m.move_to(bubble_pink.get_end())
 
         self.add(cords)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's correct.
-
-                <bookmark mark="blue"/> The blue line describes the cosine function One way to see this, is that
-                at <bookmark mark="blue_0"/> x equals zero, the cosine is one. This is satisfied by the blue
-                line.
-
-                <bookmark mark="pink"/> The purple line describes the sine function. One way to see this, is that
-                at <bookmark mark="pink_0"/> x equals pi over two, the sine is one. This is satisfied by the purple
-                line.
-                """
+                text=self.translate("Func_7_3.P1.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("blue")
@@ -887,7 +805,7 @@ class Func_7_3_P_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -906,28 +824,18 @@ class Func_7_3_P_1_c(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), x_range=[0,2*np.pi,0.001], color=PURPLE)
 
         startpoint_blue = plane.c2p(0,1)+0.1*UP
-        bubble_blue = Bubble(["$\\cos(0)=1$", "$\\Rightarrow$cosine"], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
+        bubble_blue = Bubble(["$\\cos(0)=1$", self.translate("Func_7_3.P1.a.bubbleblue")], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
         blue_updater = lambda m: m.move_to(bubble_blue.get_end())
 
         startpoint_pink = plane.c2p(np.pi/2,1)+0.1*UP
-        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", "$\\Rightarrow$sine"], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
+        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", self.translate("Func_7_3.P1.a.bubblepink")], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
         pink_updater = lambda m: m.move_to(bubble_pink.get_end())
 
         self.add(cords)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-
-                <bookmark mark="blue"/> The blue line describes the cosine function One way to see this, is that
-                at <bookmark mark="blue_0"/> x equals zero, the cosine is one. This is satisfied by the blue
-                line.
-
-                <bookmark mark="pink"/> The purple line describes the sine function. One way to see this, is that
-                at <bookmark mark="pink_0"/> x equals pi over two, the sine is one. This is satisfied by the purple
-                line.
-                """
+                text=self.translate("Func_7_3.P1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("blue")
@@ -965,7 +873,7 @@ class Func_7_3_P_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -984,28 +892,18 @@ class Func_7_3_P_1_d(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), x_range=[0,2*np.pi,0.001], color=PURPLE)
 
         startpoint_blue = plane.c2p(0,1)+0.1*UP
-        bubble_blue = Bubble(["$\\cos(0)=1$", "$\\Rightarrow$cosine"], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
+        bubble_blue = Bubble(["$\\cos(0)=1$", self.translate("Func_7_3.P1.a.bubbleblue")], start_point=startpoint_blue, center=0.8*LEFT+2*UP, loc="b2")
         blue_updater = lambda m: m.move_to(bubble_blue.get_end())
 
         startpoint_pink = plane.c2p(np.pi/2,1)+0.1*UP
-        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", "$\\Rightarrow$sine"], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
+        bubble_pink = Bubble(["$\\sin(\\tfrac{\\Pi}{2})=1$", self.translate("Func_7_3.P1.a.bubblepink")], start_point = startpoint_pink, center=0.8*RIGHT+0.4*UP)
         pink_updater = lambda m: m.move_to(bubble_pink.get_end())
 
         self.add(cords)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-
-                <bookmark mark="blue"/> The blue line describes the cosine function One way to see this, is that
-                at <bookmark mark="blue_0"/> x equals zero, the cosine is one. This is satisfied by the blue
-                line.
-
-                <bookmark mark="pink"/> The purple line describes the sine function. One way to see this, is that
-                at <bookmark mark="pink_0"/> x equals pi over two, the sine is one. This is satisfied by the purple
-                line.
-                """
+                text=self.translate("Func_7_3.P1.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("blue")
@@ -1040,19 +938,21 @@ class Func_7_3_P_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_7_3_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["Cosine: Even, Sine: Even", "Cosine: Even, Sine: Odd", "Cosine: Odd, Sine: Even", "Cosine: Odd, Sine: Odd"],
-    correctAnswerIndex = 1,
-    questionText = "Is the cosine function even or odd? What about the sine function?"
-)
 class Func_7_3_P_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_3.P2.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_7_3.P2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1, 1, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -1073,15 +973,7 @@ class Func_7_3_P_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                The <bookmark mark="blue"/> blue graph corresponds to the cosine function and
-                the<bookmark mark="purple"/> purple graph corresponds to the sine function. By
-                looking at the two graphs, can you tell me if the sine function is an even or an odd function?
-
-                And what about the cosine function?
-                
-                Is it even, or odd?
-                """
+                text=self.translate("Func_7_3.P2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -1101,7 +993,7 @@ class Func_7_3_P_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1, 1, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -1121,27 +1013,16 @@ class Func_7_3_P_2_a(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), color=PINK)
 
         startpoint_odd = plane.c2p(0,0)+0.1*(LEFT+DOWN)
-        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", "$\\Rightarrow$Sine function is odd"], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
+        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", self.translate("Func_7_3.P2.a.bubbleodd")], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
         odd_updater = lambda m: m.move_to(bubble_odd.get_end())
 
         startpoint_even = plane.c2p(0,1) + 0.1*UP
-        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", "$\\Rightarrow$Cosine function is even"], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
+        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", self.translate("Func_7_3.P2.a.bubbleeven")], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
         even_updater = lambda m: m.move_to(bubble_even.get_end())
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, well done.
-                The <bookmark mark="blue"/> cosine function is an even function, because it is <bookmark mark="y_axis"/> symmetric
-                to the y-axis. <bookmark mark="bubble_cosine"/>Formally, a function is even if f of minus x is equal to f of x.
-                This holds true for the cosine function.
-
-                The<bookmark mark="purple"/> purple graph corresponds to the sine function. The sine function is an odd function,
-                because it is <bookmark mark="origin"/> symmetric to the origin. <bookmark mark="bubble_sine"/>Formally, a
-                function is odd if f of minus x is equal to minus f of x. This holds true for the sine function.
-
-                So in summary, the sine function is an odd function and the cosine function is an even function.
-                """
+                text=self.translate("Func_7_3.P2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -1188,7 +1069,7 @@ class Func_7_3_P_2_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1, 1, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -1208,27 +1089,16 @@ class Func_7_3_P_2_b(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), color=PINK)
 
         startpoint_odd = plane.c2p(0,0)+0.1*(LEFT+DOWN)
-        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", "$\\Rightarrow$Sine function is odd"], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
+        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", self.translate("Func_7_3.P2.a.bubbleodd")], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
         odd_updater = lambda m: m.move_to(bubble_odd.get_end())
 
         startpoint_even = plane.c2p(0,1) + 0.1*UP
-        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", "$\\Rightarrow$Cosine function is even"], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
+        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", self.translate("Func_7_3.P2.a.bubbleeven")], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
         even_updater = lambda m: m.move_to(bubble_even.get_end())
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's correct, well done.
-                The <bookmark mark="blue"/> cosine function is an even function, because it is <bookmark mark="y_axis"/> symmetric
-                to the y-axis. <bookmark mark="bubble_cosine"/>Formally, a function is even if f of minus x is equal to f of x.
-                This holds true for the cosine function.
-
-                The<bookmark mark="purple"/> purple graph corresponds to the sine function. The sine function is an odd function,
-                because it is <bookmark mark="origin"/> symmetric to the origin. <bookmark mark="bubble_sine"/>Formally, a
-                function is odd if f of minus x is equal to minus f of x. This holds true for the sine function.
-
-                So in summary, the sine function is an odd function and the cosine function is an even function.
-                """
+                text=self.translate("Func_7_3.P2.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -1275,7 +1145,7 @@ class Func_7_3_P_2_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1, 1, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -1295,27 +1165,16 @@ class Func_7_3_P_2_c(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), color=PINK)
 
         startpoint_odd = plane.c2p(0,0)+0.1*(LEFT+DOWN)
-        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", "$\\Rightarrow$Sine function is odd"], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
+        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", self.translate("Func_7_3.P2.a.bubbleodd")], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
         odd_updater = lambda m: m.move_to(bubble_odd.get_end())
 
         startpoint_even = plane.c2p(0,1) + 0.1*UP
-        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", "$\\Rightarrow$Cosine function is even"], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
+        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", self.translate("Func_7_3.P2.a.bubbleeven")], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
         even_updater = lambda m: m.move_to(bubble_even.get_end())
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                The <bookmark mark="blue"/> cosine function is an even function, because it is <bookmark mark="y_axis"/> symmetric
-                to the y-axis. <bookmark mark="bubble_cosine"/>Formally, a function is even if f of minus x is equal to f of x.
-                This holds true for the cosine function.
-
-                The<bookmark mark="purple"/> purple graph corresponds to the sine function. The sine function is an odd function,
-                because it is <bookmark mark="origin"/> symmetric to the origin. <bookmark mark="bubble_sine"/>Formally, a
-                function is odd if f of minus x is equal to minus f of x. This holds true for the sine function.
-
-                So in summary, the sine function is an odd function and the cosine function is an even function.
-                """
+                text=self.translate("Func_7_3.P2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -1362,7 +1221,7 @@ class Func_7_3_P_2_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine")
+        title = self.add_title(self.translate("Func_7_3.P1.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1, 1, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -1382,27 +1241,16 @@ class Func_7_3_P_2_d(SophiaCursorScene):
         graph_pink = plane.plot(lambda x: np.sin(x), color=PINK)
 
         startpoint_odd = plane.c2p(0,0)+0.1*(LEFT+DOWN)
-        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", "$\\Rightarrow$Sine function is odd"], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
+        bubble_odd = Bubble(["$\\sin(-x)=-\\sin(x)$", self.translate("Func_7_3.P2.a.bubbleodd")], start_point=startpoint_odd, width = 2.6, center=0.4*RIGHT+2.6*DOWN, loc="t1")
         odd_updater = lambda m: m.move_to(bubble_odd.get_end())
 
         startpoint_even = plane.c2p(0,1) + 0.1*UP
-        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", "$\\Rightarrow$Cosine function is even"], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
+        bubble_even = Bubble(["$\\cos(-x)=\\cos(x)$", self.translate("Func_7_3.P2.a.bubbleeven")], start_point=startpoint_even, width = 2.6, center=0.8*LEFT+2*UP, loc="b1")
         even_updater = lambda m: m.move_to(bubble_even.get_end())
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not right.
-                The <bookmark mark="blue"/> cosine function is an even function, because it is <bookmark mark="y_axis"/> symmetric
-                to the y-axis. <bookmark mark="bubble_cosine"/>Formally, a function is even if f of minus x is equal to f of x.
-                This holds true for the cosine function.
-
-                The<bookmark mark="purple"/> purple graph corresponds to the sine function. The sine function is an odd function,
-                because it is <bookmark mark="origin"/> symmetric to the origin. <bookmark mark="bubble_sine"/>Formally, a
-                function is odd if f of minus x is equal to minus f of x. This holds true for the sine function.
-
-                So in summary, the sine function is an odd function and the cosine function is an even function.
-                """
+                text=self.translate("Func_7_3.P2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
@@ -1447,20 +1295,20 @@ class Func_7_3_P_2_d(SophiaCursorScene):
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_3_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_I_1_q, Func_7_3_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_3_I_1_q),
     PagePrototypeVideo.from_scene(Func_7_3_I_1_a),
     PagePrototypeVideo.from_scene(Func_7_3_I_1_b),
     PagePrototypeVideo.from_scene(Func_7_3_I_3),
     PagePrototypeVideo.from_scene(Func_7_3_I_4),
     PagePrototypeVideo.from_scene(Func_7_3_I_5),
     PagePrototypeVideo.from_scene(Func_7_3_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_1_q, Func_7_3_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_3_P_1_q),
     PagePrototypeVideo.from_scene(Func_7_3_P_1_a),
     PagePrototypeVideo.from_scene(Func_7_3_P_1_b),
     PagePrototypeVideo.from_scene(Func_7_3_P_1_c),
     PagePrototypeVideo.from_scene(Func_7_3_P_1_d),
     PagePrototypeVideo.from_scene(Func_7_3_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_3_P_2_q, Func_7_3_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_3_P_2_q),
     PagePrototypeVideo.from_scene(Func_7_3_P_2_a),
     PagePrototypeVideo.from_scene(Func_7_3_P_2_b),
     PagePrototypeVideo.from_scene(Func_7_3_P_2_c),

@@ -1073,7 +1073,8 @@ class DegToRadAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        self.deg = int(self.angle_frac*360)
+        deg = self.deg = int(self.angle_frac*360)
+        
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:

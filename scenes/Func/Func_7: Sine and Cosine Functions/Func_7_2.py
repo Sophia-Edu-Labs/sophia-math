@@ -16,22 +16,26 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 #####################################
 #####################################
-TASK_Func_7_2_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["blue line / green line", "pink line / blue line", "pink line / green line", "green line / pink line"],
-    correctAnswerIndex = 1,
-    questionText = "Which of the lines do we have two divide by which to get the sine of the bottom left corner?"
-)
 class Func_7_2_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_2.I1.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_7_2.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -55,16 +59,7 @@ class Func_7_2_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Check out<bookmark mark="show_triangle"/> this beautiful triangle.
-
-                You know what's just as beautiful? <bookmark mark="sine"/> The sine function. Well, at least
-                once you really understand it.
-
-                Let's start slowly though. Which line do we divide by which other line,
-                to get the sine of the angle <bookmark mark="angle"/>in the bottom
-                left corner?
-                """
+                text=self.translate("Func_7_2.I1.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("show_triangle")
@@ -91,7 +86,7 @@ class Func_7_2_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -113,21 +108,13 @@ class Func_7_2_I_1_a(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The sine is equal to <bookmark mark="opposite"/> the length of the opposite divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The opposite is the side opposite to the angle. In this case,<bookmark mark="opposite_plot"/> it's the pink line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -168,7 +155,7 @@ class Func_7_2_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -190,21 +177,12 @@ class Func_7_2_I_1_b(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
-        
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's correct.
-                The sine is equal to <bookmark mark="opposite"/> the length of the opposite divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The opposite is the side opposite to the angle. In this case,<bookmark mark="opposite_plot"/> it's the pink line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_2.I1.b.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -246,7 +224,7 @@ class Func_7_2_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -268,21 +246,13 @@ class Func_7_2_I_1_c(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The sine is equal to <bookmark mark="opposite"/> the length of the opposite divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The opposite is the side opposite to the angle. In this case,<bookmark mark="opposite_plot"/> it's the pink line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -315,6 +285,7 @@ class Func_7_2_I_1_c(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
+
 
 
 class Func_7_2_I_1_d(SophiaCursorScene):
@@ -324,7 +295,7 @@ class Func_7_2_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -346,21 +317,13 @@ class Func_7_2_I_1_d(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The sine is equal to <bookmark mark="opposite"/> the length of the opposite divided <bookmark mark="hypothenuse"/>
-                by the length of the hypothenuse.
-
-                The opposite is the side opposite to the angle. In this case,<bookmark mark="opposite_plot"/> it's the pink line.
-                The hypothenuse is the longest side of a triangle. In this case,<bookmark mark="hypothenuse_plot"/> it's the blue line.
-                This means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left
-                corner.
-                """
+                text=self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -395,21 +358,24 @@ class Func_7_2_I_1_d(SophiaCursorScene):
         self.wait(4)
 
 
+
 #####################################
 #####################################
-TASK_Func_7_2_I_2_q = SophiaTaskDefinition(
-    answerOptions = ["It has the length $\cos(1)$","It has length $\sin(1)$""It has length $\sqrt{2}$","It has length $1$"],
-    correctAnswerIndex = 3,
-    questionText = "What can we say about the hypothenuse (the blue line) for the inscribed triangle?"
-)
 class Func_7_2_I_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_2.I2.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_7_2.I2.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -431,16 +397,14 @@ class Func_7_2_I_2_q(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end).shift(0.7*LEFT+0.2*UP)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now what if we <bookmark mark="circle"/>inscribe the triangle into a circle, with the radius of one?
-                If the top left corner is in the center of the circle, what can we say
-                about <bookmark mark="hypothenuse"/> the hypothenuse, meaning the blue line?
-                """
+                text=self.translate("Func_7_2.I2.q.voiceover")
         ) as tracker:
             
             self.play(triangle.animate.shift(0.7*RIGHT+0.2*DOWN), sine_formula.animate.shift(DOWN))
@@ -467,7 +431,7 @@ class Func_7_2_I_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -491,20 +455,15 @@ class Func_7_2_I_2_a(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(arc, DOWN, buff=0.6)
+        
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The blue line goes <bookmark mark="center"/>from the center of the circle to the
-                edge<bookmark mark="circle"/> of the circle. Since the radius of the circle is one, the length of the
-                blue line is<bookmark mark="write_one"/> also one.
-
-                Note that we can <bookmark mark="vary"/> vary the angle alpha and the length of the blue line will
-                still be one, as long as it is inscribed into the unit circle
-                """
+                text=self.translate("Func_7_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("center")
@@ -541,7 +500,7 @@ class Func_7_2_I_2_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -565,20 +524,15 @@ class Func_7_2_I_2_b(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(arc, DOWN, buff=0.6)
+        
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The blue line goes <bookmark mark="center"/>from the center of the circle to the
-                edge<bookmark mark="circle"/> of the circle. Since the radius of the circle is one, the length of the
-                blue line is<bookmark mark="write_one"/> also one.
-
-                Note that we can <bookmark mark="vary"/> vary the angle alpha and the length of the blue line will
-                still be one, as long as it is inscribed into the unit circle
-                """
+                text=self.translate("Func_7_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("center")
@@ -615,7 +569,7 @@ class Func_7_2_I_2_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -639,20 +593,15 @@ class Func_7_2_I_2_c(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(arc, DOWN, buff=0.6)
+        
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
+
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                The blue line goes <bookmark mark="center"/>from the center of the circle to the
-                edge<bookmark mark="circle"/> of the circle. Since the radius of the circle is one, the length of the
-                blue line is<bookmark mark="write_one"/> also one.
-
-                Note that we can <bookmark mark="vary"/> vary the angle alpha and the length of the blue line will
-                still be one, as long as it is inscribed into the unit circle
-                """
+                text=self.translate("Func_7_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("center")
@@ -689,7 +638,7 @@ class Func_7_2_I_2_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -713,20 +662,13 @@ class Func_7_2_I_2_d(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(arc, DOWN, buff=0.6)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's right. Well done.
-                The blue line goes <bookmark mark="center"/>from the center of the circle to the
-                edge<bookmark mark="circle"/> of the circle. Since the radius of the circle is one, the length of the
-                blue line is<bookmark mark="write_one"/> also one.
-
-                Note that we can <bookmark mark="vary"/> vary the angle alpha and the length of the blue line will
-                still be one, as long as it is inscribed into the unit circle
-                """
+                text=self.translate("Func_7_2.I2.d.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("center")
@@ -765,7 +707,7 @@ class Func_7_2_I_3(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -789,23 +731,14 @@ class Func_7_2_I_3(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        sine_formula = MathTex("\\sin(\\alpha) =", "\\frac{\\text{opposite}}{\\text{hypothenuse}}", color=c1t, font_size=fs3).next_to(arc, DOWN, buff=0.6)
+        opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
+        sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         sine_formula_2 = MathTex("\\sin(\\alpha) =", "\\text{opposite}", color=PINK, font_size=fs3).move_to(sine_formula)
         self.add(sine_formula)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                So <bookmark mark="sine"/> the sine of the angle alpha <bookmark mark="opposite"/>is the opposite divided 
-                <bookmark mark="hypothenuse"/>by the hypothenuse.
-                In our example, that means the <bookmark mark="pink_line"/>length of the pink line divided by the <bookmark mark="blue_line"/>
-                length of the blue line. And we know that <bookmark mark="vary"/> the length of the blue line is always one, as long as it is
-                inscribed into the unit circle. This means, that the sine of the angle alpha is <bookmark mark="sine_one"/> always equal to
-                the length of the pink line,  <bookmark mark="hypothenuse_2"/>because the hypothenuse that we're dividing by is always one.
-
-                So for the expression, that means that if we inscribe the triangle into the unit circle, the <bookmark mark="sine_term"/>
-                sine of the inner angle is equal to the <bookmark mark="opposite_term"/>length of the opposite side.
-                """
+                text=self.translate("Func_7_2.I3.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sine")
@@ -882,7 +815,7 @@ class Func_7_2_I_4(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -906,12 +839,12 @@ class Func_7_2_I_4(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        angle_intro = Tex("Angle: ", color=c1t, font_size=fs2)
+        angle_intro = Tex(self.translate("Func_7_2.I4.angle"), color=c1t, font_size=fs2)
         angle_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(a.get_value()/np.pi))
         angle_label = MathTex("\\Pi", color=c1t, font_size=fs2)
         angle = VGroup(angle_intro, angle_num, angle_label).arrange(RIGHT, buff=0.1)
 
-        sine_intro = Tex("Sine: ", color=c1t, font_size=fs2)
+        sine_intro = Tex(self.translate("Func_7_2.I4.sine"), color=c1t, font_size=fs2)
         sine_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(sine()))
         sine_group = VGroup(sine_intro, sine_num).arrange(RIGHT, buff=0.1)
 
@@ -921,17 +854,7 @@ class Func_7_2_I_4(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now we can <bookmark mark="sine_function_title"/>use the sine-function to describe the relationship between
-                the angle of the triangle and the sine of the angle, which in this case is equal to the length of the
-                opposite side, so the pink line.
-
-                When we change the angle, let us keep track<bookmark mark="track_angle"/> of the angle alpha and
-                <bookmark mark="track_length"/>the length of the pink line, which is the sine of the angle.
-
-                Now, <bookmark mark="vary"/>vary the angle alpha and observe how the length of the pink line changes.
-                Also look at how the sine changes together with the angle.
-                """
+                text=self.translate("Func_7_2.I4.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("sine_function_title")
@@ -975,7 +898,7 @@ class Func_7_2_I_5(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
@@ -999,12 +922,12 @@ class Func_7_2_I_5(SophiaCursorScene):
         triangle = VGroup(line_cos, line_sine, line_end)
         self.add(triangle)
 
-        angle_intro = Tex("Angle: ", color=c1t, font_size=fs2)
+        angle_intro = Tex(self.translate("Func_7_2.I4.angle"), color=c1t, font_size=fs2)
         angle_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(a.get_value()/np.pi))
         angle_label = MathTex("\\Pi", color=c1t, font_size=fs2)
         angle = VGroup(angle_intro, angle_num, angle_label).arrange(RIGHT, buff=0.1)
 
-        sine_intro = Tex("Sine: ", color=c1t, font_size=fs2)
+        sine_intro = Tex(self.translate("Func_7_2.I4.sine"), color=c1t, font_size=fs2)
         sine_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(sine()))
         sine_group = VGroup(sine_intro, sine_num).arrange(RIGHT, buff=0.1)
 
@@ -1022,24 +945,7 @@ class Func_7_2_I_5(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                I already announced that we will use the sine function to describe the relationship between
-                the angle of the triangle and the sine of the angle. <bookmark mark="reorder"/>
-
-                Let's do that graphically.
-
-                On this graph, <bookmark mark="x_axis"/>the x-axis describes the angle alpha,
-                <bookmark mark="y_axis"/>and the y-axis describes the sine of the
-                angle alpha. 
-
-                Now let's <bookmark mark="reset"/>start at zero
-
-                <bookmark mark="increase_1"/>and increase the angle alpha. See how the sine of the angle
-                increases in parallel to the opposite side of the triangle?
-
-                Anyway, this is the sine function... The value of the sine function at a certain angle alpha
-                is equal to the length of the opposite side of the triangle. It also has this cool wave shape.
-                """
+                text=self.translate("Func_7_2.I5.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("reorder")
@@ -1079,7 +985,7 @@ class Func_7_2_I_6(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         a = ValueTracker(0)
         sine = lambda: np.sin(a.get_value())
@@ -1101,12 +1007,12 @@ class Func_7_2_I_6(SophiaCursorScene):
         triangle = VGroup(line_cos, line_end, line_sine).shift(upshift)
         self.add(triangle)
 
-        angle_intro = Tex("Angle: ", color=c1t, font_size=fs2)
+        angle_intro = Tex(self.translate("Func_7_2.I4.angle"), color=c1t, font_size=fs2)
         angle_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(a.get_value()/np.pi))
         angle_label = MathTex("\\Pi", color=c1t, font_size=fs2)
         angle = VGroup(angle_intro, angle_num, angle_label).arrange(RIGHT, buff=0.1)
 
-        sine_intro = Tex("Sine: ", color=c1t, font_size=fs2)
+        sine_intro = Tex(self.translate("Func_7_2.I4.sine"), color=c1t, font_size=fs2)
         sine_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(sine()))
         sine_group = VGroup(sine_intro, sine_num).arrange(RIGHT, buff=0.1)
 
@@ -1133,18 +1039,7 @@ class Func_7_2_I_6(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here are three important facts about the sign function:
-
-                <bookmark mark="one"/>FACT NUMBER ONE: The maximum value of the sign function is one.
-                It is <bookmark mark="max"/> reached at the angle alpha equals half pi.
-                Similarly, the minimum value of the sign function is negative one,
-                <bookmark mark="min"/>and it is reached at the angle alpha equals
-                three half pie.
-
-                Look how in both cases<bookmark mark="switch"/>, the triangle is not really a triangle?
-                It looks much more like a line.
-                """
+                text=self.translate("Func_7_2.I6.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("one")
@@ -1180,7 +1075,7 @@ class Func_7_2_I_7(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         a = ValueTracker(0)
         sine = lambda: np.sin(a.get_value())
@@ -1202,12 +1097,12 @@ class Func_7_2_I_7(SophiaCursorScene):
         triangle = VGroup(line_cos, line_end, line_sine).shift(upshift)
         self.add(triangle)
 
-        angle_intro = Tex("Angle: ", color=c1t, font_size=fs2)
+        angle_intro = Tex(self.translate("Func_7_2.I4.angle"), color=c1t, font_size=fs2)
         angle_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(a.get_value()/np.pi))
         angle_label = MathTex("\\Pi", color=c1t, font_size=fs2)
         angle = VGroup(angle_intro, angle_num, angle_label).arrange(RIGHT, buff=0.1)
 
-        sine_intro = Tex("Sine: ", color=c1t, font_size=fs2)
+        sine_intro = Tex(self.translate("Func_7_2.I4.sine"), color=c1t, font_size=fs2)
         sine_num = DecimalNumber(0, num_decimal_places=1, font_size=fs2).set_color(c1t).add_updater(lambda m: m.set_value(sine()))
         sine_group = VGroup(sine_intro, sine_num).arrange(RIGHT, buff=0.1)
 
@@ -1234,23 +1129,7 @@ class Func_7_2_I_7(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="two"/>FACT NUMBER TWO: The sine function is periodic. This means, that it repeats itself
-                every 2 pie.
-
-                What does that mean?
-
-                So we already know what the function looks <bookmark mark="zero_to_two_pi"/> like from zero to two pie.
-                It starts at zero and then goes up to one, back to zero, down to negative one and back to zero.
-                
-                Now notice that this all happened while the triangle went around the circle fully, so after two pie,
-                we're back at where we started.
-
-                So naturally, the function will look exactly the way it does at x equals zero:
-                <bookmark mark="continue_1"/> Up to one, back to zero, down to negative one, and back to zero again.
-
-                And at four pie, it repeats itself again!
-                """
+                text=self.translate("Func_7_2.I7.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("two")
@@ -1286,7 +1165,7 @@ class Func_7_2_I_8(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine Function")
+        title = self.add_title(self.translate("Func_7_2.I1.q.title"))
 
         a = ValueTracker(-2*np.pi)
         sine = lambda: np.sin(a.get_value())
@@ -1329,30 +1208,7 @@ class Func_7_2_I_8(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="three"/>FACT NUMBER THREE: The sine function is an odd function.
-
-                What does that mean?
-
-                Let's <bookmark mark="draw_1"/>first draw the function from negative two pi to zero.
-                From fact number two, we know that the function looks exactly the same from negative two pie to zero
-                as it does from zero to two pie.
-
-                <bookmark mark="draw_2"/>
-                Now let's draw the function from zero to two pie as well.
-
-                Look <bookmark mark="y_axis"/> at the y-axis and compare the values of the function on
-                the left and on the right side of the y-axis.
-
-                See how the values are the same, but the sign is different? That's what it means to be an odd function.
-                <bookmark mark="clean_circle"/> Specifically, <bookmark mark="odd_1_a"/>that f of negative x is
-                <bookmark mark="odd_1_b"/>equal to negative f of x.
-
-                You can easily check that this is true here. This means <bookmark mark="odd_2_a"/>that the sine of negative x
-                <bookmark mark="odd_2_b"/>is equal to negative sine of  x.
-
-                So the sine function is an odd function.
-                """
+                text=self.translate("Func_7_2.I8.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("three")
@@ -1416,11 +1272,11 @@ class Func_7_2_I_8(SophiaCursorScene):
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_2_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_2_I_1_q, Func_7_2_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_2_I_1_q),
     PagePrototypeVideo.from_scene(Func_7_2_I_1_a),
     PagePrototypeVideo.from_scene(Func_7_2_I_1_b),
     PagePrototypeVideo.from_scene(Func_7_2_I_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_2_I_2_q, Func_7_2_I_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_2_I_2_q),
     PagePrototypeVideo.from_scene(Func_7_2_I_2_a),
     PagePrototypeVideo.from_scene(Func_7_2_I_2_b),
     PagePrototypeVideo.from_scene(Func_7_2_I_2_c),

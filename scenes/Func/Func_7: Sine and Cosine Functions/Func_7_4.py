@@ -16,22 +16,25 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+import ast
 
 #####################################
 #####################################
-TASK_Func_7_4_I_1_q = SophiaTaskDefinition(
-    answerOptions = ["Add $2$: $f(x)=\sin(x)+2$", "Multiply by $2$: $f(x)=2\sin(x)$", "Multiply by $\\tfrac{1}{2}$: $f(x)=\\tfrac{1}{2}\sin(x)$", "Add $\\tfrac{1}{2}$: $f(x)=\sin(x)+\\tfrac{1}{2}$"],
-    correctAnswerIndex = 1,
-    questionText = "How do we change the function $f(x)=\sin(x)$, so that its values reach from $-2$ to $2$?"
-)
 class Func_7_4_I_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_4.I1.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_7_4.I1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-1.5, 1.5, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -56,17 +59,7 @@ class Func_7_4_I_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                This is a graph of the sine function.
-                The values of the sine function range<bookmark mark="neg_1"/> from negative <bookmark mark="pos_1"/>one to one.
-
-                Now we want to change the function, so that its values <bookmark mark="neg_2"/>range from negative
-                <bookmark mark="pos_2"/>two to two.
-
-                How do we change the <bookmark mark="f"/> term f <bookmark mark="fx"/> of x<bookmark mark="sin"/> equals sine
-                <bookmark mark="x"/> of x, so that the values of the function range from negative
-                two to two?
-                """
+                text=self.translate("Func_7_4.I1.q.voiceover")
         ) as tracker:
             
             
@@ -127,7 +120,7 @@ class Func_7_4_I_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-1.5, 1.5, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -162,19 +155,7 @@ class Func_7_4_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We want the values of the function to range from negative two to two, instead of from negative one to one.
-                This means, that wherever the function<bookmark mark="row_1_a"/> has a value of one, we want it
-                <bookmark mark="row_1_b"/>to have a value of two instead.
-
-                And wherever the function<bookmark mark="row_2_a"/> has a value of negative one, we want it <bookmark mark="row_2_b"/>
-                to have a value of negative two instead.
-
-                Clearly, we can achieve this by <bookmark mark="transform_term"/> multiplying the function by two.
-                If we do that, <bookmark mark="stretch_func"/> the function will be stretched vertically by a factor of two.
-                And that's exactly what we want.
-                """
+                text=self.translate("Func_7_4.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("row_1_a")
@@ -223,7 +204,7 @@ class Func_7_4_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-1.5, 1.5, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -258,19 +239,7 @@ class Func_7_4_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's it!
-                We want the values of the function to range from negative two to two, instead of from negative one to one.
-                This means, that wherever the function<bookmark mark="row_1_a"/> has a value of one, we want it
-                <bookmark mark="row_1_b"/>to have a value of two instead.
-
-                And wherever the function<bookmark mark="row_2_a"/> has a value of negative one, we want it <bookmark mark="row_2_b"/>
-                to have a value of negative two instead.
-
-                Clearly, we can achieve this by <bookmark mark="transform_term"/> multiplying the function by two.
-                If we do that, <bookmark mark="stretch_func"/> the function will be stretched vertically by a factor of two.
-                And that's exactly what we want.
-                """
+                text=self.translate("Func_7_4.I1.b.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("row_1_a")
@@ -319,7 +288,7 @@ class Func_7_4_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-1.5, 1.5, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -354,19 +323,7 @@ class Func_7_4_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We want the values of the function to range from negative two to two, instead of from negative one to one.
-                This means, that wherever the function<bookmark mark="row_1_a"/> has a value of one, we want it
-                <bookmark mark="row_1_b"/>to have a value of two instead.
-
-                And wherever the function<bookmark mark="row_2_a"/> has a value of negative one, we want it <bookmark mark="row_2_b"/>
-                to have a value of negative two instead.
-
-                Clearly, we can achieve this by <bookmark mark="transform_term"/> multiplying the function by two.
-                If we do that, <bookmark mark="stretch_func"/> the function will be stretched vertically by a factor of two.
-                And that's exactly what we want.
-                """
+                text=self.translate("Func_7_4.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("row_1_a")
@@ -415,7 +372,7 @@ class Func_7_4_I_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-1.5, 1.5, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(1.6*DOWN)
         plane = cords[0]
@@ -450,19 +407,7 @@ class Func_7_4_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right.
-                We want the values of the function to range from negative two to two, instead of from negative one to one.
-                This means, that wherever the function<bookmark mark="row_1_a"/> has a value of one, we want it
-                <bookmark mark="row_1_b"/>to have a value of two instead.
-
-                And wherever the function<bookmark mark="row_2_a"/> has a value of negative one, we want it <bookmark mark="row_2_b"/>
-                to have a value of negative two instead.
-
-                Clearly, we can achieve this by <bookmark mark="transform_term"/> multiplying the function by two.
-                If we do that, <bookmark mark="stretch_func"/> the function will be stretched vertically by a factor of two.
-                And that's exactly what we want.
-                """
+                text=self.translate("Func_7_4.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("row_1_a")
@@ -514,7 +459,7 @@ class Func_7_4_I_2(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -543,13 +488,7 @@ class Func_7_4_I_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                In general, we can scale the sine function <bookmark mark="y_axis"/> in y-direction by simply
-                multiplying the entire function <bookmark mark="scale_a"/> by a constant factor a.<bookmark mark="move_cursor"/>
-                If <bookmark mark="a_1"/>a is greater than one, the function will be stretched vertically.
-                And if <bookmark mark="a_2"/>a is less than one, the function will be compressed vertically.
-                We can also reflect the function at the x-axis by <bookmark mark="a_3"/>choosing a negative value for a.
-                """
+                text=self.translate("Func_7_4.I2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y_axis")
@@ -587,19 +526,21 @@ class Func_7_4_I_2(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_7_4_P_1_q = SophiaTaskDefinition(
-    answerOptions = ["$a=2$", "$a=\\tfrac{1}{2}$", "$a=-2$", "$a=-\\tfrac{1}{2}$"],
-    correctAnswerIndex = 2,
-    questionText = "What value do we choose for $a$, to stretch the function vertically by a factor of two and reflect it at the x-axis?",
-)
 class Func_7_4_P_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$a=2$", "$a=\\tfrac{1}{2}$", "$a=-2$", "$a=-\\tfrac{1}{2}$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_7_4.P1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -626,14 +567,7 @@ class Func_7_4_P_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here's the sine <bookmark mark="f"/> function f <bookmark mark="fx"/> of x <bookmark mark="a"/>
-                equals a <bookmark mark="sin"/> times sine <bookmark mark="x"/> of x.
-                Now <bookmark mark="move_cursor"/>say we want to stretch the function <bookmark mark="a_1"/>by a factor of two,
-                and <bookmark mark="a_2"/>reflect it at the x-axis.
-
-                What <bookmark mark="a_mark"/>value of a do we need to choose, to make this happen?
-                """
+                text=self.translate("Func_7_4.P1.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -690,7 +624,7 @@ class Func_7_4_P_1_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -717,19 +651,7 @@ class Func_7_4_P_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. So we start with the <bookmark mark="f"/> function f
-                <bookmark mark="fx"/> of x <bookmark mark="a"/> equals a <bookmark mark="sin"/>
-                times sine <bookmark mark="x"/> of x.
-                Now to <bookmark mark="move_cursor_1"/>stretch the function <bookmark mark="a_1"/>by a factor of two,
-                we <bookmark mark="a_term_1"/>multiply the function by a factor of a equals two.
-
-                <bookmark mark="move_cursor_2"/>Next, to <bookmark mark="a_2"/>reflect the function at the x-axis,
-                we multiply the entire function by negative one, which means <bookmark mark="a_term_2"/>choosing
-                a value of "a" equals negative two.
-
-                So the answer is "a" equals negative two.
-                """
+                text=self.translate("Func_7_4.P1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -800,7 +722,7 @@ class Func_7_4_P_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -827,19 +749,7 @@ class Func_7_4_P_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. So we start with the <bookmark mark="f"/> function f
-                <bookmark mark="fx"/> of x <bookmark mark="a"/> equals a <bookmark mark="sin"/>
-                times sine <bookmark mark="x"/> of x.
-                Now to <bookmark mark="move_cursor_1"/>stretch the function <bookmark mark="a_1"/>by a factor of two,
-                we <bookmark mark="a_term_1"/>multiply the function by a factor of a equals two.
-
-                <bookmark mark="move_cursor_2"/>Next, to <bookmark mark="a_2"/>reflect the function at the x-axis,
-                we multiply the entire function by negative one, which means <bookmark mark="a_term_2"/>choosing
-                a value of "a" equals negative two.
-
-                So the answer is "a" equals negative two.
-                """
+                text=self.translate("Func_7_4.P1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -910,7 +820,7 @@ class Func_7_4_P_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -937,19 +847,7 @@ class Func_7_4_P_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right. So we start with the <bookmark mark="f"/> function f
-                <bookmark mark="fx"/> of x <bookmark mark="a"/> equals a <bookmark mark="sin"/>
-                times sine <bookmark mark="x"/> of x.
-                Now to <bookmark mark="move_cursor_1"/>stretch the function <bookmark mark="a_1"/>by a factor of two,
-                we <bookmark mark="a_term_1"/>multiply the function by a factor of a equals two.
-
-                <bookmark mark="move_cursor_2"/>Next, to <bookmark mark="a_2"/>reflect the function at the x-axis,
-                we multiply the entire function by negative one, which means <bookmark mark="a_term_2"/>choosing
-                a value of "a" equals negative two.
-
-                So the answer is "a" equals negative two.
-                """
+                text=self.translate("Func_7_4.P1.c.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1020,7 +918,7 @@ class Func_7_4_P_1_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1047,19 +945,7 @@ class Func_7_4_P_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not it. So we start with the <bookmark mark="f"/> function f
-                <bookmark mark="fx"/> of x <bookmark mark="a"/> equals a <bookmark mark="sin"/>
-                times sine <bookmark mark="x"/> of x.
-                Now to <bookmark mark="move_cursor_1"/>stretch the function <bookmark mark="a_1"/>by a factor of two,
-                we <bookmark mark="a_term_1"/>multiply the function by a factor of a equals two.
-
-                <bookmark mark="move_cursor_2"/>Next, to <bookmark mark="a_2"/>reflect the function at the x-axis,
-                we multiply the entire function by negative one, which means <bookmark mark="a_term_2"/>choosing
-                a value of "a" equals negative two.
-
-                So the answer is "a" equals negative two.
-                """
+                text=self.translate("Func_7_4.P1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1125,19 +1011,21 @@ class Func_7_4_P_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_7_4_I_3_q = SophiaTaskDefinition(
-    answerOptions = ["Add $b$ to $x$: $f(x)=\sin(x+b)$", "Multiply $f$ by $b$: $f(x)=b\sin(x)$", "Add $b$ to $f$: $f(x)=\sin(x)+b$", "Multiply x by $b$: $f(x)=\sin(bx)$"],
-    correctAnswerIndex = 3,
-    questionText = "How do we change the function $f(x)=\sin(x)$, so that it is scaled in x-Direction?"
-)
 class Func_7_4_I_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_4.I3.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_7_4.I3.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1166,18 +1054,7 @@ class Func_7_4_I_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                <bookmark mark="start"/>
-                We can scale the sine function <bookmark mark="y_axis"/> in y-direction by simply
-                multiplying the entire function by a <bookmark mark="scale_a"/>constant factor a.
-                <bookmark mark="move_cursor"/>
-
-
-                Now, what if we want to scale the <bookmark mark="x_axis"/> function in x-direction?
-                How do we change the <bookmark mark="f"/> function term f <bookmark mark="fx"/> of x <bookmark mark="sin"/>equals
-                sine <bookmark mark="x"/> of x, so that <bookmark mark="scale_b"/>f is scaled in x-direction?
-                
-                """
+                text=self.translate("Func_7_4.I3.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("start")
@@ -1247,7 +1124,7 @@ class Func_7_4_I_3_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1276,15 +1153,7 @@ class Func_7_4_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not correct.
-                
-                <bookmark mark="scale_b"/>We can scale the sine function in x-direction by simply
-                multiplying the value of x by a <bookmark mark="term_1"/>constant factor b.
-
-                This way we scale all the values we plug in for x, which means we scale the entire
-                <bookmark mark="x_axis"/>function in x-direction.
-                """
+                text=self.translate("Func_7_4.I3.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("scale_b")
@@ -1324,7 +1193,7 @@ class Func_7_4_I_3_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1353,15 +1222,7 @@ class Func_7_4_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not correct.
-                
-                <bookmark mark="scale_b"/>We can scale the sine function in x-direction by simply
-                multiplying the value of x by a <bookmark mark="term_1"/>constant factor b.
-
-                This way we scale all the values we plug in for x, which means we scale the entire
-                <bookmark mark="x_axis"/>function in x-direction.
-                """
+                text=self.translate("Func_7_4.I3.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("scale_b")
@@ -1401,7 +1262,7 @@ class Func_7_4_I_3_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1430,15 +1291,7 @@ class Func_7_4_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                That's not correct.
-                
-                <bookmark mark="scale_b"/>We can scale the sine function in x-direction by simply
-                multiplying the value of x by a <bookmark mark="term_1"/>constant factor b.
-
-                This way we scale all the values we plug in for x, which means we scale the entire
-                <bookmark mark="x_axis"/>function in x-direction.
-                """
+                text=self.translate("Func_7_4.I3.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("scale_b")
@@ -1478,7 +1331,7 @@ class Func_7_4_I_3_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1507,15 +1360,8 @@ class Func_7_4_I_3_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right. Nice job.
-                
-                <bookmark mark="scale_b"/>We can scale the sine function in x-direction by simply
-                multiplying the value of x by a <bookmark mark="term_1"/>constant factor b.
+                text=self.translate("Func_7_4.I3.d.voiceover")
 
-                This way we scale all the values we plug in for x, which means we scale the entire
-                <bookmark mark="x_axis"/>function in x-direction.
-                """
         ) as tracker:
 
             self.wait_until_bookmark("scale_b")
@@ -1552,19 +1398,21 @@ class Func_7_4_I_3_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_7_4_I_4_q = SophiaTaskDefinition(
-    answerOptions = ["$b<1$: squash, $b>1$: stretch", "$b<1$: stretch, $b>1$: squash", "$b<0$: squash, $b>0$: stretch", "$b<0$: squash, $b>0$: stretch"],
-    correctAnswerIndex = 1,
-    questionText = "Which values of $b$ would stretch the function, and which values would squash it?"
-)
 class Func_7_4_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_4.I4.q.answer-options")),
+            correctAnswerIndex=1,
+            questionText=self.translate("Func_7_4.I4.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1592,14 +1440,7 @@ class Func_7_4_I_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Looking at the function <bookmark mark="f"/> term f <bookmark mark="fx"/> of x <bookmark mark="sin"/>equals
-                sine <bookmark mark="b_1"/> of <bookmark mark="x"/> b times x, what values of
-                b <bookmark mark="stretch"/>would  stretch the function in x-direction?
-
-                And: which values of <bookmark mark ="compress"/>b would squash the function
-                in x direction?
-                """
+                text=self.translate("Func_7_4.I4.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1652,7 +1493,7 @@ class Func_7_4_I_4_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1690,25 +1531,7 @@ class Func_7_4_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                To understand these dynamics, let's look at the <bookmark mark="point"/> point x equals 1.5 pie.
-                Here, the sine function <bookmark mark="line_1"/>has the value negative one.
-
-                Now if we want to <bookmark mark="squash"/>squash the function in x-direction, for example by a factor of three, we need
-                the point where the function has the value negative one to <bookmark mark="line_2"/>be at x equals 0.5 pie, instead of 1.5 pie.
-                To achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5
-                pi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark="clean"/>
-
-                <bookmark mark="point_2"/>Now let's look at the point x <bookmark mark="line_3"/>equals 0.5 pie. Here, the sine function
-                has the value one. If we want<bookmark mark="stretch"/> to stretch the function in x-direction, for example by a factor of two,
-                we need the point where the function has the value one to be <bookmark mark="line_4"/>at x equals pie, instead of 0.5 pie.
-                To achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.
-                <bookmark mark="clean_final"/>
-
-                So in summary, for b greater <bookmark mark="squash_final"/>than one, we SQUASH the function in x-direction,
-                and for b smaller than one, we <bookmark mark="stretch_final"/>STRETCH the function in x-direction.
-                """
+                text=self.translate("Func_7_4.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("point")
@@ -1787,7 +1610,7 @@ class Func_7_4_I_4_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1825,25 +1648,7 @@ class Func_7_4_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yes, that's correct.
-                To understand these dynamics, let's look at the <bookmark mark="point"/> point x equals 1.5 pie.
-                Here, the sine function <bookmark mark="line_1"/>has the value negative one.
-
-                Now if we want to <bookmark mark="squash"/>squash the function in x-direction, for example by a factor of three, we need
-                the point where the function has the value negative one to <bookmark mark="line_2"/>be at x equals 0.5 pie, instead of 1.5 pie.
-                To achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5
-                pi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark="clean"/>
-
-                <bookmark mark="point_2"/>Now let's look at the point x <bookmark mark="line_3"/>equals 0.5 pie. Here, the sine function
-                has the value one. If we want<bookmark mark="stretch"/> to stretch the function in x-direction, for example by a factor of two,
-                we need the point where the function has the value one to be <bookmark mark="line_4"/>at x equals pie, instead of 0.5 pie.
-                To achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.
-                <bookmark mark="clean_final"/>
-
-                So in summary, for b greater <bookmark mark="squash_final"/>than one, we SQUASH the function in x-direction,
-                and for b smaller than one, we <bookmark mark="stretch_final"/>STRETCH the function in x-direction.
-                """
+                text=self.translate("Func_7_4.I4.b.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("point")
@@ -1921,7 +1726,7 @@ class Func_7_4_I_4_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -1959,25 +1764,7 @@ class Func_7_4_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                To understand these dynamics, let's look at the <bookmark mark="point"/> point x equals 1.5 pie.
-                Here, the sine function <bookmark mark="line_1"/>has the value negative one.
-
-                Now if we want to <bookmark mark="squash"/>squash the function in x-direction, for example by a factor of three, we need
-                the point where the function has the value negative one to <bookmark mark="line_2"/>be at x equals 0.5 pie, instead of 1.5 pie.
-                To achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5
-                pi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark="clean"/>
-
-                <bookmark mark="point_2"/>Now let's look at the point x <bookmark mark="line_3"/>equals 0.5 pie. Here, the sine function
-                has the value one. If we want<bookmark mark="stretch"/> to stretch the function in x-direction, for example by a factor of two,
-                we need the point where the function has the value one to be <bookmark mark="line_4"/>at x equals pie, instead of 0.5 pie.
-                To achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.
-                <bookmark mark="clean_final"/>
-
-                So in summary, for b greater <bookmark mark="squash_final"/>than one, we SQUASH the function in x-direction,
-                and for b smaller than one, we <bookmark mark="stretch_final"/>STRETCH the function in x-direction.
-                """
+                text=self.translate("Func_7_4.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("point")
@@ -2055,7 +1842,7 @@ class Func_7_4_I_4_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -2093,25 +1880,7 @@ class Func_7_4_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not right.
-                To understand these dynamics, let's look at the <bookmark mark="point"/> point x equals 1.5 pie.
-                Here, the sine function <bookmark mark="line_1"/>has the value negative one.
-
-                Now if we want to <bookmark mark="squash"/>squash the function in x-direction, for example by a factor of three, we need
-                the point where the function has the value negative one to <bookmark mark="line_2"/>be at x equals 0.5 pie, instead of 1.5 pie.
-                To achieve this, we multiply x by three, so b equals three. This way, x equals 0.5 pi achieves the same value as x equals 1.5
-                pi did before.This means that for b greater than one, we squash the function in x-direction. <bookmark mark="clean"/>
-
-                <bookmark mark="point_2"/>Now let's look at the point x <bookmark mark="line_3"/>equals 0.5 pie. Here, the sine function
-                has the value one. If we want<bookmark mark="stretch"/> to stretch the function in x-direction, for example by a factor of two,
-                we need the point where the function has the value one to be <bookmark mark="line_4"/>at x equals pie, instead of 0.5 pie.
-                To achieve this, we divide x by two, so b equals 0.5. This means that for b smaller than one, we stretch the function in x-direction.
-                <bookmark mark="clean_final"/>
-
-                So in summary, for b greater <bookmark mark="squash_final"/>than one, we SQUASH the function in x-direction,
-                and for b smaller than one, we <bookmark mark="stretch_final"/>STRETCH the function in x-direction.
-                """
+                text=self.translate("Func_7_4.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("point")
@@ -2184,19 +1953,22 @@ class Func_7_4_I_4_d(SophiaCursorScene):
 
 #####################################
 #####################################
-TASK_Func_7_4_I_5_q = SophiaTaskDefinition(
-    answerOptions = ["The function is stretched in $x$-direction", "The function is stretched in $y$-direction", "The function is reflected at the $x$-axis", "The function is reflected at the $y$-axis"],
-    correctAnswerIndex = 3,
-    questionText = "What happens if we plug in $b=-1$?"
-)
 class Func_7_4_I_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Func_7_4.I5.q.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_7_4.I5.q.question-text")
+        )
+    
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-.5, 2*np.pi, np.pi], [-2, 2, 1], x_ticks=[0, np.pi, 2*np.pi], x_labels=["0", "\\Pi", "2\\Pi"], y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
@@ -2225,12 +1997,7 @@ class Func_7_4_I_5_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Now, we know what happens for b greater than one and for b smaller than one.
-                But <bookmark mark="qmark"/>what about negative values of b?
-                
-                What happens if we <bookmark mark="b"/>plug in b equals<bookmark mark="neg_one"/> negative one?
-                """
+                text=self.translate("Func_7_4.I5.q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("qmark")
@@ -2258,7 +2025,7 @@ class Func_7_4_I_5_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2284,11 +2051,7 @@ class Func_7_4_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right. If we plug in <bookmark mark="b"/>b equals <bookmark mark="neg_one"/>negative one, we
-                basically switch negative values with positive values, which amounts <bookmark mark="reflect"/> to reflecting the
-                function at the y-axis.
-                """
+                text=self.translate("Func_7_4.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("b")
@@ -2322,7 +2085,7 @@ class Func_7_4_I_5_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2348,11 +2111,7 @@ class Func_7_4_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right. If we plug in <bookmark mark="b"/>b equals <bookmark mark="neg_one"/>negative one, we
-                basically switch negative values with positive values, which amounts <bookmark mark="reflect"/> to reflecting the
-                function at the y-axis.
-                """
+                text=self.translate("Func_7_4.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("b")
@@ -2386,7 +2145,7 @@ class Func_7_4_I_5_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2412,11 +2171,7 @@ class Func_7_4_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                No, that's not quite right. If we plug in <bookmark mark="b"/>b equals <bookmark mark="neg_one"/>negative one, we
-                basically switch negative values with positive values, which amounts <bookmark mark="reflect"/> to reflecting the
-                function at the y-axis.
-                """
+                text=self.translate("Func_7_4.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("b")
@@ -2450,7 +2205,7 @@ class Func_7_4_I_5_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine \& Cosine: Scaling")
+        title = self.add_title(self.translate("Func_7_4.I1.q.title"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2476,11 +2231,7 @@ class Func_7_4_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Yep, that's right. If we plug in <bookmark mark="b"/>b equals <bookmark mark="neg_one"/>negative one, we
-                basically switch negative values with positive values, which amounts <bookmark mark="reflect"/> to reflecting the
-                function at the y-axis.
-                """
+                text=self.translate("Func_7_4.I5.d.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("b")
@@ -2527,7 +2278,8 @@ class SineCosineScalingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine-function: Scaling" if self.use_sine else "Cosine-function: Scaling")
+        
+        title = self.add_title(self.translate("Func_7_4.SineCosineScalingQuestionScene.sinetitle") if self.use_sine else self.translate("Func_7_4.SineCosineScalingQuestionScene.cosinetitle"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2548,7 +2300,7 @@ class SineCosineScalingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         
         
         func_tex_string = "\\sin" if self.use_sine else "\\cos"
-        func_speech_string = "sign" if self.use_sine else "cosine"
+        func_speech_string = self.translate("Func_7_4.SineCosineScalingQuestionScene.sine") if self.use_sine else self.translate("Func_7_4.SineCosineScalingQuestionScene.cosine")
         func = lambda x: a.get_value()*np.sin(b.get_value()*x) if self.use_sine else a.get_value()*np.cos(b.get_value()*x)
 
 
@@ -2558,13 +2310,7 @@ class SineCosineScalingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}<bookmark mark="f_intro"/>
-                f <bookmark mark="fx_intro"/>of x<bookmark mark="sin_cos_intro"/> equals {func_speech_string} <bookmark mark="x_intro"/>of x.
-                {self.a_text}
-                {self.b_text}
-                {self.q_text}
-                """
+                text=self.evaluate_string(self.translate("Func_7_4.SineCosineScalingQuestionScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("f_intro")
@@ -2584,6 +2330,7 @@ class SineCosineScalingQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             x,y,_ = functerm[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=.3)
             cursor.blinking=True
+
 
             if self.a_factor !=1:
                 self.wait_until_bookmark("a")
@@ -2617,12 +2364,12 @@ class SineCosineScalingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
     @abstractmethod
     def construct(self):
 
-        self.a_xplain = f"""This means we have to multiply the <bookmark mark="a_explained"/>entire function by {self.a_factor}.""" if self.a_factor!=1 else ""
-        self.b_xplain = f"""This means we have to multiply the <bookmark mark="b_explained"/>argument x by {self.b_factor}.""" if self.b_factor!=1 else ""
+        self.a_xplain = self.evaluate_string(self.translate("Func_7_4.SineCosineScalingAnswerScene.a_xplain"))if self.a_factor!=1 else ""
+        self.b_xplain = self.evaluate_string(self.translate("Func_7_4.SineCosineScalingAnswerScene.b_xplain")) if self.b_factor!=1 else ""
         
         super().construct()
         self.add_mathgrid()
-        title = self.add_title("Sine-function: Scaling" if self.use_sine else "Cosine-function: Scaling")
+        title = self.add_title(self.translate("Func_7_4.SineCosineScalingAnswerScene.title_sine") if self.use_sine else self.translate("Func_7_4.SineCosineScalingAnswerScene.title_cosine"))
 
         cords = self.add_cords([-2*np.pi, 2*np.pi, np.pi], [-1.2, 1.2, 1], x_ticks=[-2*np.pi, -np.pi, 0, np.pi, 2*np.pi], x_labels=["-2\\Pi", "-\\Pi", "0", "\\Pi", "2\\Pi"], y_ticks=[-1,1]).shift(DOWN)
         plane = cords[0]
@@ -2643,7 +2390,7 @@ class SineCosineScalingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         
         
         func_tex_string = "\\sin" if self.use_sine else "\\cos"
-        func_speech_string = "sign" if self.use_sine else "cosine"
+        func_speech_string = self.translate("Func_7_4.SineCosineScalingQuestionScene.sine") if self.use_sine else self.translate("Func_7_4.SineCosineScalingQuestionScene.cosine")
         func = lambda x: a.get_value()*np.sin(b.get_value()*x) if self.use_sine else a.get_value()*np.cos(b.get_value()*x)
 
 
@@ -2655,16 +2402,7 @@ class SineCosineScalingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=f"""
-                {self.intro}. We're working with the<bookmark mark="f_intro"/> function
-                f <bookmark mark="fx_intro"/>of x <bookmark mark="a_intro"/>equals "a"<bookmark mark="sincos_intro"/>
-                times <bookmark mark="b_intro"/>{func_speech_string} of b <bookmark mark="x_intro"/>times x.
-                {self.a_text}. {self.a_xplain}
-                {self.b_text}. {self.b_xplain}.
-                So, the term of the shifted <bookmark mark="f"/> function is f <bookmark mark="fx"/> of x
-                <bookmark mark="a_term"/> equals {self.a_factor} <bookmark mark="sine_cosine"/>times {func_speech_string}
-                <bookmark mark="b_term"/> of {self.b_factor} <bookmark mark="x"/>times x.
-                """
+                text=self.evaluate_string(self.translate("Func_7_4.SineCosineScalingAnswerScene.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("f_intro")
@@ -2767,16 +2505,19 @@ class SineCosineScalingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 ######## Specific Qs ################
 #####################################
 #####################################
-TASK_Func_7_4_P_2_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=2\sin(\\frac{1}{3}x)$", "$f(x)=\\frac{1}{2}\sin(3x)$", "$f(x)=2\sin(3x)$", "$f(x)=\\frac{1}{2}\sin(\\frac{1}{3}x)$"],
-    correctAnswerIndex = 1,
-    questionText = "What is the term of the sine function, if we stretch it by 2 in y direction and squash it by 3 in x direction?"
-)
+
 class Func_7_4_P_2_q(SineCosineScalingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=2\sin(\\frac{1}{3}x)$", "$f(x)=\\frac{1}{2}\sin(3x)$", "$f(x)=2\sin(3x)$", "$f(x)=\\frac{1}{2}\sin(\\frac{1}{3}x)$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_7_4.P2.q.question-text")
+        )
 
     def construct(self):
     
-        self.intro = "Let's practice scaling now. Consider the function"
+        self.intro = self.translate("Func_7_4.P2.q.intro")
         self.use_sine = True
 
         self.a_factor = 2
@@ -2784,9 +2525,9 @@ class Func_7_4_P_2_q(SineCosineScalingQuestionScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>stretch the function in y-direction by a factor of 2."""
-        self.b_text = """and want to <bookmark mark="b"/>squash the function in x-direction by a factor of 3."""
-        self.q_text = """What is the term of the scaled function?"""
+        self.a_text = self.translate("Func_7_4.P2.q.a_text")
+        self.b_text = self.translate("Func_7_4.P2.q.b_text")
+        self.q_text = self.translate("Func_7_4.P2.q.q_text")
 
         super().construct()
 
@@ -2795,7 +2536,7 @@ class Func_7_4_P_2_a(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P2.a.intro")
         self.use_sine = True
 
         self.a_factor = 2
@@ -2803,8 +2544,8 @@ class Func_7_4_P_2_a(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>stretch the function in y-direction by a factor of 2."""
-        self.b_text = """We also want to <bookmark mark="b"/>squash the function in x-direction by a factor of 3."""
+        self.a_text = self.translate("Func_7_4.P2.a.a_text")
+        self.b_text = self.translate("Func_7_4.P2.a.b_text")
         
         super().construct()
 
@@ -2813,7 +2554,7 @@ class Func_7_4_P_2_b(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P2.a.intro")
         self.use_sine = True
 
         self.a_factor = 2
@@ -2821,8 +2562,8 @@ class Func_7_4_P_2_b(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>stretch the function in y-direction by a factor of 2."""
-        self.b_text = """We also want to <bookmark mark="b"/>squash the function in x-direction by a factor of 3."""
+        self.a_text = self.translate("Func_7_4.P2.a.a_text")
+        self.b_text = self.translate("Func_7_4.P2.a.b_text")
         
         super().construct()
 
@@ -2831,7 +2572,7 @@ class Func_7_4_P_2_c(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "That is correct, great job."
+        self.intro = self.translate("Func_7_4.P2.c.intro")
         self.use_sine = True
 
         self.a_factor = 2
@@ -2839,8 +2580,8 @@ class Func_7_4_P_2_c(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>stretch the function in y-direction by a factor of 2."""
-        self.b_text = """We also want to <bookmark mark="b"/>squash the function in x-direction by a factor of 3."""
+        self.a_text = self.translate("Func_7_4.P2.a.a_text")
+        self.b_text = self.translate("Func_7_4.P2.a.b_text")
         
         super().construct()
 
@@ -2849,7 +2590,7 @@ class Func_7_4_P_2_d(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P2.a.intro")
         self.use_sine = True
 
         self.a_factor = 2
@@ -2857,24 +2598,26 @@ class Func_7_4_P_2_d(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>stretch the function in y-direction by a factor of 2."""
-        self.b_text = """We also want to <bookmark mark="b"/>squash the function in x-direction by a factor of 3."""
+        self.a_text = self.translate("Func_7_4.P2.a.a_text")
+        self.b_text = self.translate("Func_7_4.P2.a.b_text")
         
         super().construct()
 
 
 #####################################
 #####################################
-TASK_Func_7_4_P_3_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=2\cos(x)$", "$f(x)=\\frac{1}{2}\cos(x)$", "$f(x)=\cos(2x)$", "$f(x)=\cos(\\frac{1}{2}x)$"],
-    correctAnswerIndex = 3,
-    questionText = "What is the term of the cosine function, if we stretch it by 2 in x direction?"
-)
 class Func_7_4_P_3_q(SineCosineScalingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=2\cos(x)$", "$f(x)=\\frac{1}{2}\cos(x)$", "$f(x)=\cos(2x)$", "$f(x)=\cos(\\frac{1}{2}x)$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_7_4.P3.q.question-text")
+        )
 
     def construct(self):
     
-        self.intro = "Ok, now consider the function"
+        self.intro = self.translate("Func_7_4.P3.q.intro")
         self.use_sine = False
 
         self.a_factor = 1
@@ -2883,8 +2626,8 @@ class Func_7_4_P_3_q(SineCosineScalingQuestionScene):
         self.x_start = np.pi
 
         self.a_text = """"""
-        self.b_text = """We now want to <bookmark mark="b"/>stretch the function in x-direction by a factor of 2."""
-        self.q_text = """What is the term of the function, after we scale it?"""
+        self.b_text = self.translate("Func_7_4.P3.q.b_text")
+        self.q_text = self.translate("Func_7_4.P3.q.q_text")
 
         super().construct()
 
@@ -2893,7 +2636,7 @@ class Func_7_4_P_3_a(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P3.a.intro")
         self.use_sine = True
 
         self.a_factor = 1
@@ -2902,7 +2645,7 @@ class Func_7_4_P_3_a(SineCosineScalingAnswerScene):
         self.x_start = np.pi
 
         self.a_text = ""
-        self.b_text = """We want to <bookmark mark="b"/>stretch the function in x-direction by a factor of 2."""
+        self.b_text = self.translate("Func_7_4.P3.a.b_text")
         
         super().construct()
 
@@ -2910,7 +2653,7 @@ class Func_7_4_P_3_b(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P3.a.intro")
         self.use_sine = True
 
         self.a_factor = 1
@@ -2919,7 +2662,7 @@ class Func_7_4_P_3_b(SineCosineScalingAnswerScene):
         self.x_start = np.pi
 
         self.a_text = ""
-        self.b_text = """We want to <bookmark mark="b"/>stretch the function in x-direction by a factor of 2."""
+        self.b_text = self.translate("Func_7_4.P3.a.b_text")
         
         super().construct()
 
@@ -2927,7 +2670,7 @@ class Func_7_4_P_3_c(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's not right."
+        self.intro = self.translate("Func_7_4.P3.a.intro")
         self.use_sine = True
 
         self.a_factor = 1
@@ -2936,7 +2679,7 @@ class Func_7_4_P_3_c(SineCosineScalingAnswerScene):
         self.x_start = np.pi
 
         self.a_text = ""
-        self.b_text = """We want to <bookmark mark="b"/>stretch the function in x-direction by a factor of 2."""
+        self.b_text = self.translate("Func_7_4.P3.a.b_text")
         
         super().construct()
 
@@ -2944,7 +2687,7 @@ class Func_7_4_P_3_d(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "Yep, that's correct. Well done"
+        self.intro = self.translate("Func_7_4.P3.d.intro")
         self.use_sine = True
 
         self.a_factor = 1
@@ -2953,7 +2696,7 @@ class Func_7_4_P_3_d(SineCosineScalingAnswerScene):
         self.x_start = np.pi
 
         self.a_text = ""
-        self.b_text = """We want to <bookmark mark="b"/>stretch the function in x-direction by a factor of 2."""
+        self.b_text = self.translate("Func_7_4.P3.a.b_text")
         
         super().construct()
 
@@ -2961,16 +2704,18 @@ class Func_7_4_P_3_d(SineCosineScalingAnswerScene):
 
 #####################################
 #####################################
-TASK_Func_7_4_P_4_q = SophiaTaskDefinition(
-    answerOptions = ["$f(x)=\\frac{1}{2}\sin(x)", "$f(x)=2\sin(x)$", "$f(x)=\sin(2x)$", "$f(x)=\sin(\\frac{1}{2}x)$"],
-    correctAnswerIndex = 0,
-    questionText = "What is the term of the sine function, if we squash it by 0.5 in y direction?"
-)
 class Func_7_4_P_4_q(SineCosineScalingQuestionScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=\\frac{1}{2}\sin(x)", "$f(x)=2\sin(x)$", "$f(x)=\sin(2x)$", "$f(x)=\sin(\\frac{1}{2}x)$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_7_4.P4.q.question-text")
+        )
 
     def construct(self):
     
-        self.intro = "Next exercise. Look at the function"
+        self.intro = self.translate("Func_7_4.P4.q.intro")
         self.use_sine = True
 
         self.a_factor = 0.5
@@ -2978,9 +2723,9 @@ class Func_7_4_P_4_q(SineCosineScalingQuestionScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """We want to <bookmark mark="a"/>squash the function in y-direction by a factor of one half."""
+        self.a_text = self.translate("Func_7_4.P4.q.a_text")
         self.b_text = """"""
-        self.q_text = """What is the term of the scaled function?"""
+        self.q_text = self.translate("Func_7_4.P4.q.q_text")
 
         super().construct()
 
@@ -2989,7 +2734,7 @@ class Func_7_4_P_4_a(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "Correct! Well done."
+        self.intro = self.translate("Func_7_4.P4.a.intro")
         self.use_sine = True
 
         self.a_factor = 0.5
@@ -2997,7 +2742,7 @@ class Func_7_4_P_4_a(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """So we want to <bookmark mark="a"/>stretch the function in y-direction by a factor of one half."""
+        self.a_text = self.translate("Func_7_4.P4.a.a_text")
         self.b_text = ""
 
         super().construct()
@@ -3006,7 +2751,7 @@ class Func_7_4_P_4_b(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_7_4.P4.b.intro")
         self.use_sine = True
 
         self.a_factor = 0.5
@@ -3014,7 +2759,7 @@ class Func_7_4_P_4_b(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """So we want to <bookmark mark="a"/>stretch the function in y-direction by a factor of one half."""
+        self.a_text = self.translate("Func_7_4.P4.a.a_text")
         self.b_text = ""
 
         super().construct()
@@ -3023,7 +2768,7 @@ class Func_7_4_P_4_c(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_7_4.P4.b.intro")
         self.use_sine = True
 
         self.a_factor = 0.5
@@ -3031,7 +2776,7 @@ class Func_7_4_P_4_c(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """So we want to <bookmark mark="a"/>stretch the function in y-direction by a factor of one half."""
+        self.a_text = self.translate("Func_7_4.P4.a.a_text")
         self.b_text = ""
 
         super().construct()
@@ -3040,7 +2785,7 @@ class Func_7_4_P_4_d(SineCosineScalingAnswerScene):
 
     def construct(self):
     
-        self.intro = "No, that's incorrect."
+        self.intro = self.translate("Func_7_4.P4.b.intro")
         self.use_sine = True
 
         self.a_factor = 0.5
@@ -3048,57 +2793,57 @@ class Func_7_4_P_4_d(SineCosineScalingAnswerScene):
 
         self.x_start = (-3/2)*np.pi
 
-        self.a_text = """So we want to <bookmark mark="a"/>stretch the function in y-direction by a factor of one half."""
+        self.a_text = self.translate("Func_7_4.P4.a.a_text")
         self.b_text = ""
 
         super().construct()
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_7_4_I_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_I_1_q, Func_7_4_I_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_I_1_q),
     PagePrototypeVideo.from_scene(Func_7_4_I_1_a),
     PagePrototypeVideo.from_scene(Func_7_4_I_1_b),
     PagePrototypeVideo.from_scene(Func_7_4_I_1_c),
     PagePrototypeVideo.from_scene(Func_7_4_I_1_d),
     PagePrototypeVideo.from_scene(Func_7_4_I_2),
     PagePrototypeVideo.from_scene(Func_7_4_P_1_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_P_1_q, Func_7_4_P_1_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_P_1_q),
     PagePrototypeVideo.from_scene(Func_7_4_P_1_a),
     PagePrototypeVideo.from_scene(Func_7_4_P_1_b),
     PagePrototypeVideo.from_scene(Func_7_4_P_1_c),
     PagePrototypeVideo.from_scene(Func_7_4_P_1_d),
     PagePrototypeVideo.from_scene(Func_7_4_I_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_I_3_q, Func_7_4_I_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_I_3_q),
     PagePrototypeVideo.from_scene(Func_7_4_I_3_a),
     PagePrototypeVideo.from_scene(Func_7_4_I_3_b),
     PagePrototypeVideo.from_scene(Func_7_4_I_3_c),
     PagePrototypeVideo.from_scene(Func_7_4_I_3_d),
     PagePrototypeVideo.from_scene(Func_7_4_I_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_I_4_q, Func_7_4_I_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_I_4_q),
     PagePrototypeVideo.from_scene(Func_7_4_I_4_a),
     PagePrototypeVideo.from_scene(Func_7_4_I_4_b),
     PagePrototypeVideo.from_scene(Func_7_4_I_4_c),
     PagePrototypeVideo.from_scene(Func_7_4_I_4_d),
     PagePrototypeVideo.from_scene(Func_7_4_I_5_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_I_5_q, Func_7_4_I_5_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_I_5_q),
     PagePrototypeVideo.from_scene(Func_7_4_I_5_a),
     PagePrototypeVideo.from_scene(Func_7_4_I_5_b),
     PagePrototypeVideo.from_scene(Func_7_4_I_5_c),
     PagePrototypeVideo.from_scene(Func_7_4_I_5_d),
     PagePrototypeVideo.from_scene(Func_7_4_P_2_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_P_2_q, Func_7_4_P_2_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_P_2_q),
     PagePrototypeVideo.from_scene(Func_7_4_P_2_a),
     PagePrototypeVideo.from_scene(Func_7_4_P_2_b),
     PagePrototypeVideo.from_scene(Func_7_4_P_2_c),
     PagePrototypeVideo.from_scene(Func_7_4_P_2_d),
     PagePrototypeVideo.from_scene(Func_7_4_P_3_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_P_3_q, Func_7_4_P_3_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_P_3_q),
     PagePrototypeVideo.from_scene(Func_7_4_P_3_a),
     PagePrototypeVideo.from_scene(Func_7_4_P_3_b),
     PagePrototypeVideo.from_scene(Func_7_4_P_3_c),
     PagePrototypeVideo.from_scene(Func_7_4_P_3_d),
     PagePrototypeVideo.from_scene(Func_7_4_P_4_q),
-    PagePrototypeQuestion.from_task_definition(TASK_Func_7_4_P_4_q, Func_7_4_P_4_q.__name__),
+    PagePrototypeQuestion.from_scene(Func_7_4_P_4_q),
     PagePrototypeVideo.from_scene(Func_7_4_P_4_a),
     PagePrototypeVideo.from_scene(Func_7_4_P_4_b),
     PagePrototypeVideo.from_scene(Func_7_4_P_4_c),
