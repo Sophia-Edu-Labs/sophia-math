@@ -271,24 +271,25 @@ class FuncTermAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add(func)
 
 
-        plugInTexts = ""
+        self.plugInTexts = ""
         for i in range(len(self.vals)):
+            self.i = i
             if i < 2:
-                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-1")
+                self.plugInTexts += self.evaluate_string(self.translate("Func_1_2.1I2a.main.plug-in-texts-1"))
             elif i < len(self.vals) - 1:
-                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-2")
+                self.plugInTexts += self.evaluate_string(self.translate("Func_1_2.1I2a.main.plug-in-texts-2"))
             else:
-                plugInTexts += self.translate("Func_1_2.1I2a.main.plug-in-texts-3")
+                self.plugInTexts += self.evaluate_string(self.translate("Func_1_2.1I2a.main.plug-in-texts-3"))
 
-        introText = ""
+        self.introText = ""
         if self.idx_selected == self.idx_correct:
-            introText = self.translate("Func_1_2.1I2a.main.intro-text-correct")
+            self.introText = self.translate("Func_1_2.1I2a.main.intro-text-correct")
         else:
-            introText = self.translate("Func_1_2.1I2a.main.intro-text-incorrect")
+            self.introText = self.translate("Func_1_2.1I2a.main.intro-text-incorrect")
 
         # Action Sequence
         with self.voiceover(
-                text= self.translate("Func_1_2.1I2a.func-term-answer.voiceover")
+                text= self.evaluate_string(self.translate("Func_1_2.1I2a.func-term-answer.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("show_term")
@@ -898,7 +899,7 @@ class FuncDefinitionsQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-            text=self.translate("Func_1_2.func-def-q-scene-voiceover")
+            text=self.evaluate_string(self.translate("Func_1_2.func-def-q-scene-voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("Func")

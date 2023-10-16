@@ -9,5 +9,12 @@
     "i18n-ally.extract.targetPickingStrategy": "most-similar",
     "i18n-ally.enabledParsers": [
         "json"
-    ]
+    ],
+    "i18nJsonEditor.supportedFolders": [
+		"i18n",
+		"locales",
+	], 
+    "i18nJsonEditor.workspaceFolders": [
+        { "name": "Common", "path": "./scenes/i18n/locales" },
+    ],
 }

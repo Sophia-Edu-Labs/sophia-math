@@ -1,118 +1,5 @@
 {
-  "Func_6_1": {
-    "1I1q": {
-      "main": {
-        "voiceover": "Stell dir vor, du bist <bookmark mark=\"crown\"/> der König oder die Königin eines alten Reiches.\nWenn du nicht damit beschäftigt bist, dein Reich zu regieren, spielst du gerne<bookmark mark=\"chess\"/> Schach mit deinen Freunden.\nAlso bittest du den begabtesten Künstler deines Reiches, dir ein Schachbrett anzufertigen.\nAls er mit dem Schachbrett zurückkommt, bist du von seiner Schönheit beeindruckt und beschließt,\nsie mit einem Preis zu belohnen.\nAber du bist knapp bei Kasse, denn du hast all dein Geld<bookmark mark=\"headphones\"/> für ein brandneues Paar Kopfhörer ausgegeben,\nalso bittest du den Künstler, seinen Preis zu nennen.\nDer Künstler stellt dich vor die Wahl:\nDu kannst entweder <bookmark mark=\"gold\"/>für jedes Feld auf dem Schachbrett eine Goldmünze zahlen,\noder du kannst <bookmark mark=\"rice\"/>ihm ein Reiskorn für das erste Feld, zwei Reiskörner für das zweite Feld,\nvier Reiskörner für das dritte Feld, acht Reiskörner für das vierte Feld, und so weiter, bis\ndu sie für alle 64 Quadrate bezahlt hast. <bookmark mark=\"qmark\"/>\nWelche Option wählst du?",
-        "exponential-functions": "Exponentialfunktionen"
-      },
-      "question": {
-        "with-rice": "Mit Reis",
-        "with-gold": "Mit Gold",
-        "how-do-you-pay-the-artist": "Wie bezahlst du den Künstler?"
-      }
-    },
-    "1I1a": {
-      "main": {
-        "grains-of-rice": "Reiskörner",
-        "21st-square": "21. Feld",
-        "41st-square": "41. Feld",
-        "voiceover": "Mhm, ich bin mir nicht sicher, ob das eine gute Idee ist.\nSchauen wir mal, wie viel Reis dich das kostet.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>ein Reiskorn.\nFür das zweite Quadrat zahlst du zusätzlich<bookmark mark=\"two\"/>zwei Reiskörner.\nFür das dritte Feld bezahlst du zusätzlich<bookmark mark=\"four\"/>vier Reiskörner.\nfür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>acht Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der acht Reihen auf dem Schachbrett füllen willst? Einhundertachtundzwanzig.\nDas ist eine Menge Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nSobald du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreicht hast, wirst du mehr als eine Million Reiskörner bezahlen müssen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreicht hast, musst du mehr als eine Billion Reiskörner bezahlen.\nAm Ende werden Sie insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen bezahlen müssen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner.\nIch bin mir nicht sicher über den Umrechnungskurs von Reis in Gold, aber ich bin mir ziemlich sicher, dass Gold hier die billigere Option ist...",
-        "test_key": "mein Testschlüssel"
-      }
-    },
-    "1I1b": {
-      "main": {
-        "voiceover": "Ja, das scheint die richtige Idee zu sein.\nZum Vergleich, lass uns sehen, wie viel Reis es dich kosten würde.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>1 Reiskorn.\nFür das zweite Feld zahlst du zusätzlich<bookmark mark=\"two\"/>2 Reiskörner.\nFür das dritte Feld zahlst du zusätzlich<bookmark mark=\"four\"/>4 Reiskörner.\nFür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>8 Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der\n8 Reihen auf dem Schachbrett beendet hast? Einhundertachtundzwanzig.\nDas ist viel Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nWenn du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreichst, musst du mehr als eine Million Reiskörner zahlen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreichst, musst du mehr als eine Billion Reiskörner zahlen.\nAm Ende musst du insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner zahlen.\nIch bin mir nicht sicher über die Reis-zu-Gold-Umrechnungskurse, aber ich bin ziemlich sicher, dass Gold hier die günstigere Option ist..."
-      }
-    },
-    "1I2": {
-      "main": {
-        "exponential-growth": "Exponentielles Wachstum",
-        "linear-growth": "Lineares Wachstum",
-        "voiceover": "Was ist der Grund dafür, dass im Beispiel des Schachbretts die Anzahl der Reiskörner, die Sie bezahlen müssen\nso schnell ansteigt? Wie kann Reis so schnell so viel teurer werden als Gold?\nDie Antwort auf diese beiden Fragen ist die gleiche: Exponentielles Wachstum.\nVergleichen wir die beiden Optionen, Reis und Gold, noch einmal. Genauer gesagt,\nlassen Sie uns die beiden <bookmark mark=\"cords\"/> mit Hilfe von Funktionen beschreiben.\nBeginnen wir mit Gold.\nDie Funktion, die die Menge an Gold beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, lautet\n<bookmark mark=\"f_gold\"/> f von x ist gleich x.\nFür das erste Feld muss man eine Goldmünze bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Feld musst du ebenfalls eine Goldmünze bezahlen. Also ist f von 2 gleich eins für das erste Feld,\nplus eins für das zweite Feld, also zwei. Und so weiter. Wie Sie sehen, steigt der Betrag, den Sie zahlen müssen\nlinear mit der Anzahl der zu zahlenden Quadrate ansteigt. Ein zusätzliches Quadrat kostet genau\nso viel wie jedes der vorherigen Quadrate, und das letzte Quadrat kostet genau so viel wie das erste.\nWir nennen dies <bookmark mark=\"linear\"/>lineares Wachstum...\n\nBetrachten wir nun <bookmark mark=\"clean\"/> zum Vergleich Reis.\nDie <bookmark mark=\"cords_rice\"/>Funktion, die die Menge an Reis beschreibt, die man für eine\nDie <bookmark mark=\"f_rice\"/>-Funktion, die die Menge an Reis beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, ist eine Exponentialfunktion\nFür das erste Quadrat muss man ein Reiskorn bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Quadrat muss man zwei Reiskörner bezahlen. Also ist f von 2 gleich eins für das erste Quadrat,\nplus zwei für das zweite Feld, also drei. \nFür das dritte Feld musst du vier Reiskörner bezahlen. Also ist f von 3 gleich eins für das erste Feld,\nplus zwei für das zweite Feld, plus vier für das dritte Feld, also sieben.\nUnd so weiter.\nWie Sie sehen, steigt der Betrag, den Sie zahlen müssen, schnell mit der Anzahl der Quadrate, für die Sie zahlen müssen,\ndenn für jedes Feld müssen Sie doppelt so viel bezahlen wie für das vorherige Feld.\nWir nennen dies <bookmark mark=\"exponential\"/>exponentielles Wachstum..."
-      }
-    },
-    "1I3": {
-      "main": {
-        "title": "Lineares Wachstum",
-        "voiceover": "Treffen Sie <bookmark mark=\"tom_in_1\"/> Tom.\n\nTom ist ein <bookmark mark=\"chicken_in_1\"/> Hühnerzüchter.\n\nEr hat <bookmark mark=\"two_chickens\"/>zwei Hühner. \nJeden Tag liegt jeder von ihnen\n\n<bookmark mark=\"one_egg_per_day\"/>ein Ei.\n\nWeil Tom Eier so sehr mag, sammelt er sie jeden Tag ein\n\nund zählt <bookmark mark=\"calendar\"/>wie viele Eier er im Laufe der Zeit gesammelt hat.\n\n\nHelfen wir Tom, indem wir die Anzahl der Eier, die er gesammelt hat, mithilfe einer Funktion beschreiben.\n\nWir beschreiben die Funktion anhand eines <bookmark mark=\"cords\"/>-Diagramms.\n\n\nNach <bookmark mark=\"one_day\"/>einem Tag hat Tom also <bookmark mark=\"two_eggs\"/>\n\nzwei Eier, weil jedes der beiden Hühner ein Ei gelegt hat.\n\nNach <bookmark mark=\"two_days\"/>zwei Tagen hat Tom <bookmark mark=\"four_eggs\"/>\n\nvier Eier, weil jedes der beiden Hühner am ersten Tag ein Ei gelegt hat,\n\nund ein Ei am zweiten Tag.\n\nUnd nach <bookmark mark=\"drei_tagen\"/>drei Tagen hat Tom <bookmark mark=\"six_eggs\"/>\n\nsechs Eier, weil jedes der beiden Hühner am ersten Tag ein Ei gelegt hat,\n\nein Ei am zweiten Tag und ein Ei am dritten Tag. \nund so geht es weiter...\n\n\nAlso <bookmark mark=\"plot\"/> jeden Tag bekommt Tom zwei zusätzliche Eier.\n\nDas bedeutet, dass wir die Anzahl der Eier, die Tom gesammelt hat, mit a beschreiben können\n\n<bookmark mark=\"func\"/>Funktion f <bookmark mark=\"fx\"/> von x gleich\n\n<bookmark mark=\"two_times\"/>zweimal <bookmark mark=\"x\"/>x, wobei x das ist\n\nAnzahl der vergangenen Tage.\n\n\nWenn Sie sich die Darstellung dieser Funktion ansehen, können Sie erkennen, dass es sich um eine gerade Linie handelt.\n\ndenn die Anzahl der Eier nimmt jeden Tag um den gleichen Betrag zu.\n\nDies wird als <bookmark mark=\"linear\"/>lineares Wachstum bezeichnet."
-      }
-    },
-    "1I4": {
-      "main": {
-        "one_egg": "1 $/$Woche",
-        "title": "Exponentielles Wachstum",
-        "two_chickens": "2 mal",
-        "voiceover": "Treffen Sie <bookmark mark=\"Sophie_in_1\"/> Sophie.\n\nSophie liebt <bookmark mark=\"chicken_in_1\"/> Hühner.\n\nSie hat derzeit <bookmark mark=\"two_chickens_1\"/>zwei Hühner, aber sie möchte\n\nviel mehr. \nJedes ihrer beiden Hühner legt <bookmark mark=\"one_egg_per_week\"/>\n\nein Ei pro Woche und am Ende der Woche das Huhn aus dem Ei\n\ngeschlüpft und alt genug, um selbst Eier zu legen. \nDas sind ein paar schnelle Hühner!\n\n\nBeschreiben wir die Anzahl der Hühner, die Sophie hat, indem wir das <bookmark mark=\"graph\"/> verwenden\n\nGraph einer Funktion.\n\nIn der <bookmark mark=\"one_week\"/>ersten Woche hat Sophie also zwei Hühner<bookmark mark=\"two_chickens\"/>\n\nEine Woche <bookmark mark=\"two_weeks\"/>später hat Sophie <bookmark mark=\"four_chickens\"/>\n\nvier Hühner. \nDie beiden Hühner, mit denen sie angefangen hat, und die beiden Hühner, die aus den Eiern geschlüpft sind.\n\n\nIn den <bookmark mark=\"drei_wochen\"/>nächsten Woche hat Sophie vier Hühner, die jeweils ein Ei legen,\n\nalso bekommt sie vier Eier. \nDies bedeutet, dass die Gesamtzahl der Hühner nach der zweiten Woche beträgt\n\n<bookmark mark=\"eight_chickens\"/>acht: die vier Hühner aus der ersten Woche und die vier Hühner\n\ndas aus den Eiern geschlüpft ist.\n\n\nIn der <bookmark mark=\"four_weeks\"/>vierten Woche hat Sophie acht Hühner, die eins legen\n\njedes Ei, also bekommt sie acht Eier. \nDie Gesamtzahl der Hühner beträgt also nach der dritten Woche\n\n<bookmark mark=\"sixteen_chickens\"/>sechzehn: die acht Hühner aus der zweiten Woche und die\n\nacht Hühner, die aus den Eiern geschlüpft sind.\n\n\nWie Sie sehen können, nimmt <bookmark mark=\"plot\"/>die Anzahl der Hühner sehr schnell zu, und das nennen wir\n\nexponentielles Wachstum. \nDie Anzahl der Hühner verdoppelt sich jede Woche, weil jedes Ihrer\n\nHühner legen ein Ei pro Woche. \nDas bedeutet, wie viele Hühner Sie haben möchten\n\nx Wochen werden beschrieben durch <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/> x entspricht <bookmark mark=\"two\"/>\n\nzwei hoch <bookmark mark=\"power\"/> Potenz von x. \nWeil man mit zwei Hühnern beginnt und jedes Mal x\n\num eins erhöht, verdoppelt sich die Anzahl der Hühner.\n\n\nDas nennen wir <bookmark mark=\"exponential\"/>exponentielles Wachstum."
-      }
-    },
-    "I5": {
-      "a": {
-        "voiceover": "Das ist richtig, gut gemacht.\n\nSchauen wir uns Schritt für Schritt die Anzahl der Bakterien an.\n\nZuerst gibt es ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten verdoppelt sich das Bakterium, es sind also<bookmark mark=\"two\"/> zwei Bakterien vorhanden.\n\nNach weiteren zwanzig Minuten verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem Zeitschritt doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt:<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt erhalten wir <bookmark mark=\"step1\"/>ein Bakterium, im zweiten Zeitschritt erhalten wir <bookmark mark=\"step2\"/>zwei Bakterien\n\nund im dritten Zeitschritt erhalten wir <bookmark mark=\"step3\"/>vier Bakterien ...\n\nDas bedeutet, dass die Anzahl der Bakterien <bookmark mark=\"exponential\"/>exponentiell wächst, denn mit jedem Zeitschritt erhalten wir\n\ndoppelt so viele zusätzliche Bakterien wie im vorherigen Zeitschritt."
-      },
-      "b": {
-        "voiceover": "Nein, das ist nicht richtig.\n\nSchauen wir uns Schritt für Schritt die Anzahl der Bakterien an.\n\nZuerst gibt es ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten verdoppelt sich das Bakterium, es sind also<bookmark mark=\"two\"/> zwei Bakterien vorhanden.\n\nNach weiteren zwanzig Minuten verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem Zeitschritt doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt:<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt erhalten wir <bookmark mark=\"step1\"/>ein Bakterium, im zweiten Zeitschritt erhalten wir <bookmark mark=\"step2\"/>zwei Bakterien\n\nund im dritten Zeitschritt erhalten wir <bookmark mark=\"step3\"/>vier Bakterien ...\n\nDas bedeutet, dass die Anzahl der Bakterien <bookmark mark=\"exponential\"/>exponentiell wächst, denn mit jedem Zeitschritt erhalten wir\n\ndoppelt so viele zusätzliche Bakterien wie im vorherigen Zeitschritt."
-      },
-      "main": {
-        "bacteria_double1": "$\\\\Uparrow$ Alle duplizieren",
-        "bacteria_double2": "20$ Minuten",
-        "eg1": "$\\\\Rightarrow$ Die Anzahl der Bakterien",
-        "eg2": "wächst exponentiell",
-        "title": "Exponentiell oder linear?",
-        "voiceover": "Meine Freundin <bookmark mark=\"sarah\"/>Sarah ist Ärztin und forscht darüber\n\n<bookmark mark=\"bacteria\"/>Bakterien.\n\nWussten Sie, dass Bakterien wachsen, indem sie sich einfach vervielfältigen?\n\nDie Bakterien, die Sarah untersucht, zum Beispiel <bookmark mark=\"bacteria_double\"/>\n\neinmal alle zwanzig Minuten duplizieren. \nDas bedeutet, dass jeweils alle zwanzig Minuten\n\nVon den Bakterien, die Sarah untersucht, verwandelt es sich in<bookmark mark=\"show_double\"/> zwei Bakterien ...\n\nJetzt will Sarah wissen: Wächst die Zahl der Bakterien, die sie analysiert?\n\n<bookmark mark=\"linear\"/>linear, oder wächst es <bookmark mark=\"exponential\"/> exponentiell?"
-      },
-      "q": {
-        "answer-options": "[\"exponentiell\", \"linear\"]",
-        "question-text": "Wächst die Anzahl der Bakterien exponentiell oder linear?"
-      }
-    },
-    "I6": {
-      "a": {
-        "title": "Exponentielles Wachstum",
-        "voiceover": "Das ist es nicht.\n\nSchauen wir uns noch einmal an, wie viele Bakterien wir bei jedem Schritt haben.\n\nWenn wir beginnen, gibt es bei x gleich Null ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die Bakterien, sodass <bookmark mark=\"two\"/> zwei Bakterien vorhanden sind.\n\nNach weiteren zwanzig Minuten, also bei x gleich zwei, verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten, das heißt bei x = vier, duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um eins erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>ein Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit zwei.\n\nIm zweiten Zeitschritt gehen wir von zwei <bookmark mark=\"step2\"/> Bakterien auf vier über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n\nund im dritten Zeitschritt gehen wir von vier <bookmark mark=\"step3\"/> Bakterien auf acht und multiplizieren die Anzahl der Bakterien erneut mit zwei.\n\n\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch zwei hoch x gegeben ist, da wir 2 x mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/> ist. g von <bookmark mark=\"gx\"/>x entspricht <bookmark mark=\"gtwo\"/>zwei hoch <bookmark \nmark=\"gxx\"/> x."
-      },
-      "b": {
-        "bacteria": "Bakterien",
-        "voiceover": "Das ist richtig, gut gemacht.\n\nSchauen wir uns noch einmal an, wie viele Bakterien wir bei jedem Schritt haben.\n\nWenn wir beginnen, gibt es bei x gleich Null ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die Bakterien, sodass <bookmark mark=\"two\"/> zwei Bakterien vorhanden sind.\n\nNach weiteren zwanzig Minuten, also bei x gleich zwei, verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten, das heißt bei x = vier, duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um eins erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>ein Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit zwei.\n\nIm zweiten Zeitschritt gehen wir von zwei <bookmark mark=\"step2\"/> Bakterien auf vier über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n\nund im dritten Zeitschritt gehen wir von vier <bookmark mark=\"step3\"/> Bakterien auf acht und multiplizieren die Anzahl der Bakterien erneut mit zwei.\n\n\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch zwei hoch x gegeben ist, da wir 2 x mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/> ist. g von <bookmark mark=\"gx\"/>x entspricht <bookmark mark=\"gtwo\"/>zwei hoch <bookmark \nmark=\"gxx\"/> x."
-      },
-      "q": {
-        "bacteria_double_a": "$\\\\Uparrow$ Alle duplizieren",
-        "bacteria_double_b": "20$ Minuten",
-        "bacteria_minutes": "Protokoll",
-        "bacteria_time": "Zeit",
-        "question-text": "Welche Funktion beschreibt die Anzahl der Bakterien zum Zeitpunkt x?",
-        "voiceover": "<bookmark mark=\"sarah\"/>Sarah weiß, dass sich die <bookmark mark=\"bacteria\"/>Bakterien, die sie untersucht, alle zwanzig Minuten verdoppeln.\n\nNun möchte sie die Anzahl der Bakterien, die sie untersucht, mithilfe einer Funktion beschreiben.\n\nSei x<bookmark mark=\"table\"/> die verstrichene Zeit in Einheiten von zwanzig Minuten, sodass <bookmark mark=\"row_1\"/>x gleich eins ist\n\nzwanzig Minuten, <bookmark mark=\"row_2\"/>x entspricht zwei bedeutet vierzig Minuten,<bookmark mark=\"rowsss\"/> und so weiter.\n\n<bookmark mark=\"clean\"/>Welche dieser Funktionen beschreiben die Anzahl der Bakterien zum Zeitpunkt x?\n\nIst <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"ftwo\"/>2 mal <bookmark mark=\"fxx\"/> x?\n\nOder ist <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x?\n\nOder ist <bookmark mark=\"h\"/> h von <bookmark mark=\"hx\"/>x gleich <bookmark mark=\"hxx\"/>x im Quadrat?"
-      }
-    },
-    "I7": {
-      "a": {
-        "double-t1": "$\\\\Uparrow$ Alle duplizieren",
-        "double-t2": "20$ Minuten",
-        "voiceover": "Nein, das ist nicht richtig.\n\nFür die Funktion <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x ist gleich <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x,\n\nDie Anzahl der Bakterien verdoppelt sich alle zwanzig Minuten. \nJeder Zeitschritt bringt also doppelt so viele Bakterien hervor wie der vorherige.<bookmark mark=\"cords\"/>\n\nDie blaue <bookmark mark=\"blue\"/>-Grafik hat eine konstante Steigung, das heißt, sie steigt immer mit der gleichen Geschwindigkeit, es kann also nicht diejenige sein, die wir haben\n\nAuf der Suche nach.\n\nDas violette Diagramm <bookmark mark=\"purple\"/> nimmt mit abnehmender Geschwindigkeit zu, es kann also auch nicht richtig sein <bookmark mark=\"clear_cords\"/>.\n\nDie grüne <bookmark mark=\"green\"/>-Grafik wächst jedoch immer schneller, sodass es sich um die gesuchte Grafik handeln muss. \nIn der Tat,\n\nes verdoppelt sich bei jedem Zeitschritt, also muss es das richtige sein."
-      },
-      "b": {
-        "voiceover": "Ja, das ist es!\n\nFür die Funktion <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x ist gleich <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x,\n\nDie Anzahl der Bakterien verdoppelt sich alle zwanzig Minuten. \nJeder Zeitschritt bringt also doppelt so viele Bakterien hervor wie der vorherige.<bookmark mark=\"cords\"/>\n\nDie blaue <bookmark mark=\"blue\"/>-Grafik hat eine konstante Steigung, das heißt, sie steigt immer mit der gleichen Geschwindigkeit, es kann also nicht diejenige sein, die wir haben\n\nAuf der Suche nach.\n\nDas violette Diagramm <bookmark mark=\"purple\"/> nimmt mit abnehmender Geschwindigkeit zu, es kann also auch nicht richtig sein <bookmark mark=\"clear_cords\"/>.\n\nDie grüne <bookmark mark=\"green\"/>-Grafik wächst jedoch immer schneller, sodass es sich um die gesuchte Grafik handeln muss. \nIn der Tat,\n\nes verdoppelt sich bei jedem Zeitschritt, also muss es das richtige sein."
-      },
-      "q": {
-        "answer-options": "[\"Der blaue Graph\", \"Der grüne Graph\", \"Der violette Graph\"],",
-        "lin-growth": "Lineares Wachstum",
-        "question-text": "Welcher der Graphen gehört zur Funktion?",
-        "voiceover": "Schauen Sie sich die Funktion<bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x an, die <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x entspricht \n?\n\nWelcher der folgenden <bookmark mark=\"cords\"/>-Graphen gehört zur Funktion?\n\nDas <bookmark mark=\"blue\"/> blaue Diagramm? \nOder die <bookmark mark=\"green\"/> grüne Grafik? \nOder ist es das lila Diagramm <bookmark mark=\"purple\"/>?"
-      }
-    }
-  },
   "Func_1_1": {
-    "1I1q": {
-      "question": {
-        "the-blue-representation": "Die blaue Darstellung",
-        "the-red-representation": "Die rote Darstellung",
-        "which-representation-describes-a-realistic-temperature-trend": "Welche Darstellung beschreibt einen realistischen Temperaturverlauf?"
-      },
-      "main": {
-        "title": "Funktionen",
-        "voiceover": "Was ist eine Funktion? \n<bookmark mark=\"qOut\"/>\n<break time=\"0.5s\"/>     \nStell dir vor, du planst ein                \n<bookmark mark=\"picnicIn\"/>\nPicknick mit deinen Freunden.\n<break time=\"0.5s\"/>\nDamit das Picknick richtig gut wird, ist es\n<bookmark mark=\"picnicOut\"/>\nnatürlich wichtig, dass das Wetter mitspielt.\n<bookmark mark=\"WetterIn\"/>\nSchau dir also den Wetterbericht an.\n<bookmark mark=\"CordsInWetterOut\"/>\n<break time=\"0.5s\"/>\nDer Bericht besteht aus einer Darstellung wo           \n<bookmark mark=\"ShowXAxis\"/>\ndie x-Achse die Zeit in Stunden, und\n<bookmark mark=\"ShowYAxis\"/>\nDie Y-Achse die Temperatur in Grad Celsius darstellt.\n<bookmark mark=\"ResetCursor1\"/>\nSo kannst du sehen, wie sich die Temperatur im Laufe des Tages entwickelt.\n<break time=\"0.5s\"/>\nPass auf, ich zeige dir jetzt zwei mögliche Darstellungen.                \n<break time=\"0.5s\"/>  \nÜberleg dir, welche davon einen realistischen Temperaturtrend darstellt.\n<break time=\"0.5s\"/>\n<bookmark mark=\"BlueFuncIn\"/>\nIst es die blaue Darstellung?\n<break time=\"1.4s\"/>\n<bookmark mark=\"RedFuncIn\"/>\nOder ist es die rote Darstellung?"
-      }
-    },
     "1I1_correct": {
       "main": {
         "voiceover": "Genau richtig! \n<bookmark mark=\"BlueFuncIn\"/> Die blaue Darstellung ist korrekt...\n<break time=\"1s\"/>\nAuf der linken Seite der x-Achse ist morgens der Wert der blauen Darstellung niedrig.      \nDas ergibt Sinn, denn morgens ist es kühler....\n<break time=\"1s\"/>\nIm Laufe des <bookmark mark=\"MoveAlongFunc\"/>Tages nimmt der Wert der blauen Darstellung zu. \nDas passt auch, da es wärmer wird.\nUnd abends ist auf der rechten Seite der x-Achse der Wert der blauen Darstellung wieder niedrig, wenn es kälter wird.\n<bookmark mark=\"RedFuncIn\"/>\n<break time=\"1s\"/>\nWarum kann es nun nicht die rote Darstellung sein?\n<break time=\"1s\"/>\nBetrachte<bookmark mark=\"notRed\"/> die Temperatur um zwei Uhr.       \n<break time=\"0.5s\"/>\nZiehen wir dann eine Linie\n<bookmark mark=\"VertLine\" /> von der x-Achse, also von zwei Uhr nach oben.\nDiese Linie schneidet die rote Darstellung an genau zwei Punkten:\n<bookmark mark=\"intersect1\"/>\nEinmal bei acht Grad und\n<bookmark mark=\"intersect2\"/>\nEinmal bei sechzehn Komma fünf Grad.\n<break time=\"0.4s\"/>\nDas würde bedeuten, dass es gleichzeitig acht Grad und sechzehn Komma fünf Grad hat.\nAber es kann zu einem bestimmten Zeitpunkt nur eine Temperatur geben.\nDie rote Darstellung ist also nicht korrekt...\n<break time=\"1s\"/>\nZusammenfassend: <bookmark mark=\"blueRecap\"/>Die blaue Darstellung ist korrekt, da sie jedem x-Wert, also jedem Zeitpunkt einen y-Wert, also eine Temperatur zuordnet.\nDie rote Darstellung <bookmark mark=\"redRecap\"/> ist dagegen nicht korrekt, da es x-Werte gibt, also Zeitpunkte, für die es zwei y-Werte, also zwei Temperaturen gibt. Das kann nicht sein, denn es kann an einem Ort zu einer Zeit immer nur eine Temperatur geben."
@@ -136,6 +23,17 @@
         "voiceover": "Das ist leider nicht richtig.                \n<bookmark mark=\"RedFuncIn\"/>\nAber warum kann es nicht die rote Darstellung sein?\nBetrachte<bookmark mark=\"notRed\"/> die Temperatur um zwei Uhr.\n<break time=\"0.6s\"/> \nZiehen wir eine Linie\n<bookmark mark=\"VertLine\" /> von der x-Achse, also von zwei Uhr nach oben.\nDiese Linie schneidet die rote Darstellung dann an genau zwei Punkten,         \n<bookmark mark=\"intersect1\"/>\neinmal bei acht Grad und\n<bookmark mark=\"intersect2\"/>\neinmal bei sechzehn Komma fünf Grad.\nDas würde bedeuten, dass es gleichzeitig acht Grad und sechzehn Komma fünf Grad hat.\nAber es kann zu einem bestimmten Zeitpunkt nur eine Temperatur geben.\nDie rote Darstellung ist also nicht <bookmark mark=\"BlueFuncIn\"/> korrekt.\nDie blaue Darstellung hingegen beschreibt die Temperatur im Tagesverlauf, also ist sie richtig.\nAuf der linken Seite der x-Achse ist morgens der Wert der blauen Darstellung niedrig.\nDies ergibt Sinn, da die Temperatur am Morgen meist niedrig ist.\n<bookmark mark=\"MoveAlongFunc\"/>\nIm Laufe des Tages nimmt der Wert der blauen Darstellung zu. \nDas passt auch, denn es wird ja über den Tag wärmer.\nUnd abends ist auf der rechten Seite der x-Achse der Wert der blauen Darstellung wieder niedrig, da es kälter wird.\nAlso ist die blaue Darstellung korrekt."
       }
     },
+    "1I1q": {
+      "main": {
+        "title": "Funktionen",
+        "voiceover": "Was ist eine Funktion? \n<bookmark mark=\"qOut\"/>\n<break time=\"0.5s\"/>     \nStell dir vor, du planst ein                \n<bookmark mark=\"picnicIn\"/>\nPicknick mit deinen Freunden.\n<break time=\"0.5s\"/>\nDamit das Picknick richtig gut wird, ist es\n<bookmark mark=\"picnicOut\"/>\nnatürlich wichtig, dass das Wetter mitspielt.\n<bookmark mark=\"WetterIn\"/>\nSchau dir also den Wetterbericht an.\n<bookmark mark=\"CordsInWetterOut\"/>\n<break time=\"0.5s\"/>\nDer Bericht besteht aus einer Darstellung wo           \n<bookmark mark=\"ShowXAxis\"/>\ndie x-Achse die Zeit in Stunden, und\n<bookmark mark=\"ShowYAxis\"/>\nDie Y-Achse die Temperatur in Grad Celsius darstellt.\n<bookmark mark=\"ResetCursor1\"/>\nSo kannst du sehen, wie sich die Temperatur im Laufe des Tages entwickelt.\n<break time=\"0.5s\"/>\nPass auf, ich zeige dir jetzt zwei mögliche Darstellungen.                \n<break time=\"0.5s\"/>  \nÜberleg dir, welche davon einen realistischen Temperaturtrend darstellt.\n<break time=\"0.5s\"/>\n<bookmark mark=\"BlueFuncIn\"/>\nIst es die blaue Darstellung?\n<break time=\"1.4s\"/>\n<bookmark mark=\"RedFuncIn\"/>\nOder ist es die rote Darstellung?"
+      },
+      "question": {
+        "the-blue-representation": "Die blaue Darstellung",
+        "the-red-representation": "Die rote Darstellung",
+        "which-representation-describes-a-realistic-temperature-trend": "Welche Darstellung beschreibt einen realistischen Temperaturverlauf?"
+      }
+    },
     "1I2": {
       "main": {
         "title": "\"Die Funktion\"",
@@ -149,14 +47,14 @@
         "voiceover": "Merke dir: <bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert <bookmark mark=\"map1\"/> genau einen <bookmark mark=\"map2\"/> y-Wert zuweist.\n<bookmark mark=\"OrangeFuncIn\"/>\nDie orangefarbene Darstellung ist also ein Beispiel für eine Funktion.\nSie <bookmark mark=\"orangeX\"/> weist jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen y-wert zu.\n<bookmark mark=\"MoveAlongFunc\"/>\nDas heißt, dass jedem x-Wert ein entsprechender y-Wert zugeordnet ist.\n<bookmark mark=\"GreenFuncIn\"/>\nDas ist auch der Grund, warum die grüne Darstellung keine Funktion ist.\nSie weist einigen x-Werten, zum Beispiel <bookmark mark=\"VertLine\" /> dem Wert x gleich Null, zwei y-Werte zu.\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen y-Wert zuordnet."
       }
     },
-    "P_2_intro": "\"\"\"Es ist Regenzeit.\n                \n                \nWir wollen wissen, wie viel Niederschlag es gibt, und die Niederschlagsmenge täglich messen.",
-    "P_2_title": "\"Regnerisches Wetter\"",
+    "P_2_intro": "Es ist Regenzeit.\n                \n                \nWir wollen wissen, wie viel Niederschlag es gibt, und messen jeden Tag die Niederschlagsmenge.",
+    "P_2_title": "\"Regenwetter\"",
     "P_2_x": "\"Tag\"",
     "P_2_x_text": "\"Der Tag, nummeriert von eins bis fünf\"",
     "P_2_y": "\"mm\"",
     "P_2_y_text": "\"Die Regenmenge in Millimetern\"",
-    "P_3_intro": "\"\"\"Es ist Winterzeit.\n                \n                \nWir wollen wissen, wie viel Schnee fällt und die Schneemenge täglich messen.",
-    "P_3_title": "\"Verschneites Wetter\"",
+    "P_3_intro": "Es ist Winter.\n                \n                \nWir wollen wissen, wie viel Schnee fällt und messen jeden Tag die Schneemenge.",
+    "P_3_title": "\"Schneewetter\"",
     "P_3_x": "\"Tag\"",
     "P_3_x_text": "Der Tag, nummeriert von eins bis fünf",
     "P_3_y": "\"cm\"",
@@ -167,26 +65,26 @@
     "P_4_x_text": "\"Der Tag, nummeriert von eins bis fünf\"",
     "P_4_y": "\"Std\"",
     "P_4_y_text": "\"Die Anzahl der Sonnenstunden\"",
-    "P_5_intro": "\"\"\"Es ist ein stürmischer Tag.\n                \n                \nDas sind tolle Neuigkeiten für uns, denn wir betreiben einen Park mit Windkraftanlagen, die erneuerbare Energie produzieren.\n                \nWir wollen wissen, wie schnell der Wind weht und die Windgeschwindigkeit stündlich messen.",
+    "P_5_intro": "Es ist ein stürmischer Tag.\n                \n                \nDas sind tolle Neuigkeiten für uns, denn wir betreiben einen Park mit Windkraftanlagen, die erneuerbare Energie produzieren.\n                \nWir wollen wissen, wie schnell der Wind weht und messen die Windgeschwindigkeit stündlich.",
     "P_5_labels": "[\"Stunde\", \"km/h\"]",
     "P_5_textlabels": "[\"Die Stunde, nummeriert von eins bis sechs\", \"Die Windgeschwindigkeit in Kilometern pro Stunde\"]",
     "P_5_title": "\"Windgeschwindigkeit\"",
-    "P_6_intro": "\"\"\"Es ist Frühling.\n                \n                \nWir wollen wissen, wie sich die Temperatur verändert und messen die Temperatur täglich.",
+    "P_6_intro": "Es ist Frühling.\n                \n                \nWir wollen wissen, wie sich die Temperatur entwickelt und messen die Temperatur täglich.",
     "P_6_labels": "[\"Tag\", \"°C\"]",
     "P_6_textlabels": "[\"Der Tag\", \"Die Temperatur in Grad Celsius\"]",
     "P_6_title": "\"Temperaturänderung\"",
-    "P_7_intro": "\"\"\"Es ist ein feuchter Tag.\n                \n                \nWir wollen wissen, wie hoch die Luftfeuchtigkeit ist und messen diese stündlich.",
+    "P_7_intro": "Es ist ein feuchter Tag.\n                \n                \nWir wollen wissen, wie hoch die Luftfeuchtigkeit ist und messen diese stündlich.",
     "P_7_labels": "[\"Stunde\", \"%\"]",
     "P_7_textlabels": "[\"Die Stunde\", \"Die Luftfeuchtigkeit in Prozent\"]",
     "P_7_title": "\"Feuchtigkeit\"",
-    "P_8_intro": "\"\"\"Es ist Erntezeit.\n                \n                \nWir wollen wissen, wie viele Äpfel wir sammeln und zählen die Anzahl der täglich gepflückten Äpfel.",
+    "P_8_intro": "Es ist Erntezeit.\n                \n                \nWir wollen wissen, wie viele Äpfel wir sammeln und zählen jeden Tag wie viele äpfel wir gepflückt haben.",
     "P_8_labels": "[\"Tag\", \"Äpfel\"]",
-    "P_8_textlabels": "[\"Der Tag\", \"Die Anzahl der geernteten Äpfel\"]",
+    "P_8_textlabels": "[\"Tag\", \"Anzahl der geernteten Äpfel\"]",
     "P_8_title": "\"Apfelernte\"",
-    "P_color-1": "\"Die orange Funktion\"",
-    "P_color-2": "\"Die blaue Funktion\"",
-    "P_color-3": "\"Die grüne Funktion\"",
-    "P_intro": "\"Wir machen eine Bergwanderung.\n                \n                \nDabei messen wir zu jeder vollen Stunde unsere Höhe.",
+    "P_color-1": "Die orangene Funktion",
+    "P_color-2": "Die blaue Funktion",
+    "P_color-3": "Die grüne Funktion",
+    "P_intro": "Wir machen eine Bergwanderung.\n                \n                \nDabei messen wir zu jeder vollen Stunde unsere Höhe.",
     "P_question-1": "\"Welche Funktion passt zu den Werten?\"",
     "P_title": "\"Bergwanderung\"",
     "P_x": "\"Zeit\"",
@@ -200,155 +98,27 @@
       "color-1": "\"Orange\"",
       "color-2": "\"Blau\"",
       "color-3": "\"Grün\"",
-      "first_bit": "f \"Das ist nicht korrekt. Die Funktion {colors[self.idx_selected]} ist nicht die richtige.\"",
-      "first_bit_correct": "f\"Das stimmt, tolle Arbeit!\"",
-      "voiceover": "F\"\"\"\n                \n<prosody rate=\"110%\">\n                \n{first_bit}\n                \nSie haben also die Funktion <bookmark mark=\"Func\"/>{colors[self.idx_selected]} ausgewählt.\n                \nUm zu überprüfen, ob das stimmt, tragen wir nacheinander die Werte aus der Tabelle in das Koordinatensystem ein.\n                \nIn diesem Beispiel stellt die <bookmark mark=\"xaxis\"/> x-Achse {self.Textlabels[0]} und die <bookmark mark=\"yaxis\"/> dar\n                \nDie y-Achse stellt {self.Textlabels[1]} dar.\n\n                \n<Lesezeichen mark=\"val1\"/>\n                \nDer erste Wert hat {nums[self.xvals[0]]} als x-Wert und {nums[self.yvals[self.correcty][0]]} als y-Wert.\n\n                \n<Lesezeichen mark=\"val2\"/>\n                \nDer zweite Wert hat {nums[self.xvals[1]]} als x-Wert und {nums[self.yvals[self.correcty][1]]} als y-Wert.\n\n                \n<Lesezeichen mark=\"val3\"/>\n                \nDer dritte Wert hat die Koordinaten {nums[self.xvals[2]]} und {nums[self.yvals[self.correcty][2]]}.\n\n                \n<Lesezeichen mark=\"val4\"/>\n                \nDer vierte Wert hat die Koordinaten {nums[self.xvals[3]]} und {nums[self.yvals[self.correcty][3]]}.\n\n                \n<Lesezeichen mark=\"val5\"/>\n                \nUnd der fünfte Wert hat die Koordinaten {nums[self.xvals[4]]} und {nums[self.yvals[self.correcty][4]]}.\n\n                \nWenn wir diese Werte verbinden, <bookmark mark=\"TrueFunc\"/>können wir sehen, dass die Funktion {colors[self.correcty]} funktioniert\n                \nist das Richtige.\n                \n</prosody>\n                \n\"\"\""
-    }
-  },
-  "Func_2_3": {
-    "I5": {
-      "title": "Funktionen \\& Gleichungen",
-      "equations": "Gleichungen",
-      "functions": "Funktionen",
-      "te1": "→ Wird verwendet, um bestimmte zu finden",
-      "te2": "Wert einer Variablen",
-      "tf1": "→ Wird zur Beschreibung verwendet",
-      "tf2": "reale Szenarien",
-      "ts1": "→ Kombinieren Sie die beiden zu",
-      "ts2": "Vergleichen Sie die reale Welt",
-      "ts3": "Szenarien",
-      "voiceover": "Fassen wir also noch einmal zusammen, <bookmark mark=\"qmark\"/> was wir gerade gemacht haben und was es mit Funktionen und Gleichungen zu tun hat.\n\n\n<bookmark mark=\"functions\"/> Funktionen werden häufig zur Beschreibung realer Szenarien verwendet. \nBeispielsweise kann eine Funktion beschreiben\n\ndie Entfernung, die Sie nach einiger Zeit zurückgelegt haben.\n\n\n<Lesezeichen mark=\"gleichung\"/>\n\nGleichungen werden verwendet, um den Wert einer Variablen zu ermitteln. \nBeispielsweise kann eine Gleichung dazu verwendet werden\n\nBestimmen Sie den Zeitpunkt, zu dem Sie zwanzig Kilometer zurückgelegt haben.\n\n\nJetzt können wir diese beiden Konzepte <bookmark mark=\"handshake\"/> zusammenfügen, um zu bestimmen, zu welchem ​​Zeitpunkt\n\nZwei reale Szenarien, die beide durch Funktionen beschrieben werden, sind gleich.\n\n\nIn dem Beispiel, das wir uns gerade angesehen haben, hatten wir zwei Funktionen, die die Entfernung zwischen Ihnen und Ihrem Freund beschreiben\n\nzu irgendeinem Zeitpunkt gereist sind. \nAnschließend haben wir mithilfe einer Gleichung ermittelt, zu welchem ​​Zeitpunkt\n\nSie und Ihr Freund sind die gleiche Strecke zurückgelegt.\n\n\nWir tun dies, indem wir einfach die Terme der beiden Funktionen einander gleichsetzen,\n\nund dann die Gleichung nach der Variablen lösen, in unserem Fall nach x."
-    },
-    "I1": {
-      "a": {
-        "voiceover": "Mhmmm, das ist nicht ganz richtig. \nLassen Sie uns das gemeinsam lösen.\n\n\n<bookmark mark=\"friend\"/>\n\nDein Freund fährt mit einer Geschwindigkeit von 15 Kilometern pro Stunde und wenn x für die Anzahl der gefahrenen Stunden steht,\n\nWir können ihre Funktion als <bookmark mark=\"friendfunc1\"/> schreiben. f von x entspricht fünfzehn mal x.\n\n\nUnd da sie auch einen Vorsprung von 5 Kilometern hat, müssen wir der Funktion <bookmark mark=\"friendfunc2\"/> 5 hinzufügen.\n\nDie Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, ist also f von x gleich fünfzehn mal x plus fünf.\n\n\nSchauen wir uns als Nächstes Ihre Funktion an. \n<bookmark mark=\"you\"/>\n\nSie radeln mit einer Geschwindigkeit von 20 Stundenkilometern.\n\n\nDa Sie keinen Vorsprung haben, lautet Ihre Funktion einfach: <bookmark mark=\"yourfunc\"/> g von x entspricht zwanzig mal x."
-      },
-      "c": {
-        "voiceover": "Das ist richtig. \nGut gemacht.\n\n<bookmark mark=\"friend\"/>\n\nDein Freund fährt mit einer Geschwindigkeit von 15 Kilometern pro Stunde und wenn x für die Anzahl der gefahrenen Stunden steht,\n\nWir können ihre Funktion als <bookmark mark=\"friendfunc1\"/> schreiben. f von x entspricht fünfzehn mal x.\n\n\nUnd da sie auch einen Vorsprung von 5 Kilometern hat, müssen wir der Funktion <bookmark mark=\"friendfunc2\"/> 5 hinzufügen.\n\nDie Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, ist also f von x gleich fünfzehn mal x plus fünf.\n\n\nSchauen wir uns als Nächstes Ihre Funktion an. \n<bookmark mark=\"you\"/>\n\nSie radeln mit einer Geschwindigkeit von 20 Stundenkilometern.\n\n\nDa Sie keinen Vorsprung haben, lautet Ihre Funktion einfach: <bookmark mark=\"yourfunc\"/> g von x entspricht zwanzig mal x."
-      },
-      "q": {
-        "f1": "Dein Freund:",
-        "f2a": "$5$km Vorsprung",
-        "f2b": "Geschwindigkeit: 15 km/h",
-        "question-text": "Welche Funktion beschreibt die Entfernungen, die Sie und Ihr Freund zurückgelegt haben?",
-        "title": "Funktionen und lineare Gleichungen",
-        "voiceover": "Neues Thema! \nIn diesem Kapitel betrachten wir lineare Funktionen und lineare Gleichungen.\n\nund was diese beiden miteinander zu tun haben.\n\n\nUnd wie könnte man den Zusammenhang besser herausfinden, als sich ein Beispiel aus der Praxis anzusehen?\n\n\nDies ist das Szenario: Sie und Ihr Freund radeln beide von Ihrem Haus aus mit dem Fahrrad zum Strand.\n\n\n<Lesezeichen mark=\"f1\"/>\n\nIhre Freundin hat einen <bookmark mark=\"f2\"/> Vorsprung von 5 Kilometern und radelt <bookmark mark=\"f3\"/> mit einer Geschwindigkeit von 15 Kilometern pro Stunde.\n\n\n<Lesezeichen mark=\"y1\"/>\n\nSie hingegen radeln mit <bookmark mark=\"y2\"/> einer Geschwindigkeit von 20 Kilometern pro Stunde, haben aber keinen Vorsprung.\n\n\nFrage Nummer eins, und hier geht es hauptsächlich um Funktionen: Welche Funktionen f und g beschreiben die Entfernung, die Ihr Freund und Sie zurückgelegt haben?",
-        "y1": "Du:",
-        "y2": "20$km/h Geschwindigkeit"
-      }
-    },
-    "I2": {
-      "Q1": "→ Zu welchem ​​Zeitpunkt",
-      "Q2": "wirst du gereist sein",
-      "Q3": "der gleiche Abstand?",
-      "title": "Wann triffst du dich?",
-      "voiceover": "Ok, warum machen wir das? \nUnd was hat das mit Gleichungen zu tun?\n\n\nDenken Sie darüber nach: <bookmark mark=\"race\"/> Da Sie beide in die gleiche Richtung radeln, Ihr Freund aber einen Vorsprung hatte,\n\nIrgendwann werdet ihr euch treffen – denn ihr radelt schneller als sie.\n\n\nAber wann <bookmark mark=\"meet\"/> werdet ihr euch treffen?\n\n\nNatürlich treffen Sie sich zu dem Zeitpunkt, an dem Sie beide genau die gleiche Strecke zurückgelegt haben.\n\n<bookmark mark=\"Q\"/>\n\n\nÜberlegen Sie, wie wir diesen Zeitpunkt mithilfe der beiden Funktionen finden können, die wir gerade geschrieben haben."
-    },
-    "I3": {
-      "tb1": "→Beschreibt die Zeit",
-      "tb2": "wenn ihr euch trefft",
-      "tf1": "→Beschreibt die Entfernung",
-      "tf2": "Dein Freund ist gereist",
-      "title": "Wann triffst du dich?",
-      "ty1": "→Beschreibt die Entfernung",
-      "ty2": "Du bist gereist",
-      "voiceover": "Denken wir an das zurück, was wir bereits wissen.\n\n\nDie Funktion <bookmark mark=\"f\"/> f von x beschreibt die Entfernung, die Ihr Freund zum Zeitpunkt x zurückgelegt hat.\n\n\nDie Funktion <bookmark mark=\"g\"/> g von x hingegen beschreibt die von DU zurückgelegte Strecke\n\nzum Zeitpunkt x.\n\n\n<bookmark mark=\"youLeave\"/>\n\nDa Sie und Ihr Freund sich treffen, nachdem Sie die gleiche Strecke zurückgelegt haben, können wir das sagen\n\n<bookmark mark=\"both\"/> trifft man, wenn f von x gleich g von x ist."
-    },
-    "I4": {
-      "title": "Wann triffst du dich?",
-      "voiceover": "Ok, jetzt wissen wir, wie man die Zeit findet, wenn man seinen Freund trifft: Wir rechnen einfach\n\nder Wert von x, wobei <bookmark mark=\"both\"/> f von x gleich g von x ist, da f den Abstand beschreibt\n\nDein Freund ist gereist und g beschreibt die Distanz, die DU zurückgelegt hast.\n\n\nDenken Sie daran: f von x ist <bookmark mark=\"f\"/> gleich fünfzehn mal x plus fünf, -\n\nund g von x ist <bookmark mark=\"g\"/> gleich zwanzigmal x.\n\n\nJetzt wollen wir den Wert von x finden, wobei <bookmark mark=\"calculate\"/>\n\nf von x ist gleich g von x.\n\n\nDer erste Schritt <bookmark mark=\"step1a\"/> besteht darin, die Terme von f und g <bookmark mark=\"step1b\"/> einzufügen.\n\nWir erhalten die Gleichung 15x plus 5 ist gleich 20x.\n\n\nAls nächstes <bookmark mark=\"step2a\"/> subtrahieren wir 15x von beiden Seiten, was übrig bleibt\n\nuns mit <bookmark mark=\"step2b\"/> die Gleichung 5 gleich 5x.\n\n\nZum Schluss teilen wir <bookmark mark=\"step3a\"/> beide Seiten durch 5, was ergibt\n\ndie endgültige Lösung, <bookmark mark=\"step3b\"/> dass x gleich 1 ist.\n\n\nWir können jetzt sagen, dass Sie und Ihr Freund sich nach einer Stunde treffen.\n\n\nPuh, das war heftig. \nLasst uns tief Luft holen."
-    },
-    "I6": {
-      "a": {
-        "voiceover": "Ja! \nDas stimmt, sehr gut!\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
-      },
-      "b": {
-        "voiceover": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen die richtige Lösung.\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
-      },
-      "q": {
-        "question-text": "Wo schneiden sich die Funktionen?",
-        "title": "Grafische Lösung",
-        "voiceover": "Es gibt eine andere Möglichkeit, diese Art von Problemen zu lösen: Visuell, indem wir das verwenden\n\n<bookmark mark=\"cords\"/> Diagramm der Funktionen.\n\n\nDenken Sie daran, wir wollen die Werte von x finden, für die zwei Funktionen gleich sind.\n\n\nWir können dies tun, indem wir uns den Graphen der beiden Funktionen ansehen und den Punkt finden, an dem\n\nDie beiden Funktionen haben den gleichen y-Wert, also den Punkt, an dem sich die beiden Funktionen treffen.\n\n\nKehren wir zum letzten Mal zu unserem Fahrradbeispiel zurück, versprochen!!!\n\n\nDenken Sie daran, dass die Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, durch gegeben ist\n\n<bookmark mark=\"f\"/> f von x entspricht fünfzehn mal x plus fünf,\n\nund die Funktion, die die von Ihnen zurückgelegte Strecke beschreibt, ist gegeben durch\n\n<bookmark mark=\"g\"/> g von x ist zwanzigmal x.\n\n\nLassen Sie uns nun <bookmark mark=\"plot\"/> die beiden Funktionen plotten. \nWo schneiden sich die beiden Funktionen?"
-      }
-    },
-    "LinearFunctionEqualityAnswerScene": {
-      "eqAText": "{get_num(self.fParams[0])} x gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1]-self.fParams[1], negation='minus', pos= \n'Plus')}",
-      "fText": "f von x ist gleich {get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g von x ist gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}\"\n        \nfEqGText = f\"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} gleich {get_num(self.gParams[0]) \n} x {get_num(self.gParams[1], negation='minus', pos='plus')}",
-      "op1a": "[\"Hinzufügen zu\"]",
-      "op1b": "[\"subtrahieren\", \"von\"]",
-      "stepA": "Als nächstes <bookmark mark=\"shiftUp\"/> wir {op1[0]} <bookmark mark=\"add\"/> {abs(self.fParams[1])} {op1[1]} beide Seiten, - und erhalten \n{eqAText}.",
-      "stepB": "Dann {op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} auf beiden Seiten, - und erhalten {eqBText}.",
-      "stepC": "Schließlich dividieren wir beide Seiten durch {self.fParams[0]-self.gParams[0]}, um <bookmark mark=\"final\"/> {eqCText} zu erhalten.",
-      "title": "Lineare Funktionen \\",
-      "voiceover": "{self.tfIntro}\n\nMerken: <bookmark mark=\"f\"/>\n\n{fText} und <bookmark mark=\"g\"/>\n\n{gText}.\n\n\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\n\n\nDies gibt uns <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n\n\n{SchrittA}\n\n\n{stepB}\n\n\n{stepC}.\n\n\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {get_num(x_sol)} schneiden."
-    },
-    "LinearFunctionEqualityQuestionScene": {
-      "fText": "f von x ist gleich {get_num(self.fParams[0])} mal x {get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g von x ist gleich {get_num(self.gParams[0])} mal x {get_num(self.gParams[1], negation='minus', pos='plus')}",
-      "title": "Lineare Funktionen",
-      "voiceover": "Betrachten Sie die folgenden zwei linearen Funktionen:\n    \n<bookmark mark=\"f\"/>\n    \n{fText}.\n    \n<bookmark mark=\"g\"/>\n    \n{gText}.\n\n    \nWo schneiden sich die beiden Funktionen?\n    \nDas heißt, <bookmark mark=\"handshake\"/> Wo ist f gleich g?"
-    },
-    "P1": {
-      "a": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
-      },
-      "d": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
-      },
-      "q": {
-        "question-text": "Wo schneiden sich $f(x)$ und $g(x)$?"
-      }
-    },
-    "P2": {
-      "a": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
-      },
-      "b": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
-      }
-    },
-    "P3": {
-      "a": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
-      },
-      "c": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
-      }
-    },
-    "P4": {
-      "a": {
-        "tfIntro": "Mhm, das ist es nicht... Ich erkläre es:"
-      },
-      "b": {
-        "tfIntro": "Tolle Arbeit, das ist es!"
-      }
-    },
-    "P5": {
-      "a": {
-        "tfIntro": "Nein, das ist nicht korrekt. \nLass es uns gemeinsam lösen"
-      },
-      "c": {
-        "tfIntro": "Tolle Arbeit, du hast es richtig gemacht!"
-      }
+      "first_bit": "Das ist nicht korrekt. Die Funktion {colors[self.idx_selected]} ist nicht die richtige.",
+      "first_bit_correct": "Das stimmt, gut gemacht!",
+      "voiceover": "{first_bit}\nDu hast also die Funktion <bookmark mark=\"Func\"/>{colors[self.idx_selected]} ausgewählt.\nUm zu überprüfen, ob das stimmt, tragen wir nacheinander die Werte aus der Tabelle in das Koordinatensystem ein.\nIn diesem Beispiel stellt die <bookmark mark=\"xaxis\"/> x-Achse {self.Textlabels[0]}dar und die <bookmark mark=\"yaxis\"/>y-Achse stellt {self.Textlabels[1]} dar.\n<Lesezeichen mark=\"val1\"/>\n<break time=\"0.7s\"/>\nDer erste Wert hat {nums[self.xvals[0]]} als x-Wert und {nums[self.yvals[self.correcty][0]]} als y-Wert.\n<break time=\"0.7s\"/>\n<Lesezeichen mark=\"val2\"/>\nDer zweite Wert hat {nums[self.xvals[1]]} als x-Wert und {nums[self.yvals[self.correcty][1]]} als y-Wert.\n<break time=\"0.7s\"/>\n<Lesezeichen mark=\"val3\"/>\nDer dritte Wert hat die Koordinaten {nums[self.xvals[2]]} und {nums[self.yvals[self.correcty][2]]}.\n<break time=\"0.7s\"/>\n<Lesezeichen mark=\"val4\"/>\n<break time=\"0.7s\"/>\nDer vierte Wert hat die Koordinaten {nums[self.xvals[3]]} und {nums[self.yvals[self.correcty][3]]}.\n<break time=\"0.7s\"/>\n<Lesezeichen mark=\"val5\"/>\nUnd der fünfte Wert hat die Koordinaten {nums[self.xvals[4]]} und {nums[self.yvals[self.correcty][4]]}.\nWenn wir diese Werte verbinden, <bookmark mark=\"TrueFunc\"/>können wir sehen, dass die {colors[self.correcty]} Funktion\ndie richtige ist."
     }
   },
   "Func_1_2": {
     "1I1q": {
       "main": {
-        "apple-cost": "\": 2$ Euro/Stück\"",
+        "apple-cost": ": $2$ Euro/Stück",
         "explainers": "[\"$x$: Anzahl der Äpfel\", [\"$\\\\rightarrow$ Der Begriff $2x$\", \"beschreibt die Gesamtkosten\"]]",
-        "title": "Bedingungen",
-        "voiceover": "\"\"\"\n                \n<prosody rate=\"110%\">\n                \nKurze Erinnerung: Erinnern Sie sich, was ein Begriff ist?\n                \nEin Begriff ist ein Ausdruck, der aus Zahlen, Variablen und Operatoren besteht.\n                \nBeispielsweise ist <bookmark mark=\"term1\"/>zwei mal x plus drei ein Begriff,\n                \n<bookmark mark=\"term2\"/> oder x zum Quadrat minus zwei.<bookmark mark=\"term3\"/>\n                \nDer Ausdruck x plus drei gleich sieben ist jedoch kein Begriff, da er ein Gleichheitszeichen enthält.\n                \nBegriffe sind nützlich, weil sie zur Beschreibung von Beziehungen verwendet werden können.\n                \n<bookmark mark=\"unwriteTerms\"/>\n                \nWenn wir zum Beispiel <bookmark mark=\"apple\"/> x Äpfel für jeweils zwei Euro kaufen, können wir das tun\n                \n<bookmark mark=\"appleCost\"/>Berechnen Sie die Gesamtkosten mithilfe des Begriffs zwei mal x.\n                \nDadurch werden jedem Wert von x Kosten zugeordnet, die die Menge der gekauften Äpfel darstellen.\n                \nWir berechnen diese Kosten mit zwei mal x.\n                \nFunktionen funktionieren auf ähnliche Weise.\n                \nGenau wie Terme weisen Funktionen jedem Wert von x einen Wert von y zu.\n                \n</prosody>\n                \n\"\"\""
+        "title": "Terme",
+        "voiceover": "Kurze Wiederholung: Erinnerst du dich, was ein Term ist?\n<break time=\"0.5s\"/>\nEin Term ist ein Ausdruck, der aus Zahlen, Variablen und Operatoren besteht.\n<break time=\"0.5s\"/>\nBeispielsweise ist <bookmark mark=\"term1\"/>zwei mal x plus drei ein Term,\n<bookmark mark=\"term2\"/> oder x zum Quadrat minus zwei.<bookmark mark=\"term3\"/>\n<break time=\"0.5s\"/>\nDer Ausdruck x plus drei gleich sieben ist jedoch kein Term, da er ein Gleichheitszeichen enthält.\n<break time=\"0.5s\"/>\nTerme sind nützlich, weil sie zur Beschreibung von Beziehungen verwendet werden können.   \n<bookmark mark=\"unwriteTerms\"/>\nWenn wir zum Beispiel <bookmark mark=\"apple\"/> x Äpfel für jeweils zwei Euro kaufen, können wir die Gesamtkosten\n<bookmark mark=\"appleCost\"/>berechnen mit Hilfe des Terms zwei mal x.                \nDadurch werden jedem Wert von x Kosten zugeordnet, die die Menge der gekauften Äpfel darstellen.\nUnd diese Kosten berechnen wir mit dem Term zwei mal x.\n<break time=\"0.5s\"/>\nFunktionen funktionieren auf ähnliche Weise wie Terme.\n<break time=\"0.5s\"/>\nDenn Funktionen weisen jedem Wert von x genau einen Wert von y zu, genau wie Terme."
       }
     },
     "1I2": {
       "func-term-q-scene": {
-        "voiceover": "F\"\"\"\n                \nWir beginnen mit einem Funktionsterm und wollen den entsprechenden Graphen finden.\n                \nDer Begriff, den wir im Diagramm für <bookmark mark=\"term\"/> finden möchten, ist {self.termInWords}.\n                \nJetzt sagen Sie mir: <bookmark mark=\"findGraph\"/>\n                \nWelcher der folgenden Graphen beschreibt die Funktion des gegebenen Termes?\n                \n<bookmark mark=\"blue\"/> Ist es die blaue Grafik?<break time=\"1s\"/>\n\n                \n<bookmark mark=\"orange\"/> Oder ist es die orangefarbene Grafik?<break time=\"1s\"/>\n\n                \n<bookmark mark=\"lila\"/> Oder ist es die lila Grafik?<break time=\"1s\"/>\n                \n\"\"\""
+        "voiceover": "Beginnen wir mit einem Funktionsterm und versuchen wir, den dazu gehörigen Graphen zu finden.\n<break time=\"0.5s\"/>        \nDer Begriff, für den wir den zugehörigen Graphen suchen, <bookmark mark=\"term\"/>lautet {self.termInWords}.\n<break time=\"0.5s\"/>\nJetzt sag mir: <bookmark mark=\"findGraph\"/>\nWelcher der folgenden Graphen beschreibt die Funktion des gegebenen Termes?\n<bookmark mark=\"blue\"/> Ist es die blaue Grafik?<break time=\"1s\"/>\n<bookmark mark=\"orange\"/> Oder ist es die orangefarbene Grafik?<break time=\"1s\"/>\n<bookmark mark=\"lila\"/> Oder ist es die lila Grafik?<break time=\"1s\"/>"
       },
       "main": {
-        "title": "\"Vom Begriff zur Funktion\"",
-        "voiceover": "\"\"\"\n                \n<prosody rate=\"110%\">\n                \nJetzt lernen wir, wie man von einem Begriff zu einer Funktion übergeht.\n                 \n<bookmark mark=\"term\"/>\n                \nBetrachten Sie den Term zwei mal x minus zwei.\n                \n                \nZuerst wählen wir eine Menge aus, auf der wir die Funktion untersuchen wollen.\n                \nDiese Menge wird als Domäne bezeichnet. \n<Lesezeichen mark=\"domain\"/>\n                \nHier wählen wir beispielsweise alle Werte aus, die <bookmark mark=\"xaxis\"/> auf der x-Achse liegen. \nAlso alle Werte zwischen minus drei und drei.\n                \n                \n<bookmark mark=\"plot\"/>\n                \nJetzt setzen wir jeden Wert von x in den Term ein, um einen Wert für y zu erhalten.\n                \nDiesen Wert tragen wir dann auf einer Koordinatenebene ein.\n                \n                \n<bookmark mark=\"func\"/>\n                \nDurch die Verbindung der Punkte erhalten wir eine Darstellung einer Funktion, da die Gerade einen Punkt zuordnet\n                \nauf der x-Achse zu einem Punkt auf der y-Achse.\n\n                \nUm den y-Wert zu erhalten, der einem x-Wert entspricht, können wir entweder den x-Wert <bookmark mark=\"xTerm\"/> in den Term einsetzen,\n                \n<bookmark mark=\"xFunc\"/> oder wir können den x-Wert auf der x-Achse lokalisieren und dann den y-Wert auf der y-Achse ablesen.\n                \n                \nDa der Begriff in diesem Fall eine Funktion beschreibt, nennen wir ihn einen Funktionsterm.\n                \n<bookmark mark=\"termToFunc\"/>\n                \nWir schreiben es auch so, dass f von x gleich zwei mal x minus zwei ist, also setzen wir f von x gleich vor den Term.\n                \n</prosody>\n                \n\"\"\""
+        "title": "\"Vom Term zur Funktion\"",
+        "voiceover": "Jetzt lernen wir, wie man von einem Term zu einer Funktion übergeht.\n<bookmark mark=\"term\"/>\nBetrachte den Term zwei mal x minus zwei.\n<break time=\"0.5s\"/>\nZuerst wählen wir eine Menge aus, auf der wir die Funktion untersuchen wollen.\nDiese Menge wird als Definitionsbereich bezeichnet. \n<Lesezeichen mark=\"domain\"/>\nHier wählen wir beispielsweise alle Werte aus, die <bookmark mark=\"xaxis\"/> auf der x-Achse liegen. \nAlso alle Werte zwischen minus drei und drei.\n <bookmark mark=\"plot\"/>\nJetzt setzen wir jeden Wert von x in den Term ein, um einen Wert für y zu erhalten.\nDiesen Wert tragen wir dann auf einem Koordinatensystem ein.\n<break time=\"0.5s\"/>\n<bookmark mark=\"func\"/>\nIm dem wir die Punkte verbinden, erhalten wir eine Darstellung der Funktion, da die Gerade jedem Punkt auf der x-Achse einen Punkt auf der y-Achse zuordnet.\n<break time=\"0.5s\"/>\nUm den y-Wert zu erhalten, der einem x-Wert entspricht, können wir entweder den x-Wert <bookmark mark=\"xTerm\"/> in den Term einsetzen,\n<bookmark mark=\"xFunc\"/> oder wir können den x-Wert auf der x-Achse suchen und dann den y-Wert auf der y-Achse ablesen.\n<break time=\"0.5s\"/>\nDa der Term in diesem Fall eine Funktion beschreibt, nennen wir ihn einen Funktionsterm.\n<bookmark mark=\"termToFunc\"/>\n<break time=\"0.5s\"/>\nWir schreiben den Term auch als f von x gleich zwei mal x minus zwei, also setzen wir ein \"f von x gleich\" vor den Term. Das f steht hier für Funktion, und das x bedeutet, dass die Funktion von der Variable x abhängt."
       }
     },
     "1I21q": {
@@ -356,48 +126,42 @@
     },
     "1I2_1q": {
       "main": {
-        "term-in-words": "\"f von x ist gleich negativ x\""
+        "term-in-words": "\"f von x ist gleich minus x\""
       },
       "question": {
-        "which-graph-belongs": "\"Welcher dieser Graphen beschreibt die entsprechende Funktion?\""
+        "which-graph-belongs": "\"Welcher dieser Graphen gehört zur entsprechenden Funktion?\""
       }
     },
     "1I2a": {
       "func-term-answer": {
-        "voiceover": "F\"\"\"\n                \n{Einführungstext}\n                \nWir wollen den Funktionsgraphen für den <bookmark mark=\"show_term\"/>term {self.termInWords} ermitteln.\n                \nWir gehen wie folgt vor:\n                \n<bookmark mark=\"plugIn\"/>\n                \nWir betrachten Punkte aus unserem Bereich einzeln.\n                \nDann fügen wir diese Punkte in den Term ein und erhalten die entsprechenden Funktionswerte.\n                \nUnd dann <bookmark mark=\"addPoints\"/> zeichnen wir diese Punkte in einem Koordinatensystem ein.\n                \nKommen wir also zu unserem Beispiel:\n                \n{plugInTexts}\n                \nJetzt verbinden wir die Punkte, die wir eingezeichnet haben\n                \n<Lesezeichen mark=\"connect\"/>\n                \nund so den Funktionsgraphen erhalten.\n                \n\"\"\""
+        "voiceover": "{self.introText}\nWir wollen den Funktionsgraphen für den <bookmark mark=\"show_term\"/>term {self.termInWords} ermitteln.\nWir gehen wie folgt vor:\n<bookmark mark=\"plugIn\"/>\nWir betrachten Punkte aus unserem Bereich einzeln.\nDann fügen wir diese Punkte in den Term ein und erhalten die entsprechenden Funktionswerte.\nUnd dann <bookmark mark=\"addPoints\"/> zeichnen wir diese Punkte in einem Koordinatensystem ein.\n<break time=\"0.5s\"/>\nKommen wir also zu unserem Beispiel:\n{self.plugInTexts}\nJetzt verbinden wir die Punkte, die wir eingezeichnet haben\n<Lesezeichen mark=\"connect\"/>\nund erhaltne so den Funktionsgraph."
       },
       "main": {
-        "intro-text-correct": "\"Großartig, das stimmt!\"",
-        "intro-text-incorrect": "\"Leider ist das nicht korrekt.\"",
-        "plug-in-texts-1": "f\"\"\"<bookmark mark=\"val{i 1}\"/> Der {nums_ordinal[i 1]}-Wert, den wir einfügen, ist {get_num(self.vals[i])} und der Wert der Funktion an dieser Stelle \nPunkt ist {get_num(self.fs[self.idx_correct](self.vals[i]))} -\"\"\"",
-        "plug-in-texts-2": "f\"\"\"<bookmark mark=\"val{i 1}\"/> Für den x-Wert {get_num(self.vals[i])} erhalten wir den y-Wert {get_num(self.fs[self.idx_correct \n](self.vals[i]))}, \"\"\"",
-        "plug-in-texts-3": "f\"\"\"<bookmark mark=\"val{i 1}\"/> und für den x-Wert {get_num(self.vals[i])} erhalten wir schließlich den y-Wert {get_num(self.fs[self \n.idx_correct](self.vals[i]))}.\"\"\"",
-        "title": "\"Begriff \\"
-      }
-    },
-    "P23": {
-      "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \" \n$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
-        "func-spoken": "\"f von x ist gleich zweimal x\""
+        "intro-text-correct": "\"Toll, das stimmt!\"",
+        "intro-text-incorrect": "\"Das stimmt leider nicht.\"",
+        "plug-in-texts-1": "<bookmark mark=\"val{self.i+1}\"/> Der {self.i+1} Wert, den wir einfügen, ist {self.vals[self.i]} und der Wert der Funktion an dieser Stelle ist {self.fs[self.idx_correct](self.vals[self.i])}",
+        "plug-in-texts-2": "<bookmark mark=\"val{self.i+1}\"/> Für den x-Wert {self.vals[self.i]} erhalten wir den y-Wert {self.fs[self.idx_correct \n](self.vals[self.i])}",
+        "plug-in-texts-3": "<bookmark mark=\"val{self.i+1}\"/> und für den x-Wert {self.vals[self.i]} erhalten wir schließlich den y-Wert {get_num(self.fs[self \n.idx_correct](self.vals[self.i])}.",
+        "title": "Term \\& Funktion"
       }
     },
     "1I2q": {
       "main": {
-        "title": "\"Begriff \\"
+        "title": "Term \\& Funktion"
       }
     },
     "1I3": {
       "main": {
-        "title": "\"Funktionen: Konzepte\"",
-        "voiceover": "\"\"\"\n                \n<prosody rate=\"110%\">\n                \nLassen Sie uns nun über einige wichtige Konzepte im Zusammenhang mit Funktionen sprechen.\n                \n<bookmark mark=\"term\"/>\n                \nBeginnen wir mit dem Konzept des Funktionsterms ...\n                \n<break time=\"1s\"/>\n                \nWie wir bereits wissen, beschreibt der Term einer Funktion, wie wir von einem x-Wert zu einem y-Wert gelangen.\n                \n<break time=\"1s\"/>\n                \nDas heißt, wir fügen jeden Wert von x in den Term ein, um den entsprechenden y-Wert zu erhalten.\n                \n<bookmark mark=\"show_term\"/>\n                \nDer Funktionsterm wird normalerweise als \"f von x gleich\" geschrieben, gefolgt vom Term. \nHier wird es beispielsweise so geschrieben, dass f von x gleich x im Quadrat minus drei ist.\n                \n<break time=\"1s\"/>\n                \n<bookmark mark=\"graph\"/>\n                \nDas nächste Konzept ist das des Graphen einer Funktion.\n                \n<break time=\"1s\"/>\n                \nDer Graph einer Funktion beschreibt, wie die Funktion aussieht.\n                \nUm den Graphen einer Funktion zu erhalten, zeichnen wir einfach einige Punkte, die wir mithilfe des Funktionsterms berechnen können, auf einer Koordinatenebene ein.\n                \nUnd weil wir nicht die Zeit haben, unendlich viele Punkte zu zeichnen, wählen wir normalerweise nur ein paar Punkte aus\n                \nDann verbinden wir die Punkte, um den Graphen zu erhalten. \nManchmal müssen wir viele Punkte zeichnen, um ein genaues Diagramm zu erhalten, manchmal reichen nur wenige Punkte aus.\n                \n</prosody>\n                \n\"\"\""
+        "title": "Funktionen: Konzepte",
+        "voiceover": "Besprechen wir jetzt ein paar wichtige Konzepte, die mit Funktionen zusammen hängen.\n<bookmark mark=\"term\"/>\nBeginnen wir mit dem Konzept des Funktionsterms ...\n<break time=\"1s\"/>\nWie wir bereits wissen, beschreibt der Term einer Funktion, wie wir von einem x-Wert zu einem y-Wert gelangen.\n<break time=\"1s\"/>\nDas heißt, wir fügen jeden Wert von x in den Term ein, um den entsprechenden y-Wert zu erhalten.\n<bookmark mark=\"show_term\"/>\nDer Funktionsterm wird normalerweise als \"f von x gleich\" geschrieben, gefolgt vom Term. \nHier wird es beispielsweise so geschrieben, dass f von x gleich x Quadrat minus drei ist.\n<break time=\"1s\"/>\n<bookmark mark=\"graph\"/>\nDas nächste Konzept ist das des Graphens einer Funktion.\n<break time=\"1s\"/>\nDer Graph einer Funktion beschreibt, wie die Funktion aussieht.\nUm den Graphen einer Funktion zu erhalten, zeichnen wir einfach einige Punkte, die wir mithilfe des Funktionsterms berechnen können, auf einer Koordinatenebene ein.\nUnd weil wir nicht die Zeit haben, unendlich viele Punkte zu zeichnen, wählen wir normalerweise nur ein paar Punkte aus\nDann verbinden wir die Punkte, um den Graphen zu erhalten. \nManchmal müssen wir viele Punkte zeichnen, um ein genaues Diagramm zu erhalten, manchmal reichen nur wenige Punkte aus.\n</prosody>"
       }
     },
     "1I4": {
       "main": {
-        "domain": "\"Domäne:\\\\\\\\ Alle Werte, die wir für $x$ einfügen können.\"",
-        "range": "\"Bereich:\\\\\\\\ Alle Werte, die wir für $y$ erhalten.\"",
-        "title": "\"Funktion – Konzepte\"",
-        "voiceover": "\"\"\"\n                \n<prosody rate=\"110%\">\n                \nZwei weitere wichtige Konzepte im Zusammenhang mit Funktionen: Die Domäne und der Bereich.\n                \n<break time=\"1s\"/>\n                \nDie Domäne <bookmark mark=\"domain_in\"/> ist die Menge aller Werte, die wir für x ersetzen können.\n                \nEs ist also die Menge aller x-Werte, die wir für die Funktion verwenden können.\n                \n<Lesezeichen mark=\"show_def\"/>\n                \n<break time=\"1s\"/>\n                \nIn diesem Fall ist der Definitionsbereich das Intervall, das alle Werte zwischen minus drei und drei umfasst.\n                \n<break time=\"1s\"/>\n                \nDas nächste Konzept ist das<bookmark mark=\"range_in\"/> des Bereichs.\n                \n<break time=\"1s\"/>\n                \nDer Bereich ist die Menge aller Werte, die wir für y erhalten können.\n                \n<bookmark mark=\"show_val\"/>\n                \nIn diesem Fall ist der Bereich das Intervall, das alle Werte zwischen minus drei und sechs umfasst.\n                \n<break time=\"1s\"/>\n                \nDenn wir erhalten den niedrigsten Wert bei x gleich Null, also minus drei.\n                \nUnd wir erhalten den höchsten Wert bei x gleich drei, also sechs. \nDer Bereich ist also das Intervall zwischen minus drei und sechs.\n                \n</prosody>\n                \n\"\"\""
+        "domain": "Definitionsbereich:\\\\\\\\ Alle Werte, die wir für $x$ einfügen können.",
+        "range": "Wertebereich:\\\\\\\\ Alle Werte, die wir für $y$ erhalten.",
+        "title": "Funktion – Konzepte",
+        "voiceover": "Zwei weitere wichtige Konzepte im Zusammenhang mit Funktionen: Definitionsbereich und Wertebereich.\n<break time=\"1s\"/>\nDer Definitionsbereich <bookmark mark=\"domain_in\"/> ist die Menge aller Werte, die wir für x ersetzen können.\nEr ist also die Menge aller x-Werte, die wir für die Funktion verwenden können.\n<Lesezeichen mark=\"show_def\"/>\n<break time=\"1s\"/>\nIn diesem Fall ist der Definitionsbereich das Intervall, das alle Werte zwischen minus drei und drei umfasst.\n<break time=\"1s\"/>\nDas nächste Konzept ist das<bookmark mark=\"range_in\"/> des Wertebereichs.\n<break time=\"1s\"/>\nDer Wertebereich umfasst die Menge aller Werte, die wir für y erhalten können.\n<bookmark mark=\"show_val\"/>\nIn diesem Fall ist der Wertebereich das Intervall, das alle Werte zwischen minus drei und sechs umfasst.\n<break time=\"1s\"/>\nDenn wir erhalten den niedrigsten Wert bei x gleich Null, also minus drei.\nUnd wir erhalten den höchsten Wert bei x gleich drei, also sechs. \nDer Wertebereich ist also das Intervall zwischen minus drei und sechs."
       }
     },
     "P13": {
@@ -417,6 +181,12 @@
       "q": {
         "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$ \nD=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
         "func-spoken": "f von x ist gleich x kubisch plus zwei"
+      }
+    },
+    "P23": {
+      "q": {
+        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \" \n$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
+        "func-spoken": "\"f von x ist gleich zweimal x\""
       }
     },
     "P24": {
@@ -441,9 +211,9 @@
       "title-correct": "\"Richtig!\"",
       "title-incorrect": "\"Falsch!\""
     },
-    "func-def-q-range": "\"$\\\\Rightarrow$ Wie groß ist der Bereich?\"",
-    "func-def-q-scene": "\"Domäne \\",
-    "func-def-q-scene-voiceover": "F\"\"\"\n            \n<prosody rate=\"110%\">\n            \nIn Ordnung. \nWir betrachten jetzt die <bookmark mark=\"Func\"/>-Funktion {self.funcSpoken}.\n            \nKonkret untersuchen wir es hier auf dem angegebenen Koordinatensystem.\n            \nHier ist nun die Frage an Sie:\n            \nWas ist in diesem Beispiel die <bookmark mark=\"domain\"/>-Domäne der Funktion?\n            \nUnd was ist der <bookmark mark=\"range\"/>-Bereich?\n            \n</prosody>\n            \n\"\"\"",
+    "func-def-q-range": "$\\\\Rightarrow$ Wie groß ist der Bereich?",
+    "func-def-q-scene": "Definitions- \\& Wertebreich",
+    "func-def-q-scene-voiceover": "In Ordnung. \nWir betrachten jetzt die <bookmark mark=\"Func\"/>-Funktion {self.funcSpoken}.\n            \nKonkret untersuchen wir es hier auf dem angegebenen Koordinatensystem.\n            \nHier ist nun die Frage an Sie:\n            \nWas ist in diesem Beispiel die <bookmark mark=\"domain\"/>-Domäne der Funktion?\n            \nUnd was ist der <bookmark mark=\"range\"/>-Bereich?\n            \n</prosody>\n            \n\"\"\"",
     "func-def-q": {
       "domain": "\"$\\\\Rightarrow$ Wie lautet die Domain?\""
     },
@@ -457,10 +227,6 @@
     }
   },
   "Func_1_3": {
-    "I4a": {
-      "voiceover": "F\"\"\"\n            \nHmm, das ist nicht korrekt. \nAber wie bekommen wir die richtige Antwort?\n            \n<break time=\"1s\"/>\n            \nZuerst <bookmark mark=\"note1\"/> setzen wir den Ausdruck der Funktion auf Null.\n            \nDies ergibt <bookmark mark=\"eq0\"/> x im Quadrat minus eins gleich Null.\n            \n<break time=\"1s\"/>\n            \nAls nächstes <bookmark mark=\"solveX\"/> lösen wir nach x auf und erhalten direkt zwei Werte für x:\n            \n<bookmark mark=\"xeq\"/> x ist gleich minus eins oder x ist gleich eins.\n            \n<bookmark mark=\"zeros\"/> Dies sind die beiden Nulldurchgänge der Funktion.\n            \nUnd das ist unsere Lösung!\n            \n<break time=\"1s\"/>\n            \nWenn wir uns den <bookmark mark=\"plot\"/>-Graphen der Funktion ansehen,\n            \nWir können bestätigen, dass die Nulldurchgänge bei <bookmark mark=\"visualZeros\"/> x gleich minus eins und x gleich eins liegen.\n            \n\"\"\"",
-      "title": "Bestimmen Sie Nulldurchgänge"
-    },
     "1I1q": {
       "answer-options": "[\"$-1$\", \"$0$\", \"$1$\", \"$2$\"]"
     },
@@ -489,6 +255,10 @@
     "I3": {
       "title": "Bestimmung von Nulldurchgängen",
       "voiceover": "F\"\"\"\n            \nDie Frage lautet nun: <bookmark mark=\"findZeros\"/> Wie finde ich die Nulldurchgänge einer Funktion?\n            \n            \nWir haben bereits gelernt, wie man das grafisch macht.\n            \nWir suchen einfach nach allen Punkten, an denen der Graph <bookmark mark=\"zeros\"/> die x-Achse schneidet.\n            \nDas sind die Punkte, an denen der Funktionswert gleich Null ist.\n            \n            \nDer andere Weg ist: Wir setzen den Funktionsausdruck gleich Null und berechnen den Wert von x.\n            \n<bookmark mark=\"clear\"/>\n            \nBetrachten Sie beispielsweise die Funktion <bookmark mark=\"func\"/> f von x gleich x minus eins.\n            \n            \nDann folgen wir zwei Schritten:\n            \n<bookmark mark=\"findZero1\"/> Zuerst setzen wir den Funktionsausdruck auf Null. \n<Lesezeichen mark=\"equal0\"/>\n            \nDas ergibt x minus eins gleich Null.\n            \n<bookmark mark=\"findZero2\"/> Dann lösen wir die Gleichung nach x <bookmark mark=\"findX\"/> und erhalten x gleich eins.\n            \nWie wir auch grafisch überprüfen können, <bookmark mark=\"showZero\"/> ist dies unser Nulldurchgang.\n            \n\"\"\""
+    },
+    "I4a": {
+      "title": "Bestimmen Sie Nulldurchgänge",
+      "voiceover": "F\"\"\"\n            \nHmm, das ist nicht korrekt. \nAber wie bekommen wir die richtige Antwort?\n            \n<break time=\"1s\"/>\n            \nZuerst <bookmark mark=\"note1\"/> setzen wir den Ausdruck der Funktion auf Null.\n            \nDies ergibt <bookmark mark=\"eq0\"/> x im Quadrat minus eins gleich Null.\n            \n<break time=\"1s\"/>\n            \nAls nächstes <bookmark mark=\"solveX\"/> lösen wir nach x auf und erhalten direkt zwei Werte für x:\n            \n<bookmark mark=\"xeq\"/> x ist gleich minus eins oder x ist gleich eins.\n            \n<bookmark mark=\"zeros\"/> Dies sind die beiden Nulldurchgänge der Funktion.\n            \nUnd das ist unsere Lösung!\n            \n<break time=\"1s\"/>\n            \nWenn wir uns den <bookmark mark=\"plot\"/>-Graphen der Funktion ansehen,\n            \nWir können bestätigen, dass die Nulldurchgänge bei <bookmark mark=\"visualZeros\"/> x gleich minus eins und x gleich eins liegen.\n            \n\"\"\""
     },
     "I4b": {
       "voiceover": "F\"\"\"\n            \nGroßartig, das stimmt!\n            \n<break time=\"1s\"/>\n            \nZuerst <bookmark mark=\"note1\"/> setzen wir den Ausdruck der Funktion auf Null.\n            \nDies ergibt <bookmark mark=\"eq0\"/> x im Quadrat minus eins gleich Null.\n            \n<break time=\"1s\"/>\n            \nAls nächstes <bookmark mark=\"solveX\"/> lösen wir nach x auf und erhalten direkt zwei Werte für x:\n            \n<bookmark mark=\"xeq\"/> x ist gleich minus eins oder x ist gleich eins.\n            \n<bookmark mark=\"zeros\"/> Dies sind die beiden Nulldurchgänge der Funktion.\n            \nUnd das ist unsere Lösung!\n            \n<break time=\"1s\"/>\n            \nWenn wir uns den <bookmark mark=\"plot\"/>-Graphen der Funktion ansehen,\n            \nWir können bestätigen, dass die Nulldurchgänge bei <bookmark mark=\"visualZeros\"/> x gleich minus eins und x gleich eins liegen.\n            \n\"\"\""
@@ -912,6 +682,134 @@
         "functext": "Die Funktion f(x) ist definiert als fünf mal x plus vier.",
         "introtext": "Lassen Sie uns in ein weiteres Funktionsrätsel eintauchen. \nBetrachten Sie diese Gleichung",
         "qtext": "Es werden drei Diagramme angezeigt. \nWelches entspricht der Funktion?"
+      }
+    }
+  },
+  "Func_2_3": {
+    "I1": {
+      "a": {
+        "voiceover": "Mhmmm, das ist nicht ganz richtig. \nLassen Sie uns das gemeinsam lösen.\n\n\n<bookmark mark=\"friend\"/>\n\nDein Freund fährt mit einer Geschwindigkeit von 15 Kilometern pro Stunde und wenn x für die Anzahl der gefahrenen Stunden steht,\n\nWir können ihre Funktion als <bookmark mark=\"friendfunc1\"/> schreiben. f von x entspricht fünfzehn mal x.\n\n\nUnd da sie auch einen Vorsprung von 5 Kilometern hat, müssen wir der Funktion <bookmark mark=\"friendfunc2\"/> 5 hinzufügen.\n\nDie Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, ist also f von x gleich fünfzehn mal x plus fünf.\n\n\nSchauen wir uns als Nächstes Ihre Funktion an. \n<bookmark mark=\"you\"/>\n\nSie radeln mit einer Geschwindigkeit von 20 Stundenkilometern.\n\n\nDa Sie keinen Vorsprung haben, lautet Ihre Funktion einfach: <bookmark mark=\"yourfunc\"/> g von x entspricht zwanzig mal x."
+      },
+      "c": {
+        "voiceover": "Das ist richtig. \nGut gemacht.\n\n<bookmark mark=\"friend\"/>\n\nDein Freund fährt mit einer Geschwindigkeit von 15 Kilometern pro Stunde und wenn x für die Anzahl der gefahrenen Stunden steht,\n\nWir können ihre Funktion als <bookmark mark=\"friendfunc1\"/> schreiben. f von x entspricht fünfzehn mal x.\n\n\nUnd da sie auch einen Vorsprung von 5 Kilometern hat, müssen wir der Funktion <bookmark mark=\"friendfunc2\"/> 5 hinzufügen.\n\nDie Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, ist also f von x gleich fünfzehn mal x plus fünf.\n\n\nSchauen wir uns als Nächstes Ihre Funktion an. \n<bookmark mark=\"you\"/>\n\nSie radeln mit einer Geschwindigkeit von 20 Stundenkilometern.\n\n\nDa Sie keinen Vorsprung haben, lautet Ihre Funktion einfach: <bookmark mark=\"yourfunc\"/> g von x entspricht zwanzig mal x."
+      },
+      "q": {
+        "f1": "Dein Freund:",
+        "f2a": "$5$km Vorsprung",
+        "f2b": "Geschwindigkeit: 15 km/h",
+        "question-text": "Welche Funktion beschreibt die Entfernungen, die Sie und Ihr Freund zurückgelegt haben?",
+        "title": "Funktionen und lineare Gleichungen",
+        "voiceover": "Neues Thema! \nIn diesem Kapitel betrachten wir lineare Funktionen und lineare Gleichungen.\n\nund was diese beiden miteinander zu tun haben.\n\n\nUnd wie könnte man den Zusammenhang besser herausfinden, als sich ein Beispiel aus der Praxis anzusehen?\n\n\nDies ist das Szenario: Sie und Ihr Freund radeln beide von Ihrem Haus aus mit dem Fahrrad zum Strand.\n\n\n<Lesezeichen mark=\"f1\"/>\n\nIhre Freundin hat einen <bookmark mark=\"f2\"/> Vorsprung von 5 Kilometern und radelt <bookmark mark=\"f3\"/> mit einer Geschwindigkeit von 15 Kilometern pro Stunde.\n\n\n<Lesezeichen mark=\"y1\"/>\n\nSie hingegen radeln mit <bookmark mark=\"y2\"/> einer Geschwindigkeit von 20 Kilometern pro Stunde, haben aber keinen Vorsprung.\n\n\nFrage Nummer eins, und hier geht es hauptsächlich um Funktionen: Welche Funktionen f und g beschreiben die Entfernung, die Ihr Freund und Sie zurückgelegt haben?",
+        "y1": "Du:",
+        "y2": "20$km/h Geschwindigkeit"
+      }
+    },
+    "I2": {
+      "Q1": "→ Zu welchem ​​Zeitpunkt",
+      "Q2": "wirst du gereist sein",
+      "Q3": "der gleiche Abstand?",
+      "title": "Wann triffst du dich?",
+      "voiceover": "Ok, warum machen wir das? \nUnd was hat das mit Gleichungen zu tun?\n\n\nDenken Sie darüber nach: <bookmark mark=\"race\"/> Da Sie beide in die gleiche Richtung radeln, Ihr Freund aber einen Vorsprung hatte,\n\nIrgendwann werdet ihr euch treffen – denn ihr radelt schneller als sie.\n\n\nAber wann <bookmark mark=\"meet\"/> werdet ihr euch treffen?\n\n\nNatürlich treffen Sie sich zu dem Zeitpunkt, an dem Sie beide genau die gleiche Strecke zurückgelegt haben.\n\n<bookmark mark=\"Q\"/>\n\n\nÜberlegen Sie, wie wir diesen Zeitpunkt mithilfe der beiden Funktionen finden können, die wir gerade geschrieben haben."
+    },
+    "I3": {
+      "tb1": "→Beschreibt die Zeit",
+      "tb2": "wenn ihr euch trefft",
+      "tf1": "→Beschreibt die Entfernung",
+      "tf2": "Dein Freund ist gereist",
+      "title": "Wann triffst du dich?",
+      "ty1": "→Beschreibt die Entfernung",
+      "ty2": "Du bist gereist",
+      "voiceover": "Denken wir an das zurück, was wir bereits wissen.\n\n\nDie Funktion <bookmark mark=\"f\"/> f von x beschreibt die Entfernung, die Ihr Freund zum Zeitpunkt x zurückgelegt hat.\n\n\nDie Funktion <bookmark mark=\"g\"/> g von x hingegen beschreibt die von DU zurückgelegte Strecke\n\nzum Zeitpunkt x.\n\n\n<bookmark mark=\"youLeave\"/>\n\nDa Sie und Ihr Freund sich treffen, nachdem Sie die gleiche Strecke zurückgelegt haben, können wir das sagen\n\n<bookmark mark=\"both\"/> trifft man, wenn f von x gleich g von x ist."
+    },
+    "I4": {
+      "title": "Wann triffst du dich?",
+      "voiceover": "Ok, jetzt wissen wir, wie man die Zeit findet, wenn man seinen Freund trifft: Wir rechnen einfach\n\nder Wert von x, wobei <bookmark mark=\"both\"/> f von x gleich g von x ist, da f den Abstand beschreibt\n\nDein Freund ist gereist und g beschreibt die Distanz, die DU zurückgelegt hast.\n\n\nDenken Sie daran: f von x ist <bookmark mark=\"f\"/> gleich fünfzehn mal x plus fünf, -\n\nund g von x ist <bookmark mark=\"g\"/> gleich zwanzigmal x.\n\n\nJetzt wollen wir den Wert von x finden, wobei <bookmark mark=\"calculate\"/>\n\nf von x ist gleich g von x.\n\n\nDer erste Schritt <bookmark mark=\"step1a\"/> besteht darin, die Terme von f und g <bookmark mark=\"step1b\"/> einzufügen.\n\nWir erhalten die Gleichung 15x plus 5 ist gleich 20x.\n\n\nAls nächstes <bookmark mark=\"step2a\"/> subtrahieren wir 15x von beiden Seiten, was übrig bleibt\n\nuns mit <bookmark mark=\"step2b\"/> die Gleichung 5 gleich 5x.\n\n\nZum Schluss teilen wir <bookmark mark=\"step3a\"/> beide Seiten durch 5, was ergibt\n\ndie endgültige Lösung, <bookmark mark=\"step3b\"/> dass x gleich 1 ist.\n\n\nWir können jetzt sagen, dass Sie und Ihr Freund sich nach einer Stunde treffen.\n\n\nPuh, das war heftig. \nLasst uns tief Luft holen."
+    },
+    "I5": {
+      "equations": "Gleichungen",
+      "functions": "Funktionen",
+      "te1": "→ Wird verwendet, um bestimmte zu finden",
+      "te2": "Wert einer Variablen",
+      "tf1": "→ Wird zur Beschreibung verwendet",
+      "tf2": "reale Szenarien",
+      "title": "Funktionen \\& Gleichungen",
+      "ts1": "→ Kombinieren Sie die beiden zu",
+      "ts2": "Vergleichen Sie die reale Welt",
+      "ts3": "Szenarien",
+      "voiceover": "Fassen wir also noch einmal zusammen, <bookmark mark=\"qmark\"/> was wir gerade gemacht haben und was es mit Funktionen und Gleichungen zu tun hat.\n\n\n<bookmark mark=\"functions\"/> Funktionen werden häufig zur Beschreibung realer Szenarien verwendet. \nBeispielsweise kann eine Funktion beschreiben\n\ndie Entfernung, die Sie nach einiger Zeit zurückgelegt haben.\n\n\n<Lesezeichen mark=\"gleichung\"/>\n\nGleichungen werden verwendet, um den Wert einer Variablen zu ermitteln. \nBeispielsweise kann eine Gleichung dazu verwendet werden\n\nBestimmen Sie den Zeitpunkt, zu dem Sie zwanzig Kilometer zurückgelegt haben.\n\n\nJetzt können wir diese beiden Konzepte <bookmark mark=\"handshake\"/> zusammenfügen, um zu bestimmen, zu welchem ​​Zeitpunkt\n\nZwei reale Szenarien, die beide durch Funktionen beschrieben werden, sind gleich.\n\n\nIn dem Beispiel, das wir uns gerade angesehen haben, hatten wir zwei Funktionen, die die Entfernung zwischen Ihnen und Ihrem Freund beschreiben\n\nzu irgendeinem Zeitpunkt gereist sind. \nAnschließend haben wir mithilfe einer Gleichung ermittelt, zu welchem ​​Zeitpunkt\n\nSie und Ihr Freund sind die gleiche Strecke zurückgelegt.\n\n\nWir tun dies, indem wir einfach die Terme der beiden Funktionen einander gleichsetzen,\n\nund dann die Gleichung nach der Variablen lösen, in unserem Fall nach x."
+    },
+    "I6": {
+      "a": {
+        "voiceover": "Ja! \nDas stimmt, sehr gut!\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
+      },
+      "b": {
+        "voiceover": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen die richtige Lösung.\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
+      },
+      "q": {
+        "question-text": "Wo schneiden sich die Funktionen?",
+        "title": "Grafische Lösung",
+        "voiceover": "Es gibt eine andere Möglichkeit, diese Art von Problemen zu lösen: Visuell, indem wir das verwenden\n\n<bookmark mark=\"cords\"/> Diagramm der Funktionen.\n\n\nDenken Sie daran, wir wollen die Werte von x finden, für die zwei Funktionen gleich sind.\n\n\nWir können dies tun, indem wir uns den Graphen der beiden Funktionen ansehen und den Punkt finden, an dem\n\nDie beiden Funktionen haben den gleichen y-Wert, also den Punkt, an dem sich die beiden Funktionen treffen.\n\n\nKehren wir zum letzten Mal zu unserem Fahrradbeispiel zurück, versprochen!!!\n\n\nDenken Sie daran, dass die Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, durch gegeben ist\n\n<bookmark mark=\"f\"/> f von x entspricht fünfzehn mal x plus fünf,\n\nund die Funktion, die die von Ihnen zurückgelegte Strecke beschreibt, ist gegeben durch\n\n<bookmark mark=\"g\"/> g von x ist zwanzigmal x.\n\n\nLassen Sie uns nun <bookmark mark=\"plot\"/> die beiden Funktionen plotten. \nWo schneiden sich die beiden Funktionen?"
+      }
+    },
+    "LinearFunctionEqualityAnswerScene": {
+      "eqAText": "{get_num(self.fParams[0])} x gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1]-self.fParams[1], negation='minus', pos= \n'Plus')}",
+      "fText": "f von x ist gleich {get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g von x ist gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}\"\n        \nfEqGText = f\"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} gleich {get_num(self.gParams[0]) \n} x {get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "op1a": "[\"Hinzufügen zu\"]",
+      "op1b": "[\"subtrahieren\", \"von\"]",
+      "stepA": "Als nächstes <bookmark mark=\"shiftUp\"/> wir {op1[0]} <bookmark mark=\"add\"/> {abs(self.fParams[1])} {op1[1]} beide Seiten, - und erhalten \n{eqAText}.",
+      "stepB": "Dann {op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} auf beiden Seiten, - und erhalten {eqBText}.",
+      "stepC": "Schließlich dividieren wir beide Seiten durch {self.fParams[0]-self.gParams[0]}, um <bookmark mark=\"final\"/> {eqCText} zu erhalten.",
+      "title": "Lineare Funktionen \\",
+      "voiceover": "{self.tfIntro}\n\nMerken: <bookmark mark=\"f\"/>\n\n{fText} und <bookmark mark=\"g\"/>\n\n{gText}.\n\n\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\n\n\nDies gibt uns <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n\n\n{SchrittA}\n\n\n{stepB}\n\n\n{stepC}.\n\n\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {get_num(x_sol)} schneiden."
+    },
+    "LinearFunctionEqualityQuestionScene": {
+      "fText": "f von x ist gleich {get_num(self.fParams[0])} mal x {get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g von x ist gleich {get_num(self.gParams[0])} mal x {get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "title": "Lineare Funktionen",
+      "voiceover": "Betrachten Sie die folgenden zwei linearen Funktionen:\n    \n<bookmark mark=\"f\"/>\n    \n{fText}.\n    \n<bookmark mark=\"g\"/>\n    \n{gText}.\n\n    \nWo schneiden sich die beiden Funktionen?\n    \nDas heißt, <bookmark mark=\"handshake\"/> Wo ist f gleich g?"
+    },
+    "P1": {
+      "a": {
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+      },
+      "d": {
+        "tfIntro": "Tolle Arbeit, das stimmt!"
+      },
+      "q": {
+        "question-text": "Wo schneiden sich $f(x)$ und $g(x)$?"
+      }
+    },
+    "P2": {
+      "a": {
+        "tfIntro": "Tolle Arbeit, das stimmt!"
+      },
+      "b": {
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+      }
+    },
+    "P3": {
+      "a": {
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+      },
+      "c": {
+        "tfIntro": "Tolle Arbeit, das stimmt!"
+      }
+    },
+    "P4": {
+      "a": {
+        "tfIntro": "Mhm, das ist es nicht... Ich erkläre es:"
+      },
+      "b": {
+        "tfIntro": "Tolle Arbeit, das ist es!"
+      }
+    },
+    "P5": {
+      "a": {
+        "tfIntro": "Nein, das ist nicht korrekt. \nLass es uns gemeinsam lösen"
+      },
+      "c": {
+        "tfIntro": "Tolle Arbeit, du hast es richtig gemacht!"
       }
     }
   },
@@ -1734,6 +1632,108 @@
       "voiceover": "Jetzt sind wir wahre Wurzelexperten. \nSprechen wir also über die Beziehung von\n\nWurzeln und Potenzfunktion.\n\n\n<bookmark mark=\"title\"/>Wurzeln und Potenzfunktionen sind Umkehrfunktionen zueinander.\n\nDas bedeutet, dass wir eine Zahl potenzieren und dann die Zahl nehmen\n\nWenn wir die Wurzel dieser Zahl bilden, erhalten wir die ursprüngliche Zahl zurück.\n\n\nWenn wir zum Beispiel <bookmark mark=\"example1a\"/>2 nehmen und daraus die Quadratwurzel ziehen, und dann\n\n<bookmark mark=\"example1b\"/>quadriere diese Zahl, wir <bookmark mark=\"example1c\"/>erhalten 2 zurück. <bookmark mark=\"example2\"/>\n\nWenn wir <bookmark mark=\"example2a\"/>3 nehmen, die vierte Wurzel daraus ziehen und dann <bookmark mark=\"example2b\"/>erhöhen\n\nWenn wir diese Zahl auf die vierte Potenz hochrechnen, <bookmark mark=\"example2c\"/>erhalten wir 3 zurück.\n\n\nDies funktioniert auch umgekehrt: Wenn wir eine Zahl nehmen, die k-te Wurzel daraus ziehen und dann erhöhen\n\nWenn wir diese Wurzel hoch k-ten, erhalten wir die ursprüngliche Zahl zurück.\n\n\nWenn wir also zum Beispiel mit <bookmark mark=\"example3a\"/>4 beginnen und es quadrieren, und dann\n\n<bookmark mark=\"example3b\"/>ziehe daraus die Quadratwurzel, wir <bookmark mark=\"example3c\"/>bekommen 4 zurück.\n\nOder wenn wir mit <bookmark mark=\"example4a\"/>5 beginnen und es quadrieren und dann <bookmark mark=\"example4b\"/>nehmen\n\ndie Quadratwurzel, wir <bookmark mark=\"example4c\"/>erhalten 5 zurück.\n\n\nAus diesem Grund gibt es eine andere Schreibweise für Wurzeln:\n\nAnstatt <bookmark mark=\"root_k_1\"/>die k-te Wurzel von x zu schreiben, können wir schreiben\n\n<bookmark mark=\"root_k_2\"/>x hoch 1 über k.\n\nSo kann beispielsweise <bookmark mark=\"root_3_1\"/>die Kubikwurzel von x geschrieben werden als\n\n<bookmark mark=\"root_3_2\"/>x hoch 1 Drittel.\n\nUnd <bookmark mark=\"root_5_1\"/>die fünfte Wurzel von x kann geschrieben werden als\n\n<bookmark mark=\"root_5_2\"/>x hoch 1 Fünftel und so weiter ..."
     }
   },
+  "Func_6_1": {
+    "1I1a": {
+      "main": {
+        "21st-square": "21. Feld",
+        "41st-square": "41. Feld",
+        "grains-of-rice": "Reiskörner",
+        "test_key": "mein Testschlüssel",
+        "voiceover": "Mhm, ich bin mir nicht sicher, ob das eine gute Idee ist.\nSchauen wir mal, wie viel Reis dich das kostet.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>ein Reiskorn.\nFür das zweite Quadrat zahlst du zusätzlich<bookmark mark=\"two\"/>zwei Reiskörner.\nFür das dritte Feld bezahlst du zusätzlich<bookmark mark=\"four\"/>vier Reiskörner.\nfür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>acht Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der acht Reihen auf dem Schachbrett füllen willst? Einhundertachtundzwanzig.\nDas ist eine Menge Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nSobald du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreicht hast, wirst du mehr als eine Million Reiskörner bezahlen müssen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreicht hast, musst du mehr als eine Billion Reiskörner bezahlen.\nAm Ende werden Sie insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen bezahlen müssen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner.\nIch bin mir nicht sicher über den Umrechnungskurs von Reis in Gold, aber ich bin mir ziemlich sicher, dass Gold hier die billigere Option ist..."
+      }
+    },
+    "1I1b": {
+      "main": {
+        "voiceover": "Ja, das scheint die richtige Idee zu sein.\nZum Vergleich, lass uns sehen, wie viel Reis es dich kosten würde.\nFür das erste Feld zahlst du <bookmark mark=\"one\"/>1 Reiskorn.\nFür das zweite Feld zahlst du zusätzlich<bookmark mark=\"two\"/>2 Reiskörner.\nFür das dritte Feld zahlst du zusätzlich<bookmark mark=\"four\"/>4 Reiskörner.\nFür das vierte Feld zahlst du zusätzlich<bookmark mark=\"eight\"/>8 Reiskörner.\nund für das fünfte Feld zahlst du zusätzlich<bookmark mark=\"sixteen\"/>16 Reiskörner.\nRate mal, wie viele Reiskörner du zahlen musst, wenn du die erste der\n8 Reihen auf dem Schachbrett beendet hast? Einhundertachtundzwanzig.\nDas ist viel Reis. Und du bist noch nicht einmal mit der ersten Reihe fertig.\nWenn du das <bookmark mark=\"twentyfirst\"/>einundzwanzigste Feld erreichst, musst du mehr als eine Million Reiskörner zahlen.\nUnd wenn du das <bookmark mark=\"fourtyfirst\"/>einundvierzigste Feld erreichst, musst du mehr als eine Billion Reiskörner zahlen.\nAm Ende musst du insgesamt<bookmark mark=\"largeNumber\"/> achtzehn Quintillionen,\nvierhundertsechsundvierzig Quadrillionen, siebenhundertvierundvierzig Billionen, dreiundsiebzig Milliarden,\nsiebenhundertneun Millionen, fünfhunderteinundfünfzigtausend, sechshundertfünfzehn Reiskörner zahlen.\nIch bin mir nicht sicher über die Reis-zu-Gold-Umrechnungskurse, aber ich bin ziemlich sicher, dass Gold hier die günstigere Option ist..."
+      }
+    },
+    "1I1q": {
+      "main": {
+        "exponential-functions": "Exponentialfunktionen",
+        "voiceover": "Stell dir vor, du bist <bookmark mark=\"crown\"/> der König oder die Königin eines alten Reiches.\nWenn du nicht damit beschäftigt bist, dein Reich zu regieren, spielst du gerne<bookmark mark=\"chess\"/> Schach mit deinen Freunden.\nAlso bittest du den begabtesten Künstler deines Reiches, dir ein Schachbrett anzufertigen.\nAls er mit dem Schachbrett zurückkommt, bist du von seiner Schönheit beeindruckt und beschließt,\nsie mit einem Preis zu belohnen.\nAber du bist knapp bei Kasse, denn du hast all dein Geld<bookmark mark=\"headphones\"/> für ein brandneues Paar Kopfhörer ausgegeben,\nalso bittest du den Künstler, seinen Preis zu nennen.\nDer Künstler stellt dich vor die Wahl:\nDu kannst entweder <bookmark mark=\"gold\"/>für jedes Feld auf dem Schachbrett eine Goldmünze zahlen,\noder du kannst <bookmark mark=\"rice\"/>ihm ein Reiskorn für das erste Feld, zwei Reiskörner für das zweite Feld,\nvier Reiskörner für das dritte Feld, acht Reiskörner für das vierte Feld, und so weiter, bis\ndu sie für alle 64 Quadrate bezahlt hast. <bookmark mark=\"qmark\"/>\nWelche Option wählst du?"
+      },
+      "question": {
+        "how-do-you-pay-the-artist": "Wie bezahlst du den Künstler?",
+        "with-gold": "Mit Gold",
+        "with-rice": "Mit Reis"
+      }
+    },
+    "1I2": {
+      "main": {
+        "exponential-growth": "Exponentielles Wachstum",
+        "linear-growth": "Lineares Wachstum",
+        "voiceover": "Was ist der Grund dafür, dass im Beispiel des Schachbretts die Anzahl der Reiskörner, die Sie bezahlen müssen\nso schnell ansteigt? Wie kann Reis so schnell so viel teurer werden als Gold?\nDie Antwort auf diese beiden Fragen ist die gleiche: Exponentielles Wachstum.\nVergleichen wir die beiden Optionen, Reis und Gold, noch einmal. Genauer gesagt,\nlassen Sie uns die beiden <bookmark mark=\"cords\"/> mit Hilfe von Funktionen beschreiben.\nBeginnen wir mit Gold.\nDie Funktion, die die Menge an Gold beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, lautet\n<bookmark mark=\"f_gold\"/> f von x ist gleich x.\nFür das erste Feld muss man eine Goldmünze bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Feld musst du ebenfalls eine Goldmünze bezahlen. Also ist f von 2 gleich eins für das erste Feld,\nplus eins für das zweite Feld, also zwei. Und so weiter. Wie Sie sehen, steigt der Betrag, den Sie zahlen müssen\nlinear mit der Anzahl der zu zahlenden Quadrate ansteigt. Ein zusätzliches Quadrat kostet genau\nso viel wie jedes der vorherigen Quadrate, und das letzte Quadrat kostet genau so viel wie das erste.\nWir nennen dies <bookmark mark=\"linear\"/>lineares Wachstum...\n\nBetrachten wir nun <bookmark mark=\"clean\"/> zum Vergleich Reis.\nDie <bookmark mark=\"cords_rice\"/>Funktion, die die Menge an Reis beschreibt, die man für eine\nDie <bookmark mark=\"f_rice\"/>-Funktion, die die Menge an Reis beschreibt, die man für eine bestimmte Anzahl von Quadraten bezahlen muss, ist eine Exponentialfunktion\nFür das erste Quadrat muss man ein Reiskorn bezahlen. Also ist f von 1 gleich 1.\nFür das zweite Quadrat muss man zwei Reiskörner bezahlen. Also ist f von 2 gleich eins für das erste Quadrat,\nplus zwei für das zweite Feld, also drei. \nFür das dritte Feld musst du vier Reiskörner bezahlen. Also ist f von 3 gleich eins für das erste Feld,\nplus zwei für das zweite Feld, plus vier für das dritte Feld, also sieben.\nUnd so weiter.\nWie Sie sehen, steigt der Betrag, den Sie zahlen müssen, schnell mit der Anzahl der Quadrate, für die Sie zahlen müssen,\ndenn für jedes Feld müssen Sie doppelt so viel bezahlen wie für das vorherige Feld.\nWir nennen dies <bookmark mark=\"exponential\"/>exponentielles Wachstum..."
+      }
+    },
+    "1I3": {
+      "main": {
+        "title": "Lineares Wachstum",
+        "voiceover": "Treffen Sie <bookmark mark=\"tom_in_1\"/> Tom.\n\nTom ist ein <bookmark mark=\"chicken_in_1\"/> Hühnerzüchter.\n\nEr hat <bookmark mark=\"two_chickens\"/>zwei Hühner. \nJeden Tag liegt jeder von ihnen\n\n<bookmark mark=\"one_egg_per_day\"/>ein Ei.\n\nWeil Tom Eier so sehr mag, sammelt er sie jeden Tag ein\n\nund zählt <bookmark mark=\"calendar\"/>wie viele Eier er im Laufe der Zeit gesammelt hat.\n\n\nHelfen wir Tom, indem wir die Anzahl der Eier, die er gesammelt hat, mithilfe einer Funktion beschreiben.\n\nWir beschreiben die Funktion anhand eines <bookmark mark=\"cords\"/>-Diagramms.\n\n\nNach <bookmark mark=\"one_day\"/>einem Tag hat Tom also <bookmark mark=\"two_eggs\"/>\n\nzwei Eier, weil jedes der beiden Hühner ein Ei gelegt hat.\n\nNach <bookmark mark=\"two_days\"/>zwei Tagen hat Tom <bookmark mark=\"four_eggs\"/>\n\nvier Eier, weil jedes der beiden Hühner am ersten Tag ein Ei gelegt hat,\n\nund ein Ei am zweiten Tag.\n\nUnd nach <bookmark mark=\"drei_tagen\"/>drei Tagen hat Tom <bookmark mark=\"six_eggs\"/>\n\nsechs Eier, weil jedes der beiden Hühner am ersten Tag ein Ei gelegt hat,\n\nein Ei am zweiten Tag und ein Ei am dritten Tag. \nund so geht es weiter...\n\n\nAlso <bookmark mark=\"plot\"/> jeden Tag bekommt Tom zwei zusätzliche Eier.\n\nDas bedeutet, dass wir die Anzahl der Eier, die Tom gesammelt hat, mit a beschreiben können\n\n<bookmark mark=\"func\"/>Funktion f <bookmark mark=\"fx\"/> von x gleich\n\n<bookmark mark=\"two_times\"/>zweimal <bookmark mark=\"x\"/>x, wobei x das ist\n\nAnzahl der vergangenen Tage.\n\n\nWenn Sie sich die Darstellung dieser Funktion ansehen, können Sie erkennen, dass es sich um eine gerade Linie handelt.\n\ndenn die Anzahl der Eier nimmt jeden Tag um den gleichen Betrag zu.\n\nDies wird als <bookmark mark=\"linear\"/>lineares Wachstum bezeichnet."
+      }
+    },
+    "1I4": {
+      "main": {
+        "one_egg": "1 $/$Woche",
+        "title": "Exponentielles Wachstum",
+        "two_chickens": "2 mal",
+        "voiceover": "Treffen Sie <bookmark mark=\"Sophie_in_1\"/> Sophie.\n\nSophie liebt <bookmark mark=\"chicken_in_1\"/> Hühner.\n\nSie hat derzeit <bookmark mark=\"two_chickens_1\"/>zwei Hühner, aber sie möchte\n\nviel mehr. \nJedes ihrer beiden Hühner legt <bookmark mark=\"one_egg_per_week\"/>\n\nein Ei pro Woche und am Ende der Woche das Huhn aus dem Ei\n\ngeschlüpft und alt genug, um selbst Eier zu legen. \nDas sind ein paar schnelle Hühner!\n\n\nBeschreiben wir die Anzahl der Hühner, die Sophie hat, indem wir das <bookmark mark=\"graph\"/> verwenden\n\nGraph einer Funktion.\n\nIn der <bookmark mark=\"one_week\"/>ersten Woche hat Sophie also zwei Hühner<bookmark mark=\"two_chickens\"/>\n\nEine Woche <bookmark mark=\"two_weeks\"/>später hat Sophie <bookmark mark=\"four_chickens\"/>\n\nvier Hühner. \nDie beiden Hühner, mit denen sie angefangen hat, und die beiden Hühner, die aus den Eiern geschlüpft sind.\n\n\nIn den <bookmark mark=\"drei_wochen\"/>nächsten Woche hat Sophie vier Hühner, die jeweils ein Ei legen,\n\nalso bekommt sie vier Eier. \nDies bedeutet, dass die Gesamtzahl der Hühner nach der zweiten Woche beträgt\n\n<bookmark mark=\"eight_chickens\"/>acht: die vier Hühner aus der ersten Woche und die vier Hühner\n\ndas aus den Eiern geschlüpft ist.\n\n\nIn der <bookmark mark=\"four_weeks\"/>vierten Woche hat Sophie acht Hühner, die eins legen\n\njedes Ei, also bekommt sie acht Eier. \nDie Gesamtzahl der Hühner beträgt also nach der dritten Woche\n\n<bookmark mark=\"sixteen_chickens\"/>sechzehn: die acht Hühner aus der zweiten Woche und die\n\nacht Hühner, die aus den Eiern geschlüpft sind.\n\n\nWie Sie sehen können, nimmt <bookmark mark=\"plot\"/>die Anzahl der Hühner sehr schnell zu, und das nennen wir\n\nexponentielles Wachstum. \nDie Anzahl der Hühner verdoppelt sich jede Woche, weil jedes Ihrer\n\nHühner legen ein Ei pro Woche. \nDas bedeutet, wie viele Hühner Sie haben möchten\n\nx Wochen werden beschrieben durch <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/> x entspricht <bookmark mark=\"two\"/>\n\nzwei hoch <bookmark mark=\"power\"/> Potenz von x. \nWeil man mit zwei Hühnern beginnt und jedes Mal x\n\num eins erhöht, verdoppelt sich die Anzahl der Hühner.\n\n\nDas nennen wir <bookmark mark=\"exponential\"/>exponentielles Wachstum."
+      }
+    },
+    "I5": {
+      "a": {
+        "voiceover": "Das ist richtig, gut gemacht.\n\nSchauen wir uns Schritt für Schritt die Anzahl der Bakterien an.\n\nZuerst gibt es ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten verdoppelt sich das Bakterium, es sind also<bookmark mark=\"two\"/> zwei Bakterien vorhanden.\n\nNach weiteren zwanzig Minuten verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem Zeitschritt doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt:<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt erhalten wir <bookmark mark=\"step1\"/>ein Bakterium, im zweiten Zeitschritt erhalten wir <bookmark mark=\"step2\"/>zwei Bakterien\n\nund im dritten Zeitschritt erhalten wir <bookmark mark=\"step3\"/>vier Bakterien ...\n\nDas bedeutet, dass die Anzahl der Bakterien <bookmark mark=\"exponential\"/>exponentiell wächst, denn mit jedem Zeitschritt erhalten wir\n\ndoppelt so viele zusätzliche Bakterien wie im vorherigen Zeitschritt."
+      },
+      "b": {
+        "voiceover": "Nein, das ist nicht richtig.\n\nSchauen wir uns Schritt für Schritt die Anzahl der Bakterien an.\n\nZuerst gibt es ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten verdoppelt sich das Bakterium, es sind also<bookmark mark=\"two\"/> zwei Bakterien vorhanden.\n\nNach weiteren zwanzig Minuten verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem Zeitschritt doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt:<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt erhalten wir <bookmark mark=\"step1\"/>ein Bakterium, im zweiten Zeitschritt erhalten wir <bookmark mark=\"step2\"/>zwei Bakterien\n\nund im dritten Zeitschritt erhalten wir <bookmark mark=\"step3\"/>vier Bakterien ...\n\nDas bedeutet, dass die Anzahl der Bakterien <bookmark mark=\"exponential\"/>exponentiell wächst, denn mit jedem Zeitschritt erhalten wir\n\ndoppelt so viele zusätzliche Bakterien wie im vorherigen Zeitschritt."
+      },
+      "main": {
+        "bacteria_double1": "$\\\\Uparrow$ Alle duplizieren",
+        "bacteria_double2": "20$ Minuten",
+        "eg1": "$\\\\Rightarrow$ Die Anzahl der Bakterien",
+        "eg2": "wächst exponentiell",
+        "title": "Exponentiell oder linear?",
+        "voiceover": "Meine Freundin <bookmark mark=\"sarah\"/>Sarah ist Ärztin und forscht darüber\n\n<bookmark mark=\"bacteria\"/>Bakterien.\n\nWussten Sie, dass Bakterien wachsen, indem sie sich einfach vervielfältigen?\n\nDie Bakterien, die Sarah untersucht, zum Beispiel <bookmark mark=\"bacteria_double\"/>\n\neinmal alle zwanzig Minuten duplizieren. \nDas bedeutet, dass jeweils alle zwanzig Minuten\n\nVon den Bakterien, die Sarah untersucht, verwandelt es sich in<bookmark mark=\"show_double\"/> zwei Bakterien ...\n\nJetzt will Sarah wissen: Wächst die Zahl der Bakterien, die sie analysiert?\n\n<bookmark mark=\"linear\"/>linear, oder wächst es <bookmark mark=\"exponential\"/> exponentiell?"
+      },
+      "q": {
+        "answer-options": "[\"exponentiell\", \"linear\"]",
+        "question-text": "Wächst die Anzahl der Bakterien exponentiell oder linear?"
+      }
+    },
+    "I6": {
+      "a": {
+        "title": "Exponentielles Wachstum",
+        "voiceover": "Das ist es nicht.\n\nSchauen wir uns noch einmal an, wie viele Bakterien wir bei jedem Schritt haben.\n\nWenn wir beginnen, gibt es bei x gleich Null ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die Bakterien, sodass <bookmark mark=\"two\"/> zwei Bakterien vorhanden sind.\n\nNach weiteren zwanzig Minuten, also bei x gleich zwei, verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten, das heißt bei x = vier, duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um eins erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>ein Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit zwei.\n\nIm zweiten Zeitschritt gehen wir von zwei <bookmark mark=\"step2\"/> Bakterien auf vier über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n\nund im dritten Zeitschritt gehen wir von vier <bookmark mark=\"step3\"/> Bakterien auf acht und multiplizieren die Anzahl der Bakterien erneut mit zwei.\n\n\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch zwei hoch x gegeben ist, da wir 2 x mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/> ist. g von <bookmark mark=\"gx\"/>x entspricht <bookmark mark=\"gtwo\"/>zwei hoch <bookmark \nmark=\"gxx\"/> x."
+      },
+      "b": {
+        "bacteria": "Bakterien",
+        "voiceover": "Das ist richtig, gut gemacht.\n\nSchauen wir uns noch einmal an, wie viele Bakterien wir bei jedem Schritt haben.\n\nWenn wir beginnen, gibt es bei x gleich Null ein <bookmark mark=\"one\"/> Bakterium.\n\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die Bakterien, sodass <bookmark mark=\"two\"/> zwei Bakterien vorhanden sind.\n\nNach weiteren zwanzig Minuten, also bei x gleich zwei, verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n\nUnd nach weiteren zwanzig Minuten, das heißt bei x = vier, duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n\n\nSie sehen also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um eins erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>ein Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit zwei.\n\nIm zweiten Zeitschritt gehen wir von zwei <bookmark mark=\"step2\"/> Bakterien auf vier über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n\nund im dritten Zeitschritt gehen wir von vier <bookmark mark=\"step3\"/> Bakterien auf acht und multiplizieren die Anzahl der Bakterien erneut mit zwei.\n\n\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch zwei hoch x gegeben ist, da wir 2 x mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/> ist. g von <bookmark mark=\"gx\"/>x entspricht <bookmark mark=\"gtwo\"/>zwei hoch <bookmark \nmark=\"gxx\"/> x."
+      },
+      "q": {
+        "bacteria_double_a": "$\\\\Uparrow$ Alle duplizieren",
+        "bacteria_double_b": "20$ Minuten",
+        "bacteria_minutes": "Protokoll",
+        "bacteria_time": "Zeit",
+        "question-text": "Welche Funktion beschreibt die Anzahl der Bakterien zum Zeitpunkt x?",
+        "voiceover": "<bookmark mark=\"sarah\"/>Sarah weiß, dass sich die <bookmark mark=\"bacteria\"/>Bakterien, die sie untersucht, alle zwanzig Minuten verdoppeln.\n\nNun möchte sie die Anzahl der Bakterien, die sie untersucht, mithilfe einer Funktion beschreiben.\n\nSei x<bookmark mark=\"table\"/> die verstrichene Zeit in Einheiten von zwanzig Minuten, sodass <bookmark mark=\"row_1\"/>x gleich eins ist\n\nzwanzig Minuten, <bookmark mark=\"row_2\"/>x entspricht zwei bedeutet vierzig Minuten,<bookmark mark=\"rowsss\"/> und so weiter.\n\n<bookmark mark=\"clean\"/>Welche dieser Funktionen beschreiben die Anzahl der Bakterien zum Zeitpunkt x?\n\nIst <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"ftwo\"/>2 mal <bookmark mark=\"fxx\"/> x?\n\nOder ist <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x?\n\nOder ist <bookmark mark=\"h\"/> h von <bookmark mark=\"hx\"/>x gleich <bookmark mark=\"hxx\"/>x im Quadrat?"
+      }
+    },
+    "I7": {
+      "a": {
+        "double-t1": "$\\\\Uparrow$ Alle duplizieren",
+        "double-t2": "20$ Minuten",
+        "voiceover": "Nein, das ist nicht richtig.\n\nFür die Funktion <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x ist gleich <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x,\n\nDie Anzahl der Bakterien verdoppelt sich alle zwanzig Minuten. \nJeder Zeitschritt bringt also doppelt so viele Bakterien hervor wie der vorherige.<bookmark mark=\"cords\"/>\n\nDie blaue <bookmark mark=\"blue\"/>-Grafik hat eine konstante Steigung, das heißt, sie steigt immer mit der gleichen Geschwindigkeit, es kann also nicht diejenige sein, die wir haben\n\nAuf der Suche nach.\n\nDas violette Diagramm <bookmark mark=\"purple\"/> nimmt mit abnehmender Geschwindigkeit zu, es kann also auch nicht richtig sein <bookmark mark=\"clear_cords\"/>.\n\nDie grüne <bookmark mark=\"green\"/>-Grafik wächst jedoch immer schneller, sodass es sich um die gesuchte Grafik handeln muss. \nIn der Tat,\n\nes verdoppelt sich bei jedem Zeitschritt, also muss es das richtige sein."
+      },
+      "b": {
+        "voiceover": "Ja, das ist es!\n\nFür die Funktion <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x ist gleich <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x,\n\nDie Anzahl der Bakterien verdoppelt sich alle zwanzig Minuten. \nJeder Zeitschritt bringt also doppelt so viele Bakterien hervor wie der vorherige.<bookmark mark=\"cords\"/>\n\nDie blaue <bookmark mark=\"blue\"/>-Grafik hat eine konstante Steigung, das heißt, sie steigt immer mit der gleichen Geschwindigkeit, es kann also nicht diejenige sein, die wir haben\n\nAuf der Suche nach.\n\nDas violette Diagramm <bookmark mark=\"purple\"/> nimmt mit abnehmender Geschwindigkeit zu, es kann also auch nicht richtig sein <bookmark mark=\"clear_cords\"/>.\n\nDie grüne <bookmark mark=\"green\"/>-Grafik wächst jedoch immer schneller, sodass es sich um die gesuchte Grafik handeln muss. \nIn der Tat,\n\nes verdoppelt sich bei jedem Zeitschritt, also muss es das richtige sein."
+      },
+      "q": {
+        "answer-options": "[\"Der blaue Graph\", \"Der grüne Graph\", \"Der violette Graph\"],",
+        "lin-growth": "Lineares Wachstum",
+        "question-text": "Welcher der Graphen gehört zur Funktion?",
+        "voiceover": "Schauen Sie sich die Funktion<bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x an, die <bookmark mark=\"gtwo\"/>zwei hoch von <bookmark mark=\"gxx\"/> x entspricht \n?\n\nWelcher der folgenden <bookmark mark=\"cords\"/>-Graphen gehört zur Funktion?\n\nDas <bookmark mark=\"blue\"/> blaue Diagramm? \nOder die <bookmark mark=\"green\"/> grüne Grafik? \nOder ist es das lila Diagramm <bookmark mark=\"purple\"/>?"
+      }
+    }
+  },
   "Func_6_2": {
     "GraphToGrowthFactorAnswerScene": {
       "voiceover": "{self.intro}\n\nWenn wir uns die Grafik ansehen, können wir sehen, dass <bookmark mark=\"x_one\"/>bei x gleich eins ist, es ist <bookmark mark=\"f_x_one\"/> bei {self.a}.\n\nDas bedeutet also, dass a hoch eins gleich {self.a} ist.<bookmark mark=\"sol\"/> Also muss \"a\" {self.a} sein.\n\n\nWir können dies auch <bookmark mark=\"verify\"/>verifizieren, indem wir <bookmark mark=\"x_max\"/>f von {self.x_max} berechnen.\n\nWenn wir uns das Diagramm ansehen, können wir Folgendes sehen: <bookmark mark=\"x_max_graph\"/>\n\nes muss {self.a**self.x_max} sein. \nUm dies zu überprüfen, berechnen wir \"a\" hoch {self.x_max} für \"a\" gleich {self.a}.\n\n<bookmark mark=\"verify_2\"/>Dies ist {self.a} hoch {self.x_max}, <bookmark mark=\"verify_3\"/>was {self.a**self.x_max} entspricht.\n\nDies passt zum Wert in der Grafik."
@@ -2443,13 +2443,6 @@
         "question-text": "Was sind die Nullstellen der Polynomfunktion $f(x)=x^2-1$?",
         "title": "Funktionen des ersten Grades",
         "voiceover": "Lassen Sie uns zunächst darüber sprechen, den Nullpunkt einer Polynomfunktion ersten Grades zu finden.\n\n\nStellen Sie sich vor, Sie haben eine Menge Freunde <bookmark mark=\"friends_in\"/>, die das haben\n\ncoolste Frisuren. \nDa Sie nun ein so talentierter Künstler sind, bitten sie Sie darum\n\n<bookmark mark=\"scissors_in\"/>haben sich die Haare geschnitten.\n\n\nNehmen wir an, Sie <bookmark mark=\"ten_bucks\"/> haben zehn Dollar für die Schere bezahlt.\n\nUnd dann berechnen Sie Ihren Freunden fünf Dollar pro Haarschnitt.\n\n<bookmark mark=\"qmark\"/>\n\nWie lautet der Term der Funktion, die den Geldbetrag beschreibt, den Sie danach verdient haben?\n\nx Freunden die Haare schneiden?"
-      }
-    }
-  },
-  "Func_X_X": {
-    "I1": {
-      "q": {
-        "question-text": ""
       }
     }
   },

@@ -659,9 +659,9 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
-        first_bit = self.translate("Func_1_1.ValueTableSolutionScene.first_bit")
+        first_bit = self.evaluate_string(self.translate("Func_1_1.ValueTableSolutionScene.first_bit"))
         if self.idx_selected == self.correcty:
-            first_bit = self.translate("Func_1_1.ValueTableSolutionScene.first_bit_correct")
+            first_bit = self.evaluate_string(self.translate("Func_1_1.ValueTableSolutionScene.first_bit_correct"))
 
         # Action Sequence
         with self.voiceover(
