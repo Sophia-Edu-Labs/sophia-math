@@ -949,6 +949,9 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         x_sol = (self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0])
         x,y,_ = plane.c2p(x_sol, func_f(x_sol))
         circ = Circle(radius=0.1, color=RED).move_to([x,y,0])
+        self.stepA = stepA
+        self.stepB = stepB
+        self.stepC = stepC
 
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.voiceover"))

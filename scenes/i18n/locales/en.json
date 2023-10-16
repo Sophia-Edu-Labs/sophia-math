@@ -748,7 +748,7 @@
       "q": {
         "question-text": "Where do the functions intersect?",
         "title": "Graphical solution",
-        "voiceover": "There is another way we can solve these kinds of problems: Visually, by using the\n<bookmark mark=\"cords\"/> graph of the functions.\n\nRemember, we want to find the values of x for which two functions are equal.\n\nWe can do this by looking at the graph of the two functions, and finding the point at which\nthe two functions have the same y-value, so the point at which the two functions meet.\n\nLet's return to our bike example, for the last time, i promise!!!\n\nRemember, the function describing the distance your friend has traveled is given by\n<bookmark mark=\"f\"/> f of x equals fifteen times x plus five,\nand the function describing the distance you have traveled is given by\n<bookmark mark=\"g\"/> g of x equals twenty times x.\n\nNow, let's <bookmark mark=\"plot\"/> plot the two functions. Where do the two functions intersect?"
+        "voiceover": "There is another way we can solve these kinds of problems: Visually, by using the\n<bookmark mark=\"cords\"/> graph of the functions.\n<break time=\"0.5s\"/>\nRemember, we want to find the values of x for which two functions are equal.\n<break time=\"0.5s\"/>\nWe can do this by looking at the graph of the two functions, and finding the point at which\nthe two functions have the same y-value, so the point at which the two functions meet.\n\nLet's return to our bike example, for the last time, i promise!!!\n\nRemember, the function describing the distance your friend has traveled is given by\n<bookmark mark=\"f\"/> f of x equals fifteen times x plus five,\nand the function describing the distance you have traveled is given by\n<bookmark mark=\"g\"/> g of x equals twenty times x.\n\nNow, let's <bookmark mark=\"plot\"/> plot the two functions. Where do the two functions intersect?"
       }
     },
     "LinearFunctionEqualityAnswerScene": {
@@ -761,12 +761,12 @@
       "stepB": "Then, we {op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} both sides, - and obtain {eqBText}.",
       "stepC": "Finally, we divide both sides by {self.fParams[0]-self.gParams[0]} to get <bookmark mark=\"final\"/> {eqCText}.",
       "title": "Linear Functions \\& Equalities",
-      "voiceover": "{self.tfIntro}\nRemember: <bookmark mark=\"f\"/>\n{fText} and <bookmark mark=\"g\"/>\n{gText}.\n\nSo now, the first thing we do is set <bookmark mark=\"fEqG\"/> f of x equal to g of x.\n\nThis gives us <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n\n{stepA}\n\n{stepB}\n\n{stepC}.\n\nWe can also verify this, by <bookmark mark=\"cords\"/> plotting the graph of <bookmark mark=\"plotF\"/> f and the graph  <bookmark mark=\"plotG\"/> of g.\n\nLooking at the two graphs, we can <bookmark mark=\"confirm\"/> confirm that the two graphs intersect at the point x equals {get_num(x_sol)}. "
+      "voiceover": "{self.tfIntro}\nRemember: <bookmark mark=\"f\"/>\n{fText} and <bookmark mark=\"g\"/>\n{gText}.\n\nSo now, the first thing we do is set <bookmark mark=\"fEqG\"/> f of x equal to g of x.\nThis gives us <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n{self.stepA}\n{self.stepB}\n{self.stepC}.\nWe can also verify this, by <bookmark mark=\"cords\"/> plotting the graph of <bookmark mark=\"plotF\"/> f and the graph  <bookmark mark=\"plotG\"/> of g.\nLooking at the two graphs, we can <bookmark mark=\"confirm\"/> confirm that the two graphs intersect at the point x equals {get_num(x_sol)}. "
     },
     "LinearFunctionEqualityQuestionScene": {
       "fText": "f of x equals {get_num(self.fParams[0])} times x {get_num(self.fParams[1], negation='minus', pos='plus')}",
       "gText": "g of x equals {get_num(self.gParams[0])} times x {get_num(self.gParams[1], negation='minus', pos='plus')}",
-      "title": "Linear Functions & Equalities",
+      "title": "Linear Functions \\& Equalities",
       "voiceover": "    Consider the following two linear functions:\n    <bookmark mark=\"f\"/>\n    {fText}.\n    <bookmark mark=\"g\"/>\n    {gText}.\n\n    Where do the two functions intersect?\n    That is, <bookmark mark=\"handshake\"/> where does f equal g?"
     },
     "P1": {

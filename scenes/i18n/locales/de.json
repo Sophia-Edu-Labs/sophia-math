@@ -709,72 +709,72 @@
       "Q2": "wirst du gleich weit",
       "Q3": "gefahren sein?",
       "title": "Wann trefft ihr euch?",
-      "voiceover": "Ok, warum machen wir das? \nUnd was hat das mit Gleichungen zu tun?\n\n\nDenken Sie darüber nach: <bookmark mark=\"race\"/> Da Sie beide in die gleiche Richtung radeln, Ihr Freund aber einen Vorsprung hatte,\n\nIrgendwann werdet ihr euch treffen – denn ihr radelt schneller als sie.\n\n\nAber wann <bookmark mark=\"meet\"/> werdet ihr euch treffen?\n\n\nNatürlich treffen Sie sich zu dem Zeitpunkt, an dem Sie beide genau die gleiche Strecke zurückgelegt haben.\n\n<bookmark mark=\"Q\"/>\n\n\nÜberlegen Sie, wie wir diesen Zeitpunkt mithilfe der beiden Funktionen finden können, die wir gerade geschrieben haben."
+      "voiceover": "Ok, warum machen wir das? \nUnd was hat das mit Gleichungen zu tun?\n<break time=\"0.5s\"/>\nDenk mal darüber nach: <bookmark mark=\"race\"/> Da ihr beide in die gleiche Richtung radelt, deine Freundin aber einen Vorsprung hatte,\nwerdet ihr euch irgendwann treffen - denn du radelst ja schneller als sie.\nAber wann <bookmark mark=\"meet\"/>?\n<break time=\"0.5s\"/>\nGanz einfach, zu dem Zeitpunkt, an dem ihr beide die gleiche Strecke zurückgelegt habt.\n<bookmark mark=\"Q\"/>\nÜberlege dir, wie wir diesen Zeitpunkt mithilfe der beiden Funktionen, die wir gerade formuliert haben, finden können"
     },
     "I3": {
       "tb1": "→Beschreibt die Zeit",
       "tb2": "wenn ihr euch trefft",
-      "tf1": "→Beschreibt die Entfernung",
-      "tf2": "Dein Freund ist gereist",
-      "title": "Wann triffst du dich?",
-      "ty1": "→Beschreibt die Entfernung",
-      "ty2": "Du bist gereist",
-      "voiceover": "Denken wir an das zurück, was wir bereits wissen.\n\n\nDie Funktion <bookmark mark=\"f\"/> f von x beschreibt die Entfernung, die Ihr Freund zum Zeitpunkt x zurückgelegt hat.\n\n\nDie Funktion <bookmark mark=\"g\"/> g von x hingegen beschreibt die von DU zurückgelegte Strecke\n\nzum Zeitpunkt x.\n\n\n<bookmark mark=\"youLeave\"/>\n\nDa Sie und Ihr Freund sich treffen, nachdem Sie die gleiche Strecke zurückgelegt haben, können wir das sagen\n\n<bookmark mark=\"both\"/> trifft man, wenn f von x gleich g von x ist."
+      "tf1": "→Beschreibt die von deiner",
+      "tf2": "Freundin zurückgelegte Distanz",
+      "title": "Wann trefft ihr euch?",
+      "ty1": "→Beschreibt die von dir",
+      "ty2": "zurückgelegte Distanz",
+      "voiceover": "Denken wir an das zurück, was wir bereits wissen.\n<break time=\"0.5s\"/>\nDie Funktion <bookmark mark=\"f\"/> f von x beschreibt die Entfernung, die deine Freundin zum Zeitpunkt x zurückgelegt hat.\n<break time=\"0.5s\"/>\nDie Funktion <bookmark mark=\"g\"/> g von x hingegen beschreibt die von dir zurückgelegte Strecke zum Zeitpunkt x.\n<bookmark mark=\"youLeave\"/>\nDa du deine Freundin triffst, wenn ihr beide gleiche Strecke zurückgelegt habt, können wir sagen, dass ihr euch trefft\nwenn<bookmark mark=\"both\"/> f von x gleich g von x ist."
     },
     "I4": {
-      "title": "Wann triffst du dich?",
-      "voiceover": "Ok, jetzt wissen wir, wie man die Zeit findet, wenn man seinen Freund trifft: Wir rechnen einfach\n\nder Wert von x, wobei <bookmark mark=\"both\"/> f von x gleich g von x ist, da f den Abstand beschreibt\n\nDein Freund ist gereist und g beschreibt die Distanz, die DU zurückgelegt hast.\n\n\nDenken Sie daran: f von x ist <bookmark mark=\"f\"/> gleich fünfzehn mal x plus fünf, -\n\nund g von x ist <bookmark mark=\"g\"/> gleich zwanzigmal x.\n\n\nJetzt wollen wir den Wert von x finden, wobei <bookmark mark=\"calculate\"/>\n\nf von x ist gleich g von x.\n\n\nDer erste Schritt <bookmark mark=\"step1a\"/> besteht darin, die Terme von f und g <bookmark mark=\"step1b\"/> einzufügen.\n\nWir erhalten die Gleichung 15x plus 5 ist gleich 20x.\n\n\nAls nächstes <bookmark mark=\"step2a\"/> subtrahieren wir 15x von beiden Seiten, was übrig bleibt\n\nuns mit <bookmark mark=\"step2b\"/> die Gleichung 5 gleich 5x.\n\n\nZum Schluss teilen wir <bookmark mark=\"step3a\"/> beide Seiten durch 5, was ergibt\n\ndie endgültige Lösung, <bookmark mark=\"step3b\"/> dass x gleich 1 ist.\n\n\nWir können jetzt sagen, dass Sie und Ihr Freund sich nach einer Stunde treffen.\n\n\nPuh, das war heftig. \nLasst uns tief Luft holen."
+      "title": "Wann trefft ihr euch?",
+      "voiceover": "Ok, jetzt wissen wir, wie wir herausfinden, wann wir unsere Freundin treffen: Wir berechnen einfach\nden Wert von x, an dem <bookmark mark=\"both\"/> f von x gleich g von x ist, da f den Abstand beschreibt, den\ndeine Freundin zurückgelegt hat und g die Distanz beschreibt, die du zurückgelegt hast.\n<break time=\"0.5s\"/>\nKleine Erinnerung: f von x istgleich <bookmark mark=\"f\"/> fünfzehn mal x plus fünf, \nund g von x istgleich <bookmark mark=\"g\"/> zwanzig mal x.\n<break time=\"0.5s\"/>\nJetzt wollen wir den Wert von x finden, wobei <bookmark mark=\"calculate\"/>\nan dem f von x gleich g von x ist.\n<break time=\"0.5s\"/>\nDer erste Schritt <bookmark mark=\"step1a\"/> besteht darin, die Terme von f und g <bookmark mark=\"step1b\"/> einzufügen.\nWir erhalten dann die Gleichung 15x plus 5 ist gleich 20 x.\n<break time=\"0.5s\"/>\nAls nächstes <bookmark mark=\"step2a\"/> subtrahieren wir 15x von beiden Seiten, und erhalten so\n<bookmark mark=\"step2b\"/> die Gleichung 5 gleich 5x.\nZum Schluss teilen wir <bookmark mark=\"step3a\"/> beide Seiten durch 5, was\ndie endgültige Lösung,  nämlich <bookmark mark=\"step3b\"/> x gleich 1 ergibt.\n<break time=\"0.5s\"/>\nDann wissen wir also, dass sich du und deine Freundin nach einer Stunde treffen werdet.\n<break time=\"0.5s\"/>\nPuh, das war schwer. \nLasst uns tief Luft holen."
     },
     "I5": {
       "equations": "Gleichungen",
       "functions": "Funktionen",
-      "te1": "→ Wird verwendet, um bestimmte zu finden",
-      "te2": "Wert einer Variablen",
-      "tf1": "→ Wird zur Beschreibung verwendet",
-      "tf2": "reale Szenarien",
+      "te1": "→ Verwendung zum Finden",
+      "te2": "bestimmter Variablenwerte",
+      "tf1": "→ Wird zur Beschreibung",
+      "tf2": "realer Szenarien verwendet",
       "title": "Funktionen \\& Gleichungen",
-      "ts1": "→ Kombinieren Sie die beiden zu",
-      "ts2": "Vergleichen Sie die reale Welt",
-      "ts3": "Szenarien",
-      "voiceover": "Fassen wir also noch einmal zusammen, <bookmark mark=\"qmark\"/> was wir gerade gemacht haben und was es mit Funktionen und Gleichungen zu tun hat.\n\n\n<bookmark mark=\"functions\"/> Funktionen werden häufig zur Beschreibung realer Szenarien verwendet. \nBeispielsweise kann eine Funktion beschreiben\n\ndie Entfernung, die Sie nach einiger Zeit zurückgelegt haben.\n\n\n<bookmark mark=\"gleichung\"/>\n\nGleichungen werden verwendet, um den Wert einer Variablen zu ermitteln. \nBeispielsweise kann eine Gleichung dazu verwendet werden\n\nBestimmen Sie den Zeitpunkt, zu dem Sie zwanzig Kilometer zurückgelegt haben.\n\n\nJetzt können wir diese beiden Konzepte <bookmark mark=\"handshake\"/> zusammenfügen, um zu bestimmen, zu welchem ​​Zeitpunkt\n\nZwei reale Szenarien, die beide durch Funktionen beschrieben werden, sind gleich.\n\n\nIn dem Beispiel, das wir uns gerade angesehen haben, hatten wir zwei Funktionen, die die Entfernung zwischen Ihnen und Ihrem Freund beschreiben\n\nzu irgendeinem Zeitpunkt gereist sind. \nAnschließend haben wir mithilfe einer Gleichung ermittelt, zu welchem ​​Zeitpunkt\n\nSie und Ihr Freund sind die gleiche Strecke zurückgelegt.\n\n\nWir tun dies, indem wir einfach die Terme der beiden Funktionen einander gleichsetzen,\n\nund dann die Gleichung nach der Variablen lösen, in unserem Fall nach x."
+      "ts1": "→ Kombiniere beides um",
+      "ts2": "realistische Szenarien",
+      "ts3": "zu untersuchen",
+      "voiceover": "Fassen wir also noch einmal zusammen, <bookmark mark=\"qmark\"/> was wir gerade gemacht haben und was es mit Funktionen und Gleichungen zu tun hat.\n<break time=\"0.5s\"/>\n<bookmark mark=\"functions\"/> Funktionen werden häufig verwendet, um realistische Beispiele aus der Praxis zu untersuchen. \nBeispielsweise kann eine Funktion die Entfernung beschreiben, die du nach einer bestimmten Zeit zurückgelegt hast.\n<bookmark mark=\"gleichung\"/>\nGleichungen werden verwendet, um den Wert einer Variablen zu ermitteln. \nBeispielsweise kann eine Gleichung dazu verwendet werden, um den Zeitpunkt, zu dem du zwanzig Kilometer zurückgelegt hast zu bestimmen.\n<break time=\"0.4s\"/>\nWir können die beiden Konzepte nun <bookmark mark=\"handshake\"/>kombinieren, um zu bestimmen, zu welchem ​​Zeitpunkt\nzwei praktische Dinge gleich sind.\n<break time=\"0.5s\"/>\nIn dem Beispiel, das wir uns gerade angesehen haben, hatten wir zwei Funktionen, die beschreiben wie weit deine Freundin und du geradelt seid. <break time=\"0.5s\"/>\nWir haben dann mithilfe einer Gleichung ermittelt, zu welchem ​​Zeitpunkt ihr beide die gleiche Strecke zurückgelegt habt.\n<break time=\"0.5s\"/>\nDafür setzen wir die Terme beider Funktionen gleich, und lösen die Gleichung dann nach x auf."
     },
     "I6": {
       "a": {
-        "voiceover": "Ja! \nDas stimmt, sehr gut!\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
+        "voiceover": "Super, das stimmt!\n<break time=\"0.5s\"/>\nWenn wir einem der Graphen <bookmark mark=\"intersectLoc\"/> folgen, bis er den anderen Graphen kreuzt, können wir sehen, dass der Schnittpunkt an der Stelle \"1\", \"20\" liegt.<bookmark mark=\"cursorBack\"/>\n<break time=\"0.5s\"/>\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – dass du und deine Freundin euch nach x istgleich eins Stunden, also nach einer Stunde trefft.\nDer y-Wert – 20 – bedeutet das ihr zu diesem Zeitpunkt beide 20 kilometer zurückgelegt habt."
       },
       "b": {
-        "voiceover": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen die richtige Lösung.\n\n\nWenn wir einem der Diagramme <bookmark mark=\"intersectLoc\"/> folgen, bis es das andere Diagramm schneidet, können wir das sehen\n\nDie Graphen der beiden Funktionen schneiden sich im Punkt 1,20.\n\n\n<bookmark mark=\"cursorBack\"/>\n\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – das\n\nSie und Ihre Freunde treffen sich, nachdem x einer Stunde entspricht. \nDer y-Wert – zwanzig – bedeutet das zu diesem Zeitpunkt\n\nDu bist zwanzig Kilometer gereist, und dein Freund ist auch zwanzig Kilometer gereist."
+        "voiceover": "Mhm, das stimmt nicht ganz. \n<break time=\"0.5s\"/>\nWenn wir einem der Graphen <bookmark mark=\"intersectLoc\"/> folgen, bis er den anderen Graphen kreuzt, können wir sehen, dass der Schnittpunkt an der Stelle \"1\", \"20\" liegt.<bookmark mark=\"cursorBack\"/>\n<break time=\"0.5s\"/>\nDie Interpretation davon ist – wie wir bereits in einem früheren Video gesehen haben – dass du und deine Freundin euch nach x istgleich eins Stunden, also nach einer Stunde trefft.\nDer y-Wert – 20 – bedeutet das ihr zu diesem Zeitpunkt beide 20 kilometer zurückgelegt habt."
       },
       "q": {
         "question-text": "Wo schneiden sich die Funktionen?",
         "title": "Grafische Lösung",
-        "voiceover": "Es gibt eine andere Möglichkeit, diese Art von Problemen zu lösen: Visuell, indem wir das verwenden\n\n<bookmark mark=\"cords\"/> Diagramm der Funktionen.\n\n\nDenken Sie daran, wir wollen die Werte von x finden, für die zwei Funktionen gleich sind.\n\n\nWir können dies tun, indem wir uns den Graphen der beiden Funktionen ansehen und den Punkt finden, an dem\n\nDie beiden Funktionen haben den gleichen y-Wert, also den Punkt, an dem sich die beiden Funktionen treffen.\n\n\nKehren wir zum letzten Mal zu unserem Fahrradbeispiel zurück, versprochen!!!\n\n\nDenken Sie daran, dass die Funktion, die die Entfernung beschreibt, die Ihr Freund zurückgelegt hat, durch gegeben ist\n\n<bookmark mark=\"f\"/> f von x entspricht fünfzehn mal x plus fünf,\n\nund die Funktion, die die von Ihnen zurückgelegte Strecke beschreibt, ist gegeben durch\n\n<bookmark mark=\"g\"/> g von x ist zwanzigmal x.\n\n\nLassen Sie uns nun <bookmark mark=\"plot\"/> die beiden Funktionen plotten. \nWo schneiden sich die beiden Funktionen?"
+        "voiceover": "Wir können diese Aufgaben auch auf einen anderen Weg lösen:\nGraphisch, mit Hilfe des<bookmark mark=\"cords\"/> Funktionsgraphen.\nWir wollen ja die Werte von x finden, für die zwei Funktionen gleich sind.\n<break time=\"0.5s\"/>\nWir können dies tun, indem wir uns den Graphen der beiden Funktionen ansehen und den Punkt finden, an dem\nDie beiden Funktionen den gleichen y-Wert haben. Denn das ist ja den Punkt, an dem sich die beiden Funktionen treffen.\n<break time=\"0.5s\"/>\nKehren wir ein letzes mal zu unserem Fahrradbeispiel zurück...\n<break time=\"0.5s\"/>\nWieder zur Erinnerung:<bookmark mark=\"f\"/> Die von deiner Freundin zurückgelegte Strecke wird beschrieben durch f von x gleich fünfzehn mal x plus fünf, und die von dir zurückgelegte Strecke wird durch<bookmark mark=\"g\"/> g von x gleich zwanzig x beschrieben.\n<break time=\"0.5s\"/>\nBetrachten wir nun die Graphen <bookmark mark=\"plot\"/>der beiden Funktionen. \nWo schneiden sich die beiden Funktionen?"
       }
     },
     "LinearFunctionEqualityAnswerScene": {
       "eqAText": "{get_num(self.fParams[0])} x gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1]-self.fParams[1], negation='minus', pos= \n'Plus')}",
       "fText": "f von x ist gleich {get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')}",
       "gText": "g von x ist gleich {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}\"\n        \nfEqGText = f\"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} gleich {get_num(self.gParams[0]) \n} x {get_num(self.gParams[1], negation='minus', pos='plus')}",
-      "op1a": "[\"Hinzufügen zu\"]",
+      "op1a": "[\"addieren\", \"zu\"]",
       "op1b": "[\"subtrahieren\", \"von\"]",
-      "stepA": "Als nächstes <bookmark mark=\"shiftUp\"/> wir {op1[0]} <bookmark mark=\"add\"/> {abs(self.fParams[1])} {op1[1]} beide Seiten, - und erhalten \n{eqAText}.",
-      "stepB": "Dann {op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} auf beiden Seiten, - und erhalten {eqBText}.",
+      "stepA": "Als nächstes <bookmark mark=\"shiftUp\"/>{op1[0]}wir <bookmark mark=\"add\"/> {abs(self.fParams[1])} {op1[1]} beide Seiten, - und erhalten \n{eqAText}.",
+      "stepB": "Dann {op2[0]} wir<bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {op2[1]} auf beiden Seiten, - und erhalten {eqBText}.",
       "stepC": "Schließlich dividieren wir beide Seiten durch {self.fParams[0]-self.gParams[0]}, um <bookmark mark=\"final\"/> {eqCText} zu erhalten.",
-      "title": "Lineare Funktionen \\",
-      "voiceover": "{self.tfIntro}\n\nMerken: <bookmark mark=\"f\"/>\n\n{fText} und <bookmark mark=\"g\"/>\n\n{gText}.\n\n\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\n\n\nDies gibt uns <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n\n\n{SchrittA}\n\n\n{stepB}\n\n\n{stepC}.\n\n\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {get_num(x_sol)} schneiden."
+      "title": "Lineare Funktionen \\& Gleichungen",
+      "voiceover": "{self.tfIntro}\nMerke: <bookmark mark=\"f\"/>\n{fText} und <bookmark mark=\"g\"/>\n{gText}.\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\nDaraus erhalten wir <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n{self.stepA}\n{self.stepB}\n{self.stepC}.\n\n\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {get_num(x_sol)} schneiden."
     },
     "LinearFunctionEqualityQuestionScene": {
-      "fText": "f von x ist gleich {get_num(self.fParams[0])} mal x {get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g von x ist gleich {get_num(self.gParams[0])} mal x {get_num(self.gParams[1], negation='minus', pos='plus')}",
-      "title": "Lineare Funktionen",
-      "voiceover": "Betrachten Sie die folgenden zwei linearen Funktionen:\n    \n<bookmark mark=\"f\"/>\n    \n{fText}.\n    \n<bookmark mark=\"g\"/>\n    \n{gText}.\n\n    \nWo schneiden sich die beiden Funktionen?\n    \nDas heißt, <bookmark mark=\"handshake\"/> Wo ist f gleich g?"
+      "fText": "f von x gleich {get_num(self.fParams[0])} mal x {get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g von x gleich {get_num(self.gParams[0])} mal x {get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "title": "Lineare Funktionen \\& Gleichungen",
+      "voiceover": "Schau dir diese beiden linearen Funktionen an:\n<bookmark mark=\"f\"/>\n{fText}.\n<bookmark mark=\"g\"/>\n{gText}.\nWo schneiden sich die beiden Funktionen?\n<break time=\"0.5s\"/>\nDas heißt, <bookmark mark=\"handshake\"/> Wo ist f gleich g?"
     },
     "P1": {
       "a": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeigs dir:"
       },
       "d": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
+        "tfIntro": "Tolle gemacht, das stimmt!"
       },
       "q": {
         "question-text": "Wo schneiden sich $f(x)$ und $g(x)$?"
@@ -782,34 +782,34 @@
     },
     "P2": {
       "a": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
+        "tfIntro": "Tolle gemacht, das stimmt!"
       },
       "b": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeigs dir:"
       }
     },
     "P3": {
       "a": {
-        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeige Ihnen:"
+        "tfIntro": "Mhm, das stimmt nicht ganz. \nIch zeigs dir:"
       },
       "c": {
-        "tfIntro": "Tolle Arbeit, das stimmt!"
+        "tfIntro": "Toll gemacht, das stimmt!"
       }
     },
     "P4": {
       "a": {
-        "tfIntro": "Mhm, das ist es nicht... Ich erkläre es:"
+        "tfIntro": "Mhm, das stimmt nicht... Ich erklärs dir:"
       },
       "b": {
-        "tfIntro": "Tolle Arbeit, das ist es!"
+        "tfIntro": "Tolle, das ist richtig."
       }
     },
     "P5": {
       "a": {
-        "tfIntro": "Nein, das ist nicht korrekt. \nLass es uns gemeinsam lösen"
+        "tfIntro": "Nein, das ist nicht korrekt. \nLösen wir es gemeinsam:"
       },
       "c": {
-        "tfIntro": "Tolle Arbeit, du hast es richtig gemacht!"
+        "tfIntro": "Tolle, das ist richtig."
       }
     }
   },
@@ -889,7 +889,7 @@
     "I7": {
       "large": "groß",
       "s1": "Singularität bei $x$",
-      "s3a": "Das Einstecken von $x$ führt zu",
+      "s3a": "Das Einsetzen von $x$ führt zu",
       "s3b": "Durch Null teilen",
       "small": "klein",
       "title": "Rationale Funktionen",
