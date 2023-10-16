@@ -960,8 +960,9 @@ class FuncDefinitionsAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         if self.isTrue:
             intro = self.translate("Func_1_2.func-def.intro-correct")
         # Action Sequence
+        self.intro = intro
         with self.voiceover(
-                text=self.translate("Func_1_2.func-def.voiceover")
+                text=self.evaluate_string(self.translate("Func_1_2.func-def.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("define_domain")

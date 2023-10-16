@@ -165,45 +165,45 @@
       }
     },
     "P13": {
-      "term-in-words": "\"f of x equals two times x squared plus one\""
+      "term-in-words": "f of x equals two times x squared plus one"
     },
     "P14": {
-      "term-in-words": "\"f of x is equal to three times x squared minus x\""
+      "term-in-words": "f of x is equal to three times x squared minus x"
     },
     "P21": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-3,6]$\", \"$D=[-3,6],\\,W=[-3,6]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-3,6],\\,W=[-3,3]$\"]",
-        "func-spoken": "\"f of x equals x squared minus three\"",
-        "question-text": "\"What are the domain D and range W?\""
+        "answer-options": "[\"$D=[-3,3],\\,R=[-3,6]$\", \"$D=[-3,6],\\,R=[-3,6]$\", \"$D=[-3,3],\\,R=[-3,3]$\", \"$D=[-3,6],\\,R=[-3,3]$\"]",
+        "func-spoken": "f of x equals x squared minus three",
+        "question-text": "What are the domain D and range R?"
       }
     },
     "P22": {
       "q": {
-        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$D=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
+        "answer-options": "[\"$D=[-10,6],\\,R=[-2,2]$\", \"$D=[-1,2],\\,R=[1,3]$\", \"$D=[-2,2],\\,R=[-6,10]$\", \"$D=[-2,2],\\,R=[-10,6]$\"]",
         "func-spoken": "f of x equals x cubed plus two"
       }
     },
     "P23": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \"$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
-        "func-spoken": "\"f of x equals two times x\""
+        "answer-options": "[\"$D=[-3,3],\\,R=[-4,4]$\", \"$D=[-2,2],\\,R=[-4,4]$\", \"$D=[-4,4],\\,R=[-2,2]$\", \"$D=[-4,4],\\,R=[-3,3]$\"]",
+        "func-spoken": "f of x equals two times x"
       }
     },
     "P24": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
-        "func-spoken": "\"f of x equals four times x minus five\""
+        "answer-options": "[\"$D=[-3,3],\\,R=[-17,7]$\", \"$D=[-17,7],\\,R=[-3,3]$\", \"$D=[-3,3],\\,R=[-3,3]$\", \"$D=[-17,17],\\,R=[-3,3]$\"]",
+        "func-spoken": "f of x equals four times x minus five"
       }
     },
     "P25": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \"$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,R=[-10,10]$\", \"$D=[-10,10],\\,R=[-4,4]$\", \"$D=[-3,10],\\,R=[4,10]$\", \"$D=[-3,3],\\,R=[-4,10]$\"]",
         "func-spoken": "f of x equals x squared plus x minus two"
       }
     },
     "P26": {
       "q": {
-        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$D=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-2,3],\\,R=[9,17]$\", \"$D=[-2,2],\\,R=[-1,12]$\", \"$D=[-10,10],\\,R=[9,17]$\", \"$D=[0,10],\\,R=[-3,3]$\"]",
         "func-spoken": "f of x equals three times x squared minus two times x plus one"
       }
     },
@@ -213,17 +213,17 @@
     },
     "func-def-q-range": "$\\\\Rightarrow$ What's the range?",
     "func-def-q-scene": "Domain \\& Range",
-    "func-def-q-scene-voiceover": "f\"\"\"\n            <prosody rate=\"110%\">\n            Alright. We're now looking at the <bookmark mark=\"Func\"/> function {self.funcSpoken}.\n            Specifically, we're examining it on the given coordinate system here.\n            Now, here's the question for you:\n            In this example, what is the <bookmark mark=\"domain\"/> domain of the function?\n            And, what is the <bookmark mark=\"range\"/> range?\n            </prosody>\n            \"\"\"",
+    "func-def-q-scene-voiceover": "            Alright. We're now looking at the <bookmark mark=\"Func\"/> function {self.funcSpoken}.\n            Specifically, we're examining it on the given coordinate system here.\n            Now, here's the question for you:\n            In this example, what is the <bookmark mark=\"domain\"/> domain of the function?\n            And, what is the <bookmark mark=\"range\"/> range?",
     "func-def-q": {
-      "domain": "\"$\\\\Rightarrow$ What's the domain?\""
+      "domain": "$\\\\Rightarrow$ What's the domain?"
     },
     "func-def": {
-      "domain": "\"Domain: Input x-values\"",
-      "intro-correct": "\"Great job, that's correct!\"",
-      "intro-incorrect": "\"Unfortunately, that's incorrect!\"",
-      "range": "\"Range: Output y-values\"",
-      "title": "\"Domain \\& Range\"",
-      "voiceover": "f\"\"\"\n                <prosody rate=\"110%\">\n                {intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {get_num(self.domain[0])} to {get_num(self.domain[1])}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {get_num(self.range[0])} to {get_num(self.range[1])},\n                so that is the range of the function.\n                </prosody>\n                \"\"\""
+      "domain": "Domain: Input x-values",
+      "intro-correct": "Great job, that's correct!",
+      "intro-incorrect": "Unfortunately, that's incorrect!",
+      "range": "Range: Output y-values",
+      "title": "Domain \\& Range",
+      "voiceover": "\n                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {get_num(self.domain[0])} to {get_num(self.domain[1])}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {get_num(self.range[0])} to {get_num(self.range[1])},\n                so that is the range of the function."
     }
   },
   "Func_1_3": {
@@ -236,45 +236,45 @@
     "I1a": {
       "bubble": "[\"Zero crossing\", \"at $x=1$\"]",
       "title": "Zero Crossing",
-      "voiceover": "f\"\"\"\n            That's not correct.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one.\n            \"\"\""
+      "voiceover": "\n            That's not correct.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one."
     },
     "I1c": {
-      "voiceover": "f\"\"\"\n            That's correct, nice job.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one.\n            \"\"\""
+      "voiceover": "\n            That's correct, nice job.\n            The zero crossing is the point where the graph intersects the<bookmark mark=\"axis_x\"/> x-axis.\n            <break time=\"1s\"/>\n            As we can see from the graph, the point where the graph of the red function intersects\n            the x-axis, is at the position <bookmark mark=\"x1\"/> x equals one.\n            <break time=\"1s\"/>\n            <bookmark mark=\"bubble\"/>\n            So the zero crossing of the red function is at the position x equals one."
     },
     "I1q": {
       "question": {
         "at-which-x": "At which $x$ value is the zero crossing of the red function?"
       },
       "title": "Intersections",
-      "voiceover": "f\"\"\"\n            So, now we are learning something new about functions: intersections with the axes.\n            Remember, there are two axes: The <bookmark mark='axis_x'/> x-axis and the <bookmark mark='axis_y'/>\n            y axis.\n            <break time=\"1s\"/>\n            First, we are interested in the intersection point of a function with the <bookmark mark='axis_x_2'/> x-axis. \n            This point is also called the \"zero\", or the \"zero crossing\", because the value of y is always zero there.\n            <break time=\"1s\"/>\n            Look at the <bookmark mark=\"funcBlue\"/> blue function. The intersection point with the x-axis is at the position\n            <bookmark mark=\"x1\"/> x equals three. This means the zero crossing is three.\n            <break time=\"1s\"/>\n            Now look at the <bookmark mark=\"funcRed\"/> red function.\n            <break time=\"1s\"/>\n            What is the value of x at the zero crossing of this function?\n            \"\"\""
+      "voiceover": "            So, now we are learning something new about functions: intersections with the axes.\n            Remember, there are two axes: The <bookmark mark='axis_x'/> x-axis and the <bookmark mark='axis_y'/>\n            y axis.\n            <break time=\"1s\"/>\n            First, we are interested in the intersection point of a function with the <bookmark mark='axis_x_2'/> x-axis. \n            This point is also called the \"zero\", or the \"zero crossing\", because the value of y is always zero there.\n            <break time=\"1s\"/>\n            Look at the <bookmark mark=\"funcBlue\"/> blue function. The intersection point with the x-axis is at the position\n            <bookmark mark=\"x1\"/> x equals three. This means the zero crossing is three.\n            <break time=\"1s\"/>\n            Now look at the <bookmark mark=\"funcRed\"/> red function.\n            <break time=\"1s\"/>\n            What is the value of x at the zero crossing of this function?"
     },
     "I2": {
       "title": "Intersections",
-      "voiceover": "f\"\"\"\n            So, the red and blue functions were both straight lines, and\n            Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.\n            <break time=\"1s\"/>\n            <bookmark mark=\"funcPink\"/> The pink function is parallel to the x-axis and therefore has no zero crossing.\n            <break time=\"1s\"/>\n            Now, consider <bookmark mark=\"funcPurple\"/> the purple function.\n            The function is curved and has no zero crossing.\n            <break time=\"1s\"/>\n            Or look at the <bookmark mark=\"funcGreen\"/> green function.\n            It's also curved, but it has two zero crossings.\n            So, as we can see: Functions can have zero,<break time=\".5s\"/> one, <break time=\".5s\"/>or multiple zero crossings.\n            \"\"\""
+      "voiceover": "            So, the red and blue functions were both straight lines, and\n            Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.\n            <break time=\"1s\"/>\n            <bookmark mark=\"funcPink\"/> The pink function is parallel to the x-axis and therefore has no zero crossing.\n            <break time=\"1s\"/>\n            Now, consider <bookmark mark=\"funcPurple\"/> the purple function.\n            The function is curved and has no zero crossing.\n            <break time=\"1s\"/>\n            Or look at the <bookmark mark=\"funcGreen\"/> green function.\n            It's also curved, but it has two zero crossings.\n            So, as we can see: Functions can have zero,<break time=\".5s\"/> one, <break time=\".5s\"/>or multiple zero crossings."
     },
     "I3": {
       "title": "Determining Zero Crossings",
-      "voiceover": "f\"\"\"\n            So, the question now is: <bookmark mark=\"findZeros\"/> How do I find the zero crossings of a function?\n            \n            We have already learned how to do this graphically.\n            We simply look for all the points where the graph <bookmark mark=\"zeros\"/> intersects the x-axis.\n            Those are the points where the function value is equal to zero.\n            \n            The other way is: We set the function expression equal to zero and calculate the value of x.\n            <bookmark mark=\"clear\"/>\n            For example, consider the function <bookmark mark=\"func\"/> f of x equals x minus one.\n            \n            Then we follow two steps:\n            <bookmark mark=\"findZero1\"/> First, we set the function expression equal to zero. <bookmark mark=\"equal0\"/>\n            This gives us x minus one equals zero.\n            <bookmark mark=\"findZero2\"/> Then we solve the equation for x <bookmark mark=\"findX\"/> and obtain x equals one.\n            As we can also verify graphically, <bookmark mark=\"showZero\"/> this is our zero crossing.\n            \"\"\""
+      "voiceover": "            So, the question now is: <bookmark mark=\"findZeros\"/> How do I find the zero crossings of a function?\n            \n            We have already learned how to do this graphically.\n            We simply look for all the points where the graph <bookmark mark=\"zeros\"/> intersects the x-axis.\n            Those are the points where the function value is equal to zero.\n            \n            The other way is: We set the function expression equal to zero and calculate the value of x.\n            <bookmark mark=\"clear\"/>\n            For example, consider the function <bookmark mark=\"func\"/> f of x equals x minus one.\n            \n            Then we follow two steps:\n            <bookmark mark=\"findZero1\"/> First, we set the function expression equal to zero. <bookmark mark=\"equal0\"/>\n            This gives us x minus one equals zero.\n            <bookmark mark=\"findZero2\"/> Then we solve the equation for x <bookmark mark=\"findX\"/> and obtain x equals one.\n            As we can also verify graphically, <bookmark mark=\"showZero\"/> this is our zero crossing."
     },
     "I4a": {
       "title": "Determine Zero Crossings",
-      "voiceover": "f\"\"\"\n            Hmm, that's not correct. But how do we get the right answer?\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one.\n            \"\"\""
+      "voiceover": "            Hmm, that's not correct. But how do we get the right answer?\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one."
     },
     "I4b": {
-      "voiceover": "f\"\"\"\n            Great, that's correct!\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one.\n            \"\"\""
+      "voiceover": "            Great, that's correct!\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"note1\"/> set the function's expression equal to zero.\n            This gives us<bookmark mark=\"eq0\"/> x squared minus one equals zero.\n            <break time=\"1s\"/>\n            Next, we <bookmark mark=\"solveX\"/> solve for x, and directly obtain two values for x:\n            <bookmark mark=\"xeq\"/> x equals minus one or x equals one.\n            <bookmark mark=\"zeros\"/> These are the two zero crossings of the function.\n            And that's our solution!\n            <break time=\"1s\"/>\n            When we look at the <bookmark mark=\"plot\"/> graph of the function,\n            we can confirm that the zero crossings are at <bookmark mark=\"visualZeros\"/> x equals minus one and x equals one."
     },
     "I4q": {
       "question": {
         "at-which-x": "At which $x$ value is/are the zero crossing(s)?"
       },
       "title": "Determine Zero Crossings",
-      "voiceover": "f\"\"\"\n            Now, <bookmark mark=\"mic\"/>it's your turn.\n            We're looking at the function <bookmark mark=\"func\"/> f of x equals x squared minus one.\n            <break time=\"1s\"/><bookmark mark=\"q\"/>\n            What are the zero crossings of that function?<break time=\"1s\"/>\n            Quick Reminder: To find the zero crossings, set the function equal to zero and solve for x.\n            \"\"\""
+      "voiceover": "            Now, <bookmark mark=\"mic\"/>it's your turn.\n            We're looking at the function <bookmark mark=\"func\"/> f of x equals x squared minus one.\n            <break time=\"1s\"/><bookmark mark=\"q\"/>\n            What are the zero crossings of that function?<break time=\"1s\"/>\n            Quick Reminder: To find the zero crossings, set the function equal to zero and solve for x."
     },
     "I5": {
       "instruct-1": "a) Plug $x=0$ into the\\\\\\\\function expression",
       "instruct-2": "b) Find the intersection\\\\\\\\graphically",
       "title": "Intersection with y-axis",
-      "voiceover": "f\"\"\"\n            Now, let's focus on the intersection points with the y axis.\n            One way to find the intersection points with the y-axis is to <bookmark mark=\"instruct_1\"/>plug x equals zero into the function expression.\n            <break time=\"1s\"/>\n            Another way to find the intersection point with the y-axis is, <bookmark mark=\"instruct_2\"/> to read it off from the graph.\n            <break time=\"1s\"/>\n            Let's practice using two examples.\n            <break time=\"1s\"/>Example Number one. <bookmark mark=\"clear\"/>\n            Consider the function f of x equals x squared minus one.\n            To find the intersection point with the y axis, we simply plug in <bookmark mark=\"substitute\"/> x equals zero.\n            We get f of zero equals zero squared minus one, which equals negative one. So the intersection point is at y equals minus one.\n            <bookmark mark=\"blue\"/> We can confirm this visually: The graph intersects the y axis at <bookmark mark=\"cross1\"/> y equals minus one.\n            <break time=\"1s\"/>Example Number Two.\n            Look at the function <bookmark mark=\"green1\"/> g of x equals x plus two.\n            Plugging in <bookmark mark=\"subGreen\"/> x equals zero gives us the value two, which is also the intersection point with the y axis.\n            Again, we can <bookmark mark=\"green2\"/> visually confirm this: The graph intersects the y axis at <bookmark mark=\"cross2\"/> y equals two.\n            \"\"\""
+      "voiceover": "            Now, let's focus on the intersection points with the y axis.\n            One way to find the intersection points with the y-axis is to <bookmark mark=\"instruct_1\"/>plug x equals zero into the function expression.\n            <break time=\"1s\"/>\n            Another way to find the intersection point with the y-axis is, <bookmark mark=\"instruct_2\"/> to read it off from the graph.\n            <break time=\"1s\"/>\n            Let's practice using two examples.\n            <break time=\"1s\"/>Example Number one. <bookmark mark=\"clear\"/>\n            Consider the function f of x equals x squared minus one.\n            To find the intersection point with the y axis, we simply plug in <bookmark mark=\"substitute\"/> x equals zero.\n            We get f of zero equals zero squared minus one, which equals negative one. So the intersection point is at y equals minus one.\n            <bookmark mark=\"blue\"/> We can confirm this visually: The graph intersects the y axis at <bookmark mark=\"cross1\"/> y equals minus one.\n            <break time=\"1s\"/>Example Number Two.\n            Look at the function <bookmark mark=\"green1\"/> g of x equals x plus two.\n            Plugging in <bookmark mark=\"subGreen\"/> x equals zero gives us the value two, which is also the intersection point with the y axis.\n            Again, we can <bookmark mark=\"green2\"/> visually confirm this: The graph intersects the y axis at <bookmark mark=\"cross2\"/> y equals two."
     },
     "P1a": {
       "intro": "Unfortunately, that's not quite right..."
@@ -370,7 +370,7 @@
     },
     "P2_7q": {
       "func": "f of x equals x squared plus two x plus one",
-      "intro": "Here's another complex function.",
+      "intro": "Here's another function.",
       "zero": "f of zero equals zero squared plus two times zero plus one equals one"
     },
     "P2a": {
@@ -436,16 +436,16 @@
       "zeros": "x equals minus four and x equals four"
     },
     "P7a": {
-      "intro": "Unfortunately, that's incorrect. Too bad."
+      "intro": "Unfortunately, that's incorrect."
     },
     "P7c": {
       "intro": "That's correct. Great job!"
     },
     "P7q": {
-      "func": "function f of x equals x squared minus twenty-five",
+      "func": "function f of x equals x squared minus 25",
       "intro": "Let's try another function.",
-      "zero": "x squared minus twenty-five equals zero",
-      "zeros": "x equals minus five and x equals five"
+      "zero": "x squared minus 25 equals 0",
+      "zeros": "x equals negative 5 and x equals 5"
     },
     "x_crossing_answer_scene": {
       "setToZero": "$\\\\rightarrow$ Set function equal to zero",
@@ -463,7 +463,7 @@
       "title": "Intersection with the y-Axis"
     },
     "y_crossing_question_scene": {
-      "intro": "                {self.intro}\n                Consider the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n                <bookmark mark=\"zero\"/>\n                Where is the intersection of the function with the y axis?",
+      "intro": "                {self.intro}\n                Consider the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n                <bookmark mark=\"zero\"/>\n<break time=\"0.5s\"/>\n                Where is the intersection of the function with the y axis?",
       "title": "Intersection with the y-Axis"
     }
   },

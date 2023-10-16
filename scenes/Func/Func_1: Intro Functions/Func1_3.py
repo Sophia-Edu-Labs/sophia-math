@@ -38,7 +38,7 @@ class Func_1_3_I_1_q(SophiaCursorScene):
         graphRed = plane.plot(funcRed, color=c2)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I1q.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I1q.voiceover"))
         ) as tracker:
             self.wait_until_bookmark("axis_x")
             plane.x_axis.set_color(RED)
@@ -85,7 +85,7 @@ class Func_1_3_I_1_a(SophiaCursorScene):
         b = Bubble(texts = ast.literal_eval(self.translate("Func_1_3.I1a.bubble")), center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I1a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I1a.voiceover"))
         ) as tracker:
 
 
@@ -122,7 +122,7 @@ class Func_1_3_I_1_b(SophiaCursorScene):
         b = Bubble(texts = ast.literal_eval(self.translate("Func_1_3.I1a.bubble")), center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I1a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I1a.voiceover"))
         ) as tracker:
 
 
@@ -197,7 +197,7 @@ class Func_1_3_I_1_d(SophiaCursorScene):
         b = Bubble(texts = ast.literal_eval(self.translate("Func_1_3.I1a.bubble")), center=np.array([.6,-1.6, 0]), start_point=plane.c2p(1,0)+[.2,-0.2,0], width=2.5, height = 0.8, loc="t2")
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I1a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I1a.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("axis_x")
@@ -241,7 +241,7 @@ class Func_1_3_I_2(SophiaCursorScene):
         self.add(graphBlue, graphRed)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I2.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I2.voiceover"))
         ) as tracker:
             
             self.wait_until_bookmark("funcPink")
@@ -335,7 +335,7 @@ class Func_1_3_I_4_q(SophiaCursorScene):
         term0 = MathTex("f(x)=x^2-1", color=c1t, font_size=fs1).next_to(mic, DOWN, buff=.6).shift(RIGHT*5)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I4q.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I4q.voiceover"))
         ) as tracker:
             self.wait_until_bookmark("mic")
             self.add_shift_sound(0.5)
@@ -371,7 +371,7 @@ class Func_1_3_I_4_a(SophiaCursorScene):
         self.add(term0)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I4a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I4a.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("eq0")
@@ -413,7 +413,7 @@ class Func_1_3_I_4_b(SophiaCursorScene):
         self.add(term0)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I4b.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I4b.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("eq0")
@@ -456,7 +456,7 @@ class Func_1_3_I_4_c(SophiaCursorScene):
         self.add(term0)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I4a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I4a.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("eq0")
@@ -499,7 +499,7 @@ class Func_1_3_I_4_d(SophiaCursorScene):
         self.add(term0)
 
         with self.voiceover(
-            text=self.translate("Func_1_3.I4a.voiceover")
+            text=self.evaluate_string(self.translate("Func_1_3.I4a.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("eq0")
@@ -1878,7 +1878,8 @@ class Func_1_3_P_2_5_c(yCrossingAnswerScene):
 
         self.funcTex = "f(x)=x^3+x^2-2"
         self.funcZero = "f(0)=0^3+0^2-2=-2"
-        self.func = lambda x: x**3 + x**2 - 2        self.funcText = self.translate("Func_1_3.P2_5q.func")
+        self.func = lambda x: x**3 + x**2 - 2        
+        self.funcText = self.translate("Func_1_3.P2_5q.func")
         self.ZeroText = self.translate("Func_1_3.P2_5q.zero")
         self.intro = self.translate("Func_1_3.P2_5c.intro")
         self.y_cross_text = self.translate("Func_1_3.P2_5a.y_cross")
