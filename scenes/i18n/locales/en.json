@@ -1281,7 +1281,7 @@
       }
     },
     "ScaleAnswerScene": {
-      "voiceover": "If we plug {xx} into the unit parabola, we obtain <bookmark mark=\"square\"/>the value {xx**2}.\nThat means<bookmark mark=\"cursorInPos\"/>, we have to <bookmark mark=\"scale\"/>scale it by a factor of a equals {np.abs(yy)} over {xx**2},\nwhich equals {abs}. <bookmark mark=\"flip\"/>{self.flip}\nThat means, <bookmark mark=\"final\"/> the correct factor is <bookmark mark=\"af\"/>a equals <bookmark mark=\"afrac\"/>{yy} over {xx**2} which is equal to <bookmark mark=\"ff\"/>{sign*abs}"
+      "voiceover": "If we plug {self.xx} into the unit parabola, we obtain <bookmark mark=\"square\"/>the value {self.xx**2}.\nThat means<bookmark mark=\"cursorInPos\"/>, we have to <bookmark mark=\"scale\"/>scale it by a factor of a equals {np.abs(self.yy)} over {self.xx**2},\nwhich equals {abs}. <bookmark mark=\"flip\"/>{self.flip}\nThat means, <bookmark mark=\"final\"/> the correct factor is <bookmark mark=\"af\"/>a equals <bookmark mark=\"afrac\"/>{self.yy} over {self.xx**2} which is equal to <bookmark mark=\"ff\"/>{self.sign*self.abs}"
     },
     "ScaleQuestionScene": {
       "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nNow, we want to<bookmark mark=\"scale\"/> scale it, so that it goes through the point <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]}.\n{self.question}"

@@ -483,7 +483,8 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         square = MathTex(f"{xx}^2 = {xx**2}", color=c1t, font_size = fs2).next_to(cords, DOWN, buff=0.4)
         arrow = MathTex("\\Downarrow", color=c1t, font_size = fs2).next_to(square, DOWN, buff=0.2)
         solution = MathTex(f"a = ", f"\\frac{{{yy}}}{{{xx**2}}}", "=", f"{sign*abs}", color=c1t, font_size = fs2).next_to(arrow, DOWN, buff=0.2)
-
+        self.xx, self.yy = xx, yy
+        self.sign, self.abs = sign, abs
 
         # Action Sequence
         with self.voiceover(
