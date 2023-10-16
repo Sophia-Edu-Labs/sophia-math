@@ -933,7 +933,7 @@
         "question-text": "Which of the lines describes the horizontal asymptote of the function?"
       },
       "title": "Asymptotes",
-      "voiceover": "Here's a question for you and to be fair, you can't really know this, but try to make a guess: <bookmark mark=\"cords\"/>\n\nLook at the <bookmark mark=\"f\"/> function that is shown on this graph.\n\nWhich of the following three lines describes the horizontal Asymptote of this function?\n\n<bookmark mark=\"OrangeLine\"/>\nIs it the orange line?\n\n<bookmark mark=\"GreenLine\"/>\nIs it the green line?\n\n<bookmark mark=\"PurpleLine\"/>\nOr is it the purple line?"
+      "voiceover": "Here's a question for you and to be fair, you can't really know this, but try to make a guess: <bookmark mark=\"cords\"/>\n<break time=\"0.5s\"/>\nLook at the <bookmark mark=\"f\"/> function that is shown on this graph.\nWhich of the following three lines describes the horizontal Asymptote of this function?\n<break time=\"0.5s\"/>\n<bookmark mark=\"OrangeLine\"/>\nIs it the orange line?\n<break time=\"0.5s\"/>\n<bookmark mark=\"GreenLine\"/>\nIs it the green line?\n<break time=\"0.5s\"/>\n<bookmark mark=\"PurpleLine\"/>\nOr is it the purple line?"
     },
     "I3": {
       "title": "Asymptotes",
@@ -987,7 +987,7 @@
     },
     "horizontalAsymptoteQuestionScene": {
       "title": "Asymptotes",
-      "voiceover": "{self.introText}\nConsider the function <bookmark mark=\"cords\"/> f that belongs to the graph,\nwhich is <bookmark mark=\"f\"/>shown here.\n\nIs the <bookmark mark=\"green\"/>green line a horizontal asymptote of the function?\n\nAnd what about the purple line, is the <bookmark mark=\"purple\"/>purple line a horizontal asymptote of the function?"
+      "voiceover": "{self.introText}\nConsider the function <bookmark mark=\"cords\"/> f that belongs to the graph,\nwhich is <bookmark mark=\"f\"/>shown here.\n<break time=\"0.5s\"/>\nIs the <bookmark mark=\"green\"/>green line a horizontal asymptote of the function?\n<break time=\"0.5s\"/>\nAnd what about the purple line, is the <bookmark mark=\"purple\"/>purple line a horizontal asymptote of the function?"
     },
     "verticalAsymptoteAnswerScene": {
       "title": "Asymptotes",
