@@ -2219,56 +2219,56 @@
     },
     "I5": {
       "a": {
-        "voiceover": "Nein, das ist nicht ganz richtig. \nWenn wir <bookmark mark=\"b\"/>b gleich <bookmark mark=\"neg_one\"/>negativ eins einfügen, werden wir\n\nVertauschen Sie grundsätzlich negative Werte mit positiven Werten, was <bookmark mark=\"reflect\"/> darauf hinausläuft, das widerzuspiegeln\n\nFunktion auf der y-Achse."
+        "voiceover": "Nein, das ist nicht ganz richtig. \nWenn wir <bookmark mark=\"b\"/>b gleich <bookmark mark=\"neg_one\"/>minus eins einsetzen, vertauschen wir die negativen Werte mit den positiven Werten, was <bookmark mark=\"reflect\"/> dazu führt, dass wir die Funktionan der y-Achse spiegeln."
       },
       "d": {
-        "voiceover": "Ja, das stimmt. \nWenn wir <bookmark mark=\"b\"/>b gleich <bookmark mark=\"neg_one\"/>negativ eins einfügen, werden wir\n\nVertauschen Sie grundsätzlich negative Werte mit positiven Werten, was <bookmark mark=\"reflect\"/> darauf hinausläuft, das widerzuspiegeln\n\nFunktion auf der y-Achse."
+        "voiceover": "Ja, das stimmt. \nWenn wir <bookmark mark=\"b\"/>b gleich <bookmark mark=\"neg_one\"/>minus eins einsetzen, vertauschen wir die negativen Werte mit den positiven Werten, was <bookmark mark=\"reflect\"/> dazu führt, dass wir die Funktionan der y-Achse spiegeln."
       },
       "q": {
-        "answer-options": "[\"Die Funktion wird in $x$-Richtung gestreckt\", \"Die Funktion wird in $y$-Richtung gestreckt\", \"Die Funktion wird an der $x$-Achse gespiegelt\", \"Die Funktion wird an der $y$-Achse gespiegelt \n$-Achse\"]",
-        "question-text": "Was passiert, wenn wir $b=-1$ einstecken?",
-        "voiceover": "Jetzt wissen wir, was für b größer als eins und für b kleiner als eins passiert.\n\nAber <bookmark mark=\"qmark\"/>Was ist mit negativen Werten von b?\n\n\nWas passiert, wenn wir <bookmark mark=\"b\"/>b gleich<bookmark mark=\"neg_one\"/> negativ eins einstecken?"
+        "answer-options": "[\"Die Funktion wird in $x$-Richtung gestreckt\", \"Die Funktion wird in $y$-Richtung gestreckt\", \"Die Funktion wird an der $x$-Achse gespiegelt\", \"Die Funktion wird an der $y$-Achse gespiegelt\"]",
+        "question-text": "Was passiert, wenn wir $b=-1$ einsetzen?",
+        "voiceover": "Jetzt wissen wir, was für b größer als eins und für b kleiner als eins passiert.\n<break time=\"0.4s\"/>\nAber <bookmark mark=\"qmark\"/>Was ist mit negativen Werten von b?\nWas passiert, wenn wir <bookmark mark=\"b\"/>b gleich<bookmark mark=\"neg_one\"/> minus eins einsetzen?"
       }
     },
     "P1": {
       "a": {
-        "voiceover": "Nein, das ist es nicht. \nWir beginnen also mit der <bookmark mark=\"f\"/>-Funktion f\n\n<bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/> entspricht einem <bookmark mark=\"sin\"/>\n\nmal Sinus <bookmark mark=\"x\"/> von x.\n\nUm nun <bookmark mark=\"move_cursor_1\"/>die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei zu strecken,\n\nWir <bookmark mark=\"a_term_1\"/>multiplizieren die Funktion mit dem Faktor a gleich zwei.\n\n\n<bookmark mark=\"move_cursor_2\"/>Als nächstes <bookmark mark=\"a_2\"/>spiegeln Sie die Funktion auf der x-Achse,\n\nWir multiplizieren die gesamte Funktion mit minus eins, was bedeutet, dass <bookmark mark=\"a_term_2\"/> ausgewählt wird\n\nein Wert von \"a\" entspricht minus zwei.\n\n\nDie Antwort lautet also: \"a\" ist gleich minus zwei."
+        "voiceover": "Nein, stimmt nicht. \nWir beginnen also mit der <bookmark mark=\"f\"/>-Funktion f <bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/> gleich <bookmark mark=\"sin\"/> Sinus <bookmark mark=\"x\"/> von x.\n<break time=\"0.4s\"/>\nUm nun <bookmark mark=\"move_cursor_1\"/>die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei zu strecken, multiplizieren\nwir <bookmark mark=\"a_term_1\"/>die Funktion mit dem Faktor a gleich zwei.\n<break time=\"0.4s\"/>\n<bookmark mark=\"move_cursor_2\"/>Als nächstes <bookmark mark=\"a_2\"/>spiegeln wir die Funktion an der x-Achse,\n<break time=\"0.4s\"/>, indem wir die gesamte Funktion mit minus eins multiplizieren. Das beides erreichen wir durch einen Wert <bookmark mark=\"a_term_2\"/> \"a\" ist gleich minus zwei."
       },
       "c": {
-        "voiceover": "Ja, das stimmt. \nWir beginnen also mit der <bookmark mark=\"f\"/>-Funktion f\n\n<bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/> entspricht einem <bookmark mark=\"sin\"/>\n\nmal Sinus <bookmark mark=\"x\"/> von x.\n\nUm nun <bookmark mark=\"move_cursor_1\"/>die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei zu strecken,\n\nWir <bookmark mark=\"a_term_1\"/>multiplizieren die Funktion mit dem Faktor a gleich zwei.\n\n\n<bookmark mark=\"move_cursor_2\"/>Als nächstes <bookmark mark=\"a_2\"/>spiegeln Sie die Funktion auf der x-Achse,\n\nWir multiplizieren die gesamte Funktion mit minus eins, was bedeutet, dass <bookmark mark=\"a_term_2\"/> ausgewählt wird\n\nein Wert von \"a\" entspricht minus zwei.\n\n\nDie Antwort lautet also: \"a\" ist gleich minus zwei."
+        "voiceover": "Ja, das stimmt. \nWir beginnen also mit der <bookmark mark=\"f\"/>-Funktion f <bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/> gleich <bookmark mark=\"sin\"/> Sinus <bookmark mark=\"x\"/> von x.\n<break time=\"0.4s\"/>\nUm nun <bookmark mark=\"move_cursor_1\"/>die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei zu strecken, multiplizieren\nwir <bookmark mark=\"a_term_1\"/>die Funktion mit dem Faktor a gleich zwei.\n<break time=\"0.4s\"/>\n<bookmark mark=\"move_cursor_2\"/>Als nächstes <bookmark mark=\"a_2\"/>spiegeln wir die Funktion an der x-Achse,\n<break time=\"0.4s\"/>, indem wir die gesamte Funktion mit minus eins multiplizieren. Das beides erreichen wir durch einen Wert <bookmark mark=\"a_term_2\"/> \"a\" ist gleich minus zwei."
       },
       "q": {
-        "question-text": "Welchen Wert wählen wir für $a$, um die Funktion vertikal um den Faktor zwei zu strecken und an der x-Achse wiederzugeben?",
-        "voiceover": "Hier ist die Sinus-<bookmark mark=\"f\"/>-Funktion f <bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/>\n\nentspricht einem <bookmark mark=\"sin\"/> mal dem Sinus <bookmark mark=\"x\"/> von x.\n\nNun <bookmark mark=\"move_cursor\"/>sagen wir, wir wollen die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei strecken,\n\nund <bookmark mark=\"a_2\"/>spiegeln es an der x-Achse.\n\n\nWelchen <bookmark mark=\"a_mark\"/>Wert von a müssen wir wählen, um dies zu erreichen?"
+        "question-text": "Welchen Wert wählen wir für $a$, um die Funktion vertikal um den Faktor zwei zu strecken und an der x-Achse zu spiegeln?",
+        "voiceover": "Hier ist die Sinus-<bookmark mark=\"f\"/>Funktion f <bookmark mark=\"fx\"/> von x <bookmark mark=\"a\"/> gleich a <bookmark mark=\"sin\"/>Sinus <bookmark mark=\"x\"/> von x.\n<break time=\"0.5s\"/>\nNun <bookmark mark=\"move_cursor\"/>sagen wir, wir wollen die Funktion <bookmark mark=\"a_1\"/>um den Faktor zwei strecken, und <bookmark mark=\"a_2\"/>an der x-Achse spiegeln.\n<break time=\"0.5s\"/>\nWelchen <bookmark mark=\"a_mark\"/>Wert von a müssen wir wählen, um dies zu erreichen?"
       }
     },
     "P2": {
       "a": {
-        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor 2 <bookmark mark=\"a\"/>dehnen.",
+        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor 2 <bookmark mark=\"a\"/>strecken.",
         "b_text": "Außerdem wollen wir die Funktion in x-Richtung um den Faktor 3 <bookmark mark=\"b\"/>stauchen.",
         "intro": "Nein, das ist nicht richtig."
       },
       "c": {
-        "intro": "Das ist richtig, tolle Arbeit."
+        "intro": "Das ist richtig, toll gemacht."
       },
       "q": {
-        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor 2 <bookmark mark=\"a\"/>dehnen.",
+        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor 2 <bookmark mark=\"a\"/>strecken.",
         "b_text": "und möchten die Funktion in x-Richtung um den Faktor 3 <bookmark mark=\"b\"/>stauchen.",
-        "intro": "Lassen Sie uns jetzt die Skalierung üben. \nBetrachten Sie die Funktion",
+        "intro": "Üben wir jetzt das Skalieren. Betrachte die Funktion",
         "q_text": "Wie lautet der Term der skalierten Funktion?",
         "question-text": "Wie lautet der Term der Sinusfunktion, wenn wir sie in y-Richtung um 2 strecken und in x-Richtung um 3 stauchen?"
       }
     },
     "P3": {
       "a": {
-        "b_text": "Wir wollen die Funktion in x-Richtung um den Faktor 2 <bookmark mark=\"b\"/>dehnen.",
+        "b_text": "Wir wollen die Funktion in x-Richtung um den Faktor 2 <bookmark mark=\"b\"/>strecken.",
         "intro": "Nein, das ist nicht richtig."
       },
       "d": {
         "intro": "Ja, das ist richtig. \nGut gemacht"
       },
       "q": {
-        "b_text": "Wir wollen nun die Funktion in x-Richtung um den Faktor 2 <bookmark mark=\"b\"/>dehnen.",
+        "b_text": "Wir wollen nun die Funktion in x-Richtung um den Faktor 2 <bookmark mark=\"b\"/>strecken.",
         "intro": "Ok, jetzt betrachten wir die Funktion",
         "q_text": "Wie lautet der Term der Funktion, nachdem wir sie skaliert haben?",
         "question-text": "Wie lautet der Term der Kosinusfunktion, wenn wir sie in x-Richtung um 2 strecken?"
@@ -2276,15 +2276,15 @@
     },
     "P4": {
       "a": {
-        "a_text": "Wir wollen also die Funktion in y-Richtung um den Faktor halb <bookmark mark=\"a\"/>dehnen.",
+        "a_text": "Wir wollen also die Funktion in y-Richtung um den Faktor ein halb <bookmark mark=\"a\"/>strecken.",
         "intro": "Richtig! \nGut gemacht."
       },
       "b": {
         "intro": "Nein, das ist falsch."
       },
       "q": {
-        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor halb <bookmark mark=\"a\"/>stauchen.",
-        "intro": "Nächste Übung. \nSchauen Sie sich die Funktion an",
+        "a_text": "Wir wollen die Funktion in y-Richtung um den Faktor ein halb <bookmark mark=\"a\"/>stauchen.",
+        "intro": "Nächste Übung. \nSchau auf die Funktion",
         "q_text": "Wie lautet der Term der skalierten Funktion?",
         "question-text": "Wie lautet der Term der Sinusfunktion, wenn wir sie in y-Richtung um 0,5 stauchen?"
       }
@@ -2294,22 +2294,22 @@
       "b_xplain": "Das bedeutet, dass wir das <bookmark mark=\"b_explained\"/>Argument x mit {self.b_factor} multiplizieren müssen.",
       "title_cosine": "Kosinusfunktion: Skalierung",
       "title_sine": "Sinusfunktion: Skalierung",
-      "voiceover": "{self.intro}. \nWir arbeiten mit der Funktion<bookmark mark=\"f_intro\"/>\n\nf <bookmark mark=\"fx_intro\"/>von x <bookmark mark=\"a_intro\"/>gleich \"a\"<bookmark mark=\"sincos_intro\"/>\n\nmal <bookmark mark=\"b_intro\"/>{func_speech_string} von b <bookmark mark=\"x_intro\"/>mal x.\n\n{self.a_text}. \n{self.a_xplain}\n\n{self.b_text}. \n{self.b_xplain}.\n\nDer Term der verschobenen <bookmark mark=\"f\"/>-Funktion ist also f <bookmark mark=\"fx\"/> von x\n\n<bookmark mark=\"a_term\"/> entspricht {self.a_factor} <bookmark mark=\"sine_cosine\"/>mal {func_speech_string}\n\n<bookmark mark=\"b_term\"/> von {self.b_factor} <bookmark mark=\"x\"/>mal x."
+      "voiceover": "{self.intro}. \nWir arbeiten mit der Funktion<bookmark mark=\"f_intro\"/> f <bookmark mark=\"fx_intro\"/>von x <bookmark mark=\"a_intro\"/>gleich \"a\"<bookmark mark=\"sincos_intro\"/> mal <bookmark mark=\"b_intro\"/>{func_speech_string} von b <bookmark mark=\"x_intro\"/>x.\n{self.a_text}. \n{self.a_xplain}\n<break time=\"0.5s\"/>\n{self.b_text}. \n{self.b_xplain}.\n<break time=\"0.5s\"/>\nDer Term der skalierten <bookmark mark=\"f\"/>-Funktion ist also f <bookmark mark=\"fx\"/> von x\n<bookmark mark=\"a_term\"/> gleich {self.a_factor} <bookmark mark=\"sine_cosine\"/>mal {func_speech_string}\n<bookmark mark=\"b_term\"/> von {self.b_factor} <bookmark mark=\"x\"/>x."
     },
     "SineCosineScalingQuestionScene": {
       "cosine": "Kosinus",
       "cosinetitle": "Kosinusfunktion: Skalierung",
       "down": "runter",
-      "sine": "Zeichen",
+      "sine": "Sinus",
       "sinetitle": "Sinusfunktion: Skalierung",
       "up": "hoch",
-      "voiceover": "{self.intro}<bookmark mark=\"f_intro\"/>\n\nf <bookmark mark=\"fx_intro\"/>von x<bookmark mark=\"sin_cos_intro\"/> entspricht {func_speech_string} <bookmark mark=\"x_intro\"/>von x.\n\n{self.a_text}\n\n{self.b_text}\n\n{self.q_text}"
+      "voiceover": "{self.intro}<bookmark mark=\"f_intro\"/>\nf <bookmark mark=\"fx_intro\"/>von x<bookmark mark=\"sin_cos_intro\"/> gleich {func_speech_string} <bookmark mark=\"x_intro\"/>von x.\n{self.a_text}\n{self.b_text}\n{self.q_text}"
     }
   },
   "Func_8_1": {
     "I1": {
       "a": {
-        "voiceover": "Nein, das ist keine lineare Funktion.\n\n<bookmark mark=\"linear_func\"/>\n\nEine lineare Funktion ist eine Funktion mit konstanter Steigung. \nDas heißt, es\n\ndarf nur Begriffe der Form <bookmark mark=\"ax\"/> a enthalten\n\nmal x <bookmark mark=\"b\"/>plus b, wobei a und b Konstanten sind.\n\n<bookmark mark=\"sine\"/>Also der Sinus und der<bookmark mark=\"not_sine\"/>Cosinus\n\nsind nicht linear, <bookmark mark=\"x_squared\"/>und x quadriert <bookmark mark=\"not_x_squared\"/>\n\nist auch nicht linear.\n\n<bookmark mark=\"sol\"/> ein halbes mal x ist dagegen linear,\n\n<bookmark mark=\"checkmark\"/> Das ist also die richtige Antwort."
+        "voiceover": "Nein, das ist keine lineare Funktion.\n<break time=\"0.5s\"/>\n<bookmark mark=\"linear_func\"/>\n<break time=\"0.5s\"/>\nEine lineare Funktion ist eine Funktion mit konstanter Steigung. \nDas heißt, es darf nur Begriffe der Form <bookmark mark=\"ax\"/> a enthalten mal x <bookmark mark=\"b\"/>plus b, wobei a und b Konstanten sind.\n<break time=\"0.5s\"/>\n<bookmark mark=\"sine\"/>Also sind Sinus und<bookmark mark=\"not_sine\"/>Cosinus nicht linear, <bookmark mark=\"x_squared\"/>und x quadrat <bookmark mark=\"not_x_squared\"/> ist auch nicht linear.\n<bookmark mark=\"sol\"/> ein halb x ist dagegen linear,\n<break time=\"0.5s\"/>\n<bookmark mark=\"checkmark\"/> Das ist also die richtige Antwort."
       },
       "c": {
         "voiceover": "Ja, das stimmt.\n\n<bookmark mark=\"linear_func\"/>\n\nEine lineare Funktion ist eine Funktion mit konstanter Steigung. \nDas heißt, es\n\ndarf nur Begriffe der Form <bookmark mark=\"ax\"/> a enthalten\n\nmal x <bookmark mark=\"b\"/>plus b, wobei a und b Konstanten sind.\n\n<bookmark mark=\"sine\"/>Also der Sinus und der<bookmark mark=\"not_sine\"/>Cosinus\n\nsind nicht linear, <bookmark mark=\"x_squared\"/>und x quadriert <bookmark mark=\"not_x_squared\"/>\n\nist auch nicht linear.\n\n<bookmark mark=\"sol\"/> ein halbes mal x ist dagegen linear,\n\n<bookmark mark=\"checkmark\"/> Das ist also die richtige Antwort."

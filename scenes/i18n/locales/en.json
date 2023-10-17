@@ -2294,7 +2294,7 @@
       "b_xplain": "This means we have to multiply the <bookmark mark=\"b_explained\"/>argument x by {self.b_factor}.",
       "title_cosine": "Cosine-function: Scaling",
       "title_sine": "Sine-function: Scaling",
-      "voiceover": "{self.intro}. We're working with the<bookmark mark=\"f_intro\"/> function\nf <bookmark mark=\"fx_intro\"/>of x <bookmark mark=\"a_intro\"/>equals \"a\"<bookmark mark=\"sincos_intro\"/>\ntimes <bookmark mark=\"b_intro\"/>{func_speech_string} of b <bookmark mark=\"x_intro\"/>times x.\n{self.a_text}. {self.a_xplain}\n{self.b_text}. {self.b_xplain}.\nSo, the term of the shifted <bookmark mark=\"f\"/> function is f <bookmark mark=\"fx\"/> of x\n<bookmark mark=\"a_term\"/> equals {self.a_factor} <bookmark mark=\"sine_cosine\"/>times {func_speech_string}\n<bookmark mark=\"b_term\"/> of {self.b_factor} <bookmark mark=\"x\"/>times x."
+      "voiceover": "{self.intro}. We're working with the<bookmark mark=\"f_intro\"/> function\nf <bookmark mark=\"fx_intro\"/>of x <bookmark mark=\"a_intro\"/>equals \"a\"<bookmark mark=\"sincos_intro\"/>\ntimes <bookmark mark=\"b_intro\"/>{func_speech_string} of b <bookmark mark=\"x_intro\"/>times x.\n{self.a_text}. {self.a_xplain}\n{self.b_text}. {self.b_xplain}.\nSo, the term of the scaled <bookmark mark=\"f\"/> function is f <bookmark mark=\"fx\"/> of x\n<bookmark mark=\"a_term\"/> equals {self.a_factor} <bookmark mark=\"sine_cosine\"/>times {func_speech_string}\n<bookmark mark=\"b_term\"/> of {self.b_factor} <bookmark mark=\"x\"/>times x."
     },
     "SineCosineScalingQuestionScene": {
       "cosine": "cosine",
