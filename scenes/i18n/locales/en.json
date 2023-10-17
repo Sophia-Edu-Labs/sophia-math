@@ -2201,7 +2201,7 @@
       "q": {
         "answer-options": "[\"Add $b$ to $x$: $f(x)=\\sin(x+b)$\", \"Multiply $f$ by $b$: $f(x)=b\\sin(x)$\", \"Add $b$ to $f$: $f(x)=\\sin(x)+b$\", \"Multiply x by $b$: $f(x)=\\sin(bx)$\"]",
         "question-text": "How do we change the function $f(x)=\\sin(x)$, so that it is scaled in x-Direction?",
-        "voiceover": "<bookmark mark=\"start\"/>\nWe can scale the sine function <bookmark mark=\"y_axis\"/> in y-direction by simply\nmultiplying the entire function by a <bookmark mark=\"scale_a\"/>constant factor a.\n<bookmark mark=\"move_cursor\"/>\n\n\nNow, what if we want to scale the <bookmark mark=\"x_axis\"/> function in x-direction?\nHow do we change the <bookmark mark=\"f\"/> function term f <bookmark mark=\"fx\"/> of x <bookmark mark=\"sin\"/>equals\nsine <bookmark mark=\"x\"/> of x, so that <bookmark mark=\"scale_b\"/>f is scaled in x-direction?"
+        "voiceover": "<bookmark mark=\"start\"/>\nWe can scale the sine function <bookmark mark=\"y_axis\"/> in y-direction by simply\nmultiplying the entire function by a <bookmark mark=\"scale_a\"/>constant factor a.\n<bookmark mark=\"move_cursor\"/>\n<break time=\"0.4s\"/>\nNow, what if we want to scale the <bookmark mark=\"x_axis\"/> function in x-direction?\nHow do we change the <bookmark mark=\"f\"/> function term f <bookmark mark=\"fx\"/> of x <bookmark mark=\"sin\"/>equals\nsine <bookmark mark=\"x\"/> of x, so that <bookmark mark=\"scale_b\"/>f is scaled in x-direction?"
       }
     },
     "I4": {
