@@ -1785,7 +1785,7 @@
     },
     "P3": {
       "q": {
-        "question-text": "Welchen Wert hat a angesichts des GRÜNEN Diagramms?"
+        "question-text": "Ausgehend vom grünen Graphen, was ist der Wert von $a$?"
       }
     },
     "P4": {
@@ -1796,7 +1796,7 @@
     },
     "P5": {
       "q": {
-        "question-text": "Welchen Wert hat a angesichts des rosa Diagramms?"
+        "question-text": "Ausgehend vom rosanen Graphen, was ist der Wert von $a$?"
       }
     },
     "P6": {
@@ -1813,7 +1813,7 @@
     "intro": "Nein, das ist nicht richtig."
   },
   "Func_6_2_P_1_q": {
-    "intro": "Ansehen",
+    "intro": "Betrachte",
     "questionText": "Welchen Wert hat a angesichts des violetten Diagramms?"
   },
   "Func_6_2_P_2_a": {
@@ -1826,28 +1826,28 @@
     "color_1_name": "lila",
     "color_2_name": "Blau",
     "color_3_name": "Grün",
-    "intro": "Nehmen wir an, wir betrachten einen Wachstumsfaktor von a gleich zwei, also ist Ihre Funktion"
+    "intro": "Nehmen wir an, wir haben einen Wachstumsfaktor von a gleich zwei, also ist deine"
   },
   "Func_6_2_P_3_a": {
     "intro": "Nein, das ist nicht richtig."
   },
   "Func_6_2_P_3_b": {
-    "intro": "Ja das ist es. \nGut gemacht."
+    "intro": "Ja das ist richtig."
   },
   "Func_6_2_P_3_q": {
-    "intro": "Kasse"
+    "intro": "Betrachte"
   },
   "Func_6_2_P_4_a": {
     "intro": "Das ist nicht richtig."
   },
   "Func_6_2_P_4_c": {
-    "intro": "Ja! \nDas ist richtig."
+    "intro": "Ja, Das ist richtig."
   },
   "Func_6_2_P_4_q": {
     "color_1_name": "Blau",
     "color_2_name": "Grün",
     "color_3_name": "orange",
-    "intro": "Nehmen wir an, wir betrachten einen Wachstumsfaktor von a gleich der Hälfte, also ist Ihre Funktion"
+    "intro": "Nehmen wir an, wir untersuchen einen Wachstumsfaktor von a gleich ein halb, also lautet deine Funktion"
   },
   "Func_6_2_P_5_a": {
     "intro": "Ja, das ist richtig."
@@ -1856,7 +1856,7 @@
     "intro": "Nein, das ist nicht richtig."
   },
   "Func_6_2_P_5_q": {
-    "intro": "Schauen Sie mal rein"
+    "intro": "Betrachte"
   },
   "Func_6_2_P_6_a": {
     "intro": "Nein das ist falsch."
@@ -1868,7 +1868,7 @@
     "color_1_name": "lila",
     "color_2_name": "Blau",
     "color_3_name": "Rosa",
-    "intro": "Nehmen wir an, wir betrachten einen Wachstumsfaktor von a gleich drei, also ist Ihre Funktion"
+    "intro": "Nehmen wir an, wir betrachten einen Wachstumsfaktor von a gleich drei, also lautet deine Funktion"
   },
   "Func_6_3": {
     "Func_6_3": {
@@ -1881,57 +1881,57 @@
     },
     "I1": {
       "a": {
-        "voiceover": "Leider ist das nicht richtig.\n\nDie umgekehrte Operation <bookmark mark=\"raise\"/>zum Erhöhen einer Potenz <bookmark mark=\"root\"/> ist das Ziehen der Wurzel.\n\nWenn wir <bookmark mark=\"sol_raise\"/>eine Zahl wie vier auf die zweite Potenz erhöhen, können wir diesen Vorgang rückgängig machen\n\nindem <bookmark mark=\"sol_root\"/>die zweite Wurzel des Ergebnisses gezogen wird.\n\n\nDie umgekehrte Operation, eine Zahl zu potenzieren, ist also das Ziehen der Wurzel."
+        "voiceover": "Das stimmt leider nicht.\n<break time=\"0.6s\"/>\nDie Umkehroperation <bookmark mark=\"raise\"/>zum erheben einer Potenz <bookmark mark=\"root\"/> ist das Ziehen der Wurzel.\n<break time=\"0.6s\"/>\nWenn wir <bookmark mark=\"sol_raise\"/>eine Zahl wie vier hoch zwei rechnen, können wir diesen Vorgang rückgängig machen\nindem  wir<bookmark mark=\"sol_root\"/>die zweite Wurzel des Ergebnisses nehmen.\n<break time=\"0.6s\"/>\nDie umgekehrte Operation, eine Zahl zu potenzieren, ist also das Ziehen der Wurzel."
       },
       "b": {
-        "voiceover": "Ja, das ist richtig!\n\nDie umgekehrte Operation <bookmark mark=\"raise\"/>zum Erhöhen einer Potenz <bookmark mark=\"root\"/> ist das Ziehen der Wurzel.\n\nWenn wir <bookmark mark=\"sol_raise\"/>eine Zahl wie vier auf die zweite Potenz erhöhen, können wir diesen Vorgang rückgängig machen\n\nindem <bookmark mark=\"sol_root\"/>die zweite Wurzel des Ergebnisses gezogen wird.\n\n\nDie umgekehrte Operation, eine Zahl zu potenzieren, ist also das Ziehen der Wurzel."
+        "voiceover": "Ja, das ist richtig!\n<break time=\"0.6s\"/>\nDie Umkehroperation <bookmark mark=\"raise\"/>zum erheben einer Potenz <bookmark mark=\"root\"/> ist das Ziehen der Wurzel.\n<break time=\"0.6s\"/>\nWenn wir <bookmark mark=\"sol_raise\"/>eine Zahl wie vier hoch zwei rechnen, können wir diesen Vorgang rückgängig machen\nindem  wir<bookmark mark=\"sol_root\"/>die zweite Wurzel des Ergebnisses nehmen.\n<break time=\"0.6s\"/>\nDie umgekehrte Operation, eine Zahl zu potenzieren, ist also das Ziehen der Wurzel."
       },
       "q": {
         "answer-options": "[\"Das Quadrat erneut anwenden $(\\Box^2)^2$\", \"Wurzel ziehen $\\sqrt{\\Box^2}$\", \"Durch zwei dividieren $\\Box/2$\", \"Mit zwei multiplizieren \n$\\Box\\times 2$\"]",
-        "question-text": "Welche Operation können wir anwenden, um die Quadrierung ($\\Box^2$) rückgängig zu machen?",
+        "question-text": "Welche Operation können wir anwenden, um das Quadrieren ($\\Box^2$) rückgängig zu machen?",
         "title": "Umkehrfunktionen",
-        "voiceover": "Wenn wir über verschiedene mathematische Operationen nachdenken, kommen sie immer paarweise vor, die sich gegenseitig aufheben können.\n\nEs gibt zum Beispiel Addition und Subtraktion. \nWenn Sie<bookmark mark=\"two_add_1\"/>eine Zahl nehmen, sagen wir zwei, und etwas hinzufügen, sagen wir\n\nzwei <bookmark mark=\"two_add_2\"/> zur ursprünglichen Nummer,\n\nSie können dann <bookmark mark=\"two_add_3\"/> 2 vom Ergebnis subtrahieren und erhalten die ursprüngliche Zahl zurück.\n\n\n<bookmark mark=\"clear_1\"/>\n\nEin weiteres Beispiel ist Multiplikation und Division.\n\nNochmals: Wenn Sie eine <bookmark mark=\"drei_mul_1\"/>Zahl nehmen, beispielsweise drei, und sie mit etwas multiplizieren, <bookmark mark=\"drei_mul_2\"/>sagen wir drei,\n\n<bookmark mark=\"drei_mul_3\"/>Sie können das Ergebnis dann durch drei dividieren und erhalten die ursprüngliche Zahl zurück.\n\n\n<bookmark mark=\"clear_2\"/>\n\nKennen Sie die umgekehrte Operation, um etwas zu potenzieren?\n\nWenn wir<bookmark mark=\"four_pow_1\"/> eine Zahl, sagen wir vier, potenzieren, wie zum Beispiel <bookmark mark=\"four_pow_2\"/>zwei,\n\n<bookmark mark=\"four_pow_3\"/>\n\nWelche Operation müssen wir anwenden, um die Quadrierung rückgängig zu machen?"
+        "voiceover": "Wenn wir an verschiedene mathematische Operationen denken, gibt es immer paare, die sich gegenseitig aufheben können.\n<break time=\"0.3s\"/>\nEin Beispiel sind Addition und Subtraktion. \nWenn du<bookmark mark=\"two_add_1\"/>eine Zahl nimmst, sagen wir zwei, und eine Zahl, sagen wir zwei <bookmark mark=\"two_add_2\"/> zur ursprünglichen Nummer addierst, so kannst du<bookmark mark=\"two_add_3\"/> 2 vom Ergebnis subtrahieren und erhältst die ursprüngliche Zahl zurück. Also macht subtraktion die Addition rückgängig. <bookmark mark=\"clear_1\"/> <break time=\"0.3s\"/>\nEin weiteres Beispiel sind Multiplikation und Division.\n<break time=\"0.3s\"/>\nSelbes Prinzip: Wenn du eine <bookmark mark=\"drei_mul_1\"/>Zahl nimmst, beispielsweise drei, und sie mit etwas multiplizierst, <bookmark mark=\"drei_mul_2\"/>sagen wir drei, <bookmark mark=\"drei_mul_3\"/>so kannst das Ergebnis dann durch drei dividieren und du erhältst die ursprüngliche Zahl zurück.\nAlso kann Division die Multiplikation rückgängig machen.\n<bookmark mark=\"clear_2\"/>\nJetzt die Frage an dich: Welche Operation macht das Potenzieren, also das rechnen hoch irgendetwas rückgängig?\n<break time=\"0.3s\"/>\nWenn wir<bookmark mark=\"four_pow_1\"/> eine Zahl, sagen wir vier, hoch eine andere Zahl nehmen, wie zum Beispiel <bookmark mark=\"four_pow_2\"/>zwei,\n<bookmark mark=\"four_pow_3\"/>welche Operation müssen wir anwenden, um das Quadrieren rückgängig zu machen?"
       }
     },
     "I2": {
       "title": "Logarithmus",
-      "voiceover": "Nun fragen Sie sich vielleicht: Was ist die Umkehroperation für Exponentialfunktionen?\n\n\nZum Beispiel nehme ich <bookmark mark=\"take_number\"/>eine Zahl, sagen wir drei, und <bookmark mark=\"raise_4\"/>erhöhe vier hoch drei.\n\nDann habe ich 64. Aber welche Operation kann ich verwenden, um wieder auf drei zu kommen? \nWas ist die umgekehrte Operation, etwas zu potenzieren?\n\n\nDie Antwort lautet: <bookmark mark=\"take_log\"/>Logarithmieren. \nWenn ich also vier hoch drei erhöhe, erhalte ich 64.\n\nWenn ich dann den Logarithmus zur Basis vier von 64 nehme, erhalte ich drei zurück. \nAlso <bookmark mark=\"inverse_raise\"/>die umgekehrte Operation zum Erhöhen von a\n\nZahl k zu einer <bookmark mark=\"inverse_log\"/>Potenz nimmt den Logarithmus zur Basis k.\n\n\nWas genau das bedeutet, erfahren wir im nächsten Video."
+      "voiceover": "So und ganz ähnlich mag man vielleicht jetzt die Frage stellen: Was ist die inverse Funktion der Exponentialfunktion?\n<break time=\"'0.5s\"/>\nBeispiel: Ich beginne mit<bookmark mark=\"take_number\"/>einer Zahl, sagen wir drei, und <bookmark mark=\"raise_4\"/>rechne vier hoch diese Zahl, also hoch drei.\n<break time=\"'0.5s\"/>\nDann habe ich 64. Aber welche Operation kann ich verwenden, um wieder auf drei zu kommen? \nWas ist die Umkehrfunktion der Exponentialfunktion?\n<break time=\"'0.5s\"/>\nDie Antwort lautet: <bookmark mark=\"take_log\"/>der Logarithmus. \nWenn ich also vier hoch drei nehme, erhalte ich 64.\n<break time=\"'0.5s\"/>\nWenn ich dann den Logarithmus zur Basis vier von 64 nehme, erhalte ich drei zurück. \nAlso ist <bookmark mark=\"inverse_raise\"/>die umgekehrte Operation dazu, eine zahl k hoch a zu rechnen <bookmark mark=\"inverse_log\"/>den Logarithmus zur Basis k zu nehmen.\n<break time=\"'0.5s\"/>\nWas genau das bedeutet, erfahren wir im nächsten Video."
     },
     "I3": {
-      "voiceover": "Was macht der Logarithmus eigentlich?\n\n\nWir nehmen eine Zahl,<bookmark mark=\"two_1\"/> sagen wir zwei, und multiplizieren sie mit sich selbst eins,\n\n<bookmark mark=\"two_2\"/>zwei, <bookmark mark=\"two_3\"/>drei <bookmark mark=\"two_4\"/>vier,\n\n<bookmark mark=\"two_5\"/>fünfmal, um <bookmark mark=\"two_pow_5\"/> zwei hoch zu bekommen\n\nvon fünf<bookmark mark=\"two_32\"/>, was 32 entspricht.\n\n\nWas aber, wenn wir in die entgegengesetzte Richtung gehen wollen?\n\nAngenommen, wir <bookmark mark=\"thirtytwo_1\"/> haben 32 und möchten es wissen\n\nWie oft müssen wir <bookmark mark=\"thirtytwo_2\"/>zwei mit sich selbst multiplizieren, um 32 zu erhalten?\n\n\nWir können diese Zahl ermitteln, indem wir den <bookmark mark=\"sol_1\"/>-Logarithmus zur Basis zwei von 32 berechnen.\n\nDer Logarithmus zur Basis zwei von 32 ist die Zahl, zu der wir zwei erhöhen müssen\n\num 32 zu erhalten. <bookmark mark=\"sol_2\"/>Und diese Zahl ist fünf..."
+      "voiceover": "Was genau macht der Logarithmus eigentlich?\n<break time=\"'0.5s\"/>\nNehmen wir eine Zahl,<bookmark mark=\"two_1\"/> beispielsweise zwei, und multiplizieren sie eins, <bookmark mark=\"two_2\"/>zwei, <bookmark mark=\"two_3\"/>drei <bookmark mark=\"two_4\"/>vier, <bookmark mark=\"two_5\"/>fünfmal mit sich selbst, sodass wir<bookmark mark=\"two_pow_5\"/> zwei hoch fünf<bookmark mark=\"two_32\"/>erhalten, was 32 ergibt.\n<break time=\"'0.5s\"/>\nWas aber, wenn wir in die entgegengesetzte Richtung gehen wollen?\n<break time=\"'0.5s\"/>\nAngenommen, wir <bookmark mark=\"thirtytwo_1\"/> haben 32 und möchten wissen, wie oft wir <bookmark mark=\"thirtytwo_2\"/>die zwei mit sich selbst multiplizieren müssen, um 32 zu erhalten?\n<break time=\"'0.5s\"/>\nWir können diese Zahl ermitteln, indem wir den <bookmark mark=\"sol_1\"/>-Logarithmus zur Basis zwei von 32 berechnen.\n<break time=\"'0.5s\"/>\nDer Logarithmus zur Basis zwei von 32 ist die Zahl, hoch der wir zwei Rechnen müssen, um 32 zu erhalten. <bookmark mark=\"sol_2\"/>Und diese Zahl ist fünf..."
     },
     "I4": {
       "a": {
-        "voiceover": "Das ist nicht richtig.\n\nWir wollen also wissen, um wie viel Potenz wir fünf erhöhen müssen, um 625 zu erhalten.\n\nWir können dies so umformulieren, dass die Gleichung <bookmark mark=\"sol_1\"/>fünf hoch x <bookmark mark=\"sol_2\"/>gleich 625 ist.\n\nDies kann dann gelöst werden, da <bookmark mark=\"sol_3\"/>x dem Logarithmus zur Basis fünf von 625 entspricht.\n\nDie Basis des Logarithmus ist die Zahl, die die Basis der Potenz darstellt, in diesem Fall fünf.\n\nUnd die Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten wollen, in diesem Fall 625."
+        "voiceover": "Das stimmt so nicht.\n<break time=\"'0.5s\"/>\nWir wollen ja wissen, hoch was wir fünf nehmen müssen, um 625 zu erhalten.\n<break time=\"'0.5s\"/>\nWir können das auch mit der Gleichung <bookmark mark=\"sol_1\"/>fünf hoch x <bookmark mark=\"sol_2\"/>gleich 625 beschreiben.\nDas kann man dann lösen, da <bookmark mark=\"sol_3\"/>x dem Logarithmus zur Basis fünf von 625 entspricht.\n<break time=\"'0.5s\"/>\nDie Basis des Logarithmus ist also die Zahl, die die Basis der Potenz darstellt, in diesem Fall fünf.\n<break time=\"'0.5s\"/>\nUnd die Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten wollen, in diesem Fall 625."
       },
       "d": {
-        "voiceover": "Ja, das ist richtig!\n\nWir wollen also wissen, um wie viel Potenz wir fünf erhöhen müssen, um 625 zu erhalten.\n\nWir können dies so umformulieren, dass die Gleichung <bookmark mark=\"sol_1\"/>fünf hoch x <bookmark mark=\"sol_2\"/>gleich 625 ist.\n\nDies kann dann gelöst werden, da <bookmark mark=\"sol_3\"/>x dem Logarithmus zur Basis fünf von 625 entspricht.\n\nDie Basis des Logarithmus ist die Zahl, die die Basis der Potenz darstellt, in diesem Fall fünf.\n\nUnd die Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten wollen, in diesem Fall 625."
+        "voiceover": "Ja, das ist richtig!\n<break time=\"'0.5s\"/>\nWir wollen ja wissen, hoch was wir fünf nehmen müssen, um 625 zu erhalten.\n<break time=\"'0.5s\"/>\nWir können das auch mit der Gleichung <bookmark mark=\"sol_1\"/>fünf hoch x <bookmark mark=\"sol_2\"/>gleich 625 beschreiben.\nDas kann man dann lösen, da <bookmark mark=\"sol_3\"/>x dem Logarithmus zur Basis fünf von 625 entspricht.\n<break time=\"'0.5s\"/>\nDie Basis des Logarithmus ist also die Zahl, die die Basis der Potenz darstellt, in diesem Fall fünf.\n<break time=\"'0.5s\"/>\nUnd die Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten wollen, in diesem Fall 625."
       },
       "q": {
         "question-text": "Für welchen Wert von x gilt $5^x=625$?",
-        "voiceover": "Versuchen wir, den Logarithmus selbst zu verwenden!\n\nWir beginnen mit der <bookmark mark=\"sixtwofive_1\"/>Nummer 625.\n\nWir wollen wissen, um welche Potenz wir die Zahl Fünf erhöhen müssen, um 625 zu erhalten.\n\n<bookmark mark=\"qmark\"/>Wie finden wir diese Zahl mithilfe des Logarithmus?"
+        "voiceover": "Versuchen wir mal den Logarithmus selbst anzuwenden!\n<break time=\"0.5s\"/>\nBeginnen wir mit der <bookmark mark=\"sixtwofive_1\"/>Zahl 625.\n<break time=\"0.5s\"/>\nWir wollen wissen, hoch was wir die Zahl Fünf nehmen müssen, um 625 zu erhalten.\n<break time=\"0.5s\"/>\n<bookmark mark=\"qmark\"/>Wie finden wir diese Zahl mithilfe des Logarithmus?"
       }
     },
     "I5": {
       "base": "a: Basis des Logarithmus",
       "log": "b: Nummer, die wir bekommen wollen",
-      "voiceover": "Jetzt etwas formeller: Logarithmen.\n\nWir haben eine <bookmark mark=\"intro_1\"/>Basis a und möchten sie auf eine gewisse Potenz erhöhen, um sie zu erhalten\n\n<bookmark mark=\"intro_2\"/>die Zahl b als Ergebnis.\n\nNun ist es die Zahl x, nach der wir suchen.\n\n\nHier kommt der Logarithmus ins Spiel. Der <bookmark mark=\"sol_in\"/>Logarithmus sagt uns, bis zu welcher Zahl wir rechnen müssen\n\nErhöhen Sie die Basis a, wenn wir die Zahl b erhalten wollen.\n\n\nDer Logarithmus besteht aus zwei Teilen.\n\n<bookmark mark=\"base\"/> Die Basis \"a\", die als Index geschrieben wird und die Basis der Potenz beschreibt,\n\nalso die Zahl, die wir auf eine gewisse Potenz erhöhen wollen.\n\n<bookmark mark=\"log\"/> Und die Zahl b, die in Klammern steht, ist die Zahl, die wir erhalten wollen ..."
+      "voiceover": "Jetzt etwas formeller: Logarithmen.\n<break time=\"0.5s\"/>\nWir haben eine <bookmark mark=\"intro_1\"/>Basis a und möchten sie hoch etwas rechnen, um  <bookmark mark=\"intro_2\"/>die Zahl b als Ergebnis zu kriegen.\n<break time=\"0.5s\"/>\nNun suchen wir Zahl x, also die Zahl hoch die wir a rechnen.\n<break time=\"0.5s\"/>\nHier kommt der Logarithmus ins Spiel. Der <bookmark mark=\"sol_in\"/>Logarithmus sagt uns, hoch welche Zahl wir a nehmen müssen\num die Zahl b zu erhalten.\n<break time=\"1s\"/>\nDer Logarithmus besteht aus zwei Teilen.\n<bookmark mark=\"base\"/> Die Basis \"a\", die als Index, also klein unten geschrieben wird und die Basis der Potenz beschreibt,\nalso die Zahl, die wir hoch etwas rechnen wollen.\n<break time=\"0.5s\"/>\n<bookmark mark=\"log\"/> Und die Zahl b, die in Klammern steht. Das ist die Zahl, die wir erhalten wollen ..."
     },
     "P1": {
       "a": {
         "intro": "Nein, das stimmt nicht..."
       },
       "b": {
-        "intro": "Ja du hast es!"
+        "intro": "Ja, richtig!"
       },
       "q": {
         "intro": "Ein weiteres Beispiel zum Üben:",
-        "question-text": "Für welchen Wert von x gilt $4^x=256$?"
+        "question-text": "Für welchen Wert von $x$ gilt $4^x=256$?"
       }
     },
     "P2": {
       "a": {
-        "intro": "Ja du hast es!"
+        "intro": "Ganz genau!"
       },
       "b": {
         "intro": "Nein, das stimmt nicht..."
@@ -1942,65 +1942,65 @@
       }
     },
     "findLogExpressionAnswerScene": {
-      "voiceover": "{self.intro}\n\nWir möchten also wissen, wie stark wir {self.base} erhöhen müssen, um {self.result} zu erhalten.\n\nWir können dies als Gleichung <bookmark mark=\"sol_1\"/>{self.base} hoch x umformulieren\n\n<bookmark mark=\"sol_2\"/>ist gleich {self.result}. \nDies kann dann wie folgt gelöst werden\n\n<bookmark mark=\"sol_3\"/>x ist gleich dem Basislogarithmus {self.base} von {self.result}. \n<bookmark mark=\"clean\"/>\n\nDie <bookmark mark=\"bubble_1\"/>Basis des Logarithmus ist die Zahl, die die Basis der Potenz darstellt, in diesem Fall {self.base}.\n\nUnd die <bookmark mark=\"bubble_2\"/>Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten möchten, in diesem Fall {self.result}."
+      "voiceover": "{self.intro}\nAusgehend vom grünen Graphen, was ist der Wert von $a$?\nWir möchten also wissen,  hoch was wir {self.base} nehmen müssen, um {self.result} zu erhalten.\n<break time=\"0.6s\"/>\nWir können das als Gleichung <bookmark mark=\"sol_1\"/>{self.base} hoch x <bookmark mark=\"sol_2\"/>gleich {self.result} formulieren.\n<break time=\"0.6s\"/>\nDas kann dann wie folgt gelöst werden <bookmark mark=\"sol_3\"/>x ist gleich dem Logarithmus von {self.result} zur Basis {self.base}.\n<bookmark mark=\"clean\"/>\n<break time=\"0.6s\"/>\nDie <bookmark mark=\"bubble_1\"/>Basis des Logarithmus ist die Zahl, die die Basis der Potenz darstellt, in diesem Fall {self.base}.\n<break time=\"0.6s\"/>\nUnd die <bookmark mark=\"bubble_2\"/>Zahl, deren Logarithmus wir bilden, ist die Zahl, die wir erhalten möchten, in diesem Fall {self.result}."
     },
     "findLogExpressionQuestionScene": {
-      "voiceover": "{self.intro}\n\nWir beginnen mit der <bookmark mark=\"result_1\"/>Nummer {self.result}.\n\nWir wollen wissen, um welche Potenz wir <bookmark mark=\"result_2\"/>die Zahl {self.base} erhöhen müssen, um {self.result} zu erhalten.\n\n<bookmark mark=\"qmark\"/>Wie finden wir diese Zahl mithilfe des Logarithmus?"
+      "voiceover": "{self.intro}\n<break time=\"0.6s\"/>\nWir beginnen mit der <bookmark mark=\"result_1\"/>Nummer {self.result}.\n<break time=\"0.6s\"/>\nWir wollen wissen, hoch welche Zahl wir <bookmark mark=\"result_2\"/>die Zahl {self.base} rechnen müssen, um {self.result} zu erhalten.\n<break time=\"0.6s\"/>\n<bookmark mark=\"qmark\"/>Wie finden wir diese Zahl mithilfe des Logarithmus?"
     }
   },
   "Func_7_1": {
     "DegToRadAnswerScene": {
-      "voiceover": "{self.intro} Der Winkel <bookmark mark=\"red_circle\"/> des Kreises {self.color_string} beträgt <bookmark mark=\"degrees\"/>\n\n{self.deg} Grad, was {self.angle_frac_string} eines Vollkreises entspricht.\n\n\nDer Winkel im Bogenmaß ist also auch {self.angle_frac_string} eines Vollkreises, der <bookmark mark=\"eq_1\"/>\n\nist {self.angle_frac_string} <bookmark mark=\"eq_2\"/> mal 2 Pi, was <bookmark mark=\"eq_3\"/> gleich ist\n\n{self.angle_rad_string}Pi-Bogenmaß."
+      "voiceover": "{self.intro} Der Winkel <bookmark mark=\"red_circle\"/> des {self.color_string} Kreises beträgt <bookmark mark=\"degrees\"/> {self.deg} Grad, was {self.angle_frac_string} eines vollen Kreises entspricht.\n<break time=\"0.4s\"/>\nDer Winkel in Bogenmaß entspricht dann ja auch {self.angle_frac_string} eines vollen Kreises. Ein voller Kreis sind ja 2 Pi, also ist der Winkel in Bogenmaß gleich <bookmark mark=\"eq_1\"/>{self.angle_frac_string} <bookmark mark=\"eq_2\"/> mal 2 Pi, was <bookmark mark=\"eq_3\"/> gleich {self.angle_rad_string}Pi ist."
     },
     "DegToRadQuestionScene": {
-      "deg": "Abschlüsse:",
+      "deg": "Grad:",
       "rad": "Bogenmaß:",
-      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} Kreis. \nGemessen in Grad ist es <bookmark mark=\"degrees\"/>\n\nhat einen Winkel von {deg} Grad.\n\nWas ist der entsprechende Winkel, wenn wir ihn <bookmark mark=\"rad\"/>im Bogenmaß statt in Grad beschreiben?"
+      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} Kreis. \nGemessen in Grad hat er<bookmark mark=\"degrees\"/>\neinen Winkel von {deg} Grad.\n<break time=\"0.5s\"/>\nWas ist der entsprechende Winkel, wenn wir ihn <bookmark mark=\"rad\"/>im Bogenmaß statt in Grad beschreiben?"
     },
     "I1": {
       "a": {
         "full_circle": "Voller Kreis: $360^\\\\circ$",
-        "three_quarter": "Hier: $\\\\tfrac{3}{4}$ eines Vollkreises",
-        "voiceover": "Das ist leider falsch.\n\n\nWir haben hier <bookmark mark=\" three_quarter\"/> einen Dreiviertelkreis.\n\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 360 Grad hat.\n\nDer gesuchte Winkel beträgt also drei Viertel von 360 Grad.\n\nUnser Winkel beträgt also <bookmark mark=\"equation_1\"/> drei Viertel <bookmark mark=\"equation_2\"/>\n\nmal 360 Grad, was <bookmark mark=\"equation_3\"/>270 Grad entspricht."
+        "three_quarter": "Hier: $\\\\tfrac{3}{4}$ eines vollen Kreises",
+        "voiceover": "Das ist leider falsch.\n<break time=\"0.5s\"/>\nWir haben hier <bookmark mark=\" three_quarter\"/> einen Dreiviertelkreis.\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 360 Grad hat.\nDer gesuchte Winkel beträgt also drei Viertel von 360 Grad.\nAlso beträgt unser Winkel<bookmark mark=\"equation_1\"/> drei Viertel <bookmark mark=\"equation_2\"/>\nmal 360 Grad, was <bookmark mark=\"equation_3\"/>270 Grad entspricht."
       },
       "c": {
-        "voiceover": "Genau, Glückwunsch!\n\n\nWir haben hier <bookmark mark=\" three_quarter\"/> einen Dreiviertelkreis.\n\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 360 Grad hat.\n\nDer gesuchte Winkel beträgt also drei Viertel von 360 Grad.\n\nUnser Winkel beträgt also <bookmark mark=\"equation_1\"/> drei Viertel <bookmark mark=\"equation_2\"/>\n\nmal 360 Grad, was <bookmark mark=\"equation_3\"/>270 Grad entspricht."
+        "voiceover": "Genau, Glückwunsch!\n<break time=\"0.5s\"/>\nWir haben hier <bookmark mark=\" three_quarter\"/> einen Dreiviertelkreis.\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 360 Grad hat.\nDer gesuchte Winkel beträgt also drei Viertel von 360 Grad.\nAlso beträgt unser Winkel<bookmark mark=\"equation_1\"/> drei Viertel <bookmark mark=\"equation_2\"/>\nmal 360 Grad, was <bookmark mark=\"equation_3\"/>270 Grad entspricht."
       },
       "q": {
         "question-text": "Wie viele Grad hat dieser $\\\\tfrac{3}{4}$-Kreis?",
-        "title": "Abschlüsse",
-        "voiceover": "Immer wenn sich zwei Geraden treffen, entsteht ein Winkel.\n\nUnd die bekannteste Methode zum Messen von Winkeln ist <bookmark mark=\"degrees\"/>in Grad.\n\n\n<bookmark mark=\"full_circle\"/>Ein Vollkreis hat 360 Grad.\n\n<bookmark mark=\"half_circle\"/>Ein Halbkreis hat 180 Grad.\n\n<bookmark mark=\"quarter_circle\"/>Ein Viertelkreis hat 90 Grad.\n\nUnd so weiter...\n\n\nWie viele Grad hat <bookmark mark=\"dreiviertelkreis\"/>dieser Winkel,\n\nder drei Viertel des Kreises erreicht?"
+        "title": "Grad",
+        "voiceover": "Immer wenn sich zwei Geraden treffen, entsteht ein Winkel.\n<break time=\"0.5s\"/>\nUnd die bekannteste Methode zum Messen von Winkeln ist <bookmark mark=\"degrees\"/>in Grad.\n<break time=\"0.5s\"/>\n<bookmark mark=\"full_circle\"/>Ein voller Kreis hat 360 Grad.\n<break time=\"0.5s\"/>\n<bookmark mark=\"half_circle\"/>Ein Halbkreis hat 180 Grad.\n<break time=\"0.5s\"/>\n<bookmark mark=\"quarter_circle\"/>Ein Viertelkreis hat 90 Grad.\n<break time=\"0.5s\"/>\nUnd so weiter...\nWie viele Grad hat <bookmark mark=\"dreiviertelkreis\"/>dieser Winkel, der drei Viertel des Kreises umfasst?"
       }
     },
     "I2": {
       "a": {
         "full": "Voller Kreis: $2\\\\Pi$",
-        "half": "Hier: $\\\\tfrac{1}{2}$ eines Vollkreises",
-        "voiceover": "Das ist leider falsch.\n\n\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\n\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi-Bogenmaße hat.\n\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte beträgt\n\n<bookmark mark=\"equation_2\"/> mal 2 Pi, was\n\n<bookmark mark=\"equation_3\"/>ist gleich Pi."
+        "half": "Hier: $\\\\tfrac{1}{2}$ eines vollen Kreises",
+        "voiceover": "Das ist leider falsch.\n<break time=\"0.5s\"/>\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\nWir wissen ja, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi in Bogenmaß hat.\n<break time=\"0.5s\"/>\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte von\n<bookmark mark=\"equation_2\"/> 2 Pi beträgt, also ist<bookmark mark=\"equation_3\"/>er gleich Pi."
       },
       "d": {
-        "voiceover": "Das ist richtig, gut gemacht!\n\n\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\n\nUnd wir wissen, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi-Bogenmaße hat.\n\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte beträgt\n\n<bookmark mark=\"equation_2\"/> mal 2 Pi, was\n\n<bookmark mark=\"equation_3\"/>ist gleich Pi."
+        "voiceover": "Das ist richtig, gut gemacht!\n<break time=\"0.5s\"/>\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\nWir wissen ja, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi in Bogenmaß hat.\n<break time=\"0.5s\"/>\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte von\n<bookmark mark=\"equation_2\"/> 2 Pi beträgt, also ist<bookmark mark=\"equation_3\"/>er gleich Pi."
       },
       "q": {
-        "deg": "Abschlüsse:",
+        "deg": "Grad:",
         "full": "Voll",
         "half": "Halb",
         "question-text": "Wie viele Grad hat dieser $\\\\tfrac{3}{4}$-Kreis?",
         "rad": "Bogenmaß:",
         "title": "Bogenmaß",
-        "voiceover": "Neben Grad gibt es noch eine weitere Möglichkeit, Winkel zu beschreiben:\n\nBogenmaß. \nUnd genau wie ein vollständiger Kreis <bookmark mark=\"degrees\"/>360 Grad hat,\n\nIm Bogenmaß beträgt der Winkel eines Vollkreises<bookmark mark=\"radians\"/> 2 pi.\n\n\nWenn man nun weiß, dass ein vollständiger Kreis 2 Pi im Bogenmaß hat, wie viele Bogenmaß\n\n<bookmark mark=\"half_circle\"/>ist ein Halbkreis?\n\n\nKleiner Hinweis: Wie bereits erwähnt hat ein <bookmark mark=\"full_circle_fin\"/> Vollkreis 360 Grad.\n\nUnd <bookmark mark=\"half_circle_fin\"/>ein Halbkreis hat 180 Grad.\n\n\nJetzt wissen wir auch, dass ein Vollkreis <bookmark mark=\"radians_fin\"/> 2 Pi im Bogenmaß hat.\n\nAlso <bookmark mark=\"radians_fin_half\"/>wie viel Bogenmaß hat ein Halbkreis?"
+        "voiceover": "Neben Grad gibt es noch eine weitere Möglichkeit, Winkel zu beschreiben:\n<break time=\"0.5s\"/>\nBogenmaß. \nUnd genau wie ein vollständiger Kreis <bookmark mark=\"degrees\"/>360 Grad hat,\nbeträgt der Winkel eines gesamten Kreises in Bogenmaß<bookmark mark=\"radians\"/> 2 pi.\nWenn man nun weiß, dass ein vollständiger Kreis 2 Pi im Bogenmaß hat, wie viel <bookmark mark=\"half_circle\"/>ist ein Halbkreis in Bogenmaß?\n<break time=\"0.5s\"/>\nKleiner Hinweis: Wie bereits erwähnt hat ein <bookmark mark=\"full_circle_fin\"/> voller Kreis 360 Grad.\nUnd <bookmark mark=\"half_circle_fin\"/>ein Halbkreis hat 180 Grad.\n<break time=\"0.5s\"/>\nJetzt wissen wir auch, dass ein Vollkreis <bookmark mark=\"radians_fin\"/> 2 Pi im Bogenmaß hat.\n<break time=\"0.5s\"/>Wie viel umfasst also <bookmark mark=\"radians_fin_half\"/>ein Halbkreis in Bogenmaß?"
       }
     },
     "I3": {
       "title": "Winkel messen",
-      "voiceover": "Haben Sie sich jemals gefragt, warum ein vollständiger <bookmark mark=\"degrees\"/>Kreis 360 Grad hat?\n\nEs scheint so eine Zufallszahl zu sein, nicht wahr? \nWarum nicht 72? \nOder 420?\n\n\nNun, der Grund dafür, dass es 360 ist, ist, dass es schon immer so war.\n\n<bookmark mark=\"tempel\"/>Die Babylonier, die im Gebiet des heutigen Irak lebten,\n\nein Zahlensystem mit <bookmark mark=\"base\"/>der Basis 60 verwendet. Das bedeutet\n\nSie zählten in 60ern statt in Zehnern, wie wir es heute tun. \nUnd sie haben diese Nummer verwendet\n\nSystem, um auch Winkel zu messen. \nStellen Sie sich also vor, für sie war 360 so etwas wie\n\n100 ist heute für uns. \nEs war eine schöne runde Zahl, mit der man leicht arbeiten konnte.\n\n<bookmark mark=\"degrees_switch\"/> Es gibt auch einen Grund, warum <bookmark mark=\"rad\"/>\n\nim Bogenmaß beträgt ein Vollkreis 2 Pi. \nUnd es ist nicht historisch, sondern mathematisch.\n\n<bookmark mark=\"qmark\"/>\n\nNehmen Sie sich einen Moment Zeit und überlegen Sie: Warum sagen wir, dass ein Vollkreis 2 Pi im Bogenmaß hat?\n\nWenn Sie einen Hinweis wünschen: Denken Sie an den Umfang eines Kreises."
+      "voiceover": "Hast du dich mal gefragt, warum ein vollständiger <bookmark mark=\"degrees\"/>Kreis 360 Grad hat?\n<break time=\"0.4s\"/>\nEs scheint so eine zufällig ausgewählte nummer zu sein, oder?  Warum nicht 72?  Oder 420?\n<break time=\"0.4s\"/>\nNun, der Grund dafür, dass es 360 ist, ist, dass es schon immer so war.\n<bookmark mark=\"tempel\"/>Die Babylonier, die im Gebiet des heutigen Irak lebten, haben ein Zahlensystem mit <bookmark mark=\"base\"/>der Basis 60 verwendet. Das bedeutet, dass sie in 60ern statt in Zehnern zählten, wie wir es heute tun. \nUnd sie haben diese Zahlen auch verwendet, um Winkel zu messen. \nStellen dir also vor, für sie war die 360 so etwas wie die 100 heute für uns. \nAlso eine schöne runde Zahl, mit der man gut arbeiten konnte.\n<bookmark mark=\"degrees_switch\"/>\nEs gibt auch einen Grund, warum <bookmark mark=\"rad\"/> im Bogenmaß beträgt ein voller Kreis 2 Pi hat. Und der Grund ist nicht historisch, sondern mathematisch.\n<bookmark mark=\"qmark\"/>\nNimm dir einen Moment Zeit und überleg dir: Warum sagen wir, dass ein Vollkreis 2 Pi im Bogenmaß hat?\n<break time=\"0.4s\"/>\nWenn du einen Tipp willst: Denk an den Umfang eines Kreises."
     },
     "I4": {
-      "voiceover": "Hier kommt's:\n\nErinnern Sie sich an die Formel <bookmark mark=\"around\"/> für den Umfang eines Kreises:\n\nDer <bookmark mark=\"circ_1\"/> Umfang c eines Kreises ist gleich <bookmark mark=\"two\"/>\n\nauf 2 <bookmark mark=\"pi\"/> Mal Pie mal <bookmark mark=\"r\"/>den Radius r des Kreises.\n\n\nBetrachten wir den Einheitskreis<bookmark mark=\"unit\"/>, der ein Kreis mit dem Radius ist\n\nvon 1 können wir sehen, dass der Umfang des Einheitskreises <bookmark mark=\"two_pi\"/> ist\n\neinfach gleich dem Zweifachen von Pie.\n\n\nIm Einheitskreis ist der Winkel im Bogenmaß also <bookmark mark=\"rad_1\"/> gleich\n\nder Umfang des Einheitskreises.\n\n\n<bookmark mark=\"red_circle\"/> Und das gilt auch für andere Blickwinkel: Ein Viertel\n\nDer Einheitskreis hat sowohl einen Umfang als auch einen Winkel von 0,5 Pie. \n<bookmark mark=\"half\"/>\n\nUnd eine Hälfte des Einheitskreises hat sowohl einen Umfang als auch einen Winkel von Pie."
+      "voiceover": "Also:\n<break time=\"0.4s\"/>\nErinnerst du dich an die Formel <bookmark mark=\"around\"/> für den Umfang eines Kreises:\nDer <bookmark mark=\"circ_1\"/> Umfang c eines Kreises ist gleich <bookmark mark=\"two\"/> 2 <bookmark mark=\"pi\"/> Mal Pi mal <bookmark mark=\"r\"/>den Radius r des Kreises.\n<break time=\"0.4s\"/>\nBetrachten wir nun den Einheitskreis<bookmark mark=\"unit\"/>, also einen Kreis mit dem Radius 1, so können wir sehen, dass der Umfang des Einheitskreises <bookmark mark=\"two_pi\"/> gleich zwei Pi ist.\n<break time=\"0.4s\"/>\nIm Einheitskreis ist der Winkel im Bogenmaß also <bookmark mark=\"rad_1\"/> gleich dem Umfang des Einheitskreises.\n<bookmark mark=\"red_circle\"/> Und das gilt auch für andere Blickwinkel: Ein Viertel des Einheitskreis hat sowohl einen Umfang als auch einen Winkel von 0,5 Pi.\n<bookmark mark=\"half\"/> Und eine Hälfte des Einheitskreises hat sowohl einen Umfang als auch einen Winkel von Pi."
     },
     "P1": {
       "a": {
-        "intro": "Das ist es nicht..."
+        "intro": "Das stimmt nicht..."
       },
       "c": {
         "intro": "Das ist richtig, gut gemacht."
@@ -2056,25 +2056,25 @@
       }
     },
     "RadToDegAnswerScene": {
-      "voiceover": "{self.intro} Der <bookmark mark=\"red_circle\"/>-Winkel des Kreises {self.color_string} beträgt <bookmark mark=\"radians\"/>\n\n{self.angle_rad_string} Pi, also {self.angle_frac_string} eines Vollkreises.\n\n\nDer Winkel in Grad ist also auch {self.angle_frac_string} eines Vollkreises, der <bookmark mark=\"eq_1\"/> ist\n\nist {self.angle_frac_string} <bookmark mark=\"eq_2\"/> mal 360 Grad, was <bookmark mark=\"eq_3\"/> entspricht\n\n{deg}Grad."
+      "voiceover": "{self.intro} Der <bookmark mark=\"red_circle\"/>-Winkel des Kreises {self.color_string} beträgt <bookmark mark=\"radians\"/>\n{self.angle_rad_string} Pi, also {self.angle_frac_string} eines vollen Kreises.\n<break time=\"0.4s\"/>\nDer Winkel in Grad ist also auch {self.angle_frac_string} eines Vollkreises, der <bookmark mark=\"eq_1\"/> ist {self.angle_frac_string} <bookmark mark=\"eq_2\"/> mal 360 Grad, was <bookmark mark=\"eq_3\"/> {deg}Grad entspricht."
     },
     "RadToDegQuestionScene": {
-      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} Kreis. \nGemessen im Bogenmaß ist es <bookmark mark=\"rad\"/>\n\nhat einen Winkel von {self.angle_rad_string} Pi.\n\nWas ist der entsprechende Winkel, wenn wir ihn <bookmark mark=\"degrees\"/>in Grad statt im Bogenmaß beschreiben?"
+      "voiceover": "{self.intro} <bookmark mark=\"red_circle\"/> {self.color_string} Kreis. \nGemessen im Bogenmaß hat er <bookmark mark=\"rad\"/> einen Winkel von {self.angle_rad_string} Pi.\n<break time=\"0.5s\"/>\nWas ist der entsprechende Winkel, wenn wir ihn <bookmark mark=\"degrees\"/>in Grad statt im Bogenmaß beschreiben?"
     }
   },
   "Func_7_2": {
     "I1": {
       "a": {
         "hypothenuse": "Hypothenuse",
-        "opposite": "Gegenteil",
-        "voiceover": "Nein, das ist nicht richtig.\n\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der entgegengesetzt geteilten <bookmark mark=\"hypothenuse\"/>\n\ndurch die Länge der Hypothenuse.\n\n\nDas Gegenteil ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n\nDas bedeutet, dass wir die rosa Linie durch die blaue Linie dividieren müssen, um den Sinus des Winkels unten links zu erhalten\n\nEcke."
+        "opposite": "Gegenkathete",
+        "voiceover": "Nein, das ist nicht richtig.\n<break time=\"0.4s\"/>\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der Gegenkathete geteilt <bookmark mark=\"hypothenuse\"/> durch die Länge der Hypothenuse.\n<break time=\"0.4s\"/>\nDie Gegenkathete ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n<break time=\"0.4s\"/>\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Länge der rosa Linie durch die Länge der blauen Linie dividieren müssen, um den Sinus des Winkels der Ecke unten links zu erhalten."
       },
       "b": {
-        "voiceover": "Ja, das ist richtig.\n\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der entgegengesetzt geteilten <bookmark mark=\"hypothenuse\"/>\n\ndurch die Länge der Hypothenuse.\n\n\nDas Gegenteil ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n\nDas bedeutet, dass wir die rosa Linie durch die blaue Linie dividieren müssen, um den Sinus des Winkels unten links zu erhalten\n\nEcke."
+        "voiceover": "Ja, das ist richtig.\n<break time=\"0.4s\"/>\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der Gegenkathete geteilt <bookmark mark=\"hypothenuse\"/> durch die Länge der Hypothenuse.\n<break time=\"0.4s\"/>\nDie Gegenkathete ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n<break time=\"0.4s\"/>\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Länge der rosa Linie durch die Länge der blauen Linie dividieren müssen, um den Sinus des Winkels der Ecke unten links zu erhalten."
       },
       "q": {
         "answer-options": "[\"blaue Linie / grüne Linie\", \"rosa Linie / blaue Linie\", \"rosa Linie / grüne Linie\", \"grüne Linie / rosa Linie\"]",
-        "question-text": "Durch welche der Geraden müssen wir zwei dividieren, um den Sinus der unteren linken Ecke zu erhalten?",
+        "question-text": "Durch welche der Geraden müssen wir welche andere Gerade dividieren, um den Sinus der unteren linken Ecke zu erhalten?",
         "title": "Sinusfunktion",
         "voiceover": "Schauen Sie sich<bookmark mark=\"show_triangle\"/> dieses wunderschöne Dreieck an.\n\n\nWeißt du, was genauso schön ist? \n<bookmark mark=\"sine\"/> Die Sinusfunktion. \nGut, zumindest\n\nsobald man es wirklich verstanden hat.\n\n\nFangen wir aber langsam an. \nWelche Linie teilen wir durch welche andere Linie,\n\num den Sinus des Winkels <bookmark mark=\"angle\"/> unten zu erhalten\n\nlinke Ecke?"
       }

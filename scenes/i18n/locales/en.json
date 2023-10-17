@@ -1785,7 +1785,7 @@
     },
     "P3": {
       "q": {
-        "question-text": "Given the GREEN graph, what is the value of a?"
+        "question-text": "Given the green graph, what is the value of $a$?"
       }
     },
     "P4": {
@@ -1796,7 +1796,7 @@
     },
     "P5": {
       "q": {
-        "question-text": "Given the pink graph, what is the value of a?"
+        "question-text": "Given the pink graph, what is the value of $a$?"
       }
     },
     "P6": {
@@ -2074,7 +2074,7 @@
       },
       "q": {
         "answer-options": "[\"blue line / green line\", \"pink line / blue line\", \"pink line / green line\", \"green line / pink line\"]",
-        "question-text": "Which of the lines do we have two divide by which to get the sine of the bottom left corner?",
+        "question-text": "Which of the lines do we have to divide by which to get the sine of the bottom left corner?",
         "title": "Sine Function",
         "voiceover": "Check out<bookmark mark=\"show_triangle\"/> this beautiful triangle.\n\nYou know what's just as beautiful? <bookmark mark=\"sine\"/> The sine function. Well, at least\nonce you really understand it.\n\nLet's start slowly though. Which line do we divide by which other line,\nto get the sine of the angle <bookmark mark=\"angle\"/>in the bottom\nleft corner?"
       }
