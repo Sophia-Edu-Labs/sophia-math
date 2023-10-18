@@ -6,25 +6,27 @@
       }
     },
     "1I1a": {
-      "bubble_1a": "\"Blue representation\"",
+      "bubble_1a": "Blue representation",
       "bubble_1b": "is correct",
-      "bubble_2a": "\"$2$ temperatures at once\"",
-      "bubble_2b": "\"$\\\\Rightarrow$ incorrect\"",
+      "bubble_2a": "$2$ temperatures at once",
+      "bubble_2b": "$\\Rightarrow$ incorrect",
       "main": {
-        "title": "\"Correct!\"",
+        "title": "Correct!",
         "voiceover": "\"\"\"\n                Exactly right! <bookmark mark=\"BlueFuncIn\"/> The blue representation is correct...\n                <break time=\"1s\"/>\n                On the left side of the x-axis, in the morning, the value of the blue representation is low.\n                That makes sense because it's cooler in the morning....\n                <break time=\"1s\"/>\n                As <bookmark mark=\"MoveAlongFunc\"/>the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.\n                And in the evening, on the right side of the x-axis, the value of the blue representation is low again as it gets colder.\n                <bookmark mark=\"RedFuncIn\"/>\n                <break time=\"1s\"/>\n                Now why can't it be the red representation?\n                <break time=\"1s\"/>\n                Consider <bookmark mark=\"notRed\"/> the temperature at two o'clock.\n                <break time=\"0.5s\"/>\n                Let's draw a line\n                <bookmark mark=\"VertLine\" /> from the x-axis, that is, from two o'clock, upwards.\n                This line intersects the red representation at exactly two points:\n                <bookmark mark=\"intersect1\"/>\n                Once at eight degrees and\n                <bookmark mark=\"intersect2\"/>\n                Once at sixteen point five degrees.\n                <break time=\"0.4s\"/>\n                This would mean that it's both eight degrees and sixteen point five degrees at the same time.\n                But there can only be one temperature at a given time.\n                So, the red representation is not correct...\n                <break time=\"1s\"/>\n                In summary: <bookmark mark=\"blueRecap\"/>The blue representation is correct, because it assigns to each x-value, so to each\n                point in time one y-value, so one temperature.\n                The <bookmark mark=\"redRecap\"/> red representation on the other hand is not correct, because there are x-value, so points\n                in time to which it assigns two y-values, so two temperatures. This is not possible.\n                \"\"\"",
-        "x-axis": "\"Time\"",
-        "y-axis": "\"Temperature\""
+        "x-axis": "Time",
+        "y-axis": "Temperature"
       }
     },
     "1I1b": {
       "main": {
-        "title": "\"Careful!\"",
+        "title": "Careful!",
         "voiceover": "\"\"\"\n                <prosody rate=\"110%\">\n                Unfortunately, the answer was incorrect.\n                <bookmark mark=\"RedFuncIn\"/>\n                Why can't it be the red representation??\n                Consider <bookmark mark=\"notRed\"/> the temperature at two o'clock.\n                Let's draw a line\n                <bookmark mark=\"VertLine\" /> from the x-axis, that is, from two o'clock, upwards.\n                This line intersects the red representation at exactly two points,\n                <bookmark mark=\"intersect1\"/>\n                once at eight degrees and\n                <bookmark mark=\"intersect2\"/>\n                once at sixteen point five degrees.\n                This would mean that it's both eight degrees and sixteen point five degrees at the same time.\n                But there can only be one temperature at a given time.\n                So, the red representation is not <bookmark mark=\"BlueFuncIn\"/> correct.\n                On the other hand, the blue representation describes the temperature throughout the day\n                and is therefore correct.\n                On the left side of the x-axis, in the morning, the value of the blue representation is low.\n                This makes sense, as the temperature is also low in the morning.\n                <bookmark mark=\"MoveAlongFunc\"/>\n                As the day progresses, the value of the blue representation increases. This also fits, as it gets warmer.\n                And in the evening, on the right side of the x-axis, the value of the blue representation is low again, as it gets colder.\n                Therefore, the blue representation is correct.\n                </prosody>\n                \"\"\""
       }
     },
     "1I1q": {
       "main": {
+        "temperature": "Temperature",
+        "time": "Time",
         "title": "Functions",
         "voiceover": "So, what is a function? <bookmark mark=\"qOut\"/>\n<break time=\"0.5s\"/>                    \nImagine you're planning a\n<bookmark mark=\"picnicIn\"/>\npicnic with your friends today.\n<break time=\"0.5s\"/>\nTo have a great picnic, it's\n<bookmark mark=\"picnicOut\"/>\ncrucial that the temperature is just right.\n<bookmark mark=\"WetterIn\"/>\nSo you check the weather report.\n<break time=\"0.5s\"/>\n<bookmark mark=\"CordsInWetterOut\"/>\nThis report consists of a visualization where\n<bookmark mark=\"ShowXAxis\"/>\nthe x-axis represents the time in hours, and\n<bookmark mark=\"ShowYAxis\"/>\nthe y-axis represents the temperature in degrees Celsius.\n<bookmark mark=\"ResetCursor1\"/>\nThis helps you understand how the weather will change throughout the day.\nNow, we're going to show you two possible representations.\n<break time=\"0.5s\"/>\nThink about which one of them depicts a realistic temperature trend.\n<break time=\"0.5s\"/>\n<bookmark mark=\"BlueFuncIn\"/>\nIs it the blue representation?\n<break time=\"1.4s\"/>\n<bookmark mark=\"RedFuncIn\"/>\nOr is it the red representation?\n</prosody>"
       },
@@ -36,71 +38,71 @@
     },
     "1I2": {
       "main": {
-        "title": "\"The Function\"",
+        "title": "The Function",
         "voiceover": "                <prosody rate=\"110%\">\n                <bookmark mark=\"BlueFuncIn\"/>\n                Ok... now the blue representation is a great example of a function.\n                A function is a mapping that assigns <bookmark mark=\"map1\"/> exactly  one <bookmark mark=\"map2\"/> y-value to each x-value.\n                \n                <bookmark mark=\"MoveAlongFunc\"/>\n                So, the blue representation assigns to each x-value, that is, each point in time, a y-value, which is a temperature.\n                This makes sense, as at each point in time, there's one temperature.\n                <break time=\"1s\"/>\n                The fact, that it can only be one temperature at any given time is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\n                It assigns to an x-value, that is, a time, <bookmark mark=\"VertLine\" /> for example, two y-values, which means two temperatures.\n                This can't be correct, as there's only one temperature at each time.\n                \n                <bookmark mark=\"Memorize\"/>\n                So remember: <break time=\"1s\"/>A function is a mapping that assigns exactly <bookmark mark=\"aY\"/> one y-value to each\n                <bookmark mark=\"aX\"/> x-value."
       }
     },
     "1I3": {
       "main": {
-        "func_def": "\"A function assigns\\\\\\\\ exactly one y-value\\\\\\\\ to each x-value.\"",
-        "title": "\"The Function\"",
+        "func_def": "A function assigns\\\\ exactly one y-value\\\\ to each x-value.",
+        "title": "Functions",
         "voiceover": "                <prosody rate=\"110%\">\n                Remember: <bookmark mark=\"Memorize\"/>\n                A function is a mapping that assigns <bookmark mark=\"map1\"/> exactly one <bookmark mark=\"map2\"/> y-value to each x-value.\n                \n                <bookmark mark=\"OrangeFuncIn\"/>\n                So, the orange representation is an example of a function.\n                \n                It <bookmark mark=\"orangeX\"/> assigns to each x-value <bookmark mark=\"orangeY\"/>\n                exactly one y-value. <bookmark mark=\"MoveAlongFunc\"/>\n                \n                This means, that each x-value has a corresponding y-value assigned to it.\n                \n                <bookmark mark=\"GreenFuncIn\"/>\n                That's also the reason why the green representation is not a function.\n                It assigns to some x-values, for example, <bookmark mark=\"VertLine\" /> to the x value x equals zero, two y-values.\n                \n                So, we remember: <bookmark mark=\"TrueFct\"/>\n                A function is a mapping that assigns exactly one y-value to each x-value.\n                </prosody>"
       }
     },
     "P_2_intro": "\"\"\"It's rainy season.\n                \n                We want to know how much precipitation there is and measure the amount of rain daily.\"\"\"",
-    "P_2_title": "\"Rainy Weather\"",
-    "P_2_x": "\"Day\"",
-    "P_2_x_text": "\"The day, numbered from one to five\"",
-    "P_2_y": "\"mm\"",
-    "P_2_y_text": "\"The amount of rain in millimeters\"",
+    "P_2_title": "Rainy Weather",
+    "P_2_x": "Day",
+    "P_2_x_text": "The day, numbered from one to five",
+    "P_2_y": "mm",
+    "P_2_y_text": "The amount of rain in millimeters",
     "P_3_intro": "It's winter time.\n                \n                We want to know how much snow is falling and measure the amount of snow daily.",
-    "P_3_title": "\"Snowy Weather\"",
-    "P_3_x": "\"Day\"",
+    "P_3_title": "Snowy Weather",
+    "P_3_x": "Day",
     "P_3_x_text": "The day, numbered from one to five",
-    "P_3_y": "\"cm\"",
+    "P_3_y": "cm",
     "P_3_y_text": "The amount of snow in centimeters",
     "P_4_intro": "It's summer time.\n                \n                We want to know how many hours of sunshine we get, so we measure the number of hours of sunshine daily.",
-    "P_4_title": "\"Sunshine Duration\"",
-    "P_4_x": "\"Day\"",
-    "P_4_x_text": "\"The day, numbered from one to five\"",
-    "P_4_y": "\"Hours\"",
-    "P_4_y_text": "\"The amount of hours of sunshine\"",
+    "P_4_title": "Sunshine Duration",
+    "P_4_x": "Day",
+    "P_4_x_text": "The day, numbered from one to five",
+    "P_4_y": "Hours",
+    "P_4_y_text": "The amount of hours of sunshine",
     "P_5_intro": "It's a stormy day.\n                \n                That's great news for us, because we operate a park with wind turbines that produce renewable energy.\n                We want to know how fast the wind is blowing and measure the wind speed hourly.",
     "P_5_labels": "[\"Hour\", \"km/h\"]",
     "P_5_textlabels": "[\"The hour, numbered from one to six\", \"The wind speed in kilometers per hour\"]",
-    "P_5_title": "\"Wind Speed\"",
+    "P_5_title": "Wind Speed",
     "P_6_intro": "It's spring.\n                \n                We want to know how the temperature changes and measure the temperature daily.",
     "P_6_labels": "[\"Day\", \"°C\"]",
     "P_6_textlabels": "[\"The day\", \"The temperature in degrees Celsius\"]",
-    "P_6_title": "\"Temperature Change\"",
+    "P_6_title": "Temperature Change",
     "P_7_intro": "It's a humid day.\n                \n                We want to know how high the humidity is and measure it hourly.",
     "P_7_labels": "[\"Hour\", \"%\"]",
     "P_7_textlabels": "[\"The hour\", \"The humidity in percentage\"]",
-    "P_7_title": "\"Humidity\"",
+    "P_7_title": "Humidity",
     "P_8_intro": "\"\"\"It's harvest time.\n                \n                We want to know how many apples we collect and count the number of picked apples daily.",
     "P_8_labels": "[\"Day\", \"Apples\"]",
     "P_8_textlabels": "[\"The day\", \"The number of harvested apples\"]",
-    "P_8_title": "\"Apple Harvest\"",
+    "P_8_title": "Apple Harvest",
     "P_color-1": "The orange function",
     "P_color-2": "The blue function",
     "P_color-3": "The green function",
     "P_intro": "We're going on a mountain hike.\n                \n                During this, we measure our altitude at each full hour.",
-    "P_question-1": "\"Which function matches the values?\"",
+    "P_question-1": "Which function matches the values?",
     "P_title": "\"Mountain Hike\"",
-    "P_x": "\"Time\"",
-    "P_x_text": "\"The time\"",
-    "P_y": "\"Altitude\"",
+    "P_x": "Time",
+    "P_x_text": "The time",
+    "P_y": "Altitude",
     "P_y_text": "The Altitude",
     "ValueTableQuestionScene": {
       "voiceover": "                Imagine, <bookmark mark=\"action\"/>\n                {self.intro}. <bookmark mark=\"values\"/>\n                \n                The values are entered in this table.\n                \n                Now the question is:\n                Which function corresponds to the values in the table?\n\n                <bookmark mark=\"orange\"/>\n                Is it the orange function?\n\n                <bookmark mark=\"blue\"/>\n                Or is it the blue function?\n\n                <bookmark mark=\"green\"/>\n                Or perhaps the green function?"
     },
     "ValueTableSolutionScene": {
-      "color-1": "\"Orange\"",
-      "color-2": "\"Blue\"",
-      "color-3": "\"Green\"",
-      "first_bit": "f\"That's not correct. The {colors[self.idx_selected]} function is not the correct one.\"",
+      "color-1": "Orange",
+      "color-2": "Blue",
+      "color-3": "Green",
+      "first_bit": "f\"That's not correct. The {self.colors[self.idx_selected]} function is not the correct one.\"",
       "first_bit_correct": "That's correct, great job",
-      "voiceover": "{first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{colors[self.idx_selected]} function.\n                To check if this is correct, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n<break time=\"0.7s\"/>\n                <bookmark mark=\"val1\"/>\n                The first value has {nums[self.xvals[0]]} as its x-value and {nums[self.yvals[self.correcty][0]]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {nums[self.xvals[1]]} as its x-value and {nums[self.yvals[self.correcty][1]]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {nums[self.xvals[2]]} and {nums[self.yvals[self.correcty][2]]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {nums[self.xvals[3]]} and {nums[self.yvals[self.correcty][3]]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {nums[self.xvals[4]]} and {nums[self.yvals[self.correcty][4]]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {colors[self.correcty]} function\n                is the correct one."
+      "voiceover": "{self.first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{self.colors[self.idx_selected]} function.\n                To check if this is correct, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n<break time=\"0.7s\"/>\n                <bookmark mark=\"val1\"/>\n                The first value has {self.xvals[0]} as its x-value and {self.yvals[self.correcty][0]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {self.xvals[1]} as its x-value and {self.yvals[self.correcty][1]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {self.xvals[2]} and {self.yvals[self.correcty][2]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {self.xvals[3]} and {self.yvals[self.correcty][3]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {self.xvals[4]} and {nums[self.yvals[self.correcty][4]]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {self.colors[self.correcty]} function\n                is the correct one."
     }
   },
   "Func_1_2": {
@@ -117,7 +119,7 @@
         "voiceover": "f\"\"\"\n                We're starting with a function term and we want to find the corresponding graph.\n                The term we want to find the graph for <bookmark mark=\"term\"/>is {self.termInWords}.\n                Now tell me: <bookmark mark=\"findGraph\"/>\n                Which of the following graphs describes the function of the given term?\n                <bookmark mark=\"blue\"/> Is it the blue graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"orange\"/> Or is it the orange graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"lila\"/> Or is it the purple graph?<break time=\"1s\"/>\n                \"\"\""
       },
       "main": {
-        "title": "\"From Term to Function\"",
+        "title": "From Term to Function",
         "voiceover": "So, now we're learning how to go from a term to a function.\n<bookmark mark=\"term\"/>\nConsider the term two times x minus two.\n<break time=\"0.5s\"/>\nFirst, we choose a set on which we want to examine the function.\nThis set is called the domain. <bookmark mark=\"domain\"/>\nFor example, here we choose all values that lie <bookmark mark=\"xaxis\"/> on the x-axis. So, all values between minus three and three.\n<bookmark mark=\"plot\"/><break time=\"0.5s\"/>\nNow we substitute each value of x into the term to get a value for y.\nWe then plot this value on a coordinate plane.\n<break time=\"0.5s\"/>\n<bookmark mark=\"func\"/>\nConnecting the points, we obtain a representation of a function, because the line assigns a point\non the x-axis to a point on the y-axis.\nTo get the y-value corresponding to an x-value, we can either substitute the x-value <bookmark mark=\"xTerm\"/> into the term,\n<bookmark mark=\"xFunc\"/> or we can locate the x-value on the x-axis and then read the y-value on the y-axis.\nIn this case, since the term describes a function, we call it a function term.\n<bookmark mark=\"termToFunc\"/>\nWe also write it as f of x equals two times x minus two, so we put f of x equals in front of the term.\nThe \"f\" stands for \"function\" and the x means that the function depends on the variable x."
       }
     },
@@ -126,10 +128,10 @@
     },
     "1I2_1q": {
       "main": {
-        "term-in-words": "\"f of x equals negative x\""
+        "term-in-words": "f of x equals negative x"
       },
       "question": {
-        "which-graph-belongs": "\"Which of these graphs describes the corresponding function?\""
+        "which-graph-belongs": "Which of these graphs describes the corresponding function?"
       }
     },
     "1I2a": {
@@ -137,8 +139,8 @@
         "voiceover": "\n                {self.introText}\n                We want to determine the function graph for the <bookmark mark=\"show_term\"/>term {self.termInWords}.\n                We proceed as follows:\n                <bookmark mark=\"plugIn\"/>\n                We consider points from our domain one by one.\n                Then, we plug these points into the term and obtain the corresponding function values.\n                And then, we <bookmark mark=\"addPoints\"/> plot these points in a coordinate system.\n<break time=\"0.5s\"/>\n                So, let's turn to our example:\n                {self.plugInTexts}\n                Now, we connect the points we've plotted\n                <bookmark mark=\"connect\"/>\n                and thus obtain the function graph."
       },
       "main": {
-        "intro-text-correct": "\"Great, that's correct!\"",
-        "intro-text-incorrect": "\"Unfortunately, that's incorrect.\"",
+        "intro-text-correct": "Great, that's correct!",
+        "intro-text-incorrect": "Unfortunately, that's incorrect.",
         "plug-in-texts-1": "<bookmark mark=\"val{self.i+1}\"/> The {self.i+1} value we plug in is {self.vals[self.i]}, and the value of the function at this point is {self.fs[self.idx_correct](self.vals[self.i])}",
         "plug-in-texts-2": "<bookmark mark=\"val{self.i+1}\"/> For the x-value {self.vals[self.i]}, we obtain the y-value {self.fs[self.idx_correct](self.vals[self.i])}",
         "plug-in-texts-3": "<bookmark mark=\"val{self.i+1}\"/> and for the x-value {get_num(self.vals[self.i])}, we finally get the y-value {self.fs[self.idx_correct](self.vals[self.i])}.",
@@ -208,8 +210,8 @@
       }
     },
     "func-def-a": {
-      "title-correct": "\"Correct!\"",
-      "title-incorrect": "\"Incorrect!\""
+      "title-correct": "Correct!",
+      "title-incorrect": "Incorrect!"
     },
     "func-def-q-range": "$\\\\Rightarrow$ What's the range?",
     "func-def-q-scene": "Domain \\& Range",

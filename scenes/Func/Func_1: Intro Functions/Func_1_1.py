@@ -78,8 +78,7 @@ class Func_1_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
         # Create a notepad with texts
 
         # Create the coordinate system
-        cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
-                               x_labels=[6, 12, 18, 24], y_labels=[5, 10, 15, 20, 25]).shift(DOWN*1.4)
+        cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25], axisLabelX=self.translate("Func_1_1.1I1q.main.time"), axisLabelY=self.translate("Func_1_1.1I1q.main.temperature")).shift(DOWN*1.4)
         plane = cords[0]
         # self.add(cords)
 
@@ -185,7 +184,7 @@ class Func_1_1_I_1_a(SophiaCursorScene):
 
 
         # Add title to the scene
-        self.add_title(self.translate("Func_1_1.1I1a.main.title"))
+        self.add_title(self.translate("Func_1_1.1I1q.main.title"))
 
         # Create and plot piecewise linear function
         func = create_piecewise_linear([[6, 9], [8, 12], [10, 17], [12, 19], [14, 22], [16, 18], [18, 13], [20, 11], [22, 8], [24, 7]])
@@ -274,8 +273,8 @@ class Func_1_1_I_1_a(SophiaCursorScene):
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.idle=True
             cursor.remove_updater(lambda m: m.move_to(b.get_end()))
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of animation
@@ -296,7 +295,7 @@ class Func_1_1_I_1_b(SophiaCursorScene):
         plane = cords[0]
 
         # Add title to the scene
-        self.add_title(self.translate("Func_1_1.1I1b.main.title"))
+        self.add_title(self.translate("Func_1_1.1I1q.main.title"))
 
         # Create and plot piecewise linear function
         func = create_piecewise_linear([[6, 9], [8, 12], [10, 17], [12, 19], [14, 22], [16, 18], [18, 13], [20, 11], [22, 8], [24, 7]])
@@ -586,7 +585,7 @@ class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_1_1.ValueTableQuestionScene.voiceover")
+                text=self.evaluate_string(self.translate("Func_1_1.ValueTableQuestionScene.voiceover"))
         ) as tracker:
             
             # Highlight first Text
@@ -646,7 +645,7 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         func_plotted_correct = plane.plot(fcorrect, color=RED)
 
 
-        colors = [self.translate("Func_1_1.ValueTableSolutionScene.color-1"), self.translate("Func_1_1.ValueTableSolutionScene.color-2"), self.translate("Func_1_1.ValueTableSolutionScene.color-3")]
+        self.colors = [self.translate("Func_1_1.ValueTableSolutionScene.color-1"), self.translate("Func_1_1.ValueTableSolutionScene.color-2"), self.translate("Func_1_1.ValueTableSolutionScene.color-3")]
         funcs = [func_plotted1, func_plotted2, func_plotted3]
 
         tab = Table([[str(val) for val in self.xvals], [str(val) for val in self.yvals[self.correcty]]],
@@ -663,9 +662,10 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         if self.idx_selected == self.correcty:
             first_bit = self.evaluate_string(self.translate("Func_1_1.ValueTableSolutionScene.first_bit_correct"))
 
+        self.first_bit = first_bit
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_1_1.ValueTableSolutionScene.voiceover")
+                text=self.evaluate_string(self.translate("Func_1_1.ValueTableSolutionScene.voiceover"))
         ) as tracker:
             
             # Create the Coordinate System
