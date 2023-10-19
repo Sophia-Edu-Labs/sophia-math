@@ -444,7 +444,7 @@ class SophiaScene(VoiceoverScene):
         self.add_stretched_sound("huuup", duration, target_volume=0.1, rate_func=rate_func)
 
     def add_shift_sound(self, duration=0.5, rate_func=smooth):
-        self.add_stretched_sound("shift", duration, target_volume=0.8, rate_func=rate_func )
+        self.add_stretched_sound("shift", duration, target_volume=0.4, rate_func=rate_func )
 
     def add_cursor_sound(self, duration=0.3, rate_func=smooth):
         self.add_stretched_sound("cursor", duration, target_volume=0.2, rate_func=rate_func )

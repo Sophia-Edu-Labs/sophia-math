@@ -42,9 +42,9 @@ class Func_2_3_I_1_q(SophiaCursorScene):
         bike = bike.scale(3.2/bike.get_width()).move_to([-5, 1, 0])
 
         f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(bike, DOWN, buff=0.6).shift(5*RIGHT)
-        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs3).set_color(c1t).next_to(f1, DOWN)
         y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(f2, DOWN)
-        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs3).set_color(c1t).next_to(y1, DOWN)
         comparison = VGroup(f1, f2, y1, y2).arrange(DOWN, center=False, aligned_edge=LEFT).shift(0.2*LEFT)
         
         # Action Sequence

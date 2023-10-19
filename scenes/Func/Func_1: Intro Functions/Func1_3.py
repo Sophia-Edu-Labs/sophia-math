@@ -30,6 +30,10 @@ class Func_1_3_I_1_q(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
+
         self.add_title(self.translate("Func_1_3.I1q.title"))
 
         funcBlue = lambda x: 3 - x
@@ -41,28 +45,34 @@ class Func_1_3_I_1_q(SophiaCursorScene):
             text=self.evaluate_string(self.translate("Func_1_3.I1q.voiceover"))
         ) as tracker:
             self.wait_until_bookmark("axis_x")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
 
             self.wait_until_bookmark("axis_y")
-            plane.y_axis.set_color(RED)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMarkAxis(cursor, plane, axis='y'), run_time=0.5)
             self.wait(1)
-            plane.y_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("axis_x_2")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
             self.wait(1)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("funcBlue")
+            self.add_pencil_sound(1.5)
             self.play(Write(graphBlue))
 
             self.wait_until_bookmark("x1")
             x1 = plane.x_axis.n2p(3)
             circ1 = Circle(radius=0.1, color=c3).move_to(x1)
-            self.play(Write(circ1))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ1), run_time=0.5)
 
             self.wait_until_bookmark("funcRed")
+            self.add_pencil_sound(1.5)
             self.play(Write(graphRed))
 
         self.wait(4)
@@ -75,6 +85,10 @@ class Func_1_3_I_1_a(SophiaCursorScene):
         cords = self.add_cords([-3, 3, 1], [-6, 6, 2], x_ticks=[-3, -1, 1, 3], y_ticks=[-6, -3, 3, 6]).shift(DOWN)
         plane = cords[0]
         self.add(cords)
+
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
 
         self.add_title(self.translate("Func_1_3.I1a.title"))
 
@@ -90,13 +104,16 @@ class Func_1_3_I_1_a(SophiaCursorScene):
 
 
             self.wait_until_bookmark("axis_x")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
             self.wait(1)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
-            self.play(Write(circ))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ), run_time=0.5)
 
             self.wait_until_bookmark("bubble")
             self.add_pencil_sound(1.5)
@@ -113,6 +130,10 @@ class Func_1_3_I_1_b(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
+
         self.add_title(self.translate("Func_1_3.I1a.title"))
 
         funcRed = lambda x: 2 * x - 2
@@ -127,13 +148,16 @@ class Func_1_3_I_1_b(SophiaCursorScene):
 
 
             self.wait_until_bookmark("axis_x")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
             self.wait(1)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
-            self.play(Write(circ))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ), run_time=0.5)
 
             self.wait_until_bookmark("bubble")
             self.add_pencil_sound(1.5)
@@ -150,6 +174,10 @@ class Func_1_3_I_1_c(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
+
         self.add_title(self.translate("Func_1_3.I1a.title"))
 
         funcRed = lambda x: 2 * x - 2
@@ -165,13 +193,16 @@ class Func_1_3_I_1_c(SophiaCursorScene):
 
 
             self.wait_until_bookmark("axis_x")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
             self.wait(1)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
-            self.play(Write(circ))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ), run_time=0.5)
 
             self.wait_until_bookmark("bubble")
             self.add_pencil_sound(1.5)
@@ -188,6 +219,10 @@ class Func_1_3_I_1_d(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
+
         self.add_title(self.translate("Func_1_3.I1a.title"))
 
         funcRed = lambda x: 2 * x - 2
@@ -201,13 +236,16 @@ class Func_1_3_I_1_d(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("axis_x")
-            plane.x_axis.set_color(RED)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane), run_time=0.5)
             self.wait(1)
-            plane.x_axis.set_color(c1)
+            self.play(CursorMoveResize(cursor, xo,yo, 0.2, 0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("x1")
             circ = Circle(radius=0.1, color=c2).move_to(plane.x_axis.n2p(1))
-            self.play(Write(circ))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ), run_time=0.5)
 
             self.wait_until_bookmark("bubble")
             self.add_pencil_sound(1.5)
@@ -246,13 +284,16 @@ class Func_1_3_I_2(SophiaCursorScene):
             
             self.wait_until_bookmark("funcPink")
             self.play( Unwrite(graphRed), Unwrite(graphBlue), run_time=0.5)
+            self.add_pencil_sound(1)
             self.play( Write(graphPink), run_time=1)
 
             self.wait_until_bookmark("funcPurple")
             self.play(Unwrite(graphPink), run_time=0.5)
+            self.add_pencil_sound(1.5)
             self.play(Write(graphPurple))
 
             self.wait_until_bookmark("funcGreen")
+            self.add_pencil_sound(1.5)
             self.play(Write(graphGreen))
 
         self.wait(4)
@@ -289,14 +330,17 @@ class Func_1_3_I_3(SophiaCursorScene):
             self.wait_until_bookmark("zeros")
             circ1 = Circle(radius=0.1, color=GREEN).move_to(plane.c2p(1, 0))
             circ2 = Circle(radius=0.1, color=GREEN).move_to(plane.c2p(-1, 0))
-            self.play(Write(circ2))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ2), run_time=0.5)
             self.wait(1)
-            self.play(Write(circ1))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ1), run_time=0.5)
 
             self.wait_until_bookmark("clear")
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(graphGreen), run_time=1)
 
             self.wait_until_bookmark("func")
+            self.add_pencil_sound(1.5)
             self.play(Write(graphBlue), Write(term0))
 
             self.wait_until_bookmark("equal0")
@@ -307,7 +351,8 @@ class Func_1_3_I_3(SophiaCursorScene):
 
             self.wait_until_bookmark("showZero")
             circ3 = Circle(radius=0.1, color=BLUE).move_to(plane.c2p(1, 0))
-            self.play(Write(circ3))
+            self.add_pencil_sound(0.5)
+            self.play(Write(circ3), run_time=0.5)
 
         self.wait(4)
 
@@ -674,11 +719,13 @@ class xCrossingAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
             self.wait_until_bookmark("plot")
             self.play(Write(self.cords), run_time=0.5)
+            self.add_pencil_sound(1.5)
             self.play(Write(plot))
 
             self.wait_until_bookmark("crossing")
             for x in self.zeros:
-                self.play(Write(Circle(radius=0.1, color=BLUE).move_to(plane.coords_to_point(x,0))))
+                self.add_pencil_sound(0.5)
+                self.play(Write(Circle(radius=0.1, color=BLUE).move_to(plane.coords_to_point(x,0))), run_time=0.5)
                 self.wait(0.5)
 
         self.wait(4)

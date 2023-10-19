@@ -116,7 +116,7 @@
     },
     "1I2": {
       "func-term-q-scene": {
-        "voiceover": "f\"\"\"\n                We're starting with a function term and we want to find the corresponding graph.\n                The term we want to find the graph for <bookmark mark=\"term\"/>is {self.termInWords}.\n                Now tell me: <bookmark mark=\"findGraph\"/>\n                Which of the following graphs describes the function of the given term?\n                <bookmark mark=\"blue\"/> Is it the blue graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"orange\"/> Or is it the orange graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"lila\"/> Or is it the purple graph?<break time=\"1s\"/>\n                \"\"\""
+        "voiceover": "\n                We're starting with a function term and we want to find the corresponding graph.\n                The term we want to find the graph for <bookmark mark=\"term\"/>is {self.termInWords}.\n                Now tell me: <bookmark mark=\"findGraph\"/>\n                Which of the following graphs describes the function of the given term?\n                <bookmark mark=\"blue\"/> Is it the blue graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"orange\"/> Or is it the orange graph?<break time=\"1s\"/>\n\n                <bookmark mark=\"lila\"/> Or is it the purple graph?<break time=\"1s\"/>\n"
       },
       "main": {
         "title": "From Term to Function",
@@ -141,7 +141,7 @@
       "main": {
         "intro-text-correct": "Great, that's correct!",
         "intro-text-incorrect": "Unfortunately, that's incorrect.",
-        "plug-in-texts-1": "<bookmark mark=\"val{self.i+1}\"/> The {self.i+1} value we plug in is {self.vals[self.i]}, and the value of the function at this point is {self.fs[self.idx_correct](self.vals[self.i])}",
+        "plug-in-texts-1": "<bookmark mark=\"val{self.i+1}\"/> The {self.i+1}. value we plug in is {self.vals[self.i]}, and the value of the function at this point is {self.fs[self.idx_correct](self.vals[self.i])}",
         "plug-in-texts-2": "<bookmark mark=\"val{self.i+1}\"/> For the x-value {self.vals[self.i]}, we obtain the y-value {self.fs[self.idx_correct](self.vals[self.i])}",
         "plug-in-texts-3": "<bookmark mark=\"val{self.i+1}\"/> and for the x-value {get_num(self.vals[self.i])}, we finally get the y-value {self.fs[self.idx_correct](self.vals[self.i])}.",
         "title": "Term \\& Function"
@@ -252,7 +252,7 @@
     },
     "I2": {
       "title": "Intersections",
-      "voiceover": "            So, the red and blue functions were both straight lines, and\n            Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.\n            <break time=\"1s\"/>\n            <bookmark mark=\"funcPink\"/> The pink function is parallel to the x-axis and therefore has no zero crossing.\n            <break time=\"1s\"/>\n            Now, consider <bookmark mark=\"funcPurple\"/> the purple function.\n            The function is curved and has no zero crossing.\n            <break time=\"1s\"/>\n            Or look at the <bookmark mark=\"funcGreen\"/> green function.\n            It's also curved, but it has two zero crossings.\n            So, as we can see: Functions can have zero,<break time=\".5s\"/> one, <break time=\".5s\"/>or multiple zero crossings."
+      "voiceover": "            So, the red and blue functions were both straight lines, and\n            Straight lines always have exactly one zero crossing, unless they are parallel to the x-axis.\n            <break time=\"1s\"/>\n            <bookmark mark=\"funcPink\"/> The pink function is parallel to the x-axis and therefore has no zero crossing.\n            <break time=\"1s\"/>\n            Now, consider <bookmark mark=\"funcPurple\"/> the purple function.\n            The function is curved and has no zero crossing.\n            <break time=\"1s\"/>\n            Or look at the <bookmark mark=\"funcGreen\"/> green function.\n            It's also curved, but it has two zero crossings.\n            So, as we can see: Functions can have zero,<break time=\"0.5s\"/> one, <break time=\"0.5s\"/>or multiple zero crossings."
     },
     "I3": {
       "title": "Determining Zero Crossings",
@@ -450,8 +450,8 @@
       "zeros": "x equals negative 5 and x equals 5"
     },
     "x_crossing_answer_scene": {
-      "setToZero": "$\\\\rightarrow$ Set function equal to zero",
-      "solve": "$\\\\rightarrow$ Solve for $x$",
+      "setToZero": "$\\rightarrow$ Set function equal to zero",
+      "solve": "$\\rightarrow$ Solve for $x$",
       "title": "Intersecting Axes",
       "voiceover": "{self.intro}\n            So, we start with the function <bookmark mark=\"writeFunc\"/> {self.funcText}.\n            <break time=\"1s\"/>\n            First, we <bookmark mark=\"setToZero1\"/> set this function equal to zero, which gives us <bookmark mark=\"setToZero2\"/> {self.ZeroText}.\n            Then, <bookmark mark=\"solve1\"/> we solve the equation for x, and <bookmark mark=\"solve2\"/> we obtain {self.ZerosText}.\n            <break time=\"1s\"/>\n            We can also <bookmark mark=\"clear\"/> graphically verify this solution.\n            <break time=\"1s\"/>\n            <bookmark mark=\"plot\"/>Here's the graph of our function.\n            As you can see <bookmark mark=\"crossing\"/>, the graph intersects the x-axis at {self.ZerosText}."
     },
@@ -489,7 +489,7 @@
         "answer-options": "[\"a: Shift in x-Direction, b: Shift in y-Direction\", \"a: Shift in y-Direction, b: Shift in x-Direction\", \"a: Slope of the function, b: Shift in y-Direction\", \"a: Slope of the function, b: Shift in x-Direction\"]",
         "question-text": "What aspects of the function do $a$ and $b$ describe?",
         "title": "Role of a and b",
-        "voiceover": "Ok, so we wanted to find out how we determine the term of a function,\nwhen we are given <bookmark mark=\"graph\"/> the graph of that function.\nAnd we also know that the term of a linear function f of x has <bookmark mark=\"funcTerm\"/> the structure f of x is equal to \"a\" times x plus b.\n\naaaand, we just learned, how to determine \"b\": We simply plug in zero for x, and the value of f of zero is equal to the value of b.\n\nNow, how do we obtain \"a\"?\n\nBefore we figure that out: Let's think back to what \"a\" and \"b\" actually describe.\nDo you remember, what aspect of the graph \"a\" and \"b\" describe?"
+        "voiceover": "Ok, so we wanted to find out how we determine the term of a function,\nwhen we are given <bookmark mark=\"graph\"/> the graph of that function.\nAnd we also know that the term of a linear function f of x has<bookmark mark=\"funcTerm\"/> the structure f of x is equal to \"a\" times x plus b.\n\naaaand, we just learned, how to determine \"b\": We simply plug in zero for x, and the value of f of zero is equal to the value of b.\n\nNow, how do we obtain \"a\"?\n\nBefore we figure that out: Let's think back to what \"a\" and \"b\" actually describe.\nDo you remember, what aspect of the graph \"a\" and \"b\" describe?"
       }
     },
     "I11": {
@@ -516,7 +516,7 @@
     "I2": {
       "e1": "1. The slope is constant",
       "e2": "2. The graph is a straight line",
-      "e3": "3. The function has the form\\\\\\\\$f(x)=ax+b$",
+      "e3": "3. The function has the form\\\\$f(x)=ax+b$",
       "title": "Linear Functions",
       "voiceover": "Let's formally define: What is a linear function?\n                <break time=\"0.5s\"/>\n                There are three ways to explain it.\n                <bookmark mark=\"constant\"/> First: A linear function is a function with a constant slope.\n                We just discussed that. That means, and this is the second way to explain linear \n                functions, <bookmark mark=\"straight\"/> the graph is a straight line.\n                <break time=\"0.5s\"/>\n                Both of these conditions are met when the function has the form <bookmark mark=\"term\"/>\n                f of x equals \"a\" times \"x\" plus \"b\", where we can plug in any number for \"a\" and \"b\". That's the third\n                way to define linear functions."
     },
@@ -566,8 +566,8 @@
       "voiceover": "So, let's take a closer look at the function term of linear functions.\nThe <bookmark mark=\"f\"/> general term for linear functions <bookmark mark=\"tf\"/> \nis f of <bookmark mark=\"tx\"/>x equals <bookmark mark=\"tax\"/>\"a\" times x\nplus<bookmark mark=\"tb\"/> b.\n<break time=\"0.5s\"/>\nWhat role does the <bookmark mark=\"a\"/>value of \"a\" play, and what role does the <bookmark mark=\"b\"/>value of b play?\nTo find out, let's consider a specific example,\n<bookmark mark=\"example\"/>namely the <bookmark mark=\"ef\"/>function f <bookmark mark=\"ex1\"/>of x <bookmark mark=\"ex2\"/>equals x,\nwhich means \"a\" is equal to 1 and b is 0. The function <bookmark mark=\"plot\"/>looks like this.\n<break time=\"0.5s\"/>\nNow, what happens when we change the value of \"a\"?<bookmark mark=\"qmark\"/>\n<break time=\"0.5s\"/>\nSpecifically, what happens when we substitute a value greater than 1 for \"a\"?"
     },
     "I6": {
-      "a_high": "$a>>1\\\\Rightarrow$ steeper line",
-      "a_low": "$a<<1\\\\Rightarrow$ flatter line",
+      "a_high": "$a>>1\\Rightarrow$ steeper line",
+      "a_low": "$a<<1\\Rightarrow$ flatter line",
       "q": {
         "answer-options": "[\"The line is shifted upwards\", \"The line is shifted downwards\", \"The line becomes flatter\", \"The line becomes steeper\"]",
         "question-text": "What happens when we choose $b>0$?"
@@ -584,8 +584,8 @@
       "voiceover": "                Let's take another look at the function term of linear functions.\n                We're again looking at the general form of linear <bookmark mark=\"f\"/> functions,\n                which is <bookmark mark=\"tf\"/>f of<bookmark mark=\"tx\"/> x equals <bookmark mark=\"tax\"/>\"a\" times x\n                plus <bookmark mark=\"tb\"/> b. <break time=\"0.5s\"/>\n                As we have seen earlier, the value <bookmark mark=\"a\"/> of \"a\" determines the slope of the line.\n                <break time=\"0.5s\"/><bookmark mark=\"a_high\"/>\n                High values of \"a\" mean that the line becomes steeper.\n                <break time=\"0.5s\"/><bookmark mark=\"a_low\"/>\n                On the other hand, low values of \"a\" mean that the line becomes flatter.\n                <break time=\"0.5s\"/>\n                Now, the only question left is: What role does the value <bookmark mark=\"b\"/> of b play?\n                To find out, let's look at our example again,\n                that is <bookmark mark=\"example\"/> the function <bookmark mark=\"ef\"/> f of <bookmark mark=\"ex1\"/> x\n                equals <bookmark mark=\"ex2\"/>one time x plus <bookmark mark=\"plus_b_final\"/> b.\n                So, a is one again, and the function looks like <bookmark mark=\"plot\"/>\n                this.\n                <break time=\"0.5s\"/>\n                Now, what happens if we <bookmark mark=\"b_change\"/>change the value of b?\n                <break time=\"0.5s\"/>\n                For example: What happens when we set a value for b that is greater than zero?"
     },
     "I7": {
-      "note_1": "$a$ determines the slope\\\\\\\\$a>1$ $\\\\rightarrow$ Function steeper",
-      "note_2": "$b$ determines the shift\\\\\\\\$b>0$ $\\\\rightarrow$ Shift upwards",
+      "note_1": "$a$ determines the slope\\\\$a>1$ $\\rightarrow$ Function steeper",
+      "note_2": "$b$ determines the shift\\\\$b>0$ $\\rightarrow$ Shift upwards",
       "title": "Note: Function Term",
       "voiceover": "                So, let's review again:\n                <break time=\"0.5s\"/>\n                The general expression for a linear function is <bookmark mark=\"funcTerm\"/> f of x equals \"a\" times x plus b.\n                <break time=\"0.5s\"/>\n                The value <bookmark mark=\"a\"/> of a determines the slope here: <bookmark mark=\"goToOne\"/>\n                With a high value of a, <bookmark mark=\"ahigh\"/> the function becomes steeper, -\n                <bookmark mark=\"alow\"/> with a low value of a, it becomes flatter. <bookmark mark=\"reset\"/>\n                <break time=\"0.5s\"/>\n                The value <bookmark mark=\"b\"/> of b on the other hand determines the shift upwards and downwards. <bookmark mark=\"goToZero\"/>\n                With a high value of b <bookmark mark=\"bhigh\"/>, the function is shifted upwards, -\n                <bookmark mark=\"blow\"/> with a low value of b, it is shifted downwards."
     },
@@ -600,7 +600,7 @@
         "answer-options": "[\"We can directly read $a$: $f(0)=a$\", \"We can directly read $b$: $f(0)=b$\", \"We can directly read $a+b$: $f(0)=a+b$\"]",
         "question-text": "What happens when we substitute $x=0$ into the function $f(x)=ax+b$?",
         "title": "Note: Function Term",
-        "voiceover": "So, now we know: A linear function always has the form <bookmark mark=\"f\"/> f of x equals \"a\" times x plus b.\n<break time=\"0.5s\"/>\nLet's say <bookmark mark=\"cords\"/> we have a function, <bookmark mark=\"func\"/> that looks like this.\n<break time=\"0.5s\"/>\nHow do we determine the term of the function?\n<break time=\"0.5s\"/>\n<bookmark mark=\"cursor\"/>\nWe need to know two values to determine <bookmark mark=\"cursorA\"/> the function: a <bookmark mark=\"cursorB\"/> and b.\n<break time=\"0.5s\"/>\nWe'll start by figuring out how to find <bookmark mark=\"circleB\"/> b.\n<break time=\"0.5s\"/>\nThere's a simple trick for that. Let's substitute <bookmark mark=\"plugInZero\"/> zero into the function term.\n<bookmark mark=\"q\"/><break time=\"0.5s\"/>What happens?"
+        "voiceover": "So, now we know: A linear function always has the form <bookmark mark=\"f\"/>f of x equals \"a\" times x plus b.\n<break time=\"0.5s\"/>\nLet's say <bookmark mark=\"cords\"/> we have a function, <bookmark mark=\"func\"/> that looks like this.\n<break time=\"0.5s\"/>\nHow do we determine the term of the function?\n<break time=\"0.5s\"/>\n<bookmark mark=\"cursor\"/>\nWe need to know two values to determine <bookmark mark=\"cursorA\"/> the function: a <bookmark mark=\"cursorB\"/> and b.\n<break time=\"0.5s\"/>\nWe'll start by figuring out how to find <bookmark mark=\"circleB\"/> b.\n<break time=\"0.5s\"/>\nThere's a simple trick for that. Let's substitute <bookmark mark=\"plugInZero\"/> zero into the function term.\n<bookmark mark=\"q\"/><break time=\"0.5s\"/>What happens?"
       }
     },
     "I9": {
@@ -651,7 +651,7 @@
         "introtextcorrect": "Great, that's correct",
         "introtextincorrect": "Unfortunately, that's incorrect.",
         "orange": "orange",
-        "voiceover": "                {self.introText} <bookmark mark=\"func\"/>\n                The function is {self.funcText}.\n                \n                To determine the graph, <bookmark mark=\"note1\"/> we need to plug in two x-values. <bookmark mark=\"cords\"/>\n                For the first x-value, we use <bookmark mark=\"x0\"/> x equals zero, and we get <bookmark mark=\"fx0\"/> f of Zero equals {get_num(self.f_correct(0))}.\n                And for the second value, we plug in <bookmark mark=\"x\"/> x equals {get_num(self.x)}, resulting in <bookmark mark=\"fx\"/> f of {get_num(self.x)} equals {get_num(self.f_correct(self.x))}.\n                \n                Now, <bookmark mark=\"graph\"/> we connect the two points to obtain the graph of the function, the {self.c_correct} graph."
+        "voiceover": "                {self.introText} <bookmark mark=\"func\"/>\n                The function is {self.funcText}.\n                \n                To determine the graph, <bookmark mark=\"note1\"/> we need to plug in two x-values. <bookmark mark=\"cords\"/>\n                For the first x-value, we use <bookmark mark=\"x0\"/> x equals zero, and we get <bookmark mark=\"fx0\"/> f of Zero equals {self.f_correct(0)}.\n                And for the second value, we plug in <bookmark mark=\"x\"/> x equals {self.x}, resulting in <bookmark mark=\"fx\"/> f of {self.x} equals {self.f_correct(self.x)}.\n                \n                Now, <bookmark mark=\"graph\"/> we connect the two points to obtain the graph of the function, the {self.c_correct} graph."
       },
       "plot_linear_function_question": {
         "title": "Drawing Functions",

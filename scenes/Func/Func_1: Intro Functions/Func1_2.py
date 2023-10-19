@@ -217,7 +217,7 @@ class FuncTermQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_1_2.1I2.func-term-q-scene.voiceover")
+                text=self.eva(self.translate("Func_1_2.1I2.func-term-q-scene.voiceover"))
         ) as tracker:
 
             self.wait_until_bookmark("term")
@@ -292,6 +292,8 @@ class FuncTermAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
                 text= self.evaluate_string(self.translate("Func_1_2.1I2a.func-term-answer.voiceover"))
         ) as tracker:
             
+            print(self.evaluate_string(self.translate("Func_1_2.1I2a.func-term-answer.voiceover")))
+
             self.wait_until_bookmark("show_term")
             x,y,_ = func.get_center()
             cursor.idle=False

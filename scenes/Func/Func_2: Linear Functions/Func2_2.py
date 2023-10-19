@@ -428,6 +428,7 @@ class Func_2_2_I_2(SophiaCursorScene):
             self.play(ReplacementTransform(func10, func_original2), run_time=0.8)
 
             self.wait_until_bookmark("connect")
+            self.add_pencil_sound(2)
             self.play(Write(updated_f), run_time=2)
 
         # Wait for 4 seconds at the end of animation
@@ -481,13 +482,16 @@ class plotLinearFunctionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(self.cords), func.animate.move_to(self.cords.get_bottom()+0.5*DOWN), run_time=1.5)
 
             self.wait_until_bookmark("o1")
-            self.play(Write(g1), run_time=1.5)
+            self.add_pencil_sound(1.5)
+            self.play(Write(g1))
 
             self.wait_until_bookmark("o2")
-            self.play(Write(g2), run_time=1.5)
+            self.add_pencil_sound(1.5)
+            self.play(Write(g2))
 
             self.wait_until_bookmark("o3")
-            self.play(Write(g3), run_time=1.5)
+            self.add_pencil_sound(1.5)
+            self.play(Write(g3))
             
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -514,6 +518,8 @@ class plotLinearFunctionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         cursor = AltCursor(stroke_width=0.0, blinking=True)
         cursor.autoFadeBackground = True
         cursor.blinking=False
+
+        self.f_correct = self.f1 if self.idx_correct == 0 else self.f2 if self.idx_correct == 1 else self.f3
 
         # Action Sequence
         
@@ -555,7 +561,8 @@ class plotLinearFunctionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(Dot([x,y,0], color=self.color)), run_time=0.5)
 
             self.wait_until_bookmark("graph")
-            self.play(Write(graph), run_time=1.5)
+            self.add_pencil_sound(1.5)
+            self.play(Write(graph))
             
         # Wait for 4 seconds at the end of animation
         self.wait(4)

@@ -456,6 +456,7 @@ class Func_2_1_I_2(SophiaCursorScene):
 
             self.wait_until_bookmark("straight")
             self.play(Write(e2), run_time=.3)
+            self.add_pencil_sound(1.5)
             self.play(Write(func1_plotted))
 
             self.wait_until_bookmark("term")
@@ -1868,6 +1869,7 @@ class Func_2_1_I_8_q(SophiaCursorScene):
             self.play(Write(cords), func.animate.move_to(cords.get_bottom()+0.5*DOWN), run_time=0.5)
 
             self.wait_until_bookmark("func")
+            self.add_pencil_sound(1)
             self.play(Write(updated_f), run_time=1)
 
             self.wait_until_bookmark("cursor")
