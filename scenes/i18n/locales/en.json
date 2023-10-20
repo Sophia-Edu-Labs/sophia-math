@@ -707,19 +707,19 @@
       }
     },
     "I2": {
-      "Q1": "→ At what point in time",
+      "Q1": "$\\rightarrow$ At what point in time",
       "Q2": "will you have traveled",
       "Q3": "the same distance?",
       "title": "When will you meet?",
       "voiceover": "Ok, so why are we doing this? And what does it have to do with equations?\n\nThink about this: <bookmark mark=\"race\"/> Since you're both cycling in the same direction, but your friend had a head start,\nyou two will meet at some point - because you are cycling faster than her.\n\nBut when <bookmark mark=\"meet\"/> will you two meet?\n\nClearly, you'll meet at the point in time when both of you have traveled the exact same distance.\n<bookmark mark=\"Q\"/>\n\nThink about how we can find that point in time using the two functions we just wrote."
     },
     "I3": {
-      "tb1": "→Describes the time",
+      "tb1": "$\\rightarrow$Describes the time",
       "tb2": "when you meet",
-      "tf1": "→Describes the distance",
+      "tf1": "$\\rightarrow$Describes the distance",
       "tf2": "your friend has traveled",
       "title": "When will you meet?",
-      "ty1": "→Describes the distance",
+      "ty1": "$\\rightarrow$Describes the distance",
       "ty2": "you have traveled",
       "voiceover": "Let's think back to what we already know.\n\nThe function <bookmark mark=\"f\"/> f of x describes the distance your friend has traveled at time x.\n\nThe function <bookmark mark=\"g\"/> g of x on the other hand describes the distance YOU have traveled\nat time x.\n\n<bookmark mark=\"youLeave\"/>\nSince you and your friend meet, when you have traveled the same distance, we can say that\n<bookmark mark=\"both\"/> you meet when f of x is equal to g of x."
     },
@@ -766,10 +766,10 @@
       "voiceover": "{self.tfIntro}\nRemember: <bookmark mark=\"f\"/>\n{fText} and <bookmark mark=\"g\"/>\n{gText}.\n\nSo now, the first thing we do is set <bookmark mark=\"fEqG\"/> f of x equal to g of x.\nThis gives us <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n{self.stepA}\n{self.stepB}\n{self.stepC}.\nWe can also verify this, by <bookmark mark=\"cords\"/> plotting the graph of <bookmark mark=\"plotF\"/> f and the graph  <bookmark mark=\"plotG\"/> of g.\nLooking at the two graphs, we can <bookmark mark=\"confirm\"/> confirm that the two graphs intersect at the point x equals {get_num(x_sol)}. "
     },
     "LinearFunctionEqualityQuestionScene": {
-      "fText": "f of x equals {get_num(self.fParams[0])} times x {get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g of x equals {get_num(self.gParams[0])} times x {get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "fText": "f of x equals {get_num(self.fParams[0])} times x {self.fParams[1]}",
+      "gText": "g of x equals {self.gParams[0]} times x {self.gParams[1]}",
       "title": "Linear Functions \\& Equalities",
-      "voiceover": "    Consider the following two linear functions:\n    <bookmark mark=\"f\"/>\n    {fText}.\n    <bookmark mark=\"g\"/>\n    {gText}.\n\n    Where do the two functions intersect?\n    That is, <bookmark mark=\"handshake\"/> where does f equal g?"
+      "voiceover": "    Consider the following two linear functions:\n    <bookmark mark=\"f\"/>\n    {self.fText}.\n    <bookmark mark=\"g\"/>\n    {self.gText}.\n\n    Where do the two functions intersect?\n    That is, <bookmark mark=\"handshake\"/> where does f equal g?"
     },
     "P1": {
       "a": {

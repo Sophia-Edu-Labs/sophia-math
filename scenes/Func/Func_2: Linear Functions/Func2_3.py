@@ -81,15 +81,15 @@ class Func_2_3_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_2_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_2_3.I1.q.title"))
 
         f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs3).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
         y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs3).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -129,17 +129,16 @@ class Func_2_3_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_2_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_2_3.I1.q.title"))
 
         f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs3).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
         y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs3).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
-
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
 
         funcFriend = MathTex("f(x)=15x","+5", color=c1t, font_size=fs2).next_to(f3, DOWN)
@@ -178,15 +177,15 @@ class Func_2_3_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_2_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_2_3.I1.q.title"))
 
         f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs3).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
         y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs3).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -226,15 +225,15 @@ class Func_2_3_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_2_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_2_3.I1.q.title"))
 
         f1 = Tex(self.translate("Func_2_3.I1.q.f1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.6)
-        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs2).set_color(c1t).next_to(f1, DOWN)
+        f2 = BulletedList(self.translate("Func_2_3.I1.q.f2a"), self.translate("Func_2_3.I1.q.f2b"), buff=0.2, font_size=fs3).set_color(c1t).next_to(f1, DOWN)
         f3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(f2, DOWN)
 
 
         y1 = Tex(self.translate("Func_2_3.I1.q.y1"), color=c1t, font_size=fs2).next_to(title, DOWN)
-        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs2).set_color(c1t).next_to(y1, DOWN)
+        y2 = BulletedList(self.translate("Func_2_3.I1.q.y2"), color=c1t, font_size=fs3).set_color(c1t).next_to(y1, DOWN)
         y3 = MathTex("\\downarrow", color=c1t, font_size=fs2).next_to(y2, DOWN)
 
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
@@ -288,9 +287,9 @@ class Func_2_3_I_2(SophiaCursorScene):
         # funcFriend = MathTex("f(x)=15x","+5", color=c1t, font_size=fs2).next_to(f3, DOWN)
         # funcYou = MathTex("g(x)=20x", color=c1t, font_size=fs2).next_to(y3, DOWN)
         
-        Q1 = Text(self.translate("Func_2_3.I2.Q1"), color=RED, font_size=fs3, weight=BOLD).next_to(bikeMeet, DOWN, buff=0.6).shift(RIGHT*5)
-        Q2 = Text(self.translate("Func_2_3.I2.Q2"), color=RED, font_size=fs3, weight=BOLD).next_to(Q1, DOWN, buff=0.1)
-        Q3 = Text(self.translate("Func_2_3.I2.Q3"), color=RED, font_size=fs3, weight=BOLD).next_to(Q2, DOWN, buff=0.1)        
+        Q1 = Tex(self.translate("Func_2_3.I2.Q1"), color=RED, font_size=fs3).next_to(bikeMeet, DOWN, buff=0.6).shift(RIGHT*5)
+        Q2 = Tex(self.translate("Func_2_3.I2.Q2"), color=RED, font_size=fs3).next_to(Q1, DOWN, buff=0.1)
+        Q3 = Tex(self.translate("Func_2_3.I2.Q3"), color=RED, font_size=fs3).next_to(Q2, DOWN, buff=0.1)        
         Q = VGroup(Q1, Q2, Q3).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(LEFT*0.1)
         # Action Sequence
         with self.voiceover(
@@ -325,21 +324,21 @@ class Func_2_3_I_3(SophiaCursorScene):
         # comparison = VGroup(f1, f2, y1, y2).arrange(aligned_edge=LEFT).shift(0.2*LEFT)
 
         funcFriend = MathTex("f(x)=15x","+5", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
-        textFriend1 = Text(self.translate("Func_2_3.I3.tf1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcFriend, DOWN, buff=0.2)
-        textFriend2 = Text(self.translate("Func_2_3.I3.tf2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textFriend1, DOWN, buff=0.1)
+        textFriend1 = Tex(self.translate("Func_2_3.I3.tf1"), color=RED, font_size=fs3).next_to(funcFriend, DOWN, buff=0.2)
+        textFriend2 = Tex(self.translate("Func_2_3.I3.tf2"), color=RED, font_size=fs3).next_to(textFriend1, DOWN, buff=0.1)
         textFriend = VGroup(textFriend1, textFriend2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
 
         funcYou = MathTex("g(x)=20x", color=c1t, font_size=fs2).next_to(textFriend, DOWN)
         funcYou = funcYou.shift(LEFT*(funcYou.get_left()[0]-funcFriend.get_left()[0]))
-        textYou1 = Text(self.translate("Func_2_3.I3.ty1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcYou, DOWN, buff=0.2)
-        textYou2 = Text(self.translate("Func_2_3.I3.ty2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textYou1, DOWN, buff=0.1)
+        textYou1 = Tex(self.translate("Func_2_3.I3.ty1"), color=RED, font_size=fs3).next_to(funcYou, DOWN, buff=0.2)
+        textYou2 = Tex(self.translate("Func_2_3.I3.ty2"), color=RED, font_size=fs3).next_to(textYou1, DOWN, buff=0.1)
         textYou = VGroup(textYou1, textYou2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         textYou = textYou.shift(LEFT*(textYou.get_left()[0]-textFriend.get_left()[0]))
 
         funcBoth = MathTex("f(x)=g(x)", color=c1t, font_size=fs2).next_to(textYou, DOWN, buff=1)
         funcBoth = funcBoth.shift(LEFT*(funcBoth.get_left()[0]-funcFriend.get_left()[0]))
-        textBoth1 = Text(self.translate("Func_2_3.I3.tb1"), color=RED, font_size=fs3, slant=ITALIC).next_to(funcBoth, DOWN, buff=0.2)
-        textBoth2 = Text(self.translate("Func_2_3.I3.tb2"), color=RED, font_size=fs3, slant=ITALIC).next_to(textBoth1, DOWN, buff=0.1)
+        textBoth1 = Tex(self.translate("Func_2_3.I3.tb1"), color=RED, font_size=fs3).next_to(funcBoth, DOWN, buff=0.2)
+        textBoth2 = Tex(self.translate("Func_2_3.I3.tb2"), color=RED, font_size=fs3).next_to(textBoth1, DOWN, buff=0.1)
         textBoth = VGroup(textBoth1, textBoth2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         textBoth = textBoth.shift(LEFT*(textBoth.get_left()[0]-textFriend.get_left()[0]))
 
@@ -462,26 +461,26 @@ class Func_2_3_I_5(SophiaCursorScene):
         qmark = ImageMobject(assets_folder / "img" / "qmark.png")
         qmark = qmark.scale(3.2/qmark.get_width()).move_to([-5, 1, 0])
 
-        function = Text(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=1).shift(LEFT*0.4)
-        tf1 = Text(self.translate("Func_2_3.I5.tf1"), color=RED, font_size=fs3, slant=ITALIC).next_to(function, DOWN, buff=0.2)
-        tf2 = Text(self.translate("Func_2_3.I5.tf2"), color=RED, font_size=fs3, slant=ITALIC).next_to(tf1, DOWN, buff=0.1)
+        function = Tex(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=1).shift(LEFT*0.4)
+        tf1 = Tex(self.translate("Func_2_3.I5.tf1"), color=RED, font_size=fs3).next_to(function, DOWN, buff=0.2)
+        tf2 = Tex(self.translate("Func_2_3.I5.tf2"), color=RED, font_size=fs3).next_to(tf1, DOWN, buff=0.1)
         tf = VGroup(tf1, tf2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.4)
 
-        equation = Text(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs2).next_to(tf, DOWN)
+        equation = Tex(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs2).next_to(tf, DOWN)
         equation = equation.shift(LEFT*(equation.get_left()[0]-function.get_left()[0]))
-        te1 = Text(self.translate("Func_2_3.I5.te1"), color=RED, font_size=fs3, slant=ITALIC).next_to(equation, DOWN, buff=0.2)
-        te2 = Text(self.translate("Func_2_3.I5.te2"), color=RED, font_size=fs3, slant=ITALIC).next_to(te1, DOWN, buff=0.1)
+        te1 = Tex(self.translate("Func_2_3.I5.te1"), color=RED, font_size=fs3).next_to(equation, DOWN, buff=0.2)
+        te2 = Tex(self.translate("Func_2_3.I5.te2"), color=RED, font_size=fs3).next_to(te1, DOWN, buff=0.1)
         te = VGroup(te1, te2).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         te = te.shift(LEFT*(te.get_left()[0]-tf.get_left()[0]))
 
         handshake = ImageMobject(assets_folder / "img" / "handshake.png")
         handshake = handshake.scale(1.2/handshake.get_width()).move_to([-5, 1, 0])
-        fLeft = Text(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs3).next_to(handshake, LEFT, buff=0.1)
-        eRight = Text(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs3).next_to(handshake, RIGHT, buff=0.1)
+        fLeft = Tex(self.translate("Func_2_3.I5.functions"), color=c1t, font_size=fs3).next_to(handshake, LEFT, buff=0.1)
+        eRight = Tex(self.translate("Func_2_3.I5.equations"), color=c1t, font_size=fs3).next_to(handshake, RIGHT, buff=0.1)
         shakeGroup = Group(handshake, fLeft, eRight).scale(0.8).next_to(te, DOWN, buff=0.5)
-        ts1 = Text(self.translate("Func_2_3.I5.ts1"), color=RED, font_size=fs3, slant=ITALIC).next_to(shakeGroup, DOWN, buff=0.2)
-        ts2 = Text(self.translate("Func_2_3.I5.ts2"), color=RED, font_size=fs3, slant=ITALIC).next_to(ts1, DOWN, buff=0.1)
-        ts3 = Text(self.translate("Func_2_3.I5.ts3"), color=RED, font_size=fs3, slant=ITALIC).next_to(ts2, DOWN, buff=0.1)
+        ts1 = Tex(self.translate("Func_2_3.I5.ts1"), color=RED, font_size=fs3).next_to(shakeGroup, DOWN, buff=0.2)
+        ts2 = Tex(self.translate("Func_2_3.I5.ts2"), color=RED, font_size=fs3).next_to(ts1, DOWN, buff=0.1)
+        ts3 = Tex(self.translate("Func_2_3.I5.ts3"), color=RED, font_size=fs3).next_to(ts2, DOWN, buff=0.1)
         ts = VGroup(ts1, ts2, ts3).arrange(DOWN, buff=0.1, center=False, aligned_edge=RIGHT).shift(RIGHT*0.2)
         ts = ts.shift(LEFT*(ts.get_left()[0]-te.get_left()[0]))
         shakeGroup.shift(3*RIGHT)
@@ -531,7 +530,7 @@ class Func_2_3_I_6_q(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
-        cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
+        cords = self.add_cords([0, 3, 1], [0, 40, 5], x_ticks=[1,2,3], y_ticks=[10,20,30,40])
         plane = cords[0]
 
         # note = Notepad(texts=["Problem can also be solved graphically", "Consider the plots of $g$ and $f$","Where do the two functions intersect?"])
@@ -586,7 +585,7 @@ class Func_2_3_I_6_a(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
-        cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
+        cords = self.add_cords([0, 3, 1], [0, 40, 5], x_ticks=[1,2,3], y_ticks=[10,20,30,40])
         plane = cords[0]
 
         # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
@@ -646,7 +645,7 @@ class Func_2_3_I_6_b(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
-        cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
+        cords = self.add_cords([0, 3, 1], [0, 40, 5], x_ticks=[1,2,3], y_ticks=[10,20,30,40])
         plane = cords[0]
 
         # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
@@ -708,7 +707,7 @@ class Func_2_3_I_6_c(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
-        cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
+        cords = self.add_cords([0, 3, 1], [0, 40, 5], x_ticks=[1,2,3], y_ticks=[10,20,30,40])
         plane = cords[0]
 
         # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
@@ -769,7 +768,7 @@ class Func_2_3_I_6_d(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_2_3.I6.q.title"))
 
-        cords = self.add_cords([0, 2, 1], [0, 40, 5], x_ticks=[1,2], y_ticks=[10,20,30,40])
+        cords = self.add_cords([0, 3, 1], [0, 40, 5], x_ticks=[1,2,3], y_ticks=[10,20,30,40])
         plane = cords[0]
 
         # note = Notepad(texts=[["Follow one of the graphs", "until both intersect"], "Intersection at $(1,20)$","$\\rightarrow$ You meet after $x=1$ hour"])
@@ -836,8 +835,8 @@ class linearFunctionEqualityQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         title = self.add_title(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.title"))
 
-        fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.fText"))
-        gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.gText"))
+        self.fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.fText"))
+        self.gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
         gTex = f"g(x) = {str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
 
