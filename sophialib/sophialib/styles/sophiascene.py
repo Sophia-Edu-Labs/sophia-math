@@ -162,7 +162,7 @@ class SophiaScene(VoiceoverScene):
         if os.environ.get('SPEECH_SERVICE') == 'aws':
             speechs = AWSPollyService()
         elif os.environ.get('SPEECH_SERVICE') == 'elevenlabs':
-            speechs = ElevenlabsVoiceoverService()
+            speechs = ElevenlabsVoiceoverService(should_use_history=True)
         else:
             ##################################################################
             ##################################################################
@@ -171,7 +171,7 @@ class SophiaScene(VoiceoverScene):
             ##################################################################
             ##################################################################
             ##################################################################
-            speechs = ElevenlabsVoiceoverService()
+            speechs = ElevenlabsVoiceoverService(should_use_history=True)
             # optionally use this. 
             # speechs = AWSPollyService()
         
