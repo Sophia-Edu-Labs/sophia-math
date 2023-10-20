@@ -754,21 +754,24 @@
       }
     },
     "LinearFunctionEqualityAnswerScene": {
-      "eqAText": "{self.get_num(self.fParams[0])} x gleich {self.get_num(self.gParams[0])} x {self.get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='Plus')}",
-      "fText": "f von x ist gleich {self.get_num(self.fParams[0])} x {self.get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g von x ist gleich {self.get_num(self.gParams[0])} x {self.get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "eqAText": "{self.get_num(self.fParams[0], negation='minus', point='komma')} x gleich {self.get_num(self.gParams[0], negation='minus', point='komma')} x {self.get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='Plus', point='komma')}",
+      "fText": "f von 'x' ist gleich {self.get_num(self.fParams[0], negation='minus', point='komma')} 'x' {self.get_num(self.fParams[1], negation='minus', pos='plus', point='komma')}",
+      "gText": "g von 'x' ist gleich {self.get_num(self.gParams[0], negation='minus', point='komma')} 'x' {self.get_num(self.gParams[1], pos='plus', negation='minus', point='komma')}",
       "op1a": "[\"addieren\", \"zu\"]",
       "op1b": "[\"subtrahieren\", \"von\"]",
       "stepA": "Als nächstes <bookmark mark=\"shiftUp\"/>{self.op1[0]} wir <bookmark mark=\"add\"/> {abs(self.fParams[1])} {self.op1[1]} beiden Seiten, und erhalten \n{self.eqAText}.",
-      "stepB": "Dann {self.op2[0]} wir<bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {self.op2[1]} beiden Seiten, - und erhalten {self.eqBText}.",
+      "stepB": "Dann {self.op2[0]} wir<bookmark mark=\"addx\"/> {abs(self.gParams[0])} 'x' {self.op2[1]} beiden Seiten, - und erhalten {self.eqBText}.",
       "stepC": "Schließlich dividieren wir beide Seiten durch {self.fParams[0]-self.gParams[0]}, um <bookmark mark=\"final\"/> {self.eqCText} zu erhalten.",
       "title": "Lineare Funktionen \\& Gleichungen",
-      "voiceover": "{self.tfIntro}\nMerke: <bookmark mark=\"f\"/>\n{self.fText} und <bookmark mark=\"g\"/>\n{self.gText}.\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\nDaraus erhalten wir <bookmark mark=\"fEqGNums\"/> {self.fEqGText}.\n<break time=\"1s\"/>\n{self.stepA}\n<break time=\"1s\"/>\n{self.stepB}\n<break time=\"1s\"/>\n{self.stepC}.\n<break time=\"1s\"/>\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {self.get_num(self.x_sol)} schneiden.",
-      "equals": "gleich"
+      "voiceover": "{self.tfIntro}\nMerke: <bookmark mark=\"f\"/>\n{self.fText} und <bookmark mark=\"g\"/>\n{self.gText}.\nAls Erstes setzen wir also <bookmark mark=\"fEqG\"/> f von x gleich g von x.\nDaraus erhalten wir <bookmark mark=\"fEqGNums\"/> {self.fEqGText}.\n{self.stepA}\n{self.stepB}\n{self.stepC}.\n\n\nWir können dies auch überprüfen, indem wir <bookmark mark=\"cords\"/> den Graphen von <bookmark mark=\"plotF\"/> f und den Graphen <bookmark mark=\"plotG\"/> von g zeichnen.\n\n\nWenn wir uns die beiden Diagramme ansehen, können wir <bookmark mark=\"confirm\"/> bestätigen, dass sich die beiden Diagramme am Punkt x gleich {self.get_num(self.x_sol, negation='minus', point='komma')} schneiden.",
+      "equals": "gleich",
+      "neg": "minus",
+      "pos": "plus",
+      "point": "komma"
     },
     "LinearFunctionEqualityQuestionScene": {
-      "fText": "f von x gleich {self.get_num(self.fParams[0], negation='minus', pos='')} mal x {self.get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g von x gleich {self.get_num(self.gParams[0], negation='minus', pos='')} mal x {self.get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "fText": "f von x gleich {self.get_num(self.fParams[0], negation='minus', pos='', point='komma')} mal x {self.get_num(self.fParams[1], pos='plus', negation='minus', point='komma')}",
+      "gText": "g von x gleich {self.get_num(self.gParams[0], negation='minus', pos='', point='komma')} mal x {self.get_num(self.gParams[1], negation='minus', pos='plus', point='komma')}",
       "title": "Lineare Funktionen \\& Gleichungen",
       "voiceover": "Schau dir diese beiden linearen Funktionen an:\n<bookmark mark=\"f\"/>\n{self.fText}.\n<bookmark mark=\"g\"/>\n{self.gText}.\nWo schneiden sich die beiden Funktionen?\n<break time=\"0.5s\"/>\nDas heißt, <bookmark mark=\"handshake\"/> Wo ist f gleich g?"
     },

@@ -3,12 +3,7 @@
 # Import necessary libraries and modules
 from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaQuestionInfo, SophiaScene, Cursor,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *

@@ -755,16 +755,19 @@
     },
     "LinearFunctionEqualityAnswerScene": {
       "eqAText": "{self.get_num(self.fParams[0])} x equals {vget_num(self.gParams[0])} x {self.get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='plus')}",
-      "fText": "f of x is equal to {self.get_num(self.fParams[0])} x {self.get_num(self.fParams[1], negation='minus', pos='plus')}",
-      "gText": "g of x is equal to {self.get_num(self.gParams[0])} x {self.get_num(self.gParams[1], negation='minus', pos='plus')}",
+      "fText": "f of 'x' is equal to {self.get_num(self.fParams[0])} 'x' {self.get_num(self.fParams[1], negation='minus', pos='plus')}",
+      "gText": "g of 'x' is equal to {self.get_num(self.gParams[0])} 'x' {self.get_num(self.gParams[1], negation='minus', pos='plus')}",
       "op1a": "[\"add\", \"to\"]",
       "op1b": "[\"subtract\", \"from\"]",
       "stepA": "Next, <bookmark mark=\"shiftUp\"/> we {self.op1[0]} <bookmark mark=\"add\"/> {abs(self.fParams[1])} {self.op1[1]} both sides, and obtain {self.eqAText}.",
-      "stepB": "Then, we {self.op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} x {self.op2[1]} both sides, - and obtain {self.eqBText}.",
+      "stepB": "Then, we {self.op2[0]} <bookmark mark=\"addx\"/> {abs(self.gParams[0])} 'x' {self.op2[1]} both sides, - and obtain {self.eqBText}.",
       "stepC": "Finally, we divide both sides by {self.fParams[0]-self.gParams[0]} to get <bookmark mark=\"final\"/> {self.eqCText}.",
       "title": "Linear Functions \\& Equalities",
       "voiceover": "{self.tfIntro}\nRemember: <bookmark mark=\"f\"/>\n{self.fText} and <bookmark mark=\"g\"/>\n{self.gText}.\n\nSo now, the first thing we do is set <bookmark mark=\"fEqG\"/> f of x equal to g of x.\nThis gives us <bookmark mark=\"fEqGNums\"/> {fEqGText}.\n<break time=\"1s\"/>\n{self.stepA}\n<break time=\"1s\"/>\n{self.stepB}\n<break time=\"1s\"/>\n{self.stepC}.\n<break time=\"1s\"/>\nWe can also verify this, by <bookmark mark=\"cords\"/> plotting the graph of <bookmark mark=\"plotF\"/> f and the graph  <bookmark mark=\"plotG\"/> of g.\nLooking at the two graphs, we can <bookmark mark=\"confirm\"/> confirm that the two graphs intersect at the point x equals {self.get_num(self.x_sol)}. ",
-      "equals": "equals"
+      "equals": "equals",
+      "neg": "minus",
+      "pos": "plus",
+      "point": "point"
     },
     "LinearFunctionEqualityQuestionScene": {
       "fText": "f of x equals {self.get_num(self.fParams[0], negation='minus', pos='')} times x {self.get_num(self.fParams[1], negation='minus', pos='plus')}",

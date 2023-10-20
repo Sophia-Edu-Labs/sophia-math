@@ -893,12 +893,14 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         self.get_num = get_num
 
+        neg, pos, pointstring = self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.neg"), self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.pos"), self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.point")
+
         self.fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.fText"))
         self.gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
         gTex = f"g(x) = {str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
         fEqGTex = f"{str(self.fParams[0])}x {get_texNum(self.fParams[1])}={str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
-        self.fEqGText = f"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}"
+        self.fEqGText = f"{get_num(self.fParams[0], negation=neg, point=pointstring)} 'x' {get_num(self.fParams[1], negation=neg, point=pointstring, pos=pos)} {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[0], negation=neg, point=pointstring)} x {get_num(self.gParams[1], negation=neg, point=pointstring, pos=pos)}"
         f = MathTex(fTex, color=c1t, font_size=fs1).next_to(title, DOWN, buff=1.5)
         g = MathTex(gTex, color=c2t, font_size=fs1).next_to(f, DOWN, buff=0.2)
         fEqG = MathTex("f(x)=g(x)", color=c1t, font_size=fs2).next_to(g, DOWN, buff=0.8)
@@ -921,7 +923,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         downArrow3 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqBTex = f"{str(self.fParams[0]-self.gParams[0])}x ={self.gParams[1]-self.fParams[1]}"
-        self.eqBText = f"{get_num(self.fParams[0]-self.gParams[0], negation='minus')} x {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[1]-self.fParams[1], negation='negative')}"
+        self.eqBText = f"{get_num(self.fParams[0]-self.gParams[0], negation='minus')} 'x' {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[1]-self.fParams[1], negation=neg, point=pointstring)}"
         eqB = MathTex(eqBTex, color=c2t, font_size=fs2).next_to(downArrow3, DOWN, buff=0.2)
         stepB = """<bookmark mark="addx"/>"""
         if abs(self.gParams[0])!=0:
@@ -931,7 +933,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         
         downArrow4 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqCTex = f"x ={format((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]), '.2g')}"
-        self.eqCText = f"x {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]))}"
+        self.eqCText = f"'x' {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]), negation=neg, point=pointstring)}"
         eqC = MathTex(eqCTex, color=c2t, font_size=fs2).next_to(downArrow4, DOWN, buff=0.2)
         stepC = """<bookmark mark="final"/>"""
         if (self.fParams[0]-self.gParams[0])!=1:
