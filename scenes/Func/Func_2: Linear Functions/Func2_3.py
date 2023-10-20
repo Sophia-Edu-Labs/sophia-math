@@ -835,6 +835,10 @@ class linearFunctionEqualityQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         title = self.add_title(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.title"))
 
+        self.get_num = get_num
+
+        print(self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.fText")))
+        print("XXX-PRint")
         self.fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.fText"))
         self.gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityQuestionScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
@@ -883,15 +887,18 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         upshift = 2
 
-        op1 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.fParams[1] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
-        op2 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.gParams[0] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
+        self.op1 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.fParams[1] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
+        self.op2 = ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1a")) if self.gParams[0] < 0 else ast.literal_eval(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.op1b"))
         plane = self.cords[0]
 
-        fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.fText"))
-        gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.gText"))
+        self.get_num = get_num
+
+        self.fText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.fText"))
+        self.gText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.gText"))
         fTex = f"f(x) = {str(self.fParams[0])}x {get_texNum(self.fParams[1])}"
         gTex = f"g(x) = {str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
         fEqGTex = f"{str(self.fParams[0])}x {get_texNum(self.fParams[1])}={str(self.gParams[0])}x {get_texNum(self.gParams[1])}"
+        self.fEqGText = f"{get_num(self.fParams[0])} x {get_num(self.fParams[1], negation='minus', pos='plus')} {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[0])} x {get_num(self.gParams[1], negation='minus', pos='plus')}"
         f = MathTex(fTex, color=c1t, font_size=fs1).next_to(title, DOWN, buff=1.5)
         g = MathTex(gTex, color=c2t, font_size=fs1).next_to(f, DOWN, buff=0.2)
         fEqG = MathTex("f(x)=g(x)", color=c1t, font_size=fs2).next_to(g, DOWN, buff=0.8)
@@ -904,7 +911,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         downArrow2 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqATex = f"{str(self.fParams[0])}x ={str(self.gParams[0])}x {get_texNum(self.gParams[1]-self.fParams[1])}"
-        eqAText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.eqAText"))
+        self.eqAText = self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.eqAText"))
         eqA = MathTex(eqATex, color=c2t, font_size=fs2).next_to(downArrow2, DOWN, buff=0.2)
         stepA="""<bookmark mark="shiftUp"/><bookmark mark="add"/>"""
         if abs(self.fParams[1])!=0:
@@ -914,7 +921,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         downArrow3 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqBTex = f"{str(self.fParams[0]-self.gParams[0])}x ={self.gParams[1]-self.fParams[1]}"
-        eqBText = f"{get_num(self.fParams[0]-self.gParams[0])} x equals {get_num(self.gParams[1]-self.fParams[1], negation='negative')}"
+        self.eqBText = f"{get_num(self.fParams[0]-self.gParams[0], negation='minus')} x {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num(self.gParams[1]-self.fParams[1], negation='negative')}"
         eqB = MathTex(eqBTex, color=c2t, font_size=fs2).next_to(downArrow3, DOWN, buff=0.2)
         stepB = """<bookmark mark="addx"/>"""
         if abs(self.gParams[0])!=0:
@@ -924,7 +931,7 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         
         downArrow4 = MathTex("\\downarrow", color=c1t, font_size=fs1).next_to(prev, DOWN, buff=0.2)
         eqCTex = f"x ={format((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]), '.2g')}"
-        eqCText = f"x equals {get_num((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]))}"
+        self.eqCText = f"x {self.translate('Func_2_3.LinearFunctionEqualityAnswerScene.equals')} {get_num((self.gParams[1]-self.fParams[1])/(self.fParams[0]-self.gParams[0]))}"
         eqC = MathTex(eqCTex, color=c2t, font_size=fs2).next_to(downArrow4, DOWN, buff=0.2)
         stepC = """<bookmark mark="final"/>"""
         if (self.fParams[0]-self.gParams[0])!=1:
@@ -951,6 +958,9 @@ class linearFunctionEqualityAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.stepA = stepA
         self.stepB = stepB
         self.stepC = stepC
+        self.x_sol = x_sol
+
+        print("THE STRING", self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.voiceover")))
 
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_2_3.LinearFunctionEqualityAnswerScene.voiceover"))

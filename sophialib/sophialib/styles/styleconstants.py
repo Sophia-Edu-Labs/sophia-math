@@ -86,21 +86,21 @@ nums = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", 
         "Hundred"]
 
 
-def get_num(x, negation="negative", pos=None):
+def get_num(x, negation="negative", point="point", pos=None):
     def get_decNum(f):
         if int(f)==f:
-            return nums[int(f)]
+            return str(int(f))
         # Convert float to string and split on decimal point
         int_part, _, frac_part = str(f).partition('.')
         
         # Convert integer part to words
-        int_words = nums[int(int_part)]
+        int_words = str(int(int_part))
         
         # Convert fractional part to words
-        frac_words = [nums[int(digit)] for digit in frac_part]
+        frac_words = [str(int(digit)) for digit in frac_part]
         
         # Combine integer and fractional words with the "point" word in between
-        return ' '.join([int_words] + ["point"] + frac_words)
+        return ' '.join([int_words] + [point] + frac_words)
     if x>=0:
         if pos is not None:
             return pos + " " + get_decNum(x)
