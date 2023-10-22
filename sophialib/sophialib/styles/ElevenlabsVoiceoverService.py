@@ -5,8 +5,10 @@
 import datetime
 import os
 from pathlib import Path
+import re
+import tempfile
 import sys
-from typing import Iterator, Optional, Union
+from typing import Iterator, List, Optional, Union
 from dotenv import load_dotenv, find_dotenv
 from manim_voiceover.helper import (
     create_dotenv_file,
@@ -111,6 +113,57 @@ class ElevenlabsVoiceoverService(SpeechService):
             elif item.date < max_days_ago:
                 return None
         
+    def generateMultipleAudiosAndCombine(self, texts: List[str]) -> Union[bytes,Iterator[bytes]]:
+        # array of bytes that will contain the audio bytes of all generated audios
+        all_audios_bytes = []
+
+        # iterate over all texts
+        for t in texts:
+            with parallel_request_sem:
+                audio_bytes = None
+                # get audio bytes from history if possible
+                if self.should_use_history:
+                    audio_bytes = self.get_audio_from_history(t)
+                
+                if audio_bytes is None:
+                    # should be audio bytes in mp3 format
+                    audio_bytes = generate(
+                        text=t,
+                        voice=self.voice_name,
+                        model=self.model_id,
+                        stream=False,
+                    )
+                
+                # append audio bytes to all_audios_bytes
+                all_audios_bytes.append(audio_bytes)
+
+        # if we have exactly one audio in the all_audios_bytes array, just return it
+        if len(all_audios_bytes) == 1:
+            return all_audios_bytes[0]
+
+        # otherwise, combine all audios:
+        # -> save all audio bytes to temporary files (using tempfile)
+        # -> use ffmpeg to combine all temporary files
+        # -> return the combined audio bytes
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # create temporary files for all audio bytes
+            temp_files = []
+            for i, audio_bytes in enumerate(all_audios_bytes):
+                temp_file = os.path.join(temp_dir, f"audio_{i}.mp3")
+                with open(temp_file, "wb") as f:
+                    f.write(audio_bytes)
+                temp_files.append(temp_file)
+            
+            # combine all temporary files using ffmpeg
+            combined_audio_file = os.path.join(temp_dir, "combined_audio.mp3")
+            os.system(f"ffmpeg -y -i \"concat:{'|'.join(temp_files)}\" -c copy {combined_audio_file}")
+
+            # read combined audio file and return its bytes
+            with open(combined_audio_file, "rb") as f:
+                return f.read()
+
+
+
 
 
     @property
@@ -125,46 +178,49 @@ class ElevenlabsVoiceoverService(SpeechService):
 
         # text preprocessing
         input_text = remove_bookmarks(text)
-        input_text = remove_xml_tags(input_text, exclude_tags=["break"])
+        input_text = remove_xml_tags(input_text, exclude_tags=["break", "split"])
         input_text = "\n".join([line.strip() for line in input_text.split("\n")]) # remove all leading and trailing whitespaces from every line
 
+        # check if a split tag is contained in the input_text, by using regex (afterwards split the input_text at every split tag)
+        split_regex = r"<split.*?>"
+        split_tags = re.findall(split_regex, input_text)
+        if split_tags:
+            # split the input_text at every split tag
+            input_texts = re.split(split_regex, input_text)
+        else:
+            # if no split tags are contained, just use the input_text as is
+            input_texts = [input_text]
 
-        # make sure the input is no longer than allowed character limit
-        if len(input_text) > self._user_character_limit_per_request:
+        # make sure that every input text is no longer than allowed character limit
+        if any(len(t) > self._user_character_limit_per_request for t in input_texts):
             raise ValueError(
                 f"Text input is too long. The maximum number of characters is {self._user_character_limit_per_request}."
             ) 
         
+        # check if we can return a locally cached result
         input_data = {"input_text": text, "service": "elevenlabs"}
 
         cached_result = self.get_cached_result(input_data, cache_dir)
         if cached_result is not None:
             return cached_result
+        
 
+        # determine where to store the generated audio file
         if path is None:
             audio_path = self.get_audio_basename(input_data) + ".mp3"
         else:
             audio_path = path
 
+        # the following seems to be necessary too (for some reason :))
         if not kwargs:
             kwargs = self.init_kwargs
 
+        # determine where to store the generated audio file
         output_path = str(Path(cache_dir) / audio_path)
         
-        with parallel_request_sem:
-            audio_bytes = None
-            # get audio bytes from history if possible
-            if self.should_use_history:
-                audio_bytes = self.get_audio_from_history(input_text)
-            
-            if audio_bytes is None:
-                # should be audio bytes in mp3 format
-                audio_bytes = generate(
-                    text=input_text,
-                    voice=self.voice_name,
-                    model=self.model_id,
-                    stream=False,
-                )
+        
+        # create the audio bytes for each of the splitted input texts by using the elevenlabs api
+        audio_bytes = self.generateMultipleAudiosAndCombine(input_texts)
 
         # save audio bytes to file
         with open(output_path, "wb") as f:
