@@ -160,8 +160,8 @@
     },
     "1I4": {
       "main": {
-        "domain": "Definitionsbereich:\\\\\\\\ Alle Werte, die wir für $x$ einfügen können.",
-        "range": "Wertebereich:\\\\\\\\ Alle Werte, die wir für $y$ erhalten.",
+        "domain": "Definitionsbereich:\\\\ Alle Werte, die wir für $x$ einfügen können.",
+        "range": "Wertebereich:\\\\ Alle Werte, die wir für $y$ erhalten.",
         "title": "Funktion – Konzepte",
         "voiceover": "Zwei weitere wichtige Konzepte im Zusammenhang mit Funktionen: Definitionsbereich und Wertebereich.\n<break time=\"1s\"/>\nDer Definitionsbereich <bookmark mark=\"domain_in\"/> ist die Menge aller Werte, die wir für x ersetzen können.\nEr ist also die Menge aller x-Werte, die wir für die Funktion verwenden können.\n<bookmark mark=\"show_def\"/>\n<break time=\"1s\"/>\nIn diesem Fall ist der Definitionsbereich das Intervall, das alle Werte zwischen minus drei und drei umfasst.\n<break time=\"1s\"/>\nDas nächste Konzept ist das<bookmark mark=\"range_in\"/> des Wertebereichs.\n<break time=\"1s\"/>\nDer Wertebereich umfasst die Menge aller Werte, die wir für y erhalten können.\n<bookmark mark=\"show_val\"/>\nIn diesem Fall ist der Wertebereich das Intervall, das alle Werte zwischen minus drei und sechs umfasst.\n<break time=\"1s\"/>\nDenn wir erhalten den niedrigsten Wert bei x gleich Null, also minus drei.\nUnd wir erhalten den höchsten Wert bei x gleich drei, also sechs. \nDer Wertebereich ist also das Intervall zwischen minus drei und sechs."
       }
@@ -213,11 +213,11 @@
       "title-correct": "Richtig!",
       "title-incorrect": "Falsch!"
     },
-    "func-def-q-range": "$\\\\Rightarrow$ Wie groß ist der Bereich?",
+    "func-def-q-range": "$Rightarrow$ Wie groß ist der Bereich?",
     "func-def-q-scene": "Definitions- \\& Wertebreich",
     "func-def-q-scene-voiceover": " Betrachten wir jetzt die <bookmark mark=\"Func\"/>-Funktion {self.funcSpoken}.\nKonkret untersuchen wir sie auf dem hier abgebildeten Koordinatensystem.\nJetzt die Frage an dich:\nWas ist in diesem Beispiel der <bookmark mark=\"domain\"/> Wertebereich der Funktion?\n<break time=\"0.5s\"/>\nUnd was ist der <bookmark mark=\"range\"/> Wertebereich?\n<break time=\"0.5s\"/>",
     "func-def-q": {
-      "domain": "$\\\\Rightarrow$ Was ist der Wertebereich?"
+      "domain": "$Rightarrow$ Was ist der Wertebereich?"
     },
     "func-def": {
       "domain": "Definitonsbereich: Eingesetzte x-Werte",
