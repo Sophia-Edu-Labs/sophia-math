@@ -400,7 +400,7 @@ class Func_6_2_I_2_b(SophiaCursorScene):
         pizza_left = self.translate("Func_6_2.I2.a.pizza-left")
 
         t = MathTable(
-            [["x", f"\\text{pizza_left}"],
+            [["x", f"\\text{{{pizza_left}}}"],
             ["1", "\\tfrac12"],
             ["2", "(\\tfrac12)^2"],
             ["3", "(\\tfrac12)^3"],
@@ -525,7 +525,7 @@ class Func_6_2_I_2_c(SophiaCursorScene):
         pizza_left = self.translate("Func_6_2.I2.a.pizza-left")
 
         t = MathTable(
-            [["x", f"\\text{pizza_left}"],
+            [["x", f"\\text{{{pizza_left}}}"],
             ["1", "\\tfrac12"],
             ["2", "(\\tfrac12)^2"],
             ["3", "(\\tfrac12)^3"],
@@ -648,7 +648,7 @@ class Func_6_2_I_2_d(SophiaCursorScene):
         pizza_left = self.translate("Func_6_2.I2.a.pizza-left")
 
         t = MathTable(
-            [["x", f"\\text{pizza_left}"],
+            [["x", f"\\text{{{pizza_left}}}"],
             ["1", "\\tfrac12"],
             ["2", "(\\tfrac12)^2"],
             ["3", "(\\tfrac12)^3"],

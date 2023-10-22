@@ -71,7 +71,7 @@ class Func_1_Intro(SophiaCursorScene):
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=0, y=-2)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
 
