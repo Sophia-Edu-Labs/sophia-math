@@ -592,6 +592,7 @@ class Func_6_3_I_4_q(SophiaCursorScene):
             cursor.blinking=True
 
             self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.3)
             self.play(qmark.animate.shift(5*RIGHT), run_time=0.3)
 
         self.wait(4)

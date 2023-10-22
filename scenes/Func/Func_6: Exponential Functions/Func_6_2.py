@@ -1122,7 +1122,7 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         plane = self.cords[0]
         f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
-        intro_auto = self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i1") if self.a>1 else self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i2")
+        self.intro_auto = self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i1") if self.a>1 else self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i2")
         intro_auto_tex = Tex("$a>1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.eg')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4) if self.a>1 else Tex("$0<a<1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.ed')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4)
         
         g_1 = plane.plot(self.f1, color=self.c1)
@@ -1131,7 +1131,7 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         gs = [g_1,g_2,g_3]
         g_correct = gs[self.idx_correct]
-        color_correct = self.color_1_name if self.idx_correct==0 else self.color_2_name if self.idx_correct==1 else self.color_3_name
+        self.color_correct = self.color_1_name if self.idx_correct==0 else self.color_2_name if self.idx_correct==1 else self.color_3_name
 
 
         def cursor_sound_updater(mob, dt):
