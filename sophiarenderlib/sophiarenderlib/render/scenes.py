@@ -14,13 +14,13 @@ from sophialib.videopostprocessing.crop import crop_video_file
 
 
 
-def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False):
+def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, quality: str = "production_quality"):
     if test_run_with_last_frame:
         output_path = (output_dir/sc.__module__/f"{sc.__name__}_lastframe.png").resolve()
     else: 
         output_path = (output_dir/sc.__module__/f"{sc.__name__}.mp4").resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True) #make sure always exist
-    config = {"quality": "production_quality", "preview": False, "output_file": str(output_path), "disable_caching": True, "media_dir": scene_media_folder} # disable caching is important for manim-voiceover (due to a bug in manim)
+    config = {"quality": quality, "preview": False, "output_file": str(output_path), "disable_caching": True, "media_dir": scene_media_folder} # disable caching is important for manim-voiceover (due to a bug in manim)
     if test_run_with_last_frame:
         config["quality"] = "low_quality"
         config["save_last_frame"] = True
@@ -45,7 +45,7 @@ def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Pa
         crop_video_file(output_path)
 
 
-def render_scenes(scenes: List[Type[SophiaScene]], output_dir: Path, media_parent_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, rethrow_exceptions: bool = False):
+def render_scenes(scenes: List[Type[SophiaScene]], output_dir: Path, media_parent_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, rethrow_exceptions: bool = False, quality: str = "production_quality"):
     """Renders all scenes in a list of scenes. Returns a list of scenes for which rendering failed, if rethrow_exceptions is False, otherwise it will rethrow the exceptions."""
     failed_rendered_scenes = []
 
@@ -56,7 +56,7 @@ def render_scenes(scenes: List[Type[SophiaScene]], output_dir: Path, media_paren
         scene_media_folder.mkdir(parents=True, exist_ok=True)
 
         try: 
-            render_scene(sc, output_dir, scene_media_folder, test_run_with_last_frame, disable_progressbar)
+            render_scene(sc, output_dir, scene_media_folder, test_run_with_last_frame, disable_progressbar, quality)
         except Exception as e:
             print(f"Error while rendering scene {sc.__name__}: {e}")
             if rethrow_exceptions:
