@@ -449,8 +449,8 @@ class SophiaScene(VoiceoverScene):
     def add_cursor_sound(self, duration=0.3, rate_func=smooth):
         self.add_stretched_sound("cursor", duration, target_volume=0.2, rate_func=rate_func )
 
-    def add_pencil_sound(self, duration=0.5, rate_func=smooth):
-        self.add_stretched_sound("pencil", duration*0.6, target_volume=0.4, rate_func=rate_func )
+    def add_pencil_sound(self, duration=0.5, rate_func=smooth, volume=1):
+        self.add_stretched_sound("pencil", duration*0.6, target_volume=volume*0.4, rate_func=rate_func )
 
     def add_bubble_sound(self, duration=0.5, rate_func=smooth):
         self.add_stretched_sound("bubble", duration, target_volume=0.3, rate_func=rate_func )

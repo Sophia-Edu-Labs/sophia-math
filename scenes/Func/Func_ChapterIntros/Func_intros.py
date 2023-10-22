@@ -53,7 +53,7 @@ class Func_1_Intro(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Functions - Intro")
+        self.add_title(self.translate("Func_1_Intro.title"))
         
         #Create the coordinate system
         cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
@@ -78,17 +78,7 @@ class Func_1_Intro(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                How fast is your friend, who is currently running from a wild cow, at any given time?
-                How much money would you accumulate over time, if you got a Dollar every time you are bored in class?
-                Or what is the speed of the person you see skating on the ice at any given time?
-                In the first chapter of the functions series, you will learn how to describe real-world scenarios like these.
-                using functions. You will also learn more about <bookmark mark="f"/>graphs of functions, like the one you see on screen.
-                Once you've finished the chapter you'll know what a function is, how to plot a function, how to
-                model real world scenarios using functions, and more!
-                Functions are also very important for many other topics in math, <bookmark mark="fOut"/> so it's super important to understand them well.
-                So let's make sure to try our best! Let's get started!
-                """
+                text = self.translate("Func_1_Intro.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -109,7 +99,7 @@ class Func_2_Intro(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Functions - Intro")
+        self.add_title(self.translate("Func_2_Intro.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-4, 4, 2], [-4,4,2], x_ticks=[-4,-2,2,4], y_ticks=[-4,-2,2,4]).shift(DOWN*1.4)
@@ -137,18 +127,7 @@ class Func_2_Intro(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Here are three situations, that can be modeled with linear functions:
-                One: You're ordering burgers with your friends and you're figuring out, how much you will have to spend
-                depending on how many burgers you're ordering. Two: you've got a job working as a lifeguard with a fixed
-                hourly salary, and you want to determine how much money you'll receive for your work. Three: you're going
-                to a sports game and in addition to the ticket price, you have to pay for each drink you're getting. In
-                this chapter, you will learn how to model situations like these <bookmark mark="plot"/>using linear functions.
-                Many concepts, in this chapter are some of the most <bookmark mark="fOut"/>fundamental techniques in all of mathematics, so
-                understanding them well will make your life much easier later on, when you learn about other functions.
-                Specifically, we'll learn about how to use <bookmark mark="term"/>terms to describe linear functions, how to<bookmark mark="plot2"/> plot linear functions,
-                how to model interpret linear <bookmark mark="plotOut"/>functions and much more. 
-                """
+                text=self.translate("Func_2_Intro.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("plot")
@@ -178,7 +157,7 @@ class Func_3_Intro(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title("Functions - Intro")
+        self.add_title(self.translate("Func_3_Intro.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-4, 4, 2], [-4,4,2], x_ticks=[-4,-2,2,4], y_ticks=[-4,-2,2,4]).shift(DOWN*1.4)
@@ -202,19 +181,7 @@ class Func_3_Intro(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Sharing is caring and because I care about your math skills, in this chapter I will share all of my
-                knowledge about <bookmark mark="plot"/> fractional rational functions. They will help you share
-                everything you have with your friends and other people in your life, because they are
-                the perfect tool to model situations where you have to share something. <bookmark mark="fOut"/>
-                For example, you can use fractional rational functions
-                to model how much food each person gets, if the food is shared equally between a group of people.
-                Or, if you prefer to look out for your own good, you can use them to determine how much money you'll
-                have to pay for a shared bill, depending on how many people are sharing it. In this chapter, you will
-                learn how to model situations like these <bookmark mark="plot2"/>using fractional rational functions.
-                You will learn about important concepts like asymptotes, singularities and many other things that have
-                fancy sounding names. 
-                """
+                text=self.translate("Func_3_Intro.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("plot")
@@ -400,3 +367,66 @@ class Func_5_Intro(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
+
+#Intro Exponential Functions
+class Func_6_Intro(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+        self.add_title(self.translate("Func_6_Intro.title"))
+
+        # Create the coordinate system
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[1,2,3,4,5], y_ticks=[8, 16, 24, 32]).shift(DOWN*0.8)
+        plane = cords[0]
+
+        # Define the exponential function
+        func = lambda x: 2**x
+        graph = plane.plot(func, color=BLUE)
+
+        def cursor_sound_updater(mob, dt):
+            if mob.needSound:
+                mob.needSound = False
+                self.add_cursor_sound()
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
+        self.add(cursor)
+        l1, l2, l3 = self.translate("Func_6_Intro.list_1"), self.translate("Func_6_Intro.list_2"), self.translate("Func_6_Intro.list_3")
+        list = BulletedList(l1, l2, l3).scale(0.5).next_to(cords, DOWN, buff=0.8)
+        for idx in range(len(list)):
+            list[idx].set_color(BLACK)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_Intro.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("func_in")
+            x,y,_ = plane.c2p(0,0)
+            cursor.idle=False
+            self.play(Write(cords), CursorMoveTo(cursor, x,y))
+            cursor.idle=True
+            graph_updater = lambda m: m.move_to(graph.get_end())
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(graph.get_end()))._start_fading(1.5))
+            self.add_pencil_sound(1.5)
+            self.play(Write(graph))
+
+
+            self.wait_until_bookmark("list_1")
+            cursor.idle=False
+            x,y,_ = list[0].get_left()+0.4*LEFT
+            self.play(Write(list[0]), CursorMoveTo(cursor, x,y), run_time=.5)
+
+            self.wait_until_bookmark("list_2")
+            x,y,_ = list[1].get_left()+0.4*LEFT
+            self.play(Write(list[1]), CursorMoveToCurved(cursor, x,y), run_time=.5)
+
+            self.wait_until_bookmark("list_3")
+            x,y,_ = list[2].get_left()+0.4*LEFT
+            self.play(Write(list[2]), CursorMoveToCurved(cursor, x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
