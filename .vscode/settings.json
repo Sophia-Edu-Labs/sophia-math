@@ -17,4 +17,5 @@
     "i18nJsonEditor.workspaceFolders": [
         { "name": "Common", "path": "./scenes/i18n/locales" },
     ],
+    
 }
