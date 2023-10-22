@@ -67,7 +67,7 @@ class ElevenlabsVoiceoverService(SpeechService):
             set_api_key(api_key)
 
         # save if we should use history
-        self.should_use_history = False #should_use_history
+        self.should_use_history = should_use_history
 
         # save model id
         self.model_id = model_id
