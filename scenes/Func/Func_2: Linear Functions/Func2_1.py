@@ -3149,7 +3149,7 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_2_1_I_3_b),
     PagePrototypeVideo.from_scene(Func_2_1_I_3_c),
     PagePrototypeVideo.from_scene(Func_2_1_I_4_q),
-    PagePrototypeQuestion.from_scene(Func_2_1_I_3_q),
+    PagePrototypeQuestion.from_scene(Func_2_1_I_4_q),
     PagePrototypeVideo.from_scene(Func_2_1_I_4_a),
     PagePrototypeVideo.from_scene(Func_2_1_I_4_b),
     PagePrototypeVideo.from_scene(Func_2_1_I_4_c),

@@ -1,7 +1,7 @@
 # BASED ON: https://github.com/ManimCommunity/manim-voiceover/blob/main/manim_voiceover/services/coqui.py
 
 
-
+import time
 import datetime
 import os
 from pathlib import Path
@@ -127,12 +127,31 @@ class ElevenlabsVoiceoverService(SpeechService):
                 
                 if audio_bytes is None:
                     # should be audio bytes in mp3 format
-                    audio_bytes = generate(
-                        text=t,
-                        voice=self.voice_name,
-                        model=self.model_id,
-                        stream=False,
-                    )
+                    try_again_count = 10
+                    wait_time_sec = 10
+                    while try_again_count > 0:
+                        try: 
+                            audio_bytes = generate(
+                                text=t,
+                                voice=self.voice_name,
+                                model=self.model_id,
+                                stream=False,
+                            )
+                            break
+                        except Exception as e:
+                            print(f"Error while generating audio for text '{t}': {e}")
+                            print(f"Trying again {try_again_count} more times...")
+                            print(f"Waiting for {wait_time_sec} seconds before new try... ... ...")
+                            
+                            # wait for wait_time_sec seconds
+                            time.sleep(wait_time_sec)
+                            print("Trying again NOW...\n\n")
+
+                            # decrease try_again_count
+                            try_again_count -= 1
+
+                    if try_again_count == 0:
+                        raise Exception(f"Could not generate audio for text '{t}' after {try_again_count} tries. Aborting...")
                 
                 # append audio bytes to all_audios_bytes
                 all_audios_bytes.append(audio_bytes)
