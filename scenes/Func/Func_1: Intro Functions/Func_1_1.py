@@ -778,6 +778,7 @@ class Func_1_1_P_1_b(ValueTableSolutionScene):
     def construct(self):
 
         self.correcty = 0
+        self.title = self.translate("Func_1_1.P_title")
         self.idx_selected = 1
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
@@ -793,6 +794,7 @@ class Func_1_1_P_1_c(ValueTableSolutionScene):
     def construct(self):
 
         self.correcty = 0
+        self.title = self.translate("Func_1_1.P_title")
         self.idx_selected = 2
         self.xvals = [0,1,2,3,4]
         self.yvals = [[4,1,0,1,4],[2,0,1,1,3],[1,3,4,1,2]]
