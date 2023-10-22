@@ -276,7 +276,8 @@ class Func_6_2_I_2_a(SophiaCursorScene):
         pizza_left = self.translate("Func_6_2.I2.a.pizza-left")
 
         t = MathTable(
-            [["x", f"\\text{pizza_left}"],
+            [["x", f"\\text{{{pizza_left}}}"],
+            
             ["1", "\\tfrac12"],
             ["2", "(\\tfrac12)^2"],
             ["3", "(\\tfrac12)^3"],
@@ -876,7 +877,7 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.GraphToGrowthFactorQuestionScene.voiceover")
+                text=self.evaluate_string(self.translate("Func_6_2.GraphToGrowthFactorQuestionScene.voiceover"))
         ) as tracker:
             
             self.play(Write(self.cords))

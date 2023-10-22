@@ -38,7 +38,7 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -99,7 +99,7 @@ class Func_6_1_I_1_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -166,7 +166,7 @@ class Func_6_1_I_1_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -260,7 +260,7 @@ class Func_6_1_I_2(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -275,17 +275,17 @@ class Func_6_1_I_2(SophiaCursorScene):
             self.play(Write(cords))
 
             self.wait_until_bookmark("f_gold")
-            cursor.blinking=False
+            cursor.idle=False
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m, dt: m.move_to(g_gold.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Write(g_gold))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("linear")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = lin_growth.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), Write(lin_growth), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
             self.wait_until_bookmark("clean")
@@ -295,19 +295,19 @@ class Func_6_1_I_2(SophiaCursorScene):
             self.play(Write(cords_2))
 
             self.wait_until_bookmark("f_rice")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_rice.get_start()
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m, dt: m.move_to(g_rice.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Write(g_rice))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("exponential")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = exp_growth.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), Write(exp_growth), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -353,7 +353,7 @@ class Func_6_1_I_3(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -385,7 +385,7 @@ class Func_6_1_I_3(SophiaCursorScene):
             self.play(Write(cords))
 
             self.wait_until_bookmark("one_day")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -422,11 +422,11 @@ class Func_6_1_I_3(SophiaCursorScene):
             cc_two_eggs._start_fading(2)
             cc_four_eggs._start_fading(2)
             cc_six_eggs._start_fading(2)
-            cursor.blinking=True
+            cursor.idle=True
             self.play(Create(g_eggs), run_time=5)
 
             self.wait_until_bookmark("func")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_tex_eggs[0].get_center()+0.4*DOWN
             self.play(egg.animate.shift(5*RIGHT), one_egg.animate.shift(5*RIGHT), chicken.animate.shift(5*RIGHT), two_chickens.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(f_tex_eggs), run_time=0.5)
 
@@ -441,13 +441,13 @@ class Func_6_1_I_3(SophiaCursorScene):
             self.wait_until_bookmark("x")
             x,y,_ = f_tex_eggs[4].get_center()+0.4*DOWN 
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("linear")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = lin_growth.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), Write(lin_growth), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -471,7 +471,7 @@ class Func_6_1_I_4(SophiaCursorScene):
 
         egg = ImageMobject(assets_folder / "img" / "egg.png")
         egg = egg.scale(1.5/egg.get_width()).next_to(chicken, DOWN, buff=0.6).shift(0.2*LEFT)
-        one_egg = Tex(self.translate("Func_6_1.1I4.main.one_egg"), color=c1t).next_to(egg, LEFT, buff=0.2).scale(0.8)
+        one_egg = Tex(self.translate("Func_6_1.1I4.main.one_egg"), color=c1t).next_to(egg, LEFT, buff=0.6).scale(0.8)
         one_egg.shift((two_chickens.get_left()-one_egg.get_left())*np.array([1,0,0]))
 
         farmer_female = ImageMobject(assets_folder / "img" / "farmer_female.png")
@@ -491,7 +491,7 @@ class Func_6_1_I_4(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -520,7 +520,7 @@ class Func_6_1_I_4(SophiaCursorScene):
             self.play(Write(cords))
 
             self.wait_until_bookmark("one_week")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -577,10 +577,10 @@ class Func_6_1_I_4(SophiaCursorScene):
             cc_eight_chickens._start_fading(3.5)
             cc_sixteen_chickens._start_fading(5)
             self.play(Create(g_eggs), run_time=10)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_tex_eggs[0].get_center()+0.4*DOWN
             self.play(egg.animate.shift(5*RIGHT), one_egg.animate.shift(5*RIGHT), chicken.animate.shift(5*RIGHT), sixteen_chickens.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(f_tex_eggs), run_time=0.5)
 
@@ -595,13 +595,13 @@ class Func_6_1_I_4(SophiaCursorScene):
             self.wait_until_bookmark("power")
             x,y,_ = f_tex_eggs[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("exponential")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = exp_growth.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), Write(exp_growth), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -644,7 +644,7 @@ class Func_6_1_I_5_q(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -669,16 +669,16 @@ class Func_6_1_I_5_q(SophiaCursorScene):
             self.play(bacteria_double.animate.shift(1.2*bacteria.get_width()*RIGHT), run_time=0.5)
 
             self.wait_until_bookmark("linear")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = title.get_right()+0.4*DOWN+0.5*LEFT
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("exponential")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = title.get_left()+0.4*DOWN+0.5*RIGHT
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -832,7 +832,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -879,7 +879,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
             self.play(sarah.animate.shift(5*RIGHT), bacteria_double.animate.shift(5*RIGHT), bacteria.animate.shift(2.5*UP), t.animate.shift(2.5*UP), run_time=0.5)
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -894,10 +894,10 @@ class Func_6_1_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_tex[0].get_center()+0.4*DOWN
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -912,10 +912,10 @@ class Func_6_1_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("h")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = h_tex[0].get_center()+0.4*DOWN
             self.play(Write(h_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -926,7 +926,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("hxx")
             x,y,_ = h_tex[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -958,7 +958,7 @@ class Func_6_1_I_6_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
 
@@ -1010,7 +1010,7 @@ class Func_6_1_I_6_a(SophiaCursorScene):
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
         
             self.wait_until_bookmark("gx")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_tex[1].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
 
@@ -1021,7 +1021,7 @@ class Func_6_1_I_6_a(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1053,7 +1053,7 @@ class Func_6_1_I_6_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
 
@@ -1105,7 +1105,7 @@ class Func_6_1_I_6_b(SophiaCursorScene):
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
         
             self.wait_until_bookmark("gx")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_tex[1].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
 
@@ -1116,7 +1116,7 @@ class Func_6_1_I_6_b(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1147,7 +1147,7 @@ class Func_6_1_I_6_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
 
@@ -1199,7 +1199,7 @@ class Func_6_1_I_6_c(SophiaCursorScene):
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
         
             self.wait_until_bookmark("gx")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_tex[1].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
 
@@ -1210,7 +1210,7 @@ class Func_6_1_I_6_c(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1246,7 +1246,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1272,7 +1272,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
             
             self.wait_until_bookmark("g")
             x,y,_ = g_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("gx")
@@ -1286,7 +1286,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords")
             self.play(Write(cords), run_time=0.3)
@@ -1338,7 +1338,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1364,7 +1364,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
             
             self.wait_until_bookmark("g")
             x,y,_ = g_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("gx")
@@ -1378,7 +1378,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords")
             self.play(Write(cords), run_time=0.3)
@@ -1432,7 +1432,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1458,7 +1458,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
             
             self.wait_until_bookmark("g")
             x,y,_ = g_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("gx")
@@ -1472,7 +1472,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords")
             self.play(Write(cords), run_time=0.3)
@@ -1526,7 +1526,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1552,7 +1552,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
             
             self.wait_until_bookmark("g")
             x,y,_ = g_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(g_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("gx")
@@ -1566,7 +1566,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
             self.wait_until_bookmark("gxx")
             x,y,_ = g_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords")
             self.play(Write(cords), run_time=0.3)
