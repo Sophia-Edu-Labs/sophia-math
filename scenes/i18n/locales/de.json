@@ -181,31 +181,31 @@
     },
     "P22": {
       "q": {
-        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$ \nD=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
+        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$D=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
         "func-spoken": "f von x ist gleich x hoch drei plus zwei"
       }
     },
     "P23": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \" \n$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \"$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x gleich zweimal x"
       }
     },
     "P24": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \" \n$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x gleich vier mal x minus fünf"
       }
     },
     "P25": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \" \n$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \"$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
         "func-spoken": "f von x ist gleich x zum Quadrat plus x minus zwei"
       }
     },
     "P26": {
       "q": {
-        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$ \nD=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$D=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x ist gleich dreimal x im Quadrat minus zwei mal x plus eins"
       }
     },
@@ -486,7 +486,7 @@
         "voiceover": "Tolle, das stimmt!!!\n<bookmark mark=\"note1\"/>\n\"a\" beschreibt die Steigung der Funktion. \n<bookmark mark=\"cursorA\"/> Denk dran: <bookmark mark=\"aH\"/> hohe Werte von \"a\" bedeuten eine steile Steigung, <bookmark mark=\"aL\"/> niedrige Werte von \"a\" bedeuten eine flache Steigung.\n<bookmark mark=\"a1\"/>\n\"b\" beschreibt die Verschiebung der Funktion in üpsilon-Richtung. <bookmark mark=\"bH\"/> positive Werte von \"b\" führen zu einer Verschiebung nach oben, <bookmark mark=\"bL\"/> negative Werte von \"b\" führen zu einer Verschiebung nach unten. \n<bookmark mark=\"b1\"/>"
       },
       "q": {
-        "answer-options": "[\"a: Verschiebung in x-Richtung, b: Verschiebung in y-Richtung\", \"a: Verschiebung in y-Richtung, b: Verschiebung in x-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in y \n-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in x-Richtung\"]",
+        "answer-options": "[\"a: Verschiebung in x-Richtung, b: Verschiebung in y-Richtung\", \"a: Verschiebung in y-Richtung, b: Verschiebung in x-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in y-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in x-Richtung\"]",
         "question-text": "Welche Aspekte der Funktion beschreiben $a$ und $b$?",
         "title": "Rolle von a und b",
         "voiceover": "Ok, wir wollten also herausfinden, wie wir den Term einer Funktion bestimmen,\nwenn wir <bookmark mark=\"graph\"/> den Graphen dieser Funktion kennen.\nUnd wenn wir auch wissen, dass der Term einer linearen Funktion f von x <bookmark mark=\"funcTerm\"/>die Struktur f von x gleich \"a\" mal x plus b ist.\n<break time=\"0.5s\"/>\nWir haben ja gerade gelernt, wie man \"b\" bestimmt: Wir setzen einfach Null für x ein, und der Wert von f von Null ist gleich dem Wert von b.\n<break time=\"0.5s\"/>\nWie erhalten wir nun \"a\"?\n<break time=\"0.5s\"/>\nBevor wir das herausfinden: Denken wir noch einmal darüber nach, was \"a\" und \"b\" eigentlich beschreiben.\n<break time=\"0.5s\"/>\nErinnerst du dich, welchen Aspekt des Graphen \"a\" und \"b\" beschreiben?"
