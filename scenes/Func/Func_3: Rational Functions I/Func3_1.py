@@ -147,6 +147,7 @@ class Func_3_1_I_2(SophiaCursorScene):
             cursor.blinking=True
 
             self.wait_until_bookmark("plot")
+            self.add_pencil_sound(2.5)
             self.play(Write(func_plotted), run_time=2.5)
             self.play(Unwrite(circ1), Unwrite(circ2), Unwrite(circ4), Unwrite(circHalf), Unwrite(circQuarter), run_time=0.5)
             
@@ -178,7 +179,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate(""))
+        self.add_title(self.translate("Func_3_1.I3.q.title"))
 
         # Create a notepad with texts
         # note = Notepad(texts=[["$x$ gets closer to zero","$\\rightarrow f(x)$ increases quickly"], ["$\\rightarrow$ What will happen,","     if we plug in $x=0$"]], buff=0.3)
@@ -255,6 +256,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
             self.play(Write(circTwentieth))
 
             self.wait_until_bookmark("func")
+            self.add_pencil_sound(1.5)
             self.play(Write(func_plotted))
             self.play(Unwrite(circ1), Unwrite(circHalf), Unwrite(circQuarter), Unwrite(circTenth), Unwrite(circTwentieth))
 
@@ -301,8 +303,10 @@ class Func_3_1_I_3_a(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("warning")
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
             self.wait(0.8)
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
 
             self.wait_until_bookmark("func")
@@ -312,6 +316,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
+            self.add_pencil_sound(4)
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
@@ -322,8 +327,10 @@ class Func_3_1_I_3_a(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
+            self.add_shift_sound(1.5)
             anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
+            self.add_pencil_sound(5.5, volume=0.5)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
         # Wait for 4 seconds at the end of the animation
@@ -369,8 +376,10 @@ class Func_3_1_I_3_b(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("warning")
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
             self.wait(0.8)
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
 
             self.wait_until_bookmark("func")
@@ -380,6 +389,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
+            self.add_pencil_sound(4)
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
@@ -390,8 +400,10 @@ class Func_3_1_I_3_b(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
+            self.add_shift_sound(1.5)
             anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
+            self.add_pencil_sound(5.5, volume=0.5)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
         # Wait for 4 seconds at the end of the animation
@@ -438,8 +450,10 @@ class Func_3_1_I_3_c(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("warning")
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
             self.wait(0.8)
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
 
             self.wait_until_bookmark("func")
@@ -449,6 +463,7 @@ class Func_3_1_I_3_c(SophiaCursorScene):
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
+            self.add_pencil_sound(4)
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
@@ -459,8 +474,10 @@ class Func_3_1_I_3_c(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
+            self.add_shift_sound(1.5)
             anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
+            self.add_pencil_sound(5.5, volume=0.5)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
         # Wait for 4 seconds at the end of the animation
@@ -506,8 +523,10 @@ class Func_3_1_I_3_d(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("warning")
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
             self.wait(0.8)
+            self.add_shift_sound(0.4)
             self.play(warningsign.animate.shift(RIGHT*5), run_time=0.4)
 
             self.wait_until_bookmark("func")
@@ -517,6 +536,7 @@ class Func_3_1_I_3_d(SophiaCursorScene):
             self.play(ReplacementTransform(func, func_0))
 
             self.wait_until_bookmark("cross")
+            self.add_pencil_sound(4)
             self.play(Write(cross_0), run_time=4)
 
             self.wait_until_bookmark("domain")
@@ -527,8 +547,10 @@ class Func_3_1_I_3_d(SophiaCursorScene):
             self.play(Write(warning), run_time=0.8)
 
             self.wait_until_bookmark("cords")
+            self.add_shift_sound(1.5)
             anims = [Write(cords), warning1.animate.shift(DOWN*1.55), warning2.animate.shift(DOWN*1.35), zero.animate.shift(5*RIGHT)]
             self.play(*anims, run_time=1)
+            self.add_pencil_sound(5.5, volume=0.5)
             self.play(Write(func_plotted, rate_func=rate_functions.ease_out_sine), run_time=9)
 
         # Wait for 4 seconds at the end of the animation

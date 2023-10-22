@@ -400,3 +400,66 @@ class Func_5_Intro(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
+
+#Intro Exponential Functions
+class Func_6_Intro(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+        self.add_title("Exponential Functions")
+
+        # Create the coordinate system
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[1,2,3,4,5], y_ticks=[8, 16, 24, 32]).shift(DOWN*0.8)
+        plane = cords[0]
+
+        # Define the exponential function
+        func = lambda x: 2**x
+        graph = plane.plot(func, color=BLUE)
+
+        def cursor_sound_updater(mob, dt):
+            if mob.needSound:
+                mob.needSound = False
+                self.add_cursor_sound()
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
+        self.add(cursor)
+        l1, l2, l3 = self.translate("Func_6_Intro.list_1"), self.translate("Func_6_Intro.list_2"), self.translate("Func_6_Intro.list_3")
+        list = BulletedList("Exponential Growth", "Exponential Decay", "Logarithms").scale(0.5).next_to(cords, DOWN, buff=0.8)
+        for idx in range(len(list)):
+            list[idx].set_color(BLACK)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_Intro.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("func_in")
+            x,y,_ = plane.c2p(0,0)
+            cursor.idle=False
+            self.play(Write(cords), CursorMoveTo(cursor, x,y))
+            cursor.idle=True
+            graph_updater = lambda m: m.move_to(graph.get_end())
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(graph.get_end()))._start_fading(1.5))
+            self.add_pencil_sound(1.5)
+            self.play(Write(graph))
+
+
+            self.wait_until_bookmark("list_1")
+            cursor.idle=False
+            x,y,_ = list[0].get_left()+0.4*LEFT
+            self.play(Write(list[0]), CursorMoveTo(cursor, x,y), run_time=.5)
+
+            self.wait_until_bookmark("list_2")
+            x,y,_ = list[1].get_left()+0.4*LEFT
+            self.play(Write(list[1]), CursorMoveToCurved(cursor, x,y), run_time=.5)
+
+            self.wait_until_bookmark("list_3")
+            x,y,_ = list[2].get_left()+0.4*LEFT
+            self.play(Write(list[2]), CursorMoveToCurved(cursor, x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
