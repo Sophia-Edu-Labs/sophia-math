@@ -1198,7 +1198,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
         t = Table(
             [["x", self.translate("Func_6_1.I6.q.bacteria_time")],
             ["1", f"20 {self.translate('Func_6_1.I6.q.bacteria_minutes')}"],
-            ["2", f"20 {self.translate('Func_6_1.I6.q.bacteria_minutes')}"],
+            ["2", f"40 {self.translate('Func_6_1.I6.q.bacteria_minutes')}"],
             ["...", "..."]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(bacteria, RIGHT, buff=0.2).shift(RIGHT*5)
         rows = t.get_rows()
         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines())
@@ -1307,11 +1307,7 @@ class Func_6_1_I_6_a(SophiaCursorScene):
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(t, DOWN, buff=0.2)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, idle=False)
+        cursor = AltCursor(idle=False)
 
 
         # Action Sequence
