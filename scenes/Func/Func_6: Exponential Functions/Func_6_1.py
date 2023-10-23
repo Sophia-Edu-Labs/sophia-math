@@ -809,7 +809,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = ["$f(x)=2\\cdot x$", "$g(x)=2^x$", "$h(x)=x^2$"],
-            correctAnswerIndex = 0,
+            correctAnswerIndex = 1,
             questionText=self.translate("Func_6_1.I6.q.question-text")
         )
 
