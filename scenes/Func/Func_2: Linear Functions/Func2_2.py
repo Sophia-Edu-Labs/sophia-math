@@ -20,7 +20,7 @@ import ast
 
 
 class Func_2_2_I_1_q(SophiaCursorScene):
-adfasdfasdf
+    #Test
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions=ast.literal_eval(self.translate("Func_2_2.I1.q.answer-options")),
