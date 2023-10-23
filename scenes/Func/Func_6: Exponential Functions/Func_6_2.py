@@ -1223,7 +1223,7 @@ class Func_6_2_P_1_q(GraphToGrowthFactorQuestionScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = ["$a=3$", "$a=1$", "$a=\frac{1}{3}$", "$a=-2$"],
-            correctAnswerIndex = 2,
+            correctAnswerIndex = 0,
             questionText=self.translate("Func_6_2_P_1_q.questionText")
         )
 

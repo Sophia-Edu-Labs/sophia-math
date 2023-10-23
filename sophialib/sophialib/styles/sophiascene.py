@@ -162,7 +162,7 @@ class SophiaScene(VoiceoverScene):
         if os.environ.get('SPEECH_SERVICE') == 'aws':
             speechs = AWSPollyService()
         elif os.environ.get('SPEECH_SERVICE') == 'elevenlabs':
-            speechs = ElevenlabsVoiceoverService(should_use_history=True)
+            speechs = ElevenlabsVoiceoverService(should_use_history=False)
         else:
             ##################################################################
             ##################################################################
@@ -171,7 +171,7 @@ class SophiaScene(VoiceoverScene):
             ##################################################################
             ##################################################################
             ##################################################################
-            speechs = ElevenlabsVoiceoverService(should_use_history=True)
+            speechs = ElevenlabsVoiceoverService(should_use_history=False)
             # optionally use this. 
             # speechs = AWSPollyService()
         
@@ -279,6 +279,14 @@ class SophiaScene(VoiceoverScene):
         font_size = fs1 if len(title) < 12 else (fs2 if len(title) < 20 else fs3)
         title = Text(title, font_size=font_size, color=c1, font=font_0).to_edge(UP) if not tex else Tex(title, font_size=font_size, color=c1).to_edge(UP)
         title = title.scale(min(3.2/title.get_width(), 0.4/title.get_height()))
+
+        remainder_title = title.get_bottom()[1] % 0.2
+        if remainder_title != 0:
+            if remainder_title < 0.1:
+                title.shift(DOWN * remainder_title)
+            else:
+                title.shift(UP * (0.2 - remainder_title))
+
         self.add(title)
         return title
         
@@ -329,6 +337,22 @@ class SophiaScene(VoiceoverScene):
         #     ylabel = Tex(axisLabelY, color=c1t, font_size=fs3).next_to(plane.y_axis, UP, buff=0.2)
         #     ylabel = ylabel.scale(min(1,0.6*plane.y_axis.get_height()/ylabel.get_height()))
         #     cords.add(ylabel)
+
+            # Adjust x_axis position
+        remainder_x = plane.x_axis.get_y() % 0.2
+        if remainder_x != 0:
+            if remainder_x < 0.1:
+                cords.shift(DOWN * remainder_x)
+            else:
+                cords.shift(UP * (0.2 - remainder_x))
+
+        # Adjust y_axis position
+        remainder_y = plane.y_axis.get_x() % 0.2
+        if remainder_y != 0:
+            if remainder_y < 0.1:
+                cords.shift(LEFT * remainder_y)
+            else:
+                cords.shift(RIGHT * (0.2 - remainder_y))
 
         return cords
 

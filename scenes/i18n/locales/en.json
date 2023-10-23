@@ -1666,13 +1666,16 @@
     },
     "1I1q": {
       "main": {
-        "exponential-functions": "Exponential Functions",
-        "voiceover": "Imagine you're <bookmark mark=\"crown\"/> the king or the queen of an ancient empire.\nWhenever you're not busy ruling your kingdom, you like to play<bookmark mark=\"chess\"/> chess with your friends.\nSo you ask the most talented artist of your empire to make you a chessboard.\nWhen they come back with the chessboard, you are amazed by its beauty, so you decide to\nreward them with a prize.\nBut you're a little short on cash, because you spent it all<bookmark mark=\"headphones\"/> on a brand new pair of headphones,\nso you ask them to name their price.\nThe artist offers you a choice:<split/>\nYou can either <bookmark mark=\"gold\"/>pay them 1 gold coin for every square on the chessboard,\nor you can <bookmark mark=\"rice\"/>pay them 1 grain of rice for the first square, 2 grains of rice for the second square,\n4 grains of rice for the third square, 8 grains of rice for the fourth square, and so on, until\nyou've paid them for all 64 squares. <bookmark mark=\"qmark\"/>\nWhich option do you choose?"
+        "exponential-functions": "Exponential \\& Linear",
+        "voiceover": "Let's say you've just created<bookmark mark=\"vid_in\"/> an incredibly funny Short-Video.\nIt's so funny, that every person who watches it, send's it to two of their friends.\nLet's say when you first post <bookmark mark=\"person\"/>it, one person watches the video, because they follow your account.\nAn hour later,<bookmark mark=\"share\"/> two people watch it, because the person who watched it, sent it to two of their friends.\n<bookmark mark=\"qmark\"/>Now tell me, how many people will watch it after another hour?"
       },
       "question": {
-        "how-do-you-pay-the-artist": "How do you pay the artist?",
-        "with-gold": "With Gold",
-        "with-rice": "With Rice"
+        "how-do-you-pay-the-artist": "How many people will watch the video after another hour?",
+        "with-gold": "",
+        "with-rice": ""
+      },
+      "answer": {
+        "voiceover": "The first person who watches it in the second round,<bookmark mark=\"first_person\"/>will send it to two new people.\nAnd the second person who watches it, <bookmark mark=\"second_person\"/>will also send it to two new people.\nSo in total, four people will watch it in the second round.<break time=\"0.8s\"/>\nSimilarly, in the round that follows there will be eight people watching the video:\n<bookmark mark=\"p1\"/>Two people who received it from the first person of the previous round,<break time=\"0.4s\"/>\n<bookmark mark=\"p2\"/>two people who received it from the second person of the previous round,<break time=\"0.4s\"/>\n<bookmark mark=\"p3\"/>two people who received it from the third person of the previous round,<break time=\"0.4s\"/>\n<bookmark mark=\"p4\"/>and lastly, two people who received it from the fourth person of the previous round.<break time=\"0.8s\"/>"
       }
     },
     "1I2": {
@@ -1685,7 +1688,8 @@
     "1I3": {
       "main": {
         "title": "Linear Growth",
-        "voiceover": "Meet <bookmark mark=\"tom_in_1\"/> Tom.\nTom is a <bookmark mark=\"chicken_in_1\"/> chicken farmer.\nHe has <bookmark mark=\"two_chickens\"/>two chickens. Every day, each of them lays\n<bookmark mark=\"one_egg_per_day\"/>one egg.\nBecause Tom likes eggs so much, he collects them every day\nand counts <bookmark mark=\"calendar\"/>how many eggs he has collected over time.\n\nLet's help tom by describing the number of eggs he has collected using a function.\nWe'll describe the function using a <bookmark mark=\"cords\"/>graph.\n\nSo after <bookmark mark=\"one_day\"/>one day, tom has <bookmark mark=\"two_eggs\"/>\ntwo eggs, because each of the two chickens has laid one egg.\nAfter <bookmark mark=\"two_days\"/>two days, tom has <bookmark mark=\"four_eggs\"/>\nfour eggs, because each of the two chickens has laid one egg on the first day,\nand one egg on the second day.\nAnd after <bookmark mark=\"three_days\"/>three days, tom has <bookmark mark=\"six_eggs\"/>\nsix eggs, because each of the two chickens has laid one egg on the first day,\none egg on the second day, and one egg on the third day. and so it continues...<split/>\n\nSo <bookmark mark=\"plot\"/> every day, tom gets two extra eggs.\nThis means, that we can describe the number of eggs tom has collected using a\n<bookmark mark=\"func\"/>function f <bookmark mark=\"fx\"/> of x equals \n<bookmark mark=\"two_times\"/>two times <bookmark mark=\"x\"/>x, where x is the\nnumber of days that have passed.\n\nIf you look at the plot of this function, you can see that it is a straight line,\nbecause the number of eggs increases by the same amount every day.\nThis is called <bookmark mark=\"linear\"/>linear growth."
+        "voiceover": "Meet <bookmark mark=\"tom_in_1\"/> Tom.\nTom is a <bookmark mark=\"chicken_in_1\"/> chicken farmer.\nHe has <bookmark mark=\"two_chickens\"/>two chickens. Every day, each of them lays\n<bookmark mark=\"one_egg_per_day\"/>one egg.\nBecause Tom likes eggs so much, he collects them every day\nand counts <bookmark mark=\"calendar\"/>how many eggs he has collected over time.\n\nLet's help tom by describing the number of eggs he has collected using a function.\nWe'll describe the function using a <bookmark mark=\"cords\"/>graph.\n\nSo after <bookmark mark=\"one_day\"/>one day, tom has <bookmark mark=\"two_eggs\"/>\ntwo eggs, because each of the two chickens has laid one egg.\nAfter <bookmark mark=\"two_days\"/>two days, tom has <bookmark mark=\"four_eggs\"/>\nfour eggs, because each of the two chickens has laid one egg on the first day,\nand one egg on the second day.\nAnd after <bookmark mark=\"three_days\"/>three days, tom has <bookmark mark=\"six_eggs\"/>\nsix eggs, because each of the two chickens has laid one egg on the first day,\none egg on the second day, and one egg on the third day. and so it continues...<split/>\n\nSo <bookmark mark=\"plot\"/> every day, tom gets two extra eggs.\nThis means, that we can describe the number of eggs tom has collected using a\n<bookmark mark=\"func\"/>function f <bookmark mark=\"fx\"/> of x equals \n<bookmark mark=\"two_times\"/>two times <bookmark mark=\"x\"/>x, where x is the\nnumber of days that have passed.\n\nIf you look at the plot of this function, you can see that it is a straight line,\nbecause the number of eggs increases by the same amount every day.\nThis is called <bookmark mark=\"linear\"/>linear growth.",
+        "day": "day"
       }
     },
     "1I4": {
@@ -1749,6 +1753,23 @@
         "question-text": "Which of the graphs belongs to the function?",
         "voiceover": "Look at the function<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nWhich of the following <bookmark mark=\"cords\"/> graphs belongs to the function?\nThe <bookmark mark=\"blue\"/> blue graph? Or the <bookmark mark=\"green\"/> green graph? Or is it the <bookmark mark=\"purple\"/> purple graph?"
       }
+    },
+    "1I2q": {
+      "question": {
+        "how-do-you-pay-the-artist": "Which function describes the number of people watching the video after x rounds?"
+      },
+      "voiceover": "You can see that after zero rounds, we <bookmark mark=\"one_in\"/>have one person watching the video.\nAfter one round, we <bookmark mark=\"two_in\"/>have two people watching the video.\nAfter two rounds, we <bookmark mark=\"four_in\"/>have four people watching the video.\nAnd after three rounds, we <bookmark mark=\"eight_in\"/>have eight people watching the video.\n<break time=\"0.8s\"/>\nNow which function describes the number of people watching the video after x rounds?\nIs it the function <bookmark mark=\"f_in\"/> f of x equals two times x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals x squared? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two to the power of x?",
+      "answer": {
+        "voiceover": "The correct function is h of x equals 2 to the power of x.\n<bookmark mark=\"h_0\"/>Because h of 0 is 2 to the power of 0, so it is 1.\n<bookmark mark=\"h_1\"/>h of 1 is 2 to the power of 1, so it's equal to 2.\n<bookmark mark=\"h_2\"/>h of 2 is 2 to the power of 2, so 4.\n<bookmark mark=\"h_3\"/>And h of 3 is 2 to the power of 3, so it's 8.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> in a coordinate system,\n<bookmark mark=\"plot_in\"/>we can see that it increases at an increasing rate. This type of function is called exponential function.",
+        "incorrect": "That's not right.",
+        "correct": "that's right, great job."
+      }
+    },
+    "1I21": {
+      "e1": "Blue Graph: Exponential Grpwth",
+      "e2": "Green Graph: Linear Growth",
+      "e3": "Purple Graph: Exponential Growth",
+      "voiceover": "Let's compare exponential growth with linear growth.\nThe <bookmark mark=\"plot_1\"/>blue graph shows exponential growth. Like in the previous example, the function increases at an increasing rate. Every step, the function is multiplied by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_2\"/>green graph shows linear growth. The function increases at a constant rate. Every step, the function is increased by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_3\"/>purple graph shows exponential growth as well. The function decreases at an increasing rate. Every step, the function is multiplied by the same value, in this case one half."
     }
   },
   "Func_6_2": {
