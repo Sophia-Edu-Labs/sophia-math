@@ -17,7 +17,7 @@ class Func_1_3_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_3.1I1q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_3.1I1q.answer-options")),
             correctAnswerIndex = 2,
             questionText = self.translate("Func_1_3.I1q.question.at-which-x") 
         )
@@ -363,7 +363,7 @@ class Func_1_3_I_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_3.1I4q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_3.1I4q.answer-options")),
             correctAnswerIndex = 1,
             questionText = self.translate("Func_1_3.I4q.question.at-which-x") 
         )

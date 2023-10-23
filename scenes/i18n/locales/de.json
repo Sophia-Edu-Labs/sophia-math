@@ -174,38 +174,38 @@
     },
     "P21": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-3,6]$\", \"$D=[-3,6],\\,W=[-3,6]$\", \" \n$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-3,6],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-3,6]$\", \"$D=[-3,6],\\,W=[-3,6]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-3,6],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x ist gleich x Quadrat minus drei",
         "question-text": "Was sind die Definitionsbereich D und der Wertebereich W?"
       }
     },
     "P22": {
       "q": {
-        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$ \nD=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
+        "answer-options": "[\"$D=[-10,6],\\,W=[-2,2]$\", \"$D=[-1,2],\\,W=[1,3]$\", \"$D=[-2,2],\\,W=[-6,10]$\", \"$D=[-2,2],\\,W=[-10,6]$\"]",
         "func-spoken": "f von x ist gleich x hoch drei plus zwei"
       }
     },
     "P23": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \" \n$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-4,4]$\", \"$D=[-2,2],\\,W=[-4,4]$\", \"$D=[-4,4],\\,W=[-2,2]$\", \"$D=[-4,4],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x gleich zweimal x"
       }
     },
     "P24": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \" \n$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-17,7]$\", \"$D=[-17,7],\\,W=[-3,3]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-17,17],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x gleich vier mal x minus fünf"
       }
     },
     "P25": {
       "q": {
-        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \" \n$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
+        "answer-options": "[\"$D=[-3,3],\\,W=[-10,10]$\", \"$D=[-10,10],\\,W=[-4,4]$\", \"$D=[-3,10],\\,W=[4,10]$\", \"$D=[-3,3],\\,W=[-4,10]$\"]",
         "func-spoken": "f von x ist gleich x zum Quadrat plus x minus zwei"
       }
     },
     "P26": {
       "q": {
-        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$ \nD=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
+        "answer-options": "[\"$D=[-2,3],\\,W=[9,17]$\", \"$D=[-2,2],\\,W=[-1,12]$\", \"$D=[-10,10],\\,W=[9,17]$\", \"$D=[0,10],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x ist gleich dreimal x im Quadrat minus zwei mal x plus eins"
       }
     },
@@ -490,7 +490,7 @@
         "voiceover": "Tolle, das stimmt!!!\n<bookmark mark=\"note1\"/>\n\"a\" beschreibt die Steigung der Funktion. \n<bookmark mark=\"cursorA\"/> Denk dran: <bookmark mark=\"aH\"/> hohe Werte von \"a\" bedeuten eine steile Steigung, <bookmark mark=\"aL\"/> niedrige Werte von \"a\" bedeuten eine flache Steigung.\n<bookmark mark=\"a1\"/>\n\"b\" beschreibt die Verschiebung der Funktion in üpsilon-Richtung. <bookmark mark=\"bH\"/> positive Werte von \"b\" führen zu einer Verschiebung nach oben, <bookmark mark=\"bL\"/> negative Werte von \"b\" führen zu einer Verschiebung nach unten. \n<bookmark mark=\"b1\"/>"
       },
       "q": {
-        "answer-options": "[\"a: Verschiebung in x-Richtung, b: Verschiebung in y-Richtung\", \"a: Verschiebung in y-Richtung, b: Verschiebung in x-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in y \n-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in x-Richtung\"]",
+        "answer-options": "[\"a: Verschiebung in x-Richtung, b: Verschiebung in y-Richtung\", \"a: Verschiebung in y-Richtung, b: Verschiebung in x-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in y-Richtung\", \"a: Steigung der Funktion, b: Verschiebung in x-Richtung\"]",
         "question-text": "Welche Aspekte der Funktion beschreiben $a$ und $b$?",
         "title": "Rolle von a und b",
         "voiceover": "Ok, wir wollten also herausfinden, wie wir den Term einer Funktion bestimmen,\nwenn wir <bookmark mark=\"graph\"/> den Graphen dieser Funktion kennen.\nUnd wenn wir auch wissen, dass der Term einer linearen Funktion f von x <bookmark mark=\"funcTerm\"/>die Struktur f von x gleich \"a\" mal x plus b ist.\n<break time=\"0.5s\"/>\nWir haben ja gerade gelernt, wie man \"b\" bestimmt: Wir setzen einfach Null für x ein, und der Wert von f von Null ist gleich dem Wert von b.\n<break time=\"0.5s\"/>\nWie erhalten wir nun \"a\"?\n<break time=\"0.5s\"/>\nBevor wir das herausfinden: Denken wir noch einmal darüber nach, was \"a\" und \"b\" eigentlich beschreiben.\n<break time=\"0.5s\"/>\nErinnerst du dich, welchen Aspekt des Graphen \"a\" und \"b\" beschreiben?"
@@ -1744,7 +1744,7 @@
         "voiceover": "Ja, das ist richtig!\n<break time=\"0.4s\"/>\nBei der Funktion <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x verdoppelt sich die Anzahl der Bakterien alle zwanzig Minuten.\n<break time=\"0.4s\"/>\nJeder Zeitschritt bringt also doppelt so viele Bakterien hervor wie der vorherige.<bookmark mark=\"cords\"/>\n<break time=\"0.4s\"/>\nDer blaue <bookmark mark=\"blue\"/>Graph hat eine konstante Steigung, das heißt, er steigt immer mit der gleichen Geschwindigkeit, also ist es nicht der richtige.\n<split/>\nDer lilane Graph <bookmark mark=\"purple\"/> nimmt mit abnehmender Geschwindigkeit zu, es kann also auch nicht der richtige sein <bookmark mark=\"clear_cords\"/>.\n<break time=\"0.4s\"/>\nDer grüne <bookmark mark=\"green\"/>Graph hingegen wächst immer schneller, sodass es sich um den gesuchten Graphen handeln muss. \nEr verdoppelt sich bei jedem Zeitschritt, also muss er der richtige sein."
       },
       "q": {
-        "answer-options": "[\"Der blaue Graph\", \"Der grüne Graph\", \"Der violette Graph\"],",
+        "answer-options": "[\"Der blaue Graph\", \"Der grüne Graph\", \"Der violette Graph\"]",
         "lin-growth": "Lineares Wachstum",
         "question-text": "Welcher der Graphen gehört zur Funktion?",
         "voiceover": "Schau auf die Funktion<bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x.\nWelcher der folgenden <bookmark mark=\"cords\"/>Graphen gehört zur Funktion?\n<break time=\"0.5s\"/>\nDer <bookmark mark=\"blue\"/> blaue Graph? \n<break time=\"0.5s\"/>\nOder der <bookmark mark=\"green\"/> grüne Graph?\n<break time=\"0.5s\"/>\nOder ist es der lila Graph <bookmark mark=\"purple\"/>?"
@@ -2353,7 +2353,7 @@
         "voiceover": "Ja! \nDas ist richtig...\n<break time=\"0.5s\"/>\nWenn wir <bookmark mark=\"square_only\"/>den x-Term aus der Funktion entfernen, ändert sie sich kaum.<bookmark mark=\"reset_1\"/>\nDas ist also nicht die richtige Lösung.\n<break time=\"0.5s\"/>\nWenn <bookmark mark=\"add\"/> wir der Funktion eine Konstante hinzufügen, oder\n<bookmark mark=\"multiply\"/> wenn wir die Funktion mit einer Konstanten multiplizieren,\nbewegt sich die Funktion nur nach oben oder unten, oder wird gedehnt oder gestaucht.\nAber <bookmark mark=\"reset_2\"/> wir wollen der Achterbahn noch mehr Kurven hinzufügen,\nalso ist das auch nicht die richtige Lösung.\n<break time=\"0.5s\"/>\nWas wir jedoch tun können, ist, Begriffe hinzuzufügen, die <bookmark mark=\"add_terms\"/> x hoch drei enthalten\noder x hoch vier. \nAuf diese Weise wird die Funktion mehr Kurven haben und die Achterbahn wird mehr Spaß machen.\n<break time=\"0.5s\"/>\nDie richtige Lösung ist es also, Begriffe wie x hoch drei oder x hoch vier hinzuzufügen"
       },
       "q": {
-        "answer-options": "[\"Multipliziere $f$ mit $a>0$\", \"Entferne den $\\\\tfrac{1}{2}x$-Term aus $f$\", \"Füge eine Konstante $c$ zu $f$ hinzu\", \" \nFüge Begriffe wie $x^3, x^4$,... zu $f$ hinzu\"]",
+        "answer-options": "[\"Multipliziere $f$ mit $a>0$\", \"Entferne den $\\\\tfrac{1}{2}x$-Term aus $f$\", \"Füge eine Konstante $c$ zu $f$ hinzu\", \"Füge Begriffe wie $x^3, x^4$,... zu $f$ hinzu\"]",
         "question-text": "Wie können wir der Achterbahn weitere Kurven hinzufügen?",
         "voiceover": "Ok, zugegebenermaßen ist das eine ziemlich langweilige Achterbahnfahrt.\n<break time=\"0.5s\"/>\nDamit es noch mehr Spaß macht, könnten wir ein <bookmark mark=\"add_square\"/> x im Quadrat zur Funktion.  hinzufügen. Die Funktion wäre dann vom Grad zwei, und enthält eine schöne Kurve.\n<break time=\"0.5s\"/>\nDas ist zwar etwas besser, aber nicht viel besser. \n<bookmark mark=\"qmark\"/>\nWie könnten wir der Achterbahn noch mehr Kurven hinzufügen, damit es mehr Spaß macht?"
       }
@@ -2423,7 +2423,7 @@
         "intro": "Ja, das stimmt."
       },
       "q": {
-        "answer-options": "[\"Grad: $0$, Koeffizient: $2$\", \"Grad: $1$, Koeffizient: $-3$\", \"Grad: $4$, Koeffizient: $-3$\", \"Grad: $4$, Koeffizient: $ \n\\\\tfrac{1}{2}$\"]",
+        "answer-options": "[\"Grad: $0$, Koeffizient: $2$\", \"Grad: $1$, Koeffizient: $-3$\", \"Grad: $4$, Koeffizient: $-3$\", \"Grad: $4$, Koeffizient: $\\\\tfrac{1}{2}$\"]",
         "func-text": "f<bookmark mark=\"fx\"/> von x gleich <bookmark mark=\"el_1\"/> zwei\n<bookmark mark=\"el_2\"/> minus drei x<bookmark mark=\"el_3\"/>\nplus ein halb x hoch vier.",
         "highest-term": "x hoch vier.",
         "intro": "Schau dir als nächstes die Funktion",
