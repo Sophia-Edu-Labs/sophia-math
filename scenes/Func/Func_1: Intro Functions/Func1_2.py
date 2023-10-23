@@ -327,7 +327,7 @@ class Func_1_2_I_2_1_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.1I21q.answer-options")),
             correctAnswerIndex = 1,
             questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
         )
@@ -531,7 +531,7 @@ class Func_1_2_P_1_1_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.1I21q.answer-options")),
             correctAnswerIndex = 0,
             questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
         )
@@ -621,7 +621,7 @@ class Func_1_2_P_1_2_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.1I21q.answer-options")),
             correctAnswerIndex = 1,
             questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
         )
@@ -701,7 +701,7 @@ class Func_1_2_P_1_3_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.1I21q.answer-options")),
             correctAnswerIndex = 0,
             questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
         )
@@ -780,7 +780,7 @@ class Func_1_2_P_1_4_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.1I21q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.1I21q.answer-options")),
             correctAnswerIndex = 2,
             questionText = self.translate("Func_1_2.1I2_1q.question.which-graph-belongs") 
         )
@@ -992,7 +992,7 @@ class Func_1_2_P_2_1_q(FuncDefinitionsQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = self.translate("Func_1_2.P21.q.answer-options"),
+            answerOptions = ast.literal_eval(self.translate("Func_1_2.P21.q.answer-options")),
             correctAnswerIndex = 0,
             questionText = self.translate("Func_1_2.P21.q.question-text") 
         )
