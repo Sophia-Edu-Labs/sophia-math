@@ -143,7 +143,7 @@
         "intro-text-incorrect": "Unfortunately, that's incorrect.",
         "plug-in-texts-1": "<bookmark mark=\"val{self.i+1}\"/> The {self.i+1}. value we plug in is {self.vals[self.i]}, and the value of the function at this point is {self.fs[self.idx_correct](self.vals[self.i])}",
         "plug-in-texts-2": "<bookmark mark=\"val{self.i+1}\"/> For the x-value {self.vals[self.i]}, we obtain the y-value {self.fs[self.idx_correct](self.vals[self.i])}",
-        "plug-in-texts-3": "<bookmark mark=\"val{self.i+1}\"/> and for the x-value {get_num(self.vals[self.i])}, we finally get the y-value {self.fs[self.idx_correct](self.vals[self.i])}.",
+        "plug-in-texts-3": "<bookmark mark=\"val{self.i+1}\"/> and for the x-value {self.vals[self.i]}, we finally get the y-value {self.fs[self.idx_correct](self.vals[self.i])}.",
         "title": "Term \\& Function"
       }
     },
@@ -225,7 +225,7 @@
       "intro-incorrect": "Unfortunately, that's incorrect!",
       "range": "Range: Output y-values",
       "title": "Domain \\& Range",
-      "voiceover": "\n                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {get_num(self.domain[0])} to {get_num(self.domain[1])}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {get_num(self.range[0])} to {get_num(self.range[1])},\n                so that is the range of the function."
+      "voiceover": "\n                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {self.domain[0]} to {self.domain[1]}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {self.range[0]} to {self.range[1]},\n                so that is the range of the function."
     }
   },
   "Func_1_3": {
@@ -758,7 +758,7 @@
       }
     },
     "LinearFunctionEqualityAnswerScene": {
-      "eqAText": "{self.get_num(self.fParams[0])} x equals {vget_num(self.gParams[0])} x {self.get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='plus')}",
+      "eqAText": "{self.get_num(self.fParams[0])} x equals {self.get_num(self.gParams[0])} x {self.get_num(self.gParams[1]-self.fParams[1], negation='minus', pos='plus')}",
       "equals": "equals",
       "fText": "f of 'x' is equal to {self.get_num(self.fParams[0])} 'x' {self.get_num(self.fParams[1], negation='minus', pos='plus')}",
       "gText": "g of 'x' is equal to {self.get_num(self.gParams[0])} 'x' {self.get_num(self.gParams[1], negation='minus', pos='plus')}",
