@@ -1,5 +1,6 @@
 
 import json
+import os
 from pathlib import Path
 from sophialib.constants.directories import SCENES_FOLDER
 from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes
@@ -66,6 +67,10 @@ for path, pt in prototypes_per_dir:
         **pt.to_json()
     })
 
+# create the output file name, based on whether a locale is set in environment or not (if not set, choose the default one, i.e. "en")
+locale = os.environ.get("LOCALE", "en")
+output_file_name = f"prototypes_{locale}.json"
+
 # write the overview json to the file
-with open("prototypes.json", "w") as f:
+with open(output_file_name, "w") as f:
     f.write(json.dumps(overview_json, indent=4))
