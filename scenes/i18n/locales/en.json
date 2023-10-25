@@ -1748,7 +1748,7 @@
         "voiceover": "Yep, that's it!\nFor the function <bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x,\nthe number of bacteria doubles every twenty minutes. So each timestep yields twice as many bacteria as the previous one.<bookmark mark=\"cords\"/>\nThe <bookmark mark=\"blue\"/> blue graph has a constant slope, that means it always increases at the same rate, so it can't be the one we're looking for.\n<split/>\nThe <bookmark mark=\"purple\"/> purple graph increases at a decreasing rate, so it can't be right <bookmark mark=\"clear_cords\"/> either.\nThe <bookmark mark=\"green\"/> green graph however, increases at an increasing rate so it must be the one we're looking for. Indeed,\nit doubles at every timestep, so it must be the right one."
       },
       "q": {
-        "answer-options": "[\"The blue graph\", \"The green graph\", \"The purple graph\"],",
+        "answer-options": "[\"The blue graph\", \"The green graph\", \"The purple graph\"]",
         "lin-growth": "Linear Growth",
         "question-text": "Which of the graphs belongs to the function?",
         "voiceover": "Look at the function<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nWhich of the following <bookmark mark=\"cords\"/> graphs belongs to the function?\nThe <bookmark mark=\"blue\"/> blue graph? Or the <bookmark mark=\"green\"/> green graph? Or is it the <bookmark mark=\"purple\"/> purple graph?"

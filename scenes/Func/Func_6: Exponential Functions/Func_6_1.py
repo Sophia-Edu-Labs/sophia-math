@@ -1578,6 +1578,8 @@ class Func_6_1_I_7_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
+        print(ast.literal_eval(self.translate("Func_6_1.I7.q.answer-options")), "TESTEVAL")
+
         title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
         sarah = ImageMobject(assets_folder / "img" / "biologist.png")
