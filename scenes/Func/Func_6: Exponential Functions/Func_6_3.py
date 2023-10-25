@@ -546,7 +546,7 @@ class Func_6_3_I_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["x=\sqrt[5]{625}", "x=\sqrt[625]{5}", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+            answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
             correctAnswerIndex = 3,
             questionText=self.translate("Func_6_3.I4.q.question-text")
         )
@@ -1013,7 +1013,7 @@ class Func_6_3_P_1_q(findLogExpressionQuestionScene):
         
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$x=\log_{256}{4}$", "$x=\log_4{256}$", "x=\sqrt[4]{256}", "x=\sqrt[256]{4}"],
+            answerOptions = ["$x=\log_{256}{4}$", "$x=\log_4{256}$", "$x=\sqrt[4]{256}$", "$x=\sqrt[256]{4}$"],
             correctAnswerIndex = 1,
             questionText=self.translate("Func_6_3.P1.q.question-text")
         )
@@ -1080,7 +1080,7 @@ class Func_6_3_P_2_q(findLogExpressionQuestionScene):
         
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$x=\log_\frac12{\\frac{1}{16}}$", "$x=\log_{\frac{1}{16}}{\frac12}$", "x=\sqrt[\frac12]{\frac{1}{16}}", "x=\sqrt[25\frac{1}{16}]{\frac12}"],
+            answerOptions = ["$x=\log_\\frac12{\\frac{1}{16}}$", "$x=\log_{\\frac{1}{16}}{\\frac12}$", "$x=\sqrt[\\frac12]{\\frac{1}{16}}$", "$x=\sqrt[25\\frac{1}{16}]{\\frac12}$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_3.P2.q.question-text")
         )

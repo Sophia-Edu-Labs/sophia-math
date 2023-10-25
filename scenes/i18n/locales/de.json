@@ -1830,7 +1830,7 @@
     "P4": {
       "q": {
         "answer-options": "[\"Der blaue Graph\", \"Der grüne Graph\", \"Der orangefarbene Graph\"]",
-        "question-text": "Welcher der Graphen entspricht der Funktion $f(x)=\\\\frac{1}{2}^x$?"
+        "question-text": "Welcher der Graphen entspricht der Funktion $f(x)=\\frac{1}{2}^x$?"
       }
     },
     "P5": {

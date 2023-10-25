@@ -340,7 +340,7 @@ class Func_6_1_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["f(x)=2\cdot x", "g(x)=x^2", "h(x)=2^x"],
+            answerOptions = ["$f(x)=2\cdot x$", "$g(x)=x^2$", "$h(x)=2^x$"],
             correctAnswerIndex = 2,
             questionText = self.translate("Func_6_1.1I2q.question.how-do-you-pay-the-artist") 
         )

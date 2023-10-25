@@ -128,7 +128,7 @@ class Func_6_2_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$a=1$", "$a=-1$", "$a=\frac{1}{2}$", "$a=2$"],
+            answerOptions = ["$a=1$", "$a=-1$", "$a=\\frac{1}{2}$", "$a=2$"],
             correctAnswerIndex = 2,
             questionText=self.translate("Func_6_2.I2.q.question-text")
         )
@@ -1222,7 +1222,7 @@ class Func_6_2_P_1_q(GraphToGrowthFactorQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$a=3$", "$a=1$", "$a=\frac{1}{3}$", "$a=-2$"],
+            answerOptions = ["$a=3$", "$a=1$", "$a=\\frac{1}{3}$", "$a=-2$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_2_P_1_q.questionText")
         )
@@ -1402,7 +1402,7 @@ class Func_6_2_P_3_q(GraphToGrowthFactorQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$a=3$", "$a=2$", "$a=\frac{1}{2}$", "$a=-2$"],
+            answerOptions = ["$a=3$", "$a=2$", "$a=\\frac{1}{2}$", "$a=-2$"],
             correctAnswerIndex = 1,
             questionText=self.translate("Func_6_2.P3.q.question-text")
         )

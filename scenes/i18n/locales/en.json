@@ -1830,7 +1830,7 @@
     "P4": {
       "q": {
         "answer-options": "[\"The blue graph\", \"The green graph\", \"The orange graph\"]",
-        "question-text": "Which of the graph corresponds to the function $f(x)=\\\\frac{1}{2}^x$?"
+        "question-text": "Which of the graph corresponds to the function $f(x)=\\frac{1}{2}^x$?"
       }
     },
     "P5": {
