@@ -60,6 +60,13 @@ if len(all_prototype_ids) != len(set(all_prototype_ids)):
 
 overview_json = []
 
+# a helper function, which strips everything before and including the first underscore
+def strip_prefix(text):
+    return text[text.find("_")+1:]
+
+# sort the prototypes_per_dir by their prototypeID
+prototypes_per_dir.sort(key=lambda x: strip_prefix(x[1].prototypeID))
+
 # go through all scenes and add an entry to the overview json
 for path, pt in prototypes_per_dir:
     overview_json.append({
