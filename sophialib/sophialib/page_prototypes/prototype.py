@@ -20,14 +20,12 @@ class PagePrototype:
         }
 
 class PagePrototypeVideo(PagePrototype):
-    def __init__(self, prototypeID: str, videoID: Optional[str] = None):
+    def __init__(self, prototypeID: str):
         super().__init__(prototypeID, 'video')
-        self.videoID = videoID
 
     def to_json(self):
         return {
             **super().to_json(),
-            "videoID": self.videoID
         }
 
     # Factory method that will create a PagePrototypeVideo from a SophiaScene
@@ -35,7 +33,6 @@ class PagePrototypeVideo(PagePrototype):
     def from_scene(scene: SophiaScene):
         return PagePrototypeVideo(
             prototypeID = f"VIDEO_{scene.__name__}",
-            videoID = scene.videoID if hasattr(scene, 'videoID') else None
         )
 
 class PagePrototypeQuestion(PagePrototype):
