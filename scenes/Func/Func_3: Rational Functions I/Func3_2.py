@@ -36,8 +36,6 @@ class Func_3_2_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
-        # self.add(note)
         title = self.add_title(self.translate("Func_3_2.I1.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -50,7 +48,7 @@ class Func_3_2_I_1(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -0.25, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f = MathTex("f(x)=\\tfrac{1}{x}", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -66,101 +64,25 @@ class Func_3_2_I_1(SophiaCursorScene):
 
             self.wait_until_bookmark("pos")
             x,y,_ = plane.c2p(8,0)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("neg")
             x,y,_ = plane.c2p(-8,0)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
             self.play(CursorMoveTo(cursor, x, y), run_time=5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("hug")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMarkAxis(cursor, plane), run_time=0.8)
 
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
-#####################################
-#####################################
-# TASK_Func_3_2_I_2_q = SophiaTaskDefinition(
-#     answerOptions=["The orange line", "The green Line", "The purple line"],
-#     correctAnswerIndex=0,
-#     questionText="Which of the lines describes the horizontal asymptote of the function?",
-# )
-# class Func_3_2_I_2_q(SophiaCursorScene):
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         note = Notepad(texts=[["$x$ very large positive","$\\Rightarrow f(x)$ approaches x-axis from above"], ["$x$ very large negative","$\\Rightarrow f(x)$ approaches x-axis from below"], "$\\Rightarrow$ $x$ Axis is a \"horizontal Asymptote\""], buff=0.28)
-#         self.add(note)
-
-#         title = self.add_title("Asymptotes")
-
-#         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
-#         plane = cords[0]
-#         x_ax = plane.x_axis.copy().set_color(RED)
-#         y_ax = plane.y_axis.copy().set_color(RED)
-
-#         func = lambda x: 1/x+2
-#         plotted_right = plane.plot(func, color=BLUE, x_range=[0.5, 8, 0.01], use_smoothing=False)
-#         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
-
-#         xo, yo, _ = plane.x_axis.n2p(0)
-#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
-#         cursor.add_updater(lambda m: self.bring_to_front(cursor))
-
-#         LineOrange = Line(plane.c2p(-8,0), plane.c2p(8,0), color=ORANGE)
-#         LineGreen = Line(plane.c2p(-8,2), plane.c2p(8,2), color=GREEN)
-#         LinePurple = Line(plane.c2p(0,-4), plane.c2p(0,4), color=PURPLE)
-
-
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-#                 Here's a question for you and to be fair, you cannot really know this, but try to make a guess: <bookmark mark="cords"/>
-#                 
-#                 Look at the <bookmark mark="f"/> function that is shown on this graph.
-#                 
-#                 Which of the following three lines describes the horizontal Asymptote of this function?
-#                 
-#                 <bookmark mark="OrangeLine"/>
-#                 Is it the orange line?
-#                 
-#                 <bookmark mark="GreenLine"/>
-#                 Is it the green line?
-#                 
-#                 <bookmark mark="PurpleLine"/>
-#                 Or is it the purple line?
-#                 """
-#         ) as tracker:
-            
-#             self.wait_until_bookmark("cords")
-#             self.play(Write(cords), Write(cursor))
-
-#             self.wait_until_bookmark("f")
-#             self.play(Write(plotted_left), Write(plotted_right))
-
-#             self.wait_until_bookmark("OrangeLine")
-#             self.play(Write(LineOrange))
-
-#             self.wait_until_bookmark("GreenLine")
-#             self.play(Write(LineGreen))
-
-#             self.wait_until_bookmark("PurpleLine")
-#             self.play(Write(LinePurple))
-                    
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(4)
 
 
 #####################################
@@ -185,7 +107,7 @@ class Func_3_2_I_2_q(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_2.I2.title"))
 
-        cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
         x_ax = plane.x_axis.copy().set_color(RED)
         y_ax = plane.y_axis.copy().set_color(RED)
@@ -195,7 +117,7 @@ class Func_3_2_I_2_q(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineOrange = Line(plane.c2p(-8,0), plane.c2p(8,0), color=ORANGE)
@@ -212,16 +134,20 @@ class Func_3_2_I_2_q(SophiaCursorScene):
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plotted_left), Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_left), Create(plotted_right))
 
             self.wait_until_bookmark("OrangeLine")
-            self.play(Write(LineOrange))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineOrange))
 
             self.wait_until_bookmark("GreenLine")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("PurpleLine")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
                     
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -233,9 +159,6 @@ class Func_3_2_I_2_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        # note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
-        # self.add(note)
 
         title = self.add_title(self.translate("Func_3_2.I2.title"))
 
@@ -249,33 +172,36 @@ class Func_3_2_I_2_a(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineOrange = Line(plane.c2p(-8,0), plane.c2p(8,0), color=ORANGE)
         LineGreen = Line(plane.c2p(-8,2), plane.c2p(8,2), color=GREEN)
         LinePurple = Line(plane.c2p(0,-4), plane.c2p(0,4), color=PURPLE)
 
-
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_2.I2.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plotted_left), Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_left), Create(plotted_right))
 
             self.wait_until_bookmark("GreenLine")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("PurpleLine")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
             self.wait_until_bookmark("OrangeLine")
-            self.play(Write(LineOrange))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
@@ -313,7 +239,7 @@ class Func_3_2_I_2_b(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineOrange = Line(plane.c2p(-8,0), plane.c2p(8,0), color=ORANGE)
@@ -323,23 +249,27 @@ class Func_3_2_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_2.I2.b.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_3_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plotted_left), Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_left), Create(plotted_right))
 
             self.wait_until_bookmark("GreenLine")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("PurpleLine")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
             self.wait_until_bookmark("OrangeLine")
-            self.play(Write(LineOrange))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
@@ -360,9 +290,6 @@ class Func_3_2_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Orange Line crosses function","$\\Rightarrow$ not an asymptote"], ["Purple Line is vertical","$\\Rightarrow$ not a horizontal asymptote"], "$\\Rightarrow$ Green Line is the horizontal Asymptote"], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_2.I2.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -375,7 +302,7 @@ class Func_3_2_I_2_c(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineOrange = Line(plane.c2p(-8,0), plane.c2p(8,0), color=ORANGE)
@@ -385,23 +312,27 @@ class Func_3_2_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_2.I2.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cords")
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plotted_left), Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_left), Create(plotted_right))
 
             self.wait_until_bookmark("GreenLine")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("PurpleLine")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
             self.wait_until_bookmark("OrangeLine")
-            self.play(Write(LineOrange))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineOrange))
 
             self.wait_until_bookmark("noOrange")
             self.play(FadeOut(LineOrange))
@@ -423,9 +354,6 @@ class Func_3_2_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_2.I3.title"))
 
         cords = self.add_cords([-8,8, 2], [-4, 4, 1], x_ticks=[4*i-8 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -438,7 +366,7 @@ class Func_3_2_I_3(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-8, -1/6, 0.01], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineGreen = Line(plane.c2p(-8,2), plane.c2p(8,2), color=GREEN)
@@ -451,29 +379,32 @@ class Func_3_2_I_3(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("cords")
-            self.play(Write(cords), Write(cursor), Write(plotted_left), Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Write(cords), Write(cursor), Create(plotted_left), Create(plotted_right))
 
             self.wait_until_bookmark("horizontal")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("vertical")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
             self.wait_until_bookmark("x")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMarkAxis(cursor, plane))
 
             self.wait_until_bookmark("cursorReset")
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("y")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMarkAxis(cursor, plane, axis='y'))
 
             self.wait_until_bookmark("fin")
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -503,19 +434,16 @@ class horizontalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Consider the function shown here", "Is the green line a horizontal asymptote?", "Is the purple line a horizontal asymptote?"], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_2.horizontalAsymptoteQuestionScene.title"))
 
-        cords = self.cords
+        cords = self.cords.shift(DOWN)
         plane = cords[0]
         xmin, xmax, _ = plane.get_x_range()
 
         plots = VGroup(*[plane.plot(self.funcs[i], color=BLUE, x_range=self.funcRanges[i], use_smoothing=False) for i in range(len(self.funcs))])
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineGreen = Line(plane.c2p(xmin,self.yGreen), plane.c2p(xmax,self.yGreen), color=GREEN)
@@ -530,13 +458,16 @@ class horizontalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plots))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plots))
 
             self.wait_until_bookmark("green")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("purple")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -556,33 +487,33 @@ class horizontalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         title = self.add_title(self.translate("Func_3_2.horizontalAsymptoteAnswerScene.title"))
 
-        cords = self.cords
+        cords = self.cords.shift(DOWN)
         plane = cords[0]
         xmin, xmax, _ = plane.get_x_range()
 
         plots = VGroup(*[plane.plot(self.funcs[i], color=BLUE, x_range=self.funcRanges[i], use_smoothing=False) for i in range(len(self.funcs))])
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineGreen = Line(plane.c2p(xmin,self.yGreen), plane.c2p(xmax,self.yGreen), color=GREEN)
         LinePurple = Line(plane.c2p(xmin,self.yPurple), plane.c2p(xmax,self.yPurple), color=PURPLE)
-
-
 
         # Action Sequence
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_3_2.horizontalAsymptoteAnswerScene.voiceover"))
         ) as tracker:
             
-            self.play(Write(cords), Write(cursor), Write(plots))
+            self.play(Write(cords), Write(cursor), Create(plots))
 
             self.wait_until_bookmark("green")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("purple")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -598,19 +529,16 @@ class verticalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Consider the function shown here", "Is the green line a vertical asymptote?", "Is the purple line a vertical asymptote?"], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_2.verticalAsymptoteQuestionScene.title"))
 
-        cords = self.cords
+        cords = self.cords.shift(DOWN)
         plane = cords[0]
         ymin, ymax, _ = plane.get_y_range()
 
         plots = VGroup(*[plane.plot(self.funcs[i], color=BLUE, x_range=self.funcRanges[i], use_smoothing=False) for i in range(len(self.funcs))])
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineGreen = Line(plane.c2p(self.xGreen, ymin), plane.c2p(self.xGreen, ymax), color=GREEN)
@@ -625,13 +553,16 @@ class verticalAsymptoteQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(cords), Write(cursor))
 
             self.wait_until_bookmark("f")
-            self.play(Write(plots))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plots))
 
             self.wait_until_bookmark("green")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("purple")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -646,19 +577,16 @@ class verticalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote of a function f:","A line that the function gets","arbitrarily close to,","but never reaches"]], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_2.verticalAsymptoteAnswerScene.title"))
 
-        cords = self.cords
+        cords = self.cords.shift(DOWN)
         plane = cords[0]
         ymin, ymax, _ = plane.get_y_range()
 
         plots = VGroup(*[plane.plot(self.funcs[i], color=BLUE, x_range=self.funcRanges[i], use_smoothing=False) for i in range(len(self.funcs))])
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         LineGreen = Line(plane.c2p(self.xGreen, ymin), plane.c2p(self.xGreen, ymax), color=GREEN)
@@ -674,10 +602,12 @@ class verticalAsymptoteAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(cords), Write(cursor), Write(plots))
 
             self.wait_until_bookmark("green")
-            self.play(Write(LineGreen))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LineGreen))
 
             self.wait_until_bookmark("purple")
-            self.play(Write(LinePurple))
+            self.add_pencil_sound(1.5)
+            self.play(Create(LinePurple))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)

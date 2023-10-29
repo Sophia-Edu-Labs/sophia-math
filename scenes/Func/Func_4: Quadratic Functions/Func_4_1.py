@@ -36,13 +36,13 @@ class Func_4_1_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -63,33 +63,33 @@ class Func_4_1_I_1_q(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func1[0].get_left()+0.2*LEFT
-            self.play(Write(func1), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            self.play(Write(func1), CursorMoveTo(cursor, x, y), run_time=.5)
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func2[0].get_left()+0.2*LEFT
-            self.play(Write(func2), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            self.play(Write(func2), CursorMoveTo(cursor, x, y), run_time=.5)
+            cursor.idle=True
             
             self.wait_until_bookmark("h")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func3[0].get_left()+0.2*LEFT
-            self.play(Write(func3), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            self.play(Write(func3), CursorMoveTo(cursor, x, y), run_time=.5)
+            cursor.idle=True
 
             self.wait_until_bookmark("moveCursor")
             x,y,_ = start_point
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("bubble")
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.add_bubble_sound(1.5)
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -104,19 +104,19 @@ class Func_4_1_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
-        allowed = VGroup(MathTex("x^2", color=GREEN), MathTex("x", color=GREEN), MathTex("1", color=GREEN)).arrange(RIGHT, buff=0.2).next_to(title, DOWN, buff=0.5)
+        allowed = MathTex("x^2\\,\\,", "x\\,\\,\\,\\,", "1", color=GREEN).next_to(title, DOWN, buff=0.5)
 
         func_general = MathTex("f(x) = ax^2 + bx +c", color=c1t, font_size=fs1).shift(UP)
 
@@ -131,20 +131,20 @@ class Func_4_1_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I1.a.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_4_1.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcWrong[0].get_left()+0.2*LEFT
-            self.play(Write(funcWrong), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            self.play(Write(funcWrong), CursorMoveTo(cursor, x, y), run_time=.5)
+            cursor.idle=True
 
             self.wait_until_bookmark("funcWrong2")
             self.play(Unwrite(funcWrong))
 
             self.wait_until_bookmark("a1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = allowed[0].get_center()+0.5*DOWN+0.1*LEFT
             self.play(CursorMoveTo(cursor, x,y ), Write(allowed[0]), run_time=0.5)
 
@@ -155,28 +155,28 @@ class Func_4_1_I_1_a(SophiaCursorScene):
             self.wait_until_bookmark("a3")
             x,y,_ = allowed[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), Write(allowed[2]), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func1[0].get_left()+0.2*LEFT
             self.play(Write(func1), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func2[0].get_left()+0.2*LEFT
             self.play(Write(func2), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("h")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func3[0].get_left()+0.2*LEFT
             self.play(Write(func3), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xcubed")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = start_point
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
 
@@ -184,7 +184,7 @@ class Func_4_1_I_1_a(SophiaCursorScene):
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -198,19 +198,19 @@ class Func_4_1_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
-        allowed = VGroup(MathTex("x^2", color=GREEN), MathTex("x", color=GREEN), MathTex("1", color=GREEN)).arrange(RIGHT, buff=0.2).next_to(title, DOWN, buff=0.5)
+        allowed = MathTex("x^2\\,\\,", "x\\,\\,\\,\\,", "1", color=GREEN).next_to(title, DOWN, buff=0.5)
 
         func_general = MathTex("f(x) = ax^2 + bx +c", color=c1t, font_size=fs1).shift(UP)
 
@@ -229,16 +229,16 @@ class Func_4_1_I_1_b(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcWrong[0].get_left()+0.2*LEFT
             self.play(Write(funcWrong), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("funcWrong2")
             self.play(Unwrite(funcWrong))
 
             self.wait_until_bookmark("a1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = allowed[0].get_center()+0.5*DOWN+0.1*LEFT
             self.play(CursorMoveTo(cursor, x,y ), Write(allowed[0]), run_time=0.5)
 
@@ -249,28 +249,28 @@ class Func_4_1_I_1_b(SophiaCursorScene):
             self.wait_until_bookmark("a3")
             x,y,_ = allowed[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), Write(allowed[2]), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func1[0].get_left()+0.2*LEFT
             self.play(Write(func1), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func2[0].get_left()+0.2*LEFT
             self.play(Write(func2), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("h")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func3[0].get_left()+0.2*LEFT
             self.play(Write(func3), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xcubed")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = start_point
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
 
@@ -278,7 +278,7 @@ class Func_4_1_I_1_b(SophiaCursorScene):
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -291,16 +291,16 @@ class Func_4_1_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I1.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         allowed = MathTex("x^2", "\\,\\,\\,\\,\\,x", "\\,\\,\\,\\,\\,c", color=GREEN).scale(1.4).next_to(title, DOWN, buff=0.5)
@@ -321,16 +321,16 @@ class Func_4_1_I_1_c(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("funcWrong")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcWrong[0].get_left()+0.2*LEFT
             self.play(Write(funcWrong), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("funcWrong2")
             self.play(Unwrite(funcWrong))
 
             self.wait_until_bookmark("a1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = allowed[0].get_center()+0.5*DOWN+0.1*LEFT
             self.play(CursorMoveTo(cursor, x,y ), Write(allowed[0]), run_time=0.5)
 
@@ -341,28 +341,28 @@ class Func_4_1_I_1_c(SophiaCursorScene):
             self.wait_until_bookmark("a3")
             x,y,_ = allowed[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), Write(allowed[2]), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func1[0].get_left()+0.2*LEFT
             self.play(Write(func1), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func2[0].get_left()+0.2*LEFT
             self.play(Write(func2), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("h")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func3[0].get_left()+0.2*LEFT
             self.play(Write(func3), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xcubed")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = start_point
             self.play(CursorMoveTo(cursor, x,y), run_time=0.5)
 
@@ -370,7 +370,7 @@ class Func_4_1_I_1_c(SophiaCursorScene):
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -394,16 +394,16 @@ class Func_4_1_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I2.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I2.q.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
@@ -419,8 +419,8 @@ class Func_4_1_I_2_q(SophiaCursorScene):
         g3 = plane.plot(f3, color=GREEN, x_range=[-2**0.5,2**0.5, 0.001])
 
         
-        tQ = Tex(self.translate("Func_4_1.I2.q.tQ"), color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=1)
-        fQ = Tex(self.translate("Func_4_1.I2.q.fQ"), color=RED, font_size=fs2).next_to(tQ, DOWN, buff=0.2)
+        tQ = Tex(self.translate("Func_4_1.I2.q.tQ"), color=GREEN, font_size=fs3).next_to(cords, DOWN, buff=1)
+        fQ = Tex(self.translate("Func_4_1.I2.q.fQ"), color=RED, font_size=fs3).next_to(tQ, DOWN, buff=0.2)
         
 
         # Action Sequence
@@ -438,31 +438,31 @@ class Func_4_1_I_2_q(SophiaCursorScene):
             self.play(Write(fQ))
 
             self.wait_until_bookmark("blue")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("purple")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g2.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g2), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("green")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g3.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g3.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g3), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -475,10 +475,10 @@ class Func_4_1_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I2.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I2.q.title"))
 
         cursor = AltCursor()
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
@@ -497,62 +497,62 @@ class Func_4_1_I_2_a(SophiaCursorScene):
         start_point = g2.get_start()+0.2*DOWN
         b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I2.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("purple")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g2.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g2), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("green")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g3.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g3.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g3), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Unwrite")
             self.play(Unwrite(g1), Unwrite(g3))
 
             self.wait_until_bookmark("right")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_end()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("left")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("bubble")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()+0.2*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -566,10 +566,10 @@ class Func_4_1_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I2.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I2.q.title"))
 
         cursor = AltCursor()
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
@@ -588,62 +588,62 @@ class Func_4_1_I_2_b(SophiaCursorScene):
         start_point = g2.get_start()+0.2*DOWN
         b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I2.b.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_4_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("purple")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g2.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g2), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("green")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g3.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g3.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g3), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Unwrite")
             self.play(Unwrite(g1), Unwrite(g3))
 
             self.wait_until_bookmark("right")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_end()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("left")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("bubble")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()+0.2*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -656,10 +656,10 @@ class Func_4_1_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I2.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I2.q.title"))
 
         cursor = AltCursor()
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
@@ -678,62 +678,62 @@ class Func_4_1_I_2_c(SophiaCursorScene):
         start_point = g2.get_start()+0.2*DOWN
         b = Bubble(ast.literal_eval(self.translate("Func_4_1.I2.a.bubble")), width=4, height=1.2, start_point = start_point, center=[0,-2.6,0], loc="t1")
         
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I2.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_1.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("blue")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("purple")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g2.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g2), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("green")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g3.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g3.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g3), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Unwrite")
             self.play(Unwrite(g1), Unwrite(g3))
 
             self.wait_until_bookmark("right")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_end()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("left")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("bubble")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()+0.2*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -754,10 +754,10 @@ class Func_4_1_I_3(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         title = self.add_title(self.translate("Func_4_1.I3.title"))
@@ -783,7 +783,7 @@ class Func_4_1_I_3(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("func_general")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = func_general[0].get_center()+0.4*DOWN
             self.play(Write(func_general), CursorMoveTo(cursor, x,y ), run_time=0.3)
 
@@ -802,10 +802,10 @@ class Func_4_1_I_3(SophiaCursorScene):
             self.wait_until_bookmark("c")
             x,y,_ = func_general[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("aa")
-            cursor.blinking=False
+            cursor.idle=False
             c2 = cursor.copy()._start_fading(1)
             self.play(c2.animate.move_to(func_general[3].get_center()+0.4*DOWN), run_time=0.3)
 
@@ -816,22 +816,22 @@ class Func_4_1_I_3(SophiaCursorScene):
             self.wait_until_bookmark("cc")
             c4 = cursor.copy()._start_fading(2)
             self.play(c4.animate.scale(3))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("aNot0")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aNotZero.get_center()+0.4*DOWN
             self.play(Write(aNotZero), CursorMoveTo(cursor, x,y ), run_time=0.8)
             cursor
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f[0].get_center()+0.4*LEFT
             self.play(Write(f), CursorMoveTo(cursor, x,y ), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("fExplained")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = fExplained[1].get_center()+0.4*DOWN
             self.play(Write(fExplained), CursorMoveTo(cursor, x,y ), run_time=1)
             
@@ -842,29 +842,29 @@ class Func_4_1_I_3(SophiaCursorScene):
             self.wait_until_bookmark("ec")
             x,y,_ = fExplained[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[0].get_center()+0.4*LEFT
             self.play(Write(g), CursorMoveTo(cursor, x,y ), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("gnot")
             self.play(g.animate.set_color(RED))
 
             self.wait_until_bookmark("cube")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
 
             self.wait_until_bookmark("bubble")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = startpoint
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(b.get_end()))
             self.play(Create(b), Create(b.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -880,16 +880,10 @@ class Func_4_1_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I4.title"))
+        title = self.add_title(self.translate("Func_4_1.I4.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
@@ -915,31 +909,31 @@ class Func_4_1_I_4(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("plot")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
-            cursor.blinking=True
+            cursor.idle=True
             self.play(Create(g1), run_time=0.8)
 
             self.wait_until_bookmark("purple")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g2.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
-            cursor.blinking=True
+            cursor.idle=True
             self.play(Create(g2), run_time=0.8)
 
             self.wait_until_bookmark("blueVertex")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,4)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("max")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,4)+0.2*UP
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             
@@ -949,23 +943,23 @@ class Func_4_1_I_4(SophiaCursorScene):
             cursor.add_updater(bUpdater)
             self.play(Create(bMax), Create(bMax.text))
             cursor.remove_updater(bUpdater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("purpleVertex")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0.5,-4.25)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("min")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0.5,-4.25)+0.2*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             bMin = Bubble(ast.literal_eval(self.translate("Func_4_1.I4.bMin")), width=2.2, height=0.8, start_point = plane.c2p(0.5,-4.25)+0.2*DOWN, center=[0.6,-2.6,0], loc="t2")
             self.add_bubble_sound(1.5)
             cursor.add_updater(lambda m: m.move_to(bMin.get_end()))
             self.play(Create(bMin), Create(bMin.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -981,31 +975,31 @@ class Func_4_1_I_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_4_1.I5.title"))
+        title = self.add_title(self.translate("Func_4_1.I5.title"))
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         #Create the coordinate system
-        cords = self.add_cords([-2,2, 1], [-2, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-2,2,4]).shift(DOWN)
+        cords = self.add_cords([-2,2, 1], [-2, 2, 1], x_ticks=[-2,-1,1,2],y_ticks=[-2,-1,1,2]).shift(DOWN)
         plane = cords[0]
 
         f1 = lambda x: x**2
         
-        posLine = Line(plane.c2p(2.5,0), plane.c2p(2.5,4), color=GREEN, stroke_width=6)
+        posLine = Line(plane.c2p(2.5,0), plane.c2p(2.5,2), color=GREEN, stroke_width=6)
         posTex = MathTex("\\geq0", color=GREEN, font_size=fs3).next_to(posLine, RIGHT, buff=0.1)
 
-        symLine = Line(plane.c2p(0,-2), plane.c2p(0,4), color=PURPLE, stroke_width=6)
+        symLine = Line(plane.c2p(0,-2), plane.c2p(0,2), color=PURPLE, stroke_width=6)
         symTex = MathTex("f(-x)","=", "f(x)", color=BLUE, font_size=fs2).next_to(symLine, UP, buff=0.4)
 
-        g1 = plane.plot(f1, color=BLUE)
+        g1 = plane.plot(f1, color=BLUE, x_range=[-2**0.5,2**0.5, 0.001])
 
         startpoint = plane.c2p(-0.5,-0.5)
         b = Bubble(ast.literal_eval(self.translate("Func_4_1.I5.b")), width=3, height=1, start_point = startpoint, center=[0,-1.7,0], loc="t1")
@@ -1021,16 +1015,16 @@ class Func_4_1_I_5(SophiaCursorScene):
             self.play(Create(cords), run_time=1)
 
             self.wait_until_bookmark("unit")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_pencil_sound(0.8)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("funcTerm")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
 
@@ -1041,16 +1035,16 @@ class Func_4_1_I_5(SophiaCursorScene):
             self.wait_until_bookmark("xsquared")
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("origin")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("vertexBubble")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = startpoint
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_bubble_sound(1.5)
@@ -1058,43 +1052,43 @@ class Func_4_1_I_5(SophiaCursorScene):
             cursor.add_updater(bUpdater)
             self.play(Create(b), Create(b.text))
             cursor.remove_updater(bUpdater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posLine")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = posLine.get_bottom()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(posLine.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(posLine), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("geq0")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = posTex.get_center()+0.4*DOWN
             self.play(Write(posTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("symLine")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = symLine.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(symLine.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(symLine), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("symTex")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = symTex[0].get_center()+0.4*DOWN
             self.play(Write(symTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sym2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = symTex[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1109,16 +1103,16 @@ class Func_4_1_I_5(SophiaCursorScene):
 #         super().construct()
 #         self.add_mathgrid()
 
-#         self.add_title(self.translate("Func_4_1.I5.title"))
+#         title = self.add_title(self.translate("Func_4_1.I5.title"))
 
 #         def cursor_sound_updater(mob, dt):
 #             if mob.needSound:
 #                 mob.needSound = False
 #                 self.add_cursor_sound()
-#         cursor = AltCursor(stroke_width=0.0, blinking=True)
+#         cursor = AltCursor(stroke_width=0.0, idle=True)
 #         cursor.autoFadeBackground = True
 #         cursor.add_updater(cursor_sound_updater)
-#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 #         self.add(cursor)
 
 #         #Create the coordinate system
@@ -1161,16 +1155,16 @@ class Func_4_1_I_5(SophiaCursorScene):
 #             self.play(Create(cords), run_time=1)
 
 #             self.wait_until_bookmark("unit")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = g1.get_start()
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 #             self.add_pencil_sound(0.8)
 #             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
 #             self.play(Create(g1), run_time=0.8)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("funcTerm")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
 #             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
 
@@ -1181,16 +1175,16 @@ class Func_4_1_I_5(SophiaCursorScene):
 #             self.wait_until_bookmark("xsquared")
 #             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
 #             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("origin")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = plane.c2p(0,0)
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("vertexBubble")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = startpoint
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 #             self.add_bubble_sound(1.5)
@@ -1198,43 +1192,43 @@ class Func_4_1_I_5(SophiaCursorScene):
 #             cursor.add_updater(bUpdater)
 #             self.play(Create(b), Create(b.text))
 #             cursor.remove_updater(bUpdater)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("posLine")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = posLine.get_bottom()
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 #             self.add(cursor.copy().add_updater(lambda m: m.move_to(posLine.get_end()))._start_fading(1))
 #             self.add_pencil_sound(0.8)
 #             self.play(Create(posLine), run_time=0.8)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("geq0")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = posTex.get_center()+0.4*DOWN
 #             self.play(Write(posTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("symLine")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = symLine.get_start()
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 #             self.add(cursor.copy().add_updater(lambda m: m.move_to(symLine.get_end()))._start_fading(1))
 #             self.add_pencil_sound(0.8)
 #             self.play(Create(symLine), run_time=0.8)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("symTex")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = symTex[0].get_center()+0.4*DOWN
 #             self.play(Write(symTex), CursorMoveTo(cursor, x,y ), run_time=0.4)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("sym2")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = symTex[2].get_center()+0.4*DOWN
 #             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-#             cursor.blinking=True
+#             cursor.idle=True
             
 #         # Wait for 4 seconds at the end of the animation
 #         self.wait(4)
@@ -1255,7 +1249,7 @@ class Func_4_1_I_6_q(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I6.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1267,10 +1261,10 @@ class Func_4_1_I_6_q(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1284,7 +1278,7 @@ class Func_4_1_I_6_q(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("term")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
             
@@ -1303,10 +1297,10 @@ class Func_4_1_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("c")
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("aa")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
 
@@ -1319,25 +1313,25 @@ class Func_4_1_I_6_q(SophiaCursorScene):
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
 
             self.wait_until_bookmark("graph")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy().add_updater(lambda m: m.move_to(g1.get_end()))._start_fading(1))
             self.add_pencil_sound(0.8)
             self.play(Create(g1), run_time=0.8)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("aaa")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("increaseA")
-            cursor.blinking=False
+            cursor.idle=False
             cc = cursor.copy()._start_fading(1)
             self.play(cc.animate.scale(3))
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1349,7 +1343,7 @@ class Func_4_1_I_6_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I6.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1361,10 +1355,10 @@ class Func_4_1_I_6_a(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1379,49 +1373,49 @@ class Func_4_1_I_6_a(SophiaCursorScene):
         aTracked = DecimalNumber(1, color=c1t, num_decimal_places=1).move_to(funcTerm[3]).add_updater(lambda m: m.set_value(a.get_value())).shift(0.08*LEFT)
         aTracked.scale(2*funcTerm[3].get_width()/aTracked.get_width())
         aTracked.shift((funcTerm[3].get_bottom()[1]-aTracked.get_bottom()[1])*UP)
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I6.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a1")
             self.play(Unwrite(funcTerm[3]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("a2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(a.animate.set_value(3), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(a.animate(run_time=6).set_value(0.2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("largeA")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), a.animate.set_value(1), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("smallA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -1435,7 +1429,7 @@ class Func_4_1_I_6_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I6.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1447,10 +1441,10 @@ class Func_4_1_I_6_b(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1468,46 +1462,46 @@ class Func_4_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I6.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a1")
             self.play(Unwrite(funcTerm[3]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("a2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(a.animate.set_value(3), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(a.animate(run_time=6).set_value(0.2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("largeA")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), a.animate.set_value(1), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("smallA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -1521,7 +1515,7 @@ class Func_4_1_I_6_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I6.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1533,10 +1527,10 @@ class Func_4_1_I_6_c(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1554,46 +1548,46 @@ class Func_4_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I6.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a1")
             self.play(Unwrite(funcTerm[3]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("a2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(a.animate.set_value(3), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(a.animate(run_time=6).set_value(0.2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("largeA")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), a.animate.set_value(1), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("smallA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -1607,7 +1601,7 @@ class Func_4_1_I_6_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I6.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I6.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1619,10 +1613,10 @@ class Func_4_1_I_6_d(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1640,46 +1634,46 @@ class Func_4_1_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I6.d.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_4_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a1")
             self.play(Unwrite(funcTerm[3]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("a2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(a.animate.set_value(3), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(a.animate(run_time=6).set_value(0.2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("largeA")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), a.animate.set_value(1), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("smallA")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -1702,7 +1696,7 @@ class Func_4_1_I_7_q(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I7.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -1714,10 +1708,10 @@ class Func_4_1_I_7_q(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1732,14 +1726,14 @@ class Func_4_1_I_7_q(SophiaCursorScene):
             
             self.wait_until_bookmark("plot")
             x,y,_ = g1.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g1))
             
             self.wait_until_bookmark("term")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
             
@@ -1758,19 +1752,19 @@ class Func_4_1_I_7_q(SophiaCursorScene):
             self.wait_until_bookmark("c")
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("bbb")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("increaseB")
-            cursor.blinking=False
+            cursor.idle=False
             cc = cursor.copy()._start_fading(1)
             self.play(cc.animate.scale(3))
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1782,7 +1776,7 @@ class Func_4_1_I_7_a(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I7.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -1794,10 +1788,10 @@ class Func_4_1_I_7_a(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1815,46 +1809,46 @@ class Func_4_1_I_7_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I7.a.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_4_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("b1")
             self.play(Unwrite(funcTerm[5]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("b2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(b.animate.set_value(2), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(b.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posB")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), b.animate.set_value(0), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1867,7 +1861,7 @@ class Func_4_1_I_7_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I7.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -1879,10 +1873,10 @@ class Func_4_1_I_7_b(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1900,46 +1894,46 @@ class Func_4_1_I_7_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I7.b.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_4_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("b1")
             self.play(Unwrite(funcTerm[5]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("b2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(b.animate.set_value(2), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(b.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posB")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), b.animate.set_value(0), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1952,7 +1946,7 @@ class Func_4_1_I_7_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I7.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -1964,10 +1958,10 @@ class Func_4_1_I_7_c(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1985,46 +1979,46 @@ class Func_4_1_I_7_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I7.b.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_4_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("b1")
             self.play(Unwrite(funcTerm[5]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("b2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(b.animate.set_value(2), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(b.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posB")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), b.animate.set_value(0), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2037,7 +2031,7 @@ class Func_4_1_I_7_d(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_1.I7.q.title"))
+        title = self.add_title(self.translate("Func_4_1.I7.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-3,3, 1], [-10, 10, 4], x_ticks=[-3,-1,1,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
@@ -2049,10 +2043,10 @@ class Func_4_1_I_7_d(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = False
         cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -2070,46 +2064,46 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_1.I7.b.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_4_1.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[5].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("b1")
             self.play(Unwrite(funcTerm[5]), Write(aTracked), run_time=1)
 
             self.wait_until_bookmark("b2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             funcDater = lambda m: m.move_to(plane.c2p(1,f1(1)))
             cursor.add_updater(funcDater)
             self.play(b.animate.set_value(2), run_time=4)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("decreaseB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(b.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posB")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.remove_updater(funcDater)
             x,y,_ = aIncreased.get_left()+0.2*LEFT
             self.play(CursorMoveTo(cursor, x, y), b.animate.set_value(0), run_time=0.3)
             self.play(Write(aIncreased), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negB")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = aDecreased.get_left()+0.2*LEFT
             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2129,7 +2123,7 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #         # Adding initial components to the scene
 #         super().construct()
 #         self.add_mathgrid()
-#         self.add_title("Function Term")
+#         title = self.add_title("Function Term")
         
 #         #Create the coordinate system
 #         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2141,10 +2135,10 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #                 mob.needSound = False
 #                 self.add_cursor_sound()
 #         x,y,_ = plane.c2p(0,0)
-#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+#         cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 #         cursor.autoFadeBackground = False
 #         cursor.add_updater(cursor_sound_updater)
-#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 #         self.add(cursor)
 
 #         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -2164,14 +2158,14 @@ class Func_4_1_I_7_d(SophiaCursorScene):
             
 #             self.wait_until_bookmark("plot")
 #             x,y,_ = g1.get_start()
-#             cursor.blinking=False
+#             cursor.idle=False
 #             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
 #             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
 #             self.add_pencil_sound(1.5)
 #             self.play(Create(g1))
             
 #             self.wait_until_bookmark("term")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
 #             self.play(Write(funcTerm), CursorMoveTo(cursor, x,y ), run_time=0.4)
             
@@ -2190,13 +2184,13 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #             self.wait_until_bookmark("c")
 #             x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
 #             self.play(CursorMoveToCurved(cursor, x,y ), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("increaseC")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             cc = cursor.copy()._start_fading(1)
 #             self.play(cc.animate.scale(3))
-#             cursor.blinking=True
+#             cursor.idle=True
             
 #         # Wait for 4 seconds at the end of the animation
 #         self.wait(4)
@@ -2208,7 +2202,7 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #         # Adding initial components to the scene
 #         super().construct()
 #         self.add_mathgrid()
-#         self.add_title("Function Term")
+#         title = self.add_title("Function Term")
         
 #         #Create the coordinate system
 #         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -2220,10 +2214,10 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #                 mob.needSound = False
 #                 self.add_cursor_sound()
 #         x,y,_ = plane.c2p(0,0)
-#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+#         cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 #         cursor.autoFadeBackground = False
 #         cursor.add_updater(cursor_sound_updater)
-#         cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+#         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 #         self.add(cursor)
 
 #         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -2251,42 +2245,42 @@ class Func_4_1_I_7_d(SophiaCursorScene):
 #         ) as tracker:
             
 #             self.wait_until_bookmark("c")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = funcTerm[-1].get_center()+0.4*DOWN
 #             self.play(CursorMoveTo(cursor, x,y ), run_time=0.4)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("c1")
 #             self.play(Unwrite(funcTerm[-1]), Write(aTracked), run_time=1)
 
 #             self.wait_until_bookmark("c2")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = plane.c2p(0,0)
 #             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
 #             funcDater = lambda m: m.move_to(plane.c2p(0,f1(0)))
 #             cursor.add_updater(funcDater)
 #             self.play(c.animate.set_value(2), run_time=4)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("decreaseC")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = aDecreased.get_left()+0.2*LEFT
 #             self.play(c.animate(run_time=6).set_value(-2), CursorMoveTo(cursor, x, y), run_time=1)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("posC")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             cursor.remove_updater(funcDater)
 #             x,y,_ = aIncreased.get_left()+0.2*LEFT
 #             self.play(CursorMoveTo(cursor, x, y), c.animate.set_value(0), run_time=0.3)
 #             self.play(Write(aIncreased), run_time=1)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("negC")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = aDecreased.get_left()+0.2*LEFT
 #             self.play(Write(aDecreased), CursorMoveTo(cursor, x, y), run_time=1)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #         # Wait for 4 seconds at the end of the animation
 #         self.wait(4)

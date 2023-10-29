@@ -76,16 +76,12 @@ class Func_3_1_I_2(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I2.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=["Consider function $f(x)=\\tfrac1x$", "Plug in several values",["f decreases fast at first", "and then decreases more slowly"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
         cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
 
@@ -111,7 +107,7 @@ class Func_3_1_I_2(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("plugIn1")
-            cursor.blinking = False
+            cursor.idle = False
             x,y,_ = plane.c2p(1,1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -128,10 +124,10 @@ class Func_3_1_I_2(SophiaCursorScene):
             circ4 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y))
             self.play(Write(circ4))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plugInHalf")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0.5,2)
             circHalf = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -144,7 +140,7 @@ class Func_3_1_I_2(SophiaCursorScene):
             self.play(Write(circQuarter))
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
             self.add_pencil_sound(2.5)
@@ -153,10 +149,10 @@ class Func_3_1_I_2(SophiaCursorScene):
             
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(0.25,4)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y),run_time=1)
             self.play(MoveAlongPath(cursor, func_plotted), run_time=9, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -181,10 +177,6 @@ class Func_3_1_I_3_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I3.q.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=[["$x$ gets closer to zero","$\\rightarrow f(x)$ increases quickly"], ["$\\rightarrow$ What will happen,","     if we plug in $x=0$"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
         func = lambda x: 1/x
         cordsOld = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
@@ -198,7 +190,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
         func_plotted = plane.plot(func, color=RED, x_range=[0.001, 1, 0.001], use_smoothing=False).reverse_points()
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
         self.add(cursor)
@@ -212,20 +204,21 @@ class Func_3_1_I_3_q(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("closerTo0")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = planeOld.c2p(4,1/4)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(MoveAlongPath(cursor, func_plotted_Old), run_time=5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cordsAway")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
+            self.add.shift_sound(0.5)
             self.play(cordsOld.animate(run_time=0.5).shift(RIGHT*5), func_plotted_Old.animate(run_time=0.5).shift(RIGHT*5), Write(cords), CursorMoveTo(cursor,x,y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -282,7 +275,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
 
 
 
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -299,7 +292,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I3.a.voiceover")
+                text=self.translate("Func_3_1.I3.a.intro")+self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -349,13 +342,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
-        # Create a notepad with texts
-        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        # self.add(note)
-
-
-
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -371,8 +358,9 @@ class Func_3_1_I_3_b(SophiaCursorScene):
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
         # Action Sequence
+        # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I3.a.voiceover")
+                text=self.translate("Func_3_1.I3.a.intro")+self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -423,16 +411,9 @@ class Func_3_1_I_3_c(SophiaCursorScene):
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
-        # Create a notepad with texts
-        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        # self.add(note)
-
-
-
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
-        # cursor.move_to([xo, yo, 0])
-        # self.add(cursor)
+
 
         func = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1)
         func_0 = MathTex("f(0) = \\tfrac 10", color=c1t, font_size=fs1)
@@ -443,10 +424,9 @@ class Func_3_1_I_3_c(SophiaCursorScene):
         cords = self.add_cords([0,4, 1], [0, 4, 1], x_ticks=[1,2,3,4],y_ticks=[1,2,3,4]).shift(DOWN)
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
-
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I3.c.voiceover")
+                text=self.translate("Func_3_1.I3.c.intro")+self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -496,16 +476,8 @@ class Func_3_1_I_3_d(SophiaCursorScene):
         warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
-        # Create a notepad with texts
-        # note = Notepad(texts=[["Plug in $x=0$", "$\\rightarrow$We get $f(0)=\\frac10$"], ["It's not possible to divide by $0$","$\\rightarrow f(0)$ is undefined"]], buff=0.3)
-        # self.add(note)
-
-
-
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
-        # cursor.move_to([xo, yo, 0])
-        # self.add(cursor)
 
         func = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1)
         func_0 = MathTex("f(0) = \\tfrac 10", color=c1t, font_size=fs1)
@@ -517,9 +489,9 @@ class Func_3_1_I_3_d(SophiaCursorScene):
         plane = cords[0]
         func_plotted = plane.plot(f, color=RED, x_range=[1/4, 4, 0.01], use_smoothing=False).reverse_points()
 
-        # Action Sequence
+
         with self.voiceover(
-                text=self.translate("Func_3_1.I3.a.voiceover")
+                text=self.translate("Func_3_1.I3.a.intro")+self.translate("Func_3_1.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("warning")
@@ -577,10 +549,8 @@ class Func_3_1_I_4_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I4.q.title"))
 
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
-        # cursor.move_to([xo, yo, 0])
-        # self.add(cursor)   
 
         f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1)
         f0 = MathTex("f(0) = \\tfrac 10", color=c1t, font_size=fs1)
@@ -628,7 +598,7 @@ class Func_3_1_I_4_a(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
-        cursor = AltCursor(blinking=False, stroke_width=0)
+        cursor = AltCursor(idle=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -648,7 +618,7 @@ class Func_3_1_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I4.a.voiceover")
+                text=self.translate("Func_3_1.I4.a.intro")+self.translate("Func_3_1.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -667,35 +637,73 @@ class Func_3_1_I_4_a(SophiaCursorScene):
             self.play(Write(cursor))
 
             self.wait_until_bookmark("denom1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[3].get_bottom()+0.3*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("c2g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[0].get_bottom()+0.3*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step1[0].get_left()+0.4*LEFT
             self.play(Write(step1), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step23")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step3[0].get_left()+0.4*LEFT
             self.play(Write(step2), Write(step3), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("moveUp")
-            self.play(g.animate.shift(UP/2), Unwrite(step1), Unwrite(step2), step3.animate.shift(2.8*UP), run_time=1)
+            self.add_shift_sound(1)
+            self.wait_until_bookmark("preach")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("pbc")
+            self.play(Write(pbc))
+
+            self.wait_until_bookmark("step1")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("e1")
+            self.play(Write(e1))
+
+            self.wait_until_bookmark("step2")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
+
+            self.wait_until_bookmark("e2")
+            self.play(Write(e2))
+
+            self.wait_until_bookmark("step3")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
+
+            self.wait_until_bookmark("e3")
+            self.play(Write(e3[0]))
+
+            self.wait_until_bookmark("meaning")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("meaningA")
+            self.play(Write(e3[1]))
+
+            self.wait_until_bookmark("meaningB")
+            self.play(Write(e3[2]))
+
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
-            explainer = Tex("has a singularity at", color=c1t, font_size=fs2).move_to(center)
+            explainer = Tex(self.translate("Func_3_1.I4.d.has-singularity"), color=c1t, font_size=fs2).move_to(center)
             self.play(Write(explainer), run_time=1)
             
 
@@ -713,7 +721,7 @@ class Func_3_1_I_4_b(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
-        cursor = AltCursor(blinking=False, stroke_width=0)
+        cursor = AltCursor(idle=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -752,35 +760,73 @@ class Func_3_1_I_4_b(SophiaCursorScene):
             self.play(Write(cursor))
 
             self.wait_until_bookmark("denom1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[3].get_bottom()+0.3*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("c2g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[0].get_bottom()+0.3*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step1[0].get_left()+0.4*LEFT
             self.play(Write(step1), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step23")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step3[0].get_left()+0.4*LEFT
             self.play(Write(step2), Write(step3), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("moveUp")
-            self.play(g.animate.shift(UP/2), Unwrite(step1), Unwrite(step2), step3.animate.shift(2.8*UP), run_time=1)
+            self.add_shift_sound(1)
+            self.wait_until_bookmark("preach")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("pbc")
+            self.play(Write(pbc))
+
+            self.wait_until_bookmark("step1")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("e1")
+            self.play(Write(e1))
+
+            self.wait_until_bookmark("step2")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
+
+            self.wait_until_bookmark("e2")
+            self.play(Write(e2))
+
+            self.wait_until_bookmark("step3")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
+
+            self.wait_until_bookmark("e3")
+            self.play(Write(e3[0]))
+
+            self.wait_until_bookmark("meaning")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("meaningA")
+            self.play(Write(e3[1]))
+
+            self.wait_until_bookmark("meaningB")
+            self.play(Write(e3[2]))
+
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
-            explainer = Tex("has a singularity at", color=c1t, font_size=fs2).move_to(center)
+            explainer = Tex(self.translate("Func_3_1.I4.d.has-singularity"), color=c1t, font_size=fs2).move_to(center)
             self.play(Write(explainer), run_time=1)
             
 
@@ -799,7 +845,7 @@ class Func_3_1_I_4_c(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
-        cursor = AltCursor(blinking=False, stroke_width=0)
+        cursor = AltCursor(idle=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -838,35 +884,73 @@ class Func_3_1_I_4_c(SophiaCursorScene):
             self.play(Write(cursor))
 
             self.wait_until_bookmark("denom1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[3].get_bottom()+0.3*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("c2g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[0].get_bottom()+0.3*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step1[0].get_left()+0.4*LEFT
             self.play(Write(step1), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step23")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step3[0].get_left()+0.4*LEFT
             self.play(Write(step2), Write(step3), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("moveUp")
-            self.play(g.animate.shift(UP/2), Unwrite(step1), Unwrite(step2), step3.animate.shift(2.8*UP), run_time=1)
+            self.add_shift_sound(1)
+            self.wait_until_bookmark("preach")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("pbc")
+            self.play(Write(pbc))
+
+            self.wait_until_bookmark("step1")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("e1")
+            self.play(Write(e1))
+
+            self.wait_until_bookmark("step2")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
+
+            self.wait_until_bookmark("e2")
+            self.play(Write(e2))
+
+            self.wait_until_bookmark("step3")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
+
+            self.wait_until_bookmark("e3")
+            self.play(Write(e3[0]))
+
+            self.wait_until_bookmark("meaning")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("meaningA")
+            self.play(Write(e3[1]))
+
+            self.wait_until_bookmark("meaningB")
+            self.play(Write(e3[2]))
+
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
-            explainer = Tex("has a singularity at", color=c1t, font_size=fs2).move_to(center)
+            explainer = Tex(self.translate("Func_3_1.I4.d.has-singularity"), color=c1t, font_size=fs2).move_to(center)
             self.play(Write(explainer), run_time=1)
             
 
@@ -884,7 +968,7 @@ class Func_3_1_I_4_d(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I4.q.title"))
 
-        cursor = AltCursor(blinking=False, stroke_width=0)
+        cursor = AltCursor(idle=False, stroke_width=0)
         cursor.autoFadeBackground = True
         # cursor.move_to([xo, yo, 0])
         # self.add(cursor)
@@ -904,7 +988,7 @@ class Func_3_1_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I4.d.voiceover")
+                text=self.translate("Func_3_1.I4.d.intro")+self.translate("Func_3_1.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("singularity")
@@ -923,35 +1007,73 @@ class Func_3_1_I_4_d(SophiaCursorScene):
             self.play(Write(cursor))
 
             self.wait_until_bookmark("denom1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[3].get_bottom()+0.3*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("c2g")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g[0].get_bottom()+0.3*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step1[0].get_left()+0.4*LEFT
             self.play(Write(step1), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("step23")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = step3[0].get_left()+0.4*LEFT
             self.play(Write(step2), Write(step3), CursorMoveTo(cursor,x,y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("moveUp")
-            self.play(g.animate.shift(UP/2), Unwrite(step1), Unwrite(step2), step3.animate.shift(2.8*UP), run_time=1)
+            self.add_shift_sound(1)
+            self.wait_until_bookmark("preach")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("pbc")
+            self.play(Write(pbc))
+
+            self.wait_until_bookmark("step1")
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("e1")
+            self.play(Write(e1))
+
+            self.wait_until_bookmark("step2")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
+
+            self.wait_until_bookmark("e2")
+            self.play(Write(e2))
+
+            self.wait_until_bookmark("step3")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
+
+            self.wait_until_bookmark("e3")
+            self.play(Write(e3[0]))
+
+            self.wait_until_bookmark("meaning")
+            self.add_shift_sound(1.5, volume=.6)
+            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
+
+            self.wait_until_bookmark("meaningA")
+            self.play(Write(e3[1]))
+
+            self.wait_until_bookmark("meaningB")
+            self.play(Write(e3[2]))
+
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
-            explainer = Tex("has a singularity at", color=c1t, font_size=fs2).move_to(center)
+            explainer = Tex(self.translate("Func_3_1.I4.d.has-singularity"), color=c1t, font_size=fs2).move_to(center)
             self.play(Write(explainer), run_time=1)
             
 
@@ -977,7 +1099,7 @@ class Func_3_1_I_5(SophiaCursorScene):
         newCords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         newPlane = newCords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
@@ -1004,13 +1126,16 @@ class Func_3_1_I_5(SophiaCursorScene):
             self.play(Write(f), run_time=1)
 
             self.wait_until_bookmark("f0")
+            self.add_shift_sound(1, volume=.6)
             self.play(f.animate.shift(DOWN*1.5), run_time=1)
             self.play(Write(cords), run_time=1)
 
             self.wait_until_bookmark("f1")
+            self.add_pencil_sound(7, volume=.5)
             self.play(Write(f_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
 
             self.wait_until_bookmark("oldCords")
+            self.add_shift_sound(1, volume=.6)
             self.play(cords.animate.shift(5*RIGHT), f_plotted.animate.shift(5*RIGHT), run_time=1)
 
             self.wait_until_bookmark("newCords")
@@ -1070,9 +1195,10 @@ class Func_3_1_I_5(SophiaCursorScene):
             self.wait_until_bookmark("fEnd")
             x,y,_ = newPlane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), ReplacementTransform(f100, fCopy), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
         
             self.wait_until_bookmark("plot")
+            self.add_pencil_sound(3)
             self.play(Write(fNewPlotted), Unwrite(circs, rate_func=rate_functions.ease_out_sine), run_time=3)
 
         # Wait for 4 seconds at the end of the animation
@@ -1101,15 +1227,15 @@ class Func_3_1_I_6_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I6.q.title"))
 
-        cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
+        cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1]).shift(DOWN)
         plane = cords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
 
-        f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1)
+        f = MathTex("f(x) = \\tfrac 1x", color=c1t, font_size=fs1).next_to(cords, DOWN, buff=.2)
         func = lambda x: 1/x
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
 
@@ -1118,15 +1244,7 @@ class Func_3_1_I_6_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                Ok, so we know, that for the function <bookmark mark="f"/> f of x equals one divided by x, the values don't get <bookmark mark="cords"/> negative for larger x, because one divided by something positive is always positive.
-                
-                We've also seen, that <bookmark mark="plot"/> the function values get closer and closer to zero, as we plug in larger and larger x-values.
-                
-                Now I have a question for you but it's a bit tricky: Is there a positive number, that is smaller than the smallest value, that f of x can reach?
-                
-                I mean, is there a positive number, that is smaller than one divided by 100 and smaller than 1 over 1000 and smaller than 1 over ten thousand and so on?
-                """
+                text=self.translate("Func_3_1.I6.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1136,6 +1254,7 @@ class Func_3_1_I_6_q(SophiaCursorScene):
             self.play(Write(cords), f.animate.shift(DOWN*0.6), run_time=1)
 
             self.wait_until_bookmark("plot")
+            self.add_pencil_sound(7, volume=.5)
             self.play(Write(f_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
 
         # Wait for 4 seconds at the end of the animation
@@ -1155,7 +1274,7 @@ class Func_3_1_I_6_a(SophiaCursorScene):
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
@@ -1186,37 +1305,42 @@ class Func_3_1_I_6_a(SophiaCursorScene):
         f_plotted = plane.plot(func, color=RED, x_range=[1, 100, 0.01], use_smoothing=False)
 
         t = t.shift(LEFT*5)
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I6.a.voiceover")
+                text=self.translate("Func_3_1.I6.a.intro")+self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
-            self.play(t.animate.shift(RIGHT*5))
+            self.add_shift_sound(.5)
+            self.play(t.animate.shift(RIGHT*5), run_time=.5)
 
             self.wait_until_bookmark("pbc")
             self.play(Write(pbc))
 
             self.wait_until_bookmark("step1")
+            self.add_shift_sound(.5)
             self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
 
             self.wait_until_bookmark("e1")
             self.play(Write(e1))
 
             self.wait_until_bookmark("step2")
+            self.add_shift_sound(1.5, volume=.6)
             self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
 
             self.wait_until_bookmark("e2")
             self.play(Write(e2))
 
             self.wait_until_bookmark("step3")
+            self.add_shift_sound(1.5, volume=.6)
             self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
 
             self.wait_until_bookmark("e3")
             self.play(Write(e3[0]))
 
             self.wait_until_bookmark("meaning")
+            self.add_shift_sound(1.5, volume=.6)
             self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
 
             self.wait_until_bookmark("meaningA")
@@ -1241,7 +1365,7 @@ class Func_3_1_I_6_b(SophiaCursorScene):
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
@@ -1275,7 +1399,7 @@ class Func_3_1_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I6.a.voiceover")
+                text=self.translate("Func_3_1.I6.a.intro")+self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1327,7 +1451,7 @@ class Func_3_1_I_6_c(SophiaCursorScene):
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
@@ -1361,7 +1485,7 @@ class Func_3_1_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I6.c.voiceover")
+                text=self.translate("Func_3_1.I6.c.intro")+self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1414,7 +1538,7 @@ class Func_3_1_I_6_d(SophiaCursorScene):
         cords = self.add_cords([0,100, 20], [0, 1, 1/4], x_ticks=[20,40,60,80],y_ticks=[0,0.25, 0.5, 0.75,1])
         plane = cords[0]
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
@@ -1448,7 +1572,7 @@ class Func_3_1_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I6.a.voiceover")
+                text=self.translate("Func_3_1.I6.a.intro")+self.translate("Func_3_1.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("preach")
@@ -1510,13 +1634,13 @@ class Func_3_1_I_7(SophiaCursorScene):
         plotted_right = plane.plot(func, color=RED, x_range=[1, 4, 0.01], use_smoothing=False)
         plotted_left = plane.plot(func, color=RED, x_range=[0.25, 1, 0.01], use_smoothing=False).reverse_points()
 
-        cursor = AltCursor(stroke_width=0.0, blinking=False)
+        cursor = AltCursor(stroke_width=0.0, idle=False)
         cursor.autoFadeBackground = True
         x,y,_ = plane.c2p(0,0)
         cursor.move_to([x,y,0])
 
         f = Tex("$f(x) = \\tfrac 1x$","$>0$", color=c1t, font_size=fs1)
-        cond = Tex("for $x\\geq0$", color=c3t, font_size=fs2)
+        cond = Tex(self.translate("Func_3_1.I7.for")+" $x\\geq0$", color=c3t, font_size=fs2)
         Group(f,cond).arrange(DOWN, buff=0.05, aligned_edge=LEFT).shift(DOWN*0.4)
 
         small = self.translate("Func_3_1.I7.small")
@@ -1528,8 +1652,8 @@ class Func_3_1_I_7(SophiaCursorScene):
 
         S1 = Tex(self.translate("Func_3_1.I7.s1"), color=c1t, font_size=fs2).next_to(title, DOWN, buff=2)
         S2 = Tex("$\\Leftrightarrow$", color=c1t, font_size=fs2).next_to(S1, DOWN, buff=0.2)
-        S3a = Tex(self.translate("Func_3_1.I7.s3a"), color=c1t, font_size=fs2)
-        S3b = Tex(self.translate("Func_3_1.I7.s3b"), color=c1t, font_size=fs2)
+        S3a = Tex(self.translate("Func_3_1.I7.s3a"), color=c1t, font_size=fs3)
+        S3b = Tex(self.translate("Func_3_1.I7.s3b"), color=c1t, font_size=fs3)
         S = VGroup(S1, S2, S3a, S3b).arrange(DOWN, buff=0.2).next_to(title, DOWN, buff=1)
 
         # Action Sequence
@@ -1569,11 +1693,19 @@ class Func_3_1_I_7(SophiaCursorScene):
             self.wait_until_bookmark("graph")
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            self.play(Write(plotted_right), MoveAlongPath(cursor, plotted_right), run_time=5)
+            plr_updater = lambda m: m.move_to(plotted_right.get_end())
+            cursor.add_updater(plr_updater)
+            self.add_pencil_sound(5)
+            self.play(Create(plotted_right), run_time=5)
+            cursor.remove_updater(plr_updater)
 
             self.wait_until_bookmark("left")
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            self.play(Write(plotted_left), MoveAlongPath(cursor, plotted_left), run_time=5)
+            pll_updater = lambda m: m.move_to(plotted_left.get_end())
+            cursor.add_updater(pll_updater)
+            self.add_pencil_sound(5)
+            self.play(Create(plotted_left), run_time=5)
+            cursor.remove_updater(pll_updater)
 
         with self.voiceover(text=self.translate("Func_3_1.I7.voiceover2")
             ) as tracker:
@@ -1609,12 +1741,9 @@ class Func_3_1_I_8_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Positive x:", "$x$ small $\\Rightarrow f(x)$ large", "$x$ large $\\Rightarrow f(x)$ small"], ["How does $f$ behave for","negative values of $x$?"]], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
-        cords = self.add_cords([-4,0, 1], [-4,0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
+        cords = self.add_cords([-4,0, 1], [-4,0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4], include_tip=False)
         plane = cords[0]
 
         qmark = ImageMobject(assets_folder / "img" / "qmark.png")
@@ -1651,16 +1780,12 @@ class Func_3_1_I_8_a(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
-        cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
+        cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4], include_tip=False)
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
 
@@ -1671,10 +1796,9 @@ class Func_3_1_I_8_a(SophiaCursorScene):
         f = Tex("$f(x) = \\tfrac 1x$", color=c1t, font_size=fs2).shift(0.2*DOWN)
         cond = Tex("for $x<0$", color=c3t, font_size=fs3)
         Group(f,cond).arrange(DOWN, buff=0.05, aligned_edge=LEFT).shift(DOWN*0.6)
-
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I8.a.voiceover")
+                text=self.translate("Func_3_1.I8.a.correct")+self.translate("Func_3_1.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1688,7 +1812,7 @@ class Func_3_1_I_8_a(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("plugIn1")
-            cursor.blinking = False
+            cursor.idle = False
             x,y,_ = plane.c2p(-1,-1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1705,14 +1829,14 @@ class Func_3_1_I_8_a(SophiaCursorScene):
             circ4 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y))
             self.play(Write(circ4))
-            cursor.blinking=True
+            cursor.idle=True
 
         with self.voiceover(
                 text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(-0.5,-2)
             circHalf = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1725,7 +1849,7 @@ class Func_3_1_I_8_a(SophiaCursorScene):
             self.play(Write(circQuarter))
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
@@ -1733,10 +1857,10 @@ class Func_3_1_I_8_a(SophiaCursorScene):
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y),run_time=1)
             self.play(MoveAlongPath(cursor, func_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1752,16 +1876,12 @@ class Func_3_1_I_8_b(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
 
@@ -1775,7 +1895,7 @@ class Func_3_1_I_8_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I8.b.voiceover")
+                text=self.translate("Func_3_1.I8.b.incorrect")+self.translate("Func_3_1.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1789,7 +1909,7 @@ class Func_3_1_I_8_b(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("plugIn1")
-            cursor.blinking = False
+            cursor.idle = False
             x,y,_ = plane.c2p(-1,-1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1806,14 +1926,14 @@ class Func_3_1_I_8_b(SophiaCursorScene):
             circ4 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y))
             self.play(Write(circ4))
-            cursor.blinking=True
+            cursor.idle=True
 
         with self.voiceover(
                 text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(-0.5,-2)
             circHalf = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1826,7 +1946,7 @@ class Func_3_1_I_8_b(SophiaCursorScene):
             self.play(Write(circQuarter))
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
@@ -1834,10 +1954,10 @@ class Func_3_1_I_8_b(SophiaCursorScene):
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y),run_time=1)
             self.play(MoveAlongPath(cursor, func_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1853,16 +1973,12 @@ class Func_3_1_I_8_c(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
 
@@ -1876,7 +1992,7 @@ class Func_3_1_I_8_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I8.b.voiceover")
+                text=self.translate("Func_3_1.I8.a.correct")+self.translate("Func_3_1.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1890,7 +2006,7 @@ class Func_3_1_I_8_c(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("plugIn1")
-            cursor.blinking = False
+            cursor.idle = False
             x,y,_ = plane.c2p(-1,-1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1907,14 +2023,14 @@ class Func_3_1_I_8_c(SophiaCursorScene):
             circ4 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y))
             self.play(Write(circ4))
-            cursor.blinking=True
+            cursor.idle=True
 
         with self.voiceover(
                 text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(-0.5,-2)
             circHalf = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -1927,7 +2043,7 @@ class Func_3_1_I_8_c(SophiaCursorScene):
             self.play(Write(circQuarter))
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
@@ -1935,10 +2051,10 @@ class Func_3_1_I_8_c(SophiaCursorScene):
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y),run_time=1)
             self.play(MoveAlongPath(cursor, func_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1953,16 +2069,12 @@ class Func_3_1_I_8_d(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_1.I8.q.title"))
 
-        # Create a notepad with texts
-        # note = Notepad(texts=["Consider $f(x)=\\tfrac1x$ for negative x", "Plug in several values",["f(x) close to zero first", "and then decreases rapidly as $x\\rightarrow0$"]], buff=0.3)
-        # self.add(note)
-
         # Create the coordinate system
         cords = self.add_cords([-4, 0, 1], [-4, 0, 1], x_ticks=[-1,-2,-3,-4],y_ticks=[-1,-2,-3,-4])
         plane = cords[0]
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.move_to([xo, yo, 0])
 
@@ -1976,7 +2088,7 @@ class Func_3_1_I_8_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_1.I8.b.voiceover")
+                text=self.translate("Func_3_1.I8.a.correct")+self.translate("Func_3_1.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("f")
@@ -1990,7 +2102,7 @@ class Func_3_1_I_8_d(SophiaCursorScene):
             self.add(cursor)
 
             self.wait_until_bookmark("plugIn1")
-            cursor.blinking = False
+            cursor.idle = False
             x,y,_ = plane.c2p(-1,-1)
             circ1 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -2007,14 +2119,14 @@ class Func_3_1_I_8_d(SophiaCursorScene):
             circ4 = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y))
             self.play(Write(circ4))
-            cursor.blinking=True
+            cursor.idle=True
 
         with self.voiceover(
                 text=self.translate("Func_3_1.I8.a.voiceover2")
         )as tracker:
         
             self.wait_until_bookmark("plugInHalf")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(-0.5,-2)
             circHalf = Circle(radius=0.1, color=RED).move_to([x,y,0])
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
@@ -2027,7 +2139,7 @@ class Func_3_1_I_8_d(SophiaCursorScene):
             self.play(Write(circQuarter))
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
             self.play(Write(func_plotted), run_time=2.5)
@@ -2035,10 +2147,10 @@ class Func_3_1_I_8_d(SophiaCursorScene):
 
             self.wait_until_bookmark("moveAlongFunc")
             x,y,_ = plane.c2p(-4, -1/4)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y),run_time=1)
             self.play(MoveAlongPath(cursor, func_plotted), run_time=12, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2055,9 +2167,6 @@ class Func_3_1_I_9(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Consider our function $f(x)=\\tfrac1x$", "for positive and negative $x$"], ["Function forms two rounded edges","around x- and y-axis"]], buff=0.28)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_1.I9.title"))
 
         cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
@@ -2070,7 +2179,7 @@ class Func_3_1_I_9(SophiaCursorScene):
         plotted_left = plane.plot(func, color=BLUE, x_range=[-4, -0.25, 0.01], use_smoothing=False)
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f = MathTex("f(x)=\\tfrac{1}{x}", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -2090,32 +2199,34 @@ class Func_3_1_I_9(SophiaCursorScene):
             
             self.wait_until_bookmark("fNeg")
             x,y,_ = plane.c2p(-4, -0.25)
-            cursor.blinking=False
-            self.play(Write(plotted_left))
+            cursor.idle=False
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_left))
             self.play(CursorMoveTo(cursor,x,y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("moveNeg")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(MoveAlongPath(cursor, plotted_left), run_time=6, rate_func=rate_functions.ease_out_sine)
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("fPos")
             x,y,_ = plane.c2p(4, 0.25)
-            self.play(Write(plotted_right))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plotted_right))
 
             self.wait_until_bookmark("xLarge")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("movePos")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(MoveAlongPath(cursor, plotted_right), run_time=8, rate_func=rate_functions.ease_out_sine)
             self.wait(0.2)
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("x")
             self.play(Write(x_ax), run_time=0.7)
@@ -2125,7 +2236,7 @@ class Func_3_1_I_9(SophiaCursorScene):
 
             self.wait_until_bookmark("tR")
             x,y,_ = plane.c2p(2,2)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveResize(cursor,x,y, 1.2, 1.2), run_time=0.5)
 
             self.wait_until_bookmark("bL")

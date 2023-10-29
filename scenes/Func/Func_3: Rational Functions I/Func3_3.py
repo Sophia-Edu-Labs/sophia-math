@@ -43,12 +43,9 @@ class Func_3_3_I_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptotes are lines that a function","gets arbitrarily close to but never touches."], ["Singularities are points where", "the function is  undefined,"], ["A hyperbola is the curve describing the", "graph of a fractional rational function."]], buff=0.25, buff_inner=0.05)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I1.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -60,7 +57,7 @@ class Func_3_3_I_1(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f = MathTex("f(x)=\\tfrac{a}{x+b}+c", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -71,10 +68,10 @@ class Func_3_3_I_1(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("cords")
-            self.play(Write(cords), Write(plotted_right), Write(plotted_left), Write(cursor))
+            self.play(Write(cords), Write(plotted_right), Create(plotted_left), Create(cursor))
 
             self.wait_until_bookmark("x")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMarkAxis(cursor, plane))
 
             self.wait_until_bookmark("y")
@@ -82,25 +79,25 @@ class Func_3_3_I_1(SophiaCursorScene):
 
             self.wait_until_bookmark("singularities1")
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("singularities2")
-            cursor.blinking=False
-            self.play(CursorMarkAxis(cursor, plane, axis="y"), run_time=0.5)
+            cursor.idle=False
+            self.play(CursorMarkAxis(cursor, plane, axis="y"), run_time=0.3)
             self.wait(1)
             self.play(CursorMoveResize(cursor, xo, yo, 0.2, 0.2))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("leftCurve")
             x,y,_ = plane.c2p(-1,-1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("rightCurve")
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.wait(0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -123,12 +120,9 @@ class Func_3_3_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Consider function $f(x)=\\tfrac{1}{x}$", ["Scale the function by multilpying", "with factor $a\\rightarrow f(x)=\\tfrac a x$"], "How does the graph change when $a<1$?"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I2.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -140,7 +134,7 @@ class Func_3_3_I_2_q(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f0 = MathTex("f(x)=\\tfrac1x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -172,11 +166,9 @@ class Func_3_3_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
         title = self.add_title(self.translate("Func_3_3.I2.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -188,7 +180,7 @@ class Func_3_3_I_2_a(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f0 = MathTex("f(x)=\\tfrac1x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -196,10 +188,10 @@ class Func_3_3_I_2_a(SophiaCursorScene):
         a_tex = DecimalNumber(1, num_decimal_places=2, color=c1t).scale(0.8).next_to(f1, RIGHT, buff=0.1).shift(0.05*UP).add_updater(lambda m: m.set_value(a.get_value()))
 
         self.add(cords, plotted_right, plotted_left, cursor)
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I2.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -210,7 +202,7 @@ class Func_3_3_I_2_a(SophiaCursorScene):
 
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
@@ -226,11 +218,9 @@ class Func_3_3_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
         title = self.add_title(self.translate("Func_3_3.I2.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -242,7 +232,7 @@ class Func_3_3_I_2_b(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f0 = MathTex("f(x)=\\tfrac1x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -253,7 +243,7 @@ class Func_3_3_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I2.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -264,7 +254,7 @@ class Func_3_3_I_2_b(SophiaCursorScene):
 
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
@@ -280,11 +270,9 @@ class Func_3_3_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["$a<1$", ["$\\rightarrow$ we multiply each","value by something$<1$"], "The graph is squashed in y-Direction"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
         title = self.add_title(self.translate("Func_3_3.I2.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -296,7 +284,7 @@ class Func_3_3_I_2_c(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f0 = MathTex("f(x)=\\tfrac1x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -307,7 +295,7 @@ class Func_3_3_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I2.c.voiceover")
+                text=self.translate("General.correct_2")+self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -318,7 +306,7 @@ class Func_3_3_I_2_c(SophiaCursorScene):
 
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
@@ -338,7 +326,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
         # self.add(note)
         title = self.add_title(self.translate("Func_3_3.I2.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -350,7 +338,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f0 = MathTex("f(x)=\\tfrac1x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -361,7 +349,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I2.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_3_3.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f1")
@@ -372,7 +360,7 @@ class Func_3_3_I_2_d(SophiaCursorScene):
 
             self.wait_until_bookmark("decimalNumber")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(a_tex), Write(f1[1]), CursorMoveTo(cursor, x, y))
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
             self.play(a.animate.set_value(0.1), run_time=10)
@@ -398,12 +386,9 @@ class Func_3_3_I_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Consider $f(x)=\\tfrac ax$", ["$a<1\\Rightarrow$ f is squashed","$a>1\\Rightarrow$ f is stretched"], "What happens for $a=-1$?"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I3.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -415,7 +400,7 @@ class Func_3_3_I_3_q(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         f1 = MathTex("f(x)=\\tfrac ax", ",\\,a=", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -433,20 +418,24 @@ class Func_3_3_I_3_q(SophiaCursorScene):
 
             self.wait_until_bookmark("moveCursor")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y))
 
             self.wait_until_bookmark("smallA1")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
+            self.add_scale_sound('down', 5)
             self.play(a.animate.set_value(0.1), run_time=5, rate_func=linear)
 
             self.wait_until_bookmark("largeA1")
+            self.add_scale_sound('up', 5)
             self.play(a.animate.set_value(3), run_time=5, rate_func=linear)
 
             self.wait_until_bookmark("smallA2")
+            self.add_scale_sound('down', 2)
             self.play(a.animate.set_value(0.1), run_time=2, rate_func=linear)
 
             self.wait_until_bookmark("resetA")
+            self.add_scale_sound('up', 1)
             self.play(a.animate.set_value(1), run_time=1, rate_func=linear)
             cursor.clear_updaters()
 
@@ -471,7 +460,7 @@ class Func_3_3_I_3_a(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_3.I3.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -483,7 +472,7 @@ class Func_3_3_I_3_a(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         a1n1 = MathTex("f(x)=\\tfrac1x", "\\rightarrow", "f(x)=\\tfrac{-1}x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -491,14 +480,14 @@ class Func_3_3_I_3_a(SophiaCursorScene):
         f1 = MathTex("f(x)=\\tfrac ax", ",\\,a=", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
         a_tex = DecimalNumber(1, num_decimal_places=1, color=c1t).scale(0.8).next_to(f1, RIGHT, buff=0.1).shift(0.05*UP).add_updater(lambda m: m.set_value(a.get_value()))
         self.add(cords, plotted_right, plotted_left, cursor)
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I3.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("oneOne")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y))
 
@@ -513,10 +502,11 @@ class Func_3_3_I_3_a(SophiaCursorScene):
 
             self.wait_until_bookmark("func2")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
+            self.add_scale_sound('down', 3)
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -534,7 +524,7 @@ class Func_3_3_I_3_b(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_3.I3.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -546,7 +536,7 @@ class Func_3_3_I_3_b(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         a1n1 = MathTex("f(x)=\\tfrac1x", "\\rightarrow", "f(x)=\\tfrac{-1}x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -557,11 +547,11 @@ class Func_3_3_I_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I3.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("oneOne")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y))
 
@@ -576,10 +566,11 @@ class Func_3_3_I_3_b(SophiaCursorScene):
 
             self.wait_until_bookmark("func2")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
+            self.add_scale_sound('down', 3)
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -596,7 +587,7 @@ class Func_3_3_I_3_c(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_3.I3.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -608,7 +599,7 @@ class Func_3_3_I_3_c(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         a1n1 = MathTex("f(x)=\\tfrac1x", "\\rightarrow", "f(x)=\\tfrac{-1}x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -619,11 +610,11 @@ class Func_3_3_I_3_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I3.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("oneOne")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y))
 
@@ -638,10 +629,11 @@ class Func_3_3_I_3_c(SophiaCursorScene):
 
             self.wait_until_bookmark("func2")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
+            self.add_scale_sound('down', 3)
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -654,12 +646,9 @@ class Func_3_3_I_3_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Take any point on the graph of $f$", ["We multiply $f$ by $-1$","$\\Rightarrow$ point is flipped"], "$\\Rightarrow$ entire graph is flipped"], buff=0.25, buff_inner=0.05)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I3.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -671,7 +660,7 @@ class Func_3_3_I_3_d(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         a1n1 = MathTex("f(x)=\\tfrac1x", "\\rightarrow", "f(x)=\\tfrac{-1}x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -682,11 +671,11 @@ class Func_3_3_I_3_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I3.d.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_3_3.I3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("oneOne")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y))
 
@@ -701,10 +690,11 @@ class Func_3_3_I_3_d(SophiaCursorScene):
 
             self.wait_until_bookmark("func2")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
+            self.add_scale_sound('down', 3)
             self.play(a.animate.set_value(-1), run_time=3)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor, xo, yo), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -721,12 +711,9 @@ class Func_3_3_I_4(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Modify $f$ by varying $a$:","increase $a\\rightarrow f$ is stretched","decrease $a\\rightarrow f$ is squashed","$a$ negative $\\rightarrow f$ is flipped"], buff=0.1, buff_inner=0)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I4.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -738,7 +725,7 @@ class Func_3_3_I_4(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         a1n1 = MathTex("f(x)=\\tfrac1x", "\\rightarrow", "f(x)=\\tfrac{-1}x", color=c1t).scale(0.8).next_to(cords, DOWN, buff=0.5)
@@ -757,18 +744,21 @@ class Func_3_3_I_4(SophiaCursorScene):
 
             self.wait_until_bookmark("a")
             self.play(Write(f1[1]), Write(a_tex))
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, a.get_value())))
 
             self.wait_until_bookmark("increase")
+            self.add_scale_sound('up', 1.5)
             self.play(a.animate.set_value(3), rate_func=linear)
 
             self.wait_until_bookmark("decrease")
+            self.add_scale_sound('down', 1.5)
             self.play(a.animate.set_value(0.1), rate_func=linear)
 
             self.wait_until_bookmark("negate")
+            self.add_scale_sound('down', 1.5)
             self.play(a.animate.set_value(-1), rate_func=linear)
 
         self.wait(4)
@@ -796,7 +786,7 @@ class Func_3_3_I_5_q(SophiaCursorScene):
 
         title = self.add_title(self.translate("Func_3_3.I5.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -808,7 +798,7 @@ class Func_3_3_I_5_q(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -823,23 +813,27 @@ class Func_3_3_I_5_q(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("cursorBack")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
 
             self.wait_until_bookmark("up")
+            self.add_move_sound('forward', 0.5)
             self.play(c.animate.set_value(2), run_time=0.5)
 
             self.wait_until_bookmark("down")
+            self.add_move_sound('backward', 0.5)
             self.play(c.animate.set_value(-2), run_time=0.5)
 
             self.wait_until_bookmark("back")
+            self.add_move_sound('forward', 0.5)
             self.play(c.animate.set_value(0), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("upOne")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_move_sound('forward', 1.5)
             self.play(c.animate.set_value(1))
 
         # Wait for 4 seconds at the end of the animation
@@ -853,12 +847,9 @@ class Func_3_3_I_5_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I5.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -870,7 +861,7 @@ class Func_3_3_I_5_a(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -878,19 +869,19 @@ class Func_3_3_I_5_a(SophiaCursorScene):
         fShift = f1[2].get_center()
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
-
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I5.a.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 2)
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
 
@@ -921,12 +912,9 @@ class Func_3_3_I_5_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I5.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -938,7 +926,7 @@ class Func_3_3_I_5_b(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -949,16 +937,17 @@ class Func_3_3_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I5.a.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 2)
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
 
@@ -990,12 +979,9 @@ class Func_3_3_I_5_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I5.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1007,7 +993,7 @@ class Func_3_3_I_5_c(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1018,16 +1004,17 @@ class Func_3_3_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I5.c.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 2)
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
 
@@ -1062,12 +1049,9 @@ class Func_3_3_I_5_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function up by one", "$\\Rightarrow$ shift every point up by one", ["Add $1$ to function", "$\\Rightarrow f(x)=\\tfrac ax+1$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I5.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1079,7 +1063,7 @@ class Func_3_3_I_5_d(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1090,16 +1074,17 @@ class Func_3_3_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I5.a.voiceover")
+                text=self.translate("General.incorrect_3")+self.translate("Func_3_3.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 2)
             self.play(c.animate.set_value(1), run_time=2)
             cursor.clear_updaters()
 
@@ -1139,13 +1124,9 @@ class Func_3_3_I_6_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["Consider the function $f(x)=\\tfrac ax$", "We want to shift it down by $2$", "How does the term of the function change?"], buff=0.2, buff_inner=0)
-        # note.change_colors([0])
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I6.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1157,7 +1138,7 @@ class Func_3_3_I_6_q(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1172,7 +1153,7 @@ class Func_3_3_I_6_q(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f1[0].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
@@ -1183,22 +1164,25 @@ class Func_3_3_I_6_q(SophiaCursorScene):
             self.wait_until_bookmark("ax")
             x,y,_ = f1[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("note1")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("db2")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('backward', 1.5)
             self.play(c.animate.set_value(-2), run_time=1.5)
             self.wait(1)
+            self.add_move_sound('forward', .5)
             self.play(c.animate.set_value(0), run_time=.5)
-            cursor.blinking = True
+            cursor.idle = True
 
             self.wait_until_bookmark("downTwo")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_move_sound('backward', 1.5)
             self.play(c.animate.set_value(-2))
 
 
@@ -1215,12 +1199,9 @@ class Func_3_3_I_6_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I6.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1232,7 +1213,7 @@ class Func_3_3_I_6_a(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1243,17 +1224,18 @@ class Func_3_3_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
-            self.play(c.animate.set_value(1), run_time=2)
+            self.add_move_sound('backward', 2)
+            self.play(c.animate.set_value(-2), run_time=2)
             cursor.clear_updaters()
 
             self.wait_until_bookmark("funcNew")
@@ -1283,12 +1265,9 @@ class Func_3_3_I_6_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I6.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1300,7 +1279,7 @@ class Func_3_3_I_6_b(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1311,17 +1290,18 @@ class Func_3_3_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
-            self.play(c.animate.set_value(1), run_time=2)
+            self.add_move_sound('backward', 2)
+            self.play(c.animate.set_value(-2), run_time=2)
             cursor.clear_updaters()
 
             self.wait_until_bookmark("funcNew")
@@ -1352,12 +1332,9 @@ class Func_3_3_I_6_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I6.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1369,7 +1346,7 @@ class Func_3_3_I_6_c(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1380,17 +1357,18 @@ class Func_3_3_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
-            self.play(c.animate.set_value(1), run_time=2)
+            self.add_move_sound('backward', 2)
+            self.play(c.animate.set_value(-2), run_time=2)
             cursor.clear_updaters()
 
             self.wait_until_bookmark("funcNew")
@@ -1421,12 +1399,9 @@ class Func_3_3_I_6_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We want to shift function down by two", "$\\Rightarrow$ shift every point down by two", ["Subtract $1$ from function", "$\\Rightarrow f(x)=\\tfrac ax-2$"]], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I6.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1438,7 +1413,7 @@ class Func_3_3_I_6_d(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1449,17 +1424,18 @@ class Func_3_3_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I6.d.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_3_3.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("cursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("upOne")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
-            self.play(c.animate.set_value(1), run_time=2)
+            self.add_move_sound('backward', 2)
+            self.play(c.animate.set_value(-2), run_time=2)
             cursor.clear_updaters()
 
             self.wait_until_bookmark("funcNew")
@@ -1491,12 +1467,9 @@ class Func_3_3_I_7(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We're shifting hyperbolas along the y-axis", "Formalization as $f(x)=\\tfrac a x+c$", "$c>0\\Rightarrow$ shift up", "$c<0\\Rightarrow$ shift down",], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I7.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1508,7 +1481,7 @@ class Func_3_3_I_7(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1517,6 +1490,9 @@ class Func_3_3_I_7(SophiaCursorScene):
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
 
+        a_tex = DecimalNumber(1, num_decimal_places=1, color=c1t, include_sign=True).scale(0.8).next_to(f1[3], RIGHT, buff=0.2).shift(0.05*UP).add_updater(lambda m: m.set_value(c.get_value()))
+        self.add(a_tex)
+
         # Action Sequence
         with self.voiceover(
                 text=self.translate("Func_3_3.I7.voiceover")
@@ -1524,16 +1500,19 @@ class Func_3_3_I_7(SophiaCursorScene):
             
             self.wait_until_bookmark("note1")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
 
             self.wait_until_bookmark("up1")
+            self.add_move_sound('forward',  .6)
             self.play(c.animate.set_value(2), run_time=0.6)
 
             self.wait_until_bookmark("down1")
+            self.add_move_sound('backward',  .5)
             self.play(c.animate.set_value(-2), run_time=0.5)
             self.wait(0.4)
+            self.add_move_sound('forward',  .5)
             self.play(c.animate.set_value(0), run_time=0.5)
             cursor.clear_updaters()
 
@@ -1546,29 +1525,31 @@ class Func_3_3_I_7(SophiaCursorScene):
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
 
             self.wait_until_bookmark("up2")
+            self.add_move_sound('forward',  .5)
             self.play(c.animate.set_value(2), run_time=0.5)
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("down2")
-            cursor.blinking=False
+            cursor.idle=False
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('backward', .5)
             self.play(c.animate.set_value(-2), run_time=0.5)
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("note2")
             x,y,_ = plane.c2p(0,0)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), c.animate.set_value(0), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("func")
             x,y,_ = f1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
-            self.play(Write(f1[4]), Write(f1[5]), f1.animate.shift(fShift[0]*RIGHT), CursorMoveTo(cursor,x,y), run_time=0.5)
+            cursor.idle=False
+            self.play(Unwrite(a_tex), Write(f1[4]), Write(f1[5]), f1.animate.shift(fShift[0]*RIGHT), CursorMoveTo(cursor,x,y), run_time=0.5)
 
             self.wait_until_bookmark("x")
             x,y,_ = f1[1].get_center()+0.4*DOWN
@@ -1581,24 +1562,27 @@ class Func_3_3_I_7(SophiaCursorScene):
             self.wait_until_bookmark("c")
             x,y,_ = f1[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("resetCursorFinal")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward',  1.5)
             self.play(c.animate.set_value(2))
 
             self.wait_until_bookmark("cNeg")
+            self.add_move_sound('backward',  1.5)
             self.play(c.animate.set_value(-2))
 
             self.wait_until_bookmark("resetC")
             cursor.clear_updaters()
             x,y,_ = plane.c2p(0,0)
+            self.add_move_sound('forward',  .5)
             self.play(c.animate.set_value(0), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1622,16 +1606,13 @@ class Func_3_3_I_8_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
-        # Adding initial components to the scene
+        
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=["We're shifting hyperbolas up or down", "Shifted function: $f(x)=\\tfrac 1 x+2$", ["Where is the horizontal asymptote", "of the shifted function"],], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I8.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1643,7 +1624,7 @@ class Func_3_3_I_8_q(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
 
@@ -1658,31 +1639,35 @@ class Func_3_3_I_8_q(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("setupCursor")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("up")
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 0.5)
             self.play(c.animate.set_value(2), run_time=0.5)
 
             self.wait_until_bookmark("down")
+            self.add_move_sound('backward', 0.5)
             self.play(c.animate.set_value(-2), run_time=0.5)
             self.wait(.5)
+            self.add_move_sound('forward', 0.5)
             self.play(c.animate.set_value(0), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("func")
             self.play(Write(f1[0]), Write(f1[1]), Write(f1[2]), Write(f1[3]), run_time=0.5)
 
             self.wait_until_bookmark("upByTwo")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_move_sound('forward', 0.5)
             self.play(c.animate.set_value(2), run_time=0.5)
 
             self.wait_until_bookmark("funcNew")
             x,y,_ = f1[0].get_center()+0.4*DOWN
             cursor.clear_updaters()
-            cursor._setup_blinking()
+            cursor._setup_idle()
             self.play(Write(f1[4]), Write(f1[5]), f1.animate.shift(fShift[0]*RIGHT), CursorMoveTo(cursor,x,y), run_time=0.5)
 
             self.wait_until_bookmark("x")
@@ -1696,7 +1681,7 @@ class Func_3_3_I_8_q(SophiaCursorScene):
             self.wait_until_bookmark("two")
             x,y,_ = f1[5].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1710,12 +1695,9 @@ class Func_3_3_I_8_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I8.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1727,7 +1709,7 @@ class Func_3_3_I_8_a(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         y_unit = (plane.c2p(0,1)-plane.c2p(0,0))
@@ -1740,55 +1722,57 @@ class Func_3_3_I_8_a(SophiaCursorScene):
         fShift = f1[2].get_center()
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I8.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
 
             self.wait_until_bookmark("func")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f1[4]), Write(f1[5]), run_time=0.5)
 
             self.wait_until_bookmark("f")
             x,y,_ = f1[0].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("x")
             x,y,_ = f1[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("oneOverX")
             x,y,_ = f1[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("plusTwo")
             x,y,_ = f1[5].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
 
             self.wait_until_bookmark("shiftUp")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 1.5)
             self.play(c.animate.set_value(2))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorBack")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(aT1.get_center()))
+            self.add_move_sound('forward', 1.5)
             self.play(aT1.animate.shift(2*y_unit))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1802,12 +1786,9 @@ class Func_3_3_I_8_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I8.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1819,7 +1800,7 @@ class Func_3_3_I_8_b(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         y_unit = (plane.c2p(0,1)-plane.c2p(0,0))
@@ -1832,55 +1813,57 @@ class Func_3_3_I_8_b(SophiaCursorScene):
         fShift = f1[2].get_center()
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I8.b.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
 
             self.wait_until_bookmark("func")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f1[4]), Write(f1[5]), run_time=0.5)
 
             self.wait_until_bookmark("f")
             x,y,_ = f1[0].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("x")
             x,y,_ = f1[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("oneOverX")
             x,y,_ = f1[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("plusTwo")
             x,y,_ = f1[5].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
 
             self.wait_until_bookmark("shiftUp")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 1.5)
             self.play(c.animate.set_value(2))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorBack")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(aT1.get_center()))
+            self.add_move_sound('forward', 1.5)
             self.play(aT1.animate.shift(2*y_unit))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1894,12 +1877,9 @@ class Func_3_3_I_8_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I8.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -1911,7 +1891,7 @@ class Func_3_3_I_8_c(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         y_unit = (plane.c2p(0,1)-plane.c2p(0,0))
@@ -1924,55 +1904,57 @@ class Func_3_3_I_8_c(SophiaCursorScene):
         fShift = f1[2].get_center()
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I8.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
 
             self.wait_until_bookmark("func")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f1[4]), Write(f1[5]), run_time=0.5)
 
             self.wait_until_bookmark("f")
             x,y,_ = f1[0].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("x")
             x,y,_ = f1[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("oneOverX")
             x,y,_ = f1[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("plusTwo")
             x,y,_ = f1[5].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
 
             self.wait_until_bookmark("shiftUp")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 1.5)
             self.play(c.animate.set_value(2))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorBack")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(aT1.get_center()))
+            self.add_move_sound('forward', 1.5)
             self.play(aT1.animate.shift(2*y_unit))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1981,18 +1963,15 @@ class Func_3_3_I_8_c(SophiaCursorScene):
 
 class Func_3_3_I_8_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+        # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        # note = Notepad(texts=[["Asymptote: Line that function approaches,","but never reaches"], ["Function is shifted up by two", "$\\Rightarrow$ Asymptote is shifted up by two"], "Asymptote at $y=2$"], buff=0.2, buff_inner=0.1)
-        # self.add(note)
-
         title = self.add_title(self.translate("Func_3_3.I8.title"))
 
-        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)])
+        cords = self.add_cords([-4,4, 1], [-4, 4, 1], x_ticks=[2*i-4 for i in range(5)],y_ticks=[2*i-4 for i in range(5)]).shift(DOWN)
         plane = cords[0]
 
         a, b, c = ValueTracker(1), ValueTracker(0), ValueTracker(0)
@@ -2004,7 +1983,7 @@ class Func_3_3_I_8_d(SophiaCursorScene):
         plotted_left = always_redraw(lambda: plane.plot(func, color=BLUE, x_range=[*get_valid_xrange(-b.get_value(),4, -4,4,func), 0.01], use_smoothing=False).reverse_points())
 
         xo, yo, _ = plane.x_axis.n2p(0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=xo, y=yo)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=xo, y=yo)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
 
         y_unit = (plane.c2p(0,1)-plane.c2p(0,0))
@@ -2017,55 +1996,57 @@ class Func_3_3_I_8_d(SophiaCursorScene):
         fShift = f1[2].get_center()
         f1 = f1.shift(fShift[0]*LEFT)
         self.add(cords, plotted_right, plotted_left, cursor, f1[0], f1[1], f1[2], f1[3])
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_3_3.I8.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_3_3.I8.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("as0")
             self.play(Write(aT1))
 
             self.wait_until_bookmark("func")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f1[4]), Write(f1[5]), run_time=0.5)
 
             self.wait_until_bookmark("f")
             x,y,_ = f1[0].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("x")
             x,y,_ = f1[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("oneOverX")
             x,y,_ = f1[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("plusTwo")
             x,y,_ = f1[5].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
-            cursor.blinking=True
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
 
             self.wait_until_bookmark("shiftUp")
             x,y,_ = plane.c2p(1,1)
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(plane.c2p(1, 1+c.get_value())))
+            self.add_move_sound('forward', 1.5)
             self.play(c.animate.set_value(2))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorBack")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(0,0)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor.add_updater(lambda m: cursor.move_to(aT1.get_center()))
+            self.add_move_sound('forward', 1.5)
             self.play(aT1.animate.shift(2*y_unit))
             cursor.clear_updaters()
-            cursor._setup_blinking()
-            cursor.blinking=True
+            cursor._setup_idle()
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)

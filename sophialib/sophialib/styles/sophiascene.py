@@ -290,7 +290,7 @@ class SophiaScene(VoiceoverScene):
         self.add(title)
         return title
         
-    def add_cords(self, x_range = [-1,1,1], y_range = [-1,1,1], x_ticks=[-1,0,1], y_ticks=[-1,0,1], x_labels = None, y_labels = None, width=2.4, height=2.4, axisLabelX='x', axisLabelY='y', tip_x=StealthTip, tip_y=StealthTip):
+    def add_cords(self, x_range = [-1,1,1], y_range = [-1,1,1], x_ticks=[-1,0,1], y_ticks=[-1,0,1], x_labels = None, y_labels = None, width=2.4, height=2.4, axisLabelX='x', axisLabelY='y', tip_x=StealthTip, tip_y=StealthTip, include_tip = True):
 
         if x_labels is None:
             x_labels = x_ticks
@@ -311,7 +311,7 @@ class SophiaScene(VoiceoverScene):
         if max_ticks == num_y_ticks:
             y_length = height
 
-        plane = NumberPlane(x_range=x_range, y_range=y_range, x_length=x_length, y_length=y_length, background_line_style={"stroke_opacity": 0}, axis_config={"include_tip": True, 'tip_width': 0.15, 'tip_height': 0.1}).move_to(np.array([0,1.4,0]))
+        plane = NumberPlane(x_range=x_range, y_range=y_range, x_length=x_length, y_length=y_length, background_line_style={"stroke_opacity": 0}, axis_config={"include_tip": include_tip, 'tip_width': 0.15, 'tip_height': 0.1}).move_to(np.array([0,1.4,0]))
         plane.color=BLACK
         plane.x_axis.add_ticks()
         plane.y_axis.add_ticks()
@@ -467,8 +467,8 @@ class SophiaScene(VoiceoverScene):
     def add_reflect_sound(self, duration=0.5, rate_func=smooth):
         self.add_stretched_sound("huuup", duration, target_volume=0.1, rate_func=rate_func)
 
-    def add_shift_sound(self, duration=0.5, rate_func=smooth):
-        self.add_stretched_sound("shift", duration, target_volume=0.8, rate_func=rate_func )
+    def add_shift_sound(self, duration=0.5, rate_func=smooth, volume=1):
+        self.add_stretched_sound("shift", duration, target_volume=0.8*volume, rate_func=rate_func )
 
     def add_cursor_sound(self, duration=0.3, rate_func=smooth):
         self.add_stretched_sound("cursor", duration, target_volume=0.2, rate_func=rate_func )

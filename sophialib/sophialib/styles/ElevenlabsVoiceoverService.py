@@ -198,8 +198,15 @@ class ElevenlabsVoiceoverService(SpeechService):
         # text preprocessing
         input_text = remove_bookmarks(text)
         input_text = remove_xml_tags(input_text, exclude_tags=["break", "split"])
-        input_text = "\n".join([line.strip() for line in input_text.split("\n")]) # remove all leading and trailing whitespaces from every line
 
+        # Replace every newline with a space character
+        input_text = input_text.replace("\n", " ")
+
+        # Replace multiple consecutive spaces with a single space
+        input_text = re.sub(r' +', ' ', input_text)
+
+        input_text = "\n".join([line.strip() for line in input_text.split("\n")])  # remove all leading and trailing whitespaces from every line
+        
         # check if a split tag is contained in the input_text, by using regex (afterwards split the input_text at every split tag)
         split_regex = r"<split.*?>"
         split_tags = re.findall(split_regex, input_text)
