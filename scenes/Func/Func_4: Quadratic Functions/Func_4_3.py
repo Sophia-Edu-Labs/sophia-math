@@ -30,8 +30,6 @@ class Func_4_3_I_1_q(SophiaCursorScene):
             questionText=self.translate("Func_4_3.I1.q.question-text")
         )
 
-
-
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -45,23 +43,19 @@ class Func_4_3_I_1_q(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
         f1 = lambda x: a.get_value()*x**2
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[-(4/a.get_value())**0.5,(4/a.get_value())**0.5]))
         funcTerm = MathTex("f","(x)", "=","a","x^2", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1)
-        aLarge = Tex("$a$ large ","$\\Rightarrow$", "Parabola steeper", color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=0.4)
-        aSmall = Tex("$a$ small ","$\\Rightarrow$", "Parabola flatter", color=c1t, font_size=fs3).next_to(aLarge, DOWN, buff=0.2)
+        al1, al2 = self.translate("Func_4_3.I1.q.al1"), self.translate("Func_4_3.I1.q.al2")
+        as1, as2 = self.translate("Func_4_3.I1.q.as1"), self.translate("Func_4_3.I1.q.as2")
+        aLarge = Tex(al1, "$\\Rightarrow$", al2, color=c1t, font_size=fs3).next_to(funcTerm, DOWN, buff=0.4)
+        aSmall = Tex(as1, "$\\Rightarrow$", as2, color=c1t, font_size=fs3).next_to(aLarge, DOWN, buff=0.2)
 
         # Action Sequence
         with self.voiceover(
@@ -146,15 +140,10 @@ class Func_4_3_I_1_a(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -204,15 +193,10 @@ class Func_4_3_I_1_b(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -262,15 +246,10 @@ class Func_4_3_I_1_c(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -321,15 +300,10 @@ class Func_4_3_I_1_d(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -394,15 +368,10 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b = ValueTracker(1), ValueTracker(1)
@@ -461,15 +430,10 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a, b = ValueTracker(1), ValueTracker(1)

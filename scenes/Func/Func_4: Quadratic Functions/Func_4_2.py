@@ -975,8 +975,11 @@ class Func_4_2_I_3(SophiaCursorScene):
             cursor.idle=False
             shiftUpdater = lambda m: m.set_x(unitG.get_center()[0])
             cursor.add_updater(shiftUpdater)
+            self.add_move_sound('backward', 1.5)
             self.play(unitG.animate.shift(LEFT*2*xUnit), run_time=1.5)
+            self.add_move_sound('forward', 1.5)
             self.play(unitG.animate.shift(RIGHT*4*xUnit), run_time=1.5)
+            self.add_move_sound('backward', .5)
             self.play(unitG.animate.shift(LEFT*2*xUnit), run_time=0.5)
             cursor.remove_updater(shiftUpdater)
             cursor.idle=True
@@ -1006,6 +1009,7 @@ class Func_4_2_I_3(SophiaCursorScene):
             x,y,_ = plane.c2p(2,0)
             cursor.add_updater(shiftUpdater)
             self.add(unitG.copy().set_color(GREY))
+            self.add_move_sound('forward', 1.5)
             self.play(unitG.animate.shift(RIGHT*2*xUnit), run_time=1.5)
             cursor.remove_updater(shiftUpdater)
             cursor.idle=True
@@ -1126,6 +1130,7 @@ class Func_4_2_I_4_q(SophiaCursorScene):
             shiftUpdater = lambda m: m.set_x(g.get_center()[0])
             cursor.add_updater(shiftUpdater)
             self.add(g.copy().set_color(GREY))
+            self.add_move_sound('backward', 1.5)
             self.play(g.animate.shift(LEFT*2*xUnit), run_time=1.5)
             cursor.remove_updater(shiftUpdater)
 
@@ -1165,12 +1170,13 @@ class Func_4_2_I_4_a(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
+        sl = self.translate("Func_4_2.I4.a.shift-left")
+        t3 = Tex(sl, font_size=fs3, color=c1t).next_to(t2, DOWN, buff=0.4)
         funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I4.a.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1198,6 +1204,7 @@ class Func_4_2_I_4_a(SophiaCursorScene):
             shiftUpdater = lambda m: m.set_x(g.get_center()[0])
             cursor.add_updater(shiftUpdater)
             self.add(g.copy().set_color(GREY))
+            self.add_move_sound('backward', 1.5)
             self.play(g.animate.shift(LEFT*2*xUnit), run_time=1.5)
             cursor.remove_updater(shiftUpdater)
             cursor.idle=True
@@ -1277,12 +1284,13 @@ class Func_4_2_I_4_b(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
-        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
+        sl = self.translate("Func_4_2.I4.a.shift-left")
+        t3 = Tex(sl, font_size=fs3, color=c1t).next_to(t2, DOWN, buff=0.4)
+        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I4.a.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1391,12 +1399,13 @@ class Func_4_2_I_4_c(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
-        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
+        sl = self.translate("Func_4_2.I4.a.shift-left")
+        t3 = Tex(sl, font_size=fs3, color=c1t).next_to(t2, DOWN, buff=0.4)
+        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I4.c.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1505,12 +1514,13 @@ class Func_4_2_I_4_d(SophiaCursorScene):
         t2 = MathTex("-2", "\\,\\Rightarrow\\,", "0", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1).next_to(t1, DOWN, buff=0.2)
         t1[1].set_color(PURPLE)
         t2[1].set_color(PURPLE)
-        t3 = Tex("Shift left$\\Rightarrow$ add $2$ to $x$", font_size=fs2, color=c1t).next_to(t2, DOWN, buff=0.4)
-        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.2)
+        sl = self.translate("Func_4_2.I4.a.shift-left")
+        t3 = Tex(sl, font_size=fs3, color=c1t).next_to(t2, DOWN, buff=0.4)
+        funcTermShifted = MathTex("f","(x)", "=","(x","+2)^2", "-2", color=c1t, font_size=fs2).next_to(t3, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I4.a.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_4_2.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1632,9 +1642,11 @@ class Func_4_2_I_5_q(SophiaCursorScene):
             cursor.idle=False
             unit_updater = lambda m: m.set_x(unit_plot.get_center()[0])
             cursor.add_updater(unit_updater)
+            self.add_move_sound('backward', 1)
             self.play(unit_plot.animate.shift(LEFT*xUnit), run_time=1)
 
             self.wait_until_bookmark("right")
+            self.add_move_sound('forward', 1)
             self.play(unit_plot.animate.shift(RIGHT*2*xUnit), run_time=1)
 
             self.wait_until_bookmark("reset")
@@ -1702,11 +1714,12 @@ class Func_4_2_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I5.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
             cursor.idle=False
+            self.add_move_sound('forward', 1)
             self.play(g.animate.shift(RIGHT*1.5*xUnit), cursor.animate.shift(1.5*RIGHT*xUnit), run_time=1.5)
             cursor.idle=True
 
@@ -1785,11 +1798,12 @@ class Func_4_2_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I5.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
             cursor.idle=False
+            self.add_move_sound('forward', 1)
             self.play(g.animate.shift(RIGHT*1.5*xUnit), cursor.animate.shift(1.5*RIGHT*xUnit), run_time=1.5)
             cursor.idle=True
 
@@ -1867,12 +1881,14 @@ class Func_4_2_I_5_c(SophiaCursorScene):
         self.add(g)
 
         # Action Sequence
+        # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I5.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
             cursor.idle=False
+            self.add_move_sound('forward', 1)
             self.play(g.animate.shift(RIGHT*1.5*xUnit), cursor.animate.shift(1.5*RIGHT*xUnit), run_time=1.5)
             cursor.idle=True
 
@@ -1951,11 +1967,12 @@ class Func_4_2_I_5_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_2.I5.d.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_4_2.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("shiftRight")
             cursor.idle=False
+            self.add_move_sound('forward', 1)
             self.play(g.animate.shift(RIGHT*1.5*xUnit), cursor.animate.shift(1.5*RIGHT*xUnit), run_time=1.5)
             cursor.idle=True
 

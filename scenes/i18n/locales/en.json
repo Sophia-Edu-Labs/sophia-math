@@ -1193,10 +1193,11 @@
     },
     "I4": {
       "a": {
-        "voiceover": "No. So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?"
+        "voiceover": "So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?",
+        "shift-left": "Shift left$\\Rightarrow$ add $2$ to $x$"
       },
       "c": {
-        "voiceover": "Yes, you got it right! So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?"
+        "voiceover": ""
       },
       "q": {
         "question-text": "What is the term of the shfited function?",
@@ -1205,10 +1206,10 @@
     },
     "I5": {
       "a": {
-        "voiceover": "No, that's wrong. We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
+        "voiceover": "We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
       },
       "d": {
-        "voiceover": "Yep, that's it. well done. We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
+        "voiceover": ""
       },
       "q": {
         "question-text": "What is the term of the shifted function? (1.5 to the right)",
@@ -1228,7 +1229,11 @@
         "answer-options": "[\"The parabola remains the same\", \"The parabola gets much flatter\", \"The parabola is reflected along the x-axis\", \"The parabola is shifted down\"]",
         "question-text": "What happens if we set a to $-1$?",
         "title": "Scaling Parabolas",
-        "voiceover": "Parabolas can also be modified by scaling them. For example, we<bookmark mark=\"cursorInPos\"/> can make them <bookmark mark=\"steeper\"/>steeper, so that they rise faster.\nOr we can make them <bookmark mark=\"flatter\"/>flatter, so that they rise more slowly. If<bookmark mark=\"f\"/> we write the function as f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/> a times <bookmark mark=\"xSquared\"/>x squared, then the value of a determines how steep the<bookmark mark=\"cursorInPos2\"/> parabola is.\nFor <bookmark mark=\"large\"/> larger values of a, the parabola is steeper, and for <bookmark mark=\"small\"/> smaller values of a, the parabola is flatter.\nBut what will happen, if a is below zero, like negative one for example?"
+        "voiceover": "Parabolas can also be modified by scaling them. For example, we<bookmark mark=\"cursorInPos\"/> can make them <bookmark mark=\"steeper\"/>steeper, so that they rise faster.\nOr we can make them <bookmark mark=\"flatter\"/>flatter, so that they rise more slowly. If<bookmark mark=\"f\"/> we write the function as f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/> a times <bookmark mark=\"xSquared\"/>x squared, then the value of a determines how steep the<bookmark mark=\"cursorInPos2\"/> parabola is.\nFor <bookmark mark=\"large\"/> larger values of a, the parabola is steeper, and for <bookmark mark=\"small\"/> smaller values of a, the parabola is flatter.\nBut what will happen, if a is below zero, like negative one for example?",
+        "al1": "$a$ large",
+        "al2": "Parabola steeper",
+        "as1": "$a$ small ",
+        "as2": "Parabola flatter"
       }
     },
     "P1": {
@@ -2472,7 +2477,8 @@
     "incorrect_1": "Mhmm, that's not right. ",
     "incorrect_2": "No, that's not it. ",
     "incorrect_3": "No, not quite. ",
-    "incorrect_4": "That's not correct. "
+    "incorrect_4": "That's not correct. ",
+    "incorrect_5": "No. "
   },
   "degree": "Degree",
   "test-key": "[“1\", \"2\", \"3\"]"
