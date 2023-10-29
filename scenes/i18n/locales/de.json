@@ -1223,7 +1223,7 @@
   "Func_4_3": {
     "I1": {
       "a": {
-        "voiceover": "Nein, das stimmt nicht.\n<break time=\"0.4s\"/>\nWenn wir a auf minus Eins setzen, multiplizieren wir jeden Wert mit <bookmark mark=\"cursorInPos\"/>minus Eins.\n<break time=\"0.4s\"/>\nDas heißt, jeder Wert,<bookmark mark=\"flip\"/> wird entlang der x-Achse gespiegelt und so wird die gesamte Funktion an der x-achse gespiegelt."
+        "voiceover": "<break time=\"0.4s\"/>\nWenn wir a auf minus Eins setzen, multiplizieren wir jeden Wert mit <bookmark mark=\"cursorInPos\"/>minus Eins.\n<break time=\"0.4s\"/>\nDas heißt, jeder Wert,<bookmark mark=\"flip\"/> wird entlang der x-Achse gespiegelt und so wird die gesamte Funktion an der x-achse gespiegelt."
       },
       "c": {
         "voiceover": "Ja, das stimmt, super!\n<break time=\"0.4s\"/>\nWenn wir a auf minus Eins setzen, multiplizieren wir jeden Wert mit <bookmark mark=\"cursorInPos\"/>minus Eins.\n<break time=\"0.4s\"/>\nDas heißt, jeder Wert,<bookmark mark=\"flip\"/> wird entlang der x-Achse gespiegelt und so wird die gesamte Funktion an der x-achse gespiegelt."
@@ -1232,7 +1232,7 @@
         "answer-options": "[\"Die Parabel bleibt gleich\", \"Die Parabel wird viel flacher\", \"Die Parabel wird entlang der x-Achse gespiegelt\", \"Die Parabel wird nach unten verschoben\"]",
         "question-text": "Was passiert, wenn wir a auf $-1$ setzen?",
         "title": "Parabeln skalieren",
-        "voiceover": "Parabeln können auch durch Skalieren verändert werden. \nBeispielsweise können wir<bookmark mark=\"cursorInPos\"/> sie <bookmark mark=\"steeper\"/>steiler machen, sodass sie schneller steigen.\n<break time=\"0.4s\"/>\nOder wir können sie <bookmark mark=\"flatter\"/>flacher machen, damit sie langsamer steigen. \nWenn<bookmark mark=\"f\"/> wir die Funktion als f von <bookmark mark=\"x\"/> x gleich\n<bookmark mark=\"a\"/> a mal <bookmark mark=\"xSquared\"/>x Quadrat schreiben, dann bestimmt der Wert von a, wie steil die <bookmark mark=\"cursorInPos2\"/> Parabel ist.\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"large\"/> größere Werte von a ist die Parabel steiler, und für <bookmark mark=\"small\"/> kleinere Werte von a ist die Parabel flacher.\n<break time=\"0.4s\"/>\nAber was passiert, wenn a kleiner als Null ist, also beispielsweise negativ Eins ist?",
+        "voiceover": "Parabeln können auch durch Skalieren verändert werden. \nBeispielsweise können wir<bookmark mark=\"cursorInPos\"/> sie <bookmark mark=\"steeper\"/>steiler machen, sodass sie schneller steigen.\n<break time=\"0.4s\"/>\nOder wir können sie <bookmark mark=\"flatter\"/>flacher machen, damit sie langsamer steigen.<split/>\nWenn<bookmark mark=\"f\"/> wir die Funktion als f von <bookmark mark=\"x\"/> x gleich\n<bookmark mark=\"a\"/> a mal <bookmark mark=\"xSquared\"/>x Quadrat schreiben, dann bestimmt der Wert von a, wie steil die <bookmark mark=\"cursorInPos2\"/> Parabel ist.\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"large\"/> größere Werte von a ist die Parabel steiler,<split/> und für <bookmark mark=\"small\"/> kleinere Werte von a ist die Parabel flacher.\n<break time=\"0.4s\"/>\nAber was passiert, wenn a kleiner als Null ist, also beispielsweise negativ Eins ist?",
         "al1": "$a$ groß",
         "al2": "Parabel steiler",
         "as1": "$a$ klein ",
@@ -1282,7 +1282,7 @@
       }
     },
     "ScaleAnswerScene": {
-      "voiceover": "Wenn wir {self.xx} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nDas heißt<bookmark mark=\"cursorInPos\"/>, wir müssen sie um den Faktor a gleich {np.abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.abs} ist. \n<bookmark mark=\"flip\"/>{self.flip}\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor gleich <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.yy} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{sign*abs} ist."
+      "voiceover": "Wenn wir {self.get_num(self.xx, negation=\"minus\")} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nDas heißt<bookmark mark=\"cursorInPos\"/>, wir müssen sie um den Faktor a gleich {abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.string_abs} ist. \n<bookmark mark=\"flip\"/>{self.flip}\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"negative\")} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{self.get_num(self.string_sign*self.string_abs, negation=\"negative\")} ist."
     },
     "ScaleQuestionScene": {
       "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nJetzt wollen wir es so skalieren, dass es durch den Punkt <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]} geht.\n{self.question}"

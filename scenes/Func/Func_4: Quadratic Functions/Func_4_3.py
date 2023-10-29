@@ -44,7 +44,7 @@ class Func_4_3_I_1_q(SophiaCursorScene):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
@@ -62,33 +62,36 @@ class Func_4_3_I_1_q(SophiaCursorScene):
                 text=self.translate("Func_4_3.I1.q.voiceover")
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
-            x,y,_ = plane.c2p(2**0.5,2)
+            cursor.idle=False
+            x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
-            cursor_updater = lambda m: m.move_to(plane.c2p((2/a.get_value())**0.5,2))
+            cursor.idle=True
+            cursor_updater = lambda m: m.move_to(plane.c2p(1,a.get_value()))
             cursor.add_updater(cursor_updater)
 
             self.wait_until_bookmark("steeper")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='up', duration=2)
             self.play(a.animate.set_value(2), run_time=2)
 
             self.wait_until_bookmark("flatter")
+            self.add_scale_sound(direction='down', duration=2)
             self.play(a.animate.set_value(0.5), run_time=2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = funcTerm[0].get_center()+0.4*DOWN
+            self.add_scale_sound(direction='down', duration = .5)
             self.play(Create(funcTerm), a.animate(run_time=0.5).set_value(1))
             cursor.remove_updater(cursor_updater)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
@@ -104,22 +107,24 @@ class Func_4_3_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("xSquared")
             x,y,_ = funcTerm[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos2")
-            cursor.blinking=False
-            x,y,_ = plane.c2p(2**0.5,2)
+            cursor.idle=False
+            x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
-            cursor.add_updater(lambda m: m.move_to(plane.c2p((2/a.get_value())**0.5,2)))
+            cursor.idle=True
+            cursor.add_updater(cursor_updater)
 
             self.wait_until_bookmark("large")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='up', duration=2)
             self.play(Write(aLarge) ,a.animate(run_time=2).set_value(2), run_time=0.5)
 
             self.wait_until_bookmark("small")
+            self.add_scale_sound(direction='down', duration=2)
             self.play(Write(aSmall), a.animate(run_time=2).set_value(0.5), run_time=0.5)
-            cursor.blinking=True            
+            cursor.idle=True            
 
 
         # Wait for 4 seconds at the end of the animation
@@ -141,7 +146,7 @@ class Func_4_3_I_1_a(SophiaCursorScene):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -155,26 +160,27 @@ class Func_4_3_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_3.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cursor.add_updater(lambda m: m.move_to(plane.c2p(1,f1(1))))
 
             self.wait_until_bookmark("flip")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='down', duration=4)
             self.play(a.animate.set_value(-1), run_time=4)
 
         self.wait(4)
@@ -194,7 +200,7 @@ class Func_4_3_I_1_b(SophiaCursorScene):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -208,26 +214,27 @@ class Func_4_3_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_3.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cursor.add_updater(lambda m: m.move_to(plane.c2p(1,f1(1))))
 
             self.wait_until_bookmark("flip")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='down', duration=4)
             self.play(a.animate.set_value(-1), run_time=4)
 
         self.wait(4)
@@ -247,7 +254,7 @@ class Func_4_3_I_1_c(SophiaCursorScene):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -261,29 +268,28 @@ class Func_4_3_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_3.I1.c.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cursor.add_updater(lambda m: m.move_to(plane.c2p(1,f1(1))))
 
             self.wait_until_bookmark("flip")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='down', duration=4)
             self.play(a.animate.set_value(-1), run_time=4)
-
-        self.wait(4)
 
 
 class Func_4_3_I_1_d(SophiaCursorScene):
@@ -301,7 +307,7 @@ class Func_4_3_I_1_d(SophiaCursorScene):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -315,26 +321,27 @@ class Func_4_3_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_3.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_4_3.I1.a.voiceover")
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,1)
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cursor.add_updater(lambda m: m.move_to(plane.c2p(1,f1(1))))
 
             self.wait_until_bookmark("flip")
-            cursor.blinking=False
+            cursor.idle=False
+            self.add_scale_sound(direction='down', duration=4)
             self.play(a.animate.set_value(-1), run_time=4)
 
         self.wait(4)
@@ -369,7 +376,7 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -379,36 +386,35 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2.2,-(4/a.get_value())**0.5),min(2.2,(4/a.get_value())**0.5), 0.001]))
 
         xx, yy = self.point
-        sign = 1 if yy > 0 else -1
-        abs = np.abs(yy/xx**2)
+        self.string_sign, self.string_abs = 1 if yy > 0 else -1, np.abs(yy/xx**2)
 
         # Action Sequence
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_4_3.ScaleQuestionScene.voiceover"))
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.add_pencil_sound(1.5)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(xx, f1(xx))
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cursor.add_updater(lambda m: m.move_to(plane.c2p(xx, f1(xx))))
 
             self.wait_until_bookmark("scale")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(a.animate.set_value(abs), b.animate.set_value(sign), run_time=2)
 
             self.wait_until_bookmark("markPoint")
             self.play(ApplyWave(cursor))
-            cursor.blinking=True
+            cursor.idle=True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -431,7 +437,7 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.add(cords)
 
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
 
         cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
@@ -441,59 +447,59 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         g1 = always_redraw(lambda: plane.plot(f1, color=BLUE, x_range=[max(-2.2,-(4/a.get_value())**0.5),min(2.2,(4/a.get_value())**0.5), 0.001]))
         
         xx, yy = self.point
-        sign = 1 if yy > 0 else -1
-        self.flip == "" if sign==1 else self.flip
-        abs = np.abs(yy/xx**2)
+        self.string_sign, self.string_abs = 1 if yy > 0 else -1, np.abs(yy/xx**2)
+        self.flip == "" if self.string_sign==1 else self.flip
         square = MathTex(f"{xx}^2 = {xx**2}", color=c1t, font_size = fs2).next_to(cords, DOWN, buff=0.4)
         arrow = MathTex("\\Downarrow", color=c1t, font_size = fs2).next_to(square, DOWN, buff=0.2)
-        solution = MathTex(f"a = ", f"\\frac{{{yy}}}{{{xx**2}}}", "=", f"{sign*abs}", color=c1t, font_size = fs2).next_to(arrow, DOWN, buff=0.2)
+        solution = MathTex(f"a = ", f"\\frac{{{yy}}}{{{xx**2}}}", "=", f"{self.string_sign*self.string_abs}", color=c1t, font_size = fs2).next_to(arrow, DOWN, buff=0.2)
         self.xx, self.yy = xx, yy
-        self.sign, self.abs = sign, abs
+        self.get_num = get_num
+
 
         # Action Sequence
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_4_3.ScaleAnswerScene.voiceover"))
         ) as tracker:
 
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add_pencil_sound(1)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.play(Create(g1), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("square")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = square.get_center()+0.4*DOWN
             self.play(Create(square), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cursorInPos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(xx, f1(xx))
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             cU = lambda m: m.move_to(plane.c2p(xx, f1(xx)))
             cursor.add_updater(cU)
 
             self.wait_until_bookmark("scale")
-            cursor.blinking=False
-            self.play(a.animate.set_value(abs), run_time=2)
+            cursor.idle=False
+            self.play(a.animate.set_value(self.string_abs), run_time=2)
 
             self.wait_until_bookmark("flip")
-            if sign <0:
-                self.play(b.animate.set_value(sign))
+            if self.string_sign <0:
+                self.play(b.animate.set_value(self.string_sign))
             cursor.remove_updater(cU)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("final")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Create(arrow), Create(solution), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("af")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = solution[0].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
@@ -504,7 +510,7 @@ class ScaleAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("ff")
             x,y,_ = solution[3].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
 
         # Wait for 4 seconds at the end of the animation

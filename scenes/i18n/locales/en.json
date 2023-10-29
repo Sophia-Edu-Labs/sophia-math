@@ -1220,7 +1220,7 @@
   "Func_4_3": {
     "I1": {
       "a": {
-        "voiceover": "No, that's not it. If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
+        "voiceover": "If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
       },
       "c": {
         "voiceover": "Yep, that's it, very good. If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
@@ -1279,7 +1279,7 @@
       }
     },
     "ScaleAnswerScene": {
-      "voiceover": "If we plug {self.xx} into the unit parabola, we obtain <bookmark mark=\"square\"/>the value {self.xx**2}.\nThat means<bookmark mark=\"cursorInPos\"/>, we have to <bookmark mark=\"scale\"/>scale it by a factor of a equals {np.abs(self.yy)} over {self.xx**2},\nwhich equals {abs}. <bookmark mark=\"flip\"/>{self.flip}\nThat means, <bookmark mark=\"final\"/> the correct factor is <bookmark mark=\"af\"/>a equals <bookmark mark=\"afrac\"/>{self.yy} over {self.xx**2} which is equal to <bookmark mark=\"ff\"/>{self.sign*self.abs}"
+      "voiceover": "If we plug {self.get_num(self.xx, negation=\"minus\")} into the unit parabola, we obtain <bookmark mark=\"square\"/>the value {self.xx**2}.\nThat means<bookmark mark=\"cursorInPos\"/>, we have to <bookmark mark=\"scale\"/>scale it by a factor of a equals {self.get_num(abs(self.yy), negation=\"minus\")} over {self.xx**2},\nwhich equals {self.string_abs}. <bookmark mark=\"flip\"/>{self.flip}\nThat means, <bookmark mark=\"final\"/> the correct factor is <bookmark mark=\"af\"/>a equals <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"minus\")} over {self.xx**2} which is equal to <bookmark mark=\"ff\"/>{self.get_num(self.sign*self.abs, negation=\"minus\")}"
     },
     "ScaleQuestionScene": {
       "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nNow, we want to<bookmark mark=\"scale\"/> scale it, so that it goes through the point <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]}.\n{self.question}"
