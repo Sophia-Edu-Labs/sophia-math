@@ -35,13 +35,8 @@ class Func_7_1_I_1_q(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -68,7 +63,7 @@ class Func_7_1_I_1_q(SophiaCursorScene):
 
             self.wait_until_bookmark("degrees")
             x,y,_ = angle.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
@@ -86,16 +81,16 @@ class Func_7_1_I_1_q(SophiaCursorScene):
             self.play(a.animate.set_value(0.25), run_time=0.5)
             self.play(MoveAlongPath(cursor, arc))
             self.play(CursorMoveTo(cursor,0,0))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("threequartercircle")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(a.animate.set_value(0.75), run_time=0.5)
             x,y,_ = arc.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(MoveAlongPath(cursor, arc))
             self.play(CursorMoveTo(cursor,0,0))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -109,13 +104,8 @@ class Func_7_1_I_1_a(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -145,7 +135,7 @@ class Func_7_1_I_1_a(SophiaCursorScene):
 
             self.wait_until_bookmark("three_quarter")
             x,y,_ = three_quarter.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(three_quarter), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
@@ -163,7 +153,7 @@ class Func_7_1_I_1_a(SophiaCursorScene):
             self.wait_until_bookmark("equation_3")
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -176,13 +166,8 @@ class Func_7_1_I_1_b(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -212,7 +197,7 @@ class Func_7_1_I_1_b(SophiaCursorScene):
 
             self.wait_until_bookmark("three_quarter")
             x,y,_ = three_quarter.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(three_quarter), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
@@ -230,7 +215,7 @@ class Func_7_1_I_1_b(SophiaCursorScene):
             self.wait_until_bookmark("equation_3")
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -243,13 +228,8 @@ class Func_7_1_I_1_c(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -279,7 +259,7 @@ class Func_7_1_I_1_c(SophiaCursorScene):
 
             self.wait_until_bookmark("three_quarter")
             x,y,_ = three_quarter.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(three_quarter), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
@@ -297,7 +277,7 @@ class Func_7_1_I_1_c(SophiaCursorScene):
             self.wait_until_bookmark("equation_3")
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -310,13 +290,8 @@ class Func_7_1_I_1_d(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_7_1.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -346,7 +321,7 @@ class Func_7_1_I_1_d(SophiaCursorScene):
 
             self.wait_until_bookmark("three_quarter")
             x,y,_ = three_quarter.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(three_quarter), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
@@ -364,7 +339,7 @@ class Func_7_1_I_1_d(SophiaCursorScene):
             self.wait_until_bookmark("equation_3")
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
         
@@ -376,7 +351,7 @@ class Func_7_1_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$90^\circ$", "$180^\circ$", "$270^\circ$", "$360^\circ$"],
+            answerOptions = ["$\\tfrac{3}{2}\Pi$", "$\\tfrac{1}{2}\Pi$", "$2\Pi$", "$\Pi$"],
             correctAnswerIndex = 3,
             questionText=self.translate("Func_7_1.I2.q.question-text")
         )
@@ -388,13 +363,8 @@ class Func_7_1_I_2_q(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_7_1.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -430,48 +400,48 @@ class Func_7_1_I_2_q(SophiaCursorScene):
 
             self.wait_until_bookmark("degrees")
             x,y,_ = degrees_val_1.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(degrees), Write(degrees_val_1), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("radians")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = radians_val_1.get_center()+0.4*DOWN
             self.play(Write(radians), Write(radians_val_1), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("half_circle")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(a.animate.set_value(0.5), run_time=0.5)
             x,y,_ = arc.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.2)
             self.play(MoveAlongPath(cursor, arc))
             self.play(CursorMoveTo(cursor, x, y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("full_circle_fin")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = degrees_val_1.get_center()+0.4*DOWN
             self.play(Write(full), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("half_circle_fin")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = degrees_val_2.get_center()+0.4*DOWN
             self.play(Write(half), Write(degrees_val_2), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("radians_fin")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = radians_val_1.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("radians_fin_half")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = radians_val_2.get_center()+0.4*DOWN
             self.play(Write(radians_val_2), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -487,13 +457,8 @@ class Func_7_1_I_2_a(SophiaCursorScene):
         self.add_title(self.translate("Func_7_1.I2.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -514,10 +479,9 @@ class Func_7_1_I_2_a(SophiaCursorScene):
 
         equation = MathTex("\\tfrac{1}{2}", "\\cdot",  "2\\Pi", "=", "\\Pi", color=c1t, font_size=fs2).shift(2.2*DOWN)
 
-        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_1.I2.a.voiceover")
+                text=self.translate("General.incorrect_6") + self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -525,31 +489,31 @@ class Func_7_1_I_2_a(SophiaCursorScene):
 
             self.wait_until_bookmark("half")
             x,y,_ = half.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(half), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
             x,y,_ = full_circle.get_center()+0.4*DOWN
             self.play(Write(full_circle), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[0].get_center()+0.4*DOWN
             self.play(Write(equation[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[2].get_center()+0.4*DOWN
             self.play(Write(equation[1]), Write(equation[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -565,13 +529,8 @@ class Func_7_1_I_2_b(SophiaCursorScene):
         self.add_title(self.translate("Func_7_1.I2.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -595,7 +554,7 @@ class Func_7_1_I_2_b(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_1.I2.a.voiceover")
+                text=self.translate("General.incorrect_6") + self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -603,31 +562,31 @@ class Func_7_1_I_2_b(SophiaCursorScene):
 
             self.wait_until_bookmark("half")
             x,y,_ = half.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(half), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
             x,y,_ = full_circle.get_center()+0.4*DOWN
             self.play(Write(full_circle), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[0].get_center()+0.4*DOWN
             self.play(Write(equation[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[2].get_center()+0.4*DOWN
             self.play(Write(equation[1]), Write(equation[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -643,13 +602,8 @@ class Func_7_1_I_2_c(SophiaCursorScene):
         self.add_title(self.translate("Func_7_1.I2.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -673,7 +627,7 @@ class Func_7_1_I_2_c(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_1.I2.a.voiceover")
+                text=self.translate("General.incorrect_6") + self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -681,31 +635,31 @@ class Func_7_1_I_2_c(SophiaCursorScene):
 
             self.wait_until_bookmark("half")
             x,y,_ = half.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(half), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
             x,y,_ = full_circle.get_center()+0.4*DOWN
             self.play(Write(full_circle), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[0].get_center()+0.4*DOWN
             self.play(Write(equation[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[2].get_center()+0.4*DOWN
             self.play(Write(equation[1]), Write(equation[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -720,13 +674,8 @@ class Func_7_1_I_2_d(SophiaCursorScene):
         self.add_title(self.translate("Func_7_1.I2.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -749,7 +698,7 @@ class Func_7_1_I_2_d(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_1.I2.d.voiceover")
+                text=self.translate("General.correct_6") + self.translate("Func_7_1.I2.a.voiceover")
         ) as tracker:
 
             # Display the arc initially
@@ -757,31 +706,31 @@ class Func_7_1_I_2_d(SophiaCursorScene):
 
             self.wait_until_bookmark("half")
             x,y,_ = half.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Write(half), run_time=0.5)
 
             self.wait_until_bookmark("full_circle")
             x,y,_ = full_circle.get_center()+0.4*DOWN
             self.play(Write(full_circle), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[0].get_center()+0.4*DOWN
             self.play(Write(equation[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[2].get_center()+0.4*DOWN
             self.play(Write(equation[1]), Write(equation[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("equation_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y, _ = equation[4].get_center()+0.4*DOWN
             self.play(Write(equation[3]), Write(equation[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -797,13 +746,8 @@ class Func_7_1_I_3(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_7_1.I3.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(0)
@@ -831,22 +775,22 @@ class Func_7_1_I_3(SophiaCursorScene):
             self.wait_until_bookmark("degrees")
             threesixty = MathTex("360", color=c1t, font_size=fs1).move_to(arc)
             x,y,_ = threesixty.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(Write(threesixty), run_time=0.5)
             qmark = self.draw_qmark(cursor, [0,-2.2,0], run_time=4, apply_waves=0)
             for _ in range(2):
                 self.play(ApplyWave(qmark), run_time=2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("temple")
             self.play(FadeOut(qmark), temple.animate.shift(5*RIGHT), run_time=1)
 
             self.wait_until_bookmark("base")
             x,y,_ = threesixty.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             for idx in range(6):
                 threesixty_new = MathTex(str((1+idx)*60), color=c1t, font_size=fs1).move_to(threesixty)
                 self.play(ReplacementTransform(threesixty, threesixty_new))
@@ -879,13 +823,8 @@ class Func_7_1_I_4(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_7_1.I3.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=False, y=0.6)
+
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -920,16 +859,16 @@ class Func_7_1_I_4(SophiaCursorScene):
             x,y,_ = arc.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             self.play(MoveAlongPath(cursor, arc))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("circ_1")
             x,y,_ = circ[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(circ[0]), Write(circ[1]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = circ[2].get_center()+0.4*DOWN
             self.play(Write(circ[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
 
@@ -940,23 +879,23 @@ class Func_7_1_I_4(SophiaCursorScene):
             self.wait_until_bookmark("r")
             x,y,_ = circ[6].get_center()+0.4*DOWN
             self.play(Write(circ[5]), Write(circ[6]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("unit")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = unit_line.get_start()
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor_updater = lambda m: m.move_to(unit_line.get_end())
             cursor.add_updater(cursor_updater)
             self.play(Create(unit_line), Write(unit_label))
             cursor.remove_updater(cursor_updater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two_pi")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = circ[4].get_center()+0.4*DOWN
             self.play(circ.animate.shift(0.3*RIGHT), Unwrite(circ[5]), Unwrite(circ[6]), CursorMoveTo(cursor, x, y))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rad_1")
             dec = DecimalNumber(2, num_decimal_places=1, font_size=fs1).set_color(c1t).move_to(circ[2].get_right())
@@ -968,17 +907,17 @@ class Func_7_1_I_4(SophiaCursorScene):
             self.wait_until_bookmark("red_circle")
             self.add(arc_2, line_start_2, line_end_2)
             x,y,_ = arc_2.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), Unwrite(unit_line), Unwrite(unit_label), run_time=0.5)
             cursor.add_updater(lambda m: m.move_to(arc_2.get_end()))
             dec.add_updater(lambda m: m.set_value(b.get_value()*2))
             self.play(b.animate.set_value(0.25))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("half")
-            cursor.blinking=False
+            cursor.idle=False
             self.play(b.animate.set_value(0.5))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1006,13 +945,8 @@ class DegToRadQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         deg = int(self.angle_frac*360)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=False, y=0.6)
+
         self.add(cursor)
 
         circ =  Arc(radius=1, angle=2*PI, color=BLUE, fill_color=BLUE).shift(0.6*UP)
@@ -1040,25 +974,25 @@ class DegToRadQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("red_circle")
             self.add(arc_2, line_start_2, line_end_2)
             x,y,_ = arc_2.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor_updater = lambda m: m.move_to(arc_2.get_end())
             cursor.add_updater(cursor_updater)
             self.play(b.animate.set_value(self.angle_frac))
             cursor.remove_updater(cursor_updater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("degrees")
             x,y,_ = label_deg[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_deg), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rad")
             x,y,_ = label_rad[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_rad), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1076,13 +1010,8 @@ class DegToRadAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         deg = self.deg = int(self.angle_frac*360)
         
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=False, y=0.6)
+
         self.add(cursor)
 
         circ =  Arc(radius=1, angle=2*PI, color=BLUE, fill_color=BLUE).shift(0.6*UP)
@@ -1109,37 +1038,37 @@ class DegToRadAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("red_circle")
             self.add(arc_2, line_start_2, line_end_2)
             x,y,_ = arc_2.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor_updater = lambda m: m.move_to(arc_2.get_end())
             cursor.add_updater(cursor_updater)
             self.play(b.animate.set_value(self.angle_frac))
             cursor.remove_updater(cursor_updater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("degrees")
             x,y,_ = label_deg[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_deg), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("eq_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[0].get_center()+0.4*DOWN
             self.play(Write(eq[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("eq_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[2].get_center()+0.4*DOWN
             self.play(Write(eq[1]), Write(eq[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("eq_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[4].get_center()+0.4*DOWN
             self.play(Write(eq[3]), Write(eq[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1158,13 +1087,8 @@ class RadToDegQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
         deg = int(self.angle_frac*360)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=False, y=0.6)
+
         self.add(cursor)
 
         circ =  Arc(radius=1, angle=2*PI, color=BLUE, fill_color=BLUE).shift(0.6*UP)
@@ -1192,25 +1116,25 @@ class RadToDegQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("red_circle")
             self.add(arc_2, line_start_2, line_end_2)
             x,y,_ = arc_2.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor_updater = lambda m: m.move_to(arc_2.get_end())
             cursor.add_updater(cursor_updater)
             self.play(b.animate.set_value(self.angle_frac))
             cursor.remove_updater(cursor_updater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rad")
             x,y,_ = label_rad[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_rad), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("degrees")
             x,y,_ = label_deg[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_deg), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1227,13 +1151,8 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         deg = int(self.angle_frac*360)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=False, y=0.6)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(stroke_width=0.0, idle=False, y=0.6)
+
         self.add(cursor)
 
         circ =  Arc(radius=1, angle=2*PI, color=BLUE, fill_color=BLUE).shift(0.6*UP)
@@ -1260,37 +1179,37 @@ class RadToDegAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("red_circle")
             self.add(arc_2, line_start_2, line_end_2)
             x,y,_ = arc_2.get_start()
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor, x, y), run_time=0.5)
             cursor_updater = lambda m: m.move_to(arc_2.get_end())
             cursor.add_updater(cursor_updater)
             self.play(b.animate.set_value(self.angle_frac))
             cursor.remove_updater(cursor_updater)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("radians")
             x,y,_ = label_rad[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(label_rad), CursorMoveTo(cursor, x, y), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("eq_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[0].get_center()+0.4*DOWN
             self.play(Write(eq[0]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("eq_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[2].get_center()+0.4*DOWN
             self.play(Write(eq[1]), Write(eq[2]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("eq_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = eq[4].get_center()+0.4*DOWN
             self.play(Write(eq[3]), Write(eq[4]), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 

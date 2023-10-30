@@ -2000,16 +2000,16 @@
       "a": {
         "full": "Full circle: $2\\\\Pi$",
         "half": "Here: $\\\\tfrac{1}{2}$ of a full circle",
-        "voiceover": "That's wrong, unfortunately.\n\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
+        "voiceover": "<break time=\"0.5s\"/>\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means <split/>that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
       },
       "d": {
-        "voiceover": "That is correct, well done!\n\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
+        "voiceover": ""
       },
       "q": {
         "deg": "Degrees:",
         "full": "Full",
         "half": "Half",
-        "question-text": "How many degrees does this $\\\\tfrac{3}{4}$ circle have?",
+        "question-text": "What is the measure in radians of a half circle?",
         "rad": "Radians:",
         "title": "Radians",
         "voiceover": "In addition to degrees, there is one more way to describe angles:\nRadians. And just like a full circle <bookmark mark=\"degrees\"/>has 360 degrees,\nin radians the angle of a full circle<bookmark mark=\"radians\"/> is 2 pi.\n\nNow, knowing that a full circle is 2 pi radians, how many radians\n<bookmark mark=\"half_circle\"/>is a half circle?\n\nA little hint: As mentioned, a <bookmark mark=\"full_circle_fin\"/> full circle has 360 degrees.\nAnd <bookmark mark=\"half_circle_fin\"/>a half circle has 180 degrees.\n\nNow we also know that a full circle <bookmark mark=\"radians_fin\"/>is 2 pi radians.\nSo <bookmark mark=\"radians_fin_half\"/>how many radians is a half circle?"
@@ -2091,10 +2091,10 @@
       "a": {
         "hypothenuse": "hypothenuse",
         "opposite": "opposite",
-        "voiceover": "No, that's not right.\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe opposite is the side opposite to the angle. In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
+        "voiceover": "<break time=\"0.4s\"/>\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\nThe opposite is the side opposite to the angle. <split/>In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
       },
       "b": {
-        "voiceover": "Yep, that's correct.\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\n\nThe opposite is the side opposite to the angle. In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
+        "voiceover": ""
       },
       "q": {
         "answer-options": "[\"blue line / green line\", \"pink line / blue line\", \"pink line / green line\", \"green line / pink line\"]",
@@ -2111,9 +2111,9 @@
         "voiceover": "Yes, that's right. Well done.\nThe blue line goes <bookmark mark=\"center\"/>from the center of the circle to the\nedge<bookmark mark=\"circle\"/> of the circle. Since the radius of the circle is one, the length of the\nblue line is<bookmark mark=\"write_one\"/> also one.\n\nNote that we can <bookmark mark=\"vary\"/> vary the angle alpha and the length of the blue line will\nstill be one, as long as it is inscribed into the unit circle"
       },
       "q": {
-        "answer-options": "[\"It has the length $\\cos(1)$\",\"It has length $\\sin(1)$\"\"It has length $\\sqrt{2}$\",\"It has length $1$\"]",
+        "answer-options": "[\"It has the length $\\cos(1)$\",\"It has length $\\sin(1)$\", \"It has length $\\sqrt{2}$\",\"It has length $1$\"]",
         "question-text": "What can we say about the hypothenuse (the blue line) for the inscribed triangle?",
-        "voiceover": "Now what if we <bookmark mark=\"circle\"/>inscribe the triangle into a circle, with the radius of one?\nIf the top left corner is in the center of the circle, what can we say\nabout <bookmark mark=\"hypothenuse\"/> the hypothenuse, meaning the blue line?"
+        "voiceover": "Now what if we <bookmark mark=\"circle\"/>inscribe the triangle into a circle, with the radius of one?\nIf the left corner is in the center of the circle, what can we say\nabout <bookmark mark=\"hypothenuse\"/> the hypothenuse, meaning the blue line?"
       }
     },
     "I3": {
@@ -2478,7 +2478,9 @@
     "incorrect_2": "No, that's not it. ",
     "incorrect_3": "No, not quite. ",
     "incorrect_4": "That's not correct. ",
-    "incorrect_5": "No. "
+    "incorrect_5": "No. ",
+    "incorrect_6": "That's wrong, unfortunately. ",
+    "correct_6": "That is correct, well done. "
   },
   "degree": "Degree",
   "test-key": "[“1\", \"2\", \"3\"]"

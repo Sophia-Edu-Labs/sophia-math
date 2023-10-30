@@ -1282,7 +1282,7 @@
       }
     },
     "ScaleAnswerScene": {
-      "voiceover": "Wenn wir {self.get_num(self.xx, negation=\"minus\")} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nDas heißt<bookmark mark=\"cursorInPos\"/>, wir müssen sie um den Faktor a gleich {abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.string_abs} ist. \n<bookmark mark=\"flip\"/>{self.flip}\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"negative\")} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{self.get_num(self.string_sign*self.string_abs, negation=\"negative\")} ist."
+      "voiceover": "Wenn wir {self.get_num(self.xx, negation=\"minus\", point=\"komma\")} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nAlso müssen wir<bookmark mark=\"cursorInPos\"/>die Einheitsparabel um den Faktor a gleich {abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.get_num(self.string_abs, negation=\"minus\", point=\"Komma\"} ist. \n{self.flip}<bookmark mark=\"flip\"/>\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"minus\", point=\"komma\")} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{self.get_num(self.string_sign*self.string_abs, negation=\"minus\", point=\"komma\")} ist."
     },
     "ScaleQuestionScene": {
       "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nJetzt wollen wir es so skalieren, dass es durch den Punkt <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]} geht.\n{self.question}"
@@ -1299,7 +1299,7 @@
       "q": {
         "question-text": "Welche Funktion ist keine quadratische Funktion?",
         "title": "Quadratische Funktionen",
-        "voiceover": "Wie können quadratische Funktionen aussehen?\n<break time=\"0.4s\"/>\nUnd wie sehen quadratische Funktionen nie aus?\n<break time=\"0.4s\"/>\nBeginnen wir mit diesen drei Funktionen:\nDie erste ist <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fx2\"/> x Quadrat minus <bookmark mark=\"f2\"/> 2.\n<break time=\"0.4s\"/>\nDie zweite ist <bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gx2\"/> x Quadrat mal Klammer auf\n<bookmark mark=\"gxb\"/> x minus<bookmark mark=\"g1\"/> eins Klamme zu.\n<break time=\"0.4s\"/>\nUnd die dritte lautet <bookmark mark=\"h\"/> h von x<bookmark mark=\"hx\"/> gleich Klammer auf <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>zwei Klammer zu\nmal Klammer auf <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>zwei Klammer zu.\n<break time=\"0.4s\"/>\nWelche der drei ist nun keine quadratische Funktion?"
+        "voiceover": "Wie können quadratische Funktionen aussehen?\n<break time=\"0.4s\"/>\nUnd wie sehen quadratische Funktionen nie aus?\n<break time=\"0.4s\"/>\nBeginnen wir mit diesen drei Funktionen:<split/>\nDie erste ist <bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fx2\"/> x Quadrat minus <bookmark mark=\"f2\"/> 2.\n<break time=\"0.4s\"/>\nDie zweite ist <split/><bookmark mark=\"g\"/>g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gx2\"/> x Quadrat mal Klammer auf\n<bookmark mark=\"gxb\"/> x minus<bookmark mark=\"g1\"/> eins Klammer zu.\n<break time=\"0.4s\"/>\nUnd die dritte lautet<split/><bookmark mark=\"h\"/> h von x<bookmark mark=\"hx\"/> gleich Klammer auf <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>zwei Klammer zu\nmal Klammer auf <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>zwei Klammer zu.\n<break time=\"0.4s\"/>\nWelche der drei ist nun keine quadratische Funktion?"
       }
     },
     "I2": {
@@ -2003,16 +2003,16 @@
       "a": {
         "full": "Voller Kreis: $2\\\\Pi$",
         "half": "Hier: $\\\\tfrac{1}{2}$ eines vollen Kreises",
-        "voiceover": "Das ist leider falsch.\n<break time=\"0.5s\"/>\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\nWir wissen ja, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi in Bogenmaß hat.\n<break time=\"0.5s\"/>\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte von\n<bookmark mark=\"equation_2\"/> 2 Pi beträgt, also ist<bookmark mark=\"equation_3\"/>er gleich Pi."
+        "voiceover": "<break time=\"0.5s\"/>\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\nWir wissen ja, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi in Bogenmaß hat.\n<break time=\"0.5s\"/>\nDas bedeutet, <split/>dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte von\n<bookmark mark=\"equation_2\"/> 2 Pi beträgt, also ist<bookmark mark=\"equation_3\"/>er gleich Pi."
       },
       "d": {
-        "voiceover": "Das ist richtig, gut gemacht!\n<break time=\"0.5s\"/>\nIn diesem Beispiel betrachten wir <bookmark mark=\"half\"/> einen Halbkreis.\nWir wissen ja, dass <bookmark mark=\"full_circle\"/>ein vollständiger Kreis 2 Pi in Bogenmaß hat.\n<break time=\"0.5s\"/>\nDas bedeutet, dass unser Winkel <bookmark mark=\"equation_1\"/> die Hälfte von\n<bookmark mark=\"equation_2\"/> 2 Pi beträgt, also ist<bookmark mark=\"equation_3\"/>er gleich Pi."
+        "voiceover": ""
       },
       "q": {
         "deg": "Grad:",
         "full": "Voll",
         "half": "Halb",
-        "question-text": "Wie viele Grad hat dieser $\\\\tfrac{3}{4}$-Kreis?",
+        "question-text": "Wie groß ist der Winkel eines Halbkreises in Bogenmaß?",
         "rad": "Bogenmaß:",
         "title": "Bogenmaß",
         "voiceover": "Neben Grad gibt es noch eine weitere Möglichkeit, Winkel zu beschreiben:\n<break time=\"0.5s\"/>\nBogenmaß. \nUnd genau wie ein vollständiger Kreis <bookmark mark=\"degrees\"/>360 Grad hat,\nbeträgt der Winkel eines gesamten Kreises in Bogenmaß<bookmark mark=\"radians\"/> 2 pi.\nWenn man nun weiß, dass ein vollständiger Kreis 2 Pi im Bogenmaß hat, wie viel <bookmark mark=\"half_circle\"/>ist ein Halbkreis in Bogenmaß?\n<break time=\"0.5s\"/>\nKleiner Hinweis: Wie bereits erwähnt hat ein <bookmark mark=\"full_circle_fin\"/> voller Kreis 360 Grad.\nUnd <bookmark mark=\"half_circle_fin\"/>ein Halbkreis hat 180 Grad.\n<break time=\"0.5s\"/>\nJetzt wissen wir auch, dass ein Vollkreis <bookmark mark=\"radians_fin\"/> 2 Pi im Bogenmaß hat.\n<break time=\"0.5s\"/>Wie viel umfasst also <bookmark mark=\"radians_fin_half\"/>ein Halbkreis in Bogenmaß?"
@@ -2094,10 +2094,10 @@
       "a": {
         "hypothenuse": "Hypothenuse",
         "opposite": "Gegenkathete",
-        "voiceover": "Nein, das ist nicht richtig.\n<break time=\"0.4s\"/>\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der Gegenkathete geteilt <bookmark mark=\"hypothenuse\"/> durch die Länge der Hypothenuse.\n<break time=\"0.4s\"/>\nDie Gegenkathete ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n<break time=\"0.4s\"/>\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Länge der rosa Linie durch die Länge der blauen Linie dividieren müssen, um den Sinus des Winkels der Ecke unten links zu erhalten."
+        "voiceover": "<break time=\"0.4s\"/>\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der Gegenkathete geteilt <bookmark mark=\"hypothenuse\"/> durch die Länge der Hypothenuse.\n<break time=\"0.4s\"/>\nDie Gegenkathete ist die Seite,<split/> die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n<break time=\"0.4s\"/>\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Länge der rosa Linie durch die Länge der blauen Linie dividieren müssen, um den Sinus des Winkels der Ecke unten links zu erhalten."
       },
       "b": {
-        "voiceover": "Ja, das ist richtig.\n<break time=\"0.4s\"/>\nDer Sinus ist gleich <bookmark mark=\"opposite\"/> der Länge der Gegenkathete geteilt <bookmark mark=\"hypothenuse\"/> durch die Länge der Hypothenuse.\n<break time=\"0.4s\"/>\nDie Gegenkathete ist die Seite, die dem Winkel gegenüberliegt. \nIn diesem Fall<bookmark mark=\"opposite_plot\"/> ist es die rosa Linie.\n<break time=\"0.4s\"/>\nDie Hypothenuse ist die längste Seite eines Dreiecks. \nIn diesem Fall<bookmark mark=\"hypothenuse_plot\"/> ist es die blaue Linie.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Länge der rosa Linie durch die Länge der blauen Linie dividieren müssen, um den Sinus des Winkels der Ecke unten links zu erhalten."
+        "voiceover": ""
       },
       "q": {
         "answer-options": "[\"blaue Linie / grüne Linie\", \"rosa Linie / blaue Linie\", \"rosa Linie / grüne Linie\", \"grüne Linie / rosa Linie\"]",
@@ -2114,9 +2114,9 @@
         "voiceover": "Ja, das ist richtig. \nGut gemacht.\n<break time=\"0.4s\"/>\nDie blaue Linie verläuft <bookmark mark=\"center\"/>vom Mittelpunkt des Kreises bis zur Kante<bookmark mark=\"circle\"/> des Kreises. \nDa der Radius des Kreises eins ist, ist die Länge der blauen Linie ist<bookmark mark=\"write_one\"/> ebenfalls eins.\n<break time=\"0.4s\"/>\nBeachte, dass wir <bookmark mark=\"vary\"/> den Winkel Alpha variieren können und die Länge blauen Linieimmer noch eins ist, solange es in den Einheitskreis eingeschrieben ist"
       },
       "q": {
-        "answer-options": "[\"Es hat die Länge $\\cos(1)$\",\"Es hat die Länge $\\sin(1)$\"\"Es hat die Länge $\\sqrt{2}$\",\"Es hat die Länge $1$\"]",
+        "answer-options": "[\"Es hat die Länge $\\cos(1)$\",\"Es hat die Länge $\\sin(1)$\", \"Es hat die Länge $\\sqrt{2}$\",\"Es hat die Länge $1$\"]",
         "question-text": "Was können wir über die Hypothenuse (die blaue Linie) für das eingeschriebene Dreieck sagen?",
-        "voiceover": "Was wäre nun, wenn wir das Dreieck in einen Kreis mit dem Radius eins <bookmark mark=\"circle\"/>einschreiben würden?\n<break time=\"0.4s\"/>\nWenn die obere linke Ecke in der Mitte des Kreises liegt, was können wir dann über <bookmark mark=\"hypothenuse\"/> die Hypothenuse, also die blaue Linie sagen?"
+        "voiceover": "Was wäre nun, wenn wir das Dreieck in einen Kreis mit dem Radius eins <bookmark mark=\"circle\"/>einschreiben würden?\n<break time=\"0.4s\"/>\nWenn die linke Ecke in der Mitte des Kreises liegt, was können wir dann über <bookmark mark=\"hypothenuse\"/> die Hypothenuse, also die blaue Linie sagen?"
       }
     },
     "I3": {
@@ -2478,7 +2478,9 @@
     "incorrect_2": "Das stimmt nicht.",
     "incorrect_4": "Das ist nicht korrekt.",
     "incorrect_5": "Nein. ",
-    "incorrect_1": "Mhmm, das stimmt nicht."
+    "incorrect_1": "Mhmm, das stimmt nicht.",
+    "incorrect_6": "Das ist leider falsch. ",
+    "correct_6": "Das ist richtig, gut gemacht. "
   },
   "degree": "Grad",
   "test-key": "[\"1\", \"2\", \"3\"]"

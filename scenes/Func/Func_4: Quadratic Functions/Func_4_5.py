@@ -42,15 +42,9 @@ class Func_4_5_I_1_q(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: x**2
@@ -152,13 +146,8 @@ class Func_4_5_I_1_a(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f = MathTex("f","(x)", "=", "x^2", "-", "2", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -265,13 +254,9 @@ class Func_4_5_I_1_b(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_4_5.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f = MathTex("f","(x)", "=", "x^2", "-", "2", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -380,13 +365,9 @@ class Func_4_5_I_1_c(SophiaCursorScene):
         self.add_mathgrid()
         self.add_title(self.translate("Func_4_5.I1.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f = MathTex("f","(x)", "=", "x^2", "-", "2", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -508,15 +489,9 @@ class Func_4_5_I_2_q(SophiaCursorScene):
         cords = self.add_cords([0,4, 1], [-5, 5, 1], x_ticks=[0,1,2,3,4],y_ticks=[-5,-3,-1,1,3,5]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -615,15 +590,9 @@ class Func_4_5_I_2_a(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -710,15 +679,9 @@ class Func_4_5_I_2_b(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -804,15 +767,9 @@ class Func_4_5_I_2_c(SophiaCursorScene):
         plane = cords[0]
         self.add(cords)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         a = ValueTracker(1)
@@ -903,14 +860,8 @@ class Func_4_5_I_3_q(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -956,14 +907,8 @@ class Func_4_5_I_3_a(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -1061,14 +1006,8 @@ class Func_4_5_I_3_b(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -1167,14 +1106,8 @@ class Func_4_5_I_3_c(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -1272,14 +1205,8 @@ class Func_4_5_I_3_d(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -1389,14 +1316,8 @@ class Func_4_5_I_4_q(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = lambda x: -2*(x-2)**2+3
@@ -1447,14 +1368,8 @@ class Func_4_5_I_4_a(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "a\\cdot", "(x+", "b", ")^2", "+", "c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -1556,14 +1471,8 @@ class Func_4_5_I_4_b(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "a\\cdot", "(x+", "b", ")^2", "+", "c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -1665,14 +1574,8 @@ class Func_4_5_I_4_c(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "a\\cdot", "(x+", "b", ")^2", "+", "c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -1774,14 +1677,8 @@ class Func_4_5_I_4_d(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I2.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "a\\cdot", "(x+", "b", ")^2", "+", "c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
@@ -1896,14 +1793,8 @@ class Func_4_5_I_5_q(SophiaCursorScene):
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x-", "2)", "\\cdot", "(x+", "1", ")", color=c1t, font_size=fs2)
@@ -1972,14 +1863,8 @@ class Func_4_5_I_5_a(SophiaCursorScene):
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x-", "2)", "\\cdot", "(x+", "1", ")", color=c1t, font_size=fs2)
@@ -2110,14 +1995,8 @@ class Func_4_5_I_5_b(SophiaCursorScene):
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x-", "2)", "\\cdot", "(x+", "1", ")", color=c1t, font_size=fs2)
@@ -2249,14 +2128,8 @@ class Func_4_5_I_5_c(SophiaCursorScene):
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x-", "2)", "\\cdot", "(x+", "1", ")", color=c1t, font_size=fs2)
@@ -2393,14 +2266,8 @@ class Func_4_5_I_6_q(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "2)", "\\cdot", "(x-", "3", ")", color=c1t, font_size=fs2)
@@ -2452,14 +2319,8 @@ class Func_4_5_I_6_a(SophiaCursorScene):
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "2)", "\\cdot", "(x-", "3", ")", color=c1t, font_size=fs2)
@@ -2590,14 +2451,8 @@ class Func_4_5_I_6_b(SophiaCursorScene):
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "2)", "\\cdot", "(x-", "3", ")", color=c1t, font_size=fs2)
@@ -2729,14 +2584,8 @@ class Func_4_5_I_6_c(SophiaCursorScene):
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "2)", "\\cdot", "(x-", "3", ")", color=c1t, font_size=fs2)
@@ -2867,14 +2716,8 @@ class Func_4_5_I_6_d(SophiaCursorScene):
         cords = self.add_cords([-3,3, 1], [-10, 10, 2], x_ticks=[-3,-2,-1,1,2,3],y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
         plane = cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "2)", "\\cdot", "(x-", "3", ")", color=c1t, font_size=fs2)
@@ -3010,14 +2853,8 @@ class Func_4_5_I_7_q(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "a)", "\\cdot", "(x+", "b", ")", color=c1t, font_size=fs2)
@@ -3067,14 +2904,8 @@ class Func_4_5_I_7_a(SophiaCursorScene):
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "a)", "\\cdot", "(x+", "b", ")", color=c1t, font_size=fs2)
@@ -3170,14 +3001,8 @@ class Func_4_5_I_7_b(SophiaCursorScene):
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "a)", "\\cdot", "(x+", "b", ")", color=c1t, font_size=fs2)
@@ -3273,14 +3098,8 @@ class Func_4_5_I_7_c(SophiaCursorScene):
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "a)", "\\cdot", "(x+", "b", ")", color=c1t, font_size=fs2)
@@ -3376,14 +3195,8 @@ class Func_4_5_I_7_d(SophiaCursorScene):
         title = self.add_title(self.translate("Func_4_5.I5.q.title"))
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True).shift(UP)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f","(x)", "=", "(x+", "a)", "\\cdot", "(x+", "b", ")", color=c1t, font_size=fs2)
@@ -3479,14 +3292,8 @@ class Func_4_5_I_8(SophiaCursorScene):
         self.add_mathgrid()
         title = self.add_title(self.translate("Func_4_5.I8.q.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, blinking=True)
-        cursor.autoFadeBackground = False
-        cursor.add_updater(cursor_sound_updater)
-        cursor.add_updater(lambda m: self.bring_to_front(cursor) if not m.isHidden else None)
+        cursor.add_updater(lambda m: self.bring_to_front(cursor))
         self.add(cursor)
 
         f1 = MathTex("f", "(x)", "=", "a", "x", "^2", "+", "b", "x", "+", "c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.6)

@@ -111,10 +111,10 @@ class Func_7_2_I_1_a(SophiaCursorScene):
         opp, hyp = self.translate("Func_7_2.I1.a.opposite"), self.translate("Func_7_2.I1.a.hypothenuse")
         sine_formula = MathTex("\\sin(\\alpha) =", f"\\frac{{\\text{{{opp}}}}}{{\\text{{{hyp}}}}}", color=c1t, font_size=fs3).next_to(triangle, DOWN, buff=0.8)
         
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -182,7 +182,7 @@ class Func_7_2_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_2.I1.b.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -252,7 +252,7 @@ class Func_7_2_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
@@ -285,7 +285,6 @@ class Func_7_2_I_1_c(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
-
 
 
 class Func_7_2_I_1_d(SophiaCursorScene):
@@ -323,7 +322,7 @@ class Func_7_2_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_7_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_7_2.I1.a.voiceover")
         ) as tracker:
             
             x,y,_ = sine_formula[0].get_center()+0.4*DOWN+0.2*LEFT
