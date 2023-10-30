@@ -6,6 +6,7 @@
 /renderresults_media
 # Never commit prototypes.json (as they should always be generated using the get_prototypes_json.py script)
 /prototypes.json
+/prototypes_*.json
 
 #########################################################################################################
 ##################### For macOS people without appropriate global gitignore :) ##########################
