@@ -2019,7 +2019,7 @@ class Func_4_5_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I5.b.voiceover")
+                text=self.translate("Func_4_5.I5.b.voiceintro")+self.translate("Func_4_5.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2152,7 +2152,7 @@ class Func_4_5_I_5_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I5.a.voiceover")
+                text=self.translate("Func_4_5.I5.a.voiceintro")+self.translate("Func_4_5.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2342,7 +2342,7 @@ class Func_4_5_I_6_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2474,7 +2474,7 @@ class Func_4_5_I_6_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2607,7 +2607,7 @@ class Func_4_5_I_6_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I6.c.voiceover")
+                text=self.translate("General.correct_1")+self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2739,7 +2739,7 @@ class Func_4_5_I_6_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I6.a.voiceover")
+                text=self.translate("General.incorrect_1")+self.translate("Func_4_5.I6.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -2912,17 +2912,18 @@ class Func_4_5_I_7_a(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ if }x=-a}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ if }x=-b}", color=c1t, font_size=fs2).move_to(b2)
+        if_string = self.translate("GENERAL.IF")
+        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ "+if_string+" }x=-a}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ "+if_string+" }x=-b}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
-        b2b.shift(b2.get_top()-b2b.get_top())
+        b2b.shift(b2.get_top()-b2b.get_top()).shift(0.4*DOWN)
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
         sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
-        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol = Tex(sola, " $x=-a$ ", solb, " $x=-b $", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I7.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3009,17 +3010,18 @@ class Func_4_5_I_7_b(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ if }x=-a}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ if }x=-b}", color=c1t, font_size=fs2).move_to(b2)
+        if_string = self.translate("GENERAL.IF")
+        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ "+if_string+" }x=-a}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ "+if_string+" }x=-b}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
-        b2b.shift(b2.get_top()-b2b.get_top())
+        b2b.shift(b2.get_top()-b2b.get_top()).shift(0.4*DOWN)
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
         sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
-        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol = Tex(sola, " $x=-a$ ", solb, " $x=-b $", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I7.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3106,17 +3108,18 @@ class Func_4_5_I_7_c(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ if }x=-a}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ if }x=-b}", color=c1t, font_size=fs2).move_to(b2)
+        if_string = self.translate("GENERAL.IF")
+        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ "+if_string+" }x=-a}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ "+if_string+" }x=-b}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
-        b2b.shift(b2.get_top()-b2b.get_top())
+        b2b.shift(b2.get_top()-b2b.get_top()).shift(0.4*DOWN)
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
         sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
-        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol = Tex(sola, " $x=-a$ ", solb, " $x=-b $", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I7.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -3203,17 +3206,18 @@ class Func_4_5_I_7_d(SophiaCursorScene):
         self.add(f1)
         b1 = VGroup(f1[3], f1[4])
         b2 = VGroup(f1[-3], f1[-2], f1[-1])
-        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ if }x=-a}", color=c1t, font_size=fs2).move_to(b1)
-        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ if }x=-b}", color=c1t, font_size=fs2).move_to(b2)
+        if_string = self.translate("GENERAL.IF")
+        b1b = MathTex("\\underbrace{(x+a)}_{0\\text{ "+if_string+" }x=-a}", color=c1t, font_size=fs2).move_to(b1)
+        b2b = MathTex("\\underbrace{(x+b)}_{0\\text{ "+if_string+" }x=-b}", color=c1t, font_size=fs2).move_to(b2)
         b1b.shift(b1.get_top()-b1b.get_top())
-        b2b.shift(b2.get_top()-b2b.get_top())
+        b2b.shift(b2.get_top()-b2b.get_top()).shift(0.4*DOWN)
         a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f1, DOWN, buff=0.6)
         sola, solb = self.translate("Func_4_5.I6.a.sol1a"), self.translate("Func_4_5.I6.a.sol1b")
-        sol = Tex(sola, "$x=-a$", solb, "$x=-b$", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
+        sol = Tex(sola, " $x=-a$ ", solb, " $x=-b $", color=c1t, font_size=fs3).next_to(a, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I7.d.voiceover")
+                text=self.translate("General.correct_6")+self.translate("Func_4_5.I7.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
