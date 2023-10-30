@@ -1385,7 +1385,7 @@ class Func_4_5_I_4_a(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_4_5.I4.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1488,7 +1488,7 @@ class Func_4_5_I_4_b(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_4_5.I4.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1591,7 +1591,7 @@ class Func_4_5_I_4_c(SophiaCursorScene):
         f1.move_to(ORIGIN)
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_4_5.I4.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_4_5.I4.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")
@@ -1887,7 +1887,7 @@ class Func_4_5_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_4_5.I5.a.voiceover")
+                text=self.translate("Func_4_5.I5.a.voiceintro")+self.translate("Func_4_5.I5.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f")

@@ -1,4 +1,11 @@
 {
+  "FUNC_4_5": {
+    "I5": {
+      "A": {
+        "VOICEINTRO": "No, that's not what the factored form is good for."
+      }
+    }
+  },
   "Func_1_1": {
     "1I1_correct": {
       "main": {
@@ -1193,11 +1200,8 @@
     },
     "I4": {
       "a": {
-        "voiceover": "So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?",
-        "shift-left": "Shift left$\\Rightarrow$ add $2$ to $x$"
-      },
-      "c": {
-        "voiceover": ""
+        "shift-left": "Shift left$\\Rightarrow$ add $2$ to $x$",
+        "voiceover": "So we're starting with <bookmark mark=\"f\"/>f of <bookmark mark=\"x\"/>x equals <bookmark mark=\"xSquared\"/>x squared minus <bookmark mark=\"minusTwo\"/>two. \nTo shift it to <bookmark mark=\"shift\"/>the left by two, we need the new function for <bookmark mark=\"lNeg2\"/>f of <bookmark mark=\"explain1\"/>negative two to have the same value as the old function \n<bookmark mark=\"l0\"/>for f of zero. So basically, we need the new function to turn the value<bookmark mark=\"explainTwo\"/> negative two into the value zero, before applying the new function,\nso before squaring x, <bookmark mark=\"explain3\"/>we need to add two. This means, that the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"twoNew\"/>two close bracket squared, <bookmark mark=\"minusTwoNew\"/>minus two. See how instead of squaring two, we now square x plus two?"
       },
       "q": {
         "question-text": "What is the term of the shfited function?",
@@ -1207,9 +1211,6 @@
     "I5": {
       "a": {
         "voiceover": "We know that to shift a function right, we need to subtract a number from what we plug in for x.\nWe want to shift the function <bookmark mark=\"shiftRight\"/>right by one point five, so we need to subtract one point five from what we plug in for x. The only thing we need to be careful about is\nthat there are two occurences of x, and we need to add one point five to both. We're starting with the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"xSquared\"/> x squared <bookmark mark=\"minusThreeX\"/>minus three x. We then add one point five to both occurences of x and put brackets around it.\nThen, the term of the shifted function is <bookmark mark=\"fNew\"/>f of <bookmark mark=\"xNew\"/>x equals open bracket\n<bookmark mark=\"xSquaredNew\"/>x plus <bookmark mark=\"onePointFive\"/>one point five close bracket squared, <bookmark mark=\"minusThreeNew\"/>minus three times open bracket <bookmark mark=\"xNew2\"/>\nx plus one point five close bracket."
-      },
-      "d": {
-        "voiceover": ""
       },
       "q": {
         "question-text": "What is the term of the shifted function? (1.5 to the right)",
@@ -1226,14 +1227,14 @@
         "voiceover": "Yep, that's it, very good. If we set a to negative one, we multiply every value with <bookmark mark=\"cursorInPos\"/>negative one.\nThat means every value,<bookmark mark=\"flip\"/> and thus the entire function is reflected along the x-axis."
       },
       "q": {
-        "answer-options": "[\"The parabola remains the same\", \"The parabola gets much flatter\", \"The parabola is reflected along the x-axis\", \"The parabola is shifted down\"]",
-        "question-text": "What happens if we set a to $-1$?",
-        "title": "Scaling Parabolas",
-        "voiceover": "Parabolas can also be modified by scaling them. For example, we<bookmark mark=\"cursorInPos\"/> can make them <bookmark mark=\"steeper\"/>steeper, so that they rise faster.\nOr we can make them <bookmark mark=\"flatter\"/>flatter, so that they rise more slowly. If<bookmark mark=\"f\"/> we write the function as f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/> a times <bookmark mark=\"xSquared\"/>x squared, then the value of a determines how steep the<bookmark mark=\"cursorInPos2\"/> parabola is.\nFor <bookmark mark=\"large\"/> larger values of a, the parabola is steeper, and for <bookmark mark=\"small\"/> smaller values of a, the parabola is flatter.\nBut what will happen, if a is below zero, like negative one for example?",
         "al1": "$a$ large",
         "al2": "Parabola steeper",
+        "answer-options": "[\"The parabola remains the same\", \"The parabola gets much flatter\", \"The parabola is reflected along the x-axis\", \"The parabola is shifted down\"]",
         "as1": "$a$ small ",
-        "as2": "Parabola flatter"
+        "as2": "Parabola flatter",
+        "question-text": "What happens if we set a to $-1$?",
+        "title": "Scaling Parabolas",
+        "voiceover": "Parabolas can also be modified by scaling them. For example, we<bookmark mark=\"cursorInPos\"/> can make them <bookmark mark=\"steeper\"/>steeper, so that they rise faster.\nOr we can make them <bookmark mark=\"flatter\"/>flatter, so that they rise more slowly. If<bookmark mark=\"f\"/> we write the function as f of <bookmark mark=\"x\"/> x equals\n<bookmark mark=\"a\"/> a times <bookmark mark=\"xSquared\"/>x squared, then the value of a determines how steep the<bookmark mark=\"cursorInPos2\"/> parabola is.\nFor <bookmark mark=\"large\"/> larger values of a, the parabola is steeper, and for <bookmark mark=\"small\"/> smaller values of a, the parabola is flatter.\nBut what will happen, if a is below zero, like negative one for example?"
       }
     },
     "P1": {
@@ -1290,9 +1291,6 @@
       "a": {
         "voiceover": "<break time=\"0.4s\"/>This question was about the structures of quadratic functions. <break time=\"0.4s\"/>The first <bookmark mark=\"f\"/>function, f <bookmark mark=\"fx\"/>of x <bookmark mark=\"fx2\"/>equals  x squared <bookmark mark=\"f2\"/>minus  2 is clearly a quadratic function. <split/>It is a unit parabola, shifted down by two. The second <bookmark mark=\"g\"/>one, g <bookmark mark=\"gx\"/>of x <bookmark mark=\"gx2\"/>equals x squared times open <bookmark mark=\"gxb\"/>bracket x <bookmark mark=\"g1\"/>minus one close bracket is tricky. At first glance, you might think it's a quadratic function, because\nit has an x squared term. <split/>But it's not. It's a cubic function. If you multiply the x squared with the two elements in the bracket, <bookmark mark=\"m1\"/>\nyou get x to the power of three. So g is not a quadratic function.\n<break time=\"0.4s\"/>\nFinally, <bookmark mark=\"h\"/> h of x<bookmark mark=\"hx\"/> equals open bracket <bookmark mark=\"hb1x\"/>x minus <bookmark mark=\"hb12\"/>two close bracket\ntimes open bracket <bookmark mark=\"hb2x\"/> x plus <bookmark mark=\"hb22\"/>two close bracket is also tricky. <split/>Why? Because at first glance, you might be\ntempted to think that it's a linear function, because there doesn't seem to be an x squared term. But similar to g, if you multiply <bookmark mark=\"m2\"/>\nthe two brackets, you get x squared. So h is also a quadratic function."
       },
-      "b": {
-        "voiceover": ""
-      },
       "q": {
         "question-text": "Which is not a quadratic function?",
         "title": "Quadratic Functions",
@@ -1302,9 +1300,6 @@
     "I2": {
       "a": {
         "voiceover": "<break time=\"0.4s\"/>Unsurprisingly, the vertex form is called vertex form because it makes it easy to determine the location of the vertex.\nSo, how do we find the vertex from the vertex form? First, remember that the <bookmark  mark=\"vertex\"/>vertex is the point where\nthe function reaches its minimum or maximum. Since the parabola we have here is facing downwards, the vertex is the highest point.\nNow look at the term of the function. It consists of two parts: The part that is <bookmark mark=\"square\"/>squared, and the <bookmark mark=\"3\"/>three that is added.\nNow, we want to find the value of <bookmark mark=\"x\"/>x for which the value of f is the highest, and we want to find that highest value.\nNow look at the two parts again. The <bookmark mark=\"square2\"/>squared part is multiplied with negative two, so we want it to be as small as possible.\nSince it's squared, it's always greater than or equal to zero, so the best we can do is zero. And we reach the zero, if we plug in two for x.\nNow all that is left is<bookmark mark=\"three\"/> the second part, which only consists of a three. <bookmark mark=\"sol\"/> That means, that the highest value of f is three.\nIn summary, we found that the x value of the vertex is two, and that the y value of the vertex is three.\nWe found this, because we started from the vertex form and then first, read off how to get<bookmark mark=\"square3\"/> the squared term to zero, and then looked at\nthe<bookmark mark=\"33\"/> second part."
-      },
-      "b": {
-        "voiceover": ""
       },
       "q": {
         "answer-options": "[\"We can easily determine the location of the vertex\", \"We can easily determine the location of the zeros\", \"We can easily determine the location of the y-intercept\"]",
@@ -1317,9 +1312,6 @@
       "a": {
         "voiceover": "So our function is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"one\"/> one close bracket squared\n<bookmark mark=\"two\"/>minus two.\nFirst, note that the parabola is facing up, so the vertex is the lowest point. <bookmark mark=\"moveUp\"/>\nNow, we want to find the value of<bookmark mark=\"ofX\"/> x for which the value of f is the lowest, and we want to find that lowest value.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative one for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a negative two.\n<bookmark mark=\"sol\"/> That means, that the lowest value of f is negative two.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative one, and that the y value of the vertex is negative two."
       },
-      "b": {
-        "voiceover": ""
-      },
       "q": {
         "question-text": "What are the coordinates of the vertex?",
         "voiceover": "Now your turn. Take the function <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"one\"/> one close bracket squared\n<bookmark mark=\"two\"/>minus two. Luckily for you, it's already in vertex form. Now what is\nthe location of the vertex? What is the x value, that we need to plug in, and what is the \ny value of the vertex?"
@@ -1330,8 +1322,7 @@
         "voiceover": "So the general vertex form is <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\n<bookmark mark=\"a\"/> \"a\" times open bracket <bookmark mark=\"x1\"/>x plus <bookmark mark=\"b\"/> b close bracket squared\n<bookmark mark=\"c\"/>plus c. \nWe don't know if the parabola is facing up or down, so we don't know if the vertex is the highest or lowest point.  <bookmark mark=\"moveUp\"/>\nBut that doesn't matter, since in both cases, we want to find the <bookmark mark=\"ofX\"/>x value that makes the squared term be as small as possible.\nAgain, look at the two parts of the function. The <bookmark mark=\"square\"/>squared part is always greater than or equal to zero, so the best we can do is zero.\nAnd we reach the zero, <bookmark mark=\"a1\"/>if we plug in negative b for x.\nNow all that is left is <bookmark mark=\"negTwo\"/> the second part, which only consists of a constant c.\n<bookmark mark=\"sol\"/> That means, that the extreme value of f is equal to c.\n<bookmark mark=\"summary\"/>In summary, we found that<bookmark mark=\"sum2\"/> the x value of the vertex is negative b, and that the y value of the vertex is equal to\nthe constant c."
       },
       "d": {
-        "vertex": "Vertex: ",
-        "voiceover": ""
+        "vertex": "Vertex: "
       },
       "q": {
         "question-text": "What are the coordinates of the vertex?",
@@ -1343,7 +1334,8 @@
         "if_statement": "if",
         "sol1a": "Zeros at ",
         "sol1b": "and",
-        "voiceover": "No, that's not what the factored form is good for.\nLet's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1."
+        "voiceover": "Let's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1.",
+        "voiceintro": "No, that's not what the factored form is good for."
       },
       "b": {
         "voiceover": "Yes, that's exactly what the factored form is good for.\nLet's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1."
@@ -2002,9 +1994,6 @@
         "half": "Here: $\\\\tfrac{1}{2}$ of a full circle",
         "voiceover": "<break time=\"0.5s\"/>\nWe're considering <bookmark mark=\"half\"/> a half circle in this example.\nAnd we know that <bookmark mark=\"full_circle\"/>a full circle has 2 Pi Radians.\nThis means <split/>that our angle is <bookmark mark=\"equation_1\"/> one half\n<bookmark mark=\"equation_2\"/> times 2 Pi, which\n<bookmark mark=\"equation_3\"/>equals Pi."
       },
-      "d": {
-        "voiceover": ""
-      },
       "q": {
         "deg": "Degrees:",
         "full": "Full",
@@ -2093,14 +2082,11 @@
         "opposite": "opposite",
         "voiceover": "<break time=\"0.4s\"/>\nThe sine is equal to <bookmark mark=\"opposite\"/> the length of the opposite divided <bookmark mark=\"hypothenuse\"/>\nby the length of the hypothenuse.\nThe opposite is the side opposite to the angle. <split/>In this case,<bookmark mark=\"opposite_plot\"/> it's the pink line.\nThe hypothenuse is the longest side of a triangle. In this case,<bookmark mark=\"hypothenuse_plot\"/> it's the blue line.\nThis means, that we have to divide the pink line by the blue line to get the sine of the angle in the bottom left\ncorner."
       },
-      "b": {
-        "voiceover": ""
-      },
       "q": {
         "answer-options": "[\"blue line / green line\", \"pink line / blue line\", \"pink line / green line\", \"green line / pink line\"]",
         "question-text": "Which of the lines do we have to divide by which to get the sine of the bottom left corner?",
         "title": "Sine Function",
-        "voiceover": "Check out<bookmark mark=\"show_triangle\"/> this beautiful triangle.\n\nYou know what's just as beautiful? <bookmark mark=\"sine\"/> The sine function. Well, at least\nonce you really understand it.\n\nLet's start slowly though. Which line do we divide by which other line,\nto get the sine of the angle <bookmark mark=\"angle\"/>in the bottom\nleft corner?"
+        "voiceover": "Check out<bookmark mark=\"show_triangle\"/> this beautiful triangle.\n\nYou know what's just as beautiful? <bookmark mark=\"sine\"/> The sine function. Well, at least\nonce you really understand it.\n\nLet's start slowly though. Which line do we divide by which other line,\nto get the sine of the angle <bookmark mark=\"angle\"/>in the\nleft corner?"
       }
     },
     "I2": {
@@ -2474,13 +2460,13 @@
     "correct_2": "You got it! nice! ",
     "correct_3": "Yep, that's right. ",
     "correct_4": "Yep, that's it... ",
+    "correct_6": "That is correct, well done. ",
     "incorrect_1": "Mhmm, that's not right. ",
     "incorrect_2": "No, that's not it. ",
     "incorrect_3": "No, not quite. ",
     "incorrect_4": "That's not correct. ",
     "incorrect_5": "No. ",
-    "incorrect_6": "That's wrong, unfortunately. ",
-    "correct_6": "That is correct, well done. "
+    "incorrect_6": "That's wrong, unfortunately. "
   },
   "degree": "Degree",
   "test-key": "[“1\", \"2\", \"3\"]"

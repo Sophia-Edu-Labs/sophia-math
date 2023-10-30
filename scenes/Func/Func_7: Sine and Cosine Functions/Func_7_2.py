@@ -20,6 +20,8 @@ import ast
 
 #####################################
 #####################################
+
+#Intro Sine - Video 1
 class Func_7_2_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:

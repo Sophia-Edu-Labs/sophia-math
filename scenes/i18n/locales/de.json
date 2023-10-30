@@ -2103,7 +2103,7 @@
         "answer-options": "[\"blaue Linie / grüne Linie\", \"rosa Linie / blaue Linie\", \"rosa Linie / grüne Linie\", \"grüne Linie / rosa Linie\"]",
         "question-text": "Durch welche der Geraden müssen wir welche andere Gerade dividieren, um den Sinus der unteren linken Ecke zu erhalten?",
         "title": "Sinusfunktion",
-        "voiceover": "Schauen dir<bookmark mark=\"show_triangle\"/> dieses wunderschöne Dreieck an.\n<break time=\"0.4s\"/>\nWeißt du, was genauso schön ist? \n<bookmark mark=\"sine\"/> Richtig. Die Sinusfunktion. \nGut, zumindest sobald man sie wirklich verstanden hat.\n<break time=\"0.4s\"/>\nFangen wir aber langsam an. \nWelche Linie teilen wir durch welche andere Linie, um den Sinus des Winkels in der<bookmark mark=\"angle\"/> unteren linken Ecke zu erhalten"
+        "voiceover": "Schau dir<bookmark mark=\"show_triangle\"/> dieses wunderschöne Dreieck an.\n<break time=\"0.4s\"/>\nWeißt du, was genauso schön ist? \n<bookmark mark=\"sine\"/> Richtig. Die Sinusfunktion. \nGut, zumindest sobald man sie wirklich verstanden hat.\n<break time=\"0.4s\"/>\nFangen wir aber langsam an. \nWelche Linie teilen wir durch welche andere Linie, um den Sinus des Winkels in der<bookmark mark=\"angle\"/> linken Ecke zu erhalten?"
       }
     },
     "I2": {
@@ -2116,7 +2116,7 @@
       "q": {
         "answer-options": "[\"Es hat die Länge $\\cos(1)$\",\"Es hat die Länge $\\sin(1)$\", \"Es hat die Länge $\\sqrt{2}$\",\"Es hat die Länge $1$\"]",
         "question-text": "Was können wir über die Hypothenuse (die blaue Linie) für das eingeschriebene Dreieck sagen?",
-        "voiceover": "Was wäre nun, wenn wir das Dreieck in einen Kreis mit dem Radius eins <bookmark mark=\"circle\"/>einschreiben würden?\n<break time=\"0.4s\"/>\nWenn die linke Ecke in der Mitte des Kreises liegt, was können wir dann über <bookmark mark=\"hypothenuse\"/> die Hypothenuse, also die blaue Linie sagen?"
+        "voiceover": "Was wäre nun, wenn wir das Dreieck in einen Kreis mit dem Radius eins <bookmark mark=\"circle\"/>einschreiben würden?\n<break time=\"0.4s\"/>\nWenn die linke Ecke in der Mitte des Kreises liegt, <split/>was können wir dann über <bookmark mark=\"hypothenuse\"/> die Hypothenuse, also die blaue Linie sagen?"
       }
     },
     "I3": {
