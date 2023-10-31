@@ -1,4 +1,13 @@
 {
+  "FUNC_5_1": {
+    "I5": {
+      "Q": {
+        "ODD1": "ungerade Funktionen:",
+        "ODD3": "$\\Rightarrow$ Punkt-",
+        "ODD4": "symmetrisch um Ursprung"
+      }
+    }
+  },
   "Func_1_1": {
     "1I1_correct": {
       "main": {
@@ -1370,22 +1379,22 @@
   "Func_5_1": {
     "EvenOddAnswerScene": {
       "even": "gerade",
-      "funcTerm2": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Gerader Grad",
-      "funcTerm3": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Ungerader Grad",
+      "funcTerm2": "$\\,\\,\\,\\,\\Rightarrow$ Gerader Grad",
+      "funcTerm3": "$\\,\\,\\,\\,\\Rightarrow$ Ungerader Grad",
       "neither": "weder gerade noch ungerade",
       "odd": "ungerade",
       "r1": "Die Funktion {self.c1[1]} ist",
       "r2": "Die {self.c2[1]} Funktion ist",
       "text1": "Die {self.c1[1]} Funktion ist weder gerade noch ungerade, da sie weder <bookmark mark=\"r11\"/> um den Ursprung symmetrisch ist, noch <bookmark mark=\"r12\"/>symmetrisch um die üpsilon-Achse ist.",
       "text1_even": "Die {self.c1[1]} Funktion ist gerade, da sie symmetrisch <bookmark mark=\"r12\"/> um die üpsilon-Achse ist.",
-      "text1_odd": "Die {self.c1[1]} Funktion ist ungerade, da sie symmetrisch <bookmark mark=\"r11\"/> um den Ursprung herum ist.",
+      "text1_odd": "Die {self.c1[1]} Funktion ist ungerade, da sie punktsymmetrisch <bookmark mark=\"r11\"/> um den Ursprung ist.",
       "text2": "Die {self.c2[1]} Funktion ist weder gerade noch ungerade, da sie weder <bookmark mark=\"r21\"/> um den Ursprung symmetrisch ist, noch ist sie <bookmark mark=\"r22\"/>symmetrisch um den üpsilon- \nAchse.",
       "text2_even": "Die {self.c2[1]} Funktion ist gerade, da sie symmetrisch <bookmark mark=\"r22\"/> um die üpsilon-Achse ist.",
       "text2_odd": "Die {self.c2[1]} Funktion ist ungerade, da sie symmetrisch <bookmark mark=\"r21\"/> um den Ursprung herum ist.",
-      "voiceover": "{self.intro}\nSchauen wir uns zunächst die <bookmark mark=\"f1\"/> {self.c1[1]} Funktion an.\n<break time=\"0.5s\"/>\n{text1} <bookmark mark=\"unWrite\"/>\n<break time=\"0.5s\"/>\nSchauen wir uns nun die <bookmark mark=\"f2\"/>{self.c2[1]} Funktion an.\n<break time=\"0.5s\"/>\n{text2}\n<break time=\"0.5s\"/>\nAlso: Die {self.c1[1]} Funktion ist <bookmark mark=\"r1\"/>{s1} und die {self.c2[1]} Funktion ist <bookmark mark=\"r2\"/>{s2} ."
+      "voiceover": "{self.intro}\nSchauen wir uns zunächst die <bookmark mark=\"f1\"/> {self.c1[1]} Funktion an.\n<break time=\"0.5s\"/>\n{self.text1} <bookmark mark=\"unWrite\"/>\n<break time=\"0.5s\"/>\nSchauen wir uns nun die <bookmark mark=\"f2\"/>{self.c2[1]} Funktion an.\n<break time=\"0.5s\"/>\n{self.text2}\n<break time=\"0.5s\"/>\nAlso: Die {self.c1[1]} Funktion ist <bookmark mark=\"r1\"/>{self.s1} und die {self.c2[1]} Funktion ist <bookmark mark=\"r2\"/>{self.s2} ."
     },
     "EvenOddQuestionScene": {
-      "voiceover": "{self.intro}\n<break time=\"0.5s\"/>\nSchauen dir die <bookmark mark=\"n2\"/> {self.c1[1]} Funktion und die <bookmark mark=\"n3\"/> {self.c2[1]} Funktion an.\n<break time=\"0.5s\"/>\nSind die Funktionen gerade, ungerade Funktionen oder keines von beiden?"
+      "voiceover": "{self.intro}\n<break time=\"0.5s\"/>\nSchau dir die <bookmark mark=\"n2\"/> {self.c1[1]} Funktion und die <bookmark mark=\"n3\"/> {self.c2[1]} Funktion an.\n<break time=\"0.5s\"/>\nSind die Funktionen gerade, ungerade Funktionen oder keines von beiden?"
     },
     "I1": {
       "a": {
@@ -1395,42 +1404,33 @@
         "title": "Potenzfunktionen",
         "voiceover": "Beginnen wir mit der Definition von Potenzfunktionen.\n<break time=\"0.4s\"/>\nEine Potenzfunktion ist eine Funktion der Form<bookmark mark=\"form\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"a\"/> a\nmal <bookmark mark=\"x\"/>x hoch n, wobei <bookmark mark=\"real\"/>a eine reelle Zahl ist und n eine <bookmark mark=\"int\"/>ganze Zahl ist.\n<break time=\"0.4s\"/>\nDu hast wahrscheinlich schon zwei <bookmark mark=\"shiftDown\"/> Beispiele für Potenzfunktionen gesehen.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n1\"/> n gleich 1 wählst, erhältst du eine lineare Funktion f von x gleich a mal x.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n2\"/> n gleich 2 wählst, erhältst du eine quadratische Funktion f von x gleich a mal x Quadrat.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n3\"/> n gleich 3 wählst, erhältst du eine Funktion dritten Grades, f von x gleich a mal x hoch drei.\n<break time=\"1s\"/>\nJetzt ein paar wichtige<bookmark mark=\"cleanUp\"/>Begriffe. \nDer Wert, der potenziert wird, heißt  Basis.\n<break time=\"0.4s\"/>\nDa es sich in unserem Beispiel um x hoch n handelt, ist <bookmark mark=\"base\"/>x die Basis.\n<break time=\"0.4s\"/>\nDie Potenz, also die Anzahl hoch der wir die Zahl nehmen, nennt man Exponent.\n<break time=\"0.4s\"/>\nIn unserem Beispiel x hoch n <bookmark mark=\"exponent\"/> ist n der Exponent."
       },
-      "voiceover": "Beginnen wir mit der Definition von Potenzfunktionen.\n<break time=\"0.4s\"/>\nEine Potenzfunktion ist eine Funktion der Form<bookmark mark=\"form\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"a\"/> a\nmal <bookmark mark=\"x\"/>x hoch n, wobei <bookmark mark=\"real\"/>a eine reelle Zahl ist und n eine <bookmark mark=\"int\"/>ganze Zahl ist.\n<break time=\"0.4s\"/>\nDu hast wahrscheinlich schon zwei <bookmark mark=\"shiftDown\"/> Beispiele für Potenzfunktionen gesehen.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n1\"/> n gleich 1 wählst, erhältst du eine lineare Funktion f von x gleich a mal x.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n2\"/> n gleich 2 wählst, erhältst du eine quadratische Funktion f von x gleich a mal x Quadrat.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n3\"/> n gleich 3 wählst, erhältst du eine Funktion dritten Grades, f von x gleich a mal x hoch drei.\n<break time=\"1s\"/>\nJetzt ein paar wichtige<bookmark mark=\"cleanUp\"/>Begriffe. \nDer Wert, der potenziert wird, heißt  Basis.\n<break time=\"0.4s\"/>\nDa es sich in unserem Beispiel um x hoch n handelt, ist <bookmark mark=\"base\"/>x die Basis.\n<break time=\"0.4s\"/>\nDie Potenz, also die Anzahl hoch der wir die Zahl nehmen, nennt man Exponent.\n<break time=\"0.4s\"/>\nIn unserem Beispiel x hoch n <bookmark mark=\"exponent\"/> ist n der Exponent."
+      "voiceover": "Beginnen wir mit der Definition von Potenzfunktionen.\n<break time=\"0.4s\"/>\nEine Potenzfunktion ist eine Funktion der <bookmark mark=\"form\"/>Form f <bookmark mark=\"fx\"/>von x <bookmark mark=\"a\"/>gleich a\n<bookmark mark=\"x\"/>mal x hoch n, <split/><bookmark mark=\"real\"/>wobei a eine reelle Zahl ist und \"n\" <bookmark mark=\"int\"/>eine ganze Zahl ist.\n<break time=\"0.4s\"/>\nDu hast wahrscheinlich schon zwei <bookmark mark=\"shiftDown\"/> Beispiele für Potenzfunktionen gesehen.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n1\"/> n gleich 1 wählst, erhältst du eine lineare Funktion f von x gleich a mal x.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n2\"/> n gleich 2 wählst,<split/> erhältst du eine quadratische Funktion f von x gleich a mal x Quadrat.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"n3\"/> n gleich 3 wählst, erhältst du eine Funktion dritten Grades, f von x gleich a mal x hoch drei.\n<break time=\"1s\"/>\nJetzt ein paar wichtige<bookmark mark=\"cleanUp\"/>Begriffe. <split/>\nDer Wert, der potenziert wird, heißt  Basis.\n<break time=\"0.4s\"/>\nDa es sich in unserem Beispiel um x hoch n handelt, ist <bookmark mark=\"base\"/>x die Basis.\n<break time=\"0.4s\"/>\nDie Potenz, also die Anzahl hoch der wir die Zahl nehmen, nennt man Exponent.\n<break time=\"0.4s\"/>\nIn unserem Beispiel x hoch n <bookmark mark=\"exponent\"/> ist n der Exponent."
     },
     "I2": {
       "a": {
         "bbase": "y ist die Basis",
         "bexponent": "4 ist der Exponent",
-        "voiceover": "Nein, nicht ganz.\n<break time=\"0.5s\"/>\nDie Basis ist das, was wir potenzieren, also ist die Basis in diesem Fall <bookmark mark=\"y\"/> y.\n<break time=\"0.5s\"/>\nDer Exponent ist Zahl, hoch der wir die Basis nehmen. In diesem Fall ist der Exponent also <bookmark mark=\"4\"/> 4."
-      },
-      "c": {
-        "voiceover": "Ja, das stimmt.\n<break time=\"0.5s\"/>\nDie Basis ist das, was wir potenzieren, also ist die Basis in diesem Fall <bookmark mark=\"y\"/> y.\n<break time=\"0.5s\"/>\nDer Exponent ist Zahl, hoch der wir die Basis nehmen. In diesem Fall ist der Exponent also <bookmark mark=\"4\"/> 4."
+        "voiceover": "<break time=\"0.5s\"/>\nDie Basis ist das, was wir potenzieren, also ist die Basis in diesem Fall <bookmark mark=\"y\"/> üpsilon.\n<break time=\"0.5s\"/>\nDer Exponent ist die Zahl, hoch der wir die Basis nehmen. In diesem Fall ist der Exponent also die Zahl<bookmark mark=\"4\"/> 4."
       },
       "q": {
         "answer-options": "[\"Basis: $3$, Exponent: $4$\", \"Basis: $y$, Exponent: $3$\", \"Basis: $y$, Exponent: $4$\", \"Basis: $4$, Exponent: $y$\"]",
         "question-text": "Betrachten wir den Ausdruck $3y^4$: Was ist die Basis und was der Exponent?",
-        "voiceover": "Ok kurzer Check um sicher zu gehen, dass du die Definitionen im Kopf hast.\n<break time=\"0.5s\"/>\nBetrachte den Ausdruck<bookmark mark=\"drei\"/> dreimal <bookmark mark=\"y\"/>y hoch <bookmark mark=\"4\"/>4.\n<break time=\"0.5s\"/>\nWas ist in diesem Beispiel <bookmark mark=\"base\"/>die Basis, und <bookmark mark=\"exponent\"/>der Exponent?"
+        "voiceover": "Ok kurzer Check um sicher zu gehen, dass du die Definitionen im Kopf hast.\n<break time=\"0.5s\"/>\nBetrachte den <bookmark mark=\"three\"/>Ausdruck drei <bookmark mark=\"y\"/>mal üpsilon <bookmark mark=\"4\"/>hoch 4.\n<break time=\"0.5s\"/>\nWas ist in diesem Beispiel <bookmark mark=\"base\"/>die Basis, und was ist<bookmark mark=\"exponent\"/>der Exponent?"
       }
     },
     "I3": {
       "a": {
-        "voiceover": "Ja, super!\n<break time=\"0.5s\"/>\nSchauen wir uns zunächst die beiden Funktionen mit ungeradem Grad an. \nDas bedeutet, dass der Exponent eine ungerade Zahl ist, wie z. B. x, x hoch drei, x hoch fünf und so weiter ...\n<break time=\"0.5s\"/>\nZuerst gibt es <bookmark mark=\"n1\"/>die lineare Funktion f von x gleich a mal x, was dasselbe ist wie a mal x hoch eins. \nWie du sehen kannst, sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte. \nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/>\nDann gibt es die <bookmark mark=\"n3\"/>Funktion dritten Grades f von x gleich a mal x hoch drei. \nAuch hier sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte.\n<break time=\"0.5s\"/>\nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/>\nSchauen wir uns nun <bookmark mark=\"unWriteOdd\"/>die beiden Funktionen mit geradem Grad an. \nDas bedeutet, dass der Exponent eine gerade Zahl ist, wie z. B. x im Quadrat, x hoch vier und so weiter ...\n<break time=\"0.5s\"/>\nZuerst haben wir also die <bookmark mark=\"n2\"/>quadratische Funktion f von x gleich a mal x im Quadrat. \nWie du siehst, sind die Funktionswerte immer positiv, sowohl für positive als auch für negative x-Werte. \nDenn wenn man eine negative Zahl mit sich selbst multipliziert, erhält man immer eine positive Zahl: Negativ mal negativ ist positiv.\n<break time=\"0.5s\"/>\nUnd schließlich gibt es noch die <bookmark mark=\"n4\"/>-Funktion f von x gleich a mal x hoch 4, die vom Grad vier ist. \nAuch hier sind die Funktionswerte immer positiv.\n<break time=\"0.5s\"/>\nAlso, <bookmark mark=\"unWriteEven\"/>um es zusammenzufassen: Funktionen mit einem geraden Grad <bookmark mark=\"even\"/> sind immer positiv, während Funktionen mit einem ungeraden Grad positiv<bookmark mark=\"odd\"/> sein können  oder negativ."
-      },
-      "b": {
-        "voiceover": "Nein, das stimmt nicht...\n<break time=\"0.5s\"/>\nSchauen wir uns zunächst die beiden Funktionen mit ungeradem Grad an. \nDas bedeutet, dass der Exponent eine ungerade Zahl ist, wie z. B. x, x hoch drei, x hoch fünf und so weiter ...\n<break time=\"0.5s\"/>\nZuerst gibt es <bookmark mark=\"n1\"/>die lineare Funktion f von x gleich a mal x, was dasselbe ist wie a mal x hoch eins. \nWie du sehen kannst, sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte. \nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/>\nDann gibt es die <bookmark mark=\"n3\"/>Funktion dritten Grades f von x gleich a mal x hoch drei. \nAuch hier sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte.\n<break time=\"0.5s\"/>\nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/>\nSchauen wir uns nun <bookmark mark=\"unWriteOdd\"/>die beiden Funktionen mit geradem Grad an. \nDas bedeutet, dass der Exponent eine gerade Zahl ist, wie z. B. x im Quadrat, x hoch vier und so weiter ...\n<break time=\"0.5s\"/>\nZuerst haben wir also die <bookmark mark=\"n2\"/>quadratische Funktion f von x gleich a mal x im Quadrat. \nWie du siehst, sind die Funktionswerte immer positiv, sowohl für positive als auch für negative x-Werte. \nDenn wenn man eine negative Zahl mit sich selbst multipliziert, erhält man immer eine positive Zahl: Negativ mal negativ ist positiv.\n<break time=\"0.5s\"/>\nUnd schließlich gibt es noch die <bookmark mark=\"n4\"/>-Funktion f von x gleich a mal x hoch 4, die vom Grad vier ist. \nAuch hier sind die Funktionswerte immer positiv.\n<break time=\"0.5s\"/>\nAlso, <bookmark mark=\"unWriteEven\"/>um es zusammenzufassen: Funktionen mit einem geraden Grad <bookmark mark=\"even\"/> sind immer positiv, während Funktionen mit einem ungeraden Grad positiv<bookmark mark=\"odd\"/> sein können  oder negativ."
+        "voiceover": "<break time=\"0.5s\"/>\nSchauen wir uns zunächst die beiden Funktionen mit ungeradem Grad an. \nDas bedeutet, dass der Exponent eine ungerade Zahl ist, <split/>wie zum Beispiel \"x\", \"x\" hoch drei, \"x\" hoch fünf und so weiter ...\n<break time=\"0.5s\"/>\nZuerst gibt es <bookmark mark=\"n1\"/>die lineare Funktion f von x gleich \"a\" mal \"x\", was dasselbe ist wie \"a\" mal \"x\" hoch eins. <split/> Wie du sehen kannst, sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte. \nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/> Dann gibt es die <bookmark mark=\"n3\"/>Funktion dritten Grades f von x gleich a mal x hoch drei. <split/>\nAuch hier sind die Funktionswerte negativ für negative x-Werte und positiv für positive x-Werte.\n<break time=\"0.5s\"/>\nSie sind also manchmal positiv und manchmal negativ.\n<break time=\"0.5s\"/>\nSchauen wir uns nun <bookmark mark=\"unWriteOdd\"/>die beiden Funktionen mit geradem Grad an. <split/>\nDas bedeutet, dass der Exponent eine gerade Zahl ist, wie z. B. x im Quadrat, x hoch vier und so weiter ...\n<break time=\"0.5s\"/>\nZuerst haben wir also die <bookmark mark=\"n2\"/>quadratische Funktion f von x gleich a mal x im Quadrat. \nWie du siehst, sind die Funktionswerte immer positiv, sowohl für positive als auch für negative x-Werte. <split/>\nDenn wenn man eine negative Zahl mit sich selbst multipliziert, erhält man immer eine positive Zahl: Negativ mal negativ ist positiv.\n<break time=\"0.5s\"/>\nUnd schließlich gibt es noch die <bookmark mark=\"n4\"/>-Funktion f von x gleich a mal x hoch 4, die vom Grad vier ist. \nAuch hier sind die Funktionswerte immer positiv.\n<break time=\"0.5s\"/>\nAlso, <bookmark mark=\"unWriteEven\"/>um es zusammenzufassen:<split/> Funktionen mit einem geraden Grad <bookmark mark=\"even\"/> sind immer positiv, während Funktionen mit einem ungeraden Grad positiv<bookmark mark=\"odd\"/> sein können  oder negativ."
       },
       "q": {
         "answer-options": "[\"Funktionen mit geradem Grad sind immer positiv, während Funktionen mit ungeradem Grad negativ sein können.\", \"Funktionen mit geradem Grad sind immer negativ, während Funktionen mit ungeradem Grad positiv sein können.\", \"Funktionen mit geradem Grad sind immer positiv, während Funktionen mit ungeradem Grad positiv oder negativ sein können.\", \"Funktionen mit geradem Grad sind immer negativ, während Funktionen mit ungeradem Grad positiv oder negativ sein können.\"]",
         "question-text": "Was ist der Unterschied zwischen Funktionen mit geradem Grad und Funktionen mit ungeradem Grad?",
-        "voiceover": "Zurück zu Potenzfunktionen mit der allgemeinen Struktur <bookmark mark=\"form\"/> f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"a\"/> a mal <bookmark mark=\"x\"/>x hoch n, und kurze Erinnerung: <bookmark mark=\"real\"/>a ist eine reelle Zahl und n ist eine <bookmark mark=\"int\"/>ganze Zahl.\n<break time=\"0.4s\"/>\nSchauen wir uns nochmal die <bookmark mark=\"shiftDown\"/>-Beispiele für Potenzfunktionen an, die wir bisher gesehen haben:\nDie <bookmark mark=\"n1\"/>lineare Funktion f von x gleich a mal x, wo n gleich 1 ist,\nDie <bookmark mark=\"n2\"/>quadratische Funktion f von x ist gleich a mal x im Quadrat.\nund die <bookmark mark=\"n3\"/>Funktion dritten Grades f von x ist gleich a mal x hoch drei ...\n<bookmark mark=\"shift\"/>\nUnd die <bookmark mark=\"n4\"/>Funktion f von x gleich a mal x hoch 4 hinzufügen, eine Funktion vierten grades.\n<break time=\"0.4s\"/>\nJetzt die Frage an dich: Was ist der Hauptunterschied zwischen Funktionen mit geradem Grad?\nwie die quadratische Funktion  x hoch zwei und Funktionen mit ungerader Gradzahl, wie die Funktion x hoch drei?"
+        "voiceover": "Zurück zu Potenzfunktionen mit der allgemeinen Struktur <bookmark mark=\"form\"/> f <bookmark mark=\"fx\"/>von x <bookmark mark=\"a\"/>gleich a <bookmark mark=\"x\"/>mal x hoch n, und kurze Erinnerung: <bookmark mark=\"real\"/>\"a\" ist eine reelle Zahl und n ist eine <bookmark mark=\"int\"/>ganze Zahl.\n<break time=\"0.4s\"/>\nSchauen wir uns nochmal die <bookmark mark=\"shiftDown\"/>-Beispiele für Potenzfunktionen an, die wir bisher gesehen haben:<split/>\nDie <bookmark mark=\"n1\"/>lineare Funktion f von x gleich a mal x, wo n gleich 1 ist,\nDie <bookmark mark=\"n2\"/>quadratische Funktion f von x ist gleich a mal x Quadrat.\nund die <bookmark mark=\"n3\"/>Funktion dritten Grades f von x ist gleich a mal x hoch drei ...\n<bookmark mark=\"shift\"/>\nUnd die <bookmark mark=\"n4\"/>Funktion f von x gleich a mal x hoch 4, eine Funktion vierten grades.\n<break time=\"0.4s\"/>\nJetzt die Frage an dich: <split/>Was ist der Hauptunterschied zwischen Funktionen mit geradem Grad?\nwie die quadratische Funktion  x hoch zwei und Funktionen mit ungerader Gradzahl, wie die Funktion x hoch drei?"
       }
     },
     "I4": {
       "a": {
-        "voiceover": "Nein, das stimmt nicht...\n\nDie blaue Funktion <bookmark mark=\"n2\"/> gehört zum Term <bookmark mark=\"blueTerm\"/> minus <bookmark mark=\"x2\"/>\nx Quadrat.\n<break time=\"0.4s\"/>\nDas bedeutet, dass der<bookmark mark=\"degE\"/>-Grad der blauen Funktion gerade ist, da sie den Grad zwei hat. \nAber weil es mit minus eins multipliziert wird, sind die Funktionswerte immer negativ statt immer positiv.\n<break time=\"0.4s\"/>\nDie orangene Funktion <bookmark mark=\"n3\"/> gehört zum <bookmark mark=\"orangeTerm\"/> Term 0,5 mal <bookmark mark=\"x3\"/>\nx hoch drei. \nDas bedeutet, dass der <bookmark mark=\"degO\"/>Grad der orangefarbenen Funktion ungerade ist, da sie den Grad drei hat."
-      },
-      "d": {
-        "voiceover": "Ja das ist richtig!\nDie blaue Funktion <bookmark mark=\"n2\"/> gehört zum Term <bookmark mark=\"blueTerm\"/> minus <bookmark mark=\"x2\"/>\nx Quadrat.\n<break time=\"0.4s\"/>\nDas bedeutet, dass der<bookmark mark=\"degE\"/>-Grad der blauen Funktion gerade ist, da sie den Grad zwei hat. \nAber weil es mit minus eins multipliziert wird, sind die Funktionswerte immer negativ statt immer positiv.\n<break time=\"0.4s\"/>\nDie orangene Funktion <bookmark mark=\"n3\"/> gehört zum <bookmark mark=\"orangeTerm\"/> Term 0,5 mal <bookmark mark=\"x3\"/>\nx hoch drei. \nDas bedeutet, dass der <bookmark mark=\"degO\"/>Grad der orangefarbenen Funktion ungerade ist, da sie den Grad drei hat."
+        "voiceover": "Die blaue Funktion <bookmark mark=\"n2\"/> gehört zum Term <bookmark mark=\"blueTerm\"/> minus <bookmark mark=\"x2\"/>\nx Quadrat.\n<break time=\"0.4s\"/>\nDas bedeutet, dass der<bookmark mark=\"degE\"/>-Grad der blauen Funktion gerade ist, da sie den Grad zwei hat. \nAber weil die Funktion mit minus eins multipliziert wird, sind die Funktionswerte immer negativ, und nicht immer positiv.\n<break time=\"0.4s\"/>\nDie orangene Funktion <bookmark mark=\"n3\"/> gehört zum <bookmark mark=\"orangeTerm\"/> Term 0,5 mal <bookmark mark=\"x3\"/>\nx hoch drei. <split/>\nDas bedeutet, dass der <bookmark mark=\"degO\"/>Grad der orangefarbenen Funktion ungerade ist, da sie den Grad drei hat."
       },
       "q": {
         "answer-options": "[\"Blau: Ungerade, Orange: Gerade\", \"Blau: Gerade, Orange: Gerade\", \"Blau: Ungerade, Orange: Ungerade\", \"Blau: Gerade, Orange: Ungerade\"]",
@@ -1440,22 +1440,22 @@
     },
     "I5": {
       "q": {
-        "voiceover": "Jetzt haben wir den Unterschied zwischen Funktionen geraden und ungeraden Grades gesehen: Funktionen <bookmark mark=\"even\"/>geraden Grades sind immer positiv oder immer negativ, während Funktionen mit <bookmark mark=\"odd\"/>ungeradem Grad sowohl positiv als auch negativ sein können.\n<break time=\"0.4s\"/>\nEs gibt eine coole Möglichkeit, dies visuell zu beschreiben, indem man Symmetrie verwendet.\n<break time=\"0.4s\"/>\nBeginnen wir mit den ungeraden <bookmark mark=\"odd2\"/>-Funktionen.\n<break time=\"0.4s\"/>\nSieh dir die orangenen Funktion an: Kannst du erkennen, dass f von negativ x immer das gleiche ist, wie der negative Wert von f von x?\nSo ist zum Beispiel f von <bookmark mark=\"p1\"/>eins gleich eins und f von<bookmark mark=\"n1\"/>minus eins ist minus eins.\n<break time=\"0.4s\"/>\nAlso ist f von minus eins dasselbe wie minus f von eins.\n<break time=\"0.4s\"/>\nEin weiteres Beispiel: Der Wert von f bei <bookmark mark=\"p2\"/> zwei ist zwei mal zwei mal zwei, also acht, und der\nDer Wert von f bei <bookmark mark=\"n2\"/>minus zwei ist minus zwei mal minus zwei mal minus zwei, also minus acht.\n<break time=\"0.4s\"/>\nDie Regel, die wir hier beobachten können, ist also, dass <bookmark mark=\"odd3\"/> f von minus x gleich minus f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass um den Ursprung eine <bookmark mark=\"rotate\"/> Rotationssymmetrie vorliegt.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"rotate2\"/> die Funktion um 180 Grad um den Ursprung drehst, erhältst du wieder dieselbe Funktion.\n<break time=\"0.4s\"/>\nUnd da dies für alle Funktionen ungeraden Grades gilt, beispielsweise x hoch fünf, nennen wir alle Funktionen, die diese Eigenschaft haben\n<break time=\"0.4s\"/>\n\"ungerade Funktionen\"."
+        "voiceover": "Jetzt haben wir den Unterschied zwischen Funktionen geraden und ungeraden Grades gesehen: Funktionen <bookmark mark=\"even\"/>geraden Grades sind immer positiv oder immer negativ, während Funktionen mit <bookmark mark=\"odd\"/>ungeradem Grad sowohl positiv als auch negativ sein können.\n<break time=\"0.4s\"/>\nEs gibt eine coole Möglichkeit, dies visuell zu beschreiben, indem man Symmetrie verwendet.\n<break time=\"0.4s\"/>\nBeginnen wir mit den ungeraden <bookmark mark=\"odd2\"/>-Funktionen.\n<break time=\"0.4s\"/>\nSieh dir die orangene Funktion an: Kannst du erkennen, dass f von minus x immer das gleiche ist, wie minus der Wert von f von x?\nSo ist zum Beispiel f von <bookmark mark=\"p1\"/>eins gleich eins und f von<bookmark mark=\"n1\"/>minus eins ist minus eins.\n<break time=\"0.4s\"/>\nAlso ist f von minus eins dasselbe wie minus f von eins.\n<break time=\"0.4s\"/>\nEin weiteres Beispiel: Der Wert von f bei <bookmark mark=\"p2\"/> zwei ist zwei mal zwei mal zwei, also acht, und der\nDer Wert von f bei <bookmark mark=\"n2\"/>minus zwei ist minus zwei mal minus zwei mal minus zwei, also minus acht.\n<break time=\"0.4s\"/>\nDie Regel, die wir hier beobachten können, ist also, dass <bookmark mark=\"odd3\"/> f von minus x gleich minus f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion Punktsymmetrisch <bookmark mark=\"rotate\"/> um den Ursprung ist.\n<break time=\"0.4s\"/>\nWenn du <bookmark mark=\"rotate2\"/> die Funktion um 180 Grad um den Ursprung drehst, erhältst du wieder dieselbe Funktion.\n<break time=\"0.4s\"/>\nUnd da dies für alle Funktionen ungeraden Grades gilt, beispielsweise x hoch fünf, nennen wir alle Funktionen, die diese Eigenschaft haben\n<break time=\"0.4s\"/>\n\"ungerade Funktionen\"."
       }
     },
     "I6": {
       "q": {
-        "even1": "Sogar Funktionen:",
-        "even2": "$\\\\Rightarrow$ symmetrisch",
+        "even1": "Gerade Funktionen:",
+        "even2": "$\\Rightarrow$ symmetrisch",
         "even3": "um die y-Achse",
-        "voiceover": "Die Symmetrie von Potenzfunktionen mit einem geraden <bookmark mark=\"even\"/>Grad ist so:\n<break time=\"0.4s\"/>\n<bookmark mark=\"even2\"/>f von minus x ist gleich f von x.\n<break time=\"0.4s\"/>\nWenn wir uns beispielsweise die Funktion f von x gleich x Quadrat ansehen, sehen wir, dass <bookmark mark=\"p1\"/>\nf von eins ist eins, und <bookmark mark=\"n1\"/>f von minus eins ist auch eins.\n<break time=\"0.4s\"/>\nOder dass <bookmark mark=\"p2\"/>f von zwei vier ist und <bookmark mark=\"n2\"/>f von minus zwei ebenfalls vier ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion <bookmark mark=\"sym1\"/>symmetrisch um die üpsilon-Achse ist.\n<break time=\"0.4s\"/>\nDas bedeutet, dass wir die Funktion auf der üpsilon-Achse <bookmark mark=\"sym2\"/>spiegeln können und wieder dieselbe Funktion erhalten.\n<break time=\"0.4s\"/>\nUnd da dies für alle Funktionen geraden Grades gilt, beispielsweise x hoch vier, nennen wir alle Funktionen, die diese Eigenschaft haben\n\"gerade Funktionen\"."
+        "voiceover": "Die Symmetrie von Potenzfunktionen mit einem geraden <bookmark mark=\"even\"/>Grad ist so:\n<break time=\"0.4s\"/>\n<bookmark mark=\"even2\"/>f von minus x ist gleich f von x.\n<break time=\"0.4s\"/>\nWenn wir uns beispielsweise die Funktion f von x gleich x Quadrat ansehen, sehen wir, dass <bookmark mark=\"p1\"/>\nf von eins gleich eins ist, und dass <bookmark mark=\"n1\"/>f von minus eins auch eins ist.\n<break time=\"0.4s\"/>\nOder dass <bookmark mark=\"p2\"/>f von zwei vier ist<split/> und <bookmark mark=\"n2\"/>f von minus zwei ebenfalls vier ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion <bookmark mark=\"sym1\"/>symmetrisch um die üpsilon-Achse ist.\n<break time=\"0.4s\"/>\nDas bedeutet, <split/>dass wir die Funktion auf der üpsilon-Achse <bookmark mark=\"sym2\"/>spiegeln können und wieder dieselbe Funktion erhalten.\n<break time=\"0.4s\"/>\nUnd da dies für alle Funktionen geraden Grades gilt, <split/>beispielsweise x hoch vier, nennen wir alle Funktionen, die diese Eigenschaft haben\n\"gerade Funktionen\"."
       }
     },
     "I7": {
       "even": "Gerade Funktionen:",
       "odd": "Ungerade Funktionen:",
       "title": "Gerade und ungerade Funktionen",
-      "voiceover": "Zusammenfassung gerader und ungerader Funktionen:\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"even\"/>gerade Funktionen gilt, dass <bookmark mark=\"even2\"/>f von minus x gleich f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion <bookmark mark=\"sym1\"/>symmetrisch um die üpsilon-Achse ist.\n<break time=\"0.4s\"/>\nAlle Potenzfunktionen mit einen geraden Grad, etwa x im Quadrat, x hoch vier und so weiter\nsind gerade Funktionen, es gibt aber auch andere Beispiele für gerade Funktionen.\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"odd\"/>ungerade Funktionen gilt hingegen, dass <bookmark mark=\"odd2\"/>f von minus x gleich minus f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion <bookmark mark=\"rotate\"/>rotationssymmetrisch um den Ursprung ist.\n<break time=\"0.4s\"/>\nAlle Potenzfunktionen mit ungeradem Grad, wie x, x hoch drei und so weiter, sind ungerade Funktionen, es gibt aber auch andere Beispiele für ungerade Funktionen."
+      "voiceover": "Zusammenfassung gerader und ungerader Funktionen:\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"even\"/>gerade Funktionen gilt, dass <bookmark mark=\"even2\"/>f von minus x gleich f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet das, <split/>dass die Funktion <bookmark mark=\"sym1\"/>symmetrisch um die üpsilon-Achse ist.\n<break time=\"0.4s\"/>\nAlle Potenzfunktionen mit einen geraden Grad, etwa x im Quadrat, x hoch vier und so weiter\nsind gerade Funktionen,<split/> es gibt aber auch andere Beispiele für gerade Funktionen.\n<break time=\"0.4s\"/>\nFür <bookmark mark=\"odd\"/>ungerade Funktionen gilt hingegen, dass <bookmark mark=\"odd2\"/>f von minus x gleich minus f von x ist.\n<break time=\"0.4s\"/>\nGrafisch bedeutet dies, dass die Funktion <bookmark mark=\"rotate\"/>punktsymmetrisch um den Ursprung ist.\n<break time=\"0.4s\"/>\nAlle Potenzfunktionen mit ungeradem Grad, <split/>wie x, x hoch drei und so weiter, sind ungerade Funktionen, es gibt aber auch andere Beispiele für ungerade Funktionen."
     },
     "P1": {
       "a": {
@@ -1466,8 +1466,8 @@
       },
       "q": {
         "answer-options": "[\"Blau: Gerade, Orange: Weder noch\", \"Blau: Gerade, Orange: Gerade\", \"Blau: Ungerade, Orange: Weder noch\", \"Blau: Gerade, Orange: Ungerade\"]",
-        "c1": "Blau",
-        "c2": "orange",
+        "c1": "blaue",
+        "c2": "orangene",
         "intro": "Ok, üben wir das Konzept der geraden und ungeraden Funktionen:",
         "question-text": "Haben die blaue und die orangene Funktion einen geraden oder einen ungeraden Grad?"
       }
@@ -1481,8 +1481,8 @@
       },
       "q": {
         "answer-options": "[\"Lila: Gerade, Grün: Weder noch\", \"Lila: Weder noch, Grün: Ungerade\", \"Lila: Gerade, Grün: Gerade\", \"Lila: Ungerade, Grün: Weder noch\"]",
-        "c1": "lila",
-        "c2": "Grün",
+        "c1": "lilane",
+        "c2": "Grüne",
         "intro": "Zwei weitere Beispiele:",
         "question-text": "Haben die violette und die grüne Funktion einen geraden oder einen ungeraden Grad?"
       }
@@ -1496,8 +1496,8 @@
       },
       "q": {
         "answer-options": "[\"Rot: Gerade, Gelb: Ungerade\", \"Rot: Ungerade, Gelb: Gerade\", \"Rot: Ungerade, Gelb: Weder noch\", \"Rot: Gerade, Gelb: Weder noch\"]",
-        "c1": "Rot",
-        "c2": "Gelb",
+        "c1": "Rote",
+        "c2": "Gelbe",
         "intro": "Noch ein paar Beispiele:",
         "question-text": "Haben die rote und die gelbe Funktion einen geraden oder einen ungeraden Grad?"
       }
@@ -1511,8 +1511,8 @@
       },
       "q": {
         "answer-options": "[\"Rosa: Ungerade, Blaugrün: Ungerade\", \"Rosa: Gerade, Blaugrün: Ungerade\", \"Rosa: Ungerade, Blaugrün: Gerade\", \"Rosa: Gerade, Blaugrün: Gerade\"]",
-        "c1": "Rosa",
-        "c2": "blaugrün",
+        "c1": "Rosane",
+        "c2": "blaugrüne",
         "intro": "Letztes Beispiel für heute:",
         "question-text": "Haben die Pinke- und die blaugrüne-Funktion einen geraden oder einen ungeraden Grad?"
       }
@@ -2447,12 +2447,16 @@
   },
   "General": {
     "correct_1": "Richtig, toll gemacht.",
+    "correct_2": "Genau, gut erkannt.",
+    "correct_3": "Exakt, sehr gut.",
     "correct_4": "Ja, das ist richtig...",
+    "correct_5": "Korrekt!",
     "correct_6": "Das ist richtig, gut gemacht. ",
     "incorrect_1": "Mhmm, das stimmt nicht.",
     "incorrect_2": "Das stimmt nicht.",
+    "incorrect_3": "Leider nicht korrekt.",
     "incorrect_4": "Das ist nicht korrekt.",
-    "incorrect_5": "Nein. ",
+    "incorrect_5": "Nein.",
     "incorrect_6": "Das ist leider falsch. "
   },
   "degree": "Grad",

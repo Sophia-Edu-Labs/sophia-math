@@ -1,4 +1,13 @@
 {
+  "FUNC_5_1": {
+    "I5": {
+      "Q": {
+        "ODD1": "Odd Functions:",
+        "ODD3": "$\\Rightarrow$ Rotational",
+        "ODD4": "symmetry around origin"
+      }
+    }
+  },
   "Func_1_1": {
     "1I1_correct": {
       "main": {
@@ -1367,8 +1376,8 @@
   "Func_5_1": {
     "EvenOddAnswerScene": {
       "even": "even",
-      "funcTerm2": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Even degree",
-      "funcTerm3": "$\\\\,\\\\,\\\\,\\\\,\\\\Rightarrow$ Odd degree",
+      "funcTerm2": "$\\,\\,\\,\\,\\Rightarrow$ Even degree",
+      "funcTerm3": "$\\,\\,\\,\\,\\Rightarrow$ Odd degree",
       "neither": "neither even nor odd",
       "odd": "odd",
       "r1": "The {self.c1[1]} function is",
@@ -1379,7 +1388,7 @@
       "text2": "The {self.c2[1]} function is neither even nor odd, because it's neither symmetric <bookmark mark=\"r21\"/> around the origin, nor is it <bookmark mark=\"r22\"/>symmetric around the y-axis.",
       "text2_even": "The {self.c2[1]} function is even, because it is symmetric <bookmark mark=\"r22\"/> around the y-axis.",
       "text2_odd": "The {self.c2[1]} function is odd, because it is symmetric <bookmark mark=\"r21\"/> around the origin.",
-      "voiceover": "{self.intro}\nLet's first look at <bookmark mark=\"f1\"/>the {self.c1[1]} function.\n{text1} <bookmark mark=\"unWrite\"/>\nAnd now let's look at <bookmark mark=\"f2\"/>the {self.c2[1]} function.\n{text2}\nSo: The {self.c1[1]} function is <bookmark mark=\"r1\"/>{s1}, and the {self.c2[1]} function is <bookmark mark=\"r2\"/>{s2}."
+      "voiceover": "{self.intro}\nLet's first look at <bookmark mark=\"f1\"/>the {self.c1[1]} function.\n{self.text1} <bookmark mark=\"unWrite\"/>\nAnd now let's look at <bookmark mark=\"f2\"/>the {self.c2[1]} function.\n{self.text2}\nSo: The {self.c1[1]} function is <bookmark mark=\"r1\"/>{self.s1}, and the {self.c2[1]} function is <bookmark mark=\"r2\"/>{self.s2}."
     },
     "EvenOddQuestionScene": {
       "voiceover": "{self.intro}\nLook at the <bookmark mark=\"n2\"/> {self.c1[1]} function, and look at the <bookmark mark=\"n3\"/> {self.c2[1]} function.\nAre they even functions, odd functions, or neither?"
@@ -1398,10 +1407,7 @@
       "a": {
         "bbase": "y is the Base",
         "bexponent": "4 is the Exponent",
-        "voiceover": "No, not quite.\nThe base is whatever we raise to a power, so in this case, the base is <bookmark mark=\"y\"/> y.\nThe exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark=\"4\"/> 4."
-      },
-      "c": {
-        "voiceover": "Yep, that's right.\nThe base is whatever we raise to a power, so in this case, the base is <bookmark mark=\"y\"/> y.\nThe exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark=\"4\"/> 4."
+        "voiceover": "The base is whatever we raise to a power, so in this case, the base is <bookmark mark=\"y\"/> y.\nThe exponent is the power to which the base is raised, so in this case, the exponent is <bookmark mark=\"4\"/> 4."
       },
       "q": {
         "answer-options": "[\"Base: $3$, Exponent: $4$\", \"Base: $y$, Exponent: $3$\", \"Base: $y$, Exponent: $4$\", \"Base: $4$, Exponent: $y$\"]",
@@ -1411,10 +1417,7 @@
     },
     "I3": {
       "a": {
-        "voiceover": "Yes, well done!\nLet's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...\nFirst, we have  <bookmark mark=\"n1\"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,\nthe function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.\nNext, there is the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.\nSo they are sometimes positive and sometimes negative.\nNow, <bookmark mark=\"unWriteOdd\"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...\nSo first we have the <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,\nboth for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.\nAnd finally, there is the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.\nSo, <bookmark mark=\"unWriteEven\"/>to sum up, functions with an <bookmark mark=\"even\"/> even degree are always positive, while functions with an <bookmark mark=\"odd\"/>odd degree can be positive or negative."
-      },
-      "b": {
-        "voiceover": "No, that's not right...\nLet's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...\nFirst, we have  <bookmark mark=\"n1\"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,\nthe function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.\nNext, there is the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.\nSo they are sometimes positive and sometimes negative.\nNow, <bookmark mark=\"unWriteOdd\"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...\nSo first we have the <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,\nboth for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.\nAnd finally, there is the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.\nSo, <bookmark mark=\"unWriteEven\"/>to sum up, functions with an <bookmark mark=\"even\"/> even degree are always positive, while functions with an <bookmark mark=\"odd\"/>odd degree can be positive or negative."
+        "voiceover": "Let's first look at the two functions with an odd degree. That means that the exponent is an odd number, like in x, x cubed, x to the power of five and so on...\nFirst, we have  <bookmark mark=\"n1\"/>the linear function f of x equals a times x, which is the same as a times x to the power of one. As you can see,\nthe function values are negative for negative x values and positive for positive x values. So they are sometimes positive and sometimes negative.\nNext, there is the <bookmark mark=\"n3\"/>cubic function f of x equals a times x cubed, so x to the power of three. Again, the function values are negative for negative x values and positive for positive x values.\nSo they are sometimes positive and sometimes negative.\nNow, <bookmark mark=\"unWriteOdd\"/>let's look at the two functions with an even degree. That means that the exponent is an even number, like in x squared, x to the power of four and so on...\nSo first we have the <bookmark mark=\"n2\"/>quadratic function f of x equals a times x squared. As you can see, the function values are always positive,\nboth for positive and for negative x values. This is because if you multiply a negative number by itself, it always results in a positive number: Negative times negative is positive.\nAnd finally, there is the <bookmark mark=\"n4\"/> function f of x equals a times x to the power of 4, which is of degree four. Again, the function values are always positive.\nSo, <bookmark mark=\"unWriteEven\"/>to sum up, functions with an <bookmark mark=\"even\"/> even degree are always positive, while functions with an <bookmark mark=\"odd\"/>odd degree can be positive or negative."
       },
       "q": {
         "answer-options": "[\"Functions with an even degree are always positive, while functions with an odd degree can be negative.\", \"Functions with an even degree are always negative, while functions with an odd degree can be positive.\", \"Functions with an even degree are always positive, while functions with an odd degree can be positive or negative.\", \"Functions with an even degree are always negative, while functions with an odd degree can be positive or negative.\"]",
@@ -1424,10 +1427,7 @@
     },
     "I4": {
       "a": {
-        "voiceover": "No, that's not right...\nThe <bookmark mark=\"n2\"/> blue function belongs to the <bookmark mark=\"blueTerm\"/> Term negative one times <bookmark mark=\"x2\"/>\nx squared. This means, that the<bookmark mark=\"degE\"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,\nthe function values are always negative, instead of always positive.\nThe <bookmark mark=\"n3\"/> orange function belongs to the <bookmark mark=\"orangeTerm\"/> Term 0.5 times <bookmark mark=\"x3\"/>\nx cubed. This means, that the <bookmark mark=\"degO\"/>degree of the orange function is odd, because it has degree three."
-      },
-      "d": {
-        "voiceover": "Yes, that's it!\nThe <bookmark mark=\"n2\"/> blue function belongs to the <bookmark mark=\"blueTerm\"/> Term negative one times <bookmark mark=\"x2\"/>\nx squared. This means, that the<bookmark mark=\"degE\"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,\nthe function values are always negative, instead of always positive.\nThe <bookmark mark=\"n3\"/> orange function belongs to the <bookmark mark=\"orangeTerm\"/> Term 0.5 times <bookmark mark=\"x3\"/>\nx cubed. This means, that the <bookmark mark=\"degO\"/>degree of the orange function is odd, because it has degree three."
+        "voiceover": "The <bookmark mark=\"n2\"/> blue function belongs to the <bookmark mark=\"blueTerm\"/> Term negative one times <bookmark mark=\"x2\"/>\nx squared. This means, that the<bookmark mark=\"degE\"/> degree of the blue function is even, because it has degree two. But because it's multiplied by negative one,\nthe function values are always negative, instead of always positive.\nThe <bookmark mark=\"n3\"/> orange function belongs to the <bookmark mark=\"orangeTerm\"/> Term 0.5 times <bookmark mark=\"x3\"/>\nx cubed. This means, that the <bookmark mark=\"degO\"/>degree of the orange function is odd, because it has degree three."
       },
       "q": {
         "answer-options": "[\"Blue: Odd, Orange: Even\", \"Blue: Even, Orange: Even\", \"Blue: Odd, Orange: Odd\", \"Blue: Even, Orange: Odd\"]",
@@ -1443,7 +1443,7 @@
     "I6": {
       "q": {
         "even1": "Even functions:",
-        "even2": "$\\\\Rightarrow$ symmetrical",
+        "even2": "$\\Rightarrow$ symmetrical",
         "even3": "around the y-axis",
         "voiceover": "The symmetry of power functions with an <bookmark mark=\"even\"/>even degree is this:\n<bookmark mark=\"even2\"/>f of negative x is equal to f of x.\nSo looking at the function f of x equals x squared for example, we see that <bookmark mark=\"p1\"/>\nf of one is one, and <bookmark mark=\"n1\"/>f of negative one is also one.\nOr that <bookmark mark=\"p2\"/>f of two is four, and <bookmark mark=\"n2\"/>f of negative two is also four.\nGraphically, this means that the function is <bookmark mark=\"sym1\"/>symmetrical around the y-axis.\nThis means, that we can <bookmark mark=\"sym2\"/>reflect the function at the y-axis, and get the same function again.\nAnd since this is true for all functions of even degrees, for example x to the power of four, we call all functions that have this property\n\"even functions\"."
       }
