@@ -41,7 +41,7 @@ class Func_5_2_I_1_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -68,7 +68,7 @@ class Func_5_2_I_1_q(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("rootx1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general[0].get_center()+0.4*DOWN
             self.play(Write(root_general), CursorMoveTo(cursor, x,y), run_time=0.5)
 
@@ -79,19 +79,19 @@ class Func_5_2_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("rootx3")
             x,y,_ = root_general[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("root4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four.get_center()+0.4*DOWN
             self.play(Write(root_four), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("root9")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_nine.get_center()+0.4*DOWN
             self.play(Write(root_nine), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("2root")
             self.play(TransformMatchingTex(root_general, root_general_2), TransformMatchingTex(root_four, root_four_2), TransformMatchingTex(root_nine, root_nine_2), run_time=2)
@@ -100,7 +100,7 @@ class Func_5_2_I_1_q(SophiaCursorScene):
             self.draw_decorative_line(cursor, 0.6, run_time=4)
 
             self.wait_until_bookmark("Crootx1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general_3[0].get_center()+0.4*DOWN
             self.play(Write(root_general_3), CursorMoveTo(cursor, x,y), run_time=0.5)
 
@@ -115,13 +115,13 @@ class Func_5_2_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("Crootx4")
             x,y,_ = root_general_3[6].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("q")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_3.get_center()+0.4*DOWN
             self.play(Write(root_four_3), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -141,7 +141,7 @@ class Func_5_2_I_1_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -158,17 +158,17 @@ class Func_5_2_I_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("intro")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_eight.get_center()+0.4*DOWN
             self.play(Write(root_eight), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = cube2[0].get_center()+0.4*DOWN
             self.play(Write(cube2), CursorMoveTo(cursor, x,y), run_time=0.3)
 
@@ -187,7 +187,7 @@ class Func_5_2_I_1_a(SophiaCursorScene):
             self.wait_until_bookmark("eight")
             x,y,_ = cube2[8].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("sol")
             x,y,_ = sol.get_center()+0.4*DOWN
@@ -196,7 +196,7 @@ class Func_5_2_I_1_a(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
         
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -215,7 +215,7 @@ class Func_5_2_I_1_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -232,17 +232,17 @@ class Func_5_2_I_1_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I1.b.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_5_2.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("intro")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_eight.get_center()+0.4*DOWN
             self.play(Write(root_eight), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = cube2[0].get_center()+0.4*DOWN
             self.play(Write(cube2), CursorMoveTo(cursor, x,y), run_time=0.3)
 
@@ -261,7 +261,7 @@ class Func_5_2_I_1_b(SophiaCursorScene):
             self.wait_until_bookmark("eight")
             x,y,_ = cube2[8].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("sol")
             x,y,_ = sol.get_center()+0.4*DOWN
@@ -270,7 +270,7 @@ class Func_5_2_I_1_b(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
         
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -289,7 +289,7 @@ class Func_5_2_I_1_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -306,17 +306,17 @@ class Func_5_2_I_1_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("intro")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_eight.get_center()+0.4*DOWN
             self.play(Write(root_eight), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = cube2[0].get_center()+0.4*DOWN
             self.play(Write(cube2), CursorMoveTo(cursor, x,y), run_time=0.3)
 
@@ -335,7 +335,7 @@ class Func_5_2_I_1_c(SophiaCursorScene):
             self.wait_until_bookmark("eight")
             x,y,_ = cube2[8].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("sol")
             x,y,_ = sol.get_center()+0.4*DOWN
@@ -344,7 +344,7 @@ class Func_5_2_I_1_c(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
         
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -364,7 +364,7 @@ class Func_5_2_I_1_d(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -381,17 +381,17 @@ class Func_5_2_I_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I1.a.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("intro")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_eight.get_center()+0.4*DOWN
             self.play(Write(root_eight), CursorMoveTo(cursor, x, y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = cube2[0].get_center()+0.4*DOWN
             self.play(Write(cube2), CursorMoveTo(cursor, x,y), run_time=0.3)
 
@@ -410,7 +410,7 @@ class Func_5_2_I_1_d(SophiaCursorScene):
             self.wait_until_bookmark("eight")
             x,y,_ = cube2[8].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("sol")
             x,y,_ = sol.get_center()+0.4*DOWN
@@ -419,7 +419,7 @@ class Func_5_2_I_1_d(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
         
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -448,7 +448,7 @@ class Func_5_2_I_2_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -471,34 +471,34 @@ class Func_5_2_I_2_q(SophiaCursorScene):
                 text=self.translate("Func_5_2.I2.q.voiceover")
         ) as tracker:
             
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general_2.get_center()+0.4*DOWN
             self.play(Write(root_general_2), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cube")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general_3.get_center()+0.4*DOWN
             self.play(Write(root_general_3), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("dots")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = dots.get_center()+0.4*DOWN
             self.play(Write(dots), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("n")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general_n.get_center()+0.4*DOWN
             self.play(Write(root_general_n), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("q")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_4.get_center()+0.4*DOWN
             self.play(Write(root_four_4), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -518,7 +518,7 @@ class Func_5_2_I_2_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -538,23 +538,23 @@ class Func_5_2_I_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I2.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_5_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("root4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_4.get_center()+0.4*DOWN
             self.play(Write(root_four_4), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two.get_center()+0.4*DOWN
             self.play(Write(root_four_two), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -581,16 +581,16 @@ class Func_5_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol_1[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootNegTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo.get_center()+0.4*DOWN
             self.play(Write(root_four_negtwo), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negTwo1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -621,7 +621,7 @@ class Func_5_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("sol5")
             x,y,_ = sol_2[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -640,7 +640,7 @@ class Func_5_2_I_2_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -660,23 +660,23 @@ class Func_5_2_I_2_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I2.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_5_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("root4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_4.get_center()+0.4*DOWN
             self.play(Write(root_four_4), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two.get_center()+0.4*DOWN
             self.play(Write(root_four_two), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -703,16 +703,16 @@ class Func_5_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol_1[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootNegTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo.get_center()+0.4*DOWN
             self.play(Write(root_four_negtwo), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negTwo1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -743,7 +743,7 @@ class Func_5_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("sol5")
             x,y,_ = sol_2[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -762,7 +762,7 @@ class Func_5_2_I_2_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -782,23 +782,23 @@ class Func_5_2_I_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I2.c.voiceover")
+                text=self.translate("General.correct_6")+self.translate("Func_5_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("root4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_4.get_center()+0.4*DOWN
             self.play(Write(root_four_4), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two.get_center()+0.4*DOWN
             self.play(Write(root_four_two), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -825,16 +825,16 @@ class Func_5_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol_1[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootNegTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo.get_center()+0.4*DOWN
             self.play(Write(root_four_negtwo), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negTwo1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -865,7 +865,7 @@ class Func_5_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("sol5")
             x,y,_ = sol_2[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -884,7 +884,7 @@ class Func_5_2_I_2_d(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -904,23 +904,23 @@ class Func_5_2_I_2_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I2.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_5_2.I2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("root4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_4.get_center()+0.4*DOWN
             self.play(Write(root_four_4), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two.get_center()+0.4*DOWN
             self.play(Write(root_four_two), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("two1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_two[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -947,16 +947,16 @@ class Func_5_2_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("sol2")
             x,y,_ = sol_1[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("rootNegTwo")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo.get_center()+0.4*DOWN
             self.play(Write(root_four_negtwo), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negTwo1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_four_negtwo[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
 
@@ -987,7 +987,7 @@ class Func_5_2_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("sol5")
             x,y,_ = sol_2[-1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -1015,7 +1015,7 @@ class Func_5_2_I_3(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1060,13 +1060,13 @@ class Func_5_2_I_3(SophiaCursorScene):
         , subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
 
             self.wait_until_bookmark("even")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g1.get_start()
             self.play(Write(fTex1), CursorMoveTo(cursor, x, y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g1.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g1))
-            cursor.blinking=True
+            cursor.idle=True
             
             self.wait_until_bookmark("evenSymmetry")
             copy = g1.copy().set_color(GREY).set_stroke_width(1)
@@ -1078,13 +1078,13 @@ class Func_5_2_I_3(SophiaCursorScene):
             self.remove(copy)
 
             self.wait_until_bookmark("odd")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g2.get_start()
             self.play(TransformMatchingTex(fTex1, fTex2), CursorMoveTo(cursor, x, y), Unwrite(g1), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g2.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g2))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("oddSymmetry")
             copy = g2.copy().set_color(GREY).set_stroke_width(1)
@@ -1101,7 +1101,7 @@ class Func_5_2_I_3(SophiaCursorScene):
             self.play(Write(even), Write(odd), Write(divLine), run_time=0.5)
 
             self.wait_until_bookmark("neg_1_to_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg_1_to_2.get_center()+0.4*DOWN
             self.play(Write(neg_1_to_2), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1116,13 +1116,13 @@ class Func_5_2_I_3(SophiaCursorScene):
             self.wait_until_bookmark("neg_1_to_5")
             x,y,_ = neg_1_to_5.get_center()+0.4*DOWN
             self.play(Write(neg_1_to_5), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking = True
+            cursor.idle = True
 
             self.wait_until_bookmark("so_on")
             self.play(Write(dots_even), Write(dots_odd))
             
             self.wait_until_bookmark("one_root_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = one_root_2.get_center()+0.4*DOWN
             self.play(Write(one_root_2), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1137,10 +1137,10 @@ class Func_5_2_I_3(SophiaCursorScene):
             self.wait_until_bookmark("one_root_5")
             x,y,_ = one_root_5.get_center()+0.4*DOWN
             self.play(Write(one_root_5), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking = True
+            cursor.idle = True
 
             self.wait_until_bookmark("neg_1_root_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg_1_root_2.get_center()+0.4*DOWN
             self.play(Write(neg_1_root_2), Write(sout_2), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1155,7 +1155,7 @@ class Func_5_2_I_3(SophiaCursorScene):
             self.wait_until_bookmark("neg_1_root_5")
             x,y,_ = neg_1_root_5.get_center()+0.4*DOWN
             self.play(Write(neg_1_root_5), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking = True
+            cursor.idle = True
 
 
         # Wait for 4 seconds at the end of the animation
@@ -1186,7 +1186,7 @@ class Func_5_2_I_4_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1211,28 +1211,28 @@ class Func_5_2_I_4_q(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("root")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general.get_center()+0.4*DOWN
             self.play(Write(root_general), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q1.get_center()+0.4*DOWN
             self.play(Write(Q1), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q2a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q2a.get_center()+0.4*DOWN
             self.play(Write(Q2a), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q2b.get_center()+0.4*DOWN
             self.play(Write(Q2b), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
 class Func_5_2_I_4_a(SophiaCursorScene):
@@ -1249,7 +1249,7 @@ class Func_5_2_I_4_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1281,7 +1281,7 @@ class Func_5_2_I_4_a(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1292,70 +1292,70 @@ class Func_5_2_I_4_a(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg.get_center()+0.4*DOWN
             self.play(Write(ex_1_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg.get_center()+0.4*DOWN
             self.play(Write(ex_2_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("strike_out")
             self.play(Write(sout_1), Write(sout_2))
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_two")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_no")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1374,7 +1374,7 @@ class Func_5_2_I_4_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1406,7 +1406,7 @@ class Func_5_2_I_4_b(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1417,70 +1417,70 @@ class Func_5_2_I_4_b(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg.get_center()+0.4*DOWN
             self.play(Write(ex_1_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg.get_center()+0.4*DOWN
             self.play(Write(ex_2_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("strike_out")
             self.play(Write(sout_1), Write(sout_2))
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_two")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_no")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1498,7 +1498,7 @@ class Func_5_2_I_4_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1530,7 +1530,7 @@ class Func_5_2_I_4_c(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1541,70 +1541,70 @@ class Func_5_2_I_4_c(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg.get_center()+0.4*DOWN
             self.play(Write(ex_1_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg.get_center()+0.4*DOWN
             self.play(Write(ex_2_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("strike_out")
             self.play(Write(sout_1), Write(sout_2))
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_two")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_no")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1622,7 +1622,7 @@ class Func_5_2_I_4_d(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1654,7 +1654,7 @@ class Func_5_2_I_4_d(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1665,70 +1665,70 @@ class Func_5_2_I_4_d(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg.get_center()+0.4*DOWN
             self.play(Write(ex_1_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg.get_center()+0.4*DOWN
             self.play(Write(ex_2_neg), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("strike_out")
             self.play(Write(sout_1), Write(sout_2))
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_two")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_no")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1756,7 +1756,7 @@ class Func_5_2_I_5_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1781,28 +1781,28 @@ class Func_5_2_I_5_q(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("root")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_general.get_center()+0.4*DOWN
             self.play(Write(root_general), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q1.get_center()+0.4*DOWN
             self.play(Write(Q1), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q2a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q2a.get_center()+0.4*DOWN
             self.play(Write(Q2a), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("Q2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = Q2b.get_center()+0.4*DOWN
             self.play(Write(Q2b), CursorMoveTo(cursor, x,y), run_time=0.5)
-            cursor.blinking=True
+            cursor.idle=True
 
 
 class Func_5_2_I_5_a(SophiaCursorScene):
@@ -1819,7 +1819,7 @@ class Func_5_2_I_5_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1849,7 +1849,7 @@ class Func_5_2_I_5_a(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1860,80 +1860,80 @@ class Func_5_2_I_5_a(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
             self.wait(0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[1]), Write(ex_1_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[1]), Write(ex_2_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1952,7 +1952,7 @@ class Func_5_2_I_5_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1982,7 +1982,7 @@ class Func_5_2_I_5_b(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -1993,80 +1993,80 @@ class Func_5_2_I_5_b(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
             self.wait(0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[1]), Write(ex_1_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[1]), Write(ex_2_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -2085,7 +2085,7 @@ class Func_5_2_I_5_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -2115,7 +2115,7 @@ class Func_5_2_I_5_c(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2126,80 +2126,80 @@ class Func_5_2_I_5_c(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
             self.wait(0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[1]), Write(ex_1_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[1]), Write(ex_2_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -2218,7 +2218,7 @@ class Func_5_2_I_5_d(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -2248,7 +2248,7 @@ class Func_5_2_I_5_d(SophiaCursorScene):
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_pos[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2259,80 +2259,80 @@ class Func_5_2_I_5_d(SophiaCursorScene):
             self.wait_until_bookmark("posEx1b")
             x,y,_ = ex_1_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_pos[1]), Write(ex_1_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("posEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_pos[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_pos[1]), Write(ex_2_pos[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_pos_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos_1.get_center()+0.4*DOWN
             self.play(Write(result_pos_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_pos_3")
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(Write(result_pos_2), Write(result_pos3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("xNeg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
             self.wait(0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("negEx2a")
             x,y,_ = ex_2_neg[0].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_1_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_1_neg[1]), Write(ex_1_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("negEx2b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ex_2_neg[2].get_center()+0.4*DOWN
             self.play(Write(ex_2_neg[1]), Write(ex_2_neg[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_neg_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg_1.get_center()+0.4*DOWN
             self.play(Write(result_neg_1), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("result_neg_3")
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(Write(result_neg_2), Write(result_neg3), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = ORIGIN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_pos3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("summary_b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = result_neg3.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -2353,7 +2353,7 @@ class Func_5_2_I_6(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.4)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -2399,49 +2399,49 @@ class Func_5_2_I_6(SophiaCursorScene):
          , subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
 
             self.wait_until_bookmark("even")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even.get_center()+0.4*DOWN
             self.play(Write(even), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("odd")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = odd.get_center()+0.4*DOWN
             self.play(Write(odd), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = center
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("pos")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = pos.get_center()+0.4*DOWN
             self.play(Write(pos), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("neg")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = neg.get_center()+0.4*DOWN
             self.play(Write(neg), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = center
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("even_positive")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even_pos.get_center()
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("evenEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even_pos_examples[0].get_center()+0.4*DOWN
             self.play(Write(even_pos_examples[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
             
@@ -2452,16 +2452,16 @@ class Func_5_2_I_6(SophiaCursorScene):
             self.wait_until_bookmark("even_pos_sol")
             x,y,_ = even_pos_sol.get_center()+0.4*DOWN
             self.play(Write(even_pos_sol), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("even_negative")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even_neg.get_center()
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("evenEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even_neg_examples[0].get_center()+0.4*DOWN
             self.play(Write(even_neg_examples[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2472,32 +2472,32 @@ class Func_5_2_I_6(SophiaCursorScene):
             self.wait_until_bookmark("even_neg_sol")
             x,y,_ = even_neg_sol.get_center()+0.4*DOWN
             self.play(Write(even_neg_sol), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = center
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("even_pos_sol2")
             x,y,_ = even_pos_sol.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("even_neg_sol2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = even_neg_sol.get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("odd_positive")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = odd_pos.get_center()
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("oddEx1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = odd_pos_examples[0].get_center()+0.4*DOWN
             self.play(Write(odd_pos_examples[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2508,16 +2508,16 @@ class Func_5_2_I_6(SophiaCursorScene):
             self.wait_until_bookmark("odd_pos_sol")
             x,y,_ = odd_pos_sol.get_center()+0.4*DOWN
             self.play(Write(odd_pos_sol), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("odd_negative")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = odd_neg.get_center()
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("oddEx1b")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = odd_neg_examples[0].get_center()+0.4*DOWN
             self.play(Write(odd_neg_examples[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2528,13 +2528,13 @@ class Func_5_2_I_6(SophiaCursorScene):
             self.wait_until_bookmark("odd_neg_sol")
             x,y,_ = odd_neg_sol.get_center()+0.4*DOWN
             self.play(Write(odd_neg_sol), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("default4")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = center
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -2556,7 +2556,7 @@ class Func_5_2_I_7(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=0.4)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -2580,13 +2580,13 @@ class Func_5_2_I_7(SophiaCursorScene):
 
             
             self.wait_until_bookmark("title")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = title.get_center()+0.5*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("example1a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = two[1].get_center()+0.4*DOWN
             self.play(Write(two[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2599,13 +2599,13 @@ class Func_5_2_I_7(SophiaCursorScene):
             self.play(Write(two[3]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("example2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = two[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("example2a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = three[1].get_center()+0.4*DOWN
             self.play(Write(three[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2616,10 +2616,10 @@ class Func_5_2_I_7(SophiaCursorScene):
             self.wait_until_bookmark("example2c")
             x,y,_ = three[3].get_center()+0.4*DOWN
             self.play(Write(three[3]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("example3a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = four[1].get_center()+0.4*DOWN
             self.play(Write(four[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
             
@@ -2630,10 +2630,10 @@ class Func_5_2_I_7(SophiaCursorScene):
             self.wait_until_bookmark("example3c")
             x,y,_ = four[2].get_center()+0.4*DOWN
             self.play(Write(four[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("example4a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = five[1].get_center()+0.4*DOWN
             self.play(Write(five[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2644,37 +2644,37 @@ class Func_5_2_I_7(SophiaCursorScene):
             self.wait_until_bookmark("example4c")
             x,y,_ = five[2].get_center()+0.4*DOWN
             self.play(Write(five[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("root_k_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_k[0].get_center()+0.4*DOWN
             self.play(Write(root_k[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("root_k_2")
             x,y,_ = root_k[2].get_center()+0.4*DOWN
             self.play(Write(root_k[1]), Write(root_k[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("root_3_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_3[0].get_center()+0.4*DOWN
             self.play(Write(root_3[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("root_3_2")
             x,y,_ = root_3[2].get_center()+0.4*DOWN
             self.play(Write(root_3[1]), Write(root_3[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("root_5_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = root_5[0].get_center()+0.4*DOWN
             self.play(Write(root_5[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
             self.wait_until_bookmark("root_5_2")
             x,y,_ = root_5[2].get_center()+0.4*DOWN
             self.play(Write(root_5[1]), Write(root_5[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-            cursor.blinking=True
+            cursor.idle=True
 
             
         self.wait(4)
@@ -2697,7 +2697,7 @@ class Func_5_2_I_7(SophiaCursorScene):
 #             if mob.needSound:
 #                 mob.needSound = False
 #                 self.add_cursor_sound()
-#         cursor = AltCursor(stroke_width=0.0, blinking=True, x=0.4)
+#         cursor = AltCursor(stroke_width=0.0, idle=True, x=0.4)
 #         cursor.autoFadeBackground = True
 #         cursor.add_updater(cursor_sound_updater)
 #         self.add(cursor)
@@ -2722,13 +2722,13 @@ class Func_5_2_I_7(SophiaCursorScene):
 #          ) as tracker:
             
 #             self.wait_until_bookmark("title")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = title.get_center()+0.5*DOWN
 #             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("example1a")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = two[1].get_center()+0.4*DOWN
 #             self.play(Write(two[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2741,13 +2741,13 @@ class Func_5_2_I_7(SophiaCursorScene):
 #             self.play(Write(two[3]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
 #             self.wait_until_bookmark("example2")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = two[3].get_center()+0.4*DOWN
 #             self.play(CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("example2a")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = three[1].get_center()+0.4*DOWN
 #             self.play(Write(three[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2758,10 +2758,10 @@ class Func_5_2_I_7(SophiaCursorScene):
 #             self.wait_until_bookmark("example2c")
 #             x,y,_ = three[3].get_center()+0.4*DOWN
 #             self.play(Write(three[3]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("example3a")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = four[1].get_center()+0.4*DOWN
 #             self.play(Write(four[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
             
@@ -2772,10 +2772,10 @@ class Func_5_2_I_7(SophiaCursorScene):
 #             self.wait_until_bookmark("example3c")
 #             x,y,_ = four[2].get_center()+0.4*DOWN
 #             self.play(Write(four[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("example4a")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = five[1].get_center()+0.4*DOWN
 #             self.play(Write(five[1]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
@@ -2786,37 +2786,37 @@ class Func_5_2_I_7(SophiaCursorScene):
 #             self.wait_until_bookmark("example4c")
 #             x,y,_ = five[2].get_center()+0.4*DOWN
 #             self.play(Write(five[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("root_k_1")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = root_k[0].get_center()+0.4*DOWN
 #             self.play(Write(root_k[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
 #             self.wait_until_bookmark("root_k_2")
 #             x,y,_ = root_k[2].get_center()+0.4*DOWN
 #             self.play(Write(root_k[1]), Write(root_k[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("root_3_1")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = root_3[0].get_center()+0.4*DOWN
 #             self.play(Write(root_3[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
 #             self.wait_until_bookmark("root_3_2")
 #             x,y,_ = root_3[2].get_center()+0.4*DOWN
 #             self.play(Write(root_3[1]), Write(root_3[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
 #             self.wait_until_bookmark("root_5_1")
-#             cursor.blinking=False
+#             cursor.idle=False
 #             x,y,_ = root_5[0].get_center()+0.4*DOWN
 #             self.play(Write(root_5[0]), CursorMoveTo(cursor, x,y), run_time=0.2)
 
 #             self.wait_until_bookmark("root_5_2")
 #             x,y,_ = root_5[2].get_center()+0.4*DOWN
 #             self.play(Write(root_5[1]), Write(root_5[2]), CursorMoveTo(cursor, x,y), run_time=0.2)
-#             cursor.blinking=True
+#             cursor.idle=True
 
             
 #         self.wait(4)
