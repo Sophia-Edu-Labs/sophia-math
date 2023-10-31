@@ -24,7 +24,7 @@ class Func_4_2_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions="Func_4_2.I1.q.answer-options",
+            answerOptions=ast.literal_eval(self.translate("Func_4_2.I1.q.answer-options")),
             correctAnswerIndex=1,
             questionText=self.translate("Func_4_2.I1.q.question-text")
         )
