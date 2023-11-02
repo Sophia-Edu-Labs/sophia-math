@@ -453,11 +453,13 @@ class Func_5_2_I_2_q(SophiaCursorScene):
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
+        n_times = self.translate("General.n_times")
+
         root_general_2 = MathTex("\\sqrt[2]{x}","\\cdot","\\sqrt[2]{x}","=", "x", color=c1t, font_size = fs1).shift(UP)
         root_general_3 = MathTex("\\sqrt[3]{x}","\\cdot","\\sqrt[3]{x}","\\cdot","\\sqrt[3]{x}","=", "x", color=c1t, font_size = fs1).next_to(root_general_2, DOWN, buff=0.2)
         root_general_4 = MathTex("\\sqrt[3]{x}","\\cdot","\\sqrt[3]{x}","\\cdot","\\sqrt[3]{x}","\\cdot","\\sqrt[3]{x}","=", "x", color=c1t, font_size = fs1).next_to(root_general_3, DOWN, buff=0.2)
         dots = MathTex("\\hdots", color=c1t, font_size=fs1).next_to(root_general_4, DOWN, buff=0.1)
-        root_general_n = MathTex("\\sqrt[n]{x}","\\cdot", "\\overset{\\text{n times}}{\\hdots}","\\cdot", "\\sqrt[n]{x}", "=", "x", color=c1t, font_size = fs2).next_to(dots, DOWN, buff=0.2)
+        root_general_n = MathTex("\\sqrt[n]{x}","\\cdot", "\\overset{\\text{"+n_times+"}}{\\hdots}","\\cdot", "\\sqrt[n]{x}", "=", "x", color=c1t, font_size = fs2).next_to(dots, DOWN, buff=0.2)
         root_four_4 = MathTex("\\sqrt[4]{16}","=", "?", color=c1t, font_size = fs1).next_to(root_general_n, DOWN, buff=0.4)
 
 
@@ -1031,8 +1033,8 @@ class Func_5_2_I_3(SophiaCursorScene):
 
         divLine = Line([0,-2.5,0], [0,2,0], color=c1t)
         even_exp, odd_exp = self.translate("Func_5_2.I3.even"), self.translate("Func_5_2.I3.odd")
-        even = Tex(even_exp, font_size=fs3, color=BLUE)
-        odd = Tex(odd_exp, font_size=fs3, color=GREEN)
+        even = Tex(even_exp, font_size=fs4, color=BLUE)
+        odd = Tex(odd_exp, font_size=fs4, color=GREEN)
         even_odd = VGroup(even, odd).arrange(RIGHT, buff=0.6).next_to(divLine, UP, buff=0.2)
         neg_1_to_2 = MathTex("(-1)^2", "=", "1", font_size=fs3, color=BLUE).next_to(even, DOWN, buff=0.2)
         neg_1_to_3 = MathTex("(-1)^3", "=", "-1", font_size=fs3, color=GREEN).next_to(odd, DOWN, buff=0.2)
@@ -1277,7 +1279,7 @@ class Func_5_2_I_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I4.a.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_5_2.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")

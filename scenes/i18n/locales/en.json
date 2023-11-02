@@ -2447,7 +2447,8 @@
     "incorrect_3": "No, not quite. ",
     "incorrect_4": "That's not correct. ",
     "incorrect_5": "No. ",
-    "incorrect_6": "That's wrong, unfortunately. "
+    "incorrect_6": "That's wrong, unfortunately. ",
+    "n_times": "n times"
   },
   "degree": "Degree",
   "test-key": "[“1\", \"2\", \"3\"]"
