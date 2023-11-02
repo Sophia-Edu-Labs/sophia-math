@@ -1404,7 +1404,7 @@ class Func_5_2_I_4_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I4.b.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
@@ -1528,7 +1528,7 @@ class Func_5_2_I_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I4.b.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
@@ -1652,7 +1652,7 @@ class Func_5_2_I_4_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I4.b.voiceover")
+                text=self.translate("General.incorrect_4")+self.translate("Func_5_2.I4.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
@@ -1847,7 +1847,7 @@ class Func_5_2_I_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I5.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_5_2.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
@@ -2367,9 +2367,9 @@ class Func_5_2_I_6(SophiaCursorScene):
         neg = Tex(self.translate("Func_5_2.I6.neg"), font_size=fs3, color=GREEN)
         pos_neg = VGroup(pos, neg).arrange(RIGHT, buff=0.6).next_to(vLine, UP, buff=0.2)
         
-        even = Tex(self.translate("Func_5_2.I6.even"), font_size=fs3, color=PURPLE)
-        odd = Tex(self.translate("Func_5_2.I6.odd"), font_size=fs3, color=ORANGE)
-        even_odd = VGroup(even, odd).arrange(DOWN, buff=1.2).next_to(hLine, LEFT, buff=0.1)
+        even = Tex(self.translate("Func_5_2.I6.even"), font_size=fs4, color=PURPLE)
+        odd = Tex(self.translate("Func_5_2.I6.odd"), font_size=fs4, color=ORANGE)
+        even_odd = VGroup(even, odd).arrange(DOWN, buff=1.2).next_to(hLine, LEFT, buff=0)
 
         even_pos_examples = MathTex("\\sqrt[2]{4},", "\\sqrt[4]{16},", "...", font_size=fs4, color=c1t)
         even_pos_sol = Tex(self.translate("Func_5_2.I6.twosol"), font_size=fs4, color=c1t)
