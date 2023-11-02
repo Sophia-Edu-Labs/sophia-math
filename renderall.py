@@ -13,8 +13,12 @@ if __name__ == "__main__":
     ########################################################
     #print(found_scene_modules)
     #print("--------")
-    filenames_to_render = ["Func_7_3.py"]
-    # filenames_no_render = ["Func3_1.py", "Func3_2.py", "Func3_3.py"]
+    filenames_to_render = ["Func_1_1.py", "Func_1_2.py", "Func_1_3.py",
+                           "Func_2_1.py", "Func_2_2.py", "Func_2_3.py",
+                           "Func_3_1.py", "Func_3_2.py", "Func_3_3.py",
+                           "Func_4_1.py", "Func_4_2.py", "Func_4_3.py", "Func_4_5.py",
+                           "Func_5_1.py", "Func_5_2.py", 
+                           "Func_6_1.py", "Func_6_2.py", "Func_6_3.py"]
     found_scene_modules = [m for m in found_scene_modules if any(filename in m.name for filename in filenames_to_render)]
     # found_scene_modules = [m for m in found_scene_modules if not any(filename in m.name for filename in filenames_no_render)]
     print (f"-------- [ found the following  (n={len(found_scene_modules)}) modules ] --------")
@@ -24,7 +28,7 @@ if __name__ == "__main__":
 
     # render
     # if test_run_with_last_frame is True, then it will only render the last frame of each scene, and will not render the full scene (that makes it faster, even though still quite slow for a lot of scenes, to get an idea whether the scenes are working or not)
-    render_scene_modules(found_scene_modules, output_dir=RENDER_RESULTS_FOLDER, media_parent_folder=RENDER_RESULTS_MEDIA_FOLDER, parallelize=False, test_run_with_last_frame=False)
+    # render_scene_modules(found_scene_modules, output_dir=RENDER_RESULTS_FOLDER, media_parent_folder=RENDER_RESULTS_MEDIA_FOLDER, parallelize=False, test_run_with_last_frame=False)
     
     
                 
