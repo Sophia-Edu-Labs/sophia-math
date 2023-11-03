@@ -410,7 +410,7 @@ class ScaleQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
             self.wait_until_bookmark("scale")
             cursor.idle=False
-            self.play(a.animate.set_value(abs), b.animate.set_value(sign), run_time=2)
+            self.play(a.animate.set_value(self.string_abs), b.animate.set_value(self.string_sign), run_time=2)
 
             self.wait_until_bookmark("markPoint")
             self.play(ApplyWave(cursor))

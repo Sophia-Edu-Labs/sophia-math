@@ -865,7 +865,7 @@
     "I4": {
       "a": {
         "intro": "Nein, das stimmt nicht ganz...",
-        "voiceover": "<break time=\"0.5s\"/>\nEine Funktion hat eine <bookmark mark=\"singularity\"/>-Singularität an der Stelle x <bookmark mark=\"whenever\"/> immer dann, wenn das Einsetzen von x zu einer Division durch Null führen würde, was bekanntermaßen nicht zulässig ist.\n<break time=\"0.5s\"/>\nWenn wir bedenken, <bookmark mark=\"out\"/>, dass <bookmark mark=\"g\"/> g von x gleich zwei durch x plus zwei ist, kann man bereits erahnen, dass die<bookmark mark=\"cursor\"/> Funktion eine Singularität hat, denn  <bookmark mark=\"denom1\"/> wir teilen durch eine Summe, an der x beteiligt ist.\n<break time=\"0.5s\"/>\nUm nun den Wert von x zu finden, an dem<bookmark mark=\"c2g\"/> g eine Singularität hat, müssen wir den Wert von x finden, für den der Nenner Null ergibt.\n<break time=\"0.5s\"/>\nDas bedeutet, dass wir den Wert suchen, für den <bookmark mark=\"step1\"/> x plus zwei gleich Null ist. \nUnd dieser Wert <bookmark mark=\"step23\"/>ist x gleich minus zwei.\n<break time=\"0.5s\"/>\n<bookmark mark=\"moveUp\"/>\nAlso sehen wir, dass g <bookmark mark=\"final\"/> eine Singularität bei x gleich minus zwei hat."
+        "voiceover": "<break time=\"0.5s\"/>\nEine Funktion hat eine <bookmark mark=\"singularity\"/>Singularität an der Stelle x <bookmark mark=\"whenever\"/> immer dann, wenn das Einsetzen von x zu einer Division durch Null führen würde, <split/>was bekanntermaßen nicht zulässig ist.\n<break time=\"0.5s\"/>\nWenn wir bedenken, <bookmark mark=\"out\"/>, dass <bookmark mark=\"g\"/> g von x gleich zwei durch x plus zwei ist, <split/>kann man bereits erahnen, dass die<bookmark mark=\"cursor\"/> Funktion eine Singularität hat, denn  <bookmark mark=\"denom1\"/> wir teilen durch eine Summe, an der x beteiligt ist.\n<break time=\"0.5s\"/>\nUm nun den Wert von x zu finden, <split/>an dem<bookmark mark=\"c2g\"/> g eine Singularität hat, müssen wir den Wert von x finden, für den der Nenner Null ergibt.\n<break time=\"0.5s\"/>\nDas bedeutet, dass wir den Wert suchen, für den <bookmark mark=\"step1\"/> x plus zwei gleich Null ist.<split/> \nUnd dieser Wert <bookmark mark=\"step23\"/>ist x gleich minus zwei.\n<break time=\"0.5s\"/>\n<bookmark mark=\"moveUp\"/>\nAlso sehen wir, dass g <bookmark mark=\"final\"/> eine Singularität bei x gleich minus zwei hat."
       },
       "d": {
         "has-singularity": "hat Singularität bei",
@@ -874,8 +874,8 @@
       "q": {
         "S1": "Singularität bei $x$",
         "S2": "$\\Leftrightarrow$",
-        "S3a": "Einsetzen von $x$ ergibt",
-        "S3b": "Durch Null teilen",
+        "S3a": "Einsetzen von $x$ führt",
+        "S3b": "zu Division durch Null",
         "answer-options": "[\"$x=0$\", \"Es gibt keine Singularität\", \"$x=2$\", \"$x=-2$\"]",
         "f1": "Nicht definiert für $x=0$",
         "f2": "$\\rightarrow$ Singularität bei $x=0$",
@@ -892,7 +892,7 @@
     "I6": {
       "a": {
         "e1": "Beispiel: $a=0,001$",
-        "e2": "Unser Beispiel: $a=\\\\frac{1}{1000}$",
+        "e2": "Unser Beispiel: $a=\\frac{1}{1000}$",
         "intro": "Nein, dass stimmt nicht ganz",
         "pbc": "Beweis durch Widerspruch",
         "s1": "1. Wähle eine kleine Zahl $a$",
@@ -902,7 +902,7 @@
         "t1b": "Es gibt keine positive Zahl $a$,",
         "t2": "für großes positives x.",
         "title": "$\\tfrac1x$ für große $x$",
-        "voiceover": "Das stimmt leider nicht.\n<bookmark mark=\"preach\"/> Es gibt keine positive Zahl, die kleiner ist als der kleinste Wert, den f von x gleich eins durch x annehmen kann.\n<break time=\"0.4s\"/>\nAber warum? <split/>\nIch zeige dir jetzt eine Methode, die Mathematiker <bookmark mark=\"pbc\"/>Beweis durch Widerspruch nennen. Mit dieser Methode kannst du das überprüfen.\n<break time=\"0.4s\"/>\nSuche zunächst<bookmark mark=\"step1\"/> eine beliebige superkleine positive Zahl aus und nenne diese Zahl \"a\".\n<bookmark mark=\"e1\"/> Zum Beispiel könnten wir die Zahl Null Punkt Null Null Eins auswählen.\nAls zweiten Schritt<bookmark mark=\"step2\"/> <split/>schreibst du diese Zahl als Bruch.\nIn unserem Beispiel<bookmark mark=\"e2\"/> würden wir \"a\" als eins durch einhundert schreiben.\nIm dritten schritt<bookmark mark=\"step3\"/> nimmst du den Bruch und verdoppelst Sie den Nenner.\nIn unserem Beispiel <bookmark mark=\"e3\"/>erhalten wir a gleich eins durch zweihundert.\n<break time=\"0.5s\"/>\nNun, <bookmark mark=\"meaning\"/>was könnte das bedeuten? \n<bookmark mark=\"meaningA\"/>\nZunächst können wir feststellen, dass f den Wert annimmt, wenn wir den Wert des verdoppelten nenners in f einsetzen.\n<bookmark mark=\"meaningB\"/>Außerdem ist die Zahl mit dem Verdoppelten nenner kleiner als a.\n\nAlso haben wir gerade eine Zahl gefunden,<split/> die wir in f einsetzen können um einen Wert zu erhalten, der kleiner ist als a.\n\nDas bedeutet, dass wir unabhängig von der gewählten positiven Zahl immer einen Wert von x finden können, für den f von x kleiner als diese Zahl ist."
+        "voiceover": "<bookmark mark=\"preach\"/> Es gibt keine positive Zahl, die kleiner ist als der kleinste Wert, den f von x gleich eins durch x annehmen kann.\n<break time=\"0.4s\"/>\nAber warum? <split/>\nIch zeige dir jetzt eine Methode, die Mathematiker <bookmark mark=\"pbc\"/>Beweis durch Widerspruch nennen. Mit dieser Methode kannst du das überprüfen.\n<break time=\"0.4s\"/>\nSuche zunächst<bookmark mark=\"step1\"/> eine beliebige superkleine positive Zahl aus und nenne diese Zahl \"a\".\n<bookmark mark=\"e1\"/> Zum Beispiel könnten wir die Zahl Null Komma Null Null Eins auswählen.\nAls zweiten Schritt<bookmark mark=\"step2\"/> <split/>schreibst du diese Zahl als Bruch.\nIn unserem Beispiel<bookmark mark=\"e2\"/> würden wir \"a\" als eins durch einhundert schreiben.\nIm dritten schritt<bookmark mark=\"step3\"/> nimmst du den Bruch und verdoppelst Sie den Nenner.<split/>\nIn unserem Beispiel <bookmark mark=\"e3\"/>erhalten wir a gleich eins durch zweihundert.\n<break time=\"0.5s\"/>\nNun, <bookmark mark=\"meaning\"/>was könnte das bedeuten? \n<bookmark mark=\"meaningA\"/>\nZunächst können wir feststellen, <split/>dass \"f\" den Wert annimmt, wenn wir den Wert des verdoppelten nenners in \"f\" einsetzen.\n<bookmark mark=\"meaningB\"/>Außerdem ist die Zahl mit dem Verdoppelten nenner kleiner als a.\n\nAlso haben wir gerade eine Zahl gefunden,<split/> die wir in f einsetzen können um einen Wert zu erhalten, der kleiner ist als a.\n\nDas bedeutet, dass wir unabhängig von der gewählten positiven Zahl immer einen Wert von x finden können, für den f von x kleiner als diese Zahl ist."
       },
       "c": {
         "intro": "Ja, das ist richtig."
@@ -928,8 +928,8 @@
     "I8": {
       "a": {
         "correct": "Ja, das ist richtig.",
-        "voiceover": "Wir wollen ja wissen, wie die Funktion <bookmark mark=\"f\"/> f von x gleich eins durch x aussieht für <bookmark mark=\"cond\"/> negative Werte von x.\n<break time=\"0.4s\"/>\nWie wir es für positive Werte von x getan haben, analysieren wir die Funktion, indem wir <bookmark mark=\"cords\"/> einige Werte einsetzen.\n<break time=\"0.4s\"/>\nWenn wir minus Eins einsetzen, <split/><bookmark mark=\"plugIn1\"/>, erhalten wir eins durch minus Eins, was minus Eins ergibt.\n<break time=\"0.4s\"/>\nWenn wir minus zwei einsetzen, <bookmark mark=\"plugIn2\"/>, erhalten wir eins durch minus zwei, was minus ein Halb ergibt.\nWenn wir minus vier einsetzen, <bookmark mark=\"plugIn4\"/>, erhalten wir eins dividiert durch minus vier, was minus ein Viertel ist,\nUnd so weiter.",
-        "voiceover2": "Setzen wir noch ein paar Werte ein, die größer als minus eins sind:\n<break time=\"0.4s\"/>\nWenn wir <bookmark mark=\"plugInHalf\"/> negativ null Komma fünf einsetzen, erhalten wir eins dividiert durch negativ null Komma fünf, was minus zwei ergibt.\n<break time=\"0.4s\"/>\nUnd wenn wir <bookmark mark=\"plugInQuarter\"/> negativ null Komma zwei fünf einfügen, erhalten wir eins dividiert durch negativ null Komma zwei fünf, was minus vier ist.\n<break time=\"0.4s\"/>\nNachdem wir nun einige Werte eingesetzt haben,<split/><bookmark mark=\"plot\"/> verbinden wir sie im Koordinatensystem und sehen, wie die Funktion aussieht.\n<break time=\"0.4s\"/>\nWir sehen also, dass die Funktion <bookmark mark=\"moveAlongFunc\"/> mit Werten nahe Null für niedriges x startet und dann abnimmt, wenn x größer wird.\n<break time=\"0.4s\"/>\nZuerst nimmt sie sehr langsam ab, aber dann nimmt sie immer schneller ab ..."
+        "voiceover": "Wir wollen ja wissen, wie die Funktion <bookmark mark=\"f\"/> f von x gleich eins durch x aussieht für <bookmark mark=\"cond\"/> negative Werte von x.\n<break time=\"0.4s\"/>\nWie wir es für positive Werte von x getan haben, analysieren wir die Funktion, indem wir <bookmark mark=\"cords\"/> einige Werte einsetzen.\n<break time=\"0.4s\"/>\nWenn wir minus Eins einsetzen, <split/><bookmark mark=\"plugIn1\"/>erhalten wir eins durch minus Eins, was minus Eins ergibt.\n<break time=\"0.4s\"/>\nWenn wir minus zwei einsetzen, <bookmark mark=\"plugIn2\"/>, erhalten wir eins durch minus zwei, was minus ein Halb ergibt.\nWenn wir minus vier einsetzen, <bookmark mark=\"plugIn4\"/>, erhalten wir eins dividiert durch minus vier, was minus ein Viertel ist,\nUnd so weiter.",
+        "voiceover2": "Setzen wir noch ein paar Werte ein, die größer als minus eins sind:\n<break time=\"0.4s\"/>\nWenn wir <bookmark mark=\"plugInHalf\"/> minus null Komma fünf einsetzen, erhalten wir eins dividiert durch minus null Komma fünf, was minus zwei ergibt.\n<break time=\"0.4s\"/>\nUnd wenn wir <bookmark mark=\"plugInQuarter\"/> minus null Komma zwei fünf einfügen, erhalten wir eins dividiert durch minus null Komma zwei fünf, was minus vier ist.\n<break time=\"0.4s\"/>\nNachdem wir nun einige Werte eingesetzt haben,<split/><bookmark mark=\"plot\"/> verbinden wir sie im Koordinatensystem und sehen, wie die Funktion aussieht.\n<break time=\"0.4s\"/>\nWir sehen also, dass die Funktion <bookmark mark=\"moveAlongFunc\"/> mit Werten nahe Null für niedriges x startet und dann abnimmt, wenn x größer wird.\n<break time=\"0.4s\"/>\nZuerst nimmt sie sehr langsam ab, aber dann nimmt sie immer schneller ab ..."
       },
       "b": {
         "incorrect": "Mhmm, das stimmt nicht ganz..."
@@ -937,7 +937,7 @@
       "q": {
         "answer-options": "[\"x nahe Null -> große negative Werte,\\n x weit von Null -> kleine negative Werte\",\n                   \n\"x nahe Null -> große negative Werte,\\n x weit von Null -> kleine positive Werte\",\n                   \n\"x nahe Null -> kleine negative Werte,\\n x weit von Null -> große negative Werte\",\n                   \n\"x nahe Null -> kleine negative Werte,\\n x weit von Null -> große positive Werte\"]",
         "question-text": "Wie verhält sich f für negative Werte von x?",
-        "title": "$\\\\frac1x$ für negatives $x$",
+        "title": "$\\frac1x$ für negatives $x$",
         "voiceover": "Denken wir nun über <bookmark mark=\"neg\"/> die negativen Werte von x nach.\n<break time=\"0.4s\"/>\nWir wissen ja, dass die Funktion für positives x für kleines x sehr hoch war und für größeres x kleiner wurde.\n<break time=\"0.4s\"/>\n<bookmark mark=\"cords\"/>Wie verhält sich nun <bookmark mark=\"Q\"/>f für kleine negative Werte von x?\n<break time=\"0.4s\"/>\nUnd wie verhält es sich für große negative Werte von x?"
       }
     },
@@ -965,7 +965,7 @@
     },
     "I3": {
       "title": "Asymptoten",
-      "voiceover": "Ok, jetzt definieren wir, was eine Asymptote eigentlich ist. \nPass auf:\n<break time=\"0.5s\"/>\nEine Asymptote einer Funktion f ist eine Linie, <split/>der die Funktion beliebig nahe kommt, die sie jedoch nie erreicht.\n<break time=\"0.5s\"/>\nWir betrachten zwei Arten von Asymptoten: <bookmark mark=\"horizontal\"/> horizontale Asymptoten und<bookmark mark=\"vertical\"/> vertikale Asymptoten.\n<break time=\"0.5s\"/>\nEine horizontale Asymptote ist einfach eine Asymptote, die parallel zur x-Achse verläuft, also eine horizontale Linie\n<break time=\"0.5s\"/>\nDie Funktion kommt dem Wert beliebig nahe, <split/>erreicht ihn aber nie.\n<break time=\"0.5s\"/>\n<bookmark mark=\"cursorReset\"/>\n<break time=\"0.5s\"/>\nIn diesem Beispiel ist die grüne Linie eine horizontale Asymptote.\n<break time=\"0.5s\"/>\nEine vertikale Asymptote hingegen ist eine Asymptote, die parallel zur <bookmark mark=\"y\"/>der üpsilon-Achse verläuft, also eine vertikale Linie\n<break time=\"0.5s\"/>\nDie Funktion kommt dem Wert beliebig nahe, erreicht ihn aber nie. \n<bookmark mark=\"fin\"/>\n<break time=\"0.5s\"/>\nIn diesem Beispiel ist die violette Linie eine vertikale Asymptote."
+      "voiceover": "Ok, jetzt definieren wir, was eine Asymptote eigentlich ist. \nPass auf:\n<break time=\"0.5s\"/>\nEine Asymptote <bookmark mark=\"cords\"/>einer Funktion f ist eine Linie, <split/>der die Funktion beliebig nahe kommt, die sie jedoch nie erreicht.\n<break time=\"0.5s\"/>\nWir betrachten zwei Arten von Asymptoten: <bookmark mark=\"horizontal\"/> horizontale Asymptoten und<bookmark mark=\"vertical\"/> vertikale Asymptoten.\n<break time=\"0.5s\"/>\nEine horizontale Asymptote ist einfach eine Asymptote, die parallel<bookmark mark=\"x\"/> zur x-Achse verläuft, also eine horizontale Linie\n<break time=\"0.5s\"/>\nDie Funktion kommt dem Wert beliebig nahe, <split/>erreicht ihn aber nie.\n<break time=\"0.5s\"/>\n<bookmark mark=\"cursorReset\"/>\n<break time=\"0.5s\"/>\nIn diesem Beispiel ist die grüne Linie eine horizontale Asymptote.\n<break time=\"0.5s\"/>\nEine vertikale Asymptote hingegen ist eine Asymptote, die parallel zur <bookmark mark=\"y\"/>der üpsilon-Achse verläuft, also eine vertikale Linie\n<break time=\"0.5s\"/>\nDie Funktion kommt dem Wert beliebig nahe, erreicht ihn aber nie. \n<bookmark mark=\"fin\"/>\n<break time=\"0.5s\"/>\nIn diesem Beispiel ist die violette Linie eine vertikale Asymptote."
     },
     "P1": {
       "a": {
@@ -1055,7 +1055,7 @@
     },
     "I4": {
       "title": "Skalieren der Funktion",
-      "voiceover": "Ok, jetzt haben wir gesehen, was wir mit der Funktion <bookmark mark=\"f\"/>f von x gleich a durch x machen können, wenn wir den Parameter <bookmark mark=\"a\"/> \"a\" variieren:\nWenn wir \"a\" <bookmark mark=\"increase\"/> erhöhen, wird die Funktion in üpsilon-Richtung gestreckt.\n<break time=\"0.3s\"/>\nWenn wir \"a\" <bookmark mark=\"decrease\"/> verringern, wird die Funktion in der üpsilon-Richtung gestaucht.\n<break time=\"0.3s\"/>\nUnd wenn wir \"a\" negativ machen, wird die Funktion über die x-Achse gespiegelt."
+      "voiceover": "Ok, jetzt haben wir gesehen, was wir mit der Funktion <bookmark mark=\"f\"/>f von x gleich a durch x machen können, wenn wir den Parameter <bookmark mark=\"a\"/> \"a\" variieren:\nWenn wir \"a\" <bookmark mark=\"increase\"/> erhöhen, wird die Funktion in üpsilon-Richtung gestreckt.\n<break time=\"0.3s\"/>\nWenn wir \"a\" <bookmark mark=\"decrease\"/> verringern,<split/> wird die Funktion in der üpsilon-Richtung gestaucht.\n<break time=\"0.3s\"/>\nUnd wenn<bookmark mark=\"negate\"/> wir \"a\" negativ machen, wird die Funktion über die x-Achse gespiegelt."
     },
     "I5": {
       "a": {
@@ -1091,7 +1091,7 @@
         "question-text": "Wo ist die horizontale Asymptote der verschobenen Funktion?"
       },
       "title": "Hyperbeln Verschieben",
-      "voiceover": "Okay, sagen wir, <bookmark mark=\"setupCursor\"/>wir verschieben die Funktion <bookmark mark=\"up\"/> nach oben <bookmark mark=\"down\"/> oder nach unten.\n<break time=\"0.3s\"/>\nWas passiert dann mit den horizontalen Asymptoten?\n<break time=\"0.3s\"/>\nUm dies konkreter zu machen,<split/> nehmen wir als Beispiel die Funktion<bookmark mark=\"func\"/> f von x gleich eins durch x.\n<break time=\"0.3s\"/>\nUnd verschieben wir sie <bookmark mark=\"upByTwo\"/>um zwei nach oben, sodass die verschobene Funktion <bookmark mark=\"funcNew\"/> f von <bookmark mark=\"x\"/>x gleich <bookmark mark=\"one\" \n\"/>eins durch x plus <bookmark mark=\"two\"/>zwei ist.\n<break time=\"0.3s\"/>\nWo liegt dann die horizontale Asymptote der verschobenen Funktion?"
+      "voiceover": "Okay, sagen wir, <bookmark mark=\"setupCursor\"/>wir verschieben die Funktion <bookmark mark=\"up\"/> nach oben <bookmark mark=\"down\"/> oder nach unten.\n<break time=\"0.3s\"/>\nWas passiert dann mit den horizontalen Asymptoten?\n<break time=\"0.3s\"/>\nUm dies konkreter zu machen,<split/> nehmen wir als Beispiel die Funktion<bookmark mark=\"func\"/> f von x gleich eins durch x.\n<break time=\"0.3s\"/>\nUnd verschieben wir sie <bookmark mark=\"upByTwo\"/>um zwei nach oben, sodass die verschobene Funktion <bookmark mark=\"funcNew\"/> f von <bookmark mark=\"x\"/>x gleich <bookmark mark=\"one\"/>eins durch x plus <bookmark mark=\"two\"/>zwei ist.\n<break time=\"0.3s\"/>\nWo liegt dann die horizontale Asymptote der verschobenen Funktion?"
     }
   },
   "Func_3_Intro": {
@@ -1285,10 +1285,10 @@
       }
     },
     "ScaleAnswerScene": {
-      "voiceover": "Wenn wir {self.get_num(self.xx, negation=\"minus\", point=\"komma\")} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nAlso müssen wir<bookmark mark=\"cursorInPos\"/>die Einheitsparabel um den Faktor a gleich {abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.get_num(self.string_abs, negation=\"minus\", point=\"Komma\"} ist. \n{self.flip}<bookmark mark=\"flip\"/>\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"minus\", point=\"komma\")} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{self.get_num(self.string_sign*self.string_abs, negation=\"minus\", point=\"komma\")} ist."
+      "voiceover": "Wenn wir {self.get_num(self.xx, negation=\"minus\", point=\"komma\")} in die Einheitsparabel einsetzen, erhalten wir <bookmark mark=\"square\"/>den Wert {self.xx**2}.\n<break time=\"0.3s\"/>\nAlso müssen wir<bookmark mark=\"cursorInPos\"/>die Einheitsparabel um den Faktor a gleich {abs(self.yy)} durch {self.xx**2} <bookmark mark=\"scale\"/>skalieren,\nwas gleich {self.get_num(self.string_abs, negation=\"minus\", point=\"Komma\")} ist. \n{self.flip}<bookmark mark=\"flip\"/>\nDas bedeutet, dass <bookmark mark=\"final\"/> der korrekte Faktor <bookmark mark=\"af\"/>a gleich <bookmark mark=\"afrac\"/>{self.get_num(self.yy, negation=\"minus\", point=\"komma\")} durch {self.xx**2}, also gleich \n<bookmark mark=\"ff\"/>{self.get_num(self.string_sign*self.string_abs, negation=\"minus\", point=\"komma\")} ist."
     },
     "ScaleQuestionScene": {
-      "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nJetzt wollen wir es so skalieren, dass es durch den Punkt <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]} geht.\n{self.question}"
+      "voiceover": "{self.intro}<bookmark mark=\"cursorInPos\"/>\nJetzt wollen wir die Funktion <bookmark mark=\"scale\"/>so skalieren, dass es durch den Punkt <bookmark mark=\"markPoint\"/>{self.point[0], self.point[1]} geht.\n{self.question}"
     }
   },
   "Func_4_5": {
@@ -1347,6 +1347,9 @@
         "question-text": "Was ist der Vorteil der faktorisierten Form?",
         "title": "Faktorisierte Form",
         "voiceover": "Nächstes Video, nächste Form quadratischer Funktionen.\n<break time=\"0.5s\"/>\nJetzt betrachten wir die faktorisierte Form.\n<break time=\"0.5s\"/>\nNimm das folgende Beispiel: <bookmark mark=\"f\"/> f von <bookmark mark=\"x\"/>x gleich\nKlammer auf <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 Klammer zu mal Klammer auf <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 Klammer zu.\n<break time=\"0.5s\"/>\n<bookmark mark=\"cords\"/> Schau dir <bookmark mark=\"plot\"/>den Graphen dieser Funktion an,\nund vergleich ihn mit der faktorisierten Form des Terms.\n<break time=\"0.5s\"/>\nKannst du dir vorstellen, was der Vorteil der faktorisierten Funktion sein könnte?"
+      },
+      "b": {
+        "voiceintro": "Ja, das ist der Vorteil der Faktorisierten Form."
       }
     },
     "I6": {

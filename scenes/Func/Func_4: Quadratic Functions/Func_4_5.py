@@ -35,7 +35,7 @@ class Func_4_5_I_1_q(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_5.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_5.I1.q.title"))
         
         #Create the coordinate system
         cords = self.add_cords([-2,2, 1], [-4, 4, 1], x_ticks=[-2,-1,1,2],y_ticks=[-4,-2,2,4]).shift(DOWN*0.6)
@@ -252,7 +252,7 @@ class Func_4_5_I_1_b(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_5.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_5.I1.q.title"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -363,7 +363,7 @@ class Func_4_5_I_1_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-        self.add_title(self.translate("Func_4_5.I1.q.title"))
+        title = self.add_title(self.translate("Func_4_5.I1.q.title"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 

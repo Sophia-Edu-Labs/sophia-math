@@ -213,7 +213,7 @@ class Func_3_1_I_3_q(SophiaCursorScene):
             self.wait_until_bookmark("cordsAway")
             cursor.idle=False
             x,y,_ = plane.c2p(0,0)
-            self.add.shift_sound(0.5)
+            self.add_shift_sound(0.5)
             self.play(cordsOld.animate(run_time=0.5).shift(RIGHT*5), func_plotted_Old.animate(run_time=0.5).shift(RIGHT*5), Write(cords), CursorMoveTo(cursor,x,y))
             cursor.idle=True
 
@@ -662,44 +662,6 @@ class Func_3_1_I_4_a(SophiaCursorScene):
 
             self.wait_until_bookmark("moveUp")
             self.add_shift_sound(1)
-            self.wait_until_bookmark("preach")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), run_time=.5)
-
-            self.wait_until_bookmark("pbc")
-            self.play(Write(pbc))
-
-            self.wait_until_bookmark("step1")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("e1")
-            self.play(Write(e1))
-
-            self.wait_until_bookmark("step2")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
-
-            self.wait_until_bookmark("e2")
-            self.play(Write(e2))
-
-            self.wait_until_bookmark("step3")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
-
-            self.wait_until_bookmark("e3")
-            self.play(Write(e3[0]))
-
-            self.wait_until_bookmark("meaning")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("meaningA")
-            self.play(Write(e3[1]))
-
-            self.wait_until_bookmark("meaningB")
-            self.play(Write(e3[2]))
-
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
@@ -785,44 +747,6 @@ class Func_3_1_I_4_b(SophiaCursorScene):
 
             self.wait_until_bookmark("moveUp")
             self.add_shift_sound(1)
-            self.wait_until_bookmark("preach")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), run_time=.5)
-
-            self.wait_until_bookmark("pbc")
-            self.play(Write(pbc))
-
-            self.wait_until_bookmark("step1")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("e1")
-            self.play(Write(e1))
-
-            self.wait_until_bookmark("step2")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
-
-            self.wait_until_bookmark("e2")
-            self.play(Write(e2))
-
-            self.wait_until_bookmark("step3")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
-
-            self.wait_until_bookmark("e3")
-            self.play(Write(e3[0]))
-
-            self.wait_until_bookmark("meaning")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("meaningA")
-            self.play(Write(e3[1]))
-
-            self.wait_until_bookmark("meaningB")
-            self.play(Write(e3[2]))
-
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
@@ -909,44 +833,6 @@ class Func_3_1_I_4_c(SophiaCursorScene):
 
             self.wait_until_bookmark("moveUp")
             self.add_shift_sound(1)
-            self.wait_until_bookmark("preach")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), run_time=.5)
-
-            self.wait_until_bookmark("pbc")
-            self.play(Write(pbc))
-
-            self.wait_until_bookmark("step1")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("e1")
-            self.play(Write(e1))
-
-            self.wait_until_bookmark("step2")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
-
-            self.wait_until_bookmark("e2")
-            self.play(Write(e2))
-
-            self.wait_until_bookmark("step3")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
-
-            self.wait_until_bookmark("e3")
-            self.play(Write(e3[0]))
-
-            self.wait_until_bookmark("meaning")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("meaningA")
-            self.play(Write(e3[1]))
-
-            self.wait_until_bookmark("meaningB")
-            self.play(Write(e3[2]))
-
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2
@@ -1032,44 +918,6 @@ class Func_3_1_I_4_d(SophiaCursorScene):
 
             self.wait_until_bookmark("moveUp")
             self.add_shift_sound(1)
-            self.wait_until_bookmark("preach")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), run_time=.5)
-
-            self.wait_until_bookmark("pbc")
-            self.play(Write(pbc))
-
-            self.wait_until_bookmark("step1")
-            self.add_shift_sound(.5)
-            self.play(t.animate.shift(RIGHT*5), Write(s1), pbc.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("e1")
-            self.play(Write(e1))
-
-            self.wait_until_bookmark("step2")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s1.animate.set_color(BLACK), s1.animate.next_to(pbc, DOWN, buff=0.2), e1.animate.shift(5*RIGHT), Write(s2))
-
-            self.wait_until_bookmark("e2")
-            self.play(Write(e2))
-
-            self.wait_until_bookmark("step3")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s2.animate.set_color(BLACK), s2.animate.next_to(s1, DOWN, buff=0.2), e2.animate.shift(5*RIGHT), Write(s3))
-
-            self.wait_until_bookmark("e3")
-            self.play(Write(e3[0]))
-
-            self.wait_until_bookmark("meaning")
-            self.add_shift_sound(1.5, volume=.6)
-            self.play(s3.animate.next_to(s2, DOWN, buff=0.2), s3.animate.set_color(BLACK))
-
-            self.wait_until_bookmark("meaningA")
-            self.play(Write(e3[1]))
-
-            self.wait_until_bookmark("meaningB")
-            self.play(Write(e3[2]))
-
 
             self.wait_until_bookmark("final")
             center = (g.get_center()+step3.get_center())/2

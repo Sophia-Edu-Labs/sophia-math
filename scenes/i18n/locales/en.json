@@ -1344,6 +1344,9 @@
         "question-text": "What is the advantage of the factored form?",
         "title": "Factored Form",
         "voiceover": "New Video, new form of quadratic functions. Now we're looking at the factored form.\nConsider the following example: <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\n<bookmark mark=\"cords\"/> If you look at <bookmark mark=\"plot\"/>the plot of this function,\nand compare it with the factored form of its term, can you think of what the advantage\nof the factored form might be?"
+      },
+      "b": {
+        "voiceintro": "Yes, that's what the factored form is good for."
       }
     },
     "I6": {
