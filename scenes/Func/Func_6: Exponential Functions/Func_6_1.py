@@ -34,10 +34,7 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
@@ -90,10 +87,7 @@ class Func_6_1_I_1_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -154,10 +148,7 @@ class Func_6_1_I_1_b(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -218,10 +209,7 @@ class Func_6_1_I_1_c(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -282,10 +270,7 @@ class Func_6_1_I_1_d(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -353,10 +338,7 @@ class Func_6_1_I_2_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -417,10 +399,7 @@ class Func_6_1_I_2_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -486,10 +465,7 @@ class Func_6_1_I_2_b(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -555,10 +531,7 @@ class Func_6_1_I_2_c(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
@@ -613,7 +586,73 @@ class Func_6_1_I_2_c(SophiaCursorScene):
 
         self.wait(4)
 
-#####################################
+
+
+class Func_6_1_I_1_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=["50", "100", "200", "400"],
+    #         correctAnswerIndex=3,
+    #         questionText=self.translate("Func_6_1.1I1r.question.how-fast-does-the-rumor-spread")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title("Exponentielles Wachstum")
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        self.add(cursor)
+
+        rs = ImageMobject(assets_folder / "img" / "boy_whispering.png")
+        rs = rs.scale(0.35/rs.get_width())
+        hs = ImageMobject(assets_folder / "img" / "school_building.png")
+        hs = hs.scale(3/hs.get_width()).shift(5*LEFT)
+
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0,1,2,3], y_ticks=[50,100,150,200]).shift(DOWN*0.6)
+        plane = cords[0]
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("Func_6_1.1I11q.main.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("rumor_in")
+            self.add_shift_sound(0.5)
+            self.play(hs.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("person")
+            self.add_shift_sound(0.5)
+            p1a = rs.copy().move_to(plane.c2p(0, 1))
+            self.play(hs.animate.shift(5*RIGHT), FadeIn(p1a), run_time=0.5)
+
+            self.wait_until_bookmark("spread")
+            arrows = []
+            people = []
+            for i in range(1, 5):
+                p = rs.copy().move_to(plane.c2p(1, i))
+                a = Arrow(plane.c2p(0, 1), plane.c2p(1, i), color=c1t, stroke_width=3)
+                people.append(p)
+                arrows.append(a)
+            self.play(*[FadeIn(p) for p in people], *[Create(a) for a in arrows], run_time=0.5)
+
+            self.wait_until_bookmark("qmark")
+            cursor.idle = False
+            self.draw_qmark(cursor, 2*DOWN, run_time=4)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
+
+
+####################################################################################################################################################
 #####################################
 class Func_6_1_I_2_1(SophiaCursorScene):
 
@@ -1182,10 +1221,7 @@ class Func_6_1_I_6_q(SophiaCursorScene):
         bacteria = bacteria.scale(1.5/bacteria.get_width()).move_to([-6, -1, 0])
         bacteria_double = VGroup(Tex(self.translate("Func_6_1.I6.q.bacteria_double_a"), color=c1t, font_size=fs2), Tex(self.translate("Func_6_1.I6.q.bacteria_double_b"), color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
@@ -1397,10 +1433,7 @@ class Func_6_1_I_6_b(SophiaCursorScene):
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(t, DOWN, buff=0.2)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=False)
 
 
@@ -1490,10 +1523,7 @@ class Func_6_1_I_6_c(SophiaCursorScene):
 
         g_tex = MathTex("g","(x)", "=", "2", "^x", color=c1t, font_size=fs2).next_to(t, DOWN, buff=0.2)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=False)
 
 
@@ -1590,10 +1620,7 @@ class Func_6_1_I_7_q(SophiaCursorScene):
         double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
         bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
@@ -1681,10 +1708,7 @@ class Func_6_1_I_7_a(SophiaCursorScene):
         double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
         bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
@@ -1774,10 +1798,7 @@ class Func_6_1_I_7_b(SophiaCursorScene):
         double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
         bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
@@ -1867,10 +1888,7 @@ class Func_6_1_I_7_c(SophiaCursorScene):
         double_t1, double_t2 = self.translate("Func_6_1.I7.a.double-t1"), self.translate("Func_6_1.I7.a.double-t2")
         bacteria_double = VGroup(Tex(double_t1, color=c1t, font_size=fs2), Tex(double_t2, color=c1t, font_size=fs2)).arrange(DOWN, buff=0.).next_to(bacteria, DOWN, buff=0.2).shift(RIGHT*5.8)
         
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
+
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)

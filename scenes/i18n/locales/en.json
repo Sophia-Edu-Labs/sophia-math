@@ -1718,6 +1718,11 @@
         "question-text": "Which of the graphs belongs to the function?",
         "voiceover": "Look at the function<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nWhich of the following <bookmark mark=\"cords\"/> graphs belongs to the function?\nThe <bookmark mark=\"blue\"/> blue graph? Or the <bookmark mark=\"green\"/> green graph? Or is it the <bookmark mark=\"purple\"/> purple graph?"
       }
+    },
+    "1I11q": {
+      "main": {
+        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will know it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will know the rumor after two more hours?"
+      }
     }
   },
   "Func_6_2": {

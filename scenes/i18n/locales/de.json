@@ -1721,6 +1721,11 @@
         "question-text": "Welcher der Graphen gehört zur Funktion?",
         "voiceover": "Schau auf die Funktion<bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x.\nWelcher der folgenden <bookmark mark=\"cords\"/>Graphen gehört zur Funktion?\n<break time=\"0.5s\"/>\nDer <bookmark mark=\"blue\"/> blaue Graph? \n<break time=\"0.5s\"/>\nOder der <bookmark mark=\"green\"/> grüne Graph?\n<break time=\"0.5s\"/>\nOder ist es der lila Graph <bookmark mark=\"purple\"/>?"
       }
+    },
+    "1I11q": {
+      "main": {
+        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Freunde weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/>hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt hat. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht nach einer weiteren Stunde kennen?"
+      }
     }
   },
   "Func_6_2": {
