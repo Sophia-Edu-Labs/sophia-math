@@ -1726,6 +1726,9 @@
       "main": {
         "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Freunde weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/>hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt hat. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht nach einer weiteren Stunde kennen?"
       }
+    },
+    "1I11a": {
+      "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt. Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören. Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
     }
   },
   "Func_6_2": {

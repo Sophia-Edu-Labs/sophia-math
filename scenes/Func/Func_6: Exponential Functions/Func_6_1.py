@@ -650,6 +650,141 @@ class Func_6_1_I_1_1_q(SophiaCursorScene):
         self.wait(4)
 
 
+class Func_6_1_I_1_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+        # Adding initial images and arrows representing the first person and the first share
+        p1a = ew.copy().move_to(plane.c2p(0, 1))
+        self.add(p1a)
+        self.play(FadeIn(p1a), run_time=0.5)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_1.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("one_hour")
+            for arrow, person in zip(arrows, people):
+                self.play(FadeIn(arrow), FadeIn(person), run_time=0.5)
+
+            self.wait_until_bookmark("second_hour")
+            for j in range(4):
+                new_arrows = [
+                    Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                    for k in range(4)
+                ]
+                new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+                for new_arrow, new_person in zip(new_arrows, new_people):
+                    self.play(FadeIn(new_arrow), FadeIn(new_person), run_time=0.25)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
+class Func_6_1_I_1_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=2\cdot x$", "$g(x)=x^2$", "$h(x)=2^x$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_6_1.1I2q.question.how-do-you-pay-the-artist") 
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+
+        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane=cords[0]
+
+        arrows = VGroup()
+        people = Group()
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        for j in range(4):
+            new_arrows = [
+                Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                for k in range(4)
+            ]
+            new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+            for new_arrow, new_person in zip(new_arrows, new_people):
+                arrows.append(new_arrow)
+                people.append(new_person)
+
+        arrows = VGroup(*arrows)
+        people = Group(*people)
+
+        self.add(arrows, people)
+
+
+
+        one, four, sixteen = MathTex("1", color=c1t, font_size=fs2).next_to(plane.c2p(0,1), DOWN, buff=.3), MathTex("4", color=c1t, font_size=fs2).next_to(plane.c2p(1,1), DOWN, buff=.3), MathTex("16", color=c1t, font_size=fs2).next_to(plane.c2p(2,1), DOWN, buff=.3)
+        funcs = VGroup(MathTex("f(x)=2\cdot x", color=c1t, font_size=fs2), MathTex("g(x)=x^2", color=c1t, font_size=fs2), MathTex("h(x)=2^x", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.6)
+
+        # Action Sequence
+        with self.voiceover(
+            text = self.translate("Func_6_1.1I12q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("one_in")
+            self.play(Write(one), run_time=0.5)
+
+            self.wait_until_bookmark("two_in")
+            self.play(Write(four), run_time=0.5)
+
+            self.wait_until_bookmark("four_in")
+            self.play(Write(sixteen), run_time=0.5)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(funcs[0]), run_time=0.5)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(funcs[1]), run_time=0.5)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(funcs[2]), run_time=0.5)
+
+        self.wait(4)
+
+
 
 
 ####################################################################################################################################################
