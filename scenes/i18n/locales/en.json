@@ -1728,7 +1728,12 @@
       "voiceover": "We know that every person who hears the rumor tells it to four other people. Starting with one person who knows the rumor and spreads it, four people will hear it <bookmark mark=\"one_hour\"/>in the following hour. This means that in the next hour, each of these four people<bookmark mark=\"second_hour\"/> will tell the rumor to four new people, so after another hour, a total of sixteen people will hear the rumor."
     },
     "1I12q": {
-      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Video ansieht.\nNach einer Runde sehen sich <bookmark mark=\"two_in\"/>zwei Personen das Video an.\nNach zwei Runden schauen sich <bookmark mark=\"four_in\"/>vier Personen das Video an.\nUnd nach drei Runden sind es <bookmark mark=\"eight_in\"/>acht Leute, <split/>die sich das Video ansehen.\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die sich das Video nach x Runden ansehen?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich zwei mal x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich x im Quadrat? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei hoch x?"
+      "voiceover": ""
+    },
+    "1I13q": {
+      "main": {
+        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will know it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will know the rumor after two more hours?"
+      }
     }
   },
   "Func_6_2": {

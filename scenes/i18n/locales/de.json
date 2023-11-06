@@ -1728,7 +1728,15 @@
       }
     },
     "1I11a": {
-      "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt. Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören. Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
+      "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt.<split/> Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören.<split/> Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
+    },
+    "1I12q": {
+      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Gerücht hört.\nNach einer Runde hören dann <bookmark mark=\"four_in\"/>vier Personen das Gerücht.\nUnd nach zwei Runden hören <bookmark mark=\"sixteen_in\"/>sechzehn Personen das Gerücht, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die das Gerücht nach x Runden hören?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich x hoch vier?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich vier hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei x im Quadrat?"
+    },
+    "1I13q": {
+      "main": {
+        "voiceover": ""
+      }
     }
   },
   "Func_6_2": {
