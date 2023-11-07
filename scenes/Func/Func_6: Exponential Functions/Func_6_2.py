@@ -34,38 +34,45 @@ class Func_6_2_I_1(SophiaCursorScene):
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
 
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2)
+        f_2 = MathTex("g","(x)", "=", "2", "^x", color=PURE_BLUE, font_size=fs2)
+        f_3 = MathTex("h","(x)", "=", "3", "^x", color=PINK, font_size=fs2)
+        fs = VGroup(f_tex, f_2, f_3).arrange(DOWN, aligned_edge=LEFT, buff=0.4).next_to(cords, DOWN, buff=0.4)
 
-        a_tex_g1 = MathTex("a>1", color=BLUE, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
-        f = lambda x:2**x
-        f_plot = plane.plot(f, color=BLUE)
+        plot_2 = plane.plot(lambda x: 2**x, color=PURE_BLUE)
+        plot_3 = plane.plot(lambda x: 3**x, x_range=[0,3.788, 0.001], color=PINK)
 
-        cords_2 = self.add_cords([0, 6, 1], [0, 1, 0.25], x_ticks=[2,4,6], y_ticks=[0,0.25,0.5,0.75,1])
-        plane_2 = cords_2[0]
-
-        a_tex_l1 = MathTex("0<a<1", color=GREEN, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
-        g = lambda x:0.5**x
-        g_plot = plane_2.plot(g, color=GREEN)
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
+        qnark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
+
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I1.voiceover")
+                text="""
+                Bisher haben wir uns ja exponentielles Wachstum angesehen: Die Funktion steigt, und sie steigt immer schneller.
+                <break time="0.4s"/>
+                Der Term einer Exponentialfunktion lautet ja <bookmark mark="f"/>f von <bookmark mark="fx"/>x gleich <bookmark mark="fa"/>a hoch <bookmark mark="fxx"/> x.
+                <break time="0.4s"/>
+                Und wir haben uns eben immer Werte angeschaut, <bookmark mark="a"/>wo a größer als eins war, zum Beispiel die <bookmark mark="g"/>Funktion g von x gleich zwei hoch x oder <bookmark mark="h"/>die Funktion h von x gleich drei hoch x.
+                <break time="0.4s"/>
+                <split/>
+                Was ist jetzt aber,<bookmark mark="qmark"/> wenn wir uns Werte anschauen, <bookmark mark="a_l1"/>wo a zwischen Null und Eins liegt? Als
+                """
         ) as tracker:
             
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -79,47 +86,76 @@ class Func_6_2_I_1(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_tex[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
-            self.wait_until_bookmark("a_g1")
-            cursor.blinking=False
-            x,y,_ = a_tex_g1.get_center()+0.4*DOWN
-            self.play(Write(a_tex_g1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.play(Write(cords))
-            cursor.blinking=True
-
-            self.wait_until_bookmark("plot_1")
-            cursor.blinking=False
-            x,y,_ = f_plot.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f_plot.get_end())))
+            self.wait_until_bookmark("g")
+            cursor.idle=False
+            x,y,_ = plot_2.get_start()
+            self.play(Write(f_2), CursorMoveTo(cursor,x,y), Create(cords), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_2.get_end())))
             self.add_pencil_sound(1.5)
-            self.play(Create(f_plot))
-            cursor.blinking=True
+            self.play(Create(plot_2))
+            cursor.idle=True
 
-            self.wait_until_bookmark("a_l1")
-            cursor.blinking=False
-            x,y,_ = a_tex_l1.get_center()+0.4*DOWN
-            self.play(ReplacementTransform(a_tex_g1, a_tex_l1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.play(ReplacementTransform(cords, cords_2), Unwrite(f_plot), run_time=0.5)
-            cursor.blinking=True
-
-            self.wait_until_bookmark("plot_2")
-            cursor.blinking=False
-            x,y,_ = g_plot.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_plot.get_end())))
+            self.wait_until_bookmark("h")
+            cursor.idle=False
+            x,y,_ = plot_3.get_start()
+            self.play(Write(f_3), CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_3.get_end())))
             self.add_pencil_sound(1.5)
-            self.play(Create(g_plot))
-            cursor.blinking=True
+            self.play(Create(plot_3))
+            cursor.idle=True
+
+            self.wait_until_bookmark("qmark")
+            self.play(qnark.animate.shift(5*RIGHT))
+
+
+
+
+            # self.wait_until_bookmark("a_g1")
+            # cursor.idle=False
+            # x,y,_ = a_tex_g1.get_center()+0.4*DOWN
+            # self.play(Write(a_tex_g1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            # self.play(Write(cords))
+            # cursor.idle=True
+
+            # self.wait_until_bookmark("plot_1")
+            # cursor.idle=False
+            # x,y,_ = f_plot.get_start()
+            # self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            # self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f_plot.get_end())))
+            # self.add_pencil_sound(1.5)
+            # self.play(Create(f_plot))
+            # cursor.idle=True
+
+            # self.wait_until_bookmark("a_l1")
+            # cursor.idle=False
+            # x,y,_ = a_tex_l1.get_center()+0.4*DOWN
+            # self.play(ReplacementTransform(a_tex_g1, a_tex_l1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            # self.play(ReplacementTransform(cords, cords_2), Unwrite(f_plot), run_time=0.5)
+            # cursor.idle=True
+
+            # self.wait_until_bookmark("plot_2")
+            # cursor.idle=False
+            # x,y,_ = g_plot.get_start()
+            # self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            # self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_plot.get_end())))
+            # self.add_pencil_sound(1.5)
+            # self.play(Create(g_plot))
+            # cursor.idle=True
 
         self.wait(4)
+
+                # Wenn <bookmark mark="a_g1"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark="plot_1"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.
+                # <break time="0.4s"/>
+                # Wenn <bookmark mark="a_l1"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark="plot_2"/> mit abnehmender Geschwindigkeit ab
+                # Die Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher.
 
 
 #####################################
@@ -145,7 +181,7 @@ class Func_6_2_I_2_q(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -198,7 +234,7 @@ class Func_6_2_I_2_q(SophiaCursorScene):
 
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -212,20 +248,20 @@ class Func_6_2_I_2_q(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("qmark")
             self.play(qmark.animate.shift(RIGHT*5), run_time=0.5)
 
             self.wait_until_bookmark("x_minutes")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = x_minutes[0].get_center()+0.4*DOWN
             self.play(Write(x_minutes), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("minutes")
             x,y,_ = x_minutes[1].get_center()+0.4*DOWN  
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -244,7 +280,7 @@ class Func_6_2_I_2_a(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -306,13 +342,13 @@ class Func_6_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("row_1")
             self.play(Write(t_structure), Write(rows[0]), run_time=0.5)
             x,y,_ = rows[1].get_right()+0.4*RIGHT
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(rows[1]), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("row_2")
             x,y,_ = rows[2].get_right()+0.4*RIGHT
             self.play(Write(rows[2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("row_3")
             x,y,_ = rows[3].get_right()+0.4*RIGHT
@@ -321,11 +357,11 @@ class Func_6_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("row_4")
             x,y,_ = rows[4].get_right()+0.4*RIGHT
             self.play(Write(rows[4]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(t.animate.shift(RIGHT*5), Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -339,17 +375,17 @@ class Func_6_2_I_2_a(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol_a[1].get_center()+0.4*DOWN
             self.play(Write(sol_a), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("sol_half")
             x,y,_ = sol_a[3].get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -368,7 +404,7 @@ class Func_6_2_I_2_b(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -429,13 +465,13 @@ class Func_6_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("row_1")
             self.play(Write(t_structure), Write(rows[0]), run_time=0.5)
             x,y,_ = rows[1].get_right()+0.4*RIGHT
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(rows[1]), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("row_2")
             x,y,_ = rows[2].get_right()+0.4*RIGHT
             self.play(Write(rows[2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("row_3")
             x,y,_ = rows[3].get_right()+0.4*RIGHT
@@ -444,11 +480,11 @@ class Func_6_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("row_4")
             x,y,_ = rows[4].get_right()+0.4*RIGHT
             self.play(Write(rows[4]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(t.animate.shift(RIGHT*5), Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -462,17 +498,17 @@ class Func_6_2_I_2_b(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol_a[1].get_center()+0.4*DOWN
             self.play(Write(sol_a), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("sol_half")
             x,y,_ = sol_a[3].get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -492,7 +528,7 @@ class Func_6_2_I_2_c(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -554,13 +590,13 @@ class Func_6_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("row_1")
             self.play(Write(t_structure), Write(rows[0]), run_time=0.5)
             x,y,_ = rows[1].get_right()+0.4*RIGHT
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(rows[1]), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("row_2")
             x,y,_ = rows[2].get_right()+0.4*RIGHT
             self.play(Write(rows[2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("row_3")
             x,y,_ = rows[3].get_right()+0.4*RIGHT
@@ -569,11 +605,11 @@ class Func_6_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("row_4")
             x,y,_ = rows[4].get_right()+0.4*RIGHT
             self.play(Write(rows[4]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(t.animate.shift(RIGHT*5), Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -587,17 +623,17 @@ class Func_6_2_I_2_c(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol_a[1].get_center()+0.4*DOWN
             self.play(Write(sol_a), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("sol_half")
             x,y,_ = sol_a[3].get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -616,7 +652,7 @@ class Func_6_2_I_2_d(SophiaCursorScene):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -677,13 +713,13 @@ class Func_6_2_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("row_1")
             self.play(Write(t_structure), Write(rows[0]), run_time=0.5)
             x,y,_ = rows[1].get_right()+0.4*RIGHT
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(rows[1]), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("row_2")
             x,y,_ = rows[2].get_right()+0.4*RIGHT
             self.play(Write(rows[2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("row_3")
             x,y,_ = rows[3].get_right()+0.4*RIGHT
@@ -692,11 +728,11 @@ class Func_6_2_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("row_4")
             x,y,_ = rows[4].get_right()+0.4*RIGHT
             self.play(Write(rows[4]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(t.animate.shift(RIGHT*5), Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -710,23 +746,125 @@ class Func_6_2_I_2_d(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol_a[1].get_center()+0.4*DOWN
             self.play(Write(sol_a), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("sol_half")
             x,y,_ = sol_a[3].get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
 
 
 #####################################
+#####################################
+class Func_6_2_I_2_X(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
+        plane = cords[0]
+
+        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+
+        a_tex_g1 = MathTex("a>1", color=BLUE, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
+        f = lambda x:2**x
+        f_plot = plane.plot(f, color=BLUE)
+
+        cords_2 = self.add_cords([0, 6, 1], [0, 1, 0.25], x_ticks=[2,4,6], y_ticks=[0,0.25,0.5,0.75,1])
+        plane_2 = cords_2[0]
+
+        a_tex_l1 = MathTex("0<a<1", color=GREEN, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
+        g = lambda x:0.5**x
+        g_plot = plane_2.plot(g, color=GREEN)
+
+        def cursor_sound_updater(mob, dt):
+            if mob.needSound:
+                mob.needSound = False
+                self.add_cursor_sound()
+        x,y,_ = plane.c2p(0,0)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
+        cursor.autoFadeBackground = True
+        cursor.add_updater(cursor_sound_updater)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I1.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f")
+            x,y,_ = f_tex[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fx")
+            x,y,_ = f_tex[1].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fa")
+            x,y,_ = f_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fxx")
+            x,y,_ = f_tex[4].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("a")
+            cursor.idle=False
+            x,y,_ = f_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("a_g1")
+            cursor.idle=False
+            x,y,_ = a_tex_g1.get_center()+0.4*DOWN
+            self.play(Write(a_tex_g1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.play(Write(cords))
+            cursor.idle=True
+
+            self.wait_until_bookmark("plot_1")
+            cursor.idle=False
+            x,y,_ = f_plot.get_start()
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f_plot.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(f_plot))
+            cursor.idle=True
+
+            self.wait_until_bookmark("a_l1")
+            cursor.idle=False
+            x,y,_ = a_tex_l1.get_center()+0.4*DOWN
+            self.play(ReplacementTransform(a_tex_g1, a_tex_l1), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.play(ReplacementTransform(cords, cords_2), Unwrite(f_plot), run_time=0.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("plot_2")
+            cursor.idle=False
+            x,y,_ = g_plot.get_start()
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_plot.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(g_plot))
+            cursor.idle=True
+
+        self.wait(4)
+
+####################################################################################################################################################
 #####################################
 class Func_6_2_I_3(SophiaCursorScene):
 
@@ -759,7 +897,7 @@ class Func_6_2_I_3(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -772,7 +910,7 @@ class Func_6_2_I_3(SophiaCursorScene):
             
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -786,41 +924,41 @@ class Func_6_2_I_3(SophiaCursorScene):
             self.wait_until_bookmark("fxx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("a")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_tex[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("growth")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = title.get_left()+0.4*DOWN+RIGHT
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("factor")
             x,y,_ = title.get_right()+0.4*DOWN+0.7*LEFT
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = f_plot.get_start()
             self.play(CursorMoveToCurved(cursor,x,y), Write(cords), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f_plot.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(f_plot))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_plot.get_start()
             self.play(ReplacementTransform(cords, cords_2), Unwrite(f_plot), CursorMoveToCurved(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_plot.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g_plot))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -860,7 +998,7 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -888,11 +1026,11 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(f))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("function")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -906,17 +1044,17 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             self.wait_until_bookmark("xx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("q")
             x,y,_ = x_minutes[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("q_a")
             x,y,_ = x_minutes[1][1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
 
         self.wait(4)
@@ -939,7 +1077,7 @@ class GraphToGrowthFactorAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -968,48 +1106,48 @@ class GraphToGrowthFactorAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             self.play(Write(f))
 
             self.wait_until_bookmark("x_one")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,0)
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("f_x_one")
             x,y,_ = plane.c2p(1,self.a)
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol[1].get_center()+0.4*DOWN
             self.play(Write(sol), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("verify")
             x,y,_ = verify[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(verify[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.blinking=False
+            cursor.idle=False
 
             self.wait_until_bookmark("x_max")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = verify[1][0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(verify[1][0]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("x_max_graph")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(self.x_max,self.a**self.x_max)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("verify_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = verify[1][1].get_center()+0.4*DOWN
             self.play(Write(verify[1][1]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("verify_3")
             x,y,_ = verify[1][2].get_center()+0.4*DOWN
             self.play(Write(verify[1][2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1033,7 +1171,7 @@ class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1053,7 +1191,7 @@ class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("fx")
@@ -1067,43 +1205,43 @@ class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
             self.wait_until_bookmark("xx")
             x,y,_ = f_tex[4].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("which")
             x,y,_ = x_minutes[1].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords_in")
             self.play(Write(self.cords), run_time=0.3)
 
             self.wait_until_bookmark("plot_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_1.get_start()
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_1.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g_1))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_2.get_start()
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_2.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g_2))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("plot_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = g_3.get_start()
             self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(g_3))
-            cursor.blinking=True
+            cursor.idle=True
             
 
         self.wait(4)
@@ -1138,7 +1276,7 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
-        cursor = AltCursor(stroke_width=0.0, blinking=True)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -1152,15 +1290,15 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
             self.wait_until_bookmark("intro_auto")
             x,y,_ = intro_auto_tex[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(Write(intro_auto_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("cords_in")
             self.play(Write(self.cords), run_time=0.3)
 
             self.wait_until_bookmark("x_one")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = plane.c2p(1,0)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
 
@@ -1200,7 +1338,7 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             cursors[0]._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end()))
             self.add_pencil_sound(1.5)
             self.play(*[Create(g) for g in gs])
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("erase")
             self.add(g_correct.copy())
