@@ -1637,7 +1637,9 @@
       "e1": "Blue Graph: Exponential Grpwth",
       "e2": "Green Graph: Linear Growth",
       "e3": "Purple Graph: Exponential Growth",
-      "voiceover": "Let's compare exponential growth with linear growth.\nThe <bookmark mark=\"plot_1\"/>blue graph shows exponential growth. Like in the previous example, the function increases at an increasing rate. Every step, the function is multiplied by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_2\"/>green graph shows linear growth. The function increases at a constant rate. Every step, the function is increased by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_3\"/>purple graph shows exponential growth as well. The function decreases at an increasing rate. Every step, the function is multiplied by the same value, in this case one half."
+      "voiceover": "Let's compare exponential growth with linear growth.\nThe <bookmark mark=\"plot_1\"/>blue graph shows exponential growth. Like in the previous example, the function increases at an increasing rate. Every step, the function is multiplied by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_2\"/>green graph shows linear growth. The function increases at a constant rate. Every step, the function is increased by the same value, in this case two.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_3\"/>purple graph shows exponential growth as well. The function decreases at an increasing rate. Every step, the function is multiplied by the same value, in this case one half.",
+      "e2a": "Linear Growth \\\\$\\Rightarrow$ Add at each step",
+      "e1a": "Exponential Growth \\\\$\\Rightarrow$ multiply at each step"
     },
     "1I2q": {
       "answer": {

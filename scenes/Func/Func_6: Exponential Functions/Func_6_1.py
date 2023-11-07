@@ -1263,22 +1263,22 @@ class Func_6_1_I_2_1(SophiaCursorScene):
         cursor = AltCursor(idle=True, x=xo, y=yo)
         self.add(cursor)
 
-        plot_1 = plane.plot(lambda x: 2**x, color=BLUE)
+        plot_1 = plane.plot(lambda x: 2**x, color=PURPLE)
         plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
 
-        f_exp = MathTex("f(x)=a^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
-        f_lin = MathTex("f(x)=a\cdot x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_exp = MathTex("f(x)=a^x", color=PURPLE, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_lin = MathTex("f(x)=a\cdot x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         
         e_1, e_2 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2")
         e1a, e2a = self.translate("Func_6_1.1I21.e1a"), self.translate("Func_6_1.1I21.e2a")
-        explainers = VGroup(Tex(e_1, color=BLUE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
-        explainers_a = VGroup(Tex(e1a, color=BLUE, font_size=fs4), Tex(e2a, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
+        explainers = VGroup(Tex(e_1, color=PURPLE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
+        explainers_a = VGroup(Tex(e1a, color=PURPLE, font_size=fs4), Tex(e2a, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
 
         # Action Sequence
         with self.voiceover(
             text = """Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.
                     <break time="0.8s"/>
-                    Der <bookmark mark="plot_1"/>blaue Graph zeigt exponentielles Wachstum. <split/>
+                    Der <bookmark mark="plot_1"/>lilane Graph zeigt exponentielles Wachstum. <split/>
                     Wir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark="f_exp"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.
                     <break time="0.8s"/>
                     Der<bookmark mark="plot_2"/>grüne Graph zeigt lineares Wachstum. <split/>
@@ -1309,7 +1309,7 @@ class Func_6_1_I_2_1(SophiaCursorScene):
             cursor.idle=True
 
             self.wait_until_bookmark("explainers_out")
-            self.play(FadeOut(explainers), run_time=0.5)
+            self.play(FadeOut(explainers), FadeOut(f_lin), run_time=0.5)
 
             self.wait_until_bookmark("final_exp_1")
             self.play(Write(explainers_a[0]), run_time=0.5)
@@ -2256,7 +2256,68 @@ class Func_6_1_I_6_c(SophiaCursorScene):
         self.wait(4)
 
 
-#####################################
+
+class Func_6_1_I_6_1(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+        cords = self.add_cords([-3, 3, 1], [-8, 8, 2], x_ticks = [-3,-2,-1,1,2,3], y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
+        plane=cords[0]
+
+        xo,yo,_ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        self.add(cursor)
+
+        plot_1 = plane.plot(lambda x: 2**x, color=PURPLE)
+        plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
+
+        f_exp = MathTex("f(x)=a^x", color=PURPLE, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_lin = MathTex("f(x)=a\cdot x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        
+        e1a, e2a = self.translate("Func_6_1.1I21.e1a"), self.translate("Func_6_1.1I21.e2a")
+        explainers_a = VGroup(Tex(e1a, color=PURPLE, font_size=fs4), Tex(e2a, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
+
+        # Action Sequence
+        with self.voiceover(
+            text = """
+                    Toll, jetzt <bookmark mark="praise"/>hast du nochmal gesehen, wo die Unterschiede zwischen linearem und exponentiellen Wachstum liegen. Zur Wiederholung:<break time="0.8s"/>
+                    Exponentielles Wachstum <bookmark mark="explain_1"/>ist multiplikativ, das heißt mit jeder Erhöhung von x multiplizieren wir den Funktionswert mit einem Faktor.<split/>
+                    <bookmark mark="plot_1"/>Der lilane Graph zeigt exponentielles Wachstum. <split/> Wir erkennen, wie die Funktion steigt, und immer steiler wird.
+                    <break time="0.8s"/>
+                    Lineares Wachstum <bookmark mark="explain_2"/>ist additiv,<split/> das heisst mit jeder Erhöhung von x addieren wir einen Wert zur Funktion.
+                    Der<bookmark mark="plot_2"/>grüne Graph zeigt lineares Wachstum. <split/>Wir sehen, dass die Funktion mit konstanter Geschwindigkeit wächst.
+                    <break time="0.8s"/>
+                    Wir können uns also merken: <bookmark mark="final_exp_1"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark="final_exp_2"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.
+                    """
+        ) as tracker:
+            
+            self.wait_until_bookmark("praise")
+            cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
+
+            self.wait_until_bookmark("explain_1")
+            self.play(Write(explainers_a[0]), Unwrite(smile), run_time=1)
+            
+            self.wait_until_bookmark("plot_1")
+            self.play(Write(cords), run_time=.3)
+            self.add_pencil_sound(1)
+            self.play(Write(plot_1), run_time=1)
+
+            self.wait_until_bookmark("explain_2")
+            self.play(Write(explainers_a[1]), run_time=1)
+
+            self.wait_until_bookmark("plot_2")
+            self.add_pencil_sound(1)
+            self.play(Write(plot_2), run_time=1)
+
+        self.wait(4)
+
+####################################################################################################################################################
 #####################################
 class Func_6_1_I_7_q(SophiaCursorScene):
 
