@@ -1007,14 +1007,11 @@ class Func_6_1_I_1_4_q(SophiaCursorScene):
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
-
-
         plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
         plant = plant.scale(0.35/plant.get_width())
 
         cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
         plane=cords[0]
-
 
         plants_0, plants_1, plants_2 = [plant.copy().move_to(plane.c2p(0, i+1)) for i in range(2)], [plant.copy().move_to(plane.c2p(1, i+1)) for i in range(6)], [plant.copy().move_to(plane.c2p(2, i+1)) for i in range(18)]
         plants = Group(*plants_0, *plants_1, *plants_2)
@@ -1058,6 +1055,194 @@ class Func_6_1_I_1_4_q(SophiaCursorScene):
         self.wait(4)
 
 
+class Func_6_1_I_1_4_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 18, 3], x_ticks=[0, 1, 2], y_ticks=[3, 6, 9, 12, 15, 18]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 2*3**x, color=BLUE)
+
+        plants_0, plants_1, plants_2 = [plant.copy().move_to(plane.c2p(0, i+1)) for i in range(2)], [plant.copy().move_to(plane.c2p(1, i+1)) for i in range(6)], [plant.copy().move_to(plane.c2p(2, i+1)) for i in range(18)]
+        plants = Group(*plants_0, *plants_1, *plants_2)
+        self.add(plants)
+
+        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text = """
+                <bookmark mark="g"/>
+                Die richtige Funktion ist g von x gleich 4 hoch x.
+                <bookmark mark="h_0"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>
+                <bookmark mark="h_1"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>
+                <bookmark mark="h_2"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.
+                <break time="0.8s"/>
+                Wenn wir die Funktion <bookmark mark="cords_in"/> in ein Koordinatensystem einzeichnen,<split/>
+                <bookmark mark="plot_in"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("g")
+            self.play(Write(h), run_time=0.5)
+
+            self.wait_until_bookmark("h_0")
+            self.play(Write(h_vals[0]), run_time=0.5)
+
+            self.wait_until_bookmark("h_1")
+            self.play(Write(h_vals[1]), run_time=0.5)
+
+            self.wait_until_bookmark("h_2")
+            self.play(Write(h_vals[2]), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=0.5)
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Write(plot), run_time=1)
+            self.play(FadeOut(plants), run_time=0.5)
+
+        self.wait(4)
+
+class Func_6_1_I_1_4_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 18, 3], x_ticks=[0, 1, 2], y_ticks=[3, 6, 9, 12, 15, 18]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 2*3**x, color=BLUE)
+
+        plants_0, plants_1, plants_2 = [plant.copy().move_to(plane.c2p(0, i+1)) for i in range(2)], [plant.copy().move_to(plane.c2p(1, i+1)) for i in range(6)], [plant.copy().move_to(plane.c2p(2, i+1)) for i in range(18)]
+        plants = Group(*plants_0, *plants_1, *plants_2)
+        self.add(plants)
+
+        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text = """
+                <bookmark mark="g"/>
+                Die richtige Funktion ist g von x gleich 4 hoch x.
+                <bookmark mark="h_0"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>
+                <bookmark mark="h_1"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>
+                <bookmark mark="h_2"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.
+                <break time="0.8s"/>
+                Wenn wir die Funktion <bookmark mark="cords_in"/> in ein Koordinatensystem einzeichnen,<split/>
+                <bookmark mark="plot_in"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("g")
+            self.play(Write(h), run_time=0.5)
+
+            self.wait_until_bookmark("h_0")
+            self.play(Write(h_vals[0]), run_time=0.5)
+
+            self.wait_until_bookmark("h_1")
+            self.play(Write(h_vals[1]), run_time=0.5)
+
+            self.wait_until_bookmark("h_2")
+            self.play(Write(h_vals[2]), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=0.5)
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Write(plot), run_time=1)
+            self.play(FadeOut(plants), run_time=0.5)
+
+        self.wait(4)
+
+
+class Func_6_1_I_1_5(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 18, 3], x_ticks=[0, 1, 2], y_ticks=[3, 6, 9, 12, 15, 18]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 2*3**x, color=BLUE)
+
+        f_general = MathTex("f(x)=a^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_2 = MathTex("f(x)=2^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_3 = MathTex("f(x)=3^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+
+        
+        # Action Sequence
+        with self.voiceover(
+            text = """
+                Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark="smile"/> geübt. super!
+                <break time="1.4s"/>
+                <bookmark mark="recap"/>
+                Die Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.
+                Zum Beispiel die Funktion <bookmark mark="f_2"/> f von x gleich zwei hoch x, <split/>
+                oder die Funktion <bookmark mark="f_3"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.
+                In diesen beiden Fällen <bookmark mark="plot"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("smile")
+            cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
+            
+            self.wait_until_bookmark("recap")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, f_general), Write(f_general), FadeOut(smile))
+
+            self.wait_until_bookmark("f_2")
+            self.play(Transform(f_general, f_2))
+
+            self.wait_until_bookmark("f_3")
+            self.play(Transform(f_general, f_3))
+
+            self.wait_until_bookmark("plot")
+            x,y,_ = plane.c2p(0,0)
+            cursor.idle=True
+            self.play(Write(cords), CursorMoveResize(cursor,x,y,0.2,0.2), run_time=.5)
+            self.add_pencil_sound(1)
+            self.play(Create(plot), run_time=1)
+
+        self.wait(4)
+
+
 ####################################################################################################################################################
 #####################################
 class Func_6_1_I_2_1(SophiaCursorScene):
@@ -1080,14 +1265,27 @@ class Func_6_1_I_2_1(SophiaCursorScene):
 
         plot_1 = plane.plot(lambda x: 2**x, color=BLUE)
         plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
-        plot_3 = plane.plot(lambda x: 0.5**x, color=PURPLE)
+
+        f_exp = MathTex("f(x)=a^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_lin = MathTex("f(x)=a\cdot x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         
-        e_1, e_2, e_3 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2"), self.translate("Func_6_1.1I21.e3")
-        explainers = VGroup(Tex(e_1, color=BLUE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4), Tex(e_3, color=PURPLE, font_size=fs4)).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.6)
+        e_1, e_2 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2")
+        e1a, e2a = self.translate("Func_6_1.1I21.e1a"), self.translate("Func_6_1.1I21.e2a")
+        explainers = VGroup(Tex(e_1, color=BLUE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
+        explainers_a = VGroup(Tex(e1a, color=BLUE, font_size=fs4), Tex(e2a, color=GREEN, font_size=fs4)).arrange(DOWN, buff=0.6, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.8)
 
         # Action Sequence
         with self.voiceover(
-            text = self.translate("Func_6_1.1I21.voiceover")
+            text = """Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.
+                    <break time="0.8s"/>
+                    Der <bookmark mark="plot_1"/>blaue Graph zeigt exponentielles Wachstum. <split/>
+                    Wir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark="f_exp"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.
+                    <break time="0.8s"/>
+                    Der<bookmark mark="plot_2"/>grüne Graph zeigt lineares Wachstum. <split/>
+                    Die Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark="f_lin"/>Form f von x gleich "a" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark="explainers_out"/>
+                    <break time="0.8s"/>
+                    Wir können uns also merken: <bookmark mark="final_exp_1"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark="final_exp_2"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.
+                    """
         ) as tracker:
             
             self.wait_until_bookmark("plot_1")
@@ -1097,20 +1295,81 @@ class Func_6_1_I_2_1(SophiaCursorScene):
             x,y,_ = explainers[0].get_center()+0.4*DOWN
             self.play(Write(explainers[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
 
+            self.wait_until_bookmark("f_exp")
+            self.play(Write(f_exp))
+
             self.wait_until_bookmark("plot_2")
             self.add_pencil_sound(1)
             self.play(Write(plot_2), run_time=1)
             x,y,_ = explainers[1].get_center()+0.4*DOWN
             self.play(Write(explainers[1]), CursorMoveTo(cursor,x,y), run_time=0.5)
 
-            self.wait_until_bookmark("plot_3")
-            self.add_pencil_sound(1)
-            self.play(Write(plot_3), run_time=1)
-            x,y,_ = explainers[2].get_center()+0.4*DOWN
-            self.play(Write(explainers[2]), CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.wait_until_bookmark("f_lin")
+            self.play(Transform(f_exp, f_lin))
             cursor.idle=True
 
+            self.wait_until_bookmark("explainers_out")
+            self.play(FadeOut(explainers), run_time=0.5)
+
+            self.wait_until_bookmark("final_exp_1")
+            self.play(Write(explainers_a[0]), run_time=0.5)
+
+            self.wait_until_bookmark("final_exp_2")
+            self.play(Write(explainers_a[1]), run_time=0.5)
+
         self.wait(4)
+
+# class Func_6_1_I_2_1(SophiaCursorScene):
+
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+
+#         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+
+#         cords = self.add_cords([-3, 3, 1], [-8, 8, 2], x_ticks = [-3,-2,-1,1,2,3], y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
+#         plane=cords[0]
+#         self.add(cords)
+
+#         xo,yo,_ = plane.c2p(0,0)
+#         cursor = AltCursor(idle=True, x=xo, y=yo)
+#         self.add(cursor)
+
+#         plot_1 = plane.plot(lambda x: 2**x, color=BLUE)
+#         plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
+#         plot_3 = plane.plot(lambda x: 0.5**x, color=PURPLE)
+        
+#         e_1, e_2, e_3 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2"), self.translate("Func_6_1.1I21.e3")
+#         explainers = VGroup(Tex(e_1, color=BLUE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4), Tex(e_3, color=PURPLE, font_size=fs4)).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.6)
+
+#         # Action Sequence
+#         with self.voiceover(
+#             text = self.translate("Func_6_1.1I21.voiceover")
+#         ) as tracker:
+            
+#             self.wait_until_bookmark("plot_1")
+#             self.add_pencil_sound(1)
+#             self.play(Write(plot_1), run_time=1)
+#             cursor.idle=False
+#             x,y,_ = explainers[0].get_center()+0.4*DOWN
+#             self.play(Write(explainers[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
+
+#             self.wait_until_bookmark("plot_2")
+#             self.add_pencil_sound(1)
+#             self.play(Write(plot_2), run_time=1)
+#             x,y,_ = explainers[1].get_center()+0.4*DOWN
+#             self.play(Write(explainers[1]), CursorMoveTo(cursor,x,y), run_time=0.5)
+
+#             self.wait_until_bookmark("plot_3")
+#             self.add_pencil_sound(1)
+#             self.play(Write(plot_3), run_time=1)
+#             x,y,_ = explainers[2].get_center()+0.4*DOWN
+#             self.play(Write(explainers[2]), CursorMoveTo(cursor,x,y), run_time=0.5)
+#             cursor.idle=True
+
+#         self.wait(4)
 
 
 #####################################

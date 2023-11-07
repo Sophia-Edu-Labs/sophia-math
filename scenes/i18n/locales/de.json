@@ -1640,7 +1640,9 @@
       "e1": "Blauer Graph: Exponentielles Wachstum",
       "e2": "Grüner Graph: Lineares Wachstum",
       "e3": "Lila Graph: Exponentielles Wachstum",
-      "voiceover": "Vergleichen wir exponentielles Wachstum mit linearem Wachstum.\nDer <bookmark mark=\"plot_1\"/>blaue Graph zeigt exponentielles Wachstum. \nWie im vorherigen Beispiel nimmt die Funktion mit zunehmender Geschwindigkeit zu. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall zwei.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit.\nBei jedem Schritt wird die Funktion um denselben Wert erhöht, in diesem Fall um zwei.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_3\"/>lila Graph zeigt ebenfalls exponentielles Wachstum. \nDie Funktion nimmt mit zunehmender Geschwindigkeit ab. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall mit ein Halb."
+      "voiceover": "Vergleichen wir exponentielles Wachstum mit linearem Wachstum.\nDer <bookmark mark=\"plot_1\"/>blaue Graph zeigt exponentielles Wachstum. \nWie im vorherigen Beispiel nimmt die Funktion mit zunehmender Geschwindigkeit zu. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall zwei.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit.\nBei jedem Schritt wird die Funktion um denselben Wert erhöht, in diesem Fall um zwei.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_3\"/>lila Graph zeigt ebenfalls exponentielles Wachstum. \nDie Funktion nimmt mit zunehmender Geschwindigkeit ab. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall mit ein Halb.",
+      "e1a": "Exponential Growth \\\\$\\Rightarrow$ multiply at each step",
+      "e2a": "Linear Growth \\\\$\\Rightarrow$ Add at each step"
     },
     "1I2q": {
       "answer": {
