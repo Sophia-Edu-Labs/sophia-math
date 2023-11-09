@@ -1640,7 +1640,7 @@
       "e1": "Blauer Graph: Exponentielles Wachstum",
       "e2": "Grüner Graph: Lineares Wachstum",
       "e3": "Lila Graph: Exponentielles Wachstum",
-      "voiceover": "Vergleichen wir exponentielles Wachstum mit linearem Wachstum.\nDer <bookmark mark=\"plot_1\"/>blaue Graph zeigt exponentielles Wachstum. \nWie im vorherigen Beispiel nimmt die Funktion mit zunehmender Geschwindigkeit zu. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall zwei.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit.\nBei jedem Schritt wird die Funktion um denselben Wert erhöht, in diesem Fall um zwei.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_3\"/>lila Graph zeigt ebenfalls exponentielles Wachstum. \nDie Funktion nimmt mit zunehmender Geschwindigkeit ab. \nBei jedem Schritt wird die Funktion mit demselben Wert multipliziert, in diesem Fall mit ein Halb.",
+      "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.",
       "e1a": "Exponentielles Wachstum \\\\$\\Rightarrow$ Multipliziere in jedem Schritt",
       "e2a": "Lineares Wachstum \\\\$\\Rightarrow$ Addiere bei jedem Schritt"
     },
@@ -1726,19 +1726,53 @@
     },
     "1I11q": {
       "main": {
-        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Freunde weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/>hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt hat. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht nach einer weiteren Stunde kennen?"
+        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/>hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
       }
     },
     "1I11a": {
       "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt.<split/> Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören.<split/> Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
     },
     "1I12q": {
-      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Gerücht hört.\nNach einer Runde hören dann <bookmark mark=\"four_in\"/>vier Personen das Gerücht.\nUnd nach zwei Runden hören <bookmark mark=\"sixteen_in\"/>sechzehn Personen das Gerücht, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die das Gerücht nach x Runden hören?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich x hoch vier?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich vier hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei x im Quadrat?"
+      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Gerücht hört.\nNach einer Runde hören dann <bookmark mark=\"four_in\"/>vier Personen das Gerücht.\nUnd nach zwei Runden hören <bookmark mark=\"sixteen_in\"/>sechzehn Personen das Gerücht, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die das Gerücht nach x Runden hören?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich x hoch vier?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich vier hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei x im Quadrat?",
+      "question": "Welche Funktion beschreibt die Anzahl der Personen, die das Gerücht nach x Runden hören?"
     },
     "1I13q": {
       "main": {
         "voiceover": ""
       }
+    },
+    "I11": {
+      "question": {
+        "how-fast-does-the-rumor-spread": "Wie viele Personen werden das Gerücht in der nächsten Stunde hören?"
+      }
+    },
+    "title_1": "Exponentialfunktionen",
+    "I12a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist g von x gleich 4 hoch x.\n<bookmark mark=\"g_0\"/>Denn g von 0 ist 4 hoch 0, also 1,\n<bookmark mark=\"g_1\"/>g von 1 ist 4 hoch 1, also 4,\n<bookmark mark=\"g_2\"/>g von 2 ist 4 hoch 2, also sechzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
+    },
+    "I13q": {
+      "voiceover": "Ich habe einen Garten, <bookmark mark=\"garden_in\"/>den ich mit meiner Lieblingspflanze bepflanzen will. Sie pflanzt sich recht schnell fort, jedes Jahr werden aus einer Pflanze drei, also verdreifacht sie sich jährlich. Ich fange jetzt einfach an, indem <bookmark mark=\"two_in\"/>ich zwei davon einpflanze. Im ersten Jahr gibt es also zwei Pflanzen. Im zweiten Jahr <bookmark mark=\"second_year\"/>verdreifacht sich jede Pflanze, also gibt es sechs Pflanzen. Wie viele Pflanzen werden es im dritten Jahr sein?"
+    },
+    "I14a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist g von x gleich 4 hoch x.\n<bookmark mark=\"h_0\"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>\n<bookmark mark=\"h_1\"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>\n<bookmark mark=\"h_2\"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
+    },
+    "1I14q": {
+      "question": "Wie viele Pflanzen werden im dritten Jahr in meinem Garten sein?"
+    },
+    "1I14a": {
+      "voiceover": "Wir wissen ja, dass sich jede Pflanze jedes Jahr verdreifacht. Anfangs<bookmark mark=\"year_0\"/> gibt es ja einfach die zwei Pflanzen, die ich eingepflanzt habe. Nach einem Jahr gibt es <bookmark mark=\"year_1\"/>dann sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat. Dann wird sich im Jahr darauf jede dieser<bookmark mark=\"year_2\"/> sechs Pflanzen verdreifachen, sodass nach einem weiteren Jahr insgesamt achtzehn Pflanzen in meinem Garten sind."
+    },
+    "1I4q": {
+      "question": "Welche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?"
+    },
+    "I14q": {
+      "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
+    },
+    "I15": {
+      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
+    },
+    "1I61": {
+      "voiceover": "Toll, jetzt <bookmark mark=\"praise\"/>hast du nochmal gesehen, wo die Unterschiede zwischen linearem und exponentiellen Wachstum liegen. Zur Wiederholung:<break time=\"0.8s\"/>\nExponentielles Wachstum <bookmark mark=\"explain_1\"/>ist multiplikativ, das heißt mit jeder Erhöhung von x multiplizieren wir den Funktionswert mit einem Faktor.<split/>\n<bookmark mark=\"plot_1\"/>Der lilane Graph zeigt exponentielles Wachstum. <split/> Wir erkennen, wie die Funktion steigt, und immer steiler wird.\n<break time=\"0.8s\"/>\nLineares Wachstum <bookmark mark=\"explain_2\"/>ist additiv,<split/> das heisst mit jeder Erhöhung von x addieren wir einen Wert zur Funktion.\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>Wir sehen, dass die Funktion mit konstanter Geschwindigkeit wächst.\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
     }
   },
   "Func_6_2": {
@@ -1761,8 +1795,7 @@
       "x-minutes_2": "beschreibt die Funktion?"
     },
     "I1": {
-      "title": "Exponentialfunktion",
-      "voiceover": "Kurzer Überblick über Exponentialfunktionen.\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.\n<break time=\"0.4s\"/>\n<split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.\n<break time=\"0.4s\"/>\nWenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
+      "title": "Exponentialfunktion"
     },
     "I2": {
       "a": {
@@ -1812,6 +1845,9 @@
         "answer-options": "[\"Der violette Graph\", \"Der blaue Graph\", \"Der rosa Graph\"]",
         "question-text": "Welcher der Graphen entspricht der Funktion $f(x)=3^x$?"
       }
+    },
+    "I2X": {
+      "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
     }
   },
   "Func_6_2_P_1_a": {

@@ -747,6 +747,7 @@ class AltCursor(RoundedRectangle):
                               )
         newCursor.initial_fill_opcacity = self.initial_fill_opcacity
         self.become(newCursor)
+        return newCursor
 
         
 
@@ -921,7 +922,7 @@ class CursorUnderline(ApplyMethod):
         super().__init__(cursor.changeForm, width, height, None, x, y, self.fill_opacity, None, None, **kwargs)
 
 class CursorMoveResize(ApplyMethod):
-    def __init__(self, cursor: AltCursor, x,y, width, height, autoFadeBackground=False, moveToBackground=False, **kwargs):
+    def __init__(self, cursor: AltCursor, x,y, width=0.2, height=0.2, autoFadeBackground=False, moveToBackground=False, **kwargs):
         if x is None:
             x = cursor.get_center()[0]
         if y is None:

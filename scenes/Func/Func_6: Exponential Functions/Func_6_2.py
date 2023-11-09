@@ -3,12 +3,7 @@
 # Import necessary libraries and modules
 from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, CursorMarkAxis, Bubble)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -41,16 +36,11 @@ class Func_6_2_I_1(SophiaCursorScene):
 
         plot_2 = plane.plot(lambda x: 2**x, color=PURE_BLUE)
         plot_3 = plane.plot(lambda x: 3**x, x_range=[0,3.788, 0.001], color=PINK)
+        plot_half = plane.plot(lambda x: 64*0.5**x, color=PURPLE_E)
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         qnark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
@@ -59,14 +49,13 @@ class Func_6_2_I_1(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-                Bisher haben wir uns ja exponentielles Wachstum angesehen: Die Funktion steigt, und sie steigt immer schneller.
-                <break time="0.4s"/>
                 Der Term einer Exponentialfunktion lautet ja <bookmark mark="f"/>f von <bookmark mark="fx"/>x gleich <bookmark mark="fa"/>a hoch <bookmark mark="fxx"/> x.
                 <break time="0.4s"/>
                 Und wir haben uns eben immer Werte angeschaut, <bookmark mark="a"/>wo a größer als eins war, zum Beispiel die <bookmark mark="g"/>Funktion g von x gleich zwei hoch x oder <bookmark mark="h"/>die Funktion h von x gleich drei hoch x.
                 <break time="0.4s"/>
-                <split/>
-                Was ist jetzt aber,<bookmark mark="qmark"/> wenn wir uns Werte anschauen, <bookmark mark="a_l1"/>wo a zwischen Null und Eins liegt? Als
+                Was ist jetzt aber,<bookmark mark="qmark"/> wenn wir uns Werte anschauen, <bookmark mark="a_l1"/>wo a zwischen Null und Eins liegt?<split/><bookmark mark="switch"/>
+                Müsste die Funktion <bookmark mark="decrease"/>dann nicht abnehmen?<break time="0.6s"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?
+                <split/>Das sehen wir uns jetzt genauer an.
                 """
         ) as tracker:
             
@@ -113,7 +102,20 @@ class Func_6_2_I_1(SophiaCursorScene):
             cursor.idle=True
 
             self.wait_until_bookmark("qmark")
+            self.add_shift_sound(1.5)
             self.play(qnark.animate.shift(5*RIGHT))
+
+            self.wait_until_bookmark("switch")
+            self.add_shift_sound(0.5)
+            self.play(FadeOut(f_tex), FadeOut(f_2), FadeOut(f_3), FadeOut(plot_2), FadeOut(plot_3), qnark.animate(run_time=0.5).shift(5*RIGHT), run_time=1)
+
+            self.wait_until_bookmark("decrease")
+            cursor.idle=False
+            x,y,_ = plot_half.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_half.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(plot_half))
 
 
 
@@ -177,13 +179,7 @@ class Func_6_2_I_2_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         full_pizza = ImageMobject(assets_folder / "img" / "full_pizza.png")
@@ -251,6 +247,7 @@ class Func_6_2_I_2_q(SophiaCursorScene):
             cursor.idle=True
 
             self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(RIGHT*5), run_time=0.5)
 
             self.wait_until_bookmark("x_minutes")
@@ -276,13 +273,7 @@ class Func_6_2_I_2_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         full_pizza = ImageMobject(assets_folder / "img" / "full_pizza.png")
@@ -400,13 +391,7 @@ class Func_6_2_I_2_b(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         full_pizza = ImageMobject(assets_folder / "img" / "full_pizza.png")
@@ -524,13 +509,7 @@ class Func_6_2_I_2_c(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         full_pizza = ImageMobject(assets_folder / "img" / "full_pizza.png")
@@ -648,13 +627,7 @@ class Func_6_2_I_2_d(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         full_pizza = ImageMobject(assets_folder / "img" / "full_pizza.png")
@@ -761,6 +734,248 @@ class Func_6_2_I_2_d(SophiaCursorScene):
 
         self.wait(4)
 
+#####################################
+#####################################
+class Func_6_2_I_2_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+
+        plot_1 = plane.plot(lambda x: 17/16-(2**x)/16, color=BLUE)
+        plot_2 = plane.plot(lambda x: (1/2)**x, color=GREEN_D)
+        plot_3 = plane.plot(lambda x: 1-15*x/16, color=PINK)
+
+        f_tex = MathTex("f","(x)", "=", "\\frac{1}{2}", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+
+    
+        cursor = AltCursor(stroke_width=0.0, idle=False)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""Ok, <bookmark mark="f"/>betrachten wir jetzt die Exponentialfunktion f von x gleich ein halb hoch x. <bookmark mark="cords"/><break time="0.5s"/>Wie sieht der Graph dieser Funktion aus?<break time="0.6s"/>
+                Geht er <bookmark mark="plot_1"/>langsam nach unten,<split/> und wird dann immer steiler, wie der blaue Graph?<break time="0.6s"/>
+                Oder geht er <bookmark mark="plot_2"/>steil nach unten,<split/> und wird dann immer flacher, wie der grüne Graph?<break time="0.6s"/>
+                Oder geht er <bookmark mark="plot_3"/> mit konstanter Geschwindigkeit nach unten, <split/> wie der pinke Graph?"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("f")
+            cursor.idle=False
+            self.play(Write(f_tex), run_time=1)
+            self.play(CursorUnderline(cursor, f_tex))
+
+            self.wait_until_bookmark("cords")
+            self.play(Write(cords))
+
+            self.wait_until_bookmark("plot_1")
+            x,y,_ = plot_1.get_start()
+            self.play(CursorMoveResize(cursor,x,y), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_1.get_end())))
+            self.add_pencil_sound(2.5)
+            self.play(Create(plot_1), run_time=2.5)
+            
+            self.wait_until_bookmark("plot_2")
+            x,y,_ = plot_2.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_2.get_end())))
+            self.add_pencil_sound(2.5)
+            self.play(Create(plot_2), run_time=2.5)
+
+            self.wait_until_bookmark("plot_3")
+            x,y,_ = plot_3.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_3.get_end())))
+            self.add_pencil_sound(2.5)
+            self.play(Create(plot_3), run_time=2.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_2_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[0,1,2,3], y_ticks=[0.25,0.5,0.75,1])
+        plane = cords[0]
+
+        plot_1 = plane.plot(lambda x: 17/16-(2**x)/16, color=BLUE)
+        plot_2 = plane.plot(lambda x: (1/2)**x, color=GREEN_D)
+        plot_3 = plane.plot(lambda x: 1-(15/64)*x, color=PINK)
+
+        f_tex = MathTex("f","(x)", "=", "\\frac{1}{2}", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+
+        self.add(cords, plot_1, plot_2, plot_3, f_tex)
+
+        points = [plane.c2p(i, 0.5**i) for i in range(5)]
+    
+        cursor = AltCursor(stroke_width=0.0, idle=False)
+        self.add(cursor)
+
+        t = MathTable(
+            [["x", "f(x)"],
+             ["0", "1"],
+            ["1", "\\tfrac12"],
+            ["2", "(\\tfrac12)^2=\\tfrac14"],
+            ["...", "..."]], element_to_mobject_config={"color": c1t}, line_config={"color": c1t}).scale(0.35).next_to(f_tex, DOWN, buff=0.4)
+        rows = t.get_rows()
+        t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines(), rows[0])
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""Für x gleich null ist f ja <bookmark mark="x_0"/>gleich ein halb hoch null, also gleich eins.<break time="0.6s"/>
+                        Wenn wir dann von <bookmark mark="x_1"/>Null auf eins gehen, erhalten wir nicht mehr eins, sondern ein halb mal eins, also ein halb. <split/>
+                        Also ist f um ein halb gesunken.<break time="0.6s"/>
+                        Wenn wir dann von <bookmark mark="x_2"/>eins auf zwei gehen, erhalten wir nicht mehr ein halb, sondern ein halb mal ein halb, also ein viertel. <split/>
+                        Also ist f um ein viertel gesunken.<break time="0.6s"/>
+                        Wenn wir von <bookmark mark="x_3"/>zwei auf drei gehen, multiplizieren wir ein viertel mit ein halb, verlieren also ein achtel, und so weiter...<split/><bookmark mark="reset_cursor"/>
+                        Du siehst also, dass f sinkt, aber da wir immer kleinere Werte mit ein halb multiplizieren, sinkt f auch immer langsamer. Also muss <bookmark mark="solution"/> der grüne Graph richtig sein.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_0")
+            cursor.idle=False
+            x,y,_ = points[0]
+            self.play(CursorMoveTo(cursor,x,y), Write(t_structure), Write(rows[1]), run_time=0.5)
+            circ_1 = Circle(radius=0.1, color=RED).move_to(cursor)
+            self.add(circ_1)
+
+            self.wait_until_bookmark("x_1")
+            x,y,_ = points[1]
+            self.play(CursorMoveTo(cursor,x,y), Write(rows[2]), run_time=0.5)
+            circ_2 = Circle(radius=0.1, color=RED).move_to(cursor)
+            self.add(circ_2)
+
+            self.wait_until_bookmark("x_2")
+            x,y,_ = points[2]
+            self.play(CursorMoveTo(cursor,x,y), Write(rows[3]), run_time=0.5)
+            circ_3 = Circle(radius=0.1, color=RED).move_to(cursor)
+            self.add(circ_3)
+
+            self.wait_until_bookmark("x_3")
+            x,y,_ = points[3]
+            self.play(CursorMoveTo(cursor,x,y), Write(rows[4]), run_time=0.5)
+            circ_4 = Circle(radius=0.1, color=RED).move_to(cursor)
+            self.add(circ_4)
+
+            self.wait_until_bookmark("reset_cursor")
+            x,y,_ = plane.c2p(0,0)
+            self.play(Unwrite(circ_1), Unwrite(circ_2), Unwrite(circ_3), Unwrite(circ_4), CursorMoveTo(cursor,x,y), run_time=0.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = plane.c2p(0,0)
+            self.play(CursorMoveTo(cursor,x,y), Unwrite(plot_1), Unwrite(plot_3), run_time=0.5)
+            cursor.idle=True            
+
+        self.wait(4)
+
+
+class Func_6_2_I_2_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        pool = ImageMobject(assets_folder / "img" / "swimming_pool.png")
+        pool = pool.scale(2.8/pool.get_width()).move_to([-5, 1.2, 0])
+
+        cursor = AltCursor(stroke_width=0.0, idle=False)
+        self.add(cursor)
+
+        f_tex = MathTex("f(x)=1000\\cdot\\left(\\tfrac18\\right)^x", color=c1t, font_size=fs2)
+        g_tex = MathTex("g(x)=1000\\cdot\\left(1-\\tfrac18 x\\right)", color=c1t, font_size=fs2)
+        h_tex = MathTex("h(x)=1000\\cdot\\left(\\tfrac78\\right)^x", color=c1t, font_size=fs2)
+        funcs = VGroup(f_tex, g_tex, h_tex).arrange(DOWN, aligned_edge=LEFT, buff=0.4).next_to(pool, DOWN, buff=0.6).shift(RIGHT*5)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                        Ich habe <bookmark mark="pool_in"/>einen Pool, in dem sind tausend Liter wasser.<break time="0.6s"/>
+                        Allerdings ist es so heiß, <split/>dass jeden Tag ein Achtel des Wassers verdunstet.<break time="0.6s"/>
+                        Welche Funktion beschreibt die Menge an Wasser im Pool<split/> in Abhängigkeit von der Zeit in Tagen?<break time="0.4s"/>
+                        Ist es<bookmark mark="f"/> die Funktion "f" von x gleich tausend mal ein achtel hoch x?<break time="0.4s"/>
+                        Oder <bookmark mark="g"/>die Funktion "g" von x gleich eintausend mal Klammer auf eins minus ein achtel x Klammer zu?<break time="0.4s"/>
+                        Oder <bookmark mark="h"/>die Funktion "h" von x gleich eintausend mal sieben achtel hoch x?
+                    """
+        ) as tracker:
+            
+            self.wait_until_bookmark("pool_in")
+            self.add_shift_sound(0.5)
+            self.play(pool.animate.shift(RIGHT*5), run_time=0.5)
+
+            self.wait_until_bookmark("f")
+            cursor.idle=False
+            x,y,_ = f_tex[0].get_center()+0.4*DOWN
+            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("g")
+            x,y,_ = g_tex[0].get_center()+0.4*DOWN
+            self.play(Write(g_tex), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("h")
+            x,y,_ = h_tex[0].get_center()+0.4*DOWN
+            self.play(Write(h_tex), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+class Func_6_2_I_2_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=False)
+        self.add(cursor)
+
+        pool = ImageMobject(assets_folder / "img" / "swimming_pool.png")
+        pool = pool.scale(2.8/pool.get_width()).move_to([0, 1.2, 0])
+        self.add(pool)
+
+        f_tex = MathTex("f(x)=1000\\cdot\\left(\\tfrac18\\right)^x", color=c1t, font_size=fs2)
+        g_tex = MathTex("g(x)=1000\\cdot\\left(1-\\tfrac18 x\\right)", color=c1t, font_size=fs2)
+        h_tex = MathTex("h(x)=1000\\cdot\\left(\\tfrac78\\right)^x", color=c1t, font_size=fs2)
+        funcs = VGroup(f_tex, g_tex, h_tex).arrange(DOWN, aligned_edge=LEFT, buff=0.4).next_to(pool, DOWN, buff=0.6)
+        self.add(funcs)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                        Der Pool hat tausend Liter, und jeden Tag verdunstet ein Achtel.<break time="0.6s"/>
+                        Das heißt, dass nach jedem Tag noch sieben achtel von dem Wasser des Vortages übrig sind, also multiplizieren wir den Wert des Vortages immer mit sieben achteln. <split/>Also ist<bookmark mark="correct"/> die Funktion h von x gleich eintausend mal sieben achtel hoch x die richtige.
+                    """
+        ) as tracker:
+            
+            self.wait_until_bookmark("correct")
+            self.play(f_tex.animate.set_color(RED), g_tex.animate.set_color(RED), h_tex.animate.set_color(GREEN), run_time=0.5)
+
+        self.wait(4)
 
 #####################################
 #####################################
@@ -774,7 +989,7 @@ class Func_6_2_I_2_X(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
+        cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[], y_ticks=[])
         plane = cords[0]
 
         f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
@@ -783,28 +998,31 @@ class Func_6_2_I_2_X(SophiaCursorScene):
         f = lambda x:2**x
         f_plot = plane.plot(f, color=BLUE)
 
-        cords_2 = self.add_cords([0, 6, 1], [0, 1, 0.25], x_ticks=[2,4,6], y_ticks=[0,0.25,0.5,0.75,1])
+        cords_2 = self.add_cords([0, 6, 1], [0, 1, 0.25], x_ticks=[], y_ticks=[])
         plane_2 = cords_2[0]
 
         a_tex_l1 = MathTex("0<a<1", color=GREEN, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
         g = lambda x:0.5**x
         g_plot = plane_2.plot(g, color=GREEN)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
+
+        hd = ImageMobject(assets_folder / "img" / "happy_dog.png")
+        hd = hd.scale(4/hd.get_width()).move_to([-5, 1.2, 0])
 
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I1.voiceover")
+                text=self.translate("Func_6_2.I2X.voiceover")
         ) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(hd.animate.shift(RIGHT*5), run_time=0.5)
+            self.wait(1.6)
+            self.add_shift_sound(0.5)
+            self.play(hd.animate.shift(RIGHT*5), run_time=0.5)
             
             self.wait_until_bookmark("f")
             x,y,_ = f_tex[0].get_center()+0.4*DOWN
@@ -892,14 +1110,8 @@ class Func_6_2_I_3(SophiaCursorScene):
         g = lambda x:0.5**x
         g_plot = plane_2.plot(g, color=GREEN)
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         x,y,_ = plane.c2p(0,0)
         cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
 
@@ -994,13 +1206,7 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
 
         plane = self.cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         qmark = ImageMobject(assets_folder / "img" / "qmark.png")
@@ -1073,13 +1279,7 @@ class GraphToGrowthFactorAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
         plane = self.cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         qmark = ImageMobject(assets_folder / "img" / "qmark.png")
@@ -1167,13 +1367,7 @@ class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
 
         plane = self.cords[0]
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
@@ -1272,13 +1466,7 @@ class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
         self.color_correct = self.color_1_name if self.idx_correct==0 else self.color_2_name if self.idx_correct==1 else self.color_3_name
 
 
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
         cursor = AltCursor(stroke_width=0.0, idle=True)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
         # Action Sequence

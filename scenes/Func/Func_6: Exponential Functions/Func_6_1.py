@@ -16,7 +16,8 @@ import ast
 
 #####################################
 #####################################
-class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
+#You created a funny short video - how many ppl will watch it after another timeperiod
+class Func_6_1_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -32,7 +33,7 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -76,7 +77,6 @@ class Func_6_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
 class Func_6_1_I_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -85,7 +85,7 @@ class Func_6_1_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -136,7 +136,6 @@ class Func_6_1_I_1_a(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
-
 
 class Func_6_1_I_1_b(SophiaCursorScene):
 
@@ -146,7 +145,7 @@ class Func_6_1_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -198,7 +197,6 @@ class Func_6_1_I_1_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
 class Func_6_1_I_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -207,7 +205,7 @@ class Func_6_1_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -259,7 +257,6 @@ class Func_6_1_I_1_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
 class Func_6_1_I_1_d(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -268,7 +265,7 @@ class Func_6_1_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -321,6 +318,7 @@ class Func_6_1_I_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
+#You created a funny short video - which function describes view-numbers
 class Func_6_1_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -336,7 +334,7 @@ class Func_6_1_I_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -388,7 +386,6 @@ class Func_6_1_I_2_q(SophiaCursorScene):
 
         self.wait(4)
 
-
 class Func_6_1_I_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -397,7 +394,7 @@ class Func_6_1_I_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -453,7 +450,6 @@ class Func_6_1_I_2_a(SophiaCursorScene):
             self.play(FadeOut(a1), FadeOut(a2), FadeOut(a3), FadeOut(a4), FadeOut(a5), FadeOut(a6), FadeOut(a7), FadeOut(a8), FadeOut(a9), FadeOut(a10), FadeOut(a11), FadeOut(a12), FadeOut(a13), FadeOut(a14), FadeOut(p1a), FadeOut(p2a), FadeOut(p2b), FadeOut(p3a), FadeOut(p3b), FadeOut(p3c), FadeOut(p3d), FadeOut(p4a), FadeOut(p4b), FadeOut(p4c), FadeOut(p4d), FadeOut(p4e), FadeOut(p4f), FadeOut(p4g), FadeOut(p4h), run_time=0.5)
 
         self.wait(4)
-
 
 class Func_6_1_I_2_b(SophiaCursorScene):
 
@@ -463,7 +459,7 @@ class Func_6_1_I_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -520,7 +516,6 @@ class Func_6_1_I_2_b(SophiaCursorScene):
 
         self.wait(4)
 
-
 class Func_6_1_I_2_c(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -529,7 +524,7 @@ class Func_6_1_I_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -587,15 +582,17 @@ class Func_6_1_I_2_c(SophiaCursorScene):
         self.wait(4)
 
 
-
+#####################################
+#####################################
+#Rumor spreads - how many ppl will hear it
 class Func_6_1_I_1_1_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions=["50", "100", "200", "400"],
-    #         correctAnswerIndex=3,
-    #         questionText=self.translate("Func_6_1.1I1r.question.how-fast-does-the-rumor-spread")
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["16", "4", "8", "7"],
+            correctAnswerIndex=0,
+            questionText=self.translate("Func_6_1.I11.question.how-fast-does-the-rumor-spread")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -603,7 +600,7 @@ class Func_6_1_I_1_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Exponentielles Wachstum")
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -658,7 +655,7 @@ class Func_6_1_I_1_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -679,10 +676,169 @@ class Func_6_1_I_1_1_a(SophiaCursorScene):
             for i in range(4)
         ]
         people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
-
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_1.1I11a.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_6_1.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("one_hour")
+            for arrow, person in zip(arrows, people):
+                self.play(FadeIn(arrow), FadeIn(person), run_time=0.5)
+
+            self.wait_until_bookmark("second_hour")
+            for j in range(4):
+                new_arrows = [
+                    Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                    for k in range(4)
+                ]
+                new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+                for new_arrow, new_person in zip(new_arrows, new_people):
+                    self.play(FadeIn(new_arrow), FadeIn(new_person), run_time=0.25)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Func_6_1_I_1_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+        # Adding initial images and arrows representing the first person and the first share
+        p1a = ew.copy().move_to(plane.c2p(0, 1))
+        self.add(p1a)
+        self.play(FadeIn(p1a), run_time=0.5)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_6_1.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("one_hour")
+            for arrow, person in zip(arrows, people):
+                self.play(FadeIn(arrow), FadeIn(person), run_time=0.5)
+
+            self.wait_until_bookmark("second_hour")
+            for j in range(4):
+                new_arrows = [
+                    Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                    for k in range(4)
+                ]
+                new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+                for new_arrow, new_person in zip(new_arrows, new_people):
+                    self.play(FadeIn(new_arrow), FadeIn(new_person), run_time=0.25)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Func_6_1_I_1_1_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+        # Adding initial images and arrows representing the first person and the first share
+        p1a = ew.copy().move_to(plane.c2p(0, 1))
+        self.add(p1a)
+        self.play(FadeIn(p1a), run_time=0.5)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_6_1.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("one_hour")
+            for arrow, person in zip(arrows, people):
+                self.play(FadeIn(arrow), FadeIn(person), run_time=0.5)
+
+            self.wait_until_bookmark("second_hour")
+            for j in range(4):
+                new_arrows = [
+                    Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                    for k in range(4)
+                ]
+                new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+                for new_arrow, new_person in zip(new_arrows, new_people):
+                    self.play(FadeIn(new_arrow), FadeIn(new_person), run_time=0.25)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Func_6_1_I_1_1_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+        # Adding initial images and arrows representing the first person and the first share
+        p1a = ew.copy().move_to(plane.c2p(0, 1))
+        self.add(p1a)
+        self.play(FadeIn(p1a), run_time=0.5)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_6_1.1I11a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("one_hour")
@@ -704,14 +860,17 @@ class Func_6_1_I_1_1_a(SophiaCursorScene):
         self.wait(4)
 
 
+#####################################
+#####################################
+#Rumor spreads - what function describes it
 class Func_6_1_I_1_2_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$f(x)=2\cdot x$", "$g(x)=x^2$", "$h(x)=2^x$"],
-    #         correctAnswerIndex = 2,
-    #         questionText = self.translate("Func_6_1.1I2q.question.how-do-you-pay-the-artist") 
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=x^4$", "$g(x)=4^x$", "$h(x)=(2x)^2$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_6_1.1I12q.question") 
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -719,7 +878,7 @@ class Func_6_1_I_1_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -753,7 +912,6 @@ class Func_6_1_I_1_2_q(SophiaCursorScene):
         self.add(arrows, people)
 
 
-
         one, four, sixteen = MathTex("1", color=c1t, font_size=fs2).next_to(plane.c2p(0,1), DOWN, buff=.3), MathTex("4", color=c1t, font_size=fs2).next_to(plane.c2p(1,1), DOWN, buff=.3), MathTex("16", color=c1t, font_size=fs2).next_to(plane.c2p(2,1), DOWN, buff=.3)
         funcs = VGroup(MathTex("f(x)=x^4", color=c1t, font_size=fs2), MathTex("g(x)=4^x", color=c1t, font_size=fs2), MathTex("h(x)=(2x)^2", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.6)
 
@@ -783,8 +941,7 @@ class Func_6_1_I_1_2_q(SophiaCursorScene):
         self.wait(4)
 
 
-
-class Func_6_1_I_1_2_c(SophiaCursorScene):
+class Func_6_1_I_1_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -792,7 +949,7 @@ class Func_6_1_I_1_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -829,16 +986,7 @@ class Func_6_1_I_1_2_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """
-                <bookmark mark="g"/>
-                Die richtige Funktion ist g von x gleich 4 hoch x.
-                <bookmark mark="g_0"/>Denn g von 0 ist 4 hoch 0, also 1,
-                <bookmark mark="g_1"/>g von 1 ist 4 hoch 1, also 4,
-                <bookmark mark="g_2"/>g von 2 ist 4 hoch 2, also sechzehn.
-                <break time="0.8s"/>
-                Wenn wir die Funktion <bookmark mark="cords_in"/> in ein Koordinatensystem einzeichnen,<split/>
-                <bookmark mark="plot_in"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion.
-                """
+            text = self.translate("General.incorrect_1")+self.translate("Func_6_1.I12a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -863,15 +1011,164 @@ class Func_6_1_I_1_2_c(SophiaCursorScene):
 
         self.wait(4)
 
+class Func_6_1_I_1_2_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 16, 4], x_ticks=[0, 1, 2], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 4**x, color=BLUE)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        people.append(ew.copy().move_to(plane.c2p(0, 1)))
+        for j in range(4):
+            new_arrows = [
+                Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                for k in range(4)
+            ]
+            new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+            for new_arrow, new_person in zip(new_arrows, new_people):
+                arrows.append(new_arrow)
+                people.append(new_person)
+
+        arrows = VGroup(*arrows)
+        people = Group(*people)
+
+        self.add(arrows, people)
+        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h_vals = VGroup(MathTex("g(0)=4^0=1", color=c1t, font_size=fs3), MathTex("g(1)=4^1=4", color=c1t, font_size=fs3), MathTex("g(2)=4^2=16", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text = self.translate("General.correct_1")+self.translate("Func_6_1.I12a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("g")
+            self.play(Write(h), run_time=0.5)
+
+            self.wait_until_bookmark("g_0")
+            self.play(Write(h_vals[0]), run_time=0.5)
+
+            self.wait_until_bookmark("g_1")
+            self.play(Write(h_vals[1]), run_time=0.5)
+
+            self.wait_until_bookmark("g_2")
+            self.play(Write(h_vals[2]), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=0.5)
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Write(plot), run_time=1)
+            self.play(FadeOut(arrows), FadeOut(people), run_time=0.5)
+
+        self.wait(4)
+
+class Func_6_1_I_1_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ew.scale(0.35/ew.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 16, 4], x_ticks=[0, 1, 2], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 4**x, color=BLUE)
+
+        arrows = [
+            Arrow(plane.c2p(0, 1), plane.c2p(1, 1+i), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+            for i in range(4)
+        ]
+        people = [ew.copy().move_to(plane.c2p(1, i+1)) for i in range(4)]
+        people.append(ew.copy().move_to(plane.c2p(0, 1)))
+        for j in range(4):
+            new_arrows = [
+                Arrow(plane.c2p(1, j), plane.c2p(2, 4 * j + k+1), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=2)
+                for k in range(4)
+            ]
+            new_people = [ew.copy().move_to(plane.c2p(2, 4 * j+ k+1)) for k in range(4)]
+            for new_arrow, new_person in zip(new_arrows, new_people):
+                arrows.append(new_arrow)
+                people.append(new_person)
+
+        arrows = VGroup(*arrows)
+        people = Group(*people)
+
+        self.add(arrows, people)
+        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h_vals = VGroup(MathTex("g(0)=4^0=1", color=c1t, font_size=fs3), MathTex("g(1)=4^1=4", color=c1t, font_size=fs3), MathTex("g(2)=4^2=16", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text = self.translate("General.incorrect_1")+self.translate("Func_6_1.I12a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("g")
+            self.play(Write(h), run_time=0.5)
+
+            self.wait_until_bookmark("g_0")
+            self.play(Write(h_vals[0]), run_time=0.5)
+
+            self.wait_until_bookmark("g_1")
+            self.play(Write(h_vals[1]), run_time=0.5)
+
+            self.wait_until_bookmark("g_2")
+            self.play(Write(h_vals[2]), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=0.5)
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Write(plot), run_time=1)
+            self.play(FadeOut(arrows), FadeOut(people), run_time=0.5)
+
+        self.wait(4)
+
+#####################################
+#####################################
+#Gardening - how many plants soon
 class Func_6_1_I_1_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$10$, $36$, $12$, $18$"],
+            correctAnswerIndex = 3,
+            questionText = self.translate("Func_6_1.1I14q.question") 
+        )
 
     def construct(self):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
 
-        self.add_title("Exponentielles Wachstum")
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -887,7 +1184,7 @@ class Func_6_1_I_1_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text="""Ich habe einen Garten, <bookmark mark="garden_in"/>den ich mit meiner Lieblingspflanze bepflanzen will. Sie pflanzt sich recht schnell fort, jedes Jahr werden aus einer Pflanze drei, also verdreifacht sie sich jährlich. Ich fange jetzt einfach an, indem <bookmark mark="two_in"/>ich zwei davon einpflanze. Im ersten Jahr gibt es also zwei Pflanzen. Im zweiten Jahr <bookmark mark="second_year"/>verdreifacht sich jede Pflanze, also gibt es sechs Pflanzen. Wie viele Pflanzen werden es im dritten Jahr sein?"""
+            text=self.translate("Func_6_1.I13q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("garden_in")
@@ -932,7 +1229,7 @@ class Func_6_1_I_1_3_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -946,7 +1243,7 @@ class Func_6_1_I_1_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""Wir wissen ja, dass sich jede Pflanze jedes Jahr verdreifacht. Anfangs<bookmark mark="year_0"/> gibt es ja einfach die zwei Pflanzen, die ich eingepflanzt habe. Nach einem Jahr gibt es <bookmark mark="year_1"/>dann sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat. Dann wird sich im Jahr darauf jede dieser<bookmark mark="year_2"/> sechs Pflanzen verdreifachen, sodass nach einem weiteren Jahr insgesamt achtzehn Pflanzen in meinem Garten sind."""
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_1.1I14a.voiceover")
         ) as tracker:
             
             # Showing the initial three plants
@@ -986,15 +1283,7 @@ class Func_6_1_I_1_3_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-
-class Func_6_1_I_1_4_q(SophiaCursorScene):
-
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$f(x)=2\cdot x$", "$g(x)=x^2$", "$h(x)=2^x$"],
-    #         correctAnswerIndex = 2,
-    #         questionText = self.translate("Func_6_1.1I2q.question.how-do-you-pay-the-artist") 
-    #     )
+class Func_6_1_I_1_3_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1002,7 +1291,203 @@ class Func_6_1_I_1_4_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_1.1I14a.voiceover")
+        ) as tracker:
+            
+            # Showing the initial three plants
+            self.wait_until_bookmark("year_0")
+            plants = []
+            for i in range(2):
+                p = plant.copy().move_to(plane.c2p(0, i + 1))
+                plants.append(p)
+            self.add_shift_sound
+            self.play(*[FadeIn(p) for p in plants], run_time=0.5)
+
+            self.wait_until_bookmark("year_1")
+            # After one year, each plant grows another two plants
+            second_year_plants=[]
+            for i, p in enumerate(plants):
+                new_plants = []
+                arrows = []
+                new_ps = [plant.copy().move_to(plane.c2p(1, 2*i + j+1)) for j in range(3)]
+                second_year_plants.extend(new_ps)
+                for new_p in new_ps:
+                    new_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, stroke_width=3)
+                    arrows.append(a)
+                self.play(*[FadeIn(p) for p in new_plants], *[Create(a) for a in arrows], run_time=0.5)
+
+            self.wait_until_bookmark("year_2")
+            third_year_plants = []
+            for i, p in enumerate(second_year_plants):
+                for j in range(3):
+                    new_p = plant.copy().move_to(plane.c2p(2, 3*i + j + 1))
+                    third_year_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=1)
+                    self.play(FadeIn(new_p), Create(a), run_time=0.1)
+                self.wait(0.5)
+            
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Func_6_1_I_1_3_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_1.1I14a.voiceover")
+        ) as tracker:
+            
+            # Showing the initial three plants
+            self.wait_until_bookmark("year_0")
+            plants = []
+            for i in range(2):
+                p = plant.copy().move_to(plane.c2p(0, i + 1))
+                plants.append(p)
+            self.add_shift_sound
+            self.play(*[FadeIn(p) for p in plants], run_time=0.5)
+
+            self.wait_until_bookmark("year_1")
+            # After one year, each plant grows another two plants
+            second_year_plants=[]
+            for i, p in enumerate(plants):
+                new_plants = []
+                arrows = []
+                new_ps = [plant.copy().move_to(plane.c2p(1, 2*i + j+1)) for j in range(3)]
+                second_year_plants.extend(new_ps)
+                for new_p in new_ps:
+                    new_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, stroke_width=3)
+                    arrows.append(a)
+                self.play(*[FadeIn(p) for p in new_plants], *[Create(a) for a in arrows], run_time=0.5)
+
+            self.wait_until_bookmark("year_2")
+            third_year_plants = []
+            for i, p in enumerate(second_year_plants):
+                for j in range(3):
+                    new_p = plant.copy().move_to(plane.c2p(2, 3*i + j + 1))
+                    third_year_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=1)
+                    self.play(FadeIn(new_p), Create(a), run_time=0.1)
+                self.wait(0.5)
+            
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Func_6_1_I_1_3_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        # Setting up the coordinate system
+        cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
+        plane = cords[0]
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_1")+self.translate("Func_6_1.1I14a.voiceover")
+        ) as tracker:
+            
+            # Showing the initial three plants
+            self.wait_until_bookmark("year_0")
+            plants = []
+            for i in range(2):
+                p = plant.copy().move_to(plane.c2p(0, i + 1))
+                plants.append(p)
+            self.add_shift_sound
+            self.play(*[FadeIn(p) for p in plants], run_time=0.5)
+
+            self.wait_until_bookmark("year_1")
+            # After one year, each plant grows another two plants
+            second_year_plants=[]
+            for i, p in enumerate(plants):
+                new_plants = []
+                arrows = []
+                new_ps = [plant.copy().move_to(plane.c2p(1, 2*i + j+1)) for j in range(3)]
+                second_year_plants.extend(new_ps)
+                for new_p in new_ps:
+                    new_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, stroke_width=3)
+                    arrows.append(a)
+                self.play(*[FadeIn(p) for p in new_plants], *[Create(a) for a in arrows], run_time=0.5)
+
+            self.wait_until_bookmark("year_2")
+            third_year_plants = []
+            for i, p in enumerate(second_year_plants):
+                for j in range(3):
+                    new_p = plant.copy().move_to(plane.c2p(2, 3*i + j + 1))
+                    third_year_plants.append(new_p)
+                    a = Arrow(p.get_center(), new_p.get_center(), color=c1t, max_tip_length_to_length_ratio=0.1, max_stroke_width_to_length_ratio=1)
+                    self.play(FadeIn(new_p), Create(a), run_time=0.1)
+                self.wait(0.5)
+            
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+#####################################
+#####################################
+#Gardening - what fct
+class Func_6_1_I_1_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=3\\cdot2^x$", "$g(x)=2^x+3^x$", "$h(x)=2\\cdot3^x$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_6_1.1I4q.question") 
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
 
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -1024,14 +1509,7 @@ class Func_6_1_I_1_4_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark="one_in"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.
-                        Nach einem Jahr sind es dann schon <bookmark mark="six_in"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.
-                        Und nach zwei Jahren sind es <bookmark mark="eighteen_in"/>achtzehn Pflanzen, <split/>und so weiter...
-                        <break time="0.8s"/>
-                        Welche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>
-                        Ist es die Funktion <bookmark mark="f_in"/> f von x gleich drei mal zwei hoch x?<break time="0.4s"/>
-                        Oder ist es die Funktion <bookmark mark="g_in"/> g von x gleich 2 hoch x plus 3 hoch x? <break time="0.4s"/>
-                        Oder ist es die Funktion <bookmark mark="h_in"/> h von x gleich zwei mal drei hoch x?"""
+            text = self.translate("Func_6_1.I14q.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("one_in")
@@ -1055,7 +1533,7 @@ class Func_6_1_I_1_4_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_1_I_1_4_c(SophiaCursorScene):
+class Func_6_1_I_1_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1063,8 +1541,7 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
-
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -1084,16 +1561,7 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """
-                <bookmark mark="g"/>
-                Die richtige Funktion ist g von x gleich 4 hoch x.
-                <bookmark mark="h_0"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>
-                <bookmark mark="h_1"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>
-                <bookmark mark="h_2"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.
-                <break time="0.8s"/>
-                Wenn wir die Funktion <bookmark mark="cords_in"/> in ein Koordinatensystem einzeichnen,<split/>
-                <bookmark mark="plot_in"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion.
-                """
+            text = self.translate("General.incorrect_1")+self.translate("Func_6_1.I14a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1126,8 +1594,7 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
-
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -1147,16 +1614,7 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """
-                <bookmark mark="g"/>
-                Die richtige Funktion ist g von x gleich 4 hoch x.
-                <bookmark mark="h_0"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>
-                <bookmark mark="h_1"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>
-                <bookmark mark="h_2"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.
-                <break time="0.8s"/>
-                Wenn wir die Funktion <bookmark mark="cords_in"/> in ein Koordinatensystem einzeichnen,<split/>
-                <bookmark mark="plot_in"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion.
-                """
+            text = self.translate("General.incorrect_1")+self.translate("Func_6_1.I14a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("g")
@@ -1181,7 +1639,62 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
 
         self.wait(4)
 
+class Func_6_1_I_1_4_c(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_1.title_1"))
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        plant = ImageMobject(assets_folder / "img" / "plant.png")  # Make sure to have a plant image in the specified directory.
+        plant = plant.scale(0.35/plant.get_width())
+
+        cords = self.add_cords([0, 2, 1], [0, 18, 3], x_ticks=[0, 1, 2], y_ticks=[3, 6, 9, 12, 15, 18]).shift(DOWN * 0.6)
+        plane=cords[0]
+        plot = plane.plot(lambda x: 2*3**x, color=BLUE)
+
+        plants_0, plants_1, plants_2 = [plant.copy().move_to(plane.c2p(0, i+1)) for i in range(2)], [plant.copy().move_to(plane.c2p(1, i+1)) for i in range(6)], [plant.copy().move_to(plane.c2p(2, i+1)) for i in range(18)]
+        plants = Group(*plants_0, *plants_1, *plants_2)
+        self.add(plants)
+
+        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text = self.translate("General.correct_1")+self.translate("Func_6_1.I14a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("g")
+            self.play(Write(h), run_time=0.5)
+
+            self.wait_until_bookmark("h_0")
+            self.play(Write(h_vals[0]), run_time=0.5)
+
+            self.wait_until_bookmark("h_1")
+            self.play(Write(h_vals[1]), run_time=0.5)
+
+            self.wait_until_bookmark("h_2")
+            self.play(Write(h_vals[2]), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=0.5)
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Write(plot), run_time=1)
+            self.play(FadeOut(plants), run_time=0.5)
+
+        self.wait(4)
+
+#####################################
+#####################################
+#Chapter Outro - Fundamentals of Exponential functions
 class Func_6_1_I_1_5(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -1190,8 +1703,7 @@ class Func_6_1_I_1_5(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
-
+        self.add_title(self.translate("Func_6_1.title_1"))
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
@@ -1209,15 +1721,7 @@ class Func_6_1_I_1_5(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-            text = """
-                Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark="smile"/> geübt. super!
-                <break time="1.4s"/>
-                <bookmark mark="recap"/>
-                Die Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.
-                Zum Beispiel die Funktion <bookmark mark="f_2"/> f von x gleich zwei hoch x, <split/>
-                oder die Funktion <bookmark mark="f_3"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.
-                In diesen beiden Fällen <bookmark mark="plot"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er.
-                """
+            text = self.translate("Func_6_1.I15.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("smile")
@@ -1243,7 +1747,9 @@ class Func_6_1_I_1_5(SophiaCursorScene):
         self.wait(4)
 
 
-####################################################################################################################################################
+##############################################################################################################################################################################################################################
+
+#####################################
 #####################################
 class Func_6_1_I_2_1(SophiaCursorScene):
 
@@ -1276,16 +1782,7 @@ class Func_6_1_I_2_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.
-                    <break time="0.8s"/>
-                    Der <bookmark mark="plot_1"/>lilane Graph zeigt exponentielles Wachstum. <split/>
-                    Wir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark="f_exp"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.
-                    <break time="0.8s"/>
-                    Der<bookmark mark="plot_2"/>grüne Graph zeigt lineares Wachstum. <split/>
-                    Die Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark="f_lin"/>Form f von x gleich "a" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark="explainers_out"/>
-                    <break time="0.8s"/>
-                    Wir können uns also merken: <bookmark mark="final_exp_1"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark="final_exp_2"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.
-                    """
+            text = self.translate("Func_6_1.1I21.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("plot_1")
@@ -1318,58 +1815,6 @@ class Func_6_1_I_2_1(SophiaCursorScene):
             self.play(Write(explainers_a[1]), run_time=0.5)
 
         self.wait(4)
-
-# class Func_6_1_I_2_1(SophiaCursorScene):
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         self.add_title(self.translate("Func_6_1.1I1q.main.exponential-functions"))
-
-#         cords = self.add_cords([-3, 3, 1], [-8, 8, 2], x_ticks = [-3,-2,-1,1,2,3], y_ticks=[-8,-4,4,8]).shift(DOWN*0.6)
-#         plane=cords[0]
-#         self.add(cords)
-
-#         xo,yo,_ = plane.c2p(0,0)
-#         cursor = AltCursor(idle=True, x=xo, y=yo)
-#         self.add(cursor)
-
-#         plot_1 = plane.plot(lambda x: 2**x, color=BLUE)
-#         plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
-#         plot_3 = plane.plot(lambda x: 0.5**x, color=PURPLE)
-        
-#         e_1, e_2, e_3 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2"), self.translate("Func_6_1.1I21.e3")
-#         explainers = VGroup(Tex(e_1, color=BLUE, font_size=fs4), Tex(e_2, color=GREEN, font_size=fs4), Tex(e_3, color=PURPLE, font_size=fs4)).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(cords, DOWN, buff=0.6)
-
-#         # Action Sequence
-#         with self.voiceover(
-#             text = self.translate("Func_6_1.1I21.voiceover")
-#         ) as tracker:
-            
-#             self.wait_until_bookmark("plot_1")
-#             self.add_pencil_sound(1)
-#             self.play(Write(plot_1), run_time=1)
-#             cursor.idle=False
-#             x,y,_ = explainers[0].get_center()+0.4*DOWN
-#             self.play(Write(explainers[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
-
-#             self.wait_until_bookmark("plot_2")
-#             self.add_pencil_sound(1)
-#             self.play(Write(plot_2), run_time=1)
-#             x,y,_ = explainers[1].get_center()+0.4*DOWN
-#             self.play(Write(explainers[1]), CursorMoveTo(cursor,x,y), run_time=0.5)
-
-#             self.wait_until_bookmark("plot_3")
-#             self.add_pencil_sound(1)
-#             self.play(Write(plot_3), run_time=1)
-#             x,y,_ = explainers[2].get_center()+0.4*DOWN
-#             self.play(Write(explainers[2]), CursorMoveTo(cursor,x,y), run_time=0.5)
-#             cursor.idle=True
-
-#         self.wait(4)
 
 
 #####################################
@@ -1669,6 +2114,7 @@ class Func_6_1_I_4(SophiaCursorScene):
 
         self.wait(4)
 
+
 #####################################
 #####################################
 class Func_6_1_I_5_q(SophiaCursorScene):
@@ -1740,6 +2186,7 @@ class Func_6_1_I_5_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_1_I_5_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -1798,8 +2245,6 @@ class Func_6_1_I_5_a(SophiaCursorScene):
             self.play(Write(exponential_growth))
         
         self.wait(4)
-
-
 
 class Func_6_1_I_5_b(SophiaCursorScene):
 
@@ -2256,7 +2701,8 @@ class Func_6_1_I_6_c(SophiaCursorScene):
         self.wait(4)
 
 
-
+#####################################
+#####################################
 class Func_6_1_I_6_1(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -2285,16 +2731,7 @@ class Func_6_1_I_6_1(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text = """
-                    Toll, jetzt <bookmark mark="praise"/>hast du nochmal gesehen, wo die Unterschiede zwischen linearem und exponentiellen Wachstum liegen. Zur Wiederholung:<break time="0.8s"/>
-                    Exponentielles Wachstum <bookmark mark="explain_1"/>ist multiplikativ, das heißt mit jeder Erhöhung von x multiplizieren wir den Funktionswert mit einem Faktor.<split/>
-                    <bookmark mark="plot_1"/>Der lilane Graph zeigt exponentielles Wachstum. <split/> Wir erkennen, wie die Funktion steigt, und immer steiler wird.
-                    <break time="0.8s"/>
-                    Lineares Wachstum <bookmark mark="explain_2"/>ist additiv,<split/> das heisst mit jeder Erhöhung von x addieren wir einen Wert zur Funktion.
-                    Der<bookmark mark="plot_2"/>grüne Graph zeigt lineares Wachstum. <split/>Wir sehen, dass die Funktion mit konstanter Geschwindigkeit wächst.
-                    <break time="0.8s"/>
-                    Wir können uns also merken: <bookmark mark="final_exp_1"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark="final_exp_2"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.
-                    """
+            text = self.translate("Func_6_1.1I61.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("praise")
@@ -2317,6 +2754,7 @@ class Func_6_1_I_6_1(SophiaCursorScene):
 
         self.wait(4)
 
+#Maybe throw in this exercise before 6_1?
 ####################################################################################################################################################
 #####################################
 class Func_6_1_I_7_q(SophiaCursorScene):
@@ -2334,7 +2772,6 @@ class Func_6_1_I_7_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        print(ast.literal_eval(self.translate("Func_6_1.I7.q.answer-options")), "TESTEVAL")
 
         title = self.add_title(self.translate("Func_6_1.I5.main.title"))
 
