@@ -1795,7 +1795,8 @@
       "x-minutes_2": "beschreibt die Funktion?"
     },
     "I1": {
-      "title": "Exponentialfunktion"
+      "title": "Exponentialfunktion",
+      "voiceover": "Der Term einer Exponentialfunktion lautet ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nUnd wir haben uns eben immer Werte angeschaut, <bookmark mark=\"a\"/>wo a größer als eins war, zum Beispiel die <bookmark mark=\"g\"/>Funktion g von x gleich zwei hoch x oder <bookmark mark=\"h\"/>die Funktion h von x gleich drei hoch x.\n<break time=\"0.4s\"/>\nWas ist jetzt aber,<bookmark mark=\"qmark\"/> wenn wir uns Werte anschauen, <bookmark mark=\"a_l1\"/>wo a zwischen Null und Eins liegt?<split/><bookmark mark=\"switch\"/>\nMüsste die Funktion <bookmark mark=\"decrease\"/>dann nicht abnehmen?<break time=\"0.6s\"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?\n<split/>Das sehen wir uns jetzt genauer an."
     },
     "I2": {
       "a": {
@@ -1848,6 +1849,25 @@
     },
     "I2X": {
       "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
+    },
+    "I21": {
+      "q": {
+        "voiceover": "Ok, <bookmark mark=\"f\"/>betrachten wir jetzt die Exponentialfunktion f von x gleich ein halb hoch x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>Wie sieht der Graph dieser Funktion aus?<break time=\"0.6s\"/>\nGeht er <bookmark mark=\"plot_1\"/>langsam nach unten,<split/> und wird dann immer steiler, wie der blaue Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_2\"/>steil nach unten,<split/> und wird dann immer flacher, wie der grüne Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_3\"/> mit konstanter Geschwindigkeit nach unten, <split/> wie der pinke Graph?",
+        "question-text": "Wie sieht der Graph der Funktion $f(x)=(\\frac12)^x$ aus?",
+        "answer-options": "[\"Wie die blaue Funktion\", \"Wie die grüne Funktion\", \"Wie die pinke Funktion\", ]"
+      },
+      "a": {
+        "voiceover": "Für x gleich null ist f ja <bookmark mark=\"x_0\"/>gleich ein halb hoch null, also gleich eins.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_1\"/>Null auf eins gehen, erhalten wir nicht mehr eins, sondern ein halb mal eins, also ein halb. <split/>\nAlso ist f um ein halb gesunken.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_2\"/>eins auf zwei gehen, erhalten wir nicht mehr ein halb, sondern ein halb mal ein halb, also ein viertel. <split/>\nAlso ist f um ein viertel gesunken.<break time=\"0.6s\"/>\nWenn wir von <bookmark mark=\"x_3\"/>zwei auf drei gehen, multiplizieren wir ein viertel mit ein halb, verlieren also ein achtel, und so weiter...<split/><bookmark mark=\"reset_cursor\"/>\nDu siehst also, dass f sinkt, aber da wir immer kleinere Werte mit ein halb multiplizieren, sinkt f auch immer langsamer. Also muss <bookmark mark=\"solution\"/> der grüne Graph richtig sein."
+      }
+    },
+    "I22": {
+      "q": {
+        "voiceover": "Ich habe <bookmark mark=\"pool_in\"/>einen Pool, in dem sind tausend Liter wasser.<break time=\"0.6s\"/>\nAllerdings ist es so heiß, <split/>dass jeden Tag ein Achtel des Wassers verdunstet.<break time=\"0.6s\"/>\nWelche Funktion beschreibt die Menge an Wasser im Pool<split/> in Abhängigkeit von der Zeit in Tagen?<break time=\"0.4s\"/>\nIst es<bookmark mark=\"f\"/> die Funktion \"f\" von x gleich tausend mal ein achtel hoch x?<break time=\"0.4s\"/>\nOder <bookmark mark=\"g\"/>die Funktion \"g\" von x gleich eintausend mal Klammer auf eins minus ein achtel x Klammer zu?<break time=\"0.4s\"/>\nOder <bookmark mark=\"h\"/>die Funktion \"h\" von x gleich eintausend mal sieben achtel hoch x?",
+        "question-text": "Welche Funktion beschreibt die Menge an Wasser im Pool in Abhängigkeit von der Zeit in Tagen?"
+      },
+      "a": {
+        "voiceover": "Der Pool hat tausend Liter, und jeden Tag verdunstet ein Achtel.<break time=\"0.6s\"/>\nDas heißt, dass nach jedem Tag noch sieben achtel von dem Wasser des Vortages übrig sind, also multiplizieren wir den Wert des Vortages immer mit sieben achteln. <split/>Also ist<bookmark mark=\"correct\"/> die Funktion h von x gleich eintausend mal sieben achtel hoch x die richtige."
+      }
     }
   },
   "Func_6_2_P_1_a": {

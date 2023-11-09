@@ -1792,7 +1792,8 @@
       "x-minutes_2": "describes the function?"
     },
     "I1": {
-      "title": "Exponential Function"
+      "title": "Exponential Function",
+      "voiceover": "The term of an exponential function is indeed <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nAnd we have been looking at values, <bookmark mark=\"a\"/>where a is greater than one, for example, the <bookmark mark=\"g\"/>function g of x equals two to the power of x or <bookmark mark=\"h\"/>the function h of x equals three to the power of x.\n<break time=\"0.4s\"/>\nBut what if,<bookmark mark=\"qmark\"/> we look at values, <bookmark mark=\"a_l1\"/>where a is between zero and one?<split/><bookmark mark=\"switch\"/>\nShouldn't the function <bookmark mark=\"decrease\"/>then decrease?<break time=\"0.6s\"/> After all, we are always multiplying the function by a value less than 1?\n<split/>Let's take a closer look at this now.\n"
     },
     "I2": {
       "a": {
@@ -1845,6 +1846,25 @@
     },
     "I2X": {
       "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe plot of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
+    },
+    "I21": {
+      "q": {
+        "voiceover": "Ok, <bookmark mark=\"f\"/> let's now consider the exponential function f of x equals one half to the power of x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>What does the graph of this function look like?<break time=\"0.6s\"/>\nDoes it go <bookmark mark=\"plot_1\"/> slowly downwards,<split/> and then becomes steeper, like the blue graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_2\"/> steeply downwards,<split/> and then becomes flatter, like the green graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_3\"/> downward at a constant speed, <split/> like the pink graph?",
+        "question-text": "What does the graph of the function $f(x)=(\\frac12)^x$ look like?",
+        "answer-options": "[\"Like the blue function\", \"Like the green function\", \"Like the pink function\"]"
+      },
+      "a": {
+        "voiceover": "For x equals zero, f is <bookmark mark=\"x_0\"/> equal to one half to the power of zero, so it's equal to one.<break time=\"0.6s\"/>\nThen, as we go from <bookmark mark=\"x_1\"/> zero to one, we don't get one anymore, but half of one, so half. <split/>\nSo, f has decreased by a half.<break time=\"0.6s\"/>\nThen, as we move from <bookmark mark=\"x_2\"/> one to two, we don't get a half anymore, but a half times a half, so a quarter. <split/>\nSo, f has decreased by a quarter.<break time=\"0.6s\"/>\nAs we go from <bookmark mark=\"x_3\"/> two to three, we multiply a quarter by a half, thus losing an eighth, and so on...<split/><bookmark mark=\"reset_cursor\"/>\nSo, you see, f decreases, but since we are always multiplying by smaller values of half, f decreases more slowly. Therefore, <bookmark mark=\"solution\"/> the green graph must be correct."
+      }
+    },
+    "I22": {
+      "q": {
+        "voiceover": "I have <bookmark mark=\"pool_in\"/> a pool with a thousand liters of water.<break time=\"0.6s\"/>\nHowever, it's so hot <split/> that each day an eighth of the water evaporates.<break time=\"0.6s\"/>\nWhich function describes the amount of water in the pool <split/> as a function of time in days?<break time=\"0.4s\"/>\nIs it <bookmark mark=\"f\"/> the function \"f\" of x equals a thousand times one eighth to the power of x?<break time=\"0.4s\"/>\nOr <bookmark mark=\"g\"/> the function \"g\" of x equals a thousand times (one minus one eighth x)?<break time=\"0.4s\"/>\nOr <bookmark mark=\"h\"/> the function \"h\" of x equals a thousand times seven eighths to the power of x?",
+        "question-text": "Which function describes the amount of water in the pool as a function of time in days?"
+      },
+      "a": {
+        "voiceover": "The pool holds a thousand liters, and every day an eighth evaporates.<break time=\"0.6s\"/>\nThis means that after each day, seven eighths of the previous day's water remains, so we always multiply the previous day's value by seven eighths. <split/>Therefore, <bookmark mark=\"correct\"/> the function h of x equals a thousand times seven eighths to the power of x is the correct one."
+      }
     }
   },
   "Func_6_2_P_1_a": {
