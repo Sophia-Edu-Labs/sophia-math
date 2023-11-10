@@ -1586,7 +1586,7 @@ class Func_6_1_I_1_4_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_1_I_1_4_c(SophiaCursorScene):
+class Func_6_1_I_1_4_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -3128,11 +3128,37 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_1_I_1_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_b),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_d),
     PagePrototypeVideo.from_scene(Func_6_1_I_2_q),
     PagePrototypeQuestion.from_scene(Func_6_1_I_2_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_2_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_2_b),
     PagePrototypeVideo.from_scene(Func_6_1_I_2_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_1_1_q),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_1_a),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_1_b),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_1_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_1_d),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_1_2_q),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_2_a),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_2_b),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_2_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_1_3_q),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_3_a),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_3_b),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_3_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_3_d),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_1_I_1_4_q),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_4_a),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_4_b),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_4_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_1_5),
+##########################################################################
     PagePrototypeVideo.from_scene(Func_6_1_I_2_1),
     PagePrototypeVideo.from_scene(Func_6_1_I_3),
     PagePrototypeVideo.from_scene(Func_6_1_I_4),
@@ -3149,5 +3175,7 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_1_I_7_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_a),
     PagePrototypeVideo.from_scene(Func_6_1_I_7_b),
-    PagePrototypeVideo.from_scene(Func_6_1_I_7_c)
+    PagePrototypeVideo.from_scene(Func_6_1_I_7_c),
+    PagePrototypeVideo.from_scene(Func_6_1_I_6_1)
+##########################################################################
 ]

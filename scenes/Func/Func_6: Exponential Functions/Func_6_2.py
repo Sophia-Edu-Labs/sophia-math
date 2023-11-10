@@ -1348,6 +1348,8 @@ class Func_6_2_I_3(SophiaCursorScene):
 
 
 
+
+
 #####################################
 #####################################
 ######## Practice Part ##############
@@ -2253,6 +2255,18 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_I_2_b),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_c),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_2_1_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_1_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_1_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_1_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_2_2_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_2_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_2_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_2_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_2_X),
+##########################################################################
     PagePrototypeVideo.from_scene(Func_6_2_I_3),
     PagePrototypeVideo.from_scene(Func_6_2_P_1_q),
     PagePrototypeQuestion.from_scene(Func_6_2_P_1_q),
