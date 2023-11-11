@@ -1,12 +1,7 @@
 # Import necessary libraries and modules
 from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene, SophiaQuestionInfo,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, Bubble, CursorMarkAxis)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -1136,6 +1131,8 @@ class Func_1_1_I_3_3(SophiaCursorScene):
 
 
 ################################################################################################
+#####################################
+#####################################
 class Func_1_1_I_4_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1152,34 +1149,76 @@ class Func_1_1_I_4_1_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Create the coordinate system
-        cords = self.add_cords([-2,2,1], [-2, 2, 1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        cords = self.add_cords([0,4,1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16]).shift(DOWN)
         plane = cords[0]
+
+        xvals = [str(i+1) for i in range(4)]
+        yvals = ["12", "16", "10", "16"]
+
+        xlabel = self.translate("Func_1_1.1I41q.xlabel")
+        ylabel = self.translate("Func_1_1.1I41q.ylabel")
 
         # Add title to the scene
         self.add_title(self.translate("Func_1_1.1I3.main.title"))
 
-        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thumbs.png")
-        giraffe = giraffe.scale(4/giraffe.get_width()).move_to([-5, 0, 0])
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=0.35)
 
-        # Create and plot piecewise linear function
-        f = lambda x: x**3-1.5*x
-        func_plotted = plane.plot(f, color=GREEN_D, x_range=[-1.65,1.65,0.01])
-        func_plotted_wrong = plane.plot(f, color=RED, x_range=[-1.65,1.65,0.01]).rotate(90 * DEGREES)
+        rows = t.get_columns()
+        t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines(), rows[0], rows[1])
 
-        # Initialize a cursor
-        xo, yo, _ = plane.c2p(0,0)
-        cursor = AltCursor(idle=True, x=xo, y=yo)
-        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+        cords_blue = [[1,16], [2,10], [3,16], [4,12]]
+        cords_green = [[1,12], [2,16], [3,10], [4,16]]
+        cords_pink = [[1,10], [2,16], [3,12], [4,16]]
 
-        xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
-        func_def = Tex(self.translate("Func_1_1.1I3.main.func_def"), color=c3t, font_size=fs3, tex_environment="flushleft").next_to(xToY, DOWN, buff=.7)
+        circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
+        circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])
+        circs_pink = VGroup(*[Dot(plane.c2p(*cords_pink[i]), color=PINK) for i in range(4)])
+
 
         # Action Sequence
         with self.voiceover(
-                text="""Test"""
+                text="""
+                    So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark="table_in"/>
+                    Say I have 12 friends on the first day. <bookmark mark="day_2"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.
+                    <bookmark mark="day_3"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.
+                    <bookmark mark="day_4"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.
+                    <bookmark mark="cords_in"/>Let's draw a coordinate system and plot the points.
+                    What color of points correspond to the number of friends I have on the first day?
+                    <break time="1s"/>
+                    Is it <bookmark mark="blue"/>the blue points?
+                    <break time="0.4s"/>
+                    <bookmark mark="green"/>The green points?
+                    <break time="0.4s"/>
+                    Or is it <bookmark mark="pink"/>the pink points?
+                    """
         ) as tracker:
             
-            self.wait()
+            self.wait_until_bookmark("table_in")
+            self.play(Write(t_structure))
+
+            self.wait_until_bookmark("day_2")
+            self.play(Write(rows[2]))
+
+            self.wait_until_bookmark("day_3")
+            self.play(Write(rows[3]))
+
+            self.wait_until_bookmark("day_4")
+            self.play(Write(rows[4]))
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords))
+
+            self.wait_until_bookmark("blue")
+            self.play(Write(circs_blue))
+
+            self.wait_until_bookmark("green")
+            self.play(Write(circs_green))
+
+            self.wait_until_bookmark("pink")
+            self.play(Write(circs_pink))
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)

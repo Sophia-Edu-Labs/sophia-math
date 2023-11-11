@@ -25,7 +25,11 @@ class LinAlg_1_4_I_1(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
 
-        title = self.add_title("Lineare Abhängigkeit")
+
+        title = self.add_title(self.translate("LinAlg.14I1.title"))
+
+        indep = self.translate("LinAlg.14I1.indep")
+        dep = self.translate("LinAlg.14I1.dep")
 
         vec_1 = MathTex("\Bigg\{","\\begin{pmatrix} 1 \\\\ 0 \\\\ 0  \\end{pmatrix}","\\,,\\,"," \\begin{pmatrix} 0 \\\\ 1 \\\\ 0  \\end{pmatrix}","\Bigg\}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6).shift(0.5*RIGHT)
         copy_1, copy_2 = vec_1[1].copy(), vec_1[3].copy()
@@ -35,20 +39,15 @@ class LinAlg_1_4_I_1(SophiaCursorScene):
 
         vec_sum = MathTex("\\begin{pmatrix} 1 \\\\ 0 \\\\ 0  \\end{pmatrix}","+"," \\begin{pmatrix} 0 \\\\ 1 \\\\ 0  \\end{pmatrix}", color=c1t, font_size=fs2).next_to(vec_1, DOWN, buff=.4)
         eq_vec_sum = MathTex("=", color=c1t, font_size=fs2).next_to(vec_sum, LEFT, buff=0.1)
-        lin_dep = MathTex("\\text{Linear abhängig}", color=RED, font_size=fs2).next_to(vec_sum, DOWN, buff=.6).set_x(0)
-        lin_indep = MathTex("\\text{Linear unabhängig}", color=RED, font_size=fs2).next_to(vec_sum, DOWN, buff=.6).set_x(0)
+        lin_dep = MathTex(f"\\text{{{dep}}}", color=RED, font_size=fs2).next_to(vec_sum, DOWN, buff=.6).set_x(0)
+        lin_indep = MathTex(f"\\text{{{indep}}}", color=RED, font_size=fs2).next_to(vec_sum, DOWN, buff=.6).set_x(0)
 
         vec_new_3 = MathTex("\\begin{pmatrix} ? \\\\ ? \\\\ ?  \\end{pmatrix}", color=c1t, font_size=fs2).next_to(vec_1, DOWN, buff=.6).next_to(vec_1[1], DOWN, buff=.4)
         vec_new_4 = MathTex("\\begin{pmatrix} 0 \\\\ 0 \\\\ 1  \\end{pmatrix}", color=c1t, font_size=fs2).next_to(vec_new_3, DOWN, buff=.6).move_to(vec_new_3)
         
         # Action Sequence
         with self.voiceover(
-                text=""" Betrachte die zwei<bookmark mark="vec_1"/> Vektoren 1 0 0 <bookmark mark="vec_2"/><break time="0.6s"/>und 0 1 0.<break time="0.8s"/>
-                        Nehmen wir nun einen<bookmark mark="vec_new_in"/> dritten Vektor hinzu, und fragen uns, ob wir diesen Vektor als Linearkombination der beiden anderen Vektoren darstellen können.<break time="0.6s"/>
-                        Betrachten wir zum Beispiel den <bookmark mark="vec_new_transform"/>Vektor 1 1 0. <split/>Dieser <bookmark mark="shift_left"/>lässt sich als Linearkombination der beiden anderen Vektoren darstellen, nämlich als <bookmark mark="sum_1"/>ein mal der erste Vektor plus <bookmark mark="sum_2"/>ein mal der zweite Vektor.
-                        In diesem Fall sagt man,<split/> <bookmark mark="dep"/>dass die drei Vektoren linear abhängig <bookmark mark="cleanup"/>sind.<break time="2s"/> So, jetzt zurück zu den beiden Ausgangsvektoren, und nehmen wir ein anderes Beispiel.<split/>
-                        Betrachten wir also den Vektor <bookmark mark="vec_new_in_2"/>0 0 eins.<break time="0.6s"/> Man kann einfach sehen, dass sich dieser Vektor nicht als Linearkombination der beiden anderen Vektoren darstellen lässt. In diesem Fall sagt man, dass die drei Vektoren <bookmark mark="indep"/>linear unabhängig sind.
-                """
+                text=self.translate("LinAlg.14I1.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("vec_1")

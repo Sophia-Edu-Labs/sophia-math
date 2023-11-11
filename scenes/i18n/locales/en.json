@@ -2561,5 +2561,13 @@
     "n_times": "n times"
   },
   "degree": "Degree",
-  "test-key": "[“1\", \"2\", \"3\"]"
+  "test-key": "[“1\", \"2\", \"3\"]",
+  "LinAlg": {
+    "14I1": {
+      "voiceover": "Consider the two <bookmark mark=\"vec_1\"/> vectors 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>and 0 1 0.<break time=\"0.8s\"/>\nNow let's add a <bookmark mark=\"vec_new_in\"/> third vector and ask ourselves if we can represent this vector as a linear combination of the other two vectors.<break time=\"0.6s\"/>\nFor example, consider the <bookmark mark=\"vec_new_transform\"/>vector 1 1 0. <split/>This <bookmark mark=\"shift_left\"/> can be represented as a linear combination of the other two vectors, namely as <bookmark mark=\"sum_1\"/> one times the first vector plus <bookmark mark=\"sum_2\"/> one times the second vector.\nIn this case, it is said <split/> <bookmark mark=\"dep\"/>that the three vectors are linearly dependent <bookmark mark=\"cleanup\"/>.<break time=\"2s\"/> Now, back to the two original vectors, and let's take another example.<split/>\nSo, consider the vector <bookmark mark=\"vec_new_in_2\"/>0 0 1.<break time=\"0.6s\"/> It's easy to see that this vector cannot be represented as a linear combination of the other two vectors. In this case, it is said that the three vectors <bookmark mark=\"indep\"/>are linearly independent.",
+      "title": "Linear Dependence",
+      "indep": "Linearly independent",
+      "dep": "Linearly dependent"
+    }
+  }
 }

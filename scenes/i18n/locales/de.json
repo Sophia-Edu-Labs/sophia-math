@@ -2565,5 +2565,13 @@
     "n_times": "n mal"
   },
   "degree": "Grad",
-  "test-key": "[\"1\", \"2\", \"3\"]"
+  "test-key": "[\"1\", \"2\", \"3\"]",
+  "LinAlg": {
+    "14I1": {
+      "voiceover": "Betrachte die zwei<bookmark mark=\"vec_1\"/> Vektoren 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>und 0 1 0.<break time=\"0.8s\"/>\nNehmen wir nun einen<bookmark mark=\"vec_new_in\"/> dritten Vektor hinzu, und fragen uns, ob wir diesen Vektor als Linearkombination der beiden anderen Vektoren darstellen können.<break time=\"0.6s\"/>\nBetrachten wir zum Beispiel den <bookmark mark=\"vec_new_transform\"/>Vektor 1 1 0. <split/>Dieser <bookmark mark=\"shift_left\"/>lässt sich als Linearkombination der beiden anderen Vektoren darstellen, nämlich als <bookmark mark=\"sum_1\"/>ein mal der erste Vektor plus <bookmark mark=\"sum_2\"/>ein mal der zweite Vektor.\nIn diesem Fall sagt man,<split/> <bookmark mark=\"dep\"/>dass die drei Vektoren linear abhängig <bookmark mark=\"cleanup\"/>sind.<break time=\"2s\"/> So, jetzt zurück zu den beiden Ausgangsvektoren, und nehmen wir ein anderes Beispiel.<split/>\nBetrachten wir also den Vektor <bookmark mark=\"vec_new_in_2\"/>0 0 eins.<break time=\"0.6s\"/> Man kann einfach sehen, dass sich dieser Vektor nicht als Linearkombination der beiden anderen Vektoren darstellen lässt. In diesem Fall sagt man, dass die drei Vektoren <bookmark mark=\"indep\"/>linear unabhängig sind.",
+      "title": "Lineare Abhängigkeit",
+      "indep": "Linear unabhängig",
+      "dep": "Linear abhängig"
+    }
+  }
 }
