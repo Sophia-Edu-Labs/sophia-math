@@ -14,6 +14,7 @@ import re
 from manim_voiceover import VoiceoverScene
 from sophialib.constants.directories import SCENES_ASSETS_FOLDER
 from sophialib.sounds.dynamic_sounds import StretchedAudioFileConfig, create_combined_temporary_stretched_audio_file_from_configs, create_temporary_stretched_audio_file, create_temporary_stretched_audio_file_from_config
+from sophialib.styles.OpenAIVoiceoverService import OpenAIVoiceoverService
 from sophialib.styles.styleconstants import *
 from sophialib.styles.PollyVoiceoverService import AWSPollyService
 from sophialib.styles.ElevenlabsVoiceoverService import ElevenlabsVoiceoverService
@@ -161,6 +162,8 @@ class SophiaScene(VoiceoverScene):
         #if the environmentvariable SPEECH_SERVICE is set, always use this service, otherwise the defeault specified below
         if os.environ.get('SPEECH_SERVICE') == 'aws':
             speechs = AWSPollyService()
+        elif os.environ.get('SPEECH_SERVICE') == 'openai':
+            speechs = OpenAIVoiceoverService()
         elif os.environ.get('SPEECH_SERVICE') == 'elevenlabs':
             speechs = ElevenlabsVoiceoverService(should_use_history=True)
         else:
