@@ -2148,8 +2148,7 @@ class Func_6_1_I_5_q(SophiaCursorScene):
         cords = self.add_cords([1,6,1], [0,64,8], x_ticks=[1,2,3,4,5], y_ticks=[16,32, 48])
         plane = cords[0]
         
-
-        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True)
 
         self.add(cursor)
 

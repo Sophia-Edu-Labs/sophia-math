@@ -112,6 +112,32 @@
       "first_bit": "Das ist nicht korrekt. Die Funktion {self.colors[self.idx_selected]} ist nicht die richtige.",
       "first_bit_correct": "Das stimmt, gut gemacht!",
       "voiceover": "{self.first_bit}\nDu hast also die {self.colors[self.idx_selected]} Funktion <bookmark mark=\"Func\"/> ausgewählt.\nUm zu überprüfen, ob das stimmt, tragen wir nacheinander die Werte aus der Tabelle in das Koordinatensystem ein.\nIn diesem Beispiel stellt die<bookmark mark=\"xaxis\"/> x-Achse {self.Textlabels[0]}dar und die <bookmark mark=\"yaxis\"/>üpsilon-Achse stellt {self.Textlabels[1]} dar.\n<bookmark mark=\"val1\"/>\n<break time=\"0.7s\"/>\n<split/>\nDer erste Wert hat {self.xvals[0]} als x-Wert und {self.yvals[self.correcty][0]} als üpsilon-Wert.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val2\"/>\nDer zweite Wert hat {self.xvals[1]} als x-Wert und {self.yvals[self.correcty][1]} als üpsilon-Wert.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val3\"/>\nDer dritte Wert hat die Koordinaten {self.xvals[2]} und {self.yvals[self.correcty][2]}.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val4\"/>\n<break time=\"0.7s\"/>\nDer vierte Wert hat die Koordinaten {self.xvals[3]} und {self.yvals[self.correcty][3]}.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val5\"/>\nUnd der fünfte Wert hat die Koordinaten {self.xvals[4]} und {self.yvals[self.correcty][4]}.\nWenn wir diese Werte verbinden, <bookmark mark=\"TrueFunc\"/>können wir sehen, dass die {self.colors[self.correcty]} Funktion\ndie richtige ist."
+    },
+    "1I31q": {
+      "voiceover": "Jetzt zur Übung: Welcher dieser Darstellungen ist eine Funktion: <bookmark mark=\"blue\"/> Die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>die grüne, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>oder die Pinke?",
+      "question-text": "Welche dieser Linien beschreibt eine Funktion?",
+      "question-greenline": "Die grüne Linie",
+      "question-blueline": "Die blaue Linie",
+      "question-pinkline": "Die pinke Linie"
+    },
+    "1I31a": {
+      "voiceover": "Die <bookmark mark=\"green\"/>grüne Linie weist jedem x-Wert einen üpsilon-Wert zu, es handelt sich also um eine Funktion.<break time=\"1s\"/>\nDie blaue Linie weist einigen x-Werten zwei üpsilon-Werte zu, <bookmark mark=\"neg_ex\"/>zum Beispiel bei x gleich minus eins. \nUnd die rosa Linie ordnet einem x-wert alle üpsilon-werte zu, es handelt sich also auch nicht um eine Funktion. Denn eine Funktion weist jedem x-Wert einen üpsilon-Wert zu."
+    },
+    "1I32q": {
+      "voiceover": "Schau jetzt diese Darstellungen an: Welche davon ist KEINE Funktion? <bookmark mark=\"orange\"/> Die orangene, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>oder die grüne?",
+      "question-orangeline": "Die orangene Linie",
+      "question-blueline": "Die blaue Linie",
+      "question-greenline": "Die grüne Linie",
+      "question-text": "Welche dieser Linien ist KEINE Funktion?",
+      "question-noline": "Alle Linien gehören zu einer Funktion"
+    },
+    "1I32a": {
+      "voiceover": "Jede der Darstellungen weist jedem x-Wert genau einen üpsilon-Wert zu, auch wenn einige von ihnen ungewöhnlich aussehen, wie zum Beispiel die grüne Darstellung. <split/>\nDa sie aber alle jedem x-Wert einen üpsilon-Wert zuweisen, handelt es sich bei allen um Funktionen."
+    },
+    "1I33": {
+      "main": {
+        "voiceover": "So, jetzt wissen wir, was Funktionen sind:<break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, <split/>die jedem x-Wert <bookmark mark=\"map1\"/> genau EINEN <bookmark mark=\"map2\"/> üpsilon-Wert zuweist.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nDie grüne Darstellung ist also ein Beispiel für eine Funktion,<split/>\nweil sie <bookmark mark=\"orangeX\"/> jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen üpsilon-wert zuweist.<break time=\"0.5s\"/>\nDas ist auch der Grund, warum <bookmark mark=\"RedFuncIn\"/>die rote Darstellung keine Funktion ist.\nSie weist einigen x-Werten,<split/> zum Beispiel dem Wert x gleich Null, zwei üpsilon-Werte zu.<break time=\"0.5s\"/>\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen üpsilon-Wert zuordnet.\n<break time=\"1s\"/>\nSo, merk dir das auf jeden Fall gut und dann kann ich nur sagen: <bookmark mark=\"giraffe_in\"/>Toll gemacht! Du hast jetzt den ersten Schritt getan, Funktionen zu verstehen, und die sind super wichtig in Mathe, also hast du einen großen Schritt gemacht, Mathe zu verstehen!"
+      }
     }
   },
   "Func_1_2": {
@@ -1726,7 +1752,7 @@
     },
     "1I11q": {
       "main": {
-        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/>hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
+        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/> hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
       }
     },
     "1I11a": {

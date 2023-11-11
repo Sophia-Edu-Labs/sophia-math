@@ -112,6 +112,32 @@
       "first_bit": "f\"That's not correct. The {self.colors[self.idx_selected]} function is not the correct one.\"",
       "first_bit_correct": "That's correct, great job",
       "voiceover": "{self.first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{self.colors[self.idx_selected]} function.<split/>\n                To check if this is correct, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n<break time=\"0.7s\"/>\n                <bookmark mark=\"val1\"/>\n<split/>\n                The first value has {self.xvals[0]} as its x-value and {self.yvals[self.correcty][0]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {self.xvals[1]} as its x-value and {self.yvals[self.correcty][1]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {self.xvals[2]} and {self.yvals[self.correcty][2]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {self.xvals[3]} and {self.yvals[self.correcty][3]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {self.xvals[4]} and {self.yvals[self.correcty][4]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {self.colors[self.correcty]} function\n                is the correct one."
+    },
+    "1I31q": {
+      "voiceover": "Now, let's practice: Which of the following lines is a function:<bookmark mark=\"blue\"/> The blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>the green one, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>or the pink one?",
+      "question-text": "Which of these lines describes a function?",
+      "question-greenline": "The green line",
+      "question-blueline": "The blue line",
+      "question-pinkline": "The pink line"
+    },
+    "1I31a": {
+      "voiceover": "The <bookmark mark=\"green\"/>green line assigns one y value to each x-value, so it's a function.<break time=\"1s\"/>\nThe blue line assigns two y values to some x-values, for <bookmark mark=\"neg_ex\"/>example to x equals negative one. And the pink line assigns all y values to one x-value, so it's not a function either, because a function assigns one y value to each x value."
+    },
+    "1I32q": {
+      "voiceover": "Now look at these three lines, which of them is NOT a function?<bookmark mark=\"orange\"/> The orange one, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>the blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>or the green one?",
+      "question-orangeline": "The orange line",
+      "question-blueline": "The blue line",
+      "question-greenline": "The green line",
+      "question-noline": "They all describe a function",
+      "question-text": "Which of these lines does NOT describe a function?"
+    },
+    "1I32a": {
+      "voiceover": "Each of the lines assigns exactly one y value to each x-value, even though some of them have unusual shapes, like the green one. <split/>But since they all assign one y value to each x-value, they're all functions."
+    },
+    "1I33": {
+      "main": {
+        "voiceover": "Now we know what functions are: <break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nA function is a mapping, <split/>that assigns exactly one <bookmark mark=\"map2\"/> upsilon value to each x-value <bookmark mark=\"map1\"/>.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nSo, the green representation is an example of a function, <split/>\nbecause it assigns <bookmark mark=\"orangeY\"/> exactly one upsilon value to each x-value <bookmark mark=\"orangeX\"/>.<break time=\"0.5s\"/>\nThis is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\nIt assigns two upsilon values to some x-values, <split/> for example, the value x equals zero.<break time=\"0.5s\"/>\nSo we remember: <bookmark mark=\"TrueFct\"/>\nA function is a mapping that assigns exactly one upsilon value to each x-value.<break time=\"1s\"/>\nDefinitely remember this well, and then I can only say: <bookmark mark=\"giraffe_in\"/>Well done! You've now taken the first step in understanding functions, and functions are super important in math, so you've made a big step in understanding math!"
+      }
     }
   },
   "Func_1_2": {
@@ -1723,7 +1749,7 @@
     },
     "1I11q": {
       "main": {
-        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour?"
+        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, <bookmark mark=\"spread\"/>four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour?"
       }
     },
     "1I11a": {
@@ -1769,7 +1795,7 @@
       "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals a raised to x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
     },
     "1I61": {
-      "voiceover": "Great, now you've seen again the differences between linear and exponential growth. To recap:<break time=\"0.8s\"/>\nExponential growth <bookmark mark=\"explain_1\"/>is multiplicative, which means with each increase of x we multiply the function value by a factor.<split/>\n<bookmark mark=\"plot_1\"/>The purple graph shows exponential growth. <split/> We can see how the function rises and becomes increasingly steeper.\n<break time=\"0.8s\"/>\nLinear growth <bookmark mark=\"explain_2\"/>is additive,<split/> meaning with each increase of x we add a value to the function.\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>We see that the function grows at a constant rate.\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
+      "voiceover": "Great, <bookmark mark=\"praise\"/>now you've seen again the differences between linear and exponential growth. To recap:<break time=\"0.8s\"/>\nExponential growth <bookmark mark=\"explain_1\"/>is multiplicative, which means with each increase of x we multiply the function value by a factor.<split/>\n<bookmark mark=\"plot_1\"/>The purple graph shows exponential growth. <split/> We can see how the function rises and becomes increasingly steeper.\n<break time=\"0.8s\"/>\nLinear growth <bookmark mark=\"explain_2\"/>is additive,<split/> meaning with each increase of x we add a value to the function.\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>We see that the function grows at a constant rate.\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
     }
   },
   "Func_6_2": {

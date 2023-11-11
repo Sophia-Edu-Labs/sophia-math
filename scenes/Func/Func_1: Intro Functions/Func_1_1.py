@@ -168,7 +168,6 @@ class Func_1_1_I_1_q(SophiaCursorScene, SophiaQuestionInfo):
         self.wait(4)
 
 
-
 class Func_1_1_I_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -280,8 +279,6 @@ class Func_1_1_I_1_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
-
-
 class Func_1_1_I_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -355,7 +352,6 @@ class Func_1_1_I_1_b(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
-
 
 #####################################
 #####################################
@@ -538,6 +534,652 @@ class Func_1_1_I_3(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, xs, ys), run_time=0.5)
             self.play(MoveAlongPath(cursor, func_plotted2), run_time=5, rate_func=linear)
             cursor.idle=True
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_1_1_I_3_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [self.translate("Func_1_1.1I31q.question-greenline"), self.translate("Func_1_1.1I31q.question-blueline"), self.translate("Func_1_1.1I31q.question-pinkline")],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_1.1I31q.question-text") 
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        sine_1 = plane.plot(lambda x: 2*np.sin(1.5*x), color=BLUE).rotate(90 * DEGREES)
+        sine_2 = plane.plot(lambda x: np.sin(1.5*x-1)-1, color=GREEN_E)
+        line_not_sine = Line(plane.c2p(1,-2), plane.c2p(1,2), color=PINK)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_1.1I31q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("blue")
+            self.add_pencil_sound(1.5)
+            self.play(Write(sine_1))
+
+            self.wait_until_bookmark("green")
+            self.add_pencil_sound(1.5)
+            self.play(Write(sine_2))
+
+            self.wait_until_bookmark("pink")
+            self.add_pencil_sound(1.5)
+            self.play(Write(line_not_sine))
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_1_I_3_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        sine_1 = plane.plot(lambda x: 2*np.sin(1.5*x), color=BLUE).rotate(90 * DEGREES)
+        sine_2 = plane.plot(lambda x: np.sin(1.5*x-1)-1, color=GREEN_E)
+        line_not_sine = Line(plane.c2p(1,-2), plane.c2p(1,2), color=PINK)
+
+        self.add(sine_1, sine_2, line_not_sine)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        dl = DashedLine(plane.c2p(-1,-2), plane.c2p(-1,2), color=c1t, stroke_width=2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_1_1.1I31a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("green")
+            cursor.idle=False
+            x,y,_ = sine_2.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            cc = cursor.copy()
+            cursor.idle=True
+            self.play(MoveAlongPath(cc, sine_2), run_time=6, rate_func=linear)
+            cc._start_fading(2)
+
+            self.wait_until_bookmark("neg_ex")
+            self.add_pencil_sound(1.5)
+            self.play(Create(dl))
+            self.wait(1)
+            self.play(Unwrite(dl))
+
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_3_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        sine_1 = plane.plot(lambda x: 2*np.sin(1.5*x), color=BLUE).rotate(90 * DEGREES)
+        sine_2 = plane.plot(lambda x: np.sin(1.5*x-1)-1, color=GREEN_E)
+        line_not_sine = Line(plane.c2p(1,-2), plane.c2p(1,2), color=PINK)
+
+        self.add(sine_1, sine_2, line_not_sine)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        dl = DashedLine(plane.c2p(-1,-2), plane.c2p(-1,2), color=c1t, stroke_width=2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I31a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("green")
+            cursor.idle=False
+            x,y,_ = sine_2.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            cc = cursor.copy()
+            cursor.idle=True
+            self.play(MoveAlongPath(cc, sine_2), run_time=6, rate_func=linear)
+            cc._start_fading(2)
+
+            self.wait_until_bookmark("neg_ex")
+            self.add_pencil_sound(1.5)
+            self.play(Create(dl))
+            self.wait(1)
+            self.play(Unwrite(dl))
+
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_3_1_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        sine_1 = plane.plot(lambda x: 2*np.sin(1.5*x), color=BLUE).rotate(90 * DEGREES)
+        sine_2 = plane.plot(lambda x: np.sin(1.5*x-1)-1, color=GREEN_E)
+        line_not_sine = Line(plane.c2p(1,-2), plane.c2p(1,2), color=PINK)
+
+        self.add(sine_1, sine_2, line_not_sine)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        dl = DashedLine(plane.c2p(-1,-2), plane.c2p(-1,2), color=c1t, stroke_width=2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I31a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("green")
+            cursor.idle=False
+            x,y,_ = sine_2.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            cc = cursor.copy()
+            cursor.idle=True
+            self.play(MoveAlongPath(cc, sine_2), run_time=6, rate_func=linear)
+            cc._start_fading(2)
+
+            self.wait_until_bookmark("neg_ex")
+            self.add_pencil_sound(1.5)
+            self.play(Create(dl))
+            self.wait(1)
+            self.play(Unwrite(dl))
+
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        sine_1 = plane.plot(lambda x: 2*np.sin(1.5*x), color=BLUE).rotate(90 * DEGREES)
+        sine_2 = plane.plot(lambda x: np.sin(1.5*x-1)-1, color=GREEN_E)
+        line_not_sine = Line(plane.c2p(1,-2), plane.c2p(1,2), color=PINK)
+
+        self.add(sine_1, sine_2, line_not_sine)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        dl = DashedLine(plane.c2p(-1,-2), plane.c2p(-1,2), color=c1t, stroke_width=2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_1.1I31a.voiceover")+self.translate("General.incorrect_3")
+        ) as tracker:
+
+            self.wait_until_bookmark("green")
+            cursor.idle=False
+            x,y,_ = sine_2.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            cc = cursor.copy()
+            cursor.idle=True
+            self.play(MoveAlongPath(cc, sine_2), run_time=6, rate_func=linear)
+            cc._start_fading(2)
+
+            self.wait_until_bookmark("neg_ex")
+            self.add_pencil_sound(1.5)
+            self.play(Create(dl))
+            self.wait(1)
+            self.play(Unwrite(dl))
+
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_1_1_I_3_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [self.translate("Func_1_1.1I32q.question-orangeline"), self.translate("Func_1_1.1I32q.question-blueline"), self.translate("Func_1_1.1I32q.question-greenline"), self.translate("Func_1_1.1I32q.question-noline")],
+            correctAnswerIndex = 3,
+            questionText = self.translate("Func_1_1.1I32q.question-text") 
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        func_1 = plane.plot(lambda x: 1, color=ORANGE)
+        func_2 = plane.plot(lambda x: abs(x), color=PURE_BLUE)
+        func_3 = VGroup(Line(plane.c2p(-2,-1.5), plane.c2p(0,-1.5), color=GREEN_D), Line(plane.c2p(0,1.5), plane.c2p(2,1.5), color=GREEN_D))
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_1.1I32q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("orange")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_1))
+
+            self.wait_until_bookmark("blue")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_2))
+
+            self.wait_until_bookmark("green")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_3))
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_1_I_3_2_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        func_1 = plane.plot(lambda x: 1, color=ORANGE)
+        func_2 = plane.plot(lambda x: abs(x), color=PURE_BLUE)
+        func_3 = VGroup(Line(plane.c2p(-2,-1.5), plane.c2p(0,-1.5), color=GREEN_D), Line(plane.c2p(0,1.5), plane.c2p(2,1.5), color=GREEN_D))
+
+        self.add(func_1, func_2, func_3)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        c = AltCursor()
+        c.add_updater(lambda m, dt: self.bring_to_front(c))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I32a.voiceover")
+        ) as tracker:
+
+            x,y,_ = func_1.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_1), run_time=4, rate_func=linear)
+            
+            x,y,_ = func_2.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_2), run_time=4, rate_func=linear)
+
+            x,y,_ = func_3[0].get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_3[0]), run_time=2, rate_func=linear)
+            self.play(MoveAlongPath(c, func_3[1]), run_time=2, rate_func=linear)
+            c.idle=True
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_3_2_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        func_1 = plane.plot(lambda x: 1, color=ORANGE)
+        func_2 = plane.plot(lambda x: abs(x), color=PURE_BLUE)
+        func_3 = VGroup(Line(plane.c2p(-2,-1.5), plane.c2p(0,-1.5), color=GREEN_D), Line(plane.c2p(0,1.5), plane.c2p(2,1.5), color=GREEN_D))
+
+        self.add(func_1, func_2, func_3)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        c = AltCursor()
+        c.add_updater(lambda m, dt: self.bring_to_front(c))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I32a.voiceover")
+        ) as tracker:
+
+            x,y,_ = func_1.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_1), run_time=4, rate_func=linear)
+            
+            x,y,_ = func_2.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_2), run_time=4, rate_func=linear)
+
+            x,y,_ = func_3[0].get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_3[0]), run_time=2, rate_func=linear)
+            self.play(MoveAlongPath(c, func_3[1]), run_time=2, rate_func=linear)
+            c.idle=True
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_3_2_c(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        func_1 = plane.plot(lambda x: 1, color=ORANGE)
+        func_2 = plane.plot(lambda x: abs(x), color=PURE_BLUE)
+        func_3 = VGroup(Line(plane.c2p(-2,-1.5), plane.c2p(0,-1.5), color=GREEN_D), Line(plane.c2p(0,1.5), plane.c2p(2,1.5), color=GREEN_D))
+
+        self.add(func_1, func_2, func_3)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        c = AltCursor()
+        c.add_updater(lambda m, dt: self.bring_to_front(c))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I32a.voiceover")
+        ) as tracker:
+
+            x,y,_ = func_1.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_1), run_time=4, rate_func=linear)
+            
+            x,y,_ = func_2.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_2), run_time=4, rate_func=linear)
+
+            x,y,_ = func_3[0].get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_3[0]), run_time=2, rate_func=linear)
+            self.play(MoveAlongPath(c, func_3[1]), run_time=2, rate_func=linear)
+            c.idle=True
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_3_2_d(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        func_1 = plane.plot(lambda x: 1, color=ORANGE)
+        func_2 = plane.plot(lambda x: abs(x), color=PURE_BLUE)
+        func_3 = VGroup(Line(plane.c2p(-2,-1.5), plane.c2p(0,-1.5), color=GREEN_D), Line(plane.c2p(0,1.5), plane.c2p(2,1.5), color=GREEN_D))
+
+        self.add(func_1, func_2, func_3)
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        c = AltCursor()
+        c.add_updater(lambda m, dt: self.bring_to_front(c))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_1_1.1I32a.voiceover")
+        ) as tracker:
+
+            x,y,_ = func_1.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_1), run_time=4, rate_func=linear)
+            
+            x,y,_ = func_2.get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_2), run_time=4, rate_func=linear)
+
+            x,y,_ = func_3[0].get_start()
+            self.play(CursorMoveTo(c,x,y), run_time=.3)
+            self.play(MoveAlongPath(c, func_3[0]), run_time=2, rate_func=linear)
+            self.play(MoveAlongPath(c, func_3[1]), run_time=2, rate_func=linear)
+            c.idle=True
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_1_1_I_3_3(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2, 2, 1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thumbs.png")
+        giraffe = giraffe.scale(4/giraffe.get_width()).move_to([-5, 0, 0])
+
+        # Create and plot piecewise linear function
+        f = lambda x: x**3-1.5*x
+        func_plotted = plane.plot(f, color=GREEN_D, x_range=[-1.65,1.65,0.01])
+        func_plotted_wrong = plane.plot(f, color=RED, x_range=[-1.65,1.65,0.01]).rotate(90 * DEGREES)
+
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
+        func_def = Tex(self.translate("Func_1_1.1I3.main.func_def"), color=c3t, font_size=fs3, tex_environment="flushleft").next_to(xToY, DOWN, buff=.7)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_1.1I33.main.voiceover")
+        ) as tracker:
+            
+            # Animate the coordinate system being created
+            self.play(Write(cords), run_time=0.5)
+            self.add(cursor)
+
+            self.wait_until_bookmark("Memorize")
+            self.play(Create(func_def), run_time=.5)
+
+            self.wait_until_bookmark("map1")
+            self.play(Write(xToY[2]), run_time=0.5)
+
+            self.wait_until_bookmark("map2")
+            self.play(Write(xToY[0]), Write(xToY[1]), run_time=0.5)
+
+            # Draw the blue function plot after "BlueFuncIn" bookmark.
+            self.wait_until_bookmark("GreenFuncIn")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_plotted))
+
+            self.wait_until_bookmark("orangeX")
+            cursor.idle=False
+            x,y,_ = xToY[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+
+            self.wait_until_bookmark("orangeY")
+            x,y,_ = xToY[2].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.5)
+
+            # Follow the func with the cursor
+            self.wait_until_bookmark("RedFuncIn")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_plotted_wrong))
+            x1, y1, _ = plane.c2p(0, 0)
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x1, y1), run_time=0.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("giraffe_in")
+            self.add_shift_sound(0.5)
+            self.play(FadeOut(func_plotted_wrong), FadeOut(cords), FadeOut(xToY), FadeOut(func_def), FadeOut(func_plotted), FadeOut(cursor), giraffe.animate.shift(RIGHT*5), run_time=0.5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+################################################################################################
+class Func_1_1_I_4_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [self.translate("Func_1_1.1I31q.question-greenline"), self.translate("Func_1_1.1I31q.question-blueline"), self.translate("Func_1_1.1I31q.question-pinkline")],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_1.1I31q.question-text") 
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([-2,2,1], [-2, 2, 1], x_ticks=[-2,2], y_ticks=[-2,2]).shift(DOWN)
+        plane = cords[0]
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thumbs.png")
+        giraffe = giraffe.scale(4/giraffe.get_width()).move_to([-5, 0, 0])
+
+        # Create and plot piecewise linear function
+        f = lambda x: x**3-1.5*x
+        func_plotted = plane.plot(f, color=GREEN_D, x_range=[-1.65,1.65,0.01])
+        func_plotted_wrong = plane.plot(f, color=RED, x_range=[-1.65,1.65,0.01]).rotate(90 * DEGREES)
+
+        # Initialize a cursor
+        xo, yo, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=xo, y=yo)
+        cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
+
+        xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
+        func_def = Tex(self.translate("Func_1_1.1I3.main.func_def"), color=c3t, font_size=fs3, tex_environment="flushleft").next_to(xToY, DOWN, buff=.7)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""Test"""
+        ) as tracker:
+            
+            self.wait()
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
