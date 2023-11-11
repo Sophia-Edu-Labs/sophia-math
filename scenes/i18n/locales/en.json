@@ -136,8 +136,12 @@
     },
     "1I33": {
       "main": {
-        "voiceover": "Now we know what functions are: <break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nA function is a mapping, <split/>that assigns exactly one <bookmark mark=\"map2\"/> upsilon value to each x-value <bookmark mark=\"map1\"/>.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nSo, the green representation is an example of a function, <split/>\nbecause it assigns <bookmark mark=\"orangeY\"/> exactly one upsilon value to each x-value <bookmark mark=\"orangeX\"/>.<break time=\"0.5s\"/>\nThis is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\nIt assigns two upsilon values to some x-values, <split/> for example, the value x equals zero.<break time=\"0.5s\"/>\nSo we remember: <bookmark mark=\"TrueFct\"/>\nA function is a mapping that assigns exactly one upsilon value to each x-value.<break time=\"1s\"/>\nDefinitely remember this well, and then I can only say: <bookmark mark=\"giraffe_in\"/>Well done! You've now taken the first step in understanding functions, and functions are super important in math, so you've made a big step in understanding math!"
+        "voiceover": "Now we know what functions are: <break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nA function is a mapping, <split/>that assigns exactly one <bookmark mark=\"map2\"/> y value to each x-value <bookmark mark=\"map1\"/>.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nSo, the green representation is an example of a function, <split/>\nbecause it assigns <bookmark mark=\"orangeY\"/> exactly one y value to each x-value <bookmark mark=\"orangeX\"/>.<break time=\"0.5s\"/>\nThis is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\nIt assigns two y values to some x-values, <split/> for example, the value x equals zero.<break time=\"0.5s\"/>\nSo remember: <bookmark mark=\"TrueFct\"/>\nA function is a mapping that assigns exactly one y value to each x-value.<break time=\"1s\"/>\nDefinitely remember this well, and then I can only say: <bookmark mark=\"giraffe_in\"/>Well done! You've now taken the first step in understanding functions, and functions are super important in math, so you've made a big step in understanding math!"
       }
+    },
+    "1I41q": {
+      "xlabel": "day",
+      "ylabel": "# friends"
     }
   },
   "Func_1_2": {

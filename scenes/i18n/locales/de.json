@@ -138,6 +138,10 @@
       "main": {
         "voiceover": "So, jetzt wissen wir, was Funktionen sind:<break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, <split/>die jedem x-Wert <bookmark mark=\"map1\"/> genau EINEN <bookmark mark=\"map2\"/> üpsilon-Wert zuweist.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nDie grüne Darstellung ist also ein Beispiel für eine Funktion,<split/>\nweil sie <bookmark mark=\"orangeX\"/> jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen üpsilon-wert zuweist.<break time=\"0.5s\"/>\nDas ist auch der Grund, warum <bookmark mark=\"RedFuncIn\"/>die rote Darstellung keine Funktion ist.\nSie weist einigen x-Werten,<split/> zum Beispiel dem Wert x gleich Null, zwei üpsilon-Werte zu.<break time=\"0.5s\"/>\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen üpsilon-Wert zuordnet.\n<break time=\"1s\"/>\nSo, merk dir das auf jeden Fall gut und dann kann ich nur sagen: <bookmark mark=\"giraffe_in\"/>Toll gemacht! Du hast jetzt den ersten Schritt getan, Funktionen zu verstehen, und die sind super wichtig in Mathe, also hast du einen großen Schritt gemacht, Mathe zu verstehen!"
       }
+    },
+    "1I41q": {
+      "xlabel": "Tag",
+      "ylabel": "# Freunde"
     }
   },
   "Func_1_2": {
