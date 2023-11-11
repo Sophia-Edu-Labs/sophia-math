@@ -1812,9 +1812,12 @@
     "I3": {
       "title": "Growth factor",
       "verify": "Verify:",
-      "voiceover": "Important definition in the context of exponential functions.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nNow the value<bookmark mark=\"a\"/>a is called <bookmark mark=\"growth\"/>the <bookmark mark=\"factor\"/>growth factor.\nIt is called that, because it determines how fast the function grows, or decreases.\n<split/>\nIf <bookmark mark=\"a_g1\"/>\"a\" is greater than one, the function<bookmark mark=\"plot_1\"/> increases by the factor of \"a\"\nat every timestep. If \"a\" is two, it doubles at every timestep, if \"a\" is three, it triples at every timestep, and so on.\n\nIf a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases by the factor of \"a\" at every timestep.\nIf \"a\" is a half, it halves at every timestep, if \"a\" is a third, it reduces to a third at every timestep, and so on...",
+      "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/>a is called the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays.\n<split/>\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"a\" leads to this graph?",
       "x-minutes_1": "What is the valuef of",
-      "x-minutes_2": "the growth factor"
+      "x-minutes_2": "the growth factor",
+      "q": {
+        "question-text": "What is the value of the growth factor $a$?"
+      }
     },
     "P2": {
       "q": {
@@ -1865,6 +1868,9 @@
       "a": {
         "voiceover": "The pool holds a thousand liters, and every day an eighth evaporates.<break time=\"0.6s\"/>\nThis means that after each day, seven eighths of the previous day's water remains, so we always multiply the previous day's value by seven eighths. <split/>Therefore, <bookmark mark=\"correct\"/> the function h of x equals a thousand times seven eighths to the power of x is the correct one."
       }
+    },
+    "I3a": {
+      "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one equals one half, so <bookmark mark=\"transform\"/> a equals one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by verifying that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
     }
   },
   "Func_6_2_P_1_a": {

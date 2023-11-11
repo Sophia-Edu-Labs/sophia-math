@@ -1815,9 +1815,12 @@
     "I3": {
       "title": "Wachstumsfaktor",
       "verify": "Überprüfe:",
-      "voiceover": "Wichtiger Begriff im Kontext von Exponentialfunktionen.\n<break time=\"0.3s\"/>\nWir wissen ja, dass der Term einer Exponentialfunktion <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x ist.\n<break time=\"0.3s\"/>\nDann wird der Wert<bookmark mark=\"a\"/>a als <bookmark mark=\"growth\"/><bookmark mark=\"factor\"/>Wachstumsfaktor bezeichnet.\n<break time=\"0.3s\"/>\nEr wird so genannt, weil er bestimmt, wie schnell die Funktion wächst oder abnimmt.\n<split/>\nWenn <bookmark mark=\"a_g1\"/>\"a\" größer als eins ist, erhöht sich die Funktion mit jedem Zeitschritt<bookmark mark=\"plot_1\"/> um den Faktor \"a\".\n<break time=\"0.3s\"/>\nWenn \"a\" beispielsweise gleich zwei ist, verdoppelt sich die Funktion bei jedem Zeitschritt. Wenn \"a\" gleich drei ist, verdreifacht sie sich bei jedem Zeitschritt, und so weiter.\n<break time=\"1s\"/>\nWenn a hingegen zwischen Null und Eins liegt, verringert sich die Funktion<bookmark mark=\"plot_2\"/> bei jedem Zeitschritt um den Faktor \"a\".\n<break time=\"0.3s\"/>\nWenn \"a\" ein halb ist, halbiert sie sich bei jedem Zeitschritt, wenn \"a\" ein Drittel ist, sinkt sie bei jedem Zeitschritt auf ein Drittel und so weiter ...",
+      "voiceover": "Wichtiger Begriff im Kontext von Exponentialfunktionen:<bookmark mark=\"underline\"/>Der Wachstumsfaktor.\n<break time=\"0.3s\"/>\nWir wissen ja, dass der Term einer Exponentialfunktion <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>\"a\" hoch <bookmark mark=\"fxx\"/> x lautet.\n<break time=\"0.3s\"/>\nDann wird der Wert<bookmark mark=\"a\"/> \"a\" als Wachstumsfaktor bezeichnet.\n<break time=\"0.3s\"/>\nEr wird so genannt, weil er bestimmt, wie schnell die Funktion wächst oder abnimmt.\n<split/>\nBetrachte zum Beispiel die Funktion <bookmark mark=\"func_in\"/>von diesem Graphen.\n<break time=\"1s\"/>\nWie lautet der Wachstumsfaktor a, der zu dem Graphen führt?",
       "x-minutes_1": "Was ist der Wert von",
-      "x-minutes_2": "dem Wachstumsfaktor"
+      "x-minutes_2": "dem Wachstumsfaktor",
+      "q": {
+        "question-text": "Was ist der Wert des Wachstumsfaktor $a$?"
+      }
     },
     "P2": {
       "q": {
@@ -1868,6 +1871,9 @@
       "a": {
         "voiceover": "Der Pool hat tausend Liter, und jeden Tag verdunstet ein Achtel.<break time=\"0.6s\"/>\nDas heißt, dass nach jedem Tag noch sieben achtel von dem Wasser des Vortages übrig sind, also multiplizieren wir den Wert des Vortages immer mit sieben achteln. <split/>Also ist<bookmark mark=\"correct\"/> die Funktion h von x gleich eintausend mal sieben achtel hoch x die richtige."
       }
+    },
+    "I3a": {
+      "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins gleich ein halb, also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
     }
   },
   "Func_6_2_P_1_a": {
