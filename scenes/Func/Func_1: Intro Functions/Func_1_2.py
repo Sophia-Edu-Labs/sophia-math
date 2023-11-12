@@ -1,12 +1,7 @@
 # Import necessary libraries and modules
 from abc import ABCMeta, abstractmethod
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
-from sophialib.styles.sophiascene import (CursorMoveToCurved, CursorPositionTracker,
-                                          CursorPositionTracking,
-                                          CursorResizeDefault, SophiaScene,
-                                          assets_folder, AltCursor,
-                                          SophiaCursorScene, CursorMoveTo,
-                                          CursorMoveResize, Notepad, format_text_group)
+from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
 from sophialib.styles.sophiaobjects import *
 from manim import *
@@ -50,6 +45,281 @@ def create_piecewise_linear(points):
 ###########################################
 ###########################################
 # Topic: Repetition - What is a Term?
+class Func_1_2_I_1_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        term1 = MathTex("2x+3", color=c1t).shift(UP*1.5)
+        term2 = MathTex("x^2-2", color=c1t).next_to(term1, DOWN)
+        term3 = MathTex("x+3=7", color=c1t).next_to(term2, DOWN)
+        
+        xvals_int = [i for i in range(5)]
+        yvals_int = [8, 4, 5, 7, 3]
+        xvals, yvals = [str(x) for x in xvals_int], [str(y) for y in yvals_int]
+        xlabel = "x"
+        ylabel = "y"
+
+        x_to_y = MathTex("x", "\\mapsto", "y", color=c1t)
+
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width())
+        rows = t.get_rows()
+        x_rect = SurroundingRectangle(rows[0], color=RED, buff=0.1, corner_radius=0.2)
+        y_rect = SurroundingRectangle(rows[1], color=GREEN, buff=0.1, corner_radius=0.2)
+        
+        f_terms = Tex(self.translate("Func_1_2.1I1.f-terms"), color=c1t)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""Eine Funktion ist ja eine Abbildung, <bookmark mark="x_to_y"/>die jedem x genau ein y zuordnet.
+                Aber<bookmark mark="qmark"/> woher wissen wir, welches y zu welchem x gehört?
+                EINE Möglichkeit, die wir gerade kennengelernt haben, <bookmark mark="table_in"/>sind Wertetabellen. Da können wir dann für <bookmark mark="x_table"/>jeden Wert von x, den zugehörigen <bookmark mark="y_table"/>Wert von y ablesen.
+                <bookmark mark="table_out"/>Eine weitere Möglichkeit sind <bookmark mark="func_in"/>Funktionsterme, und die lernen wir jetzt kennen
+                Beginnen wir damit, Terme zu Wiederholen: Welcher dieser Ausdrücke ist KEIN Term? <bookmark mark="term_1"/>Ist es der Ausdruck 2x+3? <bookmark mark="term_2"/>Oder der Ausdruck x quadrat - 2? <bookmark mark="term_3"/>ODER ist es der Ausdruck x+3 istgleich 7?
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_to_y")
+            self.play(Write(x_to_y), run_time=1)
+            
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(RIGHT*5), FadeOut(x_to_y), run_time=0.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(RIGHT*5), run_time=0.5)
+
+            self.wait_until_bookmark("table_in")
+            self.play(Write(t), run_time=2)
+
+            self.wait_until_bookmark("x_table")
+            self.add_pencil_sound(1)
+            self.play(Write(x_rect), run_time=1)
+
+            self.wait_until_bookmark("y_table")
+            self.add_pencil_sound(1)
+            self.play(Write(y_rect), run_time=1)
+
+            self.wait_until_bookmark("table_out")
+            self.play(Unwrite(t), Unwrite(x_rect), Unwrite(y_rect), run_time=1)
+
+            self.wait_until_bookmark("func_in")
+            self.play(Write(f_terms), run_time=1)
+            self.wait(0.5)
+            self.play(f_terms.animate.move_to(title), FadeOut(title), run_time=1)
+
+            self.wait_until_bookmark("term_1")
+            self.play(Write(term1), run_time=1)
+
+            self.wait_until_bookmark("term_2")
+            self.play(Write(term2), run_time=1)
+
+            self.wait_until_bookmark("term_3")
+            self.play(Write(term3), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_2_I_1_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term1 = MathTex("2x+3", color=c1t).shift(UP*1.5)
+        term2 = MathTex("x^2-2", color=c1t).next_to(term1, DOWN)
+        term3 = MathTex("x+3=7", color=c1t).next_to(term2, DOWN)
+        self.add(term1, term2, term3)
+
+        left, right = term3.get_left()[0], term3.get_right()[0]
+        top, bottom = term3.get_top()[1], term3.get_bottom()[1]
+        strike = VGroup(Line([left, bottom, 0], [right, top, 0], color=RED, stroke_width=5), Line([left, top, 0], [right, bottom, 0], color=RED, stroke_width=5))
+
+        pos_rect = SurroundingRectangle(Group(term1, term2), color=GREEN, buff=0.2, corner_radius=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""Ein Term besteht ja aus Zahlen, Variablen und Operatoren, enthält allerdings keine Gleichheitszeichen.
+                Also ist der Ausdruck x+3 gleich 7 <bookmark mark="strike_out"/>kein Term, sondern eine Gleichung. Die Ausdrücke 2x+3 und x quadrat - 2 hingegen<bookmark mark="pos_box"/> sind beides Terme.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("strike_out")
+            self.add_pencil_sound(1)
+            self.play(Write(strike), run_time=1)
+
+            self.wait_until_bookmark("pos_box")
+            self.add_pencil_sound(1)
+            self.play(Write(pos_rect), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("2","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        b = Brace(term, sharpness=1, color=c1t)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
+
+        x_0 = MathTex("=0", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_0 = MathTex("=3", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        x_1 = MathTex("=1", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_1 = MathTex("=5", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+
+        term.shift(UP*1.5)
+        self.add(term)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text="""Betrachten wir also beispielsweise den Term 2x+3. Wir wollen diesen Term jetzt benutzen, um bei einer Funktion zu bestimmen, welchen y-Wert wir einem bestimmten x-Wert zuordnen.
+                Dafür setzen wir einfach <bookmark mark="x_in"/>den x-Wert in den Term ein, rechnen das aus und erhalten<bookmark mark="y_in"/> den y-Wert.
+                Setzen wir beispielsweise <bookmark mark="x_0"/>den x-Wert 0 ein, erhalten wir zwei mal null plus drei, also ist der y-Wert <bookmark mark="y_0"/> gleich 3.
+                Oder setzen wir <bookmark mark="x_1"/>den x-Wert 1 ein, erhalten wir zwei mal eins plus drei, was <bookmark mark="y_1"/>fünf ergibt. Also ist der y-Wert gleich 5.
+                Jetzt <bookmark mark="x_y_out"/>versuch du es mal: Welchen y-Wert erhältst du, wenn du <bookmark mark="x_question"/>den x-Wert 3 einsetzt?
+                """
+        ) as tracker:
+            
+            down_shift = term.get_y()
+            self.play(term.animate.shift(DOWN*down_shift))
+
+            self.wait_until_bookmark("x_in")
+            self.play(Write(x_in), run_time=1)
+
+            self.wait_until_bookmark("y_in")
+            self.play(Write(b), Write(y_out), run_time=1)
+
+            self.wait_until_bookmark("x_0")
+            self.play(Write(x_0), run_time=1)
+
+            self.wait_until_bookmark("y_0")
+            self.play(Write(y_0), run_time=1)
+
+            self.wait_until_bookmark("x_1")
+            self.play(ReplacementTransform(x_0, x_1), Unwrite(y_0), run_time=1)
+
+            self.wait_until_bookmark("y_1")
+            self.play(Write(y_1), run_time=1)
+
+            self.wait_until_bookmark("x_y_out")
+            self.play(FadeOut(x_1), FadeOut(y_1), run_time=1)
+
+            self.wait_until_bookmark("x_question")
+            self.play(Write(x_question), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("2","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        b = Brace(term, sharpness=1, color=c1t)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
+        x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        self.add(term, x_in, b, y_out, x_question)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text="""Wenn wir für x den Wert 3 einsetzen, erhalten wir zwei mal drei plus drei, was <bookmark mark="y_q"/>9 ergibt. Also ist der y-Wert gleich 9, wenn x gleich drei ist.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_q")
+            self.play(Write(y_question), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_2_I_1_4(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("","2x+3", color=c1t)
+        func_term = MathTex("f(x)=","2x+3", color=c1t)
+        box = SurroundingRectangle(term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        self.add(term)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.
+                Um deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark="f_x"/> ein f mit einer runden Klammer und x in der Klammer davor.
+                Man spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.
+                Wir können den Funktionsterm <bookmark mark="box"/>dann quasi als eine Art Rezept verstehen, mit dem wir für jeden x-Wert den zugehörigen y-Wert berechnen können.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_x")
+            self.play(TransformMatchingTex(term, func_term))
+
+            self.wait_until_bookmark("box")
+            self.add_pencil_sound(1)
+            self.play(Write(box), run_time=1)
+            
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+    
+
+######################################################################################
 class Func_1_2_I_1(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -88,6 +358,7 @@ class Func_1_2_I_1(SophiaCursorScene):
             self.wait_until_bookmark("term3")
             self.play(Write(term3), run_time=1)
             self.wait(0.5)
+            self.add_pencil_sound(1)
             self.play(Write(strikeA), Write(strikeB), run_time=1)
 
             self.wait_until_bookmark("unwriteTerms")

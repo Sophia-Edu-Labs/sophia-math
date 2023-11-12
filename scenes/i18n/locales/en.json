@@ -97,7 +97,7 @@
     "P_color-3": "The green function",
     "P_intro": "We're going on a mountain hike.\n                \n                During this, we measure our altitude at each full hour.",
     "P_question-1": "Which function matches the values?",
-    "P_title": "\"Mountain Hike\"",
+    "P_title": "Mountain Hike",
     "P_x": "Time",
     "P_x_text": "The time",
     "P_y": "Altitude",
@@ -141,7 +141,8 @@
     },
     "1I41q": {
       "xlabel": "day",
-      "ylabel": "# friends"
+      "ylabel": "# friends",
+      "voiceover": "So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark=\"table_in\"/>\nSay I have 12 friends on the first day. <bookmark mark=\"day_2\"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.\n<bookmark mark=\"day_3\"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.\n<bookmark mark=\"day_4\"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.\n<bookmark mark=\"cords_in\"/>Let's draw a coordinate system and plot the points.\nWhat color of points correspond to the number of friends I have on each day?\n<break time=\"1s\"/>\nIs it <bookmark mark=\"blue\"/>the blue points?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>The green points?\n<break time=\"0.4s\"/>\nOr is it <bookmark mark=\"pink\"/>the pink points?"
     }
   },
   "Func_1_2": {
@@ -265,6 +266,9 @@
       "range": "Range: Output y-values",
       "title": "Domain \\& Range",
       "voiceover": "                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {self.domain[0]} to {self.domain[1]}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.<split/>\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {self.range[0]} to {self.range[1]},\n                so that is the range of the function."
+    },
+    "1I1": {
+      "f-terms": "Function terms"
     }
   },
   "Func_1_3": {
@@ -969,7 +973,8 @@
         "question-text": "How does f behave for negative values of x?",
         "title": "$\\frac1x$ for negative $x$",
         "voiceover": "Now, let's think about <bookmark mark=\"neg\"/> the negative values of x.\n<break time=\"0.4s\"/>\nRemember, for positive x the function was very high for small x and got smaller for larger x.<break time=\"0.4s\"/>\n<bookmark mark=\"cords\"/>Now, how <bookmark mark=\"Q\"/>does f behave for small negative values of x?\n<break time=\"0.4s\"/>\nAnd how does it behave for large negative values of x?"
-      }
+      },
+      "my_text": "Hello, this is my text"
     },
     "I9": {
       "title": "Rational Functions",
@@ -1796,7 +1801,7 @@
       "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
     },
     "I15": {
-      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals a raised to x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
+      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
     },
     "1I61": {
       "voiceover": "Great, <bookmark mark=\"praise\"/>now you've seen again the differences between linear and exponential growth. To recap:<break time=\"0.8s\"/>\nExponential growth <bookmark mark=\"explain_1\"/>is multiplicative, which means with each increase of x we multiply the function value by a factor.<split/>\n<bookmark mark=\"plot_1\"/>The purple graph shows exponential growth. <split/> We can see how the function rises and becomes increasingly steeper.\n<break time=\"0.8s\"/>\nLinear growth <bookmark mark=\"explain_2\"/>is additive,<split/> meaning with each increase of x we add a value to the function.\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>We see that the function grows at a constant rate.\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."

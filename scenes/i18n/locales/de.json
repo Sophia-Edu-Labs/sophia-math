@@ -141,7 +141,8 @@
     },
     "1I41q": {
       "xlabel": "Tag",
-      "ylabel": "# Freunde"
+      "ylabel": "# Freunde",
+      "voiceover": "Wir wissen also, dass Funktionen jedem x-Wert einen y-Wert zuordnen. Schauen wir uns ein Beispiel an:<bookmark mark=\"table_in\"/>\nSagen wir, ich habe am ersten Tag 12 Freunde. <bookmark mark=\"day_2\"/>Am nächsten Tag gehe ich auf eine Party und finde vier neue Freunde, also habe ich am zweiten Tag sechzehn Freunde.\n<bookmark mark=\"day_3\"/>Am dritten Tag gerate ich in einen riesigen Streit mit sechs meiner ältesten Freunde und sie verlassen mich alle. Also habe ich am dritten Tag zehn Freunde.\n<bookmark mark=\"day_4\"/>Schließlich, am vierten Tag, versöhne ich mich mit meinen Freunden und sie kommen alle zurück. Also habe ich wieder sechzehn Freunde.\n<bookmark mark=\"cords_in\"/>Zeichnen wir ein Koordinatensystem und tragen die Punkte ein.\nWelche Farbe der Punkte entspricht der Anzahl der Freunde, die ich am jeweiligen Tag habe?\n<break time=\"1s\"/>\nSind es <bookmark mark=\"blue\"/>die blauen Punkte?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>Die grünen Punkte?\n<break time=\"0.4s\"/>\nOder sind es <bookmark mark=\"pink\"/>die pinken Punkte?"
     }
   },
   "Func_1_2": {
@@ -265,6 +266,9 @@
       "range": "Wertebereich: erhaltene y-Werte",
       "title": "Definitions- \\& Wertebereich",
       "voiceover": "{self.intro}\n<bookmark mark=\"define_domain\"/>\nDer Definitionsbereich ist die Menge aller x-Werte, die wir in die Funktion einfügen.\n<break time=\"1s\"/>\nIn diesem Beispiel fügen wir alle Werte auf der x-Achse ein, also alle Werte von <bookmark mark=\"domain\"/> {self.domain[0]} bis {self.domain[1]}.\nDas ist also unser Definitionsbereich.\n<break time=\"1s\"/><bookmark mark=\"define_range\"/>\nDer Wertebereich hingegen ist die Menge aller üpsilon-Werte, die wir aus der Funktion erhalten.\n<break time=\"1s\"/>\nDie erhaltenen Werte können wir einfach auf der üpsiloAchse ablesen.\nAus der Grafik können wir ersehen, dass wir alle Werte von <bookmark mark=\"range\"/> {self.range[0]} bis {self.range[1]} erhalten.\nDas ist also der Wertebereich der Funktion."
+    },
+    "1I1": {
+      "f-terms": "Funktionsterme"
     }
   },
   "Func_1_3": {
@@ -969,7 +973,8 @@
         "question-text": "Wie verhält sich f für negative Werte von x?",
         "title": "$\\frac1x$ für negatives $x$",
         "voiceover": "Denken wir nun über <bookmark mark=\"neg\"/> die negativen Werte von x nach.\n<break time=\"0.4s\"/>\nWir wissen ja, dass die Funktion für positives x für kleines x sehr hoch war und für größeres x kleiner wurde.\n<break time=\"0.4s\"/>\n<bookmark mark=\"cords\"/>Wie verhält sich nun <bookmark mark=\"Q\"/>f für kleine negative Werte von x?\n<break time=\"0.4s\"/>\nUnd wie verhält es sich für große negative Werte von x?"
-      }
+      },
+      "my_text": "Hallo, das ist mein Text"
     },
     "I9": {
       "title": "Rationale Funktionen",

@@ -796,7 +796,6 @@ class Func_1_1_I_3_1_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
-
 #####################################
 #####################################
 class Func_1_1_I_3_2_q(SophiaCursorScene):
@@ -1180,20 +1179,7 @@ class Func_1_1_I_4_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                    So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark="table_in"/>
-                    Say I have 12 friends on the first day. <bookmark mark="day_2"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.
-                    <bookmark mark="day_3"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.
-                    <bookmark mark="day_4"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.
-                    <bookmark mark="cords_in"/>Let's draw a coordinate system and plot the points.
-                    What color of points correspond to the number of friends I have on the first day?
-                    <break time="1s"/>
-                    Is it <bookmark mark="blue"/>the blue points?
-                    <break time="0.4s"/>
-                    <bookmark mark="green"/>The green points?
-                    <break time="0.4s"/>
-                    Or is it <bookmark mark="pink"/>the pink points?
-                    """
+                text=self.translate("Func_1_1.1I41q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("table_in")
@@ -1224,12 +1210,92 @@ class Func_1_1_I_4_1_q(SophiaCursorScene):
         self.wait(4)
 
 
-################################
+class Func_1_1_I_4_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([0,4,1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        xvals = [str(i+1) for i in range(4)]
+        xvals_int = [i+1 for i in range(4)]
+        yvals = ["12", "16", "10", "16"]
+        yvals_int = [12, 16, 10, 16]
+
+        xlabel = self.translate("Func_1_1.1I41q.xlabel")
+        ylabel = self.translate("Func_1_1.1I41q.ylabel")
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=1)
+
+        self.add(t)
+
+        cords_blue = [[1,16], [2,10], [3,16], [4,12]]
+        cords_green = [[1,12], [2,16], [3,10], [4,16]]
+        cords_pink = [[1,10], [2,12], [3,12], [4,10]]
+
+        func_green = create_piecewise_linear(list(zip(xvals_int, yvals_int)))
+        func_green_plotted = plane.plot(func_green, color=GREEN)
+
+        circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
+        circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])
+        circs_pink = VGroup(*[Dot(plane.c2p(*cords_pink[i]), color=PINK) for i in range(4)])
+        self.add(circs_blue, circs_green, circs_pink)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                    It has to be the green points, because I have <bookmark mark="day_1"/> twelve friends on the first day, <bookmark mark="day_2"/> sixteen friends on the second day, <bookmark mark="day_3"/> ten friends on the third day, and <bookmark mark="day_4"/> sixteen friends on the fourth day.<bookmark mark="colors_out"/>
+                    To get a better idea of what's going on, let's <bookmark mark="draw_line"/>draw a line between the points. This is what we would typically call a function graph.
+                    """
+        ) as tracker:
+            
+            self.wait_until_bookmark("day_1")
+            self.play(circs_green[0].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[0].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_2")
+            self.play(circs_green[1].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[1].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_3")
+            self.play(circs_green[2].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[2].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_4")
+            self.play(circs_green[3].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[3].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("colors_out")
+            self.play(FadeOut(circs_blue), FadeOut(circs_pink))
+
+            self.wait_until_bookmark("draw_line")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_green_plotted))
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
 ################################
 ########## Practice Part #######
-################################
-################################
-
 class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
 
     # Main method for constructing the animation
@@ -1257,7 +1323,7 @@ class ValueTableQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         tab = Table([[str(val) for val in self.xvals], [str(val) for val in self.yvals[self.correcty]]],
                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
                     row_labels=[Text(self.labels[0], color=BLACK, font_size = fs1), Text(self.labels[1], color=BLACK, font_size = fs1)])
-        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=0.35)
+        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=1)
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(*self.cursorStart)
@@ -1332,7 +1398,7 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         tab = Table([[str(val) for val in self.xvals], [str(val) for val in self.yvals[self.correcty]]],
                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
                     row_labels=[Text(self.labels[0], color=BLACK, font_size = fs1), Text(self.labels[1], color=BLACK, font_size = fs1)])
-        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=0.6)
+        tab = tab.scale(3.3/tab.get_width()).next_to(plane, DOWN, buff=1)
 
         # Initialize a cursor
         xo, yo, _ = plane.c2p(*self.cursorStart)
@@ -1409,12 +1475,8 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         self.wait(4)
 
 
-
-
 #############################################
 #               Hike Question               #
-#############################################
-
 class Func_1_1_P_1_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1487,11 +1549,8 @@ class Func_1_1_P_1_c(ValueTableSolutionScene):
         super().construct()
 
 
-
 #############################################
 #               Rain Question               #
-#############################################
-
 class Func_1_1_P_2_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1561,10 +1620,9 @@ class Func_1_1_P_2_c(ValueTableSolutionScene):
 
         super().construct()
 
+
 #############################################
 #               Snow Question               #
-#############################################
-
 class Func_1_1_P_3_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1640,15 +1698,69 @@ class Func_1_1_P_3_c(ValueTableSolutionScene):
 
         super().construct()
 
-    
 
-# Similar Answer Scenes for SnowQuestionScene can be created like RainAnswerScene1, RainAnswerScene2 and RainAnswerScene3
+#############################################
+#                  Outro                    #
+class Func_1_1_I_4_2(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[1,2,3,4], y_ticks=[4,8]).shift(DOWN)
+        plane = cords[0]
+
+        xvals_int = [i for i in range(5)]
+        yvals_int = [8, 4, 5, 7, 3]
+        xvals, yvals = [str(x) for x in xvals_int], [str(y) for y in yvals_int]
+        xlabel = "x"
+        ylabel = "y"
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=1)
+
+        func_green = create_piecewise_linear(list(zip(xvals_int, yvals_int)))
+        func_green_plotted = plane.plot(func_green, color=GREEN)
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thumbs.png").move_to([-5, 0, 0])
+        lion = lion.scale(3/lion.get_width())
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+                    Jetzt haben wir ganz schön fleißig geübt. Wir haben also gesehen, wie wir<bookmark mark="table_in"/> Wertetabellen benutzen können, um Funktionen zu beschreiben. Und dann haben wir geübt, <bookmark mark="plot_in"/> Wertetabellen und Graphen von Funktionen zu verbinden.
+                    Echt <bookmark mark="lion_in"/>klasse, wie schnell du so viel über Funktionen gelernt hast!
+                    """
+        ) as tracker:
+            
+            self.wait_until_bookmark("table_in")
+            self.play(Write(t))
+
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(cords), run_time=0.3)
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_green_plotted))
+
+            self.wait_until_bookmark("lion_in")
+            self.add_shift_sound(0.5)
+            self.play(FadeOut(t), FadeOut(cords), FadeOut(func_green_plotted), lion.animate.shift(5*RIGHT), run_time=0.5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
 
 
 #############################################
 #           Sunshine Hours Question         #
-#############################################
-
 class Func_1_1_P_4_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1721,7 +1833,6 @@ class Func_1_1_P_4_c(ValueTableSolutionScene):
 
 #############################################
 #           Wind Speed Question             #
-#############################################
 class Func_1_1_P_5_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1787,8 +1898,6 @@ class Func_1_1_P_5_c(ValueTableSolutionScene):
 
 #############################################
 #            Temperature Question           #
-#############################################
-
 class Func_1_1_P_6_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1854,8 +1963,6 @@ class Func_1_1_P_6_c(ValueTableSolutionScene):
 
 #############################################
 #             Humidity Question             #
-#############################################
-
 class Func_1_1_P_7_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1921,7 +2028,6 @@ class Func_1_1_P_7_c(ValueTableSolutionScene):
 
 #############################################
 #             Apple Picking Question        #
-#############################################
 class Func_1_1_P_8_q(ValueTableQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:

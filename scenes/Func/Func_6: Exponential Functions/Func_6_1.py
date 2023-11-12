@@ -1158,7 +1158,7 @@ class Func_6_1_I_1_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$10$, $36$, $12$, $18$"],
+            answerOptions = ["$10$", "$36$", "$12$", "$18$"],
             correctAnswerIndex = 3,
             questionText = self.translate("Func_6_1.1I14q.question") 
         )

@@ -53,7 +53,7 @@ class OpenAIVoiceoverService(SpeechService):
     def __init__(
         self,
         model_id: str = DEFAULT_MODEL_OPENAI,
-        voice_name: str = "alloy",
+        voice_name: str = "nova",
         **kwargs,
     ):
         # save model id
