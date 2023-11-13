@@ -1290,7 +1290,7 @@ class Func_1_1_I_4_1_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
-class Func_1_1_I_4_1_a(SophiaCursorScene):
+class Func_1_1_I_4_1_b(SophiaCursorScene):
 
 
     # Main method for constructing the animation
@@ -2256,6 +2256,24 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_1_1_I_1_b),
     PagePrototypeVideo.from_scene(Func_1_1_I_2),
     PagePrototypeVideo.from_scene(Func_1_1_I_3),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_1_q),
+    PagePrototypeQuestion.from_scene(Func_1_1_I_3_1_q),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_1_a),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_1_b),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_1_c),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_2_q),
+    PagePrototypeQuestion.from_scene(Func_1_1_I_3_2_q),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_2_a),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_2_b),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_2_c),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_2_d),
+    PagePrototypeVideo.from_scene(Func_1_1_I_3_3),
+#
+    PagePrototypeVideo.from_scene(Func_1_1_I_4_1_q),
+    PagePrototypeQuestion.from_scene(Func_1_1_I_4_1_q),
+    PagePrototypeVideo.from_scene(Func_1_1_I_4_1_a),
+    PagePrototypeVideo.from_scene(Func_1_1_I_4_1_b),
+    PagePrototypeVideo.from_scene(Func_1_1_I_4_1_c),
     PagePrototypeVideo.from_scene(Func_1_1_P_1_q),
     PagePrototypeQuestion.from_scene(Func_1_1_P_1_q),
     PagePrototypeVideo.from_scene(Func_1_1_P_1_a),
@@ -2271,6 +2289,8 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_1_1_P_3_a),
     PagePrototypeVideo.from_scene(Func_1_1_P_3_b),
     PagePrototypeVideo.from_scene(Func_1_1_P_3_c),
+    PagePrototypeVideo.from_scene(Func_1_1_I_4_2),
+#
     PagePrototypeVideo.from_scene(Func_1_1_P_4_q),
     PagePrototypeQuestion.from_scene(Func_1_1_P_4_q),
     PagePrototypeVideo.from_scene(Func_1_1_P_4_a),
