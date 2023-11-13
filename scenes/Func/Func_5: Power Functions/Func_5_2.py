@@ -1939,7 +1939,6 @@ class Func_5_2_I_5_a(SophiaCursorScene):
 
         self.wait(4)
 
-
 class Func_5_2_I_5_b(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -1980,7 +1979,7 @@ class Func_5_2_I_5_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_5_2.I5.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_5_2.I5.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("posEx1a")
@@ -2071,7 +2070,6 @@ class Func_5_2_I_5_b(SophiaCursorScene):
             cursor.idle=True
 
         self.wait(4)
-
 
 class Func_5_2_I_5_c(SophiaCursorScene):
 
@@ -2204,7 +2202,6 @@ class Func_5_2_I_5_c(SophiaCursorScene):
             cursor.idle=True
 
         self.wait(4)
-
 
 class Func_5_2_I_5_d(SophiaCursorScene):
 
