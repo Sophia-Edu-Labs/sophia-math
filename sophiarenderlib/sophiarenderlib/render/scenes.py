@@ -1,6 +1,6 @@
 from pathlib import Path
 import tempfile
-from typing import List, Type
+from typing import Callable, List, Type
 from manim import tempconfig
 from sophialib.filehelpers.extract import extract_audio_to_path
 from sophialib.filehelpers.hashing import hash_audio_at_path
@@ -14,11 +14,12 @@ from sophialib.videopostprocessing.crop import crop_video_file
 
 
 
-def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, quality: str = "production_quality"):
+def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, quality: str = "production_quality", include_locale_in_file: bool = True):
     if test_run_with_last_frame:
         output_path = (output_dir/sc.__module__/f"{sc.__name__}_lastframe.png").resolve()
     else: 
-        output_path = (output_dir/sc.__module__/f"{sc.__name__}.mp4").resolve()
+        locale_prefix = f"{sc().current_locale().upper()}_" if include_locale_in_file else ""
+        output_path = (output_dir/sc.__module__/f"{locale_prefix}{sc.__name__}.mp4").resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True) #make sure always exist
     config = {"quality": quality, "preview": False, "output_file": str(output_path), "disable_caching": True, "media_dir": scene_media_folder} # disable caching is important for manim-voiceover (due to a bug in manim)
     if test_run_with_last_frame:
@@ -44,8 +45,21 @@ def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Pa
         # crop output file
         crop_video_file(output_path)
 
+    # return the config with which the scene was rendered
+    return config
 
-def render_scenes(scenes: List[Type[SophiaScene]], output_dir: Path, media_parent_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False, rethrow_exceptions: bool = False, quality: str = "production_quality"):
+
+def render_scenes(scenes: List[Type[SophiaScene]], 
+                  output_dir: Path, 
+                  media_parent_folder: Path, 
+                  test_run_with_last_frame: bool = False, 
+                  disable_progressbar: bool = False, 
+                  rethrow_exceptions: bool = False, 
+                  quality: str = "production_quality", 
+                  include_locale_in_file: bool = True,
+                  #optional function to run after a scene was rendered (with the scene as parameter and the bool return value indicating whether the scene was rendered successfully and the file to where it was rendered)
+                  after_render_func: Callable[[Type[SophiaScene], bool, Path], None] = None,
+                  ):
     """Renders all scenes in a list of scenes. Returns a list of scenes for which rendering failed, if rethrow_exceptions is False, otherwise it will rethrow the exceptions."""
     failed_rendered_scenes = []
 
@@ -56,9 +70,13 @@ def render_scenes(scenes: List[Type[SophiaScene]], output_dir: Path, media_paren
         scene_media_folder.mkdir(parents=True, exist_ok=True)
 
         try: 
-            render_scene(sc, output_dir, scene_media_folder, test_run_with_last_frame, disable_progressbar, quality)
+            used_render_config = render_scene(sc, output_dir, scene_media_folder, test_run_with_last_frame, disable_progressbar, quality, include_locale_in_file)
+            if after_render_func is not None:
+                after_render_func(sc, True, used_render_config["output_file"])
         except Exception as e:
             print(f"Error while rendering scene {sc.__name__}: {e}")
+            if after_render_func is not None:
+                after_render_func(sc, False, None)
             if rethrow_exceptions:
                 raise e
             else:
