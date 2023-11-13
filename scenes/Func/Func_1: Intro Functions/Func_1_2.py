@@ -47,6 +47,13 @@ def create_piecewise_linear(points):
 # Topic: Repetition - What is a Term?
 class Func_1_2_I_1_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2x+3$", "$x^2-2$", "$x+3=7$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_2.1I11q.question-text"),
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -83,12 +90,7 @@ class Func_1_2_I_1_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""Eine Funktion ist ja eine Abbildung, <bookmark mark="x_to_y"/>die jedem x genau ein y zuordnet.
-                Aber<bookmark mark="qmark"/> woher wissen wir, welches y zu welchem x gehört?
-                EINE Möglichkeit, die wir gerade kennengelernt haben, <bookmark mark="table_in"/>sind Wertetabellen. Da können wir dann für <bookmark mark="x_table"/>jeden Wert von x, den zugehörigen <bookmark mark="y_table"/>Wert von y ablesen.
-                <bookmark mark="table_out"/>Eine weitere Möglichkeit sind <bookmark mark="func_in"/>Funktionsterme, und die lernen wir jetzt kennen
-                Beginnen wir damit, Terme zu Wiederholen: Welcher dieser Ausdrücke ist KEIN Term? <bookmark mark="term_1"/>Ist es der Ausdruck 2x+3? <bookmark mark="term_2"/>Oder der Ausdruck x quadrat - 2? <bookmark mark="term_3"/>ODER ist es der Ausdruck x+3 istgleich 7?
-                """
+                text=self.translate("Func_1_2.1I11q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("x_to_y")
@@ -159,9 +161,7 @@ class Func_1_2_I_1_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""Ein Term besteht ja aus Zahlen, Variablen und Operatoren, enthält allerdings keine Gleichheitszeichen.
-                Also ist der Ausdruck x+3 gleich 7 <bookmark mark="strike_out"/>kein Term, sondern eine Gleichung. Die Ausdrücke 2x+3 und x quadrat - 2 hingegen<bookmark mark="pos_box"/> sind beides Terme.
-                """
+                text=self.translate("General.incorrect_2")+self.translate("Func_1_2.1I11a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("strike_out")
@@ -175,7 +175,96 @@ class Func_1_2_I_1_1_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+class Func_1_2_I_1_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term1 = MathTex("2x+3", color=c1t).shift(UP*1.5)
+        term2 = MathTex("x^2-2", color=c1t).next_to(term1, DOWN)
+        term3 = MathTex("x+3=7", color=c1t).next_to(term2, DOWN)
+        self.add(term1, term2, term3)
+
+        left, right = term3.get_left()[0], term3.get_right()[0]
+        top, bottom = term3.get_top()[1], term3.get_bottom()[1]
+        strike = VGroup(Line([left, bottom, 0], [right, top, 0], color=RED, stroke_width=5), Line([left, top, 0], [right, bottom, 0], color=RED, stroke_width=5))
+
+        pos_rect = SurroundingRectangle(Group(term1, term2), color=GREEN, buff=0.2, corner_radius=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Func_1_2.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("strike_out")
+            self.add_pencil_sound(1)
+            self.play(Write(strike), run_time=1)
+
+            self.wait_until_bookmark("pos_box")
+            self.add_pencil_sound(1)
+            self.play(Write(pos_rect), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_1_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term1 = MathTex("2x+3", color=c1t).shift(UP*1.5)
+        term2 = MathTex("x^2-2", color=c1t).next_to(term1, DOWN)
+        term3 = MathTex("x+3=7", color=c1t).next_to(term2, DOWN)
+        self.add(term1, term2, term3)
+
+        left, right = term3.get_left()[0], term3.get_right()[0]
+        top, bottom = term3.get_top()[1], term3.get_bottom()[1]
+        strike = VGroup(Line([left, bottom, 0], [right, top, 0], color=RED, stroke_width=5), Line([left, top, 0], [right, bottom, 0], color=RED, stroke_width=5))
+
+        pos_rect = SurroundingRectangle(Group(term1, term2), color=GREEN, buff=0.2, corner_radius=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_2")+self.translate("Func_1_2.1I11a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("strike_out")
+            self.add_pencil_sound(1)
+            self.play(Write(strike), run_time=1)
+
+            self.wait_until_bookmark("pos_box")
+            self.add_pencil_sound(1)
+            self.play(Write(pos_rect), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
 class Func_1_2_I_1_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$y=6$", "$y=9$", "$y=3$", "$y=12$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.1I12q.question-text"),
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -207,12 +296,7 @@ class Func_1_2_I_1_2_q(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""Betrachten wir also beispielsweise den Term 2x+3. Wir wollen diesen Term jetzt benutzen, um bei einer Funktion zu bestimmen, welchen y-Wert wir einem bestimmten x-Wert zuordnen.
-                Dafür setzen wir einfach <bookmark mark="x_in"/>den x-Wert in den Term ein, rechnen das aus und erhalten<bookmark mark="y_in"/> den y-Wert.
-                Setzen wir beispielsweise <bookmark mark="x_0"/>den x-Wert 0 ein, erhalten wir zwei mal null plus drei, also ist der y-Wert <bookmark mark="y_0"/> gleich 3.
-                Oder setzen wir <bookmark mark="x_1"/>den x-Wert 1 ein, erhalten wir zwei mal eins plus drei, was <bookmark mark="y_1"/>fünf ergibt. Also ist der y-Wert gleich 5.
-                Jetzt <bookmark mark="x_y_out"/>versuch du es mal: Welchen y-Wert erhältst du, wenn du <bookmark mark="x_question"/>den x-Wert 3 einsetzt?
-                """
+                text=self.translate("Func_1_2.1I12q.voiceover")
         ) as tracker:
             
             down_shift = term.get_y()
@@ -268,8 +352,7 @@ class Func_1_2_I_1_2_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text="""Wenn wir für x den Wert 3 einsetzen, erhalten wir zwei mal drei plus drei, was <bookmark mark="y_q"/>9 ergibt. Also ist der y-Wert gleich 9, wenn x gleich drei ist.
-                """
+                text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("y_q")
@@ -278,7 +361,104 @@ class Func_1_2_I_1_2_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+class Func_1_2_I_1_2_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("2","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        b = Brace(term, sharpness=1, color=c1t)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
+        x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        self.add(term, x_in, b, y_out, x_question)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_1")+self.translate("Func_1_2.1I12a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_q")
+            self.play(Write(y_question), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("2","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        b = Brace(term, sharpness=1, color=c1t)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
+        x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        self.add(term, x_in, b, y_out, x_question)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_q")
+            self.play(Write(y_question), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_2_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        term = MathTex("2","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        b = Brace(term, sharpness=1, color=c1t)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
+        x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        self.add(term, x_in, b, y_out, x_question)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_q")
+            self.play(Write(y_question), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
 class Func_1_2_I_1_4(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -290,21 +470,18 @@ class Func_1_2_I_1_4(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("","2x+3", color=c1t)
-        func_term = MathTex("f(x)=","2x+3", color=c1t)
-        box = SurroundingRectangle(term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        term = MathTex("","","","2x+3", color=c1t)
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
 
+        x4 = VGroup(MathTex("x=4", color=RED), MathTex("y=11", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        x5 = VGroup(MathTex("x=5", color=RED), MathTex("y=13", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
         self.add(term)
 
         
         # Action Sequence
         with self.voiceover(
-                text="""
-                Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.
-                Um deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark="f_x"/> ein f mit einer runden Klammer und x in der Klammer davor.
-                Man spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.
-                Wir können den Funktionsterm <bookmark mark="box"/>dann quasi als eine Art Rezept verstehen, mit dem wir für jeden x-Wert den zugehörigen y-Wert berechnen können.
-                """
+                text=self.translate("Func_1_2.1I14.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_x")
@@ -313,7 +490,536 @@ class Func_1_2_I_1_4(SophiaCursorScene):
             self.wait_until_bookmark("box")
             self.add_pencil_sound(1)
             self.play(Write(box), run_time=1)
+
+            self.wait_until_bookmark("x4")
+            self.add(x4[0])
+
+            self.wait_until_bookmark("move_x4")
+            self.play(x4.animate.shift(DOWN*3), run_time=4)
+
+            self.wait_until_bookmark("x5")
+            self.add(x5[0])
+            self.play(FadeOut(x4), run_time=1)
+
+            self.wait_until_bookmark("move_x5")
+            self.play(x5.animate.shift(DOWN*3), run_time=4)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+###########################################
+###########################################
+class Func_1_2_I_1_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$y=6$", "$y=9$", "$y=3$", "$y=12$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I15q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        x_half = VGroup(MathTex("x=\\tfrac12", color=RED), MathTex("y=4", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(func_term, box)
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_2.1I15q.voiceover")
+        ) as tracker:
             
+            self.wait_until_bookmark("x_half")
+            self.add(x_half[0])
+
+            self.wait_until_bookmark("move_x_half")
+            self.play(x_half.animate.shift(DOWN*3), run_time=4)
+
+            self.wait_until_bookmark("x_three_half")
+            self.add(x_three_half[0])
+            self.play(FadeOut(x_half), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_2_I_1_5_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(func_term, box, x_three_half[0])
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_4")+self.translate("Func_1_2.1I15a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_three_half")
+            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_5_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(func_term, box, x_three_half[0])
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_three_half")
+            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_5_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(func_term, box, x_three_half[0])
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_three_half")
+            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_5_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
+        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(func_term, box, x_three_half[0])
+
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("x_three_half")
+            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
+class Func_1_2_I_1_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$y=9$", "$y=1$", "$y=-1$", "$y=2$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_1_2.1I16q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","4-x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+
+        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_2.1I16q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_term")
+            self.add_pencil_sound(1)
+            self.play(Write(func_term), Write(box), run_time=1)
+
+            self.wait_until_bookmark("x_five")
+            self.add(x_five[0])
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_2_I_1_6_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","4-x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_6_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","4-x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_6_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","4-x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_1_2.1I16a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_6_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","4-x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
+class Func_1_2_I_1_7_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$y=-2$", "$y=2$", "$y=-4$", "$y=4$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.1I17q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+
+        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_2.1I17q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_term")
+            self.add_pencil_sound(1)
+            self.play(Write(func_term), Write(box), run_time=1)
+
+            self.wait_until_bookmark("x_five")
+            self.add(x_five[0])
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_7_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_4")+self.translate("Func_1_2.1I17a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_7_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_7_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_7_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
+
+        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        self.add(x_five[0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("y_in")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
+class Func_1_2_I_1_8(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        baboon = ImageMobject(assets_folder / "img" / "baboon_thumbs.png").move_to([-5,0,0])
+        baboon.scale(3.5/baboon.get_width())
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        func_term = MathTex("f(","x",")=","...", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+
+        x_five = VGroup(MathTex("x=\\circ", color=RED), MathTex("y=\\triangle", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_1_2.1I18.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(func_term), Write(box), run_time=1)
+
+            self.wait_until_bookmark("y_out")
+            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+
+            self.wait_until_bookmark("baboon_in")
+            self.add_shift_sound(0.5)
+            self.play(baboon.animate.shift(RIGHT*5), FadeOut(x_five), FadeOut(func_term), FadeOut(box), run_time=0.5)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)

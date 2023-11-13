@@ -142,7 +142,17 @@
     "1I41q": {
       "xlabel": "day",
       "ylabel": "# friends",
-      "voiceover": "So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark=\"table_in\"/>\nSay I have 12 friends on the first day. <bookmark mark=\"day_2\"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.\n<bookmark mark=\"day_3\"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.\n<bookmark mark=\"day_4\"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.\n<bookmark mark=\"cords_in\"/>Let's draw a coordinate system and plot the points.\nWhat color of points correspond to the number of friends I have on each day?\n<break time=\"1s\"/>\nIs it <bookmark mark=\"blue\"/>the blue points?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>The green points?\n<break time=\"0.4s\"/>\nOr is it <bookmark mark=\"pink\"/>the pink points?"
+      "voiceover": "So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark=\"table_in\"/>\nSay I have 12 friends on the first day. <bookmark mark=\"day_2\"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.\n<bookmark mark=\"day_3\"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.\n<bookmark mark=\"day_4\"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.\n<bookmark mark=\"cords_in\"/>Let's draw a coordinate system and plot the points.\nWhat color of points correspond to the number of friends I have on each day?\n<break time=\"1s\"/>\nIs it <bookmark mark=\"blue\"/>the blue points?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>The green points?\n<break time=\"0.4s\"/>\nOr is it <bookmark mark=\"pink\"/>the pink points?",
+      "question-text": "What color of points correspond to the number of friends I have on each day?",
+      "question-greenline": "The blue points",
+      "question-blueline": "The green points",
+      "question-pinkline": "The pink points"
+    },
+    "1I42": {
+      "voiceover": "Now we have practiced quite a bit. So we have seen how we can use <bookmark mark=\"table_in\"/> value tables to describe functions. And then we practiced <bookmark mark=\"plot_in\"/> connecting value tables and graphs of functions.\nReally <bookmark mark=\"lion_in\"/>great, how quickly you have learned so much about functions!"
+    },
+    "1I41a": {
+      "voiceover": "It has to be the green points, because I have <bookmark mark=\"day_1\"/> twelve friends on the first day, <bookmark mark=\"day_2\"/> sixteen friends on the second day, <bookmark mark=\"day_3\"/> ten friends on the third day, and <bookmark mark=\"day_4\"/> sixteen friends on the fourth day.<bookmark mark=\"colors_out\"/>\nTo get a better idea of what's going on, let's <bookmark mark=\"draw_line\"/>draw a line between the points. This is what we would typically call a function graph."
     }
   },
   "Func_1_2": {
@@ -269,6 +279,47 @@
     },
     "1I1": {
       "f-terms": "Function terms"
+    },
+    "1I11q": {
+      "voiceover": "A function is a mapping, <bookmark mark=\"x_to_y\"/>that assigns exactly one y to each x.\nBut <bookmark mark=\"qmark\"/> how do we know which y belongs to which x?\nONE way, which we have just learned, <bookmark mark=\"table_in\"/>are value tables. There, we can read off the corresponding <bookmark mark=\"y_table\"/>value of y for <bookmark mark=\"x_table\"/>every value of x.\n<bookmark mark=\"table_out\"/>Another possibility are <bookmark mark=\"func_in\"/>function terms, and we are now going to learn about them.\nLet's start by repeating terms: Which of these expressions is NOT a term? <bookmark mark=\"term_1\"/>Is it the expression 2x+3? <bookmark mark=\"term_2\"/>Or the expression x squared - 2? <bookmark mark=\"term_3\"/>OR is it the expression x+3 equals 7?",
+      "question-text": "Which of these expressions is NOT a term?"
+    },
+    "1I11a": {
+      "voiceover": "A term consists of numbers, variables, and operators, but does not contain any equality signs.\nTherefore, the expression x+3 equals 7 <bookmark mark=\"strike_out\"/>is not a term, but an equation. The expressions 2x+3 and x squared - 2, on the other hand, <bookmark mark=\"pos_box\"/>are both terms."
+    },
+    "1I12q": {
+      "voiceover": "Let's consider the term 2x+3, for example. We want to use this term now to determine the y-value we assign to a particular x-value in a function.\nFor this, we simply <bookmark mark=\"x_in\"/>insert the x-value into the term, calculate it, and obtain <bookmark mark=\"y_in\"/>the y-value.\nFor instance, if we <bookmark mark=\"x_0\"/>insert the x-value 0, we get two times zero plus three, so the y-value <bookmark mark=\"y_0\"/> is equal to 3.\nOr if we <bookmark mark=\"x_1\"/>insert the x-value 1, we get two times one plus three, which <bookmark mark=\"y_1\"/>yields five. So the y-value is equal to 5.\nNow <bookmark mark=\"x_y_out\"/>you try it: What y-value do you get when you <bookmark mark=\"x_question\"/>insert the x-value 3?",
+      "question-text": "What value of y corresponds to the value $x=3$?"
+    },
+    "1I12a": {
+      "voiceover": "When we insert the value 3 for x, we get two times three plus three, which <bookmark mark=\"y_q\"/>equals 9. Therefore, the y-value is equal to 9 when x is three."
+    },
+    "1I14": {
+      "voiceover": "So, if we use a term to describe a function, we call that term a function term.\nTo make it clear that the term describes a function, we write <bookmark mark=\"f_x\"/>an f with a round bracket and an x inside the bracket in front of it.\nWe then speak of the function f of x, in this case, one would say f of x is equal to two times x plus three.\nWe can understand the function term <bookmark mark=\"box\"/>as a kind of recipe with which we can calculate the corresponding y-value for every x-value.\nSo, if we enter a value for x, for example <bookmark mark=\"x4\"/>four, we can use the function term <bookmark mark=\"move_x4\"/>as a recipe to calculate the corresponding y-value, which is 11.\nOr we enter <bookmark mark=\"x5\"/>five, and apply <bookmark mark=\"move_x5\"/>the function term to calculate the corresponding y-value, which is 13."
+    },
+    "1I15q": {
+      "voiceover": "We can really insert any value for x. So, for example, also <bookmark mark=\"x_half\"/> x equal to one half. Then we get <bookmark mark=\"move_x_half\"/> two times one half plus three, which equals four...\nNow it's your turn to calculate: What do we get when we insert <bookmark mark=\"x_three_half\"/>x equal to three halves?",
+      "question-text": "What value of $y$ to we get when we plug in $x=\\tfrac32$?"
+    },
+    "1I15a": {
+      "voiceover": "When we insert x equal to three halves, <bookmark mark=\"x_three_half\"/>we get two times three halves plus three, which equals three plus three, thus six... Therefore, the y-value is equal to six when x is three halves."
+    },
+    "1I16q": {
+      "voiceover": "Now let's practice with a different function and a different function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals four minus x.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to five?",
+      "question-text": "What is the y-value, when x is equal to five?"
+    },
+    "1I16a": {
+      "voiceover": "We set x equal to five, <bookmark mark=\"y_in\"/>and get four minus five, which equals negative one. Therefore, the y-value is negative one when x is equal to five."
+    },
+    "1I17q": {
+      "voiceover": "So, again a different function and a new function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals two times x plus two.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to -2?",
+      "question-text": "Wat is the $y$-value, when $x$ is equal to $-2$?"
+    },
+    "1I17a": {
+      "voiceover": "We set x equal to -2, <bookmark mark=\"y_in\"/>and get negative four plus two, which equals negative two. Therefore, the y-value is negative two when x is equal to -2."
+    },
+    "1I18": {
+      "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
     }
   },
   "Func_1_3": {

@@ -1136,9 +1136,9 @@ class Func_1_1_I_4_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = [self.translate("Func_1_1.1I31q.question-greenline"), self.translate("Func_1_1.1I31q.question-blueline"), self.translate("Func_1_1.1I31q.question-pinkline")],
-            correctAnswerIndex = 0,
-            questionText = self.translate("Func_1_1.1I31q.question-text") 
+            answerOptions = [self.translate("Func_1_1.1I41q.question-greenline"), self.translate("Func_1_1.1I41q.question-blueline"), self.translate("Func_1_1.1I41q.question-pinkline")],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_1.1I41q.question-text") 
         )
 
     # Main method for constructing the animation
@@ -1257,10 +1257,167 @@ class Func_1_1_I_4_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                    It has to be the green points, because I have <bookmark mark="day_1"/> twelve friends on the first day, <bookmark mark="day_2"/> sixteen friends on the second day, <bookmark mark="day_3"/> ten friends on the third day, and <bookmark mark="day_4"/> sixteen friends on the fourth day.<bookmark mark="colors_out"/>
-                    To get a better idea of what's going on, let's <bookmark mark="draw_line"/>draw a line between the points. This is what we would typically call a function graph.
-                    """
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I41a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("day_1")
+            self.play(circs_green[0].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[0].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_2")
+            self.play(circs_green[1].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[1].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_3")
+            self.play(circs_green[2].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[2].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_4")
+            self.play(circs_green[3].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[3].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("colors_out")
+            self.play(FadeOut(circs_blue), FadeOut(circs_pink))
+
+            self.wait_until_bookmark("draw_line")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_green_plotted))
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_4_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([0,4,1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        xvals = [str(i+1) for i in range(4)]
+        xvals_int = [i+1 for i in range(4)]
+        yvals = ["12", "16", "10", "16"]
+        yvals_int = [12, 16, 10, 16]
+
+        xlabel = self.translate("Func_1_1.1I41q.xlabel")
+        ylabel = self.translate("Func_1_1.1I41q.ylabel")
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=1)
+
+        self.add(t)
+
+        cords_blue = [[1,16], [2,10], [3,16], [4,12]]
+        cords_green = [[1,12], [2,16], [3,10], [4,16]]
+        cords_pink = [[1,10], [2,12], [3,12], [4,10]]
+
+        func_green = create_piecewise_linear(list(zip(xvals_int, yvals_int)))
+        func_green_plotted = plane.plot(func_green, color=GREEN)
+
+        circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
+        circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])
+        circs_pink = VGroup(*[Dot(plane.c2p(*cords_pink[i]), color=PINK) for i in range(4)])
+        self.add(circs_blue, circs_green, circs_pink)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_1_1.1I41a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("day_1")
+            self.play(circs_green[0].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[0].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_2")
+            self.play(circs_green[1].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[1].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_3")
+            self.play(circs_green[2].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[2].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("day_4")
+            self.play(circs_green[3].animate.scale(2), run_time=0.3)
+            self.wait(0.5)
+            self.play(circs_green[3].animate.scale(0.5), run_time=0.3)
+
+            self.wait_until_bookmark("colors_out")
+            self.play(FadeOut(circs_blue), FadeOut(circs_pink))
+
+            self.wait_until_bookmark("draw_line")
+            self.add_pencil_sound(1.5)
+            self.play(Write(func_green_plotted))
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_1_I_4_1_c(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Create the coordinate system
+        cords = self.add_cords([0,4,1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16]).shift(DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        xvals = [str(i+1) for i in range(4)]
+        xvals_int = [i+1 for i in range(4)]
+        yvals = ["12", "16", "10", "16"]
+        yvals_int = [12, 16, 10, 16]
+
+        xlabel = self.translate("Func_1_1.1I41q.xlabel")
+        ylabel = self.translate("Func_1_1.1I41q.ylabel")
+
+        # Add title to the scene
+        self.add_title(self.translate("Func_1_1.1I3.main.title"))
+
+        t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+                    color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+                    row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+        t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=1)
+
+        self.add(t)
+
+        cords_blue = [[1,16], [2,10], [3,16], [4,12]]
+        cords_green = [[1,12], [2,16], [3,10], [4,16]]
+        cords_pink = [[1,10], [2,12], [3,12], [4,10]]
+
+        func_green = create_piecewise_linear(list(zip(xvals_int, yvals_int)))
+        func_green_plotted = plane.plot(func_green, color=GREEN)
+
+        circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
+        circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])
+        circs_pink = VGroup(*[Dot(plane.c2p(*cords_pink[i]), color=PINK) for i in range(4)])
+        self.add(circs_blue, circs_green, circs_pink)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_1_1.1I41a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("day_1")
@@ -1737,10 +1894,7 @@ class Func_1_1_I_4_2(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                    Jetzt haben wir ganz schön fleißig geübt. Wir haben also gesehen, wie wir<bookmark mark="table_in"/> Wertetabellen benutzen können, um Funktionen zu beschreiben. Und dann haben wir geübt, <bookmark mark="plot_in"/> Wertetabellen und Graphen von Funktionen zu verbinden.
-                    Echt <bookmark mark="lion_in"/>klasse, wie schnell du so viel über Funktionen gelernt hast!
-                    """
+                text=self.translate("Func_1_1.1I42.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("table_in")
