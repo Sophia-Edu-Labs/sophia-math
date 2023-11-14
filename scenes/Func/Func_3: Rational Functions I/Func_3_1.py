@@ -266,7 +266,7 @@ class Func_3_1_I_3_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I3.a.title"))
 
-        warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
+        warningsign = ImageMobject(assets_folder / "img" / "warningsign_legacy.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         # Create a notepad with texts
@@ -339,7 +339,7 @@ class Func_3_1_I_3_b(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I3.a.title"))
 
-        warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
+        warningsign = ImageMobject(assets_folder / "img" / "warningsign_legacy.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -408,7 +408,7 @@ class Func_3_1_I_3_c(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I3.a.title"))
 
-        warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
+        warningsign = ImageMobject(assets_folder / "img" / "warningsign_legacy.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
@@ -473,7 +473,7 @@ class Func_3_1_I_3_d(SophiaCursorScene):
 
         self.add_title(self.translate("Func_3_1.I3.a.title"))
 
-        warningsign = ImageMobject(assets_folder / "img" / "warningsign.png").move_to([-5,1,0])
+        warningsign = ImageMobject(assets_folder / "img" / "warningsign_legacy.png").move_to([-5,1,0])
         warningsign = warningsign.scale(3.8/warningsign.get_width())
 
         cursor = AltCursor(stroke_width=0.0, idle=True)

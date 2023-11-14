@@ -360,7 +360,7 @@ class Func_1_1_I_2(SophiaCursorScene):
 
         # Create a notepad with texts
         cords = self.add_cords([6, 24, 3], [5, 25, 5], x_ticks=[6, 12, 18, 24], y_ticks=[10, 15, 20, 25],
-                               axisLabelX=self.translate("Func_1_1.1I1a.main.x-axis"), axisLabelY=self.translate("Func_1_1.1I1a.main.y-axis")).shift(DOWN*1.4)
+                               axisLabelX=self.translate("Func_1_1.1I1a.main.x-axis"), axisLabelY=self.translate("Func_1_1.1I1a.main.y-axis")).shift(DOWN*.6)
         plane = cords[0]
 
         # Add title to the scene
@@ -378,6 +378,10 @@ class Func_1_1_I_2(SophiaCursorScene):
         cursor.add_updater(lambda m, dt: self.bring_to_front(cursor))
 
         xToY = MathTex("x", "\,\,\,\\rightarrow\,\,\,", "y", color=c1t).next_to(cords, DOWN, buff=0.5)
+
+        attention = ImageMobject(assets_folder / "img" / "warningsign.png").shift([-5,-2.8,0])
+        attention =  attention.scale(2.6/attention.get_height())
+        self.add(attention)
 
         # Action Sequence
         with self.voiceover(
@@ -418,12 +422,15 @@ class Func_1_1_I_2(SophiaCursorScene):
             self.play(Write(l), run_time=3)
 
             self.wait_until_bookmark("Memorize")
-            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(attention.animate.shift(RIGHT*5), run_time=0.5)
+            self.wait(0.5)
             cursor.idle=False
 
             self.wait_until_bookmark("aY")
             x,y,_ = xToY[2].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
+            self.add_shift_sound(0.5)
+            self.play(CursorMoveTo(cursor,x,y), attention.animate.shift(RIGHT*5), run_time=0.5)
 
             self.wait_until_bookmark("aX")
             x,y,_ = xToY[0].get_center()+0.4*DOWN
@@ -1566,6 +1573,11 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
         if self.idx_selected == self.correcty:
             first_bit = self.evaluate_string(self.translate("Func_1_1.ValueTableSolutionScene.first_bit_correct"))
 
+        col_highlights = [SurroundingRectangle(col, color=PURE_BLUE, corner_radius=.1, buff=.2) for col in tab.get_columns()]
+
+        x_0, y_0, _ = plane.c2p(0,0)
+        lines = VGroup(DashedLine(LEFT, RIGHT, color=GREY).add_updater(lambda m: m.put_start_and_end_on([x_0,cursor.get_y(),-1], cursor.get_center())), DashedLine(LEFT, RIGHT, color=GREY).add_updater(lambda m: m.put_start_and_end_on([cursor.get_x(), y_0,-1], cursor.get_center())))
+
         self.first_bit = first_bit
         # Action Sequence
         with self.voiceover(
@@ -1577,6 +1589,7 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
 
             # Highlight first Text
             self.wait_until_bookmark("Func")
+            self.add_pencil_sound(1.5)
             self.play(Write(funcs[self.idx_selected]))
             self.add(cursor)
 
@@ -1589,44 +1602,24 @@ class ValueTableSolutionScene(SophiaCursorScene, metaclass=ABCMeta):
             self.wait_until_bookmark("yaxis")
             self.play(CursorMarkAxis(cursor, plane, 'y'), run_time=0.5)
 
-            # Create first Value
             self.wait_until_bookmark("val1")
+            self.add(lines)
             x,y,_ = plane.c2p(self.xvals[0], self.yvals[self.correcty][0])
-            self.play(CursorMoveResize(cursor, x, y, 0.2, 0.2))
-            c2 = cursor.copy()
-            self.add(c2)
+            self.play(CursorMoveResize(cursor, x, y), run_time=0.3)
+            self.play(Write(col_highlights[1]))
+            self.add(Circle(color=RED, radius=0.1).move_to(cursor))
 
-            # Create second Value
-            self.wait_until_bookmark("val2")
-            x,y,_ = plane.c2p(self.xvals[1], self.yvals[self.correcty][1])
-            self.play(CursorMoveTo(cursor, x, y))
-            c3 = cursor.copy()
-            self.add(c3)
-
-            # Create third Value
-            self.wait_until_bookmark("val3")
-            x,y,_ = plane.c2p(self.xvals[2], self.yvals[self.correcty][2])
-            self.play(CursorMoveTo(cursor, x, y))
-            c4 = cursor.copy()
-            self.add(c4)
-
-            # Create fourth Value
-            self.wait_until_bookmark("val4")
-            x,y,_ = plane.c2p(self.xvals[3], self.yvals[self.correcty][3])
-            self.play(CursorMoveTo(cursor, x, y))
-            c5 = cursor.copy()
-            self.add(c5)
-
-            # Create fifth Value
-            self.wait_until_bookmark("val5")
-            x,y,_ = plane.c2p(self.xvals[4], self.yvals[self.correcty][4])
-            self.play(CursorMoveTo(cursor, x, y))
-            c6 = cursor.copy()
-            self.add(c6)
+            for val_idx in range(1,5):
+                # Highlight first Value
+                self.wait_until_bookmark("val"+str(val_idx+1))
+                x,y,_ = plane.c2p(self.xvals[val_idx], self.yvals[self.correcty][val_idx])
+                self.play(CursorMoveTo(cursor, x, y), ReplacementTransform(col_highlights[val_idx], col_highlights[val_idx+1]),  run_time=0.3)
+                self.add(Circle(color=RED, radius=0.1).move_to(cursor))
+            cursor.idle=True
 
             # Create the function
             self.wait_until_bookmark("TrueFunc")
-            self.play(Write(func_plotted_correct), run_time=3)
+            self.play(Unwrite(col_highlights[-1]))
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -1766,7 +1759,7 @@ class Func_1_1_P_2_c(ValueTableSolutionScene):
     def construct(self):
 
         self.correcty = 2
-        self.idx_selected = 1
+        self.idx_selected = 2
         self.xvals = [1,2,3,4,5]
         self.yvals = [[10, 20, 30, 40, 20], [30, 10, 40, 20, 30], [20, 30, 10, 40, 30]]
         self.cords = self.add_cords([1,5,1], [0, 40, 10], x_ticks=[1,3,5], x_labels=[1,3,5], y_ticks=[10,20,30,40], y_labels=[10,20,30,40], height=2).shift(0.4*DOWN)

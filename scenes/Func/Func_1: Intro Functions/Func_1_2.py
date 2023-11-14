@@ -277,16 +277,20 @@ class Func_1_2_I_1_2_q(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("2","x","+3", color=c1t)
-        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        term = MathTex("2\\cdot","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*.8)
         b = Brace(term, sharpness=1, color=c1t)
         y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
 
         x_0 = MathTex("=0", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_0 = MathTex("=3", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_0 = MathTex("2\\cdot","0","+3", color=c1t)
+        term_0[1].set_color(RED)
 
         x_1 = MathTex("=1", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_1 = MathTex("=5", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_1 = MathTex("2\\cdot","1","+3", color=c1t)
+        term_1[1].set_color(RED)
 
         x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
 
@@ -310,17 +314,25 @@ class Func_1_2_I_1_2_q(SophiaCursorScene):
 
             self.wait_until_bookmark("x_0")
             self.play(Write(x_0), run_time=1)
+            self.wait(1)
+            term_copy = term.copy()
+            self.play(TransformMatchingTex(term, term_0))
 
             self.wait_until_bookmark("y_0")
             self.play(Write(y_0), run_time=1)
 
             self.wait_until_bookmark("x_1")
+            self.play(TransformMatchingTex(term_0, term_copy), run_time=.4)
             self.play(ReplacementTransform(x_0, x_1), Unwrite(y_0), run_time=1)
+            self.wait(0.5)
+            self.play(TransformMatchingTex(term_copy, term_1))
 
             self.wait_until_bookmark("y_1")
+            term = term_copy.copy()
             self.play(Write(y_1), run_time=1)
 
             self.wait_until_bookmark("x_y_out")
+            self.play(TransformMatchingTex(term_1, term), run_time=.4)
             self.play(FadeOut(x_1), FadeOut(y_1), run_time=1)
 
             self.wait_until_bookmark("x_question")
@@ -340,12 +352,14 @@ class Func_1_2_I_1_2_a(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("2","x","+3", color=c1t)
-        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        term = MathTex("2\\cdot","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.8)
         b = Brace(term, sharpness=1, color=c1t)
         y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
         x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_question = MathTex("2\\cdot","3","+3", color=c1t)
+        term_question[1].set_color(RED)
 
         self.add(term, x_in, b, y_out, x_question)
 
@@ -354,6 +368,9 @@ class Func_1_2_I_1_2_a(SophiaCursorScene):
         with self.voiceover(
                 text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
         ) as tracker:
+            
+            self.wait_until_bookmark("term_q")
+            self.play(TransformMatchingTex(term, term_question))
             
             self.wait_until_bookmark("y_q")
             self.play(Write(y_question), run_time=1)
@@ -372,12 +389,14 @@ class Func_1_2_I_1_2_b(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("2","x","+3", color=c1t)
-        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        term = MathTex("2\\cdot","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.8)
         b = Brace(term, sharpness=1, color=c1t)
         y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
         x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_question = MathTex("2\\cdot","3","+3", color=c1t)
+        term_question[1].set_color(RED)
 
         self.add(term, x_in, b, y_out, x_question)
 
@@ -386,6 +405,9 @@ class Func_1_2_I_1_2_b(SophiaCursorScene):
         with self.voiceover(
                 text=self.translate("General.correct_1")+self.translate("Func_1_2.1I12a.voiceover")
         ) as tracker:
+            
+            self.wait_until_bookmark("term_q")
+            self.play(TransformMatchingTex(term, term_question))
             
             self.wait_until_bookmark("y_q")
             self.play(Write(y_question), run_time=1)
@@ -404,12 +426,14 @@ class Func_1_2_I_1_2_c(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("2","x","+3", color=c1t)
-        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        term = MathTex("2\\cdot","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.8)
         b = Brace(term, sharpness=1, color=c1t)
         y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
         x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_question = MathTex("2\\cdot","3","+3", color=c1t)
+        term_question[1].set_color(RED)
 
         self.add(term, x_in, b, y_out, x_question)
 
@@ -418,6 +442,9 @@ class Func_1_2_I_1_2_c(SophiaCursorScene):
         with self.voiceover(
                 text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
         ) as tracker:
+            
+            self.wait_until_bookmark("term_q")
+            self.play(TransformMatchingTex(term, term_question))
             
             self.wait_until_bookmark("y_q")
             self.play(Write(y_question), run_time=1)
@@ -436,12 +463,14 @@ class Func_1_2_I_1_2_d(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("2","x","+3", color=c1t)
-        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.6)
+        term = MathTex("2\\cdot","x","+3", color=c1t)
+        x_in = MathTex("x","\\\\\\Downarrow", color=RED).next_to(term[1], UP*0.8)
         b = Brace(term, sharpness=1, color=c1t)
         y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(b, DOWN*.6)
         x_question = MathTex("=3", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
         y_question = MathTex("=9", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        term_question = MathTex("2\\cdot","3","+3", color=c1t)
+        term_question[1].set_color(RED)
 
         self.add(term, x_in, b, y_out, x_question)
 
@@ -450,6 +479,9 @@ class Func_1_2_I_1_2_d(SophiaCursorScene):
         with self.voiceover(
                 text=self.translate("General.incorrect_1")+self.translate("Func_1_2.1I12a.voiceover")
         ) as tracker:
+            
+            self.wait_until_bookmark("term_q")
+            self.play(TransformMatchingTex(term, term_question))
             
             self.wait_until_bookmark("y_q")
             self.play(Write(y_question), run_time=1)
@@ -472,6 +504,14 @@ class Func_1_2_I_1_4(SophiaCursorScene):
 
         term = MathTex("","","","2x+3", color=c1t)
         func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        func_term_x4 = MathTex("f(","4",")=","11", color=c1t)
+        func_term_x4[1].set_color(RED)
+        func_term_x4[-1].set_color(GREEN)
+        func_term_x5 = MathTex("f(","5",")=","13", color=c1t)
+        func_term_x5[1].set_color(RED)
+        func_term_x5[-1].set_color(GREEN)
+
+
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
 
         x4 = VGroup(MathTex("x=4", color=RED), MathTex("y=11", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
@@ -495,14 +535,15 @@ class Func_1_2_I_1_4(SophiaCursorScene):
             self.add(x4[0])
 
             self.wait_until_bookmark("move_x4")
-            self.play(x4.animate.shift(DOWN*3), run_time=4)
+            ft_copy = func_term.copy()
+            self.play(x4.animate.shift(DOWN*3), TransformMatchingTex(func_term, func_term_x4), run_time=4)
 
             self.wait_until_bookmark("x5")
             self.add(x5[0])
-            self.play(FadeOut(x4), run_time=1)
+            self.play(FadeOut(x4), TransformMatchingTex(func_term_x4, ft_copy), run_time=1)
 
             self.wait_until_bookmark("move_x5")
-            self.play(x5.animate.shift(DOWN*3), run_time=4)
+            self.play(x5.animate.shift(DOWN*3), TransformMatchingTex(ft_copy, func_term_x5), run_time=4)
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
