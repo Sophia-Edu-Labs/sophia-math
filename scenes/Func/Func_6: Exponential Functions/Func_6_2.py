@@ -710,7 +710,7 @@ class Func_6_2_I_2_1_q(SophiaCursorScene):
 
         plot_1 = plane.plot(lambda x: 17/16-(2**x)/16, color=BLUE)
         plot_2 = plane.plot(lambda x: (1/2)**x, color=GREEN_D)
-        plot_3 = plane.plot(lambda x: 1-15*x/16, color=PINK)
+        plot_3 = plane.plot(lambda x: 1-(15/64)*x, color=PINK)
 
         f_tex = MathTex("f","(x)", "=", "\\frac{1}{2}", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
@@ -997,7 +997,7 @@ class Func_6_2_I_2_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["f(x)=1000\\cdot\\left(\\tfrac18\\right)^x", "g(x)=1000\\cdot\\left(1-\\tfrac18 x\\right)", "h(x)=1000\\cdot\\left(\\tfrac78\\right)^x"],
+            answerOptions = ["$f(x)=1000\\cdot\\left(\\tfrac18\\right)^x$", "$g(x)=1000\\cdot\\left(1-\\tfrac18 x\\right)$", "$h(x)=1000\\cdot\\left(\\tfrac78\\right)^x$"],
             correctAnswerIndex = 2,
             questionText=self.translate("Func_6_2.I22.q.question-text")
         )
