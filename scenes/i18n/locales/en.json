@@ -278,7 +278,7 @@
       "voiceover": "                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {self.domain[0]} to {self.domain[1]}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.<split/>\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {self.range[0]} to {self.range[1]},\n                so that is the range of the function."
     },
     "1I1": {
-      "f-terms": "Function terms"
+      "f-terms": "Modelling the world"
     },
     "1I11q": {
       "voiceover": "A function is a mapping, <bookmark mark=\"x_to_y\"/>that assigns exactly one y to each x.\nBut <bookmark mark=\"qmark\"/> how do we know which y belongs to which x?\nONE way, which we have just learned, <bookmark mark=\"table_in\"/>are value tables. There, we can read off the corresponding <bookmark mark=\"y_table\"/>value of y for <bookmark mark=\"x_table\"/>every value of x.\n<bookmark mark=\"table_out\"/>Another possibility are <bookmark mark=\"func_in\"/>function terms, and we are now going to learn about them.\nLet's start by repeating terms: Which of these expressions is NOT a term? <bookmark mark=\"term_1\"/>Is it the expression 2x+3? <bookmark mark=\"term_2\"/>Or the expression x squared - 2? <bookmark mark=\"term_3\"/>OR is it the expression x+3 equals 7?",
@@ -295,31 +295,31 @@
       "voiceover": "When we insert the value 3 for x, we<bookmark mark=\"term_q\"/> get two times three plus three, which <bookmark mark=\"y_q\"/>equals 9. Therefore, the y-value is equal to 9 when x is three."
     },
     "1I14": {
-      "voiceover": "So, if we use a term to describe a function, we call that term a function term.\nTo make it clear that the term describes a function, we write <bookmark mark=\"f_x\"/>an f with a round bracket and an x inside the bracket in front of it.\nWe then speak of the function f of x, in this case, one would say f of x is equal to two times x plus three.\nWe can understand the function term <bookmark mark=\"box\"/>as a kind of recipe with which we can calculate the corresponding y-value for every x-value.\nSo, if we enter a value for x, for example <bookmark mark=\"x4\"/>four, we can use the function term <bookmark mark=\"move_x4\"/>as a recipe to calculate the corresponding y-value, which is 11.\nOr we enter <bookmark mark=\"x5\"/>five, and apply <bookmark mark=\"move_x5\"/>the function term to calculate the corresponding y-value, which is 13."
+      "voiceover": "So, when we use a term to describe a function, we call the term a function term. To make it clear that the term describes a function, we write an f with a round bracket and x in the bracket in front of it <bookmark mark=\"f_x\"/>. Then we speak of the function f of x, in this example, we would say f of x equals two times x plus three. We can understand the function term <bookmark mark=\"box\"/> almost like a kind of recipe, with which we can calculate the corresponding y-value <bookmark mark=\"y_out\"/> for every x-value <bookmark mark=\"x_in\"/>. So, if we enter a value for x, for example, four <bookmark mark=\"x4\"/>, we can use the function term as a recipe to calculate the corresponding y-value. Therefore, we replace x with four and <bookmark mark=\"four_in\"/> obtain f of 4 equals two times four plus three, and we can calculate this and we <bookmark mark=\"four_sol\"/> get f of four equals 11... So <bookmark mark=\"y_11\"/> y equals 11.\n\nOr, <bookmark mark=\"reset\"/> another example, we enter five <bookmark mark=\"x5\"/>. Then we calculate the corresponding y value by substituting five for x and <bookmark mark=\"five_in\"/> get f of five equals two times five plus three. That <bookmark mark=\"five_sol\"/> is equal to 13, so <bookmark mark=\"y_13\"/> y equals 13."
     },
     "1I15q": {
-      "voiceover": "We can really insert any value for x. So, for example, also <bookmark mark=\"x_half\"/> x equal to one half. Then we get <bookmark mark=\"move_x_half\"/> two times one half plus three, which equals four...\nNow it's your turn to calculate: What do we get when we insert <bookmark mark=\"x_three_half\"/>x equal to three halves?",
+      "voiceover": "We can really substitute any value for x. So, for example, we can also use x equals one half <bookmark mark=\"x_half\"/>. Then we get <bookmark mark=\"half_in\"/> f of one half equals two times one half plus three. And <bookmark mark=\"y_4\"/> that equals four, so then y equals 4 <bookmark mark=\"reset\"/>.\n\nNow it's your turn to calculate: What do we get when we substitute x equals three halves <bookmark mark=\"x_three_half\"/>?",
       "question-text": "What value of $y$ to we get when we plug in $x=\\tfrac32$?"
     },
     "1I15a": {
-      "voiceover": "When we insert x equal to three halves, <bookmark mark=\"x_three_half\"/>we get two times three halves plus three, which equals three plus three, thus six... Therefore, the y-value is equal to six when x is three halves."
+      "voiceover": "When we substitute <bookmark mark=\"x_threehalf\"/> x equal to three halves, then we get <bookmark mark=\"threehalf_in\"/> f of three halves is equal to two times three halves plus three. And <bookmark mark=\"y_6\"/> that equals six, so then y is equal to 6."
     },
     "1I16q": {
       "voiceover": "Now let's practice with a different function and a different function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals four minus x.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to five?",
       "question-text": "What is the y-value, when x is equal to $5$?"
     },
     "1I16a": {
-      "voiceover": "We set x equal to five, <bookmark mark=\"y_in\"/>and get four minus five, which equals negative one. Therefore, the y-value is negative one when x is equal to five."
+      "voiceover": "When we insert <bookmark mark=\"x_five\"/> x as 5, then we find <bookmark mark=\"five_in\"/> f of five is equal to 4 - 5. And four minus five <bookmark mark=\"y_neg_one\"/> results in negative one, so then y is equal to negative one."
     },
     "1I17q": {
-      "voiceover": "So, again a different function and a new function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals two times x plus two.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to -2?",
+      "voiceover": "So, again a different function and a new function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals two times x plus two.\nWhat is the y-value, <bookmark mark=\"x_neg_two\"/>when x is equal to -2?",
       "question-text": "Wat is the $y$-value, when $x$ is equal to $-2$?"
     },
     "1I17a": {
-      "voiceover": "We set x equal to -2, <bookmark mark=\"y_in\"/>and get negative four plus two, which equals negative two. Therefore, the y-value is negative two when x is equal to -2."
+      "voiceover": "When we substitute <bookmark mark=\"x_neg_two\"/> x equals -2, then we get <bookmark mark=\"neg_two_in\"/> f of -2 is equal to two times negative two plus 2. And that results in <bookmark mark=\"y_neg_two\"/> negative two, so then y equals negative two."
     },
     "1I18": {
-      "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
+      "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by <bookmark mark=\"x_in\"/>inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
     }
   },
   "Func_1_3": {

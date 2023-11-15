@@ -502,21 +502,37 @@ class Func_1_2_I_1_4(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        term = MathTex("","","","2x+3", color=c1t)
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        term = MathTex("","","","2\\cdot", "x", "+3", color=c1t)
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ft_2 = func_term.copy()
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        self.add(term)
+
+        int_term_x4 = MathTex("f(","4",")=","2\\cdot", "4", "+3", color=c1t)
+        int_term_x4[1].set_color(RED)
+        int_term_x4[-2].set_color(RED)
+        
         func_term_x4 = MathTex("f(","4",")=","11", color=c1t)
         func_term_x4[1].set_color(RED)
         func_term_x4[-1].set_color(GREEN)
+
+        int_term_x5 = MathTex("f(","5",")=","2\\cdot", "5", "+3", color=c1t)
+        int_term_x5[1].set_color(RED)
+        int_term_x5[-2].set_color(RED)
+
         func_term_x5 = MathTex("f(","5",")=","13", color=c1t)
         func_term_x5[1].set_color(RED)
         func_term_x5[-1].set_color(GREEN)
 
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        x_in_4 = MathTex("=4", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_4 = MathTex("=11", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
 
-        x4 = VGroup(MathTex("x=4", color=RED), MathTex("y=11", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        x5 = VGroup(MathTex("x=5", color=RED), MathTex("y=13", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(term)
+        x_in_5 = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_5 = MathTex("=13", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
 
         
         # Action Sequence
@@ -531,19 +547,38 @@ class Func_1_2_I_1_4(SophiaCursorScene):
             self.add_pencil_sound(1)
             self.play(Write(box), run_time=1)
 
-            self.wait_until_bookmark("x4")
-            self.add(x4[0])
+            self.wait_until_bookmark("x_in")
+            self.play(Write(x_in), run_time=1)
 
-            self.wait_until_bookmark("move_x4")
-            ft_copy = func_term.copy()
-            self.play(x4.animate.shift(DOWN*3), TransformMatchingTex(func_term, func_term_x4), run_time=4)
+            self.wait_until_bookmark("y_out")
+            self.play(Write(y_out), run_time=1)
+
+            self.wait_until_bookmark("x4")
+            self.play(Write(x_in_4))
+
+            self.wait_until_bookmark("four_in")
+            self.play(TransformMatchingTex(func_term, int_term_x4), run_time=1)
+
+            self.wait_until_bookmark("four_sol")
+            self.play(TransformMatchingTex(int_term_x4, func_term_x4), run_time=1)
+
+            self.wait_until_bookmark("y_11")
+            self.play(Write(y_out_4), run_time=1)
+
+            self.wait_until_bookmark("reset")
+            self.play(TransformMatchingTex(func_term_x4, ft_2), Unwrite(x_in_4), Unwrite(y_out_4), run_time=1)
 
             self.wait_until_bookmark("x5")
-            self.add(x5[0])
-            self.play(FadeOut(x4), TransformMatchingTex(func_term_x4, ft_copy), run_time=1)
+            self.play(Write(x_in_5))
 
-            self.wait_until_bookmark("move_x5")
-            self.play(x5.animate.shift(DOWN*3), TransformMatchingTex(ft_copy, func_term_x5), run_time=4)
+            self.wait_until_bookmark("five_in")
+            self.play(TransformMatchingTex(ft_2, int_term_x5), run_time=1)
+
+            self.wait_until_bookmark("five_sol")
+            self.play(TransformMatchingTex(int_term_x5, func_term_x5), run_time=1)
+
+            self.wait_until_bookmark("y_13")
+            self.play(Write(y_out_5), run_time=1)
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -569,12 +604,39 @@ class Func_1_2_I_1_5_q(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ftc = func_term.copy()
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
-
-        x_half = VGroup(MathTex("x=\\tfrac12", color=RED), MathTex("y=4", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
         self.add(func_term, box)
+
+        int_term_x_half = MathTex("f(","\\tfrac12",")=","2\\cdot", "\\tfrac12", "+3", color=c1t)
+        int_term_x_half[1].set_color(RED)
+        int_term_x_half[-2].set_color(RED)
+        
+        func_term_x_half = MathTex("f(","\\tfrac12",")=","4", color=c1t)
+        func_term_x_half[1].set_color(RED)
+        func_term_x_half[-1].set_color(GREEN)
+
+        int_term__threehalf = MathTex("f(","\\tfrac32",")=","2\\cdot", "\\tfrac32", "+3", color=c1t)
+        int_term__threehalf[1].set_color(RED)
+        int_term__threehalf[-2].set_color(RED)
+
+        func_term__threehalf = MathTex("f(","\\tfrac32",")=","6", color=c1t)
+        func_term__threehalf[1].set_color(RED)
+        func_term__threehalf[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_half = MathTex("=\\tfrac12", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_half = MathTex("=4", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+
+        x_in_threehalf = MathTex("=\\tfrac32", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
 
         
         # Action Sequence
@@ -583,14 +645,23 @@ class Func_1_2_I_1_5_q(SophiaCursorScene):
         ) as tracker:
             
             self.wait_until_bookmark("x_half")
-            self.add(x_half[0])
+            self.play(Write(x_in_half), run_time=1)
 
-            self.wait_until_bookmark("move_x_half")
-            self.play(x_half.animate.shift(DOWN*3), run_time=4)
+            self.wait_until_bookmark("half_in")
+            self.play(TransformMatchingTex(func_term, int_term_x_half), run_time=1)
+
+            self.wait_until_bookmark("y_4")
+            self.play(TransformMatchingTex(int_term_x_half, func_term_x_half), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_half), run_time=1)
+
+            self.wait_until_bookmark("reset")
+            self.play(TransformMatchingTex(func_term_x_half, ftc), Unwrite(x_in_half), Unwrite(y_out_half), run_time=1)
 
             self.wait_until_bookmark("x_three_half")
-            self.add(x_three_half[0])
-            self.play(FadeOut(x_half), run_time=1)
+            self.play(Write(x_in_threehalf), run_time=1)
+
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -606,12 +677,30 @@ class Func_1_2_I_1_5_a(SophiaCursorScene):
 
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
-
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ftc = func_term.copy()
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
 
-        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(func_term, box, x_three_half[0])
+
+        int_term_threehalf = MathTex("f(","\\tfrac32",")=","2\\cdot", "\\tfrac32", "+3", color=c1t)
+        int_term_threehalf[1].set_color(RED)
+        int_term_threehalf[-2].set_color(RED)
+
+        func_term_threehalf = MathTex("f(","\\tfrac32",")=","6", color=c1t)
+        func_term_threehalf[1].set_color(RED)
+        func_term_threehalf[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=\\tfrac32", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=6", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
 
         
         # Action Sequence
@@ -619,8 +708,17 @@ class Func_1_2_I_1_5_a(SophiaCursorScene):
                 text=self.translate("General.correct_4")+self.translate("Func_1_2.1I15a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("x_three_half")
-            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+            self.wait_until_bookmark("x_threehalf")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("threehalf_in")
+            self.play(TransformMatchingTex(func_term, int_term_threehalf), run_time=1)
+
+            self.wait_until_bookmark("y_6")
+            self.play(TransformMatchingTex(int_term_threehalf, func_term_threehalf), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -635,12 +733,30 @@ class Func_1_2_I_1_5_b(SophiaCursorScene):
 
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
-
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ftc = func_term.copy()
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
 
-        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(func_term, box, x_three_half[0])
+
+        int_term_threehalf = MathTex("f(","\\tfrac32",")=","2\\cdot", "\\tfrac32", "+3", color=c1t)
+        int_term_threehalf[1].set_color(RED)
+        int_term_threehalf[-2].set_color(RED)
+
+        func_term_threehalf = MathTex("f(","\\tfrac32",")=","6", color=c1t)
+        func_term_threehalf[1].set_color(RED)
+        func_term_threehalf[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=\\tfrac32", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=6", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
 
         
         # Action Sequence
@@ -648,8 +764,17 @@ class Func_1_2_I_1_5_b(SophiaCursorScene):
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("x_three_half")
-            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+            self.wait_until_bookmark("x_threehalf")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("threehalf_in")
+            self.play(TransformMatchingTex(func_term, int_term_threehalf), run_time=1)
+
+            self.wait_until_bookmark("y_6")
+            self.play(TransformMatchingTex(int_term_threehalf, func_term_threehalf), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -664,12 +789,30 @@ class Func_1_2_I_1_5_c(SophiaCursorScene):
 
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
-
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ftc = func_term.copy()
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
 
-        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(func_term, box, x_three_half[0])
+
+        int_term_threehalf = MathTex("f(","\\tfrac32",")=","2\\cdot", "\\tfrac32", "+3", color=c1t)
+        int_term_threehalf[1].set_color(RED)
+        int_term_threehalf[-2].set_color(RED)
+
+        func_term_threehalf = MathTex("f(","\\tfrac32",")=","6", color=c1t)
+        func_term_threehalf[1].set_color(RED)
+        func_term_threehalf[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=\\tfrac32", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=6", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
 
         
         # Action Sequence
@@ -677,8 +820,17 @@ class Func_1_2_I_1_5_c(SophiaCursorScene):
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("x_three_half")
-            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+            self.wait_until_bookmark("x_threehalf")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("threehalf_in")
+            self.play(TransformMatchingTex(func_term, int_term_threehalf), run_time=1)
+
+            self.wait_until_bookmark("y_6")
+            self.play(TransformMatchingTex(int_term_threehalf, func_term_threehalf), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -693,12 +845,30 @@ class Func_1_2_I_1_5_d(SophiaCursorScene):
 
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
-
-        func_term = MathTex("f(","x",")=","2x+3", color=c1t)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+3", color=c1t)
+        ftc = func_term.copy()
         box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        self.add(func_term, box)
 
-        x_three_half = VGroup(MathTex("x=\\tfrac32", color=RED), MathTex("y=6", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(func_term, box, x_three_half[0])
+
+        int_term_threehalf = MathTex("f(","\\tfrac32",")=","2\\cdot", "\\tfrac32", "+3", color=c1t)
+        int_term_threehalf[1].set_color(RED)
+        int_term_threehalf[-2].set_color(RED)
+
+        func_term_threehalf = MathTex("f(","\\tfrac32",")=","6", color=c1t)
+        func_term_threehalf[1].set_color(RED)
+        func_term_threehalf[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=\\tfrac32", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=6", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
 
         
         # Action Sequence
@@ -706,11 +876,22 @@ class Func_1_2_I_1_5_d(SophiaCursorScene):
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I15a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("x_three_half")
-            self.play(x_three_half.animate.shift(DOWN*3), run_time=6)
+            self.wait_until_bookmark("x_threehalf")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("threehalf_in")
+            self.play(TransformMatchingTex(func_term, int_term_threehalf), run_time=1)
+
+            self.wait_until_bookmark("y_6")
+            self.play(TransformMatchingTex(int_term_threehalf, func_term_threehalf), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
+
+
 
 ###########################################
 ###########################################
@@ -723,7 +904,6 @@ class Func_1_2_I_1_6_q(SophiaCursorScene):
             questionText = self.translate("Func_1_2.1I16q.question-text"),
         )
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -732,30 +912,34 @@ class Func_1_2_I_1_6_q(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","4-x", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        ##
+        func_term = MathTex("f(","x",")=","4-", "x", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+
+        x_in_five = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        ##
+
+        self.add(x_in, y_out, box)
+
         
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_1_2.1I16q.voiceover")
+            text=self.translate("Func_1_2.1I16q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_term")
-            self.add_pencil_sound(1)
-            self.play(Write(func_term), Write(box), run_time=1)
+            self.play(Write(func_term), run_time=1)
 
             self.wait_until_bookmark("x_five")
-            self.add(x_five[0])
-
-        # Wait for 4 seconds at the end of animation
-        self.wait(4)
+            self.play(Write(x_in_five), run_time=1)
 
 
 class Func_1_2_I_1_6_a(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -765,26 +949,51 @@ class Func_1_2_I_1_6_a(SophiaCursorScene):
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
         func_term = MathTex("f(","x",")=","4-x", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
         self.add(func_term, box)
 
-        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
 
+        int_term_5 = MathTex("f(","5",")=","4-", "5", color=c1t)
+        int_term_5[1].set_color(RED)
+        int_term_5[-1].set_color(RED)
+
+        func_term_5 = MathTex("f(","5",")=","-1", color=c1t)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-1", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_five")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_one")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_6_b(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -794,26 +1003,51 @@ class Func_1_2_I_1_6_b(SophiaCursorScene):
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
         func_term = MathTex("f(","x",")=","4-x", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
         self.add(func_term, box)
 
-        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
 
+        int_term_5 = MathTex("f(","5",")=","4-", "5", color=c1t)
+        int_term_5[1].set_color(RED)
+        int_term_5[-1].set_color(RED)
+
+        func_term_5 = MathTex("f(","5",")=","-1", color=c1t)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-1", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_five")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_one")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_6_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -823,26 +1057,51 @@ class Func_1_2_I_1_6_c(SophiaCursorScene):
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
         func_term = MathTex("f(","x",")=","4-x", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
         self.add(func_term, box)
 
-        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
 
+        int_term_5 = MathTex("f(","5",")=","4-", "5", color=c1t)
+        int_term_5[1].set_color(RED)
+        int_term_5[-1].set_color(RED)
+
+        func_term_5 = MathTex("f(","5",")=","-1", color=c1t)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-1", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.correct_3")+self.translate("Func_1_2.1I16a.voiceover")
+                text=self.translate("General.correct_4")+self.translate("Func_1_2.1I16a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_five")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_one")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_6_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -852,19 +1111,45 @@ class Func_1_2_I_1_6_d(SophiaCursorScene):
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
         func_term = MathTex("f(","x",")=","4-x", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
         self.add(func_term, box)
 
-        x_five = VGroup(MathTex("x=5", color=RED), MathTex("y=-1", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
 
+        int_term_5 = MathTex("f(","5",")=","4-", "5", color=c1t)
+        int_term_5[1].set_color(RED)
+        int_term_5[-1].set_color(RED)
+
+        func_term_5 = MathTex("f(","5",")=","-1", color=c1t)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_threehalf = MathTex("=5", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-1", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
+
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_5")+self.translate("Func_1_2.1I16a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_five")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_one")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
@@ -876,11 +1161,10 @@ class Func_1_2_I_1_7_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = ["$y=-2$", "$y=2$", "$y=-4$", "$y=4$"],
-            correctAnswerIndex = 1,
+            correctAnswerIndex = 0,
             questionText = self.translate("Func_1_2.1I17q.question-text"),
         )
 
-    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -889,29 +1173,35 @@ class Func_1_2_I_1_7_q(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        ##
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+2", color=c1t)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+
+        x_in_neg_two = MathTex("=-2", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        ##
+
+        self.add(x_in, y_out, box)
+
         
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_1_2.1I17q.voiceover")
+            text=self.translate("Func_1_2.1I17q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_term")
-            self.add_pencil_sound(1)
-            self.play(Write(func_term), Write(box), run_time=1)
+            self.play(Write(func_term), run_time=1)
 
-            self.wait_until_bookmark("x_five")
-            self.add(x_five[0])
-
-        # Wait for 4 seconds at the end of animation
-        self.wait(4)
+            self.wait_until_bookmark("x_neg_two")
+            self.play(Write(x_in_neg_two), run_time=1)
+        
 
 class Func_1_2_I_1_7_a(SophiaCursorScene):
 
-    # Main method for constructing the animation
+
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -920,27 +1210,53 @@ class Func_1_2_I_1_7_a(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+2", color=c1t, font_size=fs2)
+
+        int_term_5 = MathTex("f(","-2",")=","2\\cdot", "(-2)", "+2", color=c1t, font_size=fs2)
+        int_term_5[1].set_color(RED)
+        int_term_5[-2].set_color(RED)
+
+        func_term_5 = MathTex("f(","-2",")=","-2", color=c1t, font_size=fs2)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+        
+        box = SurroundingRectangle(int_term_5, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
         self.add(func_term, box)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
+        x_in_threehalf = MathTex("=-2", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-2", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
 
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.correct_4")+self.translate("Func_1_2.1I17a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_neg_two")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("neg_two_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_two")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_7_b(SophiaCursorScene):
 
-    # Main method for constructing the animation
+
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -949,27 +1265,53 @@ class Func_1_2_I_1_7_b(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+2", color=c1t, font_size=fs2)
+
+        int_term_5 = MathTex("f(","-2",")=","2\\cdot", "(-2)", "+2", color=c1t, font_size=fs2)
+        int_term_5[1].set_color(RED)
+        int_term_5[-2].set_color(RED)
+
+        func_term_5 = MathTex("f(","-2",")=","-2", color=c1t, font_size=fs2)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+        
+        box = SurroundingRectangle(int_term_5, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
         self.add(func_term, box)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
+        x_in_threehalf = MathTex("=-2", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-2", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
 
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_neg_two")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("neg_two_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_two")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_7_c(SophiaCursorScene):
 
-    # Main method for constructing the animation
+
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -978,27 +1320,53 @@ class Func_1_2_I_1_7_c(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+2", color=c1t, font_size=fs2)
+
+        int_term_5 = MathTex("f(","-2",")=","2\\cdot", "(-2)", "+2", color=c1t, font_size=fs2)
+        int_term_5[1].set_color(RED)
+        int_term_5[-2].set_color(RED)
+
+        func_term_5 = MathTex("f(","-2",")=","-2", color=c1t, font_size=fs2)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+        
+        box = SurroundingRectangle(int_term_5, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
         self.add(func_term, box)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
+        x_in_threehalf = MathTex("=-2", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-2", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
 
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_neg_two")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("neg_two_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_two")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
 class Func_1_2_I_1_7_d(SophiaCursorScene):
 
-    # Main method for constructing the animation
+
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -1007,23 +1375,50 @@ class Func_1_2_I_1_7_d(SophiaCursorScene):
         # Add title to the scene
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
-        func_term = MathTex("f(","x",")=","2x+2", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        func_term = MathTex("f(","x",")=","2\\cdot", "x", "+2", color=c1t, font_size=fs2)
+
+        int_term_5 = MathTex("f(","-2",")=","2\\cdot", "(-2)", "+2", color=c1t, font_size=fs2)
+        int_term_5[1].set_color(RED)
+        int_term_5[-2].set_color(RED)
+
+        func_term_5 = MathTex("f(","-2",")=","-2", color=c1t, font_size=fs2)
+        func_term_5[1].set_color(RED)
+        func_term_5[-1].set_color(GREEN)
+        
+        box = SurroundingRectangle(int_term_5, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
+
         self.add(func_term, box)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
 
-        x_five = VGroup(MathTex("x=-2", color=RED), MathTex("y=-2", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
-        self.add(x_five[0])
+        x_in_threehalf = MathTex("=-2", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_threehalf = MathTex("=-2", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
+        ##
 
+        self.add(func_term, box, x_in, y_out)
+
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_4")+self.translate("Func_1_2.1I17a.voiceover")
         ) as tracker:
             
-            self.wait_until_bookmark("y_in")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.wait_until_bookmark("x_neg_two")
+            self.play(Write(x_in_threehalf), run_time=1)
+
+            self.wait_until_bookmark("neg_two_in")
+            self.play(TransformMatchingTex(func_term, int_term_5), run_time=1)
+
+            self.wait_until_bookmark("y_neg_two")
+            self.play(TransformMatchingTex(int_term_5, func_term_5), run_time=1)
+            self.wait(0.5)
+            self.play(Write(y_out_threehalf), run_time=1)
+
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
+
 
 ###########################################
 ###########################################
@@ -1042,9 +1437,17 @@ class Func_1_2_I_1_8(SophiaCursorScene):
         title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
 
         func_term = MathTex("f(","x",")=","...", color=c1t)
-        box = SurroundingRectangle(func_term, color=PURPLE_E, buff=0.3, corner_radius=0.2)
+        box = SurroundingRectangle(func_term, color=PURE_BLUE, buff=0.3, corner_radius=0.2)
 
-        x_five = VGroup(MathTex("x=\\circ", color=RED), MathTex("y=\\triangle", color=GREEN, opacity=0).add_updater(lambda m: m.set_opacity(0 if m.get_top()[1]>box.get_bottom()[1] else 1))).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(box, UP, buff=.4)
+        func_term_dots_q = MathTex("f(","...",")=","???", color=c1t)
+        func_term_dots_q[1].set_color(RED)
+        func_term_dots_q[-1].set_color(GREEN)
+        
+        x_in = MathTex("x","\\\\ \\Downarrow", color=RED).next_to(box, UP*.6)
+        y_out = MathTex("\\Downarrow\\\\","y", color=GREEN).next_to(box, DOWN*.6)
+
+        x_in_dot = MathTex("=...", color=RED).next_to(x_in[0], RIGHT, buff=0.1)
+        y_out_q = MathTex("=???", color=GREEN).next_to(y_out[1], RIGHT, buff=0.1)
 
         # Action Sequence
         with self.voiceover(
@@ -1054,17 +1457,94 @@ class Func_1_2_I_1_8(SophiaCursorScene):
             self.wait_until_bookmark("term_in")
             self.play(Write(func_term), Write(box), run_time=1)
 
+            self.wait_until_bookmark("x_in")
+            self.play(Write(x_in), Write(x_in_dot), run_time=1)
+
             self.wait_until_bookmark("y_out")
-            self.play(x_five.animate.shift(DOWN*3), run_time=5)
+            self.play(TransformMatchingTex(func_term, func_term_dots_q), run_time=1)
+            self.wait(2)
+            self.play(Write(y_out), Write(y_out_q), run_time=2)
 
             self.wait_until_bookmark("baboon_in")
             self.add_shift_sound(0.5)
-            self.play(baboon.animate.shift(RIGHT*5), FadeOut(x_five), FadeOut(func_term), FadeOut(box), run_time=0.5)
+            self.play(baboon.animate.shift(RIGHT*5), FadeOut(func_term), FadeOut(box), FadeOut(x_in), FadeOut(y_out), FadeOut(x_in_dot), FadeOut(y_out_q), run_time=1)
 
 
         # Wait for 4 seconds at the end of animation
         self.wait(4)
     
+
+######################################################################################
+class Func_1_2_I_1_9(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        cat_with_hat = ImageMobject(assets_folder / "img" / "cat_with_hat.png").move_to([-5,0,0])
+        cat_with_hat.scale(3.5/cat_with_hat.get_width())
+        crazy_world = ImageMobject(assets_folder / "img" / "crazy_world.png").move_to([-5,0,0])
+        crazy_world.scale(3.5/crazy_world.get_width())
+
+        f = MathTex("f(x)=5+x", color=c1t, font_size=fs1)
+        g = MathTex("g(x)=5x", color=c1t, font_size=fs1)
+        h = MathTex("h(x)=5x+5", color=c1t, font_size=fs1)
+        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.4)
+        price = Tex(":$5$\\texteuro", color=c1t, font_size=fs1).shift([1.4,1,0])
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = """
+                        Warum lernen wir über Funktionen?
+                        Wir machen das nämlich nicht nur zum Spaß, es <bookmark mark="world_in"/>gibt nämlich viele Situationen,
+                        die wir gut mit Funktionen beschreiben können. <bookmark mark="world_out"/>
+                        Nehmen wir ein Beispiel: Um mir mehr Geld zu verdienen, habe ich einen Onlineshop, in dem ich
+                        <bookmark mark="cat_in"/> Katzenhüte verkaufe.
+                        Ich verkaufe jeden Hut für <bookmark mark="prize_in"/>fünf Euro. Wenn x die Anzahl der verkauften Hüte ist,
+                        welche Funktion beschreibt dann, wie viel Geld ich verdient habe?
+                        Ist es <bookmark mark="f_in"/>die Funktion f von x gleich 5 plus x?
+                        Oder ist es <bookmark mark="g_in"/>die Funktion g von x gleich 5 mal x?
+                        Oder ist es <bookmark mark="h_in"/>die Funktion h von x gleich 5 mal x plus 5?
+                        """
+        ) as tracker:
+            
+            self.wait_until_bookmark("world_in")
+            self.add_shift_sound(0.5)
+            self.play(crazy_world.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("world_out")
+            self.add_shift_sound(0.5)
+            self.play(crazy_world.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("cat_in")
+            self.add_shift_sound(0.5)
+            self.play(cat_with_hat.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("prize_in")
+            self.play(cat_with_hat.animate.scale(0.4), run_time=1)
+            self.play(cat_with_hat.animate.shift([0,1,0]), Write(price), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(f), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(g), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(h), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
 
 ######################################################################################
 class Func_1_2_I_1(SophiaCursorScene):
@@ -1634,7 +2114,6 @@ class Func_1_2_P_1_1_c(FuncTermAnswerScene):
 
 #################################################
 #################################################
-
 class Func_1_2_P_1_2_q(FuncTermQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:

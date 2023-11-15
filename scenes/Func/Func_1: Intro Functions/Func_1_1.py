@@ -2311,3 +2311,198 @@ PROTOTYPES = [
     PagePrototypeVideo.from_scene(Func_1_1_P_8_c)
 ]
 
+
+
+
+
+
+
+
+
+
+
+# class Test(SophiaCursorScene):
+
+#     def task_definition(self) -> SophiaTaskDefinition:
+#         return SophiaTaskDefinition(
+#             answerOptions = [self.translate("Func_1_1.1I41q.question-greenline"), self.translate("Func_1_1.1I41q.question-blueline"), self.translate("Func_1_1.1I41q.question-pinkline")],
+#             correctAnswerIndex = 1,
+#             questionText = self.translate("Func_1_1.1I41q.question-text") 
+#         )
+
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+
+#         # Create the coordinate system
+#         cords = self.add_cords([0,4,1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16]).shift(DOWN*.8)
+#         plane = cords[0]
+
+#         xvals = [str(i+1) for i in range(4)]
+#         y_1 = [3,9,2,6]
+#         y_2 = [1,12,11,3]
+#         y_3 = [8,4,6,12]
+#         yvals = [str(y) for y in y_3]
+
+#         xlabel = "x"
+#         ylabel = "y"
+
+#         # Add title to the scene
+        
+
+#         t = Table([[str(val) for val in xvals], [str(val) for val in yvals]],
+#                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+#                     row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+#         t = t.scale(3.3/t.get_width()).next_to(plane, DOWN, buff=0.6)
+
+#         rows = t.get_columns()
+#         t_structure = VGroup(t.get_horizontal_lines(), t.get_vertical_lines(), rows[0], rows[1])
+
+#         cords_blue = [[idx+1, y_1[idx]] for idx in range(4)]
+#         cords_green = [[idx+1, y_2[idx]] for idx in range(4)]
+#         cords_pink = [[idx+1, y_3[idx]] for idx in range(4)]
+
+#         circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
+#         circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])
+#         circs_pink = VGroup(*[Dot(plane.c2p(*cords_pink[i]), color=PINK) for i in range(4)])
+
+#         pic_1 = VGroup(circs_blue, circs_green, circs_pink, t, cords)
+#         self.add(pic_1)
+#         self.wait(3)
+#         self.remove(pic_1)
+
+# #########################################################################################################
+#         cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[1,2,3,4], y_ticks=[2,4,6,8]).shift(UP*0.8)
+#         plane = cords[0]
+
+#         xvals = [str(i+1) for i in range(4)]
+#         y_1 = [3,9,2,6]
+#         y_2 = [1,5,9,3]
+#         y_3 = [8,4,6,9]
+#         yvals_1 = [str(y) for y in y_1]
+#         yvals_2 = [str(y) for y in y_2]
+#         yvals_3 = [str(y) for y in y_3]
+#         yvals = [yvals_1, yvals_2, yvals_3]
+
+#         xlabel = "x"
+#         ylabel = "y"
+
+#         # Add title to the scene
+
+#         tables = VGroup(*[Table([[str(val) for val in xvals], [str(val) for val in yval_current]],
+#                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+#                     row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+#                     for yval_current in yvals]).arrange(DOWN, buff=.4)
+#         tables = tables.scale(3.3/tables.get_width()).next_to(plane, DOWN, buff=0.8)
+
+#         coords = [[idx+1, y_1[idx]] for idx in range(4)]
+#         circs = VGroup(*[Dot(plane.c2p(*coords[i]), color=ORANGE) for i in range(4)])
+
+#         pic_2 = VGroup(cords, circs, tables)
+#         self.add(pic_2)
+#         self.wait(3)
+#         self.remove(pic_2)
+
+# #########################################################################################################
+# ###### Wertetabelle erstellen - Pt1
+#         cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[1,2,3,4], y_ticks=[2,4,6,8]).shift(UP*0.8)
+#         plane = cords[0]
+
+#         xvals = [str(i+1) for i in range(4)]
+#         y_1 = [2,3,1,7]
+
+#         yvals_1 = [str(y) for y in y_1]
+
+#         yvals = [yvals_1]
+
+#         xlabel = "x"
+#         ylabel = "y"
+
+#         # Add title to the scene
+
+#         tables = VGroup(*[Table([[str(val) for val in xvals], [str(val) for val in yval_current]],
+#                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+#                     row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+#                     for yval_current in yvals]).arrange(DOWN, buff=.4)
+#         tables = tables.scale(3.3/tables.get_width()).next_to(plane, DOWN, buff=0.8)
+
+#         coords = [[idx+1, y_1[idx]] for idx in range(4)]
+#         circs = VGroup(*[Dot(plane.c2p(*coords[i]), color=BLUE) for i in range(4)])
+
+#         pic_2 = VGroup(cords, circs, tables)
+#         self.add(pic_2)
+#         self.wait(3)
+#         self.remove(pic_2)
+
+# #########################################################################################################
+# ###### Wertetabelle erstellen - Pt2
+#         cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[1,2,3,4], y_ticks=[2,4,6,8]).shift(UP*0.8)
+#         plane = cords[0]
+
+#         xvals = [str(i+1) for i in range(4)]
+#         y_1 = [9,3,4,3]
+
+#         yvals_1 = [str(y) for y in y_1]
+
+#         yvals = [yvals_1]
+
+#         xlabel = "x"
+#         ylabel = "y"
+
+#         # Add title to the scene
+
+#         tables = VGroup(*[Table([[str(val) for val in xvals], [str(val) for val in yval_current]],
+#                     color=BLACK, line_config={"color":BLACK}, element_to_mobject_config={"color":BLACK},
+#                     row_labels=[Text(xlabel, color=BLACK, font_size = fs1), Text(ylabel, color=BLACK, font_size = fs1)])
+#                     for yval_current in yvals]).arrange(DOWN, buff=.4)
+#         tables = tables.scale(3.3/tables.get_width()).next_to(plane, DOWN, buff=0.8)
+
+#         coords = [[idx+1, y_1[idx]] for idx in range(4)]
+#         circs = VGroup(*[Dot(plane.c2p(*coords[i]), color=PINK) for i in range(4)])
+
+#         pic_2 = VGroup(cords, circs, tables)
+#         self.add(pic_2)
+#         self.wait(3)
+#         self.remove(pic_2)
+
+# #########################################################################################################
+#         cords = self.add_cords([-2,2,1], [-6, 6, 3], x_ticks=[], y_ticks=[])
+#         plane = cords[0]
+
+#         f_1 = Circle(radius=0.4, color=RED).move_to(plane.c2p(0,0))
+#         f_2 = plane.plot(lambda x: 2*x+1, color=ORANGE)
+#         f_3 = Line(plane.c2p(1,0), plane.c2p(1,10), color=PURE_BLUE)
+
+#         pic_3 = VGroup(cords, f_1, f_2, f_3)
+#         self.add(pic_3)
+#         self.wait(3)
+#         self.remove(pic_3)
+
+# #########################################################################################################
+#         cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[], y_ticks=[])
+#         plane = cords[0]
+
+#         f_1 = Circle(radius=0.4, color=RED).move_to(plane.c2p(0,0))
+#         f_2 = plane.plot(lambda x: 2*x+1, color=ORANGE)
+#         f_3 = Line(plane.c2p(1,0), plane.c2p(1,10), color=PURE_BLUE)
+
+#         pic_3 = VGroup(cords, f_1, f_2, f_3)
+#         self.add(pic_3)
+#         self.wait(3)
+#         self.remove(pic_3)
+
+# #########################################################################################################
+#         cords = self.add_cords([0,4,1], [0, 10, 4], x_ticks=[], y_ticks=[])
+#         plane = cords[0]
+
+#         f_1 = plane.plot(lambda x: abs(x-3), color=PURE_BLUE)
+#         f_2 = plane.plot(lambda x: 2*x+1, color=ORANGE)
+#         f_3 = plane.plot(lambda x: 2, color=GREEN)
+
+#         pic_4 = VGroup(cords, f_1, f_2, f_3)
+#         self.add(pic_4)
+#         self.wait(3)
+#         self.remove(pic_4)
+

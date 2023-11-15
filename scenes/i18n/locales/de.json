@@ -278,7 +278,7 @@
       "voiceover": "{self.intro}\n<bookmark mark=\"define_domain\"/>\nDer Definitionsbereich ist die Menge aller x-Werte, die wir in die Funktion einfügen.\n<break time=\"1s\"/>\nIn diesem Beispiel fügen wir alle Werte auf der x-Achse ein, also alle Werte von <bookmark mark=\"domain\"/> {self.domain[0]} bis {self.domain[1]}.\nDas ist also unser Definitionsbereich.\n<break time=\"1s\"/><bookmark mark=\"define_range\"/>\nDer Wertebereich hingegen ist die Menge aller üpsilon-Werte, die wir aus der Funktion erhalten.\n<break time=\"1s\"/>\nDie erhaltenen Werte können wir einfach auf der üpsiloAchse ablesen.\nAus der Grafik können wir ersehen, dass wir alle Werte von <bookmark mark=\"range\"/> {self.range[0]} bis {self.range[1]} erhalten.\nDas ist also der Wertebereich der Funktion."
     },
     "1I1": {
-      "f-terms": "Funktionsterme"
+      "f-terms": "Die Welt modellieren"
     },
     "1I11q": {
       "voiceover": "Eine Funktion ist ja eine Abbildung, <bookmark mark=\"x_to_y\"/>die jedem x genau ein y zuordnet.\nAber<bookmark mark=\"qmark\"/> woher wissen wir, welches y zu welchem x gehört?\nEINE Möglichkeit, die wir gerade kennengelernt haben, <bookmark mark=\"table_in\"/>sind Wertetabellen. Da können wir dann für <bookmark mark=\"x_table\"/>jeden Wert von x, den zugehörigen <bookmark mark=\"y_table\"/>Wert von y ablesen.\n<bookmark mark=\"table_out\"/>Eine weitere Möglichkeit sind <bookmark mark=\"func_in\"/>Funktionsterme, und die lernen wir jetzt kennen\nBeginnen wir damit, Terme zu Wiederholen: Welcher dieser Ausdrücke ist KEIN Term? <bookmark mark=\"term_1\"/>Ist es der Ausdruck 2x+3? <bookmark mark=\"term_2\"/>Oder der Ausdruck x quadrat - 2? <bookmark mark=\"term_3\"/>ODER ist es der Ausdruck x+3 istgleich 7?",
@@ -295,31 +295,31 @@
       "voiceover": "Wenn wir für x den Wert 3 einsetzen, erhalten<bookmark mark=\"term_q\"/> wir zwei mal drei plus drei, was <bookmark mark=\"y_q\"/>9 ergibt. Also ist der y-Wert gleich 9, wenn x gleich drei ist."
     },
     "1I14": {
-      "voiceover": "Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.\nUm deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark=\"f_x\"/> ein f mit einer runden Klammer und x in der Klammer davor.\nMan spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.\nWir können den Funktionsterm <bookmark mark=\"box\"/>dann quasi als eine Art Rezept verstehen, mit dem wir für jeden x-Wert den zugehörigen y-Wert berechnen können.\nGeben wir also einen Wert für x ein, zum Beispiel <bookmark mark=\"x4\"/>vier, können wir den Funktionsterm <bookmark mark=\"move_x4\"/>als Rezept verwenden, um den zugehörigen y-Wert, nämlich 11 zu berechnen.\nOder wir geben <bookmark mark=\"x5\"/>fünf ein, und wenden<bookmark mark=\"move_x5\"/> den Funktionsterm an, um den zugehörigen y-Wert, nämlich 13 zu berechnen."
+      "voiceover": "Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.\nUm deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark=\"f_x\"/> ein f mit einer runden Klammer und x in der Klammer davor.\nMan spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.\nWir können den Funktionsterm <bookmark mark=\"box\"/>dann quasi als eine Art Rezept verstehen, mit dem wir für<bookmark mark=\"x_in\"/> jeden x-Wert den zugehörigen<bookmark mark=\"y_out\"/> y-Wert berechnen können.\nGeben wir also einen Wert für x ein, zum Beispiel <bookmark mark=\"x4\"/>vier, können wir den Funktionsterm als Rezept verwenden, um den zugehörigen y-Wert zu berechnen.\nWir ersetzen also x durch vier und <bookmark mark=\"four_in\"/>erhalten f von 4 gleich zwei mal vier plus drei, und das können wir ausrechnen und wir <bookmark mark=\"four_sol\"/>erhalten f von vier gleich 11... Also <bookmark mark=\"y_11\"/> ist y gleich 11.\nOder, <bookmark mark=\"reset\"/>anderes Beispiel, wir geben <bookmark mark=\"x5\"/>fünf ein. Dann rechnen wir den zugehörigen y Wert aus, indem wir fünf für x einsetzen und <bookmark mark=\"five_in\"/>erhalten f von fünf gleich zwei mal fünf plus drei.  Das <bookmark mark=\"five_sol\"/>ist gleich 13, also <bookmark mark=\"y_13\"/>ist y gleich 13."
     },
     "1I15q": {
-      "voiceover": "Wir können wirklich jeden Wert für x einsetzen. Also zum Beispiel auch<bookmark mark=\"x_half\"/> x gleich ein halb. Dann erhalten wir<bookmark mark=\"move_x_half\"/> zwei mal ein halb plus drei, was gleich vier ist...\nJetzt bist du dran mit rechnen: Was erhalten wir, wenn wir <bookmark mark=\"x_three_half\"/>x gleich drei halbe einsetzen?",
+      "voiceover": "Wir können wirklich jeden Wert für x einsetzen. Also zum Beispiel auch<bookmark mark=\"x_half\"/> x gleich ein halb. Dann erhalten <bookmark mark=\"half_in\"/>wir f von ein halb gleich zwei mal ein halb plus drei. Und <bookmark mark=\"y_4\"/>das ergibt vier, also ist dann y gleich 4.<bookmark mark=\"reset\"/>\nJetzt bist du dran mit rechnen: Was erhalten wir, wenn wir <bookmark mark=\"x_three_half\"/>x gleich drei halbe einsetzen?",
       "question-text": "Welchen Wert von $y$ erhalten wir, wenn wir $x=\\tfrac32$ einsetzen?"
     },
     "1I15a": {
-      "voiceover": "Wenn wir x gleich drei halbe einsetzen, <bookmark mark=\"x_three_half\"/>erhalten wir zwei mal drei halbe plus drei, was gleich drei plus drei, also sechs ist... Also ist der y-Wert gleich sechs, wenn x gleich drei halbe ist."
+      "voiceover": "Wenn wir <bookmark mark=\"x_threehalf\"/> x gleich drei halbe einsetzen, dann erhalten <bookmark mark=\"threehalf_in\"/>wir f von drei halbe ist gleich zwei mal drei halbe plus drei. Und <bookmark mark=\"y_6\"/>das ergibt sechs, also ist dann y gleich 6."
     },
     "1I16q": {
       "voiceover": "Jetzt üben wir mit einer anderen Funktion und einem anderen Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich vier minus x.\nWas ist der y-Wert, <bookmark mark=\"x_five\"/>wenn x gleich fünf ist?",
       "question-text": "Was ist der y-Wert, wenn x gleich $5$ ist?"
     },
     "1I16a": {
-      "voiceover": "Wir setzen x gleich fünf ein, <bookmark mark=\"y_in\"/>und erhalten vier minus fünf, was gleich minus eins ist. Also ist der y-Wert gleich minus eins, wenn x gleich fünf ist."
+      "voiceover": "Wenn wir <bookmark mark=\"x_five\"/> x gleich 5 einsetzen, dann erhalten <bookmark mark=\"five_in\"/>wir f von fünf ist gleich 4 - 5. Und vier minus fünf <bookmark mark=\"y_neg_one\"/>ergibt ja minus eins, also ist dann y gleich minus eins."
     },
     "1I17q": {
-      "voiceover": "So, wieder eine andere Funktion und ein neuer Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich zwei x plus zwei.\nWas ist der y-Wert, <bookmark mark=\"x_five\"/>wenn x gleich -2 ist?",
+      "voiceover": "So, wieder eine andere Funktion und ein neuer Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich zwei x plus zwei.\nWas ist der y-Wert, <bookmark mark=\"x_neg_two\"/>wenn x gleich -2 ist?",
       "question-text": "Was ist der $y$-Wert, wenn $x$ gleich $-2$ ist?"
     },
     "1I17a": {
-      "voiceover": "Wir setzen x gleich -2 ein, <bookmark mark=\"y_in\"/>und erhalten minus vier plus 2, was gleich -2 ist. Also ist der y-Wert gleich -2, wenn x gleich -2 ist."
+      "voiceover": "Wenn wir <bookmark mark=\"x_neg_two\"/> x gleich -2 einsetzen, dann erhalten <bookmark mark=\"neg_two_in\"/>wir f von -2 ist gleich zwei mal minus zwei plus 2. Und das ergibt dann ja <bookmark mark=\"y_neg_two\"/>minus zwei, also ist dann y gleich minus zwei."
     },
     "1I18": {
-      "voiceover": "Schön, jetzt wissen wir also was Funktionsterme sind: Wir schreiben sie als <bookmark mark=\"term_in\"/>f von x gleich irgendein Term, und können dann für jeden x-Wert den zugehörigen y-Wert berechnen.\nDas geht, indem wir den x-Wert in den Term einsetzen, <bookmark mark=\"y_out\"/>und das Ergebnis ausrechnen, was dann der y-Wert ist...\nToll! <bookmark mark=\"baboon_in\"/>Jetzt bist du wieder einen Schritt weiter, und kannst Funktionsterme benutzen, um Funktionen zu beschreiben."
+      "voiceover": "Schön, jetzt wissen wir also was Funktionsterme sind: Wir schreiben sie als <bookmark mark=\"term_in\"/>f von x gleich irgendein Term, und können dann für jeden x-Wert den zugehörigen y-Wert berechnen.\nDas geht, indem wir <bookmark mark=\"x_in\"/>den x-Wert in den Term einsetzen, <bookmark mark=\"y_out\"/>und das Ergebnis ausrechnen, was dann der y-Wert ist...\nToll! <bookmark mark=\"baboon_in\"/>Jetzt bist du wieder einen Schritt weiter, und kannst Funktionsterme benutzen, um Funktionen zu beschreiben."
     }
   },
   "Func_1_3": {
