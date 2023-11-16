@@ -320,6 +320,37 @@
     },
     "1I18": {
       "voiceover": "Schön, jetzt wissen wir also was Funktionsterme sind: Wir schreiben sie als <bookmark mark=\"term_in\"/>f von x gleich irgendein Term, und können dann für jeden x-Wert den zugehörigen y-Wert berechnen.\nDas geht, indem wir <bookmark mark=\"x_in\"/>den x-Wert in den Term einsetzen, <bookmark mark=\"y_out\"/>und das Ergebnis ausrechnen, was dann der y-Wert ist...\nToll! <bookmark mark=\"baboon_in\"/>Jetzt bist du wieder einen Schritt weiter, und kannst Funktionsterme benutzen, um Funktionen zu beschreiben."
+    },
+    "1I13": {
+      "voiceover": "Wuuunderbar, jetzt haben wir geübt, realistische Szenarien mit Funktionen zu modellieren.\nHat sich also gelohnt, Funktionen zu verstehen?"
+    },
+    "1I112a": {
+      "voiceover": "Ok, also für jede fahrt nimmt er jetzt fünf barren ein, also multiplizieren wir <bookmark mark=\"five_x\"/>fünf mit x.\nAber er muss auch zwei barren für Treibstoff ausgeben, also ziehen wir <bookmark mark=\"two_x\"/>zwei mal x ab.\nAlso lautet die Funktion die seine Einnahmen beschreibt <bookmark mark=\"h_in\"/>h von x gleich fünf mal x minus zwei mal x.\nAber das können wir ja noch vereinfachen, also ist die richtige Lösung <bookmark mark=\"f_in\"/>h von x gleich drei mal x."
+    },
+    "1I112q": {
+      "voiceover": "Inzwischen hat mein Cousin all sein Gold für leckere galaktische Limonaden ausgegeben. Um wieder Geld zu haben, arbeitet er <bookmark mark=\"taxi_in\"/>als intergalaktischer Taxifahrer.\nPro Fahrt verdient <bookmark mark=\"prize_in\"/>er fünf Goldbarren. Aber er muss auch für jede Fahrt <bookmark mark=\"fuel_in\"/>zwei Goldbarren für Klimaneutralen Treibstoff ausgeben.\nWenn x die Anzahl der Fahrten ist, die er macht, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich fünf minus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich fünf mal x minus zwei?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich drei mal x?",
+      "question-text": "Welche Funktion beschreibt Fred's Taxi-Einnahmen, wenn $x$ die Anzahl an Fahrten ist?"
+    },
+    "1I111a": {
+      "voiceover": "Er hat ja tausend <bookmark mark=\"thousand_in\"/>Goldbarren erhalten.\nUnd dann gibt er zehn barren für jeden Drink aus, also ziehen wir <bookmark mark=\"ten_x\"/>zehn mal x ab, wobei x die Anzahl der Tage ist.\nUnd dann lautet die Funktion, die das verbleibende Vermögen meines Cousins beschreibt ja <bookmark mark=\"f_in\"/>h von x gleich eintausend\nminus zehn mal x."
+    },
+    "1I111q": {
+      "voiceover": "Mein Cousin Fred, lebt auf dem Jupiter. Er hat <bookmark mark=\"gold_in\"/>von seinem Onkel einen Schatz <bookmark mark=\"prize_in\"/>von Tausend futuristischen Goldbarren geerbt.\nAnstatt zu sparen, kauft er sich <bookmark mark=\"drink_in\"/>jeden Tag ein futuristisches Getränk für zehn Goldbarren.\nWenn x die Anzahl der Tage ist, die er das tut, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich tausend plus zehn mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich zehn mal x minus tausend?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich tausend minus zehn mal x?",
+      "question-text": "Welche Funktion beschreibt die Anzahl an Goldbarren, die Fred hat, wenn $x$ die Anzahl der Tage ist?"
+    },
+    "1I110a": {
+      "voiceover": "Wir haben uns ja zunächst eine Eismaschine gekauft, die <bookmark mark=\"hundred_in\"/>hundert Euro gekostet hat.\nUnd dann geben wir für jede Eiswaffel, die wir machen, zwei Euro aus. Also addieren wir <bookmark mark=\"two_x\"/>zwei mal x.\nUnd dann lautet die Funktion, die unsere Kosten beschreibt ja <bookmark mark=\"f_in\"/>f von x gleich hundert plus zwei mal x.\nDa stehen die hundert euro für die Kosten der Eismaschine, und die zwei x für jede Eiswaffel."
+    },
+    "1I110q": {
+      "voiceover": "Noch ein Beispiel: Ich esse nichts lieber als frisches, selbst gemachtes Eis, also habe ich mir kürzlich\n<bookmark mark=\"machine_in\"/> eine Eismaschine zugelegt.\nDie Eismaschine hat <bookmark mark=\"prize_in\"/>hundert Euro gekostet. Und immer wenn ich <bookmark mark=\"cone_in\"/>ein Eis mache,\nkostet mich das zwei Euro. Wenn x die Anzahl der Eiswaffeln ist, die ich mache,\nwelche Funktion beschreibt dann, wie viel Geld ich ausgegeben habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich hundert plus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich hundertzwei mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich hundert mal x plus zwei?",
+      "question-text": "Welche Funktion beschreibt die Ausgaben für das Eis?"
+    },
+    "1I19q": {
+      "voiceover": "Warum lernen wir über Funktionen?\nWir machen das nämlich nicht nur zum Spaß, es <bookmark mark=\"world_in\"/>gibt nämlich viele Situationen,\ndie wir gut mit Funktionen beschreiben können. <bookmark mark=\"world_out\"/>\nNehmen wir ein Beispiel: Um mir mehr Geld zu verdienen, habe ich einen Onlineshop, in dem ich\n<bookmark mark=\"cat_in\"/> Katzenhüte verkaufe.\nIch verkaufe jeden Hut für <bookmark mark=\"prize_in\"/>fünf Euro. Wenn x die Anzahl der verkauften Hüte ist,\nwelche Funktion beschreibt dann, wie viel Geld ich verdient habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich 5 plus x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich 5 mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich 5 mal x plus 5?",
+      "question-text": "Welche Funktion beschreibt, wie viel Geld wir verdienen bei $x$ verkauften Hüten?"
+    },
+    "1I19a": {
+      "voiceover": "Wir beschreiben die Anzahl verkaufter Hüte ja mit<bookmark mark=\"x_in\"/> x.\nUnd für jeden Hut den wir verkaufen, erhalten wir 5 euro, also multiplizieren wir <bookmark mark=\"five_in\"/>x mit 5.\nAlso ist die richtige Lösung <bookmark mark=\"g_in\"/>g von x gleich 5 mal x."
     }
   },
   "Func_1_3": {

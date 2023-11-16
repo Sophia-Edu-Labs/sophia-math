@@ -1475,7 +1475,14 @@ class Func_1_2_I_1_8(SophiaCursorScene):
     
 
 ######################################################################################
-class Func_1_2_I_1_9(SophiaCursorScene):
+class Func_1_2_I_1_9_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=5+x$", "$g(x)=5\\cdot x$", "$h(x)=5\\cdot x +5$"],
+            correctAnswerIndex = 1,
+            questionText = self.translate("Func_1_2.1I19q.question-text"),
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1492,9 +1499,9 @@ class Func_1_2_I_1_9(SophiaCursorScene):
         crazy_world.scale(3.5/crazy_world.get_width())
 
         f = MathTex("f(x)=5+x", color=c1t, font_size=fs1)
-        g = MathTex("g(x)=5x", color=c1t, font_size=fs1)
-        h = MathTex("h(x)=5x+5", color=c1t, font_size=fs1)
-        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.4)
+        g = MathTex("g(x)=5\\cdot x", color=c1t, font_size=fs1)
+        h = MathTex("h(x)=5\\cdot x+5", color=c1t, font_size=fs1)
+        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.8)
         price = Tex(":$5$\\texteuro", color=c1t, font_size=fs1).shift([1.4,1,0])
 
 
@@ -1502,18 +1509,7 @@ class Func_1_2_I_1_9(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 #text=self.translate("Func_1_2.1I19.voiceover")
-                text = """
-                        Warum lernen wir über Funktionen?
-                        Wir machen das nämlich nicht nur zum Spaß, es <bookmark mark="world_in"/>gibt nämlich viele Situationen,
-                        die wir gut mit Funktionen beschreiben können. <bookmark mark="world_out"/>
-                        Nehmen wir ein Beispiel: Um mir mehr Geld zu verdienen, habe ich einen Onlineshop, in dem ich
-                        <bookmark mark="cat_in"/> Katzenhüte verkaufe.
-                        Ich verkaufe jeden Hut für <bookmark mark="prize_in"/>fünf Euro. Wenn x die Anzahl der verkauften Hüte ist,
-                        welche Funktion beschreibt dann, wie viel Geld ich verdient habe?
-                        Ist es <bookmark mark="f_in"/>die Funktion f von x gleich 5 plus x?
-                        Oder ist es <bookmark mark="g_in"/>die Funktion g von x gleich 5 mal x?
-                        Oder ist es <bookmark mark="h_in"/>die Funktion h von x gleich 5 mal x plus 5?
-                        """
+                text = self.translate("Func_1_2.1I19q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("world_in")
@@ -1544,6 +1540,742 @@ class Func_1_2_I_1_9(SophiaCursorScene):
         # Wait for 4 seconds at the end of animation
         self.wait(4)
 
+
+class Func_1_2_I_1_9_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        cat_with_hat = ImageMobject(assets_folder / "img" / "cat_with_hat.png").move_to(UP)
+        cat_with_hat.scale(1.4/cat_with_hat.get_width())
+
+        price = Tex(":$5$\\texteuro", color=c1t, font_size=fs1).shift([1.4,1,0])
+
+        func_correct = MathTex("g(x)=", "5\\cdot", "x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(cat_with_hat, price)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.incorrect_1")+self.translate("Func_1_2.1I19a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("x_in")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_9_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        cat_with_hat = ImageMobject(assets_folder / "img" / "cat_with_hat.png").move_to(UP)
+        cat_with_hat.scale(1.4/cat_with_hat.get_width())
+
+        price = Tex(":$5$\\texteuro", color=c1t, font_size=fs1).shift([1.4,1,0])
+
+        func_correct = MathTex("g(x)=", "5\\cdot", "x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(cat_with_hat, price)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.correct_1")+self.translate("Func_1_2.1I19a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("x_in")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_9_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        cat_with_hat = ImageMobject(assets_folder / "img" / "cat_with_hat.png").move_to(UP)
+        cat_with_hat.scale(1.4/cat_with_hat.get_width())
+
+        price = Tex(":$5$\\texteuro", color=c1t, font_size=fs1).shift([1.4,1,0])
+
+        func_correct = MathTex("g(x)=", "5\\cdot", "x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(cat_with_hat, price)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.incorrect_1")+self.translate("Func_1_2.1I19a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("x_in")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("five_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+###########################################
+###########################################
+class Func_1_2_I_1_10_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=100+2x$", "$g(x)=102\\cdot x$", "$h(x)=100\\cdot x +2$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I110q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        ice_cream_machine = ImageMobject(assets_folder / "img" / "ice_cream_machine.png").move_to([-5,0,0])
+        ice_cream_machine.scale(3.5/ice_cream_machine.get_width())
+
+        ice_cream_cone = ImageMobject(assets_folder / "img" / "ice_cream_cone.png").move_to(UP*0.6)
+        ice_cream_cone.scale(1.2/ice_cream_cone.get_width())
+
+        f = MathTex("f(x)=100+2x", color=c1t, font_size=fs2)
+        g = MathTex("g(x)=102\\cdot x", color=c1t, font_size=fs2)
+        h = MathTex("h(x)=100\\cdot x+2", color=c1t, font_size=fs2)
+        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.8)
+
+        price_machine = Tex(":$100$\\texteuro", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_cone = Tex(":$2$\\texteuro", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("Func_1_2.1I110q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("machine_in")
+            self.add_shift_sound(0.5)
+            self.play(ice_cream_machine.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("prize_in")
+            self.play(ice_cream_machine.animate.scale(0.35), run_time=1)
+            self.play(ice_cream_machine.animate.shift([0,2,0]), Write(price_machine), run_time=1)
+
+            self.wait_until_bookmark("cone_in")
+            self.play(FadeIn(ice_cream_cone), run_time=1)
+            self.play(FadeIn(price_cone), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(f), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(g), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(h), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+class Func_1_2_I_1_10_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        ice_cream_machine = ImageMobject(assets_folder / "img" / "ice_cream_machine.png").move_to([0,2,0])
+        ice_cream_machine.scale(1.22/ice_cream_machine.get_width())
+
+        ice_cream_cone = ImageMobject(assets_folder / "img" / "ice_cream_cone.png").move_to(UP*0.6)
+        ice_cream_cone.scale(1.2/ice_cream_cone.get_width())
+
+        price_machine = Tex(":$100$\\texteuro", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_cone = Tex(":$2$\\texteuro", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("f(x)=", "100", "+2x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(ice_cream_machine, ice_cream_cone, price_machine, price_cone)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.correct_4")+self.translate("Func_1_2.1I110a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("hundred_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_10_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        ice_cream_machine = ImageMobject(assets_folder / "img" / "ice_cream_machine.png").move_to([0,2,0])
+        ice_cream_machine.scale(1.22/ice_cream_machine.get_width())
+
+        ice_cream_cone = ImageMobject(assets_folder / "img" / "ice_cream_cone.png").move_to(UP*0.6)
+        ice_cream_cone.scale(1.2/ice_cream_cone.get_width())
+
+        price_machine = Tex(":$100$\\texteuro", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_cone = Tex(":$2$\\texteuro", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("f(x)=", "100", "+2x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(ice_cream_machine, ice_cream_cone, price_machine, price_cone)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.incorrect_4")+self.translate("Func_1_2.1I110a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("hundred_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_10_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        ice_cream_machine = ImageMobject(assets_folder / "img" / "ice_cream_machine.png").move_to([0,2,0])
+        ice_cream_machine.scale(1.22/ice_cream_machine.get_width())
+
+        ice_cream_cone = ImageMobject(assets_folder / "img" / "ice_cream_cone.png").move_to(UP*0.6)
+        ice_cream_cone.scale(1.2/ice_cream_cone.get_width())
+
+        price_machine = Tex(":$100$\\texteuro", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_cone = Tex(":$2$\\texteuro", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("f(x)=", "100", "+2x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(ice_cream_machine, ice_cream_cone, price_machine, price_cone)
+
+        # Action Sequence
+        with self.voiceover(
+                #text=self.translate("Func_1_2.1I19.voiceover")
+                text = self.translate("General.incorrect_4")+self.translate("Func_1_2.1I110a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("hundred_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
+class Func_1_2_I_1_11_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=1000+10x$", "$g(x)=10\\cdot x-1000$", "$h(x)=1000-10x$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I111q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        futuristic_gold = ImageMobject(assets_folder / "img" / "futuristic_gold.png").move_to([-5,0,0])
+        futuristic_gold.scale(3.5/futuristic_gold.get_width())
+
+        futuristic_drink = ImageMobject(assets_folder / "img" / "futuristic_drink.png").move_to(UP*0.6)
+        futuristic_drink.scale(1.2/futuristic_drink.get_width())
+
+        f = MathTex("f(x)=1000+10x", color=c1t, font_size=fs2)
+        g = MathTex("g(x)=10\\cdot x-1000", color=c1t, font_size=fs2)
+        h = MathTex("h(x)=1000-10x", color=c1t, font_size=fs2)
+        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.8)
+
+        price_machine = Tex(":$1000$", color=c1t, font_size=fs2).shift([1.4,2,0])
+        price_cone = Tex(":$10$", color=c1t, font_size=fs2).shift([1.4,.6,0])
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("Func_1_2.1I111q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("gold_in")
+            self.add_shift_sound(0.5)
+            self.play(futuristic_gold.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("prize_in")
+            self.play(futuristic_gold.animate.scale(0.35), run_time=1)
+            self.play(futuristic_gold.animate.shift([0,2,0]), Write(price_machine), run_time=1)
+
+            self.wait_until_bookmark("drink_in")
+            self.play(FadeIn(futuristic_drink), run_time=1)
+            self.play(FadeIn(price_cone), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(f), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(g), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(h), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_11_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        futuristic_gold = ImageMobject(assets_folder / "img" / "futuristic_gold.png").move_to([0,2,0])
+        futuristic_gold.scale(1.22/futuristic_gold.get_width())
+
+        futuristic_drink = ImageMobject(assets_folder / "img" / "futuristic_drink.png").move_to(UP*0.6)
+        futuristic_drink.scale(1.2/futuristic_drink.get_width())
+
+        price_gold = Tex(":$1000$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        pricedrink = Tex(":$10$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("h(x)=", "1000", "-10x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(futuristic_gold, futuristic_drink, price_gold, pricedrink)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.incorrect_5")+self.translate("Func_1_2.1I111a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("thousand_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("ten_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_11_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        futuristic_gold = ImageMobject(assets_folder / "img" / "futuristic_gold.png").move_to([0,2,0])
+        futuristic_gold.scale(1.22/futuristic_gold.get_width())
+
+        futuristic_drink = ImageMobject(assets_folder / "img" / "futuristic_drink.png").move_to(UP*0.6)
+        futuristic_drink.scale(1.2/futuristic_drink.get_width())
+
+        price_gold = Tex(":$1000$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        pricedrink = Tex(":$10$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("h(x)=", "1000", "-10x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(futuristic_gold, futuristic_drink, price_gold, pricedrink)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.incorrect_5")+self.translate("Func_1_2.1I111a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("thousand_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("ten_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_11_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        futuristic_gold = ImageMobject(assets_folder / "img" / "futuristic_gold.png").move_to([0,2,0])
+        futuristic_gold.scale(1.22/futuristic_gold.get_width())
+
+        futuristic_drink = ImageMobject(assets_folder / "img" / "futuristic_drink.png").move_to(UP*0.6)
+        futuristic_drink.scale(1.2/futuristic_drink.get_width())
+
+        price_gold = Tex(":$1000$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        pricedrink = Tex(":$10$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct = MathTex("h(x)=", "1000", "-10x", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(futuristic_gold, futuristic_drink, price_gold, pricedrink)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.correct_4")+self.translate("Func_1_2.1I111a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("thousand_in")
+            self.play(Write(func_correct[1]), run_time=1)
+
+            self.wait_until_bookmark("ten_x")
+            self.play(Write(func_correct[2]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func_correct[0]), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+
+
+###########################################
+###########################################
+class Func_1_2_I_1_12_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=5-2\\cdot x$", "$g(x)=5x-2$", "$h(x)=3\\cdot x$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_1_2.1I112q.question-text"),
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        space_taxi = ImageMobject(assets_folder / "img" / "space_taxi.png").move_to([-5,0,0])
+        space_taxi.scale(3.5/space_taxi.get_width())
+
+        space_fuel = ImageMobject(assets_folder / "img" / "space_fuel.png").move_to(UP*0.6)
+        space_fuel.scale(1.2/space_fuel.get_width())
+
+        f = MathTex("f(x)=5-2\\cdot x", color=c1t, font_size=fs2)
+        g = MathTex("g(x)=5x-2", color=c1t, font_size=fs2)
+        h = MathTex("h(x)=3\\cdot x", color=c1t, font_size=fs2)
+        funcs = VGroup(f, g, h).arrange(DOWN, buff=0.4, aligned_edge=LEFT).shift(DOWN*1.8)
+
+        price_machine = Tex(":$5$", color=c1t, font_size=fs2).shift([1.4,2,0])
+        price_cone = Tex(":$2$", color=c1t, font_size=fs2).shift([1.4,.6,0])
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("Func_1_2.1I112q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("taxi_in")
+            self.add_shift_sound(0.5)
+            self.play(space_taxi.animate.shift(RIGHT*5), run_time=.5)
+
+            self.wait_until_bookmark("prize_in")
+            self.play(space_taxi.animate.scale(0.35), run_time=1)
+            self.play(space_taxi.animate.shift([0,2,0]), Write(price_machine), run_time=1)
+
+            self.wait_until_bookmark("fuel_in")
+            self.play(FadeIn(space_fuel), run_time=1)
+            self.play(FadeIn(price_cone), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(Write(f), run_time=1)
+
+            self.wait_until_bookmark("g_in")
+            self.play(Write(g), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(h), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_12_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        space_taxi = ImageMobject(assets_folder / "img" / "space_taxi.png").move_to([0,2,0])
+        space_taxi.scale(1.22/space_taxi.get_width())
+
+        space_fuel = ImageMobject(assets_folder / "img" / "space_fuel.png").move_to(UP*0.6)
+        space_fuel.scale(1.2/space_fuel.get_width())
+
+        price_taxi = Tex(":$5$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_fuel = Tex(":$2$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct_1 = MathTex("h(x)=", "5x", "-2x", color=c1t, font_size=fs1).shift(DOWN)
+        func_correct_2 = MathTex("h(x)=", "3x", "", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(space_taxi, space_fuel, price_taxi, price_fuel)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.incorrect_6")+self.translate("Func_1_2.1I112a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("five_x")
+            self.play(Write(func_correct_1[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct_1[2]), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(func_correct_1[0]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(TransformMatchingTex(func_correct_1, func_correct_2), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_12_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        space_taxi = ImageMobject(assets_folder / "img" / "space_taxi.png").move_to([0,2,0])
+        space_taxi.scale(1.22/space_taxi.get_width())
+
+        space_fuel = ImageMobject(assets_folder / "img" / "space_fuel.png").move_to(UP*0.6)
+        space_fuel.scale(1.2/space_fuel.get_width())
+
+        price_taxi = Tex(":$5$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_fuel = Tex(":$2$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct_1 = MathTex("h(x)=", "5x", "-2x", color=c1t, font_size=fs1).shift(DOWN)
+        func_correct_2 = MathTex("h(x)=", "3x", "", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(space_taxi, space_fuel, price_taxi, price_fuel)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.incorrect_6")+self.translate("Func_1_2.1I112a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("five_x")
+            self.play(Write(func_correct_1[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct_1[2]), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(func_correct_1[0]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(TransformMatchingTex(func_correct_1, func_correct_2), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+class Func_1_2_I_1_12_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+
+        space_taxi = ImageMobject(assets_folder / "img" / "space_taxi.png").move_to([0,2,0])
+        space_taxi.scale(1.22/space_taxi.get_width())
+
+        space_fuel = ImageMobject(assets_folder / "img" / "space_fuel.png").move_to(UP*0.6)
+        space_fuel.scale(1.2/space_fuel.get_width())
+
+        price_taxi = Tex(":$5$", color=c1t, font_size=fs1).shift([1.4,2,0])
+        price_fuel = Tex(":$2$", color=c1t, font_size=fs1).shift([1.4,.6,0])
+
+
+        func_correct_1 = MathTex("h(x)=", "5x", "-2x", color=c1t, font_size=fs1).shift(DOWN)
+        func_correct_2 = MathTex("h(x)=", "3x", "", color=c1t, font_size=fs1).shift(DOWN)
+
+        self.add(space_taxi, space_fuel, price_taxi, price_fuel)
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("General.correct_6")+self.translate("Func_1_2.1I112a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("five_x")
+            self.play(Write(func_correct_1[1]), run_time=1)
+
+            self.wait_until_bookmark("two_x")
+            self.play(Write(func_correct_1[2]), run_time=1)
+
+            self.wait_until_bookmark("h_in")
+            self.play(Write(func_correct_1[0]), run_time=1)
+
+            self.wait_until_bookmark("f_in")
+            self.play(TransformMatchingTex(func_correct_1, func_correct_2), run_time=1)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
+
+###########################################
+###########################################
+class Func_1_2_I_1_13(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Add title to the scene
+        title = self.add_title(self.translate("Func_1_2.1I1.f-terms"))
+        zebra_thumbs = ImageMobject(assets_folder / "img" / "zebra_thumbs.png").move_to([-5,0,0])
+        zebra_thumbs.scale(4/zebra_thumbs.get_width())
+
+        # Action Sequence
+        with self.voiceover(
+                text = self.translate("Func_1_2.1I13.voiceover")
+        ) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(zebra_thumbs.animate.shift(RIGHT*5), run_time=.5)
+
+        self.add_shift_sound(0.5)
+        self.play(zebra_thumbs.animate.shift(RIGHT*5), run_time=.5)
+
+        # Wait for 4 seconds at the end of animation
+        self.wait(4)
 
 
 ######################################################################################
