@@ -320,6 +320,18 @@
     },
     "1I18": {
       "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by <bookmark mark=\"x_in\"/>inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
+    },
+    "1I19q": {
+      "question-text": "Which function describes how much many we make, if we sell $s$ hats?"
+    },
+    "1I110q": {
+      "question-text": "Which function describes how much money we've spent on ice cream?"
+    },
+    "1I111q": {
+      "question-text": "Which function describes the number of gold bars that Fred has, if $x$ is the number of days that have passed?"
+    },
+    "1I112q": {
+      "question-text": "What function describes Fred's earning as a taxi driver, if $x$ describes the number of rides?"
     }
   },
   "Func_1_3": {
