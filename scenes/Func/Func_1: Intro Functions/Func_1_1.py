@@ -1177,7 +1177,7 @@ class Func_1_1_I_4_1_q(SophiaCursorScene):
 
         cords_blue = [[1,16], [2,10], [3,16], [4,12]]
         cords_green = [[1,12], [2,16], [3,10], [4,16]]
-        cords_pink = [[1,10], [2,16], [3,12], [4,16]]
+        cords_pink = [[1,10], [2,112], [3,12], [4,18]]
 
         circs_blue = VGroup(*[Dot(plane.c2p(*cords_blue[i]), color=BLUE) for i in range(4)])
         circs_green = VGroup(*[Dot(plane.c2p(*cords_green[i]), color=GREEN) for i in range(4)])

@@ -109,7 +109,7 @@
       "color-1": "Orange",
       "color-2": "Blue",
       "color-3": "Green",
-      "first_bit": "f\"That's not correct. The {self.colors[self.idx_selected]} function is not the correct one.\"",
+      "first_bit": "That's not correct.",
       "first_bit_correct": "That's correct, great job",
       "voiceover": "{self.first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{self.colors[self.idx_selected]} function.<split/>\n                To find the right function, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n<break time=\"0.7s\"/>\n                <bookmark mark=\"val1\"/>\n<split/>\n                The first value has {self.xvals[0]} as its x-value and {self.yvals[self.correcty][0]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {self.xvals[1]} as its x-value and {self.yvals[self.correcty][1]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {self.xvals[2]} and {self.yvals[self.correcty][2]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {self.xvals[3]} and {self.yvals[self.correcty][3]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {self.xvals[4]} and {self.yvals[self.correcty][4]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {self.colors[self.correcty]} function\n                is the correct one."
     },
@@ -322,16 +322,35 @@
       "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by <bookmark mark=\"x_in\"/>inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
     },
     "1I19q": {
-      "question-text": "Which function describes how much many we make, if we sell $s$ hats?"
+      "question-text": "Which function describes how much many we make, if we sell $x$ hats?",
+      "voiceover": "Why do we learn about functions?\nWe do this not just for fun, there <bookmark mark=\"world_in\"/>are indeed many situations,\nwhich we can describe well with functions. <bookmark mark=\"world_out\"/>\nLet's take an example: To earn more money, I have an online store where I\n<bookmark mark=\"cat_in\"/> sell cat hats.\nI sell each hat for <bookmark mark=\"prize_in\"/>five euros. If x is the number of hats sold,\nwhich function describes how much money I have earned?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals 5 plus x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals 5 times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals 5 times x plus 5?"
     },
     "1I110q": {
-      "question-text": "Which function describes how much money we've spent on ice cream?"
+      "question-text": "Which function describes how much money we've spent on ice cream?",
+      "voiceover": "Here's another example: I love nothing more than fresh, homemade ice cream, so I recently got myself\n<bookmark mark=\"machine_in\"/> an ice cream maker.\nThe ice cream maker cost <bookmark mark=\"prize_in\"/>one hundred euros. And whenever I make <bookmark mark=\"cone_in\"/>an ice cream cone,\nit costs me two euros. If x is the number of ice cream cones I make,\nwhich function describes how much money I have spent?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals one hundred plus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals one hundred two times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals one hundred times x plus two?"
     },
     "1I111q": {
-      "question-text": "Which function describes the number of gold bars that Fred has, if $x$ is the number of days that have passed?"
+      "question-text": "Which function describes the number of gold bars that Fred has, if $x$ is the number of days that have passed?",
+      "voiceover": "My cousin Fred, who lives on Jupiter, inherited <bookmark mark=\"gold_in\"/>a treasure of <bookmark mark=\"prize_in\"/>a thousand futuristic gold bars from his uncle.\nInstead of saving, he buys <bookmark mark=\"drink_in\"/>a futuristic drink every day for ten gold bars.\nIf x is the number of days he does this, which function describes how many gold bars he has left?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals a thousand plus ten times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals ten times x minus a thousand?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals a thousand minus ten times x?"
     },
     "1I112q": {
-      "question-text": "What function describes Fred's earning as a taxi driver, if $x$ describes the number of rides?"
+      "question-text": "What function describes Fred's earning as a taxi driver, if $x$ describes the number of rides?",
+      "voiceover": "Now that my cousin has spent all his gold on delicious galactic lemonades, he's working <bookmark mark=\"taxi_in\"/>as an intergalactic taxi driver to earn money again.\nFor each ride, he earns <bookmark mark=\"prize_in\"/>five gold bars. But he also has to spend <bookmark mark=\"fuel_in\"/>two gold bars for climate-neutral fuel for each ride.\nIf x is the number of rides he makes, which function describes how many gold bars he has?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals five minus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals five times x minus two?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals three times x?"
+    },
+    "1I19a": {
+      "voiceover": "We describe the number of hats sold with <bookmark mark=\"x_in\"/> x.\nAnd for each hat we sell, we get 5 euros, so we multiply <bookmark mark=\"five_in\"/>x by 5.\nSo the correct solution is <bookmark mark=\"g_in\"/>g of x equals 5 times x."
+    },
+    "1I110a": {
+      "voiceover": "We first bought an ice cream maker that cost <bookmark mark=\"hundred_in\"/>one hundred euros.\nAnd then we spend two euros for every ice cream cone we make. So, we add <bookmark mark=\"two_x\"/>two times x.\nAnd then the function that describes our costs is <bookmark mark=\"f_in\"/>f of x equals one hundred plus two times x.\nHere, the one hundred euros represent the cost of the ice cream maker, and the two x for each ice cream cone."
+    },
+    "1I111a": {
+      "voiceover": "He received a thousand <bookmark mark=\"thousand_in\"/>gold bars.\nAnd then he spends ten bars for each drink, so we subtract <bookmark mark=\"ten_x\"/>ten times x, where x is the number of days.\nAnd then the function that describes my cousin's remaining wealth is <bookmark mark=\"f_in\"/>h of x equals one thousand\nminus ten times x."
+    },
+    "1I112a": {
+      "voiceover": "Ok, so for each ride, he now earns five bars, so we multiply <bookmark mark=\"five_x\"/>five by x.\nBut he also has to spend two bars on fuel, so we subtract <bookmark mark=\"two_x\"/>two times x.\nSo, the function that describes his earnings is <bookmark mark=\"h_in\"/>h of x equals five times x minus two times x.\nBut we can simplify this, so the correct solution is <bookmark mark=\"f_in\"/>h of x equals three times x."
+    },
+    "1I13": {
+      "voiceover": "Wonderful, now we have practiced modeling realistic scenarios with functions.\nSo, was it worthwhile to understand functions?"
     }
   },
   "Func_1_3": {
