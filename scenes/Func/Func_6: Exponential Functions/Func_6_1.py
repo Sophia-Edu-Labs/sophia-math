@@ -884,7 +884,7 @@ class Func_6_1_I_1_2_q(SophiaCursorScene):
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
 
-        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
         ew = ew.scale(0.35/ew.get_width())
 
         cords = self.add_cords([0, 3, 1], [0, 16, 4], x_ticks=[0, 1, 2, 3], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
@@ -954,7 +954,7 @@ class Func_6_1_I_1_2_a(SophiaCursorScene):
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
-        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
         ew = ew.scale(0.35/ew.get_width())
 
         cords = self.add_cords([0, 2, 1], [0, 16, 4], x_ticks=[0, 1, 2], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
@@ -1024,7 +1024,7 @@ class Func_6_1_I_1_2_b(SophiaCursorScene):
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
-        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
         ew = ew.scale(0.35/ew.get_width())
 
         cords = self.add_cords([0, 2, 1], [0, 16, 4], x_ticks=[0, 1, 2], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
@@ -1094,7 +1094,7 @@ class Func_6_1_I_1_2_c(SophiaCursorScene):
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
-        ew = ImageMobject(assets_folder / "img" / "exponential_woman.png")
+        ew = ImageMobject(assets_folder / "img" / "boy_whispering.png")
         ew = ew.scale(0.35/ew.get_width())
 
         cords = self.add_cords([0, 2, 1], [0, 16, 4], x_ticks=[0, 1, 2], y_ticks=[4, 8, 12, 16]).shift(DOWN * 0.6)
@@ -1160,7 +1160,7 @@ class Func_6_1_I_1_3_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions = ["$10$", "$36$", "$12$", "$18$"],
             correctAnswerIndex = 3,
-            questionText = self.translate("Func_6_1.1I14q.question") 
+            questionText = self.translate("Func_6_1.1I13q.question") 
         )
 
     def construct(self):
@@ -1556,7 +1556,10 @@ class Func_6_1_I_1_4_a(SophiaCursorScene):
         plants = Group(*plants_0, *plants_1, *plants_2)
         self.add(plants)
 
-        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        two, six, eighteen = MathTex("2", color=c1t, font_size=fs2).next_to(plane.c2p(0,1), DOWN, buff=.3), MathTex("6", color=c1t, font_size=fs2).next_to(plane.c2p(1,1), DOWN, buff=.3), MathTex("18", color=c1t, font_size=fs2).next_to(plane.c2p(2,1), DOWN, buff=.3)
+        self.add(two, six, eighteen)
+
+        h = MathTex("h(x)=2\\cdot3^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.6)
         h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
 
         # Action Sequence
@@ -1577,7 +1580,7 @@ class Func_6_1_I_1_4_a(SophiaCursorScene):
             self.play(Write(h_vals[2]), run_time=0.5)
 
             self.wait_until_bookmark("cords_in")
-            self.play(Write(cords), run_time=0.5)
+            self.play(Write(cords), Unwrite(two), Unwrite(six), Unwrite(eighteen), run_time=0.5)
 
             self.wait_until_bookmark("plot_in")
             self.add_pencil_sound(1)
@@ -1609,7 +1612,7 @@ class Func_6_1_I_1_4_b(SophiaCursorScene):
         plants = Group(*plants_0, *plants_1, *plants_2)
         self.add(plants)
 
-        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h = MathTex("h(x)=2\\cdot3^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
 
         # Action Sequence
@@ -1662,7 +1665,7 @@ class Func_6_1_I_1_4_c(SophiaCursorScene):
         plants = Group(*plants_0, *plants_1, *plants_2)
         self.add(plants)
 
-        h = MathTex("g(x)=4^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        h = MathTex("h(x)=2\\cdot3^x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         h_vals = VGroup(MathTex("h(0)=2*3^0=2", color=c1t, font_size=fs3), MathTex("h(1)=2*3^1=6", color=c1t, font_size=fs3), MathTex("h(2)=2*3^2=18", color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT).next_to(h, DOWN, buff=0.4)
 
         # Action Sequence
@@ -2072,7 +2075,7 @@ class Func_6_1_I_4(SophiaCursorScene):
             self.add(cc_sixteen_chickens)
 
             self.wait_until_bookmark("plot")
-            x,y,_ = plane.c2p(0,0)
+            x,y,_ = plane.c2p(1,2)
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             cc_func = cursor.copy()._start_fading(7).add_updater(lambda m, dt: m.move_to(g_eggs.get_end()))
             chicken_counter = DecimalNumber(16, color=c1t, num_decimal_places=0).add_updater(lambda m: m.set_value(max(16,plane.p2c(g_eggs.get_end())[1])))

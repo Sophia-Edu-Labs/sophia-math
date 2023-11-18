@@ -1754,7 +1754,7 @@
       }
     },
     "1I21": {
-      "e1": "Blauer Graph: Exponentielles Wachstum",
+      "e1": "Lila Graph: Exponentielles Wachstum",
       "e2": "Grüner Graph: Lineares Wachstum",
       "e3": "Lila Graph: Exponentielles Wachstum",
       "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.",
@@ -1795,7 +1795,7 @@
         "voiceover": "Nein, das ist nicht richtig.\n<break time=\"0.4s\"/>\nSchauen wir uns Schritt für Schritt die Anzahl der Bakterien an.\n<break time=\"0.4s\"/>\nZuerst gibt es ein <bookmark mark=\"one\"/> Bakterium.\n<break time=\"0.4s\"/>\nNach zwanzig Minuten verdoppelt sich das Bakterium, es sind also<bookmark mark=\"two\"/> zwei Bakterien vorhanden.\n<break time=\"0.4s\"/>\nNach weiteren zwanzig Minuten verdoppelt sich jede der beiden Bakterien, sodass es <bookmark mark=\"four\"/>vier Bakterien gibt.\n<break time=\"0.4s\"/>\nUnd nach weiteren zwanzig Minuten duplizieren sie sich jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen vier weitere Bakterien, sodass wir auf acht kommen.\n<split/>\nDu siehst also, dass wir in jedem Zeitschritt doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt:<bookmark mark=\"step0\"/>\n<break time=\"0.4s\"/>\nIm ersten Zeitschritt erhalten wir <bookmark mark=\"step1\"/>ein Bakterium, im zweiten Zeitschritt erhalten wir <bookmark mark=\"step2\"/>zwei Bakterien und im dritten Zeitschritt erhalten wir <bookmark mark=\"step3\"/>vier Bakterien ...\n<break time=\"0.4s\"/>\nDas bedeutet, dass die Anzahl der Bakterien <bookmark mark=\"exponential\"/>exponentiell wächst, denn mit jedem Zeitschritt erhalten wir\ndoppelt so viele zusätzliche Bakterien wie im vorherigen Zeitschritt."
       },
       "main": {
-        "bacteria_double1": "$\\Uparrow$ Verdopllung alle",
+        "bacteria_double1": "$\\Uparrow$ Verdopplung alle",
         "bacteria_double2": "$20$ Minuten",
         "eg1": "$\\Rightarrow$ Die Anzahl der Bakterien",
         "eg2": "wächst exponentiell",
@@ -1856,7 +1856,8 @@
     "1I13q": {
       "main": {
         "voiceover": ""
-      }
+      },
+      "question": "Wenn ich zwei Pflanzen pflanze und jede Pflanze sich jedes Jahr verdreifacht, wie viele Pflanzen wird es dann im dritten Jahr in meinem Garten geben?"
     },
     "I11": {
       "question": {
@@ -1871,7 +1872,7 @@
       "voiceover": "Ich habe einen Garten, <bookmark mark=\"garden_in\"/>den ich mit meiner Lieblingspflanze bepflanzen will. Sie pflanzt sich recht schnell fort, jedes Jahr werden aus einer Pflanze drei, also verdreifacht sie sich jährlich. Ich fange jetzt einfach an, indem <bookmark mark=\"two_in\"/>ich zwei davon einpflanze. Im ersten Jahr gibt es also zwei Pflanzen. Im zweiten Jahr <bookmark mark=\"second_year\"/>verdreifacht sich jede Pflanze, also gibt es sechs Pflanzen. Wie viele Pflanzen werden es im dritten Jahr sein?"
     },
     "I14a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist g von x gleich 4 hoch x.\n<bookmark mark=\"h_0\"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>\n<bookmark mark=\"h_1\"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>\n<bookmark mark=\"h_2\"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
+      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist h von x gleich 2 mal 3 hoch x.\n<bookmark mark=\"h_0\"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>\n<bookmark mark=\"h_1\"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>\n<bookmark mark=\"h_2\"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
     },
     "1I14q": {
       "question": "Wie viele Pflanzen werden im dritten Jahr in meinem Garten sein?"
@@ -1880,7 +1881,7 @@
       "voiceover": "Wir wissen ja, dass sich jede Pflanze jedes Jahr verdreifacht. Anfangs<bookmark mark=\"year_0\"/> gibt es ja einfach die zwei Pflanzen, die ich eingepflanzt habe. Nach einem Jahr gibt es <bookmark mark=\"year_1\"/>dann sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat. Dann wird sich im Jahr darauf jede dieser<bookmark mark=\"year_2\"/> sechs Pflanzen verdreifachen, sodass nach einem weiteren Jahr insgesamt achtzehn Pflanzen in meinem Garten sind."
     },
     "1I4q": {
-      "question": "Welche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?"
+      "question": "Ich habe am Anfang zwei Pflanzen gepflanzt, und jede der Pflanzen verdreifacht sich jährlich. \nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach $x$ Jahren in meinem Garten habe?"
     },
     "I14q": {
       "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
@@ -1913,7 +1914,7 @@
     },
     "I1": {
       "title": "Exponentialfunktion",
-      "voiceover": "Der Term einer Exponentialfunktion lautet ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nUnd wir haben uns eben immer Werte angeschaut, <bookmark mark=\"a\"/>wo a größer als eins war, zum Beispiel die <bookmark mark=\"g\"/>Funktion g von x gleich zwei hoch x oder <bookmark mark=\"h\"/>die Funktion h von x gleich drei hoch x.\n<break time=\"0.4s\"/>\nWas ist jetzt aber,<bookmark mark=\"qmark\"/> wenn wir uns Werte anschauen, <bookmark mark=\"a_l1\"/>wo a zwischen Null und Eins liegt?<split/><bookmark mark=\"switch\"/>\nMüsste die Funktion <bookmark mark=\"decrease\"/>dann nicht abnehmen?<break time=\"0.6s\"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?\n<split/>Das sehen wir uns jetzt genauer an."
+      "voiceover": "Der Term einer Exponentialfunktion lautet ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nUnd wir haben uns eben immer Werte angeschaut, <bookmark mark=\"a\"/>wo a größer als eins war, zum Beispiel die <bookmark mark=\"g\"/>Funktion g von x gleich zwei hoch x oder <bookmark mark=\"h\"/>die Funktion h von x gleich drei hoch x.\n<break time=\"0.4s\"/>\nWas ist jetzt aber,<bookmark mark=\"qmark\"/> wenn wir uns Werte anschauen, <bookmark mark=\"a_l1\"/>wo a zwischen Null und Eins liegt?<split/><bookmark mark=\"switch\"/>\nMüsste die Funktion <bookmark mark=\"decrease\"/>dann nicht abnehmen?<break time=\"0.6s\"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?\n<split/>Das sehen wir uns jetzt anhand eines beispiels genauer an."
     },
     "I2": {
       "a": {
@@ -1973,7 +1974,7 @@
     "I21": {
       "q": {
         "voiceover": "Ok, <bookmark mark=\"f\"/>betrachten wir jetzt die Exponentialfunktion f von x gleich ein halb hoch x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>Wie sieht der Graph dieser Funktion aus?<break time=\"0.6s\"/>\nGeht er <bookmark mark=\"plot_1\"/>langsam nach unten,<split/> und wird dann immer steiler, wie der blaue Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_2\"/>steil nach unten,<split/> und wird dann immer flacher, wie der grüne Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_3\"/> mit konstanter Geschwindigkeit nach unten, <split/> wie der pinke Graph?",
-        "question-text": "Wie sieht der Graph der Funktion $f(x)=(\\frac12)^x$ aus?",
+        "question-text": "Wie sieht der Graph der Funktion $f(x)=(\\tfrac12)^x$ aus?",
         "answer-options": "[\"Wie die blaue Funktion\", \"Wie die grüne Funktion\", \"Wie die pinke Funktion\", ]"
       },
       "a": {
@@ -1990,7 +1991,7 @@
       }
     },
     "I3a": {
-      "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins gleich ein halb, also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
+      "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins, was gleich ein halb ist. Also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
     }
   },
   "Func_6_2_P_1_a": {

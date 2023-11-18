@@ -1256,6 +1256,89 @@ class Func_6_2_I_2_X(SophiaCursorScene):
 
 ####################################################################################################################################################
 #####################################
+class Func_6_2_I_3_1(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 64, 8], x_ticks=[1,3,5], y_ticks=[16,32,48,64])
+        plane = cords[0]
+
+        f_tex = MathTex("f","(x)", "=", "", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4).shift(DOWN)
+        f_transformed = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+
+        flying_monkey = ImageMobject(assets_folder / "img" / "flying_monkey.png")
+        flying_monkey = flying_monkey.scale(2.8/flying_monkey.get_width()).move_to([-5, 1, 0])
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I31.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(f_tex))
+
+            self.wait_until_bookmark("func_transform")
+            self.play(TransformMatchingTex(f_tex, f_transformed))
+
+            self.wait_until_bookmark("monkey_in")
+            self.add_shift_sound(0.5)
+            self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+
+        self.add_shift_sound(0.5)
+        self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+        self.wait(4)
+
+
+class Func_6_2_I_3_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 64, 8], x_ticks=[1,3,5], y_ticks=[16,32,48,64])
+        plane = cords[0]
+
+        
+        f_transformed = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.4)
+        dec_nums = VGroup(MathTex("a=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=0, color=c1t, font_size=fs2), MathTex("\\,\\,b=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=0, color=c1t, font_size=fs2)).arrande(LEFT, buff=.1).next_to(f_transformed, DOWN, buff=0.4)
+        a, b = dec_nums[1], dec_nums[3]
+
+        f_plotted_green = plane.plot(lambda x:2**x, color=GREEN_D)
+        f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE))
+        f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURPLE))
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I31.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(f_tex))
+
+            self.wait_until_bookmark("func_transform")
+            self.play(TransformMatchingTex(f_tex, f_transformed))
+
+            self.wait_until_bookmark("monkey_in")
+            self.add_shift_sound(0.5)
+            self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+
+        self.add_shift_sound(0.5)
+        self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+        self.wait(4)
+
+####################################################################################################################################################
+#####################################
 class Func_6_2_I_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1606,7 +1689,7 @@ class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
 
         f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
         xm1, xm2 = self.translate("Func_6_2.I3.x-minutes_1"), self.translate("Func_6_2.I3.x-minutes_2")
-        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, " $a$?", color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.2)
+        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, " $a$?", color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.6)
 
         func = lambda x: self.a**x
         f = plane.plot(func, color=self.color)
@@ -2200,7 +2283,7 @@ class Func_6_2_P_4_q(GrowthFactorToGraphQuestionScene):
         self.a = 1/2
         self.intro = self.translate("Func_6_2_P_4_q.intro")
 
-        self.f1 = lambda x: (4-self.a)**x
+        self.f1 = lambda x: self.a**(4-x)
         self.f2 = lambda x: x/4
         self.f3 = lambda x: self.a**x
 

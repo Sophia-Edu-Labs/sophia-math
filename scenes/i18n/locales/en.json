@@ -1751,7 +1751,7 @@
       }
     },
     "1I21": {
-      "e1": "Blue Graph: Exponential Grpwth",
+      "e1": "Purple Graph: Exponential Growth",
       "e2": "Green Graph: Linear Growth",
       "e3": "Purple Graph: Exponential Growth",
       "voiceover": "Let's try to understand what exactly exponential growth is. To do this, let's compare it with linear growth.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_1\"/>purple graph shows exponential growth. <split/>\nWe see that the function rises and becomes steeper and steeper. This is because the function has the form <bookmark mark=\"f_exp\"/>f of x equals a raised to x, which means for each x, the value of the function is multiplied by the same value, in this case, two. So it doubles at each step.\n<break time=\"0.8s\"/>\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>\nThe function grows at a constant rate. The term of the function has the <bookmark mark=\"f_lin\"/>form f of x equals \"a\" times x, which means for each x, the same value is added to the function, in this case, two.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step.",
@@ -1781,7 +1781,7 @@
         "one_egg": "$1/$week",
         "title": "Exponential Growth",
         "two_chickens": "2\\times",
-        "voiceover": "Meet <bookmark mark=\"Sophie_in_1\"/> Sophie.\nSophie loves <bookmark mark=\"chicken_in_1\"/> chickens.\nShe currently has <bookmark mark=\"two_chickens_1\"/>two chickens, but she wants\nmany more. Each of her two chickens lays <bookmark mark=\"one_egg_per_week\"/>\none egg per week, and at the end of the week, the  chicken from the egg is\nhatched and old enough to lay eggs itself. Those are some fast chickens!\n\nLet's describe the number of chickens Sophie has using the <bookmark mark=\"graph\"/>\ngraph of a function.\nSo in the <bookmark mark=\"one_week\"/>first week, sophie has two chickens<bookmark mark=\"two_chickens\"/>\nOne week <bookmark mark=\"two_weeks\"/>later, Sophie has <bookmark mark=\"four_chickens\"/>\nfour chickens. The two chickens she started with, and the two chickens that hatched from the eggs.\n\nIn the <bookmark mark=\"three_weeks\"/>next week, Sophie has four chickens that lay one egg each,\nso she gets four eggs. This means that the total number of chickens after the second week is\n<bookmark mark=\"eight_chickens\"/>eight: the four chickens from the first week, and the four chickens\nthat hatched from the eggs.\n\nIn the <bookmark mark=\"four_weeks\"/>fourth week, Sophie has eight chickens that lay one\negg each, so she gets eight eggs. <split/>So the total number of chickens after the third week is\n<bookmark mark=\"sixteen_chickens\"/>sixteen: the eight chickens from the second week, and the\neight chickens that hatched from the eggs.\n\nAs you can see, <bookmark mark=\"plot\"/>the number of chickens increases really fast, and this is what we call\nexponential growth. The number of chickens doubles every week, because each of your\nchickens lays one egg per week. This means, that the number of chickens you have after\nx weeks is described by <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"two\"/>\ntwo to the <bookmark mark=\"power\"/> power of x. Because you start with two chickens, and each time x\nincreases by one, the number of chickens doubles.\n\nThis is what we call <bookmark mark=\"exponential\"/>exponential growth."
+        "voiceover": "Meet <bookmark mark=\"Sophie_in_1\"/> Sophie.\nSophie loves <bookmark mark=\"chicken_in_1\"/> chickens.\nShe currently has <bookmark mark=\"two_chickens_1\"/>two chickens, but she wants\nmany more. Each of her two chickens lays <bookmark mark=\"one_egg_per_week\"/>\none egg per week, and at the end of the week, the  chicken from the egg is\nhatched and old enough to lay eggs itself. Those are some fast chickens!\n\nLet's describe the number of chickens Sophie has using the <bookmark mark=\"graph\"/>\ngraph of a function.\nSo in the <bookmark mark=\"one_week\"/>first week, sophie has two chickens<bookmark mark=\"two_chickens\"/>\nOne week <bookmark mark=\"two_weeks\"/>later, Sophie has <bookmark mark=\"four_chickens\"/>\nfour chickens. The two chickens she started with, and the two chickens that hatched from the eggs.\n\nIn the <bookmark mark=\"three_weeks\"/>next week, Sophie has four chickens that lay one egg each,\nso she gets four eggs. This means that the total number of chickens after the second week is\n<bookmark mark=\"eight_chickens\"/>eight: the four chickens from the first week, and the four chickens\nthat hatched from the eggs.\n\nIn the <bookmark mark=\"four_weeks\"/>fourth week, Sophie has eight chickens that lay one\negg each, so she gets eight eggs. <split/>So the total number of chickens after the third week is\n<bookmark mark=\"sixteen_chickens\"/>sixteen: the eight chickens from the second week, and the\neight chickens that hatched from the eggs.\n\nAs you can see, <bookmark mark=\"plot\"/>the number of chickens increases really fast, and this is what we call\nexponential growth. The number of chickens doubles every week, because each of your\nchickens lay one egg per week. This means, that the number of chickens you have after\nx weeks is described by <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"two\"/>\ntwo to the <bookmark mark=\"power\"/> power of x. Because you start with two chickens, and each time x\nincreases by one, the number of chickens doubles.\n\nThis is what we call <bookmark mark=\"exponential\"/>exponential growth."
       }
     },
     "I5": {
@@ -1853,7 +1853,8 @@
     "1I13q": {
       "main": {
         "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will know it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will know the rumor after two more hours?"
-      }
+      },
+      "question": "If i plant two plants and each plant triples every year, how many plants will there be in my garden in the third year?"
     },
     "I11": {
       "question": {
@@ -1868,7 +1869,7 @@
       "voiceover": "I have a garden, <bookmark mark=\"garden_in\"/>which I want to plant with my favorite plant. It propagates quite quickly, each year one plant becomes three, so it triples annually. I'm starting simply by <bookmark mark=\"two_in\"/>planting two of them. So, in the first year, there are two plants. In the second year, <bookmark mark=\"second_year\"/>each plant triples, so there are six plants. How many plants will there be in the third year?"
     },
     "I14a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is g of x equals 4 raised to the power of x.\n<bookmark mark=\"h_0\"/>Because h of 0 is two times three to the power of 0, which is 2,<split/>\n<bookmark mark=\"h_1\"/>h of 1 is two times three to the power of 1, which is six,<split/>\n<bookmark mark=\"h_2\"/>h of 2 is two times three to the power of 2, which is eighteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
+      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is h of x equals 2 times 3 raised to the power of x.\n<bookmark mark=\"h_0\"/>Because h of 0 is two times three to the power of 0, which is 2,<split/>\n<bookmark mark=\"h_1\"/>h of 1 is two times three to the power of 1, which is six,<split/>\n<bookmark mark=\"h_2\"/>h of 2 is two times three to the power of 2, which is eighteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
     },
     "1I14q": {
       "question": "How many plants will there be in my garden in the third year?"
@@ -1877,7 +1878,7 @@
       "voiceover": "We know that each plant triples every year. Initially<bookmark mark=\"year_0\"/> there are just the two plants I planted. After one year, there are <bookmark mark=\"year_1\"/>six plants, as each of the two plants has tripled. Then in the following year, each of these<bookmark mark=\"year_2\"/> six plants will triple, so that after another year there are a total of eighteen plants in my garden."
     },
     "1I4q": {
-      "question": "What function now describes the number of plants I have in my garden after x years?"
+      "question": "I planted two plants in the beginning, and they each triple every year. What function now describes the number of plants I have in my garden after $x$ years?"
     },
     "I14q": {
       "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
@@ -1910,7 +1911,7 @@
     },
     "I1": {
       "title": "Exponential Function",
-      "voiceover": "The term of an exponential function is indeed <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nAnd we have been looking at values, <bookmark mark=\"a\"/>where a is greater than one, for example, the <bookmark mark=\"g\"/>function g of x equals two to the power of x or <bookmark mark=\"h\"/>the function h of x equals three to the power of x.\n<break time=\"0.4s\"/>\nBut what if,<bookmark mark=\"qmark\"/> we look at values, <bookmark mark=\"a_l1\"/>where a is between zero and one?<split/><bookmark mark=\"switch\"/>\nShouldn't the function <bookmark mark=\"decrease\"/>then decrease?<break time=\"0.6s\"/> After all, we are always multiplying the function by a value less than 1?\n<split/>Let's take a closer look at this now.\n"
+      "voiceover": "The term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nAnd we have been looking at values, <bookmark mark=\"a\"/>where a is greater than one, for example, the <bookmark mark=\"g\"/>function g of x equals two to the power of x or <bookmark mark=\"h\"/>the function h of x equals three to the power of x.\n<break time=\"0.4s\"/>\nBut what if,<bookmark mark=\"qmark\"/> we look at values, <bookmark mark=\"a_l1\"/>where a is between zero and one?<split/><bookmark mark=\"switch\"/>\nShouldn't the function <bookmark mark=\"decrease\"/>then decrease?<break time=\"0.6s\"/> After all, we are always multiplying the function by a value less than 1?\n<split/>Let's take a closer look at this now, by using an example."
     },
     "I2": {
       "a": {
@@ -1929,8 +1930,8 @@
     "I3": {
       "title": "Growth factor",
       "verify": "Verify:",
-      "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/>a is called the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays.\n<split/>\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"a\" leads to this graph?",
-      "x-minutes_1": "What is the valuef of",
+      "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/> \"a\" is called the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays.\n<split/>\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"a\" leads to this graph?",
+      "x-minutes_1": "What is the value of",
       "x-minutes_2": "the growth factor",
       "q": {
         "question-text": "What is the value of the growth factor $a$?"
@@ -1965,12 +1966,12 @@
       }
     },
     "I2X": {
-      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe plot of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
+      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe graph of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
     },
     "I21": {
       "q": {
         "voiceover": "Ok, <bookmark mark=\"f\"/> let's now consider the exponential function f of x equals one half to the power of x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>What does the graph of this function look like?<break time=\"0.6s\"/>\nDoes it go <bookmark mark=\"plot_1\"/> slowly downwards,<split/> and then becomes steeper, like the blue graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_2\"/> steeply downwards,<split/> and then becomes flatter, like the green graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_3\"/> downward at a constant speed, <split/> like the pink graph?",
-        "question-text": "What does the graph of the function $f(x)=(\\frac12)^x$ look like?",
+        "question-text": "What does the graph of the function $f(x)=(\\tfrac12)^x$ look like?",
         "answer-options": "[\"Like the blue function\", \"Like the green function\", \"Like the pink function\"]"
       },
       "a": {
@@ -1987,7 +1988,10 @@
       }
     },
     "I3a": {
-      "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one equals one half, so <bookmark mark=\"transform\"/> a equals one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by verifying that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
+      "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one, which equals one half, so <bookmark mark=\"transform\"/> a is one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by checking that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
+    },
+    "I31": {
+      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\n"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2031,7 +2035,7 @@
     "color_1_name": "blue",
     "color_2_name": "green",
     "color_3_name": "orange",
-    "intro": "Let's say we're considering a growth factor of a equals one half,so your function is"
+    "intro": "Let's say we're considering a growth factor of \"a\" equals one half,so your function is"
   },
   "Func_6_2_P_5_a": {
     "intro": "Yep, that is correct."
