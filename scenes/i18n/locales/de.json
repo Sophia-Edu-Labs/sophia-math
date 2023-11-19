@@ -1992,6 +1992,22 @@
     },
     "I3a": {
       "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins, was gleich ein halb ist. Also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
+    },
+    "I32": {
+      "q": {
+        "question-text": "Welcher Graph zeigt, wie wir $a$ erhöhen?",
+        "question-options": "[\"Der blaue Graph\", \"Der lila Graph\"]"
+      }
+    },
+    "I31": {
+      "voiceover": ""
+    },
+    "I33": {
+      "capital": "Kapital",
+      "doubles": "Verdoppelt sich jährlich",
+      "a": {
+        "voiceover": ""
+      }
     }
   },
   "Func_6_2_P_1_a": {
@@ -2650,7 +2666,8 @@
     "incorrect_4": "Das ist nicht korrekt.",
     "incorrect_5": "Nein.",
     "incorrect_6": "Das ist leider falsch. ",
-    "n_times": "n mal"
+    "n_times": "n mal",
+    "pa": "pro Jahr"
   },
   "degree": "Grad",
   "test-key": "[\"1\", \"2\", \"3\"]",

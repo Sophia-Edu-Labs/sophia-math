@@ -1295,8 +1295,16 @@ class Func_6_2_I_3_1(SophiaCursorScene):
         self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
         self.wait(4)
 
-
+#####################################
+#####################################
 class Func_6_2_I_3_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval(self.translate("Func_6_2.I32.q.question-options")),
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_2.I32.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1310,13 +1318,13 @@ class Func_6_2_I_3_2_q(SophiaCursorScene):
         plane = cords[0]
 
         
-        f_transformed = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.4)
-        dec_nums = VGroup(MathTex("a=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=0, color=c1t, font_size=fs2), MathTex("\\,\\,b=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=0, color=c1t, font_size=fs2)).arrande(LEFT, buff=.1).next_to(f_transformed, DOWN, buff=0.4)
-        a, b = dec_nums[1], dec_nums[3]
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.4)
+        
+        a, b = ValueTracker(1), ValueTracker(2)
 
         f_plotted_green = plane.plot(lambda x:2**x, color=GREEN_D)
         f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE))
-        f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURPLE))
+        f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:b.get_value()**x, color=PURPLE, x_range=[0,np.emath.logn(b.get_value(), 64)]))
 
         # Action Sequence
         with self.voiceover(
@@ -1326,15 +1334,355 @@ class Func_6_2_I_3_2_q(SophiaCursorScene):
             self.wait_until_bookmark("func_in")
             self.play(Write(f_tex))
 
-            self.wait_until_bookmark("func_transform")
-            self.play(TransformMatchingTex(f_tex, f_transformed))
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(cords), run_time=1)
+            self.add_pencil_sound(1.5)
+            self.play(Create(f_plotted_green), run_time=1)
 
-            self.wait_until_bookmark("monkey_in")
+            self.wait_until_bookmark("blue_anim")
+            self.add(f_plotted_updated_blue)
+            self.play(a.animate.set_value(2))
+
+            self.wait_until_bookmark("purple_anim")
+            self.add(f_plotted_updated_purple)
+            self.play(b.animate.set_value(2.7), run_time=2.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        #self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 64, 8], x_ticks=[1,3,5], y_ticks=[16,32,48,64])
+        plane = cords[0]
+        self.add(cords)
+
+        a, b = ValueTracker(1), ValueTracker(2)
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.6)
+        dec_nums = VGroup(MathTex("a=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=1, color=c1t, font_size=fs2).add_updater(lambda m: m.set_value(a.get_value())), Circle(radius=.1, stroke_width=0), MathTex("b=", color=c1t, font_size=fs2), DecimalNumber(2, num_decimal_places=1, color=c1t, font_size=fs2).add_updater(lambda m: m.set_value(b.get_value()))).arrange(RIGHT, buff=.1).next_to(f_tex, DOWN, buff=0.6)
+        self.add(f_tex, dec_nums)
+
+        rect_a = SurroundingRectangle(Group(dec_nums[0], dec_nums[1]), buff=.2, corner_radius=.1, color=RED)
+        rect_b = SurroundingRectangle(Group(dec_nums[3], dec_nums[4]), buff=.2, corner_radius=.1, color=RED)
+
+        f_plotted_green = plane.plot(lambda x:2**x, color=GREEN_D)
+        f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE))
+        f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:b.get_value()**x, color=PURPLE, x_range=[0,np.emath.logn(b.get_value(), 64)]))
+        self.add(f_plotted_green)
+
+        x_0,y_0, _ = plane.c2p(0,0)
+        cursor=AltCursor(idle=True, x=x_0, y=y_0)
+        self.add(cursor)
+
+        x_cross, y_cross, _ = plane.c2p(2.3,0)
+        x_end, y_end, _ = plane.c2p(5,0)
+        x_mid_1, y_mid_1 = (x_0+x_cross)/2, (y_0+y_cross)/2
+        x_mid_2, y_mid_2 = (x_cross+x_end)/2, (y_cross+y_end)/2
+
+        width_mid_1, width_mid_2 = x_cross-x_0, x_end-x_cross 
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_5")+self.translate("Func_6_2.I32a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("blue_anim")
+            self.add(f_plotted_updated_blue)
+            self.play(a.animate.set_value(2), run_time=2)
+
+            self.wait_until_bookmark("of_a")
+            self.add_pencil_sound(1)
+            self.play(Write(rect_a), run_time=1)
+
+            self.wait_until_bookmark("purple_anim")
+            self.add(f_plotted_updated_purple)
+            self.play(b.animate.set_value(2.7), ReplacementTransform(rect_a, rect_b), run_time=2)
+            self.wait(1.5)
+            self.play(FadeOut(rect_b), run_time=1)
+
+            self.wait_until_bookmark("low_values")
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x_mid_1, y_mid_1, width=width_mid_1), run_time=.8)
+
+            self.wait_until_bookmark("high_values")
+            self.play(CursorMoveResize(cursor, x_mid_2, y_mid_2, width=width_mid_2), run_time=.8)
+
+            self.wait_until_bookmark("reset")
+            self.play(CursorMoveResize(cursor, x_0, y_0), run_time=.3)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_3_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        #self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 64, 8], x_ticks=[1,3,5], y_ticks=[16,32,48,64])
+        plane = cords[0]
+        self.add(cords)
+
+        a, b = ValueTracker(1), ValueTracker(2)
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.6)
+        dec_nums = VGroup(MathTex("a=", color=c1t, font_size=fs2), DecimalNumber(1, num_decimal_places=1, color=c1t, font_size=fs2).add_updater(lambda m: m.set_value(a.get_value())), Circle(radius=.1, stroke_width=0), MathTex("b=", color=c1t, font_size=fs2), DecimalNumber(2, num_decimal_places=1, color=c1t, font_size=fs2).add_updater(lambda m: m.set_value(b.get_value()))).arrange(RIGHT, buff=.1).next_to(f_tex, DOWN, buff=0.6)
+        self.add(f_tex, dec_nums)
+
+        rect_a = SurroundingRectangle(Group(dec_nums[0], dec_nums[1]), buff=.2, corner_radius=.1, color=RED)
+        rect_b = SurroundingRectangle(Group(dec_nums[3], dec_nums[4]), buff=.2, corner_radius=.1, color=RED)
+
+        f_plotted_green = plane.plot(lambda x:2**x, color=GREEN_D)
+        f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE))
+        f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:b.get_value()**x, color=PURPLE, x_range=[0,np.emath.logn(b.get_value(), 64)]))
+        self.add(f_plotted_green)
+
+        x_0,y_0, _ = plane.c2p(0,0)
+        cursor=AltCursor(idle=True, x=x_0, y=y_0)
+        self.add(cursor)
+
+        x_cross, y_cross, _ = plane.c2p(2.3,0)
+        x_end, y_end, _ = plane.c2p(5,0)
+        x_mid_1, y_mid_1 = (x_0+x_cross)/2, (y_0+y_cross)/2
+        x_mid_2, y_mid_2 = (x_cross+x_end)/2, (y_cross+y_end)/2
+
+        width_mid_1, width_mid_2 = x_cross-x_0, x_end-x_cross 
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I32a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("blue_anim")
+            self.add(f_plotted_updated_blue)
+            self.play(a.animate.set_value(2), run_time=2)
+
+            self.wait_until_bookmark("of_a")
+            self.add_pencil_sound(1)
+            self.play(Write(rect_a), run_time=1)
+
+            self.wait_until_bookmark("purple_anim")
+            self.add(f_plotted_updated_purple)
+            self.play(b.animate.set_value(2.7), ReplacementTransform(rect_a, rect_b), run_time=2)
+            self.wait(1.5)
+            self.play(FadeOut(rect_b), run_time=1)
+
+            self.wait_until_bookmark("low_values")
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x_mid_1, y_mid_1, width=width_mid_1), run_time=.8)
+
+            self.wait_until_bookmark("high_values")
+            self.play(CursorMoveResize(cursor, x_mid_2, y_mid_2, width=width_mid_2), run_time=.8)
+
+            self.wait_until_bookmark("reset")
+            self.play(CursorMoveResize(cursor, x_0, y_0), run_time=.3)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_3_3_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        mib = ImageMobject(assets_folder / "img" / "money_in_the_bank.png")
+        mib = mib.scale(2.8/mib.get_width()).move_to([-5, 1.6, 0])
+
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble("\\usepackage{lmodern,textcomp}")
+
+        capital = self.translate("Func_6_2.I33.capital")
+        doubles = self.translate("Func_6_2.I33.doubles")
+        notes = BulletedList(f"$1000$€ {capital}", doubles, tex_template=myTemplate).scale(.6).next_to(mib, DOWN, buff=0.4).shift(5*RIGHT)
+        notes[0].set_color(c1t), notes[1].set_color(c1t)
+
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(notes, DOWN, buff=.8)
+        f_box = SurroundingRectangle(f_tex, buff=.2, corner_radius=.1, color=RED)
+        
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("Func_6_2.I33.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(f_tex))
+
+            self.wait_until_bookmark("thousand_in")
             self.add_shift_sound(0.5)
-            self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+            self.play(mib.animate.shift(RIGHT*5), Write(notes[0]), run_time=0.5)
 
-        self.add_shift_sound(0.5)
-        self.play(flying_monkey.animate.shift(RIGHT*5), run_time=0.5)
+            self.wait_until_bookmark("interest_in")
+            self.play(Write(notes[1]), run_time=0.5)
+
+            self.wait_until_bookmark("func_box")
+            self.add_pencil_sound(1)
+            self.play(Write(f_box), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_3_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        mib = ImageMobject(assets_folder / "img" / "money_in_the_bank.png")
+        mib = mib.scale(2.8/mib.get_width()).move_to([0, 1.6, 0])
+        self.add(mib)
+
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble("\\usepackage{lmodern,textcomp}")
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        capital = self.translate("Func_6_2.I33.capital")
+        doubles = self.translate("Func_6_2.I33.doubles")
+        notes = BulletedList(f"$1000$€ {capital}", doubles, tex_template=myTemplate).scale(.6).next_to(mib, DOWN, buff=0.4)
+        notes[0].set_color(c1t), notes[1].set_color(c1t)
+        self.add(notes)
+
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(notes, DOWN, buff=.8)
+        self.add(f_tex)
+
+        f_sol_1 = MathTex("f","(x)", "=", "1000\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_sol_2 = MathTex("f","(x)", "=", "1000\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("Func_6_2.I33.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("capital")
+            x,y,_ = notes[0].get_center()+0.3*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_1")
+            self.play(TransformMatchingTex(f_tex, f_sol_1))
+
+            self.wait_until_bookmark("doubles")
+            x,y,_ = notes[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_2")
+            cursor.idle=True
+            self.play(TransformMatchingTex(f_sol_1, f_sol_2))
+
+            self.wait_until_bookmark("underline_fct")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, f_sol_2), run_time=0.5)
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_3_4_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 6, 1], [0, 16, 2], x_ticks=[2,4,6], y_ticks=[4,8,12,16], height=3.2).shift(.6*DOWN)
+        plane = cords[0]
+
+        plot = plane.plot(lambda x: (2**x)/4, color=GREEN_E)
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("Func_6_2.I34.q.voiceover")
+        ) as tracker:
+            
+            self.play(Write(cords), run_time=.5)
+
+            self.wait_until_bookmark("graph_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot), run_time=1)
+
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func_tex), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_3_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 6, 1], [0, 16, 2], x_ticks=[2,4,6], y_ticks=[4,8,12,16], height=3.2).shift(.6*DOWN)
+        plane = cords[0]
+        self.add(cords)
+
+        plot = plane.plot(lambda x: (2**x)/4, color=GREEN_E)
+        self.add(plot)
+
+        x_0, y_0, _ = plane.c2p(0,0)
+        cursor = AltCursor(cursor, x=x_0, y=y_0, idle=True)
+        self.add(cursor)
+
+        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+
+        circ_3 = Circle(radius=.1, stroke_width=0, color=RED).move_to(plane.c2p(3,2))
+        circ_4 = Circle(radius=.1, stroke_width=0, color=RED).move_to(plane.c2p(4,4))
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        func_sol_1 = MathTex("f","(x)", "=", "a\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_sol_2 = MathTex("f","(x)", "=", "\\tfrac14\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        f_vals = VGroup(MathTex("f","(3)=2", color=c1t, font_size=fs2), MathTex("f","(4)=4", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_tex, DOWN, buff=.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text="""
+We can find the value of b by comparing the function at two x-values that are 1 unit apart. For example, we can compare the function at x equals 3 and x equals 4.
+We can see that <bookmark mark="f_3"/>f of three is equal to 2 and <bookmark mark="f_4"/>f of four is equal to 4.
+This means, that if we increase f by one, the function doubles. That means, that <bookmark mark="sol_1"> b is equal to two.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_3")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_3)
+            self.play(Create(lines_f_3), run_ti)
+
+            self.wait_until_bookmark("f_4")
+            x,y,_ = plane.c2p(4,4)
+
         self.wait(4)
 
 ####################################################################################################################################################

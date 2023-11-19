@@ -1991,7 +1991,31 @@
       "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one, which equals one half, so <bookmark mark=\"transform\"/> a is one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by checking that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
     },
     "I31": {
-      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\n"
+      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
+    },
+    "I32": {
+      "q": {
+        "question-text": "Which plot shows how we increase $a$?",
+        "question-options": "[\"The blue plot\", \"The purple plot\"]"
+      }
+    },
+    "I32a": {
+      "voiceover": "The blue <bookmark mark=\"blue_anim\"/>animation shows what happens when we increase the value <bookmark mark=\"of_a\"/>of a.\nAnd the purple <bookmark mark=\"purple_anim\"/>animation shows what happens when we increase the value of b.\nOne way to see this, is by comparing for what values of x each of the two is larger...\nFor low values <bookmark mark=\"low_values\"/> of x, the blue function is larger. And for <bookmark mark=\"high_values\"/>high values of x, the purple function is larger.\nThis means, <bookmark mark=\"reset\"/>that the purple function grows more quickly relative to the blue function as x gets higher, so it must have a higher base value, which means a higher value of b."
+    },
+    "I33": {
+      "capital": "Capital",
+      "doubles": "Doubles yearly",
+      "q": {
+        "voiceover": "Let's see an example where we model a situation using a term of the form <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x.\nSay you've put <bookmark mark=\"thousand_in\"/> one thousand euros in a magical savings account, where the money <bookmark mark=\"interest_in\"/> doubles every year.\nWhat function of the form <bookmark mark=\"func_box\"/> f of x equals a times b to the power of x could you use to model the amount of money in the savings account after x years?"
+      },
+      "a": {
+        "voiceover": "We're <bookmark mark=\"capital\"/> starting with a capital of one thousand euros. So we multiply the entire function<bookmark mark=\"sol_1\"/> by one thousand.\nAnd the <bookmark mark=\"doubles\"/>money doubles every year. This means that the base b <bookmark mark=\"sol_2\"/>is equal to two. So the function describing the capital after x years is <bookmark mark=\"underline_fct\"/> f of x equals one thousand times two to the power of x."
+      }
+    },
+    "I34": {
+      "q": {
+        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph you see here. What function of the <bookmark mark=\"func_in\"/> form f of x equals a times b to the power of x does it belong to?"
+      }
     }
   },
   "Func_6_2_P_1_a": {
@@ -2649,7 +2673,9 @@
     "incorrect_4": "That's not correct. ",
     "incorrect_5": "No. ",
     "incorrect_6": "That's wrong, unfortunately. ",
-    "n_times": "n times"
+    "n_times": "n times",
+    "correct_5": "That's correct.",
+    "pa": "per year"
   },
   "degree": "Degree",
   "test-key": "[“1\", \"2\", \"3\"]",
