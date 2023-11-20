@@ -1756,23 +1756,86 @@ class Func_6_2_I_3_5_q(SophiaCursorScene):
         self.add_title(self.translate("Func_6_2.I1.title"))
 
         ball = ImageMobject(assets_folder / "img" / "ball.png")
-        ball = ball.scale(2.8/ball.get_width()).move_to([-5, 1.6, 0])
+        ball = ball.scale(2/ball.get_width()).move_to([0, 5, 0])
+        original_height = self.translate("Func_6_2.I35.original-height")
+        eight_meters = Tex(original_height, ": $8$m", color=c1t, font_size=fs2).set_y(2.4)
 
-        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=0.4).set_x(0)
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=0.4).shift(DOWN*4)
+        three_bounces = self.translate("Func_6_2.I35.three-bounces")
+        bounce_tex = Tex(three_bounces, "\\\\ $\\Rightarrow \\tfrac18$ m", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=0.4)
 
         # Action Sequence
         with self.voiceover(
-            text="""
-Another exercise: <bookmark mark="ball_in"/>A ball is dropped from a height of 8 meters. We can use an 
-"""
+            text=self.translate("Func_6_2.I35.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ball_in")
             self.add_shift_sound(1)
-            self.play(ball.animate.shift(5*RIGHT), run_time=1)
+            self.play(ball.animate.shift(4*DOWN), run_time=1)
 
+            self.wait_until_bookmark("eight_meters")
+            self.play(Write(eight_meters), run_time=.5)
+
+            self.wait_until_bookmark("three_bounces")
+            self.play(Write(bounce_tex[0]), run_time=.5)
+
+            self.wait_until_bookmark("one_eigth")
+            self.play(Write(bounce_tex[1]), run_time=.5)
+
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func_tex), run_time=1)
 
         self.wait(4)
+
+
+class Func_6_2_I_3_5_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        ball = ImageMobject(assets_folder / "img" / "ball.png")
+        ball = ball.scale(2/ball.get_width()).move_to([0, 1, 0])
+        original_height = self.translate("Func_6_2.I35.original-height")
+        eight_meters = Tex(original_height, ": $8$m", color=c1t, font_size=fs2).set_y(2.4)
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=0.4)
+        func_tex_a = MathTex("f","(x)", "=", "8\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        three_bounces = self.translate("Func_6_2.I35.three-bounces")
+        bounce_tex = Tex(three_bounces, "\\\\ $\\Rightarrow \\tfrac18$ m", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=0.4)
+
+        self.add(ball, eight_meters, bounce_tex)
+
+        follows_0 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(eight_meters, DOWN, buff=0.2)
+        f_0_1 = MathTex("f(0)=", "a\\cdot b^0", "=8", color=c1t, font_size=fs2).next_to(follows_0, DOWN, buff=0.2)
+        f_0_2 = MathTex("f(0)=", "a\\cdot 1", "=8", color=c1t, font_size=fs2).move_to(f_0_1)
+
+        # Action Sequence
+        with self.voiceover(
+            text="""
+So the original height is what we get at x equals zero. So <bookmark mark="f_0_1"/> we get f of zero equals a times b to the power of zero equals eight. And b to the power of zero<bookmark mark="f_0_2"/> is one. So we get<bookmark mark="f_0_3"/> a equals eight.
+
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_0_1")
+            self.add_shift_sound(1)
+            self.play(ball.animate.shift(5*UP), Write(follows_0), Write(f_0_1), run_time=1)
+
+            self.wait_until_bookmark("f_0_2")
+            self.play(TransformMatchingTex(f_0_1, f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_0_3")
+            self.play(TransformMatchingTex(func_tex, func_tex_a), run_time=1)
+
+            
+
+        self.wait(4)
+
 
 ####################################################################################################################################################
 #####################################

@@ -2019,6 +2019,13 @@
       "a": {
         "voiceover": "To find the function term, we'll need to find the values of a and b.\nWe can find the value of b by comparing the function at two x-values that are 1 unit apart. For example, we can compare the function <bookmark mark=\"f_x_3\"/>at x equals 3 <bookmark mark=\"f_x_4\"/>and x equals 4.\nWe can see that <bookmark mark=\"f_3\"/>f of three is equal to 2 and <bookmark mark=\"f_4\"/>f of four is equal to 4.\nThis means, that if we increase f by one, the function doubles. That means, <bookmark mark=\"sol_1\"/>that b is equal to two, because increasing x by one multiplies the function value by two.<bookmark mark=\"reset_1\"/>\nNow what is <bookmark mark=\"of_a\"/>the value of a? We can find that out by looking at the function value <bookmark mark=\"f_3_again\"/>at x equals 3.\nIf we plug x equals 3 into the function term, we get <bookmark mark=\"step_1\"/>f of three equals a times two to the power of three.\nThis is <bookmark mark=\"step_2\"/>equal to a times eight. And by looking at the function, we can see that <bookmark mark=\"step_3\"/>f of three is equal to two.\nSo a times eight is equal to two. That means, <bookmark mark=\"step_4\"/>that a has to be equal to one quarter.\nSo the <bookmark mark=\"reset_2\"/> term of the function that is shown in the graph <bookmark mark=\"final_sol\"/>is one quarter times two to the power of x."
       }
+    },
+    "I35": {
+      "three-bounces": "three bounces",
+      "original-height": "Original height",
+      "q": {
+        "voiceover": "Another exercise: <bookmark mark=\"ball_in\"/>A ball is dropped from a height<bookmark mark=\"eight_meters\"/>of 8 meters. After bouncing off the ground<bookmark mark=\"three_bounces\"/> three times, it only jumps up to the height of <bookmark mark=\"one_eigth\"/>one eigth of a meter. We can use an exponential function of the form <bookmark mark=\"func_in\"/>f of x equals a times b to the power of x to describe the height of the ball after x bounces. What is the value of a?"
+      }
     }
   },
   "Func_6_2_P_1_a": {
