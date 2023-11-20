@@ -18,6 +18,7 @@ c6 = GREEN
 c1t = BLACK
 c2t = GRAY_E
 c3t = GRAY_D
+c4t = GRAY_C
 
 fs1 = 48
 fs2 = 36

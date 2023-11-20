@@ -2029,6 +2029,9 @@
       "a": {
         "voiceover": "So the original height is what we get at x equals zero. So <bookmark mark=\"f_0_1\"/> we get f of zero equals a times b to the power of zero equals eight. And b to the power of zero<bookmark mark=\"f_0_2\"/> is one. So we get that <bookmark mark=\"f_0_3\"/>a times one equals eight, <bookmark mark=\"f_0_4\"/>so a equals eight...\nNow let's try to find b. <bookmark mark=\"reorganize\"/>We know that after three bounces, the balls height is one eighth of a meter. So we get <bookmark mark=\"f_1_1\"/>f of three equals eight times b to the power of three equals one eighth. If we divide both sides by 8, we <bookmark mark=\"f_1_2\"/> get b to the power of 3 equals 1 over 64. So we know that b to the power of three equals one sixty fourth. This means, that <bookmark mark=\"final_sol\"/>b equals one quarter, because one quarter to the power of three is one over 64.<bookmark mark=\"clean_up\"/>\nSo the function describing the height of the ball after x bounces is <bookmark mark=\"frame\"/>f of x equals eight times one quarter to the power of x."
       }
+    },
+    "I41": {
+      "voiceover": "There are some important <bookmark mark=\"rules_in\"/> rules you should take into account when dealing with exponential functions. I'll start by giving you an overview, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of negative x is equal to one over a to the power of x...\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nTry to remember all three!"
     }
   },
   "Func_6_2_P_1_a": {
