@@ -290,7 +290,7 @@ class SophiaScene(VoiceoverScene):
             else:
                 title.shift(UP * (0.2 - remainder_title))
 
-        self.add(title)
+        #self.add(title)
         return title
         
     def add_cords(self, x_range = [-1,1,1], y_range = [-1,1,1], x_ticks=[-1,0,1], y_ticks=[-1,0,1], x_labels = None, y_labels = None, width=2.4, height=2.4, axisLabelX='x', axisLabelY='y', tip_x=StealthTip, tip_y=StealthTip, include_tip = True):
