@@ -2072,27 +2072,51 @@ class Func_6_2_I_4_3_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1)
+        rule = Tex("$\\frac{a^x}{a^y}=a^{x-y}$", color=c1t, font_size=fs1)
+        other_rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c4t, font_size=fs1).set_y(-1)
+        ud = Tex("$\\Updownarrow$", color=c1t, font_size=fs1)
+
+
         step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c2t, font_size=fs2)
         step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c2t, font_size=fs2)
         step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
-        step_4 = Tex("$a^x\\cdot a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x+ y$ times}}$", color=c2t, font_size=fs2)
-        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+        step_4 = Tex("$\\frac{a^x}{a^y}=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x-y$ times}}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT)
         step_3.set_x(0)
 
-        example = MathTex("4^a\\cdot 4^b=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        example = MathTex("\\frac{3^x}{3^{y}}=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+
+        cursor = AltCursor(idle=False)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I42.q.voiceover")
+                text="""
+                Now consider the rule stating that <bookmark mark="rule"/>a to the power of x divided by a to the power of y is equal to a to the power of x minus y.
+                There are two ways to remember this rule. The first is by comparing it to the <bookmark mark="other_rule"/>rule stating that a to the power of x times a to the power of y is equal to a to the power of x plus y.
+                It makes sense that<bookmark mark="multiply"/> if multiplying the expressions leads to adding the exponents, <bookmark mark="divide"/>then dividing the expressions leads to subtracting the exponents.
+                Another <bookmark mark="clean_up_1"/>way to remember this rule is to see that <bookmark mark="step_1"/>"a" to the power of x is equal to "a", multiplied by itself x times, and <bookmark mark="step_2"/>"a" to the power of y is equal to "a" multiplied by itself y times.
+                This means that if we <bookmark mark="step_3"/>divide a to the power of x by a to the power of y, we are only multiplying "a" by itself x minus y times, because y times "a" are cancelled out.
+                Now <bookmark mark="clean_up_2"/>let's look at an example. How can we simplify <bookmark mark="example_in"/> the expression three to the power of x divided by three to the power of y?
+                """
         ) as tracker:
             
             self.wait_until_bookmark("rule")
             self.play(Write(rule), run_time=1)
 
+            self.wait_until_bookmark("other_rule")
+            self.play(rule.animate.shift(UP), Write(other_rule), Write(ud))
+
+            self.wait_until_bookmark("multiply")
+            self.play(CursorUnderline(cursor, other_rule), run_time=.4)
+
+            self.wait_until_bookmark("divide")
+            self.play(CursorUnderline(cursor, rule), run_time=.4)
+
+            self.wait_until_bookmark("clean_up_1")
+            self.play(rule.animate.shift(UP*1.8), Unwrite(other_rule), Unwrite(ud), CursorMoveResize(cursor, 5, 0), run_time=1)
+
             self.wait_until_bookmark("step_1")
-            self.add_shift_sound(.5)
-            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
+            self.play(Write(step_1), run_time=1)
 
             self.wait_until_bookmark("step_2")
             self.play(Write(step_2), run_time=1)
@@ -2100,7 +2124,7 @@ class Func_6_2_I_4_3_q(SophiaCursorScene):
             self.wait_until_bookmark("step_3")
             self.play(Write(step_3), Write(step_4), run_time=1)
 
-            self.wait_until_bookmark("clean")
+            self.wait_until_bookmark("clean_up_2")
             self.play(Unwrite(steps), run_time=1)
 
             self.wait_until_bookmark("example_in")
