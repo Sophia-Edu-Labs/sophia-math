@@ -2025,6 +2025,9 @@
       "original-height": "Original height",
       "q": {
         "voiceover": "Another exercise: <bookmark mark=\"ball_in\"/>A ball is dropped from a height<bookmark mark=\"eight_meters\"/>of 8 meters. After bouncing off the ground<bookmark mark=\"three_bounces\"/> three times, it only jumps up to the height of <bookmark mark=\"one_eigth\"/>one eigth of a meter. We can use an exponential function of the form <bookmark mark=\"func_in\"/>f of x equals a times b to the power of x to describe the height of the ball after x bounces. What is the value of a?"
+      },
+      "a": {
+        "voiceover": "So the original height is what we get at x equals zero. So <bookmark mark=\"f_0_1\"/> we get f of zero equals a times b to the power of zero equals eight. And b to the power of zero<bookmark mark=\"f_0_2\"/> is one. So we get that <bookmark mark=\"f_0_3\"/>a times one equals eight, <bookmark mark=\"f_0_4\"/>so a equals eight...\nNow let's try to find b. <bookmark mark=\"reorganize\"/>We know that after three bounces, the balls height is one eighth of a meter. So we get <bookmark mark=\"f_1_1\"/>f of three equals eight times b to the power of three equals one eighth. If we divide both sides by 8, we <bookmark mark=\"f_1_2\"/> get b to the power of 3 equals 1 over 64. So we know that b to the power of three equals one sixty fourth. This means, that <bookmark mark=\"final_sol\"/>b equals one quarter, because one quarter to the power of three is one over 64.<bookmark mark=\"clean_up\"/>\nSo the function describing the height of the ball after x bounces is <bookmark mark=\"frame\"/>f of x equals eight times one quarter to the power of x."
       }
     }
   },
@@ -2696,5 +2699,9 @@
       "indep": "Linearly independent",
       "dep": "Linearly dependent"
     }
+  },
+  "general": {
+    "scaling_factor": "scaling faktor",
+    "growth_factor": "growth factor"
   }
 }

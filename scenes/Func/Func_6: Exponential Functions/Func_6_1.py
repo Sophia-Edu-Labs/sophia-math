@@ -14,9 +14,11 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
 
 
+####################################################################################################################################################
+# CHAPTER: Intro exponential growth ################################################################################################################
+
 #####################################
 #####################################
-#You created a funny short video - how many ppl will watch it after another timeperiod
 class Func_6_1_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -76,6 +78,7 @@ class Func_6_1_I_1_q(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 class Func_6_1_I_1_a(SophiaCursorScene):
 
@@ -318,7 +321,6 @@ class Func_6_1_I_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-#You created a funny short video - which function describes view-numbers
 class Func_6_1_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1750,7 +1752,8 @@ class Func_6_1_I_1_5(SophiaCursorScene):
         self.wait(4)
 
 
-##############################################################################################################################################################################################################################
+####################################################################################################################################################
+# CHAPTER: Exponential vs. linear growth ###########################################################################################################
 
 #####################################
 #####################################
@@ -2758,7 +2761,7 @@ class Func_6_1_I_6_1(SophiaCursorScene):
 
 #Maybe throw in this exercise before 6_1?
 ####################################################################################################################################################
-#####################################
+# What is this?????????????????????????? ###########################################################################################################
 class Func_6_1_I_7_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:

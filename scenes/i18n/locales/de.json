@@ -2682,5 +2682,9 @@
       "indep": "Linear unabhängig",
       "dep": "Linear abhängig"
     }
+  },
+  "general": {
+    "scaling_factor": "Skalierungsfaktor",
+    "growth_factor": "Wachstumsfaktor"
   }
 }
