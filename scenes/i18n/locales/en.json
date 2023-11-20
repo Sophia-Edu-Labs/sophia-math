@@ -2031,7 +2031,15 @@
       }
     },
     "I41": {
-      "voiceover": "There are some important <bookmark mark=\"rules_in\"/> rules you should take into account when dealing with exponential functions. I'll start by giving you an overview, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of negative x is equal to one over a to the power of x...\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nTry to remember all three!"
+      "voiceover": "There are some important <bookmark mark=\"rules_in\"/> rules you should take into account when dealing with exponential functions. I'll start by giving you an overview, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of negative x is equal to one over a to the power of x...\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nTry to remember all three!"
+    },
+    "I42": {
+      "q": {
+        "voiceover": "Let's start by looking at the rule for multiplying two exponential functions with the same base. The rule states that <bookmark mark=\"rule\"/> a to the power of x times a to the power of y equals a to the power of x plus y. So the result is the original base to the power of the sum of the exponents.\nBut why is that? It's actually easy to make sense of this: First, notice that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of y is just \"a\" multiplied by itself y times. So if we multiply these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x plus y times. And that is exactly what the rule states...\nNow <bookmark mark=\"clean\"/>let's practice: How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of a times 4 to the power of b?"
+      },
+      "a": {
+        "voiceover": "If we simply apply the rule to the term four to the power of a times four to the power of b, we see that it equals <bookmark mark=\"equal\"/> four to the power of a plus b, because we keep the base, which is 4, and we add the exponents, which are a and b.\nWe can verify this, by checking that <bookmark mark=\"step_1\"/>4 to the power of a equals 4 multiplied by itself a total of \"a\" times, and <bookmark mark=\"step_2\"/>4 to the power of b equals 4, multiplied by itself a total of b times. If we multiply these two terms, we get <bookmark mark=\"step_3\"/>four multiplied by itself \"a\" plus b times, so 4 to the power of \"a\" plus b."
+      }
     }
   },
   "Func_6_2_P_1_a": {

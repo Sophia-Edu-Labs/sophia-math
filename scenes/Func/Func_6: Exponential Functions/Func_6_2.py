@@ -1939,8 +1939,8 @@ class Func_6_2_I_4_1(SophiaCursorScene):
         justice = justice.scale(4/justice.get_width()).move_to([-5, 1, 0])
 
         rule_1 = Tex("$1$) ", "$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs2)
-        rule_2 = Tex("$2$) ", "$a^{-x}=\\frac{1}{a^x}$", color=c1t, font_size=fs2)
-        rule_3 = Tex("$3$) ", "$\\frac{a^x}{a^y}=a^{x-y}$", color=c1t, font_size=fs2)
+        rule_2 = Tex("$2$) ", "$\\frac{a^x}{a^y}=a^{x-y}$", color=c1t, font_size=fs2)
+        rule_3 = Tex("$3$) ", "$a^{-x}=\\frac{1}{a^x}$", color=c1t, font_size=fs2)
         rule_4 = Tex("$4$) ", "$(a^x)^y=a^{x\\cdot y}$", color=c1t, font_size=fs2)
         rules = VGroup(rule_1, rule_2, rule_3, rule_4).arrange(DOWN, buff=.4, aligned_edge=LEFT)
 
@@ -1982,30 +1982,26 @@ class Func_6_2_I_4_2_q(SophiaCursorScene):
         self.add_title(self.translate("Func_6_2.I1.title"))
 
         rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1)
-        step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c4t, font_size=fs2)
-        step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c4t, font_size=fs2)
-        step_3 = Tex("$\\Downarrow$", color=c4t, font_size=fs2)
-        step_4 = Tex("$a^x\\cdot a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x\\cdot y$ times}}$", color=c4t, font_size=fs2)
+        step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$a^x\\cdot a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x+ y$ times}}$", color=c2t, font_size=fs2)
         steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
         step_3.set_x(0)
 
-        example = MathTex("4^a\\cdot 4^b", color=c1t, font_size=fs2)
+        example = MathTex("4^a\\cdot 4^b=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Let's start by looking at the rule for multiplying two exponential functions with the same base. The rule states that <bookmark mark="rule"/> a to the power of x times a to the power of y equals a to the power of x plus y. So the result is the same base to the power of the sum of the exponents.
-But why is that? It's actually easy to make sense of this: First, notice that <bookmark mark="step_1"/>a to the power of x is just "a" multiplied by itself x times. And <bookmark mark="step_2"/>a to the power of y is just "a" multiplied by itself y times. So if we multiply these two expressions, we get <bookmark mark="step_3"/>"a" multiplied by itself x plus y times. And that is exactly what the rule states.
-Now <bookmark mark="clean"/>let's practice: How can we simplify the <bookmark mark="example_in"/> 4 to the power of a times 4 to the power of b?
-"""
+                text=self.translate("Func_6_2.I42.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("rule")
             self.play(Write(rule), run_time=1)
 
             self.wait_until_bookmark("step_1")
-            self.add_shift_sound(1)
-            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=1)
+            self.add_shift_sound(.5)
+            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
 
             self.wait_until_bookmark("step_2")
             self.play(Write(step_2), run_time=1)
@@ -2017,16 +2013,100 @@ Now <bookmark mark="clean"/>let's practice: How can we simplify the <bookmark ma
             self.play(Unwrite(steps), run_time=1)
 
             self.wait_until_bookmark("example_in")
-            example.move_to(rule).shift(DOWN*1.2)
             self.play(Write(example), run_time=1)
-
-
 
         self.wait(4)
 
 
+class Func_6_2_I_4_2_a(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = Tex("$4^a=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$b$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$4^a\\cdot 4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a+ b$ times}}=4^{a+b}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2).scale(.85)
+        step_3.set_x(0)
+
+        example = MathTex("4^a\\cdot 4^b=", "\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("4^a\\cdot 4^b=", "4^{a+b}", color=c1t, font_size=fs1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I42.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("equal")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), solution.animate.shift(2.6*UP), Unwrite(rule), run_time=1)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(step_3), Write(step_4))
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_4_3_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1)
+        step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$a^x\\cdot a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x+ y$ times}}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+        step_3.set_x(0)
+
+        example = MathTex("4^a\\cdot 4^b=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I42.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule")
+            self.play(Write(rule), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=1)
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(step_3), Write(step_4), run_time=1)
+
+            self.wait_until_bookmark("clean")
+            self.play(Unwrite(steps), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example), run_time=1)
+
+        self.wait(4)
 
 
 ####################################################################################################################################################
