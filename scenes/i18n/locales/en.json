@@ -2231,10 +2231,13 @@
         "voiceover": "Yes, that is correct!\nThe inverse operation <bookmark mark=\"raise\"/>for raising something to a power <bookmark mark=\"root\"/>is taking the root.\nIf we raise <bookmark mark=\"sol_raise\"/>a number like four to the second power, we can undo that operation\nby <bookmark mark=\"sol_root\"/>taking the second root of the result.\n\nSo the inverse operation of raising a number to a power is taking the root."
       },
       "q": {
-        "answer-options": "[\"Applying the square again $(\\Box^2)^2$\", \"Taking the root $\\sqrt{\\Box^2}$\", \"Dividing by two $\\Box/2$\", \"Multiplying by two $\\Box\\times 2$\"]",
+        "answer-options": "[\"Applying the square again $(\\Box^2)^2$\", \"Taking the root $\\sqrt{\\Box^2}$\", \"Dividing by two $\\Box/2$\", \"Multiplying by two $\\Box\\cdot 2$\"]",
         "question-text": "What operation can we apply to undo the squaring ($\\Box^2$)?",
         "title": "Inverse Functions",
-        "voiceover": "If we think about different mathematical operations, they always come in pairs, that can cancel each other out.\nFor example, there's addition and subtraction. If you<bookmark mark=\"two_add_1\"/>take a number, say two, and add something, say\ntwo <bookmark mark=\"two_add_2\"/>to the original number,\nyou can then <bookmark mark=\"two_add_3\"/> subtract 2 from the result and get the original number back.\n\n<bookmark mark=\"clear_1\"/>\nAnother example is multiplication and division.\nAgain, if you take a <bookmark mark=\"three_mul_1\"/>number, like three, and multiply it by something, <bookmark mark=\"three_mul_2\"/>say three,\n<bookmark mark=\"three_mul_3\"/>you can then divide the result by three and get the original number back.\n\n<bookmark mark=\"clear_2\"/>\nDo you know the inverse operation for raising something to a power?\nIf we raise<bookmark mark=\"four_pow_1\"/> a number, say four, to a power, like <bookmark mark=\"four_pow_2\"/>two for example,\n<bookmark mark=\"four_pow_3\"/>\nWhat operation do we need to apply to undo the squaring?"
+        "voiceover": "If we think about different mathematical operations, they always come in pairs, that can cancel each other out.\nFor example, there's addition and subtraction. If you<bookmark mark=\"two_add_1\"/>take a number, say two, and add something, say\ntwo <bookmark mark=\"two_add_2\"/>to the original number,\nyou can then <bookmark mark=\"two_add_3\"/> subtract 2 from the result and get the original number back.\n\n<bookmark mark=\"clear_1\"/>\nAnother example is multiplication and division.\nAgain, if you take a <bookmark mark=\"three_mul_1\"/>number, like three, and multiply it by something, <bookmark mark=\"three_mul_2\"/>say three,\n<bookmark mark=\"three_mul_3\"/>you can then divide the result by three and get the original number back.\n\n<bookmark mark=\"clear_2\"/>\nDo you know the inverse operation for raising something to a power?\nIf we raise<bookmark mark=\"four_pow_1\"/> a number, say four, to a power, like <bookmark mark=\"four_pow_2\"/>two for example,\n<bookmark mark=\"four_pow_3\"/>\nWhat operation do we need to apply to undo the squaring?",
+        "base": "base",
+        "exponent": "exponent",
+        "result": "result"
       }
     },
     "I2": {
@@ -2290,6 +2293,9 @@
     },
     "findLogExpressionQuestionScene": {
       "voiceover": "{self.intro}\nWe'll start with the <bookmark mark=\"result_1\"/>number {self.result}.\nWe want to know, to what power we have to raise <bookmark mark=\"result_2\"/>the number {self.base} to get {self.result}.\n<bookmark mark=\"qmark\"/>How do we find that number using the logarithm?"
+    },
+    "I6": {
+      "voiceover": "Ok, so quick recap of <bookmark mark=\"logarithm_in\"/>the logarithm. First thing to know: the logarithm is the inverse function <bookmark mark=\"exponential_in\"/>of the exponential function. But how exactly are they related?\nLet's say we have an exponential <bookmark mark=\"exp_in\"/>expression b to the power of x equals c. Now say we know the base b, and we know what result c we want to obtain. But we want to know the number x, to which we have to raise b to get c.\nThen <bookmark mark=\"log_in\"/> x is equal to the logarithm of c to the base b. And that's exactly what the logarithm is: it's the exponent x, to which we have to raise b to get c.\n<bookmark mark=\"clean_up\"/>Great, now <bookmark mark=\"croc_in\"/>we've learned all the theory about exponential functions and logarithms. The world is ours!!!!!"
     }
   },
   "Func_6_Intro": {

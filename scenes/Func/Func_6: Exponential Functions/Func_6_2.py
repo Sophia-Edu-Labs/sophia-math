@@ -3186,9 +3186,7 @@ class Func_6_2_I_5_6_6(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Great<bookmark mark="ostrich_in"/> job learning<bookmark mark="percentage_in"/> about and practicing with percentages. They'll be super helpful when you need figure out how much money you have!!!
-"""
+                text=self.translate("Func_6_2.I566.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("ostrich_in")
