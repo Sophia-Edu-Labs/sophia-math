@@ -2016,6 +2016,21 @@
     "I561": {
       "interest": "Zinsen",
       "factor": "Faktor"
+    },
+    "I562": {
+      "eaten": "gegessen",
+      "remaining": "übrig"
+    },
+    "I562q": {
+      "amount_increases": "Menge wächst",
+      "amount_decreases": "Menge nimmt ab",
+      "factor": "Faktor",
+      "increase": "Erhöhung",
+      "decrease": "Abnahme",
+      "interest": "Zinsen",
+      "spend_half": "Ausgaben:",
+      "final_factor": "Gesamtfaktor",
+      "investment": "Investment"
     }
   },
   "Func_6_2_P_1_a": {

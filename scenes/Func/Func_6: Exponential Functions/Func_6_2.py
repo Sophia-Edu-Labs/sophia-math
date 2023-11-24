@@ -2823,6 +2823,7 @@ class Func_6_2_I_5_6_1_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_2_I_5_6_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -2897,9 +2898,7 @@ class Func_6_2_I_5_6_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Now I've just cooked the <bookmark mark="soup_in"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark="twenty_percent"/> twenty percent of the soup and passes it on to the next person. <bookmark mark="qmark"/>How much soup will be left after x people have had their turn?
-"""
+                text=self.translate("Func_6_2.I562.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("soup_in")
@@ -2910,7 +2909,294 @@ Now I've just cooked the <bookmark mark="soup_in"/>most delicious soup and every
             self.play(Write(twenty_percent), run_time=1)
 
             self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(5*RIGHT), FadeOut(twenty_percent), FadeOut(soup), run_time=0.5)
+
+        self.wait(4)
+
+
+class Func_6_2_I_5_6_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        soup = ImageMobject(assets_folder / "img" / "soup.png")
+        soup = soup.scale(4/soup.get_width()).move_to([-5, 0, 0])
+
+        eaten = self.translate("Func_6_2.I562.eaten")
+        remaining = self.translate("Func_6_2.I562.remaining")
+        percentages = (VGroup(Tex("$20\%$ ", eaten, color=c1t, font_size=fs2), MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex("$80\%$ ", remaining, color=c1t, font_size=fs2))).arrange(DOWN, buff=.2)
+
+        function = MathTex("f(x)=", "0.8", "^x", color=c1t, font_size=fs1).set_y(2.6)
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I562q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("twenty_percent_in")
+            self.play(Write(percentages[0]), run_time=.5)
+
+            self.wait_until_bookmark("eighty_percent_in")
+            self.play(Write(percentages[1]), Write(percentages[2]), run_time=.5)
+
+            self.wait_until_bookmark("func_in")
+            self.play(Write(function), run_time=1)
+
+            self.wait_until_bookmark("soup_in")
+            self.add_shift_sound(0.5)
+            self.play(soup.animate.shift(5*RIGHT), run_time=0.5)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_6_3(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        amount_increases = self.translate("Func_6_2.I562q.amount_increases")
+        amount_decreases = self.translate("Func_6_2.I562q.amount_decreases")
+        increase = self.translate("Func_6_2.I562q.increase")
+        decrease = self.translate("Func_6_2.I562q.decrease")
+        factor = self.translate("Func_6_2.I562q.factor")
+
+        steps_increase = VGroup(Tex(amount_increases, color=c1t, font_size=fs2), MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(factor, f"$=1+\\frac{{\\text{{{increase} in }}\%}}{{100}}$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2)
+        steps_decrease = VGroup(Tex(amount_decreases, color=c1t, font_size=fs2), MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(factor, f"$=1-\\frac{{\\text{{{decrease} in }}\%}}{{100}}$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I563.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("increase_in")
+            self.play(Write(steps_increase[0]), run_time=.5)
+
+            self.wait_until_bookmark("increase_factor")
+            self.play(Write(steps_increase[1]), Write(steps_increase[2]), run_time=.5)
+
+            self.wait_until_bookmark("decrease_in")
+            self.play(Unwrite(steps_increase), Write(steps_decrease[0]), run_time=.5)
+
+            self.wait_until_bookmark("decrease_factor")
+            self.play(Write(steps_decrease[1]), Write(steps_decrease[2]), run_time=.5)
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_5_6_4_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
+        money = money.scale(4/money.get_width()).move_to([-5, 0, 0])
+        interest = self.translate("Func_6_2.I562q.interest")
+        spending = self.translate("Func_6_2.I562q.spend_half")
+        dollars = MathTex("100", "\\$", color=c1t, font_size=fs1).next_to(money, DOWN, buff=.2).set_x(0)
+        bullets = VGroup(Tex("$\\bullet$ ", interest, ": $10\%$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", spending, ": $50\%$", color=c1t, font_size=fs2),).arrange(DOWN, buff=.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I564.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_in")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            self.play(Write(dollars))
+
+            self.wait_until_bookmark("percent_in")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), Write(bullets[0]), dollars.animate.shift(4*UP), run_time=.5)
+
+            self.wait_until_bookmark("spend_half")
+            self.play(Write(bullets[1]), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_2_I_5_6_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        interest = self.translate("Func_6_2.I562q.interest")
+        spending = self.translate("Func_6_2.I562q.spend_half")
+        factor = self.translate("Func_6_2.I562q.factor")
+        final_factor = self.translate("Func_6_2.I562q.final_factor")
+        bullets = VGroup(Tex(f"$\\bullet$ {interest}: $10\%$\\\\ $\\Rightarrow${factor}: $1.10$",  color=c1t, font_size=fs2, tex_environment="flushright"), Tex(f"$\\bullet$ {spending}: $50\%$\\\\ $\\Rightarrow${factor}: $0.50$",  color=c1t, font_size=fs2, tex_environment="flushright")).arrange(DOWN, buff=.4).set_y(1)
+        solution = VGroup(MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(final_factor, color=c1t, font_size=fs2), MathTex("1.10\\cdot 0.50=0.55", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4).next_to(bullets, DOWN, buff=.6)
+        solution_func = MathTex("f(x)=0.55^x", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I564q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("interest_in")
+            self.play(Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("factor")
+            self.play(Write(bullets[1]), run_time=.5)
+
+            self.wait_until_bookmark("final_factor")
+            self.play(Write(solution), run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(bullets), Unwrite(solution[0]), Group(solution[1], solution[2]).animate.shift(4*UP), run_time=.5)
+
+            self.wait_until_bookmark("func_in")
+            self.play(Write(solution_func), run_time=.5)
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_5_6_5_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        money = ImageMobject(assets_folder / "img" / "flying_money.png")
+        money = money.scale(4/money.get_width()).move_to([-5, 1, 0])
+        interest = self.translate("Func_6_2.I562q.interest")
+        investment = self.translate("Func_6_2.I562q.investment")
+        dollars = Tex("$\\bullet$ ", investment, ": $1000\\$$", color=c1t, font_size=fs2)
+        interest = Tex("$\\bullet$ ", interest, ": $50\%$", color=c1t, font_size=fs2)
+        bullets = VGroup(dollars, interest).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(money, DOWN, buff=1).set_x(0)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I565.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_in")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            
+            self.wait_until_bookmark("thousand_in")
+            self.play(Write(dollars), run_time=.5)
+
+            self.wait_until_bookmark("percent_in")
+            self.play(Write(interest), run_time=.5)
+
+
+        self.wait(4)
+
+
+class Func_6_2_I_5_6_5_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        money = ImageMobject(assets_folder / "img" / "flying_money.png")
+        money = money.scale(4/money.get_width()).set_y(1)
+        interest = self.translate("Func_6_2.I562q.interest")
+        investment = self.translate("Func_6_2.I562q.investment")
+        dollars = Tex("$\\bullet$ ", investment, ": $1000\\$$", color=c1t, font_size=fs2)
+        interest = Tex("$\\bullet$ ", interest, ": $50\%$", color=c1t, font_size=fs2)
+        bullets = VGroup(dollars, interest).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(money, DOWN, buff=1)
+
+        func = MathTex("f(x)=","1000","\\cdot","1.5^x", "", color=c1t, font_size=fs2)
+        func_3 = MathTex("f(3)=","1000","\\cdot","1.5^3", "=3375", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I565q.voiceover")
+        ) as tracker:
+
+            self.add_shift_sound(0.5)
+            self.play(bullets.animate.shift(4.5*UP), money.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("function_in")
+            self.play(Write(func), run_time=.5)
+
+            self.wait_until_bookmark("thousand_red")
+            self.play(func[1].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("fifty_percent_red")
+            self.play(func[1].animate.set_color(c1t), func[3].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("all_black")
+            self.play(func[1].animate.set_color(c1t), func[3].animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("func_3")
+            self.play(ReplacementTransform(func, func_3[0:4]), run_time=.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(func_3[4]), run_time=.5)
+
+            self.wait_until_bookmark("solution_green")
+            self.play(func_3[4].animate.set_color(GREEN), run_time=.5)
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_5_6_6(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        ostrich = ImageMobject(assets_folder / "img" / "ostrich_thumbs.png")
+        ostrich = ostrich.scale(4/ostrich.get_width()).move_to([-5, 1.4, 0])
+
+        percentage = ImageMobject(assets_folder / "img" / "percentage.png")
+        percentage = percentage.scale(3/percentage.get_width()).move_to([-3, -2, 0])
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Great<bookmark mark="ostrich_in"/> job learning<bookmark mark="percentage_in"/> about and practicing with percentages. They'll be super helpful when you need figure out how much money you have!!!
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("ostrich_in")
+            self.add_shift_sound(0.5)
+            self.play(ostrich.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("percentage_in")
+            self.play(percentage.animate.shift(6.6*RIGHT), rate_func=linear, run_time=6)
 
 
         self.wait(4)

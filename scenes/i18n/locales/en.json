@@ -2115,7 +2115,39 @@
       "voiceover": "If we get 5 percent interest per year, we multiply the amount of money we have <bookmark mark=\"factor\"/>by one point zero five every <bookmark mark=\"one_red\"/>year: one, because we keep all the money from the previous year<bookmark mark=\"point05_red\"/>and point zero five, because we get five percent interest.\n<bookmark mark=\"all_black\"/>So the function describing the amount of money in the account after x years is<bookmark mark=\"func\"/> f of x equals 100 times one point zero five to the power of x.\nSo an <bookmark mark=\"interest_in\"/>interest rate of five percent leads to<bookmark mark=\"factor_in\"/> a multiplicative factor of 1 point 0 5..."
     },
     "I562": {
-      "voiceover": "Now I've just cooked the <bookmark mark=\"soup_in\"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark=\"twenty_percent\"/> twenty percent of the soup and passes it on to the next person. <bookmark mark=\"qmark\"/>How much soup will be left after x people have had their turn?"
+      "voiceover": "Now I've just cooked the <bookmark mark=\"soup_in\"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark=\"twenty_percent\"/> twenty percent of the soup and passes it on to the next person. <bookmark mark=\"qmark\"/>How much soup will be left after x people have had their turn?",
+      "eaten": "eaten",
+      "remaining": "remaining"
+    },
+    "I562q": {
+      "voiceover": "Whenever a person <bookmark mark=\"twenty_percent_in\"/>eats twenty percent of the soup, <bookmark mark=\"eighty_percent_in\"/>80 percent of the soup will remain. So the <bookmark mark=\"func_in\"/>function f of x equals zero point eight to the power of x describes the amount <bookmark mark=\"soup_in\"/>of soup that remains after x people have had soup. This is because every person leaves eighty percent, so we have to multiply the amount of soup with 0 point 8 every time a person has soup.",
+      "amount_increases": "amount increases",
+      "amount_decreases": "amount decreases",
+      "factor": "factor",
+      "increase": "increase",
+      "decrease": "decrease",
+      "interest": "interest",
+      "spend_half": "spending",
+      "final_factor": "final factor",
+      "investment": "investment"
+    },
+    "I563": {
+      "voiceover": "So there are two types of percentage changes.\nIf the amount <bookmark mark=\"increase_in\"/>increases by some percentage, then the factor is <bookmark mark=\"increase_factor\"/>one plus the percentage increase divided by 100...\nIf on the other hand the function <bookmark mark=\"decrease_in\"/>decreases by some percentage, then the factor is <bookmark mark=\"decrease_factor\"/>one minus the percentage decrease divided by 100."
+    },
+    "I564": {
+      "voiceover": "say <bookmark mark=\"money_in\"/>you have 100 dollars in the bank...\nAnd the bank gives you<bookmark mark=\"percent_in\"/> 10 percent interest every year. However, you also love buying stuff and spend<bookmark mark=\"spend_half\"/> half your money every year.\nWhat function describes the amount of money you have after x years?"
+    },
+    "I564q": {
+      "voiceover": "Every year, we <bookmark mark=\"interest_in\"/>get ten percent in interest. That means the <bookmark mark=\"factor\"/>factor for the interest is one plus zero point one, which equals one point one.\nWe also <bookmark mark=\"spend_half\"/>spend half of our money. That means the <bookmark mark=\"factor\"/>factor for the spending is one minus zero point five, which equals zero point five.\n<bookmark mark=\"final_factor\"/>The final factor is the product of the two factors, which is one point one times zero point five, which equals zero point five five.\nSo<bookmark mark=\"clean_up\"/> the function describing the amount of money we have after x years<bookmark mark=\"func_in\"/> is f of x equals 0 point 5 5 to the power of x."
+    },
+    "I565": {
+      "voiceover": "I have been <bookmark mark=\"money_in\"/>saving up for years and now I am investing <bookmark mark=\"thousand_in\"/>the 1000 dollars i have saved up in a risky business.\nI will get <bookmark mark=\"percent_in\"/>50 percent interest every year. What will my money be worth in 3 years?"
+    },
+    "I565q": {
+      "voiceover": "The <bookmark mark=\"function_in\"/>function describing the amount of money in the bank after x years is <bookmark mark=\"function_in\"/>f of x equals 1000 times 1.5 to the power of x.\nThis is, because we're <bookmark mark=\"thousand_red\"/> investing 1000 dollars and <bookmark mark=\"fifty_percent_red\"/>getting 50 percent interest every year.<bookmark mark=\"all_black\"/>\nNow we want to know how much money we have after 3 years. So we just have to <bookmark mark=\"func_3\"/>plug in 3 for x and <bookmark mark=\"result\"/>calculate the result. Since 1000 times 1.5 to the power of 3 equals 3375, we <bookmark mark=\"solution_green\"/>have 3375 dollars in the bank after 3 years."
+    },
+    "I566": {
+      "voiceover": "Great<bookmark mark=\"ostrich_in\"/> job learning<bookmark mark=\"percentage_in\"/> about and practicing with percentages. They'll be super helpful when you need figure out how much money you have!!!"
     }
   },
   "Func_6_2_P_1_a": {
