@@ -19,8 +19,8 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
 
 
-####################################################################################################################################################
-# Chapter: Logarithms ##############################################################################################################################
+#####################################
+#####################################
 class Func_6_3_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -140,7 +140,6 @@ class Func_6_3_I_1_q(SophiaCursorScene):
 
         self.wait(4)
 
-
 class Func_6_3_I_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -201,6 +200,7 @@ class Func_6_3_I_1_a(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
+
 
 class Func_6_3_I_1_b(SophiaCursorScene):
 
@@ -263,6 +263,7 @@ class Func_6_3_I_1_b(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_3_I_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -323,6 +324,7 @@ class Func_6_3_I_1_c(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
+
 
 class Func_6_3_I_1_d(SophiaCursorScene):
 
@@ -451,6 +453,7 @@ class Func_6_3_I_2(SophiaCursorScene):
             cursor.blinking=True
 
         self.wait(4)
+
 
 
 #####################################
@@ -783,6 +786,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
 
         self.wait(4)
 
+
 #####################################
 #####################################
 class Func_6_3_I_5(SophiaCursorScene):
@@ -925,6 +929,7 @@ class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
         self.wait(4)
 
 
+
 class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
 
     # Main method for constructing the animation
@@ -1056,6 +1061,7 @@ class Func_6_3_P_1_c(findLogExpressionAnswerScene):
 
             super().construct()
 
+
 class Func_6_3_P_1_d(findLogExpressionAnswerScene):
 
         # Main method for constructing the animation
@@ -1066,6 +1072,7 @@ class Func_6_3_P_1_d(findLogExpressionAnswerScene):
             self.intro = self.translate("Func_6_3.P1.a.intro")
 
             super().construct()
+
 
 #####################################
 #####################################
@@ -1121,6 +1128,7 @@ class Func_6_3_P_2_c(findLogExpressionAnswerScene):
 
             super().construct()
 
+
 class Func_6_3_P_2_d(findLogExpressionAnswerScene):
 
         # Main method for constructing the animation
@@ -1131,62 +1139,6 @@ class Func_6_3_P_2_d(findLogExpressionAnswerScene):
             self.intro = self.translate("Func_6_3.P2.b.intro")
 
             super().construct()
-
-
-#####################################
-#####################################
-class Func_6_3_I_6(SophiaCursorScene):
-
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
-
-        croc = ImageMobject(assets_folder / "img" / "croc_thumbs.png")
-        croc = croc.scale(4/croc.get_width()).set_x(-5)
-        base, exponent, result = self.translate("Func_6_3.I1.q.base"), self.translate("Func_6_3.I1.q.exponent"), self.translate("Func_6_3.I1.q.result")
-
-        log_exp = VGroup(Tex("Exponential function $\\Box^\\Box$", color=c1t, font_size=fs3), MathTex("\\Updownarrow", color=c1t, font_size=fs2), Tex("Logarithm $\\log_\\Box{\\Box}$", color=c1t, font_size=fs3)).arrange(DOWN, buff=0.4)
-        exponential_expression = MathTex("b^x=c", color=c1t, font_size=fs2).move_to(log_exp[0])
-        logarithm_expression = MathTex("x=\\log_b{(c)}", color=c1t, font_size=fs2).move_to(log_exp[2])
-        ud_arrow = log_exp[1].copy()
-
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("Func_6_3.I6.voiceover")
-        ) as tracker:
-            
-            self.wait_until_bookmark("logarithm_in")
-            self.play(Create(log_exp[2]))
-
-            self.wait_until_bookmark("exponential_in")
-            self.play(Create(log_exp[0]), Create(log_exp[1]))
-
-            self.wait_until_bookmark("exp_in")
-            self.play(ReplacementTransform(log_exp[0], exponential_expression), Unwrite(log_exp[1]), Unwrite(log_exp[2]))
-
-            self.wait_until_bookmark("log_in")
-            self.play(Create(logarithm_expression), Create(ud_arrow))
-
-            self.wait_until_bookmark("clean_up")
-            self.play(Unwrite(logarithm_expression), Unwrite(ud_arrow), Unwrite(exponential_expression))
-
-            self.wait_until_bookmark("croc_in")
-            self.add_shift_sound(0.5)
-            self.play(croc.animate.shift(5*RIGHT), run_time=0.5)
-
-    
-        self.wait(4)
-
-
-
-####################################################################################################################################################
-# Chapter: XXX #####################################################################################################################################
 
 PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_3_I_1_q),
