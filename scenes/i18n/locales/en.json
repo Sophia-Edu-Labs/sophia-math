@@ -58,6 +58,47 @@
         "voiceover": "\n                Remember: <bookmark mark=\"Memorize\"/>\n                A function is a mapping that assigns <bookmark mark=\"map1\"/> exactly one <bookmark mark=\"map2\"/> y-value to each x-value.\n                \n                <bookmark mark=\"OrangeFuncIn\"/>\n                So, the orange representation is an example of a function.\n                \n                It <bookmark mark=\"orangeX\"/> assigns to each x-value <bookmark mark=\"orangeY\"/>\n                exactly one y-value. <bookmark mark=\"MoveAlongFunc\"/>\n                \n                This means, that each x-value has a corresponding y-value assigned to it.\n<split/>\n                <bookmark mark=\"GreenFuncIn\"/>\n                That's also the reason why the green representation is not a function.\n                It assigns to some x-values, for example, <bookmark mark=\"VertLine\" /> to the x value x equals zero, two y-values.\n                \n                So, we remember: <bookmark mark=\"TrueFct\"/>\n                A function is a mapping that assigns exactly one y-value to each x-value."
       }
     },
+    "1I31a": {
+      "voiceover": "The <bookmark mark=\"green\"/>green line assigns one y value to each x-value, so it's a function.<break time=\"1s\"/>\nThe blue line assigns two y values to some x-values, for <bookmark mark=\"neg_ex\"/>example to x equals negative one. And the pink line assigns all y values to one x-value, so it's not a function either, because a function assigns one y value to each x value."
+    },
+    "1I31q": {
+      "question-blueline": "The blue line",
+      "question-greenline": "The green line",
+      "question-pinkline": "The pink line",
+      "question-text": "Which of these lines describes a function?",
+      "voiceover": "Now, let's practice: Which of the following lines is a function:<bookmark mark=\"blue\"/> The blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>the green one, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>or the pink one?"
+    },
+    "1I32a": {
+      "voiceover": "Each of the lines assigns exactly one y value to each x-value, even though some of them have unusual shapes, like the green one. <split/>But since they all assign one y value to each x-value, they're all functions."
+    },
+    "1I32q": {
+      "question-blueline": "The blue line",
+      "question-greenline": "The green line",
+      "question-noline": "They all describe a function",
+      "question-orangeline": "The orange line",
+      "question-text": "Which of these lines does NOT describe a function?",
+      "voiceover": "Now look at these three lines, which of them is NOT a function?<bookmark mark=\"orange\"/> The orange one, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>the blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>or the green one?"
+    },
+    "1I33": {
+      "main": {
+        "voiceover": "Now we know what functions are: <break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nA function is a mapping, <split/>that assigns exactly one <bookmark mark=\"map2\"/> y value to each x-value <bookmark mark=\"map1\"/>.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nSo, the green representation is an example of a function, <split/>\nbecause it assigns <bookmark mark=\"orangeY\"/> exactly one y value to each x-value <bookmark mark=\"orangeX\"/>.<break time=\"0.5s\"/>\nThis is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\nIt assigns two y values to some x-values, <split/> for example, the value x equals zero.<break time=\"0.5s\"/>\nSo remember: <bookmark mark=\"TrueFct\"/>\nA function is a mapping that assigns exactly one y value to each x-value.<break time=\"1s\"/>\nDefinitely remember this well, and then I can only say: <bookmark mark=\"giraffe_in\"/>Well done! You've now taken the first step in understanding functions, and functions are super important in math, so you've made a big step in understanding math!"
+      }
+    },
+    "1I41a": {
+      "voiceover": "It has to be the green points, because I have <bookmark mark=\"day_1\"/> twelve friends on the first day, <bookmark mark=\"day_2\"/> sixteen friends on the second day, <bookmark mark=\"day_3\"/> ten friends on the third day, and <bookmark mark=\"day_4\"/> sixteen friends on the fourth day.<bookmark mark=\"colors_out\"/>\nTo get a better idea of what's going on, let's <bookmark mark=\"draw_line\"/>draw a line between the points. This is what we would typically call a function graph."
+    },
+    "1I41q": {
+      "question-blueline": "The green points",
+      "question-greenline": "The blue points",
+      "question-pinkline": "The pink points",
+      "question-text": "What color of points correspond to the number of friends I have on each day?",
+      "voiceover": "So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark=\"table_in\"/>\nSay I have 12 friends on the first day. <bookmark mark=\"day_2\"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.\n<bookmark mark=\"day_3\"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.\n<bookmark mark=\"day_4\"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.\n<bookmark mark=\"cords_in\"/>Let's draw a coordinate system and plot the points.\nWhat color of points correspond to the number of friends I have on each day?\n<break time=\"1s\"/>\nIs it <bookmark mark=\"blue\"/>the blue points?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>The green points?\n<break time=\"0.4s\"/>\nOr is it <bookmark mark=\"pink\"/>the pink points?",
+      "xlabel": "day",
+      "ylabel": "# friends"
+    },
+    "1I42": {
+      "voiceover": "Now we have practiced quite a bit. So we have seen how we can use <bookmark mark=\"table_in\"/> value tables to describe functions. And then we practiced <bookmark mark=\"plot_in\"/> connecting value tables and graphs of functions.\nReally <bookmark mark=\"lion_in\"/>great, how quickly you have learned so much about functions!"
+    },
     "P_2_intro": "\"\"\"It's rainy season.\n                \n                We want to know how much precipitation there is and measure the amount of rain daily.\"\"\"",
     "P_2_title": "Rainy Weather",
     "P_2_x": "Day",
@@ -112,50 +153,84 @@
       "first_bit": "That's not correct.",
       "first_bit_correct": "That's correct, great job",
       "voiceover": "{self.first_bit}\n                So you selected the <bookmark mark=\"Func\"/>{self.colors[self.idx_selected]} function.<split/>\n                To find the right function, let's enter the values from the table into the coordinate system, one after the other.\n                In this example, the <bookmark mark=\"xaxis\"/> x-axis represents {self.Textlabels[0]} and the <bookmark mark=\"yaxis\"/>\n                y-axis represents {self.Textlabels[1]}.\n<break time=\"0.7s\"/>\n                <bookmark mark=\"val1\"/>\n<split/>\n                The first value has {self.xvals[0]} as its x-value and {self.yvals[self.correcty][0]} as its y-value.\n\n                <bookmark mark=\"val2\"/>\n                The second value has {self.xvals[1]} as its x-value and {self.yvals[self.correcty][1]} as its y-value.\n\n                <bookmark mark=\"val3\"/>\n                The third value has coordinates {self.xvals[2]} and {self.yvals[self.correcty][2]}.\n\n                <bookmark mark=\"val4\"/>\n                The fourth value has coordinates {self.xvals[3]} and {self.yvals[self.correcty][3]}.\n\n                <bookmark mark=\"val5\"/>\n                And the fifth value has coordinates {self.xvals[4]} and {self.yvals[self.correcty][4]}.\n\n                If we connect these values, <bookmark mark=\"TrueFunc\"/>we can see that the {self.colors[self.correcty]} function\n                is the correct one."
-    },
-    "1I31q": {
-      "voiceover": "Now, let's practice: Which of the following lines is a function:<bookmark mark=\"blue\"/> The blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>the green one, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>or the pink one?",
-      "question-text": "Which of these lines describes a function?",
-      "question-greenline": "The green line",
-      "question-blueline": "The blue line",
-      "question-pinkline": "The pink line"
-    },
-    "1I31a": {
-      "voiceover": "The <bookmark mark=\"green\"/>green line assigns one y value to each x-value, so it's a function.<break time=\"1s\"/>\nThe blue line assigns two y values to some x-values, for <bookmark mark=\"neg_ex\"/>example to x equals negative one. And the pink line assigns all y values to one x-value, so it's not a function either, because a function assigns one y value to each x value."
-    },
-    "1I32q": {
-      "voiceover": "Now look at these three lines, which of them is NOT a function?<bookmark mark=\"orange\"/> The orange one, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>the blue one, <break time=\"0.5s\"/><bookmark mark=\"green\"/>or the green one?",
-      "question-orangeline": "The orange line",
-      "question-blueline": "The blue line",
-      "question-greenline": "The green line",
-      "question-noline": "They all describe a function",
-      "question-text": "Which of these lines does NOT describe a function?"
-    },
-    "1I32a": {
-      "voiceover": "Each of the lines assigns exactly one y value to each x-value, even though some of them have unusual shapes, like the green one. <split/>But since they all assign one y value to each x-value, they're all functions."
-    },
-    "1I33": {
-      "main": {
-        "voiceover": "Now we know what functions are: <break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nA function is a mapping, <split/>that assigns exactly one <bookmark mark=\"map2\"/> y value to each x-value <bookmark mark=\"map1\"/>.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nSo, the green representation is an example of a function, <split/>\nbecause it assigns <bookmark mark=\"orangeY\"/> exactly one y value to each x-value <bookmark mark=\"orangeX\"/>.<break time=\"0.5s\"/>\nThis is also the reason why <bookmark mark=\"RedFuncIn\"/>the red representation is not a function.\nIt assigns two y values to some x-values, <split/> for example, the value x equals zero.<break time=\"0.5s\"/>\nSo remember: <bookmark mark=\"TrueFct\"/>\nA function is a mapping that assigns exactly one y value to each x-value.<break time=\"1s\"/>\nDefinitely remember this well, and then I can only say: <bookmark mark=\"giraffe_in\"/>Well done! You've now taken the first step in understanding functions, and functions are super important in math, so you've made a big step in understanding math!"
-      }
-    },
-    "1I41q": {
-      "xlabel": "day",
-      "ylabel": "# friends",
-      "voiceover": "So we know that functions assign one y value to each x-value. Let's look at an example:<bookmark mark=\"table_in\"/>\nSay I have 12 friends on the first day. <bookmark mark=\"day_2\"/>The next day I go to a party and make four new friends, so I'll have sixteen friends the second day.\n<bookmark mark=\"day_3\"/>The third day, I get in a huge fight with six of my oldest friends and they all leave me. So I'll have ten friends the third day.\n<bookmark mark=\"day_4\"/>Finally, the fourth day, I reconcile with my friends and they all come back. So I'll have sixteen friends again.\n<bookmark mark=\"cords_in\"/>Let's draw a coordinate system and plot the points.\nWhat color of points correspond to the number of friends I have on each day?\n<break time=\"1s\"/>\nIs it <bookmark mark=\"blue\"/>the blue points?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>The green points?\n<break time=\"0.4s\"/>\nOr is it <bookmark mark=\"pink\"/>the pink points?",
-      "question-text": "What color of points correspond to the number of friends I have on each day?",
-      "question-greenline": "The blue points",
-      "question-blueline": "The green points",
-      "question-pinkline": "The pink points"
-    },
-    "1I42": {
-      "voiceover": "Now we have practiced quite a bit. So we have seen how we can use <bookmark mark=\"table_in\"/> value tables to describe functions. And then we practiced <bookmark mark=\"plot_in\"/> connecting value tables and graphs of functions.\nReally <bookmark mark=\"lion_in\"/>great, how quickly you have learned so much about functions!"
-    },
-    "1I41a": {
-      "voiceover": "It has to be the green points, because I have <bookmark mark=\"day_1\"/> twelve friends on the first day, <bookmark mark=\"day_2\"/> sixteen friends on the second day, <bookmark mark=\"day_3\"/> ten friends on the third day, and <bookmark mark=\"day_4\"/> sixteen friends on the fourth day.<bookmark mark=\"colors_out\"/>\nTo get a better idea of what's going on, let's <bookmark mark=\"draw_line\"/>draw a line between the points. This is what we would typically call a function graph."
     }
   },
   "Func_1_2": {
+    "1I1": {
+      "f-terms": "Modelling the world"
+    },
+    "1I110a": {
+      "voiceover": "We first bought an ice cream maker that cost <bookmark mark=\"hundred_in\"/>one hundred euros.\nAnd then we spend two euros for every ice cream cone we make. So, we add <bookmark mark=\"two_x\"/>two times x.\nAnd then the function that describes our costs is <bookmark mark=\"f_in\"/>f of x equals one hundred plus two times x.\nHere, the one hundred euros represent the cost of the ice cream maker, and the two x for each ice cream cone."
+    },
+    "1I110q": {
+      "question-text": "Which function describes how much money we've spent on ice cream?",
+      "voiceover": "Here's another example: I love nothing more than fresh, homemade ice cream, so I recently got myself\n<bookmark mark=\"machine_in\"/> an ice cream maker.\nThe ice cream maker cost <bookmark mark=\"prize_in\"/>one hundred euros. And whenever I make <bookmark mark=\"cone_in\"/>an ice cream cone,\nit costs me two euros. If x is the number of ice cream cones I make,\nwhich function describes how much money I have spent?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals one hundred plus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals one hundred two times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals one hundred times x plus two?"
+    },
+    "1I111a": {
+      "voiceover": "He received a thousand <bookmark mark=\"thousand_in\"/>gold bars.\nAnd then he spends ten bars for each drink, so we subtract <bookmark mark=\"ten_x\"/>ten times x, where x is the number of days.\nAnd then the function that describes my cousin's remaining wealth is <bookmark mark=\"f_in\"/>h of x equals one thousand\nminus ten times x."
+    },
+    "1I111q": {
+      "question-text": "Which function describes the number of gold bars that Fred has, if $x$ is the number of days that have passed?",
+      "voiceover": "My cousin Fred, who lives on Jupiter, inherited <bookmark mark=\"gold_in\"/>a treasure of <bookmark mark=\"prize_in\"/>a thousand futuristic gold bars from his uncle.\nInstead of saving, he buys <bookmark mark=\"drink_in\"/>a futuristic drink every day for ten gold bars.\nIf x is the number of days he does this, which function describes how many gold bars he has left?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals a thousand plus ten times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals ten times x minus a thousand?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals a thousand minus ten times x?"
+    },
+    "1I112a": {
+      "voiceover": "Ok, so for each ride, he now earns five bars, so we multiply <bookmark mark=\"five_x\"/>five by x.\nBut he also has to spend two bars on fuel, so we subtract <bookmark mark=\"two_x\"/>two times x.\nSo, the function that describes his earnings is <bookmark mark=\"h_in\"/>h of x equals five times x minus two times x.\nBut we can simplify this, so the correct solution is <bookmark mark=\"f_in\"/>h of x equals three times x."
+    },
+    "1I112q": {
+      "question-text": "What function describes Fred's earning as a taxi driver, if $x$ describes the number of rides?",
+      "voiceover": "Now that my cousin has spent all his gold on delicious galactic lemonades, he's working <bookmark mark=\"taxi_in\"/>as an intergalactic taxi driver to earn money again.\nFor each ride, he earns <bookmark mark=\"prize_in\"/>five gold bars. But he also has to spend <bookmark mark=\"fuel_in\"/>two gold bars for climate-neutral fuel for each ride.\nIf x is the number of rides he makes, which function describes how many gold bars he has?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals five minus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals five times x minus two?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals three times x?"
+    },
+    "1I11a": {
+      "voiceover": "A term consists of numbers, variables, and operators, but does not contain any equality signs.\nTherefore, the expression x+3 equals 7 <bookmark mark=\"strike_out\"/>is not a term, but an equation. The expressions 2x+3 and x squared - 2, on the other hand, <bookmark mark=\"pos_box\"/>are both terms."
+    },
+    "1I11q": {
+      "question-text": "Which of these expressions is NOT a term?",
+      "voiceover": "A function is a mapping, <bookmark mark=\"x_to_y\"/>that assigns exactly one y to each x.\nBut <bookmark mark=\"qmark\"/> how do we know which y belongs to which x?\nONE way, which we have just learned, <bookmark mark=\"table_in\"/>are value tables. There, we can read off the corresponding <bookmark mark=\"y_table\"/>value of y for <bookmark mark=\"x_table\"/>every value of x.\n<bookmark mark=\"table_out\"/>Another possibility are <bookmark mark=\"func_in\"/>function terms, and we are now going to learn about them.\nLet's start by repeating terms: Which of these expressions is NOT a term? <bookmark mark=\"term_1\"/>Is it the expression 2x+3? <bookmark mark=\"term_2\"/>Or the expression x squared - 2? <bookmark mark=\"term_3\"/>OR is it the expression x+3 equals 7?"
+    },
+    "1I12a": {
+      "voiceover": "When we insert the value 3 for x, we<bookmark mark=\"term_q\"/> get two times three plus three, which <bookmark mark=\"y_q\"/>equals 9. Therefore, the y-value is equal to 9 when x is three."
+    },
+    "1I12q": {
+      "question-text": "What value of $y$ corresponds to the value $x=3$?",
+      "voiceover": "Let's consider the term 2x+3, for example. We want to use this term now to determine the y-value we assign to a particular x-value in a function.\nFor this, we simply <bookmark mark=\"x_in\"/>insert the x-value into the term, calculate it, and obtain <bookmark mark=\"y_in\"/>the y-value.\nFor instance, if we <bookmark mark=\"x_0\"/>insert the x-value 0, we get two times zero plus three, so the y-value <bookmark mark=\"y_0\"/> is equal to 3.\nOr if we <bookmark mark=\"x_1\"/>insert the x-value 1, we get two times one plus three, which <bookmark mark=\"y_1\"/>yields five. So the y-value is equal to 5.\nNow <bookmark mark=\"x_y_out\"/>you try it: What y-value do you get when you <bookmark mark=\"x_question\"/>insert the x-value 3?"
+    },
+    "1I13": {
+      "voiceover": "Wonderful, now we have practiced modeling realistic scenarios with functions.\nSo, was it worthwhile to understand functions?"
+    },
+    "1I14": {
+      "voiceover": "So, when we use a term to describe a function, we call the term a function term. To make it clear that the term describes a function, we write an f with a round bracket and x in the bracket in front of it <bookmark mark=\"f_x\"/>. Then we speak of the function f of x, in this example, we would say f of x equals two times x plus three. We can understand the function term <bookmark mark=\"box\"/> almost like a kind of recipe, with which we can calculate the corresponding y-value <bookmark mark=\"y_out\"/> for every x-value <bookmark mark=\"x_in\"/>. So, if we enter a value for x, for example, four <bookmark mark=\"x4\"/>, we can use the function term as a recipe to calculate the corresponding y-value. Therefore, we replace x with four and <bookmark mark=\"four_in\"/> obtain f of 4 equals two times four plus three, and we can calculate this and we <bookmark mark=\"four_sol\"/> get f of four equals 11... So <bookmark mark=\"y_11\"/> y equals 11.\n\nOr, <bookmark mark=\"reset\"/> another example, we enter five <bookmark mark=\"x5\"/>. Then we calculate the corresponding y value by substituting five for x and <bookmark mark=\"five_in\"/> get f of five equals two times five plus three. That <bookmark mark=\"five_sol\"/> is equal to 13, so <bookmark mark=\"y_13\"/> y equals 13."
+    },
+    "1I15a": {
+      "voiceover": "When we substitute <bookmark mark=\"x_threehalf\"/> x equal to three halves, then we get <bookmark mark=\"threehalf_in\"/> f of three halves is equal to two times three halves plus three. And <bookmark mark=\"y_6\"/> that equals six, so then y is equal to 6."
+    },
+    "1I15q": {
+      "question-text": "What value of $y$ to we get when we plug in $x=\\tfrac32$?",
+      "voiceover": "We can really substitute any value for x. So, for example, we can also use x equals one half <bookmark mark=\"x_half\"/>. Then we get <bookmark mark=\"half_in\"/> f of one half equals two times one half plus three. And <bookmark mark=\"y_4\"/> that equals four, so then y equals 4 <bookmark mark=\"reset\"/>.\n\nNow it's your turn to calculate: What do we get when we substitute x equals three halves <bookmark mark=\"x_three_half\"/>?"
+    },
+    "1I16a": {
+      "voiceover": "When we insert <bookmark mark=\"x_five\"/> x as 5, then we find <bookmark mark=\"five_in\"/> f of five is equal to 4 - 5. And four minus five <bookmark mark=\"y_neg_one\"/> results in negative one, so then y is equal to negative one."
+    },
+    "1I16q": {
+      "question-text": "What is the y-value, when x is equal to $5$?",
+      "voiceover": "Now let's practice with a different function and a different function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals four minus x.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to five?"
+    },
+    "1I17a": {
+      "voiceover": "When we substitute <bookmark mark=\"x_neg_two\"/> x equals -2, then we get <bookmark mark=\"neg_two_in\"/> f of -2 is equal to two times negative two plus 2. And that results in <bookmark mark=\"y_neg_two\"/> negative two, so then y equals negative two."
+    },
+    "1I17q": {
+      "question-text": "Wat is the $y$-value, when $x$ is equal to $-2$?",
+      "voiceover": "So, again a different function and a new function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals two times x plus two.\nWhat is the y-value, <bookmark mark=\"x_neg_two\"/>when x is equal to -2?"
+    },
+    "1I18": {
+      "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by <bookmark mark=\"x_in\"/>inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
+    },
+    "1I19a": {
+      "voiceover": "We describe the number of hats sold with <bookmark mark=\"x_in\"/> x.\nAnd for each hat we sell, we get 5 euros, so we multiply <bookmark mark=\"five_in\"/>x by 5.\nSo the correct solution is <bookmark mark=\"g_in\"/>g of x equals 5 times x."
+    },
+    "1I19q": {
+      "question-text": "Which function describes how much many we make, if we sell $x$ hats?",
+      "voiceover": "Why do we learn about functions?\nWe do this not just for fun, there <bookmark mark=\"world_in\"/>are indeed many situations,\nwhich we can describe well with functions. <bookmark mark=\"world_out\"/>\nLet's take an example: To earn more money, I have an online store where I\n<bookmark mark=\"cat_in\"/> sell cat hats.\nI sell each hat for <bookmark mark=\"prize_in\"/>five euros. If x is the number of hats sold,\nwhich function describes how much money I have earned?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals 5 plus x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals 5 times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals 5 times x plus 5?"
+    },
     "1I1q": {
       "main": {
         "apple-cost": ": $2$ Euro/Piece",
@@ -276,81 +351,6 @@
       "range": "Range: Output y-values",
       "title": "Domain \\& Range",
       "voiceover": "                {self.intro}\n                <bookmark mark=\"define_domain\"/>\n                The domain is the set of all x-values we plug into the function.\n                <break time=\"1s\"/>\n                In this example, we plug in all values on the x-axis, so all values from <bookmark mark=\"domain\"/> {self.domain[0]} to {self.domain[1]}.\n                So this is our domain.\n                <break time=\"1s\"/><bookmark mark=\"define_range\"/>\n                The range on the other hand is the set of all y-values we get from the function.\n                <break time=\"1s\"/>\n                We can simply read off the values we get on the y-axis.<split/>\n                From the graph, we can see that we get all values from <bookmark mark=\"range\"/> {self.range[0]} to {self.range[1]},\n                so that is the range of the function."
-    },
-    "1I1": {
-      "f-terms": "Modelling the world"
-    },
-    "1I11q": {
-      "voiceover": "A function is a mapping, <bookmark mark=\"x_to_y\"/>that assigns exactly one y to each x.\nBut <bookmark mark=\"qmark\"/> how do we know which y belongs to which x?\nONE way, which we have just learned, <bookmark mark=\"table_in\"/>are value tables. There, we can read off the corresponding <bookmark mark=\"y_table\"/>value of y for <bookmark mark=\"x_table\"/>every value of x.\n<bookmark mark=\"table_out\"/>Another possibility are <bookmark mark=\"func_in\"/>function terms, and we are now going to learn about them.\nLet's start by repeating terms: Which of these expressions is NOT a term? <bookmark mark=\"term_1\"/>Is it the expression 2x+3? <bookmark mark=\"term_2\"/>Or the expression x squared - 2? <bookmark mark=\"term_3\"/>OR is it the expression x+3 equals 7?",
-      "question-text": "Which of these expressions is NOT a term?"
-    },
-    "1I11a": {
-      "voiceover": "A term consists of numbers, variables, and operators, but does not contain any equality signs.\nTherefore, the expression x+3 equals 7 <bookmark mark=\"strike_out\"/>is not a term, but an equation. The expressions 2x+3 and x squared - 2, on the other hand, <bookmark mark=\"pos_box\"/>are both terms."
-    },
-    "1I12q": {
-      "voiceover": "Let's consider the term 2x+3, for example. We want to use this term now to determine the y-value we assign to a particular x-value in a function.\nFor this, we simply <bookmark mark=\"x_in\"/>insert the x-value into the term, calculate it, and obtain <bookmark mark=\"y_in\"/>the y-value.\nFor instance, if we <bookmark mark=\"x_0\"/>insert the x-value 0, we get two times zero plus three, so the y-value <bookmark mark=\"y_0\"/> is equal to 3.\nOr if we <bookmark mark=\"x_1\"/>insert the x-value 1, we get two times one plus three, which <bookmark mark=\"y_1\"/>yields five. So the y-value is equal to 5.\nNow <bookmark mark=\"x_y_out\"/>you try it: What y-value do you get when you <bookmark mark=\"x_question\"/>insert the x-value 3?",
-      "question-text": "What value of $y$ corresponds to the value $x=3$?"
-    },
-    "1I12a": {
-      "voiceover": "When we insert the value 3 for x, we<bookmark mark=\"term_q\"/> get two times three plus three, which <bookmark mark=\"y_q\"/>equals 9. Therefore, the y-value is equal to 9 when x is three."
-    },
-    "1I14": {
-      "voiceover": "So, when we use a term to describe a function, we call the term a function term. To make it clear that the term describes a function, we write an f with a round bracket and x in the bracket in front of it <bookmark mark=\"f_x\"/>. Then we speak of the function f of x, in this example, we would say f of x equals two times x plus three. We can understand the function term <bookmark mark=\"box\"/> almost like a kind of recipe, with which we can calculate the corresponding y-value <bookmark mark=\"y_out\"/> for every x-value <bookmark mark=\"x_in\"/>. So, if we enter a value for x, for example, four <bookmark mark=\"x4\"/>, we can use the function term as a recipe to calculate the corresponding y-value. Therefore, we replace x with four and <bookmark mark=\"four_in\"/> obtain f of 4 equals two times four plus three, and we can calculate this and we <bookmark mark=\"four_sol\"/> get f of four equals 11... So <bookmark mark=\"y_11\"/> y equals 11.\n\nOr, <bookmark mark=\"reset\"/> another example, we enter five <bookmark mark=\"x5\"/>. Then we calculate the corresponding y value by substituting five for x and <bookmark mark=\"five_in\"/> get f of five equals two times five plus three. That <bookmark mark=\"five_sol\"/> is equal to 13, so <bookmark mark=\"y_13\"/> y equals 13."
-    },
-    "1I15q": {
-      "voiceover": "We can really substitute any value for x. So, for example, we can also use x equals one half <bookmark mark=\"x_half\"/>. Then we get <bookmark mark=\"half_in\"/> f of one half equals two times one half plus three. And <bookmark mark=\"y_4\"/> that equals four, so then y equals 4 <bookmark mark=\"reset\"/>.\n\nNow it's your turn to calculate: What do we get when we substitute x equals three halves <bookmark mark=\"x_three_half\"/>?",
-      "question-text": "What value of $y$ to we get when we plug in $x=\\tfrac32$?"
-    },
-    "1I15a": {
-      "voiceover": "When we substitute <bookmark mark=\"x_threehalf\"/> x equal to three halves, then we get <bookmark mark=\"threehalf_in\"/> f of three halves is equal to two times three halves plus three. And <bookmark mark=\"y_6\"/> that equals six, so then y is equal to 6."
-    },
-    "1I16q": {
-      "voiceover": "Now let's practice with a different function and a different function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals four minus x.\nWhat is the y-value, <bookmark mark=\"x_five\"/>when x is equal to five?",
-      "question-text": "What is the y-value, when x is equal to $5$?"
-    },
-    "1I16a": {
-      "voiceover": "When we insert <bookmark mark=\"x_five\"/> x as 5, then we find <bookmark mark=\"five_in\"/> f of five is equal to 4 - 5. And four minus five <bookmark mark=\"y_neg_one\"/> results in negative one, so then y is equal to negative one."
-    },
-    "1I17q": {
-      "voiceover": "So, again a different function and a new function term: <bookmark mark=\"func_term\"/>Consider the function f of x equals two times x plus two.\nWhat is the y-value, <bookmark mark=\"x_neg_two\"/>when x is equal to -2?",
-      "question-text": "Wat is the $y$-value, when $x$ is equal to $-2$?"
-    },
-    "1I17a": {
-      "voiceover": "When we substitute <bookmark mark=\"x_neg_two\"/> x equals -2, then we get <bookmark mark=\"neg_two_in\"/> f of -2 is equal to two times negative two plus 2. And that results in <bookmark mark=\"y_neg_two\"/> negative two, so then y equals negative two."
-    },
-    "1I18": {
-      "voiceover": "Great, so now we know what function terms are: We write them as <bookmark mark=\"term_in\"/>f of x equals some term, and then we can calculate the corresponding y-value for each x-value.\nThis is done by <bookmark mark=\"x_in\"/>inserting the x-value into the term, <bookmark mark=\"y_out\"/>and calculating the result, which then is the y-value...\nAwesome! <bookmark mark=\"baboon_in\"/>Now you've taken another step forward, and can use function terms to describe functions."
-    },
-    "1I19q": {
-      "question-text": "Which function describes how much many we make, if we sell $x$ hats?",
-      "voiceover": "Why do we learn about functions?\nWe do this not just for fun, there <bookmark mark=\"world_in\"/>are indeed many situations,\nwhich we can describe well with functions. <bookmark mark=\"world_out\"/>\nLet's take an example: To earn more money, I have an online store where I\n<bookmark mark=\"cat_in\"/> sell cat hats.\nI sell each hat for <bookmark mark=\"prize_in\"/>five euros. If x is the number of hats sold,\nwhich function describes how much money I have earned?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals 5 plus x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals 5 times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals 5 times x plus 5?"
-    },
-    "1I110q": {
-      "question-text": "Which function describes how much money we've spent on ice cream?",
-      "voiceover": "Here's another example: I love nothing more than fresh, homemade ice cream, so I recently got myself\n<bookmark mark=\"machine_in\"/> an ice cream maker.\nThe ice cream maker cost <bookmark mark=\"prize_in\"/>one hundred euros. And whenever I make <bookmark mark=\"cone_in\"/>an ice cream cone,\nit costs me two euros. If x is the number of ice cream cones I make,\nwhich function describes how much money I have spent?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals one hundred plus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals one hundred two times x?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals one hundred times x plus two?"
-    },
-    "1I111q": {
-      "question-text": "Which function describes the number of gold bars that Fred has, if $x$ is the number of days that have passed?",
-      "voiceover": "My cousin Fred, who lives on Jupiter, inherited <bookmark mark=\"gold_in\"/>a treasure of <bookmark mark=\"prize_in\"/>a thousand futuristic gold bars from his uncle.\nInstead of saving, he buys <bookmark mark=\"drink_in\"/>a futuristic drink every day for ten gold bars.\nIf x is the number of days he does this, which function describes how many gold bars he has left?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals a thousand plus ten times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals ten times x minus a thousand?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals a thousand minus ten times x?"
-    },
-    "1I112q": {
-      "question-text": "What function describes Fred's earning as a taxi driver, if $x$ describes the number of rides?",
-      "voiceover": "Now that my cousin has spent all his gold on delicious galactic lemonades, he's working <bookmark mark=\"taxi_in\"/>as an intergalactic taxi driver to earn money again.\nFor each ride, he earns <bookmark mark=\"prize_in\"/>five gold bars. But he also has to spend <bookmark mark=\"fuel_in\"/>two gold bars for climate-neutral fuel for each ride.\nIf x is the number of rides he makes, which function describes how many gold bars he has?\nIs it <bookmark mark=\"f_in\"/>the function f of x equals five minus two times x?\nOr is it <bookmark mark=\"g_in\"/>the function g of x equals five times x minus two?\nOr is it <bookmark mark=\"h_in\"/>the function h of x equals three times x?"
-    },
-    "1I19a": {
-      "voiceover": "We describe the number of hats sold with <bookmark mark=\"x_in\"/> x.\nAnd for each hat we sell, we get 5 euros, so we multiply <bookmark mark=\"five_in\"/>x by 5.\nSo the correct solution is <bookmark mark=\"g_in\"/>g of x equals 5 times x."
-    },
-    "1I110a": {
-      "voiceover": "We first bought an ice cream maker that cost <bookmark mark=\"hundred_in\"/>one hundred euros.\nAnd then we spend two euros for every ice cream cone we make. So, we add <bookmark mark=\"two_x\"/>two times x.\nAnd then the function that describes our costs is <bookmark mark=\"f_in\"/>f of x equals one hundred plus two times x.\nHere, the one hundred euros represent the cost of the ice cream maker, and the two x for each ice cream cone."
-    },
-    "1I111a": {
-      "voiceover": "He received a thousand <bookmark mark=\"thousand_in\"/>gold bars.\nAnd then he spends ten bars for each drink, so we subtract <bookmark mark=\"ten_x\"/>ten times x, where x is the number of days.\nAnd then the function that describes my cousin's remaining wealth is <bookmark mark=\"f_in\"/>h of x equals one thousand\nminus ten times x."
-    },
-    "1I112a": {
-      "voiceover": "Ok, so for each ride, he now earns five bars, so we multiply <bookmark mark=\"five_x\"/>five by x.\nBut he also has to spend two bars on fuel, so we subtract <bookmark mark=\"two_x\"/>two times x.\nSo, the function that describes his earnings is <bookmark mark=\"h_in\"/>h of x equals five times x minus two times x.\nBut we can simplify this, so the correct solution is <bookmark mark=\"f_in\"/>h of x equals three times x."
-    },
-    "1I13": {
-      "voiceover": "Wonderful, now we have practiced modeling realistic scenarios with functions.\nSo, was it worthwhile to understand functions?"
     }
   },
   "Func_1_3": {
@@ -1050,13 +1050,13 @@
       "b": {
         "incorrect": "Mhmm, that's not right..."
       },
+      "my_text": "Hello, this is my text",
       "q": {
         "answer-options": "[\"x close to zero -> large negative values,\\n x far from zero -> small negative values\", \n                   \"x close to zero -> large negative values,\\n x far from zero -> small positive values\", \n                   \"x close to zero -> small negative values,\\n x far from zero -> large negative values\", \n                   \"x close to zero -> small negative values,\\n x far from zero -> large positive values\"]",
         "question-text": "How does f behave for negative values of x?",
         "title": "$\\frac1x$ for negative $x$",
         "voiceover": "Now, let's think about <bookmark mark=\"neg\"/> the negative values of x.\n<break time=\"0.4s\"/>\nRemember, for positive x the function was very high for small x and got smaller for larger x.<break time=\"0.4s\"/>\n<bookmark mark=\"cords\"/>Now, how <bookmark mark=\"Q\"/>does f behave for small negative values of x?\n<break time=\"0.4s\"/>\nAnd how does it behave for large negative values of x?"
-      },
-      "my_text": "Hello, this is my text"
+      }
     },
     "I9": {
       "title": "Rational Functions",
@@ -1456,14 +1456,14 @@
         "voiceintro": "No, that's not what the factored form is good for.",
         "voiceover": "Let's go back to our example function. <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\nSay we want to determine the zeros of that function. F is written as a product of two factors.\nThe first is the <bookmark mark=\"b1\"/> bracket x minus 2, and the second is the <bookmark mark=\"b2\"/> bracket x plus 1.\nNow for the function to be zero, we need the product to be zero, which is the case if at least\none of the factors is zero. The first factor is zero <bookmark mark=\"b1b\"/>if x equals 2, an the second factor is zero\n<bookmark mark=\"b2b\"/>if x equals negative 1.\nThis means <bookmark mark=\"arrow\"/> that the zeros of the function are at<bookmark mark=\"z1\"/> x equals 2 and\n<bookmark mark=\"z2\"/> at x equals negative 1.\nWe can<bookmark mark=\"cords\"/> also verify this graphically: When we look at the <bookmark mark=\"plot\"/>plot of the function,\nwe can see that one of the zeros is at<bookmark mark=\"zg1\"/> x equals 2, and the other one is at<bookmark mark=\"zg2\"/> x equals negative 1."
       },
+      "b": {
+        "voiceintro": "Yes, that's what the factored form is good for."
+      },
       "q": {
         "answer-options": "[\"We can easily determine the location of the vertex\", \"We can easily determine the location of the zeros\", \"We can easily determine the location of the y-intercept\"]",
         "question-text": "What is the advantage of the factored form?",
         "title": "Factored Form",
         "voiceover": "New Video, new form of quadratic functions. Now we're looking at the factored form.\nConsider the following example: <bookmark mark=\"f\"/> f of <bookmark mark=\"x\"/>x equals\nopen bracket <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 close bracket times\nopen bracket <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 close bracket.\n<bookmark mark=\"cords\"/> If you look at <bookmark mark=\"plot\"/>the plot of this function,\nand compare it with the factored form of its term, can you think of what the advantage\nof the factored form might be?"
-      },
-      "b": {
-        "voiceintro": "Yes, that's what the factored form is good for."
       }
     },
     "I6": {
@@ -1718,6 +1718,30 @@
     }
   },
   "Func_6_1": {
+    "1I11a": {
+      "voiceover": "We know that every person who hears the rumor tells it to four other people. Starting with one person who knows the rumor and spreads it, four people will hear it <bookmark mark=\"one_hour\"/>in the following hour. This means that in the next hour, each of these four people<bookmark mark=\"second_hour\"/> will tell the rumor to four new people, so after another hour, a total of sixteen people will hear the rumor."
+    },
+    "1I11q": {
+      "main": {
+        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, <bookmark mark=\"spread\"/>four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour?"
+      }
+    },
+    "1I12q": {
+      "question": "What function describes the number of people who will hear the rumor after x rounds?",
+      "voiceover": "You see that after zero rounds <bookmark mark=\"one_in\"/>one person hears the rumor.\nAfter one round, <bookmark mark=\"four_in\"/>four people hear the rumor.\nAnd after two rounds, <bookmark mark=\"sixteen_in\"/>sixteen people hear the rumor, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of people who hear the rumor after x rounds?\nIs it the function <bookmark mark=\"f_in\"/> f of x equals x to the power of four?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals four to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two x squared?"
+    },
+    "1I13q": {
+      "main": {
+        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will know it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will know the rumor after two more hours?"
+      },
+      "question": "If i plant two plants and each plant triples every year, how many plants will there be in my garden in the third year?"
+    },
+    "1I14a": {
+      "voiceover": "We know that each plant triples every year. Initially<bookmark mark=\"year_0\"/> there are just the two plants I planted. After one year, there are <bookmark mark=\"year_1\"/>six plants, as each of the two plants has tripled. Then in the following year, each of these<bookmark mark=\"year_2\"/> six plants will triple, so that after another year there are a total of eighteen plants in my garden."
+    },
+    "1I14q": {
+      "question": "How many plants will there be in my garden in the third year?"
+    },
     "1I1a": {
       "main": {
         "21st-square": "$21$st square",
@@ -1752,11 +1776,11 @@
     },
     "1I21": {
       "e1": "Purple Graph: Exponential Growth",
+      "e1a": "Exponential Growth \\\\$\\Rightarrow$ multiply at each step",
       "e2": "Green Graph: Linear Growth",
-      "e3": "Purple Graph: Exponential Growth",
-      "voiceover": "Let's try to understand what exactly exponential growth is. To do this, let's compare it with linear growth.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_1\"/>purple graph shows exponential growth. <split/>\nWe see that the function rises and becomes steeper and steeper. This is because the function has the form <bookmark mark=\"f_exp\"/>f of x equals a raised to x, which means for each x, the value of the function is multiplied by the same value, in this case, two. So it doubles at each step.\n<break time=\"0.8s\"/>\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>\nThe function grows at a constant rate. The term of the function has the <bookmark mark=\"f_lin\"/>form f of x equals \"a\" times x, which means for each x, the same value is added to the function, in this case, two.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step.",
       "e2a": "Linear Growth \\\\$\\Rightarrow$ Add at each step",
-      "e1a": "Exponential Growth \\\\$\\Rightarrow$ multiply at each step"
+      "e3": "Purple Graph: Exponential Growth",
+      "voiceover": "Let's try to understand what exactly exponential growth is. To do this, let's compare it with linear growth.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_1\"/>purple graph shows exponential growth. <split/>\nWe see that the function rises and becomes steeper and steeper. This is because the function has the form <bookmark mark=\"f_exp\"/>f of x equals a raised to x, which means for each x, the value of the function is multiplied by the same value, in this case, two. So it doubles at each step.\n<break time=\"0.8s\"/>\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>\nThe function grows at a constant rate. The term of the function has the <bookmark mark=\"f_lin\"/>form f of x equals \"a\" times x, which means for each x, the same value is added to the function, in this case, two.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
     },
     "1I2q": {
       "answer": {
@@ -1783,6 +1807,32 @@
         "two_chickens": "2\\times",
         "voiceover": "Meet <bookmark mark=\"Sophie_in_1\"/> Sophie.\nSophie loves <bookmark mark=\"chicken_in_1\"/> chickens.\nShe currently has <bookmark mark=\"two_chickens_1\"/>two chickens, but she wants\nmany more. Each of her two chickens lays <bookmark mark=\"one_egg_per_week\"/>\none egg per week, and at the end of the week, the  chicken from the egg is\nhatched and old enough to lay eggs itself. Those are some fast chickens!\n\nLet's describe the number of chickens Sophie has using the <bookmark mark=\"graph\"/>\ngraph of a function.\nSo in the <bookmark mark=\"one_week\"/>first week, sophie has two chickens<bookmark mark=\"two_chickens\"/>\nOne week <bookmark mark=\"two_weeks\"/>later, Sophie has <bookmark mark=\"four_chickens\"/>\nfour chickens. The two chickens she started with, and the two chickens that hatched from the eggs.\n\nIn the <bookmark mark=\"three_weeks\"/>next week, Sophie has four chickens that lay one egg each,\nso she gets four eggs. This means that the total number of chickens after the second week is\n<bookmark mark=\"eight_chickens\"/>eight: the four chickens from the first week, and the four chickens\nthat hatched from the eggs.\n\nIn the <bookmark mark=\"four_weeks\"/>fourth week, Sophie has eight chickens that lay one\negg each, so she gets eight eggs. <split/>So the total number of chickens after the third week is\n<bookmark mark=\"sixteen_chickens\"/>sixteen: the eight chickens from the second week, and the\neight chickens that hatched from the eggs.\n\nAs you can see, <bookmark mark=\"plot\"/>the number of chickens increases really fast, and this is what we call\nexponential growth. The number of chickens doubles every week, because each of your\nchickens lay one egg per week. This means, that the number of chickens you have after\nx weeks is described by <bookmark mark=\"f\"/> f of <bookmark mark=\"fx\"/> x equals <bookmark mark=\"two\"/>\ntwo to the <bookmark mark=\"power\"/> power of x. Because you start with two chickens, and each time x\nincreases by one, the number of chickens doubles.\n\nThis is what we call <bookmark mark=\"exponential\"/>exponential growth."
       }
+    },
+    "1I4q": {
+      "question": "I planted two plants in the beginning, and they each triple every year. What function now describes the number of plants I have in my garden after $x$ years?"
+    },
+    "1I61": {
+      "voiceover": "Great, <bookmark mark=\"praise\"/>now you've seen again the differences between linear and exponential growth. To recap:<break time=\"0.8s\"/>\nExponential growth <bookmark mark=\"explain_1\"/>is multiplicative, which means with each increase of x we multiply the function value by a factor.<split/>\n<bookmark mark=\"plot_1\"/>The purple graph shows exponential growth. <split/> We can see how the function rises and becomes increasingly steeper.\n<break time=\"0.8s\"/>\nLinear growth <bookmark mark=\"explain_2\"/>is additive,<split/> meaning with each increase of x we add a value to the function.\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>We see that the function grows at a constant rate.\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
+    },
+    "I11": {
+      "question": {
+        "how-fast-does-the-rumor-spread": "How many people will hear the rumor in the next hour?"
+      }
+    },
+    "I12a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is g of x equals 4 raised to the power of x.\n<bookmark mark=\"g_0\"/>Because g of 0 is 4 to the power of 0, which is 1,\n<bookmark mark=\"g_1\"/>g of 1 is 4 to the power of 1, which is 4,\n<bookmark mark=\"g_2\"/>g of 2 is 4 to the power of 2, which is sixteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
+    },
+    "I13q": {
+      "voiceover": "I have a garden, <bookmark mark=\"garden_in\"/>which I want to plant with my favorite plant. It propagates quite quickly, each year one plant becomes three, so it triples annually. I'm starting simply by <bookmark mark=\"two_in\"/>planting two of them. So, in the first year, there are two plants. In the second year, <bookmark mark=\"second_year\"/>each plant triples, so there are six plants. How many plants will there be in the third year?"
+    },
+    "I14a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is h of x equals 2 times 3 raised to the power of x.\n<bookmark mark=\"h_0\"/>Because h of 0 is two times three to the power of 0, which is 2,<split/>\n<bookmark mark=\"h_1\"/>h of 1 is two times three to the power of 1, which is six,<split/>\n<bookmark mark=\"h_2\"/>h of 2 is two times three to the power of 2, which is eighteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
+    },
+    "I14q": {
+      "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
+    },
+    "I15": {
+      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
     },
     "I5": {
       "a": {
@@ -1838,57 +1888,7 @@
         "voiceover": "Look at the function<bookmark mark=\"g\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x?\nWhich of the following <bookmark mark=\"cords\"/> graphs belongs to the function?\nThe <bookmark mark=\"blue\"/> blue graph? Or the <bookmark mark=\"green\"/> green graph? Or is it the <bookmark mark=\"purple\"/> purple graph?"
       }
     },
-    "1I11q": {
-      "main": {
-        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, <bookmark mark=\"spread\"/>four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour?"
-      }
-    },
-    "1I11a": {
-      "voiceover": "We know that every person who hears the rumor tells it to four other people. Starting with one person who knows the rumor and spreads it, four people will hear it <bookmark mark=\"one_hour\"/>in the following hour. This means that in the next hour, each of these four people<bookmark mark=\"second_hour\"/> will tell the rumor to four new people, so after another hour, a total of sixteen people will hear the rumor."
-    },
-    "1I12q": {
-      "voiceover": "You see that after zero rounds <bookmark mark=\"one_in\"/>one person hears the rumor.\nAfter one round, <bookmark mark=\"four_in\"/>four people hear the rumor.\nAnd after two rounds, <bookmark mark=\"sixteen_in\"/>sixteen people hear the rumor, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of people who hear the rumor after x rounds?\nIs it the function <bookmark mark=\"f_in\"/> f of x equals x to the power of four?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals four to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two x squared?",
-      "question": "What function describes the number of people who will hear the rumor after x rounds?"
-    },
-    "1I13q": {
-      "main": {
-        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, four people will know it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will know the rumor after two more hours?"
-      },
-      "question": "If i plant two plants and each plant triples every year, how many plants will there be in my garden in the third year?"
-    },
-    "I11": {
-      "question": {
-        "how-fast-does-the-rumor-spread": "How many people will hear the rumor in the next hour?"
-      }
-    },
-    "title_1": "Exponential functions",
-    "I12a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is g of x equals 4 raised to the power of x.\n<bookmark mark=\"g_0\"/>Because g of 0 is 4 to the power of 0, which is 1,\n<bookmark mark=\"g_1\"/>g of 1 is 4 to the power of 1, which is 4,\n<bookmark mark=\"g_2\"/>g of 2 is 4 to the power of 2, which is sixteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
-    },
-    "I13q": {
-      "voiceover": "I have a garden, <bookmark mark=\"garden_in\"/>which I want to plant with my favorite plant. It propagates quite quickly, each year one plant becomes three, so it triples annually. I'm starting simply by <bookmark mark=\"two_in\"/>planting two of them. So, in the first year, there are two plants. In the second year, <bookmark mark=\"second_year\"/>each plant triples, so there are six plants. How many plants will there be in the third year?"
-    },
-    "I14a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nThe correct function is h of x equals 2 times 3 raised to the power of x.\n<bookmark mark=\"h_0\"/>Because h of 0 is two times three to the power of 0, which is 2,<split/>\n<bookmark mark=\"h_1\"/>h of 1 is two times three to the power of 1, which is six,<split/>\n<bookmark mark=\"h_2\"/>h of 2 is two times three to the power of 2, which is eighteen.\n<break time=\"0.8s\"/>\nIf we plot the function <bookmark mark=\"cords_in\"/> on a coordinate system,<split/>\n<bookmark mark=\"plot_in\"/>we notice that the function rises increasingly rapidly. Thus, it is an exponential function."
-    },
-    "1I14q": {
-      "question": "How many plants will there be in my garden in the third year?"
-    },
-    "1I14a": {
-      "voiceover": "We know that each plant triples every year. Initially<bookmark mark=\"year_0\"/> there are just the two plants I planted. After one year, there are <bookmark mark=\"year_1\"/>six plants, as each of the two plants has tripled. Then in the following year, each of these<bookmark mark=\"year_2\"/> six plants will triple, so that after another year there are a total of eighteen plants in my garden."
-    },
-    "1I4q": {
-      "question": "I planted two plants in the beginning, and they each triple every year. What function now describes the number of plants I have in my garden after $x$ years?"
-    },
-    "I14q": {
-      "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
-    },
-    "I15": {
-      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
-    },
-    "1I61": {
-      "voiceover": "Great, <bookmark mark=\"praise\"/>now you've seen again the differences between linear and exponential growth. To recap:<break time=\"0.8s\"/>\nExponential growth <bookmark mark=\"explain_1\"/>is multiplicative, which means with each increase of x we multiply the function value by a factor.<split/>\n<bookmark mark=\"plot_1\"/>The purple graph shows exponential growth. <split/> We can see how the function rises and becomes increasingly steeper.\n<break time=\"0.8s\"/>\nLinear growth <bookmark mark=\"explain_2\"/>is additive,<split/> meaning with each increase of x we add a value to the function.\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>We see that the function grows at a constant rate.\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
-    }
+    "title_1": "Exponential functions"
   },
   "Func_6_2": {
     "GraphToGrowthFactorAnswerScene": {
@@ -1927,15 +1927,201 @@
         "voiceover": "My friends cooked pizza <bookmark mark=\"full_pizza\"/> for dinner, and I am running<bookmark mark=\"late\"/> late!\nThey hate it, when I'm late, so they decided to start eating without me.\nEvery Minute, they will eat half of the remaining pizza.\nSo after one minute, only <bookmark mark=\"full\"/> half of the pizza is left.\nAfter two minutes, only <bookmark mark=\"half\"/> one quarter of the pizza is left.\nAfter three minutes, only <bookmark mark=\"quarter\"/> one eighth of the pizza is left, and so on...\n<split/>\nNow since they're already annoyed at me, I might as well annoy them a bit more, so I'll\ntell them how to describe the amount of pizza that is left for me using an exponential <bookmark mark=\"f\"/>function\n<bookmark mark=\"fx\"/>f of x <bookmark mark=\"fa\"/>equals a to the <bookmark mark=\"fxx\"/>power of  x.\n\nNow all I need to know is this: <bookmark mark=\"qmark\"/>Which value do I plug in for a, <bookmark mark=\"x_minutes\"/>\nif x is the number <bookmark mark=\"minutes\"/>of minutes that have passed?"
       }
     },
+    "I21": {
+      "a": {
+        "voiceover": "For x equals zero, f is <bookmark mark=\"x_0\"/> equal to one half to the power of zero, so it's equal to one.<break time=\"0.6s\"/>\nThen, as we go from <bookmark mark=\"x_1\"/> zero to one, we don't get one anymore, but half of one, so half. <split/>\nSo, f has decreased by a half.<break time=\"0.6s\"/>\nThen, as we move from <bookmark mark=\"x_2\"/> one to two, we don't get a half anymore, but a half times a half, so a quarter. <split/>\nSo, f has decreased by a quarter.<break time=\"0.6s\"/>\nAs we go from <bookmark mark=\"x_3\"/> two to three, we multiply a quarter by a half, thus losing an eighth, and so on...<split/><bookmark mark=\"reset_cursor\"/>\nSo, you see, f decreases, but since we are always multiplying by smaller values of half, f decreases more slowly. Therefore, <bookmark mark=\"solution\"/> the green graph must be correct."
+      },
+      "q": {
+        "answer-options": "[\"Like the blue function\", \"Like the green function\", \"Like the pink function\"]",
+        "question-text": "What does the graph of the function $f(x)=(\\tfrac12)^x$ look like?",
+        "voiceover": "Ok, <bookmark mark=\"f\"/> let's now consider the exponential function f of x equals one half to the power of x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>What does the graph of this function look like?<break time=\"0.6s\"/>\nDoes it go <bookmark mark=\"plot_1\"/> slowly downwards,<split/> and then becomes steeper, like the blue graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_2\"/> steeply downwards,<split/> and then becomes flatter, like the green graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_3\"/> downward at a constant speed, <split/> like the pink graph?"
+      }
+    },
+    "I22": {
+      "a": {
+        "voiceover": "The pool holds a thousand liters, and every day an eighth evaporates.<break time=\"0.6s\"/>\nThis means that after each day, seven eighths of the previous day's water remains, so we always multiply the previous day's value by seven eighths. <split/>Therefore, <bookmark mark=\"correct\"/> the function h of x equals a thousand times seven eighths to the power of x is the correct one."
+      },
+      "q": {
+        "question-text": "Which function describes the amount of water in the pool as a function of time in days?",
+        "voiceover": "I have <bookmark mark=\"pool_in\"/> a pool with a thousand liters of water.<break time=\"0.6s\"/>\nHowever, it's so hot <split/> that each day an eighth of the water evaporates.<break time=\"0.6s\"/>\nWhich function describes the amount of water in the pool <split/> as a function of time in days?<break time=\"0.4s\"/>\nIs it <bookmark mark=\"f\"/> the function \"f\" of x equals a thousand times one eighth to the power of x?<break time=\"0.4s\"/>\nOr <bookmark mark=\"g\"/> the function \"g\" of x equals a thousand times (one minus one eighth x)?<break time=\"0.4s\"/>\nOr <bookmark mark=\"h\"/> the function \"h\" of x equals a thousand times seven eighths to the power of x?"
+      }
+    },
+    "I2X": {
+      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe graph of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
+    },
     "I3": {
+      "q": {
+        "question-text": "What is the value of the growth factor $a$?"
+      },
       "title": "Growth factor",
       "verify": "Verify:",
       "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/> \"a\" is called the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays.\n<split/>\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"a\" leads to this graph?",
       "x-minutes_1": "What is the value of",
-      "x-minutes_2": "the growth factor",
+      "x-minutes_2": "the growth factor"
+    },
+    "I31": {
+      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
+    },
+    "I32": {
       "q": {
-        "question-text": "What is the value of the growth factor $a$?"
+        "question-options": "[\"The blue plot\", \"The purple plot\"]",
+        "question-text": "Which plot shows how we increase $a$?"
       }
+    },
+    "I32a": {
+      "voiceover": "The blue <bookmark mark=\"blue_anim\"/>animation shows what happens when we increase the value <bookmark mark=\"of_a\"/>of a.\nAnd the purple <bookmark mark=\"purple_anim\"/>animation shows what happens when we increase the value of b.\nOne way to see this, is by comparing for what values of x each of the two is larger...\nFor low values <bookmark mark=\"low_values\"/> of x, the blue function is larger. And for <bookmark mark=\"high_values\"/>high values of x, the purple function is larger.\nThis means, <bookmark mark=\"reset\"/>that the purple function grows more quickly relative to the blue function as x gets higher, so it must have a higher base value, which means a higher value of b."
+    },
+    "I33": {
+      "a": {
+        "voiceover": "We're <bookmark mark=\"capital\"/> starting with a capital of one thousand euros. So we multiply the entire function<bookmark mark=\"sol_1\"/> by one thousand.\nAnd the <bookmark mark=\"doubles\"/>money doubles every year. This means that the base b <bookmark mark=\"sol_2\"/>is equal to two. So the function describing the capital after x years is <bookmark mark=\"underline_fct\"/> f of x equals one thousand times two to the power of x."
+      },
+      "capital": "Capital",
+      "doubles": "Doubles yearly",
+      "q": {
+        "question-text": "What function of the form $f(x)=a\\cdot b^x$ could you use to model the amount of money in the savings account after $x$ years?",
+        "voiceover": "Let's see an example where we model a situation using a term of the form <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x.\nSay you've put <bookmark mark=\"thousand_in\"/> one thousand euros in a magical savings account, where the money <bookmark mark=\"interest_in\"/> doubles every year.\nWhat function of the form <bookmark mark=\"func_box\"/> f of x equals a times b to the power of x could you use to model the amount of money in the savings account after x years?"
+      }
+    },
+    "I34": {
+      "a": {
+        "voiceover": "To find the function term, we'll need to find the values of a and b.\nWe can find the value of b by comparing the function at two x-values that are 1 unit apart. For example, we can compare the function <bookmark mark=\"f_x_3\"/>at x equals 3 <bookmark mark=\"f_x_4\"/>and x equals 4.\nWe can see that <bookmark mark=\"f_3\"/>f of three is equal to 2 and <bookmark mark=\"f_4\"/>f of four is equal to 4.\nThis means, that if we increase f by one, the function doubles. That means, <bookmark mark=\"sol_1\"/>that b is equal to two, because increasing x by one multiplies the function value by two.<bookmark mark=\"reset_1\"/>\nNow what is <bookmark mark=\"of_a\"/>the value of a? We can find that out by looking at the function value <bookmark mark=\"f_3_again\"/>at x equals 3.\nIf we plug x equals 3 into the function term, we get <bookmark mark=\"step_1\"/>f of three equals a times two to the power of three.\nThis is <bookmark mark=\"step_2\"/>equal to a times eight. And by looking at the function, we can see that <bookmark mark=\"step_3\"/>f of three is equal to two.\nSo a times eight is equal to two. That means, <bookmark mark=\"step_4\"/>that a has to be equal to one quarter.\nSo the <bookmark mark=\"reset_2\"/> term of the function that is shown in the graph <bookmark mark=\"final_sol\"/>is one quarter times two to the power of x."
+      },
+      "q": {
+        "question-text": "What function of the form $f(x)=a\\cdot b^x$ does this graph belong to?",
+        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph you see here. What function of the <bookmark mark=\"func_in\"/> form f of x equals a times b to the power of x does it belong to?"
+      }
+    },
+    "I35": {
+      "a": {
+        "voiceover": "So the original height is what we get at x equals zero. So <bookmark mark=\"f_0_1\"/> we get f of zero equals a times b to the power of zero equals eight. And b to the power of zero<bookmark mark=\"f_0_2\"/> is one. So we get that <bookmark mark=\"f_0_3\"/>a times one equals eight, <bookmark mark=\"f_0_4\"/>so a equals eight...\nNow let's try to find b. <bookmark mark=\"reorganize\"/>We know that after three bounces, the balls height is one eighth of a meter. So we get <bookmark mark=\"f_1_1\"/>f of three equals eight times b to the power of three equals one eighth. If we divide both sides by 8, we <bookmark mark=\"f_1_2\"/> get b to the power of 3 equals 1 over 64. So we know that b to the power of three equals one sixty fourth. This means, that <bookmark mark=\"final_sol\"/>b equals one quarter, because one quarter to the power of three is one over 64.<bookmark mark=\"clean_up\"/>\nSo the function describing the height of the ball after x bounces is <bookmark mark=\"frame\"/>f of x equals eight times one quarter to the power of x."
+      },
+      "original-height": "Original height",
+      "q": {
+        "voiceover": "Another exercise: <bookmark mark=\"ball_in\"/>A ball is dropped from a height<bookmark mark=\"eight_meters\"/>of 8 meters. After bouncing off the ground<bookmark mark=\"three_bounces\"/> three times, it only jumps up to the height of <bookmark mark=\"one_eigth\"/>one eigth of a meter. We can use an exponential function of the form <bookmark mark=\"func_in\"/>f of x equals a times b to the power of x to describe the height of the ball after x bounces. What is the value of a?"
+      },
+      "three-bounces": "three bounces"
+    },
+    "I3a": {
+      "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one, which equals one half, so <bookmark mark=\"transform\"/> a is one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by checking that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
+    },
+    "I41": {
+      "voiceover": "There are some important <bookmark mark=\"rules_in\"/> rules you should take into account when dealing with exponential functions. I'll start by giving you an overview, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of negative x is equal to one over a to the power of x...\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nTry to remember all of them!"
+    },
+    "I42": {
+      "a": {
+        "voiceover": "If we simply apply the rule to the term four to the power of a times four to the power of b, we see that it equals <bookmark mark=\"equal\"/> four to the power of a plus b, because we keep the base, which is 4, and we add the exponents, which are a and b.\nWe can verify this, by checking that <bookmark mark=\"step_1\"/>4 to the power of a equals 4 multiplied by itself a total of \"a\" times, and <bookmark mark=\"step_2\"/>4 to the power of b equals 4, multiplied by itself a total of b times. If we multiply these two terms, we get <bookmark mark=\"step_3\"/>four multiplied by itself \"a\" plus b times, so 4 to the power of \"a\" plus b."
+      },
+      "q": {
+        "voiceover": "Let's start by looking at the rule for multiplying two exponential functions with the same base. The rule states that <bookmark mark=\"rule\"/> a to the power of x times a to the power of y equals a to the power of x plus y. So the result is the original base to the power of the sum of the exponents.\nBut why is that? It's actually easy to make sense of this: First, notice that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of y is just \"a\" multiplied by itself y times. So if we multiply these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x plus y times. And that is exactly what the rule states...\nNow <bookmark mark=\"clean\"/>let's practice: How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of a times 4 to the power of b?"
+      }
+    },
+    "I43": {
+      "a": {
+        "voiceover": "The rule states, that if we <bookmark mark=\"fraction\"/>have a fraction of two exponential functions with the same base, we can <bookmark mark=\"subtract\"/>simply subtract the exponents.\nSince we're <bookmark mark=\"example_divide\"/>dividing two exponential functions with base 3 in this example, we can apply the rule and write it as <bookmark mark=\"solution\"/>the base, which is three to the power of x minus y, where x is the exponent of the numerator and y is the exponent of the denominator."
+      },
+      "q": {
+        "voiceover": "Now consider the rule stating that <bookmark mark=\"rule\"/>a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThere are two ways to remember this rule. The first is by comparing it to the <bookmark mark=\"other_rule\"/>rule stating that a to the power of x times a to the power of y is equal to a to the power of x plus y.\nIt makes sense that<bookmark mark=\"multiply\"/> if multiplying the expressions leads to adding the exponents, <bookmark mark=\"divide\"/>then dividing the expressions leads to subtracting the exponents.\nAnother <bookmark mark=\"clean_up_1\"/>way to remember this rule is to see that <bookmark mark=\"step_1\"/>\"a\" to the power of x is equal to \"a\", multiplied by itself x times, and <bookmark mark=\"step_2\"/>\"a\" to the power of y is equal to \"a\" multiplied by itself y times.\nThis means that if we <bookmark mark=\"step_3\"/>divide a to the power of x by a to the power of y, we are only multiplying \"a\" by itself x minus y times, because y times \"a\" are cancelled out.\nNow <bookmark mark=\"clean_up_2\"/>let's look at an example. How can we simplify <bookmark mark=\"example_in\"/> the expression three to the power of x divided by three to the power of y?"
+      }
+    },
+    "I44": {
+      "a": {
+        "voiceover": "We can just apply the rule to the expression: We <bookmark mark=\"example_1\"/>divide one by a to the power of something, and that something is the negative value of the original power, so <bookmark mark=\"example_2\"/>2 c in our example."
+      },
+      "q": {
+        "voiceover": "The rule we're looking at now states that <bookmark mark=\"rule_in\"/>one over a to the power of x is equal to a to the power of minus x.\nThis rule is a bit more tricky to understand, but we can use a rule we've previously seen to show that it is true...\nSo we'll start with the rule <bookmark mark=\"other_rule\"/> that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nNext, we're going to <bookmark mark=\"switch\"/>switch x and y, to obtain the rule that a to the power of y divided by a to the power of x is equal to a to the power of y minus x.\nNext, we set y to zero to<bookmark mark=\"step_one\"/>obtain the rule that a to the power of zero divided by a to the power of x is equal to a to the power of zero minus x.\nIf we then plug in that a to the power of zero is equal to one, we obtain the <bookmark mark=\"rule\"/> rule that one divided by a to the power of x is equal to a to the power of minus x, and we're done...\nNow, let's <bookmark mark=\"clean_up\"/>practice with an example. Which expression is equal to <bookmark mark=\"example_in\"/>b to the power of negative 2 c?"
+      }
+    },
+    "I45": {
+      "a": {
+        "voiceover": "If we simply apply the rule, we get that four to the power of two a, to the power of two b, is equal to <bookmark mark=\"example_1\"/>four to the power of two a times two b. We can simplify this further, and write it <bookmark mark=\"example_2\"/> as four to the power of four a b."
+      },
+      "q": {
+        "voiceover": "What if we raise something to a power and then raise that to another power?\nThe next rule states that <bookmark mark=\"rule\"/> a to the power of x to the power of y equals a to the power of x times y. So the result is the original base to the power of the product of the exponents.\nHow can we make sense of this? First, note that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of x, to the power of y is just \"a\" to the power of x multiplied by itself y times. So if we combine these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x times y times. And that's what the rule states.\nNow let's use this rule: <bookmark mark=\"clean\"/> How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of 2 a to the power of 2 b?"
+      }
+    },
+    "I46": {
+      "voiceover": "Nice, now we've worked with each of the four. Let's summarize them again. \nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of negative x is equal to one over a to the power of x...\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nNow we're well <bookmark mark=\"antilope_in\"/>equipped to work with all sorts of exponential functions. Let's go!"
+    },
+    "I51": {
+      "voiceover": "Let's look at another set of<bookmark mark=\"rules_in\"/> rules that can help you deal with exponential functions. Let's get an overview, before we look at each rule in detail.\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\nTake a good look at these rules, you'll need them later on."
+    },
+    "I52": {
+      "a": {
+        "voiceover": "We can just apply the rule to the example, and raise both the numerator and the denominator to the power of 2 \"a\". Then we get <bookmark mark=\"solution\"/>the solution x to the power of 2 \"a\" divided by y to the power of 2 \"a\"."
+      },
+      "q": {
+        "voiceover": "Let's start by looking at the rule for raising a fraction to a power. The rule states that <bookmark mark=\"rule\"/> a over b to the power of x equals a to the power of x over b to the power of x. So we can just raise both the enumerator and the denominator to the power.\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction \"a\" over b to the power of x is just \"a\" over b multiplied by itself x times. Then, think about what happens when we multiply fractions: We get a new fraction, where the enumerator is the product of the enumerators and the denominator is the product of the denominators. So, in our example <bookmark mark=\"step_2\"/>we get a fraction where the enumerator is \"a\" multiplied by itself x times and the denominator is b multiplied by itself x times. And that is exactly what we have in the rule. So, <bookmark mark=\"step_3\"/>we can just write a to the power of x over b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. <bookmark mark=\"example_in\"/> We have the fraction x over y to the power of 2a. How can we simplify this using the rule we just learned?"
+      }
+    },
+    "I53": {
+      "a": {
+        "voiceover": "Take the rule which states <bookmark mark=\"rule_1\"/>that the power of a fraction is equal to the fraction of the powers. And for convenience,<bookmark mark=\"rule_1_alt\"/> switch the numerator and denominator.\nNow, if we <bookmark mark=\"downarrow_1\"/>set b equal to one, we <bookmark mark=\"rule_2\"/>get that one over a to the power of x is equal to one to the power of x over a to the power of x. And this is equal to<bookmark mark=\"rule_2_alt\"/> one over a to the power of x, since one to the power of x is equal to one."
+      },
+      "q": {
+        "voiceover": "Now what if we <bookmark mark=\"situation\"/>raise one divided by something to a power? There's a rule that states that one over a to the power of x equals<bookmark mark=\"rule\"/> one divided by the expression a to the power of x. So if we raise one divided by something to a power, we can just raise the denominator to the power....\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction one over \"a\" to the power of x is just one over \"a\" multiplied by itself x times. If we do this multiplication, <bookmark mark=\"step_2\"/>the enumerator is the product of the enumerators, and the denominator is the product of the denominators. And since one to the power of x is still one, we get a fraction where<bookmark mark=\"step_3\"/> the enumerator is one and the denominator is \"a\" multiplied by itself x times. So, we can just write one over a to the power of x.\nNow, <bookmark mark=\"clean\"/>this rule is only a special case of another rule. Which other rule can we infer this one from?"
+      }
+    },
+    "I54": {
+      "a": {
+        "voiceover": "We can simply apply the rule, and we get that 3 a to the power of x is equal <bookmark mark=\"solution\"/>to 3 to the power of x times a to the power of x."
+      },
+      "q": {
+        "voiceover": "Now we're looking at the rule that says that <bookmark mark=\"rule\"/>a b to the power of x is the same as a to the power of x times b to the power of x.\nThere are three easy steps to understand this. First, <bookmark mark=\"step_1\"/>we write out a b to the power of x as a b times a b times a b and so on x times. Next, <bookmark mark=\"step_2\"/>we can rearrange the terms so that all the a's are on one side and all the b's are on the other side. Finally, <bookmark mark=\"step_3\"/>we can rewrite the terms as a to the power of x times b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. What do we get, if we apply this rule <bookmark mark=\"example_in\"/>to 3 a to the power of x?"
+      }
+    },
+    "I55": {
+      "a": {
+        "voiceover": "If we apply the rule to the expression a over b to the power of negative 2, we get the expression<bookmark mark=\"solution\"/> b over a to the power of 2. So we switched the numerator and the denominator and changed the sign of the exponent."
+      },
+      "q": {
+        "voiceover": "Now, one more rule. The rule states that <bookmark mark=\"rule\"/>a over b to the power of minus x is equal to b over a to the power of x. So we can just switch the numerator and denominator and change the sign of the exponent.\nTo understand this rule, let's start with another rule, which says that<bookmark mark=\"start\"/> a to the power of negative x equals one over a to the power of x. If we apply this rule to the expression a over b to the power of negative x, we <bookmark mark=\"step_1\"/>get one divided by a over b to the power of x. Now, we can apply the rule that dividing one by a fraction is the same as switching the numerator and denominator. So we get <bookmark mark=\"step_2\"/>b over a to the power of x. So we have shown that<bookmark mark=\"clean_up\"/> a over b to the power of negative x is equal to b over a to the power of x.\nNow let's apply this rule. How can we rewrite<bookmark mark=\"example\"/> the expression a over b to the power of negative two?"
+      }
+    },
+    "I56": {
+      "voiceover": "Well, we're done. At least with the rules for exponential functions, we've seen them all. Let's recap the ones we just practiced:\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\n<bookmark mark=\"thumbs_in\"/>Great, now we've seen all the rules for exponential functions. A bit of practice, and we'll have mastered exponential functions!"
+    },
+    "I561": {
+      "factor": "factor",
+      "interest": "interest",
+      "voiceover": "Let's focus on a special kind of exponential function: The ones involving <bookmark mark=\"percentage\"/>percentages.\nWe're going to start with a simple example: Say you've got a <bookmark mark=\"savings_account\"/>savings account with a 100 dollars in it. And you're getting 5 percent interest per year.\nBy what factor is your money in the account multiplied every year?"
+    },
+    "I561q": {
+      "voiceover": "If we get 5 percent interest per year, we multiply the amount of money we have <bookmark mark=\"factor\"/>by one point zero five every <bookmark mark=\"one_red\"/>year: one, because we keep all the money from the previous year<bookmark mark=\"point05_red\"/>and point zero five, because we get five percent interest.\n<bookmark mark=\"all_black\"/>So the function describing the amount of money in the account after x years is<bookmark mark=\"func\"/> f of x equals 100 times one point zero five to the power of x.\nSo an <bookmark mark=\"interest_in\"/>interest rate of five percent leads to<bookmark mark=\"factor_in\"/> a multiplicative factor of 1 point 0 5..."
+    },
+    "I562": {
+      "eaten": "eaten",
+      "remaining": "remaining",
+      "voiceover": "Now I've just cooked the <bookmark mark=\"soup_in\"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark=\"twenty_percent\"/> twenty percent of the soup and passes it on to the next person. <bookmark mark=\"qmark\"/>How much soup will be left after x people have had their turn?"
+    },
+    "I562q": {
+      "amount_decreases": "amount decreases",
+      "amount_increases": "amount increases",
+      "decrease": "decrease",
+      "factor": "factor",
+      "final_factor": "final factor",
+      "increase": "increase",
+      "interest": "interest",
+      "investment": "investment",
+      "spend_half": "spending",
+      "voiceover": "Whenever a person <bookmark mark=\"twenty_percent_in\"/>eats twenty percent of the soup, <bookmark mark=\"eighty_percent_in\"/>80 percent of the soup will remain. So the <bookmark mark=\"func_in\"/>function f of x equals zero point eight to the power of x describes the amount <bookmark mark=\"soup_in\"/>of soup that remains after x people have had soup. This is because every person leaves eighty percent, so we have to multiply the amount of soup with 0 point 8 every time a person has soup."
+    },
+    "I563": {
+      "voiceover": "So there are two types of percentage changes.\nIf the amount <bookmark mark=\"increase_in\"/>increases by some percentage, then the factor is <bookmark mark=\"increase_factor\"/>one plus the percentage increase divided by 100...\nIf on the other hand the function <bookmark mark=\"decrease_in\"/>decreases by some percentage, then the factor is <bookmark mark=\"decrease_factor\"/>one minus the percentage decrease divided by 100."
+    },
+    "I564": {
+      "voiceover": "say <bookmark mark=\"money_in\"/>you have 100 dollars in the bank...\nAnd the bank gives you<bookmark mark=\"percent_in\"/> 10 percent interest every year. However, you also love buying stuff and spend<bookmark mark=\"spend_half\"/> half your money every year.\nWhat function describes the amount of money you have after x years?"
+    },
+    "I564q": {
+      "voiceover": "Every year, we <bookmark mark=\"interest_in\"/>get ten percent in interest. That means the <bookmark mark=\"factor\"/>factor for the interest is one plus zero point one, which equals one point one.\nWe also <bookmark mark=\"spend_half\"/>spend half of our money. That means the <bookmark mark=\"factor\"/>factor for the spending is one minus zero point five, which equals zero point five.\n<bookmark mark=\"final_factor\"/>The final factor is the product of the two factors, which is one point one times zero point five, which equals zero point five five.\nSo<bookmark mark=\"clean_up\"/> the function describing the amount of money we have after x years<bookmark mark=\"func_in\"/> is f of x equals 0 point 5 5 to the power of x."
+    },
+    "I565": {
+      "voiceover": "I have been <bookmark mark=\"money_in\"/>saving up for years and now I am investing <bookmark mark=\"thousand_in\"/>the 1000 dollars i have saved up in a risky business.\nI will get <bookmark mark=\"percent_in\"/>50 percent interest every year. What will my money be worth in 3 years?"
+    },
+    "I565q": {
+      "voiceover": "The <bookmark mark=\"function_in\"/>function describing the amount of money in the bank after x years is <bookmark mark=\"function_in\"/>f of x equals 1000 times 1.5 to the power of x.\nThis is, because we're <bookmark mark=\"thousand_red\"/> investing 1000 dollars and <bookmark mark=\"fifty_percent_red\"/>getting 50 percent interest every year.<bookmark mark=\"all_black\"/>\nNow we want to know how much money we have after 3 years. So we just have to <bookmark mark=\"func_3\"/>plug in 3 for x and <bookmark mark=\"result\"/>calculate the result. Since 1000 times 1.5 to the power of 3 equals 3375, we <bookmark mark=\"solution_green\"/>have 3375 dollars in the bank after 3 years."
+    },
+    "I566": {
+      "voiceover": "Great<bookmark mark=\"ostrich_in\"/> job learning<bookmark mark=\"percentage_in\"/> about and practicing with percentages. They'll be super helpful when you need figure out how much money you have!!!"
     },
     "P2": {
       "q": {
@@ -1964,192 +2150,6 @@
         "answer-options": "[\"The purple graph\", \"The blue graph\", \"The pink graph\"]",
         "question-text": "Which of the graph corresponds to the function $f(x)=3^x$?"
       }
-    },
-    "I2X": {
-      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe graph of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
-    },
-    "I21": {
-      "q": {
-        "voiceover": "Ok, <bookmark mark=\"f\"/> let's now consider the exponential function f of x equals one half to the power of x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>What does the graph of this function look like?<break time=\"0.6s\"/>\nDoes it go <bookmark mark=\"plot_1\"/> slowly downwards,<split/> and then becomes steeper, like the blue graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_2\"/> steeply downwards,<split/> and then becomes flatter, like the green graph?<break time=\"0.6s\"/>\nOr does it go <bookmark mark=\"plot_3\"/> downward at a constant speed, <split/> like the pink graph?",
-        "question-text": "What does the graph of the function $f(x)=(\\tfrac12)^x$ look like?",
-        "answer-options": "[\"Like the blue function\", \"Like the green function\", \"Like the pink function\"]"
-      },
-      "a": {
-        "voiceover": "For x equals zero, f is <bookmark mark=\"x_0\"/> equal to one half to the power of zero, so it's equal to one.<break time=\"0.6s\"/>\nThen, as we go from <bookmark mark=\"x_1\"/> zero to one, we don't get one anymore, but half of one, so half. <split/>\nSo, f has decreased by a half.<break time=\"0.6s\"/>\nThen, as we move from <bookmark mark=\"x_2\"/> one to two, we don't get a half anymore, but a half times a half, so a quarter. <split/>\nSo, f has decreased by a quarter.<break time=\"0.6s\"/>\nAs we go from <bookmark mark=\"x_3\"/> two to three, we multiply a quarter by a half, thus losing an eighth, and so on...<split/><bookmark mark=\"reset_cursor\"/>\nSo, you see, f decreases, but since we are always multiplying by smaller values of half, f decreases more slowly. Therefore, <bookmark mark=\"solution\"/> the green graph must be correct."
-      }
-    },
-    "I22": {
-      "q": {
-        "voiceover": "I have <bookmark mark=\"pool_in\"/> a pool with a thousand liters of water.<break time=\"0.6s\"/>\nHowever, it's so hot <split/> that each day an eighth of the water evaporates.<break time=\"0.6s\"/>\nWhich function describes the amount of water in the pool <split/> as a function of time in days?<break time=\"0.4s\"/>\nIs it <bookmark mark=\"f\"/> the function \"f\" of x equals a thousand times one eighth to the power of x?<break time=\"0.4s\"/>\nOr <bookmark mark=\"g\"/> the function \"g\" of x equals a thousand times (one minus one eighth x)?<break time=\"0.4s\"/>\nOr <bookmark mark=\"h\"/> the function \"h\" of x equals a thousand times seven eighths to the power of x?",
-        "question-text": "Which function describes the amount of water in the pool as a function of time in days?"
-      },
-      "a": {
-        "voiceover": "The pool holds a thousand liters, and every day an eighth evaporates.<break time=\"0.6s\"/>\nThis means that after each day, seven eighths of the previous day's water remains, so we always multiply the previous day's value by seven eighths. <split/>Therefore, <bookmark mark=\"correct\"/> the function h of x equals a thousand times seven eighths to the power of x is the correct one."
-      }
-    },
-    "I3a": {
-      "voiceover": "If we plug <bookmark mark=\"x_1\"/> in x equals 1, we get a to the power of <bookmark mark=\"fx_1\"/> one, which equals one half, so <bookmark mark=\"transform\"/> a is one half.<break time=\"0.8s\"/>\nWe can confirm this,<split/> by checking that for <bookmark mark=\"x_2\"/>x equals 2, we get the <bookmark mark=\"fx_2\"/> value one quarter, which is the same as one half squared."
-    },
-    "I31": {
-      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
-    },
-    "I32": {
-      "q": {
-        "question-text": "Which plot shows how we increase $a$?",
-        "question-options": "[\"The blue plot\", \"The purple plot\"]"
-      }
-    },
-    "I32a": {
-      "voiceover": "The blue <bookmark mark=\"blue_anim\"/>animation shows what happens when we increase the value <bookmark mark=\"of_a\"/>of a.\nAnd the purple <bookmark mark=\"purple_anim\"/>animation shows what happens when we increase the value of b.\nOne way to see this, is by comparing for what values of x each of the two is larger...\nFor low values <bookmark mark=\"low_values\"/> of x, the blue function is larger. And for <bookmark mark=\"high_values\"/>high values of x, the purple function is larger.\nThis means, <bookmark mark=\"reset\"/>that the purple function grows more quickly relative to the blue function as x gets higher, so it must have a higher base value, which means a higher value of b."
-    },
-    "I33": {
-      "capital": "Capital",
-      "doubles": "Doubles yearly",
-      "q": {
-        "voiceover": "Let's see an example where we model a situation using a term of the form <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x.\nSay you've put <bookmark mark=\"thousand_in\"/> one thousand euros in a magical savings account, where the money <bookmark mark=\"interest_in\"/> doubles every year.\nWhat function of the form <bookmark mark=\"func_box\"/> f of x equals a times b to the power of x could you use to model the amount of money in the savings account after x years?",
-        "question-text": "What function of the form $f(x)=a\\cdot b^x$ could you use to model the amount of money in the savings account after $x$ years?"
-      },
-      "a": {
-        "voiceover": "We're <bookmark mark=\"capital\"/> starting with a capital of one thousand euros. So we multiply the entire function<bookmark mark=\"sol_1\"/> by one thousand.\nAnd the <bookmark mark=\"doubles\"/>money doubles every year. This means that the base b <bookmark mark=\"sol_2\"/>is equal to two. So the function describing the capital after x years is <bookmark mark=\"underline_fct\"/> f of x equals one thousand times two to the power of x."
-      }
-    },
-    "I34": {
-      "q": {
-        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph you see here. What function of the <bookmark mark=\"func_in\"/> form f of x equals a times b to the power of x does it belong to?",
-        "question-text": "What function of the form $f(x)=a\\cdot b^x$ does this graph belong to?"
-      },
-      "a": {
-        "voiceover": "To find the function term, we'll need to find the values of a and b.\nWe can find the value of b by comparing the function at two x-values that are 1 unit apart. For example, we can compare the function <bookmark mark=\"f_x_3\"/>at x equals 3 <bookmark mark=\"f_x_4\"/>and x equals 4.\nWe can see that <bookmark mark=\"f_3\"/>f of three is equal to 2 and <bookmark mark=\"f_4\"/>f of four is equal to 4.\nThis means, that if we increase f by one, the function doubles. That means, <bookmark mark=\"sol_1\"/>that b is equal to two, because increasing x by one multiplies the function value by two.<bookmark mark=\"reset_1\"/>\nNow what is <bookmark mark=\"of_a\"/>the value of a? We can find that out by looking at the function value <bookmark mark=\"f_3_again\"/>at x equals 3.\nIf we plug x equals 3 into the function term, we get <bookmark mark=\"step_1\"/>f of three equals a times two to the power of three.\nThis is <bookmark mark=\"step_2\"/>equal to a times eight. And by looking at the function, we can see that <bookmark mark=\"step_3\"/>f of three is equal to two.\nSo a times eight is equal to two. That means, <bookmark mark=\"step_4\"/>that a has to be equal to one quarter.\nSo the <bookmark mark=\"reset_2\"/> term of the function that is shown in the graph <bookmark mark=\"final_sol\"/>is one quarter times two to the power of x."
-      }
-    },
-    "I35": {
-      "three-bounces": "three bounces",
-      "original-height": "Original height",
-      "q": {
-        "voiceover": "Another exercise: <bookmark mark=\"ball_in\"/>A ball is dropped from a height<bookmark mark=\"eight_meters\"/>of 8 meters. After bouncing off the ground<bookmark mark=\"three_bounces\"/> three times, it only jumps up to the height of <bookmark mark=\"one_eigth\"/>one eigth of a meter. We can use an exponential function of the form <bookmark mark=\"func_in\"/>f of x equals a times b to the power of x to describe the height of the ball after x bounces. What is the value of a?"
-      },
-      "a": {
-        "voiceover": "So the original height is what we get at x equals zero. So <bookmark mark=\"f_0_1\"/> we get f of zero equals a times b to the power of zero equals eight. And b to the power of zero<bookmark mark=\"f_0_2\"/> is one. So we get that <bookmark mark=\"f_0_3\"/>a times one equals eight, <bookmark mark=\"f_0_4\"/>so a equals eight...\nNow let's try to find b. <bookmark mark=\"reorganize\"/>We know that after three bounces, the balls height is one eighth of a meter. So we get <bookmark mark=\"f_1_1\"/>f of three equals eight times b to the power of three equals one eighth. If we divide both sides by 8, we <bookmark mark=\"f_1_2\"/> get b to the power of 3 equals 1 over 64. So we know that b to the power of three equals one sixty fourth. This means, that <bookmark mark=\"final_sol\"/>b equals one quarter, because one quarter to the power of three is one over 64.<bookmark mark=\"clean_up\"/>\nSo the function describing the height of the ball after x bounces is <bookmark mark=\"frame\"/>f of x equals eight times one quarter to the power of x."
-      }
-    },
-    "I41": {
-      "voiceover": "There are some important <bookmark mark=\"rules_in\"/> rules you should take into account when dealing with exponential functions. I'll start by giving you an overview, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of negative x is equal to one over a to the power of x...\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nTry to remember all of them!"
-    },
-    "I42": {
-      "q": {
-        "voiceover": "Let's start by looking at the rule for multiplying two exponential functions with the same base. The rule states that <bookmark mark=\"rule\"/> a to the power of x times a to the power of y equals a to the power of x plus y. So the result is the original base to the power of the sum of the exponents.\nBut why is that? It's actually easy to make sense of this: First, notice that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of y is just \"a\" multiplied by itself y times. So if we multiply these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x plus y times. And that is exactly what the rule states...\nNow <bookmark mark=\"clean\"/>let's practice: How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of a times 4 to the power of b?"
-      },
-      "a": {
-        "voiceover": "If we simply apply the rule to the term four to the power of a times four to the power of b, we see that it equals <bookmark mark=\"equal\"/> four to the power of a plus b, because we keep the base, which is 4, and we add the exponents, which are a and b.\nWe can verify this, by checking that <bookmark mark=\"step_1\"/>4 to the power of a equals 4 multiplied by itself a total of \"a\" times, and <bookmark mark=\"step_2\"/>4 to the power of b equals 4, multiplied by itself a total of b times. If we multiply these two terms, we get <bookmark mark=\"step_3\"/>four multiplied by itself \"a\" plus b times, so 4 to the power of \"a\" plus b."
-      }
-    },
-    "I43": {
-      "q": {
-        "voiceover": "Now consider the rule stating that <bookmark mark=\"rule\"/>a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThere are two ways to remember this rule. The first is by comparing it to the <bookmark mark=\"other_rule\"/>rule stating that a to the power of x times a to the power of y is equal to a to the power of x plus y.\nIt makes sense that<bookmark mark=\"multiply\"/> if multiplying the expressions leads to adding the exponents, <bookmark mark=\"divide\"/>then dividing the expressions leads to subtracting the exponents.\nAnother <bookmark mark=\"clean_up_1\"/>way to remember this rule is to see that <bookmark mark=\"step_1\"/>\"a\" to the power of x is equal to \"a\", multiplied by itself x times, and <bookmark mark=\"step_2\"/>\"a\" to the power of y is equal to \"a\" multiplied by itself y times.\nThis means that if we <bookmark mark=\"step_3\"/>divide a to the power of x by a to the power of y, we are only multiplying \"a\" by itself x minus y times, because y times \"a\" are cancelled out.\nNow <bookmark mark=\"clean_up_2\"/>let's look at an example. How can we simplify <bookmark mark=\"example_in\"/> the expression three to the power of x divided by three to the power of y?"
-      },
-      "a": {
-        "voiceover": "The rule states, that if we <bookmark mark=\"fraction\"/>have a fraction of two exponential functions with the same base, we can <bookmark mark=\"subtract\"/>simply subtract the exponents.\nSince we're <bookmark mark=\"example_divide\"/>dividing two exponential functions with base 3 in this example, we can apply the rule and write it as <bookmark mark=\"solution\"/>the base, which is three to the power of x minus y, where x is the exponent of the numerator and y is the exponent of the denominator."
-      }
-    },
-    "I44": {
-      "q": {
-        "voiceover": "The rule we're looking at now states that <bookmark mark=\"rule_in\"/>one over a to the power of x is equal to a to the power of minus x.\nThis rule is a bit more tricky to understand, but we can use a rule we've previously seen to show that it is true...\nSo we'll start with the rule <bookmark mark=\"other_rule\"/> that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nNext, we're going to <bookmark mark=\"switch\"/>switch x and y, to obtain the rule that a to the power of y divided by a to the power of x is equal to a to the power of y minus x.\nNext, we set y to zero to<bookmark mark=\"step_one\"/>obtain the rule that a to the power of zero divided by a to the power of x is equal to a to the power of zero minus x.\nIf we then plug in that a to the power of zero is equal to one, we obtain the <bookmark mark=\"rule\"/> rule that one divided by a to the power of x is equal to a to the power of minus x, and we're done...\nNow, let's <bookmark mark=\"clean_up\"/>practice with an example. Which expression is equal to <bookmark mark=\"example_in\"/>b to the power of negative 2 c?"
-      },
-      "a": {
-        "voiceover": "We can just apply the rule to the expression: We <bookmark mark=\"example_1\"/>divide one by a to the power of something, and that something is the negative value of the original power, so <bookmark mark=\"example_2\"/>2 c in our example."
-      }
-    },
-    "I45": {
-      "q": {
-        "voiceover": "What if we raise something to a power and then raise that to another power?\nThe next rule states that <bookmark mark=\"rule\"/> a to the power of x to the power of y equals a to the power of x times y. So the result is the original base to the power of the product of the exponents.\nHow can we make sense of this? First, note that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of x, to the power of y is just \"a\" to the power of x multiplied by itself y times. So if we combine these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x times y times. And that's what the rule states.\nNow let's use this rule: <bookmark mark=\"clean\"/> How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of 2 a to the power of 2 b?"
-      },
-      "a": {
-        "voiceover": "If we simply apply the rule, we get that four to the power of two a, to the power of two b, is equal to <bookmark mark=\"example_1\"/>four to the power of two a times two b. We can simplify this further, and write it <bookmark mark=\"example_2\"/> as four to the power of four a b."
-      }
-    },
-    "I46": {
-      "voiceover": "Nice, now we've worked with each of the four. Let's summarize them again. \nThe <bookmark mark=\"rule_1\"/>first rule states that a to the power of x times a to the power of y is equal to a to the power of x plus y...\nThe <bookmark mark=\"rule_2\"/>second rule states that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThe <bookmark mark=\"rule_3\"/>third rule states that a to the power of negative x is equal to one over a to the power of x...\nAnd the <bookmark mark=\"rule_4\"/>fourth rule states that a to the power of x to the power of y is equal to a to the power of x times y.\nNow we're well <bookmark mark=\"antilope_in\"/>equipped to work with all sorts of exponential functions. Let's go!"
-    },
-    "I51": {
-      "voiceover": "Let's look at another set of<bookmark mark=\"rules_in\"/> rules that can help you deal with exponential functions. Let's get an overview, before we look at each rule in detail.\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\nTake a good look at these rules, you'll need them later on."
-    },
-    "I52": {
-      "q": {
-        "voiceover": "Let's start by looking at the rule for raising a fraction to a power. The rule states that <bookmark mark=\"rule\"/> a over b to the power of x equals a to the power of x over b to the power of x. So we can just raise both the enumerator and the denominator to the power.\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction \"a\" over b to the power of x is just \"a\" over b multiplied by itself x times. Then, think about what happens when we multiply fractions: We get a new fraction, where the enumerator is the product of the enumerators and the denominator is the product of the denominators. So, in our example <bookmark mark=\"step_2\"/>we get a fraction where the enumerator is \"a\" multiplied by itself x times and the denominator is b multiplied by itself x times. And that is exactly what we have in the rule. So, <bookmark mark=\"step_3\"/>we can just write a to the power of x over b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. <bookmark mark=\"example_in\"/> We have the fraction x over y to the power of 2a. How can we simplify this using the rule we just learned?"
-      },
-      "a": {
-        "voiceover": "We can just apply the rule to the example, and raise both the numerator and the denominator to the power of 2 \"a\". Then we get <bookmark mark=\"solution\"/>the solution x to the power of 2 \"a\" divided by y to the power of 2 \"a\"."
-      }
-    },
-    "I53": {
-      "q": {
-        "voiceover": "Now what if we <bookmark mark=\"situation\"/>raise one divided by something to a power? There's a rule that states that one over a to the power of x equals<bookmark mark=\"rule\"/> one divided by the expression a to the power of x. So if we raise one divided by something to a power, we can just raise the denominator to the power....\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction one over \"a\" to the power of x is just one over \"a\" multiplied by itself x times. If we do this multiplication, <bookmark mark=\"step_2\"/>the enumerator is the product of the enumerators, and the denominator is the product of the denominators. And since one to the power of x is still one, we get a fraction where<bookmark mark=\"step_3\"/> the enumerator is one and the denominator is \"a\" multiplied by itself x times. So, we can just write one over a to the power of x.\nNow, <bookmark mark=\"clean\"/>this rule is only a special case of another rule. Which other rule can we infer this one from?"
-      },
-      "a": {
-        "voiceover": "Take the rule which states <bookmark mark=\"rule_1\"/>that the power of a fraction is equal to the fraction of the powers. And for convenience,<bookmark mark=\"rule_1_alt\"/> switch the numerator and denominator.\nNow, if we <bookmark mark=\"downarrow_1\"/>set b equal to one, we <bookmark mark=\"rule_2\"/>get that one over a to the power of x is equal to one to the power of x over a to the power of x. And this is equal to<bookmark mark=\"rule_2_alt\"/> one over a to the power of x, since one to the power of x is equal to one."
-      }
-    },
-    "I54": {
-      "q": {
-        "voiceover": "Now we're looking at the rule that says that <bookmark mark=\"rule\"/>a b to the power of x is the same as a to the power of x times b to the power of x.\nThere are three easy steps to understand this. First, <bookmark mark=\"step_1\"/>we write out a b to the power of x as a b times a b times a b and so on x times. Next, <bookmark mark=\"step_2\"/>we can rearrange the terms so that all the a's are on one side and all the b's are on the other side. Finally, <bookmark mark=\"step_3\"/>we can rewrite the terms as a to the power of x times b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. What do we get, if we apply this rule <bookmark mark=\"example_in\"/>to 3 a to the power of x?"
-      },
-      "a": {
-        "voiceover": "We can simply apply the rule, and we get that 3 a to the power of x is equal <bookmark mark=\"solution\"/>to 3 to the power of x times a to the power of x."
-      }
-    },
-    "I55": {
-      "q": {
-        "voiceover": "Now, one more rule. The rule states that <bookmark mark=\"rule\"/>a over b to the power of minus x is equal to b over a to the power of x. So we can just switch the numerator and denominator and change the sign of the exponent.\nTo understand this rule, let's start with another rule, which says that<bookmark mark=\"start\"/> a to the power of negative x equals one over a to the power of x. If we apply this rule to the expression a over b to the power of negative x, we <bookmark mark=\"step_1\"/>get one divided by a over b to the power of x. Now, we can apply the rule that dividing one by a fraction is the same as switching the numerator and denominator. So we get <bookmark mark=\"step_2\"/>b over a to the power of x. So we have shown that<bookmark mark=\"clean_up\"/> a over b to the power of negative x is equal to b over a to the power of x.\nNow let's apply this rule. How can we rewrite<bookmark mark=\"example\"/> the expression a over b to the power of negative two?"
-      },
-      "a": {
-        "voiceover": "If we apply the rule to the expression a over b to the power of negative 2, we get the expression<bookmark mark=\"solution\"/> b over a to the power of 2. So we switched the numerator and the denominator and changed the sign of the exponent."
-      }
-    },
-    "I56": {
-      "voiceover": "Well, we're done. At least with the rules for exponential functions, we've seen them all. Let's recap the ones we just practiced:\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\n<bookmark mark=\"thumbs_in\"/>Great, now we've seen all the rules for exponential functions. A bit of practice, and we'll have mastered exponential functions!"
-    },
-    "I561": {
-      "voiceover": "Let's focus on a special kind of exponential function: The ones involving <bookmark mark=\"percentage\"/>percentages.\nWe're going to start with a simple example: Say you've got a <bookmark mark=\"savings_account\"/>savings account with a 100 dollars in it. And you're getting 5 percent interest per year.\nBy what factor is your money in the account multiplied every year?",
-      "interest": "interest",
-      "factor": "factor"
-    },
-    "I561q": {
-      "voiceover": "If we get 5 percent interest per year, we multiply the amount of money we have <bookmark mark=\"factor\"/>by one point zero five every <bookmark mark=\"one_red\"/>year: one, because we keep all the money from the previous year<bookmark mark=\"point05_red\"/>and point zero five, because we get five percent interest.\n<bookmark mark=\"all_black\"/>So the function describing the amount of money in the account after x years is<bookmark mark=\"func\"/> f of x equals 100 times one point zero five to the power of x.\nSo an <bookmark mark=\"interest_in\"/>interest rate of five percent leads to<bookmark mark=\"factor_in\"/> a multiplicative factor of 1 point 0 5..."
-    },
-    "I562": {
-      "voiceover": "Now I've just cooked the <bookmark mark=\"soup_in\"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark=\"twenty_percent\"/> twenty percent of the soup and passes it on to the next person. <bookmark mark=\"qmark\"/>How much soup will be left after x people have had their turn?",
-      "eaten": "eaten",
-      "remaining": "remaining"
-    },
-    "I562q": {
-      "voiceover": "Whenever a person <bookmark mark=\"twenty_percent_in\"/>eats twenty percent of the soup, <bookmark mark=\"eighty_percent_in\"/>80 percent of the soup will remain. So the <bookmark mark=\"func_in\"/>function f of x equals zero point eight to the power of x describes the amount <bookmark mark=\"soup_in\"/>of soup that remains after x people have had soup. This is because every person leaves eighty percent, so we have to multiply the amount of soup with 0 point 8 every time a person has soup.",
-      "amount_increases": "amount increases",
-      "amount_decreases": "amount decreases",
-      "factor": "factor",
-      "increase": "increase",
-      "decrease": "decrease",
-      "interest": "interest",
-      "spend_half": "spending",
-      "final_factor": "final factor",
-      "investment": "investment"
-    },
-    "I563": {
-      "voiceover": "So there are two types of percentage changes.\nIf the amount <bookmark mark=\"increase_in\"/>increases by some percentage, then the factor is <bookmark mark=\"increase_factor\"/>one plus the percentage increase divided by 100...\nIf on the other hand the function <bookmark mark=\"decrease_in\"/>decreases by some percentage, then the factor is <bookmark mark=\"decrease_factor\"/>one minus the percentage decrease divided by 100."
-    },
-    "I564": {
-      "voiceover": "say <bookmark mark=\"money_in\"/>you have 100 dollars in the bank...\nAnd the bank gives you<bookmark mark=\"percent_in\"/> 10 percent interest every year. However, you also love buying stuff and spend<bookmark mark=\"spend_half\"/> half your money every year.\nWhat function describes the amount of money you have after x years?"
-    },
-    "I564q": {
-      "voiceover": "Every year, we <bookmark mark=\"interest_in\"/>get ten percent in interest. That means the <bookmark mark=\"factor\"/>factor for the interest is one plus zero point one, which equals one point one.\nWe also <bookmark mark=\"spend_half\"/>spend half of our money. That means the <bookmark mark=\"factor\"/>factor for the spending is one minus zero point five, which equals zero point five.\n<bookmark mark=\"final_factor\"/>The final factor is the product of the two factors, which is one point one times zero point five, which equals zero point five five.\nSo<bookmark mark=\"clean_up\"/> the function describing the amount of money we have after x years<bookmark mark=\"func_in\"/> is f of x equals 0 point 5 5 to the power of x."
-    },
-    "I565": {
-      "voiceover": "I have been <bookmark mark=\"money_in\"/>saving up for years and now I am investing <bookmark mark=\"thousand_in\"/>the 1000 dollars i have saved up in a risky business.\nI will get <bookmark mark=\"percent_in\"/>50 percent interest every year. What will my money be worth in 3 years?"
-    },
-    "I565q": {
-      "voiceover": "The <bookmark mark=\"function_in\"/>function describing the amount of money in the bank after x years is <bookmark mark=\"function_in\"/>f of x equals 1000 times 1.5 to the power of x.\nThis is, because we're <bookmark mark=\"thousand_red\"/> investing 1000 dollars and <bookmark mark=\"fifty_percent_red\"/>getting 50 percent interest every year.<bookmark mark=\"all_black\"/>\nNow we want to know how much money we have after 3 years. So we just have to <bookmark mark=\"func_3\"/>plug in 3 for x and <bookmark mark=\"result\"/>calculate the result. Since 1000 times 1.5 to the power of 3 equals 3375, we <bookmark mark=\"solution_green\"/>have 3375 dollars in the bank after 3 years."
-    },
-    "I566": {
-      "voiceover": "Great<bookmark mark=\"ostrich_in\"/> job learning<bookmark mark=\"percentage_in\"/> about and practicing with percentages. They'll be super helpful when you need figure out how much money you have!!!"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2800,6 +2800,7 @@
     "correct_2": "You got it! nice! ",
     "correct_3": "Yep, that's right. ",
     "correct_4": "Yep, that's it... ",
+    "correct_5": "That's correct.",
     "correct_6": "That is correct, well done. ",
     "incorrect_1": "Mhmm, that's not right. ",
     "incorrect_2": "No, that's not it. ",
@@ -2808,21 +2809,20 @@
     "incorrect_5": "No. ",
     "incorrect_6": "That's wrong, unfortunately. ",
     "n_times": "n times",
-    "correct_5": "That's correct.",
     "pa": "per year"
   },
-  "degree": "Degree",
-  "test-key": "[“1\", \"2\", \"3\"]",
   "LinAlg": {
     "14I1": {
-      "voiceover": "Consider the two <bookmark mark=\"vec_1\"/> vectors 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>and 0 1 0.<break time=\"0.8s\"/>\nNow let's add a <bookmark mark=\"vec_new_in\"/> third vector and ask ourselves if we can represent this vector as a linear combination of the other two vectors.<break time=\"0.6s\"/>\nFor example, consider the <bookmark mark=\"vec_new_transform\"/>vector 1 1 0. <split/>This <bookmark mark=\"shift_left\"/> can be represented as a linear combination of the other two vectors, namely as <bookmark mark=\"sum_1\"/> one times the first vector plus <bookmark mark=\"sum_2\"/> one times the second vector.\nIn this case, it is said <split/> <bookmark mark=\"dep\"/>that the three vectors are linearly dependent <bookmark mark=\"cleanup\"/>.<break time=\"2s\"/> Now, back to the two original vectors, and let's take another example.<split/>\nSo, consider the vector <bookmark mark=\"vec_new_in_2\"/>0 0 1.<break time=\"0.6s\"/> It's easy to see that this vector cannot be represented as a linear combination of the other two vectors. In this case, it is said that the three vectors <bookmark mark=\"indep\"/>are linearly independent.",
-      "title": "Linear Dependence",
+      "dep": "Linearly dependent",
       "indep": "Linearly independent",
-      "dep": "Linearly dependent"
+      "title": "Linear Dependence",
+      "voiceover": "Consider the two <bookmark mark=\"vec_1\"/> vectors 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>and 0 1 0.<break time=\"0.8s\"/>\nNow let's add a <bookmark mark=\"vec_new_in\"/> third vector and ask ourselves if we can represent this vector as a linear combination of the other two vectors.<break time=\"0.6s\"/>\nFor example, consider the <bookmark mark=\"vec_new_transform\"/>vector 1 1 0. <split/>This <bookmark mark=\"shift_left\"/> can be represented as a linear combination of the other two vectors, namely as <bookmark mark=\"sum_1\"/> one times the first vector plus <bookmark mark=\"sum_2\"/> one times the second vector.\nIn this case, it is said <split/> <bookmark mark=\"dep\"/>that the three vectors are linearly dependent <bookmark mark=\"cleanup\"/>.<break time=\"2s\"/> Now, back to the two original vectors, and let's take another example.<split/>\nSo, consider the vector <bookmark mark=\"vec_new_in_2\"/>0 0 1.<break time=\"0.6s\"/> It's easy to see that this vector cannot be represented as a linear combination of the other two vectors. In this case, it is said that the three vectors <bookmark mark=\"indep\"/>are linearly independent."
     }
   },
+  "degree": "Degree",
   "general": {
-    "scaling_factor": "scaling faktor",
-    "growth_factor": "growth factor"
-  }
+    "growth_factor": "growth factor",
+    "scaling_factor": "scaling faktor"
+  },
+  "test-key": "[“1\", \"2\", \"3\"]"
 }

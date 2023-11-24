@@ -58,6 +58,47 @@
         "voiceover": "Merke dir: <bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert <bookmark mark=\"map1\"/> genau einen <bookmark mark=\"map2\"/> üpsilon-Wert zuweist.\n<bookmark mark=\"OrangeFuncIn\"/>\nDie orangefarbene Darstellung ist also ein Beispiel für eine Funktion.\nSie <bookmark mark=\"orangeX\"/> weist jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen üpsilon-wert zu.\n<bookmark mark=\"MoveAlongFunc\"/>\nDas heißt, dass jedem x-Wert ein entsprechender üpsilon-Wert zugeordnet ist.<split/>\n<bookmark mark=\"GreenFuncIn\"/>\nDas ist auch der Grund, warum die grüne Darstellung keine Funktion ist.\nSie weist einigen x-Werten, zum Beispiel <bookmark mark=\"VertLine\" /> dem Wert x gleich Null, zwei üpsilon-Werte zu.\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen üpsilon-Wert zuordnet."
       }
     },
+    "1I31a": {
+      "voiceover": "Die <bookmark mark=\"green\"/>grüne Linie weist jedem x-Wert einen üpsilon-Wert zu, es handelt sich also um eine Funktion.<break time=\"1s\"/>\nDie blaue Linie weist einigen x-Werten zwei üpsilon-Werte zu, <bookmark mark=\"neg_ex\"/>zum Beispiel bei x gleich minus eins. \nUnd die rosa Linie ordnet einem x-wert alle üpsilon-werte zu, es handelt sich also auch nicht um eine Funktion. Denn eine Funktion weist jedem x-Wert einen üpsilon-Wert zu."
+    },
+    "1I31q": {
+      "question-blueline": "Die blaue Linie",
+      "question-greenline": "Die grüne Linie",
+      "question-pinkline": "Die pinke Linie",
+      "question-text": "Welche dieser Linien beschreibt eine Funktion?",
+      "voiceover": "Jetzt zur Übung: Welcher dieser Darstellungen ist eine Funktion: <bookmark mark=\"blue\"/> Die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>die grüne, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>oder die Pinke?"
+    },
+    "1I32a": {
+      "voiceover": "Jede der Darstellungen weist jedem x-Wert genau einen üpsilon-Wert zu, auch wenn einige von ihnen ungewöhnlich aussehen, wie zum Beispiel die grüne Darstellung. <split/>\nDa sie aber alle jedem x-Wert einen üpsilon-Wert zuweisen, handelt es sich bei allen um Funktionen."
+    },
+    "1I32q": {
+      "question-blueline": "Die blaue Linie",
+      "question-greenline": "Die grüne Linie",
+      "question-noline": "Alle Linien gehören zu einer Funktion",
+      "question-orangeline": "Die orangene Linie",
+      "question-text": "Welche dieser Linien ist KEINE Funktion?",
+      "voiceover": "Schau jetzt diese Darstellungen an: Welche davon ist KEINE Funktion? <bookmark mark=\"orange\"/> Die orangene, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>oder die grüne?"
+    },
+    "1I33": {
+      "main": {
+        "voiceover": "So, jetzt wissen wir, was Funktionen sind:<break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, <split/>die jedem x-Wert <bookmark mark=\"map1\"/> genau EINEN <bookmark mark=\"map2\"/> üpsilon-Wert zuweist.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nDie grüne Darstellung ist also ein Beispiel für eine Funktion,<split/>\nweil sie <bookmark mark=\"orangeX\"/> jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen üpsilon-wert zuweist.<break time=\"0.5s\"/>\nDas ist auch der Grund, warum <bookmark mark=\"RedFuncIn\"/>die rote Darstellung keine Funktion ist.\nSie weist einigen x-Werten,<split/> zum Beispiel dem Wert x gleich Null, zwei üpsilon-Werte zu.<break time=\"0.5s\"/>\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen üpsilon-Wert zuordnet.\n<break time=\"1s\"/>\nSo, merk dir das auf jeden Fall gut und dann kann ich nur sagen: <bookmark mark=\"giraffe_in\"/>Toll gemacht! Du hast jetzt den ersten Schritt getan, Funktionen zu verstehen, und die sind super wichtig in Mathe, also hast du einen großen Schritt gemacht, Mathe zu verstehen!"
+      }
+    },
+    "1I41a": {
+      "voiceover": "Es müssen die grünen Punkte sein, denn ich habe <bookmark mark=\"day_1\"/> am ersten Tag zwölf Freunde, <bookmark mark=\"day_2\"/> am zweiten Tag sechzehn Freunde, <bookmark mark=\"day_3\"/> am dritten Tag zehn Freunde und <bookmark mark=\"day_4\"/> am vierten Tag wieder sechzehn Freunde.<bookmark mark=\"colors_out\"/>\nUm eine bessere Vorstellung davon zu bekommen, was passiert, lassen wir uns <bookmark mark=\"draw_line\"/>eine Linie zwischen den Punkten zeichnen. Das ist das, was wir typischerweise als Funktionsgraph bezeichnen."
+    },
+    "1I41q": {
+      "question-blueline": "Die grünen Punkte",
+      "question-greenline": "Die blauen Punkte",
+      "question-pinkline": "Die pinken Punkte",
+      "question-text": "Welche Farbe an Punkten beschreibt die Anzahl an Freunden, die ich an jedem Tag habe?",
+      "voiceover": "Wir wissen also, dass Funktionen jedem x-Wert einen y-Wert zuordnen. Schauen wir uns ein Beispiel an:<bookmark mark=\"table_in\"/>\nSagen wir, ich habe am ersten Tag 12 Freunde. <bookmark mark=\"day_2\"/>Am nächsten Tag gehe ich auf eine Party und finde vier neue Freunde, also habe ich am zweiten Tag sechzehn Freunde.\n<bookmark mark=\"day_3\"/>Am dritten Tag gerate ich in einen riesigen Streit mit sechs meiner ältesten Freunde und sie verlassen mich alle. Also habe ich am dritten Tag zehn Freunde.\n<bookmark mark=\"day_4\"/>Schließlich, am vierten Tag, versöhne ich mich mit meinen Freunden und sie kommen alle zurück. Also habe ich wieder sechzehn Freunde.\n<bookmark mark=\"cords_in\"/>Zeichnen wir ein Koordinatensystem und tragen die Punkte ein.\nWelche Farbe der Punkte entspricht der Anzahl der Freunde, die ich am jeweiligen Tag habe?\n<break time=\"1s\"/>\nSind es <bookmark mark=\"blue\"/>die blauen Punkte?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>Die grünen Punkte?\n<break time=\"0.4s\"/>\nOder sind es <bookmark mark=\"pink\"/>die pinken Punkte?",
+      "xlabel": "Tag",
+      "ylabel": "# Freunde"
+    },
+    "1I42": {
+      "voiceover": "Jetzt haben wir ganz schön fleißig geübt. Wir haben also gesehen, wie wir<bookmark mark=\"table_in\"/> Wertetabellen benutzen können, um Funktionen zu beschreiben. Und dann haben wir geübt, <bookmark mark=\"plot_in\"/> Wertetabellen und Graphen von Funktionen zu verbinden.\nEcht <bookmark mark=\"lion_in\"/>klasse, wie schnell du so viel über Funktionen gelernt hast!"
+    },
     "P_2_intro": "Es ist Regenzeit.\n                \n                \nWir wollen wissen, wie viel Niederschlag es gibt, und messen jeden Tag die Niederschlagsmenge.",
     "P_2_title": "Regenwetter",
     "P_2_x": "Tag",
@@ -112,50 +153,84 @@
       "first_bit": "Das stimmt leider nicht.",
       "first_bit_correct": "Das stimmt, gut gemacht!",
       "voiceover": "{self.first_bit}\nDu hast ja die {self.colors[self.idx_selected]} Funktion <bookmark mark=\"Func\"/> ausgewählt.\nUm die richtige Funktion zu finden, tragen wir nacheinander die Werte aus der Tabelle in das Koordinatensystem ein.\nIn diesem Beispiel stellt die x<bookmark mark=\"xaxis\"/> Achse {self.Textlabels[0]}dar und die üpsilon<bookmark mark=\"yaxis\"/> Achse stellt {self.Textlabels[1]} dar.\n<bookmark mark=\"val1\"/>\n<break time=\"0.7s\"/>\n<split/>\nDer erste Wert hat {self.xvals[0]} als x-Wert und {self.yvals[self.correcty][0]} als üpsilon-Wert.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val2\"/>\nDer zweite Wert hat {self.xvals[1]} als x-Wert und {self.yvals[self.correcty][1]} als üpsilon-Wert.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val3\"/>\nDer dritte Wert hat die Koordinaten {self.xvals[2]} und {self.yvals[self.correcty][2]}.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val4\"/>\n<break time=\"0.7s\"/>\nDer vierte Wert hat die Koordinaten {self.xvals[3]} und {self.yvals[self.correcty][3]}.\n<break time=\"0.7s\"/>\n<bookmark mark=\"val5\"/>\nUnd der fünfte Wert hat die Koordinaten {self.xvals[4]} und {self.yvals[self.correcty][4]}.\nWenn wir diese Werte verbinden, <bookmark mark=\"TrueFunc\"/>können wir sehen, dass die {self.colors[self.correcty]} Funktion\ndie richtige ist."
-    },
-    "1I31q": {
-      "voiceover": "Jetzt zur Übung: Welcher dieser Darstellungen ist eine Funktion: <bookmark mark=\"blue\"/> Die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>die grüne, <break time=\"0.5s\"/><bookmark mark=\"pink\"/>oder die Pinke?",
-      "question-text": "Welche dieser Linien beschreibt eine Funktion?",
-      "question-greenline": "Die grüne Linie",
-      "question-blueline": "Die blaue Linie",
-      "question-pinkline": "Die pinke Linie"
-    },
-    "1I31a": {
-      "voiceover": "Die <bookmark mark=\"green\"/>grüne Linie weist jedem x-Wert einen üpsilon-Wert zu, es handelt sich also um eine Funktion.<break time=\"1s\"/>\nDie blaue Linie weist einigen x-Werten zwei üpsilon-Werte zu, <bookmark mark=\"neg_ex\"/>zum Beispiel bei x gleich minus eins. \nUnd die rosa Linie ordnet einem x-wert alle üpsilon-werte zu, es handelt sich also auch nicht um eine Funktion. Denn eine Funktion weist jedem x-Wert einen üpsilon-Wert zu."
-    },
-    "1I32q": {
-      "voiceover": "Schau jetzt diese Darstellungen an: Welche davon ist KEINE Funktion? <bookmark mark=\"orange\"/> Die orangene, <break time=\"0.5s\"/><bookmark mark=\"blue\"/>die blaue, <break time=\"0.5s\"/><bookmark mark=\"green\"/>oder die grüne?",
-      "question-orangeline": "Die orangene Linie",
-      "question-blueline": "Die blaue Linie",
-      "question-greenline": "Die grüne Linie",
-      "question-text": "Welche dieser Linien ist KEINE Funktion?",
-      "question-noline": "Alle Linien gehören zu einer Funktion"
-    },
-    "1I32a": {
-      "voiceover": "Jede der Darstellungen weist jedem x-Wert genau einen üpsilon-Wert zu, auch wenn einige von ihnen ungewöhnlich aussehen, wie zum Beispiel die grüne Darstellung. <split/>\nDa sie aber alle jedem x-Wert einen üpsilon-Wert zuweisen, handelt es sich bei allen um Funktionen."
-    },
-    "1I33": {
-      "main": {
-        "voiceover": "So, jetzt wissen wir, was Funktionen sind:<break time=\"0.5s\"/><bookmark mark=\"Memorize\"/>\nEine Funktion ist eine Zuordnung, <split/>die jedem x-Wert <bookmark mark=\"map1\"/> genau EINEN <bookmark mark=\"map2\"/> üpsilon-Wert zuweist.\n<bookmark mark=\"GreenFuncIn\"/><break time=\"0.5s\"/>\nDie grüne Darstellung ist also ein Beispiel für eine Funktion,<split/>\nweil sie <bookmark mark=\"orangeX\"/> jedem x-Wert <bookmark mark=\"orangeY\"/>\ngenau einen üpsilon-wert zuweist.<break time=\"0.5s\"/>\nDas ist auch der Grund, warum <bookmark mark=\"RedFuncIn\"/>die rote Darstellung keine Funktion ist.\nSie weist einigen x-Werten,<split/> zum Beispiel dem Wert x gleich Null, zwei üpsilon-Werte zu.<break time=\"0.5s\"/>\nWir merken uns also: <bookmark mark=\"TrueFct\"/>\nEine Funktion ist eine Zuordnung, die jedem x-Wert genau einen üpsilon-Wert zuordnet.\n<break time=\"1s\"/>\nSo, merk dir das auf jeden Fall gut und dann kann ich nur sagen: <bookmark mark=\"giraffe_in\"/>Toll gemacht! Du hast jetzt den ersten Schritt getan, Funktionen zu verstehen, und die sind super wichtig in Mathe, also hast du einen großen Schritt gemacht, Mathe zu verstehen!"
-      }
-    },
-    "1I41q": {
-      "xlabel": "Tag",
-      "ylabel": "# Freunde",
-      "voiceover": "Wir wissen also, dass Funktionen jedem x-Wert einen y-Wert zuordnen. Schauen wir uns ein Beispiel an:<bookmark mark=\"table_in\"/>\nSagen wir, ich habe am ersten Tag 12 Freunde. <bookmark mark=\"day_2\"/>Am nächsten Tag gehe ich auf eine Party und finde vier neue Freunde, also habe ich am zweiten Tag sechzehn Freunde.\n<bookmark mark=\"day_3\"/>Am dritten Tag gerate ich in einen riesigen Streit mit sechs meiner ältesten Freunde und sie verlassen mich alle. Also habe ich am dritten Tag zehn Freunde.\n<bookmark mark=\"day_4\"/>Schließlich, am vierten Tag, versöhne ich mich mit meinen Freunden und sie kommen alle zurück. Also habe ich wieder sechzehn Freunde.\n<bookmark mark=\"cords_in\"/>Zeichnen wir ein Koordinatensystem und tragen die Punkte ein.\nWelche Farbe der Punkte entspricht der Anzahl der Freunde, die ich am jeweiligen Tag habe?\n<break time=\"1s\"/>\nSind es <bookmark mark=\"blue\"/>die blauen Punkte?\n<break time=\"0.4s\"/>\n<bookmark mark=\"green\"/>Die grünen Punkte?\n<break time=\"0.4s\"/>\nOder sind es <bookmark mark=\"pink\"/>die pinken Punkte?",
-      "question-text": "Welche Farbe an Punkten beschreibt die Anzahl an Freunden, die ich an jedem Tag habe?",
-      "question-greenline": "Die blauen Punkte",
-      "question-blueline": "Die grünen Punkte",
-      "question-pinkline": "Die pinken Punkte"
-    },
-    "1I42": {
-      "voiceover": "Jetzt haben wir ganz schön fleißig geübt. Wir haben also gesehen, wie wir<bookmark mark=\"table_in\"/> Wertetabellen benutzen können, um Funktionen zu beschreiben. Und dann haben wir geübt, <bookmark mark=\"plot_in\"/> Wertetabellen und Graphen von Funktionen zu verbinden.\nEcht <bookmark mark=\"lion_in\"/>klasse, wie schnell du so viel über Funktionen gelernt hast!"
-    },
-    "1I41a": {
-      "voiceover": "Es müssen die grünen Punkte sein, denn ich habe <bookmark mark=\"day_1\"/> am ersten Tag zwölf Freunde, <bookmark mark=\"day_2\"/> am zweiten Tag sechzehn Freunde, <bookmark mark=\"day_3\"/> am dritten Tag zehn Freunde und <bookmark mark=\"day_4\"/> am vierten Tag wieder sechzehn Freunde.<bookmark mark=\"colors_out\"/>\nUm eine bessere Vorstellung davon zu bekommen, was passiert, lassen wir uns <bookmark mark=\"draw_line\"/>eine Linie zwischen den Punkten zeichnen. Das ist das, was wir typischerweise als Funktionsgraph bezeichnen."
     }
   },
   "Func_1_2": {
+    "1I1": {
+      "f-terms": "Die Welt modellieren"
+    },
+    "1I110a": {
+      "voiceover": "Wir haben uns ja zunächst eine Eismaschine gekauft, die <bookmark mark=\"hundred_in\"/>hundert Euro gekostet hat.\nUnd dann geben wir für jede Eiswaffel, die wir machen, zwei Euro aus. Also addieren wir <bookmark mark=\"two_x\"/>zwei mal x.\nUnd dann lautet die Funktion, die unsere Kosten beschreibt ja <bookmark mark=\"f_in\"/>f von x gleich hundert plus zwei mal x.\nDa stehen die hundert euro für die Kosten der Eismaschine, und die zwei x für jede Eiswaffel."
+    },
+    "1I110q": {
+      "question-text": "Welche Funktion beschreibt die Ausgaben für das Eis?",
+      "voiceover": "Noch ein Beispiel: Ich esse nichts lieber als frisches, selbst gemachtes Eis, also habe ich mir kürzlich\n<bookmark mark=\"machine_in\"/> eine Eismaschine zugelegt.\nDie Eismaschine hat <bookmark mark=\"prize_in\"/>hundert Euro gekostet. Und immer wenn ich <bookmark mark=\"cone_in\"/>ein Eis mache,\nkostet mich das zwei Euro. Wenn x die Anzahl der Eiswaffeln ist, die ich mache,\nwelche Funktion beschreibt dann, wie viel Geld ich ausgegeben habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich hundert plus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich hundertzwei mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich hundert mal x plus zwei?"
+    },
+    "1I111a": {
+      "voiceover": "Er hat ja tausend <bookmark mark=\"thousand_in\"/>Goldbarren erhalten.\nUnd dann gibt er zehn barren für jeden Drink aus, also ziehen wir <bookmark mark=\"ten_x\"/>zehn mal x ab, wobei x die Anzahl der Tage ist.\nUnd dann lautet die Funktion, die das verbleibende Vermögen meines Cousins beschreibt ja <bookmark mark=\"f_in\"/>h von x gleich eintausend\nminus zehn mal x."
+    },
+    "1I111q": {
+      "question-text": "Welche Funktion beschreibt die Anzahl an Goldbarren, die Fred hat, wenn $x$ die Anzahl der Tage ist?",
+      "voiceover": "Mein Cousin Fred, lebt auf dem Jupiter. Er hat <bookmark mark=\"gold_in\"/>von seinem Onkel einen Schatz <bookmark mark=\"prize_in\"/>von Tausend futuristischen Goldbarren geerbt.\nAnstatt zu sparen, kauft er sich <bookmark mark=\"drink_in\"/>jeden Tag ein futuristisches Getränk für zehn Goldbarren.\nWenn x die Anzahl der Tage ist, die er das tut, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich tausend plus zehn mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich zehn mal x minus tausend?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich tausend minus zehn mal x?"
+    },
+    "1I112a": {
+      "voiceover": "Ok, also für jede fahrt nimmt er jetzt fünf barren ein, also multiplizieren wir <bookmark mark=\"five_x\"/>fünf mit x.\nAber er muss auch zwei barren für Treibstoff ausgeben, also ziehen wir <bookmark mark=\"two_x\"/>zwei mal x ab.\nAlso lautet die Funktion die seine Einnahmen beschreibt <bookmark mark=\"h_in\"/>h von x gleich fünf mal x minus zwei mal x.\nAber das können wir ja noch vereinfachen, also ist die richtige Lösung <bookmark mark=\"f_in\"/>h von x gleich drei mal x."
+    },
+    "1I112q": {
+      "question-text": "Welche Funktion beschreibt Fred's Taxi-Einnahmen, wenn $x$ die Anzahl an Fahrten ist?",
+      "voiceover": "Inzwischen hat mein Cousin all sein Gold für leckere galaktische Limonaden ausgegeben. Um wieder Geld zu haben, arbeitet er <bookmark mark=\"taxi_in\"/>als intergalaktischer Taxifahrer.\nPro Fahrt verdient <bookmark mark=\"prize_in\"/>er fünf Goldbarren. Aber er muss auch für jede Fahrt <bookmark mark=\"fuel_in\"/>zwei Goldbarren für Klimaneutralen Treibstoff ausgeben.\nWenn x die Anzahl der Fahrten ist, die er macht, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich fünf minus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich fünf mal x minus zwei?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich drei mal x?"
+    },
+    "1I11a": {
+      "voiceover": "Ein Term besteht ja aus Zahlen, Variablen und Operatoren, enthält allerdings keine Gleichheitszeichen.\nAlso ist der Ausdruck x+3 gleich 7 <bookmark mark=\"strike_out\"/>kein Term, sondern eine Gleichung. Die Ausdrücke 2x+3 und x quadrat - 2 hingegen<bookmark mark=\"pos_box\"/> sind beides Terme."
+    },
+    "1I11q": {
+      "question-text": "Welcher dieser Ausdrücke ist KEIN Term?",
+      "voiceover": "Eine Funktion ist ja eine Abbildung, <bookmark mark=\"x_to_y\"/>die jedem x genau ein y zuordnet.\nAber<bookmark mark=\"qmark\"/> woher wissen wir, welches y zu welchem x gehört?\nEINE Möglichkeit, die wir gerade kennengelernt haben, <bookmark mark=\"table_in\"/>sind Wertetabellen. Da können wir dann für <bookmark mark=\"x_table\"/>jeden Wert von x, den zugehörigen <bookmark mark=\"y_table\"/>Wert von y ablesen.\n<bookmark mark=\"table_out\"/>Eine weitere Möglichkeit sind <bookmark mark=\"func_in\"/>Funktionsterme, und die lernen wir jetzt kennen\nBeginnen wir damit, Terme zu Wiederholen: Welcher dieser Ausdrücke ist KEIN Term? <bookmark mark=\"term_1\"/>Ist es der Ausdruck 2x+3? <bookmark mark=\"term_2\"/>Oder der Ausdruck x quadrat - 2? <bookmark mark=\"term_3\"/>ODER ist es der Ausdruck x+3 istgleich 7?"
+    },
+    "1I12a": {
+      "voiceover": "Wenn wir für x den Wert 3 einsetzen, erhalten<bookmark mark=\"term_q\"/> wir zwei mal drei plus drei, was <bookmark mark=\"y_q\"/>9 ergibt. Also ist der y-Wert gleich 9, wenn x gleich drei ist."
+    },
+    "1I12q": {
+      "question-text": "Welcher Wert von $y$ entspricht dem Wert $x=3$?",
+      "voiceover": "Betrachten wir also beispielsweise den Term 2x+3. Wir wollen diesen Term jetzt benutzen, um bei einer Funktion zu bestimmen, welchen y-Wert wir einem bestimmten x-Wert zuordnen.\nDafür setzen wir einfach <bookmark mark=\"x_in\"/>den x-Wert in den Term ein, rechnen das aus und erhalten<bookmark mark=\"y_in\"/> den y-Wert.\nSetzen wir beispielsweise <bookmark mark=\"x_0\"/>den x-Wert 0 ein, erhalten wir zwei mal null plus drei, also ist der y-Wert <bookmark mark=\"y_0\"/> gleich 3.\nOder setzen wir <bookmark mark=\"x_1\"/>den x-Wert 1 ein, erhalten wir zwei mal eins plus drei, was <bookmark mark=\"y_1\"/>fünf ergibt. Also ist der y-Wert gleich 5.\nJetzt <bookmark mark=\"x_y_out\"/>versuch du es mal: Welchen y-Wert erhältst du, wenn du <bookmark mark=\"x_question\"/>den x-Wert 3 einsetzt?"
+    },
+    "1I13": {
+      "voiceover": "Wuuunderbar, jetzt haben wir geübt, realistische Szenarien mit Funktionen zu modellieren.\nHat sich also gelohnt, Funktionen zu verstehen?"
+    },
+    "1I14": {
+      "voiceover": "Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.\nUm deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark=\"f_x\"/> ein f mit einer runden Klammer und x in der Klammer davor.\nMan spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.\nWir können den Funktionsterm <bookmark mark=\"box\"/>dann quasi als eine Art Rezept verstehen, mit dem wir für<bookmark mark=\"x_in\"/> jeden x-Wert den zugehörigen<bookmark mark=\"y_out\"/> y-Wert berechnen können.\nGeben wir also einen Wert für x ein, zum Beispiel <bookmark mark=\"x4\"/>vier, können wir den Funktionsterm als Rezept verwenden, um den zugehörigen y-Wert zu berechnen.\nWir ersetzen also x durch vier und <bookmark mark=\"four_in\"/>erhalten f von 4 gleich zwei mal vier plus drei, und das können wir ausrechnen und wir <bookmark mark=\"four_sol\"/>erhalten f von vier gleich 11... Also <bookmark mark=\"y_11\"/> ist y gleich 11.\nOder, <bookmark mark=\"reset\"/>anderes Beispiel, wir geben <bookmark mark=\"x5\"/>fünf ein. Dann rechnen wir den zugehörigen y Wert aus, indem wir fünf für x einsetzen und <bookmark mark=\"five_in\"/>erhalten f von fünf gleich zwei mal fünf plus drei.  Das <bookmark mark=\"five_sol\"/>ist gleich 13, also <bookmark mark=\"y_13\"/>ist y gleich 13."
+    },
+    "1I15a": {
+      "voiceover": "Wenn wir <bookmark mark=\"x_threehalf\"/> x gleich drei halbe einsetzen, dann erhalten <bookmark mark=\"threehalf_in\"/>wir f von drei halbe ist gleich zwei mal drei halbe plus drei. Und <bookmark mark=\"y_6\"/>das ergibt sechs, also ist dann y gleich 6."
+    },
+    "1I15q": {
+      "question-text": "Welchen Wert von $y$ erhalten wir, wenn wir $x=\\tfrac32$ einsetzen?",
+      "voiceover": "Wir können wirklich jeden Wert für x einsetzen. Also zum Beispiel auch<bookmark mark=\"x_half\"/> x gleich ein halb. Dann erhalten <bookmark mark=\"half_in\"/>wir f von ein halb gleich zwei mal ein halb plus drei. Und <bookmark mark=\"y_4\"/>das ergibt vier, also ist dann y gleich 4.<bookmark mark=\"reset\"/>\nJetzt bist du dran mit rechnen: Was erhalten wir, wenn wir <bookmark mark=\"x_three_half\"/>x gleich drei halbe einsetzen?"
+    },
+    "1I16a": {
+      "voiceover": "Wenn wir <bookmark mark=\"x_five\"/> x gleich 5 einsetzen, dann erhalten <bookmark mark=\"five_in\"/>wir f von fünf ist gleich 4 - 5. Und vier minus fünf <bookmark mark=\"y_neg_one\"/>ergibt ja minus eins, also ist dann y gleich minus eins."
+    },
+    "1I16q": {
+      "question-text": "Was ist der y-Wert, wenn x gleich $5$ ist?",
+      "voiceover": "Jetzt üben wir mit einer anderen Funktion und einem anderen Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich vier minus x.\nWas ist der y-Wert, <bookmark mark=\"x_five\"/>wenn x gleich fünf ist?"
+    },
+    "1I17a": {
+      "voiceover": "Wenn wir <bookmark mark=\"x_neg_two\"/> x gleich -2 einsetzen, dann erhalten <bookmark mark=\"neg_two_in\"/>wir f von -2 ist gleich zwei mal minus zwei plus 2. Und das ergibt dann ja <bookmark mark=\"y_neg_two\"/>minus zwei, also ist dann y gleich minus zwei."
+    },
+    "1I17q": {
+      "question-text": "Was ist der $y$-Wert, wenn $x$ gleich $-2$ ist?",
+      "voiceover": "So, wieder eine andere Funktion und ein neuer Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich zwei x plus zwei.\nWas ist der y-Wert, <bookmark mark=\"x_neg_two\"/>wenn x gleich -2 ist?"
+    },
+    "1I18": {
+      "voiceover": "Schön, jetzt wissen wir also was Funktionsterme sind: Wir schreiben sie als <bookmark mark=\"term_in\"/>f von x gleich irgendein Term, und können dann für jeden x-Wert den zugehörigen y-Wert berechnen.\nDas geht, indem wir <bookmark mark=\"x_in\"/>den x-Wert in den Term einsetzen, <bookmark mark=\"y_out\"/>und das Ergebnis ausrechnen, was dann der y-Wert ist...\nToll! <bookmark mark=\"baboon_in\"/>Jetzt bist du wieder einen Schritt weiter, und kannst Funktionsterme benutzen, um Funktionen zu beschreiben."
+    },
+    "1I19a": {
+      "voiceover": "Wir beschreiben die Anzahl verkaufter Hüte ja mit<bookmark mark=\"x_in\"/> x.\nUnd für jeden Hut den wir verkaufen, erhalten wir 5 euro, also multiplizieren wir <bookmark mark=\"five_in\"/>x mit 5.\nAlso ist die richtige Lösung <bookmark mark=\"g_in\"/>g von x gleich 5 mal x."
+    },
+    "1I19q": {
+      "question-text": "Welche Funktion beschreibt, wie viel Geld wir verdienen bei $x$ verkauften Hüten?",
+      "voiceover": "Warum lernen wir über Funktionen?\nWir machen das nämlich nicht nur zum Spaß, es <bookmark mark=\"world_in\"/>gibt nämlich viele Situationen,\ndie wir gut mit Funktionen beschreiben können. <bookmark mark=\"world_out\"/>\nNehmen wir ein Beispiel: Um mir mehr Geld zu verdienen, habe ich einen Onlineshop, in dem ich\n<bookmark mark=\"cat_in\"/> Katzenhüte verkaufe.\nIch verkaufe jeden Hut für <bookmark mark=\"prize_in\"/>fünf Euro. Wenn x die Anzahl der verkauften Hüte ist,\nwelche Funktion beschreibt dann, wie viel Geld ich verdient habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich 5 plus x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich 5 mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich 5 mal x plus 5?"
+    },
     "1I1q": {
       "main": {
         "apple-cost": ": $2$ Euro/Stück",
@@ -276,81 +351,6 @@
       "range": "Wertebereich: erhaltene y-Werte",
       "title": "Definitions- \\& Wertebereich",
       "voiceover": "{self.intro}\n<bookmark mark=\"define_domain\"/>\nDer Definitionsbereich ist die Menge aller x-Werte, die wir in die Funktion einfügen.\n<break time=\"1s\"/>\nIn diesem Beispiel fügen wir alle Werte auf der x-Achse ein, also alle Werte von <bookmark mark=\"domain\"/> {self.domain[0]} bis {self.domain[1]}.\nDas ist also unser Definitionsbereich.\n<break time=\"1s\"/><bookmark mark=\"define_range\"/>\nDer Wertebereich hingegen ist die Menge aller üpsilon-Werte, die wir aus der Funktion erhalten.\n<break time=\"1s\"/>\nDie erhaltenen Werte können wir einfach auf der üpsiloAchse ablesen.\nAus der Grafik können wir ersehen, dass wir alle Werte von <bookmark mark=\"range\"/> {self.range[0]} bis {self.range[1]} erhalten.\nDas ist also der Wertebereich der Funktion."
-    },
-    "1I1": {
-      "f-terms": "Die Welt modellieren"
-    },
-    "1I11q": {
-      "voiceover": "Eine Funktion ist ja eine Abbildung, <bookmark mark=\"x_to_y\"/>die jedem x genau ein y zuordnet.\nAber<bookmark mark=\"qmark\"/> woher wissen wir, welches y zu welchem x gehört?\nEINE Möglichkeit, die wir gerade kennengelernt haben, <bookmark mark=\"table_in\"/>sind Wertetabellen. Da können wir dann für <bookmark mark=\"x_table\"/>jeden Wert von x, den zugehörigen <bookmark mark=\"y_table\"/>Wert von y ablesen.\n<bookmark mark=\"table_out\"/>Eine weitere Möglichkeit sind <bookmark mark=\"func_in\"/>Funktionsterme, und die lernen wir jetzt kennen\nBeginnen wir damit, Terme zu Wiederholen: Welcher dieser Ausdrücke ist KEIN Term? <bookmark mark=\"term_1\"/>Ist es der Ausdruck 2x+3? <bookmark mark=\"term_2\"/>Oder der Ausdruck x quadrat - 2? <bookmark mark=\"term_3\"/>ODER ist es der Ausdruck x+3 istgleich 7?",
-      "question-text": "Welcher dieser Ausdrücke ist KEIN Term?"
-    },
-    "1I11a": {
-      "voiceover": "Ein Term besteht ja aus Zahlen, Variablen und Operatoren, enthält allerdings keine Gleichheitszeichen.\nAlso ist der Ausdruck x+3 gleich 7 <bookmark mark=\"strike_out\"/>kein Term, sondern eine Gleichung. Die Ausdrücke 2x+3 und x quadrat - 2 hingegen<bookmark mark=\"pos_box\"/> sind beides Terme."
-    },
-    "1I12q": {
-      "voiceover": "Betrachten wir also beispielsweise den Term 2x+3. Wir wollen diesen Term jetzt benutzen, um bei einer Funktion zu bestimmen, welchen y-Wert wir einem bestimmten x-Wert zuordnen.\nDafür setzen wir einfach <bookmark mark=\"x_in\"/>den x-Wert in den Term ein, rechnen das aus und erhalten<bookmark mark=\"y_in\"/> den y-Wert.\nSetzen wir beispielsweise <bookmark mark=\"x_0\"/>den x-Wert 0 ein, erhalten wir zwei mal null plus drei, also ist der y-Wert <bookmark mark=\"y_0\"/> gleich 3.\nOder setzen wir <bookmark mark=\"x_1\"/>den x-Wert 1 ein, erhalten wir zwei mal eins plus drei, was <bookmark mark=\"y_1\"/>fünf ergibt. Also ist der y-Wert gleich 5.\nJetzt <bookmark mark=\"x_y_out\"/>versuch du es mal: Welchen y-Wert erhältst du, wenn du <bookmark mark=\"x_question\"/>den x-Wert 3 einsetzt?",
-      "question-text": "Welcher Wert von $y$ entspricht dem Wert $x=3$?"
-    },
-    "1I12a": {
-      "voiceover": "Wenn wir für x den Wert 3 einsetzen, erhalten<bookmark mark=\"term_q\"/> wir zwei mal drei plus drei, was <bookmark mark=\"y_q\"/>9 ergibt. Also ist der y-Wert gleich 9, wenn x gleich drei ist."
-    },
-    "1I14": {
-      "voiceover": "Wenn wir also einen Term benutzen, um die Funktion zu beschreiben, dann nennen wir den Term Funktionsterm.\nUm deutlich zu machen, dass der Term eine Funktion beschreibt, schreiben wir<bookmark mark=\"f_x\"/> ein f mit einer runden Klammer und x in der Klammer davor.\nMan spricht dann von der Funktion f von x, in diesem Beispiel würde man also sagen f von x ist gleich zwei mal x plus drei.\nWir können den Funktionsterm <bookmark mark=\"box\"/>dann quasi als eine Art Rezept verstehen, mit dem wir für<bookmark mark=\"x_in\"/> jeden x-Wert den zugehörigen<bookmark mark=\"y_out\"/> y-Wert berechnen können.\nGeben wir also einen Wert für x ein, zum Beispiel <bookmark mark=\"x4\"/>vier, können wir den Funktionsterm als Rezept verwenden, um den zugehörigen y-Wert zu berechnen.\nWir ersetzen also x durch vier und <bookmark mark=\"four_in\"/>erhalten f von 4 gleich zwei mal vier plus drei, und das können wir ausrechnen und wir <bookmark mark=\"four_sol\"/>erhalten f von vier gleich 11... Also <bookmark mark=\"y_11\"/> ist y gleich 11.\nOder, <bookmark mark=\"reset\"/>anderes Beispiel, wir geben <bookmark mark=\"x5\"/>fünf ein. Dann rechnen wir den zugehörigen y Wert aus, indem wir fünf für x einsetzen und <bookmark mark=\"five_in\"/>erhalten f von fünf gleich zwei mal fünf plus drei.  Das <bookmark mark=\"five_sol\"/>ist gleich 13, also <bookmark mark=\"y_13\"/>ist y gleich 13."
-    },
-    "1I15q": {
-      "voiceover": "Wir können wirklich jeden Wert für x einsetzen. Also zum Beispiel auch<bookmark mark=\"x_half\"/> x gleich ein halb. Dann erhalten <bookmark mark=\"half_in\"/>wir f von ein halb gleich zwei mal ein halb plus drei. Und <bookmark mark=\"y_4\"/>das ergibt vier, also ist dann y gleich 4.<bookmark mark=\"reset\"/>\nJetzt bist du dran mit rechnen: Was erhalten wir, wenn wir <bookmark mark=\"x_three_half\"/>x gleich drei halbe einsetzen?",
-      "question-text": "Welchen Wert von $y$ erhalten wir, wenn wir $x=\\tfrac32$ einsetzen?"
-    },
-    "1I15a": {
-      "voiceover": "Wenn wir <bookmark mark=\"x_threehalf\"/> x gleich drei halbe einsetzen, dann erhalten <bookmark mark=\"threehalf_in\"/>wir f von drei halbe ist gleich zwei mal drei halbe plus drei. Und <bookmark mark=\"y_6\"/>das ergibt sechs, also ist dann y gleich 6."
-    },
-    "1I16q": {
-      "voiceover": "Jetzt üben wir mit einer anderen Funktion und einem anderen Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich vier minus x.\nWas ist der y-Wert, <bookmark mark=\"x_five\"/>wenn x gleich fünf ist?",
-      "question-text": "Was ist der y-Wert, wenn x gleich $5$ ist?"
-    },
-    "1I16a": {
-      "voiceover": "Wenn wir <bookmark mark=\"x_five\"/> x gleich 5 einsetzen, dann erhalten <bookmark mark=\"five_in\"/>wir f von fünf ist gleich 4 - 5. Und vier minus fünf <bookmark mark=\"y_neg_one\"/>ergibt ja minus eins, also ist dann y gleich minus eins."
-    },
-    "1I17q": {
-      "voiceover": "So, wieder eine andere Funktion und ein neuer Funktionsterm: <bookmark mark=\"func_term\"/>Betrachte die Funktion f von x gleich zwei x plus zwei.\nWas ist der y-Wert, <bookmark mark=\"x_neg_two\"/>wenn x gleich -2 ist?",
-      "question-text": "Was ist der $y$-Wert, wenn $x$ gleich $-2$ ist?"
-    },
-    "1I17a": {
-      "voiceover": "Wenn wir <bookmark mark=\"x_neg_two\"/> x gleich -2 einsetzen, dann erhalten <bookmark mark=\"neg_two_in\"/>wir f von -2 ist gleich zwei mal minus zwei plus 2. Und das ergibt dann ja <bookmark mark=\"y_neg_two\"/>minus zwei, also ist dann y gleich minus zwei."
-    },
-    "1I18": {
-      "voiceover": "Schön, jetzt wissen wir also was Funktionsterme sind: Wir schreiben sie als <bookmark mark=\"term_in\"/>f von x gleich irgendein Term, und können dann für jeden x-Wert den zugehörigen y-Wert berechnen.\nDas geht, indem wir <bookmark mark=\"x_in\"/>den x-Wert in den Term einsetzen, <bookmark mark=\"y_out\"/>und das Ergebnis ausrechnen, was dann der y-Wert ist...\nToll! <bookmark mark=\"baboon_in\"/>Jetzt bist du wieder einen Schritt weiter, und kannst Funktionsterme benutzen, um Funktionen zu beschreiben."
-    },
-    "1I13": {
-      "voiceover": "Wuuunderbar, jetzt haben wir geübt, realistische Szenarien mit Funktionen zu modellieren.\nHat sich also gelohnt, Funktionen zu verstehen?"
-    },
-    "1I112a": {
-      "voiceover": "Ok, also für jede fahrt nimmt er jetzt fünf barren ein, also multiplizieren wir <bookmark mark=\"five_x\"/>fünf mit x.\nAber er muss auch zwei barren für Treibstoff ausgeben, also ziehen wir <bookmark mark=\"two_x\"/>zwei mal x ab.\nAlso lautet die Funktion die seine Einnahmen beschreibt <bookmark mark=\"h_in\"/>h von x gleich fünf mal x minus zwei mal x.\nAber das können wir ja noch vereinfachen, also ist die richtige Lösung <bookmark mark=\"f_in\"/>h von x gleich drei mal x."
-    },
-    "1I112q": {
-      "voiceover": "Inzwischen hat mein Cousin all sein Gold für leckere galaktische Limonaden ausgegeben. Um wieder Geld zu haben, arbeitet er <bookmark mark=\"taxi_in\"/>als intergalaktischer Taxifahrer.\nPro Fahrt verdient <bookmark mark=\"prize_in\"/>er fünf Goldbarren. Aber er muss auch für jede Fahrt <bookmark mark=\"fuel_in\"/>zwei Goldbarren für Klimaneutralen Treibstoff ausgeben.\nWenn x die Anzahl der Fahrten ist, die er macht, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich fünf minus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich fünf mal x minus zwei?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich drei mal x?",
-      "question-text": "Welche Funktion beschreibt Fred's Taxi-Einnahmen, wenn $x$ die Anzahl an Fahrten ist?"
-    },
-    "1I111a": {
-      "voiceover": "Er hat ja tausend <bookmark mark=\"thousand_in\"/>Goldbarren erhalten.\nUnd dann gibt er zehn barren für jeden Drink aus, also ziehen wir <bookmark mark=\"ten_x\"/>zehn mal x ab, wobei x die Anzahl der Tage ist.\nUnd dann lautet die Funktion, die das verbleibende Vermögen meines Cousins beschreibt ja <bookmark mark=\"f_in\"/>h von x gleich eintausend\nminus zehn mal x."
-    },
-    "1I111q": {
-      "voiceover": "Mein Cousin Fred, lebt auf dem Jupiter. Er hat <bookmark mark=\"gold_in\"/>von seinem Onkel einen Schatz <bookmark mark=\"prize_in\"/>von Tausend futuristischen Goldbarren geerbt.\nAnstatt zu sparen, kauft er sich <bookmark mark=\"drink_in\"/>jeden Tag ein futuristisches Getränk für zehn Goldbarren.\nWenn x die Anzahl der Tage ist, die er das tut, welche Funktion beschreibt dann, wie viele Goldbarren er hat?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich tausend plus zehn mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich zehn mal x minus tausend?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich tausend minus zehn mal x?",
-      "question-text": "Welche Funktion beschreibt die Anzahl an Goldbarren, die Fred hat, wenn $x$ die Anzahl der Tage ist?"
-    },
-    "1I110a": {
-      "voiceover": "Wir haben uns ja zunächst eine Eismaschine gekauft, die <bookmark mark=\"hundred_in\"/>hundert Euro gekostet hat.\nUnd dann geben wir für jede Eiswaffel, die wir machen, zwei Euro aus. Also addieren wir <bookmark mark=\"two_x\"/>zwei mal x.\nUnd dann lautet die Funktion, die unsere Kosten beschreibt ja <bookmark mark=\"f_in\"/>f von x gleich hundert plus zwei mal x.\nDa stehen die hundert euro für die Kosten der Eismaschine, und die zwei x für jede Eiswaffel."
-    },
-    "1I110q": {
-      "voiceover": "Noch ein Beispiel: Ich esse nichts lieber als frisches, selbst gemachtes Eis, also habe ich mir kürzlich\n<bookmark mark=\"machine_in\"/> eine Eismaschine zugelegt.\nDie Eismaschine hat <bookmark mark=\"prize_in\"/>hundert Euro gekostet. Und immer wenn ich <bookmark mark=\"cone_in\"/>ein Eis mache,\nkostet mich das zwei Euro. Wenn x die Anzahl der Eiswaffeln ist, die ich mache,\nwelche Funktion beschreibt dann, wie viel Geld ich ausgegeben habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich hundert plus zwei mal x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich hundertzwei mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich hundert mal x plus zwei?",
-      "question-text": "Welche Funktion beschreibt die Ausgaben für das Eis?"
-    },
-    "1I19q": {
-      "voiceover": "Warum lernen wir über Funktionen?\nWir machen das nämlich nicht nur zum Spaß, es <bookmark mark=\"world_in\"/>gibt nämlich viele Situationen,\ndie wir gut mit Funktionen beschreiben können. <bookmark mark=\"world_out\"/>\nNehmen wir ein Beispiel: Um mir mehr Geld zu verdienen, habe ich einen Onlineshop, in dem ich\n<bookmark mark=\"cat_in\"/> Katzenhüte verkaufe.\nIch verkaufe jeden Hut für <bookmark mark=\"prize_in\"/>fünf Euro. Wenn x die Anzahl der verkauften Hüte ist,\nwelche Funktion beschreibt dann, wie viel Geld ich verdient habe?\nIst es <bookmark mark=\"f_in\"/>die Funktion f von x gleich 5 plus x?\nOder ist es <bookmark mark=\"g_in\"/>die Funktion g von x gleich 5 mal x?\nOder ist es <bookmark mark=\"h_in\"/>die Funktion h von x gleich 5 mal x plus 5?",
-      "question-text": "Welche Funktion beschreibt, wie viel Geld wir verdienen bei $x$ verkauften Hüten?"
-    },
-    "1I19a": {
-      "voiceover": "Wir beschreiben die Anzahl verkaufter Hüte ja mit<bookmark mark=\"x_in\"/> x.\nUnd für jeden Hut den wir verkaufen, erhalten wir 5 euro, also multiplizieren wir <bookmark mark=\"five_in\"/>x mit 5.\nAlso ist die richtige Lösung <bookmark mark=\"g_in\"/>g von x gleich 5 mal x."
     }
   },
   "Func_1_3": {
@@ -1050,13 +1050,13 @@
       "b": {
         "incorrect": "Mhmm, das stimmt nicht ganz..."
       },
+      "my_text": "Hallo, das ist mein Text",
       "q": {
         "answer-options": "[\"x nahe Null -> große negative Werte,\\n x weit von Null -> kleine negative Werte\",\n                   \n\"x nahe Null -> große negative Werte,\\n x weit von Null -> kleine positive Werte\",\n                   \n\"x nahe Null -> kleine negative Werte,\\n x weit von Null -> große negative Werte\",\n                   \n\"x nahe Null -> kleine negative Werte,\\n x weit von Null -> große positive Werte\"]",
         "question-text": "Wie verhält sich f für negative Werte von x?",
         "title": "$\\frac1x$ für negatives $x$",
         "voiceover": "Denken wir nun über <bookmark mark=\"neg\"/> die negativen Werte von x nach.\n<break time=\"0.4s\"/>\nWir wissen ja, dass die Funktion für positives x für kleines x sehr hoch war und für größeres x kleiner wurde.\n<break time=\"0.4s\"/>\n<bookmark mark=\"cords\"/>Wie verhält sich nun <bookmark mark=\"Q\"/>f für kleine negative Werte von x?\n<break time=\"0.4s\"/>\nUnd wie verhält es sich für große negative Werte von x?"
-      },
-      "my_text": "Hallo, das ist mein Text"
+      }
     },
     "I9": {
       "title": "Rationale Funktionen",
@@ -1459,14 +1459,14 @@
         "voiceintro": "Nein, das ist nicht der Vorteil der Faktorisierten Form.",
         "voiceover": "<break time=\"0.3s\"/>\nKehren wir zu unserer Beispielfunktion zurück. \n<bookmark mark=\"f\"/> f von <bookmark mark=\"x\"/>x gleich Klammer auf <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 Klammer zu mal Klammer auf <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 Klammer zu.\n<break time=\"0.3s\"/>\nAngenommen, wir möchten die Nullstellen dieser Funktion bestimmen. \n<break time=\"0.3s\"/>\nF wird ja als Produkt zweier Faktoren geschrieben.\nDer erste Faktor ist der <bookmark mark=\"b1\"/>x minus 2 und der zweite Faktor ist der <bookmark mark=\"b2\"/> Ausdruck x plus 1.\n<break time=\"0.3s\"/>\nDamit die Funktion nun Null ist, muss das Produkt Null sein, also muss mindestens einer der Faktoren gleich Null sein.\n<break time=\"0.3s\"/>\nDer erste Faktor ist Null <bookmark mark=\"b1b\"/>wenn x gleich 2 ist.\n<break time=\"0.3s\"/>\nUnd der zweite Faktor ist Null <bookmark mark=\"b2b\"/>wenn x gleich minus 1 ist.\n<break time=\"0.3s\"/>\nDas bedeutet <bookmark mark=\"arrow\"/>, dass die Nullstellen der Funktion bei<bookmark mark=\"z1\"/> x gleich 2 und\n<bookmark mark=\"z2\"/> bei x gleich minus 1 liegen.\n<break time=\"0.3s\"/>\nWir können das<bookmark mark=\"cords\"/> auch grafisch überprüfen: Wenn wir uns den <bookmark mark=\"plot\"/>Graphen der Funktion ansehen, erkennen wir, dass eine der Nullen bei <bookmark mark=\"zg1\"/> x gleich 2 und die andere bei<bookmark mark=\"zg2\"/> x gleich minus 1 liegt."
       },
+      "b": {
+        "voiceintro": "Ja, das ist der Vorteil der Faktorisierten Form."
+      },
       "q": {
         "answer-options": "[\"Wir können die Position des Scheitelpunkts leicht bestimmen\", \"Wir können die Position der Nullstellen leicht bestimmen\", \"Wir können die Position des Y-Achsenabschnitts leicht bestimmen\"]",
         "question-text": "Was ist der Vorteil der faktorisierten Form?",
         "title": "Faktorisierte Form",
         "voiceover": "Nächstes Video, nächste Form quadratischer Funktionen.\n<break time=\"0.5s\"/>\nJetzt betrachten wir die faktorisierte Form.\n<break time=\"0.5s\"/>\nNimm das folgende Beispiel: <bookmark mark=\"f\"/> f von <bookmark mark=\"x\"/>x gleich\nKlammer auf <bookmark mark=\"x1\"/>x minus <bookmark mark=\"2\"/>2 Klammer zu mal Klammer auf <bookmark mark=\"x2\"/>x plus <bookmark mark=\"1\"/>1 Klammer zu.\n<break time=\"0.5s\"/>\n<bookmark mark=\"cords\"/> Schau dir <bookmark mark=\"plot\"/>den Graphen dieser Funktion an,\nund vergleich ihn mit der faktorisierten Form des Terms.\n<break time=\"0.5s\"/>\nKannst du dir vorstellen, was der Vorteil der faktorisierten Funktion sein könnte?"
-      },
-      "b": {
-        "voiceintro": "Ja, das ist der Vorteil der Faktorisierten Form."
       }
     },
     "I6": {
@@ -1721,6 +1721,27 @@
     }
   },
   "Func_6_1": {
+    "1I11a": {
+      "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt.<split/> Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören.<split/> Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
+    },
+    "1I11q": {
+      "main": {
+        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/> hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
+      }
+    },
+    "1I12q": {
+      "question": "Welche Funktion beschreibt die Anzahl der Personen, die das Gerücht nach x Runden hören?",
+      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Gerücht hört.\nNach einer Runde hören dann <bookmark mark=\"four_in\"/>vier Personen das Gerücht.\nUnd nach zwei Runden hören <bookmark mark=\"sixteen_in\"/>sechzehn Personen das Gerücht, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die das Gerücht nach x Runden hören?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich x hoch vier?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich vier hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei x im Quadrat?"
+    },
+    "1I13q": {
+      "question": "Wenn ich zwei Pflanzen pflanze und jede Pflanze sich jedes Jahr verdreifacht, wie viele Pflanzen wird es dann im dritten Jahr in meinem Garten geben?"
+    },
+    "1I14a": {
+      "voiceover": "Wir wissen ja, dass sich jede Pflanze jedes Jahr verdreifacht. Anfangs<bookmark mark=\"year_0\"/> gibt es ja einfach die zwei Pflanzen, die ich eingepflanzt habe. Nach einem Jahr gibt es <bookmark mark=\"year_1\"/>dann sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat. Dann wird sich im Jahr darauf jede dieser<bookmark mark=\"year_2\"/> sechs Pflanzen verdreifachen, sodass nach einem weiteren Jahr insgesamt achtzehn Pflanzen in meinem Garten sind."
+    },
+    "1I14q": {
+      "question": "Wie viele Pflanzen werden im dritten Jahr in meinem Garten sein?"
+    },
     "1I1a": {
       "main": {
         "21st-square": "21. Feld",
@@ -1755,11 +1776,11 @@
     },
     "1I21": {
       "e1": "Lila Graph: Exponentielles Wachstum",
-      "e2": "Grüner Graph: Lineares Wachstum",
-      "e3": "Lila Graph: Exponentielles Wachstum",
-      "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert.",
       "e1a": "Exponentielles Wachstum \\\\$\\Rightarrow$ Multipliziere in jedem Schritt",
-      "e2a": "Lineares Wachstum \\\\$\\Rightarrow$ Addiere bei jedem Schritt"
+      "e2": "Grüner Graph: Lineares Wachstum",
+      "e2a": "Lineares Wachstum \\\\$\\Rightarrow$ Addiere bei jedem Schritt",
+      "e3": "Lila Graph: Exponentielles Wachstum",
+      "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
     },
     "1I2q": {
       "answer": {
@@ -1786,6 +1807,32 @@
         "two_chickens": "2\\times",
         "voiceover": "Das ist <bookmark mark=\"Sophie_in_1\"/> Sophie.\nSophie liebt <bookmark mark=\"chicken_in_1\"/> Hühner.\nSie hat aktuell <bookmark mark=\"two_chickens_1\"/>zwei Hühner, aber sie möchte viel mehr Hühner haben.\nJedes ihrer beiden Hühner legt <bookmark mark=\"one_egg_per_week\"/> ein Ei pro Woche, und am Ende der Woche ist das Huhn aus dem Ei\ngeschlüpft und alt genug, um selbst Eier zu legen. Das sind ein paar schnelle Hühner! <break time=\"0.4s\"/>\nBeschreiben wir die Anzahl der Hühner, die Sophie hat, mit <bookmark mark=\"graph\"/> dem Graphen einer Funktion.\nIn der <bookmark mark=\"one_week\"/>ersten Woche hat Sophie ja zwei Hühner<bookmark mark=\"two_chickens\"/>.\nEine Woche <bookmark mark=\"two_weeks\"/>später hat Sophie <bookmark mark=\"four_chickens\"/> vier Hühner: Die beiden Hühner, mit denen sie angefangen hat, und die beiden Hühner, die aus den Eiern geschlüpft sind.\nIn der <bookmark mark=\"three_weeks\"/>nächsten Woche hat Sophie vier Hühner, die jeweils ein Ei legen, also bekommt sie vier Eier. \nDas bedeutet, dass die Gesamtzahl der Hühner nach der zweiten Woche <bookmark mark=\"eight_chickens\"/>acht beträgt:<split/> die vier Hühner aus der ersten Woche und die vier Hühner die aus den Eiern geschlüpft sind.\n<break time=\"0.4s\"/>\nIn der <bookmark mark=\"four_weeks\"/>nächsten Woche hat Sophie acht Hühner und jedes davon legt ein Ei. <split/>\nDie Gesamtzahl der Hühner beträgt also <bookmark mark=\"sixteen_chickens\"/>sechzehn: die acht Hühner aus der vorigen Woche und die acht Hühner, die aus den Eiern geschlüpft sind.\n<break time=\"0.4s\"/>\nWie du siehst, nimmt <bookmark mark=\"plot\"/>die Anzahl der Hühner sehr schnell zu.\nDiese Art von Wachstum nennen wir exponentielles Wachstum. Die Anzahl der Hühner verdoppelt sich jede Woche, weil jedes Ihrer\nHühner ein Ei pro Woche legt.\n<break time=\"0.4s\"/>\nDas bedeutet, dass die Anzahl an Hühnern nach x Wochen durch die Funktion<bookmark mark=\"f\"/> f von <bookmark mark=\"fx\"/> x gleich <bookmark mark=\"two\"/>zwei hoch <bookmark mark=\"power\"/> x beschrieben wird.\nDenn wir beginnen mit zwei Hühnern und jedes Mal  dass sich x um eins erhöht, also jede Woche, verdoppelt sich die Anzahl von Hühnern.\nDas nennen wir <bookmark mark=\"exponential\"/>exponentielles Wachstum."
       }
+    },
+    "1I4q": {
+      "question": "Ich habe am Anfang zwei Pflanzen gepflanzt, und jede der Pflanzen verdreifacht sich jährlich. \nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach $x$ Jahren in meinem Garten habe?"
+    },
+    "1I61": {
+      "voiceover": "Toll, jetzt <bookmark mark=\"praise\"/>hast du nochmal gesehen, wo die Unterschiede zwischen linearem und exponentiellen Wachstum liegen. Zur Wiederholung:<break time=\"0.8s\"/>\nExponentielles Wachstum <bookmark mark=\"explain_1\"/>ist multiplikativ, das heißt mit jeder Erhöhung von x multiplizieren wir den Funktionswert mit einem Faktor.<split/>\n<bookmark mark=\"plot_1\"/>Der lilane Graph zeigt exponentielles Wachstum. <split/> Wir erkennen, wie die Funktion steigt, und immer steiler wird.\n<break time=\"0.8s\"/>\nLineares Wachstum <bookmark mark=\"explain_2\"/>ist additiv,<split/> das heisst mit jeder Erhöhung von x addieren wir einen Wert zur Funktion.\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>Wir sehen, dass die Funktion mit konstanter Geschwindigkeit wächst.\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
+    },
+    "I11": {
+      "question": {
+        "how-fast-does-the-rumor-spread": "Wie viele Personen werden das Gerücht in der nächsten Stunde hören?"
+      }
+    },
+    "I12a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist g von x gleich 4 hoch x.\n<bookmark mark=\"g_0\"/>Denn g von 0 ist 4 hoch 0, also 1,\n<bookmark mark=\"g_1\"/>g von 1 ist 4 hoch 1, also 4,\n<bookmark mark=\"g_2\"/>g von 2 ist 4 hoch 2, also sechzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
+    },
+    "I13q": {
+      "voiceover": "Ich habe einen Garten, <bookmark mark=\"garden_in\"/>den ich mit meiner Lieblingspflanze bepflanzen will. Sie pflanzt sich recht schnell fort, jedes Jahr werden aus einer Pflanze drei, also verdreifacht sie sich jährlich. Ich fange jetzt einfach an, indem <bookmark mark=\"two_in\"/>ich zwei davon einpflanze. Im ersten Jahr gibt es also zwei Pflanzen. Im zweiten Jahr <bookmark mark=\"second_year\"/>verdreifacht sich jede Pflanze, also gibt es sechs Pflanzen. Wie viele Pflanzen werden es im dritten Jahr sein?"
+    },
+    "I14a": {
+      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist h von x gleich 2 mal 3 hoch x.\n<bookmark mark=\"h_0\"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>\n<bookmark mark=\"h_1\"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>\n<bookmark mark=\"h_2\"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
+    },
+    "I14q": {
+      "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
+    },
+    "I15": {
+      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
     },
     "I5": {
       "a": {
@@ -1841,57 +1888,7 @@
         "voiceover": "Schau auf die Funktion<bookmark mark=\"g\"/> g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>zwei hoch <bookmark mark=\"gxx\"/> x.\nWelcher der folgenden <bookmark mark=\"cords\"/>Graphen gehört zur Funktion?\n<break time=\"0.5s\"/>\nDer <bookmark mark=\"blue\"/> blaue Graph? \n<break time=\"0.5s\"/>\nOder der <bookmark mark=\"green\"/> grüne Graph?\n<break time=\"0.5s\"/>\nOder ist es der lila Graph <bookmark mark=\"purple\"/>?"
       }
     },
-    "1I11q": {
-      "main": {
-        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/> hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
-      }
-    },
-    "1I11a": {
-      "voiceover": "Wir wissen ja, dass jede Person, die das Gerücht hört vier weiteren Personen davon erzählt.<split/> Beginnend mit einer Person, die das Gerücht kennt und es weitererzählt, werden es <bookmark mark=\"one_hour\"/>in der Stunde danach vier Personen hören.<split/> Das bedeutet dann, dass in der nächsten Stunde jede dieser vier Personen<bookmark mark=\"second_hour\"/> das Gerücht an vier neue Personen erzählt, sodass nach einer weiteren Stunde insgesamt sechzehn Personen das Gerücht hören."
-    },
-    "1I12q": {
-      "voiceover": "Du siehst, dass nach null Runden <bookmark mark=\"one_in\"/>eine Person das Gerücht hört.\nNach einer Runde hören dann <bookmark mark=\"four_in\"/>vier Personen das Gerücht.\nUnd nach zwei Runden hören <bookmark mark=\"sixteen_in\"/>sechzehn Personen das Gerücht, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Personen, die das Gerücht nach x Runden hören?\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich x hoch vier?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich vier hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei x im Quadrat?",
-      "question": "Welche Funktion beschreibt die Anzahl der Personen, die das Gerücht nach x Runden hören?"
-    },
-    "1I13q": {
-      "main": {
-        "voiceover": ""
-      },
-      "question": "Wenn ich zwei Pflanzen pflanze und jede Pflanze sich jedes Jahr verdreifacht, wie viele Pflanzen wird es dann im dritten Jahr in meinem Garten geben?"
-    },
-    "I11": {
-      "question": {
-        "how-fast-does-the-rumor-spread": "Wie viele Personen werden das Gerücht in der nächsten Stunde hören?"
-      }
-    },
-    "title_1": "Exponentialfunktionen",
-    "I12a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist g von x gleich 4 hoch x.\n<bookmark mark=\"g_0\"/>Denn g von 0 ist 4 hoch 0, also 1,\n<bookmark mark=\"g_1\"/>g von 1 ist 4 hoch 1, also 4,\n<bookmark mark=\"g_2\"/>g von 2 ist 4 hoch 2, also sechzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
-    },
-    "I13q": {
-      "voiceover": "Ich habe einen Garten, <bookmark mark=\"garden_in\"/>den ich mit meiner Lieblingspflanze bepflanzen will. Sie pflanzt sich recht schnell fort, jedes Jahr werden aus einer Pflanze drei, also verdreifacht sie sich jährlich. Ich fange jetzt einfach an, indem <bookmark mark=\"two_in\"/>ich zwei davon einpflanze. Im ersten Jahr gibt es also zwei Pflanzen. Im zweiten Jahr <bookmark mark=\"second_year\"/>verdreifacht sich jede Pflanze, also gibt es sechs Pflanzen. Wie viele Pflanzen werden es im dritten Jahr sein?"
-    },
-    "I14a": {
-      "voiceover": "<bookmark mark=\"g\"/>\nDie richtige Funktion ist h von x gleich 2 mal 3 hoch x.\n<bookmark mark=\"h_0\"/>Denn h von 0 ist zwei mal drei hoch 0, also 2,<split/>\n<bookmark mark=\"h_1\"/>h von 1 ist zwei mal drei hoch 1, also sechs,<split/>\n<bookmark mark=\"h_2\"/>h von 2 ist zwei mal drei hoch 2, also achtzehn.\n<break time=\"0.8s\"/>\nWenn wir die Funktion <bookmark mark=\"cords_in\"/> in ein Koordinatensystem einzeichnen,<split/>\n<bookmark mark=\"plot_in\"/>erkennen wir, dass die Funktion immer schneller steigt. Die Funktion ist also eine Exponentialfunktion."
-    },
-    "1I14q": {
-      "question": "Wie viele Pflanzen werden im dritten Jahr in meinem Garten sein?"
-    },
-    "1I14a": {
-      "voiceover": "Wir wissen ja, dass sich jede Pflanze jedes Jahr verdreifacht. Anfangs<bookmark mark=\"year_0\"/> gibt es ja einfach die zwei Pflanzen, die ich eingepflanzt habe. Nach einem Jahr gibt es <bookmark mark=\"year_1\"/>dann sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat. Dann wird sich im Jahr darauf jede dieser<bookmark mark=\"year_2\"/> sechs Pflanzen verdreifachen, sodass nach einem weiteren Jahr insgesamt achtzehn Pflanzen in meinem Garten sind."
-    },
-    "1I4q": {
-      "question": "Ich habe am Anfang zwei Pflanzen gepflanzt, und jede der Pflanzen verdreifacht sich jährlich. \nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach $x$ Jahren in meinem Garten habe?"
-    },
-    "I14q": {
-      "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
-    },
-    "I15": {
-      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
-    },
-    "1I61": {
-      "voiceover": "Toll, jetzt <bookmark mark=\"praise\"/>hast du nochmal gesehen, wo die Unterschiede zwischen linearem und exponentiellen Wachstum liegen. Zur Wiederholung:<break time=\"0.8s\"/>\nExponentielles Wachstum <bookmark mark=\"explain_1\"/>ist multiplikativ, das heißt mit jeder Erhöhung von x multiplizieren wir den Funktionswert mit einem Faktor.<split/>\n<bookmark mark=\"plot_1\"/>Der lilane Graph zeigt exponentielles Wachstum. <split/> Wir erkennen, wie die Funktion steigt, und immer steiler wird.\n<break time=\"0.8s\"/>\nLineares Wachstum <bookmark mark=\"explain_2\"/>ist additiv,<split/> das heisst mit jeder Erhöhung von x addieren wir einen Wert zur Funktion.\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>Wir sehen, dass die Funktion mit konstanter Geschwindigkeit wächst.\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
-    }
+    "title_1": "Exponentialfunktionen"
   },
   "Func_6_2": {
     "GraphToGrowthFactorAnswerScene": {
@@ -1930,15 +1927,92 @@
         "voiceover": "Meine Freunde haben zum Abendessen Pizza <bookmark mark=\"full_pizza\"/> gebacken und ich bin<bookmark mark=\"late\"/> verspätet!\n<break time=\"0.3s\"/>\nMeine Freunde hassen es, wenn ich zu spät komme, also haben sie beschlossen, ohne mich das Essen anzufangen.\n<break time=\"0.3s\"/>\nJede Minute essen sie die Hälfte der noch verbleibenden Pizza.\n<break time=\"0.3s\"/>\nNach einer Minute ist also nur noch <bookmark mark=\"full\"/> die Hälfte der Pizza übrig.\n<break time=\"0.3s\"/>\nNach zwei Minuten ist nur noch <bookmark mark=\"half\"/> ein Viertel der Pizza übrig.\n<break time=\"0.3s\"/>\nNach drei Minuten ist nur noch <bookmark mark=\"quarter\"/> ein Achtel der Pizza übrig und so weiter ...\n<split/>\nDa sie jetzt eh schon sauer auf mich sind, könnte ich sie auch noch ein bisschen mehr ärgern, indem ich sie mit Mathe nerfe.\n<break time=\"0.3s\"/>\nIch sage ihnen also, wie sie mit einer exponentiellen <bookmark mark=\"f\"/>-Funktion der Form <bookmark mark=\"fx\"/>f von x <bookmark mark=\"fa\"/>gleich a hoch<bookmark mark=\"fxx\"/> x beschreiben können, wie viel Pizza zum Zeitpunkt x für mich verbleibt.\n<break time=\"0.3s\"/>\nDann muss ich nur noch Folgendes wissen: <bookmark mark=\"qmark\"/>Welchen Wert setze ich für 'a'<bookmark mark=\"x_minutes\"/> ein\nwenn x die Anzahl <bookmark mark=\"minutes\"/>der vergangenen Minuten beschreibt?"
       }
     },
+    "I21": {
+      "a": {
+        "voiceover": "Für x gleich null ist f ja <bookmark mark=\"x_0\"/>gleich ein halb hoch null, also gleich eins.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_1\"/>Null auf eins gehen, erhalten wir nicht mehr eins, sondern ein halb mal eins, also ein halb. <split/>\nAlso ist f um ein halb gesunken.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_2\"/>eins auf zwei gehen, erhalten wir nicht mehr ein halb, sondern ein halb mal ein halb, also ein viertel. <split/>\nAlso ist f um ein viertel gesunken.<break time=\"0.6s\"/>\nWenn wir von <bookmark mark=\"x_3\"/>zwei auf drei gehen, multiplizieren wir ein viertel mit ein halb, verlieren also ein achtel, und so weiter...<split/><bookmark mark=\"reset_cursor\"/>\nDu siehst also, dass f sinkt, aber da wir immer kleinere Werte mit ein halb multiplizieren, sinkt f auch immer langsamer. Also muss <bookmark mark=\"solution\"/> der grüne Graph richtig sein."
+      },
+      "q": {
+        "answer-options": "[\"Wie die blaue Funktion\", \"Wie die grüne Funktion\", \"Wie die pinke Funktion\", ]",
+        "question-text": "Wie sieht der Graph der Funktion $f(x)=(\\tfrac12)^x$ aus?",
+        "voiceover": "Ok, <bookmark mark=\"f\"/>betrachten wir jetzt die Exponentialfunktion f von x gleich ein halb hoch x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>Wie sieht der Graph dieser Funktion aus?<break time=\"0.6s\"/>\nGeht er <bookmark mark=\"plot_1\"/>langsam nach unten,<split/> und wird dann immer steiler, wie der blaue Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_2\"/>steil nach unten,<split/> und wird dann immer flacher, wie der grüne Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_3\"/> mit konstanter Geschwindigkeit nach unten, <split/> wie der pinke Graph?"
+      }
+    },
+    "I22": {
+      "a": {
+        "voiceover": "Der Pool hat tausend Liter, und jeden Tag verdunstet ein Achtel.<break time=\"0.6s\"/>\nDas heißt, dass nach jedem Tag noch sieben achtel von dem Wasser des Vortages übrig sind, also multiplizieren wir den Wert des Vortages immer mit sieben achteln. <split/>Also ist<bookmark mark=\"correct\"/> die Funktion h von x gleich eintausend mal sieben achtel hoch x die richtige."
+      },
+      "q": {
+        "question-text": "Welche Funktion beschreibt die Menge an Wasser im Pool in Abhängigkeit von der Zeit in Tagen?",
+        "voiceover": "Ich habe <bookmark mark=\"pool_in\"/>einen Pool, in dem sind tausend Liter wasser.<break time=\"0.6s\"/>\nAllerdings ist es so heiß, <split/>dass jeden Tag ein Achtel des Wassers verdunstet.<break time=\"0.6s\"/>\nWelche Funktion beschreibt die Menge an Wasser im Pool<split/> in Abhängigkeit von der Zeit in Tagen?<break time=\"0.4s\"/>\nIst es<bookmark mark=\"f\"/> die Funktion \"f\" von x gleich tausend mal ein achtel hoch x?<break time=\"0.4s\"/>\nOder <bookmark mark=\"g\"/>die Funktion \"g\" von x gleich eintausend mal Klammer auf eins minus ein achtel x Klammer zu?<break time=\"0.4s\"/>\nOder <bookmark mark=\"h\"/>die Funktion \"h\" von x gleich eintausend mal sieben achtel hoch x?"
+      }
+    },
+    "I2X": {
+      "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
+    },
     "I3": {
+      "q": {
+        "question-text": "Was ist der Wert des Wachstumsfaktor $a$?"
+      },
       "title": "Wachstumsfaktor",
       "verify": "Überprüfe:",
       "voiceover": "Wichtiger Begriff im Kontext von Exponentialfunktionen:<bookmark mark=\"underline\"/>Der Wachstumsfaktor.\n<break time=\"0.3s\"/>\nWir wissen ja, dass der Term einer Exponentialfunktion <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>\"a\" hoch <bookmark mark=\"fxx\"/> x lautet.\n<break time=\"0.3s\"/>\nDann wird der Wert<bookmark mark=\"a\"/> \"a\" als Wachstumsfaktor bezeichnet.\n<break time=\"0.3s\"/>\nEr wird so genannt, weil er bestimmt, wie schnell die Funktion wächst oder abnimmt.\n<split/>\nBetrachte zum Beispiel die Funktion <bookmark mark=\"func_in\"/>von diesem Graphen.\n<break time=\"1s\"/>\nWie lautet der Wachstumsfaktor a, der zu dem Graphen führt?",
       "x-minutes_1": "Was ist der Wert von",
-      "x-minutes_2": "dem Wachstumsfaktor",
+      "x-minutes_2": "dem Wachstumsfaktor"
+    },
+    "I32": {
       "q": {
-        "question-text": "Was ist der Wert des Wachstumsfaktor $a$?"
+        "question-options": "[\"Der blaue Graph\", \"Der lila Graph\"]",
+        "question-text": "Welcher Graph zeigt, wie wir $a$ erhöhen?"
       }
+    },
+    "I32a": {
+      "voiceover": "Die blaue <bookmark mark=\"blue_anim\"/>Animation zeigt, was passiert, wenn wir den Wert <bookmark mark=\"of_a\"/>von a erhöhen. \nUnd die lila <bookmark mark=\"purple_anim\"/>Animation zeigt, was passiert, wenn wir den Wert von b erhöhen. \nEine Möglichkeit, dies zu sehen, ist, zu vergleichen, bei welchen Werten von x jede der beiden größer ist...\nBei niedrigen Werten <bookmark mark=\"low_values\"/> von x ist die blaue Funktion größer. Und bei <bookmark mark=\"high_values\"/>hohen Werten von x ist die lila Funktion größer. \nDas bedeutet, <bookmark mark=\"reset\"/>dass die lila Funktion im Vergleich zur blauen Funktion schneller wächst, wenn x höher wird, was bedeutet, dass sie einen höheren Basiswert hat, also einen höheren Wert von b."
+    },
+    "I33": {
+      "a": {
+        "voiceover": "Wir beginnen mit einem Kapital <bookmark mark=\"capital\"/> von eintausend Euro. Also multiplizieren wir die gesamte Funktion<bookmark mark=\"sol_1\"/> mit eintausend.\nUnd das <bookmark mark=\"doubles\"/>Geld verdoppelt sich jedes Jahr. Das bedeutet, dass die Basis b <bookmark mark=\"sol_2\"/> gleich zwei ist. Also ist die Funktion, die das Kapital nach x Jahren beschreibt, <bookmark mark=\"underline_fct\"/> f von x gleich eintausend mal zwei hoch x."
+      },
+      "capital": "Kapital",
+      "doubles": "Verdoppelt sich jährlich",
+      "q": {
+        "question-text": "Welche Funktion der Form $f(x) = a \\cdot b^x$ könntest du verwenden, um den Geldbetrag auf einem Sparkonto nach $x$ Jahren zu modellieren?",
+        "voiceover": "Schauen wir ein Beispiel an, in dem wir eine Situation mit einem Ausdruck der Form <bookmark mark=\"term_in\"/> f von x gleich a mal b hoch x modellieren.\nNehmen wir an, du hast <bookmark mark=\"thousand_in\"/> eintausend Euro auf ein magisches Sparkonto eingezahlt, auf dem sich das Geld <bookmark mark=\"interest_in\"/> jedes Jahr verdoppelt.\nWelche Funktion der Form <bookmark mark=\"func_box\"/> f von x gleich a mal b hoch x könntest du verwenden, um den Geldbetrag auf dem Sparkonto nach x Jahren zu modellieren?"
+      }
+    },
+    "I34": {
+      "a": {
+        "voiceover": "Um den Funktionsterm zu finden, müssen wir die Werte von a und b bestimmen.\nDen Wert von b können wir ermitteln, indem wir die Funktion bei zwei x-Werten vergleichen, die 1 Einheit auseinander liegen. Zum Beispiel können wir die Funktion <bookmark mark=\"f_x_3\"/>bei x gleich 3 <bookmark mark=\"f_x_4\"/>und x gleich 4 vergleichen.\nWir sehen, dass <bookmark mark=\"f_3\"/>f von drei gleich 2 und <bookmark mark=\"f_4\"/>f von vier gleich 4 ist.\nDas bedeutet, dass sich die Funktion verdoppelt, wenn wir f um eins erhöhen. Das bedeutet, <bookmark mark=\"sol_1\"/>dass b gleich zwei ist, weil die Erhöhung von x um eins den Funktionswert verdoppelt.<bookmark mark=\"reset_1\"/>\nNun, was ist <bookmark mark=\"of_a\"/>der Wert von a? Das können wir herausfinden, indem wir uns den Funktionswert <bookmark mark=\"f_3_again\"/>bei x gleich 3 anschauen.\nWenn wir x gleich 3 in den Funktionsterm einsetzen, erhalten wir <bookmark mark=\"step_1\"/>f von drei gleich a mal zwei hoch drei.\nDas ist <bookmark mark=\"step_2\"/>gleich a mal acht. Und wenn wir uns die Funktion ansehen, können wir feststellen, dass <bookmark mark=\"step_3\"/>f von drei gleich zwei ist.\nAlso ist a mal acht gleich zwei. Das bedeutet, <bookmark mark=\"step_4\"/>dass a gleich ein Viertel sein muss.\nSomit ist der <bookmark mark=\"reset_2\"/> in der Grafik dargestellte Funktionsterm <bookmark mark=\"final_sol\"/>ein Viertel mal zwei hoch x."
+      },
+      "q": {
+        "question-text": "Welche Funktion der Form $f(x) = a \\cdot b^x$ gehört zu diesem Graphen?",
+        "voiceover": "Schau dir den <bookmark mark=\"graph_in\"/>Graphen an, den du hier siehst. Zu welcher Funktion der <bookmark mark=\"func_in\"/> Form f von x gleich a mal b hoch x gehört er?"
+      }
+    },
+    "I35": {
+      "original-height": "Ursprüngliche Höhe",
+      "three-bounces": "drei Aufpraller"
+    },
+    "I3a": {
+      "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins, was gleich ein halb ist. Also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
+    },
+    "I561": {
+      "factor": "Faktor",
+      "interest": "Zinsen"
+    },
+    "I562": {
+      "eaten": "gegessen",
+      "remaining": "übrig"
+    },
+    "I562q": {
+      "amount_decreases": "Menge nimmt ab",
+      "amount_increases": "Menge wächst",
+      "decrease": "Abnahme",
+      "factor": "Faktor",
+      "final_factor": "Gesamtfaktor",
+      "increase": "Erhöhung",
+      "interest": "Zinsen",
+      "investment": "Investment",
+      "spend_half": "Ausgaben:"
     },
     "P2": {
       "q": {
@@ -1967,70 +2041,6 @@
         "answer-options": "[\"Der violette Graph\", \"Der blaue Graph\", \"Der rosa Graph\"]",
         "question-text": "Welcher der Graphen entspricht der Funktion $f(x)=3^x$?"
       }
-    },
-    "I2X": {
-      "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
-    },
-    "I21": {
-      "q": {
-        "voiceover": "Ok, <bookmark mark=\"f\"/>betrachten wir jetzt die Exponentialfunktion f von x gleich ein halb hoch x. <bookmark mark=\"cords\"/><break time=\"0.5s\"/>Wie sieht der Graph dieser Funktion aus?<break time=\"0.6s\"/>\nGeht er <bookmark mark=\"plot_1\"/>langsam nach unten,<split/> und wird dann immer steiler, wie der blaue Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_2\"/>steil nach unten,<split/> und wird dann immer flacher, wie der grüne Graph?<break time=\"0.6s\"/>\nOder geht er <bookmark mark=\"plot_3\"/> mit konstanter Geschwindigkeit nach unten, <split/> wie der pinke Graph?",
-        "question-text": "Wie sieht der Graph der Funktion $f(x)=(\\tfrac12)^x$ aus?",
-        "answer-options": "[\"Wie die blaue Funktion\", \"Wie die grüne Funktion\", \"Wie die pinke Funktion\", ]"
-      },
-      "a": {
-        "voiceover": "Für x gleich null ist f ja <bookmark mark=\"x_0\"/>gleich ein halb hoch null, also gleich eins.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_1\"/>Null auf eins gehen, erhalten wir nicht mehr eins, sondern ein halb mal eins, also ein halb. <split/>\nAlso ist f um ein halb gesunken.<break time=\"0.6s\"/>\nWenn wir dann von <bookmark mark=\"x_2\"/>eins auf zwei gehen, erhalten wir nicht mehr ein halb, sondern ein halb mal ein halb, also ein viertel. <split/>\nAlso ist f um ein viertel gesunken.<break time=\"0.6s\"/>\nWenn wir von <bookmark mark=\"x_3\"/>zwei auf drei gehen, multiplizieren wir ein viertel mit ein halb, verlieren also ein achtel, und so weiter...<split/><bookmark mark=\"reset_cursor\"/>\nDu siehst also, dass f sinkt, aber da wir immer kleinere Werte mit ein halb multiplizieren, sinkt f auch immer langsamer. Also muss <bookmark mark=\"solution\"/> der grüne Graph richtig sein."
-      }
-    },
-    "I22": {
-      "q": {
-        "voiceover": "Ich habe <bookmark mark=\"pool_in\"/>einen Pool, in dem sind tausend Liter wasser.<break time=\"0.6s\"/>\nAllerdings ist es so heiß, <split/>dass jeden Tag ein Achtel des Wassers verdunstet.<break time=\"0.6s\"/>\nWelche Funktion beschreibt die Menge an Wasser im Pool<split/> in Abhängigkeit von der Zeit in Tagen?<break time=\"0.4s\"/>\nIst es<bookmark mark=\"f\"/> die Funktion \"f\" von x gleich tausend mal ein achtel hoch x?<break time=\"0.4s\"/>\nOder <bookmark mark=\"g\"/>die Funktion \"g\" von x gleich eintausend mal Klammer auf eins minus ein achtel x Klammer zu?<break time=\"0.4s\"/>\nOder <bookmark mark=\"h\"/>die Funktion \"h\" von x gleich eintausend mal sieben achtel hoch x?",
-        "question-text": "Welche Funktion beschreibt die Menge an Wasser im Pool in Abhängigkeit von der Zeit in Tagen?"
-      },
-      "a": {
-        "voiceover": "Der Pool hat tausend Liter, und jeden Tag verdunstet ein Achtel.<break time=\"0.6s\"/>\nDas heißt, dass nach jedem Tag noch sieben achtel von dem Wasser des Vortages übrig sind, also multiplizieren wir den Wert des Vortages immer mit sieben achteln. <split/>Also ist<bookmark mark=\"correct\"/> die Funktion h von x gleich eintausend mal sieben achtel hoch x die richtige."
-      }
-    },
-    "I3a": {
-      "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins, was gleich ein halb ist. Also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
-    },
-    "I32": {
-      "q": {
-        "question-text": "Welcher Graph zeigt, wie wir $a$ erhöhen?",
-        "question-options": "[\"Der blaue Graph\", \"Der lila Graph\"]"
-      }
-    },
-    "I31": {
-      "voiceover": ""
-    },
-    "I33": {
-      "capital": "Kapital",
-      "doubles": "Verdoppelt sich jährlich",
-      "a": {
-        "voiceover": ""
-      }
-    },
-    "I35": {
-      "three-bounces": "drei Aufpraller",
-      "original-height": "Ursprüngliche Höhe"
-    },
-    "I561": {
-      "interest": "Zinsen",
-      "factor": "Faktor"
-    },
-    "I562": {
-      "eaten": "gegessen",
-      "remaining": "übrig"
-    },
-    "I562q": {
-      "amount_increases": "Menge wächst",
-      "amount_decreases": "Menge nimmt ab",
-      "factor": "Faktor",
-      "increase": "Erhöhung",
-      "decrease": "Abnahme",
-      "interest": "Zinsen",
-      "spend_half": "Ausgaben:",
-      "final_factor": "Gesamtfaktor",
-      "investment": "Investment"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2692,18 +2702,18 @@
     "n_times": "n mal",
     "pa": "pro Jahr"
   },
-  "degree": "Grad",
-  "test-key": "[\"1\", \"2\", \"3\"]",
   "LinAlg": {
     "14I1": {
-      "voiceover": "Betrachte die zwei<bookmark mark=\"vec_1\"/> Vektoren 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>und 0 1 0.<break time=\"0.8s\"/>\nNehmen wir nun einen<bookmark mark=\"vec_new_in\"/> dritten Vektor hinzu, und fragen uns, ob wir diesen Vektor als Linearkombination der beiden anderen Vektoren darstellen können.<break time=\"0.6s\"/>\nBetrachten wir zum Beispiel den <bookmark mark=\"vec_new_transform\"/>Vektor 1 1 0. <split/>Dieser <bookmark mark=\"shift_left\"/>lässt sich als Linearkombination der beiden anderen Vektoren darstellen, nämlich als <bookmark mark=\"sum_1\"/>ein mal der erste Vektor plus <bookmark mark=\"sum_2\"/>ein mal der zweite Vektor.\nIn diesem Fall sagt man,<split/> <bookmark mark=\"dep\"/>dass die drei Vektoren linear abhängig <bookmark mark=\"cleanup\"/>sind.<break time=\"2s\"/> So, jetzt zurück zu den beiden Ausgangsvektoren, und nehmen wir ein anderes Beispiel.<split/>\nBetrachten wir also den Vektor <bookmark mark=\"vec_new_in_2\"/>0 0 eins.<break time=\"0.6s\"/> Man kann einfach sehen, dass sich dieser Vektor nicht als Linearkombination der beiden anderen Vektoren darstellen lässt. In diesem Fall sagt man, dass die drei Vektoren <bookmark mark=\"indep\"/>linear unabhängig sind.",
-      "title": "Lineare Abhängigkeit",
+      "dep": "Linear abhängig",
       "indep": "Linear unabhängig",
-      "dep": "Linear abhängig"
+      "title": "Lineare Abhängigkeit",
+      "voiceover": "Betrachte die zwei<bookmark mark=\"vec_1\"/> Vektoren 1 0 0 <bookmark mark=\"vec_2\"/><break time=\"0.6s\"/>und 0 1 0.<break time=\"0.8s\"/>\nNehmen wir nun einen<bookmark mark=\"vec_new_in\"/> dritten Vektor hinzu, und fragen uns, ob wir diesen Vektor als Linearkombination der beiden anderen Vektoren darstellen können.<break time=\"0.6s\"/>\nBetrachten wir zum Beispiel den <bookmark mark=\"vec_new_transform\"/>Vektor 1 1 0. <split/>Dieser <bookmark mark=\"shift_left\"/>lässt sich als Linearkombination der beiden anderen Vektoren darstellen, nämlich als <bookmark mark=\"sum_1\"/>ein mal der erste Vektor plus <bookmark mark=\"sum_2\"/>ein mal der zweite Vektor.\nIn diesem Fall sagt man,<split/> <bookmark mark=\"dep\"/>dass die drei Vektoren linear abhängig <bookmark mark=\"cleanup\"/>sind.<break time=\"2s\"/> So, jetzt zurück zu den beiden Ausgangsvektoren, und nehmen wir ein anderes Beispiel.<split/>\nBetrachten wir also den Vektor <bookmark mark=\"vec_new_in_2\"/>0 0 eins.<break time=\"0.6s\"/> Man kann einfach sehen, dass sich dieser Vektor nicht als Linearkombination der beiden anderen Vektoren darstellen lässt. In diesem Fall sagt man, dass die drei Vektoren <bookmark mark=\"indep\"/>linear unabhängig sind."
     }
   },
+  "degree": "Grad",
   "general": {
-    "scaling_factor": "Skalierungsfaktor",
-    "growth_factor": "Wachstumsfaktor"
-  }
+    "growth_factor": "Wachstumsfaktor",
+    "scaling_factor": "Skalierungsfaktor"
+  },
+  "test-key": "[\"1\", \"2\", \"3\"]"
 }
