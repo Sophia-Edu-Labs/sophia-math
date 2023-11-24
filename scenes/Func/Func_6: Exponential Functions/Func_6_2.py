@@ -1494,6 +1494,14 @@ class Func_6_2_I_3_2_b(SophiaCursorScene):
 #####################################
 class Func_6_2_I_3_3_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=1000\\cdot\\left(\\tfrac18\\right)^x$", "$f(x)=1000\\cdot2^x$", "$f(x)=2000^x$", "$1000x^2$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_2.I33.q.question-text")
+        )
+
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -1537,6 +1545,7 @@ class Func_6_2_I_3_3_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_2_I_3_3_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -1571,7 +1580,7 @@ class Func_6_2_I_3_3_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-            text=self.translate("Func_6_2.I33.a.voiceover")
+            text=self.translate("General.incorrect_3")+self.translate("Func_6_2.I33.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("capital")
@@ -1596,10 +1605,194 @@ class Func_6_2_I_3_3_a(SophiaCursorScene):
 
         self.wait(4)
 
+class Func_6_2_I_3_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        mib = ImageMobject(assets_folder / "img" / "money_in_the_bank.png")
+        mib = mib.scale(2.8/mib.get_width()).move_to([0, 1.6, 0])
+        self.add(mib)
+
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble("\\usepackage{lmodern,textcomp}")
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        capital = self.translate("Func_6_2.I33.capital")
+        doubles = self.translate("Func_6_2.I33.doubles")
+        notes = BulletedList(f"$1000$€ {capital}", doubles, tex_template=myTemplate).scale(.6).next_to(mib, DOWN, buff=0.4)
+        notes[0].set_color(c1t), notes[1].set_color(c1t)
+        self.add(notes)
+
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(notes, DOWN, buff=.8)
+        self.add(f_tex)
+
+        f_sol_1 = MathTex("f","(x)", "=", "1000\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_sol_2 = MathTex("f","(x)", "=", "1000\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.correct_3")+self.translate("Func_6_2.I33.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("capital")
+            x,y,_ = notes[0].get_center()+0.3*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_1")
+            self.play(TransformMatchingTex(f_tex, f_sol_1))
+
+            self.wait_until_bookmark("doubles")
+            x,y,_ = notes[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_2")
+            cursor.idle=True
+            self.play(TransformMatchingTex(f_sol_1, f_sol_2))
+
+            self.wait_until_bookmark("underline_fct")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, f_sol_2), run_time=0.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_3_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        mib = ImageMobject(assets_folder / "img" / "money_in_the_bank.png")
+        mib = mib.scale(2.8/mib.get_width()).move_to([0, 1.6, 0])
+        self.add(mib)
+
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble("\\usepackage{lmodern,textcomp}")
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        capital = self.translate("Func_6_2.I33.capital")
+        doubles = self.translate("Func_6_2.I33.doubles")
+        notes = BulletedList(f"$1000$€ {capital}", doubles, tex_template=myTemplate).scale(.6).next_to(mib, DOWN, buff=0.4)
+        notes[0].set_color(c1t), notes[1].set_color(c1t)
+        self.add(notes)
+
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(notes, DOWN, buff=.8)
+        self.add(f_tex)
+
+        f_sol_1 = MathTex("f","(x)", "=", "1000\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_sol_2 = MathTex("f","(x)", "=", "1000\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_3")+self.translate("Func_6_2.I33.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("capital")
+            x,y,_ = notes[0].get_center()+0.3*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_1")
+            self.play(TransformMatchingTex(f_tex, f_sol_1))
+
+            self.wait_until_bookmark("doubles")
+            x,y,_ = notes[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_2")
+            cursor.idle=True
+            self.play(TransformMatchingTex(f_sol_1, f_sol_2))
+
+            self.wait_until_bookmark("underline_fct")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, f_sol_2), run_time=0.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_3_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        mib = ImageMobject(assets_folder / "img" / "money_in_the_bank.png")
+        mib = mib.scale(2.8/mib.get_width()).move_to([0, 1.6, 0])
+        self.add(mib)
+
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble("\\usepackage{lmodern,textcomp}")
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        capital = self.translate("Func_6_2.I33.capital")
+        doubles = self.translate("Func_6_2.I33.doubles")
+        notes = BulletedList(f"$1000$€ {capital}", doubles, tex_template=myTemplate).scale(.6).next_to(mib, DOWN, buff=0.4)
+        notes[0].set_color(c1t), notes[1].set_color(c1t)
+        self.add(notes)
+
+        f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(notes, DOWN, buff=.8)
+        self.add(f_tex)
+
+        f_sol_1 = MathTex("f","(x)", "=", "1000\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_sol_2 = MathTex("f","(x)", "=", "1000\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_3")+self.translate("Func_6_2.I33.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("capital")
+            x,y,_ = notes[0].get_center()+0.3*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_1")
+            self.play(TransformMatchingTex(f_tex, f_sol_1))
+
+            self.wait_until_bookmark("doubles")
+            x,y,_ = notes[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("sol_2")
+            cursor.idle=True
+            self.play(TransformMatchingTex(f_sol_1, f_sol_2))
+
+            self.wait_until_bookmark("underline_fct")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, f_sol_2), run_time=0.5)
+
+        self.wait(4)
 
 #####################################
 #####################################
 class Func_6_2_I_3_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=1000\\cdot\\left(\\tfrac18\\right)^x$", "$f(x)=1000\\cdot2^x$", "$f(x)=2000^x$", "$1000x^2$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_2.I34.q.question-text")
+        )
+
 
     # Main method for constructing the animation
     def construct(self):

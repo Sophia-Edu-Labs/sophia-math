@@ -2006,7 +2006,8 @@
       "capital": "Capital",
       "doubles": "Doubles yearly",
       "q": {
-        "voiceover": "Let's see an example where we model a situation using a term of the form <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x.\nSay you've put <bookmark mark=\"thousand_in\"/> one thousand euros in a magical savings account, where the money <bookmark mark=\"interest_in\"/> doubles every year.\nWhat function of the form <bookmark mark=\"func_box\"/> f of x equals a times b to the power of x could you use to model the amount of money in the savings account after x years?"
+        "voiceover": "Let's see an example where we model a situation using a term of the form <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x.\nSay you've put <bookmark mark=\"thousand_in\"/> one thousand euros in a magical savings account, where the money <bookmark mark=\"interest_in\"/> doubles every year.\nWhat function of the form <bookmark mark=\"func_box\"/> f of x equals a times b to the power of x could you use to model the amount of money in the savings account after x years?",
+        "question-text": "What function of the form $f(x)=a\\cdot b^x$ could you use to model the amount of money in the savings account after $x$ years?"
       },
       "a": {
         "voiceover": "We're <bookmark mark=\"capital\"/> starting with a capital of one thousand euros. So we multiply the entire function<bookmark mark=\"sol_1\"/> by one thousand.\nAnd the <bookmark mark=\"doubles\"/>money doubles every year. This means that the base b <bookmark mark=\"sol_2\"/>is equal to two. So the function describing the capital after x years is <bookmark mark=\"underline_fct\"/> f of x equals one thousand times two to the power of x."
@@ -2014,7 +2015,8 @@
     },
     "I34": {
       "q": {
-        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph you see here. What function of the <bookmark mark=\"func_in\"/> form f of x equals a times b to the power of x does it belong to?"
+        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph you see here. What function of the <bookmark mark=\"func_in\"/> form f of x equals a times b to the power of x does it belong to?",
+        "question-text": "What function of the form $f(x)=a\\cdot b^x$ does this graph belong to?"
       },
       "a": {
         "voiceover": "To find the function term, we'll need to find the values of a and b.\nWe can find the value of b by comparing the function at two x-values that are 1 unit apart. For example, we can compare the function <bookmark mark=\"f_x_3\"/>at x equals 3 <bookmark mark=\"f_x_4\"/>and x equals 4.\nWe can see that <bookmark mark=\"f_3\"/>f of three is equal to 2 and <bookmark mark=\"f_4\"/>f of four is equal to 4.\nThis means, that if we increase f by one, the function doubles. That means, <bookmark mark=\"sol_1\"/>that b is equal to two, because increasing x by one multiplies the function value by two.<bookmark mark=\"reset_1\"/>\nNow what is <bookmark mark=\"of_a\"/>the value of a? We can find that out by looking at the function value <bookmark mark=\"f_3_again\"/>at x equals 3.\nIf we plug x equals 3 into the function term, we get <bookmark mark=\"step_1\"/>f of three equals a times two to the power of three.\nThis is <bookmark mark=\"step_2\"/>equal to a times eight. And by looking at the function, we can see that <bookmark mark=\"step_3\"/>f of three is equal to two.\nSo a times eight is equal to two. That means, <bookmark mark=\"step_4\"/>that a has to be equal to one quarter.\nSo the <bookmark mark=\"reset_2\"/> term of the function that is shown in the graph <bookmark mark=\"final_sol\"/>is one quarter times two to the power of x."
