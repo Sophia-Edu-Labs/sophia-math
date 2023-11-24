@@ -1989,11 +1989,49 @@
       }
     },
     "I35": {
+      "a": {
+        "voiceover": "Die ursprüngliche Höhe ist das, was wir bei x gleich null erhalten. Also <bookmark mark=\"f_0_1\"/> bekommen wir f von null gleich a mal b hoch null gleich acht. Und b hoch null<bookmark mark=\"f_0_2\"/> ist eins. Also erhalten wir, dass <bookmark mark=\"f_0_3\"/>a mal eins gleich acht, <bookmark mark=\"f_0_4\"/>also a gleich acht ist...\nJetzt versuchen wir, b zu finden. <bookmark mark=\"reorganize\"/>Wir wissen, dass nach drei Sprüngen die Höhe des Balls ein Achtel Meter beträgt. Also erhalten wir <bookmark mark=\"f_1_1\"/>f von drei gleich acht mal b hoch drei gleich ein Achtel. Wenn wir beide Seiten durch 8 teilen, <bookmark mark=\"f_1_2\"/> erhalten wir b hoch 3 gleich 1 durch 64. Also wissen wir, dass b hoch drei gleich ein Vierundsechzigstel ist. Das bedeutet, dass <bookmark mark=\"final_sol\"/>b gleich ein Viertel ist, denn ein Viertel hoch drei ist ein Vierundsechzigstel.<bookmark mark=\"clean_up\"/>\nAlso ist die Funktion, die die Höhe des Balls nach x Sprüngen beschreibt, <bookmark mark=\"frame\"/>f von x gleich acht mal ein Viertel hoch x."
+      },
       "original-height": "Ursprüngliche Höhe",
+      "q": {
+        "voiceover": "Ein weiteres Beispiel: <bookmark mark=\"ball_in\"/>Ein Ball wird aus einer Höhe<bookmark mark=\"eight_meters\"/> von 8 Metern fallen gelassen. Nachdem er <bookmark mark=\"three_bounces\"/>dreimal auf dem Boden aufgeprallt ist, springt er nur noch bis zu einer Höhe von <bookmark mark=\"one_eigth\"/>einem Achtel Meter hoch. Wir können eine Exponentialfunktion der Form <bookmark mark=\"func_in\"/>f von x gleich a mal b hoch x verwenden, um die Höhe des Balls nach x Sprüngen zu beschreiben. Was ist der Wert von a?"
+      },
       "three-bounces": "drei Aufpraller"
     },
     "I3a": {
       "voiceover": "Wenn wir <bookmark mark=\"x_1\"/>x gleich eins einsetzen, erhalten wir a hoch <bookmark mark=\"fx_1\"/> eins, was gleich ein halb ist. Also ist <bookmark mark=\"transform\"/> \"a\" gleich ein Halb.<break time=\"0.8s\"/>\nDas können wir auch überprüfen,<split/> indem wir sehen, dass wir für <bookmark mark=\"x_2\"/>x gleich 2 den <bookmark mark=\"fx_2\"/>Wert ein Viertel erhalten, was gleich ein halb quadrat ist."
+    },
+    "I41": {
+      "voiceover": "Es gibt einige wichtige <bookmark mark=\"rules_in\"/> Regeln, die du beachten solltest, wenn du mit Exponentialfunktionen arbeitest. Ich gebe dir zuerst einen Überblick und dann schauen wir uns jede Regel im Detail an.\nDie <bookmark mark=\"rule_1\"/>erste Regel besagt, dass a hoch x mal a hoch y gleich a hoch x plus y ist...\nDie <bookmark mark=\"rule_2\"/>zweite Regel besagt, dass a hoch x geteilt durch a hoch y gleich a hoch x minus y ist.\nDie <bookmark mark=\"rule_3\"/>dritte Regel besagt, dass a hoch minus x gleich eins über a hoch x ist...\nUnd die <bookmark mark=\"rule_4\"/>vierte Regel besagt, dass a hoch x hoch y gleich a hoch x mal y ist.\nVersuche, dir alle Regeln zu merken!"
+    },
+    "I42": {
+      "a": {
+        "voiceover": "Wenn wir die Regel einfach auf den Ausdruck vier hoch a mal vier hoch b anwenden, sehen wir, dass das gleich <bookmark mark=\"equal\"/> vier hoch a plus b ist, weil wir die Basis, also 4, beibehalten und die Exponenten, also a und b, addieren.\nWir können das überprüfen, indem wir feststellen, dass <bookmark mark=\"step_1\"/>vier hoch a gleich 4, a mal mit sich selbst  multipliziert  ist, und <bookmark mark=\"step_2\"/>vier hoch b gleich 4, b mal mit sich selbst  multipliziert ist. Wenn wir diese beiden Ausdrücke multiplizieren, erhalten wir <bookmark mark=\"step_3\"/>dann vier, \"a\" plus b-mal mit sich selbst multipliziert, also 4 hoch \"a\" plus b."
+      },
+      "q": {
+        "voiceover": "Beginnen wir mit der Regel für die Multiplikation zweier Exponentialfunktionen mit derselben Basis. Die Regel besagt, dass <bookmark mark=\"rule\"/> a hoch x mal a hoch y gleich a hoch x plus y ist. Das Ergebnis ist also die ursprüngliche Basis hoch der Summe der Exponenten.\nAber warum ist das so? Das ist eigentlich leicht zu verstehen: Beachte zuerst, dass <bookmark mark=\"step_1\"/>a hoch x einfach \"a\" ist, x-mal mit sich selbst multipliziert. Und <bookmark mark=\"step_2\"/>a hoch y ist einfach \"a\", y-mal mit sich selbst multipliziert. Wenn wir dann diese beiden Ausdrücke multiplizieren, erhalten wir <bookmark mark=\"step_3\"/>\"a\", x plus y-mal mit sich selbst multipliziert. Und das ist genau das, was die Regel besagt...\nJetzt <bookmark mark=\"clean\"/>üben wir: Wie können wir den <bookmark mark=\"example_in\"/>Ausdruck 4 hoch a mal 4 hoch b vereinfachen?"
+      }
+    },
+    "I43": {
+      "a": {
+        "voiceover": "Die Regel besagt, dass wir, wenn wir <bookmark mark=\"fraction\"/>einen Bruch aus zwei Exponentialfunktionen mit derselben Basis haben, <bookmark mark=\"subtract\"/>einfach die Exponenten subtrahieren können.\nDa wir in diesem Beispiel <bookmark mark=\"example_divide\"/>zwei Exponentialfunktionen mit der Basis 3 teilen, können wir die Regel anwenden und das ganze als <bookmark mark=\"solution\"/>die Basis, also drei hoch x minus y, schreiben, wobei x der Exponent des Zählers und y der Exponent des Nenners ist."
+      },
+      "q": {
+        "voiceover": "Betrachten wir nun die Regel, die besagt, dass <bookmark mark=\"rule\"/>a hoch x geteilt durch a hoch y gleich a hoch x minus y ist.\nEs gibt zwei Wege, sich diese Regel zu merken. Der erste ist, sie mit der <bookmark mark=\"other_rule\"/>Regel zu vergleichen, die besagt, dass a hoch x mal a hoch y gleich a hoch x plus y ist.\nEs ergibt ja Sinn, dass <bookmark mark=\"multiply\"/> wenn das Multiplizieren der Ausdrücke zum Addieren der Exponenten führt, <bookmark mark=\"divide\"/>dann das Teilen der Ausdrücke zum Subtrahieren der Exponenten führt.\nEine andere <bookmark mark=\"clean_up_1\"/>Methode, sich diese Regel zu merken, ist zu erkennen, dass <bookmark mark=\"step_1\"/>\"a\" hoch x gleich \"a\" ist, x-mal mit sich selbst multipliziert, und <bookmark mark=\"step_2\"/>\"a\" hoch y gleich \"a\" ist, y-mal mit sich selbst multipliziert.\nDas bedeutet, dass, wenn wir <bookmark mark=\"step_3\"/>a hoch x durch a hoch y teilen, wir nur noch \"a\" x minus y-mal mit sich selbst multiplizieren, weil die y-mal \"a\" wegfallen.\nJetzt <bookmark mark=\"clean_up_2\"/>schauen wir uns ein Beispiel an. Wie können wir <bookmark mark=\"example_in\"/> den Ausdruck drei hoch x geteilt durch drei hoch y vereinfachen?"
+      }
+    },
+    "I44": {
+      "a": {
+        "voiceover": "Wir können die Regel einfach auf den Ausdruck anwenden: Wir <bookmark mark=\"example_1\"/>teilen eins durch a hoch etwas, und dieses Etwas ist der negative Wert der ursprünglichen Potenz, also <bookmark mark=\"example_2\"/>2c in unserem Beispiel."
+      },
+      "q": {
+        "voiceover": "Die Regel, die wir uns jetzt anschauen, besagt, dass <bookmark mark=\"rule_in\"/>eins durch a hoch x gleich a hoch minus x ist.\nDiese Regel ist etwas schwieriger zu verstehen, aber wir können eine Regel, die wir davor gesehen haben, verwenden, um zu zeigen, dass sie stimmt...\nAlso beginnen wir mit der Regel <bookmark mark=\"other_rule\"/>, dass a hoch x geteilt durch a hoch y gleich a hoch x minus y ist.\nAls Nächstes vertauschen wir <bookmark mark=\"switch\"/>x und y, um die Regel zu erhalten, dass a hoch y geteilt durch a hoch x gleich a hoch y minus x ist.\nAls Nächstes setzen wir y gleich null, um <bookmark mark=\"step_one\"/>die Regel zu erhalten, dass a hoch null geteilt durch a hoch x gleich a hoch null minus x ist.\nWenn wir dann einsetzen, dass a hoch null gleich eins ist, erhalten wir die <bookmark mark=\"rule\"/> Regel, dass eins geteilt durch a hoch x gleich a hoch minus x ist, und wir sind fertig...\nJetzt <bookmark mark=\"clean_up\"/>üben wir mit einem Beispiel. Welcher Ausdruck ist gleich <bookmark mark=\"example_in\"/>b hoch minus 2c?"
+      }
+    },
+    "I45": {
+      "a": {
+        "voiceover": "Wenn wir die Regel einfach anwenden, erhalten wir, dass vier hoch zwei a, hoch zwei b, gleich <bookmark mark=\"example_1\"/>vier hoch zwei a mal zwei b ist. Wir können dies weiter vereinfachen und es <bookmark mark=\"example_2\"/> als vier hoch vier a b schreiben."
+      }
     },
     "I561": {
       "factor": "Faktor",
