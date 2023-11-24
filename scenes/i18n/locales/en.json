@@ -2070,6 +2070,52 @@
     },
     "I51": {
       "voiceover": "Let's look at another set of<bookmark mark=\"rules_in\"/> rules that can help you deal with exponential functions. Let's get an overview, before we look at each rule in detail.\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\nTake a good look at these rules, you'll need them later on."
+    },
+    "I52": {
+      "q": {
+        "voiceover": "Let's start by looking at the rule for raising a fraction to a power. The rule states that <bookmark mark=\"rule\"/> a over b to the power of x equals a to the power of x over b to the power of x. So we can just raise both the enumerator and the denominator to the power.\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction \"a\" over b to the power of x is just \"a\" over b multiplied by itself x times. Then, think about what happens when we multiply fractions: We get a new fraction, where the enumerator is the product of the enumerators and the denominator is the product of the denominators. So, in our example <bookmark mark=\"step_2\"/>we get a fraction where the enumerator is \"a\" multiplied by itself x times and the denominator is b multiplied by itself x times. And that is exactly what we have in the rule. So, <bookmark mark=\"step_3\"/>we can just write a to the power of x over b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. <bookmark mark=\"example_in\"/> We have the fraction x over y to the power of 2a. How can we simplify this using the rule we just learned?"
+      },
+      "a": {
+        "voiceover": "We can just apply the rule to the example, and raise both the numerator and the denominator to the power of 2 \"a\". Then we get <bookmark mark=\"solution\"/>the solution x to the power of 2 \"a\" divided by y to the power of 2 \"a\"."
+      }
+    },
+    "I53": {
+      "q": {
+        "voiceover": "Now what if we <bookmark mark=\"situation\"/>raise one divided by something to a power? There's a rule that states that one over a to the power of x equals<bookmark mark=\"rule\"/> one divided by the expression a to the power of x. So if we raise one divided by something to a power, we can just raise the denominator to the power....\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction one over \"a\" to the power of x is just one over \"a\" multiplied by itself x times. If we do this multiplication, <bookmark mark=\"step_2\"/>the enumerator is the product of the enumerators, and the denominator is the product of the denominators. And since one to the power of x is still one, we get a fraction where<bookmark mark=\"step_3\"/> the enumerator is one and the denominator is \"a\" multiplied by itself x times. So, we can just write one over a to the power of x.\nNow, <bookmark mark=\"clean\"/>this rule is only a special case of another rule. Which other rule can we infer this one from?"
+      },
+      "a": {
+        "voiceover": "Take the rule which states <bookmark mark=\"rule_1\"/>that the power of a fraction is equal to the fraction of the powers. And for convenience,<bookmark mark=\"rule_1_alt\"/> switch the numerator and denominator.\nNow, if we <bookmark mark=\"downarrow_1\"/>set b equal to one, we <bookmark mark=\"rule_2\"/>get that one over a to the power of x is equal to one to the power of x over a to the power of x. And this is equal to<bookmark mark=\"rule_2_alt\"/> one over a to the power of x, since one to the power of x is equal to one."
+      }
+    },
+    "I54": {
+      "q": {
+        "voiceover": "Now we're looking at the rule that says that <bookmark mark=\"rule\"/>a b to the power of x is the same as a to the power of x times b to the power of x.\nThere are three easy steps to understand this. First, <bookmark mark=\"step_1\"/>we write out a b to the power of x as a b times a b times a b and so on x times. Next, <bookmark mark=\"step_2\"/>we can rearrange the terms so that all the a's are on one side and all the b's are on the other side. Finally, <bookmark mark=\"step_3\"/>we can rewrite the terms as a to the power of x times b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. What do we get, if we apply this rule <bookmark mark=\"example_in\"/>to 3 a to the power of x?"
+      },
+      "a": {
+        "voiceover": "We can simply apply the rule, and we get that 3 a to the power of x is equal <bookmark mark=\"solution\"/>to 3 to the power of x times a to the power of x."
+      }
+    },
+    "I55": {
+      "q": {
+        "voiceover": "Now, one more rule. The rule states that <bookmark mark=\"rule\"/>a over b to the power of minus x is equal to b over a to the power of x. So we can just switch the numerator and denominator and change the sign of the exponent.\nTo understand this rule, let's start with another rule, which says that<bookmark mark=\"start\"/> a to the power of negative x equals one over a to the power of x. If we apply this rule to the expression a over b to the power of negative x, we <bookmark mark=\"step_1\"/>get one divided by a over b to the power of x. Now, we can apply the rule that dividing one by a fraction is the same as switching the numerator and denominator. So we get <bookmark mark=\"step_2\"/>b over a to the power of x. So we have shown that<bookmark mark=\"clean_up\"/> a over b to the power of negative x is equal to b over a to the power of x.\nNow let's apply this rule. How can we rewrite<bookmark mark=\"example\"/> the expression a over b to the power of negative two?"
+      },
+      "a": {
+        "voiceover": "If we apply the rule to the expression a over b to the power of negative 2, we get the expression<bookmark mark=\"solution\"/> b over a to the power of 2. So we switched the numerator and the denominator and changed the sign of the exponent."
+      }
+    },
+    "I56": {
+      "voiceover": "Well, we're done. At least with the rules for exponential functions, we've seen them all. Let's recap the ones we just practiced:\nRule number <bookmark mark=\"rule_1\"/>one states that if we have a fraction raised to the power of x, we can compute the numerator and the denominator to the power of x, and then divide the numerator by the denominator.\nRule number <bookmark mark=\"rule_2\"/>two states that if we raise one over something to the power of x, we can move the x into the denominator, and compute one divided by the denominator to the power of x.\nRule number <bookmark mark=\"rule_3\"/>three states that if we have a product of two things raised to the power of x, we can compute each of the two things to the power of x, and then multiply them.\nAnd lastly, rule number <bookmark mark=\"rule_4\"/>four states that if we have a fraction raised to the power of minus x, we can switch the numerator and the denominator, and then compute the fraction to the power of x, instead of negative x.\n<bookmark mark=\"thumbs_in\"/>Great, now we've seen all the rules for exponential functions. A bit of practice, and we'll have mastered exponential functions!"
+    },
+    "I561": {
+      "voiceover": "Let's focus on a special kind of exponential function: The ones involving <bookmark mark=\"percentage\"/>percentages.\nWe're going to start with a simple example: Say you've got a <bookmark mark=\"savings_account\"/>savings account with a 100 dollars in it. And you're getting 5 percent interest per year.\nBy what factor is your money in the account multiplied every year?",
+      "interest": "interest",
+      "factor": "factor"
+    },
+    "I561q": {
+      "voiceover": "If we get 5 percent interest per year, we multiply the amount of money we have <bookmark mark=\"factor\"/>by one point zero five every <bookmark mark=\"one_red\"/>year: one, because we keep all the money from the previous year<bookmark mark=\"point05_red\"/>and point zero five, because we get five percent interest.\n<bookmark mark=\"all_black\"/>So the function describing the amount of money in the account after x years is<bookmark mark=\"func\"/> f of x equals 100 times one point zero five to the power of x.\nSo an <bookmark mark=\"interest_in\"/>interest rate of five percent leads to<bookmark mark=\"factor_in\"/> a multiplicative factor of 1 point 0 5..."
+    },
+    "I562": {
+      "voiceover": "Now I've just cooked the <bookmark mark=\"soup_in\"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark=\"twenty_percent\"/> twenty percent of the soup and passes it on to the next person. <bookmark mark=\"qmark\"/>How much soup will be left after x people have had their turn?"
     }
   },
   "Func_6_2_P_1_a": {

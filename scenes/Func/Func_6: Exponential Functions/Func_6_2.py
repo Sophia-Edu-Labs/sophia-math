@@ -2398,7 +2398,7 @@ class Func_6_2_I_4_6_X(SophiaCursorScene):
         self.wait(4)
 
 ####################################################################################################################################################
-# Chapter: Rules for exponential functions I - different base ######################################################################################
+# Chapter: Rules for exponential functions II - different base #####################################################################################
 #####################################
 #####################################
 class Func_6_2_I_5_1(SophiaCursorScene):
@@ -2414,11 +2414,12 @@ class Func_6_2_I_5_1(SophiaCursorScene):
         rule_stone = ImageMobject(assets_folder / "img" / "rules_block.png")
         rule_stone = rule_stone.scale(4/rule_stone.get_width()).move_to([-5, 1, 0])
 
-        rule_1 = Tex("$1$) ", "$\\left(\\frac1a\\right)^x=\\frac1{a^x}$", color=c1t, font_size=fs2)
-        rule_2 = Tex("$2$) ", "$(ab)^x=a^xb^x$", color=c1t, font_size=fs2)
-        rule_3 = Tex("$3$) ", "$\\left(\\frac ab\\right)^x=\\frac{a^x}{b^x}$", color=c1t, font_size=fs2)
+        rule_1 = Tex("$1$) ", "$\\left(\\frac ab\\right)^x=\\frac{a^x}{b^x}$", color=c1t, font_size=fs2)
+        rule_2 = Tex("$2$) ", "$\\left(\\frac1a\\right)^x=\\frac1{a^x}$", color=c1t, font_size=fs2)
+        rule_3 = Tex("$3$) ", "$(ab)^x=a^xb^x$", color=c1t, font_size=fs2)
         rule_4 = Tex("$4$) ", "$\\left(\\frac ab\\right)^{-x}=\\left(\\frac ba\\right)^x$", color=c1t, font_size=fs2)
         rules = VGroup(rule_1, rule_2, rule_3, rule_4).arrange(DOWN, buff=.4, aligned_edge=LEFT)
+
 
 
         # Action Sequence
@@ -2449,6 +2450,302 @@ class Func_6_2_I_5_1(SophiaCursorScene):
 #####################################
 class Func_6_2_I_5_2_q(SophiaCursorScene):
 
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\left(\\frac ab\\right)^x=\\frac{a^x}{b^x}", color=c1t, font_size=fs2)
+        step_1 = MathTex("\\left(\\frac ab\\right)^x","=","\\underbrace{\\frac ab\\cdot ... \\cdot \\frac ab}_{\\text{$x$ times}}", color=c2t, font_size=fs2)
+        step_2 = MathTex("\\left(\\frac ab\\right)^x","=","\\frac{\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}}{\\underbrace{b\\cdot ... \\cdot b}_{\\text{$x$ times}}}", color=c2t, font_size=fs2)
+        step_3 = MathTex("\\left(\\frac ab\\right)^x","=","\\frac{a^x}{b^x}", color=GREEN_D, font_size=fs2)
+        
+        example = MathTex("\\left(\\frac xy\\right)^{2a}=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I52.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule")
+            self.play(Write(rule), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(TransformMatchingTex(step_1, step_2), run_time=1)
+
+            self.wait_until_bookmark("step_3")
+            self.play(TransformMatchingTex(step_2, step_3), run_time=1)
+
+            self.wait_until_bookmark("clean")
+            self.play(Unwrite(step_3), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_5_2_a(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\left(\\frac ab\\right)^x=\\frac{a^x}{b^x}", color=c1t, font_size=fs2).set_y(2.6)
+        self.add(rule)
+        
+        example = MathTex("\\left(\\frac xy\\right)^{2a}=","\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+        self.add(example)
+        solution = MathTex("\\left(\\frac xy\\right)^{2a}=","\\frac{x^{2a}}{y^{2a}}", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I52.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("solution")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_3_q(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\left(\\frac1a\\right)^x","=\\frac1{a^x}", color=c1t, font_size=fs2)
+        step_1 = MathTex("\\left(\\frac1a\\right)^x","=","\\underbrace{\\frac1a\\cdot ... \\cdot \\frac1a}_{\\text{$x$ times}}", color=c2t, font_size=fs2)
+        step_2 = MathTex("\\left(\\frac1a\\right)^x","=","\\frac{\\underbrace{1\\cdot ... \\cdot 1}_{\\text{$x$ times}}}{\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}}", color=c2t, font_size=fs2)
+        step_3 = MathTex("\\left(\\frac1a\\right)^x","=","\\frac1{a^x}", color=GREEN_D, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I53.q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("situation")
+            self.play(Write(rule[0]), run_time=1)
+            
+            self.wait_until_bookmark("rule")
+            self.play(Write(rule[1]), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(TransformMatchingTex(step_1, step_2), run_time=1)
+
+            self.wait_until_bookmark("step_3")
+            self.play(TransformMatchingTex(step_2, step_3), run_time=1)
+
+            self.wait_until_bookmark("clean")
+            self.play(Unwrite(step_3), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_5_3_a(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule_1 = MathTex("\\left(\\frac ab\\right)^x","=\\frac{a^x}{b^x}", color=c1t, font_size=fs2)
+        rule_1_alt = MathTex("\\left(\\frac ba\\right)^x","=\\frac{b^x}{a^x}", color=c1t, font_size=fs2)
+        downarrow_1 = Tex("$\\Downarrow$", " $b=1$", color=c2t, font_size=fs2)
+        rule_2 = MathTex("\\left(\\frac 1a\\right)^x","=\\frac{1^x}{a^x}", color=c1t, font_size=fs2)
+        rule_2_alt = MathTex("\\left(\\frac 1a\\right)^x","=\\frac{1}{a^x}", color=c1t, font_size=fs2)
+        steps = VGroup(VGroup(rule_1, rule_1_alt), downarrow_1, VGroup(rule_2, rule_2_alt)).arrange(DOWN, buff=.4)        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I53.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("rule_1")
+            self.play(Write(rule_1), run_time=1)
+
+            self.wait_until_bookmark("rule_1_alt")
+            self.play(ReplacementTransform(rule_1, rule_1_alt), run_time=1)
+
+            self.wait_until_bookmark("downarrow_1")
+            self.play(Write(downarrow_1), run_time=1)
+
+            self.wait_until_bookmark("rule_2")
+            self.play(Write(rule_2), run_time=1)
+
+            self.wait_until_bookmark("rule_2_alt")
+            self.play(ReplacementTransform(rule_2, rule_2_alt), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_4_q(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\left(ab\\right)^x=a^xb^x", color=c1t, font_size=fs2)
+        down_1 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        step_1 = MathTex("\\left(ab\\right)^x","=","\\underbrace{ab\\cdot ... \\cdot ab}_{\\text{$x$ times}}", color=c2t, font_size=fs2)
+        down_2 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        step_2 = MathTex("\\left(ab\\right)^x","=","\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}\\underbrace{b\\cdot ... \\cdot b}_{\\text{$x$ times}}", color=c2t, font_size=fs2)
+        down_3 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        step_3 = MathTex("\\left(ab\\right)^x=a^xb^x", color=c1t, font_size=fs2)
+        
+        example = MathTex("\\left(3a\\right)^x=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I54.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule")
+            self.play(Write(rule), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(rule.animate.shift(UP*2.6), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(TransformMatchingTex(step_1, step_2), run_time=1)
+
+            self.wait_until_bookmark("step_3")
+            self.play(TransformMatchingTex(step_2, step_3), run_time=1)
+
+            self.wait_until_bookmark("clean")
+            self.play(Unwrite(step_3), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_5_4_a(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\left(ab\\right)^x=a^xb^x", color=c1t, font_size=fs2).set_y(2.6)
+        
+        example = MathTex("\\left(3a\\right)^x=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+        solution = MathTex("\\left(3a\\right)^x=3^xa^x", color=c1t, font_size=fs2)
+
+        self.add(rule, example)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I54.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("solution")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_5_q(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        start = MathTex("a^{-x}=\\frac1{a^x}", color=c1t, font_size=fs2)
+        down_1 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        step_1 = MathTex("\\Big(\\frac ab\\Big)^{-x}","=","\\frac1{\\left(\\frac ab\\right)^x}", color=c2t, font_size=fs2)
+        down_2 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        rule = MathTex("\\Big(\\frac ab\\Big)^{-x}=\\Big(\\frac ba\\Big)^{x}", color=c1t, font_size=fs2)
+        steps = VGroup(start, down_1, step_1, down_2, rule).arrange(DOWN, buff=.4)
+        rule.shift(2.4*UP)
+        
+        example = MathTex("\\Big(\\frac ab\\Big)^{-2}","=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I55.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule")
+            self.play(Write(rule), run_time=1)
+
+            self.wait_until_bookmark("start")
+            self.play(Write(start),rule.animate.shift(DOWN*2.4), run_time=1)
+            
+            self.wait_until_bookmark("step_1")
+            self.play(Write(down_1), Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(down_2), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            rule_2 = rule.copy()
+            self.add(rule_2)
+            self.play(Unwrite(steps), rule_2.animate.shift(UP*2), run_time=1)
+
+            self.wait_until_bookmark("example")
+            self.play(Write(example), rule_2.animate.shift(UP*2), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_5_5_a(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\Big(\\frac ab\\Big)^{-x}=\\Big(\\frac ba\\Big)^{x}", color=c1t, font_size=fs2).set_y(2.4)
+            
+        example = MathTex("\\Big(\\frac ab\\Big)^{-2}","=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
+        solution = MathTex("\\Big(\\frac ab\\Big)^{-2}","=","\\Big(\\frac ba\\Big)^{2}", color=c1t, font_size=fs2)
+        self.add(rule, example)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I55.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("solution")
+            self.play(ReplacementTransform(example, solution), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_6(SophiaCursorScene):
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2457,8 +2754,8 @@ class Func_6_2_I_5_2_q(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        rule_stone = ImageMobject(assets_folder / "img" / "rules_block.png")
-        rule_stone = rule_stone.scale(4/rule_stone.get_width()).move_to([-5, 1, 0])
+        kangaroo = ImageMobject(assets_folder / "img" / "kangaroo_thumbs.png")
+        kangaroo = kangaroo.scale(4/kangaroo.get_width()).move_to([-5, 0, 0])
 
         rule_1 = Tex("$1$) ", "$\\left(\\frac ab\\right)^x=\\frac{a^x}{b^x}$", color=c1t, font_size=fs2)
         rule_2 = Tex("$2$) ", "$\\left(\\frac1a\\right)^x=\\frac1{a^x}$", color=c1t, font_size=fs2)
@@ -2467,18 +2764,15 @@ class Func_6_2_I_5_2_q(SophiaCursorScene):
         rules = VGroup(rule_1, rule_2, rule_3, rule_4).arrange(DOWN, buff=.4, aligned_edge=LEFT)
 
 
+
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I51.voiceover")
+                text=self.translate("Func_6_2.I56.voiceover")
         ) as tracker:
-            
-            self.wait_until_bookmark("rules_in")
-            self.add_shift_sound(0.5)
-            self.play(rule_stone.animate.shift(5*RIGHT), run_time=0.5)
 
             self.wait_until_bookmark("rule_1")
             self.add_shift_sound(1)
-            self.play(rule_stone.animate.shift(5*RIGHT), Write(rule_1), run_time=1)
+            self.play(Write(rule_1), run_time=1)
 
             self.wait_until_bookmark("rule_2")
             self.play(Write(rule_2), run_time=1)
@@ -2488,6 +2782,136 @@ class Func_6_2_I_5_2_q(SophiaCursorScene):
 
             self.wait_until_bookmark("rule_4")
             self.play(Write(rule_4), run_time=1)
+
+            self.wait_until_bookmark("thumbs_in")
+            self.add_shift_sound(0.5)
+            self.play(kangaroo.animate.shift(5*RIGHT), Unwrite(rule_1), Unwrite(rule_2), Unwrite(rule_3), Unwrite(rule_4), run_time=0.5)
+
+        self.add_shift_sound(.5)
+        self.play(kangaroo.animate.shift(5*RIGHT), run_time=0.5)
+
+        self.wait(4)
+
+
+####################################################################################################################################################
+# Chapter: Focus on percentage #####################################################################################################################
+#####################################
+#####################################
+class Func_6_2_I_5_6_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        percentage = ImageMobject(assets_folder / "img" / "percentage.png")
+        percentage = percentage.scale(4/percentage.get_width()).move_to([-5, 0, 0])
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I561.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("percentage")
+            self.add_shift_sound(0.5)
+            self.play(percentage.animate.shift(5*RIGHT), run_time=0.5)
+
+        self.wait(4)
+
+class Func_6_2_I_5_6_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        percentage = ImageMobject(assets_folder / "img" / "percentage.png")
+        self.add(percentage.scale(4/percentage.get_width()).move_to([0, 0, 0]))
+        func = MathTex("f(x)=100\\cdot", "1",".05", "^x", color=c1t, font_size=fs2)
+
+        interest = self.translate("Func_6_2.I561.interest")
+        factor = self.translate("Func_6_2.I561.factor")
+        steps = VGroup(Tex("$5\%$ ", interest, color=c1t, font_size=fs2), MathTex("\\Downarrow", color=c2t, font_size=fs2), Tex(factor, " $1.05$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2)
+
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_2.I561q.voiceover")
+        ) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(percentage.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("factor")
+            self.play(Write(func[1]), Write(func[2]), run_time=.3)
+
+            self.wait_until_bookmark("one_red")
+            self.play(func[1].animate.set_color(RED), run_time=.3)
+
+            self.wait_until_bookmark("point05_red")
+            self.play(func[1].animate.set_color(c1t), func[2].animate.set_color(RED), run_time=1)
+
+            self.wait_until_bookmark("all_black")
+            self.play(func[2].animate.set_color(c1t), run_time=1)
+
+            self.wait_until_bookmark("func")
+            self.play(Write(func[0]), Write(func[-1]), run_time=1)
+
+            self.wait_until_bookmark("interest_in")
+            self.add_shift_sound(0.5)
+            self.play(Write(steps[0]), func.animate.shift(2.5*UP), run_time=.5)
+
+            self.wait_until_bookmark("factor_in")
+            self.play(Write(steps[1]), Write(steps[2]), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_2_I_5_6_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        soup = ImageMobject(assets_folder / "img" / "soup.png")
+        soup = soup.scale(4/soup.get_width()).move_to([-5, 0, 0])
+        twenty_percent = MathTex("20\\%", color=c1t, font_size=fs1).next_to(soup, DOWN, buff=.2).set_x(0)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
+        qmark = qmark.scale(6/qmark.get_width()).move_to([-5, 0, 0])
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Now I've just cooked the <bookmark mark="soup_in"/>most delicious soup and everyone wants some. But people are also slightly shy, so everyone who gets a turn takes<bookmark mark="twenty_percent"/> twenty percent of the soup and passes it on to the next person. <bookmark mark="qmark"/>How much soup will be left after x people have had their turn?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("soup_in")
+            self.add_shift_sound(0.5)
+            self.play(soup.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("twenty_percent")
+            self.play(Write(twenty_percent), run_time=1)
+
+            self.wait_until_bookmark("qmark")
+            self.play(qmark.animate.shift(5*RIGHT), FadeOut(twenty_percent), FadeOut(soup), run_time=0.5)
+
 
         self.wait(4)
 
