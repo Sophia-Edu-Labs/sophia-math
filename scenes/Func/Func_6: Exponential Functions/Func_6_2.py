@@ -4352,7 +4352,7 @@ class Func_6_2_I_5_5_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6(SophiaCursorScene):
+class Func_6_2_I_5_6_X(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4405,7 +4405,7 @@ class Func_6_2_I_5_6(SophiaCursorScene):
 # Chapter: Focus on percentage #####################################################################################################################
 #####################################
 #####################################
-class Func_6_2_I_5_6_1_q(SophiaCursorScene):
+class Func_6_2_I_6_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -4439,7 +4439,7 @@ class Func_6_2_I_5_6_1_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_2_I_5_6_1_a(SophiaCursorScene):
+class Func_6_2_I_6_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4489,7 +4489,7 @@ class Func_6_2_I_5_6_1_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_1_b(SophiaCursorScene):
+class Func_6_2_I_6_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4539,7 +4539,7 @@ class Func_6_2_I_5_6_1_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_1_c(SophiaCursorScene):
+class Func_6_2_I_6_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4589,7 +4589,7 @@ class Func_6_2_I_5_6_1_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_1_d(SophiaCursorScene):
+class Func_6_2_I_6_1_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4641,7 +4641,7 @@ class Func_6_2_I_5_6_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6_2_q(SophiaCursorScene):
+class Func_6_2_I_6_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -4685,7 +4685,7 @@ class Func_6_2_I_5_6_2_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_2_I_5_6_2_a(SophiaCursorScene):
+class Func_6_2_I_6_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4723,7 +4723,7 @@ class Func_6_2_I_5_6_2_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_2_b(SophiaCursorScene):
+class Func_6_2_I_6_2_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4761,7 +4761,7 @@ class Func_6_2_I_5_6_2_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_2_c(SophiaCursorScene):
+class Func_6_2_I_6_2_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4799,7 +4799,7 @@ class Func_6_2_I_5_6_2_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_2_d(SophiaCursorScene):
+class Func_6_2_I_6_2_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4839,7 +4839,7 @@ class Func_6_2_I_5_6_2_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6_3(SophiaCursorScene):
+class Func_6_2_I_6_3(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4880,7 +4880,7 @@ class Func_6_2_I_5_6_3(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6_4_q(SophiaCursorScene):
+class Func_6_2_I_6_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -4923,7 +4923,7 @@ class Func_6_2_I_5_6_4_q(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_4_a(SophiaCursorScene):
+class Func_6_2_I_6_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4964,7 +4964,7 @@ class Func_6_2_I_5_6_4_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_4_b(SophiaCursorScene):
+class Func_6_2_I_6_4_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5005,7 +5005,7 @@ class Func_6_2_I_5_6_4_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_4_c(SophiaCursorScene):
+class Func_6_2_I_6_4_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5046,7 +5046,7 @@ class Func_6_2_I_5_6_4_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_4_d(SophiaCursorScene):
+class Func_6_2_I_6_4_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5090,7 +5090,7 @@ class Func_6_2_I_5_6_4_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6_5_q(SophiaCursorScene):
+class Func_6_2_I_6_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -5134,7 +5134,7 @@ class Func_6_2_I_5_6_5_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_2_I_5_6_5_a(SophiaCursorScene):
+class Func_6_2_I_6_5_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5186,7 +5186,7 @@ class Func_6_2_I_5_6_5_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_5_b(SophiaCursorScene):
+class Func_6_2_I_6_5_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5238,7 +5238,7 @@ class Func_6_2_I_5_6_5_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_5_c(SophiaCursorScene):
+class Func_6_2_I_6_5_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5290,7 +5290,7 @@ class Func_6_2_I_5_6_5_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_2_I_5_6_5_d(SophiaCursorScene):
+class Func_6_2_I_6_5_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5344,7 +5344,7 @@ class Func_6_2_I_5_6_5_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_6_6(SophiaCursorScene):
+class Func_6_2_I_6_6_X(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6587,6 +6587,7 @@ class Func_6_2_P_6_c(GrowthFactorToGraphAnswerScene):
 
 
 PROTOTYPES=[
+##########################################################################CHAPTER: Growth factor >1, <1
     PagePrototypeVideo.from_scene(Func_6_2_I_1),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_q),
     PagePrototypeQuestion.from_scene(Func_6_2_I_2_q),
@@ -6605,6 +6606,112 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_I_2_2_b),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_2_c),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_X),
+##########################################################################CHAPTER: General form f(x)=a*b^x
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_1),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_3_2_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_2_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_2_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_3_3_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_3_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_3_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_3_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_3_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_3_4_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_4_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_4_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_4_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_4_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_5_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_3_5_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_5_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_5_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_5_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_5_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_6_X),
+########################################################################### Chapter: Rules for exponential functions I - same base
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_1),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_4_2_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_2_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_2_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_2_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_2_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_4_3_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_3_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_3_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_3_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_3_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_4_4_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_4_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_4_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_4_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_4_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_5_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_4_5_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_5_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_5_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_5_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_5_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_6_X),
+########################################################################### Chapter: Rules for exponential functions I - different base
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_1),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_5_2_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_2_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_2_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_2_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_2_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_5_3_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_3_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_3_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_3_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_3_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_5_4_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_4_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_4_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_4_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_4_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_5_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_5_5_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_5_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_5_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_5_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_5_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_6_X),
+    ########################################################################## Chapter: Focus on percentages
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_6_1_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_1_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_1_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_1_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_1_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_6_2_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_2_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_2_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_2_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_2_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_3),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_6_4_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_4_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_4_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_4_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_4_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_5_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_6_5_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_5_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_5_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_5_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_5_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_6_X),
 ##########################################################################
     PagePrototypeVideo.from_scene(Func_6_2_I_3_q),
     PagePrototypeQuestion.from_scene(Func_6_2_I_3_q),
