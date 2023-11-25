@@ -1788,11 +1788,10 @@ class Func_6_2_I_3_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$f(x)=1000\\cdot\\left(\\tfrac18\\right)^x$", "$f(x)=1000\\cdot2^x$", "$f(x)=2000^x$", "$1000x^2$"],
-            correctAnswerIndex = 1,
+            answerOptions = ["$f(x)=8\\cdot\\left\\frac{1}{4}\\right^x$", "$f(x)=\\frac{1}{2}\\cdot4^x$", "$f(x)=2\\cdot4^x$", "$f(x)=\\frac{1}{4}\\cdot2^x$"],
+            correctAnswerIndex = 3,
             questionText=self.translate("Func_6_2.I34.q.question-text")
         )
-
 
     # Main method for constructing the animation
     def construct(self):
@@ -1824,6 +1823,7 @@ class Func_6_2_I_3_4_q(SophiaCursorScene):
             self.play(Write(func_tex), run_time=1)
 
         self.wait(4)
+
 
 class Func_6_2_I_3_4_a(SophiaCursorScene):
 
@@ -1865,7 +1865,340 @@ class Func_6_2_I_3_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text=self.translate("Func_6_2.I34.a.voiceover")
+            text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I34.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_x_3")
+            self.play(Write(f_vals[0][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_x_4")
+            self.play(Write(f_vals[1][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_3")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_3)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("f_4")
+            x,y,_ = plane.c2p(4,4)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_4)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = func_tex[-2].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(TransformMatchingTex(func_tex, func_sol_1))
+            cursor.idle=True
+
+            self.wait_until_bookmark("reset_1")
+            self.play(Unwrite(f_vals), Uncreate(lines_f_3), Uncreate(lines_f_4), Uncreate(circ_3), Uncreate(circ_4), run_time=.5)
+
+            self.wait_until_bookmark("of_a")
+            cursor.idle=False
+            x,y,_ = func_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("f_3_again")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(Write(f_3), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+            
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(f_3_steps[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(f_3_steps[1]), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(f_3_steps[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_4")
+            self.play(Write(f_3_steps[3]), TransformMatchingTex(func_sol_1, func_sol_2), run_time=1)
+
+            self.wait_until_bookmark("reset_2")
+            self.play(Unwrite(f_3_steps), Uncreate(f_3), run_time=.5)
+
+            self.wait_until_bookmark("final_sol")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func_sol_2), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        plane = cords[0]
+        self.add(cords)
+
+        plot = plane.plot(lambda x: (2**x)/4, color=GREEN_E)
+        self.add(plot)
+
+        x_0, y_0, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=x_0, y=y_0)
+        self.add(cursor)
+
+        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+
+        circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
+        circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
+
+        func_tex = MathTex("f","(x)", "=", "a","\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        self.add(func_tex)
+        func_sol_1 = MathTex("f","(x)", "=", "a","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_sol_2 = MathTex("f","(x)", "=", "\\tfrac14\\","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        f_vals = VGroup(MathTex("f(","3",")=2", color=c1t, font_size=fs2), MathTex("f(","4",")=4", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_tex, DOWN, buff=.4)
+        f_vals.shift((f_vals.get_left()-func_tex.get_left())[0]*LEFT)
+
+        f_3 = VGroup(lines_f_3.copy(), circ_3.copy())
+
+        f_3_steps = MathTex("f(3)&=a\\cdot2^3", "\\\\&=a\\cdot8", "\\\\&=2","\\\\ \\Rightarrow a&=\\tfrac14", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I34.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_x_3")
+            self.play(Write(f_vals[0][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_x_4")
+            self.play(Write(f_vals[1][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_3")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_3)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("f_4")
+            x,y,_ = plane.c2p(4,4)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_4)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = func_tex[-2].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(TransformMatchingTex(func_tex, func_sol_1))
+            cursor.idle=True
+
+            self.wait_until_bookmark("reset_1")
+            self.play(Unwrite(f_vals), Uncreate(lines_f_3), Uncreate(lines_f_4), Uncreate(circ_3), Uncreate(circ_4), run_time=.5)
+
+            self.wait_until_bookmark("of_a")
+            cursor.idle=False
+            x,y,_ = func_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("f_3_again")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(Write(f_3), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+            
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(f_3_steps[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(f_3_steps[1]), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(f_3_steps[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_4")
+            self.play(Write(f_3_steps[3]), TransformMatchingTex(func_sol_1, func_sol_2), run_time=1)
+
+            self.wait_until_bookmark("reset_2")
+            self.play(Unwrite(f_3_steps), Uncreate(f_3), run_time=.5)
+
+            self.wait_until_bookmark("final_sol")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func_sol_2), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_4_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        plane = cords[0]
+        self.add(cords)
+
+        plot = plane.plot(lambda x: (2**x)/4, color=GREEN_E)
+        self.add(plot)
+
+        x_0, y_0, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=x_0, y=y_0)
+        self.add(cursor)
+
+        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+
+        circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
+        circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
+
+        func_tex = MathTex("f","(x)", "=", "a","\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        self.add(func_tex)
+        func_sol_1 = MathTex("f","(x)", "=", "a","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_sol_2 = MathTex("f","(x)", "=", "\\tfrac14\\","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        f_vals = VGroup(MathTex("f(","3",")=2", color=c1t, font_size=fs2), MathTex("f(","4",")=4", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_tex, DOWN, buff=.4)
+        f_vals.shift((f_vals.get_left()-func_tex.get_left())[0]*LEFT)
+
+        f_3 = VGroup(lines_f_3.copy(), circ_3.copy())
+
+        f_3_steps = MathTex("f(3)&=a\\cdot2^3", "\\\\&=a\\cdot8", "\\\\&=2","\\\\ \\Rightarrow a&=\\tfrac14", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I34.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_x_3")
+            self.play(Write(f_vals[0][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_x_4")
+            self.play(Write(f_vals[1][1]), run_time=.5)
+            
+            self.wait_until_bookmark("f_3")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_3)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("f_4")
+            x,y,_ = plane.c2p(4,4)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.add(circ_4)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = func_tex[-2].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(TransformMatchingTex(func_tex, func_sol_1))
+            cursor.idle=True
+
+            self.wait_until_bookmark("reset_1")
+            self.play(Unwrite(f_vals), Uncreate(lines_f_3), Uncreate(lines_f_4), Uncreate(circ_3), Uncreate(circ_4), run_time=.5)
+
+            self.wait_until_bookmark("of_a")
+            cursor.idle=False
+            x,y,_ = func_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("f_3_again")
+            cursor.idle=False
+            x,y,_ = plane.c2p(3,2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+            self.play(Write(f_3), run_time=.5)
+            self.wait(0.5)
+            self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
+            cursor.idle=True
+            
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(f_3_steps[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(f_3_steps[1]), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(f_3_steps[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_4")
+            self.play(Write(f_3_steps[3]), TransformMatchingTex(func_sol_1, func_sol_2), run_time=1)
+
+            self.wait_until_bookmark("reset_2")
+            self.play(Unwrite(f_3_steps), Uncreate(f_3), run_time=.5)
+
+            self.wait_until_bookmark("final_sol")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func_sol_2), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_2_I_3_4_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        plane = cords[0]
+        self.add(cords)
+
+        plot = plane.plot(lambda x: (2**x)/4, color=GREEN_E)
+        self.add(plot)
+
+        x_0, y_0, _ = plane.c2p(0,0)
+        cursor = AltCursor(idle=True, x=x_0, y=y_0)
+        self.add(cursor)
+
+        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+
+        circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
+        circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
+
+        func_tex = MathTex("f","(x)", "=", "a","\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        self.add(func_tex)
+        func_sol_1 = MathTex("f","(x)", "=", "a","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_sol_2 = MathTex("f","(x)", "=", "\\tfrac14\\","\\cdot ", "2", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        f_vals = VGroup(MathTex("f(","3",")=2", color=c1t, font_size=fs2), MathTex("f(","4",")=4", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_tex, DOWN, buff=.4)
+        f_vals.shift((f_vals.get_left()-func_tex.get_left())[0]*LEFT)
+
+        f_3 = VGroup(lines_f_3.copy(), circ_3.copy())
+
+        f_3_steps = MathTex("f(3)&=a\\cdot2^3", "\\\\&=a\\cdot8", "\\\\&=2","\\\\ \\Rightarrow a&=\\tfrac14", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=.4)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.correct_4")+self.translate("Func_6_2.I34.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_x_3")
@@ -1939,6 +2272,13 @@ class Func_6_2_I_3_4_a(SophiaCursorScene):
 #####################################
 #####################################
 class Func_6_2_I_3_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\frac12$", "$\\frac14$", "$2$", "$4$"],
+            correctAnswerIndex = 3,
+            questionText=self.translate("Func_6_2.I35.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2021,7 +2361,241 @@ class Func_6_2_I_3_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text=self.translate("Func_6_2.I35.a.voiceover")
+            text=self.translate("General.correct_1")+self.translate("Func_6_2.I35.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_0_1")
+            self.add_shift_sound(1)
+            self.play(ball.animate.shift(5*UP), Write(follows_0), Write(f_0_1), run_time=1)
+
+            self.wait_until_bookmark("f_0_2")
+            self.play(TransformMatchingTex(f_0_1, f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_0_3")
+            self.play(TransformMatchingTex(func_tex, func_tex_a), run_time=1)
+
+            self.wait_until_bookmark("f_0_4")
+            self.play(Write(follows_a), Write(sol_a), run_time=1)
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(1)
+            self.play(bounce_tex.animate.shift(upshift), Unwrite(follows_0), Unwrite(follows_a), Unwrite(sol_a), Unwrite(eight_meters), Unwrite(f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_1_1")
+            self.play(Write(follows_1), Write(f_1_1), run_time=1)
+
+            self.wait_until_bookmark("f_1_2")
+            self.play(TransformMatchingTex(f_1_1, f_1_2), run_time=1)
+
+            self.wait_until_bookmark("final_sol")
+            self.play(TransformMatchingTex(func_tex_a, func_tex_sol), Write(follows_b), Write(sol_b), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(follows_a), Unwrite(follows_1), Unwrite(follows_b), Unwrite(bounce_tex), Unwrite(sol_b), Unwrite(f_1_2), func_tex_sol.animate.shift(func_tex_sol.get_y()*DOWN), run_time=1)
+
+            self.wait_until_bookmark("frame")
+            self.add_pencil_sound(1)
+            self.play(Create(frame_sol), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_3_5_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        ball = ImageMobject(assets_folder / "img" / "ball.png")
+        ball = ball.scale(2/ball.get_width()).move_to([0, 1, 0])
+        original_height = self.translate("Func_6_2.I35.original-height")
+        eight_meters = Tex(original_height, ": $8$m", color=c1t, font_size=fs2).set_y(2.4)
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=1)
+        func_tex_a = MathTex("f","(x)", "=", "8\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_tex_sol = MathTex("f","(x)", "=", "8\\cdot ", "(\\tfrac{1}{4})", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        frame_sol = SurroundingRectangle(func_tex_sol, buff=.2, corner_radius=.1, color=GREEN_E).set_y(0)
+        three_bounces = self.translate("Func_6_2.I35.three-bounces")
+        bounce_tex = Tex(three_bounces, "\\\\ $\\Rightarrow \\tfrac18$ m", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=0.4)
+
+        upshift = (eight_meters.get_top()-bounce_tex.get_top())*(0,1,0)
+
+        self.add(ball, eight_meters, func_tex)
+
+        follows_0 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(eight_meters, DOWN, buff=0.2)
+        f_0_1 = MathTex("f(0)=", "a\\cdot b^0", "=8", color=c1t, font_size=fs2).next_to(follows_0, DOWN, buff=0.2)
+        f_0_2 = MathTex("f(0)=", "a\\cdot 1", "=8", color=c1t, font_size=fs2).move_to(f_0_1)
+        follows_a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_0_2, DOWN, buff=0.2)
+        sol_a = MathTex("a=", "8", color=c1t, font_size=fs2).next_to(follows_a, DOWN, buff=0.2)
+
+        follows_1 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(bounce_tex, DOWN, buff=0.2).shift(upshift)
+        f_1_1 = MathTex("f(3)=8\\cdot", "b^3", "=\\tfrac18", color=c1t, font_size=fs2).next_to(follows_1, DOWN, buff=0.2)
+        f_1_2 = MathTex("f(3)=", "b^3", "=\\tfrac{1}{64}", color=c1t, font_size=fs2).move_to(f_1_1)
+        follows_b = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_1_2, DOWN, buff=0.2)
+        sol_b = MathTex("b=", "\\tfrac14", color=c1t, font_size=fs2).next_to(follows_b, DOWN, buff=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_1")+self.translate("Func_6_2.I35.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_0_1")
+            self.add_shift_sound(1)
+            self.play(ball.animate.shift(5*UP), Write(follows_0), Write(f_0_1), run_time=1)
+
+            self.wait_until_bookmark("f_0_2")
+            self.play(TransformMatchingTex(f_0_1, f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_0_3")
+            self.play(TransformMatchingTex(func_tex, func_tex_a), run_time=1)
+
+            self.wait_until_bookmark("f_0_4")
+            self.play(Write(follows_a), Write(sol_a), run_time=1)
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(1)
+            self.play(bounce_tex.animate.shift(upshift), Unwrite(follows_0), Unwrite(follows_a), Unwrite(sol_a), Unwrite(eight_meters), Unwrite(f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_1_1")
+            self.play(Write(follows_1), Write(f_1_1), run_time=1)
+
+            self.wait_until_bookmark("f_1_2")
+            self.play(TransformMatchingTex(f_1_1, f_1_2), run_time=1)
+
+            self.wait_until_bookmark("final_sol")
+            self.play(TransformMatchingTex(func_tex_a, func_tex_sol), Write(follows_b), Write(sol_b), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(follows_a), Unwrite(follows_1), Unwrite(follows_b), Unwrite(bounce_tex), Unwrite(sol_b), Unwrite(f_1_2), func_tex_sol.animate.shift(func_tex_sol.get_y()*DOWN), run_time=1)
+
+            self.wait_until_bookmark("frame")
+            self.add_pencil_sound(1)
+            self.play(Create(frame_sol), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_3_5_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        ball = ImageMobject(assets_folder / "img" / "ball.png")
+        ball = ball.scale(2/ball.get_width()).move_to([0, 1, 0])
+        original_height = self.translate("Func_6_2.I35.original-height")
+        eight_meters = Tex(original_height, ": $8$m", color=c1t, font_size=fs2).set_y(2.4)
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=1)
+        func_tex_a = MathTex("f","(x)", "=", "8\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_tex_sol = MathTex("f","(x)", "=", "8\\cdot ", "(\\tfrac{1}{4})", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        frame_sol = SurroundingRectangle(func_tex_sol, buff=.2, corner_radius=.1, color=GREEN_E).set_y(0)
+        three_bounces = self.translate("Func_6_2.I35.three-bounces")
+        bounce_tex = Tex(three_bounces, "\\\\ $\\Rightarrow \\tfrac18$ m", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=0.4)
+
+        upshift = (eight_meters.get_top()-bounce_tex.get_top())*(0,1,0)
+
+        self.add(ball, eight_meters, func_tex)
+
+        follows_0 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(eight_meters, DOWN, buff=0.2)
+        f_0_1 = MathTex("f(0)=", "a\\cdot b^0", "=8", color=c1t, font_size=fs2).next_to(follows_0, DOWN, buff=0.2)
+        f_0_2 = MathTex("f(0)=", "a\\cdot 1", "=8", color=c1t, font_size=fs2).move_to(f_0_1)
+        follows_a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_0_2, DOWN, buff=0.2)
+        sol_a = MathTex("a=", "8", color=c1t, font_size=fs2).next_to(follows_a, DOWN, buff=0.2)
+
+        follows_1 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(bounce_tex, DOWN, buff=0.2).shift(upshift)
+        f_1_1 = MathTex("f(3)=8\\cdot", "b^3", "=\\tfrac18", color=c1t, font_size=fs2).next_to(follows_1, DOWN, buff=0.2)
+        f_1_2 = MathTex("f(3)=", "b^3", "=\\tfrac{1}{64}", color=c1t, font_size=fs2).move_to(f_1_1)
+        follows_b = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_1_2, DOWN, buff=0.2)
+        sol_b = MathTex("b=", "\\tfrac14", color=c1t, font_size=fs2).next_to(follows_b, DOWN, buff=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_1")+self.translate("Func_6_2.I35.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_0_1")
+            self.add_shift_sound(1)
+            self.play(ball.animate.shift(5*UP), Write(follows_0), Write(f_0_1), run_time=1)
+
+            self.wait_until_bookmark("f_0_2")
+            self.play(TransformMatchingTex(f_0_1, f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_0_3")
+            self.play(TransformMatchingTex(func_tex, func_tex_a), run_time=1)
+
+            self.wait_until_bookmark("f_0_4")
+            self.play(Write(follows_a), Write(sol_a), run_time=1)
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(1)
+            self.play(bounce_tex.animate.shift(upshift), Unwrite(follows_0), Unwrite(follows_a), Unwrite(sol_a), Unwrite(eight_meters), Unwrite(f_0_2), run_time=1)
+
+            self.wait_until_bookmark("f_1_1")
+            self.play(Write(follows_1), Write(f_1_1), run_time=1)
+
+            self.wait_until_bookmark("f_1_2")
+            self.play(TransformMatchingTex(f_1_1, f_1_2), run_time=1)
+
+            self.wait_until_bookmark("final_sol")
+            self.play(TransformMatchingTex(func_tex_a, func_tex_sol), Write(follows_b), Write(sol_b), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(follows_a), Unwrite(follows_1), Unwrite(follows_b), Unwrite(bounce_tex), Unwrite(sol_b), Unwrite(f_1_2), func_tex_sol.animate.shift(func_tex_sol.get_y()*DOWN), run_time=1)
+
+            self.wait_until_bookmark("frame")
+            self.add_pencil_sound(1)
+            self.play(Create(frame_sol), run_time=1)
+
+        self.wait(4)
+
+class Func_6_2_I_3_5_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        ball = ImageMobject(assets_folder / "img" / "ball.png")
+        ball = ball.scale(2/ball.get_width()).move_to([0, 1, 0])
+        original_height = self.translate("Func_6_2.I35.original-height")
+        eight_meters = Tex(original_height, ": $8$m", color=c1t, font_size=fs2).set_y(2.4)
+
+        func_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(ball, DOWN, buff=1)
+        func_tex_a = MathTex("f","(x)", "=", "8\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        func_tex_sol = MathTex("f","(x)", "=", "8\\cdot ", "(\\tfrac{1}{4})", "^x", color=c1t, font_size=fs2).move_to(func_tex)
+        frame_sol = SurroundingRectangle(func_tex_sol, buff=.2, corner_radius=.1, color=GREEN_E).set_y(0)
+        three_bounces = self.translate("Func_6_2.I35.three-bounces")
+        bounce_tex = Tex(three_bounces, "\\\\ $\\Rightarrow \\tfrac18$ m", color=c1t, font_size=fs2).next_to(func_tex, DOWN, buff=0.4)
+
+        upshift = (eight_meters.get_top()-bounce_tex.get_top())*(0,1,0)
+
+        self.add(ball, eight_meters, func_tex)
+
+        follows_0 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(eight_meters, DOWN, buff=0.2)
+        f_0_1 = MathTex("f(0)=", "a\\cdot b^0", "=8", color=c1t, font_size=fs2).next_to(follows_0, DOWN, buff=0.2)
+        f_0_2 = MathTex("f(0)=", "a\\cdot 1", "=8", color=c1t, font_size=fs2).move_to(f_0_1)
+        follows_a = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_0_2, DOWN, buff=0.2)
+        sol_a = MathTex("a=", "8", color=c1t, font_size=fs2).next_to(follows_a, DOWN, buff=0.2)
+
+        follows_1 = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(bounce_tex, DOWN, buff=0.2).shift(upshift)
+        f_1_1 = MathTex("f(3)=8\\cdot", "b^3", "=\\tfrac18", color=c1t, font_size=fs2).next_to(follows_1, DOWN, buff=0.2)
+        f_1_2 = MathTex("f(3)=", "b^3", "=\\tfrac{1}{64}", color=c1t, font_size=fs2).move_to(f_1_1)
+        follows_b = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(f_1_2, DOWN, buff=0.2)
+        sol_b = MathTex("b=", "\\tfrac14", color=c1t, font_size=fs2).next_to(follows_b, DOWN, buff=0.2)
+
+        # Action Sequence
+        with self.voiceover(
+            text=self.translate("General.incorrect_1")+self.translate("Func_6_2.I35.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_0_1")
@@ -2166,6 +2740,13 @@ class Func_6_2_I_4_1(SophiaCursorScene):
 #####################################
 class Func_6_2_I_4_2_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$4^{ab}$", "$\\left(4^{a}\\right)^b$", "$4^{a+b}$", "$4^{a}+4^b$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_6_2.I42.q.question-text")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2210,7 +2791,6 @@ class Func_6_2_I_4_2_q(SophiaCursorScene):
 
         self.wait(4)
 
-
 class Func_6_2_I_4_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -2236,7 +2816,133 @@ class Func_6_2_I_4_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I42.a.voiceover")
+                text=self.translate("General.incorrect_2")+self.translate("Func_6_2.I42.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("equal")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), solution.animate.shift(2.6*UP), Unwrite(rule), run_time=1)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(step_3), Write(step_4))
+
+        self.wait(4)
+
+class Func_6_2_I_4_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = Tex("$4^a=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$b$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$4^a\\cdot 4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a+ b$ times}}=4^{a+b}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2).scale(.85)
+        step_3.set_x(0)
+
+        example = MathTex("4^a\\cdot 4^b=", "\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("4^a\\cdot 4^b=", "4^{a+b}", color=c1t, font_size=fs1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Func_6_2.I42.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("equal")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), solution.animate.shift(2.6*UP), Unwrite(rule), run_time=1)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(step_3), Write(step_4))
+
+        self.wait(4)
+
+class Func_6_2_I_4_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = Tex("$4^a=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$b$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$4^a\\cdot 4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a+ b$ times}}=4^{a+b}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2).scale(.85)
+        step_3.set_x(0)
+
+        example = MathTex("4^a\\cdot 4^b=", "\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("4^a\\cdot 4^b=", "4^{a+b}", color=c1t, font_size=fs1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_2")+self.translate("Func_6_2.I42.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("equal")
+            self.play(TransformMatchingTex(example, solution), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), solution.animate.shift(2.6*UP), Unwrite(rule), run_time=1)
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("step_3")
+            self.play(Write(step_3), Write(step_4))
+
+        self.wait(4)
+
+class Func_6_2_I_4_2_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = Tex("$4^a=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a$ times}}$", color=c2t, font_size=fs2)
+        step_2 = Tex("$4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$b$ times}}$", color=c2t, font_size=fs2)
+        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
+        step_4 = Tex("$4^a\\cdot 4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a+ b$ times}}=4^{a+b}$", color=c2t, font_size=fs2)
+        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2).scale(.85)
+        step_3.set_x(0)
+
+        example = MathTex("4^a\\cdot 4^b=", "\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("4^a\\cdot 4^b=", "4^{a+b}", color=c1t, font_size=fs1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Func_6_2.I42.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("equal")
@@ -2256,6 +2962,13 @@ class Func_6_2_I_4_2_a(SophiaCursorScene):
 #####################################
 #####################################
 class Func_6_2_I_4_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$3^{\\frac xy}$", "$3^{x-y}$", "\\left({\\frac xy}\\right)^3$", "$3^{x+y}$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_2.I43.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2340,7 +3053,136 @@ class Func_6_2_I_4_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I43.a.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I43.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("fraction")
+            x,y,_ = rule[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("subtract")
+            x,y,_ = rule[2].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("example_divide")
+            x,y,_ = example[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[2].get_bottom()+0.3*DOWN
+            self.play(TransformMatchingTex(example, solution), CursorMoveTo(cursor,x,y), run_time=1)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_4_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\frac{a^x}{a^y}","=","a^{x-y}", color=c1t, font_size=fs1).set_y(2.8)
+        self.add(rule)
+
+        example = MathTex("\\frac{3^x}{3^{y}}","=","\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("\\frac{3^x}{3^{y}}","=","3^{x-y}", color=c1t, font_size=fs1)
+        self.add(example)
+
+        cursor = AltCursor(idle=False)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_5")+self.translate("Func_6_2.I43.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("fraction")
+            x,y,_ = rule[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("subtract")
+            x,y,_ = rule[2].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("example_divide")
+            x,y,_ = example[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[2].get_bottom()+0.3*DOWN
+            self.play(TransformMatchingTex(example, solution), CursorMoveTo(cursor,x,y), run_time=1)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_4_3_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\frac{a^x}{a^y}","=","a^{x-y}", color=c1t, font_size=fs1).set_y(2.8)
+        self.add(rule)
+
+        example = MathTex("\\frac{3^x}{3^{y}}","=","\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("\\frac{3^x}{3^{y}}","=","3^{x-y}", color=c1t, font_size=fs1)
+        self.add(example)
+
+        cursor = AltCursor(idle=False)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I43.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("fraction")
+            x,y,_ = rule[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("subtract")
+            x,y,_ = rule[2].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("example_divide")
+            x,y,_ = example[0].get_bottom()+0.3*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.3)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[2].get_bottom()+0.3*DOWN
+            self.play(TransformMatchingTex(example, solution), CursorMoveTo(cursor,x,y), run_time=1)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_4_3_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        rule = MathTex("\\frac{a^x}{a^y}","=","a^{x-y}", color=c1t, font_size=fs1).set_y(2.8)
+        self.add(rule)
+
+        example = MathTex("\\frac{3^x}{3^{y}}","=","\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        solution = MathTex("\\frac{3^x}{3^{y}}","=","3^{x-y}", color=c1t, font_size=fs1)
+        self.add(example)
+
+        cursor = AltCursor(idle=False)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I43.a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("fraction")
