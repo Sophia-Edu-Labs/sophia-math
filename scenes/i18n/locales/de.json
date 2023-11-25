@@ -2089,7 +2089,10 @@
     "I561": {
       "factor": "Faktor",
       "interest": "Zinsen",
-      "voiceover": "Konzentrieren wir uns auf eine spezielle Art von Exponentialfunktion: Die , in <bookmark mark=\"percentage\"/>denen es um prozente geht.\nWir beginnen mit einem einfachen Beispiel: Nehmen wir an, du hast ein <bookmark mark=\"savings_account\"/>Sparkonto mit 100 Dollar darauf. Und du bekommst 5 Prozent Zinsen pro Jahr.\nUm welchen Faktor wird dein Geld auf dem Konto jedes Jahr multipliziert?"
+      "voiceover": "Konzentrieren wir uns auf eine spezielle Art von Exponentialfunktion: Die, in <bookmark mark=\"percentage\"/>denen es um prozente geht.\nWir beginnen mit einem einfachen Beispiel: Nehmen wir an, du hast ein <bookmark mark=\"savings_account\"/>Sparkonto mit 100 Dollar darauf. Und du bekommst 5 Prozent Zinsen pro Jahr.\nUm welchen Faktor wird dein Geld auf dem Konto jedes Jahr multipliziert?",
+      "q": {
+        "question-text": "Mit welchem ​​Faktor wird dein Guthaben auf dem Konto jedes Jahr multipliziert?"
+      }
     },
     "I561q": {
       "voiceover": "Wenn wir 5 Prozent Zinsen pro Jahr erhalten, multiplizieren wir den Geldbetrag, den wir haben <bookmark mark=\"factor\"/>, jedes <bookmark mark=\"one_red\"/>Jahr mit eins Komma null fünf: eins, weil wir das gesamte Geld vom Vorjahr behalten<bookmark mark=\"point05_red\"/>und null Komma fünf, weil wir fünf Prozent Zinsen erhalten.\n<bookmark mark=\"all_black\"/>Die Funktion, die den Geldbetrag auf dem Konto nach x Jahren beschreibt, ist<bookmark mark=\"func\"/> f von x gleich 100 mal eins Komma null fünf hoch x.\nSo führt ein <bookmark mark=\"interest_in\"/>Zinssatz von fünf Prozent zu<bookmark mark=\"factor_in\"/> einem multiplikativen Faktor von 1,05..."
@@ -2097,7 +2100,10 @@
     "I562": {
       "eaten": "gegessen",
       "remaining": "übrig",
-      "voiceover": "Ich hab gerade die <bookmark mark=\"soup_in\"/>leckerste Suppe gekocht und jeder möchte etwas davon. Aber die Leute sind auch etwas schüchtern, deshalb nimmt jeder, der an der Reihe ist, <bookmark mark=\"twenty_percent\"/>zwanzig Prozent der Suppe und gibt den rest an die nächste Person weiter. <bookmark mark=\"qmark\"/>Wie viel Suppe ist noch übrig, nachdem x Personen an der Reihe waren?"
+      "voiceover": "Ich hab gerade die <bookmark mark=\"soup_in\"/>leckerste Suppe gekocht und jeder möchte etwas davon. Aber die Leute sind auch etwas schüchtern, deshalb nimmt jeder, der an der Reihe ist, <bookmark mark=\"twenty_percent\"/>zwanzig Prozent der Suppe und gibt den rest an die nächste Person weiter. <bookmark mark=\"qmark\"/>Wie viel Suppe ist noch übrig, nachdem x Personen an der Reihe waren?",
+      "q": {
+        "question-text": "Wie viel Suppe bleibt übrig, nachdem $x$ Personen an der Reihe waren?"
+      }
     },
     "I562q": {
       "amount_decreases": "Menge nimmt ab",
@@ -2115,7 +2121,10 @@
       "voiceover": "Es gibt also zwei Arten von prozentualen Änderungen.\nWenn der Betrag <bookmark mark=\"increase_in\"/>um einen bestimmten Prozentsatz zunimmt, dann ist der Faktor <bookmark mark=\"increase_factor\"/>eins plus die prozentuale Erhöhung geteilt durch 100...\nWenn die Funktion hingegen <bookmark mark=\"decrease_in\"/>um einen bestimmten Prozentsatz abnimmt, dann ist der Faktor <bookmark mark=\"decrease_factor\"/>eins minus die prozentuale Abnahme geteilt durch 100."
     },
     "I564": {
-      "voiceover": "Angenommen, <bookmark mark=\"money_in\"/>du hast 100 Dollar auf der Bank...\nUnd die Bank gibt dir <bookmark mark=\"percent_in\"/>10 Prozent Zinsen jedes Jahr. Allerdings liebst du es auch, Sachen zu kaufen, und gibst <bookmark mark=\"spend_half\"/>jedes Jahr die Hälfte deines Geldes aus.\nWelche Funktion beschreibt den Geldbetrag, den du nach x Jahren hast?"
+      "voiceover": "Angenommen, <bookmark mark=\"money_in\"/>du hast 100 Dollar auf der Bank...\nUnd die Bank gibt dir <bookmark mark=\"percent_in\"/>10 Prozent Zinsen jedes Jahr. Allerdings liebst du es auch, Sachen zu kaufen, und gibst <bookmark mark=\"spend_half\"/>jedes Jahr die Hälfte deines Geldes aus.\nWelche Funktion beschreibt den Geldbetrag, den du nach x Jahren hast?",
+      "q": {
+        "question-text": "Welche Funktion beschreibt den Geldbetrag, den du nach $x$ Jahren hast?"
+      }
     },
     "I564q": {
       "voiceover": "Wir bekommen jedes Jahr <bookmark mark=\"interest_in\"/>zehn Prozent Zinsen. Das bedeutet, der <bookmark mark=\"factor\"/>Faktor für die Zinsen ist eins plus null Komma eins, was eins Komma eins ergibt.\nWir <bookmark mark=\"spend_half\"/>geben auch die Hälfte unseres Geldes aus. Das bedeutet, der <bookmark mark=\"factor\"/>Faktor für die Ausgaben ist eins minus null Komma fünf, was null Komma fünf ergibt.\n<bookmark mark=\"final_factor\"/>Der endgültige Faktor ist das Produkt der beiden Faktoren, also eins Komma eins mal null Komma fünf, was null Komma fünf fünf ergibt.\nAlso<bookmark mark=\"clean_up\"/> beschreibt die Funktion, die den Geldbetrag nach x Jahren angibt,<bookmark mark=\"func_in\"/> f von x gleich 0,55 hoch x."
