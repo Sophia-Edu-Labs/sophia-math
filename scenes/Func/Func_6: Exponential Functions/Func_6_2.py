@@ -1328,7 +1328,7 @@ class Func_6_2_I_3_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_2.I31.voiceover")
+                text=self.translate("Func_6_2.I32q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_in")
@@ -4884,7 +4884,7 @@ class Func_6_2_I_6_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$1.8^x$", "$0.8^x$", "$1-0.2^x$", "$0.2^x$"],
+            answerOptions = ["$0.5^x$", "$0.55^x$", "$1.1^x$", "$1.1^x-0.5^x$"],
             correctAnswerIndex = 1,
             questionText=self.translate("Func_6_2.I564.q.question-text")
         )
@@ -6658,7 +6658,7 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_I_4_5_c),
     PagePrototypeVideo.from_scene(Func_6_2_I_4_5_d),
     PagePrototypeVideo.from_scene(Func_6_2_I_4_6_X),
-########################################################################### Chapter: Rules for exponential functions I - different base
+########################################################################### Chapter: Rules for exponential functions II - different base
     PagePrototypeVideo.from_scene(Func_6_2_I_5_1),
     PagePrototypeVideo.from_scene(Func_6_2_I_5_2_q),
     PagePrototypeQuestion.from_scene(Func_6_2_I_5_2_q),

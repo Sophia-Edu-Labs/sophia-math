@@ -1960,7 +1960,7 @@
       "x-minutes_2": "the growth factor"
     },
     "I31": {
-      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
+      "voiceover": "Ok, so far we've looked at exponential functions of the<bookmark mark=\"func_in\"/> form f of x equals b to the power of x, where b is the base, and a is the exponent. Now, we'll try to generalize this a bit and look at functions of the form <bookmark mark=\"func_transform\"/>f of x equals a times b to the x. This way, we'll be able to <bookmark mark=\"monkey_in\"/> all kinds of crazy situations. Let's go!"
     },
     "I32": {
       "q": {
@@ -2171,6 +2171,9 @@
         "answer-options": "[\"The purple graph\", \"The blue graph\", \"The pink graph\"]",
         "question-text": "Which of the graph corresponds to the function $f(x)=3^x$?"
       }
+    },
+    "I32q": {
+      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2845,5 +2848,11 @@
     "growth_factor": "growth factor",
     "scaling_factor": "scaling faktor"
   },
-  "test-key": "[“1\", \"2\", \"3\"]"
+  "test-key": "[“1\", \"2\", \"3\"]",
+  "words": {
+    "capital": "capital",
+    "interest": "interest",
+    "years": "years",
+    "compound_interest": "compound interest"
+  }
 }

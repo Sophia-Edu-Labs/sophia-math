@@ -2130,7 +2130,10 @@
       "voiceover": "Wir bekommen jedes Jahr <bookmark mark=\"interest_in\"/>zehn Prozent Zinsen. Das bedeutet, der <bookmark mark=\"factor\"/>Faktor für die Zinsen ist eins plus null Komma eins, was eins Komma eins ergibt.\nWir <bookmark mark=\"spend_half\"/>geben auch die Hälfte unseres Geldes aus. Das bedeutet, der <bookmark mark=\"factor\"/>Faktor für die Ausgaben ist eins minus null Komma fünf, was null Komma fünf ergibt.\n<bookmark mark=\"final_factor\"/>Der endgültige Faktor ist das Produkt der beiden Faktoren, also eins Komma eins mal null Komma fünf, was null Komma fünf fünf ergibt.\nAlso<bookmark mark=\"clean_up\"/> beschreibt die Funktion, die den Geldbetrag nach x Jahren angibt,<bookmark mark=\"func_in\"/> f von x gleich 0,55 hoch x."
     },
     "I565": {
-      "voiceover": "Ich habe seit Jahren <bookmark mark=\"money_in\"/>gespart und jetzt investiere ich <bookmark mark=\"thousand_in\"/>die 1000 Dollar, die ich gespart habe, in ein riskantes Unternehmen. Ich werde jedes Jahr <bookmark mark=\"percent_in\"/>50 Prozent Zinsen bekommen. Wie viel wird mein Geld in 3 Jahren wert sein?"
+      "voiceover": "Ich habe seit Jahren <bookmark mark=\"money_in\"/>gespart und jetzt investiere ich <bookmark mark=\"thousand_in\"/>die 1000 Dollar, die ich gespart habe, in ein riskantes Unternehmen. Ich werde jedes Jahr <bookmark mark=\"percent_in\"/>50 Prozent Zinsen bekommen. Wie viel wird mein Geld in 3 Jahren wert sein?",
+      "q": {
+        "question-text": "Wie viel ist das Geld in 3 Jahren wert?"
+      }
     },
     "I565q": {
       "voiceover": "Die <bookmark mark=\"function_in\"/>Funktion, die den Geldbetrag auf der Bank nach x Jahren beschreibt, ist <bookmark mark=\"function_in\"/>f von x gleich 1000 mal 1,5 hoch x. Das liegt daran, dass wir <bookmark mark=\"thousand_red\"/>1000 Dollar investieren und <bookmark mark=\"fifty_percent_red\"/>jährlich 50 Prozent Zinsen bekommen.<bookmark mark=\"all_black\"/>\nJetzt möchten wir wissen, wie viel Geld wir nach 3 Jahren haben. Wir müssen also nur <bookmark mark=\"func_3\"/>3 für x einsetzen und <bookmark mark=\"result\"/>das Ergebnis berechnen. Da 1000 mal 1,5 hoch 3 gleich 3375 ist, <bookmark mark=\"solution_green\"/>haben wir nach 3 Jahren 3375 Dollar auf der Bank."
@@ -2165,6 +2168,12 @@
         "answer-options": "[\"Der violette Graph\", \"Der blaue Graph\", \"Der rosa Graph\"]",
         "question-text": "Welcher der Graphen entspricht der Funktion $f(x)=3^x$?"
       }
+    },
+    "I31": {
+      "voiceover": "Okay, bisher haben wir uns exponentielle Funktionen der <bookmark mark=\"func_in\"/> Form f von x gleich b hoch x angeschaut, wobei b die Basis und a der Exponent ist. Jetzt werden wir das etwas verallgemeinern und uns Funktionen der Form <bookmark mark=\"func_transform\"/>f von x gleich a mal b hoch x anschauen. So können wir <bookmark mark=\"monkey_in\"/> alle möglichen verrückten Situationen meistern. Los geht's!"
+    },
+    "I32q": {
+      "voiceover": "Lass uns damit beginnen, ein Verständnis dafür zu entwickeln, welche Auswirkungen die Werte von a und b haben.\nNimm <bookmark mark=\"func_in\"/>die Funktion f von x gleich a mal b hoch x. Wir beginnen damit, einige <bookmark mark=\"plot_in\"/> Werte für a und b auszuwählen.\nJetzt aufgepasst, hier kommt eine Übung: Ich zeige dir zwei Animationen. Eine zeigt, wie wir a erhöhen, die andere zeigt, wie wir b erhöhen. Welche zeigt, wie wir a erhöhen?\nIst <bookmark mark=\"blue_anim\"/>es die blaue Animation? Oder ist <bookmark mark=\"purple_anim\"/>es die lila Animation?"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2839,5 +2848,11 @@
     "growth_factor": "Wachstumsfaktor",
     "scaling_factor": "Skalierungsfaktor"
   },
-  "test-key": "[\"1\", \"2\", \"3\"]"
+  "test-key": "[\"1\", \"2\", \"3\"]",
+  "words": {
+    "capital": "Kapital",
+    "interest": "Zinsen",
+    "years": "Jahre",
+    "compound_interest": "Zinseszins"
+  }
 }
