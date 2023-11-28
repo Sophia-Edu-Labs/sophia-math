@@ -1723,7 +1723,7 @@
     },
     "1I11q": {
       "main": {
-        "voiceover": "Imagine a school where a new rumor starts to circulate.<bookmark mark=\"rumor_in\"/> This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, <bookmark mark=\"spread\"/>four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour?"
+        "voiceover": "Imagine <bookmark mark=\"rumor_in\"/>a school where a new rumor starts to circulate. This rumor is so juicy that every person who hears it immediately tells it to four friends. Let's assume that<bookmark mark=\"person\"/> one person spreads the rumor. One hour later, <bookmark mark=\"spread\"/>four people will hear it because the original person has told it to four friends.<bookmark mark=\"qmark\"/> Now it's your turn: How many people will hear the rumor in the following hour? And remember: Every person who heard it in the previous hour will tell it to four more people."
       }
     },
     "1I12q": {
@@ -1832,7 +1832,7 @@
       "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
     },
     "I15": {
-      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
+      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it <bookmark mark=\"f_3\"/>x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
     },
     "I5": {
       "a": {
@@ -1861,7 +1861,7 @@
       },
       "b": {
         "bacteria": "Bacteria",
-        "voiceover": "That's correct, well done.\nAgain, let's look at how many bacteria we have at each step.\nWhen we beginn, at x equals zero, there's one <bookmark mark=\"one\"/> bacteria.\nAfter twenty minutes so at x equals one, the bacteria duplicates, so there are<bookmark mark=\"two\"/> two bacteria.\nAfter another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so there are <bookmark mark=\"four\"/>four bacteria.\nAnd after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n<split/>\nSo you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark=\"step0\"/>\nIn the first timestep, we go from <bookmark mark=\"step1\"/>one bacteria to two so we multiply the number of bacteria that we have by two.\nIn the second timestep, we go from two <bookmark mark=\"step2\"/> bacteria to four, so we double the number of bacteria again.\nand in the third timestep, we go from four <bookmark mark=\"step3\"/> bacteria to eight, again multiplying the number of bacteria by two.\n\nThis means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.\nThis means, that the function describing the number of bacteria is<bookmark mark=\"exponential\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x."
+        "voiceover": "That's correct, well done.\nAgain, let's look at how many bacteria we have at each step.\nWhen we beginn, at x equals zero, <bookmark mark=\"one\"/>there's one  bacteria.\nAfter twenty minutes so at x equals one, the bacteria duplicates, so <bookmark mark=\"two\"/>there are two bacteria.\nAfter another twenty minutes, so at x equals two,  each of the two bacteria duplicates, so <bookmark mark=\"four\"/>there are four bacteria.\nAnd after another twenty minutes, meaning at x equals four, they each duplicate <bookmark mark=\"eight\"/>again, and we get four more bacteria, to get us to eight.\n<split/>\nSo you see, how at each of the timesteps, so every time that x increases by one, we get twice as many bacteria as in the previous timestep.<bookmark mark=\"step0\"/>\nIn the first timestep, we go from <bookmark mark=\"step1\"/>one bacteria to two so we multiply the number of bacteria that we have by two.\nIn the second timestep, we go from two <bookmark mark=\"step2\"/> bacteria to four, so we double the number of bacteria again.\nand in the third timestep, we go from four <bookmark mark=\"step3\"/> bacteria to eight, again multiplying the number of bacteria by two.\n\nThis means, that at every time step, the number of bacteria is given by two to the power of x, because we need to multiply 2 x times by itself, to get the number of bacteria.\nThis means, that the function describing the number of bacteria is<bookmark mark=\"exponential\"/> g of <bookmark mark=\"gx\"/>x equals <bookmark mark=\"gtwo\"/>two to the power of <bookmark mark=\"gxx\"/> x."
       },
       "q": {
         "bacteria_double_a": "$\\Uparrow$ Duplicate every",
@@ -2014,7 +2014,7 @@
       },
       "q": {
         "voiceover": "Let's start by looking at the rule for multiplying two exponential functions with the same base. The rule states that <bookmark mark=\"rule\"/> a to the power of x times a to the power of y equals a to the power of x plus y. So the result is the original base to the power of the sum of the exponents.\nBut why is that? It's actually easy to make sense of this: First, notice that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of y is just \"a\" multiplied by itself y times. So if we multiply these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x plus y times. And that is exactly what the rule states...\nNow <bookmark mark=\"clean\"/>let's practice: How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of a times 4 to the power of b?",
-        "question-text": "How can we simplify the expression $4^a\\\\cdot4^b$?"
+        "question-text": "How can we simplify the expression $4^a\\cdot4^b$?"
       }
     },
     "I43": {
@@ -2023,7 +2023,7 @@
       },
       "q": {
         "voiceover": "Now consider the rule stating that <bookmark mark=\"rule\"/>a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nThere are two ways to remember this rule. The first is by comparing it to the <bookmark mark=\"other_rule\"/>rule stating that a to the power of x times a to the power of y is equal to a to the power of x plus y.\nIt makes sense that<bookmark mark=\"multiply\"/> if multiplying the expressions leads to adding the exponents, <bookmark mark=\"divide\"/>then dividing the expressions leads to subtracting the exponents.\nAnother <bookmark mark=\"clean_up_1\"/>way to remember this rule is to see that <bookmark mark=\"step_1\"/>\"a\" to the power of x is equal to \"a\", multiplied by itself x times, and <bookmark mark=\"step_2\"/>\"a\" to the power of y is equal to \"a\" multiplied by itself y times.\nThis means that if we <bookmark mark=\"step_3\"/>divide a to the power of x by a to the power of y, we are only multiplying \"a\" by itself x minus y times, because y times \"a\" are cancelled out.\nNow <bookmark mark=\"clean_up_2\"/>let's look at an example. How can we simplify <bookmark mark=\"example_in\"/> the expression three to the power of x divided by three to the power of y?",
-        "question-text": "How can we simplify the expression $\\\\frac{3^x}{3^{y}}$?"
+        "question-text": "How can we simplify the expression $\\frac{3^x}{3^{y}}$?"
       }
     },
     "I44": {
@@ -2032,7 +2032,7 @@
       },
       "q": {
         "voiceover": "The rule we're looking at now states that <bookmark mark=\"rule_in\"/>one over a to the power of x is equal to a to the power of minus x.\nThis rule is a bit more tricky to understand, but we can use a rule we've previously seen to show that it is true...\nSo we'll start with the rule <bookmark mark=\"other_rule\"/> that a to the power of x divided by a to the power of y is equal to a to the power of x minus y.\nNext, we're going to <bookmark mark=\"switch\"/>switch x and y, to obtain the rule that a to the power of y divided by a to the power of x is equal to a to the power of y minus x.\nNext, we set y to zero to<bookmark mark=\"step_one\"/>obtain the rule that a to the power of zero divided by a to the power of x is equal to a to the power of zero minus x.\nIf we then plug in that a to the power of zero is equal to one, we obtain the <bookmark mark=\"rule\"/> rule that one divided by a to the power of x is equal to a to the power of minus x, and we're done...\nNow, let's <bookmark mark=\"clean_up\"/>practice with an example. Which expression is equal to <bookmark mark=\"example_in\"/>b to the power of negative 2 c?",
-        "question-text": "Which expression is equal to $b^{-2\\\\cdot c}$?"
+        "question-text": "Which expression is equal to $b^{-2\\cdot c}$?"
       }
     },
     "I45": {
@@ -2041,7 +2041,7 @@
       },
       "q": {
         "voiceover": "What if we raise something to a power and then raise that to another power?\nThe next rule states that <bookmark mark=\"rule\"/> a to the power of x to the power of y equals a to the power of x times y. So the result is the original base to the power of the product of the exponents.\nHow can we make sense of this? First, note that <bookmark mark=\"step_1\"/>a to the power of x is just \"a\" multiplied by itself x times. And <bookmark mark=\"step_2\"/>a to the power of x, to the power of y is just \"a\" to the power of x multiplied by itself y times. So if we combine these two expressions, we get <bookmark mark=\"step_3\"/>\"a\" multiplied by itself x times y times. And that's what the rule states.\nNow let's use this rule: <bookmark mark=\"clean\"/> How can we simplify the <bookmark mark=\"example_in\"/>expression 4 to the power of 2 a to the power of 2 b?",
-        "question-text": "How can we simplify the expression $\\\\left(4^{2a}\\\\right)^{2b}$?"
+        "question-text": "How can we simplify the expression $\\left(4^{2a}\\right)^{2b}$?"
       }
     },
     "I46": {
@@ -2056,7 +2056,7 @@
       },
       "q": {
         "voiceover": "Let's start by looking at the rule for raising a fraction to a power. The rule states that <bookmark mark=\"rule\"/> a over b to the power of x equals a to the power of x over b to the power of x. So we can just raise both the enumerator and the denominator to the power.\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction \"a\" over b to the power of x is just \"a\" over b multiplied by itself x times. Then, think about what happens when we multiply fractions: We get a new fraction, where the enumerator is the product of the enumerators and the denominator is the product of the denominators. So, in our example <bookmark mark=\"step_2\"/>we get a fraction where the enumerator is \"a\" multiplied by itself x times and the denominator is b multiplied by itself x times. And that is exactly what we have in the rule. So, <bookmark mark=\"step_3\"/>we can just write a to the power of x over b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. <bookmark mark=\"example_in\"/> We have the fraction x over y to the power of 2a. How can we simplify this using the rule we just learned?",
-        "question-text": "How can we simplify $\\\\left(\\\\frac xy\\\\right)^{2a}$ using the rule we just learned?"
+        "question-text": "How can we simplify $\\left(\\frac xy\\right)^{2a}$ using the rule we just learned?"
       }
     },
     "I53": {
@@ -2065,7 +2065,7 @@
       },
       "q": {
         "voiceover": "Now what if we <bookmark mark=\"situation\"/>raise one divided by something to a power? There's a rule that states that one over a to the power of x equals<bookmark mark=\"rule\"/> one divided by the expression a to the power of x. So if we raise one divided by something to a power, we can just raise the denominator to the power....\nWhy can we just do that? Let's see. First, notice that <bookmark mark=\"step_1\"/>the fraction one over \"a\" to the power of x is just one over \"a\" multiplied by itself x times. If we do this multiplication, <bookmark mark=\"step_2\"/>the enumerator is the product of the enumerators, and the denominator is the product of the denominators. And since one to the power of x is still one, we get a fraction where<bookmark mark=\"step_3\"/> the enumerator is one and the denominator is \"a\" multiplied by itself x times. So, we can just write one over a to the power of x.\nNow, <bookmark mark=\"clean\"/>this rule is only a special case of another rule. Which other rule can we infer this one from?",
-        "question-text": "Which other rule can we infer the rule $\\\\left(\\\\frac1a\\\\right)^x=\\\\frac1{a^x}$ from?"
+        "question-text": "Which other rule can we infer the rule $\\left(\\frac1a\\right)^x=\\frac1{a^x}$ from?"
       }
     },
     "I54": {
@@ -2074,7 +2074,7 @@
       },
       "q": {
         "voiceover": "Now we're looking at the rule that says that <bookmark mark=\"rule\"/>a b to the power of x is the same as a to the power of x times b to the power of x.\nThere are three easy steps to understand this. First, <bookmark mark=\"step_1\"/>we write out a b to the power of x as a b times a b times a b and so on x times. Next, <bookmark mark=\"step_2\"/>we can rearrange the terms so that all the a's are on one side and all the b's are on the other side. Finally, <bookmark mark=\"step_3\"/>we can rewrite the terms as a to the power of x times b to the power of x.\nNow, <bookmark mark=\"clean\"/>let's look at an example. What do we get, if we apply this rule <bookmark mark=\"example_in\"/>to 3 a to the power of x?",
-        "question-text": "What do we get, if we apply this rule to $\\\\left(3a\\\\right)^x$?"
+        "question-text": "What do we get, if we apply this rule to $\\left(3a\\right)^x$?"
       }
     },
     "I55": {
@@ -2083,7 +2083,7 @@
       },
       "q": {
         "voiceover": "Now, one more rule. The rule states that <bookmark mark=\"rule\"/>a over b to the power of minus x is equal to b over a to the power of x. So we can just switch the numerator and denominator and change the sign of the exponent.\nTo understand this rule, let's start with another rule, which says that<bookmark mark=\"start\"/> a to the power of negative x equals one over a to the power of x. If we apply this rule to the expression a over b to the power of negative x, we <bookmark mark=\"step_1\"/>get one divided by a over b to the power of x. Now, we can apply the rule that dividing one by a fraction is the same as switching the numerator and denominator. So we get <bookmark mark=\"step_2\"/>b over a to the power of x. So we have shown that<bookmark mark=\"clean_up\"/> a over b to the power of negative x is equal to b over a to the power of x.\nNow let's apply this rule. How can we rewrite<bookmark mark=\"example\"/> the expression a over b to the power of negative two?",
-        "question-text": "How can we rewrite the expression $\\\\Big(\\\\frac ab\\\\Big)^{-2}$?"
+        "question-text": "How can we rewrite the expression $\\Big(\\frac ab\\Big)^{-2}$?"
       }
     },
     "I56": {
@@ -2092,7 +2092,7 @@
     "I561": {
       "factor": "factor",
       "interest": "interest",
-      "voiceover": "Let's focus on a special kind of exponential function: The ones involving <bookmark mark=\"percentage\"/>percentages.\nWe're going to start with a simple example: Say you've got a <bookmark mark=\"savings_account\"/>savings account with a 100 dollars in it. And you're getting 5 percent interest per year.\nBy what factor is your money in the account multiplied every year?",
+      "voiceover": "Let's focus on a special kind of exponential function: The ones involving <bookmark mark=\"percentage\"/>percentages.\nWe're going to start with a simple example: Say you've got a <bookmark mark=\"savings_account\"/>savings account with a 100 dollars in it. And you're <bookmark mark=\"interest\"/>getting 5 percent interest per year.\nBy what factor is your money in the account multiplied every year?",
       "q": {
         "question-text": "By what factor is your money in the account multiplied every year?"
       }

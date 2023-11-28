@@ -2965,7 +2965,7 @@ class Func_6_2_I_4_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$3^{\\frac xy}$", "$3^{x-y}$", "\\left({\\frac xy}\\right)^3$", "$3^{x+y}$"],
+            answerOptions = ["$3^{\\frac xy}$", "$3^{x-y}$", "$\\left({\\frac xy}\\right)^3$", "$3^{x+y}$"],
             correctAnswerIndex = 1,
             questionText=self.translate("Func_6_2.I43.q.question-text")
         )
@@ -3410,7 +3410,7 @@ class Func_6_2_I_4_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$4^{\\left((2a)^{2b}\\right}$", "$4^{2a+2b}$", "$4^{2ab}$", "$4^{4ab}$"],
+            answerOptions = ["$4^{\\left((2a)^{2b}\\right)}$", "$4^{2a+2b}$", "$4^{2ab}$", "$4^{4ab}$"],
             correctAnswerIndex = 3,
             questionText=self.translate("Func_6_2.I45.q.question-text")
         )
@@ -4425,7 +4425,10 @@ class Func_6_2_I_6_1_q(SophiaCursorScene):
         percentage = ImageMobject(assets_folder / "img" / "percentage.png")
         percentage = percentage.scale(4/percentage.get_width()).move_to([-5, 0, 0])
 
+        capital = self.translate("words.capital")
+        interest = self.translate("words.interest")
 
+        bullets = VGroup(Tex(f"$\\bullet$ {capital}: $100\\$$", color=c1t, font_size=fs2), Tex(f"$\\bullet$ {interest}: $5\%$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT)
 
         # Action Sequence
         with self.voiceover(
@@ -4435,6 +4438,13 @@ class Func_6_2_I_6_1_q(SophiaCursorScene):
             self.wait_until_bookmark("percentage")
             self.add_shift_sound(0.5)
             self.play(percentage.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("savings_account")
+            self.add_shift_sound(0.5)
+            self.play(percentage.animate.shift(5*RIGHT), Write(bullets[0]), run_time=0.5)
+
+            self.wait_until_bookmark("interest")
+            self.play(Write(bullets[1]), run_time=0.5)
 
         self.wait(4)
 
@@ -5094,7 +5104,7 @@ class Func_6_2_I_6_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$1500$", "$125x$", "$33750$", "$2250$"],
+            answerOptions = ["$1500$", "$125x$", "$3375$", "$2250$"],
             correctAnswerIndex = 2,
             questionText=self.translate("Func_6_2.I565.q.question-text")
         )
@@ -5393,6 +5403,7 @@ class Func_6_2_I_3_q(SophiaCursorScene):
         self.add_mathgrid()
 
         title = self.add_title(self.translate("Func_6_2.I3.title"))
+        self.add(title)
 
         cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[0,1,2,3,4], y_ticks=[0.25,0.5,0.75,1], y_labels=["\\tfrac14", "\\tfrac12", "\\tfrac34", "1"]).shift(DOWN)
         plane = cords[0]
@@ -5891,6 +5902,8 @@ class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
         g_2 = plane.plot(self.f2, color=self.c2)
         g_3 = plane.plot(self.f3, color=self.c3)
 
+
+        print("Print_flag", self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.voiceover")))
         # Action Sequence
         with self.voiceover(
                 text=self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.voiceover"))

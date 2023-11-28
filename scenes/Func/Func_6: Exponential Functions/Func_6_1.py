@@ -1721,8 +1721,8 @@ class Func_6_1_I_1_5(SophiaCursorScene):
 
         f_general = MathTex("f(x)=a^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         f_2 = MathTex("f(x)=2^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
-        f_3 = MathTex("f(x)=3^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
-
+        f_3 = MathTex("f(x)=3^x", "", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_3_alt = MathTex("f(x)=3^x", "=\\underbrace{3\\cdot\\hdots\\cdot 3}_{x\\text{ times}}", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         
         # Action Sequence
         with self.voiceover(
@@ -1737,15 +1737,18 @@ class Func_6_1_I_1_5(SophiaCursorScene):
             self.play(CursorUnderline(cursor, f_general), Write(f_general), FadeOut(smile))
 
             self.wait_until_bookmark("f_2")
-            self.play(Transform(f_general, f_2))
+            self.play(ReplacementTransform(f_general, f_2))
 
             self.wait_until_bookmark("f_3")
-            self.play(Transform(f_general, f_3))
+            self.play(ReplacementTransform(f_2, f_3))
+
+            self.wait_until_bookmark("f_3_alt")
+            x,y,_ = plane.c2p(0,0)
+            self.play(TransformMatchingTex(f_3, f_3_alt), CursorMoveResize(cursor,x,y,0.2,0.2))
+            cursor.idle=True
 
             self.wait_until_bookmark("plot")
-            x,y,_ = plane.c2p(0,0)
-            cursor.idle=True
-            self.play(Write(cords), CursorMoveResize(cursor,x,y,0.2,0.2), run_time=.5)
+            self.play(Write(cords), run_time=.5)
             self.add_pencil_sound(1)
             self.play(Create(plot), run_time=1)
 
@@ -1853,7 +1856,7 @@ class Func_6_1_I_3(SophiaCursorScene):
         calendar = calendar.scale(2.5/calendar.get_width()).move_to([-5, 1, 0])
 
 
-        cords = self.add_cords([0,8,1], [0,20,4], x_ticks=[1,2,3,4,5,6,7], y_ticks=[4,8,12,16,20])
+        cords = self.add_cords([0,8,1], [0,20,4], x_ticks=[0,1,2,3,4,5,6,7], y_ticks=[4,8,12,16,20], height=2.5)
         plane = cords[0]
         
         f_eggs = lambda x: 2*x

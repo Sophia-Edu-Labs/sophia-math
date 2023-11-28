@@ -1726,7 +1726,7 @@
     },
     "1I11q": {
       "main": {
-        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/> hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören?"
+        "voiceover": "Stell dir vor<bookmark mark=\"rumor_in\"/>in der Schule kommt das Gerücht auf, es werden bald beheizte Türgriffe installiert. Das Gerücht ist so ulkig, dass jede Person, die es hört, es sofort an vier Personen weitererzählt. Angenommen, eine <bookmark mark=\"person\"/>Person verbreitet das Gerücht. Eine Stunde später<bookmark mark=\"spread\"/> hören es dann vier Personen, weil die ursprüngliche Person es an vier Freunde weitererzählt. <bookmark mark=\"qmark\"/>Jetzt bist du nochmal dran: Wie viele Personen werden das Gerücht in der folgenden Stunde hören? Zur Erinnerung: Jede Person, die es in der vorherigen Stunde gehört hat, erzählt es 4 weiteren Personen"
       }
     },
     "1I12q": {
@@ -1832,7 +1832,7 @@
       "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
     },
     "I15": {
-      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren das x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
+      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren diesen Wert<bookmark mark=\"f_3_alt\"/> x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
     },
     "I5": {
       "a": {
@@ -1861,7 +1861,7 @@
       },
       "b": {
         "bacteria": "Bakterien",
-        "voiceover": "Das ist richtig, gut gemacht.\n<break time=\"0.4s\"/>\nSchauen wir uns noch einmal an, wie viele Bakterien wir in jedem Schritt haben.\n<break time=\"0.4s\"/>\nWenn wir beginnen, gibt es bei x gleich Null ein <bookmark mark=\"one\"/> Bakterium.\n<break time=\"0.4s\"/>\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die Bakterien, sodass <bookmark mark=\"two\"/> 2 Bakterien vorhanden sind.\n<break time=\"0.4s\"/>\nNach weiteren 20 Minuten, also bei x gleich 2, verdoppelt sich jedes der beiden Bakterien, sodass es <bookmark mark=\"four\"/>4 Bakterien gibt.\n<break time=\"0.4s\"/>\nUnd nach weiteren 20 Minuten, das heißt bei x gleich 4, duplizieren sie jeweils <bookmark mark=\"eight\"/>noch einmal, und wir bekommen 4 weitere Bakterien, sodass wir auf 8 kommen.\n<split/>\nDu siehst also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um 1 erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n<break time=\"0.4s\"/>\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>einem Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit 2.\n<break time=\"0.4s\"/>\nIm zweiten Zeitschritt gehen wir von 2 <bookmark mark=\"step2\"/> Bakterien auf 4 über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n<break time=\"0.4s\"/>\nund im dritten Zeitschritt gehen wir von 4 <bookmark mark=\"step3\"/> Bakterien auf 8 und multiplizieren die Anzahl der Bakterien erneut mit 2.\n<break time=\"0.4s\"/>\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch 2 hoch x gegeben ist, da wir die zwei x mal mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n<break time=\"0.4s\"/>\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/>  g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>2 hoch <bookmark mark=\"gxx\"/> x lautet."
+        "voiceover": "Das ist richtig, gut gemacht.\n<break time=\"0.4s\"/>\nSchauen wir uns noch einmal an, wie viele Bakterien wir in jedem Schritt haben.\n<break time=\"0.4s\"/>\nWenn wir beginnen, gibt es bei <bookmark mark=\"one\"/>x gleich Null ein Bakterium.\n<break time=\"0.4s\"/>\nNach zwanzig Minuten, also bei x gleich eins, verdoppeln sich die <bookmark mark=\"two\"/>Bakterien, sodass  2 Bakterien vorhanden sind.\n<break time=\"0.4s\"/>\nNach weiteren 20 Minuten, also bei x gleich 2, verdoppelt sich jedes der beiden Bakterien<bookmark mark=\"four\"/>, sodass es 4 Bakterien gibt.\n<break time=\"0.4s\"/>\nUnd nach weiteren 20 Minuten, das heißt bei x gleich 4, <bookmark mark=\"eight\"/>duplizieren sie jeweils noch einmal, und wir bekommen 4 weitere Bakterien, sodass wir auf 8 kommen.\n<split/>\nDu siehst also, dass wir in jedem der Zeitschritte, also jedes Mal, wenn x um 1 erhöht wird, doppelt so viele Bakterien bekommen wie im vorherigen Zeitschritt.<bookmark mark=\"step0\"/>\n<break time=\"0.4s\"/>\nIm ersten Zeitschritt gehen wir von <bookmark mark=\"step1\"/>einem Bakterium auf zwei über, also multiplizieren wir die Anzahl der Bakterien, die wir haben, mit 2.\n<break time=\"0.4s\"/>\nIm zweiten Zeitschritt gehen wir von 2 <bookmark mark=\"step2\"/> Bakterien auf 4 über, sodass wir die Anzahl der Bakterien erneut verdoppeln.\n<break time=\"0.4s\"/>\nund im dritten Zeitschritt gehen wir von 4 <bookmark mark=\"step3\"/> Bakterien auf 8 und multiplizieren die Anzahl der Bakterien erneut mit 2.\n<break time=\"0.4s\"/>\nDas bedeutet, dass in jedem Zeitschritt die Anzahl der Bakterien durch 2 hoch x gegeben ist, da wir die zwei x mal mit sich selbst multiplizieren müssen, um die Anzahl der Bakterien zu erhalten.\n<break time=\"0.4s\"/>\nDies bedeutet, dass die Funktion, die die Anzahl der Bakterien beschreibt, <bookmark mark=\"exponential\"/>  g von <bookmark mark=\"gx\"/>x gleich <bookmark mark=\"gtwo\"/>2 hoch <bookmark mark=\"gxx\"/> x lautet."
       },
       "q": {
         "bacteria_double_a": "$\\Uparrow$ Verdopplung alle",
@@ -1905,7 +1905,7 @@
       "voiceover": "{self.intro} <bookmark mark=\"intro_auto\"/> {self.intro_auto} <bookmark mark=\"cords_in\"/>\n<break time=\"0.4s\"/>\nDas bedeutet, dass der Graph an der Stelle x gleich <bookmark mark=\"x_one\"/>eins den Wert\n<bookmark mark=\"f_x_one\"/> {self.a} aufweisen muss, weil  {self.a} hoch eins gleich {self.a} ist.\n<break time=\"0.4s\"/>\nAls nächstes können wir andere Werte überprüfen, zum Beispiel <bookmark mark=\"x_two\"/>bei x gleich zwei,\n<split/>\nDer Wert muss gleich {self.a} hoch zwei sein, <bookmark mark=\"f_x_two\"/>was {self.a**2} ist,\nund <bookmark mark=\"x_max\"/> bei x gleich {self.x_max}, muss der Wert gleich {self.a} hoch {self.x_max} sein,\n<bookmark mark=\"f_x_max\"/>das ist {self.a**self.x_max}.\n<break time=\"0.4s\"/>\nWenn wir <bookmark mark=\"plot\"/> alle drei Graphen betrachten, können wir deutlich erkennen, dass es sich um <bookmark mark=\"erase\"/>\nden {self.color_correct}Graphen handeln muss."
     },
     "GrowthFactorToGraphQuestionScene": {
-      "voiceover": "{self.intro}<bookmark mark=\"f\"/> f <bookmark mark=\"fx\"/> von x <bookmark mark=\"fa\"/> gleich {self.a} a <bookmark mark=\"xx\"/>hoch x.\n<split/><bookmark mark=\"which\"/>Welcher der<bookmark mark=\"cords_in\"/> folgenden Graphen beschreibt die Funktion?\n<break time=\"0.4s\"/>\n<bookmark mark=\"plot_1\"/>\nIst es der {self.color_1_name} Graph?\n<break time=\"0.4s\"/>\nOder <bookmark mark=\"plot_2\"/> ist es der {self.color_2_name} Graph?\n<break time=\"0.4s\"/>\nOder <bookmark mark=\"plot_3\"/> ist es der {self.color_3_name} Graph?",
+      "voiceover": "{self.intro}<bookmark mark=\"f\"/> f <bookmark mark=\"fx\"/> von x <bookmark mark=\"fa\"/> gleich {self.a} <bookmark mark=\"xx\"/>hoch x.\n<split/><bookmark mark=\"which\"/>Welcher der<bookmark mark=\"cords_in\"/> folgenden Graphen beschreibt die Funktion?\n<break time=\"0.4s\"/>\n<bookmark mark=\"plot_1\"/>\nIst es der {self.color_1_name} Graph?\n<break time=\"0.4s\"/>\nOder <bookmark mark=\"plot_2\"/> ist es der {self.color_2_name} Graph?\n<break time=\"0.4s\"/>\nOder <bookmark mark=\"plot_3\"/> ist es der {self.color_3_name} Graph?",
       "x-minutes_1": "Welcher der Graphen",
       "x-minutes_2": "beschreibt die Funktion?"
     },
@@ -2011,7 +2011,7 @@
       },
       "q": {
         "voiceover": "Beginnen wir mit der Regel für die Multiplikation zweier Exponentialfunktionen mit derselben Basis. Die Regel besagt, dass <bookmark mark=\"rule\"/> a hoch x mal a hoch y gleich a hoch x plus y ist. Das Ergebnis ist also die ursprüngliche Basis hoch der Summe der Exponenten.\nAber warum ist das so? Das ist eigentlich leicht zu verstehen: Beachte zuerst, dass <bookmark mark=\"step_1\"/>a hoch x einfach \"a\" ist, x-mal mit sich selbst multipliziert. Und <bookmark mark=\"step_2\"/>a hoch y ist einfach \"a\", y-mal mit sich selbst multipliziert. Wenn wir dann diese beiden Ausdrücke multiplizieren, erhalten wir <bookmark mark=\"step_3\"/>\"a\", x plus y-mal mit sich selbst multipliziert. Und das ist genau das, was die Regel besagt...\nJetzt <bookmark mark=\"clean\"/>üben wir: Wie können wir den <bookmark mark=\"example_in\"/>Ausdruck 4 hoch a mal 4 hoch b vereinfachen?",
-        "question-text": "Wie können wir den Ausdruck $4^a\\\\cdot4^b$ vereinfachen?"
+        "question-text": "Wie können wir den Ausdruck $4^a\\cdot4^b$ vereinfachen?"
       }
     },
     "I43": {
@@ -2020,7 +2020,7 @@
       },
       "q": {
         "voiceover": "Betrachten wir nun die Regel, die besagt, dass <bookmark mark=\"rule\"/>a hoch x geteilt durch a hoch y gleich a hoch x minus y ist.\nEs gibt zwei Wege, sich diese Regel zu merken. Der erste ist, sie mit der <bookmark mark=\"other_rule\"/>Regel zu vergleichen, die besagt, dass a hoch x mal a hoch y gleich a hoch x plus y ist.\nEs ergibt ja Sinn, dass <bookmark mark=\"multiply\"/> wenn das Multiplizieren der Ausdrücke zum Addieren der Exponenten führt, <bookmark mark=\"divide\"/>dann das Teilen der Ausdrücke zum Subtrahieren der Exponenten führt.\nEine andere <bookmark mark=\"clean_up_1\"/>Methode, sich diese Regel zu merken, ist zu erkennen, dass <bookmark mark=\"step_1\"/>\"a\" hoch x gleich \"a\" ist, x-mal mit sich selbst multipliziert, und <bookmark mark=\"step_2\"/>\"a\" hoch y gleich \"a\" ist, y-mal mit sich selbst multipliziert.\nDas bedeutet, dass, wenn wir <bookmark mark=\"step_3\"/>a hoch x durch a hoch y teilen, wir nur noch \"a\" x minus y-mal mit sich selbst multiplizieren, weil die y-mal \"a\" wegfallen.\nJetzt <bookmark mark=\"clean_up_2\"/>schauen wir uns ein Beispiel an. Wie können wir <bookmark mark=\"example_in\"/> den Ausdruck drei hoch x geteilt durch drei hoch y vereinfachen?",
-        "question-text": "Wie können wir den Ausdruck $\\\\frac{3^x}{3^{y}}$ vereinfachen?"
+        "question-text": "Wie können wir den Ausdruck $\\frac{3^x}{3^{y}}$ vereinfachen?"
       }
     },
     "I44": {
@@ -2029,7 +2029,7 @@
       },
       "q": {
         "voiceover": "Die Regel, die wir uns jetzt anschauen, besagt, dass <bookmark mark=\"rule_in\"/>eins durch a hoch x gleich a hoch minus x ist.\nDiese Regel ist etwas schwieriger zu verstehen, aber wir können eine Regel, die wir davor gesehen haben, verwenden, um zu zeigen, dass sie stimmt...\nAlso beginnen wir mit der Regel <bookmark mark=\"other_rule\"/>, dass a hoch x geteilt durch a hoch y gleich a hoch x minus y ist.\nAls Nächstes vertauschen wir <bookmark mark=\"switch\"/>x und y, um die Regel zu erhalten, dass a hoch y geteilt durch a hoch x gleich a hoch y minus x ist.\nAls Nächstes setzen wir y gleich null, um <bookmark mark=\"step_one\"/>die Regel zu erhalten, dass a hoch null geteilt durch a hoch x gleich a hoch null minus x ist.\nWenn wir dann einsetzen, dass a hoch null gleich eins ist, erhalten wir die <bookmark mark=\"rule\"/> Regel, dass eins geteilt durch a hoch x gleich a hoch minus x ist, und wir sind fertig...\nJetzt <bookmark mark=\"clean_up\"/>üben wir mit einem Beispiel. Welcher Ausdruck ist gleich <bookmark mark=\"example_in\"/>b hoch minus 2c?",
-        "question-text": "Welcher Ausdruck entspricht $b^{-2\\\\cdot c}$?"
+        "question-text": "Welcher Ausdruck entspricht $b^{-2\\cdot c}$?"
       }
     },
     "I45": {
@@ -2038,7 +2038,7 @@
       },
       "q": {
         "voiceover": "Was passiert, wenn wir etwas hoch eine Potenz nehmen und dann das Ergebnis nochmals hoch eine weitere Potenz?\nDie nächste Regel besagt, dass <bookmark mark=\"rule\"/> a hoch x, hoch y gleich a hoch x mal y ist. Das Ergebnis ist also die ursprüngliche Basis hoch dem Produkt der Exponenten.\nWie können wir das verstehen? Zuerst beachte, dass <bookmark mark=\"step_1\"/>a hoch x einfach \"a\" ist, x-mal mit sich selbst multipliziert. Und <bookmark mark=\"step_2\"/>a hoch x, hoch y ist einfach \"a\" hoch x, y-mal mit sich selbst multipliziert. Wenn wir diese beiden Ausdrücke kombinieren, erhalten wir <bookmark mark=\"step_3\"/>\"a\", x mal y-mal mit sich selbst multipliziert . Und das ist genau das, was die Regel besagt.\nJetzt wenden wir diese Regel an: <bookmark mark=\"clean\"/> Wie können wir den <bookmark mark=\"example_in\"/>Ausdruck 4 hoch 2 a hoch 2 b vereinfachen?",
-        "question-text": "Wie können wir den Ausdruck $\\\\left(4^{2a}\\\\right)^{2b}$ vereinfachen?"
+        "question-text": "Wie können wir den Ausdruck $\\left(4^{2a}\\right)^{2b}$ vereinfachen?"
       }
     },
     "I46": {
@@ -2053,7 +2053,7 @@
       },
       "q": {
         "voiceover": "Beginnen wir mit der Regel für das Potenzieren eines Bruches. Die Regel besagt, dass <bookmark mark=\"rule\"/> a durch b hoch x gleich a hoch x durch b hoch x ist. Wir können also einfach sowohl den Zähler als auch den Nenner hoch die Potenz nehmen.\nWarum können wir das einfach so machen? Lass uns das betrachten. Beachte zuerst, dass <bookmark mark=\"step_1\"/>der Bruch \"a\" durch b hoch x einfach \"a\" durch b ist, x-mal mit sich selbst multipliziert. Denk dann darüber nach, was passiert, wenn wir Brüche multiplizieren: Wir erhalten einen neuen Bruch, bei dem der Zähler das Produkt der Zähler und der Nenner das Produkt der Nenner ist. Also erhalten wir in unserem Beispiel <bookmark mark=\"step_2\"/>einen Bruch, bei dem der Zähler \"a\" ist, x-mal mit sich selbst multipliziert ist, und der Nenner ist b, x-mal mit sich selbst multipliziert. Und das ist genau das, was in der Regel steht. Also, <bookmark mark=\"step_3\"/>können wir einfach a hoch x durch b hoch x schreiben.\nSchauen wir <bookmark mark=\"clean\"/>jetzt ein Beispiel an. <bookmark mark=\"example_in\"/> Wir haben den Bruch x durch y hoch 2a. Wie können wir das mit der Regel, die wir gerade gelernt haben, vereinfachen?\n\n\n\n\n",
-        "question-text": "Wie können wir $\\\\left(\\\\frac xy\\\\right)^{2a}$ mit der gerade gelernten Regel vereinfachen?"
+        "question-text": "Wie können wir $\\left(\\frac xy\\right)^{2a}$ mit der gerade gelernten Regel vereinfachen?"
       }
     },
     "I53": {
@@ -2062,7 +2062,7 @@
       },
       "q": {
         "voiceover": "Was passiert, wenn wir <bookmark mark=\"situation\"/>eins geteilt durch etwas hoch eine Potenz nehmen? Es gibt eine Regel, die besagt, dass eins durch a hoch x gleich <bookmark mark=\"rule\"/>eins geteilt durch den Ausdruck a hoch x ist. Wenn wir also eins geteilt durch etwas hoch eine Potenz nehmen, können wir einfach den Nenner hoch die Potenz nehmen...\nWarum können wir das einfach so machen. Beachte zuerst, dass <bookmark mark=\"step_1\"/>der Bruch eins durch \"a\" hoch x einfach eins durch \"a\" ist, x-mal mit sich selbst multipliziert. Wenn wir diese Multiplikation durchführen, <bookmark mark=\"step_2\"/>ist der Zähler das Produkt der Zähler und der Nenner das Produkt der Nenner. Und da eins hoch x immer noch eins ist, erhalten wir einen Bruch, bei dem <bookmark mark=\"step_3\"/>der Zähler eins und der Nenner \"a\" ist, x-mal mit sich selbst multipliziert. Also können wir einfach eins durch a hoch x schreiben.\nJetzt <bookmark mark=\"clean\"/>ist diese Regel allerdings nur ein Spezialfall einer anderen Regel. Von welcher anderen Regel können wir diese ableiten?",
-        "question-text": "Aus welcher anderen Regel können wir die Regel $\\\\left(\\\\frac1a\\\\right)^x=\\\\frac1{a^x}$ ableiten?"
+        "question-text": "Aus welcher anderen Regel können wir die Regel $\\left(\\frac1a\\right)^x=\\frac1{a^x}$ ableiten?"
       }
     },
     "I54": {
@@ -2071,7 +2071,7 @@
       },
       "q": {
         "voiceover": "Betrachten wir jetzt die Regel, die besagt, dass <bookmark mark=\"rule\"/>a b hoch x dasselbe ist wie a hoch x mal b hoch x.\nWir können das in drei Schritten nachvollziehen. Zuerst <bookmark mark=\"step_1\"/>schreiben wir a b hoch x als a b mal a b mal a b und so weiter, insgesamt x mal.. Als Nächstes <bookmark mark=\"step_2\"/>können wir die Terme so umstellen, dass alle a's auf der einen Seite und alle b's auf der anderen Seite sind. Schließlich <bookmark mark=\"step_3\"/>können wir die Terme als a hoch x mal b hoch x umschreiben.\nJetzt, <bookmark mark=\"clean\"/>betrachten wir ein beispiel. Was erhalten wir, wenn wir diese Regel <bookmark mark=\"example_in\"/>auf 3 a hoch x anwenden?",
-        "question-text": "Was erhalten wir, wenn wir diese Regel auf $\\\\left(3a\\\\right)^x$ anwenden?"
+        "question-text": "Was erhalten wir, wenn wir diese Regel auf $\\left(3a\\right)^x$ anwenden?"
       }
     },
     "I55": {
@@ -2080,7 +2080,7 @@
       },
       "q": {
         "voiceover": "Nun, noch eine Regel. Die Regel besagt, dass <bookmark mark=\"rule\"/>a durch b hoch minus x gleich b durch a hoch x ist. Wir können also einfach den Zähler und Nenner vertauschen und das Vorzeichen des Exponenten ändern.\nUm diese Regel zu verstehen, beginnen wir mit einer anderen Regel. Diese besagt, dass <bookmark mark=\"start\"/>a hoch minus x gleich eins durch a hoch x ist. Wenn wir diese Regel auf den Ausdruck a durch b hoch minus x anwenden, erhalten wir <bookmark mark=\"step_1\"/>eins geteilt durch a durch b hoch x. Jetzt können wir die Regel anwenden, dass das Teilen von eins durch einen Bruch dasselbe ist wie das Vertauschen von Zähler und Nenner. Also erhalten wir <bookmark mark=\"step_2\"/>b durch a hoch x. So haben wir gezeigt, dass <bookmark mark=\"clean_up\"/>a durch b hoch minus x gleich b durch a hoch x ist.\nWenden wir diese Regel an. Wie können wir <bookmark mark=\"example\"/>den Ausdruck a durch b hoch minus zwei umschreiben?",
-        "question-text": "Wie können wir den Ausdruck $\\\\Big(\\\\frac ab\\\\Big)^{-2}$ umschreiben?"
+        "question-text": "Wie können wir den Ausdruck $\\Big(\\frac ab\\Big)^{-2}$ umschreiben?"
       }
     },
     "I56": {
@@ -2089,7 +2089,7 @@
     "I561": {
       "factor": "Faktor",
       "interest": "Zinsen",
-      "voiceover": "Konzentrieren wir uns auf eine spezielle Art von Exponentialfunktion: Die, in <bookmark mark=\"percentage\"/>denen es um prozente geht.\nWir beginnen mit einem einfachen Beispiel: Nehmen wir an, du hast ein <bookmark mark=\"savings_account\"/>Sparkonto mit 100 Dollar darauf. Und du bekommst 5 Prozent Zinsen pro Jahr.\nUm welchen Faktor wird dein Geld auf dem Konto jedes Jahr multipliziert?",
+      "voiceover": "Konzentrieren wir uns auf eine spezielle Art von Exponentialfunktion: Die, in <bookmark mark=\"percentage\"/>denen es um prozente geht.\nWir beginnen mit einem einfachen Beispiel: Nehmen wir an, du hast ein <bookmark mark=\"savings_account\"/>Sparkonto mit 100 Dollar darauf. Und du <bookmark mark=\"interest\"/>bekommst 5 Prozent Zinsen pro Jahr.\nUm welchen Faktor wird dein Geld auf dem Konto jedes Jahr multipliziert?",
       "q": {
         "question-text": "Mit welchem ​​Faktor wird dein Guthaben auf dem Konto jedes Jahr multipliziert?"
       }
@@ -2193,9 +2193,9 @@
     "intro": "Nein, das ist nicht richtig."
   },
   "Func_6_2_P_2_q": {
-    "color_1_name": "lila",
-    "color_2_name": "Blau",
-    "color_3_name": "Grün",
+    "color_1_name": "lilane",
+    "color_2_name": "Blaue",
+    "color_3_name": "Grüne",
     "intro": "Nehmen wir an, wir haben einen Wachstumsfaktor von a gleich zwei, also lautet die Funktion"
   },
   "Func_6_2_P_3_a": {
@@ -2214,9 +2214,9 @@
     "intro": "Ja, Das ist richtig."
   },
   "Func_6_2_P_4_q": {
-    "color_1_name": "Blau",
-    "color_2_name": "Grün",
-    "color_3_name": "orange",
+    "color_1_name": "Blaue",
+    "color_2_name": "Grüne",
+    "color_3_name": "orangene",
     "intro": "Nehmen wir an, wir untersuchen einen Wachstumsfaktor von a gleich ein halb, also lautet deine Funktion"
   },
   "Func_6_2_P_5_a": {
@@ -2235,9 +2235,9 @@
     "intro": "Ja, das stimmt."
   },
   "Func_6_2_P_6_q": {
-    "color_1_name": "lila",
-    "color_2_name": "Blau",
-    "color_3_name": "Rosa",
+    "color_1_name": "lilane",
+    "color_2_name": "Blaue",
+    "color_3_name": "pinke",
     "intro": "Nehmen wir an, wir betrachten einen Wachstumsfaktor von a gleich drei, also lautet deine Funktion"
   },
   "Func_6_3": {
