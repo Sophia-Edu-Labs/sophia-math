@@ -1275,7 +1275,12 @@ class Func_6_2_I_3_1(SophiaCursorScene):
         flying_monkey = ImageMobject(assets_folder / "img" / "flying_monkey.png")
         flying_monkey = flying_monkey.scale(2.8/flying_monkey.get_width()).move_to([-5, 1, 0])
 
+        base = self.translate("Words.base")
+        exp = self.translate("Words.exponent")
 
+        bubble_base = Bubble([f"{base}: $b$"], loc='b2', center=[-.5,-.2,0], start_point=f_tex[-2].get_center()+[-.1,.1,0], width=1.4, height=.8)
+        bubble_exp = Bubble([f"{exp}: $x$"], loc='b1', center=[.5,1,0], start_point=f_tex[-1].get_center()+0.2*UP)
+        
         # Action Sequence
         with self.voiceover(
                 text=self.translate("Func_6_2.I31.voiceover")
@@ -1284,8 +1289,16 @@ class Func_6_2_I_3_1(SophiaCursorScene):
             self.wait_until_bookmark("func_in")
             self.play(Write(f_tex))
 
+            self.wait_until_bookmark("base_in")
+            self.add_pencil_sound(1)
+            self.play(Create(bubble_base), Write(bubble_base.text), run_time=1)
+
+            self.wait_until_bookmark("exp_in")
+            self.add_pencil_sound(1)
+            self.play(Create(bubble_exp), Write(bubble_exp.text), run_time=1)
+
             self.wait_until_bookmark("func_transform")
-            self.play(TransformMatchingTex(f_tex, f_transformed))
+            self.play(Unwrite(bubble_base), Unwrite(bubble_base.text), Unwrite(bubble_exp), Unwrite(bubble_exp.text), TransformMatchingTex(f_tex, f_transformed))
 
             self.wait_until_bookmark("monkey_in")
             self.add_shift_sound(0.5)
@@ -1321,10 +1334,13 @@ class Func_6_2_I_3_2_q(SophiaCursorScene):
         f_tex = MathTex("f","(x)", "=", "a\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=.4)
         
         a, b = ValueTracker(1), ValueTracker(2)
+        a_2, b_2 = ValueTracker(1), ValueTracker(2)
 
         f_plotted_green = plane.plot(lambda x:2**x, color=GREEN_D)
-        f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE))
+        f_plotted_updated_blue = always_redraw(lambda: plane.plot(lambda x:a.get_value()*2**x, color=PURE_BLUE, x_range = [0, min(5, np.emath.logn(2, 64/a.get_value()))]))
         f_plotted_updated_purple = always_redraw(lambda: plane.plot(lambda x:b.get_value()**x, color=PURPLE, x_range=[0,np.emath.logn(b.get_value(), 64)]))
+        f_plotted_updated_blue_2 = always_redraw(lambda: plane.plot(lambda x:a_2.get_value()*2**x, color=PURE_BLUE, x_range= [0, min(5, np.emath.logn(2, 64/a_2.get_value()))]))
+        f_plotted_updated_purple_2 = always_redraw(lambda: plane.plot(lambda x:b_2.get_value()**x, color=PURPLE, x_range=[0,np.emath.logn(b_2.get_value(), 64)]))
 
         # Action Sequence
         with self.voiceover(
@@ -1341,13 +1357,24 @@ class Func_6_2_I_3_2_q(SophiaCursorScene):
 
             self.wait_until_bookmark("blue_anim")
             self.add(f_plotted_updated_blue)
-            self.play(a.animate.set_value(2))
+            self.play(a.animate.set_value(3))
 
             self.wait_until_bookmark("purple_anim")
             self.add(f_plotted_updated_purple)
-            self.play(b.animate.set_value(2.7), run_time=2.5)
+            self.play(b.animate.set_value(2.7))
 
-        self.wait(4)
+            self.wait_until_bookmark("reset_anim")
+            self.remove(f_plotted_updated_blue, f_plotted_updated_purple)
+
+            self.wait_until_bookmark("blue_anim_2")
+            self.add(f_plotted_updated_blue_2)
+            self.play(a_2.animate.set_value(3), run_time=3)
+
+            self.wait_until_bookmark("purple_anim_2")
+            self.add(f_plotted_updated_purple_2)
+            self.play(b_2.animate.set_value(2.7), run_time=3)
+
+        self.wait(6)
 
 class Func_6_2_I_3_2_a(SophiaCursorScene):
 

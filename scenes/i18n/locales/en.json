@@ -1960,7 +1960,7 @@
       "x-minutes_2": "the growth factor"
     },
     "I31": {
-      "voiceover": "Ok, so far we've looked at exponential functions of the<bookmark mark=\"func_in\"/> form f of x equals b to the power of x, where b is the base, and a is the exponent. Now, we'll try to generalize this a bit and look at functions of the form <bookmark mark=\"func_transform\"/>f of x equals a times b to the x. This way, we'll be able to <bookmark mark=\"monkey_in\"/> all kinds of crazy situations. Let's go!"
+      "voiceover": "Ok, so far we've looked at exponential functions of the<bookmark mark=\"func_in\"/> form f of x equals b to the power of x, <bookmark mark=\"base_in\"/>where b is the base, <bookmark mark=\"exp_in\"/>and x is the exponent. Now, we'll try to generalize this a bit and look at functions of the form <bookmark mark=\"func_transform\"/>f of x equals a times b to the x. This way, we'll be able to <bookmark mark=\"monkey_in\"/> all kinds of crazy situations. Let's go!"
     },
     "I32": {
       "q": {
@@ -2173,7 +2173,7 @@
       }
     },
     "I32q": {
-      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?"
+      "voiceover": "Let's start by getting an understanding of what effect the values of a and b have.\nTake <bookmark mark=\"func_in\"/>the function f of x equals a times b to the power of x. We'll start by choosing some <bookmark mark=\"plot_in\"/> values for a and b.\nNow listen up, here comes an exercise: I'll show you two animations. One shows how we increase a, the other shows how we increase b. Which one shows how we increase a?\nIs <bookmark mark=\"blue_anim\"/>it the blue animation? Or is <bookmark mark=\"purple_anim\"/>it the purple animation?\nSo, once again<bookmark mark=\"reset_anim\"/>: Does <bookmark mark=\"blue_anim_2\"/> the blue animation show, how we increase a? Or does <bookmark mark=\"purple_anim_2\"/> the purple animation show, how we increase a?"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2854,5 +2854,9 @@
     "interest": "interest",
     "years": "years",
     "compound_interest": "compound interest"
+  },
+  "Words": {
+    "base": "base",
+    "exponent": "exponent"
   }
 }
