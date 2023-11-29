@@ -1862,7 +1862,7 @@ class Func_6_2_I_3_4_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,6,8,10,12])
         plane = cords[0]
         self.add(cords)
 
@@ -1873,8 +1873,8 @@ class Func_6_2_I_3_4_a(SophiaCursorScene):
         cursor = AltCursor(idle=True, x=x_0, y=y_0)
         self.add(cursor)
 
-        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
-        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+        lines_f_3 = VGroup(DashedLine(plane.c2p(3,0), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(0,2), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(4,0), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(0,4), color=GREY))
 
         circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
         circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
@@ -1906,13 +1906,13 @@ class Func_6_2_I_3_4_a(SophiaCursorScene):
             x,y,_ = plane.c2p(3,2)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_3)
-            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=1)
 
             self.wait_until_bookmark("f_4")
             x,y,_ = plane.c2p(4,4)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_4)
-            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=1)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
             cursor.idle=True
@@ -1973,7 +1973,7 @@ class Func_6_2_I_3_4_b(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,6,8,10,12])
         plane = cords[0]
         self.add(cords)
 
@@ -1984,8 +1984,8 @@ class Func_6_2_I_3_4_b(SophiaCursorScene):
         cursor = AltCursor(idle=True, x=x_0, y=y_0)
         self.add(cursor)
 
-        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
-        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+        lines_f_3 = VGroup(DashedLine(plane.c2p(3,0), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(0,2), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(4,0), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(0,4), color=GREY))
 
         circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
         circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
@@ -2017,13 +2017,13 @@ class Func_6_2_I_3_4_b(SophiaCursorScene):
             x,y,_ = plane.c2p(3,2)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_3)
-            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=1)
 
             self.wait_until_bookmark("f_4")
             x,y,_ = plane.c2p(4,4)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_4)
-            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=1)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
             cursor.idle=True
@@ -2084,7 +2084,7 @@ class Func_6_2_I_3_4_c(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,6,8,10,12])
         plane = cords[0]
         self.add(cords)
 
@@ -2095,8 +2095,8 @@ class Func_6_2_I_3_4_c(SophiaCursorScene):
         cursor = AltCursor(idle=True, x=x_0, y=y_0)
         self.add(cursor)
 
-        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
-        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+        lines_f_3 = VGroup(DashedLine(plane.c2p(3,0), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(0,2), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(4,0), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(0,4), color=GREY))
 
         circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
         circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
@@ -2128,13 +2128,13 @@ class Func_6_2_I_3_4_c(SophiaCursorScene):
             x,y,_ = plane.c2p(3,2)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_3)
-            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=1)
 
             self.wait_until_bookmark("f_4")
             x,y,_ = plane.c2p(4,4)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_4)
-            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=1)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
             cursor.idle=True
@@ -2195,7 +2195,7 @@ class Func_6_2_I_3_4_d(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,8,12])
+        cords = self.add_cords([0, 5, 1], [0, 12, 2], x_ticks=[2,3,4], y_ticks=[2, 4,6,8,10,12])
         plane = cords[0]
         self.add(cords)
 
@@ -2206,8 +2206,8 @@ class Func_6_2_I_3_4_d(SophiaCursorScene):
         cursor = AltCursor(idle=True, x=x_0, y=y_0)
         self.add(cursor)
 
-        lines_f_3 = VGroup(DashedLine(plane.c2p(0,2), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(3,0), color=GREY))
-        lines_f_4 = VGroup(DashedLine(plane.c2p(0,4), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(4,0), color=GREY))
+        lines_f_3 = VGroup(DashedLine(plane.c2p(3,0), plane.c2p(3,2), color=GREY), DashedLine(plane.c2p(3,2), plane.c2p(0,2), color=GREY))
+        lines_f_4 = VGroup(DashedLine(plane.c2p(4,0), plane.c2p(4,4), color=GREY), DashedLine(plane.c2p(4,4), plane.c2p(0,4), color=GREY))
 
         circ_3 = Circle(radius=.1, color=RED).move_to(plane.c2p(3,2))
         circ_4 = Circle(radius=.1, color=RED).move_to(plane.c2p(4,4))
@@ -2239,13 +2239,13 @@ class Func_6_2_I_3_4_d(SophiaCursorScene):
             x,y,_ = plane.c2p(3,2)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_3)
-            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=.5)
+            self.play(Create(lines_f_3), Write(f_vals[0][0]), Write(f_vals[0][2]), run_time=1)
 
             self.wait_until_bookmark("f_4")
             x,y,_ = plane.c2p(4,4)
             self.play(CursorMoveTo(cursor,x,y), run_time=.3)
             self.add(circ_4)
-            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=.5)
+            self.play(Create(lines_f_4), Write(f_vals[1][0]), Write(f_vals[1][2]), run_time=1)
             self.wait(0.5)
             self.play(CursorMoveTo(cursor,x_0,y_0), run_time=.3)
             cursor.idle=True
@@ -2687,11 +2687,7 @@ class Func_6_2_I_3_6_X(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-            text="""
-So we've now seen how to work with exponential functions of the form <bookmark mark="f_in"/> f of x equals a times b to the power of x. The value <bookmark mark="a"/>of a is a scaling factor, and we can find it by looking at the function value at x equals zero.
-The value <bookmark mark="b"/>of b is the growth factor and describes how fast the function increases. We can find it, by comparing the function values of two consecutive x values.
-<bookmark mark="praise"/>Very nice! This brings us quite a bit closer to mastering exponential functions! Keep it up!!!
-"""
+            text=self.translate("Func_6_2.I36.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_in")
@@ -3022,11 +3018,12 @@ class Func_6_2_I_4_3_q(SophiaCursorScene):
         ud = Tex("$\\Updownarrow$", color=c1t, font_size=fs1)
 
 
-        step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c2t, font_size=fs2)
-        step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c2t, font_size=fs2)
-        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
-        step_4 = Tex("$\\frac{a^x}{a^y}=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x-y$ times}}$", color=c2t, font_size=fs2)
+        step_1 = MathTex("a^x", "=", "\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}", color=c2t, font_size=fs2)
+        step_2 = MathTex("a^y", "=", "\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}", color=c2t, font_size=fs2)
+        step_3 = MathTex("\\Downarrow", color=c2t, font_size=fs2)
+        step_4 = MathTex("{{a^x}", "\\over", "{a^y}}", "=", "\\underbrace{a\\cdot ... \\cdot a}_{x\\text{ times}}", "/", "\\underbrace{a\\cdot ... \\cdot a}_{y\\text{ times}}", color=c2t, font_size=fs3)
         steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT)
+        step_5 = MathTex("{{a^x}", "\\over", "{a^y}}", "=", "\\underbrace{a\\cdot ... \\cdot a}_{x-y\\text{ times}}", "", "", color=c2t, font_size=fs2).move_to(step_4)
         step_3.set_x(0)
 
         example = MathTex("\\frac{3^x}{3^{y}}=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
@@ -3059,11 +3056,20 @@ class Func_6_2_I_4_3_q(SophiaCursorScene):
             self.wait_until_bookmark("step_2")
             self.play(Write(step_2), run_time=1)
 
-            self.wait_until_bookmark("step_3")
-            self.play(Write(step_3), Write(step_4), run_time=1)
+            self.wait_until_bookmark("step_3_0")
+            self.play(Write(step_3), ReplacementTransform(step_1[0].copy(), step_4[0]), ReplacementTransform(step_2[0].copy(), step_4[2]), Write(step_4[1]), run_time=1)
+
+            self.wait_until_bookmark("step_3_1")
+            self.play(Write(step_4[3]), ReplacementTransform(step_1[2].copy(), step_4[4]), run_time=1)
+
+            self.wait_until_bookmark("step_3_2")
+            self.play(Write(step_4[5]), ReplacementTransform(step_2[2].copy(), step_4[6]), run_time=1)
+
+            self.wait_until_bookmark("step_3_3")
+            self.play(TransformMatchingTex(step_4, step_5), run_time=1)
 
             self.wait_until_bookmark("clean_up_2")
-            self.play(Unwrite(steps), run_time=1)
+            self.play(Unwrite(VGroup(step_1, step_2, step_3, step_5)), run_time=1)
 
             self.wait_until_bookmark("example_in")
             self.play(Write(example), run_time=1)
@@ -3263,7 +3269,8 @@ class Func_6_2_I_4_4_q(SophiaCursorScene):
         self.add_title(self.translate("Func_6_2.I1.title"))
 
 
-        other_rule = MathTex("\\frac{a^x}{a^y}=a^{x-y}", color=c1t, font_size=fs2)
+        other_rule = MathTex("{{{a", "^x", "}", "\\over", "{a", "^y", "}}}", "=a^{", "x", "-", "y", "}", color=c1t, font_size=fs2)
+        self.add(other_rule)
         ud_1 = Tex("$\\Downarrow$", "    $y=0$", color=c3t, font_size=fs2)
         ud_1[1].set_color(c3t)
         step_1 = MathTex("\\frac{a^0}{a^x}=a^{0-x}", color=c1t, font_size=fs2)
@@ -3271,7 +3278,8 @@ class Func_6_2_I_4_4_q(SophiaCursorScene):
         rule = MathTex("\\frac{1}{a^x}=a^{-x}", color=c1t, font_size=fs2)
         steps = VGroup(other_rule, ud_1, step_1, ud_2, rule).arrange(DOWN, buff=.2)
 
-        other_rule_alt = MathTex("\\frac{a^y}{a^x}=a^{y-x}", color=c1t, font_size=fs2).move_to(other_rule)
+        other_rule_alt = MathTex("{{{a", "^y", "}", "\\over", "{a", "^x", "}}}", "=a^{", "y", "-", "x", "}", color=c1t, font_size=fs2).move_to(other_rule)
+        
         ud_1.shift(ud_1[0].get_x()*LEFT)
         example = MathTex("b^{-2\\cdot c}=\\,\\,\\,\\,???", color=c1t, font_size=fs2)
 
@@ -3290,7 +3298,7 @@ class Func_6_2_I_4_4_q(SophiaCursorScene):
 
             self.wait_until_bookmark("other_rule")
             x,y,_ = other_rule[0].get_center()+0.6*DOWN
-            self.play(Write(other_rule), CursorMoveTo(cursor,x,y), run_time=1)
+            self.play(Create(other_rule), CursorMoveTo(cursor,x,y), run_time=1)
             cursor.idle=True
 
             self.wait_until_bookmark("switch")
