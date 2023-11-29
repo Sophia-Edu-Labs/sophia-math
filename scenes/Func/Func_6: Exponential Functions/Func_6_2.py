@@ -2783,11 +2783,12 @@ class Func_6_2_I_4_2_q(SophiaCursorScene):
         self.add_title(self.translate("Func_6_2.I1.title"))
 
         rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1)
-        step_1 = Tex("$a^x=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x$ times}}$", color=c2t, font_size=fs2)
-        step_2 = Tex("$a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$y$ times}}$", color=c2t, font_size=fs2)
+        step_1 = MathTex("a^x", "=", "\\underbrace{a\\cdot ... \\cdot a}_{x\\text{ times}}", color=c2t, font_size=fs2)
+        step_2 = MathTex("a^y", "=", "\\underbrace{a\\cdot ... \\cdot a}_{y\\text{ times}}", color=c2t, font_size=fs2)
         step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
-        step_4 = Tex("$a^x\\cdot a^y=\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x+ y$ times}}$", color=c2t, font_size=fs2)
+        step_4 = MathTex("a^x", "\\cdot", "a^y", "=", "\\underbrace{a\\cdot ... \\cdot a}_{x\\text{ times}}", "\\cdot", "\\underbrace{a\\cdot ... \\cdot a}_{y\\text{ times}}", color=c2t, font_size=fs3)
         steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+        step_5 = MathTex("a^x", "\\cdot", "a^y", "=", "\\underbrace{a\\cdot ... \\cdot a}_{\\text{$x+ y$ times}}", "", "", color=c2t, font_size=fs2).move_to(step_4)
         step_3.set_x(0)
 
         example = MathTex("4^a\\cdot 4^b=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
@@ -2807,11 +2808,22 @@ class Func_6_2_I_4_2_q(SophiaCursorScene):
             self.wait_until_bookmark("step_2")
             self.play(Write(step_2), run_time=1)
 
-            self.wait_until_bookmark("step_3")
-            self.play(Write(step_3), Write(step_4), run_time=1)
+            self.wait_until_bookmark("step_3_0")
+            self.play(Write(step_3), ReplacementTransform(step_1[0].copy(), step_4[0]), ReplacementTransform(step_2[0].copy(), step_4[2]), Write(step_4[1]), run_time=1)
+
+            self.wait_until_bookmark("step_3_1")
+            self.play(Write(step_4[3]), ReplacementTransform(step_1[2].copy(), step_4[4]), run_time=1)
+
+            self.wait_until_bookmark("step_3_2")
+            self.play(Write(step_4[5]), ReplacementTransform(step_2[2].copy(), step_4[6]), run_time=1)
+
+            self.wait_until_bookmark("step_3_3")
+            self.play(TransformMatchingTex(step_4, step_5), run_time=1)
+
+            #self.play(Write(step_3), Write(step_4), run_time=1)
 
             self.wait_until_bookmark("clean")
-            self.play(Unwrite(steps), run_time=1)
+            self.play(Unwrite(VGroup(step_1, step_2, step_3, step_5)), run_time=1)
 
             self.wait_until_bookmark("example_in")
             self.play(Write(example), run_time=1)
