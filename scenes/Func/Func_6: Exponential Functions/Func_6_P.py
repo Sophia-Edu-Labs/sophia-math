@@ -350,7 +350,7 @@ Take the <bookmark mark="expression_in"/>expression square root of x times x to 
 
         self.wait(4)
 
-class Func_6_P_1_1_a(SophiaCursorScene):
+class Func_6_P_1_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -541,7 +541,7 @@ The next step will <bookmark mark="clean_up"/>be that we write the x over two in
             self.play(Write(rule_2), CursorUnderline(cursor, rule_2), run_time=.5)
 
             self.wait_until_bookmark("implication_3_in")
-            x,y,_ = implication_2_1[1].get_center()+0.4*DOWN
+            x,y,_ = implication_2_1[1].get_center()+0.6*DOWN
             self.play(CursorMoveResize(cursor,x,y), Write(implication_2_1), run_time=.5)
 
             self.wait_until_bookmark("step_4_1_in")
@@ -572,10 +572,132 @@ The next step will <bookmark mark="clean_up"/>be that we write the x over two in
 
 
 
+#####################################
+#####################################
+class Func_6_P_1_2_2_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+    #         correctAnswerIndex = 3,
+    #         questionText=self.translate("Func_6_3.I4.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cursor = AltCursor()
+        self.add(cursor)
+
+        expression = MathTex("2\\cdot b^{-3x -3}", color=c1t, font_size=fs1).set_y(2)
+        downarrow = MathTex("\\Downarrow", color=c1t, font_size=fs2).set_y(1)
+        general_form = MathTex("a\\cdot b^x", color=GREEN_D, font_size=fs1).set_y(0)
+
+        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thinking.png").move_to([-5,-1.6,0]).scale(0.7)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Now we have the <bookmark mark="expression_in"/>expression 2 times b to the power of negative 3 x minus 3. What expression of the form <bookmark mark="general_form_in"/>a times b to the power of x is<bookmark mark="q_in"/> it equivalent to?"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("expression_in")
+            self.play(Write(expression), CursorUnderline(cursor, expression), run_time=.5)
+
+            self.wait_until_bookmark("general_form_in")
+            x,y,_ = general_form.get_center()+0.5*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(general_form), Write(downarrow), run_time=.5)
+
+            self.wait_until_bookmark("q_in")
+            self.add_shift_sound(0.5)
+            self.play(giraffe.animate.shift(RIGHT*5), CursorMoveResize(cursor, 0, -.4), run_time=0.5)
+            cursor.idle=True
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(giraffe.animate.shift(RIGHT*5), run_time=0.5)
+
+        self.wait(4)
 
 
+class Func_6_P_2_2_a(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
+        cursor = AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        expression_step1 = MathTex("2\\cdot b^{-3x -3}", "=", " 2\\cdot b^{-3(x+1)}}", color=c1t, font_size=fs3)
+        implication_1 = MathTex("\\Downarrow", "a^(x\\cdot y)=\\left(a^x\\right)^{^y}", color=BLUE_D, font_size=fs2) 
+        expression_step2 = MathTex("2\\cdot b^{-3x -3}", "=", " 2\\cdot \\left(b^{-3}\\right)^{(x+1)}}", color=c1t, font_size=fs3)
+        implication_2 = MathTex("\\Downarrow", "a^{(x+y)}=a^x\\cdot a^y", color=BLUE_D, font_size=fs2)
+        expression_step3 = MathTex("2\\cdot b^{-3x -3}", "=", " 2b^{-3}\\cdot \\left(b^{-3}\\right)^{x}}", color=c1t, font_size=fs3)
+        implication_3 = MathTex("\\Downarrow", "a^{-x}=\\tfrac1{a^x}", color=BLUE_D, font_size=fs2)
+        expression_step4 = MathTex("2\\cdot b^{-3x -3}", "=", " \\tfrac2{b^3}\\cdot \\left(\\tfrac1{b^3}\\right)^{x}}", color=c1t, font_size=fs3)
+        steps = VGroup(expression_step1, implication_1, expression_step2, implication_2, expression_step3, implication_3, expression_step4).arrange(DOWN, buff=.4)
+        expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step3.shift(expression_step3[1].get_x()*LEFT)
+        implication_1[1].scale(.7), implication_2[1].scale(.7), implication_3[1].scale(.7)
+        implication_1.shift((implication_1[0].get_x()+1)*LEFT), implication_2.shift((implication_2[0].get_x()+1)*LEFT), implication_3.shift((implication_3[0].get_x()+1)*LEFT)
+        expression = MathTex("2\\cdot b^{-3x -3}", color=c1t, font_size=fs1)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+The first thing we can do is <bookmark mark="step_1_in"/>write the negative 3 x minus 3 in the exponent as negative 3 times x plus 1. Then we can use the rule stating that <bookmark mark="rule_1_in"/>the power of a power is the product of the powers. So if we <bookmark mark="implication_1_in"/>set a equal to b to the power of negative 3, x equal to x plus 1, and y equal to negative 3, we get <bookmark mark="step_2_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_2_1_in"/>equal to 2 times b to the power of negative 3, all to the power of x plus 1. Then we can <bookmark mark="implication_2_in"/>use the rule stating that a to the power of x plus y is equal to a to the power of x times a to the power of y. If we <bookmark mark="implication_3_in"/>set a equal to 2, x equal to negative 3, and y equal to x, we get <bookmark mark="step_3_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_3_1_in"/>equal to 2 times b to the power of negative 3, times b to the power of x. Finally, we can <bookmark mark="implication_4_in"/>use the rule stating that a to the power of negative x is equal to one over a to the power of x. If we <bookmark mark="implication_5_in"/>set a equal to b to the power of negative 3, we get <bookmark mark="step_4_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_4_1_in"/>equal to two over b to the power of 3, times one over b to the power of 3, all to the power of x.
+"""
+        ) as tracker:
+
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(expression_step1), CursorUnderline(cursor, expression_step1), run_time=.5)
+
+            self.wait_until_bookmark("rule_1_in")
+            x,y,_ = implication_1[1].get_center()+0.4*DOWN
+            self.play(Write(implication_1), CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("implication_1_in")
+            x,y,_ = implication_1[1].get_center()+0.6*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2_in")
+            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_2_1_in")
+            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
+
+            self.wait_until_bookmark("implication_2_in")
+            x,y,_ = implication_2[1].get_center()+0.6*DOWN
+            self.play(CursorMoveResize(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_3_in")
+            x,y,_ = expression_step3[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_3_1_in")
+            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[1]), Write(expression_step3[2]), run_time=.4)
+
+            self.wait_until_bookmark("implication_3_in")
+            x,y,_ = implication_3[1].get_center()+0.6*DOWN
+            self.play(CursorMoveResize(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_4_in")
+            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_4_1_in")
+            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
+
+            cursor.idle=True
 
 
 
