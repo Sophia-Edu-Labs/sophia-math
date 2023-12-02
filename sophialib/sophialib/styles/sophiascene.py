@@ -516,7 +516,8 @@ class SophiaScene(VoiceoverScene):
         c = lambda : Circle(radius=0.1, fill_color=RED, fill_opacity=1, color=RED).shift([-0.1,-0.3,0])
         Qmark = VGroup(sq().shift(UP*0.8+LEFT*0.2), sq().shift(UP), sq().shift(UP*0.8+RIGHT*0.2), sq().shift(UP*0.6+RIGHT*0.2), sq().shift(UP*0.4), sq().shift(UP*0.3), c().shift([0,-0.1,0])).move_to(loc)
         
-        self.play(cursor.animate.move_to(Qmark[0]), run_time=0.2*run_time)
+        x,y,_ = Qmark[0].get_center()
+        self.play(CursorMoveResize(cursor, x,y), run_time=0.2*run_time)
         circ = c().move_to(cursor)
         self.add(circ)
 

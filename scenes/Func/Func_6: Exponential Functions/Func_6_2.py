@@ -3267,16 +3267,15 @@ class Func_6_2_I_4_4_q(SophiaCursorScene):
         self.add_mathgrid()
 
         self.add_title(self.translate("Func_6_2.I1.title"))
-
-
+        
         other_rule = MathTex("{{{a", "^x", "}", "\\over", "{a", "^y", "}}}", "=a^{", "x", "-", "y", "}", color=c1t, font_size=fs2)
-        self.add(other_rule)
         ud_1 = Tex("$\\Downarrow$", "    $y=0$", color=c3t, font_size=fs2)
         ud_1[1].set_color(c3t)
         step_1 = MathTex("\\frac{a^0}{a^x}=a^{0-x}", color=c1t, font_size=fs2)
         ud_2 = Tex("$\\Downarrow$", color=c3t, font_size=fs2)
         rule = MathTex("\\frac{1}{a^x}=a^{-x}", color=c1t, font_size=fs2)
         steps = VGroup(other_rule, ud_1, step_1, ud_2, rule).arrange(DOWN, buff=.2)
+        bug_help = MathTex("\\frac{a^x}{a^y}=a^{x-y}", color=c1t, font_size=fs2).move_to(other_rule)
 
         other_rule_alt = MathTex("{{{a", "^y", "}", "\\over", "{a", "^x", "}}}", "=a^{", "y", "-", "x", "}", color=c1t, font_size=fs2).move_to(other_rule)
         
@@ -3297,12 +3296,14 @@ class Func_6_2_I_4_4_q(SophiaCursorScene):
             self.play(Write(rule), CursorMoveTo(cursor,x,y), run_time=1)
 
             self.wait_until_bookmark("other_rule")
-            x,y,_ = other_rule[0].get_center()+0.6*DOWN
-            self.play(Create(other_rule), CursorMoveTo(cursor,x,y), run_time=1)
+            x,y,_ = other_rule.get_center()+0.6*DOWN
+            self.play(Write(bug_help), CursorMoveTo(cursor,x,y), run_time=1)
+            self.add(other_rule)
+            self.remove(bug_help)
             cursor.idle=True
 
             self.wait_until_bookmark("switch")
-            self.play(TransformMatchingTex(other_rule, other_rule_alt), run_time=1)
+            self.play(TransformMatchingTex(other_rule, other_rule_alt), run_time=3)
 
             self.wait_until_bookmark("step_one")
             x,y,_ = step_1.get_center()+0.6*DOWN
