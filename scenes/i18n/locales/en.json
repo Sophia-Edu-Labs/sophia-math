@@ -2856,7 +2856,8 @@
     "capital": "capital",
     "interest": "interest",
     "years": "years",
-    "compound_interest": "compound interest"
+    "compound_interest": "compound interest",
+    "year": "year"
   },
   "Words": {
     "base": "base",

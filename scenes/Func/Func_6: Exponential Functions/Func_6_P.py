@@ -14,6 +14,8 @@ from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
 
 
+###############Exercises for Rules I Chapter ##########################
+
 ##################################### Exercise Level: Easy (1)
 #####################################
 class Func_6_P_1_1_1_q(SophiaCursorScene):
@@ -649,7 +651,7 @@ class Func_6_P_2_2_a(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text="""
-The first thing we can do <bookmark mark="step_0"/>is write the negative 3 x minus 3 in the exponent <bookmark mark="step_1_in"/>as negative 3 times x plus 1. Then we can use the rule that <bookmark mark="implication_1_in"/>the power of a power is the product of the powers. So , we get <bookmark mark="step_2_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_2_1_in"/>equal to 2 times b to the power of negative 3, all to the power of x plus 1. Next we can <bookmark mark="implication_2_in"/>use the rule stating that a to the power of x plus y is equal to a to the power of x times a to the power of y. Thus, we get that <bookmark mark="step_3_in"/>2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_3_1_in"/>equal to 2 times b to the power of negative 3, times b to the power of negative three, to the power of x.<bookmark mark="clean_up"/> Finally, we can use the <bookmark mark="implication_3_in"/>rule stating that a to the power of negative x is equal to one over a to the power of x. If we set a equal to b to the power of negative 3, we get <bookmark mark="step_4_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_4_1_in"/>equal to two over b to the power of 3, times one over b to the power of 3, all to the power of x.
+The first thing we can do <bookmark mark="step_0"/>is write the negative 3 x minus 3 in the exponent <bookmark mark="step_1_in"/>as negative 3 times x plus 1. Then we can use the rule that <bookmark mark="implication_1_in"/>the power of a power is the product of the powers. So , we get <bookmark mark="step_2_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_2_1_in"/>equal to 2 times b to the power of negative 3, all to the power of x plus 1. Next we can <bookmark mark="implication_2_in"/>use the rule stating that a to the power of x plus y is equal to a to the power of x times a to the power of y. Thus, we get that <bookmark mark="step_3_in"/>2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_3_1_in"/>equal to 2 times b to the power of negative 3, times b to the power of negative three, to the power of x.<bookmark mark="clean_up"/> Finally, we can use the <bookmark mark="implication_3_in"/>rule stating that a to the power of negative x is equal to one over a to the power of x. This leads us to our final result, which is <bookmark mark="step_4_in"/>that 2 times b to the power of negative 3 x minus 3 is <bookmark mark="step_4_1_in"/>equal to two over b to the power of 3, times one over b to the power of 3, all to the power of x.
 """
         ) as tracker:
             
@@ -703,8 +705,204 @@ The first thing we can do <bookmark mark="step_0"/>is write the negative 3 x min
             self.wait_until_bookmark("step_4_1_in")
             x,y,_ = expression_step4[2].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
-
             cursor.idle=True
+
+        self.wait(4)
+
+
+
+#####################################
+#####################################
+class Func_6_P_1_2_3_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+    #         correctAnswerIndex = 3,
+    #         questionText=self.translate("Func_6_3.I4.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cursor = AltCursor()
+        self.add(cursor)
+
+        expression = MathTex("2\\cdot \\pi^{-2x +1}", color=c1t, font_size=fs1).set_y(2)
+        downarrow = MathTex("\\Downarrow", color=c1t, font_size=fs2).set_y(1)
+        general_form = MathTex("a\\cdot b^x", color=GREEN_D, font_size=fs1).set_y(0)
+
+        sloth = ImageMobject(assets_folder / "img" / "sloth_thinking.png").move_to([-5,-1.6,0]).scale(0.5)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Check out the <bookmark mark="expression_in"/>expression 2 pi to the power of negative two x plus one. What expression of the form <bookmark mark="general_form_in"/>a times b to the power of x can<bookmark mark="q_in"/> we transform it into using the rules for exponential functions?"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("expression_in")
+            self.play(Write(expression), CursorUnderline(cursor, expression), run_time=.5)
+
+            self.wait_until_bookmark("general_form_in")
+            x,y,_ = general_form.get_center()+0.5*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(general_form), Write(downarrow), run_time=.5)
+
+            self.wait_until_bookmark("q_in")
+            self.add_shift_sound(0.5)
+            self.play(sloth.animate.shift(RIGHT*5), CursorMoveResize(cursor, 0, -.4), run_time=0.5)
+            cursor.idle=True
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(sloth.animate.shift(RIGHT*5), run_time=0.5)
+
+        self.wait(4)
+
+
+class Func_6_P_1_2_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cursor = AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        rule = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs2)
+        implication_1 = MathTex("\\Downarrow", "\\substack{a=\\pi\\\\x=1,\\\\y=2x}", color=BLUE_D, font_size=fs2) 
+        expression_step1 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\cdot\\tfrac{\\pi^1}{\\pi^{2x}}", color=c1t, font_size=fs2)
+        implication_2 = MathTex("\\Downarrow", "", color=BLUE_D, font_size=fs2)
+        expression_step2 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\pi^{2x}}", color=c1t, font_size=fs2)
+        implication_3 = MathTex("\\Downarrow", "a^{x\\cdot y}=(a^x)^y", color=BLUE_D, font_size=fs2)
+        expression_step3 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\left(\\pi^2\\right)^x}", color=c1t, font_size=fs2)
+        implication_4 = MathTex("\\Downarrow", "\\tfrac1{a^x}=\\left(\\tfrac1a\\right)^x", color=BLUE_D, font_size=fs2)
+        expression_step4 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\left(\\tfrac{1}{\\pi^2}\\right)^{x}", color=c1t, font_size=fs2)
+        steps = VGroup(rule, implication_1, expression_step1, implication_2, expression_step2, implication_3, expression_step3, implication_4, expression_step4).arrange(DOWN, buff=.4).shift(DOWN)
+        implication_1[1].scale(.7), implication_3[1].scale(.7)
+        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[0].get_x()*LEFT), expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT)
+
+        
+        expression = MathTex("2\\cdot \\pi^{-2x +1}", color=c1t, font_size=fs1)
+        self.add(expression)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+We start by applying the rule <bookmark mark="rule_in"/>that a to the power of x minus y is equal to a to the power of x divided by a to the power of y. If we set<bookmark mark="implication_1_in"/> a equal to pi, x equal to 1, and y equal to 2 x, we get <bookmark mark="step_1_transform"/>that 2 times pi to the power of negative two x plus one is <bookmark mark="step_1_in"/>equal to 2 times pi to the power of one, divided by pi to the power of two x. Then, we can <bookmark mark="implication_2_in"/>rewrite pi to the power of one as pi, and we see <bookmark mark="step_2_1_in"/>that 2 times pi to the power of negative two x plus one is <bookmark mark="step_2_in"/>equal to 2 pi times one over pi to the power of two x.
+<bookmark mark="clean_up"/>Next, we use the <bookmark mark="implication_3_in"/>rule that a to the power of x times y equals a to the power of x, raised to the power of y. We'll apply it to the pi to the power of two x in the denominator, and turn it into pi squared, raised to the power of x. This way, we get <bookmark mark="step_3_1_in"/>that 2 times pi to the power of negative two x plus one is <bookmark mark="step_3_in"/>equal to 2 pi times one over pi squared to the power of x. Finally, we can <bookmark mark="implication_4_in"/>raise the entire fraction to the power of x, because one over a to the power of x is equal to open bracket one over a, close bracket, all to the power of x. This leads us to our final result, which is <bookmark mark="step_4_in"/>that 2 times pi to the power of negative two x plus one is <bookmark mark="step_4_1_in"/>equal to 2 pi times one over pi squared, raised to the power of x.
+"""
+        ) as tracker:
+ 
+            self.wait_until_bookmark("rule_in")
+            self.play(Write(rule), CursorUnderline(cursor, rule), run_time=.5)
+
+            self.wait_until_bookmark("implication_1_in")
+            x,y,_ = implication_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("step_1_transform")
+            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
+            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
+
+            self.wait_until_bookmark("step_1_in")
+            x,y,_ = expression_step1[2].get_center()+0.6*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
+
+            self.wait_until_bookmark("implication_2_in")
+            x,y,_ = implication_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(implication_2), run_time=.5)
+
+            self.wait_until_bookmark("step_2_1_in")
+            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_2_in")
+            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
+
+            self.wait_until_bookmark("clean_up")
+            upshift = rule.get_center()-expression_step2.get_center()
+            self.add_shift_sound(0.5)
+            self.play(VGroup(rule, implication_1, expression_step1, implication_2,).animate.shift(5*UP), expression_step2.animate.shift(upshift), run_time=.5)
+            expression_step3.shift(upshift), implication_3.shift(upshift), expression_step4.shift(upshift), implication_4.shift(upshift), 
+
+            self.wait_until_bookmark("implication_3_in")
+            x,y,_ = implication_3[1].get_center()+0.4*DOWN
+            self.play(Write(implication_3), CursorMoveResize(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_3_1_in")
+            x,y,_ = expression_step3[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_3_in")
+            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[1]), Write(expression_step3[2]), run_time=.4)
+
+            self.wait_until_bookmark("implication_4_in")
+            x,y,_ = implication_4[1].get_center()+0.4*DOWN
+            self.play(Write(implication_4), CursorMoveResize(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_4_in")
+            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
+
+            self.wait_until_bookmark("step_4_1_in")
+            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
+            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
+
+        self.wait(4)
+
+
+
+
+###############Exercises for Percentages Chapter ##########################
+
+##################################### Exercise Level: Easy (1)
+#####################################
+class Func_6_P_3_1_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+    #         correctAnswerIndex = 3,
+    #         questionText=self.translate("Func_6_3.I4.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
+        money = money.scale(4/money.get_width()).move_to([-5, 1.4, 0])
+        year = self.translate("words.year")
+        
+        bullets = VGroup(Tex("$\\bullet$ ", year, " 0: $100\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", year, " 2: $144\$$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+You have<bookmark mark="money_in"/> a bank account, that you <bookmark mark="dollars_1_in"/>put 100 Dollars into. Every year, you get the same amount of interest. After two years, you have <bookmark mark="dollars_2_in"/>144 Dollars in your account. What is the interest rate in percent?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_in")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            
+            self.wait_until_bookmark("dollars_1_in")
+            self.play(Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("dollars_2_in")
+            self.play(Write(bullets[1]), run_time=.5)
+
+        self.wait(4)
 
 
 

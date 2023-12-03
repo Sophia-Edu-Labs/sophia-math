@@ -2114,7 +2114,7 @@
       "increase": "Erhöhung",
       "interest": "Zinsen",
       "investment": "Investment",
-      "spend_half": "Ausgaben:",
+      "spend_half": "Ausgaben",
       "voiceover": "Immer wenn eine Person <bookmark mark=\"twenty_percent_in\"/>zwanzig Prozent der Suppe isst, <bookmark mark=\"eighty_percent_in\"/>bleiben 80 Prozent der Suppe übrig. Daher beschreibt die <bookmark mark=\"func_in\"/>Funktion f von x gleich null Komma acht hoch x die Menge <bookmark mark=\"soup_in\"/>der Suppe, die übrig bleibt, nachdem x Personen Suppe gegessen haben. Dies liegt daran, dass jede Person achtzig Prozent übrig lässt, also müssen wir die Menge der Suppe jedes Mal mit 0,8 multiplizieren, wenn eine Person Suppe isst."
     },
     "I563": {
@@ -2856,6 +2856,7 @@
     "capital": "Kapital",
     "interest": "Zinsen",
     "years": "Jahre",
-    "compound_interest": "Zinseszins"
+    "compound_interest": "Zinseszins",
+    "year": "Jahr"
   }
 }

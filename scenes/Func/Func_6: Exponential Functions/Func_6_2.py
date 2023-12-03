@@ -4960,7 +4960,7 @@ class Func_6_2_I_6_4_q(SophiaCursorScene):
         interest = self.translate("Func_6_2.I562q.interest")
         spending = self.translate("Func_6_2.I562q.spend_half")
         dollars = MathTex("100", "\\$", color=c1t, font_size=fs1).next_to(money, DOWN, buff=.2).set_x(0)
-        bullets = VGroup(Tex("$\\bullet$ ", interest, ": $10\%$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", spending, ": $50\%$", color=c1t, font_size=fs2),).arrange(DOWN, buff=.2)
+        bullets = VGroup(Tex("$\\bullet$ ", interest, ": $10\%$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", spending, ": $50\%$", color=c1t, font_size=fs2),).arrange(DOWN, buff=.2, aligned_edge=LEFT)
 
         # Action Sequence
         with self.voiceover(
