@@ -36,7 +36,8 @@ class Func_6_3_I_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_6_3.I1.q.title"))
+        self.add(title)
 
         two_add = MathTex("2", color=c1t, font_size=fs1).move_to([-1,1,0])
         four_add = MathTex("4", color=c1t, font_size=fs1).move_to([1,1,0])
@@ -77,7 +78,7 @@ class Func_6_3_I_1_q(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -90,7 +91,7 @@ class Func_6_3_I_1_q(SophiaCursorScene):
             
             self.wait_until_bookmark("two_add_1")
             x,y,_ = two_add.get_center()+0.6*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(two_add))
 
             self.wait_until_bookmark("two_add_2")
@@ -100,14 +101,14 @@ class Func_6_3_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("two_add_3")
             x,y,_ = two_add.get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(arrow_subtract), Write(subtract_two))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("clear_1")
             self.play(addition.animate.scale(0.5), run_time=0.3)
             self.play(addition.animate.shift(UP), run_time=0.3)
 
             self.wait_until_bookmark("three_mul_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = three_mul.get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(three_mul))
 
@@ -118,14 +119,14 @@ class Func_6_3_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("three_mul_3")
             x,y,_ = three_mul.get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(arrow_div), Write(div_three))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("clear_2")
             self.play(multiplication.animate.scale(0.5), run_time=0.3)
             self.play(multiplication.animate.next_to(addition, DOWN, buff=0.4), run_time=0.3)
 
             self.wait_until_bookmark("four_pow_1")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = four_pow.get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(four_pow))
 
@@ -136,7 +137,7 @@ class Func_6_3_I_1_q(SophiaCursorScene):
             self.wait_until_bookmark("four_pow_3")
             x,y,_ = four_pow.get_center()+0.6*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(arrow_root), Write(root_two))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -148,7 +149,8 @@ class Func_6_3_I_1_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_6_3.I1.q.title"))
+        self.add(title)
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -168,7 +170,7 @@ class Func_6_3_I_1_a(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -181,26 +183,25 @@ class Func_6_3_I_1_a(SophiaCursorScene):
             
             self.wait_until_bookmark("raise")
             x,y,_ = pow_root[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(pow_root[0]))
 
             self.wait_until_bookmark("root")
             x,y,_ = pow_root[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(pow_root[1]), Write(pow_root[2]))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_raise")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = pow_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y))
 
             self.wait_until_bookmark("sol_root")
             x,y,_ = root_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), ReplacementTransform(root_two, MathTex("\\sqrt{\\Box}", color=c1t, font_size=fs2).move_to(root_two)))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
-
 
 class Func_6_3_I_1_b(SophiaCursorScene):
 
@@ -210,7 +211,8 @@ class Func_6_3_I_1_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_6_3.I1.q.title"))
+        self.add(title)
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -230,7 +232,7 @@ class Func_6_3_I_1_b(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -243,26 +245,25 @@ class Func_6_3_I_1_b(SophiaCursorScene):
             
             self.wait_until_bookmark("raise")
             x,y,_ = pow_root[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(pow_root[0]))
 
             self.wait_until_bookmark("root")
             x,y,_ = pow_root[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(pow_root[1]), Write(pow_root[2]))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_raise")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = pow_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y))
 
             self.wait_until_bookmark("sol_root")
             x,y,_ = root_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), ReplacementTransform(root_two, MathTex("\\sqrt{\\Box}", color=c1t, font_size=fs2).move_to(root_two)))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
-
 
 class Func_6_3_I_1_c(SophiaCursorScene):
 
@@ -272,7 +273,8 @@ class Func_6_3_I_1_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_6_3.I1.q.title"))
+        self.add(title)
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -292,7 +294,7 @@ class Func_6_3_I_1_c(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -305,26 +307,25 @@ class Func_6_3_I_1_c(SophiaCursorScene):
             
             self.wait_until_bookmark("raise")
             x,y,_ = pow_root[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(pow_root[0]))
 
             self.wait_until_bookmark("root")
             x,y,_ = pow_root[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(pow_root[1]), Write(pow_root[2]))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_raise")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = pow_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y))
 
             self.wait_until_bookmark("sol_root")
             x,y,_ = root_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), ReplacementTransform(root_two, MathTex("\\sqrt{\\Box}", color=c1t, font_size=fs2).move_to(root_two)))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
-
 
 class Func_6_3_I_1_d(SophiaCursorScene):
 
@@ -334,7 +335,8 @@ class Func_6_3_I_1_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I1.q.title"))
+        title = self.add_title(self.translate("Func_6_3.I1.q.title"))
+        self.add(title)
 
         four_pow = MathTex("2", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("4", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -354,7 +356,7 @@ class Func_6_3_I_1_d(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -367,23 +369,23 @@ class Func_6_3_I_1_d(SophiaCursorScene):
             
             self.wait_until_bookmark("raise")
             x,y,_ = pow_root[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(pow_root[0]))
 
             self.wait_until_bookmark("root")
             x,y,_ = pow_root[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(pow_root[1]), Write(pow_root[2]))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_raise")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = pow_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y))
 
             self.wait_until_bookmark("sol_root")
             x,y,_ = root_two.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), ReplacementTransform(root_two, MathTex("\\sqrt{\\Box}", color=c1t, font_size=fs2).move_to(root_two)))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -398,7 +400,8 @@ class Func_6_3_I_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I2.title"))
+        title = self.add_title(self.translate("Func_6_3.I2.title"))
+        self.add(title)
 
         four_pow = MathTex("3", color=c1t, font_size=fs1).move_to([-1,0,0])
         two_pow = MathTex("64", color=c1t, font_size=fs1).move_to([1,0,0])
@@ -417,7 +420,7 @@ class Func_6_3_I_2(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -430,7 +433,7 @@ class Func_6_3_I_2(SophiaCursorScene):
             
             self.wait_until_bookmark("take_number")
             x,y,_ = four_pow.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(four_pow))
 
             self.wait_until_bookmark("raise_4")
@@ -440,20 +443,19 @@ class Func_6_3_I_2(SophiaCursorScene):
             self.wait_until_bookmark("take_log")
             x,y,_ = four_pow.get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(arrow_root), Write(log_two))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("inverse_raise")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = exp_log[0].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(exp_log[0]))
 
             self.wait_until_bookmark("inverse_log")
             x,y,_ = exp_log[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(exp_log[1]), Write(exp_log[2]))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
-
 
 
 #####################################
@@ -466,19 +468,20 @@ class Func_6_3_I_3(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        self.add_title(self.translate("Func_6_3.I2.title"))
+        title = self.add_title(self.translate("Func_6_3.I2.title"))
+        self.add(title)
 
         def cursor_sound_updater(mob, dt):
             if mob.needSound:
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
 
-        two_to_the_x = MathTex("2", "\\cdot2", "\\cdot2", "\\cdot2", "\\cdot2", "=", "2^5", "=", "32", color=c1t, font_size=fs2).move_to([0,0,0])
+        two_to_the_x = MathTex("2", "\\cdot2", "\\cdot2", "\\cdot2", "\\cdot2", "=", "2^5", "=", "32", color=c1t, font_size=fs2).set_y(1.6)
         thirtytwo = MathTex("32", "=", "2^?", color=c1t, font_size=fs2).next_to(two_to_the_x, DOWN, buff=0.4)
         logarithm = MathTex("\\log_2{32}", "=", "5", color=c1t, font_size=fs2).next_to(thirtytwo, DOWN, buff=0.4)
 
@@ -489,7 +492,7 @@ class Func_6_3_I_3(SophiaCursorScene):
             
             self.wait_until_bookmark("two_1")
             x,y,_ = two_to_the_x[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(two_to_the_x[0]), run_time=0.3)
 
             self.wait_until_bookmark("two_2")
@@ -515,27 +518,27 @@ class Func_6_3_I_3(SophiaCursorScene):
             self.wait_until_bookmark("two_32")
             x,y,_ = two_to_the_x[8].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(two_to_the_x[7]), Write(two_to_the_x[8]), run_time=1)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("thirtytwo_1")
             x,y,_ = thirtytwo[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(thirtytwo[0]), run_time=0.3)
 
             self.wait_until_bookmark("thirtytwo_2")
             x,y,_ = thirtytwo[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(thirtytwo[1]), Write(thirtytwo[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_1")
             x,y,_ = logarithm[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(logarithm[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
             x,y,_ = logarithm[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(logarithm[1]), Write(logarithm[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -564,7 +567,7 @@ class Func_6_3_I_4_q(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -581,15 +584,15 @@ class Func_6_3_I_4_q(SophiaCursorScene):
             
             self.wait_until_bookmark("sixtwofive_1")
             x,y,_ = sixtwentyfive[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sixtwentyfive[0]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sixtwofive_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sixtwentyfive[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sixtwentyfive[1]), Write(sixtwentyfive[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("qmark")
             self.add_shift_sound(0.3)
@@ -613,7 +616,7 @@ class Func_6_3_I_4_a(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -631,7 +634,7 @@ class Func_6_3_I_4_a(SophiaCursorScene):
             
             self.wait_until_bookmark("sol_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
@@ -641,7 +644,7 @@ class Func_6_3_I_4_a(SophiaCursorScene):
             self.wait_until_bookmark("sol_3")
             x,y,_ = sol_2[1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -660,7 +663,7 @@ class Func_6_3_I_4_b(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -678,7 +681,7 @@ class Func_6_3_I_4_b(SophiaCursorScene):
             
             self.wait_until_bookmark("sol_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
@@ -688,7 +691,7 @@ class Func_6_3_I_4_b(SophiaCursorScene):
             self.wait_until_bookmark("sol_3")
             x,y,_ = sol_2[1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -707,7 +710,7 @@ class Func_6_3_I_4_c(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -725,7 +728,7 @@ class Func_6_3_I_4_c(SophiaCursorScene):
             
             self.wait_until_bookmark("sol_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
@@ -735,7 +738,7 @@ class Func_6_3_I_4_c(SophiaCursorScene):
             self.wait_until_bookmark("sol_3")
             x,y,_ = sol_2[1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -754,7 +757,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -772,7 +775,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
             
             self.wait_until_bookmark("sol_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
@@ -782,7 +785,7 @@ class Func_6_3_I_4_d(SophiaCursorScene):
             self.wait_until_bookmark("sol_3")
             x,y,_ = sol_2[1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -796,28 +799,18 @@ class Func_6_3_I_5(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
+        title = self.add_title(self.translate("Func_6_3.I2.title"))
 
-        self.add_title(self.translate("Func_6_3.I2.title"))
-
-        def cursor_sound_updater(mob, dt):
-            if mob.needSound:
-                mob.needSound = False
-                self.add_cursor_sound()
-        x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
-        cursor.autoFadeBackground = True
-        cursor.add_updater(cursor_sound_updater)
+        cursor = AltCursor(idle=True)
         self.add(cursor)
 
+        sol_1 = MathTex("a^x", "=", "b", color=c1t, font_size=fs2).set_y(3.2)
+        sol_2 = MathTex("\\Rightarrow x=\\log_a{(b)}", color=c1t, font_size=fs2).set_y(.7)
 
-        sol_1 = MathTex("a^x", "=", "b", color=c1t, font_size=fs2).move_to([0,1.5,0])
-        sol_2 = MathTex("\\Rightarrow x=\\log_a{(b)}", color=c1t, font_size=fs2).move_to([0,-1,0])
-
-        start_base = np.array([.4,-1.4,0])
-        start_log = np.array([1,-0.7,0])
-        base = Bubble(texts = [self.translate("Func_6_3.I5.base")], center=np.array([0.4,-2.8, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
-        log = Bubble(texts = [self.translate("Func_6_3.I5.log")], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
-
+        start_base = np.array([.4,.3,0])
+        start_log = np.array([1,1,0])
+        base = Bubble(texts = [self.translate("Func_6_3.I5.base")], center=np.array([0.4,-1.1, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
+        log = Bubble(texts = [self.translate("Func_6_3.I5.log")], center=np.array([0,1.9, 0]), start_point=start_log, width=3, height=0.8)
 
         # Action Sequence
         with self.voiceover(
@@ -826,42 +819,101 @@ class Func_6_3_I_5(SophiaCursorScene):
             
             self.wait_until_bookmark("intro_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("intro_2")
             x,y,_ = sol_1[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_1[1]), Write(sol_1[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_in")
             x,y,_ = sol_2.get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_2), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("base")
             x,y,_ = start_base
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(base.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(base), Create(base.text))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("log")
             x,y,_ = start_log
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(log.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(log), Create(log.text))
-            cursor.blinking=True
-
-
+            cursor.idle=True
 
         self.wait(4)
 
+
+#####################################
+#####################################
+class Func_6_3_I_6_X(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Func_6_3.I2.title"))
+        self.add(title)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+
+        sol_1 = MathTex("a", "^x", "=", "b", color=c1t, font_size=fs1)
+        ud_arrows = MathTex("\\Updownarrow", color=c1t, font_size=fs2)
+        sol_2 = MathTex("\\Rightarrow x=", "\\log_", "a", "{(b)}", color=c1t, font_size=fs1)
+        steps = VGroup(sol_1, ud_arrows, sol_2).arrange(DOWN, buff=0.4).set_y(0.6)
+
+        buffalo = ImageMobject(assets_folder / "img" / "buffalo_thumbs.png")
+        buffalo = buffalo.scale(4/buffalo.get_width()).move_to([-5, .6, 0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+Nice, so quick summary: We have an expression of the <bookmark mark="expression_in"/>form a to the power of x equals b. "a" and b are given, and we want to find the value of x. ...
+We can use the logarithm to solve this: <bookmark mark="log_in"/>x is equal to the base b logarithm of a. ... <bookmark mark="mark_b"/>"b" is the value, we want to get and <bookmark mark="mark_a"/>a is the base, that we want to raise to a power.<bookmark mark="unmark"/> ...
+Ok, <bookmark mark="buffalo_in"/>very nice. We have now learned about the logarithm, which means we know basically all there is to know about exponential functions! way to go!!!
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("expression_in")
+            x,y,_ = sol_1.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Write(sol_1), run_time=1)
+
+            self.wait_until_bookmark("log_in")
+            x,y,_ = sol_2.get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2), Write(ud_arrows), run_time=1)
+
+            self.wait_until_bookmark("mark_b")
+            self.play(sol_1[-1].animate.set_color(BLUE_D), sol_2[-1].animate.set_color(BLUE_D), run_time=.2)
+
+            self.wait_until_bookmark("mark_a")
+            self.play(sol_1[-1].animate.set_color(c1t), sol_2[-1].animate.set_color(c1t), sol_1[0].animate.set_color(BLUE_D), sol_2[2].animate.set_color(BLUE_D), run_time=.2)
+
+            self.wait_until_bookmark("unmark")
+            self.play(sol_1[0].animate.set_color(c1t), sol_2[2].animate.set_color(c1t), run_time=.2)
+
+            self.wait_until_bookmark("buffalo_in")
+            self.add_shift_sound(.5)
+            self.play(buffalo.animate.shift(5*RIGHT), Unwrite(steps), run_time=0.5)
+
+        self.add_shift_sound(.5)
+        self.play(buffalo.animate.shift(5*RIGHT), run_time=0.5)
+        self.wait(4)
 
 #####################################
 #####################################
@@ -896,7 +948,7 @@ class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -913,15 +965,15 @@ class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
             
             self.wait_until_bookmark("result_1")
             x,y,_ = sixtwentyfive[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sixtwentyfive[0]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("result_2")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sixtwentyfive[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sixtwentyfive[1]), Write(sixtwentyfive[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("qmark")
             self.play(qmark.animate.shift(5*RIGHT), run_time=0.3)
@@ -946,7 +998,7 @@ class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
                 mob.needSound = False
                 self.add_cursor_sound()
         x,y,_ = 0,0,0
-        cursor = AltCursor(stroke_width=0.0, blinking=True, x=x, y=y)
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
         cursor.autoFadeBackground = True
         cursor.add_updater(cursor_sound_updater)
         self.add(cursor)
@@ -970,40 +1022,40 @@ class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
             
             self.wait_until_bookmark("sol_1")
             x,y,_ = sol_1[0].get_center()+0.4*DOWN
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
 
             self.wait_until_bookmark("sol_2")
             x,y,_ = sol_1[2].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_1[1]), Write(sol_1[2]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("sol_3")
-            cursor.blinking=False
+            cursor.idle=False
             x,y,_ = sol_2[1].get_center()+0.4*DOWN
             self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("clean")
             self.play(FadeOut(sol_1), FadeOut(sixtwentyfive), run_time=0.3)
 
             self.wait_until_bookmark("bubble_1")
             x,y,_ = start_base
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(base.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(base), Create(base.text))
-            cursor.blinking=True
+            cursor.idle=True
 
             self.wait_until_bookmark("bubble_2")
             x,y,_ = start_log
-            cursor.blinking=False
+            cursor.idle=False
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(log.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(log), Create(log.text))
-            cursor.blinking=True
+            cursor.idle=True
 
         self.wait(4)
 
@@ -1141,6 +1193,7 @@ class Func_6_3_P_2_d(findLogExpressionAnswerScene):
             super().construct()
 
 PROTOTYPES=[
+    #############################################
     PagePrototypeVideo.from_scene(Func_6_3_I_1_q),
     PagePrototypeQuestion.from_scene(Func_6_3_I_1_q),
     PagePrototypeVideo.from_scene(Func_6_3_I_1_a),
@@ -1156,6 +1209,8 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_3_I_4_c),
     PagePrototypeVideo.from_scene(Func_6_3_I_4_d),
     PagePrototypeVideo.from_scene(Func_6_3_I_5),
+    PagePrototypeVideo.from_scene(Func_6_3_I_6_X),
+    #############################################
     PagePrototypeVideo.from_scene(Func_6_3_P_1_q),
     PagePrototypeQuestion.from_scene(Func_6_3_P_1_q),
     PagePrototypeVideo.from_scene(Func_6_3_P_1_a),

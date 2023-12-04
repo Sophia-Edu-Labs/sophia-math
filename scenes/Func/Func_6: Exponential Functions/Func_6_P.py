@@ -13,12 +13,158 @@ from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
 
-
-###############Exercises for Rules I Chapter ##########################
+###############Exercises for Percentages Chapter ##########################
 
 ##################################### Exercise Level: Easy (1)
 #####################################
 class Func_6_P_1_1_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+    #         correctAnswerIndex = 3,
+    #         questionText=self.translate("Func_6_3.I4.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
+        money = money.scale(4/money.get_width()).move_to([-5, 1.4, 0])
+        year = self.translate("words.year")
+        
+        bullets = VGroup(Tex("$\\bullet$ ", year, " 0: $100\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", year, " 2: $144\$$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+You have<bookmark mark="money_in"/> a bank account, that you <bookmark mark="dollars_1_in"/>put 100 Dollars into. Every year, you get the same amount of interest. After two years, you have <bookmark mark="dollars_2_in"/>144 Dollars in your account. What is the interest rate in percent?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_in")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            
+            self.wait_until_bookmark("dollars_1_in")
+            self.play(Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("dollars_2_in")
+            self.play(Write(bullets[1]), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_P_1_1_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+        cursor=AltCursor()
+
+        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
+        money = money.scale(4/money.get_width()).set_y(1.4)
+        self.add(money)
+        year = self.translate("words.year")
+
+        interest_1 = MathTex("f(x)=", "a", "\\cdot", "b", "^x", color=c1t, font_size=fs2)
+        interest_2 = MathTex("f(x)=", "100", "\\cdot", "b", "^x", color=c1t, font_size=fs2)
+        interest_3 = MathTex("f(x)=", "100", "\\cdot", "1.2", "^x", color=c1t, font_size=fs2)
+        interests = VGroup(interest_1, interest_2, interest_3).set_y(2)
+
+        f_0 = MathTex("f(0)=", "a", "\\cdot b^0", "=100", color=BLUE_D, font_size=fs2)
+        implication_1 = MathTex("\\Downarrow", "b^0=1", color=BLUE_D, font_size=fs2)
+        a = MathTex("a=", "100", color=BLUE_D, font_size=fs2)
+        step_1 = VGroup(f_0, implication_1, a).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(interests, DOWN, buff=.4)
+        implication_1[1].scale(0.7)
+
+
+        f_2 = MathTex("f(2)=", "100", "\\cdot b^2", "=144", color=GREEN_D, font_size=fs2)
+        implication_2 = MathTex("\\Downarrow", "b^2=1.44", color=GREEN_D, font_size=fs2)
+        b = MathTex("b=", "1.2", color=GREEN_D, font_size=fs2)
+        step_2 = VGroup(f_2, implication_2, b).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(interests, DOWN, buff=.4)
+        implication_2[1].scale(0.7)
+
+        bullets = VGroup(Tex("$\\bullet$ ", year, " 0: $100\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", year, " 2: $144\$$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+        
+        interest = self.translate("words.interest")
+        sol = Tex(interest, ": $20\%$", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+So the function describing the amount of money we have with yearly interest is<bookmark mark="money_out"/> f of x equals a times b to the power of x. We know that<bookmark mark="zero_highlight"/> after zero years, we have 100 dollars, so we get <bookmark mark="f_0"/>that f of zero, which equals a times b to the zero is equal to 100. Since <bookmark mark="implication_1_in"/>b to the power of 0 is 1, we can see <bookmark mark="a_in"/>that a is equal to 100...
+We<bookmark mark="transition_1"/> also know that <bookmark mark="two_highlight"/>after two years, we have 144 dollars, so we get that <bookmark mark="f_2"/>f of two, which equals 100 times b to the power of two is equal to 144. So <bookmark mark="implication_2_in"/>b squared is equal to 1 point 4 4. Since the square root of 1 point 4 4 is 1 point 2, b is equal<bookmark mark="b_in"/> to 1.2. Therefore, <bookmark mark="transition_2"/>since b is 1 point 2, the interest rate is 20 percent.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_out")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            self.play(Write(interest_1))
+
+            self.wait_until_bookmark("zero_highlight")
+            self.play(bullets[0].animate.set_color(BLUE_D), run_time=.5)
+            
+            self.wait_until_bookmark("f_0")
+            self.play(Write(f_0), bullets[0].animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("implication_1_in")
+            x,y,_ = implication_1[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("a_in")
+            x,y,_ = a[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(a), run_time=.5)
+            cursor.idle=True
+            
+            self.wait_until_bookmark("transition_1")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(f_0, implication_1, a[0]).animate.shift(5*UP), run_time=.5)
+            a[1].generate_target().move_to(interest_2[1])
+            self.play(MoveToTarget(a[1]), Unwrite(interest_1[1]), ReplacementTransform(interest_1[0], interest_2[0]), ReplacementTransform(interest_1[2], interest_2[2]), ReplacementTransform(interest_1[3], interest_2[3]), ReplacementTransform(interest_1[4], interest_2[4]))
+
+            self.wait_until_bookmark("two_highlight")
+            self.play(bullets[1].animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("f_2")
+            self.play(bullets[1].animate.set_color(c1t), Write(f_2), run_time=.5)
+
+            self.wait_until_bookmark("implication_2_in")
+            cursor.idle=False
+            x,y,_ = implication_2[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_2), run_time=.5)
+
+            self.wait_until_bookmark("b_in")
+            x,y,_ = b[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(b), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("transition_2")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(f_2, implication_2, b[0]).animate.shift(5*UP), run_time=.5)
+            b[1].generate_target().move_to(interest_3[3])
+            a[1].generate_target().move_to(interest_3[1])
+            self.play(MoveToTarget(a[1]), MoveToTarget(b[1]), Unwrite(interest_2[3]), ReplacementTransform(interest_2[0], interest_3[0]), ReplacementTransform(interest_2[2], interest_3[2]), ReplacementTransform(interest_2[4], interest_3[4]), bullets.animate.shift(5*RIGHT))
+            self.play(Write(sol))
+
+        self.wait(4)
+
+
+
+
+
+
+###############Exercises for Rules Chapter ##########################
+
+##################################### Exercise Level: Easy (1)
+#####################################
+class Func_6_P_2_1_1_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -52,7 +198,7 @@ You're given the <bookmark mark="expression_in"/>expression 3 to the power of x 
 
         self.wait(4)
 
-class Func_6_P_1_1_a(SophiaCursorScene):
+class Func_6_P_2_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -114,7 +260,7 @@ If we apply this rule and <bookmark mark="implication_1_in"/>set a equal to 3 an
 
 #####################################
 #####################################
-class Func_6_P_1_1_1_2_q(SophiaCursorScene):
+class Func_6_P_2_1_1_2_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -155,7 +301,7 @@ Now look at the <bookmark mark="expression_in"/>expression x plus 2 "a" to the p
 
         self.wait(4)
 
-class Func_6_P_1_1_2_a(SophiaCursorScene):
+class Func_6_P_2_1_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -204,7 +350,7 @@ You can see that the <bookmark mark="negative_exponent"/>sign of the exponent of
 
 #####################################
 #####################################
-class Func_6_P_1_1_1_3_q(SophiaCursorScene):
+class Func_6_P_2_1_1_3_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -246,7 +392,7 @@ Now look at the <bookmark mark="expression_in"/>expression 5 to the power of k m
         self.wait(4)
 
 
-class Func_6_P_1_1_3_a(SophiaCursorScene):
+class Func_6_P_2_1_3_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -311,7 +457,7 @@ Since we're subtracting in the exponent, we can use the rule stating that <bookm
 
 #####################################
 #####################################
-class Func_6_P_1_1_1_4_q(SophiaCursorScene):
+class Func_6_P_2_1_1_4_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -352,7 +498,7 @@ Take the <bookmark mark="expression_in"/>expression square root of x times x to 
 
         self.wait(4)
 
-class Func_6_P_1_4_a(SophiaCursorScene):
+class Func_6_P_2_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -422,7 +568,7 @@ If we apply this rule and <bookmark mark="implication_1_in"/>set a equal to x, x
 
 ##################################### Exercise Level: Medium (2)
 #####################################
-class Func_6_P_1_2_1_q(SophiaCursorScene):
+class Func_6_P_2_2_1_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -576,7 +722,7 @@ The next step will <bookmark mark="clean_up"/>be that we write the x over two in
 
 #####################################
 #####################################
-class Func_6_P_1_2_2_q(SophiaCursorScene):
+class Func_6_P_2_2_2_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -713,7 +859,7 @@ The first thing we can do <bookmark mark="step_0"/>is write the negative 3 x min
 
 #####################################
 #####################################
-class Func_6_P_1_2_3_q(SophiaCursorScene):
+class Func_6_P_2_2_3_q(SophiaCursorScene):
 
     # def task_definition(self) -> SophiaTaskDefinition:
     #     return SophiaTaskDefinition(
@@ -761,7 +907,7 @@ Check out the <bookmark mark="expression_in"/>expression 2 pi to the power of ne
         self.wait(4)
 
 
-class Func_6_P_1_2_3_a(SophiaCursorScene):
+class Func_6_P_2_2_3_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -860,18 +1006,275 @@ We start by applying the rule <bookmark mark="rule_in"/>that a to the power of x
 
 
 
-###############Exercises for Percentages Chapter ##########################
+
+        
+###############Exercises for Logarithm Chapter ##########################
+
 
 ##################################### Exercise Level: Easy (1)
-#####################################
-class Func_6_P_3_1_1_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+##################################### THIS IS COPIED FROM LOGARITHM INSTRUCTION CHAPTER
+#####################################
+class findLogExpressionQuestionScene(SophiaCursorScene, metaclass=ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_3.I2.title"))
+
+        def cursor_sound_updater(mob, dt):
+            if mob.needSound:
+                mob.needSound = False
+                self.add_cursor_sound()
+        x,y,_ = 0,0,0
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
+        cursor.autoFadeBackground = True
+        cursor.add_updater(cursor_sound_updater)
+        self.add(cursor)
+
+        sixtwentyfive = MathTex(f"{self.result}", "=", f"{self.base}^?", color=c1t, font_size=fs2).shift(UP*0.4)
+        
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
+        qmark = qmark.scale(2/qmark.get_width()).move_to([-5, -1.4, 0])
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_3.findLogExpressionQuestionScene.voiceover"))
+        ) as tracker:
+            
+            self.wait_until_bookmark("result_1")
+            x,y,_ = sixtwentyfive[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Write(sixtwentyfive[0]), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("result_2")
+            cursor.idle=False
+            x,y,_ = sixtwentyfive[2].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(sixtwentyfive[1]), Write(sixtwentyfive[2]), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("qmark")
+            self.play(qmark.animate.shift(5*RIGHT), run_time=0.3)
+
+        self.wait(4)
+
+class findLogExpressionAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_3.I2.title"))
+
+        def cursor_sound_updater(mob, dt):
+            if mob.needSound:
+                mob.needSound = False
+                self.add_cursor_sound()
+        x,y,_ = 0,0,0
+        cursor = AltCursor(stroke_width=0.0, idle=True, x=x, y=y)
+        cursor.autoFadeBackground = True
+        cursor.add_updater(cursor_sound_updater)
+        self.add(cursor)
+
+        sixtwentyfive = MathTex(f"{self.result}", "=", f"{self.base}^?", color=c1t, font_size=fs2).shift(UP*0.4)
+        sol_1 = MathTex(f"{self.base}^x", "=", f"{self.result}", color=c1t, font_size=fs2).next_to(sixtwentyfive, DOWN, buff=0.4)
+        sol_2 = MathTex("\\Rightarrow", f"x=\\log_{{{self.base}}}{({self.result})}", color=c1t, font_size=fs2).next_to(sol_1, DOWN, buff=0.2)
+        self.add(sixtwentyfive)
+
+
+        start_base = np.array([.4,-1.2,0])
+        start_log = np.array([1,-0.5,0])
+
+        base = Bubble(texts = [self.evaluate_string(self.translate("Func_6_3.Func_6_3.I2.title.base"))], center=np.array([.6,-2.6, 0]), start_point=start_base, loc="t1", width=3, height=0.8)
+        log = Bubble(texts = [self.evaluate_string(self.translate("Func_6_3.Func_6_3.I2.title.log"))], center=np.array([0,0.2, 0]), start_point=start_log, width=3, height=0.8)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_3.findLogExpressionAnswerScene.voiceover"))
+        ) as tracker:
+            
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = sol_1[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Write(sol_1[0]), run_time=0.3)
+
+            self.wait_until_bookmark("sol_2")
+            x,y,_ = sol_1[2].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(sol_1[1]), Write(sol_1[2]), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_3")
+            cursor.idle=False
+            x,y,_ = sol_2[1].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(sol_2[0]), Write(sol_2[1]), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("clean")
+            self.play(FadeOut(sol_1), FadeOut(sixtwentyfive), run_time=0.3)
+
+            self.wait_until_bookmark("bubble_1")
+            x,y,_ = start_base
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(base.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(base), Create(base.text))
+            cursor.idle=True
+
+            self.wait_until_bookmark("bubble_2")
+            x,y,_ = start_log
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(log.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(log), Create(log.text))
+            cursor.idle=True
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_P_3_1_1_q(findLogExpressionQuestionScene):
+        
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$x=\log_{256}{4}$", "$x=\log_4{256}$", "$x=\sqrt[4]{256}$", "$x=\sqrt[256]{4}$"],
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_3.P1.q.question-text")
+        )
+    
+    # Main method for constructing the animation
+    def construct(self):
+
+        self.result = 256
+        self.base = 4
+        self.intro = self.translate("Func_6_3.P1.q.intro")
+
+        super().construct()
+
+
+class Func_6_P_3_1_1_a(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 256
+            self.base = 4
+            self.intro = self.translate("Func_6_3.P1.a.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_1_b(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 256
+            self.base = 4
+            self.intro = self.translate("Func_6_3.P1.b.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_1_c(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 256
+            self.base = 4
+            self.intro = self.translate("Func_6_3.P1.a.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_1_d(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 256
+            self.base = 4
+            self.intro = self.translate("Func_6_3.P1.a.intro")
+
+            super().construct()
+
+
+#####################################
+#####################################
+class Func_6_P_3_1_2_q(findLogExpressionQuestionScene):
+        
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$x=\log_\\frac12{\\frac{1}{16}}$", "$x=\log_{\\frac{1}{16}}{\\frac12}$", "$x=\sqrt[\\frac12]{\\frac{1}{16}}$", "$x=\sqrt[25\\frac{1}{16}]{\\frac12}$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_3.P2.q.question-text")
+        )
+    
+        # Main method for constructing the animation
+    def construct(self):
+
+        self.result = 1/16
+        self.base = 1/2
+        self.intro = self.translate("Func_6_3.P2.q.intro")
+
+        super().construct()
+
+
+class Func_6_P_3_1_2_a(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 1/16
+            self.base = 1/2
+            self.intro = self.translate("Func_6_3.P2.a.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_2_b(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 1/16
+            self.base = 1/2
+            self.intro = self.translate("Func_6_3.P2.b.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_2_c(findLogExpressionAnswerScene):
+
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 1/16
+            self.base = 1/2
+            self.intro = self.translate("Func_6_3.P2.b.intro")
+
+            super().construct()
+
+class Func_6_P_3_1_2_d(findLogExpressionAnswerScene):
+        
+        # Main method for constructing the animation
+        def construct(self):
+
+            self.result = 256
+            self.base = 4
+            self.intro = self.translate("Func_6_3.P2.b.intro")
+
+            super().construct()
+
+
+#####################################
+#####################################
+class Func_6_P_3_1_3_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -879,39 +1282,216 @@ class Func_6_P_3_1_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
-        money = money.scale(4/money.get_width()).move_to([-5, 1.4, 0])
-        year = self.translate("words.year")
-        
-        bullets = VGroup(Tex("$\\bullet$ ", year, " 0: $100\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", year, " 2: $144\$$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        balloon = ImageMobject(assets_folder / "img" / "hot_air_balloon.png")
+        balloon = balloon.scale(3/balloon.get_width()).set_y(-6.5)
+
+
+        per_minute = self.translate("general.per_minute")
+        increase = self.translate("words.increase")
+
+        bullets = VGroup(Tex("$\\bullet$ ", "t=0: $100$m", color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$20\%$ ", increase, per_minute, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-You have<bookmark mark="money_in"/> a bank account, that you <bookmark mark="dollars_1_in"/>put 100 Dollars into. Every year, you get the same amount of interest. After two years, you have <bookmark mark="dollars_2_in"/>144 Dollars in your account. What is the interest rate in percent?
+You're <bookmark mark="balloon_in"/>in a hot air baloon which at t equals 0 is at an altitude of <bookmark mark="altitude_in"/>100 meters. Every minute, the altitude of the baloon<bookmark mark="increase_in"/> increases by twenty percent. After how many minutes have you reached an altitude of 300 meters?
 """
         ) as tracker:
             
-            self.wait_until_bookmark("money_in")
-            self.add_shift_sound(0.5)
-            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait_until_bookmark("balloon_in")
+            self.play(balloon.animate.shift(8*UP), run_time=3)
             
-            self.wait_until_bookmark("dollars_1_in")
+            self.wait_until_bookmark("altitude_in")
             self.play(Write(bullets[0]), run_time=.5)
 
-            self.wait_until_bookmark("dollars_2_in")
+            self.wait_until_bookmark("increase_in")
             self.play(Write(bullets[1]), run_time=.5)
 
         self.wait(4)
 
+class Func_6_P_3_1_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        balloon = ImageMobject(assets_folder / "img" / "hot_air_balloon.png")
+        balloon = balloon.scale(3/balloon.get_width()).set_y(1.5)
+        self.add(balloon)
 
 
+        per_minute = self.translate("general.per_minute")
+        increase = self.translate("words.increase")
+
+        func_0 = MathTex("f(x)=", "a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2)
+        func_1 = MathTex("f(x)=", "100", "\\cdot ", "b", "^x", color=c1t, font_size=fs2)
+        func_2 = MathTex("f(x)=", "100", "\\cdot ", "1.2", "^x", color=c1t, font_size=fs2)
+        funcs = VGroup(func_0, func_1, func_2).set_y(2)
+        ud = MathTex("\\Updownarrow", "f(x)=300", color=c1t, font_size=fs2).next_to(funcs, DOWN, buff=.6)
+        log = MathTex("x=\\log", "_{1.2}", "(3)", color=c1t, font_size=fs1).next_to(ud, DOWN, buff=.6)
+
+        bullets = VGroup(Tex("$\\bullet$ t=0: ", "$100$", "m", color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$20\%$ ", increase, per_minute, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+We'll model the height of the baloon using an exponential function of the <bookmark mark="func_in"/>form f of x equals a times b to the power of x. ... Since <bookmark mark="a_1"/>at t equals zero, the height of the baloon is 100, we <bookmark mark="a_2"/> set a to 100. ... And since the height of the baloon increases<bookmark mark="b_1"/> by 20 percent every minute, we set <bookmark mark="b_2"/>b to 1.2. ...
+<bookmark mark="clean_up"/>Now we want the value of <bookmark mark="ud_in"/>x for which f of x equals 300. ... We can find <bookmark mark="log_x_in"/>x by using the logarithm. The base of the logarithm <bookmark mark="base_in"/> is equal to 1 point 2, because that's the base of the exponential function. ... And the argument of the logarithm is <bookmark mark="argument_in"/>equal to 3, because we want the height to triple. ... Therefore, the value of x is equal to the logarithm of 3, to the base of 1 point 2. 
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(balloon.animate.shift(6*UP), Write(func_0), run_time=3)
+            
+            self.wait_until_bookmark("a_1")
+            self.play(bullets[0][1].animate.set_color(BLUE_D), run_time=.5)
+
+            self.wait_until_bookmark("a_2")
+            bc_1 = bullets[0][1].copy()
+            bc_1.generate_target().move_to(func_1[1])
+            self.play(MoveToTarget(bc_1), Unwrite(func_0[1]), ReplacementTransform(func_0[0], func_1[0]), ReplacementTransform(func_0[2], func_1[2]), ReplacementTransform(func_0[3], func_1[3]), ReplacementTransform(func_0[4], func_1[4]), run_time=1)
+
+            self.wait_until_bookmark("b_1")
+            self.play(bullets[1][1].animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("b_2")
+            bc_2 = bullets[1][1].copy()
+            bc_1.generate_target().move_to(func_2[1])
+            self.play(MoveToTarget(bc_1), Unwrite(func_1[3]), ReplacementTransform(bc_2, func_2[3].set_color(GREEN_D)), ReplacementTransform(func_1[0], func_2[0]), ReplacementTransform(func_1[2], func_2[2]), ReplacementTransform(func_1[4], func_2[4]), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(FadeOut(bullets), run_time=.5)
+
+            self.wait_until_bookmark("ud_in")
+            self.play(Write(ud), run_time=.5)
+
+            self.wait_until_bookmark("log_x_in")
+            self.play(Write(log[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(log[1]), run_time=.5)
+
+            self.wait_until_bookmark("argument_in")
+            self.play(Write(log[2]), run_time=.5)
+
+        self.wait(4)
 
 
+#####################################
+#####################################
+class Func_6_P_3_1_4_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        design = ImageMobject(assets_folder / "img" / "designer_clothes.png")
+        design = design.scale(2.6/design.get_width()).move_to([-5,1.6,0])
 
 
+        year = self.translate("words.year")
+        decrease = self.translate("words.decrease")
+        value = self.translate("words.value")
+        budget = self.translate("words.budget")
 
+        bullets = VGroup(Tex("$\\bullet$ ", value, ": $200$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", budget, ": $50\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", decrease, ": $40$\%", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
 
+        # Action Sequence
+        with self.voiceover(
+                text="""
+I want to buy a <bookmark mark="clothing_in"/>fancy piece of clothing which <bookmark mark="cost_in"/>costs 200 dollars. Sadly, I can't afford it, because I only have a <bookmark mark="budget_in"/>budget of 50 dollars. Luckily, the value of the clothing<bookmark mark="decrease_in"/> decreases by 40 percent every year. After how many years will I be able to afford the piece?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("clothing_in")
+            self.add_shift_sound(0.5)
+            self.play(design.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("cost_in")
+            self.play(Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("budget_in")
+            self.play(Write(bullets[1]), run_time=.5)
+
+            self.wait_until_bookmark("decrease_in")
+            self.play(Write(bullets[2]), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_P_3_1_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        design = ImageMobject(assets_folder / "img" / "designer_clothes.png")
+        design = design.scale(2.6/design.get_width()).move_to([0,1.6,0])
+        self.add(design)
+
+        year = self.translate("words.year")
+        decrease = self.translate("words.decrease")
+        value = self.translate("words.value")
+        budget = self.translate("words.budget")
+
+        func_0 = MathTex("f(x)=", "a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2)
+        func_1 = MathTex("f(x)=", "200", "\\cdot ", "b", "^x", color=c1t, font_size=fs2)
+        func_2 = MathTex("f(x)=", "200", "\\cdot ", "0.6", "^x", color=c1t, font_size=fs2)
+        funcs = VGroup(func_0, func_1, func_2).set_y(2)
+        ud = MathTex("\\Updownarrow", "f(x)=50", color=c1t, font_size=fs2).next_to(funcs, DOWN, buff=.6)
+        log = MathTex("x=\\log", "_{0.6}", "(\\tfrac{1}{4})", color=c1t, font_size=fs1).next_to(ud, DOWN, buff=.6)
+
+        bullets = VGroup(Tex("$\\bullet$ ", value+": ", "$200$", "\$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", budget, ": $50\$$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", decrease, ": ", "$40$", "\%", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+We'll model the depreciation of the clothing's value using an exponential function of the <bookmark mark="func_in"/>form f of x equals "a" times b to the power of x. ... Since <bookmark mark="a_1"/>initially, the clothing is worth 200 dollars, we <bookmark mark="a_2"/> set a to 200. ... And since the value decreases<bookmark mark="b_1"/> by 40 percent every year, we set <bookmark mark="b_2"/>b to 0.6, because if fourty percent of the value dissappear, sixty percent remain. ...
+<bookmark mark="clean_up"/>Now we want to findthe value of <bookmark mark="ud_in"/>x for which f of x equals 50. ... We can find <bookmark mark="log_x_in"/>x by using the logarithm. The base of the logarithm <bookmark mark="base_in"/> is equal to 0.6, because that's the base of the exponential function. ... And the argument of the logarithm is <bookmark mark="argument_in"/>equal to one-fourth, because we want the value to reduce from 200 to 50, which is a quarter of its original value. ... Therefore, the value of x is equal to the logarithm of one-fourth, to the base of 0.6. 
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(design.animate.shift(5*LEFT), Write(func_0))
+            
+            self.wait_until_bookmark("a_1")
+            self.play(bullets[0][2].animate.set_color(BLUE_D), run_time=.5)
+
+            self.wait_until_bookmark("a_2")
+            bc_1 = bullets[0][2].copy()
+            self.play(ReplacementTransform(bc_1, func_0[1]), ReplacementTransform(func_0[0], func_1[0]), ReplacementTransform(func_0[2], func_1[2]), ReplacementTransform(func_0[3], func_1[3]), ReplacementTransform(func_0[4], func_1[4]), run_time=1)
+
+            self.wait_until_bookmark("b_1")
+            self.play(bullets[2][3].animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("b_2")
+            bc_2 = bullets[2][3].copy()
+            bc_1.generate_target().move_to(func_2[1])
+            self.play(MoveToTarget(bc_1), Unwrite(func_1[3]), ReplacementTransform(bc_2, func_2[3].set_color(GREEN_D)), ReplacementTransform(func_1[0], func_2[0]), ReplacementTransform(func_1[2], func_2[2]), ReplacementTransform(func_1[4], func_2[4]), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(FadeOut(bullets), run_time=.5)
+
+            self.wait_until_bookmark("ud_in")
+            self.play(Write(ud), run_time=.5)
+
+            self.wait_until_bookmark("log_x_in")
+            self.play(Write(log[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(log[1]), run_time=.5)
+
+            self.wait_until_bookmark("argument_in")
+            self.play(Write(log[2]), run_time=.5)
+
+        self.wait(4)
 
 
 
