@@ -2319,6 +2319,11 @@
     },
     "findLogExpressionQuestionScene": {
       "voiceover": "{self.intro}\n<break time=\"0.6s\"/>\nWir beginnen mit der <bookmark mark=\"result_1\"/>Nummer {self.result}.\n<break time=\"0.6s\"/>\nWir wollen wissen, hoch welche Zahl wir <bookmark mark=\"result_2\"/>die Zahl {self.base} rechnen müssen, um {self.result} zu erhalten.\n<break time=\"0.6s\"/>\n<bookmark mark=\"qmark\"/>Wie finden wir diese Zahl mithilfe des Logarithmus?"
+    },
+    "I6": {
+      "X": {
+        "voiceover": "Prima, also eine kurze Zusammenfassung: Wir haben einen Ausdruck der <bookmark mark=\"expression_in\"/>Form a hoch x gleich b. \"a\" und b sind gegeben, und wir wollen den Wert von x finden. ...\nWir können den Logarithmus verwenden, um das zu lösen: <bookmark mark=\"log_in\"/>x ist gleich dem Basis-b-Logarithmus von a. ... <bookmark mark=\"mark_b\"/>\"b\" ist der Wert, den wir erhalten möchten und <bookmark mark=\"mark_a\"/>a ist die Basis, die wir zu einer Potenz erheben wollen.<bookmark mark=\"unmark\"/> ...\nOk, <bookmark mark=\"buffalo_in\"/>sehr schön. Wir haben jetzt über den Logarithmus gelernt, was bedeutet, dass wir im Grunde alles wissen, was es über Exponentialfunktionen zu wissen gibt! Super gemacht!!!"
+      }
     }
   },
   "Func_6_Intro": {

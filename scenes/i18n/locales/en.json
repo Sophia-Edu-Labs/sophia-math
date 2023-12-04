@@ -2319,6 +2319,11 @@
     },
     "findLogExpressionQuestionScene": {
       "voiceover": "{self.intro}\nWe'll start with the <bookmark mark=\"result_1\"/>number {self.result}.\nWe want to know, to what power we have to raise <bookmark mark=\"result_2\"/>the number {self.base} to get {self.result}.\n<bookmark mark=\"qmark\"/>How do we find that number using the logarithm?"
+    },
+    "I6": {
+      "X": {
+        "voiceover": "Nice, so quick summary: We have an expression of the <bookmark mark=\"expression_in\"/>form a to the power of x equals b. \"a\" and b are given, and we want to find the value of x. ...\nWe can use the logarithm to solve this: <bookmark mark=\"log_in\"/>x is equal to the base b logarithm of a. ... <bookmark mark=\"mark_b\"/>\"b\" is the value, we want to get and <bookmark mark=\"mark_a\"/>a is the base, that we want to raise to a power.<bookmark mark=\"unmark\"/> ...\nOk, <bookmark mark=\"buffalo_in\"/>very nice. We have now learned about the logarithm, which means we know basically all there is to know about exponential functions! way to go!!!"
+      }
     }
   },
   "Func_6_Intro": {
