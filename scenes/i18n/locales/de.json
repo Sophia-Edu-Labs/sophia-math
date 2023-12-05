@@ -2868,5 +2868,25 @@
     "decrease": "Abfall",
     "value": "Wert",
     "budget": "Budget"
+  },
+  "Func_6_P": {
+    "211": {
+      "q": {
+        "voiceover": "Du hast den <bookmark mark=\"expression_in\"/>Ausdruck 3 hoch x geteilt durch zwei.<bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
+        "question-text": "Wie kannst du den Ausdruck $3^{\\tfrac x2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+      },
+      "a": {
+        "voiceover": "Beachte zuerst, dass der Ausdruck 3 hoch x geteilt durch zwei <bookmark mark=\"expression_in\"/> gleich 3 hoch ein Halb mal x ist. <bookmark mark=\"rule_in\"/>Dann kannst du die Regel verwenden, dass die Potenz einer Potenz das Produkt der Potenzen ist, um den Ausdruck umzuschreiben.\nWenn wir diese Regel anwenden und <bookmark mark=\"implication_1_in\"/>a gleich 3 und y gleich ein Halb setzen, erhalten wir den Ausdruck <bookmark mark=\"expression2_in\"/>3 hoch x geteilt durch zwei ist gleich 3 hoch ein Halb, alles hoch x. Schließlich können wir <bookmark mark=\"implication_2_in\"/>3 hoch ein Halb als die Wurzel von 3 umschreiben, und wir sehen, dass <bookmark mark=\"expression3_in\"/>der Ausdruck 3 hoch x geteilt durch zwei gleich Wurzel von 3 hoch x ist."
+      }
+    },
+    "212": {
+      "q": {
+        "question-text": "Wie kannst du den Ausdruck $\\left(x+2a\\right)^{-3b}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
+        "voiceover": "Schau dir jetzt den <bookmark mark=\"expression_in\"/>Ausdruck x plus 2 \"a\" hoch minus 3 b<bookmark mark=\"q_in\"/> an. Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+      },
+      "a": {
+        "voiceover": "Du kannst sehen, dass das <bookmark mark=\"negative_exponent\"/>Vorzeichen des Exponenten dieses Ausdrucks negativ ist. Daher können wir die <bookmark mark=\"rule_in\"/>Regel anwenden, die besagt, dass a hoch minus x gleich eins über a hoch x ist. <bookmark mark=\"implication_1_in\"/>Wenn wir a gleich x plus 2 \"a\" und x gleich minus 3 \"b\" setzen, erhalten wir, dass x plus 2 \"a\" hoch minus 3 \"b\" <bookmark mark=\"expression2_in\"/> gleich eins durch x plus 2 \"a\" hoch 3 \"b\" ist."
+      }
+    }
   }
 }

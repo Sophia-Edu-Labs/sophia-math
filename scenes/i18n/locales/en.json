@@ -2872,5 +2872,25 @@
   "Words": {
     "base": "base",
     "exponent": "exponent"
+  },
+  "Func_6_P": {
+    "211": {
+      "q": {
+        "voiceover": "You're given the <bookmark mark=\"expression_in\"/>expression 3 to the power of x over two.<bookmark mark=\"q_in\"/> How can you rewrite this expression using the rules for exponential functions?",
+        "question-text": "How can you rewrite the expression $3^{\\tfrac x2}$ using the rules for exponential functions?"
+      },
+      "a": {
+        "voiceover": "First, notice that the expression 3 to the power of x over two is<bookmark mark=\"expression_in\"/> equal to 3 to the power of one half times x. <bookmark mark=\"rule_in\"/>You can then use the rule which states that the power of a power is the product of the powers to rewrite the expression.\nIf we apply this rule and <bookmark mark=\"implication_1_in\"/>set a equal to 3 and y equal to one half, we get the expression <bookmark mark=\"expression2_in\"/>3 to the power of x over two is equal to 3 to the power of one half, all to the power of x. Finally, we can <bookmark mark=\"implication_2_in\"/>rewrite 3 to the power of one half as the square root of 3, and we see that <bookmark mark=\"expression3_in\"/>the expression 3 to the power of x over two is equal to the square root of 3 raised to the power of x."
+      }
+    },
+    "212": {
+      "q": {
+        "question-text": "How can you rewrite the expression $\\left(x+2a\\right)^{-3b}$ using the rules for exponential functions?",
+        "voiceover": "Now look at the <bookmark mark=\"expression_in\"/>expression x plus 2 \"a\" to the power of negative 3 b.<bookmark mark=\"q_in\"/> How can you rewrite this expression using the rules for exponential functions?"
+      },
+      "a": {
+        "voiceover": "You can see that the <bookmark mark=\"negative_exponent\"/>sign of the exponent of this expression is negative. So we can apply the <bookmark mark=\"rule_in\"/>rule stating that a to the power of negative x is equal to one over a to the power of x. <bookmark mark=\"implication_1_in\"/>If we set a equal to x plus 2 \"a\" and x equal to negative 3 \"b\", we <bookmark mark=\"cursor_park\"/>get that x plus 2 \"a\" to the power of negative 3 \"b\"<bookmark mark=\"expression2_in\"/> is equal to one over x plus 2 \"a\" to the power of 3 \"b\"."
+      }
+    }
   }
 }

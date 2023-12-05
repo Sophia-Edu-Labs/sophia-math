@@ -908,7 +908,7 @@ class Func_6_3_I_6_X(SophiaCursorScene):
 
 
 ####################################################################################################################################################
-# Chapter: Rules for exponential functions I - same base ###########################################################################################
+# Chapter: Rules for Logarithms ###########################################################################################
 #####################################
 #####################################
 class Func_6_3_I_7_1(SophiaCursorScene):
@@ -924,7 +924,7 @@ class Func_6_3_I_7_1(SophiaCursorScene):
 
         rule_1 = Tex("$1$) ", "$\\log_a(x\\cdot y)=\\log_a(x)+\\log_a(y)$", color=c1t, font_size=fs3)
         rule_2 = Tex("$2$) ", "$\\log_a(\\frac xy)=\\log_a(x)-\\log_a(y)$", color=c1t, font_size=fs3)
-        rule_3 = Tex("$3$) ", "$\\log_a(x)^y=y\\cdot \\log_a(x)$", color=c1t, font_size=fs3)
+        rule_3 = Tex("$3$) ", "$\\log_a\\left(x^y\\right)=y\\cdot \\log_a(x)$", color=c1t, font_size=fs3)
         rules = VGroup(rule_1, rule_2, rule_3).arrange(DOWN, buff=.4, aligned_edge=LEFT)
 
 
@@ -984,7 +984,7 @@ class Func_6_3_I_7_2_q(SophiaCursorScene):
         implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[1].get_x()*LEFT), implication_3.shift(implication_3[0].get_x()*LEFT)
         implication_1[0].scale(1.1), implication_2[1].scale(1.1), implication_3[0].scale(1.1)     
 
-        #example = MathTex("4^a\\cdot 4^b=\\,\\,\\,\\,???", color=c1t, font_size=fs1)
+        example = MathTex("\\log_a(x/2)+\\log_a(2)=???", color=c1t, font_size=fs2).scale(.95)
 
         # Action Sequence
         with self.voiceover(
@@ -994,6 +994,7 @@ If we raise both sides <bookmark mark="implication_1_in"/>to the power of "a", w
 We can then <bookmark mark="implication_2_1_in"/>rewrite the left side of the equation as x times y, because raising something to the power of the logarithm of the same base is equal to the argument of the logarithm. And we can rewrite the right side of the equation as <bookmark mark="implication_2_2_in"/>a to the power of log base "a" of x times a to the power of log base "a" of y, because something raised to power of a sum is equal to the product of the same thing raised to the power of the summands.
 We can <bookmark mark="implication_3_in"/>then rewrite the right side of the equation as <bookmark mark="step_3_in"/>x times y, because a to the power of log base "a" of x is equal to x, and a to the power of log base "a" of y is equal to y.
 So each of these steps is equivalent to the previous one, and we can conclude that the rule is true.
+For a quick<bookmark mark="clean_up"/> exercise, how <bookmark mark="example_in"/>can we rewrite the expression log base "a" of x over two plus log base "a" of two?
 """
         ) as tracker:
             
@@ -1018,9 +1019,15 @@ So each of these steps is equivalent to the previous one, and we can conclude th
             self.wait_until_bookmark("step_3_in")
             self.play(Write(step_3))
 
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(steps), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example))
+
         self.wait(4)
 
-class Func_6_2_I_4_2_a(SophiaCursorScene):
+class Func_6_3_I_7_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1030,55 +1037,353 @@ class Func_6_2_I_4_2_a(SophiaCursorScene):
 
         self.add_title(self.translate("Func_6_2.I1.title"))
 
-        rule = Tex("$a^x\\cdot a^y=a^{x+y}$", color=c1t, font_size=fs1).set_y(2.6)
-        step_1 = Tex("$4^a=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a$ times}}$", color=c2t, font_size=fs2)
-        step_2 = Tex("$4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$b$ times}}$", color=c2t, font_size=fs2)
-        step_3 = Tex("$\\Downarrow$", color=c2t, font_size=fs2)
-        step_4 = Tex("$4^a\\cdot 4^b=\\underbrace{4\\cdot \\hdots \\cdot 4}_{\\text{$a+ b$ times}}=4^{a+b}$", color=c2t, font_size=fs2)
-        steps = VGroup(step_1, step_2, step_3, step_4).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2).scale(.85)
-        step_3.set_x(0)
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
 
-        example = MathTex("4^a\\cdot 4^b=", "\\,\\,\\,\\,???", color=c1t, font_size=fs1)
-        solution = MathTex("4^a\\cdot 4^b=", "4^{a+b}", color=c1t, font_size=fs1)
+        
+        rule = Tex("$\\log_a(x)+\\log_a(y)=\\log_a(x\\cdot y)$", color=c1t, font_size=fs3).set_y(2.6)
+        ud_1 = MathTex("\\Updownarrow", color=BLUE_D, font_size=fs2)
+        step_1 = MathTex("\\log", "_a", "(\\tfrac x2)", "+", "\\log_", "a", "(2)", "=\\log_a(\\tfrac x2\\cdot 2)", color=c1t, font_size=fs2).scale(.8)
+        ud_2 = MathTex("\\Updownarrow", color=BLUE_D, font_size=fs2)
+        step_2 = MathTex("\\log", "_a", "(\\tfrac x2)", "+", "\\log_", "a", "(2)", "=\\log_a(x)", color=c1t, font_size=fs2).scale(.8)
+        steps = VGroup(rule, ud_1, step_1, ud_2, step_2).arrange(DOWN, buff=.4).set_y(1)
+        example = MathTex("\\log", "_a", "(\\tfrac x2)", "+", "\\log_", "a", "(2)", "=???", color=c1t, font_size=fs2).scale(.95).move_to(step_1)
 
         self.add(example, rule)
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_2")+self.translate("Func_6_2.I42.a.voiceover")
+                text=
+"""
+Notice, that we're <bookmark mark="mark_plus"/>adding two logarithms. Both of these logarithms are <bookmark mark="mark_base"/>base "a" logarithms. This means, we can <bookmark mark="highlight_rule"/>rewrite the sum of two logarithms as the logarithm of the product of the arguments. So we get that <bookmark mark="transform_solution"/>the base a logarithm of x over two plus the base a logarithm of two is<bookmark mark="solution_in"/> equal to the base a logarithm of x over two times two, so the product of the two arguments. And since 2 times x over 2 is equal to x, that expression is<bookmark mark="step"/> equal to the base a logarithm of x.
+"""
         ) as tracker:
             
-            self.wait_until_bookmark("equal")
-            self.play(TransformMatchingTex(example, solution), run_time=1)
+            self.wait_until_bookmark("mark_plus")
+            self.play(example[3].animate.set_color(RED), run_time=.5)
 
-            self.wait_until_bookmark("step_1")
-            self.play(Write(step_1), solution.animate.shift(2.6*UP), Unwrite(rule), run_time=1)
+            self.wait_until_bookmark("mark_base")
+            self.play(example[1].animate.set_color(RED), example[5].animate.set_color(RED), example[3].animate.set_color(c1t), run_time=.5)
 
-            self.wait_until_bookmark("step_2")
-            self.play(Write(step_2))
+            self.wait_until_bookmark("highlight_rule")
+            cursor.idle=False
+            self.play(example[1].animate.set_color(c1t), example[5].animate.set_color(c1t), CursorUnderline(cursor, rule), run_time=.5)
 
-            self.wait_until_bookmark("step_3")
-            self.play(Write(step_3), Write(step_4))
+            self.wait_until_bookmark("transform_solution")
+            x,y,_ = step_1[3].get_center()+0.4*DOWN
+            self.play(Write(ud_1), CursorMoveResize(cursor,x,y), ReplacementTransform(VGroup(example[:7]), VGroup(step_1[:7])))
+
+            self.wait_until_bookmark("solution_in")
+            x,y,_ = step_1[7].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), ReplacementTransform(VGroup(example[7:]), VGroup(step_1[7:])))
+
+            self.wait_until_bookmark("step")
+            x,y,_ = step_2[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(ud_2), Write(step_2))
 
         self.wait(4)
 
 
+#####################################
+#####################################
+class Func_6_3_I_7_3_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$4^{ab}$", "$\\left(4^{a}\\right)^b$", "$4^{a+b}$", "$4^{a}+4^b$"],
+    #         correctAnswerIndex = 2,
+    #         questionText=self.translate("Func_6_2.I42.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rule = MathTex("\\log_a(\\frac xy)=\\log_a(x)-\\log_a(y)", color=c1t, font_size=fs3)
+        implication_1 = Tex("$\\Updownarrow$ ",  "$a^\\Box$", color=BLUE_D, font_size=fs3)
+        step_1 = Tex("$a^{\\log_a(\\tfrac xy)}=a^{\\log_a(x)-\\log_a(y)}$", color=c1t, font_size=fs2).scale(.95)
+        implication_2 = Tex("$a^{\\log_a(x)}=x$", " $\\Updownarrow$ ", "$a^{x-y}=\\frac{a^x}{a^y}$", color=BLUE_D, font_size=fs3)
+        step_2 = MathTex("\\tfrac xy", "=", "\\frac{a^{\\log_a(x)}}{a^{\\log_a(y)}}", color=c1t, font_size=fs2).scale(.95)
+        implication_3 = MathTex("\\Updownarrow", color=BLUE_D, font_size=fs3)
+        step_3 = Tex("$\\tfrac xy=\\tfrac xy$", color=c1t, font_size=fs2).scale(.95)
+        steps = VGroup(rule, implication_1, step_1, implication_2, step_2, implication_3, step_3).arrange(DOWN, buff=.4).set_y(0.6)
+        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[1].get_x()*LEFT), implication_3.shift(implication_3[0].get_x()*LEFT)
+        implication_1[0].scale(1.1), implication_2[1].scale(1.1), implication_3[0].scale(1.1)  
+
+        example = MathTex("\\log_d(4x)-\\log_d(4)=???", color=c1t, font_size=fs2).scale(.95)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Now we'll look at the rule stating that<bookmark mark="rule_in"/> the base a logarithm of x over y is equal to the base "a" logarithm of x minus the base "a" logarithm of y.
+We can raise both sides <bookmark mark="implication_1_in"/>to the power of "a", and get an equivalent expression. The expression states that<bookmark mark="step_1_in"/>a to the power of log base "a" of x over y is equal to a to the power of log base "a" of x minus log base "a" of y.
+We can then rewrite the left<bookmark mark="implication_2_1_in"/> side of the equation as x divided by y, because raising something to the power of the logarithm of the same base is equal to the argument of the logarithm. And we can rewrite the right side of the equation as <bookmark mark="implication_2_2_in"/>a to the power of log base "a" of x divided by a to the power of log base "a" of y, because something raised to power of a difference is equal to the quotient of the same thing raised to the power of the minuend and the subtrahend.
+Next, we <bookmark mark="implication_3_in"/>rewrite the right side of the equation as <bookmark mark="step_3_in"/>x divided by  y, because a to the power of log base "a" of x is equal to x, and a to the power of log base "a" of y is equal to y.
+Now since each of these steps is equivalent to the previous one, we can conclude that the rule is true.
+Let's practice this:<bookmark mark="clean_up"/>  How <bookmark mark="example_in"/>can we rewrite the expression log base "d" of 4 x minus log base "d" of four?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule_in")
+            self.play(Write(rule))
+
+            self.wait_until_bookmark("implication_1_in")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("implication_2_1_in")
+            self.play(Write(implication_2[0]), Write(implication_2[1]), Write(step_2[0]))
+
+            self.wait_until_bookmark("implication_2_2_in")
+            self.play(Write(step_2[1]), Write(step_2[2]), Write(implication_2[2]))
+
+            self.wait_until_bookmark("implication_3_in")
+            self.play(Write(implication_3))
+
+            self.wait_until_bookmark("step_3_in")
+            self.play(Write(step_3))
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(steps), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example))
+            
+
+        self.wait(4)
+
+class Func_6_3_I_7_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+        
+        rule = Tex("$\\log_a(x)-\\log_a(y)=\\log_a(\\frac xy)$", color=c1t, font_size=fs3).set_y(2.6)
+        ud_1 = MathTex("\\Updownarrow", color=BLUE_D, font_size=fs2)
+        step_1 = MathTex("\\log", "_d", "(4x)", "-", "\\log_", "d", "(4)", "=\\log_d(\\tfrac {4x}4)", color=c1t, font_size=fs2).scale(.8)
+        ud_2 = MathTex("\\Updownarrow", color=BLUE_D, font_size=fs2)
+        step_2 = MathTex("\\log", "_d", "(4x)", "-", "\\log_", "d", "(4)", "=\\log_d(x)", color=c1t, font_size=fs2).scale(.8)
+        steps = VGroup(rule, ud_1, step_1, ud_2, step_2).arrange(DOWN, buff=.4).set_y(1)
+        example = MathTex("\\log", "_d", "(4x)", "-", "\\log_", "d", "(4)", "=???", color=c1t, font_size=fs2).scale(.95).move_to(step_1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+Notice, that we're <bookmark mark="mark_plus"/>subtracting one logarithm from another. Both of these logarithms have <bookmark mark="mark_base"/>the same base, which is "d". For this reason, we can <bookmark mark="highlight_rule"/>rewrite the difference of two logarithms as the logarithm of the quotient of the arguments. So we get that <bookmark mark="transform_solution"/>the base d logarithm of 4 x minus the base d logarithm of four is<bookmark mark="solution_in"/> equal to the base a logarithm of 4 x over 4, so the quotient of the two arguments. And since 4 x over 4 is equal to x, that expression is<bookmark mark="step"/> equal to the base d logarithm of x.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("mark_plus")
+            self.play(example[3].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("mark_base")
+            self.play(example[1].animate.set_color(RED), example[5].animate.set_color(RED), example[3].animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("highlight_rule")
+            cursor.idle=False
+            self.play(example[1].animate.set_color(c1t), example[5].animate.set_color(c1t), CursorUnderline(cursor, rule), run_time=.5)
+
+            self.wait_until_bookmark("transform_solution")
+            x,y,_ = step_1[3].get_center()+0.4*DOWN
+            self.play(Write(ud_1), CursorMoveResize(cursor,x,y), ReplacementTransform(VGroup(example[:7]), VGroup(step_1[:7])))
+
+            self.wait_until_bookmark("solution_in")
+            x,y,_ = step_1[7].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), ReplacementTransform(VGroup(example[7:]), VGroup(step_1[7:])))
+
+            self.wait_until_bookmark("step")
+            x,y,_ = step_2[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(ud_2), Write(step_2))
+
+        self.wait(4)
 
 
+#####################################
+#####################################
+class Func_6_3_I_7_4_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$4^{ab}$", "$\\left(4^{a}\\right)^b$", "$4^{a+b}$", "$4^{a}+4^b$"],
+    #         correctAnswerIndex = 2,
+    #         questionText=self.translate("Func_6_2.I42.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rule = MathTex("\\log_a(x)^y=y\\cdot \\log_a(x)", color=c1t, font_size=fs3)
+        implication_1 = Tex("$\\Updownarrow$ ",  "$a^\\Box$", color=BLUE_D, font_size=fs3)
+        step_1 = Tex("$a^{\\log_a\\left(x^y\\right)}=a^{y\\cdot\\log_a(x)}$", color=c1t, font_size=fs2).scale(.95)
+        implication_2 = Tex("$a^{\\log_a(x)}=x$", " $\\Updownarrow$ ", "$a^{x\\cdot y}=\\left(a^x\\right)^{^y}$", color=BLUE_D, font_size=fs3)
+        step_2 = Tex("$x^y$", "$=$", "$\\left(a^{\\log_a(x)}\\right)^{^y}$", color=c1t, font_size=fs2).scale(.95)
+        implication_3 = Tex("$\\Updownarrow$", color=BLUE_D, font_size=fs3)
+        step_3 = Tex("$x^y=x^y$", color=c1t, font_size=fs2).scale(.95)
+        steps = VGroup(rule, implication_1, step_1, implication_2, step_2, implication_3, step_3).arrange(DOWN, buff=.4).set_y(0.6)
+        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[1].get_x()*LEFT), implication_3.shift(implication_3[0].get_x()*LEFT)
+        implication_1[0].scale(1.1), implication_2[1].scale(1.1), implication_3[0].scale(1.1)     
+
+        example = MathTex("\\log_a\\left(x^{4d})=???", color=c1t, font_size=fs2).scale(.95)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Now for the rule that<bookmark mark="rule_in"/> the base a logarithm of x to the power of y is equal to y times the base "a" logarithm of x.
+If we raise both sides <bookmark mark="implication_1_in"/>to the power of "a", we get the the equivalent expression that <bookmark mark="step_1_in"/>a to the power of log base "a" of x to the power of y is equal to a to the power of log base "a" of x plus log base "a" of y.
+We'll <bookmark mark="implication_2_1_in"/>rewrite the left side of the equation as x to the power of y, because raising something to the power of the logarithm of the same base is equal to the argument of the logarithm. And we'll rewrite the right side of the equation as <bookmark mark="implication_2_2_in"/>a to the power of log base "a" of x times y, because something raised to power of a product is equal to the base raised to one factor, and all of that raised to the other factor.
+We can <bookmark mark="implication_3_in"/>then rewrite the right side of the equation as <bookmark mark="step_3_in"/>x to the power of y, because a to the power of log base "a" of x is equal to x, so the contents of the paranthesis is equal to x, and then we just raise that to the power of y.
+So each of these steps is equivalent to the previous one, and we can conclude that the rule is true.
+Now to practice this,<bookmark mark="clean_up"/> how <bookmark mark="example_in"/>can we rewrite the expression log base "a" of x raised to the power of 4 d?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule_in")
+            self.play(Write(rule))
+
+            self.wait_until_bookmark("implication_1_in")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("implication_2_1_in")
+            self.play(Write(implication_2[0]), Write(implication_2[1]), Write(step_2[0]))
+
+            self.wait_until_bookmark("implication_2_2_in")
+            self.play(Write(step_2[1]), Write(step_2[2]), Write(implication_2[2]))
+
+            self.wait_until_bookmark("implication_3_in")
+            self.play(Write(implication_3))
+
+            self.wait_until_bookmark("step_3_in")
+            self.play(Write(step_3))
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(steps), run_time=1)
+
+            self.wait_until_bookmark("example_in")
+            self.play(Write(example))
+
+        self.wait(4)
+
+class Func_6_3_I_7_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        self.add_title(self.translate("Func_6_2.I1.title"))
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+        
+        rule = Tex("$\\log_a(x^y)=y\\cdot\\log_a(x)$", color=c1t, font_size=fs3).set_y(2.6)
+        ud_1 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs2)
+        step_1 = MathTex("\\log_a(x^{4d})", "=4d\\cdot\\log_a(x)", color=c1t, font_size=fs2).scale(.8)
+        steps = VGroup(rule, ud_1, step_1).arrange(DOWN, buff=.4).set_y(1)
+        example = MathTex("\\log_a\\left(x^{4d}\\right)", "=???", color=c1t, font_size=fs2).scale(.95).move_to(step_1)
+
+        self.add(example, rule)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+So we're taking the logarithm of something raised to a power. So we can simply apply the rule<bookmark mark="rule"/> stating that the base a logarithm of x to the power of y is equal to y times the base "a" logarithm of x. So we get that<bookmark mark="step_1"/> the base a logarithm of x to the power of 4 d is <bookmark mark="step_2"/>equal to 4 d times the base a logarithm of x...
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("rule")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, rule), run_time=.5)
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[0].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(ud_1), ReplacementTransform(example, step_1[0]))
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y),  Write(step_1[1]))
+
+        self.wait(4)
 
 
+#####################################
+#####################################
+class Func_6_3_I_7_5_X(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rules_book = ImageMobject(assets_folder / "img" / "rules_book.png")
+        rules_book = rules_book.scale(4/rules_book.get_width()).move_to([-5, 1, 0])
+
+        rhino = ImageMobject(assets_folder / "img" / "rhino_thumbs.png")
+        rhino = rhino.scale(5/rhino.get_width()).set_x(-5)
+
+        rule_1 = Tex("$1$) ", "$\\log_a(x\\cdot y)=\\log_a(x)+\\log_a(y)$", color=c1t, font_size=fs3)
+        rule_2 = Tex("$2$) ", "$\\log_a(\\frac xy)=\\log_a(x)-\\log_a(y)$", color=c1t, font_size=fs3)
+        rule_3 = Tex("$3$) ", "$\\log_a\\left(x^y\\right)=y\\cdot \\log_a(x)$", color=c1t, font_size=fs3)
+        rules = VGroup(rule_1, rule_2, rule_3).arrange(DOWN, buff=.4, aligned_edge=LEFT)
 
 
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+Nice, now let's go through<bookmark mark="rules_in"/> the rules once again so that you can remember them all.
+The <bookmark mark="rule_1"/>first rule states that the logarithm of a product is equal to the sum of the logarithms of the factors.
+The <bookmark mark="rule_2"/>second rule states that the logarithm of a quotient is equal to the difference of the logarithms of the numerator and the denominator.
+And the <bookmark mark="rule_3"/>third rule states that the logarithm of a power is equal to the power times the logarithm of the base.
+<bookmark mark="clean_up"/>Nice!!! now we've seen all the rules and we're super well equipped to solve logarithmic equations.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("rules_in")
+            self.add_shift_sound(0.5)
+            self.play(rules_book.animate.shift(5*RIGHT), run_time=0.5)
 
+            self.wait_until_bookmark("rule_1")
+            self.add_shift_sound(1)
+            self.play(rules_book.animate.shift(5*RIGHT), Write(rule_1), run_time=1)
 
+            self.wait_until_bookmark("rule_2")
+            self.play(Write(rule_2), run_time=1)
 
+            self.wait_until_bookmark("rule_3")
+            self.play(Write(rule_3), run_time=1)
 
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(rhino.animate.shift(5*RIGHT), Unwrite(rules), run_time=.5)
 
-
-
-
-
-
+        self.add_shift_sound(0.5)
+        self.play(rhino.animate.shift(5*RIGHT), Unwrite(rules), run_time=.5)
+        self.wait(4)
 
 
 
