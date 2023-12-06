@@ -2874,6 +2874,20 @@
       "q": {
         "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $2\\cdot b^{-3x -3}$ umformen?",
         "voiceover": "Jetzt nehmen wir den <bookmark mark=\"expression_in\"/>Ausdruck 2 mal b hoch minus 3 x minus 3. Zu welchem Ausdruck der Form <bookmark mark=\"general_form_in\"/>a mal b hoch x ist<bookmark mark=\"q_in\"/> er äquivalent?"
+      },
+      "a": {
+        "voiceover": "Zunächst können <bookmark mark=\"step_0\"/>, wir die minus 3 x minus 3 im Exponenten <bookmark mark=\"step_1_in\"/> als minus 3 mal x plus 1 schreiben. Dann können wir die Regel verwenden, dass <bookmark mark=\"implication_1_in\"/> die Potenz einer Potenz das Produkt der Potenzen ist. Also erhalten wir <bookmark mark=\"step_2_in\"/>, dass 2 mal b hoch minus 3 x minus 3 <bookmark mark=\"step_2_1_in\"/> gleich 2 mal b hoch minus 3, alles hoch x plus 1 ist. Als Nächstes können wir <bookmark mark=\"implication_2_in\"/> die Regel verwenden, die besagt, dass a hoch x plus y gleich a hoch x mal a hoch y ist. Daraus ergibt sich, dass <bookmark mark=\"step_3_in\"/> 2 mal b hoch minus 3 x minus 3 <bookmark mark=\"step_3_1_in\"/> gleich 2 mal b hoch minus 3, mal b hoch minus drei, hoch x ist. <bookmark mark=\"clean_up\"/> Schließlich können wir die <bookmark mark=\"implication_3_in\"/> Regel verwenden, die besagt, dass a hoch minus x gleich eins durch a hoch x ist. Das führt uns zu unserem Endergebnis, das ist <bookmark mark=\"step_4_in\"/>, dass 2 mal b hoch minus 3 x minus 3 <bookmark mark=\"step_4_1_in\"/> gleich zwei durch b hoch 3, mal eins durch b hoch 3, alles hoch x ist."
+      },
+      "d_note": {
+        "voiceover": "Der Ausdruck ist zwar äquivalent, hat aber nicht die Form a mal b hoch x."
+      }
+    },
+    "23": {
+      "q": {
+        "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $2\\cdot \\pi^{-2x +1}$ umformen?"
+      },
+      "a": {
+        "voiceover": "Wir beginnen, indem wir die Regel <bookmark mark=\"rule_in\"/> anwenden, dass a hoch x minus y gleich a hoch x geteilt durch a hoch y ist. Wenn wir <bookmark mark=\"implication_1_in\"/> a gleich pi setzen, x gleich 1 und y gleich 2 x, erhalten wir <bookmark mark=\"step_1_transform\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_1_in\"/>gleich 2 mal pi hoch eins, geteilt durch pi hoch zwei x ist. Dann können wir <bookmark mark=\"implication_2_in\"/> pi hoch eins als pi umschreiben, und wir sehen <bookmark mark=\"step_2_1_in\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_2_in\"/>gleich 2 pi mal eins durch pi hoch zwei x ist.\n<bookmark mark=\"clean_up\"/>Als Nächstes verwenden wir die <bookmark mark=\"implication_3_in\"/>Regel, dass a hoch x mal y gleich a hoch x, hoch y ist. Wir wenden dass auf pi hoch zwei x im Nenner an und verwandeln es in pi quadrat, hoch x. Auf diese Weise erhalten wir <bookmark mark=\"step_3_1_in\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_3_in\"/>gleich 2 pi mal eins durch pi quadrat hoch x ist. Schließlich können wir <bookmark mark=\"implication_4_in\"/>den gesamten Bruch hoch x nehmen, denn eins durch a hoch x ist gleich Klammer auf eins durch a Klammer zu, alles hoch x. Dies führt uns zu dem Endergebnis, das <bookmark mark=\"step_4_in\"/> besagt, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_4_1_in\"/>gleich 2 pi mal eins durch pi quadrat, hoch x, ist."
       }
     },
     "211": {
