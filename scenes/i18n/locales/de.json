@@ -2870,6 +2870,12 @@
     "budget": "Budget"
   },
   "Func_6_P": {
+    "22": {
+      "q": {
+        "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $2\\cdot b^{-3x -3}$ umformen?",
+        "voiceover": "Jetzt nehmen wir den <bookmark mark=\"expression_in\"/>Ausdruck 2 mal b hoch minus 3 x minus 3. Zu welchem Ausdruck der Form <bookmark mark=\"general_form_in\"/>a mal b hoch x ist<bookmark mark=\"q_in\"/> er äquivalent?"
+      }
+    },
     "211": {
       "q": {
         "voiceover": "Du hast den <bookmark mark=\"expression_in\"/>Ausdruck 3 hoch x geteilt durch zwei.<bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
@@ -2885,7 +2891,34 @@
         "voiceover": "Schau dir jetzt den <bookmark mark=\"expression_in\"/>Ausdruck x plus 2 \"a\" hoch minus 3 b<bookmark mark=\"q_in\"/> an. Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
       },
       "a": {
-        "voiceover": "Du kannst sehen, dass das <bookmark mark=\"negative_exponent\"/>Vorzeichen des Exponenten dieses Ausdrucks negativ ist. Daher können wir die <bookmark mark=\"rule_in\"/>Regel anwenden, die besagt, dass a hoch minus x gleich eins über a hoch x ist. <bookmark mark=\"implication_1_in\"/>Wenn wir a gleich x plus 2 \"a\" und x gleich minus 3 \"b\" setzen, erhalten wir, dass x plus 2 \"a\" hoch minus 3 \"b\" <bookmark mark=\"expression2_in\"/> gleich eins durch x plus 2 \"a\" hoch 3 \"b\" ist."
+        "voiceover": "Du kannst sehen, dass das <bookmark mark=\"negative_exponent\"/>Vorzeichen des Exponenten dieses Ausdrucks negativ ist. Daher können wir die <bookmark mark=\"rule_in\"/>Regel anwenden, die besagt, dass a hoch minus x gleich eins über a hoch x ist. <bookmark mark=\"implication_1_in\"/>Wenn wir a gleich x plus 2 \"a\" und x gleich minus 3 \"b\" setzen, erhalten wir,<bookmark mark=\"cursor_park\"/> dass x plus 2 \"a\" hoch minus 3 \"b\" <bookmark mark=\"expression2_in\"/> gleich eins durch x plus 2 \"a\" hoch 3 \"b\" ist."
+      }
+    },
+    "213": {
+      "q": {
+        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 5 hoch k minus zwei. <bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
+        "question-text": "Wie kannst du den Ausdruck $5^{k-2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+      },
+      "a": {
+        "voiceover": "Da wir im Exponenten subtrahieren, können wir die Regel verwenden, die besagt, dass <bookmark mark=\"rule_in\"/>a hoch x minus y gleich a hoch x geteilt durch a hoch y ist. <bookmark mark=\"implication_1_in\"/>Wenn wir \"a\" gleich 5, x gleich k und y gleich 2 setzen, erhalten wir, <bookmark mark=\"step_1_transform\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_1_in\"/>gleich 5 hoch k geteilt durch 5 hoch 2 ist. Schließlich können wir <bookmark mark=\"implication_2_in\"/>5 hoch 2 als 25 umschreiben, und wir sehen, <bookmark mark=\"step_2_1_in\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_2_in\"/>gleich ein fünfundzwanzigstel mal 5 hoch k ist."
+      }
+    },
+    "214": {
+      "q": {
+        "question-text": "Wie kannst du den Ausdruck $\\sqrt x \\cdot x^{1.5a}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
+        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck Wurzel x mal x hoch eins Komma fünf a.<bookmark mark=\"q_in\"/> Wie kannst du den Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+      },
+      "a": {
+        "voiceover": "Wir beginnen damit, die Quadratwurzel von x als x hoch ein halb umzuschreiben. Dann erhalten wir, dass <bookmark mark=\"expression_in_1\"/>die Wurzel von x mal x hoch eins Komma fünf a <bookmark mark=\"expression_in_2\"/>gleich x hoch ein halb mal x hoch eins Komma fünf a ist. Dann können wir<bookmark mark=\"rule_in\"/> die Regel anwenden, die besagt, dass a hoch x mal a hoch y gleich a hoch x plus y ist, um den Ausdruck umzuschreiben.\nWenn wir diese Regel anwenden und <bookmark mark=\"implication_1_in\"/>a gleich x, x gleich ein halb und y gleich eins Komma fünf a setzen, erhalten wir, dass <bookmark mark=\"expression2_in_1\"/>die Wurzel von x mal x hoch eins Komma fünf a <bookmark mark=\"expression2_in_2\"/>gleich x hoch ein halb plus eins Komma fünf a ist. Schließlich können wir <bookmark mark=\"implication_2_in\"/>ein halb plus eins Komma fünf a als eins plus drei a durch zwei umschreiben. Dann sehen wir, dass <bookmark mark=\"expression3_in\"/>die Wurzel von x mal x hoc eins Komma fünf a gleich x hoch eins plus drei a durch zwei ist."
+      }
+    },
+    "221": {
+      "q": {
+        "voiceover": "Nun haben wir den <bookmark mark=\"expression_in\"/>Ausdruck 4 hoch x geteilt durch zwei minus zwei. Zu welchem Ausdruck der Form <bookmark mark=\"general_form_in\"/>a mal b hoch x ist<bookmark mark=\"q_in\"/> er äquivalent?",
+        "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $4^{\\tfrac x2 -2}$ umformen?"
+      },
+      "a": {
+        "voiceover": "Zunächst wenden wir die Regel an, die besagt, dass <bookmark mark=\"rule_in\"/>a hoch x minus y gleich a hoch x durch a hoch y ist, weil wir im Exponenten zwei von x geteilt durch zwei abziehen. Wenn wir<bookmark mark=\"implication_1_in\"/> a gleich 4 setzen, x gleich x halbe und y gleich 2, erhalten wir <bookmark mark=\"step_1_transform\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_1_in\"/>gleich 4 hoch x halbe geteilt durch 4 hoch 2 ist. Dann können wir <bookmark mark=\"implication_2_in\"/>4 hoch 2 als 16 umschreiben und wir sehen <bookmark mark=\"step_2_1_in\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_2_in\"/>gleich ein Sechzehntel mal 4 hoch x halbe ist.\nDann <bookmark mark=\"clean_up\"/>schreiben wir das x halbe im Exponenten als <bookmark mark=\"step_3_1_in\"/>ein halb mal x. Dann können wir die Regel anwenden, die besagt, dass<bookmark mark=\"rule_2_in\"/> die Potenz einer Potenz gleich der Basis hoch dem Produkt der Potenzen ist. Wenn wir <bookmark mark=\"implication_3_in\"/>a gleich 4 setzen, x gleich x geteilt halbe und y gleich x, erhalten wir <bookmark mark=\"step_4_1_in\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_4_in\"/>gleich ein Sechzehntel mal 4 hoch ein halb, alles hoch x ist. Schließlich können wir <bookmark mark=\"implication_4_in\"/>4 hoch ein halb als die Quadratwurzel von 4 umschreiben, was gleich zwei ist. Nun sehen wir, dass <bookmark mark=\"step_5_1_in\"/>der Ausdruck 4 hoch x halbe minus zwei <bookmark mark=\"step_5_in\"/>gleich einem Sechzehntel mal zwei hoch x ist."
       }
     }
   }
