@@ -2946,6 +2946,16 @@
           "question-text": "Out of the three situations, which is not described by an exponential function?",
           "answer-options": "[\"$1$: Apples\", \"$2$: Bank account\", \"$3$: Gold\", \"All three correspond to exponential functions\"]",
           "voiceover": "I'll now describe three situations two you. Which of these<bookmark mark=\"not_in\"/> can NOT be modelled using an exponential function?\nSituation <bookmark mark=\"situation_1\"/>number one: On day one, you receive <bookmark mark=\"apples_in\"/>one apple. On day two, you receive two apples. On day three, you receive four apples. On day four, you receive eight apples. <bookmark mark=\"sit_1_out\"/>And so on.\nSituation <bookmark mark=\"situation_2\"/>number two: You have <bookmark mark=\"dollars_in\"/>a bank account, that you put 100 Dollars into. Every year, you get 20 <bookmark mark=\"sit_2_out\"/>Dollars interest.\nAnd finally, situation <bookmark mark=\"situation_3\"/>number three: You have <bookmark mark=\"gold_in\"/>a gold bar. Every year, it increases in value <bookmark mark=\"sit_3_out\"/>by 10 percent\nNow out of <bookmark mark=\"overview\"/>these three situations: Which one is not described by an exponential function?"
+        },
+        "a": {
+          "voiceover": "The first situation is <bookmark mark=\"situation_1\"/>described by an exponential function: Every day, we get twice as many apples as the previous day.\nThe second situation is described by a linear function, so <bookmark mark=\"situation_2\"/>it's not an exponential function. This is, because we always get the same amount of interest every year.\nThe third situation is <bookmark mark=\"situation_3\"/>also described by an exponential function: Every year, the amount by which the value of the gold increases is 10 percent higher than it was in the previous year."
+        }
+      },
+      "3": {
+        "q": {
+          "question-text": "Which of these terms does not describe an exponential function?",
+          "none": "All terms describe exponential functions",
+          "voiceover": "I'm now going to show you three function terms. Which of them does not describe an exponential function?\nIs it the <bookmark mark=\"f_1_in\"/>function f of x equals two to the power of x minus one? Or is it the <bookmark mark=\"f_2_in\"/>function h of y equals to two to the power of y over two? Or is it the <bookmark mark=\"f_3_in\"/>function g of z, which is equal to z to the power of x plus 1?"
         }
       }
     }

@@ -201,19 +201,9 @@ class Func_6_P_recognize_growth_2_q(SophiaCursorScene):
         gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
         gold = gold.scale(1.6/gold.get_width()).set_x(-5).shift(.4*UP)
 
-
-        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
-
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-I'll now describe three situations two you. Which of these<bookmark mark="not_in"/> can NOT be modelled using an exponential function?
-Situation <bookmark mark="situation_1"/>number one: On day one, you receive <bookmark mark="apples_in"/>one apple. On day two, you receive two apples. On day three, you receive four apples. On day four, you receive eight apples. <bookmark mark="sit_1_out"/>And so on.
-Situation <bookmark mark="situation_2"/>number two: You have <bookmark mark="dollars_in"/>a bank account, that you put 100 Dollars into. Every year, you get 20 <bookmark mark="sit_2_out"/>Dollars interest.
-And finally, situation <bookmark mark="situation_3"/>number three: You have <bookmark mark="gold_in"/>a gold bar. Every year, it increases in value <bookmark mark="sit_3_out"/>by 10 percent
-Now out of <bookmark mark="overview"/>these three situations, which is not described by an exponential function?
-"""
+                text=self.translate("Func_6_P.recognize_growth.2.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("not_in")
@@ -259,6 +249,269 @@ Now out of <bookmark mark="overview"/>these three situations, which is not descr
             loc_2 = grid[1][2].get_center()
             self.play(Write(line_2), three.animate.move_to(loc_1), gold.animate.move_to(loc_2), run_time=.4)
 
+        self.wait(5)
+
+
+class Func_6_P_recognize_growth_2_a(SophiaCursorScene):
+
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        grid = VGroup(VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4), VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4)).arrange(RIGHT, buff=.4).scale(.7).set_y(0.8)
+        x_1,x_2 = grid.get_left()[0], grid.get_right()[0]
+        y_1, y_2 = (grid[0][0].get_y()+grid[0][1].get_y())/2, (grid[0][1].get_y()+grid[0][2].get_y())/2
+        line_1, line_2 = Line([x_1,y_1,0], [x_2, y_1,0], color=c4t), Line([x_1,y_2,0], [x_2, y_2,0], color=c4t)
+
+        woman_not = ImageMobject(assets_folder / "img" / "woman_not.png")
+        woman_not = woman_not.scale(.6/woman_not.get_width()).set_x(-5).shift(.4*UP)
+        one = ImageMobject(assets_folder / "img" / "one_baloony.png")
+        one = one.scale(.6/one.get_width()).set_x(-5).move_to(grid[0][0])
+        two = ImageMobject(assets_folder / "img" / "two_baloony.png")
+        two = two.scale(.6/two.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][1])
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(.6/three.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][2])
+
+        apples = ImageMobject(assets_folder / "img" / "apple_basket.png")
+        apples = apples.scale(2/apples.get_width()).set_x(-5).move_to(grid[1][0])
+        dollars = ImageMobject(assets_folder / "img" / "dollar_stack.png")
+        dollars = dollars.scale(1.6/dollars.get_width()).set_x(-5).move_to(grid[1][1])
+        gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
+        gold = gold.scale(1.6/gold.get_width()).set_x(-5).move_to(grid[1][2])
+
+        green_check_1 = ImageMobject(assets_folder / "img" / "green_check.png")
+        green_check_1 = green_check_1.scale(2/green_check_1.get_width()).move_to((apples.get_center()+one.get_center())/2)
+        red_cross = ImageMobject(assets_folder / "img" / "red_cross.png")
+        red_cross = red_cross.scale(2/red_cross.get_width()).move_to((dollars.get_center()+two.get_center())/2)
+        green_check_2 = green_check_1.copy().move_to((gold.get_center()+three.get_center())/2)
+
+        # Action Sequence
+
+        self.add(line_1, line_2, one, two, three, apples, dollars, gold)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.recognize_growth.2.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("situation_1")
+            self.play(FadeIn(green_check_1, scale=3))
+
+            self.wait_until_bookmark("situation_2")
+            self.play(FadeIn(red_cross, scale=3))
+
+            self.wait_until_bookmark("situation_3")
+            self.play(FadeIn(green_check_2, scale=3))
+
+        self.wait(4)
+
+class Func_6_P_recognize_growth_2_b(SophiaCursorScene):
+
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        grid = VGroup(VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4), VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4)).arrange(RIGHT, buff=.4).scale(.7).set_y(0.8)
+        x_1,x_2 = grid.get_left()[0], grid.get_right()[0]
+        y_1, y_2 = (grid[0][0].get_y()+grid[0][1].get_y())/2, (grid[0][1].get_y()+grid[0][2].get_y())/2
+        line_1, line_2 = Line([x_1,y_1,0], [x_2, y_1,0], color=c4t), Line([x_1,y_2,0], [x_2, y_2,0], color=c4t)
+
+        woman_not = ImageMobject(assets_folder / "img" / "woman_not.png")
+        woman_not = woman_not.scale(.6/woman_not.get_width()).set_x(-5).shift(.4*UP)
+        one = ImageMobject(assets_folder / "img" / "one_baloony.png")
+        one = one.scale(.6/one.get_width()).set_x(-5).move_to(grid[0][0])
+        two = ImageMobject(assets_folder / "img" / "two_baloony.png")
+        two = two.scale(.6/two.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][1])
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(.6/three.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][2])
+
+        apples = ImageMobject(assets_folder / "img" / "apple_basket.png")
+        apples = apples.scale(2/apples.get_width()).set_x(-5).move_to(grid[1][0])
+        dollars = ImageMobject(assets_folder / "img" / "dollar_stack.png")
+        dollars = dollars.scale(1.6/dollars.get_width()).set_x(-5).move_to(grid[1][1])
+        gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
+        gold = gold.scale(1.6/gold.get_width()).set_x(-5).move_to(grid[1][2])
+
+        green_check_1 = ImageMobject(assets_folder / "img" / "green_check.png")
+        green_check_1 = green_check_1.scale(2/green_check_1.get_width()).move_to((apples.get_center()+one.get_center())/2)
+        red_cross = ImageMobject(assets_folder / "img" / "red_cross.png")
+        red_cross = red_cross.scale(2/red_cross.get_width()).move_to((dollars.get_center()+two.get_center())/2)
+        green_check_2 = green_check_1.copy().move_to((gold.get_center()+three.get_center())/2)
+
+        # Action Sequence
+
+        self.add(line_1, line_2, one, two, three, apples, dollars, gold)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_6_P.recognize_growth.2.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("situation_1")
+            self.play(FadeIn(green_check_1, scale=3))
+
+            self.wait_until_bookmark("situation_2")
+            self.play(FadeIn(red_cross, scale=3))
+
+            self.wait_until_bookmark("situation_3")
+            self.play(FadeIn(green_check_2, scale=3))
+
+        self.wait(4)
+
+class Func_6_P_recognize_growth_2_c(SophiaCursorScene):
+
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        grid = VGroup(VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4), VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4)).arrange(RIGHT, buff=.4).scale(.7).set_y(0.8)
+        x_1,x_2 = grid.get_left()[0], grid.get_right()[0]
+        y_1, y_2 = (grid[0][0].get_y()+grid[0][1].get_y())/2, (grid[0][1].get_y()+grid[0][2].get_y())/2
+        line_1, line_2 = Line([x_1,y_1,0], [x_2, y_1,0], color=c4t), Line([x_1,y_2,0], [x_2, y_2,0], color=c4t)
+
+        woman_not = ImageMobject(assets_folder / "img" / "woman_not.png")
+        woman_not = woman_not.scale(.6/woman_not.get_width()).set_x(-5).shift(.4*UP)
+        one = ImageMobject(assets_folder / "img" / "one_baloony.png")
+        one = one.scale(.6/one.get_width()).set_x(-5).move_to(grid[0][0])
+        two = ImageMobject(assets_folder / "img" / "two_baloony.png")
+        two = two.scale(.6/two.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][1])
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(.6/three.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][2])
+
+        apples = ImageMobject(assets_folder / "img" / "apple_basket.png")
+        apples = apples.scale(2/apples.get_width()).set_x(-5).move_to(grid[1][0])
+        dollars = ImageMobject(assets_folder / "img" / "dollar_stack.png")
+        dollars = dollars.scale(1.6/dollars.get_width()).set_x(-5).move_to(grid[1][1])
+        gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
+        gold = gold.scale(1.6/gold.get_width()).set_x(-5).move_to(grid[1][2])
+
+        green_check_1 = ImageMobject(assets_folder / "img" / "green_check.png")
+        green_check_1 = green_check_1.scale(2/green_check_1.get_width()).move_to((apples.get_center()+one.get_center())/2)
+        red_cross = ImageMobject(assets_folder / "img" / "red_cross.png")
+        red_cross = red_cross.scale(2/red_cross.get_width()).move_to((dollars.get_center()+two.get_center())/2)
+        green_check_2 = green_check_1.copy().move_to((gold.get_center()+three.get_center())/2)
+
+        # Action Sequence
+
+        self.add(line_1, line_2, one, two, three, apples, dollars, gold)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.recognize_growth.2.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("situation_1")
+            self.play(FadeIn(green_check_1, scale=3))
+
+            self.wait_until_bookmark("situation_2")
+            self.play(FadeIn(red_cross, scale=3))
+
+            self.wait_until_bookmark("situation_3")
+            self.play(FadeIn(green_check_2, scale=3))
+
+        self.wait(4)
+
+class Func_6_P_recognize_growth_2_d(SophiaCursorScene):
+
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        grid = VGroup(VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4), VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4)).arrange(RIGHT, buff=.4).scale(.7).set_y(0.8)
+        x_1,x_2 = grid.get_left()[0], grid.get_right()[0]
+        y_1, y_2 = (grid[0][0].get_y()+grid[0][1].get_y())/2, (grid[0][1].get_y()+grid[0][2].get_y())/2
+        line_1, line_2 = Line([x_1,y_1,0], [x_2, y_1,0], color=c4t), Line([x_1,y_2,0], [x_2, y_2,0], color=c4t)
+
+        woman_not = ImageMobject(assets_folder / "img" / "woman_not.png")
+        woman_not = woman_not.scale(.6/woman_not.get_width()).set_x(-5).shift(.4*UP)
+        one = ImageMobject(assets_folder / "img" / "one_baloony.png")
+        one = one.scale(.6/one.get_width()).set_x(-5).move_to(grid[0][0])
+        two = ImageMobject(assets_folder / "img" / "two_baloony.png")
+        two = two.scale(.6/two.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][1])
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(.6/three.get_width()).set_x(-5).shift(.4*UP).move_to(grid[0][2])
+
+        apples = ImageMobject(assets_folder / "img" / "apple_basket.png")
+        apples = apples.scale(2/apples.get_width()).set_x(-5).move_to(grid[1][0])
+        dollars = ImageMobject(assets_folder / "img" / "dollar_stack.png")
+        dollars = dollars.scale(1.6/dollars.get_width()).set_x(-5).move_to(grid[1][1])
+        gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
+        gold = gold.scale(1.6/gold.get_width()).set_x(-5).move_to(grid[1][2])
+
+        green_check_1 = ImageMobject(assets_folder / "img" / "green_check.png")
+        green_check_1 = green_check_1.scale(2/green_check_1.get_width()).move_to((apples.get_center()+one.get_center())/2)
+        red_cross = ImageMobject(assets_folder / "img" / "red_cross.png")
+        red_cross = red_cross.scale(2/red_cross.get_width()).move_to((dollars.get_center()+two.get_center())/2)
+        green_check_2 = green_check_1.copy().move_to((gold.get_center()+three.get_center())/2)
+
+        # Action Sequence
+
+        self.add(line_1, line_2, one, two, three, apples, dollars, gold)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.recognize_growth.2.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("situation_1")
+            self.play(FadeIn(green_check_1, scale=3))
+
+            self.wait_until_bookmark("situation_2")
+            self.play(FadeIn(red_cross, scale=3))
+
+            self.wait_until_bookmark("situation_3")
+            self.play(FadeIn(green_check_2, scale=3))
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_P_recognize_growth_3_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ast.literal_eval((self.translate("Func_6_P.recognize_growth.2.q.answer-options"))),
+    #         correctAnswerIndex = 1,
+    #         questionText=self.translate("Func_6_P.recognize_growth.2.q.question-text")
+    #     )
+#out of <bookmark mark="overview"/>these three situations, which is not described by an exponential function?
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func_1 = MathTex("f(x)=2^{x-1}", color=c1t, font_size=fs1)
+        func_2 = MathTex("h(y)=2^{y/2}", color=c1t, font_size=fs1)
+        func_3 = MathTex("g(z)=z^{x+1}", color=c1t, font_size=fs1)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(0.4)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+I'm now going to show you three function terms. Which of them does not describe an exponential function?
+Is it the <bookmark mark="f_1_in"/>function f of x equals two to the power of x minus one? Or is it the <bookmark mark="f_2_in"/>function h of y equals to two to the power of y over two? Or is it the <bookmark mark="f_3_in"/>function g of z, which is equal to two times z plus two to the power of x plus one?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_1_in")
+            self.play(Write(func_1))
+
+            self.wait_until_bookmark("f_2_in")
+            self.play(Write(func_2))
+
+            self.wait_until_bookmark("f_3_in")
+            self.play(Write(func_3))
 
         self.wait(5)
 

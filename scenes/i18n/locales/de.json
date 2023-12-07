@@ -2942,6 +2942,16 @@
           "question-text": "Welche der drei Situationen lässt sich nicht durch eine Exponentialfunktion beschreiben?",
           "answer-options": "[\"$1$: Äpfel\", \"$2$: Bankkonto\", \"$3$: Gold\", \"Alle drei gehören zu Exponentialfunktionen\"]",
           "voiceover": "Ich beschreibe jetzt drei Szenarien. Welches davon lässt <bookmark mark=\"not_in\"/>sich NICHT mit Exponentialfunktionen modellieren?Situation <bookmark mark=\"situation_1\"/> Nummer eins: Am ersten Tag erhältst du <bookmark mark=\"apples_in\"/> einen Apfel. Am zweiten Tag erhältst du zwei Äpfel. Am dritten Tag erhältst du vier Äpfel. Am vierten Tag erhältst du acht Äpfel. <bookmark mark=\"sit_1_out\"/> Und so weiter.\nSituation <bookmark mark=\"situation_2\"/> Nummer zwei: Du hast <bookmark mark=\"dollars_in\"/> ein Bankkonto, auf das du 100 Dollar einzahlst. Jedes Jahr bekommst du 20 <bookmark mark=\"sit_2_out\"/> Dollar Zinsen.\nUnd schließlich, Situation <bookmark mark=\"situation_3\"/> Nummer drei: Du hast <bookmark mark=\"gold_in\"/> einen Goldbarren. Jedes Jahr steigt sein Wert um <bookmark mark=\"sit_3_out\"/> 10 Prozent.\nJetzt, aus <bookmark mark=\"overview\"/> diesen drei Situationen: Welche wird nicht durch eine Exponentialfunktion beschrieben?"
+        },
+        "a": {
+          "voiceover": "Die erste Situation wird durch <bookmark mark=\"situation_1\"/>eine exponentielle Funktion beschrieben: Jeden Tag bekommen wir doppelt so viele Äpfel wie am Vortag. \nDie zweite Situation wird durch eine lineare Funktion beschrieben, also ist es<bookmark mark=\"situation_2\"/> keine exponentielle Funktion. Das liegt daran, dass wir jedes Jahr immer den gleichen Zinsbetrag erhalten.\nDie dritte Situation wird <bookmark mark=\"situation_3\"/>ebenfalls durch eine exponentielle Funktion beschrieben: Jedes Jahr ist der Betrag, um den der Wert des Goldes zunimmt, 10 Prozent höher als im Vorjahr."
+        }
+      },
+      "3": {
+        "q": {
+          "question-text": "Welche der drei Terme beschreibt keine Exponentialfunktion?",
+          "none": "Alle Terme beschreiben Exponentialfunktionen",
+          "voiceover": "Ich zeige dir jetzt drei Funktionsterme. Welcher von ihnen beschreibt KEINE exponentielle Funktion?\nIst es die <bookmark mark=\"f_1_in\"/>Funktion f von x gleich zwei hoch x minus eins? Oder ist es die <bookmark mark=\"f_2_in\"/>Funktion h von y gleich zwei hoch y halbe? Oder ist es die <bookmark mark=\"f_3_in\"/>Funktion g von z gleich z hoch x plus 1?"
         }
       }
     }
