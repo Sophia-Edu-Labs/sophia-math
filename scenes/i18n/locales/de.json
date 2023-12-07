@@ -2884,7 +2884,8 @@
     },
     "23": {
       "q": {
-        "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $2\\cdot \\pi^{-2x +1}$ umformen?"
+        "question-text": "Zu welchem Ausdruck der Form $a\\cdot b^x$ lässt sich $2\\cdot \\pi^{-2x +1}$ umformen?",
+        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 2 pi hoch minus zwei x plus eins. In welchen Ausdruck der Form <bookmark mark=\"general_form_in\"/>a mal b hoch x können<bookmark mark=\"q_in\"/> wir ihn mithilfe der Regeln für Exponentialfunktionen umwandeln?"
       },
       "a": {
         "voiceover": "Wir beginnen, indem wir die Regel <bookmark mark=\"rule_in\"/> anwenden, dass a hoch x minus y gleich a hoch x geteilt durch a hoch y ist. Wenn wir <bookmark mark=\"implication_1_in\"/> a gleich pi setzen, x gleich 1 und y gleich 2 x, erhalten wir <bookmark mark=\"step_1_transform\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_1_in\"/>gleich 2 mal pi hoch eins, geteilt durch pi hoch zwei x ist. Dann können wir <bookmark mark=\"implication_2_in\"/> pi hoch eins als pi umschreiben, und wir sehen <bookmark mark=\"step_2_1_in\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_2_in\"/>gleich 2 pi mal eins durch pi hoch zwei x ist.\n<bookmark mark=\"clean_up\"/>Als Nächstes verwenden wir die <bookmark mark=\"implication_3_in\"/>Regel, dass a hoch x mal y gleich a hoch x, hoch y ist. Wir wenden dass auf pi hoch zwei x im Nenner an und verwandeln es in pi quadrat, hoch x. Auf diese Weise erhalten wir <bookmark mark=\"step_3_1_in\"/>, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_3_in\"/>gleich 2 pi mal eins durch pi quadrat hoch x ist. Schließlich können wir <bookmark mark=\"implication_4_in\"/>den gesamten Bruch hoch x nehmen, denn eins durch a hoch x ist gleich Klammer auf eins durch a Klammer zu, alles hoch x. Dies führt uns zu dem Endergebnis, das <bookmark mark=\"step_4_in\"/> besagt, dass 2 mal pi hoch minus zwei x plus eins <bookmark mark=\"step_4_1_in\"/>gleich 2 pi mal eins durch pi quadrat, hoch x, ist."
@@ -2933,6 +2934,15 @@
       },
       "a": {
         "voiceover": "Zunächst wenden wir die Regel an, die besagt, dass <bookmark mark=\"rule_in\"/>a hoch x minus y gleich a hoch x durch a hoch y ist, weil wir im Exponenten zwei von x geteilt durch zwei abziehen. Wenn wir<bookmark mark=\"implication_1_in\"/> a gleich 4 setzen, x gleich x halbe und y gleich 2, erhalten wir <bookmark mark=\"step_1_transform\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_1_in\"/>gleich 4 hoch x halbe geteilt durch 4 hoch 2 ist. Dann können wir <bookmark mark=\"implication_2_in\"/>4 hoch 2 als 16 umschreiben und wir sehen <bookmark mark=\"step_2_1_in\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_2_in\"/>gleich ein Sechzehntel mal 4 hoch x halbe ist.\nDann <bookmark mark=\"clean_up\"/>schreiben wir das x halbe im Exponenten als <bookmark mark=\"step_3_1_in\"/>ein halb mal x. Dann können wir die Regel anwenden, die besagt, dass<bookmark mark=\"rule_2_in\"/> die Potenz einer Potenz gleich der Basis hoch dem Produkt der Potenzen ist. Wenn wir <bookmark mark=\"implication_3_in\"/>a gleich 4 setzen, x gleich x geteilt halbe und y gleich x, erhalten wir <bookmark mark=\"step_4_1_in\"/>dass 4 hoch x halbe minus zwei <bookmark mark=\"step_4_in\"/>gleich ein Sechzehntel mal 4 hoch ein halb, alles hoch x ist. Schließlich können wir <bookmark mark=\"implication_4_in\"/>4 hoch ein halb als die Quadratwurzel von 4 umschreiben, was gleich zwei ist. Nun sehen wir, dass <bookmark mark=\"step_5_1_in\"/>der Ausdruck 4 hoch x halbe minus zwei <bookmark mark=\"step_5_in\"/>gleich einem Sechzehntel mal zwei hoch x ist."
+      }
+    },
+    "recognize_growth": {
+      "2": {
+        "q": {
+          "question-text": "Welche der drei Situationen lässt sich nicht durch eine Exponentialfunktion beschreiben?",
+          "answer-options": "[\"$1$: Äpfel\", \"$2$: Bankkonto\", \"$3$: Gold\", \"Alle drei gehören zu Exponentialfunktionen\"]",
+          "voiceover": "Ich beschreibe jetzt drei Szenarien. Welches davon lässt <bookmark mark=\"not_in\"/>sich NICHT mit Exponentialfunktionen modellieren?Situation <bookmark mark=\"situation_1\"/> Nummer eins: Am ersten Tag erhältst du <bookmark mark=\"apples_in\"/> einen Apfel. Am zweiten Tag erhältst du zwei Äpfel. Am dritten Tag erhältst du vier Äpfel. Am vierten Tag erhältst du acht Äpfel. <bookmark mark=\"sit_1_out\"/> Und so weiter.\nSituation <bookmark mark=\"situation_2\"/> Nummer zwei: Du hast <bookmark mark=\"dollars_in\"/> ein Bankkonto, auf das du 100 Dollar einzahlst. Jedes Jahr bekommst du 20 <bookmark mark=\"sit_2_out\"/> Dollar Zinsen.\nUnd schließlich, Situation <bookmark mark=\"situation_3\"/> Nummer drei: Du hast <bookmark mark=\"gold_in\"/> einen Goldbarren. Jedes Jahr steigt sein Wert um <bookmark mark=\"sit_3_out\"/> 10 Prozent.\nJetzt, aus <bookmark mark=\"overview\"/> diesen drei Situationen: Welche wird nicht durch eine Exponentialfunktion beschrieben?"
+        }
       }
     }
   }

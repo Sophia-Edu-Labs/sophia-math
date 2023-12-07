@@ -13,6 +13,255 @@ from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
 
+
+# - recognizing exponential growth
+# - Determining the growth factor
+# - Modelling situations using exponential functions
+# - Graphs of exponential functions
+# - interests and percentages
+# - Terms involving exponential functions
+# - Working with Logarithms
+# - Terms involving Logarithms
+# - General practice
+
+###############Exercises for recognizing exponential growth ##########################
+
+##################################### Exercise Level: Easy (1)
+#####################################
+class Func_6_P_recognize_growth_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$\\tfrac{3^x}{3^2}$", "$(\\sqrt3)^{^x}$", "$\\tfrac{3^x}{3^{-2}}$", "$3^x\\cdot3^{\\frac12}$"],
+    #         correctAnswerIndex = 1,
+    #         questionText=self.translate("Func_6_P.211.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+
+        f_1 = plane.plot(lambda x: 14*x**0.5, color=ORANGE)
+        f_2 = plane.plot(lambda x: 2**x, color=GREEN)
+        f_3 = plane.plot(lambda x: (32/5)*x, color=BLUE)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+I'm going to show you <bookmark mark="three_in"/>three function graphs. Exactly one of them belongs to an exponential function. <bookmark mark="cords_in"/>Can you tell which one? Is <bookmark mark="orange_in"/> it the orange graph, or is it <bookmark mark="green_in"/> the green graph, or is it <bookmark mark="blue_in"/> the blue graph?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("three_in")
+            self.add_shift_sound(0.5)
+            self.play(three.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(three.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(cords), run_time=.5)
+            x,y,_ = plane.c2p(0,0)
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x,y), run_time=.5)
+
+            self.wait_until_bookmark("orange_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_1.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("green_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_2.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_2))
+
+            self.wait_until_bookmark("blue_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_3.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_3))
+
+
+        self.wait(4)
+
+class Func_6_P_recognize_growth_1_a(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$\\tfrac{3^x}{3^2}$", "$(\\sqrt3)^{^x}$", "$\\tfrac{3^x}{3^{-2}}$", "$3^x\\cdot3^{\\frac12}$"],
+    #         correctAnswerIndex = 1,
+    #         questionText=self.translate("Func_6_P.211.q.question-text")
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+        self.add(cords)
+
+        f_1 = plane.plot(lambda x: 14*x**0.5, color=ORANGE)
+        f_2 = plane.plot(lambda x: 2**x, color=GREEN)
+        f_3 = plane.plot(lambda x: (32/5)*x, color=BLUE)
+        x,y,_ = plane.c2p(0,0)
+
+        cursor = AltCursor(idle=True, x=x, y=y)
+        self.add(cursor)
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+So the <bookmark mark="blue_in"/>blue graph is simply a straight line. That means, that it's a linear function. So it can't be an exponential function. <bookmark mark="orange_in"/>The orange graph is a square root function. So it can't be an exponential function either. We can also see that the orange graph is not an exponential function by <bookmark mark="slow_increase"/>recognizing, that it is increasing more and more slowly. An exponential function on the other hand would increase more and more quickly. Which brings us to <bookmark mark="green_in"/>the green graph. It is an exponential function. You can see how it increases at an increasing rate, so the growth factor is greater than one.
+"""
+        ) as tracker:
+            
+
+            self.wait_until_bookmark("blue_in")
+            cursor.idle=False
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_3.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("orange_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_1.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("slow_increase")
+            cc = cursor.copy()._start_fading(8)
+            self.play(MoveAlongPath(cc, f_1), run_time=6)
+
+
+            self.wait_until_bookmark("green_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_2.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_2), f_1.animate.set_color(GREY), f_3.animate.set_color(GREY))
+
+
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_P_recognize_growth_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval((self.translate("Func_6_P.recognize_growth.2.q.answer-options"))),
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_P.recognize_growth.2.q.question-text")
+        )
+#out of <bookmark mark="overview"/>these three situations, which is not described by an exponential function?
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        grid = VGroup(VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4), VGroup(*[Circle() for _ in range(3)]).arrange(DOWN, buff=.4)).arrange(RIGHT, buff=.4).scale(.7).set_y(0.8)
+        x_1,x_2 = grid.get_left()[0], grid.get_right()[0]
+        y_1, y_2 = (grid[0][0].get_y()+grid[0][1].get_y())/2, (grid[0][1].get_y()+grid[0][2].get_y())/2
+        line_1, line_2 = Line([x_1,y_1,0], [x_2, y_1,0], color=c4t), Line([x_1,y_2,0], [x_2, y_2,0], color=c4t)
+
+        woman_not = ImageMobject(assets_folder / "img" / "woman_not.png")
+        woman_not = woman_not.scale(4/woman_not.get_width()).set_x(-5).shift(.4*UP)
+        one = ImageMobject(assets_folder / "img" / "one_baloony.png")
+        one = one.scale(4/one.get_width()).set_x(-5).shift(.4*UP)
+        two = ImageMobject(assets_folder / "img" / "two_baloony.png")
+        two = two.scale(4/two.get_width()).set_x(-5).shift(.4*UP)
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        apples = ImageMobject(assets_folder / "img" / "apple_basket.png")
+        apples = apples.scale(2/apples.get_width()).set_x(-5).shift(.4*UP)
+        dollars = ImageMobject(assets_folder / "img" / "dollar_stack.png")
+        dollars = dollars.scale(1.6/dollars.get_width()).set_x(-5).shift(.4*UP)
+        gold = ImageMobject(assets_folder / "img" / "gold_bar.png")
+        gold = gold.scale(1.6/gold.get_width()).set_x(-5).shift(.4*UP)
+
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=
+"""
+I'll now describe three situations two you. Which of these<bookmark mark="not_in"/> can NOT be modelled using an exponential function?
+Situation <bookmark mark="situation_1"/>number one: On day one, you receive <bookmark mark="apples_in"/>one apple. On day two, you receive two apples. On day three, you receive four apples. On day four, you receive eight apples. <bookmark mark="sit_1_out"/>And so on.
+Situation <bookmark mark="situation_2"/>number two: You have <bookmark mark="dollars_in"/>a bank account, that you put 100 Dollars into. Every year, you get 20 <bookmark mark="sit_2_out"/>Dollars interest.
+And finally, situation <bookmark mark="situation_3"/>number three: You have <bookmark mark="gold_in"/>a gold bar. Every year, it increases in value <bookmark mark="sit_3_out"/>by 10 percent
+Now out of <bookmark mark="overview"/>these three situations, which is not described by an exponential function?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("not_in")
+            self.add_shift_sound(0.5)
+            self.play(woman_not.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(woman_not.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("situation_1")
+            self.play(one.animate.shift(5*RIGHT), run_time=0.5)
+            self.add_shift_sound(0.5)
+            
+            self.wait_until_bookmark("apples_in")
+            self.play(apples.animate.shift(5*RIGHT), one.animate.scale(.15), run_time=0.5)
+
+            self.wait_until_bookmark("sit_1_out")
+            loc_1 = grid[0][0].get_center()
+            loc_2 = grid[1][0].get_center()
+            self.play(one.animate.move_to(loc_1), apples.animate.move_to(loc_2), run_time=.4)
+
+            self.wait_until_bookmark("situation_2")
+            self.add_shift_sound(0.5)
+            self.play(two.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("dollars_in")
+            self.play(dollars.animate.shift(5*RIGHT), two.animate.scale(.15), run_time=0.5)
+
+            self.wait_until_bookmark("sit_2_out")
+            loc_1 = grid[0][1].get_center()
+            loc_2 = grid[1][1].get_center()
+            self.play(Write(line_1), two.animate.move_to(loc_1), dollars.animate.move_to(loc_2), run_time=.4)
+
+            self.wait_until_bookmark("situation_3")
+            self.add_shift_sound(0.5)
+            self.play(three.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("gold_in")
+            self.play(gold.animate.shift(5*RIGHT), three.animate.scale(.15), run_time=0.5)
+
+            self.wait_until_bookmark("sit_3_out")
+            loc_1 = grid[0][2].get_center()
+            loc_2 = grid[1][2].get_center()
+            self.play(Write(line_2), three.animate.move_to(loc_1), gold.animate.move_to(loc_2), run_time=.4)
+
+
+        self.wait(5)
+
 ###############Exercises for Percentages Chapter ##########################
 
 ##################################### Exercise Level: Easy (1)
@@ -429,7 +678,7 @@ class Func_6_P_2_1_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{1}{\\left(x+2a\\right)^{3b}}$", "$x^{-3b}+2a^{3b}$", "$\\left\\tfrac{x}{2a}\\right)^{-3b}$", "$\\tfrac{3b}{\\left(x+2a\\right)^{3b}}$"],
+            answerOptions = ["$\\tfrac{1}{\\left(x+2a\\right)^{3b}}$", "$x^{-3b}+2a^{3b}$", "$\\left(\\tfrac{x}{2a}\\right)^{-3b}$", "$\\tfrac{3b}{\\left(x+2a\\right)^{3b}}$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_P.212.q.question-text")
         )
@@ -1232,7 +1481,7 @@ class Func_6_P_2_2_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{2^x}{(-4)^2}$", "$\\left\\tfrac{1}{4}\\right)^x$", "$\\tfrac{1}{16}\\cdot 2^{x}$", "$\\left\\tfrac{1}{8}\\right)^x$"],
+            answerOptions = ["$\\tfrac{2^x}{(-4)^2}$", "$\\left(\\tfrac{1}{4}\\right)^x$", "$\\tfrac{1}{16}\\cdot 2^{x}$", "$\\left(\\tfrac{1}{8}\\right)^x$"],
             correctAnswerIndex = 2,
             questionText=self.translate("Func_6_P.221.q.question-text")
         )
@@ -1703,7 +1952,7 @@ class Func_6_P_2_2_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$2b^3\\cdot \\left(\\tfrac1{b^3}\\right)^{x}}$", "$\\left(\\tfrac2{b^3}\\right)^{x}}$", "$\\tfrac2{b^3}\\cdot \\left(\\tfrac1{b^3}\\right)^{x}}$", "$\\frac{2}{b^{3x+3}}$"],
+            answerOptions = ["$2b^3 \\cdot \\left(\\tfrac{1}{b^3}\\right)^{x}$", "$\\left(\\tfrac{2}{b^3}\\right)^{x}$", "$\\tfrac{2}{b^3}\\cdot \\left(\\tfrac{1}{b^3}\\right)^{x}$", "$\\frac{2}{b^{3x+3}}$"],
             correctAnswerIndex = 2,
             questionText=self.translate("Func_6_P.22.q.question-text")
         )
