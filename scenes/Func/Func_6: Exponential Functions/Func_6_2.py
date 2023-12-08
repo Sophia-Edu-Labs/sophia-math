@@ -29,7 +29,7 @@ class Func_6_2_I_1(SophiaCursorScene):
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[2,4,6], y_ticks=[16,32,48,64])
         plane = cords[0]
 
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2)
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2)
         f_2 = MathTex("g","(x)", "=", "2", "^x", color=PURE_BLUE, font_size=fs2)
         f_3 = MathTex("h","(x)", "=", "3", "^x", color=PINK, font_size=fs2)
         fs = VGroup(f_tex, f_2, f_3).arrange(DOWN, aligned_edge=LEFT, buff=0.4).next_to(cords, DOWN, buff=0.4)
@@ -735,21 +735,21 @@ class Func_6_2_I_2_1_q(SophiaCursorScene):
             self.wait_until_bookmark("plot_1")
             x,y,_ = plot_1.get_start()
             self.play(CursorMoveResize(cursor,x,y), run_time=0.5)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_1.get_end())))
+            self.add(cursor.copy()._start_fading(4).add_updater(lambda m: m.move_to(plot_1.get_end())))
             self.add_pencil_sound(2.5)
             self.play(Create(plot_1), run_time=2.5)
             
             self.wait_until_bookmark("plot_2")
             x,y,_ = plot_2.get_start()
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_2.get_end())))
+            self.add(cursor.copy()._start_fading(4).add_updater(lambda m: m.move_to(plot_2.get_end())))
             self.add_pencil_sound(2.5)
             self.play(Create(plot_2), run_time=2.5)
 
             self.wait_until_bookmark("plot_3")
             x,y,_ = plot_3.get_start()
             self.play(CursorMoveTo(cursor,x,y), run_time=0.5)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(plot_3.get_end())))
+            self.add(cursor.copy()._start_fading(4).add_updater(lambda m: m.move_to(plot_3.get_end())))
             self.add_pencil_sound(2.5)
             self.play(Create(plot_3), run_time=2.5)
             cursor.idle=True
@@ -1164,16 +1164,16 @@ class Func_6_2_I_2_X(SophiaCursorScene):
         cords = self.add_cords([0, 6, 1], [0, 64, 8], x_ticks=[], y_ticks=[])
         plane = cords[0]
 
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
 
-        a_tex_g1 = MathTex("a>1", color=BLUE, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
+        a_tex_g1 = MathTex("b>1", color=BLUE, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
         f = lambda x:2**x
         f_plot = plane.plot(f, color=BLUE)
 
         cords_2 = self.add_cords([0, 6, 1], [0, 1, 0.25], x_ticks=[], y_ticks=[])
         plane_2 = cords_2[0]
 
-        a_tex_l1 = MathTex("0<a<1", color=GREEN, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
+        a_tex_l1 = MathTex("0<b<1", color=GREEN, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
         g = lambda x:0.5**x
         g_plot = plane_2.plot(g, color=GREEN)
 
@@ -1815,7 +1815,7 @@ class Func_6_2_I_3_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$f(x)=8\\cdot\\left\\frac{1}{4}\\right^x$", "$f(x)=\\frac{1}{2}\\cdot4^x$", "$f(x)=2\\cdot4^x$", "$f(x)=\\frac{1}{4}\\cdot2^x$"],
+            answerOptions = ["$f(x)=8\\cdot\\left(\\frac{1}{4}\\right)^x$", "$f(x)=\\frac{1}{2}\\cdot4^x$", "$f(x)=2\\cdot4^x$", "$f(x)=\\frac{1}{4}\\cdot2^x$"],
             correctAnswerIndex = 3,
             questionText=self.translate("Func_6_2.I34.q.question-text")
         )
@@ -5433,7 +5433,377 @@ class Func_6_2_I_6_6_X(SophiaCursorScene):
 
         self.wait(4)
 
-####################################################################################################################################################
+
+
+
+#####################################
+#####################################
+######## Practice Part ##############
+#####################################
+#####################################
+
+
+
+
+#####################################
+#####################################
+######## General Qs #################
+#####################################
+#####################################
+
+#####################################
+#####################################
+class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Func_6_2.I3.title"))
+
+        plane = self.cords[0]
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        self.add(cursor)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
+        qmark = qmark.scale(2.5/qmark.get_width()).move_to([-5, 1, 0])
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
+        xm1, xm2 = self.translate("Func_6_2.I3.x-minutes_1"), self.translate("Func_6_2.I3.x-minutes_2")
+        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, " $b$?", color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.6)
+
+        func = lambda x: self.a**x
+        f = plane.plot(func, color=self.color)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_2.GraphToGrowthFactorQuestionScene.voiceover"))
+        ) as tracker:
+            
+            self.play(Write(self.cords))
+            
+            self.wait_until_bookmark("plot")
+            x, y, _ = f.get_start()
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(f))
+            cursor.idle=True
+
+            self.wait_until_bookmark("function")
+            x,y,_ = f_tex[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fx")
+            x,y,_ = f_tex[1].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fa")
+            x,y,_ = f_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("xx")
+            x,y,_ = f_tex[4].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("q")
+            x,y,_ = x_minutes[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("q_a")
+            x,y,_ = x_minutes[1][1].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+
+        self.wait(4)
+
+
+class GraphToGrowthFactorAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Func_6_2.I3.title"))
+
+        plane = self.cords[0]
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        self.add(cursor)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
+        qmark = qmark.scale(2.5/qmark.get_width()).move_to([-5, 1, 0])
+
+        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
+        sol = Tex("$\\Rightarrow$", f"a={self.a}", color=c1t, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
+        func = lambda x: self.a**x
+        f = plane.plot(func, color=self.color)
+
+        verify_translated = self.translate("Func_6_2.I3.verify")
+        verify = VGroup(Tex("$\\Rightarrow$", verify_translated, color=c1t, font_size=fs3), MathTex(f"f({self.x_max})", f"={self.a}^{self.x_max}", f"={self.a**self.x_max}", font_size=fs3, color=c1t))
+        verify.arrange(DOWN, buff=0.2).next_to(sol, DOWN, buff=0.8)
+        verify[0].shift(LEFT*0.6)
+
+        self.add(f_tex)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_2.GraphToGrowthFactorAnswerScene.voiceover"))
+        ) as tracker:
+            
+            self.play(Write(self.cords))
+            self.play(Write(f))
+
+            self.wait_until_bookmark("x_one")
+            cursor.idle=False
+            x,y,_ = plane.c2p(1,0)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("f_x_one")
+            x,y,_ = plane.c2p(1,self.a)
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol")
+            cursor.idle=False
+            x,y,_ = sol[1].get_center()+0.4*DOWN
+            self.play(Write(sol), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("verify")
+            x,y,_ = verify[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(verify[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
+            cursor.idle=False
+
+            self.wait_until_bookmark("x_max")
+            cursor.idle=False
+            x,y,_ = verify[1][0].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(verify[1][0]), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("x_max_graph")
+            cursor.idle=False
+            x,y,_ = plane.c2p(self.x_max,self.a**self.x_max)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("verify_2")
+            cursor.idle=False
+            x,y,_ = verify[1][1].get_center()+0.4*DOWN
+            self.play(Write(verify[1][1]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("verify_3")
+            x,y,_ = verify[1][2].get_center()+0.4*DOWN
+            self.play(Write(verify[1][2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Func_6_2.I3.title"))
+
+        plane = self.cords[0]
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        self.add(cursor)
+
+        f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
+        xm1, xm2 = self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.x-minutes_1"), self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.x-minutes_2")
+        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.6)
+        x_minutes[1].shift(RIGHT*0.4)
+        g_1 = plane.plot(self.f1, color=self.c1)
+        g_2 = plane.plot(self.f2, color=self.c2)
+        g_3 = plane.plot(self.f3, color=self.c3)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.voiceover"))
+        ) as tracker:
+            
+            self.wait_until_bookmark("f")
+            x,y,_ = f_tex[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fx")
+            x,y,_ = f_tex[1].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("fa")
+            x,y,_ = f_tex[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("xx")
+            x,y,_ = f_tex[4].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("which")
+            x,y,_ = x_minutes[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(self.cords), run_time=0.3)
+
+            self.wait_until_bookmark("plot_1")
+            cursor.idle=False
+            x,y,_ = g_1.get_start()
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_1.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(g_1))
+            cursor.idle=True
+
+            self.wait_until_bookmark("plot_2")
+            cursor.idle=False
+            x,y,_ = g_2.get_start()
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_2.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(g_2))
+            cursor.idle=True
+
+            self.wait_until_bookmark("plot_3")
+            cursor.idle=False
+            x,y,_ = g_3.get_start()
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(g_3))
+            cursor.idle=True
+            
+
+        self.wait(4)
+
+
+class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
+
+    # Main method for constructing the animation
+    @abstractmethod
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Func_6_2.I3.title"))
+
+        plane = self.cords[0]
+        f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
+        self.intro_auto = self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i1") if self.a>1 else self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i2")
+        intro_auto_tex = Tex("$a>1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.eg')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4) if self.a>1 else Tex("$0<a<1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.ed')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4)
+        
+        g_1 = plane.plot(self.f1, color=self.c1)
+        g_2 = plane.plot(self.f2, color=self.c2)
+        g_3 = plane.plot(self.f3, color=self.c3)
+
+        gs = [g_1,g_2,g_3]
+        g_correct = gs[self.idx_correct]
+        self.color_correct = self.color_1_name if self.idx_correct==0 else self.color_2_name if self.idx_correct==1 else self.color_3_name
+
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.voiceover"))
+        ) as tracker:
+            
+            self.play(Write(f_tex))
+
+            self.wait_until_bookmark("intro_auto")
+            x,y,_ = intro_auto_tex[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(Write(intro_auto_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
+            cursor.idle=True
+
+            self.wait_until_bookmark("cords_in")
+            self.play(Write(self.cords), run_time=0.3)
+
+            self.wait_until_bookmark("x_one")
+            cursor.idle=False
+            x,y,_ = plane.c2p(1,0)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("f_x_one")
+            x,y,_ = plane.c2p(1,self.a)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            point_1 = cursor.copy().clear_updaters()
+            self.add(point_1)
+
+            self.wait_until_bookmark("x_two")
+            x,y,_ = plane.c2p(2,0)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("f_x_two")
+            x,y,_ = plane.c2p(2,self.a**2)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            point_2 = cursor.copy().clear_updaters()
+            self.add(point_2)
+
+            self.wait_until_bookmark("x_max")
+            x,y,_ = plane.c2p(self.x_max,0)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            
+            self.wait_until_bookmark("f_x_max")
+            x,y,_ = plane.c2p(self.x_max,self.a**self.x_max)
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            point_3 = cursor.copy().clear_updaters()
+            self.add(point_3)
+
+            self.wait_until_bookmark("plot")
+            cursors = [cursor.copy() for _ in range(3)]
+            locs = [g.get_start() for g in gs]
+            x,y,_ = plane.c2p(0,0)
+            self.play(*[CursorMoveTo(c,l[0], l[1]) for c,l in zip(cursors,locs)], CursorMoveTo(cursor,x,y), run_time=1)
+            cursors[1]._start_fading(2).add_updater(lambda m: m.move_to(g_1.get_end()))
+            cursors[2]._start_fading(2).add_updater(lambda m: m.move_to(g_2.get_end()))
+            cursors[0]._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end()))
+            self.add_pencil_sound(1.5)
+            self.play(*[Create(g) for g in gs])
+            cursor.idle=True
+
+            self.wait_until_bookmark("erase")
+            self.add(g_correct.copy())
+            self.play(Uncreate(g_1), Uncreate(g_2), Uncreate(g_3),  run_time=0.3)
+
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+######## Specific Qs ################
+#####################################
+
+
+##################################### Growth factor focus
 #####################################
 class Func_6_2_I_3_q(SophiaCursorScene):
 
@@ -5456,13 +5826,18 @@ class Func_6_2_I_3_q(SophiaCursorScene):
         cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[0,1,2,3,4], y_ticks=[0.25,0.5,0.75,1], y_labels=["\\tfrac14", "\\tfrac12", "\\tfrac34", "1"]).shift(DOWN)
         plane = cords[0]
 
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4).shift(UP)
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4).shift(UP*2.5)
+        loc_a = f_tex[3].get_center()
 
         f = lambda x:0.5**x
         f_plot = plane.plot(f, color=BLUE)
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
         self.add(cursor)
+
+        base = self.translate("words.base")
+
+        b = Bubble([self.translate("Func_6_2.I3.title"), "/ "+base], center = [-.4, -.4,0], start_point=loc_a + 0.2*DOWN, loc ="t2", height=1, width=2.6)
 
 
         # Action Sequence
@@ -5497,12 +5872,19 @@ class Func_6_2_I_3_q(SophiaCursorScene):
             cursor.idle=False
             x,y,_ = f_tex[3].get_center()+0.4*DOWN
             self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            
+            self.wait_until_bookmark("growth_factor")
+            self.add_bubble_sound(1.5)
+            b_updater = lambda m: m.move_to(b.get_end())
+            cursor.add_updater(b_updater)
+            self.play(Create(b), Create(b.text))
+            cursor.remove_updater(b_updater)
             cursor.idle=True
 
             self.wait_until_bookmark("func_in")
             cursor.idle=False
             x,y,_ = f_plot.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), Write(cords), f_tex.animate.shift(DOWN), run_time=0.6)
+            self.play(CursorMoveToCurved(cursor,x,y), Write(cords), f_tex.animate.shift(2.5*DOWN), Uncreate(b), Uncreate(b.text), run_time=0.6)
             self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f_plot.get_end())))
             self.add_pencil_sound(1.5)
             self.play(Create(f_plot))
@@ -5750,374 +6132,6 @@ class Func_6_2_I_3_d(SophiaCursorScene):
 
 #####################################
 #####################################
-######## Practice Part ##############
-#####################################
-#####################################
-
-
-
-
-#####################################
-#####################################
-######## General Qs #################
-#####################################
-#####################################
-
-#####################################
-#####################################
-class GraphToGrowthFactorQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
-
-    # Main method for constructing the animation
-    @abstractmethod
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title(self.translate("Func_6_2.I3.title"))
-
-        plane = self.cords[0]
-
-        cursor = AltCursor(stroke_width=0.0, idle=True)
-        self.add(cursor)
-
-        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
-        qmark = qmark.scale(2.5/qmark.get_width()).move_to([-5, 1, 0])
-
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
-        xm1, xm2 = self.translate("Func_6_2.I3.x-minutes_1"), self.translate("Func_6_2.I3.x-minutes_2")
-        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, " $a$?", color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.6)
-
-        func = lambda x: self.a**x
-        f = plane.plot(func, color=self.color)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.evaluate_string(self.translate("Func_6_2.GraphToGrowthFactorQuestionScene.voiceover"))
-        ) as tracker:
-            
-            self.play(Write(self.cords))
-            
-            self.wait_until_bookmark("plot")
-            x, y, _ = f.get_start()
-            self.play(CursorMoveToCurved(cursor, x, y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(f.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(f))
-            cursor.idle=True
-
-            self.wait_until_bookmark("function")
-            x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("fx")
-            x,y,_ = f_tex[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("fa")
-            x,y,_ = f_tex[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("xx")
-            x,y,_ = f_tex[4].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("q")
-            x,y,_ = x_minutes[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("q_a")
-            x,y,_ = x_minutes[1][1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-
-        self.wait(4)
-
-
-class GraphToGrowthFactorAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
-
-    # Main method for constructing the animation
-    @abstractmethod
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title(self.translate("Func_6_2.I3.title"))
-
-        plane = self.cords[0]
-
-        cursor = AltCursor(stroke_width=0.0, idle=True)
-        self.add(cursor)
-
-        qmark = ImageMobject(assets_folder / "img" / "qmark.png")
-        qmark = qmark.scale(2.5/qmark.get_width()).move_to([-5, 1, 0])
-
-        f_tex = MathTex("f","(x)", "=", "a", "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
-        sol = Tex("$\\Rightarrow$", f"a={self.a}", color=c1t, font_size=fs2).next_to(f_tex, DOWN, buff=0.2)
-        func = lambda x: self.a**x
-        f = plane.plot(func, color=self.color)
-
-        verify_translated = self.translate("Func_6_2.I3.verify")
-        verify = VGroup(Tex("$\\Rightarrow$", verify_translated, color=c1t, font_size=fs3), MathTex(f"f({self.x_max})", f"={self.a}^{self.x_max}", f"={self.a**self.x_max}", font_size=fs3, color=c1t))
-        verify.arrange(DOWN, buff=0.2).next_to(sol, DOWN, buff=0.8)
-        verify[0].shift(LEFT*0.6)
-
-        self.add(f_tex)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.evaluate_string(self.translate("Func_6_2.GraphToGrowthFactorAnswerScene.voiceover"))
-        ) as tracker:
-            
-            self.play(Write(self.cords))
-            self.play(Write(f))
-
-            self.wait_until_bookmark("x_one")
-            cursor.idle=False
-            x,y,_ = plane.c2p(1,0)
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("f_x_one")
-            x,y,_ = plane.c2p(1,self.a)
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("sol")
-            cursor.idle=False
-            x,y,_ = sol[1].get_center()+0.4*DOWN
-            self.play(Write(sol), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("verify")
-            x,y,_ = verify[0].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(verify[0]), CursorMoveTo(cursor,x,y), run_time=0.5)
-            cursor.idle=False
-
-            self.wait_until_bookmark("x_max")
-            cursor.idle=False
-            x,y,_ = verify[1][0].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), Write(verify[1][0]), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("x_max_graph")
-            cursor.idle=False
-            x,y,_ = plane.c2p(self.x_max,self.a**self.x_max)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("verify_2")
-            cursor.idle=False
-            x,y,_ = verify[1][1].get_center()+0.4*DOWN
-            self.play(Write(verify[1][1]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("verify_3")
-            x,y,_ = verify[1][2].get_center()+0.4*DOWN
-            self.play(Write(verify[1][2]), CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-        self.wait(4)
-
-
-#####################################
-#####################################
-class GrowthFactorToGraphQuestionScene(SophiaCursorScene, metaclass = ABCMeta):
-
-    # Main method for constructing the animation
-    @abstractmethod
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title(self.translate("Func_6_2.I3.title"))
-
-        plane = self.cords[0]
-
-        cursor = AltCursor(stroke_width=0.0, idle=True)
-        self.add(cursor)
-
-        f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
-        xm1, xm2 = self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.x-minutes_1"), self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.x-minutes_2")
-        x_minutes = VGroup(Tex("$\\Rightarrow$", xm1, color=c1t, font_size=fs3), Tex(xm2, color=c1t, font_size=fs3)).arrange(DOWN, buff=0.1, aligned_edge=RIGHT).next_to(f_tex, DOWN, buff=0.6)
-        x_minutes[1].shift(RIGHT*0.4)
-        g_1 = plane.plot(self.f1, color=self.c1)
-        g_2 = plane.plot(self.f2, color=self.c2)
-        g_3 = plane.plot(self.f3, color=self.c3)
-
-
-        print("Print_flag", self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.voiceover")))
-        # Action Sequence
-        with self.voiceover(
-                text=self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphQuestionScene.voiceover"))
-        ) as tracker:
-            
-            self.wait_until_bookmark("f")
-            x,y,_ = f_tex[0].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(f_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("fx")
-            x,y,_ = f_tex[1].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("fa")
-            x,y,_ = f_tex[3].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("xx")
-            x,y,_ = f_tex[4].get_center()+0.4*DOWN
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("which")
-            x,y,_ = x_minutes[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(x_minutes), CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("cords_in")
-            self.play(Write(self.cords), run_time=0.3)
-
-            self.wait_until_bookmark("plot_1")
-            cursor.idle=False
-            x,y,_ = g_1.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_1.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(g_1))
-            cursor.idle=True
-
-            self.wait_until_bookmark("plot_2")
-            cursor.idle=False
-            x,y,_ = g_2.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_2.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(g_2))
-            cursor.idle=True
-
-            self.wait_until_bookmark("plot_3")
-            cursor.idle=False
-            x,y,_ = g_3.get_start()
-            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(g_3))
-            cursor.idle=True
-            
-
-        self.wait(4)
-
-
-class GrowthFactorToGraphAnswerScene(SophiaCursorScene, metaclass=ABCMeta):
-
-    # Main method for constructing the animation
-    @abstractmethod
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title(self.translate("Func_6_2.I3.title"))
-
-        plane = self.cords[0]
-        f_tex = MathTex("f","(x)", "=", str(self.a), "^x", color=c1t, font_size=fs2).next_to(plane, DOWN, buff=0.4)
-        self.intro_auto = self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i1") if self.a>1 else self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.i2")
-        intro_auto_tex = Tex("$a>1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.eg')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4) if self.a>1 else Tex("$0<a<1$",f"$\\Rightarrow${self.translate('Func_6_2.GrowthFactorToGraphAnswerScene.ed')}", color=c1t, font_size=fs3).next_to(f_tex, DOWN, buff=0.4)
-        
-        g_1 = plane.plot(self.f1, color=self.c1)
-        g_2 = plane.plot(self.f2, color=self.c2)
-        g_3 = plane.plot(self.f3, color=self.c3)
-
-        gs = [g_1,g_2,g_3]
-        g_correct = gs[self.idx_correct]
-        self.color_correct = self.color_1_name if self.idx_correct==0 else self.color_2_name if self.idx_correct==1 else self.color_3_name
-
-
-        cursor = AltCursor(stroke_width=0.0, idle=True)
-        self.add(cursor)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.evaluate_string(self.translate("Func_6_2.GrowthFactorToGraphAnswerScene.voiceover"))
-        ) as tracker:
-            
-            self.play(Write(f_tex))
-
-            self.wait_until_bookmark("intro_auto")
-            x,y,_ = intro_auto_tex[0].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(Write(intro_auto_tex), CursorMoveTo(cursor,x,y), run_time=0.3)
-            cursor.idle=True
-
-            self.wait_until_bookmark("cords_in")
-            self.play(Write(self.cords), run_time=0.3)
-
-            self.wait_until_bookmark("x_one")
-            cursor.idle=False
-            x,y,_ = plane.c2p(1,0)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("f_x_one")
-            x,y,_ = plane.c2p(1,self.a)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            point_1 = cursor.copy().clear_updaters()
-            self.add(point_1)
-
-            self.wait_until_bookmark("x_two")
-            x,y,_ = plane.c2p(2,0)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-
-            self.wait_until_bookmark("f_x_two")
-            x,y,_ = plane.c2p(2,self.a**2)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            point_2 = cursor.copy().clear_updaters()
-            self.add(point_2)
-
-            self.wait_until_bookmark("x_max")
-            x,y,_ = plane.c2p(self.x_max,0)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            
-            self.wait_until_bookmark("f_x_max")
-            x,y,_ = plane.c2p(self.x_max,self.a**self.x_max)
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            point_3 = cursor.copy().clear_updaters()
-            self.add(point_3)
-
-            self.wait_until_bookmark("plot")
-            cursors = [cursor.copy() for _ in range(3)]
-            locs = [g.get_start() for g in gs]
-            x,y,_ = plane.c2p(0,0)
-            self.play(*[CursorMoveTo(c,l[0], l[1]) for c,l in zip(cursors,locs)], CursorMoveTo(cursor,x,y), run_time=1)
-            cursors[1]._start_fading(2).add_updater(lambda m: m.move_to(g_1.get_end()))
-            cursors[2]._start_fading(2).add_updater(lambda m: m.move_to(g_2.get_end()))
-            cursors[0]._start_fading(2).add_updater(lambda m: m.move_to(g_3.get_end()))
-            self.add_pencil_sound(1.5)
-            self.play(*[Create(g) for g in gs])
-            cursor.idle=True
-
-            self.wait_until_bookmark("erase")
-            self.add(g_correct.copy())
-            self.play(Uncreate(g_1), Uncreate(g_2), Uncreate(g_3),  run_time=0.3)
-
-
-        self.wait(4)
-
-
-#####################################
-#####################################
-######## Specific Qs ################
-#####################################
-#####################################
-
-#####################################
-#####################################
 class Func_6_2_P_1_q(GraphToGrowthFactorQuestionScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -6184,6 +6198,311 @@ class Func_6_2_P_1_d(GraphToGrowthFactorAnswerScene):
 
         super().construct()
 
+
+#####################################
+#####################################
+class Func_6_2_I_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$a>1$", "$a<-1$", "$0<a<1$", "$-1<a<0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_2.I3.q.question-text")
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=PINK)
+        b_small = plane.plot(lambda x: 0.5**x, color=BLUE)
+        a_neg = plane.plot(lambda x: -(2**x)/16, color=GREEN)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("Func_6_2.I4.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("large_base")
+            cursor.idle=False
+            x,y,_ = b_large.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_large.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(b_large), Write(b_vals[0]))
+
+            self.wait_until_bookmark("small_base")
+            x,y,_ = b_small.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_small.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(b_small), Write(b_vals[1]))
+            
+            self.wait_until_bookmark("green_graph")
+            x,y,_ = a_neg.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(a_neg.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(a_neg), Write(b_vals[2]))
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_2_I_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=PINK)
+        b_small = plane.plot(lambda x: 0.5**x, color=BLUE)
+        a_neg = plane.plot(lambda x: -(2**x)/16, color=GREEN)
+
+        a = ValueTracker(1)
+        f_grey = always_redraw(lambda: plane.plot(lambda x: a.get_value()*(2**x)/16, color=GREY))
+        
+        self.add(b_large, b_small, a_neg)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex, b_vals)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.correct_4")+self.translate("Func_6_2.I4.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_pink")
+            self.play(Circumscribe(b_large, color=RED, stroke_width=8), Unwrite(b_small), Unwrite(b_vals[1]), Unwrite(b_vals[2]))
+
+            self.wait_until_bookmark("highlight_green")
+            self.play(Circumscribe(a_neg, color=RED, stroke_width=8))
+
+            self.wait_until_bookmark("show_reflection")
+            self.add(f_grey)
+            self.play(a.animate.set_value(-1), run_time=3)
+            self.remove(f_grey)
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(b_sol))
+
+        self.wait(4)
+
+class Func_6_2_I_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=PINK)
+        b_small = plane.plot(lambda x: 0.5**x, color=BLUE)
+        a_neg = plane.plot(lambda x: -(2**x)/16, color=GREEN)
+
+        a = ValueTracker(1)
+        f_grey = always_redraw(lambda: plane.plot(lambda x: a.get_value()*(2**x)/16, color=GREY))
+        
+        self.add(b_large, b_small, a_neg)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex, b_vals)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I4.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_pink")
+            self.play(Circumscribe(b_large, color=RED, stroke_width=8), Unwrite(b_small), Unwrite(b_vals[1]), Unwrite(b_vals[2]))
+
+            self.wait_until_bookmark("highlight_green")
+            self.play(Circumscribe(a_neg, color=RED, stroke_width=8))
+
+            self.wait_until_bookmark("show_reflection")
+            self.add(f_grey)
+            self.play(a.animate.set_value(-1), run_time=3)
+            self.remove(f_grey)
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(b_sol))
+
+        self.wait(4)
+
+class Func_6_2_I_4_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=PINK)
+        b_small = plane.plot(lambda x: 0.5**x, color=BLUE)
+        a_neg = plane.plot(lambda x: -(2**x)/16, color=GREEN)
+
+        a = ValueTracker(1)
+        f_grey = always_redraw(lambda: plane.plot(lambda x: a.get_value()*(2**x)/16, color=GREY))
+        
+        self.add(b_large, b_small, a_neg)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex, b_vals)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I4.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_pink")
+            self.play(Circumscribe(b_large, color=RED, stroke_width=8), Unwrite(b_small), Unwrite(b_vals[1]), Unwrite(b_vals[2]))
+
+            self.wait_until_bookmark("highlight_green")
+            self.play(Circumscribe(a_neg, color=RED, stroke_width=8))
+
+            self.wait_until_bookmark("show_reflection")
+            self.add(f_grey)
+            self.play(a.animate.set_value(-1), run_time=3)
+            self.remove(f_grey)
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(b_sol))
+
+        self.wait(4)
+
+class Func_6_2_I_4_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=PINK)
+        b_small = plane.plot(lambda x: 0.5**x, color=BLUE)
+        a_neg = plane.plot(lambda x: -(2**x)/16, color=GREEN)
+
+        a = ValueTracker(1)
+        f_grey = always_redraw(lambda: plane.plot(lambda x: a.get_value()*(2**x)/16, color=GREY))
+        
+        self.add(b_large, b_small, a_neg)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex, b_vals)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_4")+self.translate("Func_6_2.I4.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_pink")
+            self.play(Circumscribe(b_large, color=RED, stroke_width=8), Unwrite(b_small), Unwrite(b_vals[1]), Unwrite(b_vals[2]))
+
+            self.wait_until_bookmark("highlight_green")
+            self.play(Circumscribe(a_neg, color=RED, stroke_width=8))
+
+            self.wait_until_bookmark("show_reflection")
+            self.add(f_grey)
+            self.play(a.animate.set_value(-1), run_time=3)
+            self.remove(f_grey)
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(b_sol))
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class Func_6_2_I_5_q(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+
+        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        warning_sign = ImageMobject(assets_folder / "img" /"warning_sign.png")
+        self.add(warning_sign)
+
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        #b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=
+"""
+Test Test Test Test
+"""
+        ) as tracker:
+
+            self.wait_until_bookmark("large_base")
+            cursor.idle=False
+            x,y,_ = b_large.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_large.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(b_large), Write(b_vals[0]))
+
+            self.wait_until_bookmark("small_base")
+            x,y,_ = b_small.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_small.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(b_small), Write(b_vals[1]))
+            
+            self.wait_until_bookmark("green_graph")
+            x,y,_ = a_neg.get_start()
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(a_neg.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(a_neg), Write(b_vals[2]))
+            cursor.idle=True
+
+        self.wait(4)
 
 #####################################
 #####################################

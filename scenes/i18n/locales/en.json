@@ -1780,7 +1780,7 @@
       "e2": "Green Graph: Linear Growth",
       "e2a": "Linear Growth \\\\$\\Rightarrow$ Add at each step",
       "e3": "Purple Graph: Exponential Growth",
-      "voiceover": "Let's try to understand what exactly exponential growth is. To do this, let's compare it with linear growth.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_1\"/>purple graph shows exponential growth. <split/>\nWe see that the function rises and becomes steeper and steeper. This is because the function has the form <bookmark mark=\"f_exp\"/>f of x equals a raised to x, which means for each x, the value of the function is multiplied by the same value, in this case, two. So it doubles at each step.\n<break time=\"0.8s\"/>\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>\nThe function grows at a constant rate. The term of the function has the <bookmark mark=\"f_lin\"/>form f of x equals \"a\" times x, which means for each x, the same value is added to the function, in this case, two.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
+      "voiceover": "Let's try to understand what exactly exponential growth is. To do this, let's compare it with linear growth.\n<break time=\"0.8s\"/>\nThe <bookmark mark=\"plot_1\"/>purple graph shows exponential growth. <split/>\nWe see that the function rises and becomes steeper and steeper. This is because the function has the form <bookmark mark=\"f_exp\"/>f of x equals b raised to the power of x, which means for each x, the value of the function is multiplied by the same value, in this case, two. So it doubles at each step.\n<break time=\"0.8s\"/>\nThe<bookmark mark=\"plot_2\"/>green graph shows linear growth. <split/>\nThe function grows at a constant rate. The term of the function has the <bookmark mark=\"f_lin\"/>form f of x equals \"a\" times x, which means for each x, the same value is added to the function, in this case, two.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nSo we can remember: <bookmark mark=\"final_exp_1\"/>In exponential growth, we multiply the function by a value at each step, <bookmark mark=\"final_exp_2\"/>in linear growth, we add a value at each step."
     },
     "1I2q": {
       "answer": {
@@ -1832,7 +1832,7 @@
       "voiceover": "You see that after zero years, which is the beginning, <bookmark mark=\"one_in\"/>I have two plants. <split/>I planted them, after all.\nAfter one year, there are already <bookmark mark=\"six_in\"/>six plants, as each of the two plants has tripled.\nAnd after two years, there are <bookmark mark=\"eighteen_in\"/>eighteen plants, <split/>and so on...\n<break time=\"0.8s\"/>\nWhich function now describes the number of plants I have in my garden after x years?<split/>\nIs it the function <bookmark mark=\"f_in\"/> f of x equals three times two raised to x?<break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"g_in\"/> g of x equals 2 to the power of x plus 3 to the power of x? <break time=\"0.4s\"/>\nOr is it the function <bookmark mark=\"h_in\"/> h of x equals two times three to the power of x?"
     },
     "I15": {
-      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"a\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it <bookmark mark=\"f_3\"/>x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
+      "voiceover": "You have now learned the basics of exponential functions and have already practiced a little<bookmark mark=\"smile\"/>. Great!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nThe exponential functions we have learned so far are all in the form f of x equals \"b\" raised to the power of x.\nFor example, the function <bookmark mark=\"f_2\"/> f of x equals two raised to the power of x, <split/>\nor the function <bookmark mark=\"f_3\"/> f of x equals three raised to the power of x.<split/> This means we consider a value, for example, three, and multiply it <bookmark mark=\"f_3\"/>x times with itself, and the higher x is, the more often we multiply it with itself.\nIn these two cases <bookmark mark=\"plot\"/>the graph goes upwards, and the higher x gets, the steeper it becomes."
     },
     "I5": {
       "a": {
@@ -1895,7 +1895,7 @@
       "voiceover": "{self.intro}\nIf we look at the graph, we can see that <bookmark mark=\"x_one\"/>at x equals one, it is <bookmark mark=\"f_x_one\"/> at {self.a}.\nSo that means that a to the power of one equals {self.a}.<bookmark mark=\"sol\"/> So \"a\" must be {self.a}.\n<split/>\nWe can also <bookmark mark=\"verify\"/>verify this, by computing <bookmark mark=\"x_max\"/>f of {self.x_max}.\nBy looking at the graph, we can see that <bookmark mark=\"x_max_graph\"/>\nit has to be {self.a**self.x_max}. So to verify, we compute \"a\" to the power of {self.x_max} for \"a\" equals {self.a}.\n<bookmark mark=\"verify_2\"/>This is {self.a} to the power of {self.x_max}, <bookmark mark=\"verify_3\"/>which equals {self.a**self.x_max}.\nThis fits to the value on the graph."
     },
     "GraphToGrowthFactorQuestionScene": {
-      "voiceover": "{self.intro}<bookmark mark=\"plot\"/> this plot, which belongs to an exponential <bookmark mark=\"function\"/>function f \n<bookmark mark=\"fx\"/> of x <bookmark mark=\"fa\"/> equals a to the <bookmark mark=\"xx\"/>power of x.\n<bookmark mark=\"q\"/>What is the value of the growth<bookmark mark=\"q_a\"/> factor \"a\", that leads to this graph?"
+      "voiceover": "{self.intro}<bookmark mark=\"plot\"/> this plot, which belongs to an exponential <bookmark mark=\"function\"/>function f \n<bookmark mark=\"fx\"/> of x <bookmark mark=\"fa\"/> equals b to the <bookmark mark=\"xx\"/>power of x.\n<bookmark mark=\"q\"/>What is the value of the growth<bookmark mark=\"q_a\"/> factor \"b\", that leads to this graph?"
     },
     "GrowthFactorToGraphAnswerScene": {
       "ed": "exponential decay",
@@ -1911,7 +1911,7 @@
     },
     "I1": {
       "title": "Exponential Function",
-      "voiceover": "The term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nAnd we have been looking at values, <bookmark mark=\"a\"/>where a is greater than one, for example, the <bookmark mark=\"g\"/>function g of x equals two to the power of x or <bookmark mark=\"h\"/>the function h of x equals three to the power of x.\n<break time=\"0.4s\"/>\nBut what if,<bookmark mark=\"qmark\"/> we look at values, <bookmark mark=\"a_l1\"/>where a is between zero and one?<split/><bookmark mark=\"switch\"/>\nShouldn't the function <bookmark mark=\"decrease\"/>then decrease?<break time=\"0.6s\"/> After all, we are always multiplying the function by a value less than 1?\n<split/>Let's take a closer look at this now, by using an example."
+      "voiceover": "The term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x equals <bookmark mark=\"fa\"/>b to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nAnd we have been looking at values, <bookmark mark=\"a\"/>where b is greater than one, for example, the <bookmark mark=\"g\"/>function g of x equals two to the power of x or <bookmark mark=\"h\"/>the function h of x equals three to the power of x.\n<break time=\"0.4s\"/>\nBut what if,<bookmark mark=\"qmark\"/> we look at values, <bookmark mark=\"a_l1\"/>where b is between zero and one?<split/><bookmark mark=\"switch\"/>\nShouldn't the function <bookmark mark=\"decrease\"/>then decrease?<break time=\"0.6s\"/> After all, we are always multiplying the function by a value less than 1?\n<split/>Let's take a closer look at this now, by using an example."
     },
     "I2": {
       "a": {
@@ -1947,15 +1947,15 @@
       }
     },
     "I2X": {
-      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n\nThe graph of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>a.\n<split/>\nIf <bookmark mark=\"a_g1\"/>a is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>a is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
+      "voiceover": "Great! Now we know to types of exponential functions! <break time=\"0.4s\"/>\nThe term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>b to the power of <bookmark mark=\"fxx\"/> x.\n\nThe graph of the exponential function has two different shapes, depending on the value of <bookmark mark=\"a\"/>b.\n<split/>\nIf <bookmark mark=\"a_g1\"/>b is greater than one, the function<bookmark mark=\"plot_1\"/> increases at an increasing\nrate, so it gets steeper and steeper as x increases.\n\nIf <bookmark mark=\"a_l1\"/>b is between zero and one, the function<bookmark mark=\"plot_2\"/> decreases at a decreasing\nrate, so its decreasing, and it gets flatter and flatter as x increases."
     },
     "I3": {
       "q": {
-        "question-text": "What is the value of the growth factor $a$?"
+        "question-text": "What is the value of the growth factor $b$?"
       },
       "title": "Growth factor",
       "verify": "Verify:",
-      "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>a to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/> \"a\" is called the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays.\n<split/>\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"a\" leads to this graph?",
+      "voiceover": "Important definition in the context of exponential functions:<bookmark mark=\"underline\"/>The growth factor.\n<break time=\"0.3s\"/>\nWe know that the term of an exponential function is <bookmark mark=\"f\"/>f of <bookmark mark=\"fx\"/>x\nequals <bookmark mark=\"fa\"/>b to the power of <bookmark mark=\"fxx\"/> x.\n<break time=\"0.3s\"/>\nNow the value<bookmark mark=\"a\"/> \"b\" is called <bookmark mark=\"growth_factor\"/>the growth factor.<break time=\"0.3s\"/>It is called that, because it determines how fast the function grows, or decays. It is also often called the base.\nFor example, look at the function <bookmark mark=\"func_in\"/>that corresponds to this graph.\n<break time=\"1s\"/>\nWhat value for the growth factor \"b\" leads to this graph?",
       "x-minutes_1": "What is the value of",
       "x-minutes_2": "the growth factor"
     },
@@ -2177,6 +2177,12 @@
     },
     "I36": {
       "voiceover": "So we've now seen how to work with exponential functions of the form <bookmark mark=\"f_in\"/> f of x equals a times b to the power of x. The value <bookmark mark=\"a\"/>of a is a scaling factor, and we can find it by looking at the function value at x equals zero.\nThe value <bookmark mark=\"b\"/>of b is the growth factor and describes how fast the function increases. We can find it, by comparing the function values of two consecutive x values.\n<bookmark mark=\"praise\"/>Very nice! This brings us quite a bit closer to mastering exponential functions! Keep it up!!!"
+    },
+    "I4": {
+      "voiceover": "So we've now seen exponential functions with a growth factor <bookmark mark=\"large_base\"/>larger than one, and exponential functions with a growth factor <bookmark mark=\"small_base\"/>between 0 and 1.\nNow look at the <bookmark mark=\"green_graph\"/>green graph. In what range is the value of the growth factor of this function?",
+      "a": {
+        "voiceover": "If we compare the<bookmark mark=\"highlight_pink\"/> pink function, where b is greater than one with the <bookmark mark=\"highlight_green\"/>green function, we can see, that the pink function is simply the green function<bookmark mark=\"show_reflection\"/> reflected at the x-axis. So the value of b is also <bookmark mark=\"solution_in\"/>greater than one for the green function. The only difference is that the entire function is multiplied by negative one..."
+      }
     }
   },
   "Func_6_2_P_1_a": {
@@ -2867,7 +2873,8 @@
     "increase": "increase",
     "decrease": "decrease",
     "value": "value",
-    "budget": "budget"
+    "budget": "budget",
+    "base": "base"
   },
   "Words": {
     "base": "base",
@@ -2956,8 +2963,21 @@
           "question-text": "Which of these terms does not describe an exponential function?",
           "none": "All terms describe exponential functions",
           "voiceover": "I'm now going to show you three function terms. Which of them does not describe an exponential function?\nIs it the <bookmark mark=\"f_1_in\"/>function f of x equals two to the power of x minus one? Or is it the <bookmark mark=\"f_2_in\"/>function h of y equals to two to the power of y over two? Or is it the <bookmark mark=\"f_3_in\"/>function g of z, which is equal to z to the power of x plus 1?"
+        },
+        "a": {
+          "voiceover": "The function <bookmark mark=\"highlight_f_1\"/> f of x is an exponential function. The base <bookmark mark=\"f1_base\"/>is equal to two and the <bookmark mark=\"f1_exponent\"/>exponent is x minus 1. The <bookmark mark=\"highlight_f_2\"/>function h of y is also an exponential function. The <bookmark mark=\"f2_base\"/>base is equal to two and the <bookmark mark=\"f2_exponent\"/>exponent is y over 2. The <bookmark mark=\"highlight_f_3\"/>function g of z is not an exponential function. This is because the dependent variable z is <bookmark mark=\"z_not_in_exponent\"/>in the base, and not in the exponent.<bookmark mark=\"done\"/>"
         }
       }
+    }
+  },
+  "Func_6_P_recognize_growth_1": {
+    "q": {
+      "voiceover": "I'm going to show you <bookmark mark=\"three_in\"/>three function graphs. Exactly one of them belongs to an exponential function. <bookmark mark=\"cords_in\"/>Can you tell which one? Is <bookmark mark=\"orange_in\"/> it the orange graph, or is it <bookmark mark=\"green_in\"/> the green graph, or is it <bookmark mark=\"blue_in\"/> the blue graph?",
+      "question-text": "Which of the graphs describes an exponential function?",
+      "answer-options": "[\"the orange graph\", \"the green graph\", \"the blue graph\", \"none of the graphs\"]"
+    },
+    "a": {
+      "voiceover": "So the <bookmark mark=\"blue_in\"/>blue graph is simply a straight line. That means, that it's a linear function. So it can't be an exponential function. <bookmark mark=\"orange_in\"/>The orange graph is a square root function. So it can't be an exponential function either. We can also see that the orange graph is not an exponential function by <bookmark mark=\"slow_increase\"/>recognizing, that it is increasing more and more slowly. An exponential function on the other hand would increase more and more quickly. Which brings us to <bookmark mark=\"green_in\"/>the green graph. It is an exponential function. You can see how it increases at an increasing rate, so the growth factor is greater than one."
     }
   }
 }

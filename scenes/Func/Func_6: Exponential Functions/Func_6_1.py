@@ -1719,7 +1719,7 @@ class Func_6_1_I_1_5(SophiaCursorScene):
         plane=cords[0]
         plot = plane.plot(lambda x: 2*3**x, color=BLUE)
 
-        f_general = MathTex("f(x)=a^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_general = MathTex("f(x)=b^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         f_2 = MathTex("f(x)=2^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         f_3 = MathTex("f(x)=3^x", "", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         f_3_alt = MathTex("f(x)=3^x", "=\\underbrace{3\\cdot\\hdots\\cdot 3}_{x\\text{ times}}", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.2)
@@ -1781,7 +1781,7 @@ class Func_6_1_I_2_1(SophiaCursorScene):
         plot_1 = plane.plot(lambda x: 2**x, color=PURPLE)
         plot_2 = plane.plot(lambda x: 2*x, color=GREEN)
 
-        f_exp = MathTex("f(x)=a^x", color=PURPLE, font_size=fs2).next_to(cords, DOWN, buff=0.2)
+        f_exp = MathTex("f(x)=b^x", color=PURPLE, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         f_lin = MathTex("f(x)=a\cdot x", color=GREEN, font_size=fs2).next_to(cords, DOWN, buff=0.2)
         
         e_1, e_2 = self.translate("Func_6_1.1I21.e1"), self.translate("Func_6_1.1I21.e2")

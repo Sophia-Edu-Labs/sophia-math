@@ -1780,7 +1780,7 @@
       "e2": "Grüner Graph: Lineares Wachstum",
       "e2a": "Lineares Wachstum \\\\$\\Rightarrow$ Addiere bei jedem Schritt",
       "e3": "Lila Graph: Exponentielles Wachstum",
-      "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich a hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
+      "voiceover": "Versuchen wir zu verstehen, was genau exponentielles Wachstum ist. Vergleichen wir es dazu mit linearem Wachstum.\n<break time=\"0.8s\"/>\nDer <bookmark mark=\"plot_1\"/>lilane Graph zeigt exponentielles Wachstum. <split/>\nWir sehen, dass die Funktion steigt, und immer steiler wird. Das liegt daran, dass die Funktion die Form <bookmark mark=\"f_exp\"/>f von x gleich b hoch x hat, das heißt für jedes x wird der Wert der Funktion mit demselben Wert multipliziert, in diesem Fall zwei. Also verdoppelt sie sich in jedem Schritt.\n<break time=\"0.8s\"/>\nDer<bookmark mark=\"plot_2\"/>grüne Graph zeigt lineares Wachstum. <split/>\nDie Funktion wächst mit konstanter Geschwindigkeit. Der Term der Funktion hat ja die <bookmark mark=\"f_lin\"/>Form f von x gleich \"a\" mal x, das heißt für jedes x wird derselbe Wert zur Funktion addiert, in diesem Fall zwei.<bookmark mark=\"explainers_out\"/>\n<break time=\"0.8s\"/>\nWir können uns also merken: <bookmark mark=\"final_exp_1\"/>Bei exponentiellem Wachstum multiplizieren wir die Funktion bei jedem Schritt um einen Wert, <bookmark mark=\"final_exp_2\"/>bei linearem Wachstum addieren wir bei jedem Schritt einen Wert."
     },
     "1I2q": {
       "answer": {
@@ -1832,7 +1832,7 @@
       "voiceover": "Du siehst, dass ich nach null Jahren, also am Anfang <bookmark mark=\"one_in\"/>zwei Pflanzen habe. <split/>Die hab ich ja eingepflanzt.\nNach einem Jahr sind es dann schon <bookmark mark=\"six_in\"/>sechs Pflanzen, da sich jede der beiden Pflanzen verdreifacht hat.\nUnd nach zwei Jahren sind es <bookmark mark=\"eighteen_in\"/>achtzehn Pflanzen, <split/>und so weiter...\n<break time=\"0.8s\"/>\nWelche Funktion beschreibt nun die Anzahl der Pflanzen, die ich nach x Jahren in meinem Garten habe?<split/>\nIst es die Funktion <bookmark mark=\"f_in\"/> f von x gleich drei mal zwei hoch x?<break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"g_in\"/> g von x gleich 2 hoch x plus 3 hoch x? <break time=\"0.4s\"/>\nOder ist es die Funktion <bookmark mark=\"h_in\"/> h von x gleich zwei mal drei hoch x?"
     },
     "I15": {
-      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich a hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren diesen Wert<bookmark mark=\"f_3_alt\"/> x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
+      "voiceover": "Du hast jetzt die Grundlagen von Exponentialfunktionen kennengelernt und schon ein bisschen<bookmark mark=\"smile\"/> geübt. super!\n<break time=\"1.4s\"/>\n<bookmark mark=\"recap\"/>\nDie Exponentialfunktionen die wir bisher kennengelernt haben, sind alle in der Form f von x gleich b hoch x.\nZum Beispiel die Funktion <bookmark mark=\"f_2\"/> f von x gleich zwei hoch x, <split/>\noder die Funktion <bookmark mark=\"f_3\"/> f von x gleich drei hoch x.<split/> Das heißt wir betrachten einen Wert, zum Beispiel drei und multiplizieren diesen Wert<bookmark mark=\"f_3_alt\"/> x mal mit sich selbst, und je höher x ist, desto häufiger multiplizieren wir es mit sich selbst.\nIn diesen beiden Fällen <bookmark mark=\"plot\"/>geht der Graph nach oben, und je höher x wird, desto steiler wird er."
     },
     "I5": {
       "a": {
@@ -1895,7 +1895,7 @@
       "voiceover": "{self.intro}\nWenn wir den Graphen anschauen, sehen wir dass <bookmark mark=\"x_one\"/>er an der Stelle x gleich eins gleich den Wert <bookmark mark=\"f_x_one\"/> {self.a} hat.\n<break time=\"0.5s\"/>\nDas bedeutet also, dass a hoch eins gleich {self.a} ist.<bookmark mark=\"sol\"/> Also muss \"a\" {self.a} sein.\n<split/>\nWir können das auch <bookmark mark=\"verify\"/>verifizieren, indem wir <bookmark mark=\"x_max\"/>f von {self.x_max} berechnen.\n<break time=\"0.5s\"/>\nWenn wir uns das Diagramm ansehen, können wir Folgendes sehen: <bookmark mark=\"x_max_graph\"/>\nes muss {self.a**self.x_max} sein. Um dies zu überprüfen, berechnen wir \"a\" hoch {self.x_max} für \"a\" gleich {self.a}.\n<break time=\"0.5s\"/>\n<bookmark mark=\"verify_2\"/>Dies ist {self.a} hoch {self.x_max}, <bookmark mark=\"verify_3\"/>was {self.a**self.x_max} ergibt.\n<break time=\"0.5s\"/>\nDies passt zum Wert in der Grafik."
     },
     "GraphToGrowthFactorQuestionScene": {
-      "voiceover": "{self.intro}<bookmark mark=\"plot\"/> diesen Graphen, der zu einer exponentiellen <bookmark mark=\"function\"/>Funktion f\n<bookmark mark=\"fx\"/> von x <bookmark mark=\"fa\"/> gleich a <bookmark mark=\"xx\"/>hoch x gehört.\n<break time=\"0.4s\"/><bookmark mark=\"q\"/>Welchen Wert hat der Wachstumsfaktor <bookmark mark=\"q_a\"/>\"a\", der zu diesem Graphen führt?"
+      "voiceover": "{self.intro}<bookmark mark=\"plot\"/> diesen Graphen, der zu einer exponentiellen <bookmark mark=\"function\"/>Funktion f\n<bookmark mark=\"fx\"/> von x <bookmark mark=\"fa\"/> gleich b <bookmark mark=\"xx\"/>hoch x gehört.\n<break time=\"0.4s\"/><bookmark mark=\"q\"/>Welchen Wert hat der Wachstumsfaktor <bookmark mark=\"q_a\"/>\"b\", der zu diesem Graphen führt?"
     },
     "GrowthFactorToGraphAnswerScene": {
       "ed": "exponentieller Abfall",
@@ -1911,7 +1911,7 @@
     },
     "I1": {
       "title": "Exponentialfunktion",
-      "voiceover": "Der Term einer Exponentialfunktion lautet ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nUnd wir haben uns eben immer Werte angeschaut, <bookmark mark=\"a\"/>wo a größer als eins war, zum Beispiel die <bookmark mark=\"g\"/>Funktion g von x gleich zwei hoch x oder <bookmark mark=\"h\"/>die Funktion h von x gleich drei hoch x.\n<break time=\"0.4s\"/>\nWas ist jetzt aber,<bookmark mark=\"qmark\"/> wenn wir uns Werte anschauen, <bookmark mark=\"a_l1\"/>wo a zwischen Null und Eins liegt?<split/><bookmark mark=\"switch\"/>\nMüsste die Funktion <bookmark mark=\"decrease\"/>dann nicht abnehmen?<break time=\"0.6s\"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?\n<split/>Das sehen wir uns jetzt anhand eines beispiels genauer an."
+      "voiceover": "Der Term einer Exponentialfunktion lautet ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>b hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nUnd wir haben uns eben immer Werte angeschaut, <bookmark mark=\"a\"/>wo b größer als eins war, zum Beispiel die <bookmark mark=\"g\"/>Funktion g von x gleich zwei hoch x oder <bookmark mark=\"h\"/>die Funktion h von x gleich drei hoch x.\n<break time=\"0.4s\"/>\nWas ist jetzt aber,<bookmark mark=\"qmark\"/> wenn wir uns Werte anschauen, <bookmark mark=\"a_l1\"/>wo b zwischen Null und Eins liegt?<split/><bookmark mark=\"switch\"/>\nMüsste die Funktion <bookmark mark=\"decrease\"/>dann nicht abnehmen?<break time=\"0.6s\"/> Schließlich multiplizieren wir die Funktion ja immer mit einem Wert, der kleiner ist als 1?\n<split/>Das sehen wir uns jetzt anhand eines beispiels genauer an."
     },
     "I2": {
       "a": {
@@ -1947,15 +1947,15 @@
       }
     },
     "I2X": {
-      "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>a hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>a zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>a größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>a zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
+      "voiceover": "Super! Wir kennen jetzt zwei verschiedene Arten von Exponentialfunktionen!\n<break time=\"0.4s\"/>\nDer Term einer Exponentialfunktion ist ja <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>b hoch <bookmark mark=\"fxx\"/> x.\n<break time=\"0.4s\"/>\nDer Graph einer Exponentialfunktion hat je nach Wert von <bookmark mark=\"a\"/>b zwei verschiedene Formen.<break time=\"0.4s\"/><split/>\nWenn <bookmark mark=\"a_g1\"/>b größer als eins ist, erhöht sich die Funktion<bookmark mark=\"plot_1\"/> mit zunehmender Geschwindigkeit, also wird er mit zunehmendem x immer steiler.<break time=\"0.4s\"/>Wenn <bookmark mark=\"a_l1\"/>b zwischen Null und Eins liegt, nimmt die Funktion<bookmark mark=\"plot_2\"/> mit abnehmender Geschwindigkeit ab\nDie Steigung nimmt also ab und der Graph wird mit zunehmendem x immer flacher."
     },
     "I3": {
       "q": {
-        "question-text": "Was ist der Wert des Wachstumsfaktor $a$?"
+        "question-text": "Was ist der Wert des Wachstumsfaktor $b$?"
       },
       "title": "Wachstumsfaktor",
       "verify": "Überprüfe:",
-      "voiceover": "Wichtiger Begriff im Kontext von Exponentialfunktionen:<bookmark mark=\"underline\"/>Der Wachstumsfaktor.\n<break time=\"0.3s\"/>\nWir wissen ja, dass der Term einer Exponentialfunktion <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>\"a\" hoch <bookmark mark=\"fxx\"/> x lautet.\n<break time=\"0.3s\"/>\nDann wird der Wert<bookmark mark=\"a\"/> \"a\" als Wachstumsfaktor bezeichnet.\n<break time=\"0.3s\"/>\nEr wird so genannt, weil er bestimmt, wie schnell die Funktion wächst oder abnimmt.\n<split/>\nBetrachte zum Beispiel die Funktion <bookmark mark=\"func_in\"/>von diesem Graphen.\n<break time=\"1s\"/>\nWie lautet der Wachstumsfaktor a, der zu dem Graphen führt?",
+      "voiceover": "Wichtiger Begriff im Kontext von Exponentialfunktionen:<bookmark mark=\"underline\"/>Der Wachstumsfaktor.\n<break time=\"0.3s\"/>\nWir wissen ja, dass der Term einer Exponentialfunktion <bookmark mark=\"f\"/>f von <bookmark mark=\"fx\"/>x gleich <bookmark mark=\"fa\"/>\"b\" hoch <bookmark mark=\"fxx\"/> x lautet.\n<break time=\"0.3s\"/>\nDann wird der Wert<bookmark mark=\"a\"/> \"b\" als<bookmark mark=\"growth_factor\"/> Wachstumsfaktor bezeichnet.\n<break time=\"0.3s\"/>\nEr wird so genannt, weil er bestimmt, wie schnell die Funktion wächst oder abnimmt.\nUnd man nennt den Wachstumsfaktor manchmal auch \"Basis\".\nBetrachte zum Beispiel die Funktion <bookmark mark=\"func_in\"/>von diesem Graphen.\n<break time=\"1s\"/>\nWie lautet der Wachstumsfaktor b, der zu dem Graphen führt?",
       "x-minutes_1": "Was ist der Wert von",
       "x-minutes_2": "dem Wachstumsfaktor"
     },
@@ -2177,6 +2177,12 @@
     },
     "I36": {
       "voiceover": "Wir haben nun gesehen, wie man mit Exponentialfunktionen der Form <bookmark mark=\"f_in\"/> f von x gleich a mal b hoch x arbeitet. Der Wert <bookmark mark=\"a\"/>von a ist ein Skalierungsfaktor, und wir können ihn finden, indem wir den Funktionswert bei x gleich null betrachten.\nDer Wert <bookmark mark=\"b\"/>von b ist der Wachstumsfaktor und beschreibt, wie schnell die Funktion zunimmt. Wir können ihn finden, indem wir die Funktionswerte von zwei aufeinanderfolgenden x-Werten vergleichen.\n<bookmark mark=\"praise\"/>Sehr gut! Das bringt uns ein gutes Stück näher daran, Exponentialfunktionen zu meistern! Weiter so!!!"
+    },
+    "I4": {
+      "voiceover": "Wir haben also Exponentialfunktionen mit einem Wachstumsfaktor <bookmark mark=\"large_base\"/>größer als eins und Exponentialfunktionen mit einem Wachstumsfaktor <bookmark mark=\"small_base\"/>zwischen 0 und 1 gesehen.\nSchau dir jetzt den <bookmark mark=\"green_graph\"/>grünen Graphen an. In welchem Bereich liegt der Wert des Wachstumsfaktors dieser Funktion?",
+      "a": {
+        "voiceover": "Wenn wir die <bookmark mark=\"highlight_pink\"/> pinke Funktion, bei der b größer als eins ist, mit der <bookmark mark=\"highlight_green\"/> grünen Funktion vergleichen, können wir sehen, dass die pinke Funktion einfach die grüne Funktion <bookmark mark=\"show_reflection\"/> an der x-Achse gespiegelt ist. Also ist der Wert von b bei der grünen Funktion ebenfalls <bookmark mark=\"solution_in\"/> größer als eins, der einzige Unterschied besteht darin, dass die gesamte Funktion mit minus eins multipliziert wird..."
+      }
     }
   },
   "Func_6_2_P_1_a": {
@@ -2867,7 +2873,8 @@
     "increase": "Erhöhung",
     "decrease": "Abfall",
     "value": "Wert",
-    "budget": "Budget"
+    "budget": "Budget",
+    "base": "Basis"
   },
   "Func_6_P": {
     "22": {
@@ -2952,8 +2959,21 @@
           "question-text": "Welche der drei Terme beschreibt keine Exponentialfunktion?",
           "none": "Alle Terme beschreiben Exponentialfunktionen",
           "voiceover": "Ich zeige dir jetzt drei Funktionsterme. Welcher von ihnen beschreibt KEINE exponentielle Funktion?\nIst es die <bookmark mark=\"f_1_in\"/>Funktion f von x gleich zwei hoch x minus eins? Oder ist es die <bookmark mark=\"f_2_in\"/>Funktion h von y gleich zwei hoch y halbe? Oder ist es die <bookmark mark=\"f_3_in\"/>Funktion g von z gleich z hoch x plus 1?"
+        },
+        "a": {
+          "voiceover": "Die Funktion <bookmark mark=\"highlight_f_1\"/> f von x ist eine exponentielle Funktion. Die <bookmark mark=\"f1_base\"/>Basis ist gleich zwei und der <bookmark mark=\"f1_exponent\"/>Exponent ist x minus 1. Die <bookmark mark=\"highlight_f_2\"/>Funktion h von y ist ebenfalls eine exponentielle Funktion. Die <bookmark mark=\"f2_base\"/>Basis ist gleich zwei und der <bookmark mark=\"f2_exponent\"/>Exponent ist y geteilt durch 2. Die <bookmark mark=\"highlight_f_3\"/>Funktion g von z ist keine exponentielle Funktion. Dies liegt daran, dass die abhängige Variable z <bookmark mark=\"z_not_in_exponent\"/>in der Basis und nicht im Exponenten ist.<bookmark mark=\"done\"/>"
         }
       }
+    }
+  },
+  "Func_6_P_recognize_growth_1": {
+    "q": {
+      "voiceover": "Ich zeige <bookmark mark=\"three_in\"/>dir gleich drei Funktionsgraphen. Genau einer von ihnen gehört zu einer Exponentialfunktion. <bookmark mark=\"cords_in\"/>Kannst du mir sagen, welcher? Ist <bookmark mark=\"orange_in\"/> es der orangene Graph, oder ist es <bookmark mark=\"green_in\"/> der grüne Graph, oder ist es <bookmark mark=\"blue_in\"/> der blaue Graph?",
+      "question-text": "Welcher der Graphen beschreibt eine Exponentialfunktion?",
+      "answer-options": "[\"Der orangene Graph\", \"Der grüne Graph\", \"Der blaue Graph\", \"keiner der Graphen\"]"
+    },
+    "a": {
+      "voiceover": "Der <bookmark mark=\"blue_in\"/>blaue Graph ist einfach eine gerade Linie. Das bedeutet, dass er eine lineare Funktion beschreibt. Also kann er keine exponentielle Funktion sein. <bookmark mark=\"orange_in\"/>Der orangefarbene Graph ist eine Wurzelfunktion. Also kann auch er keine Exponentialfunktion sein. Wir können auch erkennen, dass der orangene Graph keine Exponentialfunktion ist, indem wir <bookmark mark=\"slow_increase\"/>erkennen, dass er immer langsamer ansteigt. Eine Exponentialfunktion hingegen würde immer schneller ansteigen. Das bringt uns zum <bookmark mark=\"green_in\"/>grünen Graphen. Er ist eine Exponentialfunktion. Man kann sehen, wie er mit immer schneller ansteigt, also ist der Wachstumsfaktor größer als eins."
     }
   }
 }

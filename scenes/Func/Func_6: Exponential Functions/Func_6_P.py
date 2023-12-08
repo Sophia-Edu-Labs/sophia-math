@@ -30,12 +30,12 @@ import ast
 #####################################
 class Func_6_P_recognize_growth_1_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$\\tfrac{3^x}{3^2}$", "$(\\sqrt3)^{^x}$", "$\\tfrac{3^x}{3^{-2}}$", "$3^x\\cdot3^{\\frac12}$"],
-    #         correctAnswerIndex = 1,
-    #         questionText=self.translate("Func_6_P.211.q.question-text")
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ast.literal_eval((self.translate("Func_6_P_recognize_growth_1.q.answer-options"))),
+            correctAnswerIndex = 1,
+            questionText=self.translate("Func_6_P_recognize_growth_1.q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -60,10 +60,7 @@ class Func_6_P_recognize_growth_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-I'm going to show you <bookmark mark="three_in"/>three function graphs. Exactly one of them belongs to an exponential function. <bookmark mark="cords_in"/>Can you tell which one? Is <bookmark mark="orange_in"/> it the orange graph, or is it <bookmark mark="green_in"/> the green graph, or is it <bookmark mark="blue_in"/> the blue graph?
-"""
+                text=self.translate("Func_6_P_recognize_growth_1.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("three_in")
@@ -97,14 +94,9 @@ I'm going to show you <bookmark mark="three_in"/>three function graphs. Exactly 
 
         self.wait(4)
 
+
 class Func_6_P_recognize_growth_1_a(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$\\tfrac{3^x}{3^2}$", "$(\\sqrt3)^{^x}$", "$\\tfrac{3^x}{3^{-2}}$", "$3^x\\cdot3^{\\frac12}$"],
-    #         correctAnswerIndex = 1,
-    #         questionText=self.translate("Func_6_P.211.q.question-text")
-    #     )
 
     # Main method for constructing the animation
     def construct(self):
@@ -129,12 +121,9 @@ class Func_6_P_recognize_growth_1_a(SophiaCursorScene):
 
         expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
 
-        # Action Sequence
+        # Action Sequenceself.translate("General.incorrect_3")+
         with self.voiceover(
-                text=
-"""
-So the <bookmark mark="blue_in"/>blue graph is simply a straight line. That means, that it's a linear function. So it can't be an exponential function. <bookmark mark="orange_in"/>The orange graph is a square root function. So it can't be an exponential function either. We can also see that the orange graph is not an exponential function by <bookmark mark="slow_increase"/>recognizing, that it is increasing more and more slowly. An exponential function on the other hand would increase more and more quickly. Which brings us to <bookmark mark="green_in"/>the green graph. It is an exponential function. You can see how it increases at an increasing rate, so the growth factor is greater than one.
-"""
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P_recognize_growth_1.a.voiceover")
         ) as tracker:
             
 
@@ -159,9 +148,173 @@ So the <bookmark mark="blue_in"/>blue graph is simply a straight line. That mean
             self.add_pencil_sound(1.5)
             self.play(Write(f_2), f_1.animate.set_color(GREY), f_3.animate.set_color(GREY))
 
+        self.wait(4)
 
+class Func_6_P_recognize_growth_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+        self.add(cords)
+
+        f_1 = plane.plot(lambda x: 14*x**0.5, color=ORANGE)
+        f_2 = plane.plot(lambda x: 2**x, color=GREEN)
+        f_3 = plane.plot(lambda x: (32/5)*x, color=BLUE)
+        x,y,_ = plane.c2p(0,0)
+
+        cursor = AltCursor(idle=True, x=x, y=y)
+        self.add(cursor)
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequenceself.translate("General.incorrect_3")+
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_6_P_recognize_growth_1.a.voiceover")
+        ) as tracker:
+            
+
+            self.wait_until_bookmark("blue_in")
+            cursor.idle=False
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_3.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("orange_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_1.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("slow_increase")
+            cc = cursor.copy()._start_fading(8)
+            self.play(MoveAlongPath(cc, f_1), run_time=6)
+
+
+            self.wait_until_bookmark("green_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_2.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_2), f_1.animate.set_color(GREY), f_3.animate.set_color(GREY))
 
         self.wait(4)
+
+class Func_6_P_recognize_growth_1_c(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+        self.add(cords)
+
+        f_1 = plane.plot(lambda x: 14*x**0.5, color=ORANGE)
+        f_2 = plane.plot(lambda x: 2**x, color=GREEN)
+        f_3 = plane.plot(lambda x: (32/5)*x, color=BLUE)
+        x,y,_ = plane.c2p(0,0)
+
+        cursor = AltCursor(idle=True, x=x, y=y)
+        self.add(cursor)
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequenceself.translate("General.incorrect_3")+
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P_recognize_growth_1.a.voiceover")
+        ) as tracker:
+            
+
+            self.wait_until_bookmark("blue_in")
+            cursor.idle=False
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_3.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("orange_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_1.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("slow_increase")
+            cc = cursor.copy()._start_fading(8)
+            self.play(MoveAlongPath(cc, f_1), run_time=6)
+
+
+            self.wait_until_bookmark("green_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_2.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_2), f_1.animate.set_color(GREY), f_3.animate.set_color(GREY))
+
+        self.wait(4)
+
+class Func_6_P_recognize_growth_1_d(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        three = ImageMobject(assets_folder / "img" / "three_baloony.png")
+        three = three.scale(4/three.get_width()).set_x(-5).shift(.4*UP)
+
+        cords = self.add_cords([0, 5, 1], [0, 32, 8], x_ticks=[], y_ticks=[])
+        plane = cords[0]
+        self.add(cords)
+
+        f_1 = plane.plot(lambda x: 14*x**0.5, color=ORANGE)
+        f_2 = plane.plot(lambda x: 2**x, color=GREEN)
+        f_3 = plane.plot(lambda x: (32/5)*x, color=BLUE)
+        x,y,_ = plane.c2p(0,0)
+
+        cursor = AltCursor(idle=True, x=x, y=y)
+        self.add(cursor)
+
+        expression = MathTex("3^{\\tfrac x2}", color=c1t, font_size=fs1)
+
+        # Action Sequenceself.translate("General.incorrect_3")+
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P_recognize_growth_1.a.voiceover")
+        ) as tracker:
+            
+
+            self.wait_until_bookmark("blue_in")
+            cursor.idle=False
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_3.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("orange_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_1.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("slow_increase")
+            cc = cursor.copy()._start_fading(8)
+            self.play(MoveAlongPath(cc, f_1), run_time=6)
+
+
+            self.wait_until_bookmark("green_in")
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(f_2.get_end()))._start_fading(2))
+            self.add_pencil_sound(1.5)
+            self.play(Write(f_2), f_1.animate.set_color(GREY), f_3.animate.set_color(GREY))
+
+        self.wait(4)
+        gbv 
 
 #####################################
 #####################################
@@ -477,13 +630,13 @@ class Func_6_P_recognize_growth_2_d(SophiaCursorScene):
 #####################################
 class Func_6_P_recognize_growth_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ast.literal_eval((self.translate("Func_6_P.recognize_growth.2.q.answer-options"))),
-    #         correctAnswerIndex = 1,
-    #         questionText=self.translate("Func_6_P.recognize_growth.2.q.question-text")
-    #     )
-#out of <bookmark mark="overview"/>these three situations, which is not described by an exponential function?
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$f(x)=2^{x-1}$", "$h(y)=2^{y/2}$", "$g(z)=z^{x+1}$", self.translate("Func_6_P.recognize_growth.3.q.none")],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_6_P.recognize_growth.3.q.question-text")    
+        )
+    
     #Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -493,15 +646,11 @@ class Func_6_P_recognize_growth_3_q(SophiaCursorScene):
         func_1 = MathTex("f(x)=2^{x-1}", color=c1t, font_size=fs1)
         func_2 = MathTex("h(y)=2^{y/2}", color=c1t, font_size=fs1)
         func_3 = MathTex("g(z)=z^{x+1}", color=c1t, font_size=fs1)
-        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(0.4)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-I'm now going to show you three function terms. Which of them does not describe an exponential function?
-Is it the <bookmark mark="f_1_in"/>function f of x equals two to the power of x minus one? Or is it the <bookmark mark="f_2_in"/>function h of y equals to two to the power of y over two? Or is it the <bookmark mark="f_3_in"/>function g of z, which is equal to two times z plus two to the power of x plus one?
-"""
+                text=self.translate("Func_6_P.recognize_growth.3.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_1_in")
@@ -512,6 +661,239 @@ Is it the <bookmark mark="f_1_in"/>function f of x equals two to the power of x 
 
             self.wait_until_bookmark("f_3_in")
             self.play(Write(func_3))
+
+        self.wait(5)
+
+
+class Func_6_P_recognize_growth_3_a(SophiaCursorScene):
+    
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func_1 = MathTex("f(x)=", "2", "^{x-1}", color=c1t, font_size=fs1)
+        func_2 = MathTex("h(y)=", "2", "^{y/2}", color=c1t, font_size=fs1)
+        func_3 = MathTex("g(z)=", "z", "^{x+1}", color=c1t, font_size=fs1)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
+        self.add(funcs)
+
+        cursor=AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_P.recognize_growth.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_f_1")
+            self.play(func_1.animate.set_color(BLUE_D))
+
+            self.wait_until_bookmark("f1_base")
+            x,y,_ = func_1[1].get_center()+.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f1_exponent")
+            x,y,_ = func_1[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_2")
+            self.play(func_2.animate.set_color(BLUE_D), func_1.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("f2_base")
+            x,y,_ = func_2[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f2_exponent")
+            x,y,_ = func_2[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_3")
+            self.play(func_3.animate.set_color(BLUE_D), func_2.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("z_not_in_exponent")
+            x,y,_ = func_3[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("done")
+            self.play(func_3.animate.set_color(RED), CursorMoveTo(cursor, 0, -1), run_time=.6)
+            cursor.idle=True
+
+        self.wait(5)
+
+class Func_6_P_recognize_growth_3_b(SophiaCursorScene):
+    
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func_1 = MathTex("f(x)=", "2", "^{x-1}", color=c1t, font_size=fs1)
+        func_2 = MathTex("h(y)=", "2", "^{y/2}", color=c1t, font_size=fs1)
+        func_3 = MathTex("g(z)=", "z", "^{x+1}", color=c1t, font_size=fs1)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
+        self.add(funcs)
+
+        cursor=AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_P.recognize_growth.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_f_1")
+            self.play(func_1.animate.set_color(BLUE_D))
+
+            self.wait_until_bookmark("f1_base")
+            x,y,_ = func_1[1].get_center()+.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f1_exponent")
+            x,y,_ = func_1[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_2")
+            self.play(func_2.animate.set_color(BLUE_D), func_1.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("f2_base")
+            x,y,_ = func_2[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f2_exponent")
+            x,y,_ = func_2[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_3")
+            self.play(func_3.animate.set_color(BLUE_D), func_2.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("z_not_in_exponent")
+            x,y,_ = func_3[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("done")
+            self.play(func_3.animate.set_color(RED), CursorMoveTo(cursor, 0, -1), run_time=.6)
+            cursor.idle=True
+
+        self.wait(5)
+
+class Func_6_P_recognize_growth_3_c(SophiaCursorScene):
+    
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func_1 = MathTex("f(x)=", "2", "^{x-1}", color=c1t, font_size=fs1)
+        func_2 = MathTex("h(y)=", "2", "^{y/2}", color=c1t, font_size=fs1)
+        func_3 = MathTex("g(z)=", "z", "^{x+1}", color=c1t, font_size=fs1)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
+        self.add(funcs)
+
+        cursor=AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_1")+self.translate("Func_6_P.recognize_growth.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_f_1")
+            self.play(func_1.animate.set_color(BLUE_D))
+
+            self.wait_until_bookmark("f1_base")
+            x,y,_ = func_1[1].get_center()+.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f1_exponent")
+            x,y,_ = func_1[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_2")
+            self.play(func_2.animate.set_color(BLUE_D), func_1.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("f2_base")
+            x,y,_ = func_2[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f2_exponent")
+            x,y,_ = func_2[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_3")
+            self.play(func_3.animate.set_color(BLUE_D), func_2.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("z_not_in_exponent")
+            x,y,_ = func_3[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("done")
+            self.play(func_3.animate.set_color(RED), CursorMoveTo(cursor, 0, -1), run_time=.6)
+            cursor.idle=True
+
+        self.wait(5)
+
+class Func_6_P_recognize_growth_3_d(SophiaCursorScene):
+    
+    #Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func_1 = MathTex("f(x)=", "2", "^{x-1}", color=c1t, font_size=fs1)
+        func_2 = MathTex("h(y)=", "2", "^{y/2}", color=c1t, font_size=fs1)
+        func_3 = MathTex("g(z)=", "z", "^{x+1}", color=c1t, font_size=fs1)
+        funcs = VGroup(func_1, func_2, func_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
+        self.add(funcs)
+
+        cursor=AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_P.recognize_growth.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_f_1")
+            self.play(func_1.animate.set_color(BLUE_D))
+
+            self.wait_until_bookmark("f1_base")
+            x,y,_ = func_1[1].get_center()+.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f1_exponent")
+            x,y,_ = func_1[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_2")
+            self.play(func_2.animate.set_color(BLUE_D), func_1.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("f2_base")
+            x,y,_ = func_2[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("f2_exponent")
+            x,y,_ = func_2[2].get_center()+.3*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("highlight_f_3")
+            self.play(func_3.animate.set_color(BLUE_D), func_2.animate.set_color(GREEN_D))
+
+            self.wait_until_bookmark("z_not_in_exponent")
+            x,y,_ = func_3[1].get_center()+.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("done")
+            self.play(func_3.animate.set_color(RED), CursorMoveTo(cursor, 0, -1), run_time=.6)
+            cursor.idle=True
 
         self.wait(5)
 
