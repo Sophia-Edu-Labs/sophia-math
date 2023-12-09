@@ -6450,7 +6450,7 @@ class Func_6_2_I_4_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_I_5_q(SophiaCursorScene):
+class Func_6_2_I_5_W(SophiaCursorScene):
 
 
     # Main method for constructing the animation
@@ -6460,47 +6460,101 @@ class Func_6_2_I_5_q(SophiaCursorScene):
         self.add_mathgrid()
 
 
-        cords = self.add_cords([0, 4, 1], [-1, 1, 0.5], x_ticks=[], y_ticks=[]).shift(0.4*UP)
-        plane = cords[0]
-        self.add(cords)
+        cords = NumberLine(x_range=[0,6,1], color=c1t, stroke_color=c1t, unit_size=.4).set_y(1.6)
+        cord_digits = VGroup()
+        for idx in range(7):
+            cord_digits.add(MathTex(idx, color=c1t, font_size=fs3).move_to(cords.n2p(idx)).shift(0.3*DOWN))
 
-        warning_sign = ImageMobject(assets_folder / "img" /"warning_sign.png")
-        self.add(warning_sign)
+        warning_sign = ImageMobject(assets_folder / "img" /"warningsign.png").scale(.6).set_x(-5)
 
-        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
-        #b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=1.2)
+        f_tex_2 = f_tex.copy()
+        b_pos = MathTex("b>0", color=c3t, font_size=fs2).next_to(f_tex, DOWN, buff=.6)
+        f_tex_neg_1 = MathTex("f","(x)", "=", "-1", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_neg_1[-2].set_color(BLUE_D)
+        b_neg = MathTex("b<0", color=c3t, font_size=fs2).next_to(f_tex, DOWN, buff=.6)
+        cross = Cross(b_neg, color=RED, stroke_width = 3)
+        b_neg_1 = MathTex("b=-1", color=BLUE_D, font_size=fs2).move_to(b_neg)
         cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
         self.add(cursor, f_tex)
 
+        x_pos = ValueTracker(0)
+        arrow = Arrow(start=cords.n2p(0)+1.4*UP, end=cords.n2p(0)+0.2*UP, color=BLACK, stroke_width=8).add_updater(lambda m: m.set_x(cords.n2p(x_pos.get_value())[0]))
+
         # Action Sequence
-        with self.voiceover(text=
-"""
-Test Test Test Test
-"""
+        with self.voiceover(text=self.translate("Func_6_2.I5.voiceover")
         ) as tracker:
 
-            self.wait_until_bookmark("large_base")
-            cursor.idle=False
-            x,y,_ = b_large.get_start()
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_large.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(b_large), Write(b_vals[0]))
+            self.wait_until_bookmark("warning_in")
+            self.add_shift_sound(0.5)
+            self.play(warning_sign.animate.shift(5*RIGHT), run_time=.5)
 
-            self.wait_until_bookmark("small_base")
-            x,y,_ = b_small.get_start()
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(b_small.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(b_small), Write(b_vals[1]))
+            self.wait_until_bookmark("warning_out")
+            self.add_shift_sound(0.5)
+            self.play(warning_sign.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_exp")
+            self.play(Indicate(f_tex, color=RED, scale_factor=1.4), run_time=3)
+
+            self.wait_until_bookmark("b_neg")
+            self.play(Write(b_neg), run_time=.5)
+            self.play(Write(cross))
+
+            self.wait_until_bookmark("numberline_in")
+            self.play(Create(cords), Create(cord_digits))
+
+            self.wait_until_bookmark("b_neg_1")
+            self.play(Uncreate(cross), run_time=.4)
+            self.play(ReplacementTransform(b_neg, b_neg_1), ReplacementTransform(f_tex, f_tex_neg_1))
+
+            self.wait_until_bookmark("f_3")
+            self.add(arrow)
+            self.play(x_pos.animate.set_value(3), run_time=1)
+            fx_3 = MathTex("-1", "^3", "=", "-1", color=BLUE_D, font_size=fs2).next_to(arrow, UP, buff=.2)
+            self.play(Write(fx_3), run_time=1)
+
+            self.wait_until_bookmark("f_6")
+            self.play(x_pos.animate.set_value(6), Unwrite(fx_3), run_time=1)
+            fx_6 = MathTex("-1", "^6", "=", "1", color=BLUE_D, font_size=fs2).next_to(arrow, UP, buff=.2)
+            self.play(Write(fx_6), run_time=1)
+            self.wait(1.5)
+            self.play(Unwrite(fx_6), run_time=1)
+
+            self.wait_until_bookmark("x_half")
+            self.play(x_pos.animate.set_value(0.5), run_time=1)
+
+            self.wait_until_bookmark("plug_in_x_half")
+            fx_half = MathTex("-1", "^{\\tfrac12}", "=", "\\sqrt{-1}", color=BLUE_D, font_size=fs2).next_to(arrow, UP, buff=.2)
+            self.play(Write(fx_half), run_time=1)
+
+            self.wait_until_bookmark("cross_x_half")
+            cross = Cross(fx_half, color=RED, stroke_width = 3)
+            self.play(Create(cross), run_time=.4)
             
-            self.wait_until_bookmark("green_graph")
-            x,y,_ = a_neg.get_start()
-            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
-            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(a_neg.get_end())))
-            self.add_pencil_sound(1.5)
-            self.play(Create(a_neg), Write(b_vals[2]))
-            cursor.idle=True
+
+            self.wait_until_bookmark("x_quarter")
+            self.play(Unwrite(cross), Unwrite(fx_half), run_time=.4)
+            self.play(x_pos.animate.set_value(0.25), run_time=1)
+
+            self.wait_until_bookmark("plug_in_x_quarter")
+            fx_quarter = MathTex("-1", "^{\\tfrac14}", "=", "\\sqrt[4]{-1}", color=BLUE_D, font_size=fs2).next_to(arrow, UP, buff=.2)
+            self.play(Write(fx_quarter), run_time=1)
+
+            self.wait_until_bookmark("cross_x_quarter")
+            cross = Cross(fx_quarter, color=RED, stroke_width = 3)
+            self.play(Create(cross), run_time=.4)
+
+            self.wait_until_bookmark("cross_neg_1s")
+            cross_1, cross_2 = Cross(f_tex_neg_1, color=RED, stroke_width=3), Cross(b_neg_1, color=RED, stroke_width=3)
+            self.play(Create(cross_1), Create(cross_2), run_time=.4)
+
+            self.wait_until_bookmark("func_general_pos")
+            self.play(Unwrite(cross_1), Unwrite(cross_2), ReplacementTransform(f_tex_neg_1, f_tex_2), Unwrite(b_neg_1), run_time=.4)
+
+            self.wait_until_bookmark("b_pos_in")
+            self.play(Write(b_pos), run_time=.5)
+
+
 
         self.wait(4)
 
