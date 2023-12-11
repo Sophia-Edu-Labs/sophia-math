@@ -2181,8 +2181,14 @@
     "I4": {
       "voiceover": "So we've now seen exponential functions with a growth factor <bookmark mark=\"large_base\"/>larger than one, and exponential functions with a growth factor <bookmark mark=\"small_base\"/>between 0 and 1.\nNow look at the <bookmark mark=\"green_graph\"/>green graph. In what range is the value of the growth factor of this function?",
       "a": {
-        "voiceover": "If we compare the<bookmark mark=\"highlight_pink\"/> pink function, where b is greater than one with the <bookmark mark=\"highlight_green\"/>green function, we can see, that the pink function is simply the green function<bookmark mark=\"show_reflection\"/> reflected at the x-axis. So the value of b is also <bookmark mark=\"solution_in\"/>greater than one for the green function. The only difference is that the entire function is multiplied by negative one..."
+        "voiceover": "If we compare the<bookmark mark=\"highlight_pink\"/> pink function, where b is greater than one with the <bookmark mark=\"highlight_green\"/>green function, we can see, that the pink function is simply the green function<bookmark mark=\"show_reflection\"/> reflected at the x-axis. So the value of b is also <bookmark mark=\"solution_in\"/>greater than one for the green function. The only difference is that the entire function<bookmark mark=\"neg_mult_in\"/> is multiplied by negative one..."
       }
+    },
+    "I5": {
+      "voiceover": "<bookmark mark=\"warning_in\"/>Warning! ... A common mistake! <bookmark mark=\"warning_out\"/>In the <bookmark mark=\"highlight_exp\"/>exponential function f of x equals b to the power of x, <bookmark mark=\"b_neg\"/>the value of b must never be negative. But why not?\nLet's consider all x-values <bookmark mark=\"numberline_in\"/>between 0 and 6 for the <bookmark mark=\"b_neg_1\"/>value b equals -1.\nWhole numbers are not a problem here: <bookmark mark=\"f_3\"/>minus one to the power of three equals minus one. Or <bookmark mark=\"f_6\"/>minus one to the power of six, which equals one.\nBut in principle, we should be able to plug in any value. What about, for example, <bookmark mark=\"x_half\"/>x equals one half? <bookmark mark=\"plug_in_x_half\"/>Minus one to the power of one half is the square root of minus one. And that does not exist. <bookmark mark=\"cross_x_half\"/>Minus one to the power of one half is therefore undefined.\nOr let's plug in <bookmark mark=\"x_quarter\"/>x equals one quarter. <bookmark mark=\"plug_in_x_quarter\"/>Minus one to the power of one quarter is the fourth root of minus one. And that does not exist either. <bookmark mark=\"cross_x_quarter\"/>Minus one to the power of one quarter is also undefined.\nSo, we see that we would have a lot of undefined values if we allow a negative value for b, and we want to avoid that. Therefore: <bookmark mark=\"cross_neg_1s\"/>Minus one is not a permissible value for b. And the same applies to all negative numbers. This means: <bookmark mark=\"func_general_pos\"/>In the exponential function f of x equals b to the power of x<bookmark mark=\"b_pos_in\"/>, the growth factor or the base b must always be greater than zero.\n"
+    },
+    "I7": {
+      "voiceover": "We just looked at the growth factor, also known as <bookmark mark=\"highlight_b\"/>base b for exponential functions of the form f of x equals b to the power of x. We found that <bookmark mark=\"b_large_in\"/>for b greater than 1, the function starts small and grows faster and faster. For <bookmark mark=\"b_small_in\"/>b smaller than 1, the function starts large and shrinks more and more slowly. We also learned that <bookmark mark=\"b_pos_in\"/>b can never be smaller than zero... One thing we can do however is <bookmark mark=\"transform_func\"/> add a multiplicative <bookmark mark=\"highlight_a\"/>factor \"a\" to the function. If we set a to negative values, we then get the graphs mirrored along the x-axis. So for \"a\" negative <bookmark mark=\"b_large_neg\"/>and b larger than 1, the function starts with small negative values and the negative values become larger negative values at an increasing rate. For \"a\" negative, <bookmark mark=\"b_small_neg\"/>and b smaller than 1, the function starts with large negative values and the negative values become smaller negative values at a decreasing rate, approaching zero.\nNow that <bookmark mark=\"alpaca_in\"/>was great, congrats for completing this! Understanding the base b is super helpful to understand the dynamics of exponential functions, so it's great that you completed this!"
     }
   },
   "Func_6_2_P_1_a": {
@@ -2330,6 +2336,9 @@
       "X": {
         "voiceover": "Nice, so quick summary: We have an expression of the <bookmark mark=\"expression_in\"/>form a to the power of x equals b. \"a\" and b are given, and we want to find the value of x. ...\nWe can use the logarithm to solve this: <bookmark mark=\"log_in\"/>x is equal to the base b logarithm of a. ... <bookmark mark=\"mark_b\"/>\"b\" is the value, we want to get and <bookmark mark=\"mark_a\"/>a is the base, that we want to raise to a power.<bookmark mark=\"unmark\"/> ...\nOk, <bookmark mark=\"buffalo_in\"/>very nice. We have now learned about the logarithm, which means we know basically all there is to know about exponential functions! way to go!!!"
       }
+    },
+    "I71": {
+      "voiceover": "When you deal with logarithms, there are certain <bookmark mark=\"rules_in\"/>rules that can make your life easier. I'll start by showing them all to you, and then we'll look at each rule in detail.\nThe <bookmark mark=\"rule_1\"/>first rule states <bookmark mark=\"mark_1_1\"/>that the logarithm of a product is equal <bookmark mark=\"mark_1_2\"/>to the sum of the logarithms of the factors.\nThe <bookmark mark=\"rule_2\"/>second rule states <bookmark mark=\"mark_2_1\"/>that the logarithm of a quotient is equal<bookmark mark=\"mark_2_2\"/> to the difference of the logarithms of the numerator and the denominator.\nAnd the <bookmark mark=\"rule_3\"/>third rule states <bookmark mark=\"mark_3_1\"/>that the logarithm of a power is equal<bookmark mark=\"mark_3_2\"/> to the power times the logarithm of the base.\nNow try to memorize these three rules, and let's practice!"
     }
   },
   "Func_6_Intro": {
@@ -2978,6 +2987,14 @@
     },
     "a": {
       "voiceover": "So the <bookmark mark=\"blue_in\"/>blue graph is simply a straight line. That means, that it's a linear function. So it can't be an exponential function. <bookmark mark=\"orange_in\"/>The orange graph is a square root function. So it can't be an exponential function either. We can also see that the orange graph is not an exponential function by <bookmark mark=\"slow_increase\"/>recognizing, that it is increasing more and more slowly. An exponential function on the other hand would increase more and more quickly. Which brings us to <bookmark mark=\"green_in\"/>the green graph. It is an exponential function. You can see how it increases at an increasing rate, so the growth factor is greater than one."
+    }
+  },
+  "6_2_I_6": {
+    "q": {
+      "voiceover": "Look at the <bookmark mark=\"plot_in\"/>green plot, which describes an exponential function. The term of the function is <bookmark mark=\"term_in\"/>f of x equals a times b to the power of x. So we have <bookmark mark=\"factor_a\"/>added a multiplicative factor a... Now the question: In which range is the value of <bookmark mark=\"factor_b\"/>the growth factor, or the base b of this exponential function?"
+    },
+    "a": {
+      "voiceover": "If you look at the blue plot<bookmark mark=\"plot_in\"/>, which describes the function b to the power of x for a value of b  between zero and one, you will see that it has the same shape as our green function, only <bookmark mark=\"mirror\"/>mirrored at the x-axis. So <bookmark mark=\"bullet_1_in\"/>the value of b is between 0 and 1, and we're multiplying it <bookmark mark=\"bullet_2_in\"/>with a negative value for a."
     }
   }
 }

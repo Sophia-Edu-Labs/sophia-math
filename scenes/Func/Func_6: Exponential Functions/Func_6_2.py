@@ -6259,6 +6259,7 @@ class Func_6_2_I_4_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_2_I_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -6280,7 +6281,9 @@ class Func_6_2_I_4_a(SophiaCursorScene):
         
         self.add(b_large, b_small, a_neg)
 
-        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex_neg = MathTex("f","(x)", "=", "-1\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_neg[3].set_color(GREEN)
         b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
         b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
         cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
@@ -6303,6 +6306,9 @@ class Func_6_2_I_4_a(SophiaCursorScene):
 
             self.wait_until_bookmark("solution_in")
             self.play(Write(b_sol))
+
+            self.wait_until_bookmark("neg_mult_in")
+            self.play(TransformMatchingTex(f_tex, f_tex_neg))
 
         self.wait(4)
 
@@ -6327,7 +6333,9 @@ class Func_6_2_I_4_b(SophiaCursorScene):
         
         self.add(b_large, b_small, a_neg)
 
-        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex_neg = MathTex("f","(x)", "=", "-1\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_neg[3].set_color(GREEN)
         b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
         b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
         cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
@@ -6350,6 +6358,9 @@ class Func_6_2_I_4_b(SophiaCursorScene):
 
             self.wait_until_bookmark("solution_in")
             self.play(Write(b_sol))
+
+            self.wait_until_bookmark("neg_mult_in")
+            self.play(TransformMatchingTex(f_tex, f_tex_neg))
 
         self.wait(4)
 
@@ -6374,7 +6385,9 @@ class Func_6_2_I_4_c(SophiaCursorScene):
         
         self.add(b_large, b_small, a_neg)
 
-        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex_neg = MathTex("f","(x)", "=", "-1\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_neg[3].set_color(GREEN)
         b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
         b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
         cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
@@ -6397,6 +6410,9 @@ class Func_6_2_I_4_c(SophiaCursorScene):
 
             self.wait_until_bookmark("solution_in")
             self.play(Write(b_sol))
+
+            self.wait_until_bookmark("neg_mult_in")
+            self.play(TransformMatchingTex(f_tex, f_tex_neg))
 
         self.wait(4)
 
@@ -6421,7 +6437,9 @@ class Func_6_2_I_4_d(SophiaCursorScene):
         
         self.add(b_large, b_small, a_neg)
 
-        f_tex = MathTex("f","(x)", "=", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex = MathTex("f","(x)", "=", "", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex_neg = MathTex("f","(x)", "=", "-1\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_neg[3].set_color(GREEN)
         b_vals = VGroup(Tex("$\\bullet$ $b>1$", color=PINK, font_size=fs2), Tex("$\\bullet$ $0<b<1$", color=BLUE, font_size=fs2), Tex("$\\bullet$ $b=???$", color=GREEN, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
         b_sol = Tex("$\\bullet$ $b>1$", color=GREEN, font_size=fs2).move_to(b_vals[0]).shift(.6*DOWN)
         cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
@@ -6445,8 +6463,10 @@ class Func_6_2_I_4_d(SophiaCursorScene):
             self.wait_until_bookmark("solution_in")
             self.play(Write(b_sol))
 
-        self.wait(4)
+            self.wait_until_bookmark("neg_mult_in")
+            self.play(TransformMatchingTex(f_tex, f_tex_neg))
 
+        self.wait(4)
 
 #####################################
 #####################################
@@ -6549,7 +6569,7 @@ class Func_6_2_I_5_W(SophiaCursorScene):
             self.play(Create(cross_1), Create(cross_2), run_time=.4)
 
             self.wait_until_bookmark("func_general_pos")
-            self.play(Unwrite(cross_1), Unwrite(cross_2), ReplacementTransform(f_tex_neg_1, f_tex_2), Unwrite(b_neg_1), run_time=.4)
+            self.play(Unwrite(cross_1), Unwrite(cross_2), ReplacementTransform(f_tex_neg_1, f_tex_2), Unwrite(b_neg_1), Unwrite(arrow), Unwrite(fx_quarter), Unwrite(cross), run_time=.4)
 
             self.wait_until_bookmark("b_pos_in")
             self.play(Write(b_pos), run_time=.5)
@@ -6560,468 +6580,347 @@ class Func_6_2_I_5_W(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_2_P_2_q(GrowthFactorToGraphQuestionScene):
+class Func_6_2_I_6_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=ast.literal_eval(self.translate("Func_6_2.P2.q.answer-options")),
-            correctAnswerIndex=0,
-            questionText=self.translate("Func_6_2.P2.q.questionText")
+            answerOptions = ["$a>1$", "$a<-1$", "$0<a<1$", "$-1<a<0$"],
+            correctAnswerIndex = 2,
+            questionText=self.translate("Func_6_2.I3.q.question-text")
         )
 
+    # Main method for constructing the animation
     def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.a = 2
-        self.color=PURPLE
-        self.intro = self.translate("Func_6_2_P_2_q.intro")
-
-        self.f1 = lambda x: self.a**x
-        self.f2 = lambda x: x**3
-        self.f3 = lambda x: 50/(self.a**x)
-
-        self.color_1_name = self.translate("Func_6_2_P_2_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_2_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_2_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = GREEN
-
+        # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
-class Func_6_2_P_2_a(GrowthFactorToGraphAnswerScene):
 
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        plot = plane.plot(lambda x: -1*0.5**x, color=GREEN)
+
+        f_tex = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("6_2_I_6.q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot), run_time=1)
+
+            self.wait_until_bookmark("term_in")
+            self.play(Write(f_tex), run_time=1)
+
+            self.wait_until_bookmark("factor_a")
+            x,y,_ = f_tex[3].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y))
+
+            self.wait_until_bookmark("factor_b")
+            x,y,_ = f_tex[5].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y))
+            self.wait(0.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+class Func_6_2_I_6_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
     def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 2
-        self.color=PURPLE
-        self.intro = self.translate("Func_6_2_P_2_a.intro")
-
-        self.f1 = lambda x: self.a**x
-        self.f2 = lambda x: x**3
-        self.f3 = lambda x: 50/(self.a**x)
-
-        self.color_1_name = self.translate("Func_6_2_P_2_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_2_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_2_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = GREEN
-
-        self.idx_correct = 0
-
+        # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
-class Func_6_2_P_2_b(GrowthFactorToGraphAnswerScene):
 
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        plot_pos = plane.plot(lambda x: 0.5**x, color=BLUE)
+        plot = plane.plot(lambda x: -1*0.5**x, color=GREEN)
+        a = ValueTracker(1)
+        plot_updated = always_redraw(lambda: plane.plot(lambda x: a.get_value()*0.5**x, color=GREY))
+        self.add(plot)
+
+        f_tex = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        bullets = VGroup(Tex("$\\bullet$ $0<b<1$", color=c1t, font_size=fs2), Tex("$\\bullet$ $a<1$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_1")+self.translate("6_2_I_6.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot_pos), run_time=1)
+
+
+            self.wait_until_bookmark("mirror")
+            self.add(plot_updated)
+            self.play(a.animate.set_value(-1), run_time=1)
+            self.remove(plot_updated)
+
+            self.wait_until_bookmark("bullet_1_in")
+            x,y,_ = bullets[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Uncreate(plot_pos), Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("bullet_2_in")
+            x,y,_ = bullets[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(bullets[1]), run_time=.5)
+            cursor.idle = True
+
+        self.wait(4)
+
+class Func_6_2_I_6_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
     def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 2
-        self.color=PURPLE
-        self.intro = self.translate("Func_6_2_P_2_b.intro")
-
-        self.f1 = lambda x: self.a**x
-        self.f2 = lambda x: x**3
-        self.f3 = lambda x: 50/(self.a**x)
-
-        self.color_1_name = self.translate("Func_6_2_P_2_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_2_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_2_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = GREEN
-
-        self.idx_correct = 0
-
+        # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
-class Func_6_2_P_2_c(GrowthFactorToGraphAnswerScene):
 
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        plot_pos = plane.plot(lambda x: 0.5**x, color=BLUE)
+        plot = plane.plot(lambda x: -1*0.5**x, color=GREEN)
+        a = ValueTracker(1)
+        plot_updated = always_redraw(lambda: plane.plot(lambda x: a.get_value()*0.5**x, color=GREY))
+        self.add(plot)
+
+        f_tex = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        bullets = VGroup(Tex("$\\bullet$ $0<b<1$", color=c1t, font_size=fs2), Tex("$\\bullet$ $a<1$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_1")+self.translate("6_2_I_6.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot_pos), run_time=1)
+
+
+            self.wait_until_bookmark("mirror")
+            self.add(plot_updated)
+            self.play(a.animate.set_value(-1), run_time=1)
+            self.remove(plot_updated)
+
+            self.wait_until_bookmark("bullet_1_in")
+            x,y,_ = bullets[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Uncreate(plot_pos), Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("bullet_2_in")
+            x,y,_ = bullets[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(bullets[1]), run_time=.5)
+            cursor.idle = True
+
+        self.wait(4)
+
+class Func_6_2_I_6_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
     def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 2
-        self.color=PURPLE
-        self.intro = self.translate("Func_6_2_P_2_b.intro")
-
-        self.f1 = lambda x: self.a**x
-        self.f2 = lambda x: x**3
-        self.f3 = lambda x: 50/(self.a**x)
-
-        self.color_1_name = self.translate("Func_6_2_P_2_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_2_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_2_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = GREEN
-
-        self.idx_correct = 0
-
+        # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
+
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        plot_pos = plane.plot(lambda x: 0.5**x, color=BLUE)
+        plot = plane.plot(lambda x: -1*0.5**x, color=GREEN)
+        a = ValueTracker(1)
+        plot_updated = always_redraw(lambda: plane.plot(lambda x: a.get_value()*0.5**x, color=GREY))
+        self.add(plot)
+
+        f_tex = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        bullets = VGroup(Tex("$\\bullet$ $0<b<1$", color=c1t, font_size=fs2), Tex("$\\bullet$ $a<1$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.correct_1")+self.translate("6_2_I_6.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot_pos), run_time=1)
+
+
+            self.wait_until_bookmark("mirror")
+            self.add(plot_updated)
+            self.play(a.animate.set_value(-1), run_time=1)
+            self.remove(plot_updated)
+
+            self.wait_until_bookmark("bullet_1_in")
+            x,y,_ = bullets[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Uncreate(plot_pos), Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("bullet_2_in")
+            x,y,_ = bullets[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(bullets[1]), run_time=.5)
+            cursor.idle = True
+
+        self.wait(4)
+
+class Func_6_2_I_6_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        plot_pos = plane.plot(lambda x: 0.5**x, color=BLUE)
+        plot = plane.plot(lambda x: -1*0.5**x, color=GREEN)
+        a = ValueTracker(1)
+        plot_updated = always_redraw(lambda: plane.plot(lambda x: a.get_value()*0.5**x, color=GREY))
+        self.add(plot)
+
+        f_tex = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        bullets = VGroup(Tex("$\\bullet$ $0<b<1$", color=c1t, font_size=fs2), Tex("$\\bullet$ $a<1$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(f_tex, DOWN, buff=.3).set_x(-.4)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("General.incorrect_1")+self.translate("6_2_I_6.a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_pencil_sound(1)
+            self.play(Create(plot_pos), run_time=1)
+
+
+            self.wait_until_bookmark("mirror")
+            self.add(plot_updated)
+            self.play(a.animate.set_value(-1), run_time=1)
+            self.remove(plot_updated)
+
+            self.wait_until_bookmark("bullet_1_in")
+            x,y,_ = bullets[0].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), Uncreate(plot_pos), Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("bullet_2_in")
+            x,y,_ = bullets[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(bullets[1]), run_time=.5)
+            cursor.idle = True
+
+        self.wait(4)
 
 #####################################
 #####################################
-class Func_6_2_P_3_q(GraphToGrowthFactorQuestionScene):
+class Func_6_2_I_7_X(SophiaCursorScene):
 
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions = ["$a=3$", "$a=2$", "$a=\\frac{1}{2}$", "$a=-2$"],
-            correctAnswerIndex = 1,
-            questionText=self.translate("Func_6_2.P3.q.question-text")
-        )
-
+    # Main method for constructing the animation
     def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16])
-        self.a = 2
-        self.color=GREEN
-        self.intro = self.translate("Func_6_2_P_3_q.intro")
-
+        # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
+
+        alpaca = ImageMobject(assets_folder / "img" /"alpaca_thumbs.png").scale(.5).set_x(-5)
+
+        cords = self.add_cords([-1, 5, 1], [-2, 2, 1], x_ticks=[], y_ticks=[]).shift(0.4*UP)
+        plane = cords[0]
+        self.add(cords)
+
+        b_large = plane.plot(lambda x: (2**x)/16, color=GREEN)
+        b_small = plane.plot(lambda x: 0.5**x, color=GREEN)
+        neg_b_large = plane.plot(lambda x: -(2**x)/16, color=RED)
+        neg_b_small = plane.plot(lambda x: -(0.5**x), color=RED)
+
+        f_tex = MathTex("f","(x)", "="," ", " ", "b", "^x", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.4)
+        f_tex_a = MathTex("f","(x)", "=","a", "\\cdot ", "b", "^x", color=c1t, font_size=fs2).move_to(f_tex)
+        f_tex_a[3].set_color(RED)
+        b_pos = MathTex("b>0", color=c3t, font_size=fs2).next_to(f_tex, DOWN, buff=.6)
+        cursor = AltCursor(stroke_width=0.0, idle=True, y=-1.2)
+        self.add(cursor, f_tex)
+
+        # Action Sequence
+        with self.voiceover(text=self.translate("Func_6_2.I7.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_b")
+            x,y,_ = f_tex[5].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("b_large_in")
+            x,y,_ = b_large.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(b_large.get_end()))._start_fading(2))
+            self.add_pencil_sound(1)
+            self.play(Create(b_large), run_time=1)
+
+            self.wait_until_bookmark("b_small_in")
+            x,y,_ = b_small.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(b_small.get_end()))._start_fading(2))
+            self.add_pencil_sound(1)
+            self.play(Create(b_small), run_time=1)
+
+            self.wait_until_bookmark("b_pos_in")
+            x,y,_ = b_pos.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+            self.play(Write(b_pos), run_time=1)
+
+            self.wait_until_bookmark("transform_func")
+            self.play(TransformMatchingTex(f_tex, f_tex_a), run_time=1)
+
+            self.wait_until_bookmark("highlight_a")
+            x,y,_ = f_tex_a[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+
+            self.wait_until_bookmark("b_large_neg")
+            x,y,_ = neg_b_large.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(neg_b_large.get_end()))._start_fading(2))
+            self.add_pencil_sound(1)
+            self.play(Create(neg_b_large), run_time=1)
+
+            self.wait_until_bookmark("b_small_neg")
+            x,y,_ = neg_b_small.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.6)
+            self.add(cursor.copy().add_updater(lambda m: m.move_to(neg_b_small.get_end()))._start_fading(2))
+            self.add_pencil_sound(1)
+
+            self.wait_until_bookmark("alpaca_in")
+            self.add_shift_sound(.5)
+            self.play(alpaca.animate.shift(5*RIGHT), Unwrite(neg_b_small), Unwrite(neg_b_large), Unwrite(b_pos), Unwrite(f_tex_a), Unwrite(b_small), Unwrite(b_large), Unwrite(cords), run_time=.5)
+
+
+        self.wait(4)
+
+##########################################################################
 
-class Func_6_2_P_3_a(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16])
-        self.a = 2
-        self.x_max = 4
-        self.color=GREEN
-        self.intro = self.translate("Func_6_2_P_3_a.intro")
-
-        super().construct()
-
-class Func_6_2_P_3_b(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16])
-        self.a = 2
-        self.x_max = 4
-        self.color=GREEN
-        self.intro = self.translate("Func_6_2_P_3_b.intro")
-
-        super().construct()
-
-class Func_6_2_P_3_c(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16])
-        self.a = 2
-        self.x_max = 4
-        self.color=GREEN
-        self.intro = self.translate("Func_6_2_P_3_a.intro")
-
-        super().construct()
-
-class Func_6_2_P_3_d(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 16, 4], x_ticks=[1,2,3,4], y_ticks=[4,8,12,16])
-        self.a = 2
-        self.x_max = 4
-        self.color=GREEN
-        self.intro = self.translate("Func_6_2_P_3_a.intro")
-
-        super().construct()
-
-
-#####################################
-#####################################
-class Func_6_2_P_4_q(GrowthFactorToGraphQuestionScene):
-
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions=ast.literal_eval(self.translate("Func_6_2.P4.q.answer-options")),
-            correctAnswerIndex=2,
-            questionText=self.translate("Func_6_2.P4.q.question-text")
-        )
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[1,2,3,4], y_ticks=[0.25,0.5,0.75,1])
-        self.a = 1/2
-        self.intro = self.translate("Func_6_2_P_4_q.intro")
-
-        self.f1 = lambda x: self.a**(4-x)
-        self.f2 = lambda x: x/4
-        self.f3 = lambda x: self.a**x
-
-        self.color_1_name = self.translate("Func_6_2_P_4_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_4_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_4_q.color_3_name")
-
-        self.c1 = BLUE
-        self.c2 = GREEN
-        self.c3 = ORANGE
-
-        super().construct()
-
-class Func_6_2_P_4_a(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[1,2,3,4], y_ticks=[0.25,0.5,0.75,1])
-        self.x_max = 4
-        self.a = 1/2
-        self.intro = self.translate("Func_6_2_P_4_a.intro")
-
-        self.f1 = lambda x: (4-self.a)**x
-        self.f2 = lambda x: x/4
-        self.f3 = lambda x: self.a**x
-
-        self.color_1_name = self.translate("Func_6_2_P_4_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_4_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_4_q.color_3_name")
-
-        self.c1 = BLUE
-        self.c2 = GREEN
-        self.c3 = ORANGE
-
-        self.idx_correct = 2
-
-        super().construct()
-
-class Func_6_2_P_4_b(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[1,2,3,4], y_ticks=[0.25,0.5,0.75,1])
-        self.x_max = 4
-        self.a = 1/2
-        self.intro = self.translate("Func_6_2_P_4_a.intro")
-
-        self.f1 = lambda x: (4-self.a)**x
-        self.f2 = lambda x: x/4
-        self.f3 = lambda x: self.a**x
-
-        self.color_1_name = self.translate("Func_6_2_P_4_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_4_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_4_q.color_3_name")
-
-        self.c1 = BLUE
-        self.c2 = GREEN
-        self.c3 = ORANGE
-
-        self.idx_correct = 2
-
-        super().construct()
-
-class Func_6_2_P_4_c(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 1, 0.25], x_ticks=[1,2,3,4], y_ticks=[0.25,0.5,0.75,1])
-        self.x_max = 4
-        self.a = 1/2
-        self.intro = self.translate("Func_6_2_P_4_c.intro")
-
-        self.f1 = lambda x: (4-self.a)**x
-        self.f2 = lambda x: x/4
-        self.f3 = lambda x: self.a**x
-
-        self.color_1_name = self.translate("Func_6_2_P_4_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_4_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_4_q.color_3_name")
-        self.c1 = BLUE
-        self.c2 = GREEN
-        self.c3 = ORANGE
-
-        self.idx_correct = 2
-
-        super().construct()
-
-#####################################
-#####################################
-class Func_6_2_P_5_q(GraphToGrowthFactorQuestionScene):
-
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions = ["$a=4$", "$a=2$", "$a=3$", "$a=-2$"],
-            correctAnswerIndex = 0,
-            questionText=self.translate("Func_6_2.P5.q.question-text")
-        )
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 256, 64], x_ticks=[1,2,3,4], y_ticks=[64,128,192,256])
-        self.a = 4
-        self.color=PINK
-        self.intro = self.translate("Func_6_2_P_5_q.intro")
-
-        super().construct()
-
-class Func_6_2_P_5_a(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 256, 64], x_ticks=[1,2,3,4], y_ticks=[64,128,192,256])
-        self.a = 4
-        self.x_max = 4
-        self.color=PINK
-        self.intro = self.translate("Func_6_2_P_5_a.intro")
-
-        super().construct()
-
-class Func_6_2_P_5_b(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 256, 64], x_ticks=[1,2,3,4], y_ticks=[64,128,192,256])
-        self.a = 4
-        self.x_max = 4
-        self.color=PINK
-        self.intro = self.translate("Func_6_2_P_5_b.intro")
-
-        super().construct()
-
-class Func_6_2_P_5_c(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 256, 64], x_ticks=[1,2,3,4], y_ticks=[64,128,192,256])
-        self.a = 4
-        self.x_max = 4
-        self.color=PINK
-        self.intro = self.translate("Func_6_2_P_5_b.intro")
-
-        super().construct()
-
-class Func_6_2_P_5_d(GraphToGrowthFactorAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 256, 64], x_ticks=[1,2,3,4], y_ticks=[64,128,192,256])
-        self.a = 4
-        self.x_max = 4
-        self.color=PINK
-        self.intro = self.translate("Func_6_2_P_5_b.intro")
-
-        super().construct()
-
-
-#####################################
-#####################################
-class Func_6_2_P_6_q(GrowthFactorToGraphQuestionScene):
-
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions=ast.literal_eval(self.translate("Func_6_2.P6.q.answer-options")),
-            correctAnswerIndex=1,
-            questionText=self.translate("Func_6_2.P6.q.question-text")
-        )
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.a = 3
-        self.intro = self.translate("Func_6_2_P_6_q.intro")
-
-        self.f1 = lambda x: x**2
-        self.f2 = lambda x: self.a**x
-        self.f3 = lambda x: self.a**(4-x)
-
-        self.color_1_name = self.translate("Func_6_2_P_6_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_6_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_6_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = PINK
-
-        super().construct()
-
-class Func_6_2_P_6_a(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 3
-        self.intro = self.translate("Func_6_2_P_6_a.intro")
-
-        self.f1 = lambda x: x**2
-        self.f2 = lambda x: self.a**x
-        self.f3 = lambda x: self.a**(4-x)
-
-        self.color_1_name = self.translate("Func_6_2_P_6_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_6_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_6_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = PINK
-
-        self.idx_correct = 1
-
-        super().construct()
-
-class Func_6_2_P_6_b(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 3
-        self.intro = self.translate("Func_6_2_P_6_b.intro")
-
-        self.f1 = lambda x: x**2
-        self.f2 = lambda x: self.a**x
-        self.f3 = lambda x: self.a**(4-x)
-
-        self.color_1_name = self.translate("Func_6_2_P_6_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_6_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_6_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = PINK
-
-        self.idx_correct = 1
-
-        super().construct()
-
-class Func_6_2_P_6_c(GrowthFactorToGraphAnswerScene):
-
-    def construct(self):
-
-        self.cords = self.add_cords([0, 4, 1], [0, 81, 9], x_ticks=[1,2,3,4], y_ticks=[27,54,81])
-        self.x_max = 4
-        self.a = 3
-        self.intro = self.translate("Func_6_2_P_6_a.intro")
-
-        self.f1 = lambda x: x**2
-        self.f2 = lambda x: self.a**x
-        self.f3 = lambda x: self.a**(4-x)
-
-        self.color_1_name = self.translate("Func_6_2_P_6_q.color_1_name")
-        self.color_2_name = self.translate("Func_6_2_P_6_q.color_2_name")
-        self.color_3_name = self.translate("Func_6_2_P_6_q.color_3_name")
-
-        self.c1 = PURPLE
-        self.c2 = BLUE
-        self.c3 = PINK
-
-        self.idx_correct = 1
-
-        super().construct()
 
 
 
 PROTOTYPES=[
-##########################################################################CHAPTER: Growth factor >1, <1
+##########################################################################CHAPTER: Exp. functions decay
     PagePrototypeVideo.from_scene(Func_6_2_I_1),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_q),
     PagePrototypeQuestion.from_scene(Func_6_2_I_2_q),
@@ -7040,6 +6939,33 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_I_2_2_b),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_2_c),
     PagePrototypeVideo.from_scene(Func_6_2_I_2_X),
+##########################################################################CHAPTER: Understanding the growth factor
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_3_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_3_d),
+    PagePrototypeVideo.from_scene(Func_6_2_P_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_P_1_q),
+    PagePrototypeVideo.from_scene(Func_6_2_P_1_a),
+    PagePrototypeVideo.from_scene(Func_6_2_P_1_b),
+    PagePrototypeVideo.from_scene(Func_6_2_P_1_c),
+    PagePrototypeVideo.from_scene(Func_6_2_P_1_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_4_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_4_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_5_W),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_q),
+    PagePrototypeQuestion.from_scene(Func_6_2_I_6_q),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_a),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_b),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_c),
+    PagePrototypeVideo.from_scene(Func_6_2_I_6_d),
+    PagePrototypeVideo.from_scene(Func_6_2_I_7_X),
 ##########################################################################CHAPTER: General form f(x)=a*b^x
     PagePrototypeVideo.from_scene(Func_6_2_I_3_1),
     PagePrototypeVideo.from_scene(Func_6_2_I_3_2_q),
@@ -7146,44 +7072,4 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_I_6_5_c),
     PagePrototypeVideo.from_scene(Func_6_2_I_6_5_d),
     PagePrototypeVideo.from_scene(Func_6_2_I_6_6_X),
-##########################################################################
-    PagePrototypeVideo.from_scene(Func_6_2_I_3_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_I_3_q),
-    PagePrototypeVideo.from_scene(Func_6_2_I_3_a),
-    PagePrototypeVideo.from_scene(Func_6_2_I_3_b),
-    PagePrototypeVideo.from_scene(Func_6_2_I_3_c),
-    PagePrototypeVideo.from_scene(Func_6_2_I_3_d),
-    PagePrototypeVideo.from_scene(Func_6_2_P_1_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_1_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_1_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_1_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_1_c),
-    PagePrototypeVideo.from_scene(Func_6_2_P_1_d),
-    PagePrototypeVideo.from_scene(Func_6_2_P_2_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_2_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_2_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_2_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_2_c),
-    PagePrototypeVideo.from_scene(Func_6_2_P_3_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_3_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_3_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_3_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_3_c),
-    PagePrototypeVideo.from_scene(Func_6_2_P_3_d),
-    PagePrototypeVideo.from_scene(Func_6_2_P_4_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_4_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_4_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_4_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_4_c),
-    PagePrototypeVideo.from_scene(Func_6_2_P_5_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_5_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_5_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_5_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_5_c),
-    PagePrototypeVideo.from_scene(Func_6_2_P_5_d),
-    PagePrototypeVideo.from_scene(Func_6_2_P_6_q),
-    PagePrototypeQuestion.from_scene(Func_6_2_P_6_q),
-    PagePrototypeVideo.from_scene(Func_6_2_P_6_a),
-    PagePrototypeVideo.from_scene(Func_6_2_P_6_b),
-    PagePrototypeVideo.from_scene(Func_6_2_P_6_c),
 ]

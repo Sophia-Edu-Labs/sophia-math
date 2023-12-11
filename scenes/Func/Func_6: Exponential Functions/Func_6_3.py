@@ -922,22 +922,18 @@ class Func_6_3_I_7_1(SophiaCursorScene):
         rules_book = ImageMobject(assets_folder / "img" / "rules_book.png")
         rules_book = rules_book.scale(4/rules_book.get_width()).move_to([-5, 1, 0])
 
-        rule_1 = Tex("$1$) ", "$\\log_a(x\\cdot y)=\\log_a(x)+\\log_a(y)$", color=c1t, font_size=fs3)
-        rule_2 = Tex("$2$) ", "$\\log_a(\\frac xy)=\\log_a(x)-\\log_a(y)$", color=c1t, font_size=fs3)
-        rule_3 = Tex("$3$) ", "$\\log_a\\left(x^y\\right)=y\\cdot \\log_a(x)$", color=c1t, font_size=fs3)
-        rules = VGroup(rule_1, rule_2, rule_3).arrange(DOWN, buff=.4, aligned_edge=LEFT)
+        rule_1 = Tex("$1$) ", "$\\log_a(x\\cdot y)$", " $=$ ", "$\\log_a(x)+\\log_a(y)$", color=c1t, font_size=fs3)
+        rule_2 = Tex("$2$) ", "$\\log_a(\\frac xy)$", " $=$ ", "$\\log_a(x)-\\log_a(y)$", color=c1t, font_size=fs3)
+        rule_3 = Tex("$3$) ", "$\\log_a\\left(x^y\\right)$", " $=$ ", "$y\\cdot \\log_a(x)$", color=c1t, font_size=fs3)
+        rules = VGroup(rule_1, rule_2, rule_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(0.6)
+
+        cursor = AltCursor(idle=True, y=-1)
+        self.add(cursor)
 
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-When you deal with logarithms, there are certain <bookmark mark="rules_in"/>rules that can make your life easier. I'll start by showing them all to you, and then we'll look at each rule in detail.
-The <bookmark mark="rule_1"/>first rule states that the logarithm of a product is equal to the sum of the logarithms of the factors.
-The <bookmark mark="rule_2"/>second rule states that the logarithm of a quotient is equal to the difference of the logarithms of the numerator and the denominator.
-And the <bookmark mark="rule_3"/>third rule states that the logarithm of a power is equal to the power times the logarithm of the base.
-Now try to memorize these three rules, and let's practice!
-"""
+                text=self.translate("Func_6_3.I71.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("rules_in")
@@ -945,14 +941,42 @@ Now try to memorize these three rules, and let's practice!
             self.play(rules_book.animate.shift(5*RIGHT), run_time=0.5)
 
             self.wait_until_bookmark("rule_1")
+            x,y,_ = rule_1.get_center()+0.4*DOWN
             self.add_shift_sound(1)
-            self.play(rules_book.animate.shift(5*RIGHT), Write(rule_1), run_time=1)
+            self.play(rules_book.animate.shift(5*RIGHT), Write(rule_1), CursorMoveTo(cursor,x,y), run_time=1)
+            
+            self.wait_until_bookmark("mark_1_1")
+            x,y, _ = rule_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("mark_1_2")
+            x,y, _ = rule_1[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("rule_2")
-            self.play(Write(rule_2), run_time=1)
+            x,y,_ = rule_2.get_center()+0.4*DOWN
+            self.play(Write(rule_2), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("mark_2_1")
+            x,y, _ = rule_2[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("mark_2_2")
+            x,y, _ = rule_2[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
             self.wait_until_bookmark("rule_3")
-            self.play(Write(rule_3), run_time=1)
+            x,y,_ = rule_3.get_center()+0.4*DOWN
+            self.play(Write(rule_3), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("mark_3_1")
+            x,y, _ = rule_3[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=0.3)
+
+            self.wait_until_bookmark("mark_3_2")
+            x,y, _ = rule_3[3].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), run_time=0.3)
 
         self.wait(4)
 
