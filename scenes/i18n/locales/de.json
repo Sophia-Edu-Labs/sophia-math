@@ -2170,7 +2170,7 @@
       }
     },
     "I31": {
-      "voiceover": "Okay, bisher haben wir uns exponentielle Funktionen der <bookmark mark=\"func_in\"/> Form f von x gleich b hoch x angeschaut, wobei b die Basis und a der Exponent ist. Jetzt werden wir das etwas verallgemeinern und uns Funktionen der Form <bookmark mark=\"func_transform\"/>f von x gleich a mal b hoch x anschauen. So können wir <bookmark mark=\"monkey_in\"/> alle möglichen verrückten Situationen meistern. Los geht's!"
+      "voiceover": "Okay, bisher haben wir uns exponentielle Funktionen der <bookmark mark=\"func_in\"/> Form f von x gleich b hoch x angeschaut, <bookmark mark=\"base_in\"/>wobei b die Basis <bookmark mark=\"exp_in\"/>und a der Exponent ist. Jetzt werden wir das etwas verallgemeinern und uns Funktionen der Form <bookmark mark=\"func_transform\"/>f von x gleich a mal b hoch x anschauen. So können wir <bookmark mark=\"monkey_in\"/> alle möglichen verrückten Situationen meistern. Los geht's!"
     },
     "I32q": {
       "voiceover": "Lass uns damit beginnen, ein Verständnis dafür zu entwickeln, welche Auswirkungen die Werte von a und b haben.\nNimm <bookmark mark=\"func_in\"/>die Funktion f von x gleich a mal b hoch x. Wir beginnen damit, irgendwelche beliebigen  Werte für a und b auszuwählen und den<bookmark mark=\"plot_in\"/> Graphen zu zeichnen.\nJetzt aufgepasst, hier kommt eine Übung: Ich zeige dir zwei Animationen. Eine zeigt, wie wir a erhöhen, die andere zeigt, wie wir b erhöhen. Welche zeigt, wie wir a erhöhen?\nIst <bookmark mark=\"blue_anim\"/>es die blaue Animation? Oder ist <bookmark mark=\"purple_anim\"/>es die lila Animation?\nAlso nochmal<bookmark mark=\"reset_anim\"/>: Zeigt <bookmark mark=\"blue_anim_2\"/> die blaue Animation, wie wir a erhöhen?\nOder zeigt <bookmark mark=\"purple_anim_2\"/> die lilane Animation, wie wir a erhöhen?"
@@ -3024,5 +3024,9 @@
     "a": {
       "voiceover": "Wenn du dir den blauen Graphen<bookmark mark=\"plot_in\">ansiehst, der die Funktion b hoch x für einen Wert von b zwischen null und eins beschreibt, kannst du sehen, dass es dieselbe Form wie unsere grüne Funktion hat, nur <bookmark mark=\"mirror\"/>gespiegelt an der x-Achse. Also <bookmark mark=\"bullet_1_in\"/>liegt der Wert von b zwischen 0 und 1, und wir multiplizieren ihn <bookmark mark=\"bullet_2_in\"/>mit einem negativen Wert für a."
     }
+  },
+  "Words": {
+    "base": "Basis",
+    "exponent": "Exponent"
   }
 }
