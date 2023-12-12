@@ -3022,7 +3022,7 @@
       "voiceover": "Schau dir den<bookmark mark=\"plot_in\"/>grünen Graphen an. Er stellt eine Exponentialfunktion dar. Der Term der Funktion ist <bookmark mark=\"term_in\"/>f von x gleich a mal b hoch x. Also haben wir <bookmark mark=\"factor_a\"/>einen multiplikativen Faktor a hinzugefügt... Jetzt die Frage: In welchem Bereich liegt der Wert <bookmark mark=\"factor_b\"/>des Wachstumsfaktors oder der Basis b dieser Exponentialfunktion?"
     },
     "a": {
-      "voiceover": "Wenn du dir den blauen Graphen<bookmark mark=\"plot_in\">ansiehst, der die Funktion b hoch x für einen Wert von b zwischen null und eins beschreibt, kannst du sehen, dass es dieselbe Form wie unsere grüne Funktion hat, nur <bookmark mark=\"mirror\"/>gespiegelt an der x-Achse. Also <bookmark mark=\"bullet_1_in\"/>liegt der Wert von b zwischen 0 und 1, und wir multiplizieren ihn <bookmark mark=\"bullet_2_in\"/>mit einem negativen Wert für a."
+      "voiceover": "Wenn du dir den blauen Graphen<bookmark mark=\"plot_in\"/>ansiehst, der die Funktion b hoch x für einen Wert von b zwischen null und eins beschreibt, kannst du sehen, dass es dieselbe Form wie unsere grüne Funktion hat, nur <bookmark mark=\"mirror\"/>gespiegelt an der x-Achse. Also <bookmark mark=\"bullet_1_in\"/>liegt der Wert von b zwischen 0 und 1, und wir multiplizieren ihn <bookmark mark=\"bullet_2_in\"/>mit einem negativen Wert für a."
     }
   },
   "Words": {
