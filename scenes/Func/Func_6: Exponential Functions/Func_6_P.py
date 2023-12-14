@@ -10,7 +10,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
 import ast
 
 
@@ -1359,7 +1359,17 @@ class Func_6_2_P_3_q(GraphToGrowthFactorQuestionScene):
         return SophiaTaskDefinition(
             answerOptions = ["$a=3$", "$a=2$", "$a=\\frac{1}{2}$", "$a=-2$"],
             correctAnswerIndex = 1,
-            questionText=self.translate("Func_6_2.P3.q.question-text")
+            questionText=self.translate("Func_6_2.P3.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=3,
+                answerOptionMatcher="$a=\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                },
+                answerOptionDescriptions={
+                    "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                }
+            )
         )
 
     def construct(self):

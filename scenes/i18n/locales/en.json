@@ -301,7 +301,8 @@
       "q": {
         "answer-options": "[\"$D=[-3,3],\\,R=[-3,6]$\", \"$D=[-3,6],\\,R=[-3,6]$\", \"$D=[-3,3],\\,R=[-3,3]$\", \"$D=[-3,6],\\,R=[-3,3]$\"]",
         "func-spoken": "f of x equals x squared minus three",
-        "question-text": "What are the domain D and range R?"
+        "question-text": "What are the domain D and range R?",
+        "answer-option-matchers": "$D=[\\key{d1},\\key{d2}],\\,R=[\\key{w1},\\key{w2}]$"
       }
     },
     "P22": {
@@ -2152,7 +2153,8 @@
     },
     "P3": {
       "q": {
-        "question-text": "Given the green graph, what is the value of $a$?"
+        "question-text": "Given the green graph, what is the value of $a$?",
+        "answer-option-description": "What is the value of a?"
       }
     },
     "P4": {

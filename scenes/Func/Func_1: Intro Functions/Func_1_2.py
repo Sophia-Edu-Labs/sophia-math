@@ -8,7 +8,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
 import ast
 
 
@@ -3291,7 +3291,17 @@ class Func_1_2_P_2_2_q(FuncDefinitionsQuestionScene):
         return SophiaTaskDefinition(
             answerOptions = ast.literal_eval(self.translate("Func_1_2.P22.q.answer-options")),
             correctAnswerIndex = 2,
-            questionText = self.translate("Func_1_2.P21.q.question-text") 
+            questionText = self.translate("Func_1_2.P21.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=3,
+                answerOptionMatcher=self.translate("Func_1_2.P21.q.answer-option-matchers"),
+                answerOptionsTypes={
+                    "d1": "number",
+                    "d2": "number",
+                    "w1": "number",
+                    "w2": "number"
+                }
+            )
         )
 
     def construct(self):

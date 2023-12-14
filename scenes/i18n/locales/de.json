@@ -301,7 +301,8 @@
       "q": {
         "answer-options": "[\"$D=[-3,3],\\,W=[-3,6]$\", \"$D=[-3,6],\\,W=[-3,6]$\", \"$D=[-3,3],\\,W=[-3,3]$\", \"$D=[-3,6],\\,W=[-3,3]$\"]",
         "func-spoken": "f von x ist gleich x Quadrat minus drei",
-        "question-text": "Was sind die Definitionsbereich D und der Wertebereich W?"
+        "question-text": "Was sind die Definitionsbereich D und der Wertebereich W?",
+        "answer-option-matchers": "$D=[\\key{d1},\\key{d2}],\\,W=[\\key{w1},\\key{w2}]$"
       }
     },
     "P22": {
@@ -2149,7 +2150,8 @@
     },
     "P3": {
       "q": {
-        "question-text": "Ausgehend vom grünen Graphen, was ist der Wert von $a$?"
+        "question-text": "Ausgehend vom grünen Graphen, was ist der Wert von $a$?",
+        "answer-option-description": "Was ist der Wert für a?"
       }
     },
     "P4": {

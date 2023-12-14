@@ -3,7 +3,7 @@ import inspect
 import itertools
 from pathlib import Path
 import sys
-from typing import List, Literal, Type, Union, Optional
+from typing import List, Literal, Type, Union, Optional, Dict
 
 from sophialib.styles.sophiascene import SophiaQuestionInfo, SophiaScene
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
@@ -42,22 +42,29 @@ class PagePrototypeQuestion(PagePrototype):
         questionVideoPrototypeID: str,
         answerOptions: List[str],
         correctAnswerIndex: int,
-        questionText: str
+        questionText: str,
+        freetext: Optional[Dict[str, Union[str, int, dict]]]
     ):
         super().__init__(prototypeID, 'question')
         self.questionVideoPrototypeID = questionVideoPrototypeID
         self.answerOptions = answerOptions
         self.correctAnswerIndex = correctAnswerIndex
         self.questionText = questionText
+        self.freetext = freetext
 
     def to_json(self):
-        return {
+        res = {
             **super().to_json(),
             "questionVideoPrototypeID": self.questionVideoPrototypeID,
             "answerOptions": self.answerOptions,
             "correctAnswerIndex": self.correctAnswerIndex,
-            "questionText": self.questionText
+            "questionText": self.questionText, 
         }
+
+        if self.freetext is not None:
+            res["freetext"] = self.freetext
+
+        return res
 
     # Factory method that will create a PagePrototypeQuestion from a SophiaTaskDefinition
     @staticmethod
@@ -67,7 +74,13 @@ class PagePrototypeQuestion(PagePrototype):
             questionVideoPrototypeID = task_definition.questionVideoPrototypeID,
             answerOptions = task_definition.answerOptions,
             correctAnswerIndex = task_definition.correctAnswerIndex,
-            questionText = task_definition.questionText
+            questionText = task_definition.questionText, 
+            freetext = None if task_definition.freeTextDetail is None else {
+                "fallbackOptionIndex": task_definition.freeTextDetail.fallbackOptionIndex,
+                "answerOptionMatcher": task_definition.freeTextDetail.answerOptionMatcher,
+                "answerOptionDescriptions": task_definition.freeTextDetail.answerOptionDescriptions,
+                "answerOptionsTypes": task_definition.freeTextDetail.answerOptionsTypes,
+            }
         )
     
     # Factory method that will create a PagePrototypeQuestion from a SophiaScene
