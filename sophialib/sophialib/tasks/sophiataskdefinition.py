@@ -26,9 +26,7 @@ class SophiaFreeTextTaskDetail():
     # the keys defined in the matcher will determine the possible number of input fields
     answerOptionMatcher: Optional[str] = "\key{a}"
     # A dictionary of descriptions, that will be used to describe the input fields. Every key in the matcher will be used as key in the dictionary
-    answerOptionDescriptions: Optional[Dict[str, str]] = field(default_factory=lambda: {
-        "a": "Please enter the value of $a$"
-    })
+    answerOptionDescriptions: Optional[Dict[str, str]] = None
     # A dictionary of types, that will be used to determine the type of the input fields. Every key in the matcher will be used as key in the dictionary
     # Possible types right now are: "number"
     answerOptionsTypes: Optional[Dict[str, str]] = field(default_factory=lambda: {
