@@ -3035,7 +3035,11 @@
       },
       "3": {
         "q": {
-          "after-20-years": "after $20$ years"
+          "after-20-years": "after $20$ years",
+          "voiceover": "Now, let's say a<bookmark mark=\"city_in\"/> city uses <bookmark mark=\"bullet_1_in\"/>8000 Megawatt hours of electricity every day. After 20 years, <bookmark mark=\"bullet_2_in\"/>that amount has increased to 2.2 times the original amount. By what percentage did the usage increase every year?"
+        },
+        "a": {
+          "voiceover": "Ok, so here we need to look at two things: by <bookmark mark=\"highlight_factor\"/>what factor the values increased and <bookmark mark=\"highlight_time\"/>over what time horizon that occured.\nWe start with the expression that<bookmark mark=\"equation_0_in\"/> b raised to the power of x equals <bookmark mark=\"x\"/>c. X stands for the number of years, <bookmark mark=\"c\"/>and c stands for the factor by which the values increased over that time period. ... We can <bookmark mark=\"20_for_x\"/>plug in 20 for x, because the time horizon we're looking at is 20 years. And we can<bookmark mark=\"2p2_for_c\"/> plug in 2.2 for c, because the values increased by a factor of 2.2. So we get the equation <bookmark mark=\"equation\"/>b to the power of 20 equals 2.2. ...\nNow we want to solve for b. ... So we<bookmark mark=\"take_root\"/> take the 20th root on both sides. ... We then get that <bookmark mark =\"equation_3\"/>b equals the 20th root of 2.2. We can calculate that on a calculator, and we get that<bookmark mark=\"digits_in\"/> b is approximately 1.04. So the values increased by 4 percent every year."
         }
       }
     },
@@ -3063,6 +3067,18 @@
     },
     "a": {
       "voiceover": "If you look at the blue plot<bookmark mark=\"plot_in\"/>, which describes the function b to the power of x for a value of b  between zero and one, you will see that it has the same shape as our green function, only <bookmark mark=\"mirror\"/>mirrored at the x-axis. So <bookmark mark=\"bullet_1_in\"/>the value of b is between 0 and 1, and we're multiplying it <bookmark mark=\"bullet_2_in\"/>with a negative value for a."
+    }
+  },
+  "Func_6_P_recognize_percentages": {
+    "1": {
+      "q": {
+        "question-text": "What is the interest rate in percent?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "By how many percent does the energy usage increase per year?"
+      }
     }
   }
 }

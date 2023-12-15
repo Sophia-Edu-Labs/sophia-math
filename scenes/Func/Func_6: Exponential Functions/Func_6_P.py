@@ -1727,12 +1727,22 @@ class Func_6_2_P_6_c(GrowthFactorToGraphAnswerScene):
 #####################################
 class Func_6_P_recognize_percentages_1_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$20$", "$x$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_recognize_percentages.1.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1807,7 +1817,120 @@ class Func_6_P_recognize_percentages_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_P.recognize_percentages.1.a.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_6_P.recognize_percentages.1.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("money_out")
+            self.add_shift_sound(0.5)
+            self.play(money.animate.shift(5*RIGHT), run_time=0.5)
+            self.play(Write(interest_1))
+
+            self.wait_until_bookmark("zero_highlight")
+            self.play(bullets[0].animate.set_color(BLUE_D), run_time=.5)
+            
+            self.wait_until_bookmark("f_0")
+            self.play(Write(f_0[:-1]), bullets[0].animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("f_0_100")
+            self.play(ReplacementTransform(bullets[0][-2].copy(), f_0[-1]), run_time=.5)
+
+            self.wait_until_bookmark("implication_1_in")
+            x,y,_ = implication_1[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("a_in")
+            x,y,_ = a[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(a), run_time=.5)
+            cursor.idle=True
+            
+            self.wait_until_bookmark("transition_1")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(f_0, implication_1, a[0]).animate.shift(5*UP), run_time=.5)
+            a[1].generate_target().move_to(interest_2[1])
+            self.play(MoveToTarget(a[1]), Unwrite(interest_1[1]), ReplacementTransform(interest_1[0], interest_2[0]), ReplacementTransform(interest_1[2], interest_2[2]), ReplacementTransform(interest_1[3], interest_2[3]), ReplacementTransform(interest_1[4], interest_2[4]))
+
+            self.wait_until_bookmark("two_highlight")
+            self.play(bullets[1].animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("f_2")
+            self.play(bullets[1].animate.set_color(c1t), Write(f_2), run_time=.5)
+
+            self.wait_until_bookmark("implication_2_in")
+            cursor.idle=False
+            x,y,_ = implication_2[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_2), run_time=.5)
+
+            self.wait_until_bookmark("bullets_out")
+            self.play(Unwrite(bullets), run_time=.5)
+
+            self.wait_until_bookmark("b_in")
+            x,y,_ = b[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(b), run_time=.5)
+
+            self.wait_until_bookmark("implication_3_in")
+            x,y,_ = implication_3[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(implication_3), run_time=.5)
+
+            self.wait_until_bookmark("b_2_in")
+            x,y,_ = b_2[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor,x,y), Write(b_2), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("transition_2")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(f_2, implication_2, b, b_2[0], implication_3).animate.shift(6*UP), run_time=.5)
+            b_2[1].generate_target().move_to(interest_3[3])
+            a[1].generate_target().move_to(interest_3[1])
+            self.play(MoveToTarget(a[1]), MoveToTarget(b_2[1]), Unwrite(interest_2[3]), ReplacementTransform(interest_2[0], interest_3[0]), ReplacementTransform(interest_2[2], interest_3[2]), ReplacementTransform(interest_2[4], interest_3[4]), bullets.animate.shift(5*RIGHT))
+            self.play(Write(sol))
+
+        self.wait(4)
+
+class Func_6_P_recognize_percentages_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+        cursor=AltCursor()
+
+        money = ImageMobject(assets_folder / "img" / "colors_money_in_bank.png")
+        money = money.scale(4/money.get_width()).set_y(1.4)
+        self.add(money)
+        year = self.translate("words.year")
+
+        interest_1 = MathTex("f(x)=", "a", "\\cdot", "b", "^x", color=c1t, font_size=fs2)
+        interest_2 = MathTex("f(x)=", "100", "\\cdot", "b", "^x", color=c1t, font_size=fs2)
+        interest_3 = MathTex("f(x)=", "100", "\\cdot", "1.2", "^x", color=c1t, font_size=fs2)
+        interests = VGroup(interest_1, interest_2, interest_3).set_y(2)
+
+        f_0 = MathTex("f(0)=", "a", "\\cdot b^0", "=", "100", color=BLUE_D, font_size=fs2)
+        implication_1 = MathTex("\\Downarrow", "b^0=1", color=BLUE_D, font_size=fs2)
+        a = MathTex("a=", "100", color=BLUE_D, font_size=fs2)
+        step_1 = VGroup(f_0, implication_1, a).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(interests, DOWN, buff=.4)
+        implication_1[1].scale(0.7)
+
+
+        f_2 = MathTex("f(2)=", "100", "\\cdot b^2", "=144", color=GREEN_D, font_size=fs2)
+        implication_2 = MathTex("\\Downarrow", "\\tfrac{\\Box}{100}", color=GREEN_D, font_size=fs2)
+        b = MathTex("b^2=", "1.44", color=GREEN_D, font_size=fs2)
+        implication_3 = MathTex("\\Downarrow", "\\sqrt{\\Box}", color=GREEN_D, font_size=fs2)
+        b_2 = MathTex("b=", "1.2", color=GREEN_D, font_size=fs2)
+        step_2 = VGroup(f_2, implication_2, b, implication_3, b_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(interests, DOWN, buff=.4)
+        implication_2[1].scale(0.7)
+
+        
+
+        bullets = VGroup(Tex("$\\bullet$ ", year, " 0: ", "$100$", "\$", color=c1t, font_size=fs2), Tex("$\\bullet$ ", year, " 2: $144\$$", color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+        
+        interest = self.translate("words.interest")
+        sol = Tex(interest, ": $20\%$", color=c1t, font_size=fs2)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.recognize_percentages.1.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("money_out")
@@ -1880,12 +2003,23 @@ class Func_6_P_recognize_percentages_1_a(SophiaCursorScene):
 #####################################
 class Func_6_P_recognize_percentages_2_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$200$", "$x$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_recognize_percentages.2.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1919,12 +2053,61 @@ class Func_6_P_recognize_percentages_2_q(SophiaCursorScene):
 
 class Func_6_P_recognize_percentages_2_a(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        city = ImageMobject(assets_folder / "img" / "city_using_energy.png")
+        city = city.scale(3/city.get_width()).set_y(1.4)
+        self.add(city)
+        year = self.translate("words.year")
+        factor = self.translate("words.factor")
+        
+        bullets = VGroup(Tex("$\\bullet$ ", " $3000$ MWh", color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$3\\times$", "$ / $", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+
+        factors = VGroup(Tex(factor+": ", "$3\\times$", color=c1t, font_size=fs2), MathTex("\\Updownarrow", color=c1t, font_size=fs2), MathTex("\\left(", "3", "-1)", "\\cdot", "100\%", "=", "200\%", color=c1t, font_size=fs2)).arrange(DOWN, buff=.4).set_y(1)
+
+        cursor = AltCursor(idle=True, y=-2.4)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_6")+self.translate("Func_6_P.recognize_percentages.2.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("value_out")
+            x,y,_ = bullets[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.add_shift_sound(0.5)
+            self.play(city.animate.shift(5*RIGHT), bullets[0].animate.shift(5*RIGHT), CursorMoveTo(cursor, x, y), run_time=0.5)
+
+            self.wait_until_bookmark("factor_in")
+            x,y,_ = factors[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(factors[0][0]), ReplacementTransform(bullets[1][1], factors[0][1]), Unwrite(bullets[1][0]), Unwrite(bullets[1][2]), Unwrite(bullets[1][3]), run_time=.5)
+
+            self.wait_until_bookmark("take_3")
+            x,y,_ = factors[2][1].get_center()+0.4*DOWN
+            self.play(Write(factors[1]), ReplacementTransform(factors[0][1].copy(), factors[2][1]), CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("subtract_one")
+            x,y,_ = factors[2][2].get_center()+0.4*DOWN
+            self.play(Write(factors[2][0]), Write(factors[2][2]), CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("multiply_100")
+            x,y,_ = factors[2][4].get_center()+0.4*DOWN
+            self.play(Write(factors[2][3]), Write(factors[2][4]), CursorMoveToCurved(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("200_percent")
+            x,y,_ = factors[2][6].get_center()+0.4*DOWN
+            self.play(Write(factors[2][5]), Write(factors[2][6]), CursorMoveToCurved(cursor, x, y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_P_recognize_percentages_2_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1948,7 +2131,7 @@ class Func_6_P_recognize_percentages_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_P.recognize_percentages.2.a.voiceover")
+                text=self.translate("General.incorrect_6")+self.translate("Func_6_P.recognize_percentages.2.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("value_out")
@@ -1984,12 +2167,22 @@ class Func_6_P_recognize_percentages_2_a(SophiaCursorScene):
 #####################################
 class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\sqrt[20]{2.2}$", "$x$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_recognize_percentages.2.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2006,9 +2199,7 @@ class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Now, let's say a<bookmark mark="city_in"/> city uses <bookmark mark="bullet_1_in"/>8000 Megawatt hours of electricity every day. After 20 years, <bookmark mark="bullet_2_in"/>that amount has increased to 2.2 times the original amount. By what percentage did the usage increase every year? Round to the nearest full percentage.
-"""
+                text=self.translate("Func_6_P.recognize_percentages.3.q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("city_in")
@@ -2025,13 +2216,6 @@ Now, let's say a<bookmark mark="city_in"/> city uses <bookmark mark="bullet_1_in
 
 
 class Func_6_P_recognize_percentages_3_a(SophiaCursorScene):
-
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2062,11 +2246,91 @@ class Func_6_P_recognize_percentages_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Ok, so here we need to look at two things: by <bookmark mark="highlight_factor"/>what factor the values increased and <bookmark mark="highlight_time"/>over what time horizon that occured.
-We start with the expression that<bookmark mark="equation_0_in"/> b raised to the power of x equals <bookmark mark="x"/>c. X stands for the number of years, <bookmark mark="c"/>and c stands for the factor by which the values increased over that time period. ... We can <bookmark mark="20_for_x"/>plug in 20 for x, because the time horizon we're looking at is 20 years. And we can<bookmark mark="2p2_for_c"/> plug in 2.2 for c, because the values increased by a factor of 2.2. So we get the equation <bookmark mark="equation"/>b to the power of 20 equals 2.2. ...
-Now we want to solve for b. ... So we<bookmark mark="take_root"/> take the 20th root on both sides. ... We then get that <bookmark mark ="equation_3"/>b equals the 20th root of 2.2. We can calculate that on a calculator, and we get that<bookmark mark="digits_in"/> b is approximately 1.04. So the values increased by 4 percent every year.
-"""
+                text=self.translate("General.correct_6")+self.translate("Func_6_P.recognize_percentages.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_factor")
+            x,y,_ = bullets[1][1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), Unwrite(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("highlight_time")
+            x,y,_ = bullets[1][-2].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("equation_0_in")
+            self.add_shift_sound(0.5)
+            self.play(Write(equation_0), city.animate.shift(5*RIGHT), bullets[1].animate.shift(UP), run_time=.5)
+
+            self.wait_until_bookmark("x")
+            x,y,_ = equation_0[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("c")
+            x,y,_ = equation_0[3].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("20_for_x")
+            self.play(ReplacementTransform(equation_0[0], equation_1[0]), ReplacementTransform(equation_0[2], equation_1[2]), ReplacementTransform(equation_0[3], equation_1[3]), ReplacementTransform(bullets[1][4].copy(), equation_1[1]), Unwrite(equation_0[1]))
+
+            self.wait_until_bookmark("2p2_for_c")
+            self.play(ReplacementTransform(equation_1[0], equation_2[0]), ReplacementTransform(equation_1[1], equation_2[1]), ReplacementTransform(equation_1[2], equation_2[2]), ReplacementTransform(bullets[1][1].copy(), equation_2[3]), Unwrite(equation_1[3]))
+
+            self.wait_until_bookmark("equation")
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, equation_2), Unwrite(bullets[1]), run_time=.5)
+
+            self.wait_until_bookmark("take_root")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), Write(step_1), run_time=.5)
+            
+            self.wait_until_bookmark("equation_3")
+            x,y,_ = equation_3[1].get_center()+0.5*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(equation_3), run_time=.5)
+
+            self.wait_until_bookmark("digits_in")
+            
+            self.add_shift_sound(.3)
+            self.play(equation_3.animate.shift(.7*LEFT), run_time=.5)
+            x,y,_ = sol_solved.get_center()+[-.7,-.5,0]
+            self.play(CursorMoveToCurved(cursor, x, y), Write(sol_solved.shift(.7*LEFT)), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_P_recognize_percentages_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        city = ImageMobject(assets_folder / "img" / "city_using_energy.png")
+        city = city.scale(3/city.get_width()).set_y(1.8)
+        self.add(city)
+        
+        after = self.translate("words.after")
+        years = self.translate("words.years")
+        
+        bullets = VGroup(Tex("$\\bullet$ ", " $8000$ MWh", color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$2.2$", "$\\times$ ", after, " $20$ ", years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+        self.add(bullets)
+
+        equation_0 = MathTex("b", "^x", "=", "c", color=c1t, font_size=fs1)
+        equation_1 = MathTex("b", "^{20}", "=", "c", color=c1t, font_size=fs1)
+        equation_2 = MathTex("b", "^{20}", "=", "2.2", color=c1t, font_size=fs1)
+        equations = VGroup(equation_0, equation_1, equation_2).set_y(1.2)
+        step_1 = MathTex("\\Downarrow", "\\sqrt[20]{\\Box}", color=BLUE, font_size=fs2).next_to(equations, DOWN, buff=.4)
+        equation_3 = MathTex("b", "=", "\\sqrt[20]{2.2}", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        sol_solved = MathTex("=1.04", color=c1t, font_size=fs1).next_to(equation_3, RIGHT, buff=.1)
+        
+        cursor = AltCursor(idle=True, y=-2.4)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_6")+self.translate("Func_6_P.recognize_percentages.3.a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("highlight_factor")
@@ -2121,277 +2385,277 @@ Now we want to solve for b. ... So we<bookmark mark="take_root"/> take the 20th 
 
 #####################################
 #####################################
-class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
+# class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        city = ImageMobject(assets_folder / "img" / "city_using_energy.png")
-        city = city.scale(3/city.get_width()).move_to([-5, 1.4, 0])
-        year = self.translate("words.year")
-        after_20_years = self.translate("Func_6_P.recognize_percentages.3.q.after-20-years")
+#         city = ImageMobject(assets_folder / "img" / "city_using_energy.png")
+#         city = city.scale(3/city.get_width()).move_to([-5, 1.4, 0])
+#         year = self.translate("words.year")
+#         after_20_years = self.translate("Func_6_P.recognize_percentages.3.q.after-20-years")
         
-        bullets = VGroup(Tex("$\\bullet$ ", " $8000$ MWh", color=c1t, font_size=fs2), Tex("$\\bullet$ $2.2\\times $", after_20_years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+#         bullets = VGroup(Tex("$\\bullet$ ", " $8000$ MWh", color=c1t, font_size=fs2), Tex("$\\bullet$ $2.2\\times $", after_20_years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-If my bank offers me 5 percent of interest every year, how much money do I have to put in the bank now, so that I will have 100 thousand euros in the bank 20 years from now?
-"""
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# If my bank offers me 5 percent of interest every year, how much money do I have to put in the bank now, so that I will have 100 thousand euros in the bank 20 years from now?
+# """
+#         ) as tracker:
             
-            self.wait_until_bookmark("city_in")
-            self.add_shift_sound(0.5)
-            self.play(city.animate.shift(5*RIGHT), run_time=0.5)
+#             self.wait_until_bookmark("city_in")
+#             self.add_shift_sound(0.5)
+#             self.play(city.animate.shift(5*RIGHT), run_time=0.5)
             
-            self.wait_until_bookmark("bullet_1_in")
-            self.play(Write(bullets[0]), run_time=.5)
+#             self.wait_until_bookmark("bullet_1_in")
+#             self.play(Write(bullets[0]), run_time=.5)
 
-            self.wait_until_bookmark("bullet_2_in")
-            self.play(Write(bullets[1]), run_time=.5)
+#             self.wait_until_bookmark("bullet_2_in")
+#             self.play(Write(bullets[1]), run_time=.5)
 
-        self.wait(4)
+#         self.wait(4)
 
 
 ###################################################################Exercises for General Form ##########################
 
 ##################################### Exercise Level: Easy (1)
 #####################################
-class Func_6_P_general_form_1_1_q(SophiaCursorScene):
+# class Func_6_P_general_form_1_1_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        func = MathTex("f(x)=3^x").set_y(2)
-        cursor = AltCursor(idle=True)
-        self.add(cursor)
+#         func = MathTex("f(x)=3^x").set_y(2)
+#         cursor = AltCursor(idle=True)
+#         self.add(cursor)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-Look at the function <bookmark mark="func_in"/>f of x equals 3 to the power of x. By what factor does the function change, if we increase x by three?
-"""
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# Look at the function <bookmark mark="func_in"/>f of x equals 3 to the power of x. By what factor does the function change, if we increase x by three?
+# """
+#         ) as tracker:
             
-            self.wait_until_bookmark("func_in")
-            self.play(Write(func))
-            cursor.idle=False
-            self.play(CursorUnderline(cursor, func))
-            self.wait(1)
-            self.play(CursorMoveResize(cursor,0,-2))
+#             self.wait_until_bookmark("func_in")
+#             self.play(Write(func))
+#             cursor.idle=False
+#             self.play(CursorUnderline(cursor, func))
+#             self.wait(1)
+#             self.play(CursorMoveResize(cursor,0,-2))
 
-        self.wait(4)
+#         self.wait(4)
 
 
-class Func_6_P_general_form_1_1_a(SophiaCursorScene):
+# class Func_6_P_general_form_1_1_a(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        func = MathTex("f(x)=3^x").set_y(2)
-        step = MathTex("\\Downarrow", "+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
-        sol = MathTex("3^{x+3}", "=3^x\\cdot3^3", "=27\\cdot 3^x", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
-        cursor = AltCursor(idle=True)
-        self.add(cursor)
+#         func = MathTex("f(x)=3^x").set_y(2)
+#         step = MathTex("\\Downarrow", "+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+#         sol = MathTex("3^{x+3}", "=3^x\\cdot3^3", "=27\\cdot 3^x", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+#         cursor = AltCursor(idle=True)
+#         self.add(cursor)
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-If <bookmark mark="add_three"/>we add three, we get <bookmark mark="three_added"/> 3 to the power of x plus 3. We can <bookmark mark="rewrite"/>rewrite that as 3 to the power of x times 3 to the power of 3. ... So the value increases by a factor of 3 to the power of 3<bookmark mark="sol_in"/>, which is 27.
-"""
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# If <bookmark mark="add_three"/>we add three, we get <bookmark mark="three_added"/> 3 to the power of x plus 3. We can <bookmark mark="rewrite"/>rewrite that as 3 to the power of x times 3 to the power of 3. ... So the value increases by a factor of 3 to the power of 3<bookmark mark="sol_in"/>, which is 27.
+# """
+#         ) as tracker:
             
-            self.wait_until_bookmark("add_three")
-            x,y, _ = step.get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x, y), Write(step), run_time=.5)
+#             self.wait_until_bookmark("add_three")
+#             x,y, _ = step.get_center()+0.4*DOWN
+#             self.play(CursorMoveTo(cursor, x, y), Write(step), run_time=.5)
 
-            self.wait_until_bookmark("three_added")
-            x,y, _ = sol[0].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x, y), Write(sol[0]), run_time=.5)
+#             self.wait_until_bookmark("three_added")
+#             x,y, _ = sol[0].get_center()+0.4*DOWN
+#             self.play(CursorMoveTo(cursor, x, y), Write(sol[0]), run_time=.5)
 
-            self.wait_until_bookmark("rewrite")
-            x,y, _ = sol[1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x, y), Write(sol[1]), run_time=.5)
+#             self.wait_until_bookmark("rewrite")
+#             x,y, _ = sol[1].get_center()+0.4*DOWN
+#             self.play(CursorMoveTo(cursor, x, y), Write(sol[1]), run_time=.5)
 
-            self.wait_until_bookmark("sol_in")
-            x,y, _ = sol[2].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x, y), Write(sol[2]), run_time=.5)
-
-
-        self.wait(4)
+#             self.wait_until_bookmark("sol_in")
+#             x,y, _ = sol[2].get_center()+0.4*DOWN
+#             self.play(CursorMoveTo(cursor, x, y), Write(sol[2]), run_time=.5)
 
 
-#####################################
-#####################################
-class Func_6_P_general_form_1_2_q(SophiaCursorScene):
+#         self.wait(4)
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+# #####################################
+# #####################################
+# class Func_6_P_general_form_1_2_q(SophiaCursorScene):
 
-        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
-        cursor = AltCursor(idle=True)
-        self.add(cursor)
-        today = self.translate("words.today")
-        twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
-        trees = self.translate("words.trees")
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-        forest = ImageMobject(assets_folder / "img" / "forest.png")
-        forest = forest.scale(3/forest.get_width()).move_to([-5, 1.4, 0])
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+#         func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+#         cursor = AltCursor(idle=True)
+#         self.add(cursor)
+#         today = self.translate("words.today")
+#         twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
+#         trees = self.translate("words.trees")
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-A <bookmark mark="forest_in"/>forest will grow exponentially, if you don't cut down any trees. <bookmark mark="today_in"/>Today, my forest contains 72 thousand 342 trees. <bookmark mark="twelve_years_ago_in"/>12 years ago, it had 48 thousand 128 trees. If the number of trees is described by a function <bookmark mark="func_in"/>of the form f of x equals a times b to the power of x, what is the value of b?
-"""
-        ) as tracker:
+#         forest = ImageMobject(assets_folder / "img" / "forest.png")
+#         forest = forest.scale(3/forest.get_width()).move_to([-5, 1.4, 0])
+
+#         bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# A <bookmark mark="forest_in"/>forest will grow exponentially, if you don't cut down any trees. <bookmark mark="today_in"/>Today, my forest contains 72 thousand 342 trees. <bookmark mark="twelve_years_ago_in"/>12 years ago, it had 48 thousand 128 trees. If the number of trees is described by a function <bookmark mark="func_in"/>of the form f of x equals a times b to the power of x, what is the value of b?
+# """
+#         ) as tracker:
         
-            self.wait_until_bookmark("forest_in")
-            self.add_shift_sound(0.5)
-            self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
+#             self.wait_until_bookmark("forest_in")
+#             self.add_shift_sound(0.5)
+#             self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
 
-            self.wait_until_bookmark("today_in")
-            self.play(Write(bullets[0]), run_time=.5)
+#             self.wait_until_bookmark("today_in")
+#             self.play(Write(bullets[0]), run_time=.5)
 
-            self.wait_until_bookmark("twelve_years_ago_in")
-            self.play(Write(bullets[1]), run_time=.5)
+#             self.wait_until_bookmark("twelve_years_ago_in")
+#             self.play(Write(bullets[1]), run_time=.5)
 
-            self.wait_until_bookmark("func_in")
-            self.add_shift_sound(0.5)
-            self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
-
-
-        self.wait(4)
+#             self.wait_until_bookmark("func_in")
+#             self.add_shift_sound(0.5)
+#             self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
 
 
-class Func_6_P_general_form_1_2_a(SophiaCursorScene):
+#         self.wait(4)
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+# class Func_6_P_general_form_1_2_a(SophiaCursorScene):
 
-        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
-        self.add(func)
-        cursor = AltCursor(idle=True)
-        self.add(cursor)
-        today = self.translate("words.today")
-        twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
-        trees = self.translate("words.trees")
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-        bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
-        self.add(bullets)
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+
+#         func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+#         self.add(func)
+#         cursor = AltCursor(idle=True)
+#         self.add(cursor)
+#         today = self.translate("words.today")
+#         twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
+#         trees = self.translate("words.trees")
+
+#         bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+#         self.add(bullets)
         
-        # Action Sequence
-        with self.voiceover(
-                text="""
-If we <bookmark mark="divide_1"/>divide 72 thousand 342, which is the number of trees in the forest today by 48 thousand 128, which is the number of trees 12 years ago, we get 1.5. So the number of trees increased by a factor of 1.5 every 12 years, meaning that <bookmark mark="b_12"/>b to the power of 12 equals 1.5. We can <bookmark mark="take_root"/>take the 12th root on both sides, and we get that b equals the 12th root of 1.5. We can calculate that on a calculator, and we get that b is approximately 1.04.
-"""
-        ) as tracker:
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# If we <bookmark mark="divide_1"/>divide 72 thousand 342, which is the number of trees in the forest today by 48 thousand 128, which is the number of trees 12 years ago, we get 1.5. So the number of trees increased by a factor of 1.5 every 12 years, meaning that <bookmark mark="b_12"/>b to the power of 12 equals 1.5. We can <bookmark mark="take_root"/>take the 12th root on both sides, and we get that b equals the 12th root of 1.5. We can calculate that on a calculator, and we get that b is approximately 1.04.
+# """
+#         ) as tracker:
         
-            self.wait_until_bookmark("forest_in")
-            self.add_shift_sound(0.5)
-            self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
+#             self.wait_until_bookmark("forest_in")
+#             self.add_shift_sound(0.5)
+#             self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
 
-            self.wait_until_bookmark("today_in")
-            self.play(Write(bullets[0]), run_time=.5)
+#             self.wait_until_bookmark("today_in")
+#             self.play(Write(bullets[0]), run_time=.5)
 
-            self.wait_until_bookmark("twelve_years_ago_in")
-            self.play(Write(bullets[1]), run_time=.5)
+#             self.wait_until_bookmark("twelve_years_ago_in")
+#             self.play(Write(bullets[1]), run_time=.5)
 
-            self.wait_until_bookmark("func_in")
-            self.add_shift_sound(0.5)
-            self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
-
-
-        self.wait(4)
+#             self.wait_until_bookmark("func_in")
+#             self.add_shift_sound(0.5)
+#             self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
 
 
-#####################################
-#####################################
-class Func_6_P_general_form_1_3_q(SophiaCursorScene):
+#         self.wait(4)
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-    #         correctAnswerIndex = 3,
-    #         questionText=self.translate("Func_6_3.I4.q.question-text")
-    #     )
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
+# #####################################
+# #####################################
+# class Func_6_P_general_form_1_3_q(SophiaCursorScene):
 
-        func = MathTex("f(x)=a\\cdot b^x").set_y(2)
-        cursor = AltCursor(idle=True)
-        self.add(cursor)
+#     # def task_definition(self) -> SophiaTaskDefinition:
+#     #     return SophiaTaskDefinition(
+#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
+#     #         correctAnswerIndex = 3,
+#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
+#     #     )
 
-        # Action Sequence
-        with self.voiceover(
-                text="""
-We have  a <bookmark mark="func_in"/>function of the form of x equals a times b to the power of x. For what value of a does the value of the function decrease by 19 percent, if we increase x by two?
-"""
-        ) as tracker:
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
+
+#         func = MathTex("f(x)=a\\cdot b^x").set_y(2)
+#         cursor = AltCursor(idle=True)
+#         self.add(cursor)
+
+#         # Action Sequence
+#         with self.voiceover(
+#                 text="""
+# We have  a <bookmark mark="func_in"/>function of the form of x equals a times b to the power of x. For what value of a does the value of the function decrease by 19 percent, if we increase x by two?
+# """
+#         ) as tracker:
             
-            self.wait_until_bookmark("func_in")
-            self.play(Write(func))
-            cursor.idle=False
-            self.play(CursorUnderline(cursor, func))
-            self.wait(1)
-            self.play(CursorMoveResize(cursor,0,-2))
+#             self.wait_until_bookmark("func_in")
+#             self.play(Write(func))
+#             cursor.idle=False
+#             self.play(CursorUnderline(cursor, func))
+#             self.wait(1)
+#             self.play(CursorMoveResize(cursor,0,-2))
 
-        self.wait(4)
+#         self.wait(4)
 
 
 
@@ -5270,7 +5534,18 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_P_6_b),
     PagePrototypeVideo.from_scene(Func_6_2_P_6_c),
 ########################################################################## Practice: Percentages and Interest
-#
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_2_b),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_3_q),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_3_a),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_3_b),
 ##########################################################################CHAPTER: Rules for Exponenial Functions: Easy
     PagePrototypeVideo.from_scene(Func_6_P_2_1_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_2_1_1_q),

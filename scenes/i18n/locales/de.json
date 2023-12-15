@@ -3031,7 +3031,11 @@
       },
       "3": {
         "q": {
-          "after-20-years": "nach $20$ Jahren"
+          "after-20-years": "nach $20$ Jahren",
+          "voiceover": "Nun, sagen wir, eine<bookmark mark=\"city_in\"/> Stadt verbraucht täglich <bookmark mark=\"bullet_1_in\"/>8000 Megawattstunden Strom. Nach 20 Jahren hat sich <bookmark mark=\"bullet_2_in\"/>diese Menge auf das 2,2-fache der ursprünglichen Menge erhöht. Um wie viel Prozent ist der Verbrauch jedes Jahr gestiegen?"
+        },
+        "a": {
+          "voiceover": "Okay, wir müssen hier also zwei Dinge betrachten: um welchen <bookmark mark=\"highlight_factor\"/>Faktor die Werte gestiegen sind, und <bookmark mark=\"highlight_time\"/>über welchen Zeitraum das passiert ist. \nWir beginnen mit dem Ausdruck, dass<bookmark mark=\"equation_0_in\"/> b hoch x gleich <bookmark mark=\"x\"/>c ist. X steht für die Anzahl der Jahre, <bookmark mark=\"c\"/>und c steht für den Faktor, um den die Werte in diesem Zeitraum gestiegen sind. ... Wir können <bookmark mark=\"20_for_x\"/>20 für x einsetzen, weil der Zeitraum, den wir betrachten, 20 Jahre beträgt. Und wir können<bookmark mark=\"2p2_for_c\"/> 2,2 für c einsetzen, weil die Werte um einen Faktor von 2,2 gestiegen sind. So erhalten wir die Gleichung <bookmark mark=\"equation\"/>b hoch 20 gleich 2,2. ...\nNun wollen wir b finden. ... Also<bookmark mark=\"take_root\"/> nehmen wir auf beiden Seiten die 20. Wurzel. ... Dann erhalten wir, dass <bookmark mark =\"equation_3\"/>b gleich der 20. Wurzel von 2,2 ist. Wir können das auf einem Taschenrechner berechnen und stellen fest, dass<bookmark mark=\"digits_in\"/> b ungefähr 1,04 ist. Also sind die Werte jedes Jahr um 4 Prozent gestiegen."
         }
       }
     },
@@ -3064,5 +3068,17 @@
   "Words": {
     "base": "Basis",
     "exponent": "Exponent"
+  },
+  "Func_6_P_recognize_percentages": {
+    "1": {
+      "q": {
+        "question-text": "Was ist der Zinssatz in Prozent?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "Um wie viel Prozent steigt der Energieverbrauch Jahr für Jahr an?"
+      }
+    }
   }
 }
