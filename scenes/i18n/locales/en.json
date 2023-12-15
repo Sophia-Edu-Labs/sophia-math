@@ -3041,12 +3041,49 @@
         "a": {
           "voiceover": "Ok, so here we need to look at two things: by <bookmark mark=\"highlight_factor\"/>what factor the values increased and <bookmark mark=\"highlight_time\"/>over what time horizon that occured.\nWe start with the expression that<bookmark mark=\"equation_0_in\"/> b raised to the power of x equals <bookmark mark=\"x\"/>c. X stands for the number of years, <bookmark mark=\"c\"/>and c stands for the factor by which the values increased over that time period. ... We can <bookmark mark=\"20_for_x\"/>plug in 20 for x, because the time horizon we're looking at is 20 years. And we can<bookmark mark=\"2p2_for_c\"/> plug in 2.2 for c, because the values increased by a factor of 2.2. So we get the equation <bookmark mark=\"equation\"/>b to the power of 20 equals 2.2. ...\nNow we want to solve for b. ... So we<bookmark mark=\"take_root\"/> take the 20th root on both sides. ... We then get that <bookmark mark =\"equation_3\"/>b equals the 20th root of 2.2. We can calculate that on a calculator, and we get that<bookmark mark=\"digits_in\"/> b is approximately 1.04. So the values increased by 4 percent every year."
         }
+      },
+      "4": {
+        "q": {
+          "voiceover": "If <bookmark mark=\"bank_in\"/>my bank offers <bookmark mark=\"percent_in\"/>me 5 percent of interest every year, how much money do I have to put in the bank now, so that I will <bookmark mark=\"hundredthousand_in\"/>have 100 thousand euros in the bank <bookmark mark=\"years_in\"/>20 years from now?"
+        },
+        "a": {
+          "voiceover": "Since we're looking at compound interest, we'll use the exponential <bookmark mark=\"function_in\"/>function f of x equals a times b to the power of x to model the amount of money we have. We now want to <bookmark mark=\"highlight_a\"/>find \"a\", which is equal to the amount of money we have at x equals zero. We <bookmark mark=\"highlight_interest\"/>get five percent of interest each year, so the value of<bookmark mark=\"plug_in_b\"/> b has to be 1.05. And we're looking at a time <bookmark mark=\"highlight_time\"/>span of 20 years, so <bookmark mark=\"plug_in_x\"/>we plug in 20 for x. Finally, we want to <bookmark mark=\"highlight_100k\"/>have 100 thousand euros in the bank, so <bookmark mark=\"transform_f\"/>we set f of x equal to 100 thousand. Now since we want to find the value of \"a\", <bookmark mark=\"step\"/>we divide both sides by 1.05 to the power of 20. And we get <bookmark mark=\"sol_in\"/>a equals 100 thousand divided by 1.05 to the power of 20. If <bookmark mark=\"approx\"/>we compute that, we can see that we need a little less than 38 thousand euros to have 100 thousand euros."
+        }
       }
     },
     "general_form_1": {
+      "1": {
+        "a": {
+          "voiceover": "If <bookmark mark=\"add_three\"/>we increase x by 3, we get <bookmark mark=\"three_added\"/> 3 to the power of x plus 3. We can <bookmark mark=\"rewrite\"/>rewrite that as 3 to the power of x times 3 to the power of 3. ... And that in turn we can rewrite <bookmark mark=\"sol_in\"/>as 27 times 3 to the power of x. So the function increases by a factor of 27, if we increase x by 3."
+        },
+        "q": {
+          "voiceover": "Look at the function <bookmark mark=\"func_in\"/>f of x equals 3 to the power of x. By what factor does the function change, if<bookmark mark=\"increase_x\"/> we increase x by three?"
+        }
+      },
       "2": {
         "q": {
-          "twelve-years-ago": "twelve years ago"
+          "twelve-years-ago": "twelve years ago",
+          "voiceover": "A <bookmark mark=\"forest_in\"/>forest will grow exponentially, if you don't cut down any trees. <bookmark mark=\"today_in\"/>Today, my forest contains 72 thousand 342 trees. <bookmark mark=\"twelve_years_ago_in\"/>12 years ago, it had 48 thousand 128 trees. If the number of trees is described by a function <bookmark mark=\"func_in\"/>of the form f of x equals a times b to the power of x, what is the value of b?"
+        },
+        "a": {
+          "voiceover": "First, we <bookmark mark=\"divide_1\"/>divide 72 thousand 342, which is the number of trees in the forest today <bookmark mark=\"divide_2\"/>by 48 thousand 128, which is the number of trees 12 years ago. This is by how much the forest grew over twelve years, meaning that <bookmark mark=\"b_12\"/>b to the power of 12 is equal to that fraction. We can then<bookmark mark=\"take_root\"/>take the 12th root on both sides, and we get <bookmark mark=\"sol_1\"/>that b equals the 12th root of 72 thousand 342 over 48 thousand 128. We can calculate that on a calculator, and we get that <bookmark mark=\"sol_2\"/>b is approximately 1. 0 3 4."
+        }
+      },
+      "3": {
+        "a": {
+          "voiceover": "If increasing x by two decreases the value of the function by 19 percent, <bookmark mark=\"compare_fs\"/>then f of x plus two equals 0.81 times f of x, because a 19 percent decrease is the same as 0.81 remaining. So comparing the terms of the functions will give <bookmark mark=\"compare_1\"/>us that a times b to the power of x plus two equals 0.81 times a times b to the power of x. We can then rewrite the expression b to the power of x plus two<bookmark mark=\"compare_2\"/> as b to the power of x times b to the power of two. ... If we then divide <bookmark mark=\"compare_3_1\"/>both sides by a times b to the power of x, we get that b squared equals 0.81. And that means that b equals the square root of 0.81, <bookmark mark=\"compare_3_2\"/>which is 0.9."
+        },
+        "q": {
+          "voiceover": "We have  a <bookmark mark=\"func_in\"/>function of the form f of x equals a times b to the power of x. For what value of a does the value of the function<bookmark mark=\"show_steps\"/> decrease by 19 percent, if we increase x by two?"
+        }
+      },
+      "4": {
+        "q": {
+          "three-years-ago": "three years ago",
+          "voiceover": "The size of <bookmark mark=\"plantation_in\"/>my apple plantation grows exponentially. Three years ago, <bookmark mark=\"bullet_1\"/>I had eight apple trees. Today, <bookmark mark=\"bullet_2\"/>I have 12 apple trees. How many apple trees will I have six years from now?"
+        },
+        "a": {
+          "voiceover": "So three years ago, I <bookmark mark=\"eight_transform\"/>had eight trees. And today, after<bookmark mark=\"years_go_by\"/> three years have gone by, I <bookmark mark=\"twelve_transform\"/>now have 12 trees. So the number of trees increases by a factor of 12 divided by eight, which is 1.5. Now since the number of trees grows exponentially, the factor by which we multiply the values remains constant. So now that we<bookmark mark=\"dev_1_0\"/> have 12 trees, if we <bookmark mark=\"dev_1_1\"/> wait another three years, we will <bookmark mark=\"dev_1_2\"/>have 1.5 times 12 equals 18 trees. And if we <bookmark mark=\"dev_2_2\"/> wait another three years, we will have 27 trees. So six years from now, I will have 27 apple trees."
         }
       }
     }
@@ -3078,6 +3115,35 @@
     "2": {
       "q": {
         "question-text": "By how many percent does the energy usage increase per year?"
+      }
+    },
+    "4": {
+      "q": {
+        "question-text": "Given an annual interest rate of $5\\%$, how much money do i need today, to reach $100.000$\\\\texteuro in $20$ years?"
+      }
+    }
+  },
+  "Func_6_P_general_form": {
+    "1": {
+      "1": {
+        "q": {
+          "question-text": "By what factor does the function $f(x)=3^x$ change, if we increase $x$ by $3$?"
+        }
+      },
+      "2": {
+        "q": {
+          "question-text": "If the number of trees is described by $f(x)=a\\\\cdot b^x$, what is the value of $b$?"
+        }
+      },
+      "3": {
+        "q": {
+          "question-text": "Considering a function of the form $f(x)=a\\\\cdot b^x$, for what value of $b$ does f decrease by $19\\%$, if we increase $x$ by $2$?"
+        }
+      },
+      "4": {
+        "q": {
+          "question-text": "Given that $3$ years ago, I had $8$ apple trees and today, I have $12$, how many apple trees will I have $6$ years from now, if the number of trees grows exponentially?"
+        }
       }
     }
   }

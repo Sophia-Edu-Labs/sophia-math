@@ -2914,7 +2914,7 @@
     "compound_interest": "Zinseszins",
     "year": "Jahr",
     "increase": "Erhöhung",
-    "decrease": "Abfall",
+    "decrease": "Minderung",
     "value": "Wert",
     "budget": "Budget",
     "base": "Basis",
@@ -3037,12 +3037,49 @@
         "a": {
           "voiceover": "Okay, wir müssen hier also zwei Dinge betrachten: um welchen <bookmark mark=\"highlight_factor\"/>Faktor die Werte gestiegen sind, und <bookmark mark=\"highlight_time\"/>über welchen Zeitraum das passiert ist. \nWir beginnen mit dem Ausdruck, dass<bookmark mark=\"equation_0_in\"/> b hoch x gleich <bookmark mark=\"x\"/>c ist. X steht für die Anzahl der Jahre, <bookmark mark=\"c\"/>und c steht für den Faktor, um den die Werte in diesem Zeitraum gestiegen sind. ... Wir können <bookmark mark=\"20_for_x\"/>20 für x einsetzen, weil der Zeitraum, den wir betrachten, 20 Jahre beträgt. Und wir können<bookmark mark=\"2p2_for_c\"/> 2,2 für c einsetzen, weil die Werte um einen Faktor von 2,2 gestiegen sind. So erhalten wir die Gleichung <bookmark mark=\"equation\"/>b hoch 20 gleich 2,2. ...\nNun wollen wir b finden. ... Also<bookmark mark=\"take_root\"/> nehmen wir auf beiden Seiten die 20. Wurzel. ... Dann erhalten wir, dass <bookmark mark =\"equation_3\"/>b gleich der 20. Wurzel von 2,2 ist. Wir können das auf einem Taschenrechner berechnen und stellen fest, dass<bookmark mark=\"digits_in\"/> b ungefähr 1,04 ist. Also sind die Werte jedes Jahr um 4 Prozent gestiegen."
         }
+      },
+      "4": {
+        "q": {
+          "voiceover": "Wenn meine Bank mir <bookmark mark=\"percent_in\"/>5 Prozent Zinsen pro Jahr bietet, wie viel Geld muss ich jetzt auf die Bank legen, damit ich <bookmark mark=\"hundredthousand_in\"/>in 20 Jahren <bookmark mark=\"years_in\"/>100.000 Euro auf dem Konto habe?"
+        },
+        "a": {
+          "voiceover": "Da wir es mit Zinseszins zu tun haben, verwenden wir die exponentielle <bookmark mark=\"function_in\"/>Funktion f von x gleich a mal b hoch x, um die Geldmenge zu modellieren. Wir wollen jetzt <bookmark mark=\"highlight_a\"/>„a“ finden, was dem Geldbetrag entspricht, den wir bei x gleich null haben. Wir <bookmark mark=\"highlight_interest\"/>bekommen jedes Jahr fünf Prozent Zinsen, also muss der Wert von <bookmark mark=\"plug_in_b\"/>b 1,05 sein. Und wir betrachten einen Zeitraum <bookmark mark=\"highlight_time\"/>von 20 Jahren, also <bookmark mark=\"plug_in_x\"/>setzen wir für x 20 ein. Schließlich wollen wir <bookmark mark=\"highlight_100k\"/>100.000 Euro auf der Bank haben, also <bookmark mark=\"transform_f\"/>setzen wir f von x gleich 100.000. Da wir den Wert von „a“ finden wollen, <bookmark mark=\"step\"/>teilen wir beide Seiten durch 1,05 hoch 20. Und wir erhalten <bookmark mark=\"sol_in\"/>a gleich 100.000 geteilt durch 1,05 hoch 20. Wenn <bookmark mark=\"approx\"/>wir das berechnen, sehen wir, dass wir etwas weniger als 38.000 Euro benötigen, um 100.000 Euro zu haben."
+        }
       }
     },
     "general_form_1": {
+      "1": {
+        "a": {
+          "voiceover": "Wenn <bookmark mark=\"add_three\"/>wir x um 3 erhöhen, erhalten wir <bookmark mark=\"three_added\"/> 3 hoch x plus 3. Das können wir <bookmark mark=\"rewrite\"/>umschreiben als 3 hoch x mal 3 hoch 3. ... Und das können wir wiederum umschreiben <bookmark mark=\"sol_in\"/>als 27 mal 3 hoch x. Also steigt die Funktion um den Faktor 27, wenn wir x um 3 erhöhen."
+        },
+        "q": {
+          "voiceover": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x gleich 3 hoch x. Um welchen Faktor ändert sich die Funktion, wenn<bookmark mark=\"increase_x\"/> wir x um drei erhöhen?"
+        }
+      },
       "2": {
         "q": {
-          "twelve-years-ago": "Vor $12$ Jahren:"
+          "twelve-years-ago": "Vor $12$ Jahren:",
+          "voiceover": "Ein <bookmark mark=\"forest_in\"/>Wald wächst exponentiell, wenn man keine Bäume fällt. <bookmark mark=\"today_in\"/>Heute sind in meinem Wald 72 Tausend 342 Bäume. <bookmark mark=\"twelve_years_ago_in\"/>Vor 12 Jahren hatte er 48 Tausend 128 Bäume. Wenn die Anzahl der Bäume durch eine Funktion <bookmark mark=\"func_in\"/>der Form f von x gleich a mal b hoch x beschrieben wird, wie lautet dann der Wert von b?"
+        },
+        "a": {
+          "voiceover": "Zuerst <bookmark mark=\"divide_1\"/>teilen wir 72 Tausend 342, das ist die Anzahl der Bäume im Wald heute <bookmark mark=\"divide_2\"/>durch 48 Tausend 128, was der Anzahl der Bäume vor 12 Jahren entspricht. Das gibt dann an, um wie viel der Wald in zwölf Jahren gewachsen ist. Das bedeutet, dass <bookmark mark=\"b_12\"/>b hoch 12 gleich diesem Bruch ist. Dann können wir auf beiden <bookmark mark=\"take_root\"/>Seiten die 12. Wurzel ziehen, und wir erhalten <bookmark mark=\"sol_1\"/>, dass b gleich der 12. Wurzel von 72 Tausend 342 über 48 Tausend 128 ist. Wir können das mit einem Taschenrechner berechnen, und wir erhalten, dass <bookmark mark=\"sol_2\"/>b ungefähr 1, Null 34 ist."
+        }
+      },
+      "3": {
+        "a": {
+          "voiceover": "Wenn der Wert der Funktion um 19 Prozent sinkt, wenn wir x um zwei erhöhen, <bookmark mark=\"compare_fs\"/>dann ist f von x plus zwei gleich 0,81 mal f von x, da eine Abnahme um 19 Prozent dem Verbleiben von 0,81 entspricht. Also zeigt uns der Vergleich der Terme der Funktionen, <bookmark mark=\"compare_1\"/>dass a mal b hoch x plus zwei gleich 0,81 mal a mal b hoch x ist. Wir können dann den Ausdruck b hoch x plus zwei <bookmark mark=\"compare_2\"/>als b hoch x mal b hoch zwei umschreiben. ... Wenn wir dann <bookmark mark=\"compare_3_1\"/>beide Seiten durch a mal b hoch x teilen, erhalten wir, dass b Quadrat gleich 0,81 ist. Und das bedeutet, dass b gleich der Quadratwurzel von 0,81 ist, <bookmark mark=\"compare_3_2\"/>was 0,9 entspricht."
+        },
+        "q": {
+          "voiceover": "Wir haben eine<bookmark mark=\"func_in\"/> Funktion der Form f von x gleich a mal b hoch x. Für welchen Wert von a verringert sich der Wert der Funktion <bookmark mark=\"show_steps\"/> um 19 Prozent, wenn wir x um zwei erhöhen?"
+        }
+      },
+      "4": {
+        "q": {
+          "three-years-ago": "Vor drei Jahren",
+          "voiceover": "Die Größe <bookmark mark=\"plantation_in\"/>meiner Apfelplantage wächst exponentiell. Vor drei Jahren hatte ich <bookmark mark=\"bullet_1\"/>acht Apfelbäume. Heute habe ich <bookmark mark=\"bullet_2\"/>12 Apfelbäume. Wie viele Apfelbäume werde ich in sechs Jahren haben?"
+        },
+        "a": {
+          "voiceover": "Vor drei Jahren hatte ich <bookmark mark=\"eight_transform\"/>acht Bäume. Und heute, nachdem <bookmark mark=\"years_go_by\"/>drei Jahre vergangen sind, habe ich <bookmark mark=\"twelve_transform\"/>jetzt 12 Bäume. Also erhöht sich die Anzahl der Bäume um den Faktor 12 geteilt durch acht, was 1,5 ergibt. Da die Anzahl der Bäume exponentiell wächst, bleibt der Faktor, mit dem wir die Werte multiplizieren, konstant. Also, jetzt, da wir <bookmark mark=\"dev_1_0\"/>12 Bäume haben, und <bookmark mark=\"dev_1_1\"/>weitere drei Jahre warten, werden wir <bookmark mark=\"dev_1_2\"/>1,5 mal 12 gleich 18 Bäume haben. Und wenn wir <bookmark mark=\"dev_2_2\"/>weitere drei Jahre warten, werden wir 27 Bäume haben. Also werden wir in sechs Jahren 27 Apfelbäume haben."
         }
       }
     }
@@ -3078,6 +3115,35 @@
     "2": {
       "q": {
         "question-text": "Um wie viel Prozent steigt der Energieverbrauch Jahr für Jahr an?"
+      }
+    },
+    "4": {
+      "q": {
+        "question-text": "Wie viel Geld benötige ich heute bei einem jährlichen Zinssatz von $5\\%$, um in $20$ Jahren $100.000$ \\\\texteuro zu haben?"
+      }
+    }
+  },
+  "Func_6_P_general_form": {
+    "1": {
+      "1": {
+        "q": {
+          "question-text": "Um welchen Faktor ändert sich die Funktion $f(x)=3^x$, wenn wir $x$ um $3$ erhöhen?"
+        }
+      },
+      "2": {
+        "q": {
+          "question-text": "Wenn die Anzahl der Bäume durch $f(x)=a\\\\cdot b^x$ beschrieben wird, welchen Wert hat dann $b$?"
+        }
+      },
+      "3": {
+        "q": {
+          "question-text": "Betrachten wir eine Funktion der Form $f(x)=a\\\\cdot b^x$. Für welchen Wert von $b$ verringert sich f um $19\\%$, wenn wir $x$ um $2$ erhöhen?"
+        }
+      },
+      "4": {
+        "q": {
+          "question-text": "Wenn man davon ausgeht, dass ich vor $3$ Jahren $8$ Apfelbäume hatte und heute $12$, wie viele Apfelbäume werde ich in $6$ Jahren haben, wenn die Anzahl der Bäume exponentiell wächst?"
+        }
       }
     }
   }

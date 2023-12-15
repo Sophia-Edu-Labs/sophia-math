@@ -1729,7 +1729,7 @@ class Func_6_P_recognize_percentages_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$20$", "$x$"],
+            answerOptions = ["$20$", "$0$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_P_recognize_percentages.1.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
@@ -2006,7 +2006,7 @@ class Func_6_P_recognize_percentages_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$200$", "$x$"],
+            answerOptions = ["$200$", "$0$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_P_recognize_percentages.2.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
@@ -2169,7 +2169,7 @@ class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\sqrt[20]{2.2}$", "$x$"],
+            answerOptions = ["$\\sqrt[20]{2.2}$", "$0$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_P_recognize_percentages.2.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
@@ -2385,277 +2385,885 @@ class Func_6_P_recognize_percentages_3_b(SophiaCursorScene):
 
 #####################################
 #####################################
-# class Func_6_P_recognize_percentages_3_q(SophiaCursorScene):
+class Func_6_P_recognize_percentages_4_q(SophiaCursorScene):
 
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\frac{100000}{1.05^{20}}$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_recognize_percentages.4.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         city = ImageMobject(assets_folder / "img" / "city_using_energy.png")
-#         city = city.scale(3/city.get_width()).move_to([-5, 1.4, 0])
-#         year = self.translate("words.year")
-#         after_20_years = self.translate("Func_6_P.recognize_percentages.3.q.after-20-years")
+        interest = self.translate("words.interest")
+        years = self.translate("words.years")
+        bank = ImageMobject(assets_folder / "img" / "bank.png")
+        bank = bank.scale(3/bank.get_width()).move_to([-5, 1.4, 0])
+
+        bullets = VGroup(Tex("$\\bullet$ ", " $5\%$ ", interest, color=c1t, font_size=fs2), Tex("$\\bullet$ ", " $100.000$\\texteuro ", color=c1t, font_size=fs2), Tex("$\\bullet$ $20$ ", years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(bank, DOWN, buff=.4).set_x(0)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.recognize_percentages.4.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("bank_in")
+            self.add_shift_sound(0.5)
+            self.play(bank.animate.shift(5*RIGHT), run_time=0.5)
+
+            self.wait_until_bookmark("percent_in")
+            self.play(Write(bullets[0]))
+
+            self.wait_until_bookmark("hundredthousand_in")
+            self.play(Write(bullets[1]))
+
+            self.wait_until_bookmark("years_in")
+            self.play(Write(bullets[2]))
+
+        self.wait(4)
+
+
+class Func_6_P_recognize_percentages_4_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        interest = self.translate("words.interest")
+        years = self.translate("words.years")
+        bank = ImageMobject(assets_folder / "img" / "bank.png")
+        bank = bank.scale(3/bank.get_width()).set_y(1.4)
+        self.add(bank)
+        func_0 = MathTex("f(x)=", "a", "\\cdot", "b", "^x", color=c1t, font_size=fs2).set_y(2)
+        func_1 = MathTex("f(x)=", "a", "\\cdot", "1.05", "^x", color=c1t, font_size=fs2).move_to(func_0)
+        func_2 = MathTex("f(20)=", "a", "\\cdot", "1.05", "^{20}", color=c1t, font_size=fs2).move_to(func_0)
+        func_3 = MathTex("100.000=", "a", "\\cdot", "1.05", "^{20}", color=c1t, font_size=fs2).move_to(func_0)
+        step_1 = MathTex("\\Downarrow", "\\frac{\\Box}{1.05^{20}}", color=BLUE, font_size=fs2).next_to(func_3, DOWN, buff=.4)
+        sol = MathTex("a", "=", "\\frac{100.000}{1.05^{20}}", "", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        sol_approx = MathTex("a", "=", "\\frac{100.000}{1.05^{20}}", "\\approx38000", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+
+        bullets = VGroup(Tex("$\\bullet$ ", " $5\%$ ", interest, color=c1t, font_size=fs2), Tex("$\\bullet$ ", " $100.000$\\texteuro ", color=c1t, font_size=fs2), Tex("$\\bullet$ $20$ ", years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(bank, DOWN, buff=.4).set_x(0)
+        self.add(bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_6")+self.translate("Func_6_P.recognize_percentages.4.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("function_in")
+            self.add_shift_sound(.5)
+            self.play(bank.animate.shift(12*RIGHT), Write(func_0), run_time=.5)
+
+            self.wait_until_bookmark("highlight_a")
+            x,y,_ = func_0[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interest")
+            x,y,_ = bullets[0][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("plug_in_b")
+            self.play(ReplacementTransform(bullets[0][1].copy(), func_1[3]), ReplacementTransform(func_0[0], func_1[0]), ReplacementTransform(func_0[1], func_1[1]), ReplacementTransform(func_0[2], func_1[2]), Unwrite(func_0[3]), ReplacementTransform(func_0[4], func_1[4]), run_time=.5)
+
+            self.wait_until_bookmark("highlight_time")
+            x,y,_ = bullets[2][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+            
+            self.wait_until_bookmark("plug_in_x")
+            self.play(ReplacementTransform(bullets[2][1].copy(), func_2[4]), ReplacementTransform(func_1[0], func_2[0]), ReplacementTransform(func_1[1], func_2[1]), ReplacementTransform(func_1[2], func_2[2]), ReplacementTransform(func_1[3], func_2[3]), Unwrite(func_1[4]), run_time=.5)
+
+            self.wait_until_bookmark("highlight_100k")
+            x,y,_ = bullets[1][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("transform_f")
+            self.play(Unwrite(func_2[0]), ReplacementTransform(bullets[1][1].copy(), func_3[0]), ReplacementTransform(func_2[1], func_3[1]), ReplacementTransform(func_2[2], func_3[2]), ReplacementTransform(func_2[3], func_3[3]), ReplacementTransform(func_2[4], func_3[4]), run_time=.5)
+
+            self.wait_until_bookmark("step")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(Unwrite(bullets), CursorMoveResize(cursor, x, y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("sol_in")
+            x,y,_ = sol[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("approx")
+            self.play(TransformMatchingTex(sol, sol_approx))
+            x,y,_ = sol_approx[3].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
         
-#         bullets = VGroup(Tex("$\\bullet$ ", " $8000$ MWh", color=c1t, font_size=fs2), Tex("$\\bullet$ $2.2\\times $", after_20_years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1.2)
+class Func_6_P_recognize_percentages_4_b(SophiaCursorScene):
 
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# If my bank offers me 5 percent of interest every year, how much money do I have to put in the bank now, so that I will have 100 thousand euros in the bank 20 years from now?
-# """
-#         ) as tracker:
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        interest = self.translate("words.interest")
+        years = self.translate("words.years")
+        bank = ImageMobject(assets_folder / "img" / "bank.png")
+        bank = bank.scale(3/bank.get_width()).set_y(1.4)
+        self.add(bank)
+        func_0 = MathTex("f(x)=", "a", "\\cdot", "b", "^x", color=c1t, font_size=fs2).set_y(2)
+        func_1 = MathTex("f(x)=", "a", "\\cdot", "1.05", "^x", color=c1t, font_size=fs2).move_to(func_0)
+        func_2 = MathTex("f(20)=", "a", "\\cdot", "1.05", "^{20}", color=c1t, font_size=fs2).move_to(func_0)
+        func_3 = MathTex("100.000=", "a", "\\cdot", "1.05", "^{20}", color=c1t, font_size=fs2).move_to(func_0)
+        step_1 = MathTex("\\Downarrow", "\\frac{\\Box}{1.05^{20}}", color=BLUE, font_size=fs2).next_to(func_3, DOWN, buff=.4)
+        sol = MathTex("a", "=", "\\frac{100.000}{1.05^{20}}", "", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        sol_approx = MathTex("a", "=", "\\frac{100.000}{1.05^{20}}", "\\approx38000", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+
+        bullets = VGroup(Tex("$\\bullet$ ", " $5\%$ ", interest, color=c1t, font_size=fs2), Tex("$\\bullet$ ", " $100.000$\\texteuro ", color=c1t, font_size=fs2), Tex("$\\bullet$ $20$ ", years, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(bank, DOWN, buff=.4).set_x(0)
+        self.add(bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_6")+self.translate("Func_6_P.recognize_percentages.4.a.voiceover")
+        ) as tracker:
             
-#             self.wait_until_bookmark("city_in")
-#             self.add_shift_sound(0.5)
-#             self.play(city.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait_until_bookmark("function_in")
+            self.add_shift_sound(.5)
+            self.play(bank.animate.shift(12*RIGHT), Write(func_0), run_time=.5)
+
+            self.wait_until_bookmark("highlight_a")
+            x,y,_ = func_0[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interest")
+            x,y,_ = bullets[0][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("plug_in_b")
+            self.play(ReplacementTransform(bullets[0][1].copy(), func_1[3]), ReplacementTransform(func_0[0], func_1[0]), ReplacementTransform(func_0[1], func_1[1]), ReplacementTransform(func_0[2], func_1[2]), Unwrite(func_0[3]), ReplacementTransform(func_0[4], func_1[4]), run_time=.5)
+
+            self.wait_until_bookmark("highlight_time")
+            x,y,_ = bullets[2][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
             
-#             self.wait_until_bookmark("bullet_1_in")
-#             self.play(Write(bullets[0]), run_time=.5)
+            self.wait_until_bookmark("plug_in_x")
+            self.play(ReplacementTransform(bullets[2][1].copy(), func_2[4]), ReplacementTransform(func_1[0], func_2[0]), ReplacementTransform(func_1[1], func_2[1]), ReplacementTransform(func_1[2], func_2[2]), ReplacementTransform(func_1[3], func_2[3]), Unwrite(func_1[4]), run_time=.5)
 
-#             self.wait_until_bookmark("bullet_2_in")
-#             self.play(Write(bullets[1]), run_time=.5)
+            self.wait_until_bookmark("highlight_100k")
+            x,y,_ = bullets[1][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
 
-#         self.wait(4)
+            self.wait_until_bookmark("transform_f")
+            self.play(Unwrite(func_2[0]), ReplacementTransform(bullets[1][1].copy(), func_3[0]), ReplacementTransform(func_2[1], func_3[1]), ReplacementTransform(func_2[2], func_3[2]), ReplacementTransform(func_2[3], func_3[3]), ReplacementTransform(func_2[4], func_3[4]), run_time=.5)
+
+            self.wait_until_bookmark("step")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(Unwrite(bullets), CursorMoveResize(cursor, x, y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("sol_in")
+            x,y,_ = sol[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("approx")
+            self.play(TransformMatchingTex(sol, sol_approx))
+            x,y,_ = sol_approx[3].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveToCurved(cursor, x, y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
 
 
 ###################################################################Exercises for General Form ##########################
 
-##################################### Exercise Level: Easy (1)
+#################################### Exercise Level: Easy (1)
+####################################
+class Func_6_P_general_form_1_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$27$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_general_form.1.1.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func = MathTex("f(x)=3^x", color=c1t, font_size=fs2).set_y(2)
+        step = MathTex("\\Downarrow", "x+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.general_form_1.1.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func))
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func))
+
+            self.wait_until_bookmark("increase_x")
+            x,y, _ = step[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), Write(step), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+class Func_6_P_general_form_1_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func = MathTex("f(x)=3^x", color=c1t, font_size=fs2).set_y(2)
+        self.add(func)
+        step = MathTex("\\Downarrow", "x+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        sol = MathTex("3^{x+3}", "=3^x\\cdot3^3", "=27\\cdot 3^x", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Func_6_P.general_form_1.1.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("add_three")
+            x,y, _ = step.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), Write(step), run_time=.5)
+
+            self.wait_until_bookmark("three_added")
+            x,y, _ = sol[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[0]), run_time=.5)
+
+            self.wait_until_bookmark("rewrite")
+            x,y, _ = sol[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[1]), run_time=.5)
+
+            self.wait_until_bookmark("sol_in")
+            x,y, _ = sol[2].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[2]), run_time=.5)
+
+
+        self.wait(4)
+
+class Func_6_P_general_form_1_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        func = MathTex("f(x)=3^x", color=c1t, font_size=fs2).set_y(2)
+        self.add(func)
+        step = MathTex("\\Downarrow", "x+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        sol = MathTex("3^{x+3}", "=3^x\\cdot3^3", "=27\\cdot 3^x", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.general_form_1.1.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("add_three")
+            x,y, _ = step.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), Write(step), run_time=.5)
+
+            self.wait_until_bookmark("three_added")
+            x,y, _ = sol[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[0]), run_time=.5)
+
+            self.wait_until_bookmark("rewrite")
+            x,y, _ = sol[1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[1]), run_time=.5)
+
+            self.wait_until_bookmark("sol_in")
+            x,y, _ = sol[2].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(sol[2]), run_time=.5)
+
+
+        self.wait(4)
+
+
 #####################################
-# class Func_6_P_general_form_1_1_q(SophiaCursorScene):
+#####################################
+class Func_6_P_general_form_1_2_q(SophiaCursorScene):
 
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\\sqrt[12]{\\frac{72342}{48128}}$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_general_form.1.2.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         func = MathTex("f(x)=3^x").set_y(2)
-#         cursor = AltCursor(idle=True)
-#         self.add(cursor)
+        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+        today = self.translate("words.today")
+        twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
+        trees = self.translate("words.trees")
 
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# Look at the function <bookmark mark="func_in"/>f of x equals 3 to the power of x. By what factor does the function change, if we increase x by three?
-# """
-#         ) as tracker:
-            
-#             self.wait_until_bookmark("func_in")
-#             self.play(Write(func))
-#             cursor.idle=False
-#             self.play(CursorUnderline(cursor, func))
-#             self.wait(1)
-#             self.play(CursorMoveResize(cursor,0,-2))
+        forest = ImageMobject(assets_folder / "img" / "forest.png")
+        forest = forest.scale(3/forest.get_width()).move_to([-5, 1.4, 0])
 
-#         self.wait(4)
+        bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
 
-
-# class Func_6_P_general_form_1_1_a(SophiaCursorScene):
-
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         func = MathTex("f(x)=3^x").set_y(2)
-#         step = MathTex("\\Downarrow", "+3", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
-#         sol = MathTex("3^{x+3}", "=3^x\\cdot3^3", "=27\\cdot 3^x", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
-#         cursor = AltCursor(idle=True)
-#         self.add(cursor)
-
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# If <bookmark mark="add_three"/>we add three, we get <bookmark mark="three_added"/> 3 to the power of x plus 3. We can <bookmark mark="rewrite"/>rewrite that as 3 to the power of x times 3 to the power of 3. ... So the value increases by a factor of 3 to the power of 3<bookmark mark="sol_in"/>, which is 27.
-# """
-#         ) as tracker:
-            
-#             self.wait_until_bookmark("add_three")
-#             x,y, _ = step.get_center()+0.4*DOWN
-#             self.play(CursorMoveTo(cursor, x, y), Write(step), run_time=.5)
-
-#             self.wait_until_bookmark("three_added")
-#             x,y, _ = sol[0].get_center()+0.4*DOWN
-#             self.play(CursorMoveTo(cursor, x, y), Write(sol[0]), run_time=.5)
-
-#             self.wait_until_bookmark("rewrite")
-#             x,y, _ = sol[1].get_center()+0.4*DOWN
-#             self.play(CursorMoveTo(cursor, x, y), Write(sol[1]), run_time=.5)
-
-#             self.wait_until_bookmark("sol_in")
-#             x,y, _ = sol[2].get_center()+0.4*DOWN
-#             self.play(CursorMoveTo(cursor, x, y), Write(sol[2]), run_time=.5)
-
-
-#         self.wait(4)
-
-
-# #####################################
-# #####################################
-# class Func_6_P_general_form_1_2_q(SophiaCursorScene):
-
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
-#         cursor = AltCursor(idle=True)
-#         self.add(cursor)
-#         today = self.translate("words.today")
-#         twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
-#         trees = self.translate("words.trees")
-
-#         forest = ImageMobject(assets_folder / "img" / "forest.png")
-#         forest = forest.scale(3/forest.get_width()).move_to([-5, 1.4, 0])
-
-#         bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
-
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# A <bookmark mark="forest_in"/>forest will grow exponentially, if you don't cut down any trees. <bookmark mark="today_in"/>Today, my forest contains 72 thousand 342 trees. <bookmark mark="twelve_years_ago_in"/>12 years ago, it had 48 thousand 128 trees. If the number of trees is described by a function <bookmark mark="func_in"/>of the form f of x equals a times b to the power of x, what is the value of b?
-# """
-#         ) as tracker:
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.general_form_1.2.q.voiceover")
+        ) as tracker:
         
-#             self.wait_until_bookmark("forest_in")
-#             self.add_shift_sound(0.5)
-#             self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait_until_bookmark("forest_in")
+            self.add_shift_sound(0.5)
+            self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
 
-#             self.wait_until_bookmark("today_in")
-#             self.play(Write(bullets[0]), run_time=.5)
+            self.wait_until_bookmark("today_in")
+            self.play(Write(bullets[0]), run_time=.5)
 
-#             self.wait_until_bookmark("twelve_years_ago_in")
-#             self.play(Write(bullets[1]), run_time=.5)
+            self.wait_until_bookmark("twelve_years_ago_in")
+            self.play(Write(bullets[1]), run_time=.5)
 
-#             self.wait_until_bookmark("func_in")
-#             self.add_shift_sound(0.5)
-#             self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
-
-
-#         self.wait(4)
+            self.wait_until_bookmark("func_in")
+            self.add_shift_sound(0.5)
+            self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
 
 
-# class Func_6_P_general_form_1_2_a(SophiaCursorScene):
+        self.wait(4)
 
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+class Func_6_P_general_form_1_2_a(SophiaCursorScene):
 
-#         func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
-#         self.add(func)
-#         cursor = AltCursor(idle=True)
-#         self.add(cursor)
-#         today = self.translate("words.today")
-#         twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
-#         trees = self.translate("words.trees")
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
-#         self.add(bullets)
+        today = self.translate("words.today")
+        twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
+        trees = self.translate("words.trees")
+        eq_1 = MathTex("{{72342}", "\\over{48128}}", "=", "b", "^{12}", color=c1t, font_size=fs2).set_y(1.8)
+        step = MathTex("\\Downarrow", "\\sqrt[12]{\\Box}", color=BLUE, font_size=fs2).next_to(eq_1, DOWN, buff=.4)
+        eq_2 = MathTex("b", "=", "\\sqrt[12]{\\frac{72342}{48128}}", "\\approx", "1.034", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+
+        bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+        self.add(bullets)
+
+        forest = ImageMobject(assets_folder / "img" / "forest.png")
+        forest = forest.scale(3/forest.get_width()).set_y(1.4)
+        self.add(forest)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
         
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# If we <bookmark mark="divide_1"/>divide 72 thousand 342, which is the number of trees in the forest today by 48 thousand 128, which is the number of trees 12 years ago, we get 1.5. So the number of trees increased by a factor of 1.5 every 12 years, meaning that <bookmark mark="b_12"/>b to the power of 12 equals 1.5. We can <bookmark mark="take_root"/>take the 12th root on both sides, and we get that b equals the 12th root of 1.5. We can calculate that on a calculator, and we get that b is approximately 1.04.
-# """
-#         ) as tracker:
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_4")+self.translate("Func_6_P.general_form_1.2.a.voiceover")
+        ) as tracker:
         
-#             self.wait_until_bookmark("forest_in")
-#             self.add_shift_sound(0.5)
-#             self.play(forest.animate.shift(5*RIGHT), run_time=0.5)
+            self.wait_until_bookmark("divide_1")
+            self.add_shift_sound(.5)
+            self.play(forest.animate.shift(5*RIGHT), ReplacementTransform(bullets[0][2].copy(), eq_1[0]), run_time=.5)
 
-#             self.wait_until_bookmark("today_in")
-#             self.play(Write(bullets[0]), run_time=.5)
+            self.wait_until_bookmark("divide_2")
+            self.play(ReplacementTransform(bullets[1][2].copy(), eq_1[1]), run_time=.5)
 
-#             self.wait_until_bookmark("twelve_years_ago_in")
-#             self.play(Write(bullets[1]), run_time=.5)
+            self.wait_until_bookmark("b_12")
+            self.play(Write(eq_1[2]), Write(eq_1[3]), Write(eq_1[4]), run_time=.5)
 
-#             self.wait_until_bookmark("func_in")
-#             self.add_shift_sound(0.5)
-#             self.play(Write(func), forest.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("take_root")
+            x,y,_ = step[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x, y), Write(step), Unwrite(bullets), run_time=.5)
+
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = eq_2[2].get_center()+0.6*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(eq_2[:3]), run_time=.5)
+
+            self.wait_until_bookmark("sol_2")
+            x,y,_ = eq_2[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(eq_2[3:]), run_time=.5)
+
+class Func_6_P_general_form_1_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        today = self.translate("words.today")
+        twelve_years_ago = self.translate("Func_6_P.general_form_1.2.q.twelve-years-ago")
+        trees = self.translate("words.trees")
+        eq_1 = MathTex("{{72342}", "\\over{48128}}", "=", "b", "^{12}", color=c1t, font_size=fs2).set_y(1.8)
+        step = MathTex("\\Downarrow", "\\sqrt[12]{\\Box}", color=BLUE, font_size=fs2).next_to(eq_1, DOWN, buff=.4)
+        eq_2 = MathTex("b", "=", "\\sqrt[12]{\\frac{72342}{48128}}", "\\approx", "1.034", color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+
+        bullets = VGroup(Tex("$\\bullet$ ", today, ": $72342$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", twelve_years_ago, ": $48128$ ", trees, color=c1t, font_size=fs3), ).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-.2)
+        self.add(bullets)
+
+        forest = ImageMobject(assets_folder / "img" / "forest.png")
+        forest = forest.scale(3/forest.get_width()).set_y(1.4)
+        self.add(forest)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_6_P.general_form_1.2.a.voiceover")
+        ) as tracker:
+        
+            self.wait_until_bookmark("divide_1")
+            self.add_shift_sound(.5)
+            self.play(forest.animate.shift(5*RIGHT), ReplacementTransform(bullets[0][2].copy(), eq_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("divide_2")
+            self.play(ReplacementTransform(bullets[1][2].copy(), eq_1[1]), run_time=.5)
+
+            self.wait_until_bookmark("b_12")
+            self.play(Write(eq_1[2]), Write(eq_1[3]), Write(eq_1[4]), run_time=.5)
+
+            self.wait_until_bookmark("take_root")
+            x,y,_ = step[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x, y), Write(step), Unwrite(bullets), run_time=.5)
+
+            self.wait_until_bookmark("sol_1")
+            x,y,_ = eq_2[2].get_center()+0.6*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(eq_2[:3]), run_time=.5)
+
+            self.wait_until_bookmark("sol_2")
+            x,y,_ = eq_2[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(eq_2[3:]), run_time=.5)
 
 
-#         self.wait(4)
 
 
-# #####################################
-# #####################################
-# class Func_6_P_general_form_1_3_q(SophiaCursorScene):
+        self.wait(4)
 
-#     # def task_definition(self) -> SophiaTaskDefinition:
-#     #     return SophiaTaskDefinition(
-#     #         answerOptions = ["$x=\sqrt[5]{625}$", "$x=\sqrt[625]{5}$", "$x=\log_{625}{5}$", "$x=\log_5{625}$"],
-#     #         correctAnswerIndex = 3,
-#     #         questionText=self.translate("Func_6_3.I4.q.question-text")
-#     #     )
+#####################################
+#####################################
+class Func_6_P_general_form_1_3_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0.9$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_general_form.1.3.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
 
-#         func = MathTex("f(x)=a\\cdot b^x").set_y(2)
-#         cursor = AltCursor(idle=True)
-#         self.add(cursor)
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Action Sequence
-#         with self.voiceover(
-#                 text="""
-# We have  a <bookmark mark="func_in"/>function of the form of x equals a times b to the power of x. For what value of a does the value of the function decrease by 19 percent, if we increase x by two?
-# """
-#         ) as tracker:
+        decrease = self.translate("words.decrease")
+
+        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+        step = MathTex("\\Downarrow", "x+2", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        result = Tex("$19\%$ ", decrease, color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+        cursor = AltCursor(idle=True)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.general_form_1.3.q.voiceover")
+        ) as tracker:
             
-#             self.wait_until_bookmark("func_in")
-#             self.play(Write(func))
-#             cursor.idle=False
-#             self.play(CursorUnderline(cursor, func))
-#             self.wait(1)
-#             self.play(CursorMoveResize(cursor,0,-2))
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func))
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, func))
+            
+            self.wait_until_bookmark("show_steps")
+            x,y,_ = result.get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), Write(step), Write(result), run_time=1)
+            cursor.idle=True
 
-#         self.wait(4)
+        self.wait(4)
+
+
+class Func_6_P_general_form_1_3_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        decrease = self.translate("words.decrease")
+
+        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+        step = MathTex("\\Downarrow", "x+2", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        step = step.shift(step[1].get_x()*LEFT)
+        result = Tex("$19\%$ ", decrease, color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+        self.add(func, step, result)
+        consequence = MathTex("\\Downarrow", "", color=BLUE, font_size=fs2).next_to(result, DOWN, buff=.4)
+        compare_1 = MathTex("f(x+2)=0.81\\cdot f(x)", color=c1t, font_size=fs2).next_to(consequence, DOWN, buff=.4)
+        step_1 = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(compare_1, DOWN, buff=.4).shift(4*UP)
+        compare_2 = MathTex("a\\cdot b^{x+2}=0.81a\\cdot b^x", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(compare_2, DOWN, buff=.4)
+        compare_3 = MathTex("a\\cdot b^x\\cdot b^2=0.81a\\cdot b^x", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        step_3 = MathTex("\\Downarrow", "\\tfrac{\\Box}{a\\cdot b^x}", color=BLUE, font_size=fs2).next_to(compare_3, DOWN, buff=.4)
+        step_3.shift(step_3[0].get_x()*LEFT)
+        compare_4 = MathTex("b^2=0.81", "\\Rightarrow b=0.9", color=c1t, font_size=fs2).next_to(step_3, DOWN, buff=.4)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_5")+self.translate("Func_6_P.general_form_1.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("compare_fs")
+            cursor.idle=False
+            x,y,_ = compare_1.get_center()+.4*DOWN
+            self.play(Write(consequence), Write(compare_1), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_1")
+            x,y,_ = compare_2.get_center()+.4*DOWN
+            self.play(Unwrite(VGroup(consequence, func, step, result)), compare_1.animate.shift(4*UP), Write(step_1), Write(compare_2), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_2")
+            x,y,_ = compare_3.get_center()+.4*DOWN
+            self.play(Write(step_2), Write(compare_3), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_3_1")
+            x,y,_ = compare_4[0].get_center()+.4*DOWN
+            self.play(Write(step_3), Write(compare_4[0]), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_3_2")
+            x,y,_ = compare_4[1].get_center()+.4*DOWN
+            self.play(Write(compare_4[1]), CursorMoveTo(cursor,x,y), run_time=1)
+
+        self.wait(4)
+
+class Func_6_P_general_form_1_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        decrease = self.translate("words.decrease")
+
+        func = MathTex("f(x)=a\\cdot b^x", color=c1t, font_size=fs2).set_y(2)
+        step = MathTex("\\Downarrow", "x+2", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.4)
+        step = step.shift(step[1].get_x()*LEFT)
+        result = Tex("$19\%$ ", decrease, color=c1t, font_size=fs2).next_to(step, DOWN, buff=.4)
+        self.add(func, step, result)
+        consequence = MathTex("\\Downarrow", "", color=BLUE, font_size=fs2).next_to(result, DOWN, buff=.4)
+        compare_1 = MathTex("f(x+2)=0.81\\cdot f(x)", color=c1t, font_size=fs2).next_to(consequence, DOWN, buff=.4)
+        step_1 = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(compare_1, DOWN, buff=.4).shift(4*UP)
+        compare_2 = MathTex("a\\cdot b^{x+2}=0.81a\\cdot b^x", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(compare_2, DOWN, buff=.4)
+        compare_3 = MathTex("a\\cdot b^x\\cdot b^2=0.81a\\cdot b^x", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        step_3 = MathTex("\\Downarrow", "\\tfrac{\\Box}{a\\cdot b^x}", color=BLUE, font_size=fs2).next_to(compare_3, DOWN, buff=.4)
+        step_3.shift(step_3[0].get_x()*LEFT)
+        compare_4 = MathTex("b^2=0.81", "\\Rightarrow b=0.9", color=c1t, font_size=fs2).next_to(step_3, DOWN, buff=.4)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_P.general_form_1.3.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("compare_fs")
+            cursor.idle=False
+            x,y,_ = compare_1.get_center()+.4*DOWN
+            self.play(Write(consequence), Write(compare_1), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_1")
+            x,y,_ = compare_2.get_center()+.4*DOWN
+            self.play(Unwrite(VGroup(consequence, func, step, result)), compare_1.animate.shift(4*UP), Write(step_1), Write(compare_2), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_2")
+            x,y,_ = compare_3.get_center()+.4*DOWN
+            self.play(Write(step_2), Write(compare_3), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_3_1")
+            x,y,_ = compare_4[0].get_center()+.4*DOWN
+            self.play(Write(step_3), Write(compare_4[0]), CursorMoveTo(cursor,x,y), run_time=1)
+
+            self.wait_until_bookmark("compare_3_2")
+            x,y,_ = compare_4[1].get_center()+.4*DOWN
+            self.play(Write(compare_4[1]), CursorMoveTo(cursor,x,y), run_time=1)
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_P_general_form_1_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$27$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P_general_form.1.4.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        plantation = ImageMobject(assets_folder / "img" / "apple_plantation.png")
+        plantation = plantation.scale(3/plantation.get_width()).move_to([-5, 1.4, 0])
+
+        three_years_ago = self.translate("Func_6_P.general_form_1.4.q.three-years-ago")
+        today = self.translate("words.today")
+        trees = self.translate("words.trees")
+
+        bullets = VGroup(Tex("$\\bullet$ ", three_years_ago, ": $8$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", today, ": $12$ ", trees, color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1)
+
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.general_form_1.4.q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("plantation_in")
+            self.add_shift_sound(.5)
+            self.play(plantation.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("bullet_1")
+            self.play(Write(bullets[0]), run_time=.5)
+
+            self.wait_until_bookmark("bullet_2")
+            self.play(Write(bullets[1]), run_time=.5)
+
+        self.wait(4)
+
+
+class Func_6_P_general_form_1_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        plantation = ImageMobject(assets_folder / "img" / "apple_plantation.png")
+        plantation = plantation.scale(3/plantation.get_width()).set_y(1.4)
+        self.add(plantation)
+
+        three_years_ago = self.translate("Func_6_P.general_form_1.4.q.three-years-ago")
+        today = self.translate("words.today")
+        trees = self.translate("words.trees")
+        years = self.translate("words.years")
+
+        bullets = VGroup(Tex("$\\bullet$ ", three_years_ago, ": $8$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", today, ": $12$ ", trees, color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1)
+        self.add(bullets)
+
+        dev_1 = MathTex("8", f"\\underset{{\\text{{$3$ {years}}}}}{{\\overset{{\\times 1.5}}{{\\Rightarrow}}}}", "12", color=c1t, font_size=fs2)
+        dev_2 = MathTex("12", f"\\underset{{\\text{{$3$ {years}}}}}{{\\Rightarrow}}", "18", color=c1t, font_size=fs2)
+        dev_3 = MathTex("18", f"\\underset{{\\text{{$3$ {years}}}}}{{\\Rightarrow}}", "27", color=c1t, font_size=fs2)
+        devs = VGroup(dev_1, dev_2, dev_3).arrange(DOWN, buff=.6, aligned_edge=LEFT).set_y(2)
+
+        cursor = AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_2")+self.translate("Func_6_P.general_form_1.4.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("eight_transform")
+            self.add_shift_sound(.5)
+            self.play(plantation.animate.shift(5*RIGHT), ReplacementTransform(bullets[0][2].copy(), dev_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("years_go_by")
+            x,y,_ = dev_1[1].get_center()+0.6*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_1[1]), run_time=.5)
+
+            self.wait_until_bookmark("twelve_transform")
+            self.play(ReplacementTransform(bullets[1][2].copy(), dev_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_0")
+            x,y,_ = dev_2[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[0]), Unwrite(bullets), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_1")
+            x,y,_ = dev_2[1].get_center()+0.6*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[1]), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_2")
+            x,y,_ = dev_2[2].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[2]), run_time=.5)
+
+            self.wait_until_bookmark("dev_2_2")
+            x,y,_ = dev_3.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_3), run_time=.5)
+
+        self.wait(4)
+
+class Func_6_P_general_form_1_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        plantation = ImageMobject(assets_folder / "img" / "apple_plantation.png")
+        plantation = plantation.scale(3/plantation.get_width()).set_y(1.4)
+        self.add(plantation)
+
+        three_years_ago = self.translate("Func_6_P.general_form_1.4.q.three-years-ago")
+        today = self.translate("words.today")
+        trees = self.translate("words.trees")
+        years = self.translate("words.years")
+
+        bullets = VGroup(Tex("$\\bullet$ ", three_years_ago, ": $8$ ", trees, color=c1t, font_size=fs3), Tex("$\\bullet$ ", today, ": $12$ ", trees, color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(-1)
+        self.add(bullets)
+
+        dev_1 = MathTex("8", f"\\underset{{\\text{{$3$ {years}}}}}{{\\overset{{\\times 1.5}}{{\\Rightarrow}}}}", "12", color=c1t, font_size=fs2)
+        dev_2 = MathTex("12", f"\\underset{{\\text{{$3$ {years}}}}}{{\\Rightarrow}}", "18", color=c1t, font_size=fs2)
+        dev_3 = MathTex("18", f"\\underset{{\\text{{$3$ {years}}}}}{{\\Rightarrow}}", "27", color=c1t, font_size=fs2)
+        devs = VGroup(dev_1, dev_2, dev_3).arrange(DOWN, buff=.6, aligned_edge=LEFT).set_y(2)
+
+        cursor = AltCursor(idle=True, y=-1)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Func_6_P.general_form_1.4.a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("eight_transform")
+            self.add_shift_sound(.5)
+            self.play(plantation.animate.shift(5*RIGHT), ReplacementTransform(bullets[0][2].copy(), dev_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("years_go_by")
+            x,y,_ = dev_1[1].get_center()+0.6*DOWN
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_1[1]), run_time=.5)
+
+            self.wait_until_bookmark("twelve_transform")
+            self.play(ReplacementTransform(bullets[1][2].copy(), dev_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_0")
+            x,y,_ = dev_2[0].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[0]), Unwrite(bullets), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_1")
+            x,y,_ = dev_2[1].get_center()+0.6*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[1]), run_time=.5)
+
+            self.wait_until_bookmark("dev_1_2")
+            x,y,_ = dev_2[2].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_2[2]), run_time=.5)
+
+            self.wait_until_bookmark("dev_2_2")
+            x,y,_ = dev_3.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor, x, y), Write(dev_3), run_time=.5)
+
+        self.wait(4)
 
 
 
@@ -5533,6 +6141,23 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_2_P_6_a),
     PagePrototypeVideo.from_scene(Func_6_2_P_6_b),
     PagePrototypeVideo.from_scene(Func_6_2_P_6_c),
+########################################################################## Practice: Modelling with EXP
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_general_form_1_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_general_form_1_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_2_b),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_general_form_1_3_q),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_3_a),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_3_b),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_general_form_1_4_q),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_4_a),
+    PagePrototypeVideo.from_scene(Func_6_P_general_form_1_4_b),
 ########################################################################## Practice: Percentages and Interest
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_1_q),
@@ -5546,6 +6171,10 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_3_q),
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_3_a),
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_3_b),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_4_q),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_4_a),
+    PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_4_b),
 ##########################################################################CHAPTER: Rules for Exponenial Functions: Easy
     PagePrototypeVideo.from_scene(Func_6_P_2_1_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_2_1_1_q),
