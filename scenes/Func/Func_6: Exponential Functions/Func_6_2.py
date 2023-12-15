@@ -10,7 +10,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
 import ast
 
 
@@ -5811,7 +5811,14 @@ class Func_6_2_I_3_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions = ["$a=\\tfrac12$", "$a=\\tfrac14$", "$a=2$", "$a=1$"],
             correctAnswerIndex = 0,
-            questionText=self.translate("Func_6_2.I3.q.question-text")
+            questionText=self.translate("Func_6_2.I3.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=3,
+                answerOptionMatcher="$a=\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
         )
 
     # Main method for constructing the animation

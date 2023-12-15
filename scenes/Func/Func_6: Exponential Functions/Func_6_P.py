@@ -1543,7 +1543,14 @@ class Func_6_2_P_5_q(GraphToGrowthFactorQuestionScene):
         return SophiaTaskDefinition(
             answerOptions = ["$a=4$", "$a=2$", "$a=3$", "$a=-2$"],
             correctAnswerIndex = 0,
-            questionText=self.translate("Func_6_2.P5.q.question-text")
+            questionText=self.translate("Func_6_2.P5.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=3,
+                answerOptionMatcher="$a=\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                },
+            )
         )
 
     def construct(self):
