@@ -2172,7 +2172,7 @@
       }
     },
     "I31": {
-      "voiceover": "Okay, bisher haben wir uns exponentielle Funktionen der <bookmark mark=\"func_in\"/> Form f von x gleich b hoch x angeschaut, <bookmark mark=\"base_in\"/>wobei b die Basis <bookmark mark=\"exp_in\"/>und a der Exponent ist. Jetzt werden wir das etwas verallgemeinern und uns Funktionen der Form <bookmark mark=\"func_transform\"/>f von x gleich a mal b hoch x anschauen. So können wir <bookmark mark=\"monkey_in\"/> alle möglichen verrückten Situationen meistern. Los geht's!"
+      "voiceover": "Okay, bisher haben wir uns exponentielle Funktionen der <bookmark mark=\"func_in\"/> Form f von x gleich b hoch x angeschaut, <bookmark mark=\"base_in\"/>wobei b die Basis <bookmark mark=\"exp_in\"/>und x der Exponent ist. Jetzt werden wir das etwas verallgemeinern und uns Funktionen der Form <bookmark mark=\"func_transform\"/>f von x gleich a mal b hoch x anschauen. So können wir <bookmark mark=\"monkey_in\"/> alle möglichen verrückten Situationen meistern. Los geht's!"
     },
     "I32q": {
       "voiceover": "Lass uns damit beginnen, ein Verständnis dafür zu entwickeln, welche Auswirkungen die Werte von a und b haben.\nNimm <bookmark mark=\"func_in\"/>die Funktion f von x gleich a mal b hoch x. Wir beginnen damit, irgendwelche beliebigen  Werte für a und b auszuwählen und den<bookmark mark=\"plot_in\"/> Graphen zu zeichnen.\nJetzt aufgepasst, hier kommt eine Übung: Ich zeige dir zwei Animationen. Eine zeigt, wie wir a erhöhen, die andere zeigt, wie wir b erhöhen. Welche zeigt, wie wir a erhöhen?\nIst <bookmark mark=\"blue_anim\"/>es die blaue Animation? Oder ist <bookmark mark=\"purple_anim\"/>es die lila Animation?\nAlso nochmal<bookmark mark=\"reset_anim\"/>: Zeigt <bookmark mark=\"blue_anim_2\"/> die blaue Animation, wie wir a erhöhen?\nOder zeigt <bookmark mark=\"purple_anim_2\"/> die lilane Animation, wie wir a erhöhen?"
@@ -2917,7 +2917,11 @@
     "decrease": "Abfall",
     "value": "Wert",
     "budget": "Budget",
-    "base": "Basis"
+    "base": "Basis",
+    "factor": "Faktor",
+    "after": "nach",
+    "today": "Heute",
+    "trees": "Bäume"
   },
   "Func_6_P": {
     "22": {
@@ -3005,6 +3009,36 @@
         },
         "a": {
           "voiceover": "Die Funktion <bookmark mark=\"highlight_f_1\"/> f von x ist eine exponentielle Funktion. Die <bookmark mark=\"f1_base\"/>Basis ist gleich zwei und der <bookmark mark=\"f1_exponent\"/>Exponent ist x minus 1. Die <bookmark mark=\"highlight_f_2\"/>Funktion h von y ist ebenfalls eine exponentielle Funktion. Die <bookmark mark=\"f2_base\"/>Basis ist gleich zwei und der <bookmark mark=\"f2_exponent\"/>Exponent ist y geteilt durch 2. Die <bookmark mark=\"highlight_f_3\"/>Funktion g von z ist keine exponentielle Funktion. Dies liegt daran, dass die abhängige Variable z <bookmark mark=\"z_not_in_exponent\"/>in der Basis und nicht im Exponenten ist.<bookmark mark=\"done\"/>"
+        }
+      }
+    },
+    "recognize_percentages": {
+      "1": {
+        "q": {
+          "voiceover": "Du hast <bookmark mark=\"money_in\"/> ein Bankkonto, auf das du <bookmark mark=\"dollars_1_in\"/> 100 Dollar eingezahlt hast. Jedes Jahr bekommst du denselben Prozentsatz an Zinsen. Nach zwei Jahren hast du <bookmark mark=\"dollars_2_in\"/> 144 Dollar auf deinem Konto. Wie hoch ist der Zinssatz in Prozent?"
+        },
+        "a": {
+          "voiceover": "Die Funktion, die beschreibt, wie viel Geld wir jedes Jahr nach unseren Zinsen haben, ist <bookmark mark=\"money_out\"/> f von x gleich a mal b hoch x. Wir wissen, dass <bookmark mark=\"zero_highlight\"/> wir nach null Jahren 100 Dollar haben. Also ergibt sich <bookmark mark=\"f_0\"/>, dass f von null, was gleich a mal b hoch null ist, <bookmark mark=\"f_0_100\"/> gleich 100 ist. Da <bookmark mark=\"implication_1_in\"/> b hoch 0 gleich 1 ist, können wir sehen <bookmark mark=\"a_in\"/>, dass a gleich 100 sein muss...\nWir wissen ausserdem, <bookmark mark=\"transition_1\"/>dass <bookmark mark=\"two_highlight\"/> wir nach zwei Jahren 144 Dollar haben. Daraus leiten wir ab, dass <bookmark mark=\"f_2\"/> f von zwei, was gleich 100 mal b hoch zwei ist, gleich 144 ist.\nWenn wir <bookmark mark=\"implication_2_in\"/> beide Seiten durch 100 teilen, erhalten wir <bookmark mark=\"b_in\"/>, dass b hoch zwei gleich 1,44 ist. ... Zum Schluss <bookmark mark=\"bullets_out\"/> nehmen wir <bookmark mark=\"implication_3_in\"/> die Wurzel auf beiden Seiten. Und da die Wurzel von 1,44 gleich 1,2 ist, ist b gleich <bookmark mark=\"b_2_in\"/> 1,2. Daher ist <bookmark mark=\"transition_2\"/> der Zinssatz 20 Prozent."
+        }
+      },
+      "2": {
+        "q": {
+          "voiceover": "Eine <bookmark mark=\"city_in\"/> Stadt verbraucht <bookmark mark=\"bullet_1_in\"/>3000 Megawattstunden Strom pro Tag. Jedes Jahr erhöht sich diese Menge <bookmark mark=\"bullet_2_in\"/>auf das Dreifache des Vorjahres. Um wie viel Prozent erhöht sich der Stromverbrauch jährlich?"
+        },
+        "a": {
+          "voiceover": "Wir interessieren uns ja nur für die relativen und nicht für die absoluten Werte <bookmark mark=\"value_out\"/> des verbrauchten Stroms, denn wir wollen die relative Veränderung in Prozent wissen. Der multiplikative Faktor <bookmark mark=\"factor_in\"/> ist drei, weil der Stromverbrauch sich jedes Jahr verdreifacht...\nUm die prozentuale Veränderung zu erhalten, <bookmark mark=\"take_3\"/>nehmen wir den Faktor, <bookmark mark=\"subtract_one\"/>ziehen eins ab und <bookmark mark=\"multiply_100\"/>multiplizieren mit 100. Das bedeutet, dass wir eine <bookmark mark=\"200_percent\"/>200-prozentige Zunahme des Stromverbrauchs haben."
+        }
+      },
+      "3": {
+        "q": {
+          "after-20-years": "nach $20$ Jahren"
+        }
+      }
+    },
+    "general_form_1": {
+      "2": {
+        "q": {
+          "twelve-years-ago": "Vor $12$ Jahren:"
         }
       }
     }

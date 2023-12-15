@@ -2917,7 +2917,11 @@
     "decrease": "decrease",
     "value": "value",
     "budget": "budget",
-    "base": "base"
+    "base": "base",
+    "factor": "factor",
+    "after": "after",
+    "today": "today",
+    "trees": "trees"
   },
   "Words": {
     "base": "base",
@@ -3009,6 +3013,36 @@
         },
         "a": {
           "voiceover": "The function <bookmark mark=\"highlight_f_1\"/> f of x is an exponential function. The base <bookmark mark=\"f1_base\"/>is equal to two and the <bookmark mark=\"f1_exponent\"/>exponent is x minus 1. The <bookmark mark=\"highlight_f_2\"/>function h of y is also an exponential function. The <bookmark mark=\"f2_base\"/>base is equal to two and the <bookmark mark=\"f2_exponent\"/>exponent is y over 2. The <bookmark mark=\"highlight_f_3\"/>function g of z is not an exponential function. This is because the dependent variable z is <bookmark mark=\"z_not_in_exponent\"/>in the base, and not in the exponent.<bookmark mark=\"done\"/>"
+        }
+      }
+    },
+    "recognize_percentages": {
+      "1": {
+        "q": {
+          "voiceover": "You have<bookmark mark=\"money_in\"/> a bank account, that you <bookmark mark=\"dollars_1_in\"/>put 100 Dollars into. Every year, you get the same percentage of interest. After two years, you have <bookmark mark=\"dollars_2_in\"/>144 Dollars in your account. What is the interest rate in percent?"
+        },
+        "a": {
+          "voiceover": "So the function describing the amount of money we have with yearly interest is<bookmark mark=\"money_out\"/> f of x equals a times b to the power of x. We know that<bookmark mark=\"zero_highlight\"/> after zero years, we have 100 dollars, so we get <bookmark mark=\"f_0\"/>that f of zero, which equals a times b to the zero is <bookmark mark=\"f_0_100\"/>equal to 100. Since <bookmark mark=\"implication_1_in\"/>b to the power of 0 is 1, we can see <bookmark mark=\"a_in\"/>that a has to be equal to 100...\nAnother thing<bookmark mark=\"transition_1\"/> we know is that <bookmark mark=\"two_highlight\"/>after two years, we have 144 dollars. This means, that we get that <bookmark mark=\"f_2\"/>f of two, which equals 100 times b to the power of two is equal to 144.\nWe can then divide <bookmark mark=\"implication_2_in\"/>both sides by 100, and we get <bookmark mark=\"b_in\"/>that b to the power of two is equal to 1 point 4 4. ... Next, we <bookmark mark=\"bullets_out\"/>take <bookmark mark=\"implication_3_in\"/>the square root on both sides. And since the square root of 1 point 4 4 is 1 point 2, b is equal<bookmark mark=\"b_2_in\"/> to 1.2. Therefore, <bookmark mark=\"transition_2\"/>since b is 1 point 2, the interest rate is 20 percent."
+        }
+      },
+      "2": {
+        "q": {
+          "voiceover": "A<bookmark mark=\"city_in\"/> city uses <bookmark mark=\"bullet_1_in\"/>3000 Megawatt hours of electricity every day. Every year, this amount increases <bookmark mark=\"bullet_2_in\"/>by a factor of three. By how many percent does the amount of electricity used increase year over year?"
+        },
+        "a": {
+          "voiceover": "So we only care about the relative and not about the absolute values<bookmark mark=\"value_out\"/> of electricity used, because we want to know about the relative change in percent. So the multiplicative factor<bookmark mark=\"factor_in\"/> is three, because the electricity used increases by a factor of three every year.\nSo to get the percentage change, we <bookmark mark=\"take_3\"/>take the factor, <bookmark mark=\"subtract_one\"/>subtract one, and <bookmark mark=\"multiply_100\"/>multiply by 100. This means, that we have a <bookmark mark=\"200_percent\"/>200 percent increase in electricity used."
+        }
+      },
+      "3": {
+        "q": {
+          "after-20-years": "after $20$ years"
+        }
+      }
+    },
+    "general_form_1": {
+      "2": {
+        "q": {
+          "twelve-years-ago": "twelve years ago"
         }
       }
     }
