@@ -5809,7 +5809,7 @@ class Func_6_2_I_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$a=\\tfrac12$", "$a=\\tfrac14$", "$a=2$", "$a=1$"],
+            answerOptions = ["$a=\\frac{1}{2}$", "$a=\\frac{1}{4}$", "$a=2$", "$a=1$"],
             correctAnswerIndex = 0,
             questionText=self.translate("Func_6_2.I3.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
