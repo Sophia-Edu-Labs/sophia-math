@@ -3119,7 +3119,7 @@
     },
     "4": {
       "q": {
-        "question-text": "Given an annual interest rate of $5\\%$, how much money do i need today, to reach $100.000$\\\\texteuro in $20$ years?"
+        "question-text": "Given an annual interest rate of $5\\%$, how much money do i need today, to reach $100.000$€ in $20$ years?"
       }
     }
   },
@@ -3132,12 +3132,12 @@
       },
       "2": {
         "q": {
-          "question-text": "If the number of trees is described by $f(x)=a\\\\cdot b^x$, what is the value of $b$?"
+          "question-text": "If the number of trees is described by $f(x)=a\\cdot b^x$, and $12$ years ago there were  $48128$ trees, while today there are $72342$, what is the value of $b$?"
         }
       },
       "3": {
         "q": {
-          "question-text": "Considering a function of the form $f(x)=a\\\\cdot b^x$, for what value of $b$ does f decrease by $19\\%$, if we increase $x$ by $2$?"
+          "question-text": "Considering a function of the form $f(x)=a\\cdot b^x$, for what value of $b$ does f decrease by $19\\%$, if we increase $x$ by $2$?"
         }
       },
       "4": {

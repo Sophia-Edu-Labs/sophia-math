@@ -3119,7 +3119,7 @@
     },
     "4": {
       "q": {
-        "question-text": "Wie viel Geld benötige ich heute bei einem jährlichen Zinssatz von $5\\%$, um in $20$ Jahren $100.000$ \\\\texteuro zu haben?"
+        "question-text": "Wie viel Geld benötige ich heute bei einem jährlichen Zinssatz von $5\\%$, um in $20$ Jahren $100.000$€ zu haben?"
       }
     }
   },
@@ -3132,12 +3132,12 @@
       },
       "2": {
         "q": {
-          "question-text": "Wenn die Anzahl der Bäume durch $f(x)=a\\\\cdot b^x$ beschrieben wird, welchen Wert hat dann $b$?"
+          "question-text": "Wenn die Anzahl der Bäume durch $f(x)=a\\cdot b^x$ beschrieben wird und es vor $12$ Jahren $48128$ Bäume gab, während es heute $72342$ sind, welchen Wert hat dann $b$?"
         }
       },
       "3": {
         "q": {
-          "question-text": "Betrachten wir eine Funktion der Form $f(x)=a\\\\cdot b^x$. Für welchen Wert von $b$ verringert sich f um $19\\%$, wenn wir $x$ um $2$ erhöhen?"
+          "question-text": "Betrachten wir eine Funktion der Form $f(x)=a\\cdot b^x$. Für welchen Wert von $b$ verringert sich f um $19\\%$, wenn wir $x$ um $2$ erhöhen?"
         }
       },
       "4": {
