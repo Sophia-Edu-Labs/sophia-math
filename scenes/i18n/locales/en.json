@@ -2921,7 +2921,10 @@
     "factor": "factor",
     "after": "after",
     "today": "today",
-    "trees": "trees"
+    "trees": "trees",
+    "loan": "loan",
+    "payment": "repayment",
+    "repayment": "repayment"
   },
   "Words": {
     "base": "base",
@@ -3086,6 +3089,16 @@
           "voiceover": "So three years ago, I <bookmark mark=\"eight_transform\"/>had eight trees. And today, after<bookmark mark=\"years_go_by\"/> three years have gone by, I <bookmark mark=\"twelve_transform\"/>now have 12 trees. So the number of trees increases by a factor of 12 divided by eight, which is 1.5. Now since the number of trees grows exponentially, the factor by which we multiply the values remains constant. So now that we<bookmark mark=\"dev_1_0\"/> have 12 trees, if we <bookmark mark=\"dev_1_1\"/> wait another three years, we will <bookmark mark=\"dev_1_2\"/>have 1.5 times 12 equals 18 trees. And if we <bookmark mark=\"dev_2_2\"/> wait another three years, we will have 27 trees. So six years from now, I will have 27 apple trees."
         }
       }
+    },
+    "graphs": {
+      "1": {
+        "q": {
+          "voiceover": "Look at <bookmark mark=\"graph_in\"/> this graph of an exponential function. It has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark=\"points_in\"/>three points i marked here. The term of the function is <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. What are the values of \"a\", b and c?"
+        },
+        "a": {
+          "voiceover": "First, we can see that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 0.5 instead of y=0. ... This means, <bookmark mark=\"c_mark\"/>that c has to be <bookmark mark=\"c_in\"/>equal to negative 0.5, because the entire function is shifted down by negative 0.5 ... Next, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 0.5. Since b to the power of zero is one, we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 0.5. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to 0.5, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark=\"point_1\"/>leftmost point is two units away from the asymptote. The <bookmark mark=\"point_2\"/>middle point is one unit away from the asymptote. And the <bookmark mark=\"point_3\"/>rightmost point is 0.5 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>This means that the distance halves for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 0.5. So the final solution is <bookmark mark=\"conclusion\"/>f of x equals 1 times 0.5 to the power of x minus 0.5."
+        }
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3144,6 +3157,13 @@
         "q": {
           "question-text": "Given that $3$ years ago, I had $8$ apple trees and today, I have $12$, how many apple trees will I have $6$ years from now, if the number of trees grows exponentially?"
         }
+      }
+    }
+  },
+  "Func_6_P_graphs": {
+    "1": {
+      "q": {
+        "question-text": "The graph is described by a function $f(x)=a\\cdot b^x+c$. What are the values of $a$, $b$ and $c$?"
       }
     }
   }

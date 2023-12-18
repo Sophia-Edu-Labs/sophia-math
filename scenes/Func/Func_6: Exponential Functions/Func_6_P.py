@@ -20,7 +20,6 @@ import ast
 # - Graphs of exponential functions
 # - Rules of exponential functions
 # - interests and percentages
-# - Working with Logarithms
 # - Rules of logarithms
 # - Modeling Terms using Logarithms
 
@@ -2392,18 +2391,17 @@ class Func_6_P_graphs_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$27$", "$0$"],
-            correctAnswerIndex = 0,
-            questionText=self.translate("Func_6_P_general_form.1.1.q.question-text"),
+            answerOptions = ["$a=0$, $b=0.5$, $c=-0.5$", "$a=1$, $b=2$, $c=1$"],
+            correctAnswerIndex = 2,
+            questionText = self.translate("Func_6_P_graphs.1.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
-                fallbackOptionIndex=1,
-                answerOptionMatcher="$\key{a}$",
-                # answerOptionsTypes={
-                #     "a": "number"
-                # },
-                # answerOptionDescriptions={
-                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
-                # }
+                fallbackOptionIndex=3,
+                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$, $c=\key{c}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number",
+                    "c": "number",
+                }
             )
         )
 
@@ -2439,10 +2437,7 @@ class Func_6_P_graphs_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-Look at <bookmark mark="graph_in"/> this graph of an exponential function. It has a <bookmark mark="asympote_in"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark="points_in"/>three points i marked here. The term of the function is <bookmark mark="term_in"/> f of x equals a times b to the power of x plus c. What are the values of "a", b and c?
-""" 
+                text=self.translate("Func_6_P.graphs.1.q.voiceover")
             ) as tracker:
             
             self.wait_until_bookmark("graph_in")
@@ -2511,10 +2506,7 @@ class Func_6_P_graphs_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-First, we can see that <bookmark mark="highlight_asymptote"/>the asymptote is at y = negative 0.5 instead of y=0. ... This means, <bookmark mark="c_mark"/>that c has to be <bookmark mark="c_in"/>equal to negative 0.5, because the entire function is shifted down by negative 0.5 ... Next, we <bookmark mark="plug_in_zero_a"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 0.5. Since b to the power of zero is one, we can simplify this <bookmark mark="plug_in_zero_b"/>to f of zero equals a minus 0.5. We also know <bookmark mark="plug_in_zero_c"/>that f of zero is equal to 0.5, so we can easily <bookmark mark="move_to_a"/>infer that a is <bookmark mark="a_in"/>equal to one. Now the <bookmark mark="reset"/>final value we need to <bookmark mark="highlight_b"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark="point_1"/>leftmost point is two units away from the asymptote. The <bookmark mark="point_2"/>middle point is one unit away from the asymptote. And the <bookmark mark="point_3"/>rightmost point is 0.5 units away from the asymptote. <bookmark mark="reset_cursor"/>This means that the distance halves for each step to the right.<bookmark mark="highlight_b_again"/> So b must be equal <bookmark mark="b_in"/>to 0.5. So the final solution is <bookmark mark="conclusion"/>f of x equals 1 times 0.5 to the power of x minus 0.5.
-""" 
+                text=self.translate("Func_6_P.graphs.1.a.voiceover")
             ) as tracker:
             
             self.wait_until_bookmark("highlight_asymptote")
@@ -6505,6 +6497,193 @@ class Func_6_P_2_2_3_d(SophiaCursorScene):
 
 #         self.wait(4)
 
+###############Exercises for Rules of Exponential functions Chapter ##########################
+        
+#####################################
+#####################################
+class Func_6_P_log_rules_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("\\log_2\\left({\\tfrac{1}{2048}}\\right)", color=c1t, font_size=fs1).set_y(2.6)
+
+        beaver = ImageMobject(assets_folder / "img" / "beaver_abacus.png")
+        beaver = beaver.scale(4/beaver.get_width()).set_x(-5)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Consider the <bookmark mark="term_in"/> base 2 logarithm of one over 2048. What is the value of this term? You can <bookmark mark="beaver_in"/>compute the numerical value without using a calculator.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+            
+            self.wait_until_bookmark("beaver_in")
+            self.add_shift_sound(0.5)
+            self.play(beaver.animate.shift(5*RIGHT), run_time=.5)
+
+        self.wait(4)
+
+
+class Func_6_P_log_rules_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("\\log_2\\left({\\tfrac{1}{2048}}\\right)", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "\\log_a\\left(\\tfrac{1}{b}\\right)=-\\log_a(b)", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("-\\log_2\\left({2048}\\right)", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4).set_x(step_1[0].get_x())
+        powers = VGroup(*[MathTex(f"2^{{{idx}}}={2**idx}", color=BLUE_D, font_size=fs2).scale(.9).next_to(step_2, RIGHT) for idx in range(12)])
+        term_3 = MathTex("\\log_2\\left({\\tfrac{1}{2048}}\\right)=-11", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4).set_x(0)
+
+        beaver = ImageMobject(assets_folder / "img" / "beaver_abacus.png")
+        beaver = beaver.scale(4/beaver.get_width())
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, term_1, beaver)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+First, we can apply the <bookmark mark="step_1_in"/>rule that the base a logarithm of one over b is equal to minus the base a logarithm of b. This <bookmark mark="term_2"/>gives us minus the base 2 logarithm of 2048. Now, let's <bookmark mark="step_2"/>compute the powers of two: Two to the power of<bookmark mark="power_0"/> zero is equal to one, two to the power of <bookmark mark="power_1"/>one is equal to two, and then we keep multiplying both sides by two, until finally, we see that two to the power of 11 is equal to 2 thousand 48. So the solution is <bookmark mark="sol"/>that the base 2 logarithm of one over 2 thousand 48 is equal to negative 11.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1_in")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(beaver.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_2), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(step_2), run_time=.5)
+
+            self.wait_until_bookmark("power_0")
+            x,y,_ = powers[0].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(powers[0]), run_time=.5)
+
+            self.wait_until_bookmark("power_1")
+            self.play(ReplacementTransform(powers[0], powers[1]))
+    
+            for idx in range(2,12):
+                self.play(ReplacementTransform(powers[idx-1], powers[idx]), run_time=.2)
+                self.wait(.3)
+
+            self.wait_until_bookmark("sol")
+            x,y,_ = term_3.get_center()+0.5*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_3), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+#####################################
+#####################################
+class Func_6_P_log_rules_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)", color=c1t, font_size=fs2).set_y(2.6)
+
+        seagull = ImageMobject(assets_folder / "img" / "seagull_writing.png")
+        seagull = seagull.scale(4/seagull.get_width()).set_x(-5)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Consider the <bookmark mark="term_in"/> expresssion base 5 logarithm of 60 "a" minus base 5 logarithm of 12 "a". What is the value of this term? Start<bookmark mark="seagull_in"/> by simplifying the term, it will make your life easier.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term_1))
+            self.play(CursorUnderline(cursor, term_1))
+            
+            self.wait_until_bookmark("seagull_in")
+            self.add_shift_sound(0.5)
+            self.play(seagull.animate.shift(5*RIGHT), CursorMoveResize(cursor,0,-2), run_time=.5)
+
+        self.wait(4)
+
+
+class Func_6_P_log_rules_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)", color=c1t, font_size=fs2).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "\\log_a(b)-\\log_a(c)=\\log_a\\left(\\tfrac{b}{c}\\right)", color=BLUE_D, font_size=fs3).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("\\log_5\\left(\\tfrac{60a}{12a}\\right)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs3).next_to(term_2, DOWN, buff=.4)
+        term_3 = MathTex("\\log_5\\left(5\\right)=1", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+
+        seagull = ImageMobject(assets_folder / "img" / "seagull_writing.png")
+        seagull = seagull.scale(4/seagull.get_width())
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, seagull, term_1)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+The first thing you can do is apply the <bookmark mark="step_1"/>rule stating that the base a logarithm of b minus the base a logarithm of c is equal to the base a logarithm of b minus c. This<bookmark mark="term_2"/> gives us the base 5 logarithm of 60 "a" over 12 "a". Now, we can <bookmark mark="step_2"/>simplify this term by dividing the numerator and the denominator by 12 "a". This <bookmark mark="solution"/>gives us the base 5 logarithm of 5, which is equal to 1. So the solution is simply one.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(seagull.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_2), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(step_2), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = term_3.get_center()+0.5*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_3), run_time=.5)
+            cursor.idle=True
+            
+
+        self.wait(4)
+
 
 ###############Exercises for modeling with log terms Chapter ##########################
         
@@ -6644,8 +6823,8 @@ class Func_6_P_model_log_terms_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        loan = self.translate("words.loan")
-        repayment = self.translate("words.payment")
+        loan_text = self.translate("words.loan")
+        repayment = self.translate("words.repayment")
         year = self.translate("words.year")
 
         loan = ImageMobject(assets_folder / "img" / "loan.png")
@@ -6655,30 +6834,239 @@ class Func_6_P_model_log_terms_2_q(SophiaCursorScene):
         self.add(cursor)
 
 
-        bullets = VGroup(Tex("$\\bullet$ ", " $5\%$ ", color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$2\\times$ ", increase, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(bank, DOWN, buff=.4).set_x(0)
+        bullets = VGroup(Tex("$\\bullet$ "," $200\$$ ", loan_text, color=c1t, font_size=fs2), Tex("$\\bullet$ "," $10\%$ ", repayment, "/ ", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(loan, DOWN, buff=.6).set_x(0).scale(0.9)
 
         # Action Sequence
         with self.voiceover(
                 text="""
-Say <bookmark mark="bank"/>your bank offers you an annual<bookmark mark="interest_in"/> interest rate of 5 percent and you decide to invest. How many years will it take for your investment<bookmark mark="increase_in"/> to double?
+You took out <bookmark mark="loan"/>a loan over <bookmark mark="loan_in"/>200 dollars from your bank. Every year, you pay <bookmark mark="payback_in"/>back 10 percent of what you still owe them. How many years will it take, until you only owe them 50$?
 """
         ) as tracker:
             
-            self.wait_until_bookmark("bank")
+            self.wait_until_bookmark("loan")
             self.add_shift_sound(.5)
-            self.play(bank.animate.shift(5*RIGHT), run_time=.5)
+            self.play(loan.animate.shift(5*RIGHT), run_time=.5)
 
-            self.wait_until_bookmark("interest_in")
+            self.wait_until_bookmark("loan_in")
             x,y,_ = bullets[0].get_center()+0.4*DOWN
             cursor.idle=False
             self.play(Write(bullets[0]), CursorMoveTo(cursor,x,y), run_time=.5)
 
-            self.wait_until_bookmark("increase_in")
+            self.wait_until_bookmark("payback_in")
             x,y,_ = bullets[1].get_center()+0.4*DOWN
             self.play(Write(bullets[1]), CursorMoveTo(cursor,x,y), run_time=.5)
             cursor.idle=True
 
         self.wait(4)
+
+class Func_6_P_model_log_terms_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        loan_text = self.translate("words.loan")
+        repayment = self.translate("words.repayment")
+        year = self.translate("words.year")
+
+        loan = ImageMobject(assets_folder / "img" / "loan.png")
+        loan = loan.scale(3/loan.get_width()).set_y(1.4)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        bullets = VGroup(Tex("$\\bullet$ "," $200\$$ ", loan_text, color=c1t, font_size=fs2), Tex("$\\bullet$ "," $10\%$ ", repayment, "/ ", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(loan, DOWN, buff=.6).set_x(0).scale(0.9)
+        
+        func = MathTex("f(x)=a\\cdot", "b", "^x", color=c1t, font_size=fs2).set_y(2.4)
+        func_b = MathTex("f(x)=200\\cdot", "0.9", "^x", color=c1t, font_size=fs2).move_to(func)
+        func_2 = MathTex("200\\cdot 0.9", "^x", "=50", color=c1t, font_size=fs2).move_to(func)
+        func_3 = MathTex("0.9", "^x", "=0.25", color=c1t, font_size=fs2).move_to(func)
+        step_1 = MathTex("\\Downarrow", "\\log_{0.9}", "\\left(\\Box\\right)", color=BLUE_D, font_size=fs3).next_to(func, DOWN, buff=.4)
+        func_log = MathTex("\\log_{0.9}\\left(0.9", "^x\\right)", "=\\log_{0.9}(0.25)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "\\log_{a}\\left(a^b\\right)=b", color=BLUE_D, font_size=fs3).next_to(func_log, DOWN, buff=.4)
+        solution = MathTex("x", "=\\log_{0.9}(0.25)", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        sol_calculated = MathTex("x", "=\\log_{0.9}(0.25)", "\\approx13.16", color=c1t, font_size=fs2).move_to(solution)
+        self.add(loan, bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+We can model the amount of money we still owe the bank using an <bookmark mark="func_in"/>exponential function f of x equals a times b to the power of x. Since <bookmark mark="highlight_repay"/>we pay back ten percent per year, we set<bookmark mark="set_b"/> b to 0.9, because that's how much remains after we've paid back ten percent. Now we want to know, when the amount we owe to the bank will be 50 dollars. So we need to find out for what value of x we get that 200 times 0.9 to the power of x <bookmark mark="transform"/>is equal to fifty. Or, after dividing both sides by 200, we can try to find out for what value of x it holds that 0.9 to the power of x <bookmark mark="transform_2"/>is equal to 0.25. To find this, we can apply the <bookmark mark="step_1"/>base 0.9 logarithm on both sides, and get that<bookmark mark="func_log"/> the base 0.9 logarithm of 0.9 to the power of x is equal to the base 0.9 logarithm of 0.25. Now we can <bookmark mark="step_2"/>just write the left hand side as x times the base 0.9 logarithm of 0.9, <bookmark mark="solution"/>and get that x is equal to the base 0.9 logarithm of 0.25. And that's <bookmark mark="approx"/>approximately 13 point 1 6, so you'll have to pay your installments for over 13 years.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.add_shift_sound(0.5)
+            x,y,_ = func.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(loan.animate.shift(5*RIGHT), Write(func), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("highlight_repay")
+            x,y,_ = bullets[1][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("set_b")
+            bc_1 = bullets[1][1].copy()
+            x,y,_ = func_b[1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func[0], func_b[0]), ReplacementTransform(bc_1, func_b[1]), Unwrite(func[1]), ReplacementTransform(func[2], func_b[2]), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("transform")
+            bc_2 = bullets[0][1].copy()
+            x,y,_ = func_2[-1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func_b[0], func_2[0]), ReplacementTransform(func_b[1], func_2[1]), Unwrite(func_b[2]), ReplacementTransform(bc_2, func_2[-1]), run_time=.5)
+
+            self.wait_until_bookmark("transform_2")
+            self.play(TransformMatchingTex(func_2, func_3))
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(Write(step_1), Unwrite(bullets), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("func_log")
+            x,y,_ = func_log.get_center()+0.4*DOWN
+            self.play(Write(func_log), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[1].get_center()+0.4*DOWN
+            self.play(Write(solution), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("approx")
+            x,y,_ = sol_calculated[-1].get_center()+0.4*DOWN    
+            self.play(ReplacementTransform(solution, sol_calculated), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+###############Exercises for Exp and Log Chapter ##########################
+        
+#####################################
+#####################################
+class Func_6_P_exp_log_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("25^x-3\\left(5^x\\right)=0", color=c1t, font_size=fs1).set_y(2.6)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_looking_for_x.png")
+        dog = dog.scale(4/dog.get_width()).set_x(-5)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Consider the <bookmark mark="term_in"/>equation 25 to the power of x minus 3 times 5 to the power of x equals zero. What <bookmark mark="dog_in"/>is the value of x?
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, term))
+            
+            self.wait_until_bookmark("dog_in")
+            self.add_shift_sound(0.5)
+            self.play(dog.animate.shift(5*RIGHT), CursorMoveResize(cursor, 0, -2), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+class Func_6_P_exp_log_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("25^x-3\\left(5^x\\right)=0", color=c1t, font_size=fs2).set_y(2.6)
+        step_1 = MathTex("25^x=5^{2x}", "\\Downarrow", "+3\\left(5^x\\right)", color=BLUE_D, font_size=fs3).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(1.1)
+        step_1[2].scale(.9)
+        step_1[0].scale(.9)
+        term_2 = MathTex("5^{2x}=3\\left(5^x\\right)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "5^{2x}=\\left(5^{x}\\right)^{^2}", color=BLUE_D, font_size=fs3).next_to(term_2, DOWN, buff=.4)
+        step_2[1].scale(.9)
+        term_3 = MathTex("\\left(5^{x}\\right)^2=3\\left(5^x\\right)", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        step_3 = MathTex("\\Downarrow", "\\Box/5^x", color=BLUE_D, font_size=fs3).next_to(term_3, DOWN, buff=.4).shift(2.4*UP)
+        term_4 = MathTex("5^x=3", color=c1t, font_size=fs2).next_to(step_3, DOWN, buff=.4)
+        step_4 = MathTex("\\Downarrow", "\\log_5", color=BLUE_D, font_size=fs3).next_to(term_4, DOWN, buff=.4)
+        term_5 = MathTex("x=\\log_5(3)", color=c1t, font_size=fs2).next_to(step_4, DOWN, buff=.4)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_looking_for_x.png")
+        dog = dog.scale(4/dog.get_width())
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, term_1, dog)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+In the first <bookmark mark="step_1_0"/>step, we will do two things: First, <bookmark mark="step_1_1"/>we will add three times 5 to the power of x on both sides. And then,<bookmark mark="step_1_2"/> we'll rewrite 25 as five squared. This gives us<bookmark mark="term_2"/>five to the power of 2x equals three times five to the power of x. Next, we rewrite<bookmark mark="step_2"/> five to the power of 2x as five to the power of x, all to the power of two. This gives <bookmark mark="term_3"/>us five to the power of x to the power of two equals three times five to the power of x. Now, we can <bookmark mark="step_3"/>divide both sides by five to the power of x, and<bookmark mark="term_4"/> get that five to the power of x equals three. Finally, we can <bookmark mark="step_4"/>apply the base five logarithm on both sides, and <bookmark mark="solution"/>get that x is equal to the base five logarithm of three.
+"""
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1_0")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(dog.animate.shift(5*RIGHT), Write(step_1[1]), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_1_1")
+            x,y,_ = step_1[2].get_center()+0.4*DOWN
+            self.play(Write(step_1[2]), CursorMoveToCurved(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_1_2")
+            x,y,_ = step_1[0].get_center()+0.4*DOWN
+            self.play(Write(step_1[0]), CursorMoveToCurved(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(Write(term_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3")
+            x,y,_ = term_3.get_center()+0.4*DOWN
+            self.play(Write(term_3), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            self.add_shift_sound(.5)
+            self.play(term_3.animate.shift(2.4*UP), Unwrite(step_2), Unwrite(step_1), Unwrite(term_1), Unwrite(term_2), run_time=.5)
+            x,y,_ = step_3[1].get_center()+0.4*DOWN
+            self.play(Write(step_3), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_4")
+            x,y,_ = term_4.get_center()+0.4*DOWN
+            self.play(Write(term_4), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_4")
+            x,y,_ = step_4[1].get_center()+0.4*DOWN
+            self.play(Write(step_4), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = term_5.get_center()+0.4*DOWN
+            self.play(Write(term_5), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+#
 
 PROTOTYPES=[
 ########################################################################## Practice: Recognizing Exponential Growth

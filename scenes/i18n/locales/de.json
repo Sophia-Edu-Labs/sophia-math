@@ -2923,7 +2923,8 @@
     "today": "Heute",
     "trees": "Bäume",
     "loan": "Darlehen",
-    "payment": "Rückzahlung"
+    "payment": "Rückzahlung",
+    "repayment": "Rückzahlung"
   },
   "Func_6_P": {
     "22": {
@@ -3084,6 +3085,16 @@
           "voiceover": "Vor drei Jahren hatte ich <bookmark mark=\"eight_transform\"/>acht Bäume. Und heute, nachdem <bookmark mark=\"years_go_by\"/>drei Jahre vergangen sind, habe ich <bookmark mark=\"twelve_transform\"/>jetzt 12 Bäume. Also erhöht sich die Anzahl der Bäume um den Faktor 12 geteilt durch acht, was 1,5 ergibt. Da die Anzahl der Bäume exponentiell wächst, bleibt der Faktor, mit dem wir die Werte multiplizieren, konstant. Also, jetzt, da wir <bookmark mark=\"dev_1_0\"/>12 Bäume haben, und <bookmark mark=\"dev_1_1\"/>weitere drei Jahre warten, werden wir <bookmark mark=\"dev_1_2\"/>1,5 mal 12 gleich 18 Bäume haben. Und wenn wir <bookmark mark=\"dev_2_2\"/>weitere drei Jahre warten, werden wir 27 Bäume haben. Also werden wir in sechs Jahren 27 Apfelbäume haben."
         }
       }
+    },
+    "graphs": {
+      "1": {
+        "q": {
+          "voiceover": "Schau dir diesen <bookmark mark=\"graph_in\"/>Graphen einer Exponentialfunktion an. Er hat eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 0,5. Und verläuft durch <bookmark mark=\"points_in\"/>die drei Punkte, die ich hier markiert habe. Der Term der Funktion ist <bookmark mark=\"term_in\"/> f von x gleich a mal b hoch x plus c. Was sind die Werte von \"a\", b und c?"
+        },
+        "a": {
+          "voiceover": "Zuerst können wir sehen, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 0,5 liegt, anstatt bei y=0. ... Das bedeutet, <bookmark mark=\"c_mark\"/>dass c gleich <bookmark mark=\"c_in\"/>minus 0,5 sein muss, weil die gesamte Funktion um minus 0,5 nach unten verschoben ist ... Als Nächstes <bookmark mark=\"plug_in_zero_a\"/>setzen wir den Wert x gleich null ein und wir erhalten, dass f von null gleich a mal b hoch null minus 0,5 ist. Da b hoch null eins ist, können wir das <bookmark mark=\"plug_in_zero_b\"/>zu f von null gleich a minus 0,5 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>dass f von null gleich 0,5 ist, also können wir leicht <bookmark mark=\"move_to_a\"/>folgern, dass a <bookmark mark=\"a_in\"/>gleich eins ist. Jetzt ist der <bookmark mark=\"reset\"/>letzte Wert, den wir <bookmark mark=\"highlight_b\"/>finden müssen, b. Dafür betrachten wir den Abstand von jedem der drei hervorgehobenen Punkte zur Asymptote. Der <bookmark mark=\"point_1\"/>linke Punkt ist zwei Einheiten von der Asymptote entfernt. Der <bookmark mark=\"point_2\"/>mittlere Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_3\"/>rechte Punkt ist 0,5 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Das bedeutet, dass der Abstand sich bei jedem Schritt nach rechts halbiert.<bookmark mark=\"highlight_b_again\"/> Also muss b gleich <bookmark mark=\"b_in\"/>0,5 sein. Die endgültige Lösung ist also <bookmark mark=\"conclusion\"/>f von x gleich 1 mal 0,5 hoch x minus 0,5."
+        }
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3146,6 +3157,13 @@
         "q": {
           "question-text": "Wenn man davon ausgeht, dass ich vor $3$ Jahren $8$ Apfelbäume hatte und heute $12$, wie viele Apfelbäume werde ich in $6$ Jahren haben, wenn die Anzahl der Bäume exponentiell wächst?"
         }
+      }
+    }
+  },
+  "Func_6_P_graphs": {
+    "1": {
+      "q": {
+        "question-text": "Der Graph wird durch eine Funktion $f(x)=a\\cdot b^x+c$ beschrieben. \nWas sind die Werte von $a$, $b$ und $c$?"
       }
     }
   }
