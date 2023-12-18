@@ -3094,7 +3094,41 @@
         "a": {
           "voiceover": "Zuerst können wir sehen, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 0,5 liegt, anstatt bei y=0. ... Das bedeutet, <bookmark mark=\"c_mark\"/>dass c gleich <bookmark mark=\"c_in\"/>minus 0,5 sein muss, weil die gesamte Funktion um minus 0,5 nach unten verschoben ist ... Als Nächstes <bookmark mark=\"plug_in_zero_a\"/>setzen wir den Wert x gleich null ein und wir erhalten, dass f von null gleich a mal b hoch null minus 0,5 ist. Da b hoch null eins ist, können wir das <bookmark mark=\"plug_in_zero_b\"/>zu f von null gleich a minus 0,5 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>dass f von null gleich 0,5 ist, also können wir leicht <bookmark mark=\"move_to_a\"/>folgern, dass a <bookmark mark=\"a_in\"/>gleich eins ist. Jetzt ist der <bookmark mark=\"reset\"/>letzte Wert, den wir <bookmark mark=\"highlight_b\"/>finden müssen, b. Dafür betrachten wir den Abstand von jedem der drei hervorgehobenen Punkte zur Asymptote. Der <bookmark mark=\"point_1\"/>linke Punkt ist zwei Einheiten von der Asymptote entfernt. Der <bookmark mark=\"point_2\"/>mittlere Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_3\"/>rechte Punkt ist 0,5 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Das bedeutet, dass der Abstand sich bei jedem Schritt nach rechts halbiert.<bookmark mark=\"highlight_b_again\"/> Also muss b gleich <bookmark mark=\"b_in\"/>0,5 sein. Die endgültige Lösung ist also <bookmark mark=\"conclusion\"/>f von x gleich 1 mal 0,5 hoch x minus 0,5."
         }
+      },
+      "2": {
+        "q": {
+          "voiceover": "Schau dir <bookmark mark=\"graph_in\"/>diesen Graphen einer Exponentialfunktion an. Er hat eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 0,5. Und er geht durch die <bookmark mark=\"points_in\"/>drei Punkte, die ich hier markiert habe. Der Term der Funktion ist <bookmark mark=\"term_in\"/>f von x gleich a mal b hoch x plus c. Was sind die Werte von \"a\", b und c?"
+        },
+        "a": {
+          "voiceover": "Zuerst können wir sehen, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 1 liegt, anstatt bei y=0. ... Das bedeutet, <bookmark mark=\"c_mark\"/>dass c gleich <bookmark mark=\"c_in\"/>minus 1 sein muss, weil die gesamte Funktion um 1 nach unten verschoben ist ... Als Nächstes <bookmark mark=\"plug_in_zero_a\"/>setzen wir den Wert x gleich null ein und wir erhalten, dass f von null gleich a mal b hoch null minus 1 ist. Da b hoch null eins ist, können wir das <bookmark mark=\"plug_in_zero_b\"/>zu f von null gleich a minus 1 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>dass f von null gleich minus 2 ist, also können wir leicht <bookmark mark=\"move_to_a\"/>folgern, dass a <bookmark mark=\"a_in\"/>gleich minus eins ist. Jetzt ist der <bookmark mark=\"reset\"/>letzte Wert, den wir <bookmark mark=\"highlight_b\"/>finden müssen, b. Dafür betrachten wir den Abstand von jedem der drei hervorgehobenen Punkte zur Asymptote. Der <bookmark mark=\"point_1\"/>linke Punkt ist 0,5 Einheiten von der Asymptote entfernt. Der <bookmark mark=\"point_2\"/>mittlere Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_3\"/>rechte Punkt ist 2 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Das bedeutet, dass der Abstand sich bei jedem Schritt nach rechts verdoppelt.<bookmark mark=\"highlight_b_again\"/> Also muss b gleich <bookmark mark=\"b_in\"/>2 sein. Also ist die Funktion <bookmark mark=\"conclusion\"/>f von x gleich minus eins mal zwei hoch x minus 1."
+        }
       }
+    },
+    "log_rules_1_q": {
+      "voiceover": "Betrachte den <bookmark mark=\"term_in\"/> Logarithmus zur Basis 2 von eins durch 2048. Was ist der Wert dieses Terms? Du kannst <bookmark mark=\"beaver_in\"/>den numerischen Wert ohne Taschenrechner berechnen."
+    },
+    "log_rules_1_a": {
+      "voiceover": "Zuerst können wir die <bookmark mark=\"step_1_in\"/>Regel anwenden, dass der Logarithmus zur Basis a von eins durch b gleich minus dem Logarithmus zur Basis a von b ist. Das <bookmark mark=\"term_2\"/>ergibt minus den Logarithmus zur Basis 2 von 2048. Jetzt, lass uns <bookmark mark=\"step_2\"/>die Potenzen von zwei berechnen: Zwei hoch <bookmark mark=\"power_0\"/>null ist gleich eins, zwei hoch <bookmark mark=\"power_1\"/>eins ist gleich zwei, und dann multiplizieren wir beide Seiten weiter mit zwei, bis wir schließlich sehen, dass zwei hoch 11 gleich 2048 ist. Also ist die Lösung <bookmark mark=\"sol\"/>dass der Logarithmus zur Basis 2 von eins durch 2048 gleich minus 11 ist."
+    },
+    "log_rules_2_q": {
+      "voiceover": "Consider the <bookmark mark=\"term_in\"/> expresssion base 5 logarithm of 60 \"a\" minus base 5 logarithm of 12 \"a\". What is the value of this term? Start<bookmark mark=\"seagull_in\"/> by simplifying the term, it will make your life easier."
+    },
+    "log_rules_2_a": {
+      "voiceover": "Das Erste, was du tun kannst, ist die <bookmark mark=\"step_1\"/>Regel anzuwenden, die besagt, dass der Logarithmus zur Basis a von b minus der Logarithmus zur Basis a von c gleich dem Logarithmus zur Basis a von b geteilt durch c ist. Das <bookmark mark=\"term_2\"/>ergibt den Logarithmus zur Basis 5 von 60 \"a\" geteilt durch 12 \"a\". Jetzt können wir <bookmark mark=\"step_2\"/>diesen Term vereinfachen, indem wir Zähler und Nenner durch 12 \"a\" teilen. Das <bookmark mark=\"solution\"/>ergibt den Logarithmus zur Basis 5 von 5, der gleich 1 ist. Also ist die Lösung einfach eins."
+    },
+    "model_log_terms_1_q": {
+      "voiceover": "Angenommen, <bookmark mark=\"bank\"/>deine Bank bietet dir einen jährlichen<bookmark mark=\"interest_in\"/> Zinssatz von 5 Prozent an und du entscheidest dich zu investieren. Wie viele Jahre wird es dauern, bis sich deine Investition<bookmark mark=\"increase_in\"/> verdoppelt?",
+      "question-text": "Wie lange wird es dauern, bis sich deine Investition verdoppelt?"
+    },
+    "model_log_terms_1_a": {
+      "voiceover": "Wir können den Geldbetrag mit Zinseszins mithilfe einer <bookmark mark=\"func_in\"/>Exponentialfunktion f von x gleich b hoch x modellieren. Da <bookmark mark=\"highlight_interest\"/>der Zinssatz 5 Prozent beträgt, setzen wir<bookmark mark=\"set_b\"/> b auf 1,05. Jetzt wollen wir wissen, wann sich der Betrag verdoppelt, also für welches x gilt, dass 1,05 hoch x <bookmark mark=\"transform\"/> gleich zwei ist. Um das herauszufinden, können wir den <bookmark mark=\"step_1\"/>Logarithmus zur Basis 1,05 auf beiden Seiten anwenden und erhalten, dass<bookmark mark=\"func_log\"/>dass der Logarithmus zur Basis 1,05 von 1,05 hoch x gleich dem Logarithmus zur Basis 1,05 von 2 ist. Jetzt können wir <bookmark mark=\"step_2\"/>einfach die linke Seite als x mal den Logarithmus zur Basis 1,05 von 1,05 schreiben, <bookmark mark=\"solution\"/>und erhalten, dass x gleich dem Logarithmus zur Basis 1,05 von 2 ist. Und das ist <bookmark mark=\"approx\"/>ungefähr 14,21, also musst du über 14 Jahre warten."
+    },
+    "model_log_terms_2_q": {
+      "question-text": "Nach wie viel Zeit werden die Schulden nur noch $50$ dollar betragen?",
+      "voiceover": "Du hast <bookmark mark=\"loan\"/>einen Kredit über <bookmark mark=\"loan_in\"/>200 Dollar bei deiner Bank aufgenommen. Jedes Jahr zahlst du <bookmark mark=\"payback_in\"/>10 Prozent von dem zurück, was du ihnen noch schuldest. Wie viele Jahre wird es dauern, bis du ihnen nur noch 50$ schuldest?"
+    },
+    "model_log_terms_2_a": {
+      "voiceover": "Wir können den Betrag, den wir der Bank noch schulden, mithilfe einer <bookmark mark=\"func_in\"/>exponentiellen Funktion f von x gleich a mal b hoch x modellieren. Da <bookmark mark=\"highlight_repay\"/>wir jedes Jahr zehn Prozent zurückzahlen, setzen wir<bookmark mark=\"set_b\"/> b auf 0,9, denn das ist der Betrag, der nach der Rückzahlung von zehn Prozent übrig bleibt. Jetzt wollen wir wissen, wann der Betrag, den wir der Bank schulden, 50 Dollar beträgt. Wir müssen also herausfinden, für welchen Wert von x gilt, dass 200 mal 0,9 hoch x <bookmark mark=\"transform\"/>gleich fünfzig ist. Oder, nachdem wir beide Seiten durch 200 geteilt haben, versuchen wir herauszufinden, für welchen Wert von x gilt, dass 0,9 hoch x <bookmark mark=\"transform_2\"/>gleich 0,25 ist. Um das herauszufinden, können wir den <bookmark mark=\"step_1\"/>Logarithmus zur Basis 0,9 auf beiden Seiten anwenden und erhalten, dass<bookmark mark=\"func_log\"/> der Logarithmus zur Basis 0,9 von 0,9 hoch x gleich dem Logarithmus zur Basis 0,9 von 0,25 ist. Jetzt können wir <bookmark mark=\"step_2\"/>einfach die linke Seite als x mal den Logarithmus zur Basis 0,9 von 0,9 schreiben, <bookmark mark=\"solution\"/>und erhalten, dass x gleich dem Logarithmus zur Basis 0,9 von 0,25 ist. Und das ist <bookmark mark=\"approx\"/>ungefähr 13,16, also musst du deine Raten über 13 Jahre zahlen."
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3164,6 +3198,23 @@
     "1": {
       "q": {
         "question-text": "Der Graph wird durch eine Funktion $f(x)=a\\cdot b^x+c$ beschrieben. \nWas sind die Werte von $a$, $b$ und $c$?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "Der Graph wird durch eine Funktion $f(x)=a\\cdot b^x+c$ beschrieben. Was sind die Werte von $a$, $b$ und $c$?"
+      }
+    }
+  },
+  "Func_6_P_log_rules": {
+    "1": {
+      "q": {
+        "question-text": "Was ergibt der Ausdruck $\\log_2\\left({\\tfrac{1}{2048}}\\right)$?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "Was ergibt der Ausdruck $\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)$?"
       }
     }
   }

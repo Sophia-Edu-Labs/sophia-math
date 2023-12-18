@@ -2392,10 +2392,10 @@ class Func_6_P_graphs_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = ["$a=0$, $b=0.5$, $c=-0.5$", "$a=1$, $b=2$, $c=1$"],
-            correctAnswerIndex = 2,
+            correctAnswerIndex = 0,
             questionText = self.translate("Func_6_P_graphs.1.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
-                fallbackOptionIndex=3,
+                fallbackOptionIndex=1,
                 answerOptionMatcher="$a=\key{a}$, $b=\key{b}$, $c=\key{c}$",
                 answerOptionsTypes={
                     "a": "number",
@@ -2458,6 +2458,7 @@ class Func_6_P_graphs_1_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_P_graphs_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -2506,7 +2507,7 @@ class Func_6_P_graphs_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("Func_6_P.graphs.1.a.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_6_P.graphs.1.a.voiceover")
             ) as tracker:
             
             self.wait_until_bookmark("highlight_asymptote")
@@ -2580,6 +2581,127 @@ class Func_6_P_graphs_1_a(SophiaCursorScene):
 
         self.wait(4)
 
+class Func_6_P_graphs_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+
+        rec = Rectangle(height=4.4, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.4,0])
+        cords = NumberPlane(x_range=[-3, 3, .5], y_range=[-4, 4, .5], x_length=3, y_length=4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        x, y = cords.get_x_axis().n2p(3)[0], cords.get_y_axis().n2p(-0.5)[1]
+        asymptote = DashedLine([-x,y,0], [x,y,0], color=c1t, stroke_width=2)
+        graph = cords.plot(lambda x: 0.5**x-.5, x_range=[-2.2, 3, .001], color=GREEN_D, stroke_width=2)
+        term = MathTex("f", "(x)", "=", "a", "\\cdot", "b", "^x", "+", "c", "", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        term_c = MathTex("f", "(x)", "=", "a", "\\cdot", "b", "^x", "-", "0.5", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_a = MathTex("f", "(0)", "=", "a", "\\cdot", "b", "^0", "-", "0.5", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_b = MathTex("f", "(0)", "=", "a", "", "", "", "-", "0.5", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_c = MathTex("f", "(0)", "=", "a", "", "", "", "-", "0.5", "=0.5",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_1 = MathTex("f", "(0)", "=", "1", "", "", "", "-", "0.5", "=0.5",color=c1t, font_size=fs2).move_to(term)
+        term_a = MathTex("f", "(x)", "=", "1", "\\cdot", "b", "^x", "-", "0.5", "",color=c1t, font_size=fs2).move_to(term)
+        term_b = MathTex("f", "(x)", "=", "1", "\\cdot", "0.5", "^x", "-", "0.5", "",color=c1t, font_size=fs2).move_to(term)
+        solution_rectangle = SurroundingRectangle(term_b, color=PURE_BLUE, corner_radius=.1, buff=.2)
+        self.add(term, asymptote, graph)
+        
+        points = [[-1,1.5], [0,0.5], [1,0]]
+        for p in points:
+                self.add(Circle(color=BLACK, radius=.05, stroke_width=2, fill_opacity=1, fill_color=WHITE).move_to(cords.c2p(*p)))
+
+        cursor = AltCursor(y=-2, idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.graphs.1.a.voiceover")
+            ) as tracker:
+            
+            self.wait_until_bookmark("highlight_asymptote")
+            x_left, x_right = asymptote.get_start()[0], asymptote.get_end()[0]
+            x,y,_ = asymptote.get_center()
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x, y, x_right-x_left+0.2), run_time=.5)
+
+            self.wait_until_bookmark("c_mark")
+            x,y,_ = term[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            
+            self.wait_until_bookmark("c_in")
+            self.play(TransformMatchingTex(term, term_c))
+
+            self.wait_until_bookmark("plug_in_zero_a")
+            x,y,_ = term_c[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            self.play(TransformMatchingTex(term_c, term_c_0_a))
+
+            self.wait_until_bookmark("plug_in_zero_b")
+            self.play(TransformMatchingTex(term_c_0_a, term_c_0_b))
+
+            self.wait_until_bookmark("plug_in_zero_c")
+            x,y,_ = term_c_0_c[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            self.play(TransformMatchingTex(term_c_0_b, term_c_0_c))
+
+            self.wait_until_bookmark("move_to_a")
+            x,y,_ = term_c_0_c[3].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("a_in")
+            self.play(TransformMatchingTex(term_c_0_c, term_c_0_1))
+
+            self.wait_until_bookmark("reset")
+            self.play(TransformMatchingTex(term_c_0_1, term_a))
+
+            self.wait_until_bookmark("highlight_b")
+            x,y,_ = term_a[5].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            lines = VGroup()
+            for idx in range(3):
+                self.wait_until_bookmark(f"point_{idx+1}")
+                x,y_top, _ = cords.c2p(*points[idx])
+                y_bottom = cords.get_y_axis().n2p(-0.5)[1]
+                line = Line([x,y_top,0], [x,y_bottom,0], color=RED, stroke_width=2)
+                lines.add(line)
+                self.play(CursorMoveTo(cursor,x,y_top), run_time=.5)
+                self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(line.get_end())))
+                self.play(Create(line))
+
+            self.wait_until_bookmark("reset_cursor")
+            self.play(CursorMoveTo(cursor,0,-2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_b_again")
+            x,y,_ = term_a[5].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("b_in")
+            self.play(TransformMatchingTex(term_a, term_b))
+
+            self.wait_until_bookmark("conclusion")
+            x,y,_ = solution_rectangle.get_end()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(solution_rectangle.get_start())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(solution_rectangle))
+            cursor.idle=True
+
+        self.wait(4)
 
 ####################################
 ####################################
@@ -2587,18 +2709,17 @@ class Func_6_P_graphs_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$27$", "$0$"],
+            answerOptions = ["$a=-1$, $b=2$, $c=-1$", "$a=1$, $b=3$, $c=1$"],
             correctAnswerIndex = 0,
-            questionText=self.translate("Func_6_P_general_form.1.1.q.question-text"),
+            questionText = self.translate("Func_6_P_graphs.2.q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
                 fallbackOptionIndex=1,
-                answerOptionMatcher="$\key{a}$",
-                # answerOptionsTypes={
-                #     "a": "number"
-                # },
-                # answerOptionDescriptions={
-                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
-                # }
+                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$, $c=\key{c}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number",
+                    "c": "number",
+                }
             )
         )
 
@@ -2634,10 +2755,7 @@ class Func_6_P_graphs_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-Look at <bookmark mark="graph_in"/> this graph of an exponential function. It has a <bookmark mark="asympote_in"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark="points_in"/>three points i marked here. The term of the function is <bookmark mark="term_in"/> f of x equals a times b to the power of x plus c. What are the values of "a", b and c?
-""" 
+                text=self.translate("Func_6_P.graphs.2.q.voiceover")
             ) as tracker:
             
             self.wait_until_bookmark("graph_in")
@@ -2657,6 +2775,7 @@ Look at <bookmark mark="graph_in"/> this graph of an exponential function. It ha
 
 
         self.wait(4)
+
 
 class Func_6_P_graphs_2_a(SophiaCursorScene):
 
@@ -2706,10 +2825,7 @@ class Func_6_P_graphs_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-"""
-First, we can see that <bookmark mark="highlight_asymptote"/>the asymptote is at y = negative 1 instead of y=0. ... This means, <bookmark mark="c_mark"/>that c has to be <bookmark mark="c_in"/>equal to negative 1, because the entire function is shifted down by 1... Next, we <bookmark mark="plug_in_zero_a"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 1. Since b to the power of zero is one, we can simplify this <bookmark mark="plug_in_zero_b"/>to f of zero equals a minus 1. We also know <bookmark mark="plug_in_zero_c"/>that f of zero is equal to negative 2, so we can easily <bookmark mark="move_to_a"/>infer that a is <bookmark mark="a_in"/>equal to negative one. Now the <bookmark mark="reset"/>final value we need to <bookmark mark="highlight_b"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark="point_1"/>leftmost point is 0.5 units away from the asymptote. The <bookmark mark="point_2"/>middle point is one unit away from the asymptote. And the <bookmark mark="point_3"/>rightmost point is 2 units away from the asymptote. <bookmark mark="reset_cursor"/>This means that the distance doubles for each step to the right.<bookmark mark="highlight_b_again"/> So b must be equal <bookmark mark="b_in"/>to 2. So in conclusion, the function is <bookmark mark="conclusion"/> f of x equals negative one times two to the power of x minus 1.
-""" 
+                text=self.translate("General.correct_5")+self.translate("Func_6_P.graphs.2.a.voiceover")
             ) as tracker:
             
             self.wait_until_bookmark("highlight_asymptote")
@@ -2784,6 +2900,128 @@ First, we can see that <bookmark mark="highlight_asymptote"/>the asymptote is at
 
         self.wait(4)
 
+class Func_6_P_graphs_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+
+        rec = Rectangle(height=4.4, width=3.4, color="#e0ffd6", fill_color="#e0ffd6", fill_opacity=1).move_to([0,1.4,0])
+        cords = NumberPlane(x_range=[-3, 3, .5], y_range=[-4, 4, .5], x_length=3, y_length=4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        x, y = cords.get_x_axis().n2p(3)[0], cords.get_y_axis().n2p(-1)[1]
+        asymptote = DashedLine([-x,y,0], [x,y,0], color=c1t, stroke_width=2)
+        graph = cords.plot(lambda x: -1*2**x-1, x_range=[-3, 1.53, .001], color=BLUE_D, stroke_width=2)
+        term = MathTex("f", "(x)", "=", "a", "\\cdot", "b", "^x", "+", "c", "", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        term_c = MathTex("f", "(x)", "=", "a", "\\cdot", "b", "^x", "-", "1", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_a = MathTex("f", "(0)", "=", "a", "\\cdot", "b", "^0", "-", "1", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_b = MathTex("f", "(0)", "=", "a", "", "", "", "-", "1", "",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_c = MathTex("f", "(0)", "=", "a", "", "", "", "-", "1", "=-2",color=c1t, font_size=fs2).move_to(term)
+        term_c_0_1 = MathTex("f", "(0)", "=", "-1", "", "", "", "-", "1", "=-2",color=c1t, font_size=fs2).move_to(term)
+        term_a = MathTex("f", "(x)", "=", "-1", "\\cdot", "b", "^x", "-", "1", "",color=c1t, font_size=fs2).move_to(term)
+        term_b = MathTex("f", "(x)", "=", "-1", "\\cdot", "2", "^x", "-", "1", "",color=c1t, font_size=fs2).move_to(term)
+        solution_rectangle = SurroundingRectangle(term_b, color=PURE_BLUE, corner_radius=.1, buff=.2)
+        self.add(term, asymptote, graph)
+        
+        points = [[-1,-1.5], [0,-2], [1,-3]]
+        for p in points:
+                self.add(Circle(color=BLACK, radius=.05, stroke_width=2, fill_opacity=1, fill_color=WHITE).move_to(cords.c2p(*p)))
+
+        cursor = AltCursor(y=-2, idle=True)
+        self.add(cursor)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_5")+self.translate("Func_6_P.graphs.2.a.voiceover")
+            ) as tracker:
+            
+            self.wait_until_bookmark("highlight_asymptote")
+            x_left, x_right = asymptote.get_start()[0], asymptote.get_end()[0]
+            x,y,_ = asymptote.get_center()
+            cursor.idle=False
+            self.play(CursorMoveResize(cursor, x, y, x_right-x_left+0.2), run_time=.5)
+
+            self.wait_until_bookmark("c_mark")
+            x,y,_ = term[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            
+            self.wait_until_bookmark("c_in")
+            self.play(TransformMatchingTex(term, term_c))
+
+            self.wait_until_bookmark("plug_in_zero_a")
+            x,y,_ = term_c[1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            self.play(TransformMatchingTex(term_c, term_c_0_a))
+
+            self.wait_until_bookmark("plug_in_zero_b")
+            self.play(TransformMatchingTex(term_c_0_a, term_c_0_b))
+
+            self.wait_until_bookmark("plug_in_zero_c")
+            x,y,_ = term_c_0_c[-1].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            self.play(TransformMatchingTex(term_c_0_b, term_c_0_c))
+
+            self.wait_until_bookmark("move_to_a")
+            x,y,_ = term_c_0_c[3].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("a_in")
+            self.play(TransformMatchingTex(term_c_0_c, term_c_0_1))
+
+            self.wait_until_bookmark("reset")
+            self.play(TransformMatchingTex(term_c_0_1, term_a))
+
+            self.wait_until_bookmark("highlight_b")
+            x,y,_ = term_a[5].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            lines = VGroup()
+            for idx in range(3):
+                self.wait_until_bookmark(f"point_{idx+1}")
+                x,y_top, _ = cords.c2p(*points[idx])
+                y_bottom = cords.get_y_axis().n2p(-1)[1]
+                line = Line([x,y_top,0], [x,y_bottom,0], color=RED, stroke_width=2)
+                lines.add(line)
+                self.play(CursorMoveTo(cursor,x,y_top), run_time=.5)
+                self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(line.get_end())))
+                self.play(Create(line))
+
+            self.wait_until_bookmark("reset_cursor")
+            self.play(CursorMoveTo(cursor,0,-2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_b_again")
+            x,y,_ = term_a[5].get_center()+0.4*DOWN
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("b_in")
+            self.play(TransformMatchingTex(term_a, term_b))
+
+            self.wait_until_bookmark("conclusion")
+            x,y,_ = solution_rectangle.get_start()
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(solution_rectangle.get_end())))
+            self.add_pencil_sound(1.5)
+            self.play(Create(solution_rectangle))
+            cursor.idle=True
+
+
+        self.wait(4)
 
 ####################################
 ####################################
@@ -6503,6 +6741,20 @@ class Func_6_P_2_2_3_d(SophiaCursorScene):
 #####################################
 class Func_6_P_log_rules_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$11$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P_log_rules.1.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -6520,9 +6772,7 @@ class Func_6_P_log_rules_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Consider the <bookmark mark="term_in"/> base 2 logarithm of one over 2048. What is the value of this term? You can <bookmark mark="beaver_in"/>compute the numerical value without using a calculator.
-"""
+                text=self.translate("Func_6_P.log_rules_1_q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("term_in")
@@ -6560,9 +6810,67 @@ class Func_6_P_log_rules_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-First, we can apply the <bookmark mark="step_1_in"/>rule that the base a logarithm of one over b is equal to minus the base a logarithm of b. This <bookmark mark="term_2"/>gives us minus the base 2 logarithm of 2048. Now, let's <bookmark mark="step_2"/>compute the powers of two: Two to the power of<bookmark mark="power_0"/> zero is equal to one, two to the power of <bookmark mark="power_1"/>one is equal to two, and then we keep multiplying both sides by two, until finally, we see that two to the power of 11 is equal to 2 thousand 48. So the solution is <bookmark mark="sol"/>that the base 2 logarithm of one over 2 thousand 48 is equal to negative 11.
-"""
+                text=self.translate("General.correct_1")+self.translate("Func_6_P.log_rules_1_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1_in")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(beaver.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_2), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(step_2), run_time=.5)
+
+            self.wait_until_bookmark("power_0")
+            x,y,_ = powers[0].get_center()+0.4*DOWN
+            self.play(CursorMoveToCurved(cursor,x,y), Write(powers[0]), run_time=.5)
+
+            self.wait_until_bookmark("power_1")
+            self.play(ReplacementTransform(powers[0], powers[1]))
+    
+            for idx in range(2,12):
+                self.play(ReplacementTransform(powers[idx-1], powers[idx]), run_time=.2)
+                self.wait(.3)
+
+            self.wait_until_bookmark("sol")
+            x,y,_ = term_3.get_center()+0.5*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_3), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_P_log_rules_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("\\log_2\\left({\\tfrac{1}{2048}}\\right)", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "\\log_a\\left(\\tfrac{1}{b}\\right)=-\\log_a(b)", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("-\\log_2\\left({2048}\\right)", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4).set_x(step_1[0].get_x())
+        powers = VGroup(*[MathTex(f"2^{{{idx}}}={2**idx}", color=BLUE_D, font_size=fs2).scale(.9).next_to(step_2, RIGHT) for idx in range(12)])
+        term_3 = MathTex("\\log_2\\left({\\tfrac{1}{2048}}\\right)=-11", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4).set_x(0)
+
+        beaver = ImageMobject(assets_folder / "img" / "beaver_abacus.png")
+        beaver = beaver.scale(4/beaver.get_width())
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, term_1, beaver)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_P.log_rules_1_a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("step_1_in")
@@ -6601,6 +6909,20 @@ First, we can apply the <bookmark mark="step_1_in"/>rule that the base a logarit
 #####################################
 class Func_6_P_log_rules_2_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$1$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P_log_rules.2.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -6618,9 +6940,7 @@ class Func_6_P_log_rules_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Consider the <bookmark mark="term_in"/> expresssion base 5 logarithm of 60 "a" minus base 5 logarithm of 12 "a". What is the value of this term? Start<bookmark mark="seagull_in"/> by simplifying the term, it will make your life easier.
-"""
+                text=self.translate("Func_6_P.log_rules_2_q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("term_in")
@@ -6657,9 +6977,55 @@ class Func_6_P_log_rules_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-The first thing you can do is apply the <bookmark mark="step_1"/>rule stating that the base a logarithm of b minus the base a logarithm of c is equal to the base a logarithm of b minus c. This<bookmark mark="term_2"/> gives us the base 5 logarithm of 60 "a" over 12 "a". Now, we can <bookmark mark="step_2"/>simplify this term by dividing the numerator and the denominator by 12 "a". This <bookmark mark="solution"/>gives us the base 5 logarithm of 5, which is equal to 1. So the solution is simply one.
-"""
+                text=self.translate("General.correct_6")+self.translate("Func_6_P.log_rules_2_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(seagull.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), Write(step_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_2), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2.get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(step_2), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = term_3.get_center()+0.5*DOWN
+            self.play(CursorMoveTo(cursor,x,y), Write(term_3), run_time=.5)
+            cursor.idle=True
+            
+
+        self.wait(4)
+
+class Func_6_P_log_rules_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)", color=c1t, font_size=fs2).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "\\log_a(b)-\\log_a(c)=\\log_a\\left(\\tfrac{b}{c}\\right)", color=BLUE_D, font_size=fs3).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("\\log_5\\left(\\tfrac{60a}{12a}\\right)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs3).next_to(term_2, DOWN, buff=.4)
+        term_3 = MathTex("\\log_5\\left(5\\right)=1", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+
+        seagull = ImageMobject(assets_folder / "img" / "seagull_writing.png")
+        seagull = seagull.scale(4/seagull.get_width())
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, seagull, term_1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_6")+self.translate("Func_6_P.log_rules_2_a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("step_1")
@@ -6691,6 +7057,19 @@ The first thing you can do is apply the <bookmark mark="step_1"/>rule stating th
 #####################################
 class Func_6_P_model_log_terms_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\log_{1.05}(2)$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P.model_log_terms_1_q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -6711,9 +7090,7 @@ class Func_6_P_model_log_terms_1_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-Say <bookmark mark="bank"/>your bank offers you an annual<bookmark mark="interest_in"/> interest rate of 5 percent and you decide to invest. How many years will it take for your investment<bookmark mark="increase_in"/> to double?
-"""
+                text=self.translate("Func_6_P.model_log_terms_1_q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("bank")
@@ -6764,9 +7141,84 @@ class Func_6_P_model_log_terms_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-We can model the amount of money with compound interest using an <bookmark mark="func_in"/>exponential function f of x equals b to the power of x. Since <bookmark mark="highlight_interest"/>the interest rate is 5 percent, we set<bookmark mark="set_b"/> b to 1 point 0 5. Now we want to know, when the amount will be doubled, so for what x is 1.05 to the power of x <bookmark mark="transform"/> equal to two. To find this, we can apply the <bookmark mark="step_1"/>base 1.05 logarithm on both sides, and get that<bookmark mark="func_log"/> the base 1.05 logarithm of 1.05 to the power of x is equal to the base 1.05 logarithm of 2. Now we can <bookmark mark="step_2"/>just write the left hand side as x times the base 1.05 logarithm of 1.05, <bookmark mark="solution"/>and get that x is equal to the base 1.05 logarithm of 2. And that's <bookmark mark="approx"/>approximately 14 point 2 1, so you'll have to wait for over 14 years.
-"""
+                text=self.translate("General.correct_2")+self.translate("Func_6_P.model_log_terms_1_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.add_shift_sound(0.5)
+            x,y,_ = func.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(bank.animate.shift(5*RIGHT), Write(func), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interest")
+            x,y,_ = bullets[0][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), bullets[1].animate.shift(0.4*DOWN), run_time=.5)
+
+            self.wait_until_bookmark("set_b")
+            bc_1 = bullets[0][1].copy()
+            x,y,_ = func_b[1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func[0], func_b[0]), ReplacementTransform(bc_1, func_b[1]), Unwrite(func[1]), ReplacementTransform(func[2], func_b[2]), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("transform")
+            bc_2 = bullets[1][1].copy()
+            x,y,_ = func_2[-1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func_b[0], func_2[0]), ReplacementTransform(func_b[1], func_2[1]), Unwrite(func_b[2]), ReplacementTransform(bc_2, func_2[-1]), run_time=.5)
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(Write(step_1), Unwrite(bullets), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("func_log")
+            x,y,_ = func_log.get_center()+0.4*DOWN
+            self.play(Write(func_log), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[1].get_center()+0.4*DOWN
+            self.play(Write(solution), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("approx")
+            x,y,_ = sol_calculated[-1].get_center()+0.4*DOWN    
+            self.play(ReplacementTransform(solution, sol_calculated), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_P_model_log_terms_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        interest = self.translate("words.interest")
+        increase = self.translate("words.increase")
+        bank = ImageMobject(assets_folder / "img" / "bank.png")
+        bank = bank.scale(3/bank.get_width()).set_y(1.4)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        bullets = VGroup(Tex("$\\bullet$ ", " $5\%$ ", interest, color=c1t, font_size=fs2), Tex("$\\bullet$ ", "$2\\times$ ", increase, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(bank, DOWN, buff=.4).set_x(0)
+        
+        func = MathTex("f(x)=", "b", "^x", color=c1t, font_size=fs2).set_y(2.4)
+        func_b = MathTex("f(x)=", "1.05", "^x", color=c1t, font_size=fs2).move_to(func)
+        func_2 = MathTex("1.05", "^x", "=2", color=c1t, font_size=fs2).move_to(func)
+        step_1 = MathTex("\\Downarrow", "\\log_{1.05}", "\\left(\\Box\\right)", color=BLUE_D, font_size=fs3).next_to(func, DOWN, buff=.4)
+        func_log = MathTex("\\log_{1.05}\\left(1.05", "^x\\right)", "=\\log_{1.05}(2)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "\\log_{a}\\left(a^b\\right)=b", color=BLUE_D, font_size=fs3).next_to(func_log, DOWN, buff=.4)
+        solution = MathTex("x", "=\\log_{1.05}(2)", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        sol_calculated = MathTex("x", "=\\log_{1.05}(2)", "\\approx14.21", color=c1t, font_size=fs2).move_to(solution)
+        self.add(bank, bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Func_6_P.model_log_terms_1_a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_in")
@@ -6816,6 +7268,19 @@ We can model the amount of money with compound interest using an <bookmark mark=
 #####################################
 class Func_6_P_model_log_terms_2_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\log_{0.9}(0.25)$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P.model_log_terms_2_q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -6838,9 +7303,7 @@ class Func_6_P_model_log_terms_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-You took out <bookmark mark="loan"/>a loan over <bookmark mark="loan_in"/>200 dollars from your bank. Every year, you pay <bookmark mark="payback_in"/>back 10 percent of what you still owe them. How many years will it take, until you only owe them 50$?
-"""
+                text=self.translate("Func_6_P.model_log_terms_2_q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("loan")
@@ -6858,6 +7321,7 @@ You took out <bookmark mark="loan"/>a loan over <bookmark mark="loan_in"/>200 do
             cursor.idle=True
 
         self.wait(4)
+
 
 class Func_6_P_model_log_terms_2_a(SophiaCursorScene):
 
@@ -6892,9 +7356,89 @@ class Func_6_P_model_log_terms_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-We can model the amount of money we still owe the bank using an <bookmark mark="func_in"/>exponential function f of x equals a times b to the power of x. Since <bookmark mark="highlight_repay"/>we pay back ten percent per year, we set<bookmark mark="set_b"/> b to 0.9, because that's how much remains after we've paid back ten percent. Now we want to know, when the amount we owe to the bank will be 50 dollars. So we need to find out for what value of x we get that 200 times 0.9 to the power of x <bookmark mark="transform"/>is equal to fifty. Or, after dividing both sides by 200, we can try to find out for what value of x it holds that 0.9 to the power of x <bookmark mark="transform_2"/>is equal to 0.25. To find this, we can apply the <bookmark mark="step_1"/>base 0.9 logarithm on both sides, and get that<bookmark mark="func_log"/> the base 0.9 logarithm of 0.9 to the power of x is equal to the base 0.9 logarithm of 0.25. Now we can <bookmark mark="step_2"/>just write the left hand side as x times the base 0.9 logarithm of 0.9, <bookmark mark="solution"/>and get that x is equal to the base 0.9 logarithm of 0.25. And that's <bookmark mark="approx"/>approximately 13 point 1 6, so you'll have to pay your installments for over 13 years.
-"""
+                text=self.translate("General.correct_4")+self.translate("Func_6_P.model_log_terms_2_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.add_shift_sound(0.5)
+            x,y,_ = func.get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(loan.animate.shift(5*RIGHT), Write(func), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("highlight_repay")
+            x,y,_ = bullets[1][1].get_center()+0.4*DOWN
+            self.play(CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("set_b")
+            bc_1 = bullets[1][1].copy()
+            x,y,_ = func_b[1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func[0], func_b[0]), ReplacementTransform(bc_1, func_b[1]), Unwrite(func[1]), ReplacementTransform(func[2], func_b[2]), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("transform")
+            bc_2 = bullets[0][1].copy()
+            x,y,_ = func_2[-1].get_center()+0.4*DOWN
+            self.play(ReplacementTransform(func_b[0], func_2[0]), ReplacementTransform(func_b[1], func_2[1]), Unwrite(func_b[2]), ReplacementTransform(bc_2, func_2[-1]), run_time=.5)
+
+            self.wait_until_bookmark("transform_2")
+            self.play(TransformMatchingTex(func_2, func_3))
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            self.play(Write(step_1), Unwrite(bullets), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("func_log")
+            x,y,_ = func_log.get_center()+0.4*DOWN
+            self.play(Write(func_log), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            x,y,_ = solution[1].get_center()+0.4*DOWN
+            self.play(Write(solution), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("approx")
+            x,y,_ = sol_calculated[-1].get_center()+0.4*DOWN    
+            self.play(ReplacementTransform(solution, sol_calculated), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+class Func_6_P_model_log_terms_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        loan_text = self.translate("words.loan")
+        repayment = self.translate("words.repayment")
+        year = self.translate("words.year")
+
+        loan = ImageMobject(assets_folder / "img" / "loan.png")
+        loan = loan.scale(3/loan.get_width()).set_y(1.4)
+
+        cursor = AltCursor(idle=True)
+        self.add(cursor)
+
+        bullets = VGroup(Tex("$\\bullet$ "," $200\$$ ", loan_text, color=c1t, font_size=fs2), Tex("$\\bullet$ "," $10\%$ ", repayment, "/ ", year, color=c1t, font_size=fs2)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(loan, DOWN, buff=.6).set_x(0).scale(0.9)
+        
+        func = MathTex("f(x)=a\\cdot", "b", "^x", color=c1t, font_size=fs2).set_y(2.4)
+        func_b = MathTex("f(x)=200\\cdot", "0.9", "^x", color=c1t, font_size=fs2).move_to(func)
+        func_2 = MathTex("200\\cdot 0.9", "^x", "=50", color=c1t, font_size=fs2).move_to(func)
+        func_3 = MathTex("0.9", "^x", "=0.25", color=c1t, font_size=fs2).move_to(func)
+        step_1 = MathTex("\\Downarrow", "\\log_{0.9}", "\\left(\\Box\\right)", color=BLUE_D, font_size=fs3).next_to(func, DOWN, buff=.4)
+        func_log = MathTex("\\log_{0.9}\\left(0.9", "^x\\right)", "=\\log_{0.9}(0.25)", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "\\log_{a}\\left(a^b\\right)=b", color=BLUE_D, font_size=fs3).next_to(func_log, DOWN, buff=.4)
+        solution = MathTex("x", "=\\log_{0.9}(0.25)", color=c1t, font_size=fs2).next_to(step_2, DOWN, buff=.4)
+        sol_calculated = MathTex("x", "=\\log_{0.9}(0.25)", "\\approx13.16", color=c1t, font_size=fs2).move_to(solution)
+        self.add(loan, bullets)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_4")+self.translate("Func_6_P.model_log_terms_2_a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("func_in")
@@ -7133,6 +7677,15 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_P_general_form_1_4_q),
     PagePrototypeVideo.from_scene(Func_6_P_general_form_1_4_a),
     PagePrototypeVideo.from_scene(Func_6_P_general_form_1_4_b),
+########################################################################## Practice: Graphs to terms
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_graphs_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_graphs_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_graphs_2_b),
 ########################################################################## Practice: Percentages and Interest
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_recognize_percentages_1_q),
@@ -7194,4 +7747,22 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_P_2_2_3_b),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_3_c),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_3_d),
+##########################################################################CHAPTER: Rules for Logarithm
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_log_rules_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_log_rules_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_log_rules_2_b),
+##########################################################################CHAPTER: Modelling with Logarithm
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_model_log_terms_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_model_log_terms_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_model_log_terms_2_b),
 ]

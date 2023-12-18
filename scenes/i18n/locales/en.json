@@ -3098,7 +3098,41 @@
         "a": {
           "voiceover": "First, we can see that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 0.5 instead of y=0. ... This means, <bookmark mark=\"c_mark\"/>that c has to be <bookmark mark=\"c_in\"/>equal to negative 0.5, because the entire function is shifted down by negative 0.5 ... Next, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 0.5. Since b to the power of zero is one, we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 0.5. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to 0.5, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark=\"point_1\"/>leftmost point is two units away from the asymptote. The <bookmark mark=\"point_2\"/>middle point is one unit away from the asymptote. And the <bookmark mark=\"point_3\"/>rightmost point is 0.5 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>This means that the distance halves for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 0.5. So the final solution is <bookmark mark=\"conclusion\"/>f of x equals 1 times 0.5 to the power of x minus 0.5."
         }
+      },
+      "2": {
+        "q": {
+          "voiceover": "Look at <bookmark mark=\"graph_in\"/> this graph of an exponential function. It has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark=\"points_in\"/>three points i marked here. The term of the function is <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. What are the values of \"a\", b and c?"
+        },
+        "a": {
+          "voiceover": "First, we can see that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 1 instead of y=0. ... This means, <bookmark mark=\"c_mark\"/>that c has to be <bookmark mark=\"c_in\"/>equal to negative 1, because the entire function is shifted down by 1... Next, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 1. Since b to the power of zero is one, we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 1. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to negative 2, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to negative one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark=\"point_1\"/>leftmost point is 0.5 units away from the asymptote. The <bookmark mark=\"point_2\"/>middle point is one unit away from the asymptote. And the <bookmark mark=\"point_3\"/>rightmost point is 2 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>This means that the distance doubles for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 2. So in conclusion, the function is <bookmark mark=\"conclusion\"/> f of x equals negative one times two to the power of x minus 1."
+        }
       }
+    },
+    "log_rules_1_q": {
+      "voiceover": "Consider the <bookmark mark=\"term_in\"/> base 2 logarithm of one over 2048. What is the value of this term? You can <bookmark mark=\"beaver_in\"/>compute the numerical value without using a calculator."
+    },
+    "log_rules_1_a": {
+      "voiceover": "First, we can apply the <bookmark mark=\"step_1_in\"/>rule that the base a logarithm of one over b is equal to minus the base a logarithm of b. This <bookmark mark=\"term_2\"/>gives us minus the base 2 logarithm of 2048. Now, let's <bookmark mark=\"step_2\"/>compute the powers of two: Two to the power of<bookmark mark=\"power_0\"/> zero is equal to one, two to the power of <bookmark mark=\"power_1\"/>one is equal to two, and then we keep multiplying both sides by two, until finally, we see that two to the power of 11 is equal to 2 thousand 48. So the solution is <bookmark mark=\"sol\"/>that the base 2 logarithm of one over 2 thousand 48 is equal to negative 11."
+    },
+    "log_rules_2_q": {
+      "voiceover": "Consider the <bookmark mark=\"term_in\"/> expresssion base 5 logarithm of 60 \"a\" minus base 5 logarithm of 12 \"a\". What is the value of this term? Start<bookmark mark=\"seagull_in\"/> by simplifying the term, it will make your life easier."
+    },
+    "log_rules_2_a": {
+      "voiceover": "The first thing you can do is apply the <bookmark mark=\"step_1\"/>rule stating that the base a logarithm of b minus the base a logarithm of c is equal to the base a logarithm of b minus c. This<bookmark mark=\"term_2\"/> gives us the base 5 logarithm of 60 \"a\" over 12 \"a\". Now, we can <bookmark mark=\"step_2\"/>simplify this term by dividing the numerator and the denominator by 12 \"a\". This <bookmark mark=\"solution\"/>gives us the base 5 logarithm of 5, which is equal to 1. So the solution is simply one."
+    },
+    "model_log_terms_1_q": {
+      "voiceover": "Say <bookmark mark=\"bank\"/>your bank offers you an annual<bookmark mark=\"interest_in\"/> interest rate of 5 percent and you decide to invest. How many years will it take for your investment<bookmark mark=\"increase_in\"/> to double?",
+      "question-text": "How long will it take for your investment to double?"
+    },
+    "model_log_terms_1_a": {
+      "voiceover": "We can model the amount of money with compound interest using an <bookmark mark=\"func_in\"/>exponential function f of x equals b to the power of x. Since <bookmark mark=\"highlight_interest\"/>the interest rate is 5 percent, we set<bookmark mark=\"set_b\"/> b to 1 point 0 5. Now we want to know, when the amount will be doubled, so for what x is 1.05 to the power of x <bookmark mark=\"transform\"/> equal to two. To find this, we can apply the <bookmark mark=\"step_1\"/>base 1.05 logarithm on both sides, and get that<bookmark mark=\"func_log\"/> the base 1.05 logarithm of 1.05 to the power of x is equal to the base 1.05 logarithm of 2. Now we can <bookmark mark=\"step_2\"/>just write the left hand side as x times the base 1.05 logarithm of 1.05, <bookmark mark=\"solution\"/>and get that x is equal to the base 1.05 logarithm of 2. And that's <bookmark mark=\"approx\"/>approximately 14 point 2 1, so you'll have to wait for over 14 years."
+    },
+    "model_log_terms_2_q": {
+      "question-text": "After how much time will you only owe $50$ dollars?",
+      "voiceover": "You took out <bookmark mark=\"loan\"/>a loan over <bookmark mark=\"loan_in\"/>200 dollars from your bank. Every year, you pay <bookmark mark=\"payback_in\"/>back 10 percent of what you still owe them. How many years will it take, until you only owe them 50$?"
+    },
+    "model_log_terms_2_a": {
+      "voiceover": "We can model the amount of money we still owe the bank using an <bookmark mark=\"func_in\"/>exponential function f of x equals a times b to the power of x. Since <bookmark mark=\"highlight_repay\"/>we pay back ten percent per year, we set<bookmark mark=\"set_b\"/> b to 0.9, because that's how much remains after we've paid back ten percent. Now we want to know, when the amount we owe to the bank will be 50 dollars. So we need to find out for what value of x we get that 200 times 0.9 to the power of x <bookmark mark=\"transform\"/>is equal to fifty. Or, after dividing both sides by 200, we can try to find out for what value of x it holds that 0.9 to the power of x <bookmark mark=\"transform_2\"/>is equal to 0.25. To find this, we can apply the <bookmark mark=\"step_1\"/>base 0.9 logarithm on both sides, and get that<bookmark mark=\"func_log\"/> the base 0.9 logarithm of 0.9 to the power of x is equal to the base 0.9 logarithm of 0.25. Now we can <bookmark mark=\"step_2\"/>just write the left hand side as x times the base 0.9 logarithm of 0.9, <bookmark mark=\"solution\"/>and get that x is equal to the base 0.9 logarithm of 0.25. And that's <bookmark mark=\"approx\"/>approximately 13 point 1 6, so you'll have to pay your installments for over 13 years."
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3164,6 +3198,23 @@
     "1": {
       "q": {
         "question-text": "The graph is described by a function $f(x)=a\\cdot b^x+c$. What are the values of $a$, $b$ and $c$?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "The graph is described by a function $f(x)=a\\cdot b^x+c$. What are the values of $a$, $b$ and $c$?"
+      }
+    }
+  },
+  "Func_6_P_log_rules": {
+    "1": {
+      "q": {
+        "question-text": "What does the expression $\\log_2\\left({\\tfrac{1}{2048}}\\right)$ evaluate to?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "What does the expression $\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)$ evaluate to?"
       }
     }
   }
