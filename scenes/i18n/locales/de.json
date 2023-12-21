@@ -3048,6 +3048,14 @@
         "a": {
           "voiceover": "Da wir es mit Zinseszins zu tun haben, verwenden wir die exponentielle <bookmark mark=\"function_in\"/>Funktion f von x gleich a mal b hoch x, um die Geldmenge zu modellieren. Wir wollen jetzt <bookmark mark=\"highlight_a\"/>„a“ finden, was dem Geldbetrag entspricht, den wir bei x gleich null haben. Wir <bookmark mark=\"highlight_interest\"/>bekommen jedes Jahr fünf Prozent Zinsen, also muss der Wert von <bookmark mark=\"plug_in_b\"/>b 1,05 sein. Und wir betrachten einen Zeitraum <bookmark mark=\"highlight_time\"/>von 20 Jahren, also <bookmark mark=\"plug_in_x\"/>setzen wir für x 20 ein. Schließlich wollen wir <bookmark mark=\"highlight_100k\"/>100.000 Euro auf der Bank haben, also <bookmark mark=\"transform_f\"/>setzen wir f von x gleich 100.000. Da wir den Wert von „a“ finden wollen, <bookmark mark=\"step\"/>teilen wir beide Seiten durch 1,05 hoch 20. Und wir erhalten <bookmark mark=\"sol_in\"/>a gleich 100.000 geteilt durch 1,05 hoch 20. Wenn <bookmark mark=\"approx\"/>wir das berechnen, sehen wir, dass wir etwas weniger als 38.000 Euro benötigen, um 100.000 Euro zu haben."
         }
+      },
+      "5": {
+        "q": {
+          "voiceover": "Vor 12 Jahren habe ich <bookmark mark=\"bank_in\"/>3 Tausend 600 Euro auf eine Bank eingezahlt. Bis heute ist der Betrag auf <bookmark mark=\"five_thousand_in\"/> 5 Tausend Euro angewachsen. Was <bookmark mark=\"interest_in\"/>war der jährliche Zinssatz? <bookmark mark=\"years_in\"/>"
+        },
+        "a": {
+          "voiceover": "Wir verwenden die Exponentialfunktion <bookmark mark=\"func_in\"/>f von x gleich \"a\" mal b hoch x, um die Geldmenge zu modellieren, die wir nach einer bestimmten Zeit haben. Wenn x für die Anzahl der Jahre steht, können wir für heute, wo 12 Jahre vergangen sind den Wert <bookmark mark=\"plug_in_twelve\"/>x gleich zwölf einsetzen. Dann sehen wir, dass f von zwölf gleich \"a\" mal b hoch zwölf ist. Wir wissen, dass f von zwölf gleich fünftausend ist, also können wir die Gleichung<bookmark mark=\"transform_f\"/> zu \"a\" mal b hoch zwölf gleich 5 Tausend umformen. Wir wissen auch, dass a<bookmark mark=\"a_plugged_in\"/> gleich 3 Tausend 600 ist, weil das der ursprüngliche Geldbetrag war. Jetzt können wir <bookmark mark=\"step_divide\"/>beide Seiten durch 3 Tausend 600 teilen, um <bookmark mark=\"divide\"/>b hoch zwölf gleich 5 Tausend geteilt durch 3 Tausend 600 zu erhalten. Dann können wir<bookmark mark=\"step_take_root\"/>die zwölfte Wurzel aus beiden Seiten ziehen<bookmark mark=\"take_root\"/>, um b gleich der zwölften Wurzel aus 5 Tausend geteilt durch 3 Tausend 600 zu erhalten. Das ist<bookmark mark=\"approx\"/> ungefähr gleich 1,028. Also erhalten wir ungefähr 2,8 Prozent Zinsen."
+        }
       }
     },
     "general_form_1": {
@@ -3097,10 +3105,26 @@
       },
       "2": {
         "q": {
-          "voiceover": "Schau dir <bookmark mark=\"graph_in\"/>diesen Graphen einer Exponentialfunktion an. Er hat eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 0,5. Und er geht durch die <bookmark mark=\"points_in\"/>drei Punkte, die ich hier markiert habe. Der Term der Funktion ist <bookmark mark=\"term_in\"/>f von x gleich a mal b hoch x plus c. Was sind die Werte von \"a\", b und c?"
+          "voiceover": "Schau dir <bookmark mark=\"graph_in\"/>diesen Graphen einer Exponentialfunktion an. Er hat eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 1. Und er geht durch die <bookmark mark=\"points_in\"/>drei Punkte, die ich hier markiert habe. Der Term der Funktion ist <bookmark mark=\"term_in\"/>f von x gleich a mal b hoch x plus c. Was sind die Werte von \"a\", b und c?"
         },
         "a": {
           "voiceover": "Zuerst können wir sehen, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 1 liegt, anstatt bei y=0. ... Das bedeutet, <bookmark mark=\"c_mark\"/>dass c gleich <bookmark mark=\"c_in\"/>minus 1 sein muss, weil die gesamte Funktion um 1 nach unten verschoben ist ... Als Nächstes <bookmark mark=\"plug_in_zero_a\"/>setzen wir den Wert x gleich null ein und wir erhalten, dass f von null gleich a mal b hoch null minus 1 ist. Da b hoch null eins ist, können wir das <bookmark mark=\"plug_in_zero_b\"/>zu f von null gleich a minus 1 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>dass f von null gleich minus 2 ist, also können wir leicht <bookmark mark=\"move_to_a\"/>folgern, dass a <bookmark mark=\"a_in\"/>gleich minus eins ist. Jetzt ist der <bookmark mark=\"reset\"/>letzte Wert, den wir <bookmark mark=\"highlight_b\"/>finden müssen, b. Dafür betrachten wir den Abstand von jedem der drei hervorgehobenen Punkte zur Asymptote. Der <bookmark mark=\"point_1\"/>linke Punkt ist 0,5 Einheiten von der Asymptote entfernt. Der <bookmark mark=\"point_2\"/>mittlere Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_3\"/>rechte Punkt ist 2 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Das bedeutet, dass der Abstand sich bei jedem Schritt nach rechts verdoppelt.<bookmark mark=\"highlight_b_again\"/> Also muss b gleich <bookmark mark=\"b_in\"/>2 sein. Also ist die Funktion <bookmark mark=\"conclusion\"/>f von x gleich minus eins mal zwei hoch x minus 1."
+        }
+      },
+      "3": {
+        "q": {
+          "voiceover": "Der orangene Graph beschreibt <bookmark mark=\"graph_in\"/> eine Exponentialfunktion. Der Term der Funktion hat die Form <bookmark mark=\"term_in\"/> f von x gleich a mal b hoch x plus c. Und wie du sehen kannst, hat der Graph eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 1,5. Und er verläuft durch die <bookmark mark=\"points_in\"/>drei Punkte, die hier hervorgehoben sind. Was sind die Werte von \"a\", b und c?"
+        },
+        "a": {
+          "voiceover": "Da wir wissen, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 1,5 anstatt bei y = 0 liegt, können wir schließen <bookmark mark=\"c_mark\"/>, dass der Wert von c <bookmark mark=\"c_in\"/>gleich minus 1,5 ist, weil die gesamte Funktion um minus 1,5 nach unten verschoben ist... Wenn wir das wissen, setzen wir <bookmark mark=\"plug_in_zero_a\"/>den Wert x gleich null ein und erhalten, dass f von null gleich a mal b hoch null minus 1,5 ist. Da b hoch null eins ist, können wir das <bookmark mark=\"plug_in_zero_b\"/>ganze zu f von null gleich a minus 1,5 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>, dass f von null gleich minus 2,5 ist, also können wir erschließen, <bookmark mark=\"move_to_a\"/>dass a <bookmark mark=\"a_in\"/>gleich minus eins ist. Nun bleibt der <bookmark mark=\"reset\"/>letzte zu bestimmende Wert <bookmark mark=\"highlight_b\"/>b. Dafür schauen wir uns den Abstand von jedem der drei hervorgehobenen Punkte zur Asymptote an. Der <bookmark mark=\"point_1\"/>linke Punkt ist zwei Einheiten von der Asymptote entfernt. Der <bookmark mark=\"point_2\"/>mittlere Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_3\"/>rechte Punkt ist 0,5 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Das bedeutet, dass der Abstand sich bei jedem Schritt nach rechts halbiert. <bookmark mark=\"highlight_b_again\"/>Also muss b gleich <bookmark mark=\"b_in\"/>0,5 sein. Die endgültige Lösung ist also <bookmark mark=\"conclusion\"/>f von x gleich minus eins mal 0,5 hoch x minus 1,5."
+        }
+      },
+      "4": {
+        "q": {
+          "voiceover": "Schau dir den pinken<bookmark mark=\"graph_in\"/> Graphen an - er zeigt eine Exponentialfunktion... Er hat eine <bookmark mark=\"asympote_in\"/>horizontale Asymptote bei y = minus 0,5. Und er verläuft durch die <bookmark mark=\"points_in\"/>zwei Punkte null, null Komma fünf und 1 1. Der Term der Funktion hat die Form <bookmark mark=\"term_in\"/> f von x gleich a mal b hoch x plus c. ... Was sind die Werte von \"a\", b und c?"
+        },
+        "a": {
+          "voiceover": "Wir wissen ja, dass <bookmark mark=\"highlight_asymptote\"/>die Asymptote bei y = minus 0,5 anstatt bei y = 0 liegt. Das bedeutet, <bookmark mark=\"c_mark\"/>dass der Wert von c <bookmark mark=\"c_in\"/>gleich minus 0,5 ist, weil die gesamte Funktion um 0,5 nach unten verschoben ist... Als nächstes setzen wir <bookmark mark=\"plug_in_zero_a\"/>den Wert x gleich null ein und erhalten, dass f von null gleich a mal b hoch null minus 0,5 ist. B hoch null ist gleich eins, also können wir das ganze <bookmark mark=\"plug_in_zero_b\"/>zu f von null gleich a minus 0,5 vereinfachen. Wir wissen auch <bookmark mark=\"plug_in_zero_c\"/>, dass f von null gleich 0,5 ist, also können wir leicht <bookmark mark=\"move_to_a\"/>erschließen, dass a <bookmark mark=\"a_in\"/>gleich eins ist. Nun bleibt der <bookmark mark=\"reset\"/>letzte zu bestimmende Wert <bookmark mark=\"highlight_b\"/>b. Dafür schauen wir uns den Abstand von den beiden gegebenen Punkten zur Asymptote an. Der <bookmark mark=\"point_1\"/>linke Punkt ist eine Einheit von der Asymptote entfernt. Und der <bookmark mark=\"point_2\"/>rechte Punkt ist 1,5 Einheiten von der Asymptote entfernt. <bookmark mark=\"reset_cursor\"/>Also erhöht sich der Abstand bei jedem Schritt nach rechts um den Faktor 1,5. <bookmark mark=\"highlight_b_again\"/>Also muss b gleich <bookmark mark=\"b_in\"/>1,5 sein. Die endgültige Lösung ist also <bookmark mark=\"conclusion\"/>f von x gleich eins mal 1,5 hoch x minus 0,5."
         }
       }
     },
@@ -3129,6 +3153,13 @@
     },
     "model_log_terms_2_a": {
       "voiceover": "Wir können den Betrag, den wir der Bank noch schulden, mithilfe einer <bookmark mark=\"func_in\"/>exponentiellen Funktion f von x gleich a mal b hoch x modellieren. Da <bookmark mark=\"highlight_repay\"/>wir jedes Jahr zehn Prozent zurückzahlen, setzen wir<bookmark mark=\"set_b\"/> b auf 0,9, denn das ist der Betrag, der nach der Rückzahlung von zehn Prozent übrig bleibt. Jetzt wollen wir wissen, wann der Betrag, den wir der Bank schulden, 50 Dollar beträgt. Wir müssen also herausfinden, für welchen Wert von x gilt, dass 200 mal 0,9 hoch x <bookmark mark=\"transform\"/>gleich fünfzig ist. Oder, nachdem wir beide Seiten durch 200 geteilt haben, versuchen wir herauszufinden, für welchen Wert von x gilt, dass 0,9 hoch x <bookmark mark=\"transform_2\"/>gleich 0,25 ist. Um das herauszufinden, können wir den <bookmark mark=\"step_1\"/>Logarithmus zur Basis 0,9 auf beiden Seiten anwenden und erhalten, dass<bookmark mark=\"func_log\"/> der Logarithmus zur Basis 0,9 von 0,9 hoch x gleich dem Logarithmus zur Basis 0,9 von 0,25 ist. Jetzt können wir <bookmark mark=\"step_2\"/>einfach die linke Seite als x mal den Logarithmus zur Basis 0,9 von 0,9 schreiben, <bookmark mark=\"solution\"/>und erhalten, dass x gleich dem Logarithmus zur Basis 0,9 von 0,25 ist. Und das ist <bookmark mark=\"approx\"/>ungefähr 13,16, also musst du deine Raten über 13 Jahre zahlen."
+    },
+    "Func_6_P_exp_log_1_q": {
+      "question-text": "Welchen Wert hat $x$ bei der Gleichung $25^x-3\\left(5^x\\right)=0$?",
+      "voiceover": "Betrachte die <bookmark mark=\"term_in\"/>Gleichung 25 hoch x minus 3 mal 5 hoch x gleich null. Was <bookmark mark=\"dog_in\"/>ist der Wert von x?"
+    },
+    "Func_6_P_exp_log_1_a": {
+      "voiceover": "Im ersten <bookmark mark=\"step_1_0\"/>Schritt werden wir zwei Dinge tun: Zuerst <bookmark mark=\"step_1_1\"/>addieren wir auf beiden Seiten dreimal 5 hoch x. Und dann,<bookmark mark=\"step_1_2\"/> schreiben wir 25 als fünf hoch zwei um. Das ergibt uns<bookmark mark=\"term_2\"/>fünf hoch 2x gleich dreimal fünf hoch x. Als Nächstes schreiben wir<bookmark mark=\"step_2\"/> fünf hoch 2x um als fünf hoch x, das Ganze hoch zwei. Das ergibt <bookmark mark=\"term_3\"/>uns fünf hoch x hoch zwei gleich dreimal fünf hoch x. Jetzt können wir <bookmark mark=\"step_3\"/>beide Seiten durch fünf hoch x teilen und<bookmark mark=\"term_4\"/> erhalten, dass fünf hoch x gleich drei ist. Schließlich können wir <bookmark mark=\"step_4\"/>den Logarithmus zur Basis fünf auf beiden Seiten anwenden und <bookmark mark=\"solution\"/>erhalten, dass x gleich dem Logarithmus zur Basis fünf von drei ist."
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3167,6 +3198,12 @@
     "4": {
       "q": {
         "question-text": "Wie viel Geld benötige ich heute bei einem jährlichen Zinssatz von $5\\%$, um in $20$ Jahren $100.000$€ zu haben?"
+      },
+      "twelveyearsago": "Vor $12$ Jahren"
+    },
+    "5": {
+      "q": {
+        "question-text": "Mit welchem ​​Zinssatz konnten meine Ersparnisse in $12$ Jahren von $3.600$€ auf $5.000$€ wachsen?"
       }
     }
   },
