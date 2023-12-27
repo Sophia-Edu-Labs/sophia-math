@@ -39,30 +39,21 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
         updownarrow = MathTex("\\Updownarrow", color=c1t, font_size=fs1).next_to(invert, DOWN, buff=.6)
         det_2 = MathTex("\\det(A) \\neq 0", color=c1t, font_size=fs1).next_to(updownarrow, DOWN, buff=.6)
 
-        blist = BulletedList("2x2 Matrix", "Animation", "3x3 Matrix", font_size=fs1).next_to(title, DOWN, buff=2)
-        blist.set_color_by_tex("2x2 Matrix", BLUE)
-        blist.set_color_by_tex("Animation", BLUE)
-        blist.set_color_by_tex("3x3 Matrix", BLUE)
-        #self.add(blist)
-
-        viel = MathTex("\\text{Viel Spaß!}", color=c1t, font_size=fs1).next_to(blist, DOWN, buff=1.5)
-    
         # Action Sequence
         with self.voiceover(
                 text=""" 
                 Die Determinante <bookmark mark="mat"/> macht aus jeder quadratischen Matrix <bookmark mark="number"/>  <break time="0.4s"/> eine Zahl. Wir nennen diese Zahl <bookmark mark="det"/> die Determinante der Matrix. 
                 Die Determinante ist von fundamentaler Wichtigkeit für die lineare Algebra, denn sie erfüllt die folgende nützliche <bookmark mark="fade_out_1"/> Eigenschaft: <bookmark mark="not_zero"/> eine Matrix A ist genau dann invertierbar, wenn ihre Determinante nicht null ist.
-                Und übrigens besitzt jede quadratische Matrix eine Determinante. <break time="0.8s"/>
-                Wir beginnen dieses Kapitel <bookmark mark="fade_out_2"/> mit dem einfachsten Fall: nämlich mit der <bookmark mark="2times2"/> Berechnung der Determinante einer 2 Kreuz 2 Matrix.
-                Sobald wir das gemeistert haben, werden wir in <bookmark mark="geometric"/> einer Animation sehen, dass wir uns die Determinante einer Matrix auch geometrisch vorstellen können.
-                Am Ende dieses Kapitels berechnen wir dann <bookmark mark="3times3"/> noch die Determinante von 3 Kreuz 3 und anderen  Matrizen. <bookmark mark="viel"/> Viel Spaß!
+                Und übrigens besitzt jede quadratische Matrix eine Determinante.
                 """
         ) as tracker:
 
+            self.add_title("Determinante")
+
             self.wait_until_bookmark("mat")
-            self.play(FadeIn(mat_1[1]), run_time=.6)
-            self.play(FadeIn(mat_2[1]), run_time=.6)
-            self.play(FadeIn(mat_3[1]), run_time=.6)
+            self.play(Write(mat_1[1]), run_time=.6)
+            self.play(Write(mat_2[1]), run_time=.6)
+            self.play(Write(mat_3[1]), run_time=.6)
 
             self.wait_until_bookmark("number")
             self.play(ReplacementTransform(copy_1, mat_1[3]), run_time=.6)
@@ -70,29 +61,60 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
             self.play(ReplacementTransform(copy_3, mat_3[3]), run_time=.6)
 
             self.wait_until_bookmark("det")
-            self.play(FadeIn(mat_1[0], mat_1[2]), run_time=.6)
-            self.play(FadeIn(mat_2[0], mat_2[2]), run_time=.6)
-            self.play(FadeIn(mat_3[0], mat_3[2]), run_time=.6)
+            self.play(Write(mat_1[0], mat_1[2]), run_time=.6)
+            self.play(Write(mat_2[0], mat_2[2]), run_time=.6)
+            self.play(Write(mat_3[0], mat_3[2]), run_time=.6)
 
             self.wait_until_bookmark("fade_out_1")
             self.play(FadeOut(mat_1,mat_2,mat_3), run_time=1)
 
             self.wait_until_bookmark("not_zero")
-            self.play(FadeIn(invert), run_time=.6)
-            self.play(FadeIn(updownarrow), run_time=.6)
-            self.play(FadeIn(det_2), run_time=.6)
+            self.play(Write(invert), run_time=.6)
+            self.play(Write(updownarrow), run_time=.6)
+            self.play(Write(det_2), run_time=.6)
 
-            self.wait_until_bookmark("fade_out_2")
-            self.play(FadeOut(invert, updownarrow, det_2), run_time=1.5)
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+class LinAlg_1_5_I_1_C(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+
+        title = self.add_title("Determinante")
+
+        blist = BulletedList("2x2 Matrix", "Animation", "3x3 Matrix", "Eigenschaften", font_size=fs1).next_to(title, DOWN, buff=2)
+        blist.set_color_by_tex("2x2 Matrix", BLUE)
+        blist.set_color_by_tex("Animation", BLUE)
+        blist.set_color_by_tex("3x3 Matrix", BLUE)
+        blist.set_color_by_tex("Eigenschaften", BLUE)
+        #self.add(blist)
+
+        viel = MathTex("\\text{Viel Spaß!}", color=c1t, font_size=fs1).next_to(blist, DOWN, buff=1.2)
+    
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Wir beginnen dieses Kapitel mit dem einfachsten Fall: nämlich mit der <bookmark mark="2times2"/> Berechnung der Determinante einer 2 Kreuz 2 Matrix.
+                Sobald wir das gemeistert haben, werden wir in <bookmark mark="geometric"/> einer Animation sehen, dass wir uns die Determinante einer Matrix auch geometrisch vorstellen können.
+                Dann zeigen wir, wie man die Determinante <bookmark mark="3times3"/> von 3 Kreuz 3 und anderen  Matrizen berechnet. 
+                Am Ende dieses Kapitels schauen wir uns dann <bookmark mark="properties"/> noch weitere wichtige Eigenschaften der Determinante an. <bookmark mark="viel"/> Viel Spaß!
+                """
+        ) as tracker:
         
             self.wait_until_bookmark("2times2")
-            self.play(FadeIn(blist[0]), run_time=1)
+            self.play(Write(blist[0]), run_time=1)
 
             self.wait_until_bookmark("geometric")
-            self.play(FadeIn(blist[1]), run_time=1)
+            self.play(Write(blist[1]), run_time=1)
 
             self.wait_until_bookmark("3times3")
-            self.play(FadeIn(blist[2]), run_time=1)
+            self.play(Write(blist[2]), run_time=1)
+
+            self.wait_until_bookmark("properties")
+            self.play(Write(blist[3]), run_time=1)
 
             self.wait_until_bookmark("viel")
             self.play(Write(viel), run_time=1)
@@ -162,7 +184,7 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
             self.wait(4)
             
 
-class LinAlg_1_5_I_2_q(SophiaCursorScene):
+class LinAlg_1_5_I_2_Q(SophiaCursorScene):
     
 
     # Main method for constructing the animation
