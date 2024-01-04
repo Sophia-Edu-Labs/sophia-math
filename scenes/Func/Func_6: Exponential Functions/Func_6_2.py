@@ -4457,11 +4457,15 @@ class Func_6_2_I_6_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$0.95$", "$1.95$", "$0.05$", "$1.05$"],
-            correctAnswerIndex = 3,
-            questionText=self.translate("Func_6_2.I561.q.question-text")
+            answerOptions = ["$1.05$", "$0.95$", "$1.95$", "$0.05$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_2.I561.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+            fallbackOptionIndex=1,
+            answerOptionMatcher="$\key{a}$",
+            )
         )
-
+    
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -4517,7 +4521,7 @@ class Func_6_2_I_6_1_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I561q.voiceover")
+                text=self.translate("General.correct_5")+self.translate("Func_6_2.I561q.voiceover")
         ) as tracker:
             
             self.add_shift_sound(0.5)
@@ -4667,7 +4671,7 @@ class Func_6_2_I_6_1_d(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.correct_5")+self.translate("Func_6_2.I561q.voiceover")
+                text=self.translate("General.incorrect_5")+self.translate("Func_6_2.I561q.voiceover")
         ) as tracker:
             
             self.add_shift_sound(0.5)
@@ -5152,9 +5156,19 @@ class Func_6_2_I_6_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$1500$", "$125x$", "$3375$", "$2250$"],
-            correctAnswerIndex = 2,
-            questionText=self.translate("Func_6_2.I565.q.question-text")
+            answerOptions = ["$3375$", "$1500$", "$125x$", "$2250$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_2.I565.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                # answerOptionsTypes={
+                #     "a": "number"
+                # },
+                # answerOptionDescriptions={
+                #     "a": self.translate("Func_6_2.P3.q.answer-option-description")
+                # }
+            )
         )
 
     # Main method for constructing the animation
@@ -5215,7 +5229,7 @@ class Func_6_2_I_6_5_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_6_2.I565q.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_6_2.I565q.voiceover")
         ) as tracker:
 
             self.add_shift_sound(0.5)

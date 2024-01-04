@@ -3052,6 +3052,14 @@
         "a": {
           "voiceover": "Since we're looking at compound interest, we'll use the exponential <bookmark mark=\"function_in\"/>function f of x equals a times b to the power of x to model the amount of money we have. We now want to <bookmark mark=\"highlight_a\"/>find \"a\", which is equal to the amount of money we have at x equals zero. We <bookmark mark=\"highlight_interest\"/>get five percent of interest each year, so the value of<bookmark mark=\"plug_in_b\"/> b has to be 1.05. And we're looking at a time <bookmark mark=\"highlight_time\"/>span of 20 years, so <bookmark mark=\"plug_in_x\"/>we plug in 20 for x. Finally, we want to <bookmark mark=\"highlight_100k\"/>have 100 thousand euros in the bank, so <bookmark mark=\"transform_f\"/>we set f of x equal to 100 thousand. Now since we want to find the value of \"a\", <bookmark mark=\"step\"/>we divide both sides by 1.05 to the power of 20. And we get <bookmark mark=\"sol_in\"/>a equals 100 thousand divided by 1.05 to the power of 20. If <bookmark mark=\"approx\"/>we compute that, we can see that we need a little less than 38 thousand euros to have 100 thousand euros."
         }
+      },
+      "5": {
+        "q": {
+          "voiceover": "12 years ago, I put <bookmark mark=\"bank_in\"/>3 thousand 600 Euros into a bank. Until today, it has grown to <bookmark mark=\"five_thousand_in\"/> 5 thousand Euros. What <bookmark mark=\"interest_in\"/>was the annual interest rate? <bookmark mark=\"years_in\"/>"
+        },
+        "a": {
+          "voiceover": "We'll use the exponential function <bookmark mark=\"func_in\"/>f of x equals \"a\" times b to the power of x to model the amount of money we have after a certain amount of time. If x stands for the number of years, we can plug in the value <bookmark mark=\"plug_in_twelve\"/>x equals twelve to obtain that f of twelve equals \"a\" times b to the power of twelve. We know that f of twelve equals five thousand, so we can transform the equation<bookmark mark=\"transform_f\"/> to \"a\" times b to the power of twelve equals 5 thousand. We also know a is<bookmark mark=\"a_plugged_in\"/> equal to 3 thousand 600, because that's how much money we had originally. Now we can <bookmark mark=\"step_divide\"/>divide both sides by 3 thousand 600 to <bookmark mark=\"divide\"/>obtain b to the power of twelve equals 5 thousand divided by 3 thousand 600. We can then<bookmark mark=\"step_take_root\"/>take the twelfth root of both sides<bookmark mark=\"take_root\"/> to obtain b equals the twelfth root of 5 thousand divided by 3 thousand 600. This is<bookmark mark=\"approx\"/> approximately equal to 1.028. So we get roughly 2.9 percent interest."
+        }
       }
     },
     "general_form_1": {
@@ -3101,10 +3109,26 @@
       },
       "2": {
         "q": {
-          "voiceover": "Look at <bookmark mark=\"graph_in\"/> this graph of an exponential function. It has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark=\"points_in\"/>three points i marked here. The term of the function is <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. What are the values of \"a\", b and c?"
+          "voiceover": "Look at <bookmark mark=\"graph_in\"/> this graph of an exponential function. It has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 1. And it goes through the <bookmark mark=\"points_in\"/>three points i marked here. The term of the function has the form<bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. What are the values of \"a\", b and c?"
         },
         "a": {
           "voiceover": "First, we can see that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 1 instead of y=0. ... This means, <bookmark mark=\"c_mark\"/>that c has to be <bookmark mark=\"c_in\"/>equal to negative 1, because the entire function is shifted down by 1... Next, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 1. Since b to the power of zero is one, we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 1. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to negative 2, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to negative one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark=\"point_1\"/>leftmost point is 0.5 units away from the asymptote. The <bookmark mark=\"point_2\"/>middle point is one unit away from the asymptote. And the <bookmark mark=\"point_3\"/>rightmost point is 2 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>This means that the distance doubles for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 2. So in conclusion, the function is <bookmark mark=\"conclusion\"/> f of x equals negative one times two to the power of x minus 1."
+        }
+      },
+      "3": {
+        "q": {
+          "voiceover": "The orange graph describes <bookmark mark=\"graph_in\"/> an exponential function. The term of the function has the form<bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. And as you can see, the graph has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 1.5. And it goes through the <bookmark mark=\"points_in\"/>three points that are highlighted here.  What are the values of \"a\", b and c?"
+        },
+        "a": {
+          "voiceover": "Since we know that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 1.5 instead of y=0, we can infer <bookmark mark=\"c_mark\"/>that the value of c is<bookmark mark=\"c_in\"/> negative 1.5, because the entire function is shifted down by negative 1.5 ... Knowing this, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 1.5. Since b to the power of zero is one, we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 1.5. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to negative 2.5, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to negative one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from each of the three highlighted points to the asymptote. The <bookmark mark=\"point_1\"/>leftmost point is two units away from the asymptote. The <bookmark mark=\"point_2\"/>middle point is one unit away from the asymptote. And the <bookmark mark=\"point_3\"/>rightmost point is 0.5 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>This means that the distance halves for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 0.5. So the final solution is <bookmark mark=\"conclusion\"/>f of x equals negative one times 0.5 to the power of x minus 1.5."
+        }
+      },
+      "4": {
+        "q": {
+          "voiceover": "Check out the pink<bookmark mark=\"graph_in\"/> graph, which shows an exponential function. ... It has a <bookmark mark=\"asympote_in\"/>horizontal asymptote at y = negative 0.5. And it goes through the <bookmark mark=\"points_in\"/>two points zero, zero point 5 and 1,1. The term of the function is <bookmark mark=\"term_in\"/> f of x equals a times b to the power of x plus c. ... What are the values of \"a\", b and c?                "
+        },
+        "a": {
+          "voiceover": "So we know that <bookmark mark=\"highlight_asymptote\"/>the asymptote is at y = negative 0.5 instead of y=0. This means, <bookmark mark=\"c_mark\"/>that the value of c is<bookmark mark=\"c_in\"/> equal to negative 0.5, because the entire function is shifted down by 0.5 ... Knowing this, we <bookmark mark=\"plug_in_zero_a\"/>plug in the value x equals zero and we get that f of zero equals a times b to the power of zero minus 0.5. B to the power of zero is equal to one, so we can simplify this <bookmark mark=\"plug_in_zero_b\"/>to f of zero equals a minus 0.5. We also know <bookmark mark=\"plug_in_zero_c\"/>that f of zero is equal to 0.5, so we can easily <bookmark mark=\"move_to_a\"/>infer that a is <bookmark mark=\"a_in\"/>equal to one. Now the <bookmark mark=\"reset\"/>final value we need to <bookmark mark=\"highlight_b\"/>find is b. For that, let's look at the distance from the two given points to the asymptote. The <bookmark mark=\"point_1\"/>left point is one unit away from the asymptote. And the <bookmark mark=\"point_2\"/>right point is 1.5 units away from the asymptote. <bookmark mark=\"reset_cursor\"/>So the distance increases by a factor of 1.5 for each step to the right.<bookmark mark=\"highlight_b_again\"/> So b must be equal <bookmark mark=\"b_in\"/>to 1.5. So the final solution is <bookmark mark=\"conclusion\"/>f of x equals one times 1.5 to the power of x minus 0.5."
         }
       }
     },
@@ -3133,6 +3157,13 @@
     },
     "model_log_terms_2_a": {
       "voiceover": "We can model the amount of money we still owe the bank using an <bookmark mark=\"func_in\"/>exponential function f of x equals a times b to the power of x. Since <bookmark mark=\"highlight_repay\"/>we pay back ten percent per year, we set<bookmark mark=\"set_b\"/> b to 0.9, because that's how much remains after we've paid back ten percent. Now we want to know, when the amount we owe to the bank will be 50 dollars. So we need to find out for what value of x we get that 200 times 0.9 to the power of x <bookmark mark=\"transform\"/>is equal to fifty. Or, after dividing both sides by 200, we can try to find out for what value of x it holds that 0.9 to the power of x <bookmark mark=\"transform_2\"/>is equal to 0.25. To find this, we can apply the <bookmark mark=\"step_1\"/>base 0.9 logarithm on both sides, and get that<bookmark mark=\"func_log\"/> the base 0.9 logarithm of 0.9 to the power of x is equal to the base 0.9 logarithm of 0.25. Now we can <bookmark mark=\"step_2\"/>just write the left hand side as x times the base 0.9 logarithm of 0.9, <bookmark mark=\"solution\"/>and get that x is equal to the base 0.9 logarithm of 0.25. And that's <bookmark mark=\"approx\"/>approximately 13 point 1 6, so you'll have to pay your installments for over 13 years."
+    },
+    "Func_6_P_exp_log_1_q": {
+      "question-text": "Given the equation $25^x-3\\left(5^x\\right)=0$, what is the value of $x$?",
+      "voiceover": "Consider the <bookmark mark=\"term_in\"/>equation 25 to the power of x minus 3 times 5 to the power of x equals zero. What <bookmark mark=\"dog_in\"/>is the value of x?"
+    },
+    "Func_6_P_exp_log_1_a": {
+      "voiceover": "In the first <bookmark mark=\"step_1_0\"/>step, we will do two things: First, <bookmark mark=\"step_1_1\"/>we will add three times 5 to the power of x on both sides. And then,<bookmark mark=\"step_1_2\"/> we'll rewrite 25 as five squared. This gives us<bookmark mark=\"term_2\"/>five to the power of 2x equals three times five to the power of x. Next, we rewrite<bookmark mark=\"step_2\"/> five to the power of 2x as five to the power of x, all to the power of two. This gives <bookmark mark=\"term_3\"/>us five to the power of x to the power of two equals three times five to the power of x. Now, we can <bookmark mark=\"step_3\"/>divide both sides by five to the power of x, and<bookmark mark=\"term_4\"/> get that five to the power of x equals three. Finally, we can <bookmark mark=\"step_4\"/>apply the base five logarithm on both sides, and <bookmark mark=\"solution\"/>get that x is equal to the base five logarithm of three."
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3167,6 +3198,12 @@
     "4": {
       "q": {
         "question-text": "Given an annual interest rate of $5\\%$, how much money do i need today, to reach $100.000$€ in $20$ years?"
+      },
+      "twelveyearsago": "$12$ years ago"
+    },
+    "5": {
+      "q": {
+        "question-text": "What interest rate allowed my savings to grow from $3600$€ to $5000$€ in $12$ years?"
       }
     }
   },
