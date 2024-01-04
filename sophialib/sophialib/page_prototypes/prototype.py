@@ -80,6 +80,7 @@ class PagePrototypeQuestion(PagePrototype):
                 "answerOptionMatcher": task_definition.freeTextDetail.answerOptionMatcher,
                 "answerOptionDescriptions": task_definition.freeTextDetail.answerOptionDescriptions,
                 "answerOptionsTypes": task_definition.freeTextDetail.answerOptionsTypes,
+                "answerOptionsEquality": task_definition.freeTextDetail.answerOptionsEquality,
             }
         )
     

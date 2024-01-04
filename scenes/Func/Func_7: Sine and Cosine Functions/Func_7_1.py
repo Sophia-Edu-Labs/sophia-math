@@ -15,7 +15,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
 
 #####################################
 #####################################
@@ -351,9 +351,22 @@ class Func_7_1_I_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{3}{2}\Pi$", "$\\tfrac{1}{2}\Pi$", "$2\Pi$", "$\Pi$"],
+            answerOptions = ["$\\frac{3}{2}{\pi}$", "$\\frac{1}{2}{\pi}$", "$2{\pi}$", "${\pi}$"],
             correctAnswerIndex = 3,
-            questionText=self.translate("Func_7_1.I2.q.question-text")
+            questionText=self.translate("Func_7_1.I2.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=0,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                },
+                answerOptionsEquality={
+                    "a": {
+                        "roundingDecimalPlaces": 2,
+                        "tolerance": 0.1
+                    }
+                }
+            )
         )
 
     # Main method for constructing the animation
