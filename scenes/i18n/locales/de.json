@@ -3160,6 +3160,10 @@
     },
     "Func_6_P_exp_log_1_a": {
       "voiceover": "Im ersten <bookmark mark=\"step_1_0\"/>Schritt werden wir zwei Dinge tun: Zuerst <bookmark mark=\"step_1_1\"/>addieren wir auf beiden Seiten dreimal 5 hoch x. Und dann,<bookmark mark=\"step_1_2\"/> schreiben wir 25 als fünf hoch zwei um. Das ergibt uns<bookmark mark=\"term_2\"/>fünf hoch 2x gleich dreimal fünf hoch x. Als Nächstes schreiben wir<bookmark mark=\"step_2\"/> fünf hoch 2x um als fünf hoch x, das Ganze hoch zwei. Das ergibt <bookmark mark=\"term_3\"/>uns fünf hoch x hoch zwei gleich dreimal fünf hoch x. Jetzt können wir <bookmark mark=\"step_3\"/>beide Seiten durch fünf hoch x teilen und<bookmark mark=\"term_4\"/> erhalten, dass fünf hoch x gleich drei ist. Schließlich können wir <bookmark mark=\"step_4\"/>den Logarithmus zur Basis fünf auf beiden Seiten anwenden und <bookmark mark=\"solution\"/>erhalten, dass x gleich dem Logarithmus zur Basis fünf von drei ist."
+    },
+    "Func_6_P_exp_log_2_q": {
+      "question-text": "Was ist der Wert von $9^{\\log_3\\sqrt5}$?",
+      "voiceover": "Schau dir den <bookmark mark=\"term_in\"/>Ausdruck 9 hoch den Basis 3 Logarithmus von der Wurzel von 5 an. <bookmark mark=\"turtle_in\"/>Wie können wir diesen Ausdruck vereinfachen?"
     }
   },
   "Func_6_P_recognize_growth_1": {

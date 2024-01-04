@@ -8446,7 +8446,7 @@ class Func_6_P_exp_log_1_q(SophiaCursorScene):
             cursor.idle=True
 
         self.wait(4)
-
+#
 
 class Func_6_P_exp_log_1_a(SophiaCursorScene):
 
@@ -8609,7 +8609,142 @@ class Func_6_P_exp_log_1_b(SophiaCursorScene):
             cursor.idle=True
 
         self.wait(4)
+
+#####################################
+#####################################
+class Func_6_P_exp_log_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$5$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P.Func_6_P_exp_log_2_q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("9^{\\log_3\\sqrt5}", color=c1t, font_size=fs1).set_y(2.6)
+
+        turtle = ImageMobject(assets_folder / "img" / "turtle_thinking.png")
+        turtle = turtle.scale(4/turtle.get_width()).set_x(-5).set_y(.6)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor) 
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.Func_6_P_exp_log_2_q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+            cursor.idle=False
+            self.play(CursorUnderline(cursor, term))
+            
+            self.wait_until_bookmark("turtle_in")
+            self.add_shift_sound(0.5)
+            self.play(turtle.animate.shift(5*RIGHT), CursorMoveResize(cursor, 0, -2), run_time=.5)
+            cursor.idle=True
+
+        self.wait(4)
+
+
+class Func_6_P_exp_log_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("9", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "9=3^2", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("\\left(3^2\\right)", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "\\left(a^b\\right)^c=a^{b\\cdot c}", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4)
+        step_2[1].scale(.9)
+        term_3_1 = MathTex("3^{", "2", "\\cdot", "\\log_3\\sqrt5}", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4)
+        term_3_2 = MathTex("3^{", "\\log_3\\sqrt5}", "\\cdot", "2", color=c1t, font_size=fs1).move_to(term_3_1)
+        step_3 = MathTex("\\Downarrow", "a^{\\log_ab}=b", color=BLUE_D, font_size=fs2).next_to(term_3_2, DOWN, buff=.4)
+        step_3[1].scale(.9)
+        term_4_1 = MathTex("\\sqrt5", "^2", color=c1t, font_size=fs1).next_to(step_3, DOWN, buff=.4)
+        term_4_2 = MathTex("5", color=c1t, font_size=fs1).move_to(term_4_1)
+
+        turtle = ImageMobject(assets_folder / "img" / "turtle_thinking.png")
+        turtle = turtle.scale(4/turtle.get_width()).set_y(.6)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor) 
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+So the first thing we can do is<bookmark mark="step_1"/> 
+"""
+        ) as tracker:
+            
+            self.wait()
+
+        self.wait(4)
 #
+
+
+
+
+
+
+class test(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        c = Circle(color=RED, fill_color=RED, fill_opacity=1).scale(1.4)
+        self.add(c)
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Fantastic work on those exercises! You're really getting the hang of exponential functions. But there's still more to explore.
+In our next session, we'll focus on understanding how exponential growth and decay happen in different scenarios. We'll use examples like a city's energy consumption and the growth of a savings account. For instance, we'll calculate the interest rate required for a savings account to grow to a certain amount over a period of years, or how much energy a city will use in the future based on current trends.
+These examples aren't just numbers; they represent real-life situations where exponential functions play a key role. So, get ready to apply your skills in even more practical ways! See you in the next session!
+"""
+        ) as tracker:
+            for idx in range(20):
+                self.play(ApplyWave(c, amplitude=.4), run_time=.4)
+                self.play(ApplyWave(c, amplitude=.5), run_time=.2)
+                self.play(ApplyWave(c, amplitude=.8), run_time=.7)
+                self.play(ApplyWave(c, amplitude=.7), run_time=.5)
+                self.wait(.1)
+
+        self.wait(4)
+
+
+
+
+
+
+
+
+
+
+
+
 
 PROTOTYPES=[
 ########################################################################## Practice: Recognizing Exponential Growth

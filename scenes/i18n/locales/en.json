@@ -3164,6 +3164,10 @@
     },
     "Func_6_P_exp_log_1_a": {
       "voiceover": "In the first <bookmark mark=\"step_1_0\"/>step, we will do two things: First, <bookmark mark=\"step_1_1\"/>we will add three times 5 to the power of x on both sides. And then,<bookmark mark=\"step_1_2\"/> we'll rewrite 25 as five squared. This gives us<bookmark mark=\"term_2\"/>five to the power of 2x equals three times five to the power of x. Next, we rewrite<bookmark mark=\"step_2\"/> five to the power of 2x as five to the power of x, all to the power of two. This gives <bookmark mark=\"term_3\"/>us five to the power of x to the power of two equals three times five to the power of x. Now, we can <bookmark mark=\"step_3\"/>divide both sides by five to the power of x, and<bookmark mark=\"term_4\"/> get that five to the power of x equals three. Finally, we can <bookmark mark=\"step_4\"/>apply the base five logarithm on both sides, and <bookmark mark=\"solution\"/>get that x is equal to the base five logarithm of three."
+    },
+    "Func_6_P_exp_log_2_q": {
+      "question-text": "What is the value of $9^{\\log_3\\sqrt5}$?",
+      "voiceover": "Check out the <bookmark mark=\"term_in\"/> expression 9 to the power of log base 3 of the square root of 5. <bookmark mark=\"turtle_in\"/>How can we simplify this expression?"
     }
   },
   "Func_6_P_recognize_growth_1": {
