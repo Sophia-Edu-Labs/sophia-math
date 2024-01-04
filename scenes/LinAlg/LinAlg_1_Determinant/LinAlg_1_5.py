@@ -174,30 +174,17 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
 
         copy_1, copy_2, copy_3 = mat_1[1].copy(), mat_2[1].copy(), mat_3[1].copy()     
     
-        det_1 = MathTex("\det", color=c1t, font_size=fs2)
-        
-        mat_4 = Matrix([["a", "b"], ["c", "d"]],
-            left_bracket="(",
-            right_bracket=")", v_buff = 0.5, h_buff = 0.5, bracket_v_buff = 0.1, bracket_h_buff = 0.1).scale(0.8).next_to(title, DOWN, buff=.5)
-        ent = mat_4.get_entries()
-        bra = mat_4.get_brackets()
-        colors = [RED, BLUE, BLUE, RED]
-        for k in range(len(colors)):
-            ent[k].set_color(colors[k])
-        bra.set_color(BLACK,BLACK)
-    
-        det_2 = MathTex("=", "a", "\\cdot", "d", "-", "b", "\\cdot", "c", color=c1t, font_size=fs2)
-        det_2[1].set_color(RED), det_2[3].set_color(RED), det_2[5].set_color(BLUE), det_2[7].set_color(BLUE)
-        
-        mobject = Group(det_1, mat_4, det_2).arrange(buff=.1)
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(mat_2, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
 
         #mat_5 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "1 \\cdot 0 - 0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_4, DOWN, buff=1.2)
         # Action Sequence
         with self.voiceover(
                 text=""" 
                 Hier zeigen <bookmark mark="title_in"/> wir dir, <bookmark mark="mat"/>  wie du die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnen kannst. <break time="1.5s"/> 
-                Dafür gibt <bookmark mark="fade_out_1"/> es eine einfache <bookmark mark="det"/> Formel. <break time="0.4s"/>
-                Nämlich ist die Determinante einer Matrix a b c d gegeben <bookmark mark="formula"/> durch: a Mal d <break time="0.4s"/> Minus b Mal c.<break time="0.4s"/>  
+                Dafür gibt <bookmark mark="fade_out_1"/> es eine einfache Formel. <break time="0.4s"/>
+                Die Determinante einer <bookmark mark="det_1"/>Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch: a Mal <bookmark mark="det_3"/>d Minus b Mal c.<break time="0.4s"/>  
                 Wir multiplizieren also die Einträge a und d auf der Hauptdiagonale und ziehen das Produkt der Einträge b und c auf der Nebendiagonale davon ab. 
                 """
                 #Wenn wir zum <bookmark mark="example"/> Beispiel die Matrix 1 null null null betrachten, dann erhalten wir mit dieser <bookmark mark="formula_example"/> Formel Eins Mal null Minus null Mal null.
@@ -220,8 +207,15 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
             self.wait_until_bookmark("fade_out_1")
             self.play(FadeOut(mat_1,mat_2,mat_3), run_time=1)
 
-            self.wait_until_bookmark("det")
-            self.play(FadeIn(mobject), run_time=.6)
+            self.wait_until_bookmark("det_1")
+            self.play(Write(mat_4[0]), Write(mat_4[1]), run_time=1)
+
+            self.wait_until_bookmark("det_2")
+            self.play(Write(mat_4[2]), Write(mat_4[3]), run_time=1)
+
+            self.wait_until_bookmark("det_3")
+            self.play(Write(mat_4[4]), run_time=.4)
+            self.play(Write(mat_4[5]), run_time=1)
 
             #self.wait_until_bookmark("example")
             #self.play(FadeIn(mat_5[1]), run_time=.6)
