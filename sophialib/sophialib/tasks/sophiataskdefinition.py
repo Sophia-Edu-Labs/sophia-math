@@ -1,7 +1,7 @@
 
 from dataclasses import dataclass, field
 import re
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 
 def remove_latex_dollar_signs(text):
     # Pattern to match "$[...]" and "$$[...$$" sequences
@@ -32,6 +32,8 @@ class SophiaFreeTextTaskDetail():
     answerOptionsTypes: Optional[Dict[str, str]] = field(default_factory=lambda: {
         "a": "number"
     })
+    # A dictionary that will associate every key in the matcher with some optional settings that can be used to specify which equality should be used when comparing the entered answer for a key with the one specified in the correct answer.
+    answerOptionsEquality: Optional[Dict[str, Dict[str, Any]]] = None
 
 
 
