@@ -21,11 +21,10 @@ import ast
 # - Rules of exponential functions
 # - interests and percentages
 # - Rules of logarithms
+# - LN (Natural Logarithm)
 # - Modeling Terms using Logarithms
 
-# - General practice
 
-###################################################################Exercises for recognizing exponential growth ##########################
 
 ##################################### Exercise Level: Easy (1)
 #####################################
@@ -7643,7 +7642,7 @@ class Func_6_P_2_2_3_d(SophiaCursorScene):
 
 #         self.wait(4)
 
-###############Exercises for Rules of Exponential functions Chapter ##########################
+###############Exercises for Rules of Log Chapter ##########################
         
 #####################################
 #####################################
@@ -7955,6 +7954,129 @@ class Func_6_P_log_rules_2_b(SophiaCursorScene):
             self.play(CursorMoveTo(cursor,x,y), Write(term_3), run_time=.5)
             cursor.idle=True
             
+
+        self.wait(4)
+
+###############Exercises for LN Chapter ##########################
+        
+#####################################
+#####################################
+# TODO: Add translation (C)
+class Func_6_P_ln_1_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$125$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P.ln_1_q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number",
+                }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).set_y(2.6)
+
+        albatross = ImageMobject(assets_folder / "img" / "albatross_calculating.png")
+        albatross = albatross.scale(4/albatross.get_width()).set_x(-5)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Func_6_P.ln_1_q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+            
+            self.wait_until_bookmark("albatross_in")
+            self.add_shift_sound(0.5)
+            self.play(albatross.animate.shift(5*RIGHT), run_time=.5)
+
+        self.wait(4)
+
+
+class Func_6_P_ln_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).set_y(2.6)
+        self.add(term)
+
+        albatross = ImageMobject(assets_folder / "img" / "albatross_calculating.png")
+        albatross = albatross.scale(4/albatross.get_width())
+        self.add(albatross)
+
+        term_1 = MathTex("e^{\\ln(0.2)\\cdot (-3)}", color=c1t, font_size=fs1).move_to(term)
+        step_1 = MathTex("\\Downarrow", "e^{\\ln(a)}=a", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("0.2^{-3}}", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4)
+        term_3 = MathTex("125", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4)
+
+        term_fin = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).move_to(step_1)
+        eq_fin = MathTex("=", color=BLUE_D, font_size=fs2).move_to(term_2)
+
+        
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_1")+self.translate("Func_6_P.ln_1_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_1")
+            self.play(ReplacementTransform(term, term_1))
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), albatross.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.6*DOWN
+            self.play(Write(term_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3")
+            x,y,_ = term_3.get_center()+0.4*DOWN
+            self.play(Write(term_3), Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_1")
+            self.play(ReplacementTransform(term_1, term_fin), Unwrite(step_1), Unwrite(step_2), Unwrite(term_2), run_time=.5)
+
+            self.wait_until_bookmark("sol_2")
+            term_3.generate_target().move_to(step_2)
+            self.add_shift_sound(0.5)
+            self.play(MoveToTarget(term_3), Write(eq_fin), run_time=.5)
+            solution_rectangle = SurroundingRectangle(VGroup(term_fin, eq_fin, term_3), buff=.2, corner_radius=.1, color=PURE_BLUE)
+            x,y,_ = solution_rectangle.get_start()
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(solution_rectangle.get_end())))
+            cursor.idle=True
+            self.add_pencil_sound(1.5)
+            self.play(Create(solution_rectangle))
 
         self.wait(4)
 
@@ -8661,7 +8783,7 @@ class Func_6_P_exp_log_2_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_exp_log_2_q(SophiaCursorScene):
+class Func_6_P_exp_log_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -8676,8 +8798,9 @@ class Func_6_P_exp_log_2_q(SophiaCursorScene):
         step_2 = MathTex("\\Downarrow", "\\left(a^b\\right)^c=a^{b\\cdot c}", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4)
         step_2[1].scale(.9)
         term_3_1 = MathTex("3^{", "2", "\\cdot", "\\log_3\\sqrt5}", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4)
-        term_3_2 = MathTex("3^{", "\\log_3\\sqrt5}", "\\cdot", "2", color=c1t, font_size=fs1).move_to(term_3_1)
-        step_3 = MathTex("\\Downarrow", "a^{\\log_ab}=b", color=BLUE_D, font_size=fs2).next_to(term_3_2, DOWN, buff=.4)
+        term_3_2 = MathTex("3^{", "\\log_3\\sqrt5", "\\cdot", "2}", color=c1t, font_size=fs1).move_to(term_3_1)
+        upshift = term_1.get_y() - term_3_1.get_y()
+        step_3 = MathTex("\\Downarrow", "a^{\\log_ab}=b", color=BLUE_D, font_size=fs2).next_to(term_3_2, DOWN, buff=.4).shift(UP*upshift)
         step_3[1].scale(.9)
         term_4_1 = MathTex("\\sqrt5", "^2", color=c1t, font_size=fs1).next_to(step_3, DOWN, buff=.4)
         term_4_2 = MathTex("5", color=c1t, font_size=fs1).move_to(term_4_1)
@@ -8686,26 +8809,157 @@ class Func_6_P_exp_log_2_q(SophiaCursorScene):
         turtle = turtle.scale(4/turtle.get_width()).set_y(.6)
 
         cursor = AltCursor(idle=True, y=-2)
-        self.add(cursor) 
-
+        self.add(cursor, turtle, term_1) 
 
         # Action Sequence
         with self.voiceover(
-                text="""
-So the first thing we can do is<bookmark mark="step_1"/> 
-"""
+                text=self.translate("General.correct_6")+self.translate("Func_6_P.Func_6_P_exp_log_2_a.voiceover")
         ) as tracker:
             
-            self.wait()
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(turtle.animate.shift(5*RIGHT), Write(step_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(Write(term_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3_1")
+            x,y,_ = term_3_1.get_center()+0.4*DOWN
+            self.play(Write(term_3_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3_2")
+            self.play(TransformMatchingTex(term_3_1, term_3_2))
+
+            self.wait_until_bookmark("cleanup_1")
+            self.add_shift_sound(.5)
+            self.play(VGroup(term_1, step_1, term_2, step_2).animate.shift(UP*6), term_3_2.animate.shift(UP*upshift), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            x,y,_ = step_3[1].get_center()+0.4*DOWN
+            self.play(Write(step_3), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_4_1")
+            x,y,_ = term_4_1.get_center()+0.4*DOWN
+            self.play(Write(term_4_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_4_2")
+            self.play(TransformMatchingTex(term_4_1, term_4_2))
+
+            self.wait_until_bookmark("solution")
+            term_1 = MathTex("9", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).set_y(1.4)
+            step_1 = MathTex("=", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+            solution = MathTex("5", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+            term_4_2.generate_target()
+            term_4_2.target.move_to(solution)
+            self.play(Write(term_1), Write(step_1), MoveToTarget(term_4_2), Unwrite(VGroup(term_3_2, step_3)), run_time=.5)
+
+            self.wait_until_bookmark("rectangle")
+            sol_rectangle = SurroundingRectangle(VGroup(term_1, step_1, solution), color=PURE_BLUE, corner_radius=.1, buff=.2)
+            x,y,_ = sol_rectangle.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+            self.add(cursor.copy()._start_fading(3).add_updater(lambda m: m.move_to(sol_rectangle.get_end())))
+            self.add_pencil_sound(1)
+            self.play(Create(sol_rectangle), run_time=1)
 
         self.wait(4)
-#
+
+class Func_6_P_exp_log_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term_1 = MathTex("9", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).set_y(2.6)
+        step_1 = MathTex("\\Downarrow", "9=3^2", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("\\left(3^2\\right)", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", "\\left(a^b\\right)^c=a^{b\\cdot c}", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4)
+        step_2[1].scale(.9)
+        term_3_1 = MathTex("3^{", "2", "\\cdot", "\\log_3\\sqrt5}", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4)
+        term_3_2 = MathTex("3^{", "\\log_3\\sqrt5", "\\cdot", "2}", color=c1t, font_size=fs1).move_to(term_3_1)
+        upshift = term_1.get_y() - term_3_1.get_y()
+        step_3 = MathTex("\\Downarrow", "a^{\\log_ab}=b", color=BLUE_D, font_size=fs2).next_to(term_3_2, DOWN, buff=.4).shift(UP*upshift)
+        step_3[1].scale(.9)
+        term_4_1 = MathTex("\\sqrt5", "^2", color=c1t, font_size=fs1).next_to(step_3, DOWN, buff=.4)
+        term_4_2 = MathTex("5", color=c1t, font_size=fs1).move_to(term_4_1)
+
+        turtle = ImageMobject(assets_folder / "img" / "turtle_thinking.png")
+        turtle = turtle.scale(4/turtle.get_width()).set_y(.6)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor, turtle, term_1) 
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_6")+self.translate("Func_6_P.Func_6_P_exp_log_2_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(0.5)
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.play(turtle.animate.shift(5*RIGHT), Write(step_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.4*DOWN
+            self.play(Write(term_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("step_2")
+            x,y,_ = step_2[1].get_center()+0.4*DOWN
+            self.play(Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3_1")
+            x,y,_ = term_3_1.get_center()+0.4*DOWN
+            self.play(Write(term_3_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3_2")
+            self.play(TransformMatchingTex(term_3_1, term_3_2))
+
+            self.wait_until_bookmark("cleanup_1")
+            self.add_shift_sound(.5)
+            self.play(VGroup(term_1, step_1, term_2, step_2).animate.shift(UP*6), term_3_2.animate.shift(UP*upshift), run_time=.5)
+
+            self.wait_until_bookmark("step_3")
+            x,y,_ = step_3[1].get_center()+0.4*DOWN
+            self.play(Write(step_3), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_4_1")
+            x,y,_ = term_4_1.get_center()+0.4*DOWN
+            self.play(Write(term_4_1), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_4_2")
+            self.play(TransformMatchingTex(term_4_1, term_4_2))
+
+            self.wait_until_bookmark("solution")
+            term_1 = MathTex("9", "^{\\log", "_3", "\\sqrt5}", color=c1t, font_size=fs1).set_y(1.4)
+            step_1 = MathTex("=", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+            solution = MathTex("5", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+            term_4_2.generate_target()
+            term_4_2.target.move_to(solution)
+            self.play(Write(term_1), Write(step_1), MoveToTarget(term_4_2), Unwrite(VGroup(term_3_2, step_3)), run_time=.5)
+
+            self.wait_until_bookmark("rectangle")
+            sol_rectangle = SurroundingRectangle(VGroup(term_1, step_1, solution), color=PURE_BLUE, corner_radius=.1, buff=.2)
+            x,y,_ = sol_rectangle.get_start()
+            self.play(CursorMoveTo(cursor, x, y), run_time=.5)
+            self.add(cursor.copy()._start_fading(3).add_updater(lambda m: m.move_to(sol_rectangle.get_end())))
+            self.add_pencil_sound(1)
+            self.play(Create(sol_rectangle), run_time=1)
+
+        self.wait(4)
 
 
-
-
-
-
+#####################################
+#####################################
 class test(SophiaCursorScene):
 
     # Main method for constructing the animation

@@ -3168,6 +3168,16 @@
     "Func_6_P_exp_log_2_q": {
       "question-text": "What is the value of $9^{\\log_3\\sqrt5}$?",
       "voiceover": "Check out the <bookmark mark=\"term_in\"/> expression 9 to the power of log base 3 of the square root of 5. <bookmark mark=\"turtle_in\"/>How can we simplify this expression?"
+    },
+    "Func_6_P_exp_log_2_a": {
+      "voiceover": "So the first thing we can do is<bookmark mark=\"step_1\"/> rewrite 9 as 3 squared, and we get <bookmark mark=\"term_2\"/>the expression 3 squared to the power of log base 3 of the square root of 5.\n<bookmark mark=\"step_2\"/>We can then use the rule that says that if we have a base raised to a power, and that whole thing is raised to another power, we can multiply the two powers together. So<bookmark mark=\"term_3_1\"/> we get 3 to the power of two times log base 3 of the square root of 5. We can then just rearrange the terms to get<bookmark mark=\"term_3_2\"/> 3 to the power of log base 3 of the square root of 5 times two.\nThe <bookmark mark=\"cleanup_1\"/>next step we can do is to use <bookmark mark=\"step_3\"/>the rule that says that if we have a base raised to the power of log base that same base of some number, we get that number. So<bookmark mark=\"term_4_1\"/> the part three to the power of base three logarithm of the square root of five collapses into the square root of five, and we get the square root of 5 to the power of two. Now all that is left for us to do is to calculate the square of the square root of 5, <bookmark mark=\"term_4_2\"/>which is 5. So we<bookmark mark=\"solution\"/>can see that <bookmark mark=\"rectangle\"/>9 to the power of log base 3 of the square root of 5 is equal to 5."
+    },
+    "ln_1_q": {
+      "voiceover": "Look at the <bookmark mark=\"term_in\"/> term e to the power of negative three times the natural logarithm of 0.2. What is the value of this term? And by the way: <bookmark mark=\"albatross_in\"/>You can compute the value without using a calculator.",
+      "question-text": "What is the value of the term $e^{-3\\ln(0.2)}$?"
+    },
+    "ln_1_a": {
+      "voiceover": "So the first thing we can do is change the order of the product in the exponent, and the<bookmark mark=\"term_1\"/> term will be equal to e to the power of the natural logarithm of 0.2 times negative three.\n<bookmark mark=\"step_1\"/>Now we can use the rule that e to the power of the natural logarithm of a number is equal to that number. ... So <bookmark mark=\"term_2\"/>the term is equal to 0.2 to the power of negative three.\nWe can simply compute this, and we'll get that that <bookmark mark=\"term_3\"/>term is equal to 125. So we get <bookmark mark=\"sol_1\"/>that e to the power of negative three times the natural logarithm of 0.2 <bookmark mark=\"sol_2\"/>is equal to 125."
     }
   },
   "Func_6_P_recognize_growth_1": {
