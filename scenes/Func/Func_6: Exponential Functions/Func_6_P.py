@@ -5312,9 +5312,16 @@ class Func_6_P_2_1_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{5^2}{5^k}$", "$\\sqrt{5}^{-2}$", "$\\tfrac{1}{5^k}$", "$\\tfrac{1}{25}\\cdot 5^k$"],
-            correctAnswerIndex = 3,
-            questionText=self.translate("Func_6_P.213.q.question-text")
+            answerOptions = ["$a=\\frac{1}{25},b=5$", "$a=0,b=0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P.213.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                answerOptionMatcher="$a=\key{a},b=\key{b}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number"
+                }
+            )
         )
 
 
@@ -5330,6 +5337,7 @@ class Func_6_P_2_1_3_q(SophiaCursorScene):
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(0.8)
 
         expression = MathTex("5^{k-2}", color=c1t, font_size=fs1)
+        general_form = MathTex("a\\cdot b^x", color=c1t, font_size=fs1)
 
         # Action Sequence
         with self.voiceover(
@@ -5346,6 +5354,10 @@ class Func_6_P_2_1_3_q(SophiaCursorScene):
             self.wait(1)
             self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(RIGHT*5), run_time=0.5)
+
+            self.wait_until_bookmark("general_form_in")
+            self.add_shift_sound(0.5)
+            self.play(expression.animate.shift(UP), Write(general_form))
 
         self.wait(4)
 
@@ -5376,7 +5388,7 @@ class Func_6_P_2_1_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.213.a.voiceover")
+                text=self.translate("General.correct_3")+self.translate("Func_6_P.213.a.voiceover")
         ) as tracker:
  
             self.wait_until_bookmark("rule_in")
@@ -5437,126 +5449,6 @@ class Func_6_P_2_1_3_b(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.incorrect_3")+self.translate("Func_6_P.213.a.voiceover")
-        ) as tracker:
- 
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule), CursorUnderline(cursor, rule), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_2[1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-            cursor.idle=True
-
-        self.wait(4)
-
-class Func_6_P_2_1_3_c(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs2)
-        implication_1 = MathTex("\\Downarrow", "\\substack{a=5\\\\x=k,\\\\y=2}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("5^{k-2}", "=", "\\tfrac{5^k}{5^2}", color=c1t, font_size=fs1)
-        implication_2 = MathTex("\\Downarrow", "5^2=25", color=BLUE_D, font_size=fs2)
-        implication_2[1].scale(.7), implication_1[1].scale(.7)
-        expression_step2 = MathTex("5^{k-2}", "=", "\\tfrac{1}{25}\\cdot 5^k", color=c1t, font_size=fs1)
-        steps = VGroup(rule, implication_1, expression_step1, implication_2, expression_step2).arrange(DOWN, buff=.4)
-        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[0].get_x()*LEFT), expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT)
-
-        
-        expression = MathTex("5^{k-2}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.213.a.voiceover")
-        ) as tracker:
- 
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule), CursorUnderline(cursor, rule), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_2[1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-            cursor.idle=True
-
-        self.wait(4)
-
-class Func_6_P_2_1_3_d(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs2)
-        implication_1 = MathTex("\\Downarrow", "\\substack{a=5\\\\x=k,\\\\y=2}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("5^{k-2}", "=", "\\tfrac{5^k}{5^2}", color=c1t, font_size=fs1)
-        implication_2 = MathTex("\\Downarrow", "5^2=25", color=BLUE_D, font_size=fs2)
-        implication_2[1].scale(.7), implication_1[1].scale(.7)
-        expression_step2 = MathTex("5^{k-2}", "=", "\\tfrac{1}{25}\\cdot 5^k", color=c1t, font_size=fs1)
-        steps = VGroup(rule, implication_1, expression_step1, implication_2, expression_step2).arrange(DOWN, buff=.4)
-        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[0].get_x()*LEFT), expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT)
-
-        
-        expression = MathTex("5^{k-2}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.correct_3")+self.translate("Func_6_P.213.a.voiceover")
         ) as tracker:
  
             self.wait_until_bookmark("rule_in")
@@ -5891,9 +5783,16 @@ class Func_6_P_2_2_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{2^x}{(-4)^2}$", "$\\left(\\tfrac{1}{4}\\right)^x$", "$\\tfrac{1}{16}\\cdot 2^{x}$", "$\\left(\\tfrac{1}{8}\\right)^x$"],
-            correctAnswerIndex = 2,
-            questionText=self.translate("Func_6_P.221.q.question-text")
+            answerOptions = ["$a=\\frac{1}{16},b=2$", "$a=0,b=0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P.221.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                answerOptionMatcher="$a=\key{a},b=\key{b}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number"
+                }
+            )
         )
 
     # Main method for constructing the animation
@@ -5926,221 +5825,8 @@ class Func_6_P_2_2_1_q(SophiaCursorScene):
 
         self.wait(4)
 
+
 class Func_6_P_2_2_1_a(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule_1 = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs1).set_y(2)
-        rule_2 = MathTex("(a^x)^{^y}=a^{x\\cdot y}", color=BLUE_D, font_size=fs1).set_y(3)
-
-        implication_1_1 = MathTex("\\Downarrow", "\\substack{a=4\\\\x=x/2,\, y=2}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("4^{x/2 -2}", "=", "\\tfrac{4^{x/2}}{4^2}", color=c1t, font_size=fs1)
-        implication_1_2 = MathTex("\\Downarrow", "4^2=16", color=BLUE_D, font_size=fs2)
-        expression_step2 = MathTex("4^{x/2 -2}", "=", "\\tfrac{1}{16}\\cdot 4^{x/2}", color=c1t, font_size=fs1)
-
-        expression_step3 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot 4^{1/2\\cdot x}", color=c1t, font_size=fs1)
-        implication_2_1 = MathTex("\\Downarrow", "\\substack{a=4\\\\x=x/2,\,y=x}", color=BLUE_D, font_size=fs2)
-        expression_step4 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot \\left(4^{1/2}\\right)^{^x}", color=c1t, font_size=fs1).scale(0.9)
-        implication_2_2 = MathTex("\\Downarrow", "4^{\\tfrac12}=\\sqrt4=2", color=BLUE_D, font_size=fs2)
-        expression_step5 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot 2^{x}", color=c1t, font_size=fs1)
-
-        steps_1 = VGroup(rule_1, implication_1_1, expression_step1, implication_1_2, expression_step2).arrange(DOWN, buff=.4).shift(UP)
-        steps_2 = VGroup(rule_2, expression_step3, implication_2_1, expression_step4,  implication_2_2, expression_step5).arrange(DOWN, buff=.4)
-
-        expression = MathTex("4^{\\tfrac x2 -2}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.221.a.voiceover")
-        ) as tracker:
-
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule_1), CursorUnderline(cursor, rule_1), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1_1[1].get_center()+0.6*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_1_2[1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_1_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-
-            self.wait_until_bookmark("clean_up")
-            upshift = expression_step3.get_center()-expression_step2.get_center()
-            self.add_shift_sound(0.5)
-            expression_step2 = expression_step2.copy()
-            self.play(expression_step2.animate.shift(upshift), FadeOut(steps_1), run_time=.5)
-            
-            self.wait_until_bookmark("step_3_1_in")
-            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), TransformMatchingTex(expression_step2, expression_step3))
-
-            self.wait_until_bookmark("rule_2_in")
-            self.play(Write(rule_2), CursorUnderline(cursor, rule_2), run_time=.5)
-
-            self.wait_until_bookmark("implication_3_in")
-            x,y,_ = implication_2_1[1].get_center()+0.6*DOWN
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_2_1), run_time=.5)
-
-            self.wait_until_bookmark("step_4_1_in")
-            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_4_in")
-            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_4_in")
-            self.add_shift_sound(0.5)
-            self.play(rule_2.animate.shift(5*UP), implication_2_1.animate.shift(5*UP), expression_step3.animate.shift(5*UP), expression_step4.animate.shift(3*UP), CursorMoveResize(cursor, 0, -.4), run_time=.5)
-            implication_2_2.shift(3*UP), expression_step5.shift(3*UP)
-            x,y,_ = implication_2_2[1].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2_2), run_time=.5)
-
-            self.wait_until_bookmark("step_5_1_in")
-            x,y,_ = expression_step5[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step5[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_5_in")
-            x,y,_ = expression_step5[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step5[1]), Write(expression_step5[2]), run_time=.4)
-            cursor.idle=True
-
-        self.wait(4)
-
-class Func_6_P_2_2_1_b(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule_1 = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs1).set_y(2)
-        rule_2 = MathTex("(a^x)^{^y}=a^{x\\cdot y}", color=BLUE_D, font_size=fs1).set_y(3)
-
-        implication_1_1 = MathTex("\\Downarrow", "\\substack{a=4\\\\x=x/2,\, y=2}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("4^{x/2 -2}", "=", "\\tfrac{4^{x/2}}{4^2}", color=c1t, font_size=fs1)
-        implication_1_2 = MathTex("\\Downarrow", "4^2=16", color=BLUE_D, font_size=fs2)
-        expression_step2 = MathTex("4^{x/2 -2}", "=", "\\tfrac{1}{16}\\cdot 4^{x/2}", color=c1t, font_size=fs1)
-
-        expression_step3 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot 4^{1/2\\cdot x}", color=c1t, font_size=fs1)
-        implication_2_1 = MathTex("\\Downarrow", "\\substack{a=4\\\\x=x/2,\,y=x}", color=BLUE_D, font_size=fs2)
-        expression_step4 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot \\left(4^{1/2}\\right)^{^x}", color=c1t, font_size=fs1).scale(0.9)
-        implication_2_2 = MathTex("\\Downarrow", "4^{\\tfrac12}=\\sqrt4=2", color=BLUE_D, font_size=fs2)
-        expression_step5 = MathTex("4^{\\tfrac x2 -2}", "=", "\\tfrac{1}{16}\\cdot 2^{x}", color=c1t, font_size=fs1)
-
-        steps_1 = VGroup(rule_1, implication_1_1, expression_step1, implication_1_2, expression_step2).arrange(DOWN, buff=.4).shift(UP)
-        steps_2 = VGroup(rule_2, expression_step3, implication_2_1, expression_step4,  implication_2_2, expression_step5).arrange(DOWN, buff=.4)
-
-        expression = MathTex("4^{\\tfrac x2 -2}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.incorrect_3")+self.translate("Func_6_P.221.a.voiceover")
-        ) as tracker:
-
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule_1), CursorUnderline(cursor, rule_1), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1_1[1].get_center()+0.6*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_1_2[1].get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_1_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-
-            self.wait_until_bookmark("clean_up")
-            upshift = expression_step3.get_center()-expression_step2.get_center()
-            self.add_shift_sound(0.5)
-            expression_step2 = expression_step2.copy()
-            self.play(expression_step2.animate.shift(upshift), FadeOut(steps_1), run_time=.5)
-            
-            self.wait_until_bookmark("step_3_1_in")
-            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), TransformMatchingTex(expression_step2, expression_step3))
-
-            self.wait_until_bookmark("rule_2_in")
-            self.play(Write(rule_2), CursorUnderline(cursor, rule_2), run_time=.5)
-
-            self.wait_until_bookmark("implication_3_in")
-            x,y,_ = implication_2_1[1].get_center()+0.6*DOWN
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_2_1), run_time=.5)
-
-            self.wait_until_bookmark("step_4_1_in")
-            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_4_in")
-            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_4_in")
-            self.add_shift_sound(0.5)
-            self.play(rule_2.animate.shift(5*UP), implication_2_1.animate.shift(5*UP), expression_step3.animate.shift(5*UP), expression_step4.animate.shift(3*UP), CursorMoveResize(cursor, 0, -.4), run_time=.5)
-            implication_2_2.shift(3*UP), expression_step5.shift(3*UP)
-            x,y,_ = implication_2_2[1].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2_2), run_time=.5)
-
-            self.wait_until_bookmark("step_5_1_in")
-            x,y,_ = expression_step5[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step5[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_5_in")
-            x,y,_ = expression_step5[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step5[1]), Write(expression_step5[2]), run_time=.4)
-            cursor.idle=True
-
-        self.wait(4)
-
-class Func_6_P_2_2_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6247,7 +5933,7 @@ class Func_6_P_2_2_1_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_1_d(SophiaCursorScene):
+class Func_6_P_2_2_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6741,9 +6427,16 @@ class Func_6_P_2_2_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\\tfrac{2}{\\pi^2}2\\cdot\\pi^{x}$", "$\\left(\\tfrac{2\\pi}{\\pi^2}\\right)^{x}$", "$2\\cdot\\left(\\tfrac{1}{\\pi^2}\\right)^{x}$", "$2\\pi\\cdot\\left(\\tfrac{1}{\\pi^2}\\right)^{x}$"],
-            correctAnswerIndex = 3,
-            questionText=self.translate("Func_6_P.23.q.question-text")
+            answerOptions = ["$a=2\\pi,b=\\frac{1}{\\pi^2}$", "$a=0,b=0$"],
+            correctAnswerIndex = 0,
+            questionText=self.translate("Func_6_P.23.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                answerOptionMatcher="$a=\key{a},b=\key{b}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number"
+                }
+            )
         )
 
     # Main method for constructing the animation
@@ -6814,7 +6507,7 @@ class Func_6_P_2_2_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=self.translate("General.incorrect_5")+self.translate("Func_6_P.23.a.voiceover")
+                text=self.translate("General.correct_5")+self.translate("Func_6_P.23.a.voiceover")
         ) as tracker:
  
             self.wait_until_bookmark("rule_in")
@@ -6969,193 +6662,6 @@ class Func_6_P_2_2_3_b(SophiaCursorScene):
             self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
 
         self.wait(4)
-
-class Func_6_P_2_2_3_c(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs2)
-        implication_1 = MathTex("\\Downarrow", "\\substack{a=\\pi\\\\x=1,\\\\y=2x}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\cdot\\tfrac{\\pi^1}{\\pi^{2x}}", color=c1t, font_size=fs2)
-        implication_2 = MathTex("\\Downarrow", "", color=BLUE_D, font_size=fs2)
-        expression_step2 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\pi^{2x}}", color=c1t, font_size=fs2)
-        implication_3 = MathTex("\\Downarrow", "a^{x\\cdot y}=(a^x)^y", color=BLUE_D, font_size=fs2)
-        expression_step3 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\left(\\pi^2\\right)^x}", color=c1t, font_size=fs2)
-        implication_4 = MathTex("\\Downarrow", "\\tfrac1{a^x}=\\left(\\tfrac1a\\right)^x", color=BLUE_D, font_size=fs2)
-        expression_step4 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\left(\\tfrac{1}{\\pi^2}\\right)^{x}", color=c1t, font_size=fs2)
-        steps = VGroup(rule, implication_1, expression_step1, implication_2, expression_step2, implication_3, expression_step3, implication_4, expression_step4).arrange(DOWN, buff=.4).shift(DOWN)
-        implication_1[1].scale(.7), implication_3[1].scale(.7)
-        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[0].get_x()*LEFT), expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT)
-
-        
-        expression = MathTex("2\\cdot \\pi^{-2x +1}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.incorrect_5")+self.translate("Func_6_P.23.a.voiceover")
-        ) as tracker:
- 
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule), CursorUnderline(cursor, rule), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_2.get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-
-            self.wait_until_bookmark("clean_up")
-            upshift = rule.get_center()-expression_step2.get_center()
-            self.add_shift_sound(0.5)
-            self.play(VGroup(rule, implication_1, expression_step1, implication_2,).animate.shift(5*UP), expression_step2.animate.shift(upshift), run_time=.5)
-            expression_step3.shift(upshift), implication_3.shift(upshift), expression_step4.shift(upshift), implication_4.shift(upshift), 
-
-            self.wait_until_bookmark("implication_3_in")
-            x,y,_ = implication_3[1].get_center()+0.4*DOWN
-            self.play(Write(implication_3), CursorMoveResize(cursor,x,y), run_time=.5)
-
-            self.wait_until_bookmark("step_3_1_in")
-            x,y,_ = expression_step3[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_3_in")
-            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[1]), Write(expression_step3[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_4_in")
-            x,y,_ = implication_4[1].get_center()+0.4*DOWN
-            self.play(Write(implication_4), CursorMoveResize(cursor,x,y), run_time=.5)
-
-            self.wait_until_bookmark("step_4_in")
-            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_4_1_in")
-            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
-
-        self.wait(4)
-
-class Func_6_P_2_2_3_d(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        cursor = AltCursor(idle=True, y=-1)
-        self.add(cursor)
-
-        rule = MathTex("a^{x-y}=\\frac{a^x}{a^y}", color=BLUE_D, font_size=fs2)
-        implication_1 = MathTex("\\Downarrow", "\\substack{a=\\pi\\\\x=1,\\\\y=2x}", color=BLUE_D, font_size=fs2) 
-        expression_step1 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\cdot\\tfrac{\\pi^1}{\\pi^{2x}}", color=c1t, font_size=fs2)
-        implication_2 = MathTex("\\Downarrow", "", color=BLUE_D, font_size=fs2)
-        expression_step2 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\pi^{2x}}", color=c1t, font_size=fs2)
-        implication_3 = MathTex("\\Downarrow", "a^{x\\cdot y}=(a^x)^y", color=BLUE_D, font_size=fs2)
-        expression_step3 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\tfrac{1}{\\left(\\pi^2\\right)^x}", color=c1t, font_size=fs2)
-        implication_4 = MathTex("\\Downarrow", "\\tfrac1{a^x}=\\left(\\tfrac1a\\right)^x", color=BLUE_D, font_size=fs2)
-        expression_step4 = MathTex("2\\cdot \\pi^{-2x +1}", "=", "2\\pi\\cdot\\left(\\tfrac{1}{\\pi^2}\\right)^{x}", color=c1t, font_size=fs2)
-        steps = VGroup(rule, implication_1, expression_step1, implication_2, expression_step2, implication_3, expression_step3, implication_4, expression_step4).arrange(DOWN, buff=.4).shift(DOWN)
-        implication_1[1].scale(.7), implication_3[1].scale(.7)
-        implication_1.shift(implication_1[0].get_x()*LEFT), implication_2.shift(implication_2[0].get_x()*LEFT), expression_step1.shift(expression_step1[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT), expression_step2.shift(expression_step2[1].get_x()*LEFT)
-
-        
-        expression = MathTex("2\\cdot \\pi^{-2x +1}", color=c1t, font_size=fs1)
-        self.add(expression)
-
-        # Action Sequence
-        with self.voiceover(
-                text=self.translate("General.correct_5")+self.translate("Func_6_P.23.a.voiceover")
-        ) as tracker:
- 
-            self.wait_until_bookmark("rule_in")
-            self.play(Write(rule), CursorUnderline(cursor, rule), run_time=.5)
-
-            self.wait_until_bookmark("implication_1_in")
-            x,y,_ = implication_1[1].get_center()+0.4*DOWN
-            cursor.idle=False
-            self.play(CursorMoveResize(cursor,x,y), Write(implication_1), run_time=.5)
-
-            self.wait_until_bookmark("step_1_transform")
-            x,y,_ = expression_step1[0].get_center()+0.6*DOWN
-            self.play(ReplacementTransform(expression, expression_step1[0]), CursorMoveTo(cursor, x,y), run_time=.4)
-
-            self.wait_until_bookmark("step_1_in")
-            x,y,_ = expression_step1[2].get_center()+0.6*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step1[1]), Write(expression_step1[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_2_in")
-            x,y,_ = implication_2.get_center()+0.4*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(implication_2), run_time=.5)
-
-            self.wait_until_bookmark("step_2_1_in")
-            x,y,_ = expression_step2[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_2_in")
-            x,y,_ = expression_step2[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step2[1]), Write(expression_step2[2]), run_time=.4)
-
-            self.wait_until_bookmark("clean_up")
-            upshift = rule.get_center()-expression_step2.get_center()
-            self.add_shift_sound(0.5)
-            self.play(VGroup(rule, implication_1, expression_step1, implication_2,).animate.shift(5*UP), expression_step2.animate.shift(upshift), run_time=.5)
-            expression_step3.shift(upshift), implication_3.shift(upshift), expression_step4.shift(upshift), implication_4.shift(upshift), 
-
-            self.wait_until_bookmark("implication_3_in")
-            x,y,_ = implication_3[1].get_center()+0.4*DOWN
-            self.play(Write(implication_3), CursorMoveResize(cursor,x,y), run_time=.5)
-
-            self.wait_until_bookmark("step_3_1_in")
-            x,y,_ = expression_step3[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_3_in")
-            x,y,_ = expression_step3[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step3[1]), Write(expression_step3[2]), run_time=.4)
-
-            self.wait_until_bookmark("implication_4_in")
-            x,y,_ = implication_4[1].get_center()+0.4*DOWN
-            self.play(Write(implication_4), CursorMoveResize(cursor,x,y), run_time=.5)
-
-            self.wait_until_bookmark("step_4_in")
-            x,y,_ = expression_step4[0].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[0]), run_time=.4)
-
-            self.wait_until_bookmark("step_4_1_in")
-            x,y,_ = expression_step4[2].get_center()+0.8*DOWN
-            self.play(CursorMoveTo(cursor, x,y), Write(expression_step4[1]), Write(expression_step4[2]), run_time=.4)
-
-        self.wait(4)
-
        
 ###############Exercises for Logarithm Chapter ##########################
 
@@ -8033,8 +7539,6 @@ class Func_6_P_ln_1_a(SophiaCursorScene):
         term_fin = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).move_to(step_1)
         eq_fin = MathTex("=", color=BLUE_D, font_size=fs2).move_to(term_2)
 
-        
-
         cursor = AltCursor(idle=True, y=-2)
         self.add(cursor)
 
@@ -8042,6 +7546,76 @@ class Func_6_P_ln_1_a(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=self.translate("General.correct_1")+self.translate("Func_6_P.ln_1_a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("term_1")
+            self.play(ReplacementTransform(term, term_1))
+
+            self.wait_until_bookmark("step_1")
+            x,y,_ = step_1[1].get_center()+0.4*DOWN
+            cursor.idle=False
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), albatross.animate.shift(5*RIGHT), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_2")
+            x,y,_ = term_2.get_center()+0.6*DOWN
+            self.play(Write(term_2), CursorMoveTo(cursor,x,y), run_time=.5)
+
+            self.wait_until_bookmark("term_3")
+            x,y,_ = term_3.get_center()+0.4*DOWN
+            self.play(Write(term_3), Write(step_2), CursorMoveTo(cursor,x,y), run_time=.5)
+            cursor.idle=True
+
+            self.wait_until_bookmark("sol_1")
+            self.play(ReplacementTransform(term_1, term_fin), Unwrite(step_1), Unwrite(step_2), Unwrite(term_2), run_time=.5)
+
+            self.wait_until_bookmark("sol_2")
+            term_3.generate_target().move_to(step_2)
+            self.add_shift_sound(0.5)
+            self.play(MoveToTarget(term_3), Write(eq_fin), run_time=.5)
+            solution_rectangle = SurroundingRectangle(VGroup(term_fin, eq_fin, term_3), buff=.2, corner_radius=.1, color=PURE_BLUE)
+            x,y,_ = solution_rectangle.get_start()
+            cursor.idle=False
+            self.play(CursorMoveTo(cursor,x,y), run_time=.5)
+            self.add(cursor.copy()._start_fading(2).add_updater(lambda m: m.move_to(solution_rectangle.get_end())))
+            cursor.idle=True
+            self.add_pencil_sound(1.5)
+            self.play(Create(solution_rectangle))
+
+        self.wait(4)
+
+class Func_6_P_ln_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        term = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).set_y(2.6)
+        self.add(term)
+
+        albatross = ImageMobject(assets_folder / "img" / "albatross_calculating.png")
+        albatross = albatross.scale(4/albatross.get_width())
+        self.add(albatross)
+
+        term_1 = MathTex("e^{\\ln(0.2)\\cdot (-3)}", color=c1t, font_size=fs1).move_to(term)
+        step_1 = MathTex("\\Downarrow", "e^{\\ln(a)}=a", color=BLUE_D, font_size=fs2).next_to(term_1, DOWN, buff=.4)
+        step_1[1].scale(.9)
+        term_2 = MathTex("0.2^{-3}}", color=c1t, font_size=fs1).next_to(step_1, DOWN, buff=.4)
+        step_2 = MathTex("\\Downarrow", color=BLUE_D, font_size=fs2).next_to(term_2, DOWN, buff=.4)
+        term_3 = MathTex("125", color=c1t, font_size=fs1).next_to(step_2, DOWN, buff=.4)
+
+        term_fin = MathTex("e^{-3\\ln(0.2)}", color=c1t, font_size=fs1).move_to(step_1)
+        eq_fin = MathTex("=", color=BLUE_D, font_size=fs2).move_to(term_2)
+
+        cursor = AltCursor(idle=True, y=-2)
+        self.add(cursor)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Func_6_P.ln_1_a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("term_1")
@@ -9121,8 +8695,6 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_P_2_2_1_q),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_1_a),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_1_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_1_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_1_d),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_2_q),
     PagePrototypeQuestion.from_scene(Func_6_P_2_2_2_q),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_2_a),
@@ -9133,8 +8705,6 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Func_6_P_2_2_3_q),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_3_a),
     PagePrototypeVideo.from_scene(Func_6_P_2_2_3_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_3_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_3_d),
 ##########################################################################CHAPTER: Rules for Logarithm
     PagePrototypeVideo.from_scene(Func_6_P_log_rules_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_log_rules_1_q),

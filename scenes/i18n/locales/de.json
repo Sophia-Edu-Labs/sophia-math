@@ -2968,8 +2968,8 @@
     },
     "213": {
       "q": {
-        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 5 hoch k minus zwei. <bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
-        "question-text": "Wie kannst du den Ausdruck $5^{k-2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 5 hoch k minus zwei. <bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben? Gib einen Ausdruck der <bookmark mark=\"general_form_in\"/>Form a mal b hoch k an.",
+        "question-text": "Wie kannst du den Ausdruck $5^{k-2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben? Der Ausdruck soll die Form $a\\\\cdot b^k$ haben."
       },
       "a": {
         "voiceover": "Da wir im Exponenten subtrahieren, können wir die Regel verwenden, die besagt, dass <bookmark mark=\"rule_in\"/>a hoch x minus y gleich a hoch x geteilt durch a hoch y ist. <bookmark mark=\"implication_1_in\"/>Wenn wir \"a\" gleich 5, x gleich k und y gleich 2 setzen, erhalten wir, <bookmark mark=\"step_1_transform\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_1_in\"/>gleich 5 hoch k geteilt durch 5 hoch 2 ist. Schließlich können wir <bookmark mark=\"implication_2_in\"/>5 hoch 2 als 25 umschreiben, und wir sehen, <bookmark mark=\"step_2_1_in\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_2_in\"/>gleich ein fünfundzwanzigstel mal 5 hoch k ist."

@@ -2972,8 +2972,8 @@
     },
     "213": {
       "q": {
-        "voiceover": "Now look at the <bookmark mark=\"expression_in\"/>expression 5 to the power of k minus two.<bookmark mark=\"q_in\"/> How can you rewrite this expression using the rules for exponential functions?",
-        "question-text": "How can you rewrite the expression $5^{k-2}$ using the rules for exponential functions?"
+        "voiceover": "Now look at the <bookmark mark=\"expression_in\"/>expression 5 to the power of k minus two.<bookmark mark=\"q_in\"/> How can you rewrite this expression using the rules for exponential functions? Give me an expression of <bookmark mark=\"general_form_in\"/>the form a times b to the power of k.",
+        "question-text": "How can you rewrite the expression $5^{k-2}$ using the rules for exponential functions? The expression should have the form $a\\\\cdot b^k$."
       },
       "a": {
         "voiceover": "Since we're subtracting in the exponent, we can use the rule stating that <bookmark mark=\"rule_in\"/>a to the power of x minus y is equal to a to the power of x divided by a to the power of y. <bookmark mark=\"implication_1_in\"/>If we set \"a\" equal to 5, x equal to k, and y equal to 2, we get <bookmark mark=\"step_1_transform\"/>that 5 to the power of k minus two is <bookmark mark=\"step_1_in\"/>equal to 5 to the power of k divided by 5 to the power of 2. Finally, we can <bookmark mark=\"implication_2_in\"/>rewrite 5 to the power of 2 as 25, and we see <bookmark mark=\"step_2_1_in\"/>that 5 to the power of k minus two <bookmark mark=\"step_2_in\"/>is equal to one over 25 times 5 to the power of k."
