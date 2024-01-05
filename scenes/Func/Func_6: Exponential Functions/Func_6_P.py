@@ -4824,7 +4824,7 @@ class Func_6_P_recognize_percentages_5_b(SophiaCursorScene):
 
 ##################################### Exercise Level: Easy (1)
 #####################################
-class Func_6_P_2_1_1_q(SophiaCursorScene):
+class Func_6_P_exp_rules_1_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -4858,7 +4858,7 @@ class Func_6_P_2_1_1_q(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_1_a(SophiaCursorScene):
+class Func_6_P_exp_rules_1_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4914,7 +4914,7 @@ class Func_6_P_2_1_1_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_1_b(SophiaCursorScene):
+class Func_6_P_exp_rules_1_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -4970,7 +4970,7 @@ class Func_6_P_2_1_1_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_1_c(SophiaCursorScene):
+class Func_6_P_exp_rules_1_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5026,7 +5026,7 @@ class Func_6_P_2_1_1_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_1_d(SophiaCursorScene):
+class Func_6_P_exp_rules_1_1_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5085,7 +5085,7 @@ class Func_6_P_2_1_1_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_P_2_1_2_q(SophiaCursorScene):
+class Func_6_P_exp_rules_1_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -5126,7 +5126,7 @@ class Func_6_P_2_1_2_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_1_2_a(SophiaCursorScene):
+class Func_6_P_exp_rules_1_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5171,7 +5171,7 @@ class Func_6_P_2_1_2_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_2_b(SophiaCursorScene):
+class Func_6_P_exp_rules_1_2_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5216,7 +5216,7 @@ class Func_6_P_2_1_2_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_2_c(SophiaCursorScene):
+class Func_6_P_exp_rules_1_2_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5261,7 +5261,7 @@ class Func_6_P_2_1_2_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_2_d(SophiaCursorScene):
+class Func_6_P_exp_rules_1_2_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5308,7 +5308,7 @@ class Func_6_P_2_1_2_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_P_2_1_3_q(SophiaCursorScene):
+class Func_6_P_exp_rules_1_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -5362,7 +5362,7 @@ class Func_6_P_2_1_3_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_1_3_a(SophiaCursorScene):
+class Func_6_P_exp_rules_1_3_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5422,7 +5422,7 @@ class Func_6_P_2_1_3_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_3_b(SophiaCursorScene):
+class Func_6_P_exp_rules_1_3_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5484,7 +5484,7 @@ class Func_6_P_2_1_3_b(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_P_2_1_4_q(SophiaCursorScene):
+class Func_6_P_exp_rules_1_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -5525,7 +5525,7 @@ class Func_6_P_2_1_4_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_1_4_a(SophiaCursorScene):
+class Func_6_P_exp_rules_1_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5588,7 +5588,7 @@ class Func_6_P_2_1_4_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_4_b(SophiaCursorScene):
+class Func_6_P_exp_rules_1_4_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5651,7 +5651,7 @@ class Func_6_P_2_1_4_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_4_c(SophiaCursorScene):
+class Func_6_P_exp_rules_1_4_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5714,7 +5714,7 @@ class Func_6_P_2_1_4_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_1_4_d(SophiaCursorScene):
+class Func_6_P_exp_rules_1_4_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5779,7 +5779,7 @@ class Func_6_P_2_1_4_d(SophiaCursorScene):
 
 ##################################### Exercise Level: Medium (2)
 #####################################
-class Func_6_P_2_2_1_q(SophiaCursorScene):
+class Func_6_P_exp_rules_2_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -5826,7 +5826,7 @@ class Func_6_P_2_2_1_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_2_1_a(SophiaCursorScene):
+class Func_6_P_exp_rules_2_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -5933,7 +5933,7 @@ class Func_6_P_2_2_1_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_1_b(SophiaCursorScene):
+class Func_6_P_exp_rules_2_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6042,7 +6042,7 @@ class Func_6_P_2_2_1_b(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_P_2_2_2_q(SophiaCursorScene):
+class Func_6_P_exp_rules_2_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -6089,7 +6089,7 @@ class Func_6_P_2_2_2_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_2_2_a(SophiaCursorScene):
+class Func_6_P_exp_rules_2_2_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6172,7 +6172,7 @@ class Func_6_P_2_2_2_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_2_b(SophiaCursorScene):
+class Func_6_P_exp_rules_2_2_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6255,7 +6255,7 @@ class Func_6_P_2_2_2_b(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_2_c(SophiaCursorScene):
+class Func_6_P_exp_rules_2_2_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6338,7 +6338,7 @@ class Func_6_P_2_2_2_c(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_2_d(SophiaCursorScene):
+class Func_6_P_exp_rules_2_2_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6423,7 +6423,7 @@ class Func_6_P_2_2_2_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Func_6_P_2_2_3_q(SophiaCursorScene):
+class Func_6_P_exp_rules_2_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
@@ -6477,7 +6477,7 @@ class Func_6_P_2_2_3_q(SophiaCursorScene):
         self.wait(4)
 
 
-class Func_6_P_2_2_3_a(SophiaCursorScene):
+class Func_6_P_exp_rules_2_3_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6570,7 +6570,7 @@ class Func_6_P_2_2_3_a(SophiaCursorScene):
 
         self.wait(4)
 
-class Func_6_P_2_2_3_b(SophiaCursorScene):
+class Func_6_P_exp_rules_2_3_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6663,6 +6663,11 @@ class Func_6_P_2_2_3_b(SophiaCursorScene):
 
         self.wait(4)
        
+
+#####################################
+#####################################
+
+
 ###############Exercises for Logarithm Chapter ##########################
 
 
@@ -8666,45 +8671,43 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_4_a),
     PagePrototypeVideo.from_scene(Func_6_P_recognize_percentages_4_b),
 ##########################################################################CHAPTER: Rules for Exponenial Functions: Easy
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_1_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_1_1_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_1_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_1_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_1_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_1_d),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_2_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_1_2_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_2_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_2_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_2_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_2_d),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_3_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_1_3_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_3_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_3_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_3_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_3_d),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_4_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_1_4_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_4_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_4_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_4_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_1_4_d),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_1_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_1_c),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_1_d),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_1_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_2_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_2_c),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_2_d),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_1_3_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_3_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_3_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_4_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_1_4_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_4_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_4_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_4_c),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_1_4_d),
 ##########################################################################CHAPTER: Rules for Exponenial Functions: Medium
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_1_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_2_1_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_1_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_1_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_2_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_2_2_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_2_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_2_b),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_2_c),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_2_d),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_3_q),
-    PagePrototypeQuestion.from_scene(Func_6_P_2_2_3_q),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_3_a),
-    PagePrototypeVideo.from_scene(Func_6_P_2_2_3_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_1_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_2_1_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_1_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_1_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_2_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_2_2_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_2_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_2_b),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_2_c),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_2_d),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_3_q),
+    PagePrototypeQuestion.from_scene(Func_6_P_exp_rules_2_3_q),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_3_a),
+    PagePrototypeVideo.from_scene(Func_6_P_exp_rules_2_3_b),
 ##########################################################################CHAPTER: Rules for Logarithm
     PagePrototypeVideo.from_scene(Func_6_P_log_rules_1_q),
     PagePrototypeQuestion.from_scene(Func_6_P_log_rules_1_q),
