@@ -2968,8 +2968,8 @@
     },
     "213": {
       "q": {
-        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 5 hoch k minus zwei. <bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben?",
-        "question-text": "Wie kannst du den Ausdruck $5^{k-2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben?"
+        "voiceover": "Betrachte den <bookmark mark=\"expression_in\"/>Ausdruck 5 hoch k minus zwei. <bookmark mark=\"q_in\"/> Wie kannst du diesen Ausdruck unter Verwendung der Regeln für Exponentialfunktionen umschreiben? Gib einen Ausdruck der <bookmark mark=\"general_form_in\"/>Form a mal b hoch k an.",
+        "question-text": "Wie kannst du den Ausdruck $5^{k-2}$ unter Verwendung der Regeln für Exponentialfunktionen umschreiben? Der Ausdruck soll die Form $a\\\\cdot b^k$ haben."
       },
       "a": {
         "voiceover": "Da wir im Exponenten subtrahieren, können wir die Regel verwenden, die besagt, dass <bookmark mark=\"rule_in\"/>a hoch x minus y gleich a hoch x geteilt durch a hoch y ist. <bookmark mark=\"implication_1_in\"/>Wenn wir \"a\" gleich 5, x gleich k und y gleich 2 setzen, erhalten wir, <bookmark mark=\"step_1_transform\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_1_in\"/>gleich 5 hoch k geteilt durch 5 hoch 2 ist. Schließlich können wir <bookmark mark=\"implication_2_in\"/>5 hoch 2 als 25 umschreiben, und wir sehen, <bookmark mark=\"step_2_1_in\"/>dass 5 hoch k minus zwei <bookmark mark=\"step_2_in\"/>gleich ein fünfundzwanzigstel mal 5 hoch k ist."
@@ -3164,6 +3164,16 @@
     "Func_6_P_exp_log_2_q": {
       "question-text": "Was ist der Wert von $9^{\\log_3\\sqrt5}$?",
       "voiceover": "Schau dir den <bookmark mark=\"term_in\"/>Ausdruck 9 hoch den Basis 3 Logarithmus von der Wurzel von 5 an. <bookmark mark=\"turtle_in\"/>Wie können wir diesen Ausdruck vereinfachen?"
+    },
+    "Func_6_P_exp_log_2_a": {
+      "voiceover": "Zunächst können wir <bookmark mark=\"step_1\"/> 9 als 3 im Quadrat umzuschreiben, und wir erhalten <bookmark mark=\"term_2\"/> den Ausdruck 3 im Quadrat hoch log Basis 3 von der Wurzel aus 5.\n<bookmark mark=\"step_2\"/> Dann können wir die Regel verwenden, die besagt, dass wenn wir eine Basis hoch eine Potenz haben und das Ganze nochmals hoch eine andere Potenz erhoben wird, wir die beiden Potenzen einfach multiplizieren können. Also <bookmark mark=\"term_3_1\"/> erhalten wir 3 hoch zwei mal log Basis 3 von der Wurzel aus 5. Wir können dann einfach die Terme umstellen, und kriegen <bookmark mark=\"term_3_2\"/> 3 hoch log Basis 3 von der Wurzel aus 5 mal zwei.\nIm <bookmark mark=\"cleanup_1\"/> nächsten Schritt<bookmark mark=\"step_3\"/> verwenden wir die Regel, dass wenn wir eine Basis hoch dem Logarithmus dieser Basis von einer Zahl haben, wir diese Zahl erhalten. Also <bookmark mark=\"term_4_1\"/> wird der Teil 3 hoch den Basis 3 Logarithmus der Wurzel von fünf einfach zur Wurzel von fünf, und wir erhalten die Wurzel aus 5 im Quadrat. Jetzt müssen wir nur noch das Quadrat von Wurzel fünf berechnen, <bookmark mark=\"term_4_2\"/> und das ist 5. Also sehen <bookmark mark=\"solution\"/> wir, dass <bookmark mark=\"rectangle\"/> 9 hoch log Basis 3 von der Wurzel aus 5 gleich 5 ist."
+    },
+    "ln_1_q": {
+      "voiceover": "Schau dir den <bookmark mark=\"term_in\"/> Term e hoch minus drei mal den natürlichen Logarithmus von 0,2 an. Was ist der Wert dieses Terms? Und übrigens: <bookmark mark=\"albatross_in\"/> Du kannst den Wert berechnen, ohne einen Taschenrechner zu verwenden.",
+      "question-text": "Welchen Wert hat der Term $e^{-3\\ln(0.2)}$?"
+    },
+    "ln_1_a": {
+      "voiceover": "Wir fangen an, indem wir die Reihenfolge des Produkts im Exponenten vertauschen. Dann ist der <bookmark mark=\"term_1\"/> Term gleich e hoch dem natürlichen Logarithmus von 0,2 mal minus drei. <bookmark mark=\"step_1\"/>Dann können wir die Regel verwenden, dass e hoch den natürlichen Logarithmus einer Zahl gleich dieser Zahl ist. ... Also ist <bookmark mark=\"term_2\"/>der Term gleich 0,2 hoch minus drei.\nWir können das dann einfach ausrechnen, und wir sehen, dass das <bookmark mark=\"term_3\"/>Term gleich 125 ist. So erhalten wir <bookmark mark=\"sol_1\"/>, dass e hoch minus drei mal dem natürlichen Logarithmus von 0,2 <bookmark mark=\"sol_2\"/>gleich 125 ist."
     }
   },
   "Func_6_P_recognize_growth_1": {
