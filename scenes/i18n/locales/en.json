@@ -3178,6 +3178,10 @@
     },
     "ln_1_a": {
       "voiceover": "So the first thing we can do is change the order of the product in the exponent, and the<bookmark mark=\"term_1\"/> term will be equal to e to the power of the natural logarithm of 0.2 times negative three.\n<bookmark mark=\"step_1\"/>Now we can use the rule that e to the power of the natural logarithm of a number is equal to that number. ... So <bookmark mark=\"term_2\"/>the term is equal to 0.2 to the power of negative three.\nWe can simply compute this, and we'll get that that <bookmark mark=\"term_3\"/>term is equal to 125. So we get <bookmark mark=\"sol_1\"/>that e to the power of negative three times the natural logarithm of 0.2 <bookmark mark=\"sol_2\"/>is equal to 125."
+    },
+    "horizontal_asymptotes_exp_1": {
+      "question-text": "What happens to the function values as $x$ gets smaller and smaller?",
+      "answer-options": "[\"They approach $-\\infty$\", \"They approach $\\infty$\", \"They start increasing\", \"They approach $0$\"]"
     }
   },
   "Func_6_P_recognize_growth_1": {

@@ -3174,6 +3174,10 @@
     },
     "ln_1_a": {
       "voiceover": "Wir fangen an, indem wir die Reihenfolge des Produkts im Exponenten vertauschen. Dann ist der <bookmark mark=\"term_1\"/> Term gleich e hoch dem natürlichen Logarithmus von 0,2 mal minus drei. <bookmark mark=\"step_1\"/>Dann können wir die Regel verwenden, dass e hoch den natürlichen Logarithmus einer Zahl gleich dieser Zahl ist. ... Also ist <bookmark mark=\"term_2\"/>der Term gleich 0,2 hoch minus drei.\nWir können das dann einfach ausrechnen, und wir sehen, dass das <bookmark mark=\"term_3\"/>Term gleich 125 ist. So erhalten wir <bookmark mark=\"sol_1\"/>, dass e hoch minus drei mal dem natürlichen Logarithmus von 0,2 <bookmark mark=\"sol_2\"/>gleich 125 ist."
+    },
+    "horizontal_asymptotes_exp_1": {
+      "question-text": "Was passiert mit den Funktionswerten, wenn $x$ immer kleiner wird?",
+      "answer-options": "[\"Sie nähern sich $-\\infty$\", \"Sie nähern sich $\\infty$\", \"Sie beginnen zu steigen\", \"Sie nähern sich $0$\"]"
     }
   },
   "Func_6_P_recognize_growth_1": {
