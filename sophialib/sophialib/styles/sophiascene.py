@@ -881,6 +881,7 @@ class CursorMarkAxis(ApplyMethod):
 
         if axis == 'x':
             x,y,_ = plane.x_axis.get_center()
+            y = plane.y_axis.n2p(0)[1]
             width = plane.x_axis.get_width()+0.2
             height = 0.3
         elif axis == 'y':
