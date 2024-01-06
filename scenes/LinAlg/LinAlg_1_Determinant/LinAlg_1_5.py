@@ -174,9 +174,12 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
 
         copy_1, copy_2, copy_3 = mat_1[1].copy(), mat_2[1].copy(), mat_3[1].copy()     
     
-        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(mat_2, DOWN, buff=.6)
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
         mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
         mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        
+        #group_1 = Group(mat_4[1][1],mat_4[1][4], mat_4[3][0], mat_4[3][2])
+        #group_2 = Group(mat_4[1][2],mat_4[1][3], mat_4[5][0], mat_4[5][2])
 
         #mat_5 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "1 \\cdot 0 - 0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_4, DOWN, buff=1.2)
         # Action Sequence
@@ -217,14 +220,12 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
             self.play(Write(mat_4[4]), run_time=.4)
             self.play(Write(mat_4[5]), run_time=1)
 
-            #self.wait_until_bookmark("example")
-            #self.play(FadeIn(mat_5[1]), run_time=.6)
-            #self.play(FadeIn(mat_5[0], mat_5[2]), run_time=.6)
+            #self.wait_until_bookmark("indicate_1")
+            #self.play(Indicate(copy_4).color(RED))
 
-            #self.wait_until_bookmark("formula_example")
-            #self.play(FadeIn(mat_5[3]), run_time=.6)
-
-            # Wait for 4 seconds at the end of the animation
+            #self.wait_until_bookmark("indicate_2")
+            #self.play(Indicate(copy_5).color(BLUE))
+            
             self.wait(4)
             
 
@@ -235,20 +236,25 @@ class LinAlg_1_5_I_2_Q(SophiaCursorScene):
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
-        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=", "a \\cdot d - b \\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
-        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "1 \\cdot 2 - 0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
+        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
+        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
+
+        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
+        answ = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","= 2", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
+        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","= ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wir haben <bookmark mark="title_in"/> ja <bookmark mark="mat_1"/> bereits gesehen, dass für eine 2 Kreuz 2 Matrix a b c d die Determinante <bookmark mark="formula"/> gegeben ist durch a Mal d Minus b Mal c.<break time="0.4s"/> 
+                Wir haben <bookmark mark="title_in"/> ja bereits <bookmark mark="det_1"/> gesehen, dass die Determinante einer Matrix a b c d gegeben ist <bookmark mark="det_2"/>durch: a Mal d <bookmark mark="det_3"/> Minus b Mal c.<break time="0.4s"/>  
                 
                 Betrachten wir nun als Beispiel die <bookmark mark="mat_2"/> Matrix 1 0 0 2.
-                Mit der Formel für die <bookmark mark="formula_example"/> Determinante erhalten wir Eins Mal 2 Minus null Mal null.
-                Also ist die Determinante der Matrix Eins null <break time="0.4s"/> null 2 <break time="0.4s"/> gleich 2. <break time="0.8s"/>
+                Mit der <bookmark mark="formula_1"/> Formel für die Determinante <bookmark mark="formula_2"/> erhalten wir Eins Mal 2 <bookmark mark="formula_3"/> Minus null Mal null.
+                Also ist die Determinante dieser <bookmark mark="transform"/> Matrix gleich 2. <break time="0.8s"/>
                 Betrachten <bookmark mark="cleanup"/> wir jetzt ein anderes Beispiel, nämlich die Matrix <bookmark mark="mat_3"/> 1 3 <break time="0.4s"/> 7 2.
                 Was<bookmark mark="qmark_in"/> ist die Determinante dieser Matrix?
                 """
@@ -257,26 +263,40 @@ class LinAlg_1_5_I_2_Q(SophiaCursorScene):
             self.wait_until_bookmark("title_in")
             self.play(Write(title))
 
-            self.wait_until_bookmark("mat_1")
-            self.play(Write(VGroup(mat_1[0], mat_1[1], mat_1[2])), run_time=.6)
+            self.wait_until_bookmark("det_1")
+            self.play(Write(mat_1[0]), Write(mat_1[1]), run_time=1)
 
-            self.wait_until_bookmark("formula")
-            self.play(Write(mat_1[3]), run_time=.6)
+            self.wait_until_bookmark("det_2")
+            self.play(Write(mat_1[2]), Write(mat_1[3]), run_time=1)
+
+            self.wait_until_bookmark("det_3")
+            self.play(Write(mat_1[4]), run_time=.4)
+            self.play(Write(mat_1[5]), run_time=1)
 
             self.wait_until_bookmark("mat_2")
             self.play(Write(mat_2[1]), run_time=.6)
             
-            self.wait_until_bookmark("formula_example")
-            self.play(Write(VGroup(mat_2[0], mat_2[2], mat_2[3])), run_time=.6)
+            self.wait_until_bookmark("formula_1")
+            self.play(Write(mat_2[0]), run_time=.6)
+
+            self.wait_until_bookmark("formula_2")
+            self.play(Write(mat_2[2]), Write(mat_2[3]), run_time=.6)
+
+            self.wait_until_bookmark("formula_3")
+            self.play(Write(mat_2[4]), run_time=.4)
+            self.play(Write(mat_2[5]), run_time=1)
+            
+            self.wait_until_bookmark("transform")
+            self.play(TransformMatchingTex(mat_2, answ), run_time=3)
 
             self.wait_until_bookmark("cleanup")
-            self.play(FadeOut(mat_2), run_time=.6)
+            self.play(FadeOut(answ), run_time=.6)
 
             self.wait_until_bookmark("mat_3")
             self.play(Write(mat_3[1]), run_time=.6)
 
             self.wait_until_bookmark("qmark_in")
-            self.play(Write(VGroup(mat_3[0], mat_3[2], mat_3[3])), run_time=.6)
+            self.play(Write(VGroup(mat_3[0], mat_3[2])), run_time=.6)
             
 
             # Wait for 4 seconds at the end of the animation
@@ -290,68 +310,190 @@ class LinAlg_1_5_I_2_A(SophiaCursorScene):
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
-        mat_qmark = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
-        mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " 1 \\cdot 2 - 3 \\cdot 7", color=c1t, font_size=fs2).move_to(mat_qmark)
+        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
+        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
+
+        mat_qmark = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
+        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " 1 \\cdot 2 - 3 \\cdot 7", color=c1t, font_size=fs2).move_to(mat_qmark)
         mat_sol = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " -19", color=c1t, font_size=fs2).move_to(mat_qmark)
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
                 Wir wollen <bookmark mark="title_in"/> die Determinante der <bookmark mark="mat_1"/> Matrix eins drei sieben zwei berechnen. 
-                Das ist ja <bookmark mark="transform_1"/>  eins Mal zwei Minus drei Mal sieben. Also ist die Determinante dieser Matrix <bookmark mark="transform_2"/> gleich Minus neunzehn. 
+                Das ist ja mit der obigen <bookmark mark="transform_1"/>Formel eins Mal zwei Minus drei Mal sieben. Also ist die Determinante dieser Matrix <bookmark mark="transform_2"/> gleich Minus neunzehn. 
                 """
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.play(Write(title), Write(mat_1))
 
             self.wait_until_bookmark("mat_1")
             self.play(Write(mat_qmark), run_time=1.5)
 
             self.wait_until_bookmark("transform_1")
-            self.play(TransformMatchingTex(mat_qmark, mat_1), run_time=3)
+            self.play(TransformMatchingTex(mat_qmark, mat_2), run_time=3)
 
             self.wait_until_bookmark("transform_2")
-            self.play(TransformMatchingTex(mat_1, mat_sol), run_time=3)
+            self.play(TransformMatchingTex(mat_2, mat_sol), run_time=3)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
 
-class LinAlg_1_5_I_3_I(SophiaCursorScene):
+class LinAlg_1_5_I_3_I_1(SophiaCursorScene):
     
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
-        mat_2 = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2)
-        mat_sol = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ax + by \\\\ cx + dy \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_2)
-        self.add(mat_2)
+        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
+        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").shift(LEFT*5).scale(.4)
+
+        tex = Text(
+            "Matrix-Vektor- \n"
+            "Multiplikation",
+            color=BLACK,
+        ).scale(0.6)
+        box = SurroundingRectangle(tex, color=YELLOW, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, tex)
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wir haben <bookmark mark="title_in"/> jetzt die Berechnung der Determinante von 2 Kreuz 2 Matrizen gemeistert. Als nächstes werden wir in einer Animation sehen, dass wir uns die Determinante einer Matrix auch geometrisch vorstellen können.
-                Dafür müssen wir aber die Matrix als lineare Abbildung auffassen. 
-                Lasst uns deshalb in diesem Video die Matrix-Vektor-Multiplikation wiederholen. 
-                
-                Wenn wir die Matrix a b c d mit dem Vektor x ypsilon multiplizieren, dann <bookmark mark="transform"/>erhalten wir den Vektor a mal x + b mal ypsilon <break time="0.4s"/> c mal x + d mal ypsilon.
+                Wir haben <bookmark mark="title_in"/> jetzt die Berechnung <bookmark mark="mat_1"/> der Determinante von 2 Kreuz 2 Matrizen <bookmark mark="smile"/>gemeistert. Super!  <break time="1.5s"/>
+                Die Formel für die <bookmark mark="lion_1"/> Determinante einer 2 Kreuz 2 Matrix ist aber noch etwas mysteriös. <bookmark mark="lion_2"/> Deshalb zeigen wir dir in einer Animation, dass diese Formel eine geometrische Bedeutung hat. 
+                <bookmark mark="mat_vec_mult"/> Für diese Animation müssen wir aber zuerst die Matrix-Vektor-Multiplikation wiederholen und genau das machen wir im nächsten Video.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("title_in")
+            self.play(Write(title), Write(mat_1))
+
+            self.wait_until_bookmark("smile")
+            cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
+            self.wait(1)
+            self.play(FadeOut(cursor,smile))
+
+            self.wait_until_bookmark("lion_1")
+            self.add_shift_sound(1.5)
+            self.play(lion.animate.shift(5*RIGHT))
+
+            self.wait_until_bookmark("lion_2")
+            self.add_shift_sound(0.5)
+            self.play(lion.animate(run_time=0.5).shift(5*RIGHT), run_time=1)
+
+            self.wait_until_bookmark("mat_vec_mult")
+            self.play(FadeOut(mat_1), run_time=0.6)
+            self.wait(1)
+            self.play(Write(mobject), run_time=1)
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+class LinAlg_1_5_I_3_I_2(SophiaCursorScene):
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+
+        tex = Text(
+            "Matrix-Vektor- \n"
+            "Multiplikation",
+            color=BLACK,
+        ).scale(0.6).next_to(title, DOWN, buff=1.5)
+        box = SurroundingRectangle(tex, color=YELLOW, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, tex)
+        
+        mat_1 = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2).next_to(mobject, DOWN, buff=1)
+        
+        copy_1, copy_3 = mat_1[0][1:3].copy(), mat_1[2].copy()
+
+        vec_1 = MathTex("\\begin{pmatrix} a \\ b \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=", "a x", "+", "b y", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
+        
+        mat_sol_1 = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ax + by \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_1)
+        
+        copy_2, copy_4 = mat_sol_1[0][3:5].copy(), mat_sol_1[2].copy()
+
+        vec_2 = MathTex("\\begin{pmatrix} c \\ d \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=", "c x", "+", "d y", color=c1t, font_size=fs2).next_to(mat_sol_1, DOWN, buff=.6)
+        
+        mat_sol_2 = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ax + by \\\\ cx + dy \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_sol_1)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Video <bookmark mark="title_in"/> wiederholen wir <bookmark mark="tex"/> also die Matrix-Vektor-Multiplikation. <break time="1.5s"/>
+                Welchen Vektor erhalten <bookmark mark="qmark"/> wir also, wenn wir die Matrix a b c d mit dem Vektor x ypsilon multiplizieren? <break time="1.5s"/>
+                Um den ersten Eintrag zu berechnen, nehmen wir <bookmark mark="vec_1_1"/> die erste Zeile der Matrix, also a b, und <bookmark mark="vec_1_2"/> den Vektor x ypsilon und bilden <bookmark mark="scalar_1"/> das Skalarprodukt, das heißt, wir <bookmark mark="calc_1"/> rechnen a Mal x und b mal ypsilon und summieren. Also ist der <bookmark mark="transform_1"/> erste Eintrag a Mal x plus b Mal ypsilon.
+                Um den zweiten <bookmark mark="clean_up"/> Eintrag zu berechnen, nehmen wir anstatt der ersten, <bookmark mark="vec_2_1"/> die zweite Zeile der Matrix, also c d, und <bookmark mark="vec_2_2"/> den Vektor x ypsilon und bilden <bookmark mark="scalar_2"/> erneut das Skalarprodukt, <bookmark mark="calc_2"/> also c Mal x und d mal ypsilon und summieren. Deshalb ist der <bookmark mark="transform_2"/> zweite Eintrag c Mal x plus d Mal ypsilon.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
             self.play(Write(title))
 
-            self.wait_until_bookmark("transform")
-            self.play(TransformMatchingTex(mat_2, mat_sol), run_time=3)
+            self.wait_until_bookmark("tex")
+            self.play(Write(mobject), run_time=1)
 
+            self.wait_until_bookmark("qmark")
+            self.play(Write(mat_1), run_time=2)
+
+            self.wait_until_bookmark("vec_1_1")
+            self.play(Transform(copy_1, vec_1[0]), run_time=2)
+
+            self.wait_until_bookmark("vec_1_2")
+            self.play(Transform(copy_3, vec_1[2]), run_time=2)
+
+            self.wait_until_bookmark("scalar_1")
+            self.play(Write(vec_1[1]), Write(vec_1[3]), run_time=.6)
+            
+            self.wait_until_bookmark("calc_1")
+            self.play(Write(vec_1[4]), run_time=.6)
+            self.play(Write(vec_1[6]), run_time=.6)
+            self.play(Write(vec_1[5]), run_time=.6)
+
+            self.wait_until_bookmark("transform_1")
+            self.play(TransformMatchingTex(mat_1, mat_sol_1), run_time=3)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(FadeOut(vec_1, copy_1, copy_3), run_time=.6)
+
+            self.wait_until_bookmark("vec_2_1")
+            self.play(Transform(copy_2, vec_2[0]), run_time=2)
+
+            self.wait_until_bookmark("vec_2_2")
+            self.play(Transform(copy_4, vec_2[2]), run_time=2)
+
+            self.wait_until_bookmark("scalar_2")
+            self.play(Write(vec_2[1]), Write(vec_2[3]), run_time=.6)
+            
+            self.wait_until_bookmark("calc_2")
+            self.play(Write(vec_2[4]), run_time=.6)
+            self.play(Write(vec_2[6]), run_time=.6)
+            self.play(Write(vec_2[5]), run_time=.6)
+
+            self.wait_until_bookmark("transform_2")
+            self.play(TransformMatchingTex(mat_sol_1, mat_sol_2), run_time=3)
+            self.play(FadeOut(vec_2, copy_2, copy_4), run_time=1.5)
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
@@ -363,42 +505,45 @@ class LinAlg_1_5_I_3_Q(SophiaCursorScene):
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
-        mat_1 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}", "=\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}", color=c1t, font_size=fs2)
-        mat_2 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_1)
+        mat_formula = MathTex("\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "=\\begin{pmatrix} ax + by \\\\ cx + dy \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+
+        mat_1 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}", "=\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(mat_formula, DOWN, buff=.6)
+        mat_2 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
 
         # Action Sequence
         with self.voiceover(
-                text="""Betrachten wir <bookmark mark="title_in"/> als Beispiel die Matrix <bookmark mark="mat_1"/> 1 0 0 2.
-                Wenden wir jetzt die Matrix auf den Vektor <bookmark mark="vec_1_in"/> 1 0 an.
-                Dafür <bookmark mark="multiply"/> multiplizieren wir ja die Matrix mit dem Vektor. <break time="0.8s"/>.
-                Da ist das Ergebnis ja der Vektor <bookmark mark="sol_in"/> 1 0, also bleibt der Vektor gleich.
+                text="""Jetzt schauen <bookmark mark="title_in"/> wir uns zwei Beispiele zur Matrix-Vektor-Multiplikation an. Zur <bookmark mark="mat_vec_mult"/> Hilfe schreiben wir nochmal die Definition der Matrix-Vektor-Multiplikation hin. <break time="1.5s"/>
+                Betrachten wir als erstes Beispiel die Matrix <bookmark mark="mat_1"/> 1 0 0 2.
+                Multiplizieren wir jetzt die Matrix mit dem Vektor <bookmark mark="vec_1_in"/> 1 0. <break time="1.5s"/>
+                Mit der obigen Definition kannst du leicht überprüfen, dass das Ergebnis ja der Vektor <bookmark mark="sol_in"/> 1 0 ist, also bleibt der Vektor gleich. <break time="1.5s"/>
                 <bookmark mark="cleanup"/>
                 Betrachten wir jetzt ein anderes Beispiel, nämlich den Vektor <bookmark mark="vec_2_in"/> 0 1.
-                Auf welchen<bookmark mark="qmark_in"/> Vektor wird dieser Vektor abgebildet?
+                Was ist nun <bookmark mark="qmark_in"/> das Ergebnis der Matrix-Vektor-Multiplikation?
                 """
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.play(Write(title), run_time=.6)
+
+            self.wait_until_bookmark("mat_vec_mult")
+            self.play(Write(mat_formula), run_time=.6)
 
             self.wait_until_bookmark("mat_1")
             self.play(Write(mat_1[0]), run_time=.6)
 
             self.wait_until_bookmark("vec_1_in")
-            self.play(Write(mat_1[2]), run_time=.6)
-
-            self.wait_until_bookmark("multiply")
-            self.play(Write(mat_1[1]), run_time=.6)
+            self.play(Write(mat_1[1]), Write(mat_1[2]), run_time=.6)
 
             self.wait_until_bookmark("sol_in")
             self.play(Write(mat_1[3]), run_time=.6)
 
             self.wait_until_bookmark("cleanup")
-            self.add(mat_2[0])
-            self.play(FadeOut(mat_1), run_time=.6)
+            self.play(Write(mat_2[0]), run_time=.6)
+            #self.play(FadeOut(mat_1), run_time=.6)
 
             self.wait_until_bookmark("vec_2_in")
             self.play(Write(mat_2[2]), run_time=.6)
@@ -417,23 +562,25 @@ class LinAlg_1_5_I_3_A(SophiaCursorScene):
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
         mat_2 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2)
         mat_sol = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} 0 \\\\ 2 \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_2)
-        self.add(mat_2)
+        
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wenn wir <bookmark mark="title_in"/> die Matrix 1 null null zwei mit dem Vektor 0 1 multiplizieren, dann <bookmark mark="transform"/>erhalten wir den Vektor 0 2.
+                Richtig! Wenn wir <bookmark mark="title_in"/> die Matrix 1 null null zwei mit dem Vektor 0 1 multiplizieren, dann <bookmark mark="transform"/>erhalten wir den Vektor 0 2.
                 Das ist ja das doppelte des ursprünglichen Vektors. Also wird der Vektor 0 1 durch die Matrix 1 0 0 2 um den Faktor zwei gestreckt.
                 """
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
             self.play(Write(title))
+            self.play(Write(mat_2))
 
             self.wait_until_bookmark("transform")
             self.play(TransformMatchingTex(mat_2, mat_sol), run_time=3)
