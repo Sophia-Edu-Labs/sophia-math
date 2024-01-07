@@ -3760,7 +3760,6 @@ class Func_6_P_graphs_4_b(SophiaCursorScene):
 ####################################
 ####################################
 #Focus: Horizontal Asymptotes
-#TODO: Add question structure / translations
 class Func_6_P_horizontal_asymptotes_exp_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -4372,7 +4371,7 @@ class Func_6_P_horizontal_asymptotes_exp_2_q(SophiaCursorScene):
             self.play(Write(term), run_time=1)
 
         self.wait(4)
-#
+
 
 class Func_6_P_horizontal_asymptotes_exp_2_a(SophiaCursorScene):
 
@@ -4448,7 +4447,7 @@ class Func_6_P_horizontal_asymptotes_exp_2_a(SophiaCursorScene):
             self.play(Create(rule_rectangle), run_time=1)
 
         self.wait(4)
-#
+
 class Func_6_P_horizontal_asymptotes_exp_2_b(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -4523,7 +4522,6 @@ class Func_6_P_horizontal_asymptotes_exp_2_b(SophiaCursorScene):
             self.play(Create(rule_rectangle), run_time=1)
 
         self.wait(4)
-#
 
 ####################################
 ####################################
@@ -4927,7 +4925,7 @@ class Func_6_P_horizontal_asymptotes_exp_4_b(SophiaCursorScene):
                 self.play(MoveToTarget(rule_2), Unwrite(term), Write(rule_2_b), run_time=1)
 
         self.wait(4)
-#
+
 ####################################
 ####################################
 class Func_6_P_horizontal_asymptotes_exp_5(SophiaCursorScene):
@@ -5014,7 +5012,7 @@ class Func_6_P_horizontal_asymptotes_exp_5(SophiaCursorScene):
             self.play(Create(rule_rectangle), run_time=1)
 
         self.wait(4)
-#
+
 
 ###############Exercises for Percentages Chapter ##########################
 

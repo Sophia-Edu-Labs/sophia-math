@@ -13,7 +13,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
 import ast 
 
 ##################################### SUBCHAPTER 1: Intro Determinants
@@ -168,6 +168,21 @@ class LinAlg_1_Determinant_intro_2(SophiaCursorScene):
 # Ich habe die folgenden (vormals beiden) Videos zu einem Video zusammengefasst.
 # Ich habe das 3_a Video komplett neu gemacht, auf Grundlage des 3_q Videos.
 class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-19$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("LinAlg_1.Determinant_intro.3q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+#
     
     # Main method for constructing the animation
     def construct(self):
@@ -194,25 +209,25 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
         blues = VGroup(mat_4[1][2], mat_4[1][3], mat_4[5][0], mat_4[5][2])
 
         # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
-        ex_1 = MathTex("\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).scale(.95)
+        ex_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).scale(.95)
         ex_1[-1].set_color(BLUE), ex_1[-3].set_color(RED)
-        sol_1 = MathTex("\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
+        sol_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
         # Damit die linksbündig sind
         sol_1.shift((ex_1.get_left()[0]-sol_1.get_left()[0])*RIGHT)
         # Haupt und Nebendiagonalen, um die beim Rechenweg zu markieren
         ex_1_diag_1 = VGroup(ex_1[1][1], ex_1[1][4])
         ex_1_diag_2 = VGroup(ex_1[1][2], ex_1[1][3])
-        ex_2 = MathTex("\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "7 \\cdot 3", color=c1t, font_size=fs2).scale(.95)
+        ex_2 = MathTex("\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "7 \\cdot 3", color=c1t, font_size=fs2).scale(.95)
 
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Schauen wir uns also an, wie man die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnet. ...
-                Dafür gibt <bookmark mark="fade_out_1"/> es nämlich eine einfache Formel. ...
-                <bookmark mark="det_1"/>Die Determinante einer Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch a Mal d<bookmark mark="det_3"/> Minus b Mal c. ...
-                Wir multiplizieren also die <bookmark mark="indicate_reds"/>Einträge a und d auf der Hauptdiagonale und ziehen <bookmark mark="indicate_blues"/>das Produkt der Einträge b und c auf der Nebendiagonale davon ab.
-                <bookmark mark="clean_up"/>Zum Beispiel ist die Determinante <bookmark mark="example_1_1"/>der Matrix 1 0 0 2 gleich dem<bookmark mark="example_1_2"/>Produkt Eins Mal Zwei minus dem <bookmark mark="example_1_3"/>Produkt Null Mal Null, also gleich <bookmark mark="solution_1"/>Zwei. ...
-                Jetzt <bookmark mark="example_1_out"/>du: ... Was ist die Determinante der Matrix 1 3 7 2?
+Schauen wir uns also an, wie man die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnet. ...
+Dafür gibt <bookmark mark="fade_out_1"/> es nämlich eine einfache Formel. ...
+<bookmark mark="det_1"/>Die Determinante einer Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch a Mal d<bookmark mark="det_3"/> Minus b Mal c. ...
+Wir multiplizieren also die <bookmark mark="indicate_reds"/>Einträge a und d auf der Hauptdiagonale und ziehen <bookmark mark="indicate_blues"/>das Produkt der Einträge b und c auf der Nebendiagonale davon ab.
+<bookmark mark="clean_up"/>Zum Beispiel ist die Determinante <bookmark mark="example_1_1"/>der Matrix 1 0 0 2 gleich dem<bookmark mark="example_1_2"/>Produkt Eins Mal Zwei minus dem <bookmark mark="example_1_3"/>Produkt Null Mal Null, also gleich <bookmark mark="solution_1"/>Zwei. ...
+Jetzt <bookmark mark="example_1_out"/>du: ... Was ist die Determinante der Matrix 1 3 7 2?
                 """ 
         ) as tracker:
             
@@ -275,7 +290,7 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
 
             self.wait_until_bookmark("example_1_out")
             self.play(Unwrite(sol_1), run_time=.6)
-            self.play(Write(ex_2)[0])
+            self.play(Write(ex_2[0]))
 
         self.wait(4)
 
@@ -308,7 +323,51 @@ class LinAlg_1_Determinant_intro_3_a(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=""" 
-Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
+Super, das ist richtig. Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
+""" 
+        ) as tracker:
+
+            self.wait_until_bookmark("example_2_1")
+            self.play(Write(ex_2[2]), Write(ex_2[3]), *[Indicate(diag, scale_factor=1.6, color=RED) for diag in ex_2_diag_1])
+
+            self.wait_until_bookmark("example_2_2")
+            self.play(Write(ex_2[4]), Write(ex_2[5]), *[Indicate(diag, scale_factor=1.6, color=BLUE) for diag in ex_2_diag_2])
+
+            self.wait_until_bookmark("solution_2")
+            self.play(TransformMatchingTex(ex_2, sol_2))
+
+        self.wait(4)
+
+class LinAlg_1_Determinant_intro_3_b(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+    
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        self.add(mat_4)
+
+        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
+        ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "3 \\cdot 7", color=c1t, font_size=fs2).scale(.95)
+        ex_2[-1].set_color(BLUE), ex_2[-3].set_color(RED)
+        sol_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
+        sol_2.shift((ex_2.get_left()[0]-sol_2.get_left()[0])*RIGHT)
+        ex_2_diag_1 = VGroup(ex_2[1][1], ex_2[1][4])
+        ex_2_diag_2 = VGroup(ex_2[1][2], ex_2[1][3])
+        self.add(ex_2[:2])
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+Das ist leider falsch. Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
 """ 
         ) as tracker:
 
@@ -954,6 +1013,7 @@ class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
+
 class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -975,3 +1035,13 @@ class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
+
+PROTOTYPES=[
+########################################################################## Practice: Recognizing Exponential Growth
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_1),
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_2),
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_q),
+    PagePrototypeQuestion.from_scene(LinAlg_1_Determinant_intro_3_q),
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_a),
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_b)
+]

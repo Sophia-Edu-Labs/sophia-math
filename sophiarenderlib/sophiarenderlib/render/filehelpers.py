@@ -7,7 +7,7 @@ from sophialib.constants.directories import SCENES_FOLDER, WORKSPACE_FOLDER
 def find_repository_scene_module_paths(result_sorted: bool = False) -> List[Path]:
     paths = []
 
-    for pf in Path(SCENES_FOLDER / "Func").glob("*/*.py"):
+    for pf in Path(SCENES_FOLDER / "LinAlg").glob("*/*.py"):
         paths.append(pf)
     
     # exclude the legacy SCENES_FOLDER/scenes/sophiascene.py file

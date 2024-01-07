@@ -3312,5 +3312,12 @@
         "question-text": "What does the expression $\\log_5\\left(60a\\right)-\\log_5\\left(12a\\right)$ evaluate to?"
       }
     }
+  },
+  "LinAlg_1": {
+    "Determinant_intro": {
+      "3q": {
+        "question-text": "What is the value of the value of the determinant $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?"
+      }
+    }
   }
 }
