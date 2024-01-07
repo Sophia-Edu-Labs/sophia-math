@@ -18,8 +18,7 @@ import ast
 
 #####################################
 #####################################
-
-class LinAlg_1_5_I_1_I(SophiaCursorScene):
+class LinAlg_1_Determinant_1(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -29,7 +28,7 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
 
         title = self.add_title("Determinante")
 
-        quest = Text(
+        question = Text(
             "Wann ist \n"
             "eine \n"
             "quadratische \n"
@@ -37,8 +36,7 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
             "invertierbar?",
             color=BLACK,
         ).scale(0.8)
-        box = SurroundingRectangle(quest, color=YELLOW, buff=MED_LARGE_BUFF)
-        mobject = VGroup(box, quest)
+        question_box = SurroundingRectangle(question, color=YELLOW, buff=MED_LARGE_BUFF)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
         mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "2", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
@@ -56,7 +54,7 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                In diesem <bookmark mark="title_in"/> Kapitel lernen wir, was die Determinante einer Matrix ist. <bookmark mark="quest"/> Unsere Leitfrage zur Determinante ist: Wann ist eine quadratische Matrix invertierbar? <bookmark mark="fade_out_quest"/> 
+                In diesem <bookmark mark="title_in"/> Kapitel lernen wir, was die Determinante einer Matrix ist. Unsere Leitfrage zur Determinante lautet: <bookmark mark="quest"/>Wann ist eine quadratische Matrix invertierbar? <bookmark mark="fade_out_quest"/> 
                 Zuersteinmal macht die Determinante <bookmark mark="mat"/> aus jeder quadratischen Matrix <bookmark mark="number"/>  <break time="0.4s"/> eine Zahl. Wir nennen diese Zahl <bookmark mark="det"/> die Determinante der Matrix. 
                 Wir werden sehen, dass diese Zahl wichtige Informationen über die Matrix codiert.
                 Wie hängt die <bookmark mark="qmark_1"/> Determinante einer Matrix nun aber <bookmark mark="qmark_2"/> mit unserer Leitfrage zusammen? Die <bookmark mark="fade_out_1"/> Antwort ist: <bookmark mark="not_zero"/> eine Matrix A ist genau dann invertierbar, wenn ihre Determinante nicht null ist. 
@@ -67,10 +65,13 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
             self.play(Write(title))
 
             self.wait_until_bookmark("quest")
-            self.play(Write(mobject), run_time=.6)
+            self.play(Write(question))
+            #Hab hier die beiden Animationen getrennt und zur zweiten ein Geräusch hinzugefügt
+            self.add_pencil_sound(1)
+            self.play(Create(question_box), run_time=1)
 
             self.wait_until_bookmark("fade_out_quest")
-            self.play(FadeOut(mobject), run_time=.6)
+            self.play(Unwrite(question), Uncreate(question_box), run_time=.6)
 
             self.wait_until_bookmark("mat")
             self.play(Write(mat_1[1]), run_time=.6)
@@ -88,12 +89,13 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
             self.play(Write(mat_3[0]), Write(mat_3[2]), run_time=.6)
 
             self.wait_until_bookmark("qmark_1")
-            self.add_shift_sound(1.5)
-            self.play(qnark.animate.shift(5*RIGHT))
+            self.add_shift_sound(0.5)
+            self.play(qnark.animate.shift(5*RIGHT), run_time=.5)
 
             self.wait_until_bookmark("qmark_2")
+            #Wenn du einen Sound hinzufügst, macht es oft Sinn, dass der Sound genauso lang ist wie die Animation, zu der der Sound gehört
             self.add_shift_sound(0.5)
-            self.play(qnark.animate(run_time=0.5).shift(5*RIGHT), run_time=1)
+            self.play(qnark.animate(run_time=0.5).shift(5*RIGHT), run_time=.5)
 
 
             self.wait_until_bookmark("fade_out_1")
@@ -107,7 +109,9 @@ class LinAlg_1_5_I_1_I(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_1_C(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_2(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -157,8 +161,13 @@ class LinAlg_1_5_I_1_C(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-
-class LinAlg_1_5_I_2_I(SophiaCursorScene):
+#####################################
+#####################################
+# Die Endungen für Fragen und Antwortmöglichkeiten sind in Kleinbuchstaben
+# Ich habe die Klassen mal alle umbenannt (habe ich in meinen Klassen auch gemacht, so ist es übersichtlicher)
+# Ich habe die folgenden (vormals beiden) Videos zu einem Video zusammengefasst.
+# Ich habe das 3_a Video komplett neu gemacht, auf Grundlage des 3_q Videos.
+class LinAlg_1_Determinant_3_q(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -167,71 +176,112 @@ class LinAlg_1_5_I_2_I(SophiaCursorScene):
         self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
 
-        mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2).shift(0.2*LEFT)
-        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "2", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
-        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=","-19", color=c1t, font_size=fs2).next_to(mat_2, DOWN, buff=.6)
+        mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2)
+        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "2", color=c1t, font_size=fs2)
+        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=","-19", color=c1t, font_size=fs2)
+        # Anstatt jede Matrix unter die vorherige zu schreiben, kannst du sie mit der VGroup arrangen, das ist praktischer.
+        # Dann kannst du auch mit aligned_edge=LEFT angeben, dass sie linksbündig auf dem gleichen x-Wert beginnen, das sieht sauberer aus.
+        matrices = VGroup(mat_1, mat_2, mat_3).arrange(DOWN, buff=.6, aligned_edge=LEFT).next_to(title, DOWN, buff=1.2)
 
         copy_1, copy_2, copy_3 = mat_1[1].copy(), mat_2[1].copy(), mat_3[1].copy()     
     
-        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6).set_x(0)
         mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        reds = VGroup(mat_4[1][1], mat_4[1][4], mat_4[3][0], mat_4[3][2])
         mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
-        
-        #group_1 = Group(mat_4[1][1],mat_4[1][4], mat_4[3][0], mat_4[3][2])
-        #group_2 = Group(mat_4[1][2],mat_4[1][3], mat_4[5][0], mat_4[5][2])
+        blues = VGroup(mat_4[1][2], mat_4[1][3], mat_4[5][0], mat_4[5][2])
 
-        #mat_5 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "1 \\cdot 0 - 0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_4, DOWN, buff=1.2)
+        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
+        ex_1 = MathTex("\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).scale(.95)
+        ex_1[-1].set_color(BLUE), ex_1[-3].set_color(RED)
+        sol_1 = MathTex("\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
+        # Damit die linksbündig sind
+        sol_1.shift((ex_1.get_left()[0]-sol_1.get_left()[0])*RIGHT)
+        # Haupt und Nebendiagonalen, um die beim Rechenweg zu markieren
+        ex_1_diag_1 = VGroup(ex_1[1][1], ex_1[1][4])
+        ex_1_diag_2 = VGroup(ex_1[1][2], ex_1[1][3])
+        ex_2 = MathTex("\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "7 \\cdot 3", color=c1t, font_size=fs2).scale(.95)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Hier zeigen <bookmark mark="title_in"/> wir dir, <bookmark mark="mat"/>  wie du die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnen kannst. <break time="1.5s"/> 
-                Dafür gibt <bookmark mark="fade_out_1"/> es eine einfache Formel. <break time="0.4s"/>
-                Die Determinante einer <bookmark mark="det_1"/>Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch: a Mal <bookmark mark="det_3"/>d Minus b Mal c.<break time="0.4s"/>  
-                Wir multiplizieren also die Einträge a und d auf der Hauptdiagonale und ziehen das Produkt der Einträge b und c auf der Nebendiagonale davon ab. 
-                """
-                #Wenn wir zum <bookmark mark="example"/> Beispiel die Matrix 1 null null null betrachten, dann erhalten wir mit dieser <bookmark mark="formula_example"/> Formel Eins Mal null Minus null Mal null.
-                #Also ist die Determinante dieser Matrix gleich null.  
+                Schauen wir uns also an, wie man die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnet. ...
+                Dafür gibt <bookmark mark="fade_out_1"/> es nämlich eine einfache Formel. ...
+                <bookmark mark="det_1"/>Die Determinante einer Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch a Mal d<bookmark mark="det_3"/> Minus b Mal c. ...
+                Wir multiplizieren also die <bookmark mark="indicate_reds"/>Einträge a und d auf der Hauptdiagonale und ziehen <bookmark mark="indicate_blues"/>das Produkt der Einträge b und c auf der Nebendiagonale davon ab.
+                <bookmark mark="clean_up"/>Zum Beispiel ist die Determinante <bookmark mark="example_1_1"/>der Matrix 1 0 0 2 gleich dem<bookmark mark="example_1_2"/>Produkt Eins Mal Zwei minus dem <bookmark mark="example_1_3"/>Produkt Null Mal Null, also gleich <bookmark mark="solution_1"/>Zwei. ...
+                Jetzt <bookmark mark="example_1_out"/>du: ... Was ist die Determinante der Matrix 1 3 7 2?
+                """ 
         ) as tracker:
             
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            # Ich würde den Titel weglassen, oder er ist von Anfang an drin (siehe self.add(title))
+            # self.wait_until_bookmark("title_in")
+            # self.play(Write(title))
 
-            self.wait_until_bookmark("mat")
-            self.play(Write(VGroup(mat_1[0], mat_1[1], mat_1[2])), run_time=1)
-            self.play(FadeIn(mat_2[0], mat_2[1], mat_2[2]), run_time=1)
-            self.play(FadeIn(mat_3[0], mat_3[1], mat_3[2]), run_time=1)
+            # Würde mit diesen Animationen direkt am Anfang beginnen.
+            # self.wait_until_bookmark("mat")
+            # Wenn du einmal Write und dann FadeIn benutzt sieht das komich aus, ich würde da konsequent sein
+            # Ich finde Write() und Create() schöner als FadeIn()...
+            self.play(Write(mat_1[0:2]), run_time=1)
+            # Du kannst statt VGroup(mat_1[0], mat_1[1], mat_1[2]) auch einfach mat_1[0:2] benutzen
+            self.play(Write(mat_2[0:2]), run_time=1)
+            self.play(Write(mat_3[0:2]), run_time=1)
 
             self.wait_until_bookmark("number")
-            self.play(ReplacementTransform(copy_1, mat_1[3]), run_time=.6)
-            self.play(ReplacementTransform(copy_2, mat_2[3]), run_time=.6)
-            self.play(ReplacementTransform(copy_3, mat_3[3]), run_time=.6)
+            # Hab [3] zu [2:] geändert, damit das "=" Zeichen mitkommt.
+            self.play(ReplacementTransform(copy_1, mat_1[2:]), run_time=.6)
+            self.play(ReplacementTransform(copy_2, mat_2[2:]), run_time=.6)
+            self.play(ReplacementTransform(copy_3, mat_3[2:]), run_time=.6)
 
-            self.wait_until_bookmark("fade_out_1")
-            self.play(FadeOut(mat_1,mat_2,mat_3), run_time=1)
+            # Hätte die erst entfernt unmittelbar bevor es weitergeht. Ich finde "leeren" screen immer schlecht.
+            # self.wait_until_bookmark("fade_out_1")
+            # self.play(Unwrite(VGroup(mat_1,mat_2,mat_3)), run_time=1)
 
             self.wait_until_bookmark("det_1")
+            self.play(Unwrite(VGroup(mat_1,mat_2,mat_3)), run_time=.5)
             self.play(Write(mat_4[0]), Write(mat_4[1]), run_time=1)
 
             self.wait_until_bookmark("det_2")
-            self.play(Write(mat_4[2]), Write(mat_4[3]), run_time=1)
+            self.play(Write(mat_4[2]), Write(mat_4[3]), run_time=.6)
 
             self.wait_until_bookmark("det_3")
             self.play(Write(mat_4[4]), run_time=.4)
             self.play(Write(mat_4[5]), run_time=1)
 
-            #self.wait_until_bookmark("indicate_1")
-            #self.play(Indicate(copy_4).color(RED))
+            self.wait_until_bookmark("indicate_reds")
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds], run_time=2)
 
-            #self.wait_until_bookmark("indicate_2")
-            #self.play(Indicate(copy_5).color(BLUE))
-            
-            self.wait(4)
-            
+            self.wait_until_bookmark("indicate_blues")
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues], run_time=2)
 
-class LinAlg_1_5_I_2_Q(SophiaCursorScene):
+            self.wait_until_bookmark("clean_up")
+            mat_4.generate_target().next_to(title, DOWN, buff=.6)
+            self.add_shift_sound(.5)
+            self.play(MoveToTarget(mat_4), run_time=.5)
+
+            self.wait_until_bookmark("example_1_1")
+            self.play(Write(ex_1[0]), Write(ex_1[1]), run_time=.6)
+
+            self.wait_until_bookmark("example_1_2")
+            self.play(Write(ex_1[2]), Write(ex_1[3]), *[Indicate(diag, scale_factor=1.6, color=RED) for diag in ex_1_diag_1], run_time=1.5)
+
+            self.wait_until_bookmark("example_1_3")
+            self.play(Write(ex_1[4]), Write(ex_1[5]), *[Indicate(diag, scale_factor=1.6, color=BLUE) for diag in ex_1_diag_2], run_time=1.5)
+
+            self.wait_until_bookmark("solution_1")
+            self.play(TransformMatchingTex(ex_1, sol_1))
+
+            self.wait_until_bookmark("example_1_out")
+            self.play(Unwrite(sol_1), run_time=.6)
+            self.play(Write(ex_2)[0])
+
+        self.wait(4)
+
+
+class LinAlg_1_Determinant_3_a(SophiaCursorScene):
     
-
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -239,113 +289,43 @@ class LinAlg_1_5_I_2_Q(SophiaCursorScene):
         self.add_mathgrid()
 
         title = self.add_title("Determinante")
-
-        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
-        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
-        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
-
-        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        answ = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","= 2", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","= ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        # Action Sequence
-        with self.voiceover(
-                text=""" 
-                Wir haben <bookmark mark="title_in"/> ja bereits <bookmark mark="det_1"/> gesehen, dass die Determinante einer Matrix a b c d gegeben ist <bookmark mark="det_2"/>durch: a Mal d <bookmark mark="det_3"/> Minus b Mal c.<break time="0.4s"/>  
-                
-                Betrachten wir nun als Beispiel die <bookmark mark="mat_2"/> Matrix 1 0 0 2.
-                Mit der <bookmark mark="formula_1"/> Formel für die Determinante <bookmark mark="formula_2"/> erhalten wir Eins Mal 2 <bookmark mark="formula_3"/> Minus null Mal null.
-                Also ist die Determinante dieser <bookmark mark="transform"/> Matrix gleich 2. <break time="0.8s"/>
-                Betrachten <bookmark mark="cleanup"/> wir jetzt ein anderes Beispiel, nämlich die Matrix <bookmark mark="mat_3"/> 1 3 <break time="0.4s"/> 7 2.
-                Was<bookmark mark="qmark_in"/> ist die Determinante dieser Matrix?
-                """
-        ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
-
-            self.wait_until_bookmark("det_1")
-            self.play(Write(mat_1[0]), Write(mat_1[1]), run_time=1)
-
-            self.wait_until_bookmark("det_2")
-            self.play(Write(mat_1[2]), Write(mat_1[3]), run_time=1)
-
-            self.wait_until_bookmark("det_3")
-            self.play(Write(mat_1[4]), run_time=.4)
-            self.play(Write(mat_1[5]), run_time=1)
-
-            self.wait_until_bookmark("mat_2")
-            self.play(Write(mat_2[1]), run_time=.6)
-            
-            self.wait_until_bookmark("formula_1")
-            self.play(Write(mat_2[0]), run_time=.6)
-
-            self.wait_until_bookmark("formula_2")
-            self.play(Write(mat_2[2]), Write(mat_2[3]), run_time=.6)
-
-            self.wait_until_bookmark("formula_3")
-            self.play(Write(mat_2[4]), run_time=.4)
-            self.play(Write(mat_2[5]), run_time=1)
-            
-            self.wait_until_bookmark("transform")
-            self.play(TransformMatchingTex(mat_2, answ), run_time=3)
-
-            self.wait_until_bookmark("cleanup")
-            self.play(FadeOut(answ), run_time=.6)
-
-            self.wait_until_bookmark("mat_3")
-            self.play(Write(mat_3[1]), run_time=.6)
-
-            self.wait_until_bookmark("qmark_in")
-            self.play(Write(VGroup(mat_3[0], mat_3[2])), run_time=.6)
-            
-
-            # Wait for 4 seconds at the end of the animation
-            self.wait(4)
-
-
-class LinAlg_1_5_I_2_A(SophiaCursorScene):
+        self.add(title)
     
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        self.add(mat_4)
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title("Determinante")
-
-        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
-        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
-        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
-
-        mat_qmark = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " 1 \\cdot 2 - 3 \\cdot 7", color=c1t, font_size=fs2).move_to(mat_qmark)
-        mat_sol = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " -19", color=c1t, font_size=fs2).move_to(mat_qmark)
+        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
+        ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "3 \\cdot 7", color=c1t, font_size=fs2).scale(.95)
+        ex_2[-1].set_color(BLUE), ex_2[-3].set_color(RED)
+        sol_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
+        sol_2.shift((ex_2.get_left()[0]-sol_2.get_left()[0])*RIGHT)
+        ex_2_diag_1 = VGroup(ex_2[1][1], ex_2[1][4])
+        ex_2_diag_2 = VGroup(ex_2[1][2], ex_2[1][3])
+        self.add(ex_2[:2])
         
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wir wollen <bookmark mark="title_in"/> die Determinante der <bookmark mark="mat_1"/> Matrix eins drei sieben zwei berechnen. 
-                Das ist ja mit der obigen <bookmark mark="transform_1"/>Formel eins Mal zwei Minus drei Mal sieben. Also ist die Determinante dieser Matrix <bookmark mark="transform_2"/> gleich Minus neunzehn. 
-                """
+Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
+""" 
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title), Write(mat_1))
 
-            self.wait_until_bookmark("mat_1")
-            self.play(Write(mat_qmark), run_time=1.5)
+            self.wait_until_bookmark("example_2_1")
+            self.play(Write(ex_2[2]), Write(ex_2[3]), *[Indicate(diag, scale_factor=1.6, color=RED) for diag in ex_2_diag_1])
 
-            self.wait_until_bookmark("transform_1")
-            self.play(TransformMatchingTex(mat_qmark, mat_2), run_time=3)
+            self.wait_until_bookmark("example_2_2")
+            self.play(Write(ex_2[4]), Write(ex_2[5]), *[Indicate(diag, scale_factor=1.6, color=BLUE) for diag in ex_2_diag_2])
 
-            self.wait_until_bookmark("transform_2")
-            self.play(TransformMatchingTex(mat_2, mat_sol), run_time=3)
+            self.wait_until_bookmark("solution_2")
+            self.play(TransformMatchingTex(ex_2, sol_2))
 
-            # Wait for 4 seconds at the end of the animation
-            self.wait(4)
+        self.wait(4)
 
-
+#####################################
+#####################################
 class LinAlg_1_5_I_3_I_1(SophiaCursorScene):
     
 

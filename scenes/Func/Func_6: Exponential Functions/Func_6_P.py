@@ -3765,18 +3765,9 @@ class Func_6_P_horizontal_asymptotes_exp_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$a=-1$, $b=0.5$, $c=-1.5$", "$a=1$, $b=2$, $c=1$"],
-            correctAnswerIndex = 0,
-            questionText = self.translate("Func_6_P_graphs.1.q.question-text"),
-            freeTextDetail=SophiaFreeTextTaskDetail(
-                fallbackOptionIndex=1,
-                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$, $c=\key{c}$",
-                answerOptionsTypes={
-                    "a": "number",
-                    "b": "number",
-                    "c": "number",
-                }
-            )
+            answerOptions=ast.literal_eval(self.translate("Func_6_P.horizontal_asymptotes_exp_1.answer-options")),
+            correctAnswerIndex=3,
+            questionText=self.translate("Func_6_P.horizontal_asymptotes_exp_1.question-text"),
         )
 
     # Main method for constructing the animation
@@ -3966,6 +3957,22 @@ There is even a rule here: If you have an exponential function of the <bookmark 
 ####################################
 class Func_6_P_horizontal_asymptotes_exp_2_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$a=-1$, $b=0.5$, $c=-1.5$", "$a=1$, $b=2$, $c=1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Func_6_P_graphs.1.q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$, $c=\key{c}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number",
+                    "c": "number",
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -4013,7 +4020,7 @@ class Func_6_P_horizontal_asymptotes_exp_2_q(SophiaCursorScene):
         with self.voiceover(
                 text="""
 We know that all functions of the form f of x equals a times b to the power of x have<bookmark mark="asymptote_in"/> a horizontal asymptote at y equals zero. Now <bookmark mark="now_what"/>what happens if we shift the function up or down?
-For example, what is the horizontal asymptote of the <bookmark mark="term_in"/>function f of x equals two to the power of x minus two?
+For example, where is the horizontal asymptote of the <bookmark mark="term_in"/>function f of x equals two to the power of x minus two?
 """
             ) as tracker:
             
