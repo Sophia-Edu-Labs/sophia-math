@@ -16,9 +16,9 @@ from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast 
 
+##################################### SUBCHAPTER 1: Intro Determinants
 #####################################
-#####################################
-class LinAlg_1_Determinant_1(SophiaCursorScene):
+class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -111,7 +111,7 @@ class LinAlg_1_Determinant_1(SophiaCursorScene):
 
 #####################################
 #####################################
-class LinAlg_1_Determinant_2(SophiaCursorScene):
+class LinAlg_1_Determinant_intro_2(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -167,7 +167,7 @@ class LinAlg_1_Determinant_2(SophiaCursorScene):
 # Ich habe die Klassen mal alle umbenannt (habe ich in meinen Klassen auch gemacht, so ist es übersichtlicher)
 # Ich habe die folgenden (vormals beiden) Videos zu einem Video zusammengefasst.
 # Ich habe das 3_a Video komplett neu gemacht, auf Grundlage des 3_q Videos.
-class LinAlg_1_Determinant_3_q(SophiaCursorScene):
+class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -279,8 +279,7 @@ class LinAlg_1_Determinant_3_q(SophiaCursorScene):
 
         self.wait(4)
 
-
-class LinAlg_1_Determinant_3_a(SophiaCursorScene):
+class LinAlg_1_Determinant_intro_3_a(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -326,7 +325,20 @@ Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinan
 
 #####################################
 #####################################
-class LinAlg_1_5_I_3_I_1(SophiaCursorScene):
+# Hier könnte man noch ein Übungs + Lösungsvideo ergänzen, mit etwas "schwereren" Zahlen, z.b. Vorzeichen, Brüche, oä.
+# Außerdem könnte man die "Kreuz-Visualisierung" nochmal zeigen (siehe https://www.algebrapracticeproblems.com/wp-content/uploads/2021/01/how-to-find-the-determinant-of-a-2x2-matrix.png)
+#TODO:
+# class LinAlg_1_Determinant_intro_4_q(SophiaCursorScene):
+# class LinAlg_1_Determinant_intro_4_a(SophiaCursorScene):
+
+#####################################
+#####################################
+# Mach das Video als Abschlussvideo und Wiederhol nochmal den wichtigsten Inhalt von Kapitel 1.
+# Den Ausblick auf Kapitel 2 würde ich nur am Ende ganz kurz in einem Satz machen.
+# Allgemeine Sachen:
+# - Wenn du Sachen schon in vorherigen Videos drin hattest (Überschrift, Formel), dann füg sie mit self.add() vor Beginn hinzu, anstatt sie zu animeren
+# - Ich finde die meisten Animationen sehen besser aus, wenn die run_time bei ca. 0.5s liegt    
+class LinAlg_1_Determinant_intro_5(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -385,7 +397,16 @@ class LinAlg_1_5_I_3_I_1(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_3_I_2(SophiaCursorScene):
+
+##################################### SUBCHAPTER 2: Geometric Interpretation
+#####################################
+# Punkte zu diesem Video:
+# Gelb / Hellgrau auf weiß sieht man nicht so gut -> mehr Kontrast
+# Überschrift entweder ganz weglassen (preferred), oder nicht animieren, sondern mit self.add() hinzufügen. Animieren nur wenns wirklich passt
+# Es sieht immer gut aus, am Rand etwas Abstand zu lassen. Im Zweifel mit self.scale(0.95) etwas Platz schaffen.
+# Da das ja das erste Video im neuen Kapitel ist, gerne eine Kapitel Intro (was ja davor so ein wenig auch im letzten Video des ersten Kapitels war)
+# Wie oben: Führ das Erklärvideo und das Übungsvideo zu einem Video zusammen
+class LinAlg_1_Determinant_geo_1_q(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -477,7 +498,6 @@ class LinAlg_1_5_I_3_I_2(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-
 class LinAlg_1_5_I_3_Q(SophiaCursorScene):
     
 
@@ -535,7 +555,7 @@ class LinAlg_1_5_I_3_Q(SophiaCursorScene):
             self.wait(4)
 
 
-class LinAlg_1_5_I_3_A(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_1_a(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -568,7 +588,9 @@ class LinAlg_1_5_I_3_A(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_3_G_1(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_geo_2(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -599,7 +621,7 @@ class LinAlg_1_5_I_3_G_1(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_3_G_2(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_3(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -629,7 +651,7 @@ class LinAlg_1_5_I_3_G_2(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
             
-class LinAlg_1_5_I_3_G_3(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_4(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -656,7 +678,7 @@ class LinAlg_1_5_I_3_G_3(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_4_I_1(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
