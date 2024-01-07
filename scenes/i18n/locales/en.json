@@ -3181,7 +3181,47 @@
     },
     "horizontal_asymptotes_exp_1": {
       "question-text": "What happens to the function values as $x$ gets smaller and smaller?",
-      "answer-options": "[\"They approach $-\\infty$\", \"They approach $\\infty$\", \"They start increasing\", \"They approach $0$\"]"
+      "answer-options": "[\"They approach $-\\infty$\", \"They approach $\\infty$\", \"They start increasing\", \"They approach $0$\"]",
+      "q": {
+        "voiceover": "Look at the <bookmark mark=\"graph_in\"/>graph that is shown here. It belongs to an exponential function of<bookmark mark=\"term_in\"/> the form f of x equals 2 to the power of x.\nYou can see that<bookmark mark=\"x_gets_larger\"/> as x gets larger and larger, the function grows more and more quickly, tending towards infinity.\n<bookmark mark=\"reset_cursor\"/>Now what, on the other hand, <bookmark mark=\"x_gets_smaller\"/>happens to the function when x gets smaller and smaller?"
+      },
+      "a": {
+        "voiceover": "Let's plug in some values. If we <bookmark mark=\"plug_in_neg_one_a\"/>plug in x equals negative one, we get two to the power of negative one, <bookmark mark=\"plug_in_neg_one_b\"/>which is equal to one over two, or one half. If we plug in <bookmark mark=\"plug_in_neg_two_a\"/>x equals negative two, we get two to the power of negative two, <bookmark mark=\"plug_in_neg_two_b\"/>which is equal to one over four. And so by <bookmark mark=\"start_plugging_in\"/>plugging in smaller and smaller values for x, we get closer and closer to zero. But: we never reach it.\nThis means, there is a <bookmark mark=\"show_asymptote\"/>horizontal asymptote at y equals zero, because the function gets closer and closer to zero, but never reaches it.\nNow <bookmark mark=\"cleanup_1\"/>let's look at other exponential functions: <bookmark mark=\"g_in\"/>G of x equals one half to the power of x, also has a horizontal asymptote at y equals zero. And<bookmark mark=\"h_in\"/>H of x equals negative one times two to the power of x, also has a horizontal asymptote at y equals zero.\nThere is even a rule here: If you have an exponential function of the <bookmark mark=\"rule_1\"/>form f of x equals a times b to the power of x, then <bookmark mark=\"rule_2\"/>the horizontal asymptote is always at y equals zero."
+      }
+    },
+    "horizontal_asymptotes_exp": {
+      "2": {
+        "a": {
+          "voiceover": "Let's recap: We saw that a function of the <bookmark mark=\"term_in\"/>form f of x equals a times b to the power of x always has <bookmark mark=\"asymptote_in\"/>a horizontal asymptote at y equals zero.\nNow if we <bookmark mark=\"orange_stays\"/>add a constant c, <bookmark mark=\"unwrite_rule_1\"/>so that the function has <bookmark mark=\"add_c\"/>the form f of x equals a times b to the power of x plus c, then the <bookmark mark=\"shift\"/>graph will shift up by c units. This means that the horizontal asymptote will <bookmark mark=\"shift_asymptote\"/>also shift up by c units. So the horizontal asymptote of f <bookmark mark=\"rule_2\"/>is at y equals c. ...\nSo there are two ways, how we can use this: If we're given the function f of x equals a times b to the power of x plus c, we know that the horizontal asymptote is at y equals c. And if we're given a graph of a function of the form f of x equals a times b to the power of x plus c, we can get the value of c by looking at the y value of the horizontal asymptote."
+        }
+      }
+    },
+    "horizontal_asymptotes_exp_2": {
+      "q": {
+        "questionText": "At what value of $y$ does the function $f(x)=2^x-2$ have a horizontal asymptote?",
+        "voiceover": "We know that all functions of the form f of x equals a times b to the power of x have<bookmark mark=\"asymptote_in\"/> a horizontal asymptote at y equals zero. Now <bookmark mark=\"now_what\"/>what happens if we shift the function up or down?\nFor example, where is the horizontal asymptote of the <bookmark mark=\"term_in\"/>function f of x equals two to the power of x minus two?"
+      },
+      "a": {
+        "voiceover": "Since the <bookmark mark=\"orange_stays\"/>orange graph is the graph of two to the power of x, we can get the graph of f <bookmark mark=\"shift_down\"/>by shifting the orange graph two units down. Naturally, if we shift the function down by two, the <bookmark mark=\"asymptote_in\"/>horizontal asymptote will <bookmark mark=\"shift_asymptote_down\"/>also shift down by two. This means that the horizontal asymptote of f is at y equals negative two.\nAgain, this is a general rule: If you have an exponential function of the <bookmark mark=\"rule_1\"/>form f of x equals a times b to the power of x plus c, then <bookmark mark=\"rule_2\"/>the horizontal asymptote is always at y equals c. In this example, c is equal to negative two, so the horizontal asymptote is at y equals negative two."
+      }
+    },
+    "horizontal_asymptotes_exp_3": {
+      "q": {
+        "voiceover": "The <bookmark mark=\"graph_in\"/>graph you can see here belongs to the <bookmark mark=\"term_in\"/>function f of x equals 0.5 to the power of x plus c. ... It has an <bookmark mark=\"asymptote_in\"/>asymptote at y equals one. ... What is<bookmark mark=\"highlight_c\"/> the value of c?",
+        "questionText": "Given that the function is described by $f(x)=a\\cdot b^x+c$, what is the value of $c$?"
+      },
+      "a": {
+        "voiceover": "First, notice that the function has the form<bookmark mark=\"rule_1\"/> f of x equals a times b to the power of x plus c: To see this, we just <bookmark mark=\"rule_1_a\"/>plug in a equals one, <bookmark mark=\"rule_1_b\"/>and b equals 0.5. We then know <bookmark mark=\"rule_2\"/>that the horizontal asymptote is at y equals c. And since we know, that the horizontal asymptote is at y equals one,<bookmark mark=\"solution\"/> we know that c is equal to one."
+      }
+    },
+    "horizontal_asymptotes_exp_4": {
+      "q": {
+        "voiceover": "The <bookmark mark=\"graph_in\"/>graph you can see here belongs to the <bookmark mark=\"term_in\"/>function f of x equals a times b to the power of x plus c. ... It has an <bookmark mark=\"asymptote_in\"/>asymptote at y equals negative one point five. ... What is<bookmark mark=\"highlight_c\"/> the value of c?",
+        "questionText": "Given that the function is described by $f(x)=a\\cdot b^x+c$, what is the value of $c$?"
+      },
+      "a": {
+        "voiceover": "Since we know that the function has the form<bookmark mark=\"rule_1\"/> f of x equals a times b to the power of x plus c, we know <bookmark mark=\"rule_2\"/>that the horizontal asymptote is at y equals c. And because the horizontal asymptote is at y equals negative one point five,<bookmark mark=\"solution\"/> we know that c is equal to negative one point five."
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {

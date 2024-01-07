@@ -3177,7 +3177,47 @@
     },
     "horizontal_asymptotes_exp_1": {
       "question-text": "Was passiert mit den Funktionswerten, wenn $x$ immer kleiner wird?",
-      "answer-options": "[\"Sie nähern sich $-\\infty$\", \"Sie nähern sich $\\infty$\", \"Sie beginnen zu steigen\", \"Sie nähern sich $0$\"]"
+      "answer-options": "[\"Sie nähern sich $-\\infty$\", \"Sie nähern sich $\\infty$\", \"Sie beginnen zu steigen\", \"Sie nähern sich $0$\"]",
+      "q": {
+        "voiceover": "Schau dir den <bookmark mark=\"graph_in\"/>Graphen an, der hier gezeigt wird. Er gehört zu einer Exponentialfunktion der <bookmark mark=\"term_in\"/>Form f von x gleich 2 hoch x.\nDu kannst sehen, dass für steigende x, <bookmark mark=\"x_gets_larger\"/>die Funktion immer schneller wächst und sich unendlich nähert.\n<bookmark mark=\"reset_cursor\"/>Was passiert, <bookmark mark=\"x_gets_smaller\"/>wenn x hingegen immer kleiner und kleiner wird?"
+      },
+      "a": {
+        "voiceover": "Setzen wir ein paar Werte ein. Wenn wir <bookmark mark=\"plug_in_neg_one_a\"/>x gleich minus eins einsetzen, erhalten wir zwei hoch minus eins, <bookmark mark=\"plug_in_neg_one_b\"/>was gleich eins geteilt durch zwei, also ein halb ist. Wenn wir <bookmark mark=\"plug_in_neg_two_a\"/>x gleich minus zwei einsetzen, erhalten wir zwei hoch minus zwei, <bookmark mark=\"plug_in_neg_two_b\"/>was gleich eins geteilt durch vier ist. Und so nähern wir uns, indem wir <bookmark mark=\"start_plugging_in\"/>immer kleinere Werte für x einsetzen, immer näher an null. Aber: wir erreichen die Null nie.\nDas bedeutet, dass es eine <bookmark mark=\"show_asymptote\"/>horizontale Asymptote bei y gleich null gibt, weil sich die Funktion immer näher an null annähert, aber die Null nie erreicht.\nSchauen <bookmark mark=\"cleanup_1\"/> wir uns andere Exponentialfunktionen an: <bookmark mark=\"g_in\"/>G von x gleich ein halb hoch x hat auch eine horizontale Asymptote bei y gleich null. Und <bookmark mark=\"h_in\"/>H von x gleich minus eins mal zwei hoch x, hat ebenfalls eine horizontale Asymptote bei y gleich null.\nEs gibt sogar eine Regel: Wenn du eine Exponentialfunktion der <bookmark mark=\"rule_1\"/>Form f von x gleich a mal b hoch x hast, dann <bookmark mark=\"rule_2\"/>ist die horizontale Asymptote immer bei y gleich null."
+      }
+    },
+    "horizontal_asymptotes_exp": {
+      "2": {
+        "a": {
+          "voiceover": "Zur Wiederholung: Wir haben gesehen, dass eine Funktion der <bookmark mark=\"term_in\"/>Form f von x gleich a mal b hoch x immer eine <bookmark mark=\"asymptote_in\"/>waagerechte Asymptote bei y gleich null hat.\nWenn wir jetzt <bookmark mark=\"orange_stays\"/>eine Konstante c addieren, <bookmark mark=\"unwrite_rule_1\"/>sodass die Funktion <bookmark mark=\"add_c\"/>die Form f von x gleich a mal b hoch x plus c annimmt, dann wird sich <bookmark mark=\"shift\"/>der Graph um c nach oben verschieben. Das bedeutet, dass die waagerechte Asymptote <bookmark mark=\"shift_asymptote\"/>ebenfalls um c nach oben verschoben wird. Die waagerechte Asymptote von f <bookmark mark=\"rule_2\"/>ist also bei y gleich c. ...\nEs gibt also zwei Möglichkeiten, wie wir das nutzen können: Wenn uns die Funktion f von x gleich a mal b hoch x plus c gegeben ist, wissen wir, dass die waagerechte Asymptote bei y gleich c liegt. Und wenn uns der Graph einer Funktion der Form f von x gleich a mal b hoch x plus c gegeben ist, können wir den Wert von c ermitteln, indem wir den y-Wert der waagerechten Asymptote betrachten."
+        }
+      }
+    },
+    "horizontal_asymptotes_exp_2": {
+      "q": {
+        "questionText": "Bei welchem ​​Wert von $y$ hat die Funktion $f(x)=2^x-2$ eine horizontale Asymptote?",
+        "voiceover": "Wir wissen jetzt also, dass alle Funktionen der Form f von x gleich a mal b hoch x eine <bookmark mark=\"asymptote_in\"/>horizontale Asymptote bei y gleich null haben. Was <bookmark mark=\"now_what\"/>passiert nun, wenn wir die Funktion nach oben oder unten verschieben?\nZum Beispiel: Wo liegt die horizontale Asymptote der <bookmark mark=\"term_in\"/>Funktion f von x gleich zwei hoch x minus zwei?"
+      },
+      "a": {
+        "voiceover": "Da der <bookmark mark=\"orange_stays\"/>orangene Graph zur Funktion zwei hoch x gehört, erhalten wir den Graphen von f <bookmark mark=\"shift_down\"/>, indem wir den orangenen Graphen um zwei nach unten verschieben. Wenn wir die Funktion um zwei nach unten verschieben, wird die <bookmark mark=\"asymptote_in\"/>horizontale Asymptote <bookmark mark=\"shift_asymptote_down\"/>ebenfalls um zwei nach unten verschoben. Das bedeutet, dass die horizontale Asymptote von f bei y gleich minus zwei liegt.\nAuch das ist eine allgemeine Regel: Wenn du eine Exponentialfunktion der <bookmark mark=\"rule_1\"/>Form f von x gleich a mal b hoch x plus c hast, dann <bookmark mark=\"rule_2\"/>ist die horizontale Asymptote immer bei y gleich c. In diesem Beispiel ist c gleich minus zwei, also ist die horizontale Asymptote bei y gleich minus zwei."
+      }
+    },
+    "horizontal_asymptotes_exp_3": {
+      "q": {
+        "voiceover": "Der <bookmark mark=\"graph_in\"/>Graph, den du hier siehst, gehört zur <bookmark mark=\"term_in\"/>Funktion f von x gleich 0,5 hoch x plus c. ... Die Funktion hat eine <bookmark mark=\"asymptote_in\"/>Asymptote bei y gleich eins. ... Was ist<bookmark mark=\"highlight_c\"/> der Wert von c?",
+        "questionText": "Wenn die Funktion durch $f(x)=a\\cdot b^x+c$ beschrieben wird, was ist der Wert von $c$?"
+      },
+      "a": {
+        "voiceover": "Beachte zunächst, dass die Funktion die Form<bookmark mark=\"rule_1\"/> f von x gleich a mal b hoch x plus c hat. Um das zu sehen, setzen wir einfach <bookmark mark=\"rule_1_a\"/>a gleich eins, <bookmark mark=\"rule_1_b\"/>und b gleich 0,5 ein. Dann wissen wir <bookmark mark=\"rule_2\"/>, dass die horizontale Asymptote bei y gleich c liegt. Und da wir wissen, dass die horizontale Asymptote bei y gleich eins liegt,<bookmark mark=\"solution\"/> wissen wir, dass c gleich eins ist."
+      }
+    },
+    "horizontal_asymptotes_exp_4": {
+      "q": {
+        "voiceover": "Der <bookmark mark=\"graph_in\"/>Graph, den du hier siehst, gehört zur <bookmark mark=\"term_in\"/>Funktion f von x gleich a mal b hoch x plus c. ... Er hat eine <bookmark mark=\"asymptote_in\"/>Asymptote bei y gleich minus eins Komma fünf. ... Was ist<bookmark mark=\"highlight_c\"/> der Wert von c?",
+        "questionText": "Wenn die Funktion $f(x)=a\\cdot b^x+c$ lautet, welchen Wert hat $c$?"
+      },
+      "a": {
+        "voiceover": "Da die Funktion die Form<bookmark mark=\"rule_1\"/> f von x gleich a mal b hoch x plus c hat, wissen wir <bookmark mark=\"rule_2\"/>, dass die horizontale Asymptote bei y gleich c liegt. Und weil die horizontale Asymptote bei y gleich minus eins Komma fünf liegt,<bookmark mark=\"solution\"/> muss c gleich minus eins Komma fünf sein."
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {
