@@ -4323,7 +4323,7 @@ The <bookmark mark="graph_in"/>graph you can see here belongs to the <bookmark m
 
 
         self.wait(4)
-#
+
 class Func_6_P_horizontal_asymptotes_exp_4_a(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -4387,7 +4387,100 @@ Since we know that the function has the form<bookmark mark="rule_1"/> f of x equ
                 self.play(MoveToTarget(rule_2), Unwrite(term), Write(rule_2_b), run_time=1)
 
         self.wait(4)
+
+####################################
+####################################
+class Func_6_P_horizontal_asymptotes_exp_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rec = Rectangle(height=3.6, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[-4, 4, .5], y_range=[-4, 4, .5], x_length=3, y_length=3.4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        x, y = cords.get_x_axis().n2p(4)[0], cords.get_y_axis().n2p(0)[1]
+        asymptote = DashedLine([-x,y,0], [x,y,0], color=GREEN_E, stroke_width=6)
+        cords_unit = cords.y_axis.n2p(1)[1]-cords.y_axis.n2p(0)[1]
+        f = lambda x: 2**x
+        g = lambda x: 0.5**x
+        h = lambda x: -1*2**x
+        
+        graph = cords.plot(f, x_range=[-4, 2, .001], color=ORANGE, stroke_width=2)
+        shift_tracker = ValueTracker(0)
+        graph_copy = always_redraw(lambda: cords.plot(lambda x: f(x)+shift_tracker.get_value(), x_range=[-4, np.emath.logn(2, 4-shift_tracker.get_value()), .001], color=RED, stroke_width=2))
+        term = MathTex("f(", "x", ")=", "a\\cdot b", "^x", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        
+        graph_g = cords.plot(g, x_range=[-2, 4, .001], color=PINK, stroke_width=2)
+        graph_h = cords.plot(h, x_range=[-4, 2, .001], color=PURPLE_D, stroke_width=2)
+        self.add(graph, graph_g, graph_h)
+
+        rule_1_a = MathTex("f(", "x", ")=", "a\\cdot b", "^x", color=c1t, font_size=fs2).move_to(term)
+        rule_1_arrow = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(rule_1_a, DOWN, buff=.2)
+        rule_1_b = Tex("Horizontal asymptote at $y=0$", color=c1t, font_size=fs3).next_to(rule_1_arrow, DOWN, buff=.2)
+
+        rule_2_a = MathTex("f(", "x", ")=", "a\\cdot b", "^x", "+c", color=c1t, font_size=fs2).move_to(term)
+        rule_2_arrow = MathTex("\\Downarrow", color=c1t, font_size=fs2).next_to(rule_2_a, DOWN, buff=.2)
+        rule_2_b = Tex("Horizontal asymptote at $y=c$", color=c1t, font_size=fs3).next_to(rule_2_arrow, DOWN, buff=.2)
+
+        rule_rectangle = SurroundingRectangle(VGroup(rule_2_a, rule_2_b), color=PURE_BLUE, corner_radius=.1, buff=.2)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text="""
+Let's recap: We saw that a function of the <bookmark mark="term_in"/>form f of x equals a times b to the power of x always has <bookmark mark="asymptote_in"/>a horizontal asymptote at y equals zero.
+Now if we <bookmark mark="orange_stays"/>add a constant c, <bookmark mark="unwrite_rule_1"/>so that the function has <bookmark mark="add_c"/>the form f of x equals a times b to the power of x plus c, then the <bookmark mark="shift"/>graph will shift up by c units. This means that the horizontal asymptote will <bookmark mark="shift_asymptote"/>also shift up by c units. So the horizontal asymptote of f <bookmark mark="rule_2"/>is at y equals c. ...
+So there are two ways, how we can use this: If we're given the function f of x equals two to the power of x plus c, we know that the horizontal asymptote is at y equals c. And if we're given a graph of a function of the form f of x equals a times b to the power of x plus c, we can get the value of c by looking at the y value of the horizontal asymptote.
+"""
+            ) as tracker:
+
+            self.wait_until_bookmark("term_in")
+            self.play(Write(rule_1_a), run_time=1)
+
+            self.wait_until_bookmark("asymptote_in")
+            self.add_pencil_sound(1)
+            self.play(Create(asymptote), Write(rule_1_arrow), Write(rule_1_b), run_time=1)
+
+            self.wait_until_bookmark("orange_stays")
+            self.play(Unwrite(graph_g), Unwrite(graph_h), run_time=1)
+
+            self.wait_until_bookmark("unwrite_rule_1")
+            self.play(Unwrite(rule_1_arrow), Unwrite(rule_1_b), run_time=.3)
+
+            self.wait_until_bookmark("add_c")
+            self.play(TransformMatchingTex(rule_1_a, rule_2_a))
+
+            self.wait_until_bookmark("shift")
+            self.add(graph_copy)
+            self.play(shift_tracker.animate.set_value(2), run_time=3)
+
+            self.wait_until_bookmark("shift_asymptote")
+            self.play(asymptote.animate.shift(2*cords_unit*UP), run_time=1)
+
+            self.wait_until_bookmark("rule_2")
+            self.play(Write(rule_2_arrow), Write(rule_2_b), run_time=1)
+            self.add_pencil_sound(1)
+            self.play(Create(rule_rectangle), run_time=1)
+
+        self.wait(4)
 #
+
 ###############Exercises for Percentages Chapter ##########################
 
 ##################################### Exercise Level: Easy (1)
