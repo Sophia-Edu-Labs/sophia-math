@@ -3319,5 +3319,12 @@
         "question-text": "What is the value of the determinant $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?"
       }
     }
+  },
+  "Calc_1": {
+    "Sequences": {
+      "3q": {
+        "question-text": "What is the value of $b_3$?"
+      }
+    }
   }
 }

@@ -888,6 +888,7 @@ class CursorMarkAxis(ApplyMethod):
             x, y, _ = plane.y_axis.get_center()
             width = 0.3
             height = plane.y_axis.get_height()+0.2
+            x = plane.x_axis.n2p(0)[0]
         else:
             raise ValueError("axis must be 'x' or 'y'")
         self.cursor = cursor

@@ -5014,6 +5014,329 @@ class Func_6_P_horizontal_asymptotes_exp_5(SophiaCursorScene):
         self.wait(4)
 
 
+####################################
+####################################
+class Func_6_P_scaling_exp_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Func_6_P.horizontal_asymptotes_exp_1.answer-options")),
+    #         correctAnswerIndex=3,
+    #         questionText=self.translate("Func_6_P.horizontal_asymptotes_exp_1.question-text"),
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rec = Rectangle(height=3.6, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[-4, 4, .5], y_range=[-4, 4, .5], x_length=3, y_length=3.4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        f = lambda x: 0.5*2**x
+        graph = cords.plot(f, x_range=[-4, 3, .001], color=ORANGE, stroke_width=2)
+        term = MathTex("f(x)=", "a", "\\cdot b^x", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+
+        x_tracker = ValueTracker(0)
+        cursor = AltCursor(y=cords.get_x_axis().n2p(0)[1], idle=False).add_updater(lambda m: m.move_to(cords.c2p(x_tracker.get_value(), f(x_tracker.get_value()))))
+
+        # Action Sequence
+        # You can see that as x gets smaller and smaller, the values get closer and closer to <bookmark mark="asympote_in"/>the line that is shown here. This line is called the asymptote.
+        with self.voiceover(
+                text=
+"""
+Let's consider exponential functions of the <bookmark mark="term_in"/>form f of x equals a times b to the power of x, and let's focus <bookmark mark="highlight_a"/>on a, specifically on how to find it.
+We'll start with an example: For <bookmark mark="graph_in"/>this graph, what is the value of a?
+"""
+            ) as tracker:
+
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+
+            self.wait_until_bookmark("highlight_a")
+            self.play(Indicate(term[1], color=RED, scale_factor=1.5), run_time=1)
+            
+            self.wait_until_bookmark("graph_in")
+            self.add_pencil_sound(1.5)
+            self.play(Create(graph))
+
+        self.wait(4)
+#
+class Func_6_P_scaling_exp_1_a(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Func_6_P.horizontal_asymptotes_exp_1.answer-options")),
+    #         correctAnswerIndex=3,
+    #         questionText=self.translate("Func_6_P.horizontal_asymptotes_exp_1.question-text"),
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rec = Rectangle(height=3.6, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[-4, 4, .5], y_range=[-4, 4, .5], x_length=3, y_length=3.4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        f = lambda x: 0.5*2**x
+        graph = cords.plot(f, x_range=[-4, 3, .001], color=ORANGE, stroke_width=2)
+        term_1 = MathTex("f(x)=", "a", "\\cdot b^x", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        step_solution = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(term_1, DOWN, buff=.2)
+        solution = MathTex("a=0.5", color=c1t, font_size=fs2).next_to(step_solution, DOWN, buff=.2)
+        step_1 = MathTex("\\Downarrow ", "x=0", color=BLUE, font_size=fs2).next_to(term_1, DOWN, buff=.2)
+        term_2_a = MathTex("f(0)=", "a", "\\cdot b^0", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        term_2_b = MathTex("f(0)=", "a", "\\cdot b^0", "=a", color=c1t, font_size=fs2).move_to(term_2_a)
+
+        self.add(term_1, graph)
+
+        cursor = AltCursor(y=cords.get_x_axis().n2p(0)[1], idle=False)
+
+        # Action Sequence
+        # You can see that as x gets smaller and smaller, the values get closer and closer to <bookmark mark="asympote_in"/>the line that is shown here. This line is called the asymptote.
+        with self.voiceover(
+                text=
+"""
+No matter what the value of b might be, if we <bookmark mark="x_zero"/>plug in x equals zero, then we get that <bookmark mark="plug_in_x_zero_1"/>f of zero equals a times b to the power of zero, which <bookmark mark="plug_in_x_zero_2"/>is "a" times one, which is just "a".
+So, the <bookmark mark="highlight_a"/>value of a is the value <bookmark mark="highlight_x_zero"/>of the function at x equals zero. As you can see, in our case this<bookmark mark="highlight_fx_zero"/> is 0.5, which means, that <bookmark mark="b_sol"/>a is equal to 0.5.
+"""
+            ) as tracker:
+
+                self.wait_until_bookmark("x_zero")
+                self.play(Write(step_1))
+
+                self.wait_until_bookmark("plug_in_x_zero_1")    
+                self.play(Write(term_2_a))
+
+                self.wait_until_bookmark("plug_in_x_zero_2")
+                self.play(TransformMatchingTex(term_2_a, term_2_b))
+
+                self.wait_until_bookmark("highlight_a")
+                self.play(Indicate(term_2_b[1], color=RED, scale_factor=1.5), run_time=1)
+
+                self.wait_until_bookmark("highlight_x_zero")
+                self.play(Write(cursor), run_time=.5)
+                self.wait(0.2)
+                self.play(CursorMarkAxis(cursor, cords, "y"), run_time=.5)
+
+                self.wait_until_bookmark("highlight_fx_zero")
+                x,y, _ = cords.c2p(0, 0.5)
+                self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+                self.wait_until_bookmark("b_sol")
+                self.play(Unwrite(term_2_b), Unwrite(step_1), run_time=.5)
+                self.play(Write(step_solution), Write(solution))
+
+        self.wait(4)
+#
+
+####################################
+####################################
+class Func_6_P_scaling_exp_2_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Func_6_P.horizontal_asymptotes_exp_1.answer-options")),
+    #         correctAnswerIndex=3,
+    #         questionText=self.translate("Func_6_P.horizontal_asymptotes_exp_1.question-text"),
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rec = Rectangle(height=3.6, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[-4, 4, .5], y_range=[-4, 4, .5], x_length=3, y_length=3.4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        f = lambda x: 0.5*2**x-2
+        graph = cords.plot(f, x_range=[-4, np.emath.logn(2, 12), .001], color=ORANGE, stroke_width=2)
+        term = MathTex("f(x)=", "a", "\\cdot b^x", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        implication = MathTex("\\Downarrow", color=BLUE, font_size=fs2).next_to(term, DOWN, buff=.2)
+        solution = MathTex("a=f(0)", color=c1t, font_size=fs2).next_to(implication, DOWN, buff=.2)
+
+        term_c = MathTex("f(x)=", "a", "\\cdot b^x", "+c", color=c1t, font_size=fs2).move_to(term)
+        term_c_orange = MathTex("-2", color=ORANGE, font_size=fs2).move_to(term_c[-1])
+        step_1 = MathTex("\\Downarrow", "x=0", color=BLUE, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        term_1 = MathTex("f(0)=", "a", "\\cdot b^0", "+c", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        term_2 = MathTex("f(0)=", "a", "+c", color=c1t, font_size=fs2).move_to(term_1)
+        step_2 = MathTex("\\Rightarrow", "a=f(0)-c", color=BLUE, font_size=fs2).next_to(term_2, DOWN, buff=.2)
+
+        x_tracker = ValueTracker(0)
+        cursor = AltCursor(y=cords.get_x_axis().n2p(0)[1], idle=False).add_updater(lambda m: m.move_to(cords.c2p(x_tracker.get_value(), f(x_tracker.get_value()))))
+
+        # Action Sequence
+        # You can see that as x gets smaller and smaller, the values get closer and closer to <bookmark mark="asympote_in"/>the line that is shown here. This line is called the asymptote.
+        with self.voiceover(
+                text=
+"""
+So we just saw that for an exponential function of the form <bookmark mark="term_in"/>f of x equals a times b to the power of x, <bookmark mark="solution_recap"/>the value of a is the value of the function at x equals zero.
+Now let's see what happens if we<bookmark mark="cleanup_1"/> also have a constant c, so that the function is of the form f of x equals <bookmark mark="transform_term_1"/>a times b to the power of x plus c. If we<bookmark mark="step_1_in"/> plug in x equals zero, we get <bookmark mark="term_1_in"/>that f of zero equals a times b to the power of zero plus c, and since b to the power of zero is equal to one, this is<bookmark mark="transform_term_2"/> simply equal to c.
+If we then subtract c from both sides, we <bookmark mark="step_2_in"/>get that a equals f of zero minus c.
+<bookmark mark="cleanup_2"/>Now let's apply this to the <bookmark mark="graph_in"/>orange graph you can see here. It belongs to the function f of x equals a times b to the power of x <bookmark mark="transform_c"/>minus two, so c is equal to negative two.
+What's the value of a?
+"""
+            ) as tracker:
+
+            self.wait_until_bookmark("term_in")
+            self.play(Write(term))
+
+            self.wait_until_bookmark("solution_recap")
+            self.play(Write(implication), Write(solution))
+
+            self.wait_until_bookmark("cleanup_1")
+            self.play(Unwrite(implication), Unwrite(solution), run_time=.5)
+
+            self.wait_until_bookmark("transform_term_1")
+            self.play(TransformMatchingTex(term, term_c))
+
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+
+            self.wait_until_bookmark("transform_term_2")
+            self.play(TransformMatchingTex(term_1, term_2))
+
+            self.wait_until_bookmark("step_2_in")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("cleanup_2")
+            step_2.generate_target().move_to(step_1)
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(step_1), Unwrite(term_2), MoveToTarget(step_2), run_time=.5)
+
+            self.wait_until_bookmark("graph_in")
+            self.add_pencil_sound(1.5)
+            self.play(Create(graph))
+
+            self.wait_until_bookmark("transform_c")
+            self.play(Transform(term_c[-1], term_c_orange))
+
+        self.wait(4)
+#
+class Func_6_P_scaling_exp_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        rec = Rectangle(height=3.6, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[-4, 4, .5], y_range=[-4, 4, .5], x_length=3, y_length=3.4, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[idx-2 for idx in range(5)], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[idx-3 for idx in range(7)], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+
+        self.add(rec, labels, bl, cords)
+
+        f = lambda x: 0.5*2**x-2
+        graph = cords.plot(f, x_range=[-4, np.emath.logn(2, 12), .001], color=ORANGE, stroke_width=2)
+        self.add(graph)
+
+        term_c = MathTex("f(x)=", "a", "\\cdot b^x", "-2", color=c1t, font_size=fs2).next_to(rec, DOWN, buff=.4)
+        term_c[-1].set_color(ORANGE)
+        step = MathTex("\\Rightarrow", "a=", "f(0)", "-", "c", color=BLUE, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        step_c = MathTex("\\Rightarrow", "a=", "f(0)", "-", "(-2)", color=BLUE, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        step_c[-1].set_color(ORANGE)
+        step_c_2 = MathTex("\\Rightarrow", "a=", "f(0)", "+2", color=BLUE, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        step_f0 = MathTex("\\Rightarrow", "a=", "-1.5", "+2", color=BLUE, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        step_f0[2].set_color(RED)
+        solution = MathTex("\\Rightarrow", "a=", "0.5", color=c1t, font_size=fs2).next_to(term_c, DOWN, buff=.2)
+        self.add(step, term_c)
+        
+        cursor = AltCursor(y=cords.get_x_axis().n2p(0)[1], idle=False)
+        self.add(cursor)
+
+        # Action Sequence
+        # You can see that as x gets smaller and smaller, the values get closer and closer to <bookmark mark="asympote_in"/>the line that is shown here. This line is called the asymptote.
+        with self.voiceover(
+                text=
+"""
+Since we know that c is equal to negative two, we can plug this into our formula for a, and we get that a equals f of <bookmark mark="step_1"/>zero minus negative two, which is equal to <bookmark mark="step_2"/>f of zero plus two.
+Now we just need to plug in zero for x, and we can see that<bookmark mark="f_0"/> f of zero is equal to negative one point five. Now we can plug <bookmark mark="plug_in"/>this into our formula for a, and we get that a equals negative one point five plus two.
+This means, that <bookmark mark="solution"/>a is equal to zero point five.
+"""
+            ) as tracker:
+
+            self.wait_until_bookmark("step_1")
+            self.play(TransformMatchingTex(step, step_c))
+
+            self.wait_until_bookmark("step_2")
+            self.play(TransformMatchingTex(step_c, step_c_2))
+
+            self.wait_until_bookmark("f_0")
+            x,y,_ = cords.c2p(0, -1.5)
+            self.play(CursorMoveResize(cursor, x, y), run_time=.5)
+
+            self.wait_until_bookmark("plug_in")
+            cursor_2 = RoundedRectangle(color=RED, fill_color=RED, fill_opacity=1, height=.2, width=.2, stroke_width=0, corner_radius=.1).move_to(cursor)
+            self.add(cursor_2)
+            self.remove(cursor)
+            self.play(ReplacementTransform(cursor_2, step_f0[2]), ReplacementTransform(step_c_2[0], step_f0[0]), ReplacementTransform(step_c_2[1], step_f0[1]), ReplacementTransform(step_c_2[3], step_f0[3]), Unwrite(step_c_2[2]))
+
+            self.wait_until_bookmark("solution")
+            self.play(TransformMatchingTex(step_f0, solution), run_time=1)
+
+            
+
+            
+
+        self.wait(4)
+#
+
 ###############Exercises for Percentages Chapter ##########################
 
 ##################################### Exercise Level: Easy (1)
@@ -9823,12 +10146,6 @@ These examples aren't just numbers; they represent real-life situations where ex
                 self.wait(.1)
 
         self.wait(4)
-
-
-
-
-
-
 
 
 

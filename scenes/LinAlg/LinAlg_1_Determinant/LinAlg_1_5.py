@@ -1037,7 +1037,7 @@ class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
             self.wait(4)
 
 PROTOTYPES=[
-########################################################################## Practice: Recognizing Exponential Growth
+##########################################################################
     PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_1),
     PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_2),
     PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_q),
