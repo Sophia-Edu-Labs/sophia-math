@@ -2924,7 +2924,9 @@
     "trees": "trees",
     "loan": "loan",
     "payment": "repayment",
-    "repayment": "repayment"
+    "repayment": "repayment",
+    "function": "function",
+    "Function": "Function"
   },
   "Words": {
     "base": "base",
@@ -3222,6 +3224,27 @@
       "a": {
         "voiceover": "Since we know that the function has the form<bookmark mark=\"rule_1\"/> f of x equals a times b to the power of x plus c, we know <bookmark mark=\"rule_2\"/>that the horizontal asymptote is at y equals c. And because the horizontal asymptote is at y equals negative one point five,<bookmark mark=\"solution\"/> we know that c is equal to negative one point five."
       }
+    },
+    "scaling_exp_1": {
+      "q": {
+        "voiceover": "Let's consider exponential functions of the <bookmark mark=\"term_in\"/>form f of x equals a times b to the power of x, and let's focus <bookmark mark=\"highlight_a\"/>on a, specifically on how to find it.\nWe'll start with an example: For <bookmark mark=\"graph_in\"/>this graph, what is the value of a?"
+      },
+      "a": {
+        "voiceover": "No matter what the value of b might be, if we <bookmark mark=\"x_zero\"/>plug in x equals zero, then we get that <bookmark mark=\"plug_in_x_zero_1\"/>f of zero equals a times b to the power of zero, which <bookmark mark=\"plug_in_x_zero_2\"/>is \"a\" times one, which is just \"a\".\nSo, the <bookmark mark=\"highlight_a\"/>value of a is the value <bookmark mark=\"highlight_x_zero\"/>of the function at x equals zero. As you can see, in our case this<bookmark mark=\"highlight_fx_zero\"/> is 0.5, which means, that <bookmark mark=\"b_sol\"/>a is equal to 0.5."
+      }
+    },
+    "scaling_exp_2": {
+      "a": {
+        "voiceover": "Since we know that c is equal to negative two, we can plug this into our formula for a, and we get that a equals f of <bookmark mark=\"step_1\"/>zero minus negative two, which is equal to <bookmark mark=\"step_2\"/>f of zero plus two.\nNow we just need to plug in zero for x, and we can see that<bookmark mark=\"f_0\"/> f of zero is equal to negative one point five. Now we can plug this into our formula for a, and we get that a <bookmark mark=\"plug_in\"/>equals negative one point five plus two.\nThis means, that <bookmark mark=\"solution\"/>a is equal to zero point five."
+      }
+    },
+    "scaling_exp_3": {
+      "q": {
+        "voiceover": "Let's practice with another function. Look at <bookmark mark=\"graph_in\"/>the pink graph. It belongs to the function f of x equals a times b to the power of x <bookmark mark=\"transform_c\"/>plus 2.5, so c is equal to 2.5.\nWhat's the value of a? And remember, we saw that a is <bookmark mark=\"step_in\"/>equal to f of zero minus c."
+      },
+      "a": {
+        "voiceover": "We know that c is equal to 2.5, which we're going to plug into the familiar formula for a. We then get that a equals f of <bookmark mark=\"step_1\"/>zero minus 2.5.\nNow we just need to plug in zero for x, and we can see that<bookmark mark=\"f_0\"/> f of zero is equal to 1. We'll plug this into our formula for a, and we get that a <bookmark mark=\"plug_in\"/>equals one minus 2.5.\nThis means, that <bookmark mark=\"solution\"/>a is equal to negative 1.5."
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3322,9 +3345,51 @@
   },
   "Calc_1": {
     "Sequences": {
+      "2": {
+        "voiceover": "Formally defined, a sequence is nothing more <bookmark mark=\"definition_in_1\"/>than a function \"a\" that maps from <bookmark mark=\"definition_in_2\"/>the natural numbers <bookmark mark=\"definition_in_3\"/>to the real numbers. Specifically, each natural <bookmark mark=\"n_in\"/>number n is mapped to a real <bookmark mark=\"a_in\"/>number a-n.\nWe then denote <bookmark mark=\"highlight_n\"/>n as the index <bookmark mark=\"highlight_a\"/>and a-n as the element at the position n.\nWe then write the sequence in general <bookmark mark=\"sequence_in\"/>as a 1, a 2, a 3, and so on... Then a 1 stands for the first element, a 2 for the second element, and so on...",
+        "title": "Definition: Sequences",
+        "element-at-index": "element at index"
+      },
       "3q": {
-        "question-text": "What is the value of $b_3$?"
+        "question-text": "What is the value of $b_3$?",
+        "title": "Explicitly defined sequences",
+        "each_element": "Each element can be determined individually",
+        "voiceover": "Explicitly defined sequences are an important type of sequence. That means that we can explicitly define <bookmark mark=\"def_in\"/>each sequence member using some rule.\nAn example is <bookmark mark=\"example_1_1\"/>the sequence a n, which we define by the rule <bookmark mark=\"example_1_2\"/>a-n equals n. This means that the <bookmark mark=\"example_1_value_1\"/>first element a 1 is equal to 1, the <bookmark mark=\"example_1_value_2\"/>second element a 2 is equal to 2, the <bookmark mark=\"example_1_value_3\"/>third element a 3 is equal to 3, and so on...\nAnother<bookmark mark=\"clean_up\"/> example is <bookmark mark=\"example_2_1\"/>the sequence b n, which we define by the rule b-n <bookmark mark=\"example_2_2\"\"/>equals n squared. Now here's another question for you: ... What is the <bookmark mark=\"b_3\"/>value b 3, i.e. the third member of the sequence b n?"
+      },
+      "1q": {
+        "voiceover": "Brief overview of the <bookmark mark=\"title_in\"/> topic of sequences: What is<bookmark mark=\"qmark_in\"/> a sequence, and what do we use it for?\nIntuitively, a sequence is a set of numbers that are ordered in some way. <bookmark mark=\"qmark_out\"/>For example, you can <bookmark mark=\"sequence_1_in\"/>write down the natural numbers from small to large as a sequence: 1, 2, 3, 4, and so on...\nAnother sequence is the square numbers <bookmark mark=\"sequence_2_in\"/>in ascending order: 1, 4, 9, 16, 25, and so on... Or the prime numbers in ascending <bookmark mark=\"sequence_3_in\" />order: 2, 3, 5, 7, 11, 13, and so on...\nSequences are very <bookmark mark=\"unwrite_sequences\"/>important in many different areas: <bookmark mark=\"application_area_1\"/>In mathematics, sequences are used to define limits or the derivative. In <bookmark mark=\"application_area_2\"/>statistics and economics, sequences are used to model time series, for example share prices. And in <bookmark mark=\"application_area_3\"/>computer science, sequences are used to analyze the runtime of algorithms.\nNow it's your turn: Which of the following examples is NOT a sequence:<bookmark mark=\"example_1\"/>\nFirst example: The decimal places of $\\\\Pi$: 1,4,1,5,9 in the order in which they occur. <bookmark mark=\"example_2\"/>Second example: The even natural numbers: i.e. all positive integers that are divisible by two. ... And finally:<bookmark mark=\"example_3\"/>Third example. An infinitely old monkey rolls a die an infinite number of times and writes down the number he has rolled each time.\nSo: ... Which of the examples is not a sequence?",
+        "title": "Sequences",
+        "question-text": "Which of the following examples is NOT a sequence?",
+        "answer-options": "[\"Decimal places of $\\Pi$\", \"Even natural numbers\", \"Infinite dice rolls\", \"All three are examples of sequences\"]",
+        "application-areas": "Mathematics|||Statistics \\& Economics|||Informatics",
+        "examples": "Decimal places of $\\Pi$|||Even natural numbers|||Infinite dice rolls"
+      },
+      "1a": {
+        "voiceover": "The <bookmark mark=\"example_1_green\"/>decimal places of pi are a sequence if you arrange them in order:<bookmark mark=\"example_1_sequence\"/>1, 4, 1, 5, 9, 2, ... and so on...\nThe <bookmark mark=\"example_2_red\"/>even natural numbers are not a sequence, as they are not necessarily ordered: So <bookmark mark=\"example_2_sequence_1\"/>2, 4, 6, 8, and so on represents the even natural numbers, but <bookmark mark=\"example_2_sequence_2\"/>4, 2, 8, 6, and so on also represents the even natural numbers. The even natural numbers are therefore not a sequence, as they have no order. However, if we write down the even natural numbers in ascending order, then <bookmark mark=\"example_2_sequence_1_green\"/>we have a sequence, because we have a sequence: 2, 4, 6, 8, and so on...\nFinally, the numbers of the <bookmark mark=\"example_3_green\"/>infinite dice rolls also represent a sequence if we write them down in the order in which they were rolled."
+      },
+      "3a": {
+        "voiceover": "b_n is equal to n squared. So <bookmark mark=\"three_squared\"/>b 3 equals 3 squared, <bookmark mark=\"three_squared\"/>which is equal to 9."
       }
+    }
+  },
+  "Func_6_P_scaling_exp": {
+    "1": {
+      "q": {
+        "question-text": "What is the value of $a$ for this graph?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "What is the value of $a$ for the function of the form $f(x)=a\\cdot b^x+c$ described by the graph?"
+      }
+    },
+    "3": {
+      "q": {
+        "question-text": "What is the value of $a$ for the function of the form $f(x)=a\\cdot b^x+c$ described by the graph?"
+      }
+    },
+    "4": {
+      "voiceover": "Now: Quick recap on how to find the value of a for an exponential function of <bookmark mark=\"term_in\"/>the form f of x equals a times b to the power of x plus c.\nWhat we do is we<bookmark mark=\"step_1_in\"/> plug in x equals zero, and we get that <bookmark mark=\"term_1_in\"/>f of zero equals a times b to the power of zero plus c, and since b to the power of zero is equal to one, this is<bookmark mark=\"term_2_in\"/> simply equal to a plus c.\nIf we then subtract c from both sides, we <bookmark mark=\"step_2_in\"/>get that a equals f of zero minus c. And this is the takeaway now that you should memorize: For a function <bookmark mark=\"indicate_term\"/>of the form f of x equals a times b to the power of x plus c, the value of a is <bookmark mark=\"rectangle_in\"/>equal to f of zero minus c."
     }
   }
 }

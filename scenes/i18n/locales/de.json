@@ -2924,7 +2924,9 @@
     "trees": "Bäume",
     "loan": "Darlehen",
     "payment": "Rückzahlung",
-    "repayment": "Rückzahlung"
+    "repayment": "Rückzahlung",
+    "function": "Funktion",
+    "Function": "Funktion"
   },
   "Func_6_P": {
     "22": {
@@ -3218,6 +3220,22 @@
       "a": {
         "voiceover": "Da die Funktion die Form<bookmark mark=\"rule_1\"/> f von x gleich a mal b hoch x plus c hat, wissen wir <bookmark mark=\"rule_2\"/>, dass die horizontale Asymptote bei y gleich c liegt. Und weil die horizontale Asymptote bei y gleich minus eins Komma fünf liegt,<bookmark mark=\"solution\"/> muss c gleich minus eins Komma fünf sein."
       }
+    },
+    "scaling_exp_1": {
+      "q": {
+        "voiceover": "Betrachten wir Exponentialfunktionen der <bookmark mark=\"term_in\"/>Form f von x gleich a mal b hoch x. Wir achten insbesondere <bookmark mark=\"highlight_a\"/> auf a, und darauf, wie man den Wert von a ermittelt.\nBeginnen wir mit einem Beispiel: Für <bookmark mark=\"graph_in\"/>diesen Graphen, was ist der Wert von a?"
+      },
+      "a": {
+        "voiceover": "Egal welchen Wert b hat: Wenn wir <bookmark mark=\"x_zero\"/>x gleich null einsetzen, dann erhalten wir, dass <bookmark mark=\"plug_in_x_zero_1\"/>f von null gleich a mal b hoch null ist, was <bookmark mark=\"plug_in_x_zero_2\"/>\"a\" mal eins ist, also einfach \"a\".\nAlso ist der <bookmark mark=\"highlight_a\"/>Wert von a der Wert <bookmark mark=\"highlight_x_zero\"/>der Funktion bei x gleich null. Wie du siehst, ist in unserem Fall dies<bookmark mark=\"highlight_fx_zero\"/> 0,5, was bedeutet, dass <bookmark mark=\"b_sol\"/>a gleich 0,5 ist."
+      }
+    },
+    "scaling_exp_3": {
+      "q": {
+        "voiceover": "Üben wir noch mit einer anderen Funktion. Schau dir <bookmark mark=\"graph_in\"/>den pinken Graphen an. Er gehört zur Funktion f von x gleich a mal b hoch x <bookmark mark=\"transform_c\"/>plus 2,5, also ist c gleich 2,5.\nWas ist der Wert von a? Und erinnere dich, wir haben gerade gesehen, dass a <bookmark mark=\"step_in\"/>gleich f von null minus c ist."
+      },
+      "a": {
+        "voiceover": "Wir wissen ja, dass c gleich 2,5 ist. Wenn wir das in die bekannte Formel einsetzen, dann erhalten wir, dass a gleich f von <bookmark mark=\"step_1\"/>null minus 2,5 ist.\nJetzt müssen wir nur noch null für x einsetzen, und wir sehen, dass<bookmark mark=\"f_0\"/> f von null gleich 1 ist. Wir setzen das in unsere Formel für a ein, und erhalten, dass a <bookmark mark=\"plug_in\"/>gleich eins minus 2,5 ist.\nDas bedeutet, dass <bookmark mark=\"solution\"/>a gleich minus 1,5 ist."
+      }
     }
   },
   "Func_6_P_recognize_growth_1": {
@@ -3322,9 +3340,51 @@
   },
   "Calc_1": {
     "Sequences": {
+      "2": {
+        "voiceover": "Formal definiert ist eine Folge nichts anderes <bookmark mark=\"definition_in_1\"/>als eine Funktion a, die von <bookmark mark=\"definition_in_2\"/>den natürlichen Zahlen <bookmark mark=\"definition_in_3\"/>in die re-ellen Zahlen abbildet. Konkret wird jede natürliche <bookmark mark=\"n_in\"/>Zahl n auf eine reelle <bookmark mark=\"a_in\"/>Zahl a-n abgebildet.\nWir bezeichnen <bookmark mark=\"highlight_n\"/>dann n als den Index <bookmark mark=\"highlight_a\"/>und a-n als das Glied an der Stelle n.\nWir schreiben die Folge dann allgemein <bookmark mark=\"sequence_in\"/>als a 1, a 2, a 3, und so weiter... Dann steht a 1 für das erste Glied, a 2 für das zweite Glied, und so weiter...",
+        "title": "Definition: Folge",
+        "element-at-index": "Glied an Stelle"
+      },
       "3q": {
-        "question-text": "Was ist der Wert von $b_3$?"
+        "question-text": "Was ist der Wert von $b_3$?",
+        "title": "Explizit definierte Folgen",
+        "each_element": "Jedes Folgenglied einzeln bestimmbar",
+        "voiceover": "Eine wichtige Art von Folgen sind explizit definierte Folgen. Das heißt, dass wir <bookmark mark=\"def_in\"/>jedes Folgenglied durch eine Regel explizit bestimmen können.\nEin Beispiel ist <bookmark mark=\"example_1_1\"/>die Folge a n, die wir durch die Regel <bookmark mark=\"example_1_2\"/>a-n gleich n definieren. Das heißt, dass das <bookmark mark=\"example_1_value_1\"/>erste Glied a 1 gleich 1 ist, das <bookmark mark=\"example_1_value_2\"/>zweite Glied a 2 gleich 2 ist, das <bookmark mark=\"example_1_value_3\"/>dritte Glied a 3 gleich 3 ist, und so weiter...\nEin<bookmark mark=\"clean_up\"/> weiteres Beispiel ist <bookmark mark=\"example_2_1\"/>die Folge b n, die wir durch die Regel b-n <bookmark mark=\"example_2_2\"/>gleich n quadrat definieren. Jetzt wieder eine Frage an dich: ... Was ist der <bookmark mark=\"b_3\"/>Wert b 3, also das dritte Glied der Folge b n?"
+      },
+      "1q": {
+        "voiceover": "Kurzer Überblick zum <bookmark mark=\"title_in\"/> Thema Folgen: Was ist<bookmark mark=\"qmark_in\"/> eine Folge, und wofür benutzen wir sie?\nEine Folge ist intuitiv gesagt eine Menge von Zahlen, die irgendwie geordnet sind. <bookmark mark=\"qmark_out\"/>Zum Beispiel kann man <bookmark mark=\"sequence_1_in\"/>die Natürlichen Zahlen von klein nach groß als Folge aufschreiben: 1, 2, 3, 4, und so weiter...\nEine weitere Folge sind die Quadratzahlen <bookmark mark=\"sequence_2_in\"/>in aufsteigender Reihenfolge: 1, 4, 9, 16, 25, und so weiter... Oder die Primzahlen in aufsteigender <bookmark mark=\"sequence_3_in\"/>Reihenfolge: 2, 3, 5, 7, 11, 13, und so weiter...\nFolgen sind in den verschiedensten Bereichen sehr <bookmark mark=\"unwrite_sequences\"/>wichtig: <bookmark mark=\"application_area_1\"/>In der Mathematik verwendet man Folgen um Grenzwerte oder die Ableitung zu definieren. In <bookmark mark=\"application_area_2\"/>der Statistik und in Wirtschaft werden Folgen verwendet um Zeitreihen zu modellieren, zum Beispiel Aktienkurse. Und in <bookmark mark=\"application_area_3\"/>der Informatik werden Folgen verwendet um die Laufzeit von Algorithmen zu analysieren.\nJetzt du: Was von den folgenden Beispielen ist KEINE Folge:<bookmark mark=\"example_1\"/>\nErstes Beispiel: Die Nachkommastellen von $\\\\Pi$: 1,4,1,5,9 in der Reihenfolge, wie sie auftreten. <bookmark mark=\"example_2\"/>Zweites Beispiel: Die geraden natürlichen Zahlen: also alle positiven ganzen Zahlen, die durch zwei teilbar sind. ... Und schließlich:<bookmark mark=\"example_3\"/>Drittes Beispiel. Ein unendlich alter Affe würfelt unendlich oft einen Würfel und schreibt jedes mal die Augenzahl auf, die er gewürfelt hat.\nAlso: ... Welches der Beispiele ist keine Folge?",
+        "title": "Folgen",
+        "question-text": "Welches der folgenden Beispiele ist KEINE Folge?",
+        "answer-options": "[\"Nachkommastellen von $\\\\Pi$\", \"Gerade natürliche Zahlen\", \"Unendliche Würfelwürfe\", \"Alle drei sind Folgen.\"]",
+        "application-areas": "Mathematik|||Statistik \\& Wirtschaft|||Informatik",
+        "examples": "Nachkommastellen von $\\Pi$|||Gerade natürliche Zahlen|||Unendliche Würfelwürfe"
+      },
+      "1a": {
+        "voiceover": "Die <bookmark mark=\"example_1_green\"/>Nachkommastellen von Pi sind eine Folge, wenn man sie in ihrer Reihenfolge ordnet:<bookmark mark=\"example_1_sequence\"/>1, 4, 1, 5, 9, 2, ... und so weiter...\nDie <bookmark mark=\"example_2_red\"/>geraden natürlichen Zahlen sind keine Folge, da sie nicht unbedingt geordnet sind: So stellt <bookmark mark=\"example_2_sequence_1\"/>2, 4, 6, 8, und so weiter die geraden natürlichen Zahlen dar, aber auch <bookmark mark=\"example_2_sequence_2\"/>4, 2, 8, 6, und so weiter stellt die geraden natürlichen Zahlen dar. Die geraden natürlichen Zahlen sind also keine Folge, da sie keine Reihenfolge haben. Wenn wir allerdings die geraden natürlichen Zahlen in aufsteigender Reihenfolge aufschreiben, dann <bookmark mark=\"example_2_sequence_1_green\"/>haben wir eine Folge, weil wir eine Reihenfolge haben: 2, 4, 6, 8, und so weiter...\nSchließlich stellen die Augenzahlen der <bookmark mark=\"example_3_green\"/>unendlichen Würfelwürfe auch eine Folge dar, wenn wir sie in der Reihenfolge aufschreiben, in der sie gewürfelt wurden."
+      },
+      "3a": {
+        "voiceover": "b_n ist ja gleich n quadrat. Also ist <bookmark mark=\"three_squared\"/>b 3 gleich 3 quadrat, <bookmark mark=\"three_squared\"/>also gleich 9."
       }
+    }
+  },
+  "Func_6_P_scaling_exp": {
+    "1": {
+      "q": {
+        "question-text": "Welchen Wert hat $a$ für diesen Graph?"
+      }
+    },
+    "2": {
+      "q": {
+        "question-text": "Welchen Wert hat $a$ für diese Funktion der Form $f(x)=a\\cdot b^x c$?"
+      }
+    },
+    "3": {
+      "q": {
+        "question-text": "Welchen Wert hat $a$ für die durch den Graphen beschriebene Funktion der Form $f(x)=a\\cdot b^x+c$?"
+      }
+    },
+    "4": {
+      "voiceover": "Ok jetzt nochmal eine Zusammenfassung, wie man den Wert von a für eine exponentielle Funktion der Form f von x gleich a mal b hoch x plus c findet <bookmark mark=\"term_in\"/>. Dafür setzen wir zunächst x gleich Null ein, und erhalten, dass <bookmark mark=\"term_1_in\"/>f von Null gleich a mal b hoch Null plus c ist, und da b hoch Null gleich eins ist, ist dies <bookmark mark=\"term_2_in\"/>einfach gleich a plus c. Wenn wir dann c von beiden Seiten subtrahieren, erhalten wir <bookmark mark=\"step_2_in\"/>, dass a gleich f von Null minus c ist. Und das ist jetzt das, was, die du dir merken solltest: Für eine Funktion <bookmark mark=\"indicate_term\"/>der Form f von x gleich a mal b hoch x plus c ist der Wert von a <bookmark mark=\"rectangle_in\"/>gleich f von Null minus c."
     }
   }
 }
