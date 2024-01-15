@@ -26,16 +26,10 @@ class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Determinante")
+        title = self.add_title(self.translate("words.Determinant"))
 
-        question = Text(
-            "Wann ist \n"
-            "eine \n"
-            "quadratische \n"
-            "Matrix \n"
-            "invertierbar?",
-            color=BLACK,
-        ).scale(0.8)
+        lines = ast.literal_eval(self.translate("LinAlg_1.Determinant_intro.1.lines"))
+        question = Tex(*lines, color=BLACK).scale(0.8)
         question_box = SurroundingRectangle(question, color=YELLOW, buff=MED_LARGE_BUFF)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
@@ -47,18 +41,14 @@ class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
         qnark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
 
         #det_1 = MathTex("A", "\\longmapsto", "\\det(A)", color=c1t, font_size=fs1)
-        invert = MathTex("\\text{A invertierbar}", color=c1t, font_size=fs1).next_to(title, DOWN, buff=2)
+        invertible = self.translate("words.invertible")
+        invert = MathTex(f"\\text{{A {invertible}}}", color=c1t, font_size=fs1).next_to(title, DOWN, buff=2)
         updownarrow = MathTex("\\Updownarrow", color=c1t, font_size=fs1).next_to(invert, DOWN, buff=.6)
         det_2 = MathTex("\\det(A) \\neq 0", color=c1t, font_size=fs1).next_to(updownarrow, DOWN, buff=.6)
 
         # Action Sequence
         with self.voiceover(
-                text=""" 
-                In diesem <bookmark mark="title_in"/> Kapitel lernen wir, was die Determinante einer Matrix ist. Unsere Leitfrage zur Determinante lautet: <bookmark mark="quest"/>Wann ist eine quadratische Matrix invertierbar? <bookmark mark="fade_out_quest"/> 
-                Zuersteinmal macht die Determinante <bookmark mark="mat"/> aus jeder quadratischen Matrix <bookmark mark="number"/>  <break time="0.4s"/> eine Zahl. Wir nennen diese Zahl <bookmark mark="det"/> die Determinante der Matrix. 
-                Wir werden sehen, dass diese Zahl wichtige Informationen über die Matrix codiert.
-                Wie hängt die <bookmark mark="qmark_1"/> Determinante einer Matrix nun aber <bookmark mark="qmark_2"/> mit unserer Leitfrage zusammen? Die <bookmark mark="fade_out_1"/> Antwort ist: <bookmark mark="not_zero"/> eine Matrix A ist genau dann invertierbar, wenn ihre Determinante nicht null ist. 
-                """
+                text=self.translate("LinAlg_1.Determinant_intro.1.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
@@ -97,7 +87,6 @@ class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
             self.add_shift_sound(0.5)
             self.play(qnark.animate(run_time=0.5).shift(5*RIGHT), run_time=.5)
 
-
             self.wait_until_bookmark("fade_out_1")
             self.play(FadeOut(mat_1,mat_2,mat_3), run_time=1)
 
@@ -119,25 +108,17 @@ class LinAlg_1_Determinant_intro_2(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Determinante")
+        title = self.add_title(self.translate("words.Determinant"))
+        blist_elements = ast.literal_eval(self.translate("LinAlg_1.Determinant_intro.2.blist_elements"))
+        blist = BulletedList(*blist_elements, font_size=fs1).next_to(title, DOWN, buff=1.5)
+        [blist[idx].set_color(RED) for idx in [0, 1, 2, 3]]
 
-        blist = BulletedList(" 2x2 Matrix", " Animation", " 3x3 Matrix", " Eigenschaften", font_size=fs1).next_to(title, DOWN, buff=1.5)
-        blist.set_color_by_tex("2x2 Matrix", RED)
-        blist.set_color_by_tex("Animation", RED)
-        blist.set_color_by_tex("3x3 Matrix", RED)
-        blist.set_color_by_tex("Eigenschaften", RED)
-        #self.add(blist)
-
-        viel = MathTex("\\text{Viel Spaß!}", color=c1t, font_size=fs1).next_to(blist, DOWN, buff=1.2)
+        have_fun = self.translate("LinAlg_1.Determinant_intro.2.have_fun")
+        viel = MathTex(f"\\text{{{have_fun}!}}", color=c1t, font_size=fs1).next_to(blist, DOWN, buff=1.2)
     
         # Action Sequence
         with self.voiceover(
-                text=""" 
-                Wir beginnen <bookmark mark="title_in"/> dieses Kapitel mit dem einfachsten Fall: <bookmark mark="2times2"/> nämlich mit der Berechnung der Determinante einer 2 Kreuz 2 Matrix.
-                Sobald wir das gemeistert haben, werden wir in <bookmark mark="geometric"/> einer Animation sehen, dass wir uns die Determinante einer Matrix auch geometrisch vorstellen können.
-                Dann zeigen wir, wie man die Determinante <bookmark mark="3times3"/> von 3 Kreuz 3 und anderen  Matrizen berechnet. 
-                Am Ende dieses Kapitels schauen wir uns dann <bookmark mark="properties"/> noch weitere wichtige Eigenschaften der Determinante an. <bookmark mark="viel"/> Viel Spaß!
-                """
+                text=self.translate("LinAlg_1.Determinant_intro.2.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("title_in")
@@ -190,7 +171,7 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Determinante")
+        title = self.add_title(self.translate("words.Determinant"))
         self.add(title)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2)
@@ -221,14 +202,7 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=""" 
-Schauen wir uns also an, wie man die <bookmark mark="number"/> Determinante von 2 Kreuz 2 Matrizen berechnet. ...
-Dafür gibt <bookmark mark="fade_out_1"/> es nämlich eine einfache Formel. ...
-<bookmark mark="det_1"/>Die Determinante einer Matrix a b c d ist gegeben<bookmark mark="det_2"/> durch a Mal d<bookmark mark="det_3"/> Minus b Mal c. ...
-Wir multiplizieren also die <bookmark mark="indicate_reds"/>Einträge a und d auf der Hauptdiagonale und ziehen <bookmark mark="indicate_blues"/>das Produkt der Einträge b und c auf der Nebendiagonale davon ab.
-<bookmark mark="clean_up"/>Zum Beispiel ist die Determinante <bookmark mark="example_1_1"/>der Matrix 1 0 0 2 gleich dem<bookmark mark="example_1_2"/>Produkt Eins Mal Zwei minus dem <bookmark mark="example_1_3"/>Produkt Null Mal Null, also gleich <bookmark mark="solution_1"/>Zwei. ...
-Jetzt <bookmark mark="example_1_out"/>du: ... Was ist die Determinante der Matrix 1 3 7 2?
-                """ 
+                text=self.translate("LinAlg_1.Determinant_intro.3q.voiceover")
         ) as tracker:
             
             # Ich würde den Titel weglassen, oder er ist von Anfang an drin (siehe self.add(title))
@@ -302,7 +276,7 @@ class LinAlg_1_Determinant_intro_3_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Determinante")
+        title = self.add_title(self.translate("words.Determinant"))
         self.add(title)
     
         mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
@@ -322,9 +296,7 @@ class LinAlg_1_Determinant_intro_3_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=""" 
-Super, das ist richtig. Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
-""" 
+                text= self.translate("General.correct_3")+self.translate("LinAlg_1.Determinant_intro.3a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("example_2_1")
@@ -346,7 +318,7 @@ class LinAlg_1_Determinant_intro_3_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title("Determinante")
+        title = self.add_title(self.translate("words.Determinant"))
         self.add(title)
     
         mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
@@ -366,9 +338,7 @@ class LinAlg_1_Determinant_intro_3_b(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=""" 
-Das ist leider falsch. Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark="example_2_1"/> Eins Mal Zwei minus dem Produkt<bookmark mark="example_2_2"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark="solution_2"/>gleich minus 19.
-""" 
+                text= self.translate("General.incorrect_3")+self.translate("LinAlg_1.Determinant_intro.3a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("example_2_1")
