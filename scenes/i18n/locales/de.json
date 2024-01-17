@@ -3369,7 +3369,7 @@
       },
       "1q": {
         "voiceover": "Kurzer Überblick zum <bookmark mark=\"title_in\"/> Thema Folgen: Was ist<bookmark mark=\"qmark_in\"/> eine Folge, und wofür benutzen wir sie?\nEine Folge ist intuitiv gesagt eine Menge von Zahlen, die irgendwie geordnet sind. <bookmark mark=\"qmark_out\"/>Zum Beispiel kann man <bookmark mark=\"sequence_1_in\"/>die Natürlichen Zahlen von klein nach groß als Folge aufschreiben: 1, 2, 3, 4, und so weiter...\nEine weitere Folge sind die Quadratzahlen <bookmark mark=\"sequence_2_in\"/>in aufsteigender Reihenfolge: 1, 4, 9, 16, 25, und so weiter... Oder die Primzahlen in aufsteigender <bookmark mark=\"sequence_3_in\"/>Reihenfolge: 2, 3, 5, 7, 11, 13, und so weiter...\nFolgen sind in den verschiedensten Bereichen sehr <bookmark mark=\"unwrite_sequences\"/>wichtig: <bookmark mark=\"application_area_1\"/>In der Mathematik verwendet man Folgen um Grenzwerte oder die Ableitung zu definieren. In <bookmark mark=\"application_area_2\"/>der Statistik und in Wirtschaft werden Folgen verwendet um Zeitreihen zu modellieren, zum Beispiel Aktienkurse. Und in <bookmark mark=\"application_area_3\"/>der Informatik werden Folgen verwendet um die Laufzeit von Algorithmen zu analysieren.\nJetzt du: Was von den folgenden Beispielen ist KEINE Folge:<bookmark mark=\"example_1\"/>\nErstes Beispiel: Die Nachkommastellen von $\\\\Pi$: 1,4,1,5,9 in der Reihenfolge, wie sie auftreten. <bookmark mark=\"example_2\"/>Zweites Beispiel: Die geraden natürlichen Zahlen: also alle positiven ganzen Zahlen, die durch zwei teilbar sind. ... Und schließlich:<bookmark mark=\"example_3\"/>Drittes Beispiel. Ein unendlich alter Affe würfelt unendlich oft einen Würfel und schreibt jedes mal die Augenzahl auf, die er gewürfelt hat.\nAlso: ... Welches der Beispiele ist keine Folge?",
-        "title": "Folgen",
+        "title": "Zahlensysteme",
         "question-text": "Welches der folgenden Beispiele ist KEINE Folge?",
         "answer-options": "[\"Nachkommastellen von $\\\\Pi$\", \"Gerade natürliche Zahlen\", \"Unendliche Würfelwürfe\", \"Alle drei sind Folgen.\"]",
         "application-areas": "Mathematik|||Statistik \\& Wirtschaft|||Informatik",
@@ -3398,6 +3398,9 @@
       },
       "5a": {
         "voiceover": "Eine Folge ist ja <bookmark mark=\"increase_in\"/>monoton wachsend, wenn für alle n gilt, dass a n + 1 größer oder gleich a n ist. Das heißt, dass die Folge immer größer wird, oder gleich groß bleibt, aber nie kleiner wird.\nBei <bookmark mark=\"higlight_1\"/>der ersten Folge bleiben die Elemente immer gleich, oder werden um eins größer. Also ist a n <bookmark mark=\"green_1\"/>monoton wachsend.\nBei <bookmark mark=\"higlight_2\"/>der zweiten Folge werden die Elemente immer um eins kleiner. Also ist b n <bookmark mark=\"red_2\"/>nicht monoton steigend, sondern monoton fallend.\nUnd bei <bookmark mark=\"higlight_3\"/>der dritten Folge werden die Elemente immer größer. c 1 ist ja gleich 2, c 2 ist gleich vier, c 3 ist gleich 8, und so weiter. Also ist c n <bookmark mark=\"green_3\"/>monoton wachsend."
+      },
+      "2q": {
+        "natural-numbers": "Natürliche Zahlen"
       }
     }
   },
