@@ -536,6 +536,443 @@ class Calc_1_Sequences_3_b(SophiaCursorScene):
         self.wait(4)
 #
 
+##################################### 
+#####################################
+class Calc_1_Sequences_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$5$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.Sequences.4q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.4q.title"))
+        self.add(title)
+
+        definition = VGroup(MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(self.translate("Calc_1.Sequences.3q.each_element"), color=c1t, font_size=fs3).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        example_1_a = MathTex("a_1", "=", "1, \,a_2=2", color=BLUE, font_size=fs2)
+        example_1_b = MathTex("a_{n+2}", "=", "a_{n+1}+a_n", color=BLUE, font_size=fs2)
+        example_1 = VGroup(example_1_a, example_1_b).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(.8)
+
+        a_3 = MathTex("a_3", "=", "a_2+a_1", "=", "1+1", "=", "2", color=c3t, font_size=fs3)
+        a_4 = MathTex("a_4", "=", "a_3+a_2", "=", "2+1", "=", "3", color=c3t, font_size=fs3)
+        a_5 = MathTex("a_5", "=", "?", color=GREEN_D, font_size=fs3)
+        a_s = VGroup(a_3, a_4, a_5).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(example_1, DOWN, buff=.4)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Calc_1.Sequences.4q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("def_in")
+            self.play(Write(definition[0]), run_time=.5)
+            self.play(Write(definition[1]), run_time=1)
+
+            self.wait_until_bookmark("example_1_a_in")
+            self.play(Write(example_1_a))
+
+            self.wait_until_bookmark("example_1_b_in")
+            self.play(Write(example_1_b))
+
+            self.wait_until_bookmark("a_3_in")
+            self.play(Write(a_3))
+
+            self.wait_until_bookmark("a_4_in")
+            self.play(Write(a_4))
+
+            self.wait_until_bookmark("a_5_in")
+            self.play(Write(a_5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
+class Calc_1_Sequences_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.4q.title"))
+        self.add(title)
+
+        definition = VGroup(MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(self.translate("Calc_1.Sequences.3q.each_element"), color=c1t, font_size=fs3).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        example_1_a = MathTex("a_1", "=", "1, \,a_2=2", color=BLUE, font_size=fs2)
+        example_1_b = MathTex("a_{n+2}", "=", "a_{n+1}", "+", "a_n", color=BLUE, font_size=fs2)
+        example_1 = VGroup(example_1_a, example_1_b).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(.8)
+        self.add(definition, example_1)
+
+        a_3 = MathTex("a_3", "=", "a_2+a_1", "=", "1+1", "=", "2", color=c3t, font_size=fs3)
+        a_4 = MathTex("a_4", "=", "a_3+a_2", "=", "2+1", "=", "3", color=c3t, font_size=fs3)
+        a_5_a = MathTex("a_5", "=", "?", color=GREEN_D, font_size=fs3)
+        a_s = VGroup(a_3, a_4, a_5_a).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(example_1, DOWN, buff=.4)
+        a_5_sol = MathTex("a_5", "=", "a_4", "+a_3", "=", "3+2", "=5", color=GREEN_D, font_size=fs3).move_to(a_5_a)
+        a_5_sol.shift((a_5_a[1].get_x()-a_5_sol[1].get_x())*RIGHT)
+        self.add(a_3, a_4, a_5_a)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_2")+self.translate("Calc_1.Sequences.4a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("a_n_p_2")
+            self.play(Indicate(example_1_b[0], scale_factor=1.5, color=RED))
+
+            self.wait_until_bookmark("a_n_p_1")
+            self.play(Indicate(example_1_b[2], scale_factor=1.5, color=RED), *[ReplacementTransform(a_5_a[idx], a_5_sol[idx]) for idx in range(3)])
+
+            self.wait_until_bookmark("a_n")
+            self.play(Indicate(example_1_b[4], scale_factor=1.5, color=RED), Write(a_5_sol[3]))
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(a_5_sol[4]), Write(a_5_sol[5]))
+
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(a_5_sol[-1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_1_Sequences_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.4q.title"))
+        self.add(title)
+
+        definition = VGroup(MathTex("\\Downarrow", color=c1t, font_size=fs2), Tex(self.translate("Calc_1.Sequences.3q.each_element"), color=c1t, font_size=fs3).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        example_1_a = MathTex("a_1", "=", "1, \,a_2=2", color=BLUE, font_size=fs2)
+        example_1_b = MathTex("a_{n+2}", "=", "a_{n+1}", "+", "a_n", color=BLUE, font_size=fs2)
+        example_1 = VGroup(example_1_a, example_1_b).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(.8)
+        self.add(definition, example_1)
+
+        a_3 = MathTex("a_3", "=", "a_2+a_1", "=", "1+1", "=", "2", color=c3t, font_size=fs3)
+        a_4 = MathTex("a_4", "=", "a_3+a_2", "=", "2+1", "=", "3", color=c3t, font_size=fs3)
+        a_5_a = MathTex("a_5", "=", "?", color=GREEN_D, font_size=fs3)
+        a_s = VGroup(a_3, a_4, a_5_a).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(example_1, DOWN, buff=.4)
+        a_5_sol = MathTex("a_5", "=", "a_4", "+a_3", "=", "3+2", "=5", color=GREEN_D, font_size=fs3).move_to(a_5_a)
+        a_5_sol.shift((a_5_a[1].get_x()-a_5_sol[1].get_x())*RIGHT)
+        self.add(a_3, a_4, a_5_a)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_2")+self.translate("Calc_1.Sequences.4a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("a_n_p_2")
+            self.play(Indicate(example_1_b[0], scale_factor=1.5, color=RED))
+
+            self.wait_until_bookmark("a_n_p_1")
+            self.play(Indicate(example_1_b[2], scale_factor=1.5, color=RED), *[ReplacementTransform(a_5_a[idx], a_5_sol[idx]) for idx in range(3)])
+
+            self.wait_until_bookmark("a_n")
+            self.play(Indicate(example_1_b[4], scale_factor=1.5, color=RED), Write(a_5_sol[3]))
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(a_5_sol[4]), Write(a_5_sol[5]))
+
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(a_5_sol[-1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+##################################### 
+#####################################
+class Calc_1_Sequences_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=["$a_n$ \& $b_n$", "$a_n$ \& $c_n$", "$b_n$ \& $c_n$", "$a_n$ \& $b_n$ \& $c_n$"],
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Sequences.5q.question-text")
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.5q.title"))
+        self.add(title)
+        
+        definition_increase = VGroup(Tex(self.translate("Calc_1.Sequences.4q.increasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\geq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        definition_decrease = VGroup(Tex(self.translate("Calc_1.Sequences.4q.decreasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\leq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        a_n = MathTex("\\left(a_n\\right)", "=", "1,2,2,3,3,3,4,\\hdots", color=c3t, font_size=fs3)
+        b_n = MathTex("\\left(b_n\\right)", "=", "3,2,1,0,-1, \\hdots", color=c3t, font_size=fs3)
+        c_n = MathTex("\\left(c_n\\right)", "=", "2^n", color=c3t, font_size=fs3)
+        a_s = VGroup(a_n, b_n, c_n).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(definition_decrease, DOWN, buff=.4)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Calc_1.Sequences.5q.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("def_increase_1_in")
+            self.play(Write(definition_increase[0]), run_time=1)
+
+            self.wait_until_bookmark("def_increase_2_in")
+            self.play(Write(definition_increase[1]), run_time=.5)
+            self.play(Write(definition_increase[2]), run_time=1)
+
+            self.wait_until_bookmark("def_decrease_1_in")
+            self.add_shift_sound(0.5)
+            self.play(definition_increase.animate.shift(RIGHT*5), run_time=.5)
+            self.play(Write(definition_decrease[0]), run_time=1)
+
+            self.wait_until_bookmark("def_decrease_2_in")
+            self.play(Write(definition_decrease[1]), run_time=.5)
+            self.play(Write(definition_decrease[2]), run_time=1)
+
+            self.wait_until_bookmark("a_n_in")
+            self.play(Write(a_n), run_time=1)
+
+            self.wait_until_bookmark("b_n_in")
+            self.play(Write(b_n), run_time=1)
+
+            self.wait_until_bookmark("c_n_in")
+            self.play(Write(c_n), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+        
+class Calc_1_Sequences_5_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.5q.title"))
+        self.add(title)
+        
+        definition_increase = VGroup(Tex(self.translate("Calc_1.Sequences.4q.increasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\geq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        definition_decrease = VGroup(Tex(self.translate("Calc_1.Sequences.4q.decreasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\leq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        a_n = MathTex("\\left(a_n\\right)", "=", "1,2,2,3,3,3,4,\\hdots", color=c3t, font_size=fs3)
+        b_n = MathTex("\\left(b_n\\right)", "=", "3,2,1,0,-1, \\hdots", color=c3t, font_size=fs3)
+        c_n = MathTex("\\left(c_n\\right)", "=", "2^n", color=c3t, font_size=fs3)
+        a_s = VGroup(a_n, b_n, c_n).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(definition_decrease, DOWN, buff=.4)
+        self.add(definition_decrease, a_s)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Sequences.5a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("increase_in")
+            self.add_shift_sound(.5)
+            self.play(definition_decrease.animate.shift(LEFT*5), run_time=.5)
+            self.play(Write(definition_increase), run_time=1)
+
+            self.wait_until_bookmark("higlight_1")
+            self.play(a_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_1")
+            self.play(a_n.animate.set_color(GREEN), run_time=.8)
+
+            self.wait_until_bookmark("higlight_2")
+            self.play(b_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("red_2")
+            self.play(b_n.animate.set_color(RED), run_time=.8)
+
+            self.wait_until_bookmark("higlight_3")
+            self.play(c_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_3")
+            self.play(c_n.animate.set_color(GREEN), run_time=.8)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_1_Sequences_5_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.5q.title"))
+        self.add(title)
+        
+        definition_increase = VGroup(Tex(self.translate("Calc_1.Sequences.4q.increasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\geq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        definition_decrease = VGroup(Tex(self.translate("Calc_1.Sequences.4q.decreasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\leq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        a_n = MathTex("\\left(a_n\\right)", "=", "1,2,2,3,3,3,4,\\hdots", color=c3t, font_size=fs3)
+        b_n = MathTex("\\left(b_n\\right)", "=", "3,2,1,0,-1, \\hdots", color=c3t, font_size=fs3)
+        c_n = MathTex("\\left(c_n\\right)", "=", "2^n", color=c3t, font_size=fs3)
+        a_s = VGroup(a_n, b_n, c_n).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(definition_decrease, DOWN, buff=.4)
+        self.add(definition_decrease, a_s)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Sequences.5a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("increase_in")
+            self.add_shift_sound(.5)
+            self.play(definition_decrease.animate.shift(LEFT*5), run_time=.5)
+            self.play(Write(definition_increase), run_time=1)
+
+            self.wait_until_bookmark("higlight_1")
+            self.play(a_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_1")
+            self.play(a_n.animate.set_color(GREEN), run_time=.8)
+
+            self.wait_until_bookmark("higlight_2")
+            self.play(b_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("red_2")
+            self.play(b_n.animate.set_color(RED), run_time=.8)
+
+            self.wait_until_bookmark("higlight_3")
+            self.play(c_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_3")
+            self.play(c_n.animate.set_color(GREEN), run_time=.8)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_1_Sequences_5_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.5q.title"))
+        self.add(title)
+        
+        definition_increase = VGroup(Tex(self.translate("Calc_1.Sequences.4q.increasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\geq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        definition_decrease = VGroup(Tex(self.translate("Calc_1.Sequences.4q.decreasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\leq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        a_n = MathTex("\\left(a_n\\right)", "=", "1,2,2,3,3,3,4,\\hdots", color=c3t, font_size=fs3)
+        b_n = MathTex("\\left(b_n\\right)", "=", "3,2,1,0,-1, \\hdots", color=c3t, font_size=fs3)
+        c_n = MathTex("\\left(c_n\\right)", "=", "2^n", color=c3t, font_size=fs3)
+        a_s = VGroup(a_n, b_n, c_n).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(definition_decrease, DOWN, buff=.4)
+        self.add(definition_decrease, a_s)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Sequences.5a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("increase_in")
+            self.add_shift_sound(.5)
+            self.play(definition_decrease.animate.shift(LEFT*5), run_time=.5)
+            self.play(Write(definition_increase), run_time=1)
+
+            self.wait_until_bookmark("higlight_1")
+            self.play(a_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_1")
+            self.play(a_n.animate.set_color(GREEN), run_time=.8)
+
+            self.wait_until_bookmark("higlight_2")
+            self.play(b_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("red_2")
+            self.play(b_n.animate.set_color(RED), run_time=.8)
+
+            self.wait_until_bookmark("higlight_3")
+            self.play(c_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_3")
+            self.play(c_n.animate.set_color(GREEN), run_time=.8)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#  
+class Calc_1_Sequences_5_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Sequences.5q.title"))
+        self.add(title)
+        
+        definition_increase = VGroup(Tex(self.translate("Calc_1.Sequences.4q.increasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\geq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+        definition_decrease = VGroup(Tex(self.translate("Calc_1.Sequences.4q.decreasing"), color=BLUE, font_size=fs2), MathTex("\\Downarrow", color=BLUE, font_size=fs2), Tex("$a_{n+1}\\leq a_n$   ", self.translate("General.for_all_n"), color=BLUE, font_size=fs2).scale(.95)).arrange(DOWN, buff=.2).next_to(title, DOWN, buff=.4)
+
+        a_n = MathTex("\\left(a_n\\right)", "=", "1,2,2,3,3,3,4,\\hdots", color=c3t, font_size=fs3)
+        b_n = MathTex("\\left(b_n\\right)", "=", "3,2,1,0,-1, \\hdots", color=c3t, font_size=fs3)
+        c_n = MathTex("\\left(c_n\\right)", "=", "2^n", color=c3t, font_size=fs3)
+        a_s = VGroup(a_n, b_n, c_n).arrange(DOWN, buff=.4, aligned_edge=LEFT).next_to(definition_decrease, DOWN, buff=.4)
+        self.add(definition_decrease, a_s)
+        
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Sequences.5a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("increase_in")
+            self.add_shift_sound(.5)
+            self.play(definition_decrease.animate.shift(LEFT*5), run_time=.5)
+            self.play(Write(definition_increase), run_time=1)
+
+            self.wait_until_bookmark("higlight_1")
+            self.play(a_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_1")
+            self.play(a_n.animate.set_color(GREEN), run_time=.8)
+
+            self.wait_until_bookmark("higlight_2")
+            self.play(b_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("red_2")
+            self.play(b_n.animate.set_color(RED), run_time=.8)
+
+            self.wait_until_bookmark("higlight_3")
+            self.play(c_n.animate.set_color(BLUE), run_time=.8)
+
+            self.wait_until_bookmark("green_3")
+            self.play(c_n.animate.set_color(GREEN), run_time=.8)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+
 PROTOTYPES=[
 ##########################################################################
     PagePrototypeVideo.from_scene(Calc_1_Sequences_1_q),
@@ -549,4 +986,14 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_1_Sequences_3_q),
     PagePrototypeVideo.from_scene(Calc_1_Sequences_3_a),
     PagePrototypeVideo.from_scene(Calc_1_Sequences_3_b),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_4_q),
+    PagePrototypeQuestion.from_scene(Calc_1_Sequences_4_q),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_4_a),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_4_b),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_5_q),
+    PagePrototypeQuestion.from_scene(Calc_1_Sequences_5_q),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_5_a),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_5_b),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_5_c),
+    PagePrototypeVideo.from_scene(Calc_1_Sequences_5_d),
 ]

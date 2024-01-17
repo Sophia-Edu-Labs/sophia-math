@@ -2890,7 +2890,8 @@
     "incorrect_5": "Nein.",
     "incorrect_6": "Das ist leider falsch. ",
     "n_times": "n mal",
-    "pa": "pro Jahr"
+    "pa": "pro Jahr",
+    "for_all_n": "für alle $n$"
   },
   "LinAlg": {
     "14I1": {
@@ -2926,7 +2927,9 @@
     "payment": "Rückzahlung",
     "repayment": "Rückzahlung",
     "function": "Funktion",
-    "Function": "Funktion"
+    "Function": "Funktion",
+    "invertible": "Invertierbar",
+    "Determinant": "Determinante"
   },
   "Func_6_P": {
     "22": {
@@ -3333,8 +3336,21 @@
   },
   "LinAlg_1": {
     "Determinant_intro": {
+      "1": {
+        "lines": "[\"Wann ist\\\\\\\\\", \"eine\\\\\\\\\", \"quadratische\\\\\\\\\", \"Matrix\\\\\\\\\", \"invertierbar?\"]",
+        "voiceover": "In diesem <bookmark mark=\"title_in\"/> Kapitel lernen wir, was die Determinante einer Matrix ist. Unsere Leitfrage zur Determinante lautet: <bookmark mark=\"quest\"/>Wann ist eine quadratische Matrix invertierbar?...\nZuersteinmal macht<bookmark mark=\"fade_out_quest\"/> die Determinante <bookmark mark=\"mat\"/> aus jeder quadratischen Matrix <bookmark mark=\"number\"/>eine Zahl. Wir nennen diese Zahl <bookmark mark=\"det\"/> die Determinante der Matrix. \nWir werden sehen, dass diese Zahl wichtige Informationen über die Matrix codiert.\nWie hängt die <bookmark mark=\"qmark_1\"/> Determinante einer Matrix nun aber <bookmark mark=\"qmark_2\"/> mit unserer Leitfrage zusammen? Die <bookmark mark=\"fade_out_1\"/> Antwort ist: <bookmark mark=\"not_zero\"/> eine Matrix A ist genau dann invertierbar, wenn ihre Determinante nicht null ist. "
+      },
+      "2": {
+        "blist_elements": "[\"2x2 Matrix\", \" Animation\", \" 3x3 Matrix\", \" Eigenschaften\"]",
+        "voiceover": "Wir beginnen <bookmark mark=\"title_in\"/> dieses Kapitel mit dem einfachsten Fall: <bookmark mark=\"2times2\"/> nämlich mit der Berechnung der Determinante einer 2 Kreuz 2 Matrix.\nSobald wir das gemeistert haben, werden wir in <bookmark mark=\"geometric\"/> einer Animation sehen, dass wir uns die Determinante einer Matrix auch geometrisch vorstellen können.\nDann zeigen wir, wie man die Determinante <bookmark mark=\"3times3\"/> von 3 Kreuz 3 und anderen  Matrizen berechnet. \nAm Ende dieses Kapitels schauen wir uns dann <bookmark mark=\"properties\"/> noch weitere wichtige Eigenschaften der Determinante an. <bookmark mark=\"viel\"/> Viel Spaß!",
+        "have_fun": "Viel Spaß"
+      },
       "3q": {
-        "question-text": "Was ist der Wert der Determinante $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?"
+        "question-text": "Was ist der Wert der Determinante $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?",
+        "voiceover": "Schauen wir uns also an, wie man die <bookmark mark=\"number\"/> Determinante von 2 Kreuz 2 Matrizen berechnet. ...\nDafür gibt <bookmark mark=\"fade_out_1\"/> es nämlich eine einfache Formel. ...\n<bookmark mark=\"det_1\"/>Die Determinante einer Matrix a b c d ist gegeben<bookmark mark=\"det_2\"/> durch a Mal d<bookmark mark=\"det_3\"/> Minus b Mal c. ...\nWir multiplizieren also die <bookmark mark=\"indicate_reds\"/>Einträge a und d auf der Hauptdiagonale und ziehen <bookmark mark=\"indicate_blues\"/>das Produkt der Einträge b und c auf der Nebendiagonale davon ab.\n<bookmark mark=\"clean_up\"/>Zum Beispiel ist die Determinante <bookmark mark=\"example_1_1\"/>der Matrix 1 0 0 2 gleich dem<bookmark mark=\"example_1_2\"/>Produkt Eins Mal Zwei minus dem <bookmark mark=\"example_1_3\"/>Produkt Null Mal Null, also gleich <bookmark mark=\"solution_1\"/>Zwei. ...\nJetzt <bookmark mark=\"example_1_out\"/>du: ... Was ist die Determinante der Matrix 1 3 7 2?"
+      },
+      "3a": {
+        "voiceover": "Wir wenden zur Berechnung der Determinante einfach die Formel an. Die Determinante der Matrix 1 3 7 2 ist also gleich dem Produkt<bookmark mark=\"example_2_1\"/> Eins Mal Zwei minus dem Produkt<bookmark mark=\"mark='example_2_2\"/> Drei mal sieben. Das ganze ergibt dann ja Minus Neunzehn, also ist die Determinante <bookmark mark=\"solution_2\"/>gleich minus 19.\n"
       }
     }
   },
@@ -3348,7 +3364,7 @@
       "3q": {
         "question-text": "Was ist der Wert von $b_3$?",
         "title": "Explizit definierte Folgen",
-        "each_element": "Jedes Folgenglied einzeln bestimmbar",
+        "each_element": "Jedes Folgenglied wird \\\\durch vorherige Glieder bestimmt",
         "voiceover": "Eine wichtige Art von Folgen sind explizit definierte Folgen. Das heißt, dass wir <bookmark mark=\"def_in\"/>jedes Folgenglied durch eine Regel explizit bestimmen können.\nEin Beispiel ist <bookmark mark=\"example_1_1\"/>die Folge a n, die wir durch die Regel <bookmark mark=\"example_1_2\"/>a-n gleich n definieren. Das heißt, dass das <bookmark mark=\"example_1_value_1\"/>erste Glied a 1 gleich 1 ist, das <bookmark mark=\"example_1_value_2\"/>zweite Glied a 2 gleich 2 ist, das <bookmark mark=\"example_1_value_3\"/>dritte Glied a 3 gleich 3 ist, und so weiter...\nEin<bookmark mark=\"clean_up\"/> weiteres Beispiel ist <bookmark mark=\"example_2_1\"/>die Folge b n, die wir durch die Regel b-n <bookmark mark=\"example_2_2\"/>gleich n quadrat definieren. Jetzt wieder eine Frage an dich: ... Was ist der <bookmark mark=\"b_3\"/>Wert b 3, also das dritte Glied der Folge b n?"
       },
       "1q": {
@@ -3364,6 +3380,24 @@
       },
       "3a": {
         "voiceover": "b_n ist ja gleich n quadrat. Also ist <bookmark mark=\"three_squared\"/>b 3 gleich 3 quadrat, <bookmark mark=\"three_squared\"/>also gleich 9."
+      },
+      "4q": {
+        "title": "Rekursiv definierte Folgen",
+        "voiceover": "Eine weitere Art von Folgen sind rekursiv definierte Folgen. Das bedeutet, dass <bookmark mark=\"def_in\"/>ein Element der Folge durch die vorherigen Elemente definiert wird.\nEin Beispiel dafür ist die sogenannte Fibonacci Folge. <bookmark mark=\"example_1_a_in\"/> Da ist a 1 gleich 1, und a 2 gleich 2. ... Das ist einfach so festgelegt. Und dann bestimmen wir die weiteren Elemente der Folge durch die vorherigen Elemente. <bookmark mark=\"example_1_b_in\"/>a n plus 2 ist nämlich gleich a n plus 1 plus a n. Dann ist zum Beispiel <bookmark mark=\"a_3_in\"/>a 3 gleich a 2 plus a 1, also 1 plus 1, also 2. Und <bookmark mark=\"a_4_in\"/>a 4 ist gleich a 3 plus a 2, also 2 plus 1, also 3. Und so weiter.\nJetzt berechne du mal ein Folgenglied. Was <bookmark mark=\"a_5_in\"/>ist a 5? Also a 5 ist gleich 5.",
+        "question-text": "Was ist der Wert von $a_5$?",
+        "increasing": "monoton wachsend",
+        "decreasing": "monoton fallend"
+      },
+      "4a": {
+        "voiceover": "Wenn a 5 gleich <bookmark mark=\"a_n_p_2\"/>a n plus zwei sein soll, dann ist <bookmark mark=\"a_n_p_1\"/>a n plus 1 gleich a 4, und <bookmark mark=\"a_n\"/>a n gleich a 3.\nDann haben wir dass a 5 gleich a vier plus a drei ist, und das ist dann ja <bookmark mark=\"step_in\"/> gleich drei plus zwei,<bookmark mark=\"sol_in\"/> also gleich 5. Also ist a 5 gleich 5."
+      },
+      "5q": {
+        "title": "Monotone Folgen",
+        "question-text": "Welche der folgenden Folgen ist monoton ansteigend:\n\n$\\left(a_n\\right)=1,2,2,3,3,3,4,\\hdots$, $\\left(b_n\\right)=3,2,1,0,-1,\\hdots$, $\\left(c_n\\right)=2^n$",
+        "voiceover": "Jetzt zu einer bestimmten Art von Folgen: Monoton wachsende und monoton fallende Folgen.\nEine Folge heißt <bookmark mark=\"def_increase_1_in\"/>monoton wachsend, wenn für alle n <bookmark mark=\"def_increase_2_in\"/>gilt, dass a_n+1 größer oder gleich a_n ist. Das heiss†, dass die Folge immer größer wird, oder gleich groß bleibt, aber nie kleiner wird.\nUnd eine Folge <bookmark mark=\"def_decrease_1_in\"/>heißt monoton fallend, wenn für alle n <bookmark mark=\"def_decrease_2_in\"/>gilt, dass a_n+1 kleiner oder gleich a_n ist. Das bedeutet dann, dass die Folge immer kleiner wird, oder gleich klein bleibt, aber nie größer wird. ...\nHier sind drei Folgen. Die erste Folge,<bookmark mark=\"a_n_in\"/> a n, lautet 1, 2, 2, 3, 3, 3, 4, und so weiter, also wird aufsteigend jeder Wert n genau n mal wiederholt...<bookmark mark=\"b_n_in\"/> Die zweite Folge, b n, beginnt mit den Elementen 3, 2, 1, 0, -1, ...und geht dann genauso weiter.<bookmark mark=\"c_n_in\"/> Und die dritte Folge, c n, ist definiert durch c n gleich 2 hoch n.\nWelche dieser Folgen sind monoton wachsend?"
+      },
+      "5a": {
+        "voiceover": "Eine Folge ist ja <bookmark mark=\"increase_in\"/>monoton wachsend, wenn für alle n gilt, dass a n + 1 größer oder gleich a n ist. Das heißt, dass die Folge immer größer wird, oder gleich groß bleibt, aber nie kleiner wird.\nBei <bookmark mark=\"higlight_1\"/>der ersten Folge bleiben die Elemente immer gleich, oder werden um eins größer. Also ist a n <bookmark mark=\"green_1\"/>monoton wachsend.\nBei <bookmark mark=\"higlight_2\"/>der zweiten Folge werden die Elemente immer um eins kleiner. Also ist b n <bookmark mark=\"red_2\"/>nicht monoton steigend, sondern monoton fallend.\nUnd bei <bookmark mark=\"higlight_3\"/>der dritten Folge werden die Elemente immer größer. c 1 ist ja gleich 2, c 2 ist gleich vier, c 3 ist gleich 8, und so weiter. Also ist c n <bookmark mark=\"green_3\"/>monoton wachsend."
       }
     }
   },

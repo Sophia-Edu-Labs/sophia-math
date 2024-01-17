@@ -2890,7 +2890,8 @@
     "incorrect_5": "No. ",
     "incorrect_6": "That's wrong, unfortunately. ",
     "n_times": "n times",
-    "pa": "per year"
+    "pa": "per year",
+    "for_all_n": "for all $n$"
   },
   "LinAlg": {
     "14I1": {
@@ -2926,7 +2927,9 @@
     "payment": "repayment",
     "repayment": "repayment",
     "function": "function",
-    "Function": "Function"
+    "Function": "Function",
+    "invertible": "invertible",
+    "Determinant": "Determinant"
   },
   "Words": {
     "base": "base",
@@ -3338,8 +3341,21 @@
   },
   "LinAlg_1": {
     "Determinant_intro": {
+      "1": {
+        "lines": "[\"When is\\\\\\\\\", \"a\\\\\\\\\", \"quadratic\\\\\\\\\", \"matrix\\\\\\\\\", \"invertible?\"]",
+        "voiceover": "In this <bookmark mark=\"title_in\"/> chapter, we'll learn what the determinant of a matrix is. Our key question about the determinant is: <bookmark mark=\"quest\"/>Under what conditions is a square matrix invertible? ... \nFirst of all,<bookmark mark=\"fade_out_quest\"/> the determinant <bookmark mark=\"mat\"/> transforms every square matrix <bookmark mark=\"number\"/>  into a number. We call this number <bookmark mark=\"det\"/> the determinant of the matrix. \nAs we'll see later, this number contains important information about the matrix.\nBut how does the <bookmark mark=\"qmark_1\"/> determinant of a matrix relate <bookmark mark=\"qmark_2\"/> to our key question? The <bookmark mark=\"fade_out_1\"/> answer is: <bookmark mark=\"not_zero\"/> a matrix A is invertible if and only if its determinant is not zero."
+      },
+      "2": {
+        "blist_elements": "[\"2x2 Matrix\", \" Animation\", \" 3x3 Matrix\", \" Properties\"]",
+        "voiceover": "We'll start <bookmark mark=\"title_in\"/> this chapter with the simplest case: <bookmark mark=\"2times2\"/> namely with calculating the determinant of 2 cross 2 matrices.\nAs soon as we have mastered this, we will look at <bookmark mark=\"geometric\"/> an animation to see that we can also conceptualize the determinant of a matrix geometrically.\nThen we will show how to calculate the determinant <bookmark mark=\"3times3\"/> of 3 cross 3 and other matrices. \nAt the end of this chapter, we'll take a look at <bookmark mark=\"properties\"/> other important properties of the determinant. <bookmark mark=\"viel\"/> Have fun!",
+        "have_fun": "Have fun!"
+      },
       "3q": {
-        "question-text": "What is the value of the determinant $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?"
+        "question-text": "What is the value of the determinant $\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}$?",
+        "voiceover": "So let's take a look at how to calculate the <bookmark mark=\"number\"/> determinant of 2 cross 2 matrices. ...\nThere is <bookmark mark=\"fade_out_1\"/> a simple formula for this. ...\n<bookmark mark=\"det_1\"/>The determinant of a matrix a b c d is given<bookmark mark=\"det_2\"/> by a times d<bookmark mark=\"det_3\"/> minus b times c. ...\nWe multiply the <bookmark mark=\"indicate_reds\"/>entries a and d on the main diagonal and subtract <bookmark mark=\"indicate_blues\"/>the product of the entries b and c on the secondary diagonal.\n<bookmark mark=\"clean_up\"/>For example, the determinant <bookmark mark=\"example_1_1\"/>of the matrix 1 0 0 2 is equal to the<bookmark mark=\"example_1_2\"/>product one times two minus the <bookmark mark=\"example_1_3\"/>product zero times zero, i.e. equal to <bookmark mark=\"solution_1\"/>two. ...\nNow <bookmark mark=\"example_1_out\"/>you: ... What is the determinant of the matrix 1 3 7 2?"
+      },
+      "3a": {
+        "voiceover": "We simply apply the formula to calculate the determinant. The determinant of the matrix 1 3 7 2 is therefore equal to the product<bookmark mark=\"example_2_1\"/> one times two minus the product<bookmark mark=\"mark='example_2_2\"/> three times seven. The result is minus nineteen, so the determinant <bookmark mark=\"solution_2\"/>is equal to minus 19."
       }
     }
   },
@@ -3353,14 +3369,14 @@
       "3q": {
         "question-text": "What is the value of $b_3$?",
         "title": "Explicitly defined sequences",
-        "each_element": "Each element can be determined individually",
-        "voiceover": "Explicitly defined sequences are an important type of sequence. That means that we can explicitly define <bookmark mark=\"def_in\"/>each sequence member using some rule.\nAn example is <bookmark mark=\"example_1_1\"/>the sequence a n, which we define by the rule <bookmark mark=\"example_1_2\"/>a-n equals n. This means that the <bookmark mark=\"example_1_value_1\"/>first element a 1 is equal to 1, the <bookmark mark=\"example_1_value_2\"/>second element a 2 is equal to 2, the <bookmark mark=\"example_1_value_3\"/>third element a 3 is equal to 3, and so on...\nAnother<bookmark mark=\"clean_up\"/> example is <bookmark mark=\"example_2_1\"/>the sequence b n, which we define by the rule b-n <bookmark mark=\"example_2_2\"\"/>equals n squared. Now here's another question for you: ... What is the <bookmark mark=\"b_3\"/>value b 3, i.e. the third member of the sequence b n?"
+        "each_element": "Each element is determined\\\\ from previous elements",
+        "voiceover": "Explicitly defined sequences are an important type of sequence. That means that we can explicitly define <bookmark mark=\"def_in\"/>each sequence member using some rule.\nAn example is <bookmark mark=\"example_1_1\"/>the sequence a n, which we define by the rule <bookmark mark=\"example_1_2\"/>a-n equals n. This means that the <bookmark mark=\"example_1_value_1\"/>first element a 1 is equal to 1, the <bookmark mark=\"example_1_value_2\"/>second element a 2 is equal to 2, the <bookmark mark=\"example_1_value_3\"/>third element a 3 is equal to 3, and so on...\nAnother<bookmark mark=\"clean_up\"/> example is <bookmark mark=\"example_2_1\"/>the sequence b n, which we define by the rule b-n <bookmark mark=\"example_2_2\"/>equals n squared. Now here's another question for you: ... What is the <bookmark mark=\"b_3\"/>value b 3, i.e. the third member of the sequence b n?"
       },
       "1q": {
         "voiceover": "Brief overview of the <bookmark mark=\"title_in\"/> topic of sequences: What is<bookmark mark=\"qmark_in\"/> a sequence, and what do we use it for?\nIntuitively, a sequence is a set of numbers that are ordered in some way. <bookmark mark=\"qmark_out\"/>For example, you can <bookmark mark=\"sequence_1_in\"/>write down the natural numbers from small to large as a sequence: 1, 2, 3, 4, and so on...\nAnother sequence is the square numbers <bookmark mark=\"sequence_2_in\"/>in ascending order: 1, 4, 9, 16, 25, and so on... Or the prime numbers in ascending <bookmark mark=\"sequence_3_in\" />order: 2, 3, 5, 7, 11, 13, and so on...\nSequences are very <bookmark mark=\"unwrite_sequences\"/>important in many different areas: <bookmark mark=\"application_area_1\"/>In mathematics, sequences are used to define limits or the derivative. In <bookmark mark=\"application_area_2\"/>statistics and economics, sequences are used to model time series, for example share prices. And in <bookmark mark=\"application_area_3\"/>computer science, sequences are used to analyze the runtime of algorithms.\nNow it's your turn: Which of the following examples is NOT a sequence:<bookmark mark=\"example_1\"/>\nFirst example: The decimal places of $\\\\Pi$: 1,4,1,5,9 in the order in which they occur. <bookmark mark=\"example_2\"/>Second example: The even natural numbers: i.e. all positive integers that are divisible by two. ... And finally:<bookmark mark=\"example_3\"/>Third example. An infinitely old monkey rolls a die an infinite number of times and writes down the number he has rolled each time.\nSo: ... Which of the examples is not a sequence?",
         "title": "Sequences",
         "question-text": "Which of the following examples is NOT a sequence?",
-        "answer-options": "[\"Decimal places of $\\Pi$\", \"Even natural numbers\", \"Infinite dice rolls\", \"All three are examples of sequences\"]",
+        "answer-options": "[\"Decimal places of $\\\\Pi$\", \"Even natural numbers\", \"Infinite dice rolls\", \"All three are examples of sequences\"]",
         "application-areas": "Mathematics|||Statistics \\& Economics|||Informatics",
         "examples": "Decimal places of $\\Pi$|||Even natural numbers|||Infinite dice rolls"
       },
@@ -3369,6 +3385,24 @@
       },
       "3a": {
         "voiceover": "b_n is equal to n squared. So <bookmark mark=\"three_squared\"/>b 3 equals 3 squared, <bookmark mark=\"three_squared\"/>which is equal to 9."
+      },
+      "4q": {
+        "title": "Recursively defined sequences",
+        "voiceover": "Another type of sequences are recursively defined sequences. This means that <bookmark mark=\"def_in\"/>each element of the sequence is defined by the previous elements.\nAn example of this is the so-called Fibonacci sequence. <bookmark mark=\"example_1_a_in\"/> Here \"a\" 1 is 1, and \"a\" 2 is 2. ... This is simply how we define it. And then we determine the other elements of the sequence using the previous elements. <bookmark mark=\"example_1_b_in\"/>\"a\" n plus 2 is equal to \"a\" n plus 1 plus \"a\" n. Then, for example, <bookmark mark=\"a_3_in\"/>\"a\" 3 is equal to \"a\" 2 plus \"a\" 1, so 1 plus 1, which equals. 2. And <bookmark mark=\"a_4_in\"/>\"a\" 4 is equal to \"a\" 3 plus \"a\" 2, which is. 2 plus 1, so it equals. 3. And so on.\nNow it's your turn to compute a sequence element. What <bookmark mark=\"a_5_in\"/>is the value of \"a\" 5?",
+        "question-text": "What is the value of $a_5$?",
+        "increasing": "increases monotonously",
+        "decreasing": "decreases monotonously"
+      },
+      "4a": {
+        "voiceover": "... If \"a\" 5 is equal to <bookmark mark=\"a_n_p_2\"/>\"a\" n plus two, then <bookmark mark=\"a_n_p_1\"/>\"a\" n plus 1 is equal to \"a\" 4, and <bookmark mark=\"a_n\"/>\"a\" n is equal to \"a\" 3.\nThen we have that \"a\" 5 is equal to a four plus \"a\" three, and that is <bookmark mark=\"step_in\"/> equal to three plus two,<bookmark mark=\"sol_in\"/> so it's equal to 5. So \"a\" 5 is equal to 5."
+      },
+      "5q": {
+        "title": "Monotonous sequences",
+        "question-text": "Which of the following sequences is monotonously increasing:\n$\\left(a_n\\right)=1,2,2,3,3,3,4,\\hdots$, $\\left(b_n\\right)=3,2,1,0,-1,\\hdots$, $\\left(c_n\\right)=2^n$",
+        "voiceover": "Now to a certain type of sequence: Monotonically increasing and monotonically decreasing sequences.\nA sequence is called <bookmark mark=\"def_increase_1_in\"/>monotonically increasing if for all n <bookmark mark=\"def_increase_2_in\"/>it is true that \"a\" n+1 is greater than or equal to \"a\" n. This means† that the sequence always increases or remains the same size, but never decreases.\nAnd a sequence <bookmark mark=\"def_decrease_1_in\"/>is called monotonically decreasing if for all n <bookmark mark=\"def_decrease_2_in\"/>it is true that \"a\" n+1 is less than or equal to \"a\" n. This then means that the sequence always becomes smaller, or remains equally small, but never becomes larger. ...\nHere are three sequences. The first sequence,<bookmark mark=\"a_n_in\"/> \"a\" n, is 1, 2, 2, 3, 3, 3, 4, and so on, so each value n is repeated exactly n times in ascending order...<bookmark mark=\"b_n_in\"/> The second sequence, b n, starts with the elements 3, 2, 1, 0, -1, ...and then continues in the same way.<bookmark mark=\"c_n_in\"/> And the third sequence, c n, is defined by c n equal to 2 to the power of n.\nWhich of these sequences are monotonically increasing?"
+      },
+      "5a": {
+        "voiceover": "A sequence is <bookmark mark=\"increase_in\"/>monotonically increasing if it holds for all n that \"a\" n + 1 is greater than or equal to \"a\" n. This means that the sequence always increases or remains the same size, but never decreases.\nFor <bookmark mark=\"higlight_1\"/>the first sequence, the elements always remain the same or increase by one. So \"a\" n <bookmark mark=\"green_1\"/>is monotonically increasing.\nFor <bookmark mark=\"higlight_2\"/>the second sequence, the elements always decrease by one. So b n <bookmark mark=\"red_2\"/>is not monotonically increasing, but monotonically decreasing.\nAnd in <bookmark mark=\"higlight_3\"/>the third sequence, the elements are always larger. After all, c 1 is equal to 2, c 2 is equal to four, c 3 is equal to 8, and so on. So c n <bookmark mark=\"green_3\"/>is monotonically increasing."
       }
     }
   },
