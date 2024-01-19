@@ -2891,7 +2891,9 @@
     "incorrect_6": "Das ist leider falsch. ",
     "n_times": "n mal",
     "pa": "pro Jahr",
-    "for_all_n": "für alle $n$"
+    "for_all_n": "für alle $n$",
+    "pfd": "Partialbruchzerlegung",
+    "complex_numbers": "Komplexe Zahlen"
   },
   "LinAlg": {
     "14I1": {
@@ -2929,7 +2931,8 @@
     "function": "Funktion",
     "Function": "Funktion",
     "invertible": "Invertierbar",
-    "Determinant": "Determinante"
+    "Determinant": "Determinante",
+    "Limits": "Grenzwerte"
   },
   "Func_6_P": {
     "22": {

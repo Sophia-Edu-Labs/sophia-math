@@ -2891,7 +2891,9 @@
     "incorrect_6": "That's wrong, unfortunately. ",
     "n_times": "n times",
     "pa": "per year",
-    "for_all_n": "for all $n$"
+    "for_all_n": "for all $n$",
+    "pfd": "Partial fraction decomposition",
+    "complex_numbers": "Complex Numbers"
   },
   "LinAlg": {
     "14I1": {
@@ -2929,11 +2931,13 @@
     "function": "function",
     "Function": "Function",
     "invertible": "invertible",
-    "Determinant": "Determinant"
+    "Determinant": "Determinant",
+    "Limits": "Limits"
   },
   "Words": {
     "base": "base",
-    "exponent": "exponent"
+    "exponent": "exponent",
+    "limits": "L"
   },
   "Func_6_P": {
     "22": {
