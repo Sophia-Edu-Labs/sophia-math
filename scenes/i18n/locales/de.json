@@ -3406,6 +3406,37 @@
       "2q": {
         "natural-numbers": "Natürliche Zahlen"
       }
+    },
+    "Practice_MC": {
+      "1q": {
+        "question-text": "Was gilt für die Komposition $g\\circ f$?"
+      },
+      "2a": {
+        "voiceover": "Wenn f auf dem geschlossenen Intervall 0, 1 differenzierbar ist, so können wir den Zwischenwertsatz anwenden, und erhalten, dass es ein x im offenem Intervall von 0 bis 1 gibt, sodass die Ableitung f strich von x gleich 0 ist. ... <bookmark mark=\"a_green\"/>Also ist a richtig. ....\nFalls wir keine weiteren Bedingungen haben, kann es sein, dass die Ableitung von f an keiner Stelle existiert. ... <bookmark mark=\"b_red\"/>Also ist b falsch. ...\nDie Funktion, die du <bookmark mark=\"graph_in\"/>hier siehst, ist ein Beispiel, in dem<bookmark mark=\"c_d_red\"/> Bedingung c und d erfüllt sind, es aber kein x zwischen 0 und 1 gibt, sodass die Ableitung von f an der Stelle x gleich 0 ist.\nDenn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist die Ableitung nirgends gleich Null. <bookmark mark=\"c_d_red\"/>Also sind c und d falsch. ...\n"
+      },
+      "2q": {
+        "question-text": "Welche dieser Bedingungen garantiert, dass es ein $z\\in[0,1]$ gibt, so dass $f'(z)=0$ ist?"
+      },
+      "1a": {
+        "voiceover": "Fangen wir damit an, <bookmark mark=\"f_stays\"/>alle möglichen Werte von f zu betrachten. Wir können ja alle Werte von<bookmark mark=\"highlight_interval\"/> 1 bis unendlich einsetzen. Dadurch erreicht x quadrat alle Werte von 1 bis unendlich, und f erreicht somit alle Werte<bookmark mark=\"intervall_f_range\"/> von 0 bis unendlich. Das bedeutet, <bookmark mark=\"g_in\"/>dass alle möglichen Werte von f im <bookmark mark=\"highlight_def_g\"/>Definitionsbereich von g liegen. Also existiert<bookmark mark=\"g_f_in\"/> g nach f auch. Außerdem stellen wir fest, dass f injektiv ist, denn wenn wir nur Werte von 1 bis unendlich einsetzen, erhalten wir die rechte Hälfte der Parabel.\nWir finden g nach f ja, indem wir f von x in den Term g anstelle von x einsetzen. Dann erhalten wir <bookmark mark=\"g_circ_f\"/>g von f von x, gleich e hoch x quadrat minus eins. <bookmark mark=\"clean_up\"/>Diese Funktion<bookmark mark=\"injective\"/> ist injektiv, denn e hoch x ist injektiv und die Verkettung zweier injektiver Funktionen ist stets injektiv. Wir erkennen auch, dass <bookmark mark=\"surjective\"/>g nach f nicht surjektiv ist, weil die e-Funktion keine negativen Werte annimmt. Und dass g nach f von x nicht immer gleich x ist, sehen wir, <bookmark mark=\"gfx_neq_x\"/>wenn wir zum Beispiel x gleich 2 einsetzen. Dann erhalten wir e hoch 2 quadrat minus 1, was e hoch drei und somit nicht gleich 2 ist."
+      },
+      "3a": {
+        "voiceover": "Der komplexe Absolutbetrag von einer komplexen Zahl z ist der Abstand von z zum <bookmark mark=\"highlight_origin\"/>Ursprung. ...\nFolglich ist der Betrag von <bookmark mark=\"higlight_abs_1\"/>z minus 1 gleich dem Abstand von z<bookmark mark=\"move_z_1\"/> zur Zahl 1.\nUnd der Betrag von <bookmark mark=\"higlight_abs_2\"/>z plus i ist gleich dem Abstand von z zur<bookmark mark=\"write_z_i\"/> Zahl minus i.\nDann ist die Gleichung also erfüllt, wenn z gleich weit von 1 und minus i entfernt ist.\nDas ist der Fall<bookmark mark=\"higlight_blue\"/> für alle Punkte auf der blauen Geraden. ...\nAlso ist die richtige Antwort, dass es die blaue Skizze ist. ..."
+      }
+    },
+    "practice_limits": {
+      "1q": {
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?"
+      },
+      "1a": {
+        "voiceover-text": "Als erstes klammern wir den Begriff n hoch drei mal wurzel drei im Zähler und im Nenner aus. <bookmark mark=\"implication_1\"/>Dann erhalten wir im Zähler n hoch drei Wurzel n mal Klammer auf zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n Klammer zu. Und im Nenner n hoch drei Wurzel n mal Klammer auf drei plus vier durch n Wurzel n Klammer zu.\nDann können <bookmark mark=\"s_out_1\"/>wir das n hoch drei Wurzel n kürzen, und <bookmark mark=\"func_2_b\"/>wir erhalten zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n, geteilt durch drei plus vier durch n Wurzel n.\nWenn wir dann <bookmark mark=\"implication_2\"/>n gegen unendlich gehen lassen, erhalten wir 0 plus 0 geteilt durch 3 plus 0, was gleich Null ist. Also ist der Grenzwert gleich Null."
+      },
+      "2q": {
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}=\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+      },
+      "2a": {
+        "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat zwei, kleiner oder gleich eins durch n plus eins ist.\nDiese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist."
+      }
     }
   },
   "Func_6_P_scaling_exp": {

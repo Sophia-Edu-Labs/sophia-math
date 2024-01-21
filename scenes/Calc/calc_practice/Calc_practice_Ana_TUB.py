@@ -31,8 +31,8 @@ class Calc_practice_MC_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions=[r"$g\circ f$ ist injektiv", r"$g\circ f$ ist surjektiv", r"$g\circ f$ existiert nicht", r"$(g\circ f)(x)=x\, \forall x\in[0,\infty)$"],
-            correctAnswerIndex=1,
-            questionText = self.translate("Calc_1.Sequences.1q.question-text")
+            correctAnswerIndex=0,
+            questionText = self.translate("Calc_1.Practice_MC.1q.question-text")
         )
 
     # Main method for constructing the animation
@@ -101,7 +101,7 @@ Oder aussage <bookmark mark="answer_d_in"/>d: Die Komposition g nach f ist für 
         self.wait(4)
 #
 
-class Calc_practice_MC_2_a(SophiaCursorScene):
+class Calc_practice_MC_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -135,11 +135,7 @@ class Calc_practice_MC_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Fangen wir damit an, <bookmark mark="f_stays"/>alle möglichen Werte von f zu betrachten. Wir können ja alle Werte von<bookmark mark="highlight_interval"/> 1 bis unendlich einsetzen. Dadurch erreicht x quadrat alle Werte von 1 bis unendlich, und f erreicht somit alle Werte<bookmark mark="intervall_f_range"/> von 0 bis unendlich. Das bedeutet, <bookmark mark="g_in"/>dass alle möglichen Werte von f im <bookmark mark="highlight_def_g"/>Definitionsbereich von g liegen. Also existiert<bookmark mark="g_f_in"/> g nach f auch. Außerdem stellen wir fest, dass f injektiv ist, denn wenn wir nur Werte von 1 bis unendlich einsetzen, erhalten wir die rechte Hälfte der Parabel.
-Wir finden g nach f ja, indem wir f von x in den Term g anstelle von x einsetzen. Dann erhalten wir <bookmark mark="g_circ_f"/>g von f von x, gleich e hoch x quadrat minus eins. <bookmark mark="clean_up"/>Diese Funktion<bookmark mark="injective"/> ist injektiv, denn e hoch x ist injektiv und die Verkettung zweier injektiver Funktionen ist stets injektiv. Wir erkennen auch, dass <bookmark mark="surjective"/>g nach f nicht surjektiv ist, weil die e-Funktion keine negativen Werte annimmt. Und dass g nach f von x nicht immer gleich x ist, sehen wir, <bookmark mark="gfx_neq_x"/>wenn wir zum Beispiel x gleich 2 einsetzen. Dann erhalten wir e hoch 2 quadrat minus 1, was e hoch drei und somit nicht gleich 2 ist.
-"""
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.1a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_stays")
@@ -186,18 +182,266 @@ Wir finden g nach f ja, indem wir f von x in den Term g anstelle von x einsetzen
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+#
+class Calc_practice_MC_1_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:", "[1,\\infty)", "\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(x)=", "x^2-1", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_1 = MathTex("g:", "[0,\\infty)", "\\rightarrow\\mathbb{R}, ", color=c1t, font_size=fs2)
+        g_2 = MathTex("g(x)=", "e", "^x", color=c1t, font_size=fs2)
+        g = VGroup(g_1, g_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_circ_f = MathTex("g\\circ f", ":[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
+        f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
+
+        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
+        observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
+        
+
+        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
+
+        self.add(f_g_fg, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.1a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_stays")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(g, g_circ_f, answers).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interval")
+            self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("intervall_f_range")
+            self.add_shift_sound(0.5)
+            self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_in")
+            self.add_shift_sound(0.5)
+            self.play(g_1[0].animate.shift(5*LEFT), g_1[2].animate.shift(5*LEFT), g_2.animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_def_g")
+            self.play(Indicate(g_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("g_f_in")
+            g_circ_f.set_color(GREEN)
+            self.add_shift_sound(0.5)
+            self.play(g_circ_f[0].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_circ_f")
+            self.play(ReplacementTransform(g_circ_f[0], g_circ_f_plugged_in[0]), run_time=.5)
+            self.wait(.5)
+            self.play(ReplacementTransform(g_circ_f[1].copy(), g_circ_f_plugged_in[1]), run_time=.5)
+            self.play(ReplacementTransform(f_2[1].copy(), g_circ_f_plugged_in[2]), run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(f), Unwrite(g), g_circ_f_plugged_in.animate.shift(2*UP), run_time=.5)
+
+            self.wait_until_bookmark("injective")
+            self.play(Write(is_injective))
+
+            self.wait_until_bookmark("surjective")
+            self.play(Write(not_surjective))
+
+            self.wait_until_bookmark("gfx_neq_x")
+            self.play(Write(not_equal))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_1_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:", "[1,\\infty)", "\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(x)=", "x^2-1", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_1 = MathTex("g:", "[0,\\infty)", "\\rightarrow\\mathbb{R}, ", color=c1t, font_size=fs2)
+        g_2 = MathTex("g(x)=", "e", "^x", color=c1t, font_size=fs2)
+        g = VGroup(g_1, g_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_circ_f = MathTex("g\\circ f", ":[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
+        f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
+
+        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
+        observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
+        
+
+        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
+
+        self.add(f_g_fg, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.1a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_stays")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(g, g_circ_f, answers).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interval")
+            self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("intervall_f_range")
+            self.add_shift_sound(0.5)
+            self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_in")
+            self.add_shift_sound(0.5)
+            self.play(g_1[0].animate.shift(5*LEFT), g_1[2].animate.shift(5*LEFT), g_2.animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_def_g")
+            self.play(Indicate(g_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("g_f_in")
+            g_circ_f.set_color(GREEN)
+            self.add_shift_sound(0.5)
+            self.play(g_circ_f[0].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_circ_f")
+            self.play(ReplacementTransform(g_circ_f[0], g_circ_f_plugged_in[0]), run_time=.5)
+            self.wait(.5)
+            self.play(ReplacementTransform(g_circ_f[1].copy(), g_circ_f_plugged_in[1]), run_time=.5)
+            self.play(ReplacementTransform(f_2[1].copy(), g_circ_f_plugged_in[2]), run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(f), Unwrite(g), g_circ_f_plugged_in.animate.shift(2*UP), run_time=.5)
+
+            self.wait_until_bookmark("injective")
+            self.play(Write(is_injective))
+
+            self.wait_until_bookmark("surjective")
+            self.play(Write(not_surjective))
+
+            self.wait_until_bookmark("gfx_neq_x")
+            self.play(Write(not_equal))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_1_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:", "[1,\\infty)", "\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(x)=", "x^2-1", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_1 = MathTex("g:", "[0,\\infty)", "\\rightarrow\\mathbb{R}, ", color=c1t, font_size=fs2)
+        g_2 = MathTex("g(x)=", "e", "^x", color=c1t, font_size=fs2)
+        g = VGroup(g_1, g_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_circ_f = MathTex("g\\circ f", ":[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
+        f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
+
+        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
+        observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
+        
+
+        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
+
+        self.add(f_g_fg, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.1a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_stays")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(g, g_circ_f, answers).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interval")
+            self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("intervall_f_range")
+            self.add_shift_sound(0.5)
+            self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_in")
+            self.add_shift_sound(0.5)
+            self.play(g_1[0].animate.shift(5*LEFT), g_1[2].animate.shift(5*LEFT), g_2.animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_def_g")
+            self.play(Indicate(g_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("g_f_in")
+            g_circ_f.set_color(GREEN)
+            self.add_shift_sound(0.5)
+            self.play(g_circ_f[0].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_circ_f")
+            self.play(ReplacementTransform(g_circ_f[0], g_circ_f_plugged_in[0]), run_time=.5)
+            self.wait(.5)
+            self.play(ReplacementTransform(g_circ_f[1].copy(), g_circ_f_plugged_in[1]), run_time=.5)
+            self.play(ReplacementTransform(f_2[1].copy(), g_circ_f_plugged_in[2]), run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(f), Unwrite(g), g_circ_f_plugged_in.animate.shift(2*UP), run_time=.5)
+
+            self.wait_until_bookmark("injective")
+            self.play(Write(is_injective))
+
+            self.wait_until_bookmark("surjective")
+            self.play(Write(not_surjective))
+
+            self.wait_until_bookmark("gfx_neq_x")
+            self.play(Write(not_equal))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+        
 
 ##################################### 
 #####################################
 # MC, Mean Value Theorem
 class Calc_practice_MC_2_q(SophiaCursorScene):
 
+
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions=["$f$ auf $[0,1]$ differenzierbar", "Keine weitere Bedingung nötig", "$f$ ist auf $[0,1]$ integrierbar", "$f$ hat in $]0,1[$ lokales Extremum"],
             correctAnswerIndex=0,
-            questionText = self.translate("Calc_1.Sequences.1q.question-text")
+            questionText = self.translate("Calc_1.Practice_MC.2q.question-text")
         )
 
     # Main method for constructing the animation
@@ -290,13 +534,7 @@ class Calc_practice_MC_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Wenn f auf dem geschlossenen Intervall 0, 1 differenzierbar ist, so können wir den Zwischenwertsatz anwenden, und erhalten, dass es ein x im offenem Intervall von 0 bis 1 gibt, sodass die Ableitung f strich von x gleich 0 ist. ... <bookmark mark="a_green"/>Also ist a richtig. ....
-Falls wir keine weiteren Bedingungen haben, kann es sein, dass die Ableitung von f an keiner Stelle existiert. ... <bookmark mark="b_red"/>Also ist b falsch. ...
-Die Funktion, die du <bookmark mark="graph_in"/>hier siehst, ist ein Beispiel, in dem<bookmark mark="c_d_red"/> Bedingung c und d erfüllt sind, es aber kein x zwischen 0 und 1 gibt, sodass die Ableitung von f an der Stelle x gleich 0 ist.
-Denn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist die Ableitung nirgends gleich Null. <bookmark mark="c_d_red"/>Also sind c und d falsch. ...
-"""
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.2a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a_green")
@@ -315,7 +553,154 @@ Denn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+#
+class Calc_practice_MC_2_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
+        exists_z = MathTex("\\exists z\\in[0,1]: f'(z)=0", color=c1t, font_size=fs2).next_to(down_q, DOWN, buff=0.4)
+
+        answer_a = Tex("a) $f$ auf $[0,1]$ differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Keine weitere Bedingung nötig", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f$ ist auf $[0,1]$ integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ hat in $]0,1[$ lokales Extremum", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(exists_z, DOWN, buff=0.5)
+
+        f_graph_left = lambda x: x #if x<.5 else -x + 1
+        f_graph_right = lambda x: -x + 1
+        cords = self.add_cords([0,1,1], [0,1.2,1], x_ticks=[0,1], y_ticks=[0,1], width=2, height=2).shift(UP*.6)
+        graph = VGroup(cords[0].plot(f_graph_left, color=RED, x_range=[0,0.5,1000]), cords[0].plot(f_graph_right, color=RED, x_range=[0.5,1,1000]))
+        
+        self.add(f, down_q, exists_z, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.2a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("graph_in")
+            self.play(Write(cords), Unwrite(f), Unwrite(down_q), exists_z.animate.scale(.85), run_time=1)
+            self.play(Write(graph), run_time=1)
+
+            self.wait_until_bookmark("c_d_red")
+            self.play(answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
+        exists_z = MathTex("\\exists z\\in[0,1]: f'(z)=0", color=c1t, font_size=fs2).next_to(down_q, DOWN, buff=0.4)
+
+        answer_a = Tex("a) $f$ auf $[0,1]$ differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Keine weitere Bedingung nötig", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f$ ist auf $[0,1]$ integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ hat in $]0,1[$ lokales Extremum", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(exists_z, DOWN, buff=0.5)
+
+        f_graph_left = lambda x: x #if x<.5 else -x + 1
+        f_graph_right = lambda x: -x + 1
+        cords = self.add_cords([0,1,1], [0,1.2,1], x_ticks=[0,1], y_ticks=[0,1], width=2, height=2).shift(UP*.6)
+        graph = VGroup(cords[0].plot(f_graph_left, color=RED, x_range=[0,0.5,1000]), cords[0].plot(f_graph_right, color=RED, x_range=[0.5,1,1000]))
+        
+        self.add(f, down_q, exists_z, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.2a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("graph_in")
+            self.play(Write(cords), Unwrite(f), Unwrite(down_q), exists_z.animate.scale(.85), run_time=1)
+            self.play(Write(graph), run_time=1)
+
+            self.wait_until_bookmark("c_d_red")
+            self.play(answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_2_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
+        exists_z = MathTex("\\exists z\\in[0,1]: f'(z)=0", color=c1t, font_size=fs2).next_to(down_q, DOWN, buff=0.4)
+
+        answer_a = Tex("a) $f$ auf $[0,1]$ differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Keine weitere Bedingung nötig", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f$ ist auf $[0,1]$ integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ hat in $]0,1[$ lokales Extremum", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(exists_z, DOWN, buff=0.5)
+
+        f_graph_left = lambda x: x #if x<.5 else -x + 1
+        f_graph_right = lambda x: -x + 1
+        cords = self.add_cords([0,1,1], [0,1.2,1], x_ticks=[0,1], y_ticks=[0,1], width=2, height=2).shift(UP*.6)
+        graph = VGroup(cords[0].plot(f_graph_left, color=RED, x_range=[0,0.5,1000]), cords[0].plot(f_graph_right, color=RED, x_range=[0.5,1,1000]))
+        
+        self.add(f, down_q, exists_z, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.2a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("graph_in")
+            self.play(Write(cords), Unwrite(f), Unwrite(down_q), exists_z.animate.scale(.85), run_time=1)
+            self.play(Write(graph), run_time=1)
+
+            self.wait_until_bookmark("c_d_red")
+            self.play(answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
 
 ##################################### 
 #####################################
@@ -379,6 +764,7 @@ Welche der folgenden Skizzen stellt <bookmark mark="cords_in"/>diese Menge dar?
             self.add_pencil_sound(.8)
             self.play(Write(circ_2), run_time=.8)
 #
+
 class Calc_practice_MC_3_a(SophiaCursorScene):
 
 
@@ -411,15 +797,7 @@ class Calc_practice_MC_3_a(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Der komplexe Absolutbetrag von einer komplexen Zahl z ist der Abstand von z zum <bookmark mark="highlight_origin"/>Ursprung. ...
-Folglich ist der Betrag von <bookmark mark="higlight_abs_1"/>z minus 1 gleich dem Abstand von z<bookmark mark="move_z_1"/> zur Zahl 1.
-Und der Betrag von <bookmark mark="higlight_abs_2"/>z plus i ist gleich dem Abstand von z zur<bookmark mark="write_z_i"/> Zahl minus i.
-Dann ist die Gleichung also erfüllt, wenn z gleich weit von 1 und minus i entfernt ist.
-Das ist der Fall<bookmark mark="higlight_blue"/> für alle Punkte auf der blauen Geraden. ...
-Also ist die richtige Antwort, dass es die blaue Skizze ist. ...
-"""
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.3a.voiceover")
         ) as tracker:
 
             self.wait_until_bookmark("highlight_origin")
@@ -448,6 +826,193 @@ Also ist die richtige Antwort, dass es die blaue Skizze ist. ...
             self.play(Unwrite(cursor), Unwrite(line_1), Unwrite(line_2), run_time=.5)
 
         self.wait(4)
+#
+class Calc_practice_MC_3_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[0,1], y_ticks=[0,1], y_labels=["0","i"])
+        plane = cords[0]
+        plot_1 = plane.plot(lambda x: x, color=GREEN)
+        plot_2 = plane.plot(lambda x: -x, color=BLUE)
+        unit_length = plane.c2p(1,0)[0] - plane.c2p(0,0)[0]
+        circ_1 = Circle(radius=unit_length, color=RED).move_to(plane.c2p(1,-1))
+        circ_2 = Circle(radius=unit_length, color=PINK).move_to(plane.c2p(-1,1))
+        set = MathTex("{z \\in \\mathbb C : ", "|z - 1|", " = ", "|z+i|", "}", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.8)
+
+        mark_origin = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(plane.c2p(0,0))
+        p_1, p_2 = plane.c2p(1,0), plane.c2p(0,-1)
+        mark_1 = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_1)
+        mark_i = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_2)
+
+        self.add(set, cords, plot_1, plot_2, circ_1, circ_2)
+
+        x,y,_ = plot_2.get_start()
+        cursor = AltCursor(idle=False, x=x, y=y)
+        line_1 = Line(start=plane.c2p(0,0), end=plane.c2p(1,0), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_1, cursor.get_center()))
+        line_2 = Line(start=plane.c2p(0,0), end=plane.c2p(0,-1), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_2, cursor.get_center()))
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.3a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_origin")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_origin), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_1")
+            self.play(Indicate(set[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("move_z_1")
+            self.play(ReplacementTransform(mark_origin, mark_1), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_2")
+            self.play(Indicate(set[3], color=RED), run_time=3)
+
+            self.wait_until_bookmark("write_z_i")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_i), run_time=.5)
+
+            self.wait_until_bookmark("higlight_blue")
+            self.play(Unwrite(plot_1), Unwrite(circ_1), Unwrite(circ_2), run_time=.5)
+            self.wait(1)
+            self.play(Write(cursor), Write(line_1), Write(line_2), run_time=.5)
+            self.play(MoveAlongPath(cursor, plot_2, rate_func=linear), run_time=3)
+            self.wait(.5)
+            self.play(Unwrite(cursor), Unwrite(line_1), Unwrite(line_2), run_time=.5)
+
+        self.wait(4)
+#
+class Calc_practice_MC_3_c(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[0,1], y_ticks=[0,1], y_labels=["0","i"])
+        plane = cords[0]
+        plot_1 = plane.plot(lambda x: x, color=GREEN)
+        plot_2 = plane.plot(lambda x: -x, color=BLUE)
+        unit_length = plane.c2p(1,0)[0] - plane.c2p(0,0)[0]
+        circ_1 = Circle(radius=unit_length, color=RED).move_to(plane.c2p(1,-1))
+        circ_2 = Circle(radius=unit_length, color=PINK).move_to(plane.c2p(-1,1))
+        set = MathTex("{z \\in \\mathbb C : ", "|z - 1|", " = ", "|z+i|", "}", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.8)
+
+        mark_origin = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(plane.c2p(0,0))
+        p_1, p_2 = plane.c2p(1,0), plane.c2p(0,-1)
+        mark_1 = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_1)
+        mark_i = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_2)
+
+        self.add(set, cords, plot_1, plot_2, circ_1, circ_2)
+
+        x,y,_ = plot_2.get_start()
+        cursor = AltCursor(idle=False, x=x, y=y)
+        line_1 = Line(start=plane.c2p(0,0), end=plane.c2p(1,0), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_1, cursor.get_center()))
+        line_2 = Line(start=plane.c2p(0,0), end=plane.c2p(0,-1), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_2, cursor.get_center()))
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.3a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_origin")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_origin), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_1")
+            self.play(Indicate(set[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("move_z_1")
+            self.play(ReplacementTransform(mark_origin, mark_1), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_2")
+            self.play(Indicate(set[3], color=RED), run_time=3)
+
+            self.wait_until_bookmark("write_z_i")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_i), run_time=.5)
+
+            self.wait_until_bookmark("higlight_blue")
+            self.play(Unwrite(plot_1), Unwrite(circ_1), Unwrite(circ_2), run_time=.5)
+            self.wait(1)
+            self.play(Write(cursor), Write(line_1), Write(line_2), run_time=.5)
+            self.play(MoveAlongPath(cursor, plot_2, rate_func=linear), run_time=3)
+            self.wait(.5)
+            self.play(Unwrite(cursor), Unwrite(line_1), Unwrite(line_2), run_time=.5)
+
+        self.wait(4)
+#
+class Calc_practice_MC_3_d(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        cords = self.add_cords([-2,2,1], [-2,2,1], x_ticks=[0,1], y_ticks=[0,1], y_labels=["0","i"])
+        plane = cords[0]
+        plot_1 = plane.plot(lambda x: x, color=GREEN)
+        plot_2 = plane.plot(lambda x: -x, color=BLUE)
+        unit_length = plane.c2p(1,0)[0] - plane.c2p(0,0)[0]
+        circ_1 = Circle(radius=unit_length, color=RED).move_to(plane.c2p(1,-1))
+        circ_2 = Circle(radius=unit_length, color=PINK).move_to(plane.c2p(-1,1))
+        set = MathTex("{z \\in \\mathbb C : ", "|z - 1|", " = ", "|z+i|", "}", color=c1t, font_size=fs2).next_to(cords, DOWN, buff=0.8)
+
+        mark_origin = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(plane.c2p(0,0))
+        p_1, p_2 = plane.c2p(1,0), plane.c2p(0,-1)
+        mark_1 = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_1)
+        mark_i = Cross(scale_factor=.1, color=RED, stroke_width=5).move_to(p_2)
+
+        self.add(set, cords, plot_1, plot_2, circ_1, circ_2)
+
+        x,y,_ = plot_2.get_start()
+        cursor = AltCursor(idle=False, x=x, y=y)
+        line_1 = Line(start=plane.c2p(0,0), end=plane.c2p(1,0), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_1, cursor.get_center()))
+        line_2 = Line(start=plane.c2p(0,0), end=plane.c2p(0,-1), color=GREY_C, stroke_width = 2).add_updater(lambda l: l.put_start_and_end_on(p_2, cursor.get_center()))
+        
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.3a.voiceover")
+        ) as tracker:
+
+            self.wait_until_bookmark("highlight_origin")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_origin), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_1")
+            self.play(Indicate(set[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("move_z_1")
+            self.play(ReplacementTransform(mark_origin, mark_1), run_time=.5)
+
+            self.wait_until_bookmark("higlight_abs_2")
+            self.play(Indicate(set[3], color=RED), run_time=3)
+
+            self.wait_until_bookmark("write_z_i")
+            self.add_pencil_sound(.5)
+            self.play(Create(mark_i), run_time=.5)
+
+            self.wait_until_bookmark("higlight_blue")
+            self.play(Unwrite(plot_1), Unwrite(circ_1), Unwrite(circ_2), run_time=.5)
+            self.wait(1)
+            self.play(Write(cursor), Write(line_1), Write(line_2), run_time=.5)
+            self.play(MoveAlongPath(cursor, plot_2, rate_func=linear), run_time=3)
+            self.wait(.5)
+            self.play(Unwrite(cursor), Unwrite(line_1), Unwrite(line_2), run_time=.5)
+
+        self.wait(4)
+#
 
 ##################################### 
 #####################################
@@ -2036,6 +2601,20 @@ Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von
 ##################################### 
 class Calc_practice_limits_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2047,7 +2626,7 @@ class Calc_practice_limits_1_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{2n^3+4n}{3n^3\sqrt{n}+4n^2}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{2n^3+4n}{3n^3\sqrt{n}+4n^2}", color=c1t, font_size=fs2).set_y(2)
 
         baboon = ImageMobject(assets_folder / "img" / "baboon_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2096,11 +2675,54 @@ class Calc_practice_limits_1_a(SophiaCursorScene):
         self.add(baboon, func)
 
         # Define the voiceover text
-        voiceover_text = """
-Als erstes klammern wir den Begriff n hoch drei mal wurzel drei im Zähler und im Nenner aus. <bookmark mark="implication_1"/>Dann erhalten wir im Zähler n hoch drei Wurzel n mal Klammer auf zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n Klammer zu. Und im Nenner n hoch drei Wurzel n mal Klammer auf drei plus vier durch n Wurzel n Klammer zu.
-Dann können <bookmark mark="s_out_1"/>wir das n hoch drei Wurzel n kürzen, und <bookmark mark="func_2_b"/>wir erhalten zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n, geteilt durch drei plus vier durch n Wurzel n.
-Wenn wir dann <bookmark mark="implication_2"/>n gegen unendlich gehen lassen, erhalten wir 0 plus 0 geteilt durch 3 plus 0, was gleich Null ist. Also ist der Grenzwert gleich Null.
-"""
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_limits.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(0.5)
+            self.play(baboon.animate.shift(5*RIGHT), Write(implication_1), Write(func_2_a), run_time=.5)
+
+            self.wait_until_bookmark("s_out_1")
+            self.play(Write(crosses), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(TransformMatchingTex(func_2_a, func_2_b), Unwrite(crosses))
+
+            self.wait_until_bookmark("implication_2")
+            self.play(Write(implication_2), Write(func_3))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_limits_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{2n^3+4n}{3n^3\sqrt{n}+4n^2}", color=c1t, font_size=fs2).set_y(2.2)
+        implication_1 = Tex(r"$\Downarrow$", " $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2_a = MathTex(r"\underset{n\to\infty}{\lim}", r"{{n^3\sqrt n", r"(\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n})}", r"\over{n^3\sqrt{n}", r"(3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        func_2_b = MathTex(r"\underset{n\to\infty}{\lim}", r"{{", r"\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n}}", r"\over{", r"3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).move_to(func_2_a)
+        implication_2 = Tex(r"$\Downarrow$", r"$\underset{n\to\infty}{\lim}$", color=BLUE, font_size=fs2).next_to(func_2_b, DOWN, buff=.2)
+        func_3 = MathTex(r"\frac{0+0}{3+0}", r"=0", color=c1t, font_size=fs2).next_to(implication_2, DOWN, buff=.2)
+        crosses = VGroup(Cross(func_2_a[1]), Cross(func_2_a[1].copy().shift(0.2*RIGHT).set_y(func_2_a[3].get_y()))).set_color(RED)
+
+        baboon = ImageMobject(assets_folder / "img" / "baboon_thinking.png").set_y(-.6).scale(.5)
+        self.add(baboon, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_limits.1a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2125,6 +2747,20 @@ Wenn wir dann <bookmark mark="implication_2"/>n gegen unendlich gehen lassen, er
 ##################################### 
 ##################################### 
 class Calc_practice_limits_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.2q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2186,12 +2822,52 @@ class Calc_practice_limits_2_a(SophiaCursorScene):
         self.add(giraffe, func)
 
         # Define the voiceover text
-        voiceover_text = """
-Als erstes <bookmark mark="step_1_a"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat zwei, kleiner oder gleich eins durch n plus eins ist.
-Diese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.
-Wir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark="step_1_b"/>gegen Null geht, wenn n gegen unendlich geht.
-Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark="step_2"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist.
-"""
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.practice_limits.2a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(.5)
+            self.play(giraffe.animate.shift(5*RIGHT), Write(step_1[0]), Write(step_1[1]), Write(step_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(step_1[3]))
+
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
+        step_1 = MathTex(r"\left|\frac{n\sin(n)+\sin(n)}{(n+1)^2}\right|", r"\leq", r"\frac{1}{n+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
+        implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        
+        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thinking.png").set_y(-.6).scale(.5)
+
+        self.add(giraffe, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.practice_limits.2a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2308,7 +2984,7 @@ class Calc_practice_limits_4_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{x\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
 
         lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2346,9 +3022,9 @@ class Calc_practice_limits_4_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{x\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
         implication_1 = Tex("L'Hospital ", r"$\Downarrow$  $\left(\frac00\right)$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
-        func_2 = MathTex(r"\underset{n\to\tfrac\pi2}{\lim} \frac{2\cos(2x)}{-\sin(x)}", "=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{x\to\tfrac\pi2}{\lim} \frac{2\cos(2x)}{-\sin(x)}", "=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
 
         lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").set_y(-.6).scale(.5)
         self.add(lion, func)
@@ -2700,7 +3376,7 @@ class Calc_practice_limits_8_a(SophiaCursorScene):
         # Define the function text using MathTex
         func = MathTex(r"\underset{x\to0}{\lim}", r"\frac{x^2-2}{\cos(x)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
         implication_1 = Tex(r"$=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
-        func_2 = MathTex(r"=\frac{0^2-2}{\cos(0)}=0", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        func_2 = MathTex(r"=\frac{0^2-2}{\cos(0)}=-2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
 
 
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
@@ -2738,11 +3414,12 @@ class Calc_practice_limits_9_q(SophiaCursorScene):
         # Define the function text using MathTex
         func = MathTex(r"\underset{x\to0}{\lim}=", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
 
+
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
         voiceover_text = """
-Betrachte die FUnktion <bookmark mark="func_in"/>e hoch x minus eins geteilt durch den Sinus von x.
+Betrachte die Funktion <bookmark mark="func_in"/>e hoch x minus eins geteilt durch den Sinus von x.
 <bookmark mark="dog_in"/>Was ist der Grenzwert dieser Funktion <bookmark mark="limit_in"/>für x gegen 0?
 """
 
@@ -2759,6 +3436,50 @@ Betrachte die FUnktion <bookmark mark="func_in"/>e hoch x minus eins geteilt dur
             self.wait_until_bookmark("limit_in")
             self.play(Write(func[0]))
 
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
+class Calc_practice_limits_9_a(SophiaCursorScene):
+        
+    def construct(self):
+        
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{x\to0}{\lim}=", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
+        implication_1 = Tex("L'Hospital ", r"$\Downarrow$  $\left(\frac00\right)$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{x\to0}{\lim} \frac{e^x}{\cos(x)}", "=1", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+        self.add(func, dog)
+
+        # Define the voiceover text
+        voiceover_text = """
+Wenn wir den Grenzwert des Zählers, oder den Grenzwert des Nenners bilden, erkennen wir, dass beide gegen Null gehen, wenn x gegen Null geht.
+Also können wir <bookmark mark="implication_1"/>die Regel von L'Hopital anwenden, und wir erhalten, dass der Grenzwert gleich dem Grenzwert der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist.
+Das ist in diesem Fall gleich <bookmark mark="func_2_a"/>dem Grenzwert für x gegen Null von e hoch x geteilt durch den Kosinus von x. Und <bookmark mark="func_2_b"/>das ist gleich 1 durch 1, also ist die Lösung Eins.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("func_2_a")
+            self.play(Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(Write(func_2[1]), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2807,6 +3528,57 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 
             self.wait_until_bookmark("b_n_in_2")
             self.play(TransformMatchingTex(series_3, series_4))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+
+class Calc_practice_limits_10_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
+        upper_limit = MathTex(r"\left|(-1)^n\frac {a_n}2\right|\leq a_n", r"\underset{n\to\infty}{\rightarrow}0", color=c1t, font_size=fs2).scale(0.95).next_to(series_4, DOWN, buff=.2)
+        implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(upper_limit, DOWN, buff=.2)
+        solution = MathTex(r"\underset{n\to\infty}{\lim}", r"b_n=0", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+
+        self.add(series_1, series_2, series_4)
+        # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+
+        # Define the voiceover text
+        voiceover_text = """
+Da bn nichts anderes ist als "a" n, abwechselnd mit ein halb und minus ein halb multipliziert, können wir <bookmark mark="upper_limit_a"/>den Betrag von b n nach oben durch "a" n abschätzen.
+Wir wissen ja, <bookmark mark="upper_limit_b"/>dass a n gegen null konvergiert. Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, und wir erhalten, dass <bookmark mark="solution"/>der Grenzwert von b n für n gegen unendlich gleich Null ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("upper_limit_a")
+            self.play(Write(upper_limit[0]),  run_time=.5)
+
+            self.wait_until_bookmark("upper_limit_b")
+            self.play(Write(upper_limit[1]),  run_time=.5)
+
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -2965,6 +3737,88 @@ class Calc_practice_ivt_10_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+
+        # Define the voiceover text
+        voiceover_text = """
+Betrachten wir die Funktion <bookmark mark="f_in"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.
+Beweise, dass die Funktion auf<bookmark mark="intervall_in"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func), run_time=.5)
+
+            self.wait_until_bookmark("intervall_in")
+            self.play(Write(intervall), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = """
+Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
+Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
+Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+        
+##################################### Mean value theorem #TODO
+#####################################
+class Calc_practice_mvt_10_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
         series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
@@ -3084,6 +3938,65 @@ Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion b
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+
+class Calc_practice_trig_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
+        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
+
+        self.add
+
+        # Define the voiceover text
+        voiceover_text = """
+Wir wissen ja, dass <bookmark mark="sine_period_1"/>Sinus von x gleich Sinus von x plus zwei Pi ist.
+Also ist <bookmark mark="sine_period_2"/>die kleinste Periode von Sinus von x gleich zwei Pi.
+Das ganze bedeutet jetzt aber auch,<bookmark mark="sine_3_period_a"/> dass der Sinus von 3 x gleich dem Sinus von 3 x plus zwei Pi ist.
+Jetzt wollen wir ja die Periode wissen, also schreiben wir <bookmark mark="sine_3_period_b"/>drei x plus T in die Klammer, und wir erhalten, dass der Sinus von drei x plus T gleich dem Sinus von drei x plus zwei Pi ist.
+Und dann lösen wir das ganze nach T auf, und <bookmark mark="period_3"/>wir erhalten, dass die Periode T gleich zwei Pi durch drei ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("sine_period_1")
+            self.add_shift_sound(.5)
+            period.generate_target().move_to(period_3)
+            self.play(Write(sine_period), MoveToTarget(period), qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("sine_period_2")
+            self.play(Write(period_1), run_time=.5)
+
+            self.wait_until_bookmark("sine_3_period_a")
+            self.play(Write(sine_3_period_a), run_time=.5)
+
+            self.wait_until_bookmark("sine_3_period_b")
+            self.play(TransformMatchingTex(sine_3_period_a, sine_3_period_b), run_time=.5)
+
+            self.wait_until_bookmark("period_3")
+            self.play(ReplacementTransform(period, period_3), run_time=.5)
+
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 
 #####################################
 class Calc_practice_trig_2_q(SophiaCursorScene):
@@ -3225,3 +4138,34 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
         self.wait(6)
 
 #
+
+PROTOTYPES=[
+##########################################################################
+    PagePrototypeVideo.from_scene(Calc_practice_MC_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_1_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_1_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_2_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_2_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_3_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_3_d),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
+    
+]

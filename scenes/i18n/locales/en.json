@@ -3412,6 +3412,22 @@
       "2q": {
         "natural-numbers": "Natural Numbers"
       }
+    },
+    "Practice_MC": {
+      "1q": {
+        "question-text": "Which is true for the composition $g\\circ f$?"
+      },
+      "2q": {
+        "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?"
+      }
+    },
+    "practice_limits": {
+      "1q": {
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?"
+      },
+      "2q": {
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}=\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+      }
     }
   },
   "Func_6_P_scaling_exp": {
