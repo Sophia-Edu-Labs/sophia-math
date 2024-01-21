@@ -2893,7 +2893,8 @@
     "pa": "per year",
     "for_all_n": "for all $n$",
     "pfd": "Partial fraction decomposition",
-    "complex_numbers": "Complex Numbers"
+    "complex_numbers": "Complex Numbers",
+    "trig_functions": "Trigonometric Functions"
   },
   "LinAlg": {
     "14I1": {

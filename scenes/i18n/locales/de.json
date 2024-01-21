@@ -2893,7 +2893,8 @@
     "pa": "pro Jahr",
     "for_all_n": "für alle $n$",
     "pfd": "Partialbruchzerlegung",
-    "complex_numbers": "Komplexe Zahlen"
+    "complex_numbers": "Komplexe Zahlen",
+    "trig_functions": "Trigonometrische Funktionen"
   },
   "LinAlg": {
     "14I1": {

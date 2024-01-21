@@ -2071,6 +2071,57 @@ Was <bookmark mark="limit_in"/>ist der Grenzwert dieses Terms?
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_limits_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{2n^3+4n}{3n^3\sqrt{n}+4n^2}", color=c1t, font_size=fs2).set_y(2.2)
+        implication_1 = Tex(r"$\Downarrow$", " $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2_a = MathTex(r"\underset{n\to\infty}{\lim}", r"{{n^3\sqrt n", r"(\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n})}", r"\over{n^3\sqrt{n}", r"(3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        func_2_b = MathTex(r"\underset{n\to\infty}{\lim}", r"{{", r"\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n}}", r"\over{", r"3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).move_to(func_2_a)
+        implication_2 = Tex(r"$\Downarrow$", r"$\underset{n\to\infty}{\lim}$", color=BLUE, font_size=fs2).next_to(func_2_b, DOWN, buff=.2)
+        func_3 = MathTex(r"\frac{0+0}{3+0}", r"=0", color=c1t, font_size=fs2).next_to(implication_2, DOWN, buff=.2)
+        crosses = VGroup(Cross(func_2_a[1]), Cross(func_2_a[1].copy().shift(0.2*RIGHT).set_y(func_2_a[3].get_y()))).set_color(RED)
+
+        baboon = ImageMobject(assets_folder / "img" / "baboon_thinking.png").set_y(-.6).scale(.5)
+        self.add(baboon, func)
+
+        # Define the voiceover text
+        voiceover_text = """
+Als erstes klammern wir den Begriff n hoch drei mal wurzel drei im Zähler und im Nenner aus. <bookmark mark="implication_1"/>Dann erhalten wir im Zähler n hoch drei Wurzel n mal Klammer auf zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n Klammer zu. Und im Nenner n hoch drei Wurzel n mal Klammer auf drei plus vier durch n Wurzel n Klammer zu.
+Dann können <bookmark mark="s_out_1"/>wir das n hoch drei Wurzel n kürzen, und <bookmark mark="func_2_b"/>wir erhalten zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n, geteilt durch drei plus vier durch n Wurzel n.
+Wenn wir dann <bookmark mark="implication_2"/>n gegen unendlich gehen lassen, erhalten wir 0 plus 0 geteilt durch 3 plus 0, was gleich Null ist. Also ist der Grenzwert gleich Null.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(0.5)
+            self.play(baboon.animate.shift(5*RIGHT), Write(implication_1), Write(func_2_a), run_time=.5)
+
+            self.wait_until_bookmark("s_out_1")
+            self.play(Write(crosses), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(TransformMatchingTex(func_2_a, func_2_b), Unwrite(crosses))
+
+            self.wait_until_bookmark("implication_2")
+            self.play(Write(implication_2), Write(func_3))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
 ##################################### 
 ##################################### 
 class Calc_practice_limits_2_q(SophiaCursorScene):
@@ -2108,6 +2159,56 @@ Was kommt da raus??
 
             self.wait_until_bookmark("term_in")
             self.play(Write(func[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
+        step_1 = MathTex(r"\left|\frac{n\sin(n)+\sin(n)}{(n+1)^2}\right|", r"\leq", r"\frac{1}{n+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
+        implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        
+        giraffe = ImageMobject(assets_folder / "img" / "giraffe_thinking.png").set_y(-.6).scale(.5)
+
+        self.add(giraffe, func)
+
+        # Define the voiceover text
+        voiceover_text = """
+Als erstes <bookmark mark="step_1_a"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat zwei, kleiner oder gleich eins durch n plus eins ist.
+Diese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.
+Wir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark="step_1_b"/>gegen Null geht, wenn n gegen unendlich geht.
+Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark="step_2"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(.5)
+            self.play(giraffe.animate.shift(5*RIGHT), Write(step_1[0]), Write(step_1[1]), Write(step_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(step_1[3]))
+
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -2151,6 +2252,47 @@ Was kommt da raus?
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+
+class Calc_practice_limits_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}=", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\frac{16\tfrac{\pi^2}{4^2}}{\tan(\tfrac\pi 4)}", r"=\pi^2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        sloth = ImageMobject(assets_folder / "img" / "sloth_thinking.png").set_y(-.6).scale(.5)
+        self.add(sloth, func)
+
+        # Define the voiceover text
+        voiceover_text = """
+Hier können wir den gesuchten Grenzwert einfach einsetzen. Wir <bookmark mark="step_1_a"/>erhalten dann 16 mal pi hoch zwei durch vier quadrat, und das geteilt durch den Tangens von pi viertel.
+Der Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark="step_1_b"/>pi quadrat als Ergebnis unseres Grenzwertes..
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(0.5)
+            self.play(sloth.animate.shift(5*RIGHT), Write(implication_1), Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(func_2[1]),  run_time=.5)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 ##################################### 
 ##################################### 
 class Calc_practice_limits_4_q(SophiaCursorScene):
@@ -2166,7 +2308,7 @@ class Calc_practice_limits_4_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\tfrac\pi2}{\lim}=", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
 
         lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2187,6 +2329,49 @@ Jetzt <bookmark mark="lion_in"/> suchen wir den Grenzwert <bookmark mark="limit_
 
             self.wait_until_bookmark("term_in")
             self.play(Write(func[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
+        implication_1 = Tex("L'Hospital ", r"$\Downarrow$  $\left(\frac00\right)$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{n\to\tfrac\pi2}{\lim} \frac{2\cos(2x)}{-\sin(x)}", "=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").set_y(-.6).scale(.5)
+        self.add(lion, func)
+
+        # Define the voiceover text
+        voiceover_text = """
+Sowohl der Zähler als auch der Nenner gehen gegen Null, wenn x gegen pi halbe geht. Also können wir die Regel von <bookmark mark="implication_1"/>L'Hopital anwenden.
+Dann erhalten wir, dass der Grenzwert gleich der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist. Das ist in diesem Fall gleich <bookmark mark="func_2_a"/>dem limes für n gegen pi halbe von 2 mal Kosinus von zwei x geteilt durch minus Sinus von x. Und <bookmark mark="func_2_b"/>das ist gleich 2, also ist die Lösung 2.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(0.5)
+            self.play(lion.animate.shift(5*RIGHT), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("func_2_a")
+            self.play(Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(Write(func_2[1]), run_time=.5)
+
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -2242,6 +2427,54 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert dieser Folge b n für n gegen u
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+class Calc_practice_limits_5_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=1$, ", r"$a_n>0$ $\forall$ $n\in\mathbb N$.", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$\ln(a_n)$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$\ln$", r"$(a_n)$", color=BLUE, font_size=fs2).move_to(series_3)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(series_4, DOWN, buff=.2)
+        series_5_a = Tex(r"$\underset{n\to\infty}{\lim}$", r"$\ln$", r"$(a_n)$", r"$=\ln(1)=0$", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        series_5_b = MathTex(r"\ln\left(", r"\underset{n\to\infty}{\lim}", r"(a_n)\right)", r"=\ln(1)=0", color=c1t, font_size=fs2).scale(0.95).next_to(implication_1, DOWN, buff=.2)
+
+        self.add(series_1, series_2, series_4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Da die Funktion stetig ist, können wir die Funktionsausführung und die Grenzwertermittlung vertauschen. Und wir erhalten, <bookmark mark="implication_1"/>dass der Grenzwert von dem natürlichen Logarithmus von a n gleich dem <bookmark mark="series_5_b"/>natürlichen Logarithmus von dem Grenzwert von a n ist.
+Da der Grenzwert von a n gleich Eins ist, erhalten wir, dass der Grenzwert von b n <bookmark mark="solution"/>gleich dem logarithmus von eins, also gleich Null ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1), *[ReplacementTransform(series_4[i+2].copy(), series_5_a[i]) for i in range(3)])
+
+            self.wait_until_bookmark("series_5_b")
+            self.play(*[ReplacementTransform(series_5_a[i], series_5_b[i]) for i in range(3)])
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(series_5_b[3]))
+
+
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 # Ana Ing TUB 2019/2
 
 ##################################### 
@@ -2283,6 +2516,46 @@ Kannst du <bookmark mark="limit_in"/>den Grenzwert dieses Terms für n gegen une
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_limits_6_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{n\to\infty}{\lim}\frac{n^4(4-\tfrac{12}{n^2}+\tfrac3n)}{n^4(2+\tfrac1{n^4})}\\", r"=\frac{4-0+0}{2+0}=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+
+        self.add(dog, func)
+
+        # Define the voiceover text
+        voiceover_text = """
+Wir können den Term n hoch vier aus dem Zähler und aus dem Nenner ausklammern. Dann <bookmark mark="step_in_1"/>erhalten wir im Zähler n hoch vier mal Klammer auf vier minus zwölf durch n quadrat plus drei durch n Klamemr zu. Und im Nenner n hoch vier mal Klammer auf zwei plus eins durch n hoch vier Klammer zu.
+Da können wir das n hoch vier kürzen, und wir erhalten für n gegen unendlich den <bookmark mark="step_in_2"/>Bruch 4 - Null plus Null geteilt durch zwei plus Null, was gleich 2 ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_in_1")
+            self.add_shift_sound(0.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(implication_1), Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_in_2")
+            self.play(Write(func_2[1]), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
 ##################################### 
 ##################################### 
 class Calc_practice_limits_7_q(SophiaCursorScene):
@@ -2298,7 +2571,7 @@ class Calc_practice_limits_7_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{cos(n)}{n^2+1}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{cos(n)}{n^2+1}", color=c1t, font_size=fs2).set_y(2)
 
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2324,6 +2597,54 @@ Was erhalten wir da??
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+class Calc_practice_limits_7_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{cos(n)}{n^2+1}", color=c1t, font_size=fs2).set_y(2)
+        step_1 = MathTex(r"\left|\frac{\cos(n)}{n^2+1}\right|", r"\leq", r"\frac{1}{n^2+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
+        implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{cos(n)}{n^2+1}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+        self.add(func, dog)
+
+        # Define the voiceover text
+        voiceover_text = """
+Als erstes <bookmark mark="step_1_a"/>wenden wir die Abschätzung an, dass der Betrag des Terms Cosinus geteilt durch n quadrat plus eins kleiner oder gleich eins durch n quadrat plus eins ist.
+Diese erhalten wir, indem wir den Betrag des Cosinus durch eins abschätzen.
+Wir können ja sehr einfach sehen, dass die Folge 1 durch n quadrat plus eins <bookmark mark="step_1_b"/>gegen Null geht, wenn n gegen unendlich geht.
+Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark="step_2"/>unserer Folge gleich Null ist, weil die Folge 1 durch n quadrat plus eins gegen Null geht und betragsmässig grösser ist.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(step_1[0]), Write(step_1[1]), Write(step_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(step_1[3]))
+
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 #####################################
 ##################################### 
 class Calc_practice_limits_8_q(SophiaCursorScene):
@@ -2339,7 +2660,7 @@ class Calc_practice_limits_8_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{x\to0}{\lim}=", r"\frac{x^2-2}{\cos(x)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        func = MathTex(r"\underset{x\to0}{\lim}", r"\frac{x^2-2}{\cos(x)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
 
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2359,6 +2680,43 @@ Was ist der<bookmark mark="limit_in"/> Grenzwert für x gegen 0 von der Funktion
             self.wait_until_bookmark("func_in")
             self.play(Write(func[1]))
 
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
+class Calc_practice_limits_8_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{x\to0}{\lim}", r"\frac{x^2-2}{\cos(x)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        implication_1 = Tex(r"$=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"=\frac{0^2-2}{\cos(0)}=0", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+        self.add(func, dog)
+
+        # Define the voiceover text
+        voiceover_text = """
+We can simply plug in the limit, so x equals zero and <bookmark mark="implication_1"/>we obtain zero squared minus two, divided by the Cosinus of zero. This is equal to negative two, and that is the solution.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(implication_1), Write(func_2), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2497,6 +2855,47 @@ Wenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansa
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+#####################################
+class Calc_practice_pfd_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
+
+        # Define the function text using MathTex
+        pfd = MathTex(r"\frac{x^2+10x+18}{x(x^2+6x+9)}", r"=\frac{A}{x}+\frac{B}{x+3}+\frac{C}{(x+3)^2}", color=c1t, font_size=fs3).set_y(2)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
+
+        # Define the voiceover text
+        voiceover_text = """
+Du hast die <bookmark mark="pfd_in"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.
+Du sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.
+<bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("pfd_in")
+            self.play(Write(pfd[0]))
+
+            self.wait_until_bookmark("ansatz_in")
+            self.play(Write(pfd[1]))
+
+            self.wait_until_bookmark("qmark_in")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
         
 
@@ -2639,6 +3038,141 @@ Was ist der <bookmark mark="qmark"/>Realteil von z? Und was ist der Imaginärtei
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+
+#
+        
+##################################### Trig functions
+#####################################
+class Calc_practice_trig_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
+
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
+
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+#####################################
+class Calc_practice_trig_2_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\frac{\cos(5x)}{3}$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Betrachte die Funktion, die Funktion <bookmark mark="func_in_2"/>f von x gleich cosinus von 5 x geteilt durch drei, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T von der Funktion f?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
+            
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
+
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+#
+        
+##################################### Steadiness
+#####################################
+class Calc_practice_steady_1_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
+
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
+
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 
 #
         
