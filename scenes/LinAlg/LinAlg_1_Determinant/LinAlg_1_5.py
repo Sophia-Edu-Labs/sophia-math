@@ -30,7 +30,7 @@ class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
 
         lines = ast.literal_eval(self.translate("LinAlg_1.Determinant_intro.1.lines"))
         question = Tex(*lines, color=BLACK).scale(0.8)
-        question_box = SurroundingRectangle(question, color=YELLOW, buff=MED_LARGE_BUFF)
+        question_box = SurroundingRectangle(question, color=BLUE, buff=MED_LARGE_BUFF)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
         mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "2", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
@@ -83,7 +83,6 @@ class LinAlg_1_Determinant_intro_1(SophiaCursorScene):
             self.play(qnark.animate.shift(5*RIGHT), run_time=.5)
 
             self.wait_until_bookmark("qmark_2")
-            #Wenn du einen Sound hinzufügst, macht es oft Sinn, dass der Sound genauso lang ist wie die Animation, zu der der Sound gehört
             self.add_shift_sound(0.5)
             self.play(qnark.animate(run_time=0.5).shift(5*RIGHT), run_time=.5)
 
@@ -144,10 +143,6 @@ class LinAlg_1_Determinant_intro_2(SophiaCursorScene):
 
 #####################################
 #####################################
-# Die Endungen für Fragen und Antwortmöglichkeiten sind in Kleinbuchstaben
-# Ich habe die Klassen mal alle umbenannt (habe ich in meinen Klassen auch gemacht, so ist es übersichtlicher)
-# Ich habe die folgenden (vormals beiden) Videos zu einem Video zusammengefasst.
-# Ich habe das 3_a Video komplett neu gemacht, auf Grundlage des 3_q Videos.
 class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -177,8 +172,6 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 0  \\end{pmatrix}","=", "0", color=c1t, font_size=fs2)
         mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "2", color=c1t, font_size=fs2)
         mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=","-19", color=c1t, font_size=fs2)
-        # Anstatt jede Matrix unter die vorherige zu schreiben, kannst du sie mit der VGroup arrangen, das ist praktischer.
-        # Dann kannst du auch mit aligned_edge=LEFT angeben, dass sie linksbündig auf dem gleichen x-Wert beginnen, das sieht sauberer aus.
         matrices = VGroup(mat_1, mat_2, mat_3).arrange(DOWN, buff=.6, aligned_edge=LEFT).next_to(title, DOWN, buff=1.2)
 
         copy_1, copy_2, copy_3 = mat_1[1].copy(), mat_2[1].copy(), mat_3[1].copy()     
@@ -189,13 +182,10 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
         mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
         blues = VGroup(mat_4[1][2], mat_4[1][3], mat_4[5][0], mat_4[5][2])
 
-        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
         ex_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).scale(.95)
         ex_1[-1].set_color(BLUE), ex_1[-3].set_color(RED)
         sol_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
-        # Damit die linksbündig sind
         sol_1.shift((ex_1.get_left()[0]-sol_1.get_left()[0])*RIGHT)
-        # Haupt und Nebendiagonalen, um die beim Rechenweg zu markieren
         ex_1_diag_1 = VGroup(ex_1[1][1], ex_1[1][4])
         ex_1_diag_2 = VGroup(ex_1[1][2], ex_1[1][3])
         ex_2 = MathTex("\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "7 \\cdot 3", color=c1t, font_size=fs2).scale(.95)
@@ -204,29 +194,14 @@ class LinAlg_1_Determinant_intro_3_q(SophiaCursorScene):
         with self.voiceover(
                 text=self.translate("LinAlg_1.Determinant_intro.3q.voiceover")
         ) as tracker:
-            
-            # Ich würde den Titel weglassen, oder er ist von Anfang an drin (siehe self.add(title))
-            # self.wait_until_bookmark("title_in")
-            # self.play(Write(title))
-
-            # Würde mit diesen Animationen direkt am Anfang beginnen.
-            # self.wait_until_bookmark("mat")
-            # Wenn du einmal Write und dann FadeIn benutzt sieht das komich aus, ich würde da konsequent sein
-            # Ich finde Write() und Create() schöner als FadeIn()...
             self.play(Write(mat_1[0:2]), run_time=1)
-            # Du kannst statt VGroup(mat_1[0], mat_1[1], mat_1[2]) auch einfach mat_1[0:2] benutzen
             self.play(Write(mat_2[0:2]), run_time=1)
             self.play(Write(mat_3[0:2]), run_time=1)
 
             self.wait_until_bookmark("number")
-            # Hab [3] zu [2:] geändert, damit das "=" Zeichen mitkommt.
             self.play(ReplacementTransform(copy_1, mat_1[2:]), run_time=.6)
             self.play(ReplacementTransform(copy_2, mat_2[2:]), run_time=.6)
             self.play(ReplacementTransform(copy_3, mat_3[2:]), run_time=.6)
-
-            # Hätte die erst entfernt unmittelbar bevor es weitergeht. Ich finde "leeren" screen immer schlecht.
-            # self.wait_until_bookmark("fade_out_1")
-            # self.play(Unwrite(VGroup(mat_1,mat_2,mat_3)), run_time=1)
 
             self.wait_until_bookmark("det_1")
             self.play(Unwrite(VGroup(mat_1,mat_2,mat_3)), run_time=.5)
@@ -284,7 +259,6 @@ class LinAlg_1_Determinant_intro_3_a(SophiaCursorScene):
         mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
         self.add(mat_4)
 
-        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
         ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "3 \\cdot 7", color=c1t, font_size=fs2).scale(.95)
         ex_2[-1].set_color(BLUE), ex_2[-3].set_color(RED)
         sol_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
@@ -326,7 +300,6 @@ class LinAlg_1_Determinant_intro_3_b(SophiaCursorScene):
         mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
         self.add(mat_4)
 
-        # Ich trenne die Spalten in der Matrix immer mit dem Ampersand (&) und das scheint auch besser zu klappen in Manim
         ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "3 \\cdot 7", color=c1t, font_size=fs2).scale(.95)
         ex_2[-1].set_color(BLUE), ex_2[-3].set_color(RED)
         sol_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
@@ -354,22 +327,23 @@ class LinAlg_1_Determinant_intro_3_b(SophiaCursorScene):
 
 #####################################
 #####################################
-# Hier könnte man noch ein Übungs + Lösungsvideo ergänzen, mit etwas "schwereren" Zahlen, z.b. Vorzeichen, Brüche, oä.
-# Außerdem könnte man die "Kreuz-Visualisierung" nochmal zeigen (siehe https://www.algebrapracticeproblems.com/wp-content/uploads/2021/01/how-to-find-the-determinant-of-a-2x2-matrix.png)
-#TODO:
-# class LinAlg_1_Determinant_intro_4_q(SophiaCursorScene):
-# class LinAlg_1_Determinant_intro_4_a(SophiaCursorScene):
+class LinAlg_1_Determinant_intro_4_q(SophiaCursorScene):
 
-#####################################
-#####################################
-# Mach das Video als Abschlussvideo und Wiederhol nochmal den wichtigsten Inhalt von Kapitel 1.
-# Den Ausblick auf Kapitel 2 würde ich nur am Ende ganz kurz in einem Satz machen.
-# Allgemeine Sachen:
-# - Wenn du Sachen schon in vorherigen Videos drin hattest (Überschrift, Formel), dann füg sie mit self.add() vor Beginn hinzu, anstatt sie zu animeren
-# - Ich finde die meisten Animationen sehen besser aus, wenn die run_time bei ca. 0.5s liegt    
-class LinAlg_1_Determinant_intro_5(SophiaCursorScene):
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$-19$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("LinAlg_1.Determinant_intro.4q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+#
     
-
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -377,39 +351,178 @@ class LinAlg_1_Determinant_intro_5(SophiaCursorScene):
         self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        self.add(mat_4)
+
+        ex_3 = MathTex("\det \\begin{pmatrix} -1 & \\frac{1}{3} \\\\ \\frac{3}{2}&-2\\end{pmatrix}","=", "(-1) \\cdot \\frac{1}{3}", "-", "\\frac{3}{2} \\cdot (-2)", color=c1t, font_size=fs2).scale(.95)
+        ex_3.shift((mat_4.get_left()[0]-ex_3.get_left()[0])*RIGHT)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Nun ein <bookmark mark="example_3"/> kniffligeres Beispiel. ... 
+                Was ist die Determinante der Matrix minus Eins ein Drittel Drei Halbe minus 2? ...
+                """ 
+        ) as tracker:
+
+            self.wait_until_bookmark("example_3")
+            self.play(Write(ex_3[0]))
+
+        self.wait(4)
+
+class LinAlg_1_Determinant_intro_4_a(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        self.add(mat_4)
+        
+        ex_3 = MathTex("\det","\\begin{pmatrix} -1 & \\frac{1}{3} \\\\ \\frac{3}{2}&-2\\end{pmatrix}", "=", "\\frac{3}{2}", color=c1t, font_size=fs2).scale(.95)
+        ex_3.shift((mat_4.get_left()[0]-ex_3.get_left()[0])*RIGHT)
+        self.add(ex_3[0:2])
+
+        ex_3_2 = MathTex("=", "(-1) \\cdot (-2)", "-", "\\frac{1}{3} \\cdot \\frac{3}{2}", color=c1t, font_size=fs2).scale(.95).next_to(ex_3, DOWN, buff=.6)
+        ex_3_2.shift((ex_3.get_left()[0]-ex_3_2.get_left()[0])*RIGHT)
+        ex_3_2[-1].set_color(BLUE), ex_3_2[-3].set_color(RED)
+        ex_3_diag_1 = VGroup(ex_3[1][1:3], ex_3[1][9:11])
+        ex_3_diag_2 = VGroup(ex_3[1][3:6], ex_3[1][6:9])
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+Super, das ist richtig. Die Determinante der Matrix minus Eins ein Drittel Drei Halbe minus 2 ist gleich dem Produkt<bookmark mark="example_2_1"/> minus Eins mal minus Zwei minus dem Produkt<bookmark mark="example_2_2"/> ein Drittel mal drei Halbe. Das ganze ergibt dann ja drei Halbe, also ist die Determinante <bookmark mark="solution_2"/>gleich drei Halbe.
+""" 
+        ) as tracker:
+
+            self.wait_until_bookmark("example_2_1")
+            self.play(Write(ex_3_2[0]), Write(ex_3_2[1]), *[Indicate(diag, scale_factor=1.6, color=RED) for diag in ex_3_diag_1])
+
+            self.wait_until_bookmark("example_2_2")
+            self.play(Write(ex_3_2[2]), Write(ex_3_2[3]), *[Indicate(diag, scale_factor=1.6, color=BLUE) for diag in ex_3_diag_2])
+
+            self.wait_until_bookmark("solution_2")
+            self.play(Unwrite(ex_3_2), run_time=.5)
+            self.play(Write(ex_3[2:]), run_time=.5)
+
+        self.wait(4)
+
+class LinAlg_1_Determinant_intro_4_b(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_4 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        self.add(mat_4)
+        
+        ex_3 = MathTex("\det","\\begin{pmatrix} -1 & \\frac{1}{3} \\\\ \\frac{3}{2}&-2\\end{pmatrix}", "=", "\\frac{3}{2}", color=c1t, font_size=fs2).scale(.95)
+        ex_3.shift((mat_4.get_left()[0]-ex_3.get_left()[0])*RIGHT)
+        self.add(ex_3[0:2])
+
+        ex_3_2 = MathTex("=", "(-1) \\cdot (-2)", "-", "\\frac{1}{3} \\cdot \\frac{3}{2}", color=c1t, font_size=fs2).scale(.95).next_to(ex_3, DOWN, buff=.6)
+        ex_3_2.shift((ex_3.get_left()[0]-ex_3_2.get_left()[0])*RIGHT)
+        ex_3_2[-1].set_color(BLUE), ex_3_2[-3].set_color(RED)
+        ex_3_diag_1 = VGroup(ex_3[1][1:3], ex_3[1][9:11])
+        ex_3_diag_2 = VGroup(ex_3[1][3:6], ex_3[1][6:9])
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+Das ist leider falsch. Die Determinante der Matrix minus Eins ein Drittel Drei Halbe minus 2 ist gleich dem Produkt<bookmark mark="example_2_1"/> minus Eins mal minus Zwei minus dem Produkt<bookmark mark="example_2_2"/> ein Drittel mal drei Halbe. Das ganze ergibt dann ja drei Halbe, also ist die Determinante <bookmark mark="solution_2"/>gleich drei Halbe.
+""" 
+        ) as tracker:
+
+            self.wait_until_bookmark("example_2_1")
+            self.play(Write(ex_3_2[0]), Write(ex_3_2[1]), *[Indicate(diag, scale_factor=1.6, color=RED) for diag in ex_3_diag_1])
+
+            self.wait_until_bookmark("example_2_2")
+            self.play(Write(ex_3_2[2]), Write(ex_3_2[3]), *[Indicate(diag, scale_factor=1.6, color=BLUE) for diag in ex_3_diag_2])
+
+            self.wait_until_bookmark("solution_2")
+            self.play(Unwrite(ex_3_2), run_time=.5)
+            self.play(Write(ex_3[2:]), run_time=.5)
+
+        self.wait(4)
+
+
+#####################################
+#####################################
+class LinAlg_1_Determinant_intro_5(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
         mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
         mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
+        self.add(mat_1)
+
+        #ex_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
+        #ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
+        #ex_3 = MathTex("\det","\\begin{pmatrix} -1 & \\frac{1}{3} \\\\ \\frac{3}{2}&-2\\end{pmatrix}", "=", "\\frac{3}{2}", color=c1t, font_size=fs2).scale(.95)
+        #examples = VGroup(ex_1, ex_2, ex_3).arrange(DOWN).next_to(mat_1, DOWN, buff=.6)
 
         cursor = AltCursor(stroke_width=0.0, idle=True)
 
         lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").shift(LEFT*5).scale(.4)
 
         tex = Text(
-            "Matrix-Vektor- \n"
-            "Multiplikation",
+            "Was ist die \n"
+            "Bedeutung der \n"
+            "Determinante?",
             color=BLACK,
         ).scale(0.6)
-        box = SurroundingRectangle(tex, color=YELLOW, buff=MED_SMALL_BUFF)
+        box = SurroundingRectangle(tex, color=BLUE, buff=MED_SMALL_BUFF)
         mobject = VGroup(box, tex)
+
+        bis = MathTex("\\text{Bis gleich!}", color=c1t, font_size=fs1).next_to(mobject, DOWN, buff=1.2)
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wir haben <bookmark mark="title_in"/> jetzt die Berechnung <bookmark mark="mat_1"/> der Determinante von 2 Kreuz 2 Matrizen <bookmark mark="smile"/>gemeistert. Super!  <break time="1.5s"/>
-                Die Formel für die <bookmark mark="lion_1"/> Determinante einer 2 Kreuz 2 Matrix ist aber noch etwas mysteriös. <bookmark mark="lion_2"/> Deshalb zeigen wir dir in einer Animation, dass diese Formel eine geometrische Bedeutung hat. 
-                <bookmark mark="mat_vec_mult"/> Für diese Animation müssen wir aber zuerst die Matrix-Vektor-Multiplikation wiederholen und genau das machen wir im nächsten Video.
+                Wir haben jetzt die Berechnung der Determinante von 2 Kreuz 2 Matrizen <bookmark mark="smile"/> gemeistert. Super! <break time="1.5s"/>
+                Zusammenfassend haben wir in diesem Kapitel also <bookmark mark="indicate"/> die Formel für die Determinante einer 2 Kreuz 2 Matrix gesehen und haben die Determinante von einigen konkreten 2 Kreuz 2 Matrizen berechnet. 
+                Diese Formel <bookmark mark="lion_1"/> ist aber noch etwas mysteriös. <bookmark mark="lion_2"/> ... Was ist <bookmark mark="meaning"/> also die Bedeutung der Determinante?  Mit dieser Frage gehen wir jetzt ins nächste Kapitel über, wo wir dir in einer Animation zeigen werden, dass die Determinante eine interessante geometrische Interpretation hat. 
+                 <bookmark mark="bis"/> Bis gleich!
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title), Write(mat_1))
 
             self.wait_until_bookmark("smile")
             cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
             self.wait(1)
             self.play(FadeOut(cursor,smile))
+
+            self.wait_until_bookmark("indicate")
+            self.play(Indicate(mat_1, scale_factor=1.1, color=None), run_time=0.5)
+
+            #self.wait_until_bookmark("example")
+            #self.play(Write(examples))
 
             self.wait_until_bookmark("lion_1")
             self.add_shift_sound(1.5)
@@ -419,25 +532,24 @@ class LinAlg_1_Determinant_intro_5(SophiaCursorScene):
             self.add_shift_sound(0.5)
             self.play(lion.animate(run_time=0.5).shift(5*RIGHT), run_time=1)
 
-            self.wait_until_bookmark("mat_vec_mult")
-            self.play(FadeOut(mat_1), run_time=0.6)
+            self.wait_until_bookmark("meaning")
+            self.play(Unwrite(mat_1), run_time=0.5)
             self.wait(1)
-            self.play(Write(mobject), run_time=1)
+            self.play(Write(mobject), run_time=0.5)
+
+            self.wait_until_bookmark("bis")
+            self.play(Write(bis), run_time=0.5)
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
 
 ##################################### SUBCHAPTER 2: Geometric Interpretation
 #####################################
-# Punkte zu diesem Video:
-# Gelb / Hellgrau auf weiß sieht man nicht so gut -> mehr Kontrast
-# Überschrift entweder ganz weglassen (preferred), oder nicht animieren, sondern mit self.add() hinzufügen. Animieren nur wenns wirklich passt
-# Es sieht immer gut aus, am Rand etwas Abstand zu lassen. Im Zweifel mit self.scale(0.95) etwas Platz schaffen.
-# Da das ja das erste Video im neuen Kapitel ist, gerne eine Kapitel Intro (was ja davor so ein wenig auch im letzten Video des ersten Kapitels war)
+#self.scale(0.95)
 # Wie oben: Führ das Erklärvideo und das Übungsvideo zu einem Video zusammen
-class LinAlg_1_Determinant_geo_1_q(SophiaCursorScene):
-    
 
+class LinAlg_1_Determinant_geo_1(SophiaCursorScene):
+    
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -445,6 +557,49 @@ class LinAlg_1_Determinant_geo_1_q(SophiaCursorScene):
         self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        #
+        cords = self.add_cords([0, 3, 1], [0, 3, 1], x_ticks = [], y_ticks=[]).shift(DOWN*0.6)
+        self.add(cords)
+        plane = cords[0]
+
+        #plane = NumberPlane()
+
+        e_1 = Vector([1, 0])
+        e_2 = Vector([0, 1])
+        label_1 = e_1.coordinate_label()
+        label_2 = e_2.coordinate_label()
+
+        self.add(plane, e_1, e_2, label_1, label_2)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Kapitel lernen wir, was die geometrische Interpretation der Determinante einer 2 Kreuz 2 Matrix ist. Wir wissen ja bereits, dass wir eine 2 Kreuz 2 Matrix A als lineare Abbildung von R zwei nach R zwei ansehen können.  
+                Betrachte das Einheitsquadrat, das von den beiden Standardvektoren eins null und null eins aufgespannt wird.
+                Wir werden sehen, dass der Betrag der Determinante das Mass für die Veränderung des Flächeninhalts dieses Quadrats ist.
+                Das Vorzeichen der Determinante hat ebenfalls eine geometrische Bedeutung. Wir werden sehen, dass das Vorzeichen negativ ist genau dann, wenn sich die Orientierung der beiden Vektoren ändert.
+                """
+        ) as tracker:
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+#####################################
+#####################################
+class LinAlg_1_Determinant_geo_2(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
 
         tex = Text(
             "Matrix-Vektor- \n"
@@ -471,15 +626,12 @@ class LinAlg_1_Determinant_geo_1_q(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                In diesem Video <bookmark mark="title_in"/> wiederholen wir <bookmark mark="tex"/> also die Matrix-Vektor-Multiplikation. <break time="1.5s"/>
+                In diesem Video wiederholen wir <bookmark mark="tex"/> also die Matrix-Vektor-Multiplikation. <break time="1.5s"/>
                 Welchen Vektor erhalten <bookmark mark="qmark"/> wir also, wenn wir die Matrix a b c d mit dem Vektor x ypsilon multiplizieren? <break time="1.5s"/>
                 Um den ersten Eintrag zu berechnen, nehmen wir <bookmark mark="vec_1_1"/> die erste Zeile der Matrix, also a b, und <bookmark mark="vec_1_2"/> den Vektor x ypsilon und bilden <bookmark mark="scalar_1"/> das Skalarprodukt, das heißt, wir <bookmark mark="calc_1"/> rechnen a Mal x und b mal ypsilon und summieren. Also ist der <bookmark mark="transform_1"/> erste Eintrag a Mal x plus b Mal ypsilon.
                 Um den zweiten <bookmark mark="clean_up"/> Eintrag zu berechnen, nehmen wir anstatt der ersten, <bookmark mark="vec_2_1"/> die zweite Zeile der Matrix, also c d, und <bookmark mark="vec_2_2"/> den Vektor x ypsilon und bilden <bookmark mark="scalar_2"/> erneut das Skalarprodukt, <bookmark mark="calc_2"/> also c Mal x und d mal ypsilon und summieren. Deshalb ist der <bookmark mark="transform_2"/> zweite Eintrag c Mal x plus d Mal ypsilon.
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
 
             self.wait_until_bookmark("tex")
             self.play(Write(mobject), run_time=1)
@@ -527,7 +679,9 @@ class LinAlg_1_Determinant_geo_1_q(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_3_Q(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_geo_3_q(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -584,7 +738,7 @@ class LinAlg_1_5_I_3_Q(SophiaCursorScene):
             self.wait(4)
 
 
-class LinAlg_1_Determinant_geo_1_a(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_3_a(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -617,9 +771,42 @@ class LinAlg_1_Determinant_geo_1_a(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
+class LinAlg_1_Determinant_geo_3_b(SophiaCursorScene):
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+
+        mat_2 = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} ? \\\\ ? \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_sol = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", "\\cdot",  "\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}", "=\\begin{pmatrix} 0 \\\\ 2 \\end{pmatrix}", color=c1t, font_size=fs2).move_to(mat_2)
+        
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Das ist leider falsch! Wenn wir <bookmark mark="title_in"/> die Matrix 1 null null zwei mit dem Vektor 0 1 multiplizieren, dann <bookmark mark="transform"/>erhalten wir den Vektor 0 2.
+                Das ist ja das doppelte des ursprünglichen Vektors. Also wird der Vektor 0 1 durch die Matrix 1 0 0 2 um den Faktor zwei gestreckt.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("title_in")
+            self.play(Write(title))
+            self.play(Write(mat_2))
+
+            self.wait_until_bookmark("transform")
+            self.play(TransformMatchingTex(mat_2, mat_sol), run_time=3)
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
 #####################################
 #####################################
-class LinAlg_1_Determinant_geo_2(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_4(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -650,7 +837,7 @@ class LinAlg_1_Determinant_geo_2(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_Determinant_geo_3(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_4_q(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -680,7 +867,7 @@ class LinAlg_1_Determinant_geo_3(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
             
-class LinAlg_1_Determinant_geo_4(SophiaCursorScene):
+class LinAlg_1_Determinant_geo_4_a(SophiaCursorScene):
     
 
     # Main method for constructing the animation
@@ -707,7 +894,114 @@ class LinAlg_1_Determinant_geo_4(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
+class LinAlg_1_Determinant_geo_4_b(SophiaCursorScene):
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+
+        title = self.add_title("Determinante")
+
+        mat = MathTex("\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}", color=c1t, font_size=fs2)
+        self.add(mat)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Zusammenfassend gilt <bookmark mark="title_in"/> also folgender Zusammenhang: Eine 2 Kreuz 2 Matrix a b c d streckt das blaue Einheitsquadrat gerade um einen Faktor gleich dem Betrag ihrer Determinante. 
+                Das heißt, dass wenn wir den Flächeninhalt des resultierenden roten Rechecks berechnung würden, dann wäre dieser gerade gegeben durch den Betrag der Determinante der Matrix a b c d. 
+                """
+        ) as tracker:
+
+            self.wait_until_bookmark("title_in")
+            self.play(Write(title))
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+##################################### Conclude chapter 
+#####################################
 class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=","a\\cdot d", "-", "b\\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        mat_1[1][1].set_color(RED), mat_1[1][4].set_color(RED), mat_1[3][0].set_color(RED),  mat_1[3][2].set_color(RED)
+        mat_1[1][2].set_color(BLUE), mat_1[1][3].set_color(BLUE), mat_1[5][0].set_color(BLUE), mat_1[5][2].set_color(BLUE)
+        self.add(mat_1)
+
+        #ex_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
+        #ex_2 = MathTex("\det","\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "-19", color=c1t, font_size=fs2).scale(.95)
+        #ex_3 = MathTex("\det","\\begin{pmatrix} -1 & \\frac{1}{3} \\\\ \\frac{3}{2}&-2\\end{pmatrix}", "=", "\\frac{3}{2}", color=c1t, font_size=fs2).scale(.95)
+        #examples = VGroup(ex_1, ex_2, ex_3).arrange(DOWN).next_to(mat_1, DOWN, buff=.6)
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").shift(LEFT*5).scale(.4)
+
+        tex = Text(
+            "Was ist die \n"
+            "Bedeutung der \n"
+            "Determinante?",
+            color=BLACK,
+        ).scale(0.6)
+        box = SurroundingRectangle(tex, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, tex)
+
+        bis = MathTex("\\text{Bis gleich!}", color=c1t, font_size=fs1).next_to(mobject, DOWN, buff=1.2)
+        
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Wir haben jetzt die Berechnung der Determinante von 2 Kreuz 2 Matrizen <bookmark mark="smile"/> gemeistert. Super! <break time="1.5s"/>
+                Zusammenfassend haben wir in diesem Kapitel also <bookmark mark="indicate"/> die Formel für die Determinante einer 2 Kreuz 2 Matrix gesehen und haben die Determinante von einigen konkreten 2 Kreuz 2 Matrizen berechnet. 
+                Diese Formel <bookmark mark="lion_1"/> ist aber noch etwas mysteriös. <bookmark mark="lion_2"/> ... Was ist <bookmark mark="meaning"/> also die Bedeutung der Determinante?  Mit dieser Frage gehen wir jetzt ins nächste Kapitel über, wo wir dir in einer Animation zeigen werden, dass die Determinante eine interessante geometrische Interpretation hat. 
+                 <bookmark mark="bis"/> Bis gleich!
+                """
+        ) as tracker:
+
+            self.wait_until_bookmark("smile")
+            cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
+            self.wait(1)
+            self.play(FadeOut(cursor,smile))
+
+            self.wait_until_bookmark("indicate")
+            self.play(Indicate(mat_1, scale_factor=1.1, color=None), run_time=0.5)
+
+            #self.wait_until_bookmark("example")
+            #self.play(Write(examples))
+
+            self.wait_until_bookmark("lion_1")
+            self.add_shift_sound(1.5)
+            self.play(lion.animate.shift(5*RIGHT))
+
+            self.wait_until_bookmark("lion_2")
+            self.add_shift_sound(0.5)
+            self.play(lion.animate(run_time=0.5).shift(5*RIGHT), run_time=1)
+
+            self.wait_until_bookmark("meaning")
+            self.play(Unwrite(mat_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mobject), run_time=0.5)
+
+            self.wait_until_bookmark("bis")
+            self.play(Write(bis), run_time=0.5)
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+##################################### SUBCHAPTER 3: 3x3 Matrix
+#####################################
+
+class LinAlg_1_Determinant_3x3_1(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -715,6 +1009,7 @@ class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
         super().construct()
 
         title = self.add_title("Determinante")
+        self.add(title)
 
         mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\ 0 \\\\ 0 \\ 0 \\ 0 \\\\ 0 \\ 1 \\ 1 \\end{pmatrix}","=", "0", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2).shift(0.2*LEFT)
         mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\ 0 \\\\ 0 \\ 1 \\ 0 \\\\ 0 \\ 0 \\ 1  \\end{pmatrix}","=", "1", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.6)
@@ -772,7 +1067,104 @@ class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
-            
+
+
+class LinAlg_1_Determinant_intro_3x3_q(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\ 0 \\\\ 0 \\ 1 \\ 0 \\\\ 0 \\ 0 \\ 1  \\end{pmatrix}","=", "1", color=c1t, font_size=fs2)
+        mat_2 = MathTex("\det","\\begin{pmatrix} \\frac{1}{2} \\ 0 \\ 0 \\\\ 0 \\ 0 \\ 0 \\\\ 0 \\ 5 \\ 2 \\end{pmatrix}","=", "0", color=c1t, font_size=fs2)
+        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ -3 \\ 0 \\\\ 7 \\ -2 \\ 1 \\\\ 1 \\ -1 \\ 0 \\end{pmatrix}","=","-2", color=c1t, font_size=fs2)
+        sarrus = MathTex("\\text{Regel von Sarrus}", color=c1t, font_size=fs1)
+        matrices = VGroup(mat_1, mat_2, mat_3, sarrus).arrange(DOWN, buff=.5, aligned_edge=LEFT).next_to(title, DOWN, buff=.6)
+
+        copy_1, copy_2, copy_3 = mat_1[1].copy(), mat_2[1].copy(), mat_3[1].copy()     
+
+        mat_4 = MathTex("\det","\\begin{pmatrix} a_{11}& a_{12}& a_{13} \\\\ a_{21}& a_{22}& a_{23} \\\\ a_{31}& a_{32}& a_{33} \\end{pmatrix}", "=", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6).scale(0.9)
+        
+        line_1 = MathTex("+ a_{11} \cdot a_{22} \cdot a_{33}", color=c1t, font_size=fs2)
+        line_2 = MathTex("+ a_{12} \cdot a_{23} \cdot a_{31}", color=c1t, font_size=fs2)
+        line_3 = MathTex("+ a_{13} \cdot a_{21} \cdot a_{32}", color=c1t, font_size=fs2)
+        line_4 = MathTex("- a_{31} \cdot a_{22} \cdot a_{13}", color=c1t, font_size=fs2)
+        line_5 = MathTex("- a_{32} \cdot a_{23} \cdot a_{11}", color=c1t, font_size=fs2)
+        line_6 = MathTex("- a_{33} \cdot a_{21} \cdot a_{12}", color=c1t, font_size=fs2)
+
+        lines = VGroup(line_1, line_2, line_3, line_4, line_5, line_6).arrange(DOWN, buff=.3, aligned_edge=LEFT).next_to(mat_4, DOWN, buff=.5)
+
+        mat_4_ext = MathTex("\\begin{pmatrix}a_{11}&a_{12}&a_{13}&a_{11}&a_{12}\\\\a_{21}&a_{22}&a_{23}&a_{21}&a_{22}\\\\a_{31}&a_{32}&a_{33}&a_{31}&a_{32}\\end{pmatrix}", color=c1t, font_size=fs2).next_to(lines, DOWN, buff=0.6).scale(0.8)
+        
+        
+
+        #mat_4[1][1].set_color(RED), mat_4[1][4].set_color(RED), mat_4[3][0].set_color(RED),  mat_4[3][2].set_color(RED)
+        #reds = VGroup(mat_4[1][1], mat_4[1][4], mat_4[3][0], mat_4[3][2])
+        #mat_4[1][2].set_color(BLUE), mat_4[1][3].set_color(BLUE), mat_4[5][0].set_color(BLUE), mat_4[5][2].set_color(BLUE)
+        #blues = VGroup(mat_4[1][2], mat_4[1][3], mat_4[5][0], mat_4[5][2])
+
+        #ex_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "0 \\cdot 0", color=c1t, font_size=fs2).scale(.95)
+        #ex_1[-1].set_color(BLUE), ex_1[-3].set_color(RED)
+        #sol_1 = MathTex("\\det","\\begin{pmatrix}1&0\\\\0&2\\end{pmatrix}","=", "2", color=c1t, font_size=fs2).scale(.95)
+        #sol_1.shift((ex_1.get_left()[0]-sol_1.get_left()[0])*RIGHT)
+        #ex_1_diag_1 = VGroup(ex_1[1][1], ex_1[1][4])
+        #ex_1_diag_2 = VGroup(ex_1[1][2], ex_1[1][3])
+        #ex_2 = MathTex("\\det\\begin{pmatrix}1&3\\\\7&2\\end{pmatrix}","=", "1 \\cdot 2", "-", "7 \\cdot 3", color=c1t, font_size=fs2).scale(.95)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Kapitel lernen wir, wie man die <bookmark mark="number"/> Determinante einer 3 Kreuz 3 Matrix berechnen kann. <break time="0.8s"/>  
+                Dafür gibt es auch eine <bookmark mark="sarrus"/> einfache Formel, die sich die Regel von Sarrus nennt. <break time="0.4s"/>
+                Wir <bookmark mark="det_1"/> betrachten also eine allgemeine 3 Kreuz 3 Matrix. Die Determinante berechnet sich dann wie folgt. 
+                Wir betrachten <bookmark mark="det_2"/> die erweiterte Matrix, wo wir die ersten zwei Spalten der Matrix nochmal hinten drangehängt haben. 
+                Die Determinante berechnet sich dann wie folgt: <bookmark mark="det_3"/>  Wir bilden jeweis das Produkt der Einträge auf den ersten drei Diagonalen und summieren. <bookmark mark="det_4"/> Dann ziehen wir von dem Ganzen jeweils die Produkte der Einträge auf den ersten drei Nebendiagonalen ab.   
+                """
+        ) as tracker:
+            self.play(Write(mat_1[0:2]), run_time=1)
+            self.play(Write(mat_2[0:2]), run_time=1)
+            self.play(Write(mat_3[0:2]), run_time=1)
+
+            self.wait_until_bookmark("number")
+            self.play(ReplacementTransform(copy_1, mat_1[2:]), run_time=.6)
+            self.play(ReplacementTransform(copy_2, mat_2[2:]), run_time=.6)
+            self.play(ReplacementTransform(copy_3, mat_3[2:]), run_time=.6)
+
+            self.wait_until_bookmark("sarrus")
+            self.play(Write(sarrus), run_time=.5)
+
+            self.wait_until_bookmark("det_1")
+            self.play(Unwrite(VGroup(mat_1,mat_2,mat_3)), Unwrite(sarrus), run_time=.5)
+            self.play(Write(mat_4), run_time=1)
+
+            self.wait_until_bookmark("det_2")
+            self.play(Write(mat_4_ext), run_time=.6)
+
+            self.wait_until_bookmark("det_3")
+            self.play(Write(line_1), run_time=.5)
+            self.play(Write(line_2), run_time=.5)
+            self.play(Write(line_3), run_time=.5)
+
+            self.wait_until_bookmark("det_4")
+            self.play(Write(line_4), Write(line_5), Write(line_6), run_time=.4)
+
+            #self.wait_until_bookmark("indicate_reds")
+            #self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds], run_time=2)
+
+            #self.wait_until_bookmark("indicate_blues")
+            #self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues], run_time=2)
+
+            #self.wait_until_bookmark("clean_up")
+            #mat_4.generate_target().next_to(title, DOWN, buff=.6)
+            #self.add_shift_sound(.5)
+            #self.play(MoveToTarget(mat_4), run_time=.5)
+
+        self.wait(4)
 
 class LinAlg_1_5_I_4_Q(SophiaCursorScene):
     
