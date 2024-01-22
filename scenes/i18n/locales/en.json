@@ -3419,6 +3419,15 @@
       },
       "2q": {
         "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?"
+      },
+      "9q": {
+        "question": "",
+        "answerOptions": "",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is differentiable and odd. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f of x is zero for all x in the real numbers. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The derivative of f at the point x equals zero is equal to zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The derivative of f at the point x equals zero is not zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: None of the above statements can be made in general. ..."
+      },
+      "8q": {
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable uneven function. Which of the following is true:",
+        "answerOptions": "[\"$f$ doesn't have a minimum on $[a,b]$\",\n\"$f([a,b])$ can be written as an interval $[c,d]$ with $c,d\\in\\mathbb R$ and $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ is injective on $[a,b]$\"]"
       }
     },
     "practice_limits": {
