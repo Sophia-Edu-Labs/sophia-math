@@ -43,7 +43,8 @@ class PagePrototypeQuestion(PagePrototype):
         answerOptions: List[str],
         correctAnswerIndex: int,
         questionText: str,
-        freetext: Optional[Dict[str, Union[str, int, dict]]]
+        freetext: Optional[Dict[str, Union[str, int, dict]]],
+        llmCheckDetails: Optional[Dict[str, Union[str, int, dict, list]]],
     ):
         super().__init__(prototypeID, 'question')
         self.questionVideoPrototypeID = questionVideoPrototypeID
@@ -51,6 +52,7 @@ class PagePrototypeQuestion(PagePrototype):
         self.correctAnswerIndex = correctAnswerIndex
         self.questionText = questionText
         self.freetext = freetext
+        self.llmCheckDetails = llmCheckDetails
 
     def to_json(self):
         res = {
@@ -63,6 +65,9 @@ class PagePrototypeQuestion(PagePrototype):
 
         if self.freetext is not None:
             res["freetext"] = self.freetext
+
+        if self.llmCheckDetails is not None:
+            res["llmCheckDetails"] = self.llmCheckDetails
 
         return res
 
@@ -81,6 +86,10 @@ class PagePrototypeQuestion(PagePrototype):
                 "answerOptionDescriptions": task_definition.freeTextDetail.answerOptionDescriptions,
                 "answerOptionsTypes": task_definition.freeTextDetail.answerOptionsTypes,
                 "answerOptionsEquality": task_definition.freeTextDetail.answerOptionsEquality,
+            },
+            llmCheckDetails= None if task_definition.llmCheckDetails is None else {
+                "fallbackOptionIndex": task_definition.llmCheckDetails.fallbackOptionIndex,
+                "specialInputSnippets": task_definition.llmCheckDetails.specialInputSnippets,
             }
         )
     

@@ -2933,7 +2933,8 @@
     "Function": "Function",
     "invertible": "invertible",
     "Determinant": "Determinant",
-    "Limits": "Limits"
+    "Limits": "Limits",
+    "mvt": "mean value theorem"
   },
   "Words": {
     "base": "base",
@@ -3415,18 +3416,169 @@
     },
     "Practice_MC": {
       "1q": {
-        "question-text": "Which is true for the composition $g\\circ f$?"
+        "question-text": "Which is true for the composition $g\\circ f$?",
+        "answer-options": "[\"$g\\circ f$ is injective\", \"$g\\circ f$ ist surjective\", \"$g\\circ f$ doesn't exist\", \"$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$\"]",
+        "answer-a": "$g\\\\circ f$ is injective",
+        "answer-b": "$g\\circ f$ is surjective",
+        "answer-c": "$g\\circ f$ doesn't exist",
+        "answer-d": "$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$",
+        "voiceover": "You're given the function <bookmark mark=\"f_in_1\"/> f, which maps from the half-open interval from 1 to infinity into the real numbers, <bookmark mark=\"f_in_2\"/>and x to x minus 1 squared, and the function <bookmark mark=\"g_in_1\"/>g, which maps from the half-open interval from 0 to infinity into the real numbers, <bookmark mark=\"g_in_2\"/>and maps x to e the power of x.\nWhich of the following statements is true for the composition <bookmark mark=\"g_circ_f_in\"/>g after f?\nStatement <bookmark mark=\"answer_a_in\"/>a: The composition g after f is injective. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: The composition g after f is surjective. ...\nStatement <bookmark mark=\"answer_c_in\"/>c: The composition g after f does not exist. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: The composition g after f is equal to x for all x in the half-open interval from 0 to infinity. ...",
+        "is_injective": "$\\bullet$ $g\\circ f$ is injective",
+        "not_surjective": "$\\bullet$ $g\\circ f$ is not surjective"
       },
       "2q": {
         "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?"
+      },
+      "9q": {
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable, odd function. Which of these statements is true in general?",
+        "answerOptions": "[\"$f(x)=0$ for all $x\\in\\mathbb R$\", \"$f'(x)=0$ for $x=0$\", \"$f'(x)\\neq0$ for $x=0$\", \"None of these statements holds true in general\"]",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is differentiable and odd. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f of x is zero for all x in the real numbers. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The derivative of f at the point x equals zero is equal to zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The derivative of f at the point x equals zero is not zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: None of the above statements can be made in general. ...",
+        "answer_a": "a) $f(x) = 0$ for all $x$",
+        "answer_b": "b) $f'(x) = 0$ for $x = 0$",
+        "answer_c": "c) $f'(x) \\neq 0$ for $x = 0$",
+        "answer_d": "d) None of these always true",
+        "f_property": "$f$ differentiable, odd"
+      },
+      "8q": {
+        "question": "Let $a,b\\in\\mathbb R$ with $a<b$ and let $f:[a,b]\\rightarrow\\mathbb R$ be a continuous function. Which of the following statements ist true?",
+        "answerOptions": "[\"$f$ doesn't have a minimum on $[a,b]$\",\n\"$f([a,b])$ can be written as an interval $[c,d]$ with $c,d\\in\\mathbb R$ and $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ is injective on $[a,b]$\"]"
+      },
+      "9a": {
+        "voiceover": "Let us first consider the<bookmark mark=\"f_1_in\"/> function f of x equal to one. This function is differentiable and odd. So a and c <bookmark mark=\"a_c_red\"/>are already wrong, because the function f is not zero and the derivative of f at the point x equals zero is not non-zero.\n<bookmark mark=\"f_2_in\"/>Let us now consider the function f of x equal to x. This function is also differentiable and odd. So<bookmark mark=\"b_red\"/> b is also false, because the derivative of f is equal to one everywhere, so f prime of zero is not zero.\nSo <bookmark mark=\"d_green\"/>only d remains, and that is also the correct answer."
+      },
+      "10q": {
+        "answerOptions": "[\"The function $g:\\mathbb R \\rightarrow \\mathbb R$ defined as $g(x)=f(x)\\cdot \\cos(x)$ is uneven\", \"\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ for all $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ for all $a>0$\", \"$f$ is not integrable\"]",
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous, even function. Which of the following statements is true:",
+        "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ is odd",
+        "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\for all $a>0$",
+        "answer_c": "c) $\\int_{-a}^{a}f(x)dx=0$ for all $a>0$",
+        "answer_d": "d) $f$ is not integrable",
+        "f_property": "$f$ continuous, even",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is continuous and even. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function g of x equals f of x times cosine of x is odd. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The definite integral from minus a to a of f of x dx is equal to 2 times the definite integral from 0 to a of f of x dx for all a greater than zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The definite integral from minus a to a of f of x dx is equal to zero for all a greater than zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: The function f is not integrable. ..."
+      },
+      "10a": {
+        "voiceover": "Let's visualize the whole thing with an<bookmark mark=\"plot_in\"/> example function.\nLet's consider the function f of x equal to x to the power of 2. This function is continuous and even.\nIf we now look at the integral from minus a to <bookmark mark=\"auc_left_in\"/>0 of f of x dx, we see that it is exactly the same as <bookmark mark=\"auc_switch\"/>the integral from 0 to a of f of x dx.\nSo <bookmark mark=\"b_green\"/>the statement b is true: The <bookmark mark=\"auc_left_back_in\"/>determined integral from minus a to a of f of x dx is equal to<bookmark mark=\"auc_final_switch\"/> 2 times the determined integral from 0 to a of f of x dx for all a greater than zero."
+      },
+      "11q": {
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is continuous and even. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f is surjective. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f is injective. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The function f has no maximum. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: The function f of x is less than zero for all x in the set of 0, 1, 2, 3. ...",
+        "question": "Which of the following statements is true for a coninuous, even function $f:\\mathbb R \\rightarrow \\mathbb R$?",
+        "answerOptions": "[\"$f$ is surjective\", \"$f$ is injective\", \"$f$ has no maximum\", \"$f(x)>0$ for all $x\\in\\{0,1,2,3\\}$\"]",
+        "answer_a": "a) $f$ is surjective",
+        "answer_b": "b) $f$ is injective",
+        "answer_c": "c) $f$ has no maximum",
+        "answer_d": "d) $f(x)<0$ for all $x\\\\in\\\\{0,1,2,3\\\\}$"
+      },
+      "11a": {
+        "voiceover": "Let's<bookmark mark=\"reorganize\"/> simply enter all the values:<bookmark mark=\"f_1\"/> f of 1 is equal to one minus one squared, which is zero. <bookmark mark=\"f_2\"/>f of 2 is equal to two minus one squared, which is one. And <bookmark mark=\"f_3\"/>f of 3 is equal to three minus one squared, which is four.\nSo we see that no two different x values are mapped to the same y value. So <bookmark mark=\"b_green\"/>the function f is injective."
+      },
+      "12q": {
+        "question": "Let $\\left(a_n\\right)_{n\\in\\mathbb N}$ and $\\left(b_n\\right)_{n\\in\\mathbb N}$ be sequences with $\\lim_{n\\to\\infty}a_n=\\infty$ and $\\lim_{n\\to\\infty}b_n=0$. Which of the following is true:",
+        "answer_d": "d) None are always true",
+        "answerOptions": "[\"$\\lim_{n\\to\\infty}a_n\\cdot b_n=0$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=1$\", \"None are always true\"]",
+        "sequences": "sequences",
+        "voiceover": "Let <bookmark mark=\"a_b_in\"/>a n and b n be sequences of real numbers.\nThe limit of <bookmark mark=\"a_in\"/>a n for n towards infinity is equal to infinity. ... And the limit of <bookmark mark=\"b_in\"/>b n for n towards infinity is equal to zero. ...\nWhich of the following statements is generally true? ...\nStatement <bookmark mark=\"answer_a_in\"/>a: The limit of a n times b n for n towards infinity is equal to zero. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: The limit of a n times b n for n towards infinity is equal to infinity. ...\nStatement <bookmark mark=\"answer_c_in\"/>c: The limit of a n times b n for n towards infinity is equal to one. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: None of the above statements are always true."
+      },
+      "12a": {
+        "voiceover": "Let's look at three examples:\nExample <bookmark mark=\"example_1_in\"/>number 1: a n is equal to n and b n is equal to one squared over n. Then the limit of a n times b n is equal to the limit of one over n for n towards infinity, that is, equal to zero.\nExample <bookmark mark=\"example_2_in\"/>number 2: a n is equal to n and b n is equal to one over n. Then the limit of a n times b n is equal to the limit of one for n towards infinity, i.e. equal to one.\nAnd example <bookmark mark=\"example_3_in\"/>number 3: a n is equal to n to the power of 2 and b n is equal to one over n. Then the limit of a n times b n is equal to the limit of n for n towards infinity, i.e. equal to infinity.\nWe can therefore see that <bookmark mark=\"d_green\"/>none of the statements a, b or c is universally true. So d is the correct answer.\n\nTranslated with DeepL.com (free version)"
+      },
+      "15q": {
+        "question": "Consider the function $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ with $f(x)=e^{-\\sqrt{x^2+1}+1}$. Which of the following statements is true?",
+        "answerOptions": "[\"$f$ has a zero on $[0,1]$\", \"$f$ has a maximum on $[0,1]$\", \"$f$ is not continuous\" ,\"$f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]",
+        "answer_a": "a) $f$ has a zero on $[0,1]$",
+        "answer_b": "b) $f$ has maximum on $[0,1]$",
+        "answer_c": "c) $f$ isn't continuous",
+        "answer_d": "d) $f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$",
+        "voiceover": "Let f be a function that maps from the interval from <bookmark mark=\"f_in_1\"/>negative pi to pi into the real numbers, and whose function rule <bookmark mark=\"f_in_2\"/>is e to the power minus the root of x to the power of 2 plus 1 plus 1. Which of the following statements is universally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f has a zero in the interval from zero to one. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f has a maximum in the interval from zero to one. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The function f is not continuous. ...\nOr <bookmark mark=\"answer_d_in\"/>statement d: The function f has the indefinite integral capital f of x is equal to x times e raised to the power of minus the root of x squared plus 1 plus 1. ...",
+        "sol": "$f$ has Min and Max on $[-\\\\pi,\\\\pi]$"
+      },
+      "15a": {
+        "voiceover": "We have a continuous function on a closed interval. We <bookmark mark=\"implication_in\"/>can then apply the theorem of minimum and maximum, and <bookmark mark=\"sol_in\"/>know that the function f has a minimum and a maximum on the interval from minus pi to pi.\nSo <bookmark mark=\"b_green\"/>the statement b is true."
+      },
+      "16q": {
+        "question": "Which of the following is true for the function $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=13x^3-3x$?",
+        "answerOptions": "[\"$f$ is odd\", \"$f$ has no zeros\", \"There are exactly $3$ values $x\\in\\mathbb R$ where $f'(x)=0$\", \"$f$ has no indefinite integral\"]",
+        "answer_a": "a) $f$ is odd",
+        "answer_b": "b) $f$ has no zeros",
+        "answer_c": "c) There are 3 values $x$ with $f'(x)=0$",
+        "answer_d": "d) $f$ has no indefinite integral",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function that maps from the real numbers into the real numbers, with the <bookmark mark=\"f_in_2\"/>function rule 13 times x to the power of 3 minus 3 times x. Which of the following statements is true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f is odd. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f has no zeros. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: There are exactly three x's in the real numbers for which the derivative of f at the point x is zero. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: The function f has no indefinite integral. ..."
+      },
+      "16a": {
+        "voiceover": "The function f is a polynomial with <bookmark mark=\"deg_three\"/>a coefficient of degree three, and <bookmark mark=\"odd\"/>a coefficient of degree one. So f has only odd powers, and the function f <bookmark mark=\"a_green\"/>is odd."
+      },
+      "18q": {
+        "answer_a": "a) There exists $\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$",
+        "answer_b": "b) $f$ not integrable on $[0,1]$",
+        "answer_c": "c) $f$ has no maximum on $[0,2]$",
+        "answer_d": "d) None of the options",
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous function with $f(x)>0$ for all $x\\in[0,1]$. Which of these statements is true?",
+        "answerOptions": "[\"a) There exists $\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$\", \"$f$ is not integrable on [0,1]$\", \"$f$ has no maximum on $[0,2]$\", \"None of the options\"]",
+        "voiceover": "Let f be a<bookmark mark=\"f_in_1\"/>continuous function that maps from the real numbers into the real numbers, for which it holds that <bookmark mark=\"f_in_2\"/>f of x is greater than zero for all x in the interval from zero to one. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that there is a xi in the open interval from zero to one such that the rectangle with height f of xi and width one has area A, where A is the definite integral from zero to one of f of x dx? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the function f is not integrable on the interval from zero to one? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f has no maximum on the interval from zero to two? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that none of the above possibilities apply? ...",
+        "solution": "There is  $\\\\xi\\\\in]0,1[$, such that\\\\\\\\ $\\\\int_0^1f(x)dx=f(\\\\xi)$"
+      },
+      "18a": {
+        "voiceover": "Since f is continuous, we can <bookmark mark=\"implication_in\"/>apply the mean value theorem, and we get <bookmark mark=\"solution\"/>that there is an xi,\nsuch that the definite integral from zero to one of f of x dx is equal to f of xi, where xi is in the open interval from zero to one.\nSo <bookmark mark=\"a_green\"/>the statement a is true."
+      },
+      "19q": {
+        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differentiable, even",
+        "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
+        "answer_a": "a) $f(x)=0$ for all $x\\\\in\\\\mathbb R$",
+        "answer_b": "b) $f'(x)=0$ for $x=0$",
+        "answer_c": "c) $f$ is injective",
+        "question": "Let $f:\\mathbb R\\rightarrow\\mathbb R$ be a differentiable, even function. Which of the following statements is true?",
+        "answerOptions": "[\"$f(x)=0$ for all $x\\in\\mathbb R$\", \"$f'(x)=0$ for $x=0$\", \"$f$ is injective\", \"$f(x)=x^3$\"]"
+      },
+      "19a": {
+        "voiceover": "Let's look at a <bookmark mark=\"plot_in\"/>graphic example of an even, differentiable function. As we can see, there must be an extreme point at <bookmark mark=\"highlight_x_0\"/>x equal to zero.\nSo <bookmark mark=\"b_green\"/>the statement b is true, because for there to be an extreme point at x equal to zero, the derivative of f at x must be equal to zero."
+      },
+      "20q": {
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=\\cos(x)+2\\cos(2x)$ be a function. Which of the following statements is true?",
+        "answerOptions": "[\"$f$ isn't periodic\", \"For $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$it holds that $b_k=0$ with $k\\in\\mathbb N$\", \"$f$ is strictly monotonously increasing\", \"All Fourier-Coefficients are $0$\"]",
+        "voiceover": "Let f <bookmark mark=\"func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x equals zero is zero ? ...\nIs it <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
+        "answer_a": "$f$ is not periodic",
+        "answer_b": "For $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$it holds that $b_k=0$ with $k\\in\\mathbb N$\", \"$f$ is strictly monotonously increasing",
+        "answer_c": "$f$ increases strictly monotonously",
+        "answer_d": "All Fourier-Coefficients are equal to $0$"
+      },
+      "20a": {
+        "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x equals is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f from x equals x to the power of 3? ..."
+      },
+      "1a": {
+        "voiceover": "Let's start by looking at <bookmark mark=\"f_stays\"/>all possible values of f. We can use all values from<bookmark mark=\"highlight_interval\"/> 1 to infinity. As a result, x squared reaches all values from 1 to infinity, and f thus reaches all values<bookmark mark=\"interval_f_range\"/> from 0 to infinity. This means <bookmark mark=\"g_in\"/>that all possible values of f lie in the <bookmark mark=\"highlight_def_g\" range of g. So<bookmark mark=\"g_f_in\"/> g after f exists as well. We also realize that f is injective, because if we only insert values from 1 to infinity, we get the right half of a parabola.\nWe find g after f by plugging f of x into the term g for x. Then we get <bookmark mark=\"g_circ_f\"/>g of f of x, equal to e squared to the power of x minus one. <bookmark mark=\"clean_up\"/>This function<bookmark mark=\"injective\"/> is injective, because e to the power of x is injective and the concatenation of two injective functions is always injective. We also recognize that <bookmark mark=\"surjective\"/>g after f is not surjective because the e-function does not take up negative values. And we can see that g after f of x is not always equal to x, <bookmark mark=\"gfx_neq_x\"/>if, for example, we set x equal to 2. Then we get e squared to the power of 2 minus 1, which is e to the power of three and therefore not equal to 2."
       }
     },
     "practice_limits": {
       "1q": {
-        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?"
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?",
+        "voiceover-text": "Let's look at the term<bookmark mark=\"func_in\"/> 2 n to the power of three + 4 n, divided by 3 n to the power of three root n + 4 n squared.\nWhat <bookmark mark=\"limit_in\"/>is the limit of this term?"
       },
       "2q": {
-        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}=\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+      },
+      "1a": {
+        "voiceover-text": "First, we factor out n to cubed root n in the enumerator and the denominator. <bookmark mark=\"implication_1\"/>This leaves us with n cubed root n times open bracket two over root n plus four over n squared root n close brakcet. And in the denominator, we get n cubed root n times open bracket three plus four over n root n close bracket. Then <bookmark mark=\"s_out_1\"/>we can reduce the n to the power of three root n, and <bookmark mark=\"func_2_b\"/>we get two over root n plus four over n to the power of two root n, divided by three plus four over n root n.\nIf we then let <bookmark mark=\"implication_2\"/>n go to infinity, we get 0 plus 0 divided by 3 plus 0, which equals zero. So the limit is zero."
+      },
+      "3q": {
+        "voiceover-text": "Now we look at the <bookmark mark=\"term_in\"/>term 16 x to the power of two divided by the tangent of x. And we look for the <bookmark mark=\"limit_in\"/>limit value for x towards pi over four.\nWhat is the result?",
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)$?"
+      },
+      "3a": {
+        "voiceover-text": "Here we can simply insert the limit we are looking for. We <bookmark mark=\"step_1_a\"/>then get 16 times pi to the power of two divided by four squared, and that divided by the tangent of pi over four.\nThe tangent of pi over four is equal to one, and we get <bookmark mark=\"step_1_b\"/>pi squared as the result of our limit."
+      },
+      "4q": {
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
+        "voiceover-text": "Now: What is <bookmark mark=\"lion_in\"/> the limit <bookmark mark=\"limit_in\"/>for x approaching pi halves for the<bookmark mark=\"term_in\"/> term sine of two x divided by the cosine of x."
+      },
+      "4a": {
+        "voiceover-text": "Both the numerator and the denominator go to zero when x goes to pi half. So we can apply the rule of <bookmark mark=\"implication_1\"/>L'Hopital.\nThen we get that the limit is equal to the derivative of the numerator divided by the derivative of the denominator. In this case, this is equal to <bookmark mark=\"func_2_a\"/>the limit for n approaching pi halves of 2 times the cosine of two x divided by the negative sine of x. And <bookmark mark=\"func_2_b\"/>this is equal to 2, so the solution is 2."
+      },
+      "5q": {
+        "voiceover-text": "Let us consider a convergent <bookmark mark=\"a_1_in\"/>sequence a n. It is given that the <bookmark mark=\"a_2_in\"/>limit of this sequence is equal to one. And furthermore, that <bookmark mark=\"a_3_in\"/>all elements of the sequence are greater than zero.\nLet us now consider a new <bookmark mark=\"b_n_in_1\"/>sequence b n, which we define as the natural logarithm of a n.\nWhat is <bookmark mark=\"b_n_in_2\"/>the limit of this sequence b n for n approaching infinity?",
+        "question-text": "Let $\\left(a_n\\right)_{n\\in\\mathbb N}$ be a convergent sequence with $\\underset{n\\to\\infty}{\\lim}a_n=1$,  and $a_n>0$ $\\forall$ $n\\in\\mathbb N$. What is the limit $\\underset{n\\to\\infty}{\\lim}b_n$?",
+        "convergent-sequence": "convergent sequence"
+      },
+      "5a": {
+        "voiceover-text": "Since the function is continuous, we can swap the function execution and the calculation of the limit. And we get <bookmark mark=\"implication_1\"/>that the limit of the natural logarithm of a n is equal to the <bookmark mark=\"series_5_b\"/>natural logarithm of the limit of a n.\nSince the limit of a n is equal to one, we obtain that the limit of b n is <bookmark mark=\"solution\"/>equal to the logarithm of one, meaning zero."
       }
     }
   },

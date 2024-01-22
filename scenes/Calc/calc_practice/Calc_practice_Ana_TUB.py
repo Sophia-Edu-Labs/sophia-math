@@ -13,7 +13,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
 import ast 
 
 
@@ -30,7 +30,7 @@ class Calc_practice_MC_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=[r"$g\circ f$ ist injektiv", r"$g\circ f$ ist surjektiv", r"$g\circ f$ existiert nicht", r"$(g\circ f)(x)=x\, \forall x\in[0,\infty)$"],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.1q.answer-options")),
             correctAnswerIndex=0,
             questionText = self.translate("Calc_1.Practice_MC.1q.question-text")
         )
@@ -50,23 +50,15 @@ class Calc_practice_MC_1_q(SophiaCursorScene):
         g_circ_f = MathTex("g\\circ f:[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Seien die Funktion<bookmark mark="f_in_1"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark="f_in_2"/>und x auf x minus 1 quadrat abbildet, sowie die Funktion <bookmark mark="g_in_1"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark="g_in_2"/>und x auf e hoch x abbildet, gegeben.
-Welche der folgenden Aussagen trifft auf die Komposition <bookmark mark="g_circ_f_in"/>g nach f zu?
-Aussage <bookmark mark="answer_a_in"/>a: Die Komposition g nach f ist injektiv. ...
-Aussage <bookmark mark="answer_b_in"/>b: Die Komposition g nach f ist surjektiv. ...
-Aussage <bookmark mark="answer_c_in"/>c: Die Komposition g nach f existiert nicht. ...
-Oder aussage <bookmark mark="answer_d_in"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...
-"""
+                text=self.translate("Calc_1.Practice_MC.1q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_in_1")
@@ -119,16 +111,16 @@ class Calc_practice_MC_1_a(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -201,16 +193,16 @@ class Calc_practice_MC_1_b(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -283,16 +275,16 @@ class Calc_practice_MC_1_c(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -365,16 +357,16 @@ class Calc_practice_MC_1_d(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -450,7 +442,7 @@ class Calc_practice_MC_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_1 = MathTex("f:[0,1]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
         f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
@@ -513,7 +505,7 @@ class Calc_practice_MC_2_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_1 = MathTex("f:[0,1]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
         f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
@@ -562,7 +554,7 @@ class Calc_practice_MC_2_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_1 = MathTex("f:[0,1]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
         f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
@@ -611,7 +603,7 @@ class Calc_practice_MC_2_c(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_1 = MathTex("f:[0,1]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
         f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
@@ -660,7 +652,7 @@ class Calc_practice_MC_2_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        f_1 = MathTex("f:[0,1])\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_1 = MathTex("f:[0,1]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_2 = MathTex("f(0)=0, \\, f(1)=0", color=c1t, font_size=fs2)
         f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
@@ -1023,7 +1015,7 @@ class Calc_practice_MC_4_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions=["$\\lim_{n\\to\\infty}a_{n}=2a$", "$\\lim_{n\\to\\infty}a_{n}=a$", "$\\lim_{n\\to\\infty}a_{n}=2a+1$", "$\\lim_{n\\to\\infty}a_{n}$ existiert nicht"],
             correctAnswerIndex=1,
-            questionText = "Welche der folgenden Aussagen trifft auf den Grenzwert von $\\left(a_n\\right)_{n\\in\\mathbb N}$ zu?"
+            questionText = "Welche der folgenden Aussagen trifft auf den Grenzwert $\\lim_{n\\to\\infty}\\left(a_n\\right)_{n\\in\\mathbb N}$ zu?"
         )
 
     # Main method for constructing the animation
@@ -1044,16 +1036,7 @@ class Calc_practice_MC_4_q(SophiaCursorScene):
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Sei <bookmark mark="a_n_in_1"/>a_n eine Folge von reellen Zahlen, die für alle n in den natürlichen Zahlen definiert ist.
-Wir wissen, dass der Grenzwert von a 2 n <bookmark mark="a_n_in_2"/> für n gegen unendlich gleich a ist. Und wir wissen auch, <bookmark mark="a_n_in_3"/>dass der Grenzwert von a 2 n plus 1 gleich a ist.
-Welche der folgenden Aussagen trifft auf den Grenzwert von a n zu?
-Aussage <bookmark mark="answer_a_in"/>a: Der Grenzwert von a n ist gleich 2 a. ...
-Aussage <bookmark mark="answer_b_in"/>b: Der Grenzwert von a n ist gleich a. ...
-Aussage <bookmark mark="answer_c_in"/>c: Der Grenzwert von a n ist gleich 2 a plus 1. ...
-Oder aussage <bookmark mark="answer_d_in"/>d: Der Grenzwert von a n existiert nicht. ...
-"""
+                text=self.translate("Calc_1.Practice_MC.4q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("a_n_in_1")
@@ -1103,13 +1086,7 @@ class Calc_practice_MC_4_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Da die Teilfolge <bookmark mark="highlight_evens"/>a 2 n gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit geradem Index gegen den Wert a. ...
-Und da die Teilfolge <bookmark mark="highlight_odds"/>a 2 n plus 1 auch gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit ungeradem Index ebenfalls gegen a. ...
-Wenn wir diese beiden Teilfolgen kombinieren, erhalten wir die Teilfolge, die aus allen Elementen von a n mit geradem oder ungeradem Index, also aus allen Elementen von a n besteht. Und diese konvergiert dann ja weiterhin gegen a...
-Also  ist der Grenzwert von a n <bookmark mark="show_solution"/>gleich a, und die richtigae Aussage ist b. ...
-"""
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.4a.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("highlight_evens")
@@ -1122,6 +1099,119 @@ Also  ist der Grenzwert von a n <bookmark mark="show_solution"/>gleich a, und di
             self.play(answer_b.animate.set_color(GREEN), VGroup(answer_a, answer_c, answer_d).animate.set_color(RED))
 
         self.wait(4)
+
+class Calc_practice_MC_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        a_n_1 = MathTex("\\left(a_n\\right)_{n\\in\\mathbb N}", color=c1t, font_size=fs2)
+        a_n_2 = MathTex("\\lim_{n\\to\\infty}a_{2n}=a", color=c1t, font_size=fs2)
+        a_n_3 = MathTex("\\lim_{n\\to\\infty}a_{2n+1}=a", color=c1t, font_size=fs2)
+        a_n = VGroup(a_n_1, a_n_2, a_n_3).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_{n}=2a$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_{n}=a$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_{n}=2a+1$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $\\lim_{n\\to\\infty}a_{n}$ existiert nicht", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.4a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_evens")
+            self.play(Indicate(a_n[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("highlight_odds")
+            self.play(Indicate(a_n[2], color=RED), run_time=3)
+
+            self.wait_until_bookmark("show_solution")
+            self.play(answer_b.animate.set_color(GREEN), VGroup(answer_a, answer_c, answer_d).animate.set_color(RED))
+
+        self.wait(4)
+
+class Calc_practice_MC_4_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        a_n_1 = MathTex("\\left(a_n\\right)_{n\\in\\mathbb N}", color=c1t, font_size=fs2)
+        a_n_2 = MathTex("\\lim_{n\\to\\infty}a_{2n}=a", color=c1t, font_size=fs2)
+        a_n_3 = MathTex("\\lim_{n\\to\\infty}a_{2n+1}=a", color=c1t, font_size=fs2)
+        a_n = VGroup(a_n_1, a_n_2, a_n_3).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_{n}=2a$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_{n}=a$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_{n}=2a+1$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $\\lim_{n\\to\\infty}a_{n}$ existiert nicht", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.4a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_evens")
+            self.play(Indicate(a_n[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("highlight_odds")
+            self.play(Indicate(a_n[2], color=RED), run_time=3)
+
+            self.wait_until_bookmark("show_solution")
+            self.play(answer_b.animate.set_color(GREEN), VGroup(answer_a, answer_c, answer_d).animate.set_color(RED))
+
+        self.wait(4)
+
+class Calc_practice_MC_4_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        a_n_1 = MathTex("\\left(a_n\\right)_{n\\in\\mathbb N}", color=c1t, font_size=fs2)
+        a_n_2 = MathTex("\\lim_{n\\to\\infty}a_{2n}=a", color=c1t, font_size=fs2)
+        a_n_3 = MathTex("\\lim_{n\\to\\infty}a_{2n+1}=a", color=c1t, font_size=fs2)
+        a_n = VGroup(a_n_1, a_n_2, a_n_3).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_{n}=2a$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_{n}=a$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_{n}=2a+1$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $\\lim_{n\\to\\infty}a_{n}$ existiert nicht", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.4a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("highlight_evens")
+            self.play(Indicate(a_n[1], color=RED), run_time=3)
+
+            self.wait_until_bookmark("highlight_odds")
+            self.play(Indicate(a_n[2], color=RED), run_time=3)
+
+            self.wait_until_bookmark("show_solution")
+            self.play(answer_b.animate.set_color(GREEN), VGroup(answer_a, answer_c, answer_d).animate.set_color(RED))
+
+        self.wait(4)
+
+
 
 ##################################### 
 #####################################
@@ -1160,17 +1250,7 @@ class Calc_practice_MC_5_q(SophiaCursorScene):
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
 
         # Voiceover text
-        voiceover_text = (
-            f"""
-            Betrachten wir die Funktion f, die <bookmark mark="f_definition"/>von dem Intervall minus pi bis pi in die reellen Zahlen abbildet, 
-            und deren Funktionsvorschrift lautet: <bookmark mark="f_formula"/>f von x ist gleich zwei mal dem Absolutbetrag von x plus vier. 
-            Welche der folgenden Aussagen trifft auf die Funktion f zu? <bookmark mark="question"/>
-            Besitzt die Funktion im Intervall von null bis eins eine Nullstelle? <bookmark mark="answer_1"/>
-            Hat sie eine lokale Extremstelle bei x gleich null? <bookmark mark="answer_2"/>
-            Ist sie streng monoton wachsend? <bookmark mark="answer_3"/>
-            Oder ist sie etwa nicht integrierbar? <bookmark mark="answer_4"/>
-            """
-        )
+        voiceover_text = self.translate("Calc_1.Practice_MC.5q.voiceover")
 
         # Main animation sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1216,13 +1296,124 @@ class Calc_practice_MC_5_a(SophiaCursorScene):
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
 
         # Voiceover text
-        voiceover_text = (
-            f"""
-Wenn wir die Funktion <bookmark mark="plot_in"/>einmal graphisch darstellen, können wir unschwer erkennen, dass die Funktion keine Nullstelle besitzt, und nicht streng monoton wachsend ist.
-Wir können auch sehen, dass die Funktion <bookmark mark="maximum"/>eine lokale Extremstelle bei x gleich null hat, ein Minimum mit y gleich Vier.
-Und wir können auch direkt erkennen, dass die Funktion integrierbar ist.
-            """
-        )
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.5a.voiceover")
+
+        # Main animation sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.play(f_group.animate.shift(DOWN*3), Unwrite(answer_group), Write(cords), run_time=.8)
+            self.play(Write(plot_left), Write(plot_right), run_time=.8)
+
+        # Wait at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_5_b(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function and the answer options
+        f_definition = MathTex("f:\\left[-\\pi,\\pi\\right]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_formula = MathTex("f(x)=2|x|+4", color=c1t, font_size=fs2)
+        f_group = VGroup(f_definition, f_formula).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2)
+
+        cords = self.add_cords([-4,4,1], [0,12,1], x_ticks=[-4,-2,2,4], y_ticks=[4,8, 12])
+        plane = cords[0]
+        plot_left  = plane.plot(lambda x: -2*x + 4, color=RED, x_range=[-4,0,1000])
+        plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
+
+        answers = [
+            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
+            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
+            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
+            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+        ]
+
+        answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.5a.voiceover")
+
+        # Main animation sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.play(f_group.animate.shift(DOWN*3), Unwrite(answer_group), Write(cords), run_time=.8)
+            self.play(Write(plot_left), Write(plot_right), run_time=.8)
+
+        # Wait at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_5_c(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function and the answer options
+        f_definition = MathTex("f:\\left[-\\pi,\\pi\\right]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_formula = MathTex("f(x)=2|x|+4", color=c1t, font_size=fs2)
+        f_group = VGroup(f_definition, f_formula).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2)
+
+        cords = self.add_cords([-4,4,1], [0,12,1], x_ticks=[-4,-2,2,4], y_ticks=[4,8, 12])
+        plane = cords[0]
+        plot_left  = plane.plot(lambda x: -2*x + 4, color=RED, x_range=[-4,0,1000])
+        plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
+
+        answers = [
+            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
+            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
+            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
+            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+        ]
+
+        answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.5a.voiceover")
+
+        # Main animation sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.play(f_group.animate.shift(DOWN*3), Unwrite(answer_group), Write(cords), run_time=.8)
+            self.play(Write(plot_left), Write(plot_right), run_time=.8)
+
+        # Wait at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_5_d(SophiaCursorScene):
+
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function and the answer options
+        f_definition = MathTex("f:\\left[-\\pi,\\pi\\right]\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_formula = MathTex("f(x)=2|x|+4", color=c1t, font_size=fs2)
+        f_group = VGroup(f_definition, f_formula).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2)
+
+        cords = self.add_cords([-4,4,1], [0,12,1], x_ticks=[-4,-2,2,4], y_ticks=[4,8, 12])
+        plane = cords[0]
+        plot_left  = plane.plot(lambda x: -2*x + 4, color=RED, x_range=[-4,0,1000])
+        plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
+
+        answers = [
+            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
+            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
+            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
+            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+        ]
+
+        answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.5a.voiceover")
 
         # Main animation sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1268,14 +1459,7 @@ class Calc_practice_MC_6_q(SophiaCursorScene):
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
 
         # The voiceover and animation sequence
-        voiceover_text = """
-Seien <bookmark mark="domain_in"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.
-<bookmark mark="question_in"/>Welche der folgenden Aussagen gilt?
-Aussage <bookmark mark="answer_a_in"/>a: f ist differenzierbar. ...
-Aussage <bookmark mark="answer_b_in"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...
-Aussage <bookmark mark="answer_c_in"/>c: f ist nicht integrierbar. ...
-Oder Antwort <bookmark mark="answer_d_in"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.6q.voiceover")
         with self.voiceover(text=voiceover_text) as tracker:
             self.wait_until_bookmark("domain_in")
             self.play(Write(domain_and_f[0]))
@@ -1296,6 +1480,7 @@ Oder Antwort <bookmark mark="answer_d_in"/>d: Keine der obigen Aussagen kann im 
             self.play(Write(answer_d))
 
         self.wait(4)
+
 
 class Calc_practice_MC_6_a(SophiaCursorScene):
 
@@ -1322,12 +1507,136 @@ class Calc_practice_MC_6_a(SophiaCursorScene):
         self.add(domain_and_f, answers)
 
         # The voiceover and animation sequence
-        voiceover_text = """
-Betrachten wir den<bookmark mark="look_at_b"/> Fall b, also sei das Integral von f auf dem Intervall von a bis b gleich null.
-Wenn wir den <bookmark mark="mvt"/>Mittelwertsatz der Integralrechnung anwenden, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich 1 durch b minus a mal dem Integral von f von x dx ist.
-<bookmark mark="look_at_c"/>Wenn wir nun einsetzen, dass das Integral von f von x auf dem Intervall a b gleich null ist, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich null ist.
-Also ist <bookmark mark="turn_b_green"/>die Aussage b wahr.
-"""
+        voiceover_text = self.translate("General.incorrect_6")+self.translate("Calc_1.Practice_MC.6a.voiceover")
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("look_at_b")
+            self.add_shift_sound(.5)
+            self.play(Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*2.4), run_time=.5)
+
+            self.wait_until_bookmark("mvt")
+            self.play(Write(downarrow_1), Write(mvt))
+
+            self.wait_until_bookmark("look_at_c")
+            self.play(Write(downarrow_2), Write(exists_xi))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        self.wait(4)
+
+class Calc_practice_MC_6_b(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the formulas
+        domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
+        downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
+        mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
+        downarrow_2 = MathTex("\\Downarrow", "\\int_{a}^{b} f(x) \\, dx=0", font_size=fs3, color=c1t).next_to(mvt, DOWN, buff=.2)
+        exists_xi = MathTex("\\exists \\xi \\in [a,b] : f(\\xi) = 0", font_size=fs3, color=c1t).next_to(downarrow_2, DOWN, buff=.2)
+
+
+        # Define the answer options
+        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
+        self.add(domain_and_f, answers)
+
+        # The voiceover and animation sequence
+        voiceover_text = self.translate("General.correct_6")+self.translate("Calc_1.Practice_MC.6a.voiceover")
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("look_at_b")
+            self.add_shift_sound(.5)
+            self.play(Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*2.4), run_time=.5)
+
+            self.wait_until_bookmark("mvt")
+            self.play(Write(downarrow_1), Write(mvt))
+
+            self.wait_until_bookmark("look_at_c")
+            self.play(Write(downarrow_2), Write(exists_xi))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        self.wait(4)
+
+class Calc_practice_MC_6_c(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the formulas
+        domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
+        downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
+        mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
+        downarrow_2 = MathTex("\\Downarrow", "\\int_{a}^{b} f(x) \\, dx=0", font_size=fs3, color=c1t).next_to(mvt, DOWN, buff=.2)
+        exists_xi = MathTex("\\exists \\xi \\in [a,b] : f(\\xi) = 0", font_size=fs3, color=c1t).next_to(downarrow_2, DOWN, buff=.2)
+
+
+        # Define the answer options
+        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
+        self.add(domain_and_f, answers)
+
+        # The voiceover and animation sequence
+        voiceover_text = self.translate("General.incorrect_6")+self.translate("Calc_1.Practice_MC.6a.voiceover")
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("look_at_b")
+            self.add_shift_sound(.5)
+            self.play(Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*2.4), run_time=.5)
+
+            self.wait_until_bookmark("mvt")
+            self.play(Write(downarrow_1), Write(mvt))
+
+            self.wait_until_bookmark("look_at_c")
+            self.play(Write(downarrow_2), Write(exists_xi))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        self.wait(4)
+
+class Calc_practice_MC_6_d(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the formulas
+        domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
+        downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
+        mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
+        downarrow_2 = MathTex("\\Downarrow", "\\int_{a}^{b} f(x) \\, dx=0", font_size=fs3, color=c1t).next_to(mvt, DOWN, buff=.2)
+        exists_xi = MathTex("\\exists \\xi \\in [a,b] : f(\\xi) = 0", font_size=fs3, color=c1t).next_to(downarrow_2, DOWN, buff=.2)
+
+
+        # Define the answer options
+        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
+        self.add(domain_and_f, answers)
+
+        # The voiceover and animation sequence
+        voiceover_text = self.translate("General.incorrect_6")+self.translate("Calc_1.Practice_MC.6a.voiceover")
         with self.voiceover(text=voiceover_text) as tracker:
             
             self.wait_until_bookmark("look_at_b")
@@ -1358,7 +1667,7 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
                 "Nur reelle Lösungen"
             ],
             correctAnswerIndex=0,
-            questionText = "q"
+            questionText = r"Was gilt für die Lösungen $z\in\mathbbC$ der Gleichung $z^6 = (1 + i)^4$?"
         )
 
     def construct(self):
@@ -1375,14 +1684,7 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
         ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation, DOWN, buff=0.8)
 
         # Voiceover text
-        voiceover_text = """
-        Betrachte die Gleichung <bookmark mark="eq_in"/>z hoch 6 gleich (1 plus i) hoch 4. 
-        Welche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?
-        Aussage <bookmark mark="ans_a_in"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...
-        Aussage <bookmark mark="ans_b_in"/>b: Es gibt unendlich viele verschiedene Lösungen. ...
-        Aussage <bookmark mark="ans_c_in"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...
-        Aussage <bookmark mark="ans_d_in"/>d: Die Gleichung hat nur reelle Lösungen. ...
-        """
+        voiceover_text = self.translate("Calc_1.Practice_MC.7q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1411,6 +1713,13 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
 #####################################
 class Calc_practice_MC_8_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.8q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.8q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -1430,13 +1739,7 @@ class Calc_practice_MC_8_q(SophiaCursorScene):
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Seien <bookmark mark="f_in_1"/>a und b Elemente der reellen Zahlen mit a kleiner als b und sei die Funktion f, <bookmark mark="f_in_2"/>die von dem geschlossenen Intervall von a bis b in die reellen Zahlen abbildet, eine stetige Funktion. <bookmark mark="f_in_2"/>Welche der folgenden Aussagen trifft zu?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion f nimmt auf dem Intervall von a bis b kein Minimum an. ...
-<bookmark mark="answer_b_in"/>Aussage b: Der Bildbereich f von dem Intervall a, b lässt sich als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d. ...
-<bookmark mark="answer_c_in"/>Aussage c: Der Bildbereich von f von dem Intervall a, b ist leer. ...
-<bookmark mark="answer_d_in"/>Oder Aussage d: Die Funktion f ist auf dem Intervall von a bis b injektiv. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.8q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1489,11 +1792,7 @@ class Calc_practice_MC_8_a(SophiaCursorScene):
         self.add(f_definition, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark="ivt"/>den Zwischenwertsatz anwenden.
-Daraus folgt dann,<bookmark mark="solution"/> dass der Bildbereich von f von a bis b ein Intervall ist.
-Also ist <bookmark mark="turn_b_green"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.8a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1511,9 +1810,152 @@ Also ist <bookmark mark="turn_b_green"/>die Aussage b wahr: Wir können den Bild
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_MC_8_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        downarrow_ivt[1].scale(.8)
+        solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
+
+        self.add(f_definition, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.8a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("ivt")
+            self.add_shift_sound(0.5)
+            self.play(Write(downarrow_ivt), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*1.4), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_8_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        downarrow_ivt[1].scale(.8)
+        solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
+
+        self.add(f_definition, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.8a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("ivt")
+            self.add_shift_sound(0.5)
+            self.play(Write(downarrow_ivt), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*1.4), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_8_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        downarrow_ivt[1].scale(.8)
+        solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
+
+        self.add(f_definition, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.8a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("ivt")
+            self.add_shift_sound(0.5)
+            self.play(Write(downarrow_ivt), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), answer_b.animate.shift(DOWN*1.4), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("turn_b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
 ##################################### 
 ##################################### 
 class Calc_practice_MC_9_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.9q.answerOptions")),
+            correctAnswerIndex=3,
+            questionText = self.translate("Calc_1.Practice_MC.9q.question")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1523,24 +1965,18 @@ class Calc_practice_MC_9_q(SophiaCursorScene):
 
         # Define the function text using MathTex
         f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
-        f_property = Tex("$f$ diff'bar, ungerade", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.9q.f_property"), color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x) = 0$ für alle $x$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x) = 0$ für $x = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f'(x) \\neq 0$ für $x = 0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine Aussage allgemeingültig", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.9q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.9q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.9q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.9q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei <bookmark mark="f_in_1"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark="f_in_2"/>die differenzierbar und ungerade ist. Welche der folgenden Aussagen gilt allgemein?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion f von x ist Null für alle x in den reellen Zahlen. ...
-<bookmark mark="answer_b_in"/>Aussage b: Die Ableitung von f an der Stelle x ist Null für x gleich Null. ...
-<bookmark mark="answer_c_in"/>Aussage c: Die Ableitung von f an der Stelle x ist nicht Null für x gleich Null. ...
-<bookmark mark="answer_d_in"/>Oder Aussage d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.9q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1577,26 +2013,22 @@ class Calc_practice_MC_9_a(SophiaCursorScene):
 
         # Define the function text using MathTex
         f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
-        f_property = Tex("$f$ diff'bar, ungerade", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.9q.f_property"), color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         f_1 = MathTex("f(x) = 1", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
         f_2 = MathTex("f(x) = x", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x) = 0$ für alle $x$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x) = 0$ für $x = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f'(x) \\neq 0$ für $x = 0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine Aussage allgemeingültig", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.9q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.9q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.9q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.9q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         self.add(f_info, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir zunächst die<bookmark mark="f_1_in"/> Funktion f von x gleich eins. Diese Funktion ist differenzierbar und ungerade. Also sind a und c <bookmark mark="a_c_red"/>schon mal falsch, denn die Funktion f ist nicht Null und die Ableitung von f an der Stelle x gleich Null ist nicht ungleich Null.
-<bookmark mark="f_2_in"/>Betrachten wir nun die Funktion f von x gleich x. Diese Funktion ist auch differenzierbar und ungerade. Also ist<bookmark mark="b_red"/> b auch falsch, weil die Ableitung von f überall gleich eins ist, also ist f Strich von Null nicht Null.
-Es bleibt also <bookmark mark="d_green"/>nur noch d übrig, und das ist auch die richtige Antwort.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.9a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1619,12 +2051,8 @@ Es bleibt also <bookmark mark="d_green"/>nur noch d übrig, und das ist auch die
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
-#
-        
 
-##################################### 
-##################################### 
-class Calc_practice_MC_10_q(SophiaCursorScene):
+class Calc_practice_MC_9_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -1634,24 +2062,174 @@ class Calc_practice_MC_10_q(SophiaCursorScene):
 
         # Define the function text using MathTex
         f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
-        f_property = Tex("$f$ stetig, gerade", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.9q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(x) = 1", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+        f_2 = MathTex("f(x) = x", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.9q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.9q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.9q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.9q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.9a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("f_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(f_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("a_c_red")
+            self.play(answer_a.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+            self.wait_until_bookmark("f_2_in")
+            self.play(ReplacementTransform(f_1, f_2))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_9_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.9q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(x) = 1", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+        f_2 = MathTex("f(x) = x", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.9q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.9q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.9q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.9q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.9a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("f_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(f_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("a_c_red")
+            self.play(answer_a.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+            self.wait_until_bookmark("f_2_in")
+            self.play(ReplacementTransform(f_1, f_2))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_9_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.9q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(x) = 1", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+        f_2 = MathTex("f(x) = x", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.9q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.9q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.9q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.9q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.9a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("f_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(f_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("a_c_red")
+            self.play(answer_a.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+            self.wait_until_bookmark("f_2_in")
+            self.play(ReplacementTransform(f_1, f_2))
+
+            self.wait_until_bookmark("b_red")
+            self.play(answer_b.animate.set_color(RED))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+##################################### 
+##################################### 
+class Calc_practice_MC_10_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.10q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.10q.question")
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.10q.f_property"), color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist nicht integrierbar", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.10q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.10q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.10q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.10q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei <bookmark mark="f_in_1"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark="f_in_2"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion g von x ist gleich f von x mal cosinus von x ist ungerade. ...
-<bookmark mark="answer_b_in"/>Aussage b: Das bestimmte Integral von minus a bis a von f von x dx ist gleich 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null. ...
-<bookmark mark="answer_c_in"/>Aussage c: Das bestimmte Integral von minus a bis a von f von x dx ist gleich Null für alle a größer als Null. ...
-<bookmark mark="answer_d_in"/>Oder Aussage d: Die Funktion f ist nicht integrierbar. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.10q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1688,7 +2266,7 @@ class Calc_practice_MC_10_a(SophiaCursorScene):
 
         # Define the function text using MathTex
         f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
-        f_property = Tex("$f$ stetig, gerade", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.10q.f_property"), color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         self.add(f_info)
 
@@ -1704,20 +2282,15 @@ class Calc_practice_MC_10_a(SophiaCursorScene):
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist nicht integrierbar", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.10q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.10q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.10q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.10q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
         self.add(answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Visualisieren wir das ganze mal mit einer<bookmark mark="plot_in"/> Beispielsfunktion.
-Wir betrachten die Funktion f von x gleich x hoch 2. Diese Funktion ist stetig und gerade.
-Wenn wir uns jetzt das Integral von minus a bis <bookmark mark="auc_left_in"/>0 von f von x dx anschauen, sehen wir, dass es genau das gleiche ist wie <bookmark mark="auc_switch"/>das Integral von 0 bis a von f von x dx.
-Also <bookmark mark="b_green"/>ist die Aussage b wahr: Das <bookmark mark="auc_left_back_in"/>bestimmte Integral von minus a bis a von f von x dx ist gleich<bookmark mark="auc_final_switch"/> 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.10a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1746,11 +2319,208 @@ Also <bookmark mark="b_green"/>ist die Aussage b wahr: Das <bookmark mark="auc_l
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_MC_10_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.10q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        self.add(f_info)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[1,2,3], x_labels = ["-a", "a"]).shift(.4*UP)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+        graph_left = plane.plot(lambda x: x**2, color=RED, x_range=[-2,0,1000])
+        graph_right = plane.plot(lambda x: x**2, color=RED, x_range=[0,2,1000])
+        auc_left = plane.get_area(graph, x_range=(-2,0))
+        auc_left_2 = plane.get_area(graph, x_range=(-2,0))
+        auc_right = plane.get_area(graph, x_range=(0,2))
+        
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.10q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.10q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.10q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.10q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.10a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_shift_sound(.5)
+            self.play(Write(cords), f_info.animate.shift(2.4*DOWN), answer_b.animate.shift(1.6*DOWN), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), run_time=.5)
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("auc_left_in")
+            self.play(Create(auc_left))
+
+            self.wait_until_bookmark("auc_switch")
+            self.play(ReplacementTransform(auc_left, auc_right))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("auc_left_back_in")
+            self.play(Create(auc_left_2))
+
+            self.wait_until_bookmark("auc_final_switch")
+            self.play(ReplacementTransform(auc_left_2, auc_right.copy()))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_10_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.10q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        self.add(f_info)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[1,2,3], x_labels = ["-a", "a"]).shift(.4*UP)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+        graph_left = plane.plot(lambda x: x**2, color=RED, x_range=[-2,0,1000])
+        graph_right = plane.plot(lambda x: x**2, color=RED, x_range=[0,2,1000])
+        auc_left = plane.get_area(graph, x_range=(-2,0))
+        auc_left_2 = plane.get_area(graph, x_range=(-2,0))
+        auc_right = plane.get_area(graph, x_range=(0,2))
+        
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.10q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.10q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.10q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.10q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.10a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_shift_sound(.5)
+            self.play(Write(cords), f_info.animate.shift(2.4*DOWN), answer_b.animate.shift(1.6*DOWN), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), run_time=.5)
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("auc_left_in")
+            self.play(Create(auc_left))
+
+            self.wait_until_bookmark("auc_switch")
+            self.play(ReplacementTransform(auc_left, auc_right))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("auc_left_back_in")
+            self.play(Create(auc_left_2))
+
+            self.wait_until_bookmark("auc_final_switch")
+            self.play(ReplacementTransform(auc_left_2, auc_right.copy()))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_10_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\mathbb{R} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = Tex(self.translate("Calc_1.Practice_MC.10q.f_property"), color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        self.add(f_info)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[1,2,3], x_labels = ["-a", "a"]).shift(.4*UP)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+        graph_left = plane.plot(lambda x: x**2, color=RED, x_range=[-2,0,1000])
+        graph_right = plane.plot(lambda x: x**2, color=RED, x_range=[0,2,1000])
+        auc_left = plane.get_area(graph, x_range=(-2,0))
+        auc_left_2 = plane.get_area(graph, x_range=(-2,0))
+        auc_right = plane.get_area(graph, x_range=(0,2))
+        
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.10q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.10q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.10q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.10q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.10a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("plot_in")
+            self.add_shift_sound(.5)
+            self.play(Write(cords), f_info.animate.shift(2.4*DOWN), answer_b.animate.shift(1.6*DOWN), Unwrite(answer_a), Unwrite(answer_c), Unwrite(answer_d), run_time=.5)
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("auc_left_in")
+            self.play(Create(auc_left))
+
+            self.wait_until_bookmark("auc_switch")
+            self.play(ReplacementTransform(auc_left, auc_right))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN))
+
+            self.wait_until_bookmark("auc_left_back_in")
+            self.play(Create(auc_left_2))
+
+            self.wait_until_bookmark("auc_final_switch")
+            self.play(ReplacementTransform(auc_left_2, auc_right.copy()))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+
 # Ana Ing TUB 2019/2
 
 ##################################### 
 ##################################### 
 class Calc_practice_MC_11_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.11q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.11q.question")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -1764,20 +2534,14 @@ class Calc_practice_MC_11_q(SophiaCursorScene):
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ hat kein Maximum", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f(x)<0$ für alle $x\\in\\{0,1,2,3\\}$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.11q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.11q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.11q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.11q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei <bookmark mark="f_in_1"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark="f_in_2"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion f ist surjektiv. ...
-<bookmark mark="answer_b_in"/>Aussage b: Die Funktion f ist injektiv. ...
-<bookmark mark="answer_c_in"/>Aussage c: Die Funktion f hat kein Maximum. ...
-<bookmark mark="answer_d_in"/>Oder Aussage d: Die Funktion f von x ist kleiner als Null für alle x in der Menge von 0, 1, 2, 3. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.11q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1823,18 +2587,168 @@ class Calc_practice_MC_11_a(SophiaCursorScene):
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ hat kein Maximum", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f(x)<0$ für alle $x\\in\\{0,1,2,3\\}$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.11q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.11q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.11q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.11q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
         self.add(answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Setzen wir<bookmark mark="reorganize"/> einfach mal alle werte ein:<bookmark mark="f_1"/> f von 1 ist gleich eins minus eins im Quadrat, also Null. <bookmark mark="f_2"/>f von 2 ist gleich zwei minus eins im Quadrat, also eins. Und <bookmark mark="f_3"/>f von 3 ist gleich drei minus eins im Quadrat, also vier.
-Wir sehen also, dass keine zwei unterschiedlichen x Werte auf den gleichen y Wert abgebildet werden. Also ist <bookmark mark="b_green"/>die Funktion f injektiv.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.11a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(.5)
+            self.play(answers.animate.shift(DOWN), f_info.animate.shift(UP), run_time=.5)
+
+            self.wait_until_bookmark("f_1")
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("f_2")
+            self.play(Write(f_2))
+
+            self.wait_until_bookmark("f_3")
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_11_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\{1,2,3\\} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=(x-1)^2", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(1) = (1-1)^2=0", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP)
+        f_2 = MathTex("f(2) = (2-1)^2=1", color=ORANGE, font_size=fs2).next_to(f_1, DOWN, buff=.2)
+        f_3 = MathTex("f(3) = (3-1)^2=4", color=ORANGE, font_size=fs2).next_to(f_2, DOWN, buff=.2)
+        self.add(f_info)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.11q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.11q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.11q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.11q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.11a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(.5)
+            self.play(answers.animate.shift(DOWN), f_info.animate.shift(UP), run_time=.5)
+
+            self.wait_until_bookmark("f_1")
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("f_2")
+            self.play(Write(f_2))
+
+            self.wait_until_bookmark("f_3")
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_11_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\{1,2,3\\} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=(x-1)^2", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(1) = (1-1)^2=0", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP)
+        f_2 = MathTex("f(2) = (2-1)^2=1", color=ORANGE, font_size=fs2).next_to(f_1, DOWN, buff=.2)
+        f_3 = MathTex("f(3) = (3-1)^2=4", color=ORANGE, font_size=fs2).next_to(f_2, DOWN, buff=.2)
+        self.add(f_info)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.11q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.11q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.11q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.11q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.11a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("reorganize")
+            self.add_shift_sound(.5)
+            self.play(answers.animate.shift(DOWN), f_info.animate.shift(UP), run_time=.5)
+
+            self.wait_until_bookmark("f_1")
+            self.play(Write(f_1))
+
+            self.wait_until_bookmark("f_2")
+            self.play(Write(f_2))
+
+            self.wait_until_bookmark("f_3")
+            self.play(Write(f_3))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_11_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f: \\{1,2,3\\} \\rightarrow \\mathbb{R}", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=(x-1)^2", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        f_1 = MathTex("f(1) = (1-1)^2=0", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP)
+        f_2 = MathTex("f(2) = (2-1)^2=1", color=ORANGE, font_size=fs2).next_to(f_1, DOWN, buff=.2)
+        f_3 = MathTex("f(3) = (3-1)^2=4", color=ORANGE, font_size=fs2).next_to(f_2, DOWN, buff=.2)
+        self.add(f_info)
+
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.11q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.11q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.11q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.11q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.11a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1863,6 +2777,13 @@ Wir sehen also, dass keine zwei unterschiedlichen x Werte auf den gleichen y Wer
 ##################################### 
 class Calc_practice_MC_12_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.12q.answerOptions")),
+            correctAnswerIndex=3,
+            questionText = self.translate("Calc_1.Practice_MC.12q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -1870,7 +2791,8 @@ class Calc_practice_MC_12_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ Folgen", color=c1t, font_size=fs2)
+        sequences = self.translate("Calc_1.Practice_MC.12q.sequences")
+        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ "+ sequences, color=c1t, font_size=fs2)
         a = MathTex("\\lim_{n\\to\\infty}a_n=\\infty", color=c1t, font_size=fs2)
         b = MathTex("\\lim_{n\\to\\infty}b_n=0", color=c1t, font_size=fs2)
         a_n = VGroup(a_b, a, b).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.95).set_y(2)
@@ -1879,19 +2801,11 @@ class Calc_practice_MC_12_q(SophiaCursorScene):
         answer_a = Tex("a) $\\lim_{n\\to\\infty}a_n\\cdot b_n=0$", color=BLUE, font_size=fs3)
         answer_b = Tex("b) $\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$", color=BLUE, font_size=fs3)
         answer_c = Tex("c) $\\lim_{n\\to\\infty}a_n\\cdot b_n=1$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine der Aussagen i.A. wahr", color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.12q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Seien <bookmark mark="a_b_in"/>a n und b n Folgen von reellen Zahlen.
-Der Grenzwert von <bookmark mark="a_in"/>a n für n gegen unendlich ist gleich unendlich. ... Und der Grenzwert von <bookmark mark="b_in"/>b n für n gegen unendlich ist gleich Null. ...
-Welche der folgenden Aussagen gilt allgemein? ...
-Aussage <bookmark mark="answer_a_in"/>a: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Null. ...
-Aussage <bookmark mark="answer_b_in"/>b: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich unendlich. ...
-Aussage <bookmark mark="answer_c_in"/>c: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Eins. ...
-Oder Aussage <bookmark mark="answer_d_in"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.12q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1930,7 +2844,8 @@ class Calc_practice_MC_12_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(a_n\\right)_{n\\in\\mathbb N}$ Folgen", color=c1t, font_size=fs2)
+        sequences = self.translate("Calc_1.Practice_MC.12q.sequences")
+        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ "+ sequences, color=c1t, font_size=fs2)
         a = MathTex("\\lim_{n\\to\\infty}a_n=\\infty", color=c1t, font_size=fs2)
         b = MathTex("\\lim_{n\\to\\infty}a_n=0", color=c1t, font_size=fs2)
         a_n = VGroup(a_b, a, b).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.95).set_y(2)
@@ -1942,20 +2857,157 @@ class Calc_practice_MC_12_a(SophiaCursorScene):
         answer_a = Tex("a) $\\lim_{n\\to\\infty}a_n\\cdot b_n=0$", color=BLUE, font_size=fs3)
         answer_b = Tex("b) $\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$", color=BLUE, font_size=fs3)
         answer_c = Tex("c) $\\lim_{n\\to\\infty}a_n\\cdot b_n=1$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine der Aussagen i.A. wahr", color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.12q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
 
         self.add(a_n, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir drei Beispiele:
-Beispiel <bookmark mark="example_1_in"/>Nummer 1: a n ist gleich n und b n ist gleich eins durch n quadrat. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins durch n für n gegen unendlich, also gleich Null.
-Beispiel <bookmark mark="example_2_in"/>Nummer 2: a n ist gleich n und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins für n gegen unendlich, also gleich Eins.
-Und Beispiel <bookmark mark="example_3_in"/>Nummer 3: a n ist gleich n hoch 2 und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von n für n gegen unendlich, also gleich unendlich.
-Wir sehen also, dass <bookmark mark="d_green"/>keine der Aussagen a, b oder c allgemeingültig wahr ist. Also ist d die richtige Antwort.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.12a.voiceover")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
 
+            self.wait_until_bookmark("example_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(example_1), answers.animate.shift(DOWN), a_n.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("example_2_in")
+            self.play(ReplacementTransform(example_1, example_2))
+
+            self.wait_until_bookmark("example_3_in")
+            self.play(ReplacementTransform(example_2, example_3))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_12_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        sequences = self.translate("Calc_1.Practice_MC.12q.sequences")
+        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ "+ sequences, color=c1t, font_size=fs2)
+        a = MathTex("\\lim_{n\\to\\infty}a_n=\\infty", color=c1t, font_size=fs2)
+        b = MathTex("\\lim_{n\\to\\infty}a_n=0", color=c1t, font_size=fs2)
+        a_n = VGroup(a_b, a, b).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.95).set_y(2)
+        example_1 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n^2}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}\\tfrac1n=0", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_2 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}1=1", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_3 = VGroup(MathTex("a_n = n^2, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}n=\\infty", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_n\\cdot b_n=0$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_n\\cdot b_n=1$", color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.12q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.12a.voiceover")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("example_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(example_1), answers.animate.shift(DOWN), a_n.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("example_2_in")
+            self.play(ReplacementTransform(example_1, example_2))
+
+            self.wait_until_bookmark("example_3_in")
+            self.play(ReplacementTransform(example_2, example_3))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_12_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        sequences = self.translate("Calc_1.Practice_MC.12q.sequences")
+        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ "+ sequences, color=c1t, font_size=fs2)
+        a = MathTex("\\lim_{n\\to\\infty}a_n=\\infty", color=c1t, font_size=fs2)
+        b = MathTex("\\lim_{n\\to\\infty}a_n=0", color=c1t, font_size=fs2)
+        a_n = VGroup(a_b, a, b).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.95).set_y(2)
+        example_1 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n^2}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}\\tfrac1n=0", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_2 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}1=1", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_3 = VGroup(MathTex("a_n = n^2, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}n=\\infty", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_n\\cdot b_n=0$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_n\\cdot b_n=1$", color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.12q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.12a.voiceover")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("example_1_in")
+            self.add_shift_sound(.5)
+            self.play(Write(example_1), answers.animate.shift(DOWN), a_n.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("example_2_in")
+            self.play(ReplacementTransform(example_1, example_2))
+
+            self.wait_until_bookmark("example_3_in")
+            self.play(ReplacementTransform(example_2, example_3))
+
+            self.wait_until_bookmark("d_green")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_12_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        sequences = self.translate("Calc_1.Practice_MC.12q.sequences")
+        a_b = Tex("$\\left(a_n\\right)_{n\\in\\mathbb N}, \\left(b_n\\right)_{n\\in\\mathbb N}$ "+ sequences, color=c1t, font_size=fs2)
+        a = MathTex("\\lim_{n\\to\\infty}a_n=\\infty", color=c1t, font_size=fs2)
+        b = MathTex("\\lim_{n\\to\\infty}a_n=0", color=c1t, font_size=fs2)
+        a_n = VGroup(a_b, a, b).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.95).set_y(2)
+        example_1 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n^2}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}\\tfrac1n=0", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_2 = VGroup(MathTex("a_n = n, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}1=1", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+        example_3 = VGroup(MathTex("a_n = n^2, b_n = \\frac{1}{n}", color=ORANGE, font_size=fs3), MathTex("\\Downarrow", color=ORANGE, font_size=fs3), MathTex("\\lim_{n\\to\\infty} a_n\\cdot b_n =\\lim_{n\\to\\infty}n=\\infty", color=ORANGE, font_size=fs3)).arrange(DOWN, buff=0.1).next_to(a_n, DOWN, buff=0.2).shift(UP*.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex("a) $\\lim_{n\\to\\infty}a_n\\cdot b_n=0$", color=BLUE, font_size=fs3)
+        answer_b = Tex("b) $\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$", color=BLUE, font_size=fs3)
+        answer_c = Tex("c) $\\lim_{n\\to\\infty}a_n\\cdot b_n=1$", color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.12q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(a_n, DOWN, buff=0.8)
+
+        self.add(a_n, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.12a.voiceover")
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
 
@@ -2036,6 +3088,13 @@ Oder Aussage <bookmark mark="answer_d_in"/>d: Das Polynom p hat keine reelle Nul
 ##################################### 
 class Calc_practice_MC_15_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.15q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.15q.question")
+        )
+    
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2048,20 +3107,14 @@ class Calc_practice_MC_15_q(SophiaCursorScene):
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ hat Nullstelle in $[0,1]$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ hat Maximum auf $[0,1]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist nicht stetig", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.15q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.15q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.15q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.15q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f eine Funktion, die von dem Intervall von <bookmark mark="f_in_1"/>minus pi bis pi in die reellen Zahlen abbildet, und deren Funktionsvorschrift <bookmark mark="f_in_2"/>lautet e hoch minus Wurzel von x hoch 2 plus 1 plus 1. Welche der folgenden Aussagen gilt allgemein?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion f hat eine Nullstelle im Intervall von Null bis Eins. ...
-<bookmark mark="answer_b_in"/>Aussage b: Die Funktion f hat ein Maximum im Intervall von Null bis Eins. ...
-<bookmark mark="answer_c_in"/>Aussage c: Die Funktion f ist nicht stetig. ...
-Oder <bookmark mark="answer_d_in"/>Aussage d: Die Funktion f hat die Stammfunktion groß f von x ist gleich x mal e hoch minus Wurzel von x hoch 2 plus 1 plus 1. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.15q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2101,22 +3154,145 @@ class Calc_practice_MC_15_a(SophiaCursorScene):
         f_property = MathTex("f(x)=e^{-\\sqrt{x^2+1}+1}", color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
         implication = MathTex("\\Downarrow", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP*.4)
-        sol = Tex("$f$ hat Min und Max auf $[-\\pi,\\pi]$", color=ORANGE, font_size=fs3).next_to(implication, DOWN, buff=.2)
+        sol = Tex(self.translate("Calc_1.Practice_MC.15q.sol"), color=ORANGE, font_size=fs3).next_to(implication, DOWN, buff=.2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ hat Nullstelle in $[0,1]$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ hat Maximum auf $[0,1]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist nicht stetig", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.15q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.15q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.15q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.15q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         self.add(f_info, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Wir haben ja eine stetige Funktion auf einem Intervall. Wir <bookmark mark="implication_in"/>können dann den Satz von Minimum und Maximum anwenden, und <bookmark mark="sol_in"/>wissen, dass die Funktion f ein Minimum und ein Maximum auf dem Intervall von minus pi bis pi hat.
-Also ist <bookmark mark="b_green"/>die Aussage b wahr.
-"""
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.15a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication), answers.animate.shift(DOWN), f_info.animate.shift(UP*.4))
+            
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_15_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:[-\\pi,\\pi]\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=e^{-\\sqrt{x^2+1}+1}", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        implication = MathTex("\\Downarrow", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP*.4)
+        sol = Tex(self.translate("Calc_1.Practice_MC.15q.sol"), color=ORANGE, font_size=fs3).next_to(implication, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.15q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.15q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.15q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.15q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.Practice_MC.15a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication), answers.animate.shift(DOWN), f_info.animate.shift(UP*.4))
+            
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_15_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:[-\\pi,\\pi]\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=e^{-\\sqrt{x^2+1}+1}", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        implication = MathTex("\\Downarrow", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP*.4)
+        sol = Tex(self.translate("Calc_1.Practice_MC.15q.sol"), color=ORANGE, font_size=fs3).next_to(implication, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.15q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.15q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.15q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.15q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.15a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication), answers.animate.shift(DOWN), f_info.animate.shift(UP*.4))
+            
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_15_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:[-\\pi,\\pi]\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=e^{-\\sqrt{x^2+1}+1}", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        implication = MathTex("\\Downarrow", color=ORANGE, font_size=fs2).next_to(f_info, DOWN, buff=.2).shift(UP*.4)
+        sol = Tex(self.translate("Calc_1.Practice_MC.15q.sol"), color=ORANGE, font_size=fs3).next_to(implication, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.15q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.15q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.15q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.15q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.15a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2136,6 +3312,14 @@ Also ist <bookmark mark="b_green"/>die Aussage b wahr.
 ##################################### 
 ##################################### 
 class Calc_practice_MC_16_q(SophiaCursorScene):
+    
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.16q.answerOptions")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Calc_1.Practice_MC.16q.question")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2149,20 +3333,14 @@ class Calc_practice_MC_16_q(SophiaCursorScene):
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist ungerade", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ hat keine Nullstellen", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) Es gibt genau drei $x$ mit $f'(x)=0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ hat keine Stammfunktion", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.16q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.16q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.16q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.16q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei <bookmark mark="f_in_1"/>f eine Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, mit cer <bookmark mark="f_in_2"/>Funktionsvorschrift 13 mal x hoch 3 minus 3 mal x. Welche der folgenden Aussagen ist wahr?
-<bookmark mark="answer_a_in"/>Aussage a: Die Funktion f ist ungerade. ...
-<bookmark mark="answer_b_in"/>Aussage b: Die Funktion f hat keine Nullstellen. ...
-<bookmark mark="answer_c_in"/>Aussage c: Es gibt genau drei x in den reellen Zahlen, für die die Ableitung von f an der Stelle x gleich Null ist. ...
-Oder Aussage <bookmark mark="answer_d_in"/>d: Die Funktion f hat keine Stammfunktion. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.16q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2202,18 +3380,16 @@ class Calc_practice_MC_16_a(SophiaCursorScene):
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist ungerade", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f$ hat keine Nullstellen", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) Es gibt genau drei $x$ mit $f'(x)=0$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ hat keine Stammfunktion", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.16q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.16q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.16q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.16q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         self.add(f_info, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Die Funktion f ist ein Polynom mit <bookmark mark="deg_three"/>einem Koeffizienten von Grad drei, und <bookmark mark="odd"/>einem Koeffizient von Grad eins. Also hat f nur ungerade Potenzen, und die Funktion f <bookmark mark="a_green"/>ist ungerade.
-"""
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.Practice_MC.16a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2230,6 +3406,125 @@ Die Funktion f ist ein Polynom mit <bookmark mark="deg_three"/>einem Koeffizient
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_MC_16_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:\\mathbb R\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=", "13x^3", "-3x", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.16q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.16q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.16q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.16q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.16a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("deg_three")
+            self.play(Indicate(f_property[1], color=RED))
+
+            self.wait_until_bookmark("odd")
+            self.play(Indicate(f_property[2], color=RED))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_16_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:\\mathbb R\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=", "13x^3", "-3x", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.16q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.16q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.16q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.16q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.16a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("deg_three")
+            self.play(Indicate(f_property[1], color=RED))
+
+            self.wait_until_bookmark("odd")
+            self.play(Indicate(f_property[2], color=RED))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_16_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_definition = MathTex("f:\\mathbb R\\rightarrow \\mathbb R", color=c1t, font_size=fs2)
+        f_property = MathTex("f(x)=", "13x^3", "-3x", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.16q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.16q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.16q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.16q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+
+        self.add(f_info, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.16a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("deg_three")
+            self.play(Indicate(f_property[1], color=RED))
+
+            self.wait_until_bookmark("odd")
+            self.play(Indicate(f_property[2], color=RED))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
 
 ##################################### 
 ##################################### 
@@ -2291,6 +3586,13 @@ Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass es nur reelle Lös
 ##################################### 
 class Calc_practice_MC_18_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.18q.answerOptions")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Calc_1.Practice_MC.18q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2303,20 +3605,14 @@ class Calc_practice_MC_18_q(SophiaCursorScene):
         f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) Es gibt $\\xi\\in]0,1[$, dass Rechteck\\\\ mit Höhe $f(\\xi)$ und Breite $1$\\\\ die Fläche $A=\\int_0^1f(x)dx$ hat", color=BLUE, font_size=fs3, tex_environment="flushright")
-        answer_b = Tex("b) $f$ nicht integrierbar auf $[0,1]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ hat kein Maximum auf $[0,2]$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine der Möglichkeiten", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f eine<bookmark mark="f_in_1"/>stetige Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, für die gilt, dass <bookmark mark="f_in_2"/>f von x größer als Null für alle x in dem Intervall von Null bis Eins. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass es ein xi in dem offenen Intervall von Null bis Eins gibt, sodass das Rechteck mit der Höhe f von xi und der Breite Eins die Fläche A hat, wobei A das bestimmte Integral von Null bis Eins von f von x dx ist? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Funktion f nicht integrierbar ist auf dem Intervall von Null bis Eins? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f kein Maximum hat auf dem Intervall von Null bis Zwei? ...
-Oder ist es <bookmark mark="answer_d_in"/>Aussage d, dass keine der obigen Möglichkeiten zutrifft? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.18q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2355,22 +3651,142 @@ class Calc_practice_MC_18_a(SophiaCursorScene):
         f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
         f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
         f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        implication_mvt = Tex("$\\Downarrow$", " Mittelwertsatz", color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
-        solution = Tex("Es gibt $\\xi\\in]0,1[$, sodass\\\\ $\\int_0^1f(x)dx=f(\\xi)$", color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) Es gibt $\\xi\\in]0,1[$, dass Rechteck\\\\ mit Höhe $f(\\xi)$ und Breite $1$\\\\ die Fläche $A=\\int_0^1f(x)dx$ hat", color=BLUE, font_size=fs3, tex_environment="flushright")
-        answer_b = Tex("b) $f$ nicht integrierbar auf $[0,1]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ hat kein Maximum auf $[0,2]$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Keine der Möglichkeiten", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Da f stetig ist, können wir <bookmark mark="implication_in"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark="solution"/>dass es ein xi gibt,
-sodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.
-Also ist <bookmark mark="a_green"/>die Aussage a wahr.
-"""
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2392,6 +3808,13 @@ Also ist <bookmark mark="a_green"/>die Aussage a wahr.
 ##################################### 
 class Calc_practice_MC_19_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.19q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.19q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2399,23 +3822,17 @@ class Calc_practice_MC_19_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        f = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$ differenzierbar, gerade", color=c1t, font_size=fs2).set_y(2)
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x)=0$ für alle $x\\in\\mathbb R$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x)=0$ für $x=0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark=func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.19q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2448,12 +3865,12 @@ class Calc_practice_MC_19_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        f = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$\\\\ differenzierbar, gerade", color=c1t, font_size=fs2).set_y(2)
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x)=0$ für alle $x\\in\\mathbb R$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x)=0$ für $x=0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
@@ -2464,10 +3881,7 @@ class Calc_practice_MC_19_a(SophiaCursorScene):
         self.add(f, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir ein <bookmark mark="plot_in"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark="highlight_x_0"/>x gleich Null geben.
-Also ist <bookmark mark="b_green"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2483,7 +3897,137 @@ Also ist <bookmark mark="b_green"/>die Aussage b wahr, denn dafür, dass es eine
             self.wait_until_bookmark("b_green")
             self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
 
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
 
+class Calc_practice_MC_19_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_19_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_19_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -2492,6 +4036,13 @@ Also ist <bookmark mark="b_green"/>die Aussage b wahr, denn dafür, dass es eine
 ##################################### 
 ##################################### 
 class Calc_practice_MC_20_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.20q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.20q.question")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -2505,20 +4056,14 @@ class Calc_practice_MC_20_q(SophiaCursorScene):
         f = VGroup(f_1,f_2).arrange(DOWN, buff=.2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist nicht periodisch", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$gilt:\\\\$b_k=0$ mit $k\\in\\mathbb N$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist streng monoto wachsend", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Alle Fourierkoeffizienten sind $0$.", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.20q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.20q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.20q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark="func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.20q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2541,55 +4086,52 @@ Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-class Calc_practice_MC_20_a(SophiaCursorScene):
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
 
-        # Define the function text using MathTex
-        f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
-        f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
-        f = VGroup(f_1,f_2).set_y(2)
 
-        # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist nicht periodisch", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$gilt:\\\\$b_k=0$ mit $k\\in\\mathbb N$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist streng monoto wachsend", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Alle Fourierkoeffizienten sind $0$.", color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+# TODO
+# class Calc_practice_MC_20_a(SophiaCursorScene):
 
-        # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark=func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        # Action Sequence
-        with self.voiceover(text=voiceover_text) as tracker:
+#         # Define the function text using MathTex
+#         f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
+#         f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
+#         f = VGroup(f_1,f_2).set_y(2)
+
+#         # Define the answer options using Tex
+#         answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
+#         answer_b = Tex(self.translate("Calc_1.Practice_MC.20q.answer_b"), color=BLUE, font_size=fs3)
+#         answer_c = Tex(self.translate("Calc_1.Practice_MC.20q.answer_c"), color=BLUE, font_size=fs3)
+#         answer_d = Tex(self.translate("Calc_1.Practice_MC.20q.answer_d"), color=BLUE, font_size=fs3)
+#         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+#         # Define the voiceover text
+#         voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.20a.voiceover")
+#         # Action Sequence
+#         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("func_in")
-            self.play(Write(f))
+#             self.wait_until_bookmark("func_in")
+#             self.play(Write(f))
 
-            self.wait_until_bookmark("answer_a_in")
-            self.play(Write(answer_a))
+#             self.wait_until_bookmark("answer_a_in")
+#             self.play(Write(answer_a))
 
-            self.wait_until_bookmark("answer_b_in")
-            self.play(Write(answer_b))
+#             self.wait_until_bookmark("answer_b_in")
+#             self.play(Write(answer_b))
 
-            self.wait_until_bookmark("answer_c_in")
-            self.play(Write(answer_c))
+#             self.wait_until_bookmark("answer_c_in")
+#             self.play(Write(answer_c))
 
-            self.wait_until_bookmark("answer_d_in")
-            self.play(Write(answer_d))
+#             self.wait_until_bookmark("answer_d_in")
+#             self.play(Write(answer_d))
 
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
+#         # Wait for 4 seconds at the end of the animation
+#         self.wait(4)
 
 
 ##################################### Limits
@@ -2631,10 +4173,7 @@ class Calc_practice_limits_1_q(SophiaCursorScene):
         baboon = ImageMobject(assets_folder / "img" / "baboon_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir den Term<bookmark mark="func_in"/> 2 n hoch drei + 4 n, geteilt durch 3 n hoch drei Wurzel n + 4 n quadrat.
-Was <bookmark mark="limit_in"/>ist der Grenzwert dieses Terms?
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.1q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2773,7 +4312,7 @@ class Calc_practice_limits_2_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2)
 
         giraffe = ImageMobject(assets_folder / "img" / "giraffe_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -2812,7 +4351,7 @@ class Calc_practice_limits_2_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
         step_1 = MathTex(r"\left|\frac{n\sin(n)+\sin(n)}{(n+1)^2}\right|", r"\leq", r"\frac{1}{n+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
         implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
         step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
@@ -2857,7 +4396,7 @@ class Calc_practice_limits_2_b(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", color=c1t, font_size=fs2).set_y(2.2)
         step_1 = MathTex(r"\left|\frac{n\sin(n)+\sin(n)}{(n+1)^2}\right|", r"\leq", r"\frac{1}{n+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
         implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
         step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{n\sin(n)+\sin(n)}{(n+1)^2}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
@@ -2893,6 +4432,20 @@ class Calc_practice_limits_2_b(SophiaCursorScene):
 ##################################### 
 class Calc_practice_limits_3_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$\pi^2$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.3q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2904,15 +4457,12 @@ class Calc_practice_limits_3_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}=", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
 
         sloth = ImageMobject(assets_folder / "img" / "sloth_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Jetzt betrachten wir den <bookmark mark="term_in"/>Term 16 x hoch zwei geteilt durch den Tangens von x. Und wir suchen den <bookmark mark="limit_in"/>Grenzwert für x gegen pi viertel.
-Was kommt da raus?
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.3q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2942,7 +4492,7 @@ class Calc_practice_limits_3_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}=", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
         implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
         func_2 = MathTex(r"\frac{16\tfrac{\pi^2}{4^2}}{\tan(\tfrac\pi 4)}", r"=\pi^2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
 
@@ -2950,10 +4500,44 @@ class Calc_practice_limits_3_a(SophiaCursorScene):
         self.add(sloth, func)
 
         # Define the voiceover text
-        voiceover_text = """
-Hier können wir den gesuchten Grenzwert einfach einsetzen. Wir <bookmark mark="step_1_a"/>erhalten dann 16 mal pi hoch zwei durch vier quadrat, und das geteilt durch den Tangens von pi viertel.
-Der Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark="step_1_b"/>pi quadrat als Ergebnis unseres Grenzwertes..
-"""
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_limits.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(0.5)
+            self.play(sloth.animate.shift(5*RIGHT), Write(implication_1), Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(func_2[1]),  run_time=.5)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\tfrac\pi4}{\lim}", r"\frac{16x^2}{\tan(x)}", color=c1t, font_size=fs2).set_y(2)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\frac{16\tfrac{\pi^2}{4^2}}{\tan(\tfrac\pi 4)}", r"=\pi^2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        sloth = ImageMobject(assets_folder / "img" / "sloth_thinking.png").set_y(-.6).scale(.5)
+        self.add(sloth, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_limits.3a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -2973,6 +4557,20 @@ Der Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark="ste
 ##################################### 
 class Calc_practice_limits_4_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.4q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -2989,9 +4587,7 @@ class Calc_practice_limits_4_q(SophiaCursorScene):
         lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Jetzt <bookmark mark="lion_in"/> suchen wir den Grenzwert <bookmark mark="limit_in"/>für x gegen pi halbe des<bookmark mark="term_in"/> Terms Sinus von zwei x geteilt durch den Kosinus von x.
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.4q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3030,10 +4626,47 @@ class Calc_practice_limits_4_a(SophiaCursorScene):
         self.add(lion, func)
 
         # Define the voiceover text
-        voiceover_text = """
-Sowohl der Zähler als auch der Nenner gehen gegen Null, wenn x gegen pi halbe geht. Also können wir die Regel von <bookmark mark="implication_1"/>L'Hopital anwenden.
-Dann erhalten wir, dass der Grenzwert gleich der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist. Das ist in diesem Fall gleich <bookmark mark="func_2_a"/>dem limes für n gegen pi halbe von 2 mal Kosinus von zwei x geteilt durch minus Sinus von x. Und <bookmark mark="func_2_b"/>das ist gleich 2, also ist die Lösung 2.
-"""
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_limits.4a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(0.5)
+            self.play(lion.animate.shift(5*RIGHT), Write(implication_1), run_time=.5)
+
+            self.wait_until_bookmark("func_2_a")
+            self.play(Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(Write(func_2[1]), run_time=.5)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{x\to\tfrac\pi2}{\lim}", r"\frac{\sin(2x)}{\cos(x)}", color=c1t, font_size=fs2).set_y(2)
+        implication_1 = Tex("L'Hospital ", r"$\Downarrow$  $\left(\frac00\right)$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{x\to\tfrac\pi2}{\lim} \frac{2\cos(2x)}{-\sin(x)}", "=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").set_y(-.6).scale(.5)
+        self.add(lion, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_limits.4a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3056,6 +4689,20 @@ Dann erhalten wir, dass der Grenzwert gleich der Ableitung des Zählers geteilt 
 ##################################### 
 class Calc_practice_limits_5_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.5q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -3067,7 +4714,8 @@ class Calc_practice_limits_5_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        convergent_sequence = self.translate("Calc_1.practice_limits.5q.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=1$, ", r"$a_n>0$ $\forall$ $n\in\mathbb N$.", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         series_3 = Tex("", r"$b_n=$", "", r"$\ln(a_n)$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
@@ -3076,11 +4724,7 @@ class Calc_practice_limits_5_q(SophiaCursorScene):
         # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir eine konvergente <bookmark mark="a_1_in"/>Folge a n. Es ist gegeben, dass der <bookmark mark="a_2_in"/>Grenzwert dieser Folge gleich Eins ist. Und außerdem, dass <bookmark mark="a_3_in"/>alle Folgenglieder größer als Null sind.
-Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als den natürlichen Logarithmus von a n definieren.
-Was ist <bookmark mark="b_n_in_2"/>der Grenzwert dieser Folge b n für n gegen unendlich?
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.5q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3116,7 +4760,8 @@ class Calc_practice_limits_5_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        convergent_sequence = self.translate("Calc_1.practice_limits.5q.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=1$, ", r"$a_n>0$ $\forall$ $n\in\mathbb N$.", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         series_3 = Tex("", r"$b_n=$", "", r"$\ln(a_n)$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
@@ -3128,10 +4773,7 @@ class Calc_practice_limits_5_a(SophiaCursorScene):
         self.add(series_1, series_2, series_4)
 
         # Define the voiceover text
-        voiceover_text = """
-Da die Funktion stetig ist, können wir die Funktionsausführung und die Grenzwertermittlung vertauschen. Und wir erhalten, <bookmark mark="implication_1"/>dass der Grenzwert von dem natürlichen Logarithmus von a n gleich dem <bookmark mark="series_5_b"/>natürlichen Logarithmus von dem Grenzwert von a n ist.
-Da der Grenzwert von a n gleich Eins ist, erhalten wir, dass der Grenzwert von b n <bookmark mark="solution"/>gleich dem logarithmus von eins, also gleich Null ist.
-"""
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_limits.5a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3145,8 +4787,48 @@ Da der Grenzwert von a n gleich Eins ist, erhalten wir, dass der Grenzwert von b
             self.wait_until_bookmark("solution")
             self.play(Write(series_5_b[3]))
 
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
+class Calc_practice_limits_5_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        convergent_sequence = self.translate("Calc_1.practice_limits.5q.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=1$, ", r"$a_n>0$ $\forall$ $n\in\mathbb N$.", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$\ln(a_n)$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$\ln$", r"$(a_n)$", color=BLUE, font_size=fs2).move_to(series_3)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(series_4, DOWN, buff=.2)
+        series_5_a = Tex(r"$\underset{n\to\infty}{\lim}$", r"$\ln$", r"$(a_n)$", r"$=\ln(1)=0$", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        series_5_b = MathTex(r"\ln\left(", r"\underset{n\to\infty}{\lim}", r"(a_n)\right)", r"=\ln(1)=0", color=c1t, font_size=fs2).scale(0.95).next_to(implication_1, DOWN, buff=.2)
+
+        self.add(series_1, series_2, series_4)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_limits.5a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1), *[ReplacementTransform(series_4[i+2].copy(), series_5_a[i]) for i in range(3)])
+
+            self.wait_until_bookmark("series_5_b")
+            self.play(*[ReplacementTransform(series_5_a[i], series_5_b[i]) for i in range(3)])
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(series_5_b[3]))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -3168,7 +4850,7 @@ class Calc_practice_limits_6_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
 
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
@@ -3205,7 +4887,7 @@ class Calc_practice_limits_6_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{n\to\infty}{\lim}=", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
         implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
         func_2 = MathTex(r"\underset{n\to\infty}{\lim}\frac{n^4(4-\tfrac{12}{n^2}+\tfrac3n)}{n^4(2+\tfrac1{n^4})}\\", r"=\frac{4-0+0}{2+0}=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
 
@@ -3412,7 +5094,7 @@ class Calc_practice_limits_9_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{x\to0}{\lim}=", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{x\to0}{\lim}", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
 
 
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
@@ -3453,7 +5135,7 @@ class Calc_practice_limits_9_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        func = MathTex(r"\underset{x\to0}{\lim}=", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
+        func = MathTex(r"\underset{x\to0}{\lim}", r"\frac{e^x-1}{\sin(x)}", color=c1t, font_size=fs2).set_y(2)
         implication_1 = Tex("L'Hospital ", r"$\Downarrow$  $\left(\frac00\right)$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
         func_2 = MathTex(r"\underset{x\to0}{\lim} \frac{e^x}{\cos(x)}", "=1", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
 
@@ -3725,6 +5407,25 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 ##################################### Intermediate value theorem
 #####################################
 class Calc_practice_ivt_10_q(SophiaCursorScene):
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["""Wir berechnen die Funktionswerte an den Intervallgrenzen und erhalten $f(0) = 0-1-1 = -2 < 0$ bzw. $f(3) = 81-1-27= 53 > 0$.
+                             
+Die Funktion $f$ ist als Summe stetiger Funktionen wieder stetig im Intervall $[0, 3]$.
+Nach dem Zwischenwertsatz nimmt $f$ jeden Wert zwischen -2 und 53 an also auch speziell den Wert 0.
+""",
+"""
+Der Schüler hat vergessen, den Zwischenwertsatz anzuwenden. 
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = """Beweisen Sie, dass die Funktion $f(x) = 3x^3 - 1 - 3^x$ im Intervall $[0, 3]$ mindestens eine Nullstelle besitzt.""",
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+    
 
     # Main method for constructing the animation
     def construct(self):
@@ -3786,6 +5487,51 @@ class Calc_practice_ivt_10_a(SophiaCursorScene):
 Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
 Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
 Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = """
+Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
+Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
+Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
+Du hast in deiner Lösung den Zwischenwertsatz nicht ausreichend angewendet. Wenn du es so machst, wie hier erläutert, hast du keine Probleme in der Klausur von 'Pi-hard Nabben, dem Formel-Boss, Bro.'
 """
 
         # Action Sequence
@@ -4167,5 +5913,9 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
     
 ]

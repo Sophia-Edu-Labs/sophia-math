@@ -2933,7 +2933,8 @@
     "Function": "Funktion",
     "invertible": "Invertierbar",
     "Determinant": "Determinante",
-    "Limits": "Grenzwerte"
+    "Limits": "Grenzwerte",
+    "mvt": "Mittelwertsatz"
   },
   "Func_6_P": {
     "22": {
@@ -3409,7 +3410,15 @@
     },
     "Practice_MC": {
       "1q": {
-        "question-text": "Was gilt für die Komposition $g\\circ f$?"
+        "question-text": "Was gilt für die Komposition $g\\circ f$?",
+        "answer-options": "[\"$g\\circ f$ ist injektiv\", \"$g\\circ f$ ist surjektiv\", \"$g\\circ f$ existiert nicht\", \"$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$\"]",
+        "answer-a": "$g\\\\circ f$ ist injektiv",
+        "answer-b": "$g\\circ f$ ist surjektiv",
+        "answer-c": "$g\\circ f$ existiert nicht",
+        "answer-d": "$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$",
+        "voiceover": "Seien die Funktion<bookmark mark=\"f_in_1\"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"f_in_2\"/>und x auf x minus 1 quadrat abbildet, sowie die Funktion <bookmark mark=\"g_in_1\"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"g_in_2\"/>und x auf e hoch x abbildet, gegeben.\nWelche der folgenden Aussagen trifft auf die Komposition <bookmark mark=\"g_circ_f_in\"/>g nach f zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Die Komposition g nach f ist injektiv. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Die Komposition g nach f ist surjektiv. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Die Komposition g nach f existiert nicht. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...",
+        "is_injective": "$\\bullet$ $g\\circ f$ ist injektiv",
+        "not_surjective": "$\\bullet$ $g\\circ f$ ist nicht surjektiv"
       },
       "2a": {
         "voiceover": "Wenn f auf dem geschlossenen Intervall 0, 1 differenzierbar ist, so können wir den Zwischenwertsatz anwenden, und erhalten, dass es ein x im offenem Intervall von 0 bis 1 gibt, sodass die Ableitung f strich von x gleich 0 ist. ... <bookmark mark=\"a_green\"/>Also ist a richtig. ....\nFalls wir keine weiteren Bedingungen haben, kann es sein, dass die Ableitung von f an keiner Stelle existiert. ... <bookmark mark=\"b_red\"/>Also ist b falsch. ...\nDie Funktion, die du <bookmark mark=\"graph_in\"/>hier siehst, ist ein Beispiel, in dem<bookmark mark=\"c_d_red\"/> Bedingung c und d erfüllt sind, es aber kein x zwischen 0 und 1 gibt, sodass die Ableitung von f an der Stelle x gleich 0 ist.\nDenn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist die Ableitung nirgends gleich Null. <bookmark mark=\"c_d_red\"/>Also sind c und d falsch. ...\n"
@@ -3422,20 +3431,180 @@
       },
       "3a": {
         "voiceover": "Der komplexe Absolutbetrag von einer komplexen Zahl z ist der Abstand von z zum <bookmark mark=\"highlight_origin\"/>Ursprung. ...\nFolglich ist der Betrag von <bookmark mark=\"higlight_abs_1\"/>z minus 1 gleich dem Abstand von z<bookmark mark=\"move_z_1\"/> zur Zahl 1.\nUnd der Betrag von <bookmark mark=\"higlight_abs_2\"/>z plus i ist gleich dem Abstand von z zur<bookmark mark=\"write_z_i\"/> Zahl minus i.\nDann ist die Gleichung also erfüllt, wenn z gleich weit von 1 und minus i entfernt ist.\nDas ist der Fall<bookmark mark=\"higlight_blue\"/> für alle Punkte auf der blauen Geraden. ...\nAlso ist die richtige Antwort, dass es die blaue Skizze ist. ..."
+      },
+      "4a": {
+        "voiceover": "Da die Teilfolge <bookmark mark=\"highlight_evens\"/>a 2 n gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit geradem Index gegen den Wert a. ...\nUnd da die Teilfolge <bookmark mark=\"highlight_odds\"/>a 2 n plus 1 auch gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit ungeradem Index ebenfalls gegen a. ...\nWenn wir diese beiden Teilfolgen kombinieren, erhalten wir die Teilfolge, die aus allen Elementen von a n mit geradem oder ungeradem Index, also aus allen Elementen von a n besteht. Und diese konvergiert dann ja weiterhin gegen a...\nAlso  ist der Grenzwert von a n <bookmark mark=\"show_solution\"/>gleich a, und die richtigae Aussage ist b. ..."
+      },
+      "4q": {
+        "voiceover": "Sei <bookmark mark=\"a_n_in_1\"/>a_n eine Folge von reellen Zahlen, die für alle n in den natürlichen Zahlen definiert ist.\nWir wissen, dass der Grenzwert der Teilfolge a 2 n <bookmark mark=\"a_n_in_2\"/> für n gegen unendlich gleich a ist. Und wir wissen auch, <bookmark mark=\"a_n_in_3\"/>dass der Grenzwert der Teilfolge a 2 n plus 1 gleich a ist.\nWelche der folgenden Aussagen trifft auf den Grenzwert von a n zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Der Grenzwert von a n ist gleich 2 a. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Der Grenzwert von a n ist gleich a. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Der Grenzwert von a n ist gleich 2 a plus 1. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Der Grenzwert von a n existiert nicht. ..."
+      },
+      "5q": {
+        "voiceover": "Betrachten wir die Funktion f, die <bookmark mark=\"f_definition\"/>von dem Intervall minus pi bis pi in die reellen Zahlen abbildet, \nund deren Funktionsvorschrift lautet: <bookmark mark=\"f_formula\"/>f von x ist gleich zwei mal dem Absolutbetrag von x plus vier. \nWelche der folgenden Aussagen trifft auf die Funktion f zu? <bookmark mark=\"question\"/>\nBesitzt die Funktion im Intervall von null bis eins eine Nullstelle? <bookmark mark=\"answer_1\"/>\nHat sie eine lokale Extremstelle bei x gleich null? <bookmark mark=\"answer_2\"/>\nIst sie streng monoton wachsend? <bookmark mark=\"answer_3\"/>\nOder ist sie etwa nicht integrierbar? <bookmark mark=\"answer_4\"/>"
+      },
+      "5a": {
+        "voiceover": "Wenn wir die Funktion <bookmark mark=\"plot_in\"/>einmal graphisch darstellen, können wir unschwer erkennen, dass die Funktion keine Nullstelle besitzt, und nicht streng monoton wachsend ist.\nWir können auch sehen, dass die Funktion <bookmark mark=\"maximum\"/>eine lokale Extremstelle bei x gleich null hat, ein Minimum mit y gleich Vier.\nUnd wir können auch direkt erkennen, dass die Funktion integrierbar ist."
+      },
+      "6q": {
+        "voiceover": "Seien <bookmark mark=\"domain_in\"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.\n<bookmark mark=\"question_in\"/>Welche der folgenden Aussagen gilt?\nAussage <bookmark mark=\"answer_a_in\"/>a: f ist differenzierbar. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: f ist nicht integrierbar. ...\nOder Antwort <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ..."
+      },
+      "6a": {
+        "voiceover": "Betrachten wir den<bookmark mark=\"look_at_b\"/> Fall b, also sei das Integral von f auf dem Intervall von a bis b gleich null.\nWenn wir den <bookmark mark=\"mvt\"/>Mittelwertsatz der Integralrechnung anwenden, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich 1 durch b minus a mal dem Integral von f von x dx ist.\n<bookmark mark=\"look_at_c\"/>Wenn wir nun einsetzen, dass das Integral von f von x auf dem Intervall a b gleich null ist, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich null ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr."
+      },
+      "7q": {
+        "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 6 gleich (1 plus i) hoch 4. \nWelche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?\nAussage <bookmark mark=\"ans_a_in\"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_b_in\"/>b: Es gibt unendlich viele verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_c_in\"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...\nAussage <bookmark mark=\"ans_d_in\"/>d: Die Gleichung hat nur reelle Lösungen. ..."
+      },
+      "8q": {
+        "voiceover": "Seien <bookmark mark=\"f_in_1\"/>a und b Elemente der reellen Zahlen mit a kleiner als b und sei die Funktion f, <bookmark mark=\"f_in_2\"/>die von dem geschlossenen Intervall von a bis b in die reellen Zahlen abbildet, eine stetige Funktion. <bookmark mark=\"f_in_2\"/>Welche der folgenden Aussagen trifft zu?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f nimmt auf dem Intervall von a bis b kein Minimum an. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Der Bildbereich f von dem Intervall a, b lässt sich als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Der Bildbereich von f von dem Intervall a, b ist leer. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist auf dem Intervall von a bis b injektiv. ...",
+        "question": "Seien $a,b\\in\\mathbb R$ mit $a<b$ und sei $f:[a,b]\\rightarrow\\mathbb R$ eine stetige Funktion. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f$ nimmt auf $[a,b]$ kein Minimum an\",\n\"$f([a,b])$ lässt sich als Intervall $[c,d]$ schreiben mit $c,d\\in\\mathbb R$ und $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ ist auf $[a,b]$ injektiv\"]"
+      },
+      "8a": {
+        "voiceover": "Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark=\"ivt\"/>den Zwischenwertsatz anwenden.\nDaraus folgt dann,<bookmark mark=\"solution\"/> dass der Bildbereich von f von a bis b ein Intervall ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d."
+      },
+      "9q": {
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine differenzierbare, ungerade Funktion. \nWelche dieser Aussagen trifft im Allgemeinen zu?",
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f'(x)\\neq0$ für $x \n=0$\", \"Keine dieser Aussagen gilt im Allgemeinen“]",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die differenzierbar und ungerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f von x ist Null für alle x in den reellen Zahlen. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Ableitung von f an der Stelle x ist Null für x gleich Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Ableitung von f an der Stelle x ist nicht Null für x gleich Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
+        "answer_a": "a) $f(x) = 0$ für alle $x$",
+        "answer_b": "b) $f'(x) = 0$ für $x = 0$",
+        "answer_c": "c) $f'(x) \\neq 0$ für $x = 0$",
+        "answer_d": "d) Keine Aussage allgemeingültig",
+        "f_property": "$f$ diff'bar, ungerade"
+      },
+      "9a": {
+        "voiceover": "Betrachten wir zunächst die<bookmark mark=\"f_1_in\"/> Funktion f von x gleich eins. Diese Funktion ist differenzierbar und ungerade. Also sind a und c <bookmark mark=\"a_c_red\"/>schon mal falsch, denn die Funktion f ist nicht Null und die Ableitung von f an der Stelle x gleich Null ist nicht ungleich Null.\n<bookmark mark=\"f_2_in\"/>Betrachten wir nun die Funktion f von x gleich x. Diese Funktion ist auch differenzierbar und ungerade. Also ist<bookmark mark=\"b_red\"/> b auch falsch, weil die Ableitung von f überall gleich eins ist, also ist f Strich von Null nicht Null.\nEs bleibt also <bookmark mark=\"d_green\"/>nur noch d übrig, und das ist auch die richtige Antwort."
+      },
+      "10q": {
+        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"\\int_{-a}^{a \n}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ für alle $a> \n0$\", \"$f$ ist nicht integrierbar\"]",
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige, gerade Funktion. \nWelche der folgenden Aussagen ist wahr:",
+        "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade",
+        "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$",
+        "answer_c": "c) $\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$",
+        "answer_d": "d) $f$ ist nicht integrierbar",
+        "f_property": "$f$ stetig, gerade",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion g von x ist gleich f von x mal cosinus von x ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Das bestimmte Integral von minus a bis a von f von x dx ist gleich 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Das bestimmte Integral von minus a bis a von f von x dx ist gleich Null für alle a größer als Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist nicht integrierbar. ..."
+      },
+      "10a": {
+        "voiceover": "Visualisieren wir das ganze mal mit einer<bookmark mark=\"plot_in\"/> Beispielsfunktion.\nWir betrachten die Funktion f von x gleich x hoch 2. Diese Funktion ist stetig und gerade.\nWenn wir uns jetzt das Integral von minus a bis <bookmark mark=\"auc_left_in\"/>0 von f von x dx anschauen, sehen wir, dass es genau das gleiche ist wie <bookmark mark=\"auc_switch\"/>das Integral von 0 bis a von f von x dx.\nAlso <bookmark mark=\"b_green\"/>ist die Aussage b wahr: Das <bookmark mark=\"auc_left_back_in\"/>bestimmte Integral von minus a bis a von f von x dx ist gleich<bookmark mark=\"auc_final_switch\"/> 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null."
+      },
+      "11q": {
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist surjektiv. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f ist injektiv. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Funktion f hat kein Maximum. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f von x ist kleiner als Null für alle x in der Menge von 0, 1, 2, 3. ...",
+        "question": "Welche der folgenden Aussagen gilt für eine stetige, gerade Funktion $f:\\mathbb R \\rightarrow \\mathbb R$?",
+        "answerOptions": "[\"$f$ ist surjektiv\", \"$f$ ist injektiv\", \"$f$ hat kein Maximum\", \"$f(x)>0$ für alle $x\\in\\{0,1,2,3 \n\\}$\"]",
+        "answer_a": "a) $f$ ist surjektiv",
+        "answer_b": "b) $f$ ist injektiv",
+        "answer_c": "c) $f$ hat kein Maximum",
+        "answer_d": "d) $f(x)<0$ für alle $x\\\\in\\\\{0,1,2,3\\\\}$"
+      },
+      "11a": {
+        "voiceover": "Setzen wir<bookmark mark=\"reorganize\"/> einfach mal alle werte ein:<bookmark mark=\"f_1\"/> f von 1 ist gleich eins minus eins im Quadrat, also Null. <bookmark mark=\"f_2\"/>f von 2 ist gleich zwei minus eins im Quadrat, also eins. Und <bookmark mark=\"f_3\"/>f von 3 ist gleich drei minus eins im Quadrat, also vier.\nWir sehen also, dass keine zwei unterschiedlichen x Werte auf den gleichen y Wert abgebildet werden. Also ist <bookmark mark=\"b_green\"/>die Funktion f injektiv."
+      },
+      "12q": {
+        "question": "Seien $\\left(a_n\\right)_{n\\in\\mathbb N}$ und $\\left(b_n\\right)_{n\\in\\mathbb N}$ Folgen mit $\\lim_{n\\to\\infty \n}a_n=\\infty$ und $\\lim_{n\\to\\infty}b_n=0$. \nWelche der folgenden Aussagen ist wahr:",
+        "answer_d": "d) Keine der Aussagen i.A. wahr",
+        "answerOptions": "[\"$\\lim_{n\\to\\infty}a_n\\cdot b_n=0$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=1$\", \"Keine der Aussagen allgemein wahr\"]",
+        "voiceover": "Seien <bookmark mark=\"a_b_in\"/>a n und b n Folgen von reellen Zahlen.\nDer Grenzwert von <bookmark mark=\"a_in\"/>a n für n gegen unendlich ist gleich unendlich. ... Und der Grenzwert von <bookmark mark=\"b_in\"/>b n für n gegen unendlich ist gleich Null. ...\nWelche der folgenden Aussagen gilt allgemein? ...\nAussage <bookmark mark=\"answer_a_in\"/>a: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Null. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich unendlich. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Eins. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
+        "sequences": "Folgen"
+      },
+      "12a": {
+        "voiceover": "Betrachten wir drei Beispiele:\nBeispiel <bookmark mark=\"example_1_in\"/>Nummer 1: a n ist gleich n und b n ist gleich eins durch n quadrat. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins durch n für n gegen unendlich, also gleich Null.\nBeispiel <bookmark mark=\"example_2_in\"/>Nummer 2: a n ist gleich n und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins für n gegen unendlich, also gleich Eins.\nUnd Beispiel <bookmark mark=\"example_3_in\"/>Nummer 3: a n ist gleich n hoch 2 und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von n für n gegen unendlich, also gleich unendlich.\nWir sehen also, dass <bookmark mark=\"d_green\"/>keine der Aussagen a, b oder c allgemeingültig wahr ist. Also ist d die richtige Antwort."
+      },
+      "15q": {
+        "question": "Betrachte die Funktion $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ mit $f(x)=e^{-\\sqrt{x^2 1} 1}$. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f$ hat Nullstelle auf $[0,1]$\", \"$f$ hat Maximum auf $[0,1]$\", \"$f$ ist nicht stetig\" ,\"$f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]",
+        "answer_a": "a) $f$ hat Nullstelle auf $[0,1]$",
+        "answer_b": "b) $f$ hat Maximum auf $[0,1]$",
+        "answer_c": "c) $f$ ist nicht stetig",
+        "answer_d": "d) $f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2 1} 1}$",
+        "voiceover": "Sei f eine Funktion, die von dem Intervall von <bookmark mark=\"f_in_1\"/>minus pi bis pi in die reellen Zahlen abbildet, und deren Funktionsvorschrift <bookmark mark=\"f_in_2\"/>lautet e hoch minus Wurzel von x hoch 2 plus 1 plus 1. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f hat eine Nullstelle im Intervall von Null bis Eins. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat ein Maximum im Intervall von Null bis Eins. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Funktion f ist nicht stetig. ...\nOder <bookmark mark=\"answer_d_in\"/>Aussage d: Die Funktion f hat die Stammfunktion groß f von x ist gleich x mal e hoch minus Wurzel von x hoch 2 plus 1 plus 1. ...",
+        "sol": "$f$ hat Min und Max auf $[-\\pi,\\pi]$"
+      },
+      "15a": {
+        "voiceover": "Wir haben ja eine stetige Funktion auf einem Intervall. Wir <bookmark mark=\"implication_in\"/>können dann den Satz von Minimum und Maximum anwenden, und <bookmark mark=\"sol_in\"/>wissen, dass die Funktion f ein Minimum und ein Maximum auf dem Intervall von minus pi bis pi hat.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr."
+      },
+      "16q": {
+        "answer_a": "a) $f$ ist ungerade",
+        "answer_b": "b) $f$ hat keine Nullstellen",
+        "answer_c": "c) Es gibt 3 Werte $x$ mit $f'(x)=0$",
+        "answer_d": "d) $f$ hat keine Stammfunktion",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, mit cer <bookmark mark=\"f_in_2\"/>Funktionsvorschrift 13 mal x hoch 3 minus 3 mal x. Welche der folgenden Aussagen ist wahr?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat keine Nullstellen. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Es gibt genau drei x in den reellen Zahlen, für die die Ableitung von f an der Stelle x gleich Null ist. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Die Funktion f hat keine Stammfunktion. ..."
+      },
+      "16a": {
+        "voiceover": "Die Funktion f ist ein Polynom mit <bookmark mark=\"deg_three\"/>einem Koeffizienten von Grad drei, und <bookmark mark=\"odd\"/>einem Koeffizient von Grad eins. Also hat f nur ungerade Potenzen, und die Funktion f <bookmark mark=\"a_green\"/>ist ungerade."
+      },
+      "18q": {
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige Funktion mit $f(x)>0$ für alle $x\\in[0,1]$. \nWelche dieser Aussagen ist wahr?",
+        "answer_a": "a) Es existiert $\\xi\\in]0,1[$, sodass das Rechteck\\\\ mit Höhe $f(\\xi)$ und Breite $1$\\\\ die Fläche $A=\\int_0^1f(x)dx$ hat ",
+        "answer_b": "b) $f$ nicht integrierbar auf $[0,1]$",
+        "answer_c": "c) $f$ hat kein Maximum auf $[0,2]$",
+        "answer_d": "d) Keine der Optionen",
+        "answerOptions": "[\"Es existiert $\\xi\\in]0,1[$, sodass das Rechteck mit Höhe $f(\\xi)$ und Breite $1$ die Fläche $A=\\int_0^1f(x)dx$ hat\", \"$f$ ist nicht integrierbar auf [0,1]$\", \"$f$ hat kein Maximum auf $[0,2]$\", \"Keine der Optionen\"]",
+        "voiceover": "Sei f eine<bookmark mark=\"f_in_1\"/>stetige Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, für die gilt, dass <bookmark mark=\"f_in_2\"/>f von x größer als Null für alle x in dem Intervall von Null bis Eins. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass es ein xi in dem offenen Intervall von Null bis Eins gibt, sodass das Rechteck mit der Höhe f von xi und der Breite Eins die Fläche A hat, wobei A das bestimmte Integral von Null bis Eins von f von x dx ist? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Funktion f nicht integrierbar ist auf dem Intervall von Null bis Eins? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f kein Maximum hat auf dem Intervall von Null bis Zwei? ...\nOder ist es <bookmark mark=\"answer_d_in\"/>Aussage d, dass keine der obigen Möglichkeiten zutrifft? ...",
+        "solution": "Es gibt $\\xi\\in]0,1[$, sodass\\\\ $\\int_0^1f(x)dx=f(\\xi)$"
+      },
+      "18a": {
+        "voiceover": "Da f stetig ist, können wir <bookmark mark=\"implication_in\"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark=\"solution\"/>dass es ein xi gibt,\nsodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.\nAlso ist <bookmark mark=\"a_green\"/>die Aussage a wahr."
+      },
+      "19q": {
+        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differenzierbar, gerade",
+        "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
+        "answer_a": "a) $f(x)=0$ für alle $x\\\\in\\\\mathbb R$",
+        "answer_b": "b) $f'(x)=0$ für $x=0$",
+        "answer_c": "c) $f$ ist injektiv",
+        "question": "Sei $f:\\mathbb R\\rightarrow\\mathbb R$ eine differenzierbare, gerade Funktion. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f$ ist injektiv\", \"$ \nf(x)=x^3$\"]"
+      },
+      "19a": {
+        "voiceover": "Betrachten wir ein <bookmark mark=\"plot_in\"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark=\"highlight_x_0\"/>x gleich Null geben.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein."
+      },
+      "20q": {
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=\\cos(x) 2\\cos(2x)$ eine Funktion. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f$ ist nicht periodisch\", \"Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$ gilt: $b_k=0$ mit $k\\in\\mathbb N$\", \"$f$ ist streng monoto wachsend\", \"Alle Fourierkoeffizienten sind $0$\"]",
+        "voiceover": "Sei f <bookmark mark=\"func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
+        "answer_a": "$f$ ist nicht periodisch",
+        "answer_b": "Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$ gilt: $b_k=0$ mit $k\\in\\mathbb N$",
+        "answer_c": "$f$ ist streng monoto wachsend",
+        "answer_d": "Alle Fourierkoeffizienten sind $0$"
+      },
+      "20a": {
+        "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...\n"
       }
     },
     "practice_limits": {
       "1q": {
-        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?"
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{2n^3+4n}{3n^3\\sqrt{n}+4n^2}$?",
+        "voiceover-text": "Betrachten wir den Term<bookmark mark=\"func_in\"/> 2 n hoch drei + 4 n, geteilt durch 3 n hoch drei Wurzel n + 4 n quadrat.\nWas <bookmark mark=\"limit_in\"/>ist der Grenzwert dieses Terms?"
       },
       "1a": {
         "voiceover-text": "Als erstes klammern wir den Begriff n hoch drei mal wurzel drei im Zähler und im Nenner aus. <bookmark mark=\"implication_1\"/>Dann erhalten wir im Zähler n hoch drei Wurzel n mal Klammer auf zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n Klammer zu. Und im Nenner n hoch drei Wurzel n mal Klammer auf drei plus vier durch n Wurzel n Klammer zu.\nDann können <bookmark mark=\"s_out_1\"/>wir das n hoch drei Wurzel n kürzen, und <bookmark mark=\"func_2_b\"/>wir erhalten zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n, geteilt durch drei plus vier durch n Wurzel n.\nWenn wir dann <bookmark mark=\"implication_2\"/>n gegen unendlich gehen lassen, erhalten wir 0 plus 0 geteilt durch 3 plus 0, was gleich Null ist. Also ist der Grenzwert gleich Null."
       },
       "2q": {
-        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}=\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
       },
       "2a": {
         "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat zwei, kleiner oder gleich eins durch n plus eins ist.\nDiese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist."
+      },
+      "3q": {
+        "voiceover-text": "Jetzt betrachten wir den <bookmark mark=\"term_in\"/>Term 16 x hoch zwei geteilt durch den Tangens von x. Und wir suchen den <bookmark mark=\"limit_in\"/>Grenzwert für x gegen pi viertel.\nWas kommt da raus?",
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)$?"
+      },
+      "3a": {
+        "voiceover-text": "Hier können wir den gesuchten Grenzwert einfach einsetzen. Wir <bookmark mark=\"step_1_a\"/>erhalten dann 16 mal pi hoch zwei durch vier quadrat, und das geteilt durch den Tangens von pi viertel.\nDer Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark=\"step_1_b\"/>pi quadrat als Ergebnis unseres Grenzwertes.."
+      },
+      "4q": {
+        "question-text": "Welchen Wert hat der Grenzwert $\\underset{n\\to\\infty}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
+        "voiceover-text": "Jetzt <bookmark mark=\"lion_in\"/> suchen wir den Grenzwert <bookmark mark=\"limit_in\"/>für x gegen pi halbe des<bookmark mark=\"term_in\"/> Terms Sinus von zwei x geteilt durch den Kosinus von x."
+      },
+      "4a": {
+        "voiceover-text": "Sowohl der Zähler als auch der Nenner gehen gegen Null, wenn x gegen pi halbe geht. Also können wir die Regel von <bookmark mark=\"implication_1\"/>L'Hopital anwenden.\nDann erhalten wir, dass der Grenzwert gleich der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist. Das ist in diesem Fall gleich <bookmark mark=\"func_2_a\"/>dem limes für n gegen pi halbe von 2 mal Kosinus von zwei x geteilt durch minus Sinus von x. Und <bookmark mark=\"func_2_b\"/>das ist gleich 2, also ist die Lösung 2."
+      },
+      "5q": {
+        "voiceover-text": "Betrachten wir eine konvergente <bookmark mark=\"a_1_in\"/>Folge a n. Es ist gegeben, dass der <bookmark mark=\"a_2_in\"/>Grenzwert dieser Folge gleich Eins ist. Und außerdem, dass <bookmark mark=\"a_3_in\"/>alle Folgenglieder größer als Null sind.\nBetrachten wir jetzt eine neue <bookmark mark=\"b_n_in_1\"/>Folge b n, die wir als den natürlichen Logarithmus von a n definieren.\nWas ist <bookmark mark=\"b_n_in_2\"/>der Grenzwert dieser Folge b n für n gegen unendlich?",
+        "question-text": "Sei $\\left(a_n\\right)_{n\\in\\mathbb N}$ eine konvergente Folge mit $\\underset{n\\to\\infty}{\\lim}a_n=1$ und $a_n>0$ $ \n\\forall$ $n\\in\\mathbb N$. \nWas ist der Grenzwert $\\underset{n\\to\\infty}{\\lim}b_n$?",
+        "convergent-sequence": "konvergente Folge"
+      },
+      "5a": {
+        "voiceover-text": "Da die Funktion stetig ist, können wir die Funktionsausführung und die Grenzwertermittlung vertauschen. Und wir erhalten, <bookmark mark=\"implication_1\"/>dass der Grenzwert von dem natürlichen Logarithmus von a n gleich dem <bookmark mark=\"series_5_b\"/>natürlichen Logarithmus von dem Grenzwert von a n ist.\nDa der Grenzwert von a n gleich Eins ist, erhalten wir, dass der Grenzwert von b n <bookmark mark=\"solution\"/>gleich dem logarithmus von eins, also gleich Null ist."
       }
     }
   },
