@@ -3410,7 +3410,15 @@
     },
     "Practice_MC": {
       "1q": {
-        "question-text": "Was gilt für die Komposition $g\\circ f$?"
+        "question-text": "Was gilt für die Komposition $g\\circ f$?",
+        "answer-options": "[\"$g\\circ f$ ist injektiv\", \"$g\\circ f$ ist surjektiv\", \"$g\\circ f$ existiert nicht\", \"$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$\"]",
+        "answer-a": "$g\\\\circ f$ ist injektiv",
+        "answer-b": "$g\\circ f$ ist surjektiv",
+        "answer-c": "$g\\circ f$ existiert nicht",
+        "answer-d": "$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$",
+        "voiceover": "Seien die Funktion<bookmark mark=\"f_in_1\"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"f_in_2\"/>und x auf x minus 1 quadrat abbildet, sowie die Funktion <bookmark mark=\"g_in_1\"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"g_in_2\"/>und x auf e hoch x abbildet, gegeben.\nWelche der folgenden Aussagen trifft auf die Komposition <bookmark mark=\"g_circ_f_in\"/>g nach f zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Die Komposition g nach f ist injektiv. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Die Komposition g nach f ist surjektiv. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Die Komposition g nach f existiert nicht. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...",
+        "is_injective": "$\\bullet$ $g\\circ f$ ist injektiv",
+        "not_surjective": "$\\bullet$ $g\\circ f$ ist nicht surjektiv"
       },
       "2a": {
         "voiceover": "Wenn f auf dem geschlossenen Intervall 0, 1 differenzierbar ist, so können wir den Zwischenwertsatz anwenden, und erhalten, dass es ein x im offenem Intervall von 0 bis 1 gibt, sodass die Ableitung f strich von x gleich 0 ist. ... <bookmark mark=\"a_green\"/>Also ist a richtig. ....\nFalls wir keine weiteren Bedingungen haben, kann es sein, dass die Ableitung von f an keiner Stelle existiert. ... <bookmark mark=\"b_red\"/>Also ist b falsch. ...\nDie Funktion, die du <bookmark mark=\"graph_in\"/>hier siehst, ist ein Beispiel, in dem<bookmark mark=\"c_d_red\"/> Bedingung c und d erfüllt sind, es aber kein x zwischen 0 und 1 gibt, sodass die Ableitung von f an der Stelle x gleich 0 ist.\nDenn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist die Ableitung nirgends gleich Null. <bookmark mark=\"c_d_red\"/>Also sind c und d falsch. ...\n"

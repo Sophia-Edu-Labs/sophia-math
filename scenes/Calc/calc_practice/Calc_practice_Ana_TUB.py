@@ -30,7 +30,7 @@ class Calc_practice_MC_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=[r"$g\circ f$ ist injektiv", r"$g\circ f$ ist surjektiv", r"$g\circ f$ existiert nicht", r"$(g\circ f)(x)=x\, \forall x\in[0,\infty)$"],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.1q.answer-options")),
             correctAnswerIndex=0,
             questionText = self.translate("Calc_1.Practice_MC.1q.question-text")
         )
@@ -50,23 +50,15 @@ class Calc_practice_MC_1_q(SophiaCursorScene):
         g_circ_f = MathTex("g\\circ f:[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Seien die Funktion<bookmark mark="f_in_1"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark="f_in_2"/>und x auf x minus 1 quadrat abbildet, sowie die Funktion <bookmark mark="g_in_1"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark="g_in_2"/>und x auf e hoch x abbildet, gegeben.
-Welche der folgenden Aussagen trifft auf die Komposition <bookmark mark="g_circ_f_in"/>g nach f zu?
-Aussage <bookmark mark="answer_a_in"/>a: Die Komposition g nach f ist injektiv. ...
-Aussage <bookmark mark="answer_b_in"/>b: Die Komposition g nach f ist surjektiv. ...
-Aussage <bookmark mark="answer_c_in"/>c: Die Komposition g nach f existiert nicht. ...
-Oder aussage <bookmark mark="answer_d_in"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...
-"""
+                text=self.translate("Calc_1.Practice_MC.1q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_in_1")
@@ -119,16 +111,16 @@ class Calc_practice_MC_1_a(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -201,16 +193,16 @@ class Calc_practice_MC_1_b(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -283,16 +275,16 @@ class Calc_practice_MC_1_c(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
@@ -365,16 +357,16 @@ class Calc_practice_MC_1_d(SophiaCursorScene):
         g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
         f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
 
-        is_injective = Tex("$\\bullet$ $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        not_surjective = Tex("$\\bullet$ $g\\circ f$ Ist nicht surjektiv", color=BLUE, font_size=fs3)
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
         not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
         observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
         
 
-        answer_a = Tex("a) $g\\circ f$ ist injektiv", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $g\\circ f$ ist surjektiv", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $g\\circ f$ existiert nicht", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
 
         self.add(f_g_fg, answers)
