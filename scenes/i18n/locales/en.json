@@ -3429,7 +3429,11 @@
       "2q": {
         "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?",
         "answer-options": "[\"$f$ differentiable on $[0,1]$\", \"No extra requirements needed\", \"$f$ is integrable on $[0,1]$\", \"$f$ has local extremum on $]0,1[$\"]",
-        "answer-a": "a) $f$ differentiable on $[0,1]$"
+        "answer-a": "a) $f$ differentiable on $[0,1]$",
+        "answer-b": "b) No further requirements",
+        "answer-c": "$f$ integrable on $[0,1]$",
+        "answer-d": "d) $f$ has local extremum on $]0,1[$",
+        "voiceover": "Let the function <bookmark mark=\"f_in_1\"/>f, which maps from the half-open interval from 0 to 1 into the real numbers, be given.\nWe also know that f<bookmark mark=\"f_in_2\"/>f of zero is zero, and that f of one is also zero.\nWhich of the <bookmark mark=\"down_q_in\"/>following statements ensures<bookmark mark=\"exists_z_in\"/>that there is a z in the closed interval from 0 to 1 so that the derivative of f at the point z is equal to 0?\nStatement <bookmark mark=\"answer_a_in\"/>a: The function f is differentiable on the closed interval from 0 to 1. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: No further condition is necessary. ...\nStatement <bookmark mark=\"answer_c_in\"/>c: The function f is integrable on the closed interval from 0 to 1. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: The function f has a local extremum on the open interval from 0 to 1. ..."
       },
       "9q": {
         "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable, odd function. Which of these statements is true in general?",
@@ -3547,6 +3551,9 @@
       },
       "1a": {
         "voiceover": "Let's start by looking at <bookmark mark=\"f_stays\"/>all possible values of f. We can use all values from<bookmark mark=\"highlight_interval\"/> 1 to infinity. As a result, x squared reaches all values from 1 to infinity, and f thus reaches all values<bookmark mark=\"interval_f_range\"/> from 0 to infinity. This means <bookmark mark=\"g_in\"/>that all possible values of f lie in the <bookmark mark=\"highlight_def_g\" range of g. So<bookmark mark=\"g_f_in\"/> g after f exists as well. We also realize that f is injective, because if we only insert values from 1 to infinity, we get the right half of a parabola.\nWe find g after f by plugging f of x into the term g for x. Then we get <bookmark mark=\"g_circ_f\"/>g of f of x, equal to e squared to the power of x minus one. <bookmark mark=\"clean_up\"/>This function<bookmark mark=\"injective\"/> is injective, because e to the power of x is injective and the concatenation of two injective functions is always injective. We also recognize that <bookmark mark=\"surjective\"/>g after f is not surjective because the e-function does not take up negative values. And we can see that g after f of x is not always equal to x, <bookmark mark=\"gfx_neq_x\"/>if, for example, we set x equal to 2. Then we get e squared to the power of 2 minus 1, which is e to the power of three and therefore not equal to 2."
+      },
+      "2a": {
+        "voiceover": "If f is differentiable on the closed interval 0, 1, we can apply the intermediate value theorem and obtain that there is an x in the open interval from 0 to 1, so that the derivative f prime of x is equal to 0. ... <bookmark mark=\"a_green\"/>So a is correct. ....\nIf we have no further conditions, it is possible that the derivative of f does not exist at any point. ... <bookmark mark=\"b_red\"/>So b is false. ...\nThe function you see <bookmark mark=\"graph_in\"/>here is an example in which<bookmark mark=\"c_d_red\"/> condition c and d are fulfilled, but there is no x between 0 and 1, so that the derivative of f at the point x is 0.\nThis is because the function is integrable and has a local extremum. However, the derivative is nowhere equal to zero. <bookmark mark=\"c_d_red\"/>So c and d are also false. ..."
       }
     },
     "practice_limits": {

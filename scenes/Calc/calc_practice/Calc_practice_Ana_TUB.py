@@ -431,7 +431,7 @@ class Calc_practice_MC_2_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=["$f$ auf $[0,1]$ differenzierbar", "Keine weitere Bedingung nötig", "$f$ ist auf $[0,1]$ integrierbar", "$f$ hat in $]0,1[$ lokales Extremum"],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.2q.answer-options")),
             correctAnswerIndex=0,
             questionText = self.translate("Calc_1.Practice_MC.2q.question-text")
         )
@@ -448,24 +448,16 @@ class Calc_practice_MC_2_q(SophiaCursorScene):
         down_q = MathTex("\\Downarrow \\, ?", color=BLUE, font_size=fs2).next_to(f, DOWN, buff=0.4)
         exists_z = MathTex("\\exists z\\in[0,1]: f'(z)=0", color=c1t, font_size=fs2).next_to(down_q, DOWN, buff=0.4)
 
-        answer_a = Tex("a) $f$ auf $[0,1]$ differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Keine weitere Bedingung nötig", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist auf $[0,1]$ integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ hat in $]0,1[$ lokales Extremum", color=BLUE, font_size=fs3)
+
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.2q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.2q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.2q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.2q.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(exists_z, DOWN, buff=0.5)
 
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Sei die Funktion <bookmark mark="f_in_1"/>f, welche von dem halboffenen Intervall von 0 bis 1 in die reellen Zahlen abbildet, gegeben.
-Wir wissen ferner, dass f<bookmark mark="f_in_2"/>von null gleich null ist, und dass f von eins auch null ist.
-Welche der <bookmark mark="down_q_in"/>folgenden Aussagen stellt sicher,<bookmark mark="exists_z_in"/> dass es ein z in dem geschlosseen Intervall von 0 bis 1 gibt, sodass die Ableitung von f an der Stelle z gleich 0 ist?
-Aussage <bookmark mark="answer_a_in"/>a: Die Funktion f ist auf dem geschlossenen Intervall von 0 bis 1 differenzierbar. ...
-Aussage <bookmark mark="answer_b_in"/>b: Es ist keine weitere Bedingung nötig. ...
-Aussage <bookmark mark="answer_c_in"/>c: Die Funktion f ist auf dem geschlossenen Intervall von 0 bis 1 integrierbar. ...
-Oder aussage <bookmark mark="answer_d_in"/>d: Die Funktion f hat in dem offenen Intervall von 0 bis 1 ein lokales Extremum. ...
-"""
+                text=self.translate("Calc_1.Practice_MC.2q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("f_in_1")
