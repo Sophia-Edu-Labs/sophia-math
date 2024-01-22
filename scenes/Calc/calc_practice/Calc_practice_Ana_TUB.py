@@ -4045,6 +4045,13 @@ class Calc_practice_MC_19_d(SophiaCursorScene):
 ##################################### 
 class Calc_practice_MC_20_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.20q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.20q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -4057,20 +4064,14 @@ class Calc_practice_MC_20_q(SophiaCursorScene):
         f = VGroup(f_1,f_2).arrange(DOWN, buff=.2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist nicht periodisch", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$gilt:\\\\$b_k=0$ mit $k\\in\\mathbb N$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist streng monoto wachsend", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Alle Fourierkoeffizienten sind $0$.", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.20q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.20q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.20q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark="func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.20q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -4093,55 +4094,52 @@ Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
-class Calc_practice_MC_20_a(SophiaCursorScene):
 
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
 
-        # Define the function text using MathTex
-        f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
-        f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
-        f = VGroup(f_1,f_2).set_y(2)
 
-        # Define the answer options using Tex
-        answer_a = Tex("a) $f$ ist nicht periodisch", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$gilt:\\\\$b_k=0$ mit $k\\in\\mathbb N$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist streng monoto wachsend", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Alle Fourierkoeffizienten sind $0$.", color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+# TODO
+# class Calc_practice_MC_20_a(SophiaCursorScene):
 
-        # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark=func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+#     # Main method for constructing the animation
+#     def construct(self):
+#         # Adding initial components to the scene
+#         super().construct()
+#         self.add_mathgrid()
 
-        # Action Sequence
-        with self.voiceover(text=voiceover_text) as tracker:
+#         # Define the function text using MathTex
+#         f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
+#         f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
+#         f = VGroup(f_1,f_2).set_y(2)
+
+#         # Define the answer options using Tex
+#         answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
+#         answer_b = Tex(self.translate("Calc_1.Practice_MC.20q.answer_b"), color=BLUE, font_size=fs3)
+#         answer_c = Tex(self.translate("Calc_1.Practice_MC.20q.answer_c"), color=BLUE, font_size=fs3)
+#         answer_d = Tex(self.translate("Calc_1.Practice_MC.20q.answer_d"), color=BLUE, font_size=fs3)
+#         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+#         # Define the voiceover text
+#         voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.20a.voiceover")
+#         # Action Sequence
+#         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("func_in")
-            self.play(Write(f))
+#             self.wait_until_bookmark("func_in")
+#             self.play(Write(f))
 
-            self.wait_until_bookmark("answer_a_in")
-            self.play(Write(answer_a))
+#             self.wait_until_bookmark("answer_a_in")
+#             self.play(Write(answer_a))
 
-            self.wait_until_bookmark("answer_b_in")
-            self.play(Write(answer_b))
+#             self.wait_until_bookmark("answer_b_in")
+#             self.play(Write(answer_b))
 
-            self.wait_until_bookmark("answer_c_in")
-            self.play(Write(answer_c))
+#             self.wait_until_bookmark("answer_c_in")
+#             self.play(Write(answer_c))
 
-            self.wait_until_bookmark("answer_d_in")
-            self.play(Write(answer_d))
+#             self.wait_until_bookmark("answer_d_in")
+#             self.play(Write(answer_d))
 
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
+#         # Wait for 4 seconds at the end of the animation
+#         self.wait(4)
 
 
 ##################################### Limits

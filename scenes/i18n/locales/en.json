@@ -3522,6 +3522,18 @@
       },
       "19a": {
         "voiceover": "Let's look at a <bookmark mark=\"plot_in\"/>graphic example of an even, differentiable function. As we can see, there must be an extreme point at <bookmark mark=\"highlight_x_0\"/>x equal to zero.\nSo <bookmark mark=\"b_green\"/>the statement b is true, because for there to be an extreme point at x equal to zero, the derivative of f at x must be equal to zero."
+      },
+      "20q": {
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=\\cos(x)+2\\cos(2x)$ be a function. Which of the following statements is true?",
+        "answerOptions": "[\"$f$ isn't periodic\", \"For $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$it holds that $b_k=0$ with $k\\in\\mathbb N$\", \"$f$ is strictly monotonously increasing\", \"All Fourier-Coefficients are $0$\"]",
+        "voiceover": "Let f <bookmark mark=\"func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x equals zero is zero ? ...\nIs it <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
+        "answer_a": "$f$ is not periodic",
+        "answer_b": "For $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$it holds that $b_k=0$ with $k\\in\\mathbb N$\", \"$f$ is strictly monotonously increasing",
+        "answer_c": "$f$ increases strictly monotonously",
+        "answer_d": "All Fourier-Coefficients are equal to $0$"
+      },
+      "20a": {
+        "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x equals is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f from x equals x to the power of 3? ..."
       }
     },
     "practice_limits": {

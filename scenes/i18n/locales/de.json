@@ -3548,6 +3548,18 @@
       },
       "19a": {
         "voiceover": "Betrachten wir ein <bookmark mark=\"plot_in\"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark=\"highlight_x_0\"/>x gleich Null geben.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein."
+      },
+      "20q": {
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=\\cos(x) 2\\cos(2x)$ eine Funktion. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f$ ist nicht periodisch\", \"Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$ gilt: $b_k=0$ mit $k\\in\\mathbb N$\", \"$f$ ist streng monoto wachsend\", \"Alle Fourierkoeffizienten sind $0$\"]",
+        "voiceover": "Sei f <bookmark mark=\"func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
+        "answer_a": "$f$ ist nicht periodisch",
+        "answer_b": "Für $b_k=\\tfrac{2}{2\\pi}\\int_{0}^{2\\pi}f(x)\\sin(kx)dx$ gilt: $b_k=0$ mit $k\\in\\mathbb N$",
+        "answer_c": "$f$ ist streng monoto wachsend",
+        "answer_d": "Alle Fourierkoeffizienten sind $0$"
+      },
+      "20a": {
+        "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...\n"
       }
     },
     "practice_limits": {
