@@ -3579,6 +3579,13 @@
       },
       "5a": {
         "voiceover-text": "Since the function is continuous, we can swap the function execution and the calculation of the limit. And we get <bookmark mark=\"implication_1\"/>that the limit of the natural logarithm of a n is equal to the <bookmark mark=\"series_5_b\"/>natural logarithm of the limit of a n.\nSince the limit of a n is equal to one, we obtain that the limit of b n is <bookmark mark=\"solution\"/>equal to the logarithm of one, meaning zero."
+      },
+      "6q": {
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}$?",
+        "voiceover-text": "Consider the term<bookmark mark=\"func_in\"/> 4 n to the power of four minus 12 n squared plus three n to the power of three, all of this divided by n to the power of three times two n plus one.\nWhat is <bookmark mark=\"limit_in\"/>the limit of this term for n approaching infinity?"
+      },
+      "6a": {
+        "voiceover-text": "We can factor the term n to the power of four out of the numerator and the denominator. Then <bookmark mark=\"step_in_1\"/>in the numerator we get n to the power of four times open bracket four minus twelve by n squared plus three by n close bracket. And in the denominator, n to the fourth power times open bracket to two plus one by n to the fourth power close bracket.\nWe can reduce the n to the power of four, and for n towards infinity we get the <bookmark mark=\"step_in_2\"/>fraction 4 - zero plus zero divided by two plus zero, which is equal to 2."
       }
     }
   },

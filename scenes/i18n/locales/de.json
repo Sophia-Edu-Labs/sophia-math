@@ -3605,6 +3605,13 @@
       },
       "5a": {
         "voiceover-text": "Da die Funktion stetig ist, können wir die Funktionsausführung und die Grenzwertermittlung vertauschen. Und wir erhalten, <bookmark mark=\"implication_1\"/>dass der Grenzwert von dem natürlichen Logarithmus von a n gleich dem <bookmark mark=\"series_5_b\"/>natürlichen Logarithmus von dem Grenzwert von a n ist.\nDa der Grenzwert von a n gleich Eins ist, erhalten wir, dass der Grenzwert von b n <bookmark mark=\"solution\"/>gleich dem logarithmus von eins, also gleich Null ist."
+      },
+      "6q": {
+        "question-text": "Welchen Wert hat der Grenzwert $\\underset{n\\to\\infty}{\\lim}\\frac{4n^4-12n^2 3n^3}{n^3(2n 1)}$?",
+        "voiceover-text": "Betrachte den Term<bookmark mark=\"func_in\"/> 4 n hoch vier minus 12 n quadrat plus drei n hoch drei, und das ganze geteilt durch n hoch drei mal zwei n plus eins.\nKannst du <bookmark mark=\"limit_in\"/>den Grenzwert dieses Terms für n gegen unendlich bestimmen?"
+      },
+      "6a": {
+        "voiceover-text": "Wir können den Term n hoch vier aus dem Zähler und aus dem Nenner ausklammern. Dann <bookmark mark=\"step_in_1\"/>erhalten wir im Zähler n hoch vier mal Klammer auf vier minus zwölf durch n quadrat plus drei durch n Klamemr zu. Und im Nenner n hoch vier mal Klammer auf zwei plus eins durch n hoch vier Klammer zu.\nDa können wir das n hoch vier kürzen, und wir erhalten für n gegen unendlich den <bookmark mark=\"step_in_2\"/>Bruch 4 - Null plus Null geteilt durch zwei plus Null, was gleich 2 ist."
       }
     }
   },

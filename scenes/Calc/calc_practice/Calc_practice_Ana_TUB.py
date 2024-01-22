@@ -4838,6 +4838,20 @@ class Calc_practice_limits_5_b(SophiaCursorScene):
 ##################################### 
 ##################################### 
 class Calc_practice_limits_6_q(SophiaCursorScene):
+    
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.6q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -4855,10 +4869,7 @@ class Calc_practice_limits_6_q(SophiaCursorScene):
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachte den Term<bookmark mark="func_in"/> 4 n hoch vier minus 12 n quadrat plus drei n hoch drei, und das ganze geteilt durch n hoch drei mal zwei n plus eins.
-Kannst du <bookmark mark="limit_in"/>den Grenzwert dieses Terms für n gegen unendlich bestimmen?
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.6q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -4896,10 +4907,44 @@ class Calc_practice_limits_6_a(SophiaCursorScene):
         self.add(dog, func)
 
         # Define the voiceover text
-        voiceover_text = """
-Wir können den Term n hoch vier aus dem Zähler und aus dem Nenner ausklammern. Dann <bookmark mark="step_in_1"/>erhalten wir im Zähler n hoch vier mal Klammer auf vier minus zwölf durch n quadrat plus drei durch n Klamemr zu. Und im Nenner n hoch vier mal Klammer auf zwei plus eins durch n hoch vier Klammer zu.
-Da können wir das n hoch vier kürzen, und wir erhalten für n gegen unendlich den <bookmark mark="step_in_2"/>Bruch 4 - Null plus Null geteilt durch zwei plus Null, was gleich 2 ist.
-"""
+        voiceover_text = self.translate("General.correct_2") + self.translate("Calc_1.practice_limits.6a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_in_1")
+            self.add_shift_sound(0.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(implication_1), Write(func_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("step_in_2")
+            self.play(Write(func_2[1]), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_limits_6_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{4n^4-12n^2+3n^3}{n^3(2n+1)}", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        implication_1 = Tex(r"$\Downarrow$  $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2 = MathTex(r"\underset{n\to\infty}{\lim}\frac{n^4(4-\tfrac{12}{n^2}+\tfrac3n)}{n^4(2+\tfrac1{n^4})}\\", r"=\frac{4-0+0}{2+0}=2", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+
+        self.add(dog, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2") + self.translate("Calc_1.practice_limits.6a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
