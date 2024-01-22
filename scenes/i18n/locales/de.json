@@ -3424,7 +3424,9 @@
         "voiceover": "Wenn f auf dem geschlossenen Intervall 0, 1 differenzierbar ist, so können wir den Zwischenwertsatz anwenden, und erhalten, dass es ein x im offenem Intervall von 0 bis 1 gibt, sodass die Ableitung f strich von x gleich 0 ist. ... <bookmark mark=\"a_green\"/>Also ist a richtig. ....\nFalls wir keine weiteren Bedingungen haben, kann es sein, dass die Ableitung von f an keiner Stelle existiert. ... <bookmark mark=\"b_red\"/>Also ist b falsch. ...\nDie Funktion, die du <bookmark mark=\"graph_in\"/>hier siehst, ist ein Beispiel, in dem<bookmark mark=\"c_d_red\"/> Bedingung c und d erfüllt sind, es aber kein x zwischen 0 und 1 gibt, sodass die Ableitung von f an der Stelle x gleich 0 ist.\nDenn die Funktion ist integrierbar, und hat ein lokales Extremum. Allerdings ist die Ableitung nirgends gleich Null. <bookmark mark=\"c_d_red\"/>Also sind c und d falsch. ...\n"
       },
       "2q": {
-        "question-text": "Welche dieser Bedingungen garantiert, dass es ein $z\\in[0,1]$ gibt, so dass $f'(z)=0$ ist?"
+        "question-text": "Welche dieser Bedingungen garantiert, dass es ein $z\\in[0,1]$ gibt, so dass $f'(z)=0$ ist?",
+        "answer-options": "[\"$f$ auf $[0,1]$ differenzierbar\", \"Keine weitere Bedingung nötig\", \"$f$ ist auf $[0,1]$ integrierbar\", \"$f$ hat in $]0,1[$ lokales Extremum\"]",
+        "answer-a": "a) $f$ auf $[0,1]$ differenzierbar"
       },
       "1a": {
         "voiceover": "Fangen wir damit an, <bookmark mark=\"f_stays\"/>alle möglichen Werte von f zu betrachten. Wir können ja alle Werte von<bookmark mark=\"highlight_interval\"/> 1 bis unendlich einsetzen. Dadurch erreicht x quadrat alle Werte von 1 bis unendlich, und f erreicht somit alle Werte<bookmark mark=\"intervall_f_range\"/> von 0 bis unendlich. Das bedeutet, <bookmark mark=\"g_in\"/>dass alle möglichen Werte von f im <bookmark mark=\"highlight_def_g\"/>Definitionsbereich von g liegen. Also existiert<bookmark mark=\"g_f_in\"/> g nach f auch. Außerdem stellen wir fest, dass f injektiv ist, denn wenn wir nur Werte von 1 bis unendlich einsetzen, erhalten wir die rechte Hälfte der Parabel.\nWir finden g nach f ja, indem wir f von x in den Term g anstelle von x einsetzen. Dann erhalten wir <bookmark mark=\"g_circ_f\"/>g von f von x, gleich e hoch x quadrat minus eins. <bookmark mark=\"clean_up\"/>Diese Funktion<bookmark mark=\"injective\"/> ist injektiv, denn e hoch x ist injektiv und die Verkettung zweier injektiver Funktionen ist stets injektiv. Wir erkennen auch, dass <bookmark mark=\"surjective\"/>g nach f nicht surjektiv ist, weil die e-Funktion keine negativen Werte annimmt. Und dass g nach f von x nicht immer gleich x ist, sehen wir, <bookmark mark=\"gfx_neq_x\"/>wenn wir zum Beispiel x gleich 2 einsetzen. Dann erhalten wir e hoch 2 quadrat minus 1, was e hoch drei und somit nicht gleich 2 ist."
@@ -3612,6 +3614,24 @@
       },
       "6a": {
         "voiceover-text": "Wir können den Term n hoch vier aus dem Zähler und aus dem Nenner ausklammern. Dann <bookmark mark=\"step_in_1\"/>erhalten wir im Zähler n hoch vier mal Klammer auf vier minus zwölf durch n quadrat plus drei durch n Klamemr zu. Und im Nenner n hoch vier mal Klammer auf zwei plus eins durch n hoch vier Klammer zu.\nDa können wir das n hoch vier kürzen, und wir erhalten für n gegen unendlich den <bookmark mark=\"step_in_2\"/>Bruch 4 - Null plus Null geteilt durch zwei plus Null, was gleich 2 ist."
+      },
+      "7q": {
+        "question-text": "Was ist der Grenzwert $\\underset{n\\to\\infty}{\\lim}\", r\"\\frac{cos(n)}{n^2+1}$?",
+        "voiceover-text": "Jetzt <bookmark mark=\"dog_in\"/>suchen wir den <bookmark mark=\"limit_in\"/>Grenzwert für n gegen unendlich des <bookmark mark=\"term_in\"/>Terms Cosinus von n geteilt durch n quadrat plus eins.\nWas erhalten wir da??"
+      },
+      "7a": {
+        "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms Cosinus geteilt durch n quadrat plus eins kleiner oder gleich eins durch n quadrat plus eins ist.\nDiese erhalten wir, indem wir den Betrag des Cosinus durch eins abschätzen.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n quadrat plus eins <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n quadrat plus eins gegen Null geht und betragsmässig grösser ist."
+      }
+    },
+    "practice_ivt": {
+      "10q": {
+        "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"f_in\"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.\nBeweise, dass die Funktion auf<bookmark mark=\"intervall_in\"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt."
+      },
+      "10a": {
+        "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"steady\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"intervall_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
+        "forgot_ivt": "Fast richtig. Du hast nur vergessen, den Zwischenwertsatz anzuwenden. Sehen wir uns das ganze gemeinsam nochmal an.",
+        "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
+        "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu nennen, die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für v von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
       }
     }
   },

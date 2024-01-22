@@ -4963,6 +4963,20 @@ class Calc_practice_limits_6_b(SophiaCursorScene):
 ##################################### 
 class Calc_practice_limits_7_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.7q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -4979,10 +4993,7 @@ class Calc_practice_limits_7_q(SophiaCursorScene):
         dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([-5,-.6,0]).scale(.5)
 
         # Define the voiceover text
-        voiceover_text = """
-Jetzt <bookmark mark="dog_in"/>suchen wir den <bookmark mark="limit_in"/>Grenzwert für n gegen unendlich des <bookmark mark="term_in"/>Terms Cosinus geteilt durch n quadrat plus eins.
-Was erhalten wir da??
-"""
+        voiceover_text = self.translate("Calc_1.practice_limits.7q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -4999,6 +5010,7 @@ Was erhalten wir da??
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+
 
 class Calc_practice_limits_7_a(SophiaCursorScene):
 
@@ -5022,12 +5034,50 @@ class Calc_practice_limits_7_a(SophiaCursorScene):
         self.add(func, dog)
 
         # Define the voiceover text
-        voiceover_text = """
-Als erstes <bookmark mark="step_1_a"/>wenden wir die Abschätzung an, dass der Betrag des Terms Cosinus geteilt durch n quadrat plus eins kleiner oder gleich eins durch n quadrat plus eins ist.
-Diese erhalten wir, indem wir den Betrag des Cosinus durch eins abschätzen.
-Wir können ja sehr einfach sehen, dass die Folge 1 durch n quadrat plus eins <bookmark mark="step_1_b"/>gegen Null geht, wenn n gegen unendlich geht.
-Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark="step_2"/>unserer Folge gleich Null ist, weil die Folge 1 durch n quadrat plus eins gegen Null geht und betragsmässig grösser ist.
-"""
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.practice_limits.7a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("step_1_a")
+            self.add_shift_sound(.5)
+            self.play(dog.animate.shift(5*RIGHT), Write(step_1[0]), Write(step_1[1]), Write(step_1[2]), run_time=.5)
+
+            self.wait_until_bookmark("step_1_b")
+            self.play(Write(step_1[3]))
+
+            self.wait_until_bookmark("implication_1")
+            self.play(Write(implication_1))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_limits_7_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{cos(n)}{n^2+1}", color=c1t, font_size=fs2).set_y(2)
+        step_1 = MathTex(r"\left|\frac{\cos(n)}{n^2+1}\right|", r"\leq", r"\frac{1}{n^2+1}", r"\underset{n\to\infty}{\rightarrow}0", color=c3t, font_size=fs3).next_to(func, DOWN, buff=.4)
+        implication_1 = Tex(r"$\Downarrow$", "  Sandwich-Theorem", color=BLUE, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        step_2 = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{cos(n)}{n^2+1}", r"=0", color=c3t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+
+        dog = ImageMobject(assets_folder / "img" / "dog_thinking_1.png").move_to([0,-.6,0]).scale(.5)
+        self.add(func, dog)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.practice_limits.7a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5051,6 +5101,21 @@ Also können wir <bookmark mark="implication_1"/>das Sandwich-Theorem anwenden, 
 #####################################
 ##################################### 
 class Calc_practice_limits_8_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.8q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
 
     # Main method for constructing the animation
     def construct(self):
@@ -5454,13 +5519,26 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 class Calc_practice_ivt_10_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["""Wir berechnen die Funktionswerte an den Intervallgrenzen und erhalten $f(0) = 0-1-1 = -2 < 0$ bzw. $f(3) = 81-1-27= 53 > 0$.
-                             
+            answerOptions = [
+"""Wir berechnen die Funktionswerte an den Intervallgrenzen und erhalten $f(0) = 0-1-1 = -2 < 0$ bzw. $f(3) = 81-1-27= 53 > 0$.                             
 Die Funktion $f$ ist als Summe stetiger Funktionen wieder stetig im Intervall $[0, 3]$.
 Nach dem Zwischenwertsatz nimmt $f$ jeden Wert zwischen -2 und 53 an also auch speziell den Wert 0.
+Folgende Aspekte müssen genannt sein, damit die Lösung als korrekt zählt:
+- Feststellung, dass die Funktion stetig ist
+- Nennung des Zwischenwertsatzes
+- Berechnung der Intervallgrenzen f(0) und f(3), oder: Feststellung, dass f(0)<0 ist und f(3)>0 ist.
 """,
 """
-Der Schüler hat vergessen, den Zwischenwertsatz anzuwenden. 
+Fast richtig, der Schüler hat nur vergessen, den Zwischenwertsatz zu nennen. 
+""",
+"""
+Fast richtig, der Schüler hat nur vergessen, die Stetigkeit zu nennen
+""",
+"""
+Fast richtig, der Schüler hat nur vergessen, die Intervallgrenzen abzuprüfen, oder ihre Vorzeichen zu nennen.
+""",
+"""
+Die Antwort ist falsch.
 """
 ],
             correctAnswerIndex = 0,
@@ -5488,10 +5566,7 @@ Der Schüler hat vergessen, den Zwischenwertsatz anzuwenden.
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir die Funktion <bookmark mark="f_in"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.
-Beweise, dass die Funktion auf<bookmark mark="intervall_in"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt.
-"""
+        voiceover_text = self.translate("Calc_1.practice_ivt.10q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5528,11 +5603,7 @@ class Calc_practice_ivt_10_a(SophiaCursorScene):
         self.add(func_and_interval)
 
         # Define the voiceover text
-        voiceover_text = """
-Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
-Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
-Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
-"""
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5572,12 +5643,128 @@ class Calc_practice_ivt_10_b(SophiaCursorScene):
         self.add(func_and_interval)
 
         # Define the voiceover text
-        voiceover_text = """
-Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
-Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
-Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
-Du hast in deiner Lösung den Zwischenwertsatz nicht ausreichend angewendet. Wenn du es so machst, wie hier erläutert, hast du keine Probleme in der Klausur von 'Pi-hard Nabben, dem Formel-Boss, Bro.'
-"""
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_ivt")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_continuity")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_interval_limits")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
+class Calc_practice_ivt_10_e(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5962,5 +6149,7 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
     PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
     PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
-    
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_c),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_d),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_e),
 ]

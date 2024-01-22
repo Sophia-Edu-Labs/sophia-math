@@ -3427,7 +3427,9 @@
         "not_surjective": "$\\bullet$ $g\\circ f$ is not surjective"
       },
       "2q": {
-        "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?"
+        "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?",
+        "answer-options": "[\"$f$ differentiable on $[0,1]$\", \"No extra requirements needed\", \"$f$ is integrable on $[0,1]$\", \"$f$ has local extremum on $]0,1[$\"]",
+        "answer-a": "a) $f$ differentiable on $[0,1]$"
       },
       "9q": {
         "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable, odd function. Which of these statements is true in general?",
@@ -3586,6 +3588,24 @@
       },
       "6a": {
         "voiceover-text": "We can factor the term n to the power of four out of the numerator and the denominator. Then <bookmark mark=\"step_in_1\"/>in the numerator we get n to the power of four times open bracket four minus twelve by n squared plus three by n close bracket. And in the denominator, n to the fourth power times open bracket to two plus one by n to the fourth power close bracket.\nWe can reduce the n to the power of four, and for n towards infinity we get the <bookmark mark=\"step_in_2\"/>fraction 4 - zero plus zero divided by two plus zero, which is equal to 2."
+      },
+      "7q": {
+        "question-text": "What is the limit $\\underset{n\\to\\infty}{\\lim}\\frac{cos(n)}{n^2+1}$?",
+        "voiceover-text": "Now <bookmark mark=\"dog_in\"/>let's find the <bookmark mark=\"limit_in\"/>limit for n approaching infinity of the <bookmark mark=\"term_in\"/>term cosine of n divided by n squared plus one.\nWhat do we get there?"
+      },
+      "7a": {
+        "voiceover-text": "First <bookmark mark=\"step_1_a\"/>we apply the bound that the absolute value of the term cosine divided by n squared plus one is less than or equal to one divided by n squared plus one.\nWe obtain this by upper bounding the absolute value of the cosine by one.\nWe can easily see that the sequence 1 divided by n squared plus one <bookmark mark=\"step_1_b\"/>goes to zero when n goes to infinity.\nSo we can apply <bookmark mark=\"implication_1\"/>the sandwich theorem, and we get that the limit <bookmark mark=\"step_2\"/>of our sequence is zero, because the sequence 1 by n squared plus one goes to zero and has a larger absolute value."
+      }
+    },
+    "practice_ivt": {
+      "10q": {
+        "voiceover-text": "Let's consider the function <bookmark mark=\"f_in\"/>f of x equals three x to the power of three minus one minus three to the power of x.\nProve that the function has at least one zero on<bookmark mark=\"interval_in\"/>the closed interval from zero to three."
+      },
+      "10a": {
+        "voiceover-text": "The function f of x equals 3 x to the power of three minus one minus three to the power of x <bookmark mark=\"steady\"/>is continuous because it is a composition of continuous functions.\nAs the function is continuous, we can now apply the intermediate value theorem. We calculate that the function assumes the values <bookmark mark=\"interval_limits\"/>f of zero equals minus two and f of three equals fifty-three at the interval limits.\nBecause f is continuous, it follows from <bookmark mark=\"ivt\"/>the intermediate value theorem that the function has at least one zero on the interval from zero to three, as it assumes all values between minus two and fifty-three on the interval.",
+        "forgot_ivt": "That's almost it. You forgot to apply the intermediate value theorem. Let's have another look together.",
+        "forgot_continuity": "That's almost it. You forgot to mention that the function is continuous, which is a requirement for the intermediate value theorem. Let's have another look together...",
+        "forgot_interval_limits": "That's almost it. You forgot to mention that the values of the limits are negative for f of zero, and positive for f of three. Let's have another look together..."
       }
     }
   },
