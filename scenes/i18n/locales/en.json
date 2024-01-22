@@ -3421,13 +3421,60 @@
         "question-text": "Which of these conditions guarantees, that there exists a $z\\in[0,1]$ such that $f'(z)=0$?"
       },
       "9q": {
-        "question": "",
-        "answerOptions": "",
-        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is differentiable and odd. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f of x is zero for all x in the real numbers. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The derivative of f at the point x equals zero is equal to zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The derivative of f at the point x equals zero is not zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: None of the above statements can be made in general. ..."
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable, odd function. Which of these statements is true in general?",
+        "answerOptions": "[\"$f(x)=0$ for all $x\\in\\mathbb R$\", \"$f'(x)=0$ for $x=0$\", \"$f'(x)\\neq0$ for $x=0$\", \"None of these statements holds true in general\"]",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is differentiable and odd. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f of x is zero for all x in the real numbers. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The derivative of f at the point x equals zero is equal to zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The derivative of f at the point x equals zero is not zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: None of the above statements can be made in general. ...",
+        "answer_a": "a) $f(x) = 0$ for all $x$",
+        "answer_b": "b) $f'(x) = 0$ for $x = 0$",
+        "answer_c": "c) $f'(x) \\neq 0$ for $x = 0$",
+        "answer_d": "d) None of these always true",
+        "f_property": "$f$ differentiable, odd"
       },
       "8q": {
-        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a differentiable uneven function. Which of the following is true:",
+        "question": "Let $a,b\\in\\mathbb R$ with $a<b$ and let $f:[a,b]\\rightarrow\\mathbb R$ be a continuous function. Which of the following statements ist true?",
         "answerOptions": "[\"$f$ doesn't have a minimum on $[a,b]$\",\n\"$f([a,b])$ can be written as an interval $[c,d]$ with $c,d\\in\\mathbb R$ and $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ is injective on $[a,b]$\"]"
+      },
+      "9a": {
+        "voiceover": "Let us first consider the<bookmark mark=\"f_1_in\"/> function f of x equal to one. This function is differentiable and odd. So a and c <bookmark mark=\"a_c_red\"/>are already wrong, because the function f is not zero and the derivative of f at the point x equals zero is not non-zero.\n<bookmark mark=\"f_2_in\"/>Let us now consider the function f of x equal to x. This function is also differentiable and odd. So<bookmark mark=\"b_red\"/> b is also false, because the derivative of f is equal to one everywhere, so f prime of zero is not zero.\nSo <bookmark mark=\"d_green\"/>only d remains, and that is also the correct answer."
+      },
+      "10q": {
+        "answerOptions": "[\"The function $g:\\mathbb R \\rightarrow \\mathbb R$ defined as $g(x)=f(x)\\cdot \\cos(x)$ is uneven\", \"\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ for all $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ for all $a>0$\", \"$f$ is not integrable\"]",
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous, even function. Which of the following statements is true:",
+        "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ is odd",
+        "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\for all $a>0$",
+        "answer_c": "c) $\\int_{-a}^{a}f(x)dx=0$ for all $a>0$",
+        "answer_d": "d) $f$ is not integrable",
+        "f_property": "$f$ continuous, even",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is continuous and even. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function g of x equals f of x times cosine of x is odd. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The definite integral from minus a to a of f of x dx is equal to 2 times the definite integral from 0 to a of f of x dx for all a greater than zero. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The definite integral from minus a to a of f of x dx is equal to zero for all a greater than zero. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: The function f is not integrable. ..."
+      },
+      "10a": {
+        "voiceover": "Let's visualize the whole thing with an<bookmark mark=\"plot_in\"/> example function.\nLet's consider the function f of x equal to x to the power of 2. This function is continuous and even.\nIf we now look at the integral from minus a to <bookmark mark=\"auc_left_in\"/>0 of f of x dx, we see that it is exactly the same as <bookmark mark=\"auc_switch\"/>the integral from 0 to a of f of x dx.\nSo <bookmark mark=\"b_green\"/>the statement b is true: The <bookmark mark=\"auc_left_back_in\"/>determined integral from minus a to a of f of x dx is equal to<bookmark mark=\"auc_final_switch\"/> 2 times the determined integral from 0 to a of f of x dx for all a greater than zero."
+      },
+      "11q": {
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function from the real numbers into the real numbers, <bookmark mark=\"f_in_2\"/>which is continuous and even. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f is surjective. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f is injective. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The function f has no maximum. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: The function f of x is less than zero for all x in the set of 0, 1, 2, 3. ...",
+        "question": "Which of the following statements is true for a coninuous, even function $f:\\mathbb R \\rightarrow \\mathbb R$?",
+        "answerOptions": "[\"$f$ is surjective\", \"$f$ is injective\", \"$f$ has no maximum\", \"$f(x)>0$ for all $x\\in\\{0,1,2,3\\}$\"]",
+        "answer_a": "a) $f$ is surjective",
+        "answer_b": "b) $f$ is injective",
+        "answer_c": "c) $f$ has no maximum",
+        "answer_d": "d) $f(x)<0$ for all $x\\\\in\\\\{0,1,2,3\\\\}$"
+      },
+      "11a": {
+        "voiceover": "Let's<bookmark mark=\"reorganize\"/> simply enter all the values:<bookmark mark=\"f_1\"/> f of 1 is equal to one minus one squared, which is zero. <bookmark mark=\"f_2\"/>f of 2 is equal to two minus one squared, which is one. And <bookmark mark=\"f_3\"/>f of 3 is equal to three minus one squared, which is four.\nSo we see that no two different x values are mapped to the same y value. So <bookmark mark=\"b_green\"/>the function f is injective."
+      },
+      "12q": {
+        "question": "Let $\\left(a_n\\right)_{n\\in\\mathbb N}$ and $\\left(b_n\\right)_{n\\in\\mathbb N}$ be sequences with $\\lim_{n\\to\\infty}a_n=\\infty$ and $\\lim_{n\\to\\infty}b_n=0$. Which of the following is true:",
+        "answer_d": "d) None are always true",
+        "answerOptions": "[\"$\\lim_{n\\to\\infty}a_n\\cdot b_n=0$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=1$\", \"None are always true\"]",
+        "sequences": "sequences",
+        "voiceover": "Let <bookmark mark=\"a_b_in\"/>a n and b n be sequences of real numbers.\nThe limit of <bookmark mark=\"a_in\"/>a n for n towards infinity is equal to infinity. ... And the limit of <bookmark mark=\"b_in\"/>b n for n towards infinity is equal to zero. ...\nWhich of the following statements is generally true? ...\nStatement <bookmark mark=\"answer_a_in\"/>a: The limit of a n times b n for n towards infinity is equal to zero. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: The limit of a n times b n for n towards infinity is equal to infinity. ...\nStatement <bookmark mark=\"answer_c_in\"/>c: The limit of a n times b n for n towards infinity is equal to one. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: None of the above statements are always true."
+      },
+      "12a": {
+        "voiceover": "Let's look at three examples:\nExample <bookmark mark=\"example_1_in\"/>number 1: a n is equal to n and b n is equal to one squared over n. Then the limit of a n times b n is equal to the limit of one over n for n towards infinity, that is, equal to zero.\nExample <bookmark mark=\"example_2_in\"/>number 2: a n is equal to n and b n is equal to one over n. Then the limit of a n times b n is equal to the limit of one for n towards infinity, i.e. equal to one.\nAnd example <bookmark mark=\"example_3_in\"/>number 3: a n is equal to n to the power of 2 and b n is equal to one over n. Then the limit of a n times b n is equal to the limit of n for n towards infinity, i.e. equal to infinity.\nWe can therefore see that <bookmark mark=\"d_green\"/>none of the statements a, b or c is universally true. So d is the correct answer.\n\nTranslated with DeepL.com (free version)"
+      },
+      "15q": {
+        "question": "Consider the function $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ with $f(x)=e^{-\\sqrt{x^2+1}+1}$. Which of the following statements is true?",
+        "answerOptions": "[\"$f$ has a zero on $[0,1]$\", \"$f$ has a maximum on $[0,1]$\", \"$f$ is not continuous\" ,\"$f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]"
       }
     },
     "practice_limits": {

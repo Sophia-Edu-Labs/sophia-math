@@ -3446,19 +3446,63 @@
       },
       "8q": {
         "voiceover": "Seien <bookmark mark=\"f_in_1\"/>a und b Elemente der reellen Zahlen mit a kleiner als b und sei die Funktion f, <bookmark mark=\"f_in_2\"/>die von dem geschlossenen Intervall von a bis b in die reellen Zahlen abbildet, eine stetige Funktion. <bookmark mark=\"f_in_2\"/>Welche der folgenden Aussagen trifft zu?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f nimmt auf dem Intervall von a bis b kein Minimum an. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Der Bildbereich f von dem Intervall a, b lässt sich als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Der Bildbereich von f von dem Intervall a, b ist leer. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist auf dem Intervall von a bis b injektiv. ...",
-        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine differenzierbare ungerade Funktion. \nWelche der folgenden Aussagen ist wahr:",
+        "question": "Seien $a,b\\in\\mathbb R$ mit $a<b$ und sei $f:[a,b]\\rightarrow\\mathbb R$ eine stetige Funktion. \nWelche der folgenden Aussagen ist wahr?",
         "answerOptions": "[\"$f$ nimmt auf $[a,b]$ kein Minimum an\",\n\"$f([a,b])$ lässt sich als Intervall $[c,d]$ schreiben mit $c,d\\in\\mathbb R$ und $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ ist auf $[a,b]$ injektiv\"]"
       },
       "8a": {
         "voiceover": "Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark=\"ivt\"/>den Zwischenwertsatz anwenden.\nDaraus folgt dann,<bookmark mark=\"solution\"/> dass der Bildbereich von f von a bis b ein Intervall ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d."
       },
       "9q": {
-        "question": "",
-        "answerOptions": "",
-        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die differenzierbar und ungerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f von x ist Null für alle x in den reellen Zahlen. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Ableitung von f an der Stelle x ist Null für x gleich Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Ableitung von f an der Stelle x ist nicht Null für x gleich Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ..."
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine differenzierbare, ungerade Funktion. \nWelche dieser Aussagen trifft im Allgemeinen zu?",
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f'(x)\\neq0$ für $x \n=0$\", \"Keine dieser Aussagen gilt im Allgemeinen“]",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die differenzierbar und ungerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f von x ist Null für alle x in den reellen Zahlen. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Ableitung von f an der Stelle x ist Null für x gleich Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Ableitung von f an der Stelle x ist nicht Null für x gleich Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
+        "answer_a": "a) $f(x) = 0$ für alle $x$",
+        "answer_b": "b) $f'(x) = 0$ für $x = 0$",
+        "answer_c": "c) $f'(x) \\neq 0$ für $x = 0$",
+        "answer_d": "d) Keine Aussage allgemeingültig",
+        "f_property": "$f$ diff'bar, ungerade"
       },
       "9a": {
         "voiceover": "Betrachten wir zunächst die<bookmark mark=\"f_1_in\"/> Funktion f von x gleich eins. Diese Funktion ist differenzierbar und ungerade. Also sind a und c <bookmark mark=\"a_c_red\"/>schon mal falsch, denn die Funktion f ist nicht Null und die Ableitung von f an der Stelle x gleich Null ist nicht ungleich Null.\n<bookmark mark=\"f_2_in\"/>Betrachten wir nun die Funktion f von x gleich x. Diese Funktion ist auch differenzierbar und ungerade. Also ist<bookmark mark=\"b_red\"/> b auch falsch, weil die Ableitung von f überall gleich eins ist, also ist f Strich von Null nicht Null.\nEs bleibt also <bookmark mark=\"d_green\"/>nur noch d übrig, und das ist auch die richtige Antwort."
+      },
+      "10q": {
+        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"\\int_{-a}^{a \n}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ für alle $a> \n0$\", \"$f$ ist nicht integrierbar\"]",
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige, gerade Funktion. \nWelche der folgenden Aussagen ist wahr:",
+        "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade",
+        "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$",
+        "answer_c": "c) $\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$",
+        "answer_d": "d) $f$ ist nicht integrierbar",
+        "f_property": "$f$ stetig, gerade",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion g von x ist gleich f von x mal cosinus von x ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Das bestimmte Integral von minus a bis a von f von x dx ist gleich 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Das bestimmte Integral von minus a bis a von f von x dx ist gleich Null für alle a größer als Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist nicht integrierbar. ..."
+      },
+      "10a": {
+        "voiceover": "Visualisieren wir das ganze mal mit einer<bookmark mark=\"plot_in\"/> Beispielsfunktion.\nWir betrachten die Funktion f von x gleich x hoch 2. Diese Funktion ist stetig und gerade.\nWenn wir uns jetzt das Integral von minus a bis <bookmark mark=\"auc_left_in\"/>0 von f von x dx anschauen, sehen wir, dass es genau das gleiche ist wie <bookmark mark=\"auc_switch\"/>das Integral von 0 bis a von f von x dx.\nAlso <bookmark mark=\"b_green\"/>ist die Aussage b wahr: Das <bookmark mark=\"auc_left_back_in\"/>bestimmte Integral von minus a bis a von f von x dx ist gleich<bookmark mark=\"auc_final_switch\"/> 2 mal das bestimmte Integral von 0 bis a von f von x dx für alle a größer als Null."
+      },
+      "11q": {
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist surjektiv. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f ist injektiv. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Funktion f hat kein Maximum. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f von x ist kleiner als Null für alle x in der Menge von 0, 1, 2, 3. ...",
+        "question": "Welche der folgenden Aussagen gilt für eine stetige, gerade Funktion $f:\\mathbb R \\rightarrow \\mathbb R$?",
+        "answerOptions": "[\"$f$ ist surjektiv\", \"$f$ ist injektiv\", \"$f$ hat kein Maximum\", \"$f(x)>0$ für alle $x\\in\\{0,1,2,3 \n\\}$\"]",
+        "answer_a": "a) $f$ ist surjektiv",
+        "answer_b": "b) $f$ ist injektiv",
+        "answer_c": "c) $f$ hat kein Maximum",
+        "answer_d": "d) $f(x)<0$ für alle $x\\\\in\\\\{0,1,2,3\\\\}$"
+      },
+      "11a": {
+        "voiceover": "Setzen wir<bookmark mark=\"reorganize\"/> einfach mal alle werte ein:<bookmark mark=\"f_1\"/> f von 1 ist gleich eins minus eins im Quadrat, also Null. <bookmark mark=\"f_2\"/>f von 2 ist gleich zwei minus eins im Quadrat, also eins. Und <bookmark mark=\"f_3\"/>f von 3 ist gleich drei minus eins im Quadrat, also vier.\nWir sehen also, dass keine zwei unterschiedlichen x Werte auf den gleichen y Wert abgebildet werden. Also ist <bookmark mark=\"b_green\"/>die Funktion f injektiv."
+      },
+      "12q": {
+        "question": "Seien $\\left(a_n\\right)_{n\\in\\mathbb N}$ und $\\left(b_n\\right)_{n\\in\\mathbb N}$ Folgen mit $\\lim_{n\\to\\infty \n}a_n=\\infty$ und $\\lim_{n\\to\\infty}b_n=0$. \nWelche der folgenden Aussagen ist wahr:",
+        "answer_d": "d) Keine der Aussagen i.A. wahr",
+        "answerOptions": "[\"$\\lim_{n\\to\\infty}a_n\\cdot b_n=0$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=\\infty$\", \"$\\lim_{n\\to\\infty}a_n\\cdot b_n=1$\", \"Keine der Aussagen allgemein wahr\"]",
+        "voiceover": "Seien <bookmark mark=\"a_b_in\"/>a n und b n Folgen von reellen Zahlen.\nDer Grenzwert von <bookmark mark=\"a_in\"/>a n für n gegen unendlich ist gleich unendlich. ... Und der Grenzwert von <bookmark mark=\"b_in\"/>b n für n gegen unendlich ist gleich Null. ...\nWelche der folgenden Aussagen gilt allgemein? ...\nAussage <bookmark mark=\"answer_a_in\"/>a: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Null. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich unendlich. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Der Grenzwert von a n mal b n für n gegen unendlich ist gleich Eins. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
+        "sequences": "Folgen"
+      },
+      "12a": {
+        "voiceover": "Betrachten wir drei Beispiele:\nBeispiel <bookmark mark=\"example_1_in\"/>Nummer 1: a n ist gleich n und b n ist gleich eins durch n quadrat. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins durch n für n gegen unendlich, also gleich Null.\nBeispiel <bookmark mark=\"example_2_in\"/>Nummer 2: a n ist gleich n und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von eins für n gegen unendlich, also gleich Eins.\nUnd Beispiel <bookmark mark=\"example_3_in\"/>Nummer 3: a n ist gleich n hoch 2 und b n ist gleich eins durch n. Dann ist der Grenzwert von a n mal b n gleich der Grenzwert von n für n gegen unendlich, also gleich unendlich.\nWir sehen also, dass <bookmark mark=\"d_green\"/>keine der Aussagen a, b oder c allgemeingültig wahr ist. Also ist d die richtige Antwort."
+      },
+      "15q": {
+        "question": "Betrachte die Funktion $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ mit $f(x)=e^{-\\sqrt{x^2 1} 1}$. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f$ hat Nullstelle auf $[0,1]$\", \"$f$ hat Maximum auf $[0,1]$\", \"$f$ ist nicht stetig\" ,\"$f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]"
       }
     },
     "practice_limits": {
