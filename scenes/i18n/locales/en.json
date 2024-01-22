@@ -2933,7 +2933,8 @@
     "Function": "Function",
     "invertible": "invertible",
     "Determinant": "Determinant",
-    "Limits": "Limits"
+    "Limits": "Limits",
+    "mvt": "mean value theorem"
   },
   "Words": {
     "base": "base",
@@ -3502,7 +3503,13 @@
         "answer_b": "b) $f$ not integrable on $[0,1]$",
         "answer_c": "c) $f$ has no maximum on $[0,2]$",
         "answer_d": "d) None of the options",
-        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous function with $f(x)>0$ for all $x\\in[0,1]$. Which of these statements is true?"
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous function with $f(x)>0$ for all $x\\in[0,1]$. Which of these statements is true?",
+        "answerOptions": "[\"a) There exists $\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$\", \"$f$ is not integrable on [0,1]$\", \"$f$ has no maximum on $[0,2]$\", \"None of the options\"]",
+        "voiceover": "Let f be a<bookmark mark=\"f_in_1\"/>continuous function that maps from the real numbers into the real numbers, for which it holds that <bookmark mark=\"f_in_2\"/>f of x is greater than zero for all x in the interval from zero to one. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that there is a xi in the open interval from zero to one such that the rectangle with height f of xi and width one has area A, where A is the definite integral from zero to one of f of x dx? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the function f is not integrable on the interval from zero to one? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f has no maximum on the interval from zero to two? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that none of the above possibilities apply? ...",
+        "solution": "There is  $\\\\xi\\\\in]0,1[$, such that\\\\\\\\ $\\\\int_0^1f(x)dx=f(\\\\xi)$"
+      },
+      "18a": {
+        "voiceover": "Since f is continuous, we can <bookmark mark=\"implication_in\"/>apply the mean value theorem, and we get <bookmark mark=\"solution\"/>that there is an xi,\nsuch that the definite integral from zero to one of f of x dx is equal to f of xi, where xi is in the open interval from zero to one.\nSo <bookmark mark=\"a_green\"/>the statement a is true."
       }
     },
     "practice_limits": {

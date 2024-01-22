@@ -2933,7 +2933,8 @@
     "Function": "Funktion",
     "invertible": "Invertierbar",
     "Determinant": "Determinante",
-    "Limits": "Grenzwerte"
+    "Limits": "Grenzwerte",
+    "mvt": "Mittelwertsatz"
   },
   "Func_6_P": {
     "22": {
@@ -3522,6 +3523,19 @@
       },
       "16a": {
         "voiceover": "Die Funktion f ist ein Polynom mit <bookmark mark=\"deg_three\"/>einem Koeffizienten von Grad drei, und <bookmark mark=\"odd\"/>einem Koeffizient von Grad eins. Also hat f nur ungerade Potenzen, und die Funktion f <bookmark mark=\"a_green\"/>ist ungerade."
+      },
+      "18q": {
+        "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige Funktion mit $f(x)>0$ für alle $x\\in[0,1]$. \nWelche dieser Aussagen ist wahr?",
+        "answer_a": "a) Es existiert $\\xi\\in]0,1[$, sodass das Rechteck\\\\ mit Höhe $f(\\xi)$ und Breite $1$\\\\ die Fläche $A=\\int_0^1f(x)dx$ hat ",
+        "answer_b": "b) $f$ nicht integrierbar auf $[0,1]$",
+        "answer_c": "c) $f$ hat kein Maximum auf $[0,2]$",
+        "answer_d": "d) Keine der Optionen",
+        "answerOptions": "[\"Es existiert $\\xi\\in]0,1[$, sodass das Rechteck mit Höhe $f(\\xi)$ und Breite $1$ die Fläche $A=\\int_0^1f(x)dx$ hat\", \"$f$ ist nicht integrierbar auf [0,1]$\", \"$f$ hat kein Maximum auf $[0,2]$\", \"Keine der Optionen\"]",
+        "voiceover": "Sei f eine<bookmark mark=\"f_in_1\"/>stetige Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, für die gilt, dass <bookmark mark=\"f_in_2\"/>f von x größer als Null für alle x in dem Intervall von Null bis Eins. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass es ein xi in dem offenen Intervall von Null bis Eins gibt, sodass das Rechteck mit der Höhe f von xi und der Breite Eins die Fläche A hat, wobei A das bestimmte Integral von Null bis Eins von f von x dx ist? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Funktion f nicht integrierbar ist auf dem Intervall von Null bis Eins? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f kein Maximum hat auf dem Intervall von Null bis Zwei? ...\nOder ist es <bookmark mark=\"answer_d_in\"/>Aussage d, dass keine der obigen Möglichkeiten zutrifft? ...",
+        "solution": "Es gibt $\\xi\\in]0,1[$, sodass\\\\ $\\int_0^1f(x)dx=f(\\xi)$"
+      },
+      "18a": {
+        "voiceover": "Da f stetig ist, können wir <bookmark mark=\"implication_in\"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark=\"solution\"/>dass es ein xi gibt,\nsodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.\nAlso ist <bookmark mark=\"a_green\"/>die Aussage a wahr."
       }
     },
     "practice_limits": {

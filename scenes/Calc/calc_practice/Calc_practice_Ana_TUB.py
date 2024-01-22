@@ -3620,13 +3620,7 @@ class Calc_practice_MC_18_q(SophiaCursorScene):
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f eine<bookmark mark="f_in_1"/>stetige Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, für die gilt, dass <bookmark mark="f_in_2"/>f von x größer als Null für alle x in dem Intervall von Null bis Eins. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass es ein xi in dem offenen Intervall von Null bis Eins gibt, sodass das Rechteck mit der Höhe f von xi und der Breite Eins die Fläche A hat, wobei A das bestimmte Integral von Null bis Eins von f von x dx ist? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Funktion f nicht integrierbar ist auf dem Intervall von Null bis Eins? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f kein Maximum hat auf dem Intervall von Null bis Zwei? ...
-Oder ist es <bookmark mark="answer_d_in"/>Aussage d, dass keine der obigen Möglichkeiten zutrifft? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.18q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3665,8 +3659,9 @@ class Calc_practice_MC_18_a(SophiaCursorScene):
         f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
         f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
         f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        implication_mvt = Tex("$\\Downarrow$", " Mittelwertsatz", color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
-        solution = Tex("Es gibt $\\xi\\in]0,1[$, sodass\\\\ $\\int_0^1f(x)dx=f(\\xi)$", color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
 
         # Define the answer options using Tex
         answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
@@ -3676,11 +3671,130 @@ class Calc_practice_MC_18_a(SophiaCursorScene):
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Da f stetig ist, können wir <bookmark mark="implication_in"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark="solution"/>dass es ein xi gibt,
-sodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.
-Also ist <bookmark mark="a_green"/>die Aussage a wahr.
-"""
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_in")
+            self.play(Write(implication_mvt), answers.animate.shift(DOWN), f.animate.shift(UP*.4))
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(solution))
+
+            self.wait_until_bookmark("a_green")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_18_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f_term = Tex("$f:\\mathbb R \\rightarrow \\mathbb R$ stetig", color=c1t, font_size=fs2)
+        f_greater_0 = MathTex("f(x)>0\\,\\forall x\\in[0,1]", color=c1t, font_size=fs2)
+        f = VGroup(f_term, f_greater_0).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        mvt = self.translate("words.mvt")
+        implication_mvt = Tex("$\\Downarrow$ ", mvt, color=ORANGE, font_size=fs3).next_to(f, DOWN, buff=.2).shift(UP*.4)
+        solution = Tex(self.translate("Calc_1.Practice_MC.18q.solution"), color=ORANGE, font_size=fs3).next_to(implication_mvt, DOWN, buff=.2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.18q.answer_a"), color=BLUE, font_size=fs3, tex_environment="flushright")
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
