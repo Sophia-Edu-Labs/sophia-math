@@ -921,7 +921,7 @@ class LinAlg_1_Determinant_geo_4_b(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-##################################### Conclude chapter 
+##################################### 
 #####################################
 class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
     
@@ -1000,7 +1000,7 @@ class LinAlg_1_Determinant_geo_5(SophiaCursorScene):
 
 ##################################### SUBCHAPTER 3: 3x3 Matrix
 #####################################
-class LinAlg_1_Determinant_intro_3x3_1(SophiaCursorScene):
+class LinAlg_1_Determinant_3x3_1(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -1108,7 +1108,7 @@ class LinAlg_1_Determinant_intro_3x3_1(SophiaCursorScene):
 
 #####################################
 #####################################
-class LinAlg_1_Determinant_intro_3x3_q(SophiaCursorScene):
+class LinAlg_1_Determinant_3x3_2(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
@@ -1193,71 +1193,314 @@ class LinAlg_1_Determinant_intro_3x3_q(SophiaCursorScene):
             self.play(Write(line_0[1]), run_time=.5)
         self.wait(4)
 
-class LinAlg_1_5_I_4_Q(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_3x3_3_q(SophiaCursorScene):
     
-
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
 
-        mat_1 = MathTex("\det","\\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}","=", "a \\cdot d - b \\cdot c", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
-        mat_2 = MathTex("\det","\\begin{pmatrix} 1 \\ 0 \\\\ 0 \\ 2  \\end{pmatrix}","=", "1 \\cdot 2 - 0 \\cdot 0", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
-        mat_3 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=1.2)
+        mat_4 = MathTex("A =","\\begin{pmatrix} -\\frac{13}{4} & 0 & 3 \\\\ 0 & 1 & 0 \\\\ 2 & 0 & -4 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+
+        line_0 = MathTex("\det (A) = ", "?", color=c1t, font_size=fs2)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Betrachten wir <bookmark mark="title_in"/> nun als Beispiel die <bookmark mark="mat_2"/> Matrix 1 0 0 2.
-                Mit der Regel von Sarrus <bookmark mark="formula_example"/> erhalten wir für die Determinante Eins Mal 2 Minus null Mal null.
-                Also ist die Determinante der Matrix Eins null <break time="0.4s"/> null 2 <break time="0.4s"/> gleich 2. <break time="0.8s"/>
-                Betrachten <bookmark mark="cleanup"/> wir jetzt ein anderes Beispiel, nämlich die Matrix <bookmark mark="mat_3"/> 1 3 <break time="0.4s"/> 7 2.
-                Was<bookmark mark="qmark_in"/> ist die Determinante dieser Matrix?
+                Jetzt du. ... Schauen wir <bookmark mark="det_1"/> uns doch zum Beispiel die Matrix minus dreizehn Viertel 0 drei 0 eins 0 zwei null minus vier an.
+                <bookmark mark="det_2"/> Was ist die Determinante dieser Matrix? 
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.wait_until_bookmark("det_1")
+            self.play(Write(mat_4), run_time=1)
 
-            # Wait for 4 seconds at the end of the animation
-            self.wait(4)
+            self.wait_until_bookmark("det_2")
+            self.play(Write(line_0), run_time=.5)
 
+        self.wait(4)
 
-class LinAlg_1_5_I_4_A(SophiaCursorScene):
+class LinAlg_1_Determinant_3x3_3_a(SophiaCursorScene):
     
-
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
 
-        mat_qmark = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " ?", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1.2)
-        mat_1 = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " 1 \\cdot 2 - 3 \\cdot 7", color=c1t, font_size=fs2).move_to(mat_qmark)
-        mat_sol = MathTex("\det","\\begin{pmatrix} 1 \\ 3 \\\\ 7 \\ 2  \\end{pmatrix}","=", " -19", color=c1t, font_size=fs2).move_to(mat_qmark)
+        mat_4 = MathTex("A =","\\begin{pmatrix} \\frac{13}{4} & 0 & 3 \\\\ 0 & 1 & 0 \\\\ 2 & 0 & -4 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+        mat_5 = MathTex("\\begin{pmatrix} \\frac{13}{4} & 0 & 3 & \\frac{13}{4} & 0 \\\\ 0 & 1 & 0 & 0 & 1 \\\\  2 & 0 & -4 & 2 & 0 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+        self.add(mat_4)
+
+        mat_4[1].generate_target()
+        mat_4[1].target.shift((mat_5.get_left()[0]-mat_4[1].get_left()[0])*RIGHT)
+
+        line_0 = MathTex("\det (A) = ", "-19", color=c1t, font_size=fs2)
+        line_1 = MathTex("+", "\\frac{13}{4} \cdot 1 \cdot (-4)", color=c1t, font_size=fs2)
+        line_2 = MathTex("+", "0 \cdot 0 \cdot 2", color=c1t, font_size=fs2)
+        line_3 = MathTex("+", "3 \cdot 0 \cdot 0", color=c1t, font_size=fs2)
+        line_4 = MathTex("-", "2 \cdot 1 \cdot 3", color=c1t, font_size=fs2)
+        line_5 = MathTex("-", "0 \cdot 0 \cdot \\frac{13}{4}", color=c1t, font_size=fs2)
+        line_6 = MathTex("-", "(-4) \cdot 0 \cdot 0", color=c1t, font_size=fs2)
+
+        lines = VGroup(line_0, line_1, line_2, line_3, line_4, line_5, line_6).arrange(DOWN, buff=.3, aligned_edge=LEFT).next_to(mat_4, DOWN, buff=.2).scale(.8)
+        self.add(line_0[0])
+
+        reds_1 = VGroup(mat_5[0][2:6], mat_5[0][14], mat_5[0][20:22], line_1[1])
+        reds_2 = VGroup(mat_5[0][6], mat_5[0][15], mat_5[0][22], line_2[1])
+        reds_3 = VGroup(mat_5[0][7], mat_5[0][16], mat_5[0][23], line_3[1])
+        blues_1 = VGroup(mat_5[0][18], mat_5[0][14], mat_5[0][7], line_4[1])
+        blues_2 = VGroup(mat_5[0][19], mat_5[0][15], mat_5[0][8:12], line_5[1])
+        blues_3 = VGroup(mat_5[0][20:22], mat_5[0][16], mat_5[0][12], line_6[1])
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Sehr gut, das stimmt! ... 
+                Wir verwenden die Regel von Sarrus, und, wie zuvor, <bookmark mark="extended"/> erweitern wir die Matrix, indem wir die ersten zwei Spalten nochmal hinten dranhängen.
+                Die Determinante ist dann ja <bookmark mark="diag_1"/> das Produkt der Einträge auf der ersten <bookmark mark="diag_2"/> Diagonale, plus dem Produkt der Einträge auf der zweiten Diagonale, <bookmark mark="diag_3"/> plus dem Produkt der Einträge auf der dritten Diagonale, minus 
+                <bookmark mark="diag_4"/> dem Produkt der Einträge auf der ersten Nebendiagonale <bookmark mark="diag_5"/>, minus dem Produkt der Einträge auf der zweiten Nebendiagonale, <bookmark mark="diag_6"/> und schliesslich minus dem Produkt der Einträge auf der dritten Nebendiagonale. Das ergibt dann ja minus dreizehn minus sechs.  <bookmark mark="clean_up"/> Also ist die Determinante der Matrix A gleich minus neunzehn.
+                """
+        ) as tracker:
+
+            self.wait_until_bookmark("extended") #transform better
+            self.play(Unwrite(mat_4[0]), run_time=.5)
+            self.wait(1)
+            self.play(MoveToTarget(mat_4[1]))
+            self.wait(1)
+            self.play(Transform(mat_4[1], mat_5), run_time=.5)
+
+            self.wait_until_bookmark("diag_1")
+            self.play(Write(line_1), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_1], run_time=2)
+            
+            self.wait_until_bookmark("diag_2")
+            self.play(Write(line_2), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_2], run_time=2)
+            
+            self.wait_until_bookmark("diag_3")
+            self.play(Write(line_3), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_3], run_time=2)
+
+            self.wait_until_bookmark("diag_4")
+            self.play(Write(line_4), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_1], run_time=2)
+            
+            self.wait_until_bookmark("diag_5")
+            self.play(Write(line_5), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_2], run_time=2)
+            
+            self.wait_until_bookmark("diag_6")
+            self.play(Write(line_6), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_3], run_time=2)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(line_1), Unwrite(line_2), Unwrite(line_3), Unwrite(line_4), Unwrite(line_5), Unwrite(line_6), Unwrite(mat_5), run_time=.5)
+            self.play(Write(line_0[1]), run_time=.5)
+        self.wait(4)
+
+class LinAlg_1_Determinant_3x3_3_b(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        mat_4 = MathTex("A =","\\begin{pmatrix} \\frac{13}{4} & 0 & 3 \\\\ 0 & 1 & 0 \\\\ 2 & 0 & -4 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+        mat_5 = MathTex("\\begin{pmatrix} \\frac{13}{4} & 0 & 3 & \\frac{13}{4} & 0 \\\\ 0 & 1 & 0 & 0 & 1 \\\\  2 & 0 & -4 & 2 & 0 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+        self.add(mat_4)
+
+        mat_4[1].generate_target()
+        mat_4[1].target.shift((mat_5.get_left()[0]-mat_4[1].get_left()[0])*RIGHT)
+
+        line_0 = MathTex("\det (A) = ", "-19", color=c1t, font_size=fs2)
+        line_1 = MathTex("+", "\\frac{13}{4} \cdot 1 \cdot (-4)", color=c1t, font_size=fs2)
+        line_2 = MathTex("+", "0 \cdot 0 \cdot 2", color=c1t, font_size=fs2)
+        line_3 = MathTex("+", "3 \cdot 0 \cdot 0", color=c1t, font_size=fs2)
+        line_4 = MathTex("-", "2 \cdot 1 \cdot 3", color=c1t, font_size=fs2)
+        line_5 = MathTex("-", "0 \cdot 0 \cdot \\frac{13}{4}", color=c1t, font_size=fs2)
+        line_6 = MathTex("-", "(-4) \cdot 0 \cdot 0", color=c1t, font_size=fs2)
+
+        lines = VGroup(line_0, line_1, line_2, line_3, line_4, line_5, line_6).arrange(DOWN, buff=.3, aligned_edge=LEFT).next_to(mat_4, DOWN, buff=.2).scale(.8)
+        self.add(line_0[0])
+
+        reds_1 = VGroup(mat_5[0][2:6], mat_5[0][14], mat_5[0][20:22], line_1[1])
+        reds_2 = VGroup(mat_5[0][6], mat_5[0][15], mat_5[0][22], line_2[1])
+        reds_3 = VGroup(mat_5[0][7], mat_5[0][16], mat_5[0][23], line_3[1])
+        blues_1 = VGroup(mat_5[0][18], mat_5[0][14], mat_5[0][7], line_4[1])
+        blues_2 = VGroup(mat_5[0][19], mat_5[0][15], mat_5[0][8:12], line_5[1])
+        blues_3 = VGroup(mat_5[0][20:22], mat_5[0][16], mat_5[0][12], line_6[1])
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Nein, das ist leider falsch! ... 
+                Wir verwenden die Regel von Sarrus, und, wie zuvor, <bookmark mark="extended"/> erweitern wir die Matrix, indem wir die ersten zwei Spalten nochmal hinten dranhängen.
+                Die Determinante ist dann ja <bookmark mark="diag_1"/> das Produkt der Einträge auf der ersten <bookmark mark="diag_2"/> Diagonale, plus dem Produkt der Einträge auf der zweiten Diagonale, <bookmark mark="diag_3"/> plus dem Produkt der Einträge auf der dritten Diagonale, minus 
+                <bookmark mark="diag_4"/> dem Produkt der Einträge auf der ersten Nebendiagonale <bookmark mark="diag_5"/>, minus dem Produkt der Einträge auf der zweiten Nebendiagonale, <bookmark mark="diag_6"/> und schliesslich minus dem Produkt der Einträge auf der dritten Nebendiagonale. Das ergibt dann ja minus dreizehn minus sechs.  <bookmark mark="clean_up"/> Also ist die Determinante der Matrix A gleich minus neunzehn.
+                """
+        ) as tracker:
+
+            self.wait_until_bookmark("extended") #transform better
+            self.play(Unwrite(mat_4[0]), run_time=.5)
+            self.wait(1)
+            self.play(MoveToTarget(mat_4[1]))
+            self.wait(1)
+            self.play(Transform(mat_4[1], mat_5), run_time=.5)
+
+            self.wait_until_bookmark("diag_1")
+            self.play(Write(line_1), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_1], run_time=2)
+            
+            self.wait_until_bookmark("diag_2")
+            self.play(Write(line_2), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_2], run_time=2)
+            
+            self.wait_until_bookmark("diag_3")
+            self.play(Write(line_3), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_3], run_time=2)
+
+            self.wait_until_bookmark("diag_4")
+            self.play(Write(line_4), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_1], run_time=2)
+            
+            self.wait_until_bookmark("diag_5")
+            self.play(Write(line_5), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_2], run_time=2)
+            
+            self.wait_until_bookmark("diag_6")
+            self.play(Write(line_6), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_3], run_time=2)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(line_1), Unwrite(line_2), Unwrite(line_3), Unwrite(line_4), Unwrite(line_5), Unwrite(line_6), Unwrite(mat_5), run_time=.5)
+            self.play(Write(line_0[1]), run_time=.5)
+        self.wait(4)
+
+#####################################
+#####################################
+class LinAlg_1_Determinant_3x3_4(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        cursor = AltCursor(stroke_width=0.0, idle=True)
+
+        mat_4 = MathTex("A =","\\begin{pmatrix} a_{11}& a_{12}& a_{13} \\\\ a_{21}& a_{22}& a_{23} \\\\ a_{31}& a_{32}& a_{33} \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+        mat_5 = MathTex("\\begin{pmatrix} a_{11}& a_{12}& a_{13}& a_{11}& a_{12}\\\\ a_{21}& a_{22}& a_{23}& a_{21}& a_{22}\\\\ a_{31}& a_{32}& a_{33}& a_{31}& a_{32}\\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.7).scale(.8)
+
+        mat_4[1].generate_target()
+        mat_4[1].target.shift((mat_5.get_left()[0]-mat_4[1].get_left()[0])*RIGHT)
+
+        line_0 = MathTex("\det (A) =", color=c1t, font_size=fs2)
+        line_1 = MathTex("+", "a_{11} \cdot a_{22} \cdot a_{33}", color=c1t, font_size=fs2)
+        line_2 = MathTex("+", "a_{12} \cdot a_{23} \cdot a_{31}", color=c1t, font_size=fs2)
+        line_3 = MathTex("+", "a_{13} \cdot a_{21} \cdot a_{32}", color=c1t, font_size=fs2)
+        line_4 = MathTex("-", "a_{31} \cdot a_{22} \cdot a_{13}", color=c1t, font_size=fs2)
+        line_5 = MathTex("-", "a_{32} \cdot a_{23} \cdot a_{11}", color=c1t, font_size=fs2)
+        line_6 = MathTex("-", "a_{33} \cdot a_{21} \cdot a_{12}", color=c1t, font_size=fs2)
+
+        lines = VGroup(line_0, line_1, line_2, line_3, line_4, line_5, line_6).arrange(DOWN, buff=.3, aligned_edge=LEFT).next_to(mat_4, DOWN, buff=.5)
+        
+        reds_1 = VGroup(mat_5[0][2:5], mat_5[0][20:23], mat_5[0][38:41], line_1[1])
+        reds_2 = VGroup(mat_5[0][5:8], mat_5[0][23:26], mat_5[0][41:44], line_2[1])
+        reds_3 = VGroup(mat_5[0][8:11], mat_5[0][26:29], mat_5[0][44:47], line_3[1])
+        blues_1 = VGroup(mat_5[0][32:35], mat_5[0][20:23], mat_5[0][8:11], line_4[1])
+        blues_2 = VGroup(mat_5[0][35:38], mat_5[0][23:26], mat_5[0][11:14], line_5[1])
+        blues_3 = VGroup(mat_5[0][38:41], mat_5[0][26:29], mat_5[0][14:17], line_6[1])
+
+        lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").shift(LEFT*5).scale(.4)
+
+        tex = Text(
+            "Wie berechnet man \n"
+            "die Determinante \n"
+            "einer allgemeinen \n"
+            "n x n Matrix?",
+            color=BLACK,
+        ).scale(0.6)
+        box = SurroundingRectangle(tex, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, tex)
+
+        bis = MathTex("\\text{Bis gleich!}", color=c1t, font_size=fs1).next_to(mobject, DOWN, buff=1.2)
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Wir wollen <bookmark mark="title_in"/> die Determinante der<bookmark mark="mat_1"/>  Matrix eins drei sieben zwei berechnen. 
-                Das ist ja <bookmark mark="transform_1"/>  eins Mal zwei Minus drei Mal sieben. Also ist die Determinante dieser Matrix <bookmark mark="transform_2"/> gleich Minus neunzehn. 
+                Wir haben jetzt die Berechnung der Determinante von 3 Kreuz 3 Matrizen <bookmark mark="smile"/> gemeistert. Genial! <break time="1.5s"/>
+                Zusammenfassend <bookmark mark="quick"/> haben wir in diesem Kapitel also die Regel von Sarrus für die Berechnung der Determinante einer 3 Kreuz 3 Matrix gesehen ... und haben die Determinante von einigen konkreten 3 Kreuz 3 Matrizen berechnet. <bookmark mark="clean_up"/>
+                Aber <bookmark mark="general"/> wie berechnet man die Determinante einer allgemeinen n Kreuz n Matrix? Das werden wir im nächsten Kapitel lernen.   
+                 <bookmark mark="bis"/> Bis gleich!
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
 
+            self.wait_until_bookmark("smile")
+            cursor, smile = self.draw_smile(cursor, ORIGIN, run_time=3)
+            self.wait(1)
+            self.play(FadeOut(cursor,smile))
+
+            self.wait_until_bookmark("quick")
+            self.play(Write(mat_4), run_time=1)
+            self.wait(1)
+            self.play(Write(line_0), run_time=.5)
+            self.wait(1)
+            self.play(Unwrite(mat_4[0]), run_time=.5)
+            self.wait(1)
+            self.play(MoveToTarget(mat_4[1]))
+            self.wait(1)
+            self.play(Transform(mat_4[1], mat_5), run_time=.5)
+            self.wait(1)
+            self.play(Write(line_1), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_1], run_time=.5)
+            self.play(Write(line_2), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_2], run_time=.5)
+            self.play(Write(line_3), run_time=.5)
+            self.play(*[Indicate(red, scale_factor=1.6, color=RED) for red in reds_3], run_time=.5)
+            self.play(Write(line_4), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_1], run_time=.5)
+            self.play(Write(line_5), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_2], run_time=.5)
+            self.play(Write(line_6), run_time=.5)
+            self.play(*[Indicate(blue, scale_factor=1.6, color=BLUE) for blue in blues_3], run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(mat_4), Unwrite(mat_5), Unwrite(lines), run_time=0.5)
+
+            self.wait_until_bookmark("general")
+            self.wait(1)
+            self.play(Write(mobject), run_time=0.5)
+
+            self.wait_until_bookmark("bis")
+            self.play(Write(bis), run_time=0.5)
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_4_I_2(SophiaCursorScene):
+##################################### SUBCHAPTER: LAPLACE?
+#####################################
+class LinAlg_1_Determinant_lap_1(SophiaCursorScene):
     
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
 
@@ -1267,13 +1510,6 @@ class LinAlg_1_5_I_4_I_2(SophiaCursorScene):
                 Bis jetzt <bookmark mark="title_in"/> haben wir gelernt, <bookmark mark="mat"/> wie man die Determinante <bookmark mark="number"/> von 2 Kreuz 2 und 3 Kreuz 3 Matrizen berechnet.
                 Jetzt zeigen wir dir, wie du die Determinante einer allgemeinen n Kreuz n Matrix berechnen kannst. <break time="0.8s"/>  
                 Dazu verwenden wir den Laplace'schen Entwicklungsatz. Dieser ist ein Algorithmus of reduction and expansion utilizing minors and cofactors.
-
-                Dafür gibt es auch eine <bookmark mark="fade_out_1"/> einfache Formel, <bookmark mark="sarrus"/> die sich die Regel von Sarrus nennt. <break time="0.4s"/>
-                Wir betrachten <bookmark mark="A"/> also eine allgemeine 3 Kreuz 3 Matrix A. Die Determinante von A berechnet sich dann wie folgt. 
-                Wir betrachten die erweiterte Matrix, wo wir die ersten zwei Spalten der Matrix A nochmal hinter dranhängen. 
-                Wir hängen die beiden ersten Spalten nochmal hinten an die Matrix dran.
-                Die Determinante ist dann gegeben durch: a Mal d <break time="0.4s"/> Minus b Mal c.<break time="0.4s"/>  
-                Wir multiplizieren also die Einträge a und d auf der Hauptdiagonale und ziehen das Produkt der Einträge b und c auf der Nebendiagonale davon ab. 
                 """
         ) as tracker:
             
@@ -1283,51 +1519,324 @@ class LinAlg_1_5_I_4_I_2(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_5_I_1(SophiaCursorScene):
+##################################### SUBCHAPTER: PROPERTIES
+#####################################
+class LinAlg_1_Determinant_prop_1(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("r \in \mathbb{R}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        mat_A_1 = MathTex("A = \\begin{pmatrix} z_1 \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_A_2 = MathTex("A = \\begin{pmatrix} s_1 &\cdots& s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+
+        matrices_1 = VGroup(mat_A_1, mat_A_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.9)
+
+        mat_B_1 = MathTex("B =", "\\begin{pmatrix} z_1 \\\\ \\vdots \\\\ r \cdot z_i \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_B_2 = MathTex("B =", "\\begin{pmatrix} s_1 & {\cdots} & r \cdot s_j & \cdots & s_n \\end{pmatrix}", color=c1t, font_size=fs2)
         
+        matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
+
+        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Als nächstes <bookmark mark="title_in"/> schauen wir uns wichtige Eigenschaften der Determinante einer Matrix an. 
-                Wir schreiben Mat n R für die Menge der n Kreuz n Matrizen mit reellen Einträgen.
+                In diesem Kapitel lernen wir einige wichtige Eigenschaften der Determinante einer Matrix kennen. 
+                Wir <bookmark mark="set"/>schreiben Mat n R für die Menge der n Kreuz n Matrizen mit reellen Einträgen.
                 
-                Sei A eine n Kreuz n Matrix. Wenn B die Matrix ist, die entsteht durch Multiplikation eines jeden Eintrags einer Spalte oder Zeile von A mit einem Skalar k, dann gilt,
-                dass die Determinante von B gleich k Mal der Determinante von A ist. Ist insbesondere eine Zeile oder eine Spalte von A gleich null, so ist die Determinante von A gleich null.
+                <bookmark mark="A"/> Sei A eine n Kreuz n Matrix und r ein Skalar. Wir schreiben  <bookmark mark="row"/> Matrizen auch in der Zeilen- <bookmark mark="column"/> ... oder ... Spaltenform, wobei z i für die i-te Zeile und s j für die j-te Spalte der Matrix steht.
+                Wenn B die <bookmark mark="B_1"/> Matrix ist, die entsteht durch Multiplikation eines jeden Eintrags einer Zeile oder Spalte von A mit einem Skalar r, dann gilt,
+                dass <bookmark mark="result"/> die Determinante von B gleich r Mal der Determinante von A ist. Ist also insbesondere eine Zeile oder eine Spalte von A gleich null, so ist die Determinante von A gleich null.
                 """
         ) as tracker:
             
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.wait_until_bookmark("set")
+            self.play(Write(set[1]), run_time=0.5)
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set[0]), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("row")
+            self.play(Write(mat_A_1), run_time=0.5)
+
+            self.wait_until_bookmark("column")
+            self.play(Write(mat_A_2), run_time=0.5)
+
+            self.wait_until_bookmark("B_1")
+            self.play(Unwrite(matrices_1), run_time = 0.5)
+            self.play(Write(mat_B_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mat_B_2), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_5_I_2(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_prop_1_e(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
-        
+        self.add(title)
+
+        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+        self.add(mobject)
+
+        mat_1 = MathTex("\\begin{pmatrix} 10 & 0 \\\\ 0 & -1 \\end{pmatrix}", "= \\begin{pmatrix} 10\cdot (1 & 0) \\\\ 0 & -1 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(mobject, DOWN, buff=.5)
+        mat_2 = MathTex("\det \\begin{pmatrix} 10 & 0 \\\\ 0 & -1 \\end{pmatrix}", "= 10 \cdot \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}", "= -10", color=c1t, font_size=fs2).next_to(mat_1, DOWN, buff=.5)
         # Action Sequence
         with self.voiceover(
                 text=""" 
+                Schauen wir <bookmark mark="mat"/> uns zum Beispiel die Matrix 10 0 0 minus 1 an. Dann ist das ja <bookmark mark="equality"/> gleich der Matrix 1 0 0 minus 1, wo man die erste Zeile mit 10 multipliziert. 
+                Also ist nach der obigen Eigenschaft <bookmark mark="det_1"/> die Determinante der Matrix 10 0 0 minus 1 <bookmark mark="det_2"/> ja 10 mal der Determinante der Matrix 1 0 0 minus 1, <bookmark mark="det_3"/> also gleich minus 10.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("mat")
+            self.play(Write(mat_1[0]), run_time=0.5)
+
+            self.wait_until_bookmark("equality")
+            self.play(Write(mat_1[1]), run_time=0.5)
+
+            self.wait_until_bookmark("det_1")
+            self.play(Write(mat_2[0]), run_time=0.5)
+
+            self.wait_until_bookmark("det_2")
+            self.play(Write(mat_2[1]), run_time=0.5)
+
+            self.wait_until_bookmark("det_3")
+            self.play(Write(mat_2[2]), run_time=0.5)
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+#####################################
+#####################################
+class LinAlg_1_Determinant_prop_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("r \in \mathbb{R}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        mat_A_1 = MathTex("A = \\begin{pmatrix} z_1 \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_A_2 = MathTex("A = \\begin{pmatrix} s_1 &\cdots& s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+
+        matrices_1 = VGroup(mat_A_1, mat_A_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.9)
+
+        mat_B_1 = MathTex("B =", "\\begin{pmatrix} z_1 \\\\ \\vdots \\\\ r \cdot z_i \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_B_2 = MathTex("B =", "\\begin{pmatrix} s_1 & {\cdots} & r \cdot s_j & \cdots & s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        
+        matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
+
+        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Kapitel lernen wir einige wichtige Eigenschaften der Determinante einer Matrix kennen. 
+                Wir <bookmark mark="set"/>schreiben Mat n R für die Menge der n Kreuz n Matrizen mit reellen Einträgen.
+                
+                <bookmark mark="A"/> Sei A eine n Kreuz n Matrix und r ein Skalar. Wir schreiben <bookmark mark="row"/> Matrizen auch in der Form <bookmark mark="column"/> ... oder ..., wobei z i für die i-te Zeile und s j für die j-te Spalte der Matrix steht.
+                Wenn B die <bookmark mark="B_1"/> Matrix ist, die entsteht durch Multiplikation eines jeden Eintrags einer Zeile oder Spalte von A mit einem Skalar r, dann gilt,
+                dass <bookmark mark="result"/> die Determinante von B gleich r Mal der Determinante von A ist. Ist also insbesondere eine Zeile oder eine Spalte von A gleich null, so ist die Determinante von A gleich null.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("set")
+            self.play(Write(set[1]), run_time=0.5)
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set[0]), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("row")
+            self.play(Write(mat_A_1), run_time=0.5)
+
+            self.wait_until_bookmark("column")
+            self.play(Write(mat_A_2), run_time=0.5)
+
+            self.wait_until_bookmark("B_1")
+            self.play(Unwrite(matrices_1), run_time = 0.5)
+            self.play(Write(mat_B_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mat_B_2), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+#####################################
+#####################################
+class LinAlg_1_Determinant_prop_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("r \in \mathbb{R}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        mat_A_1 = MathTex("A = \\begin{pmatrix} z_1 \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_A_2 = MathTex("A = \\begin{pmatrix} s_1 &\cdots& s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+
+        matrices_1 = VGroup(mat_A_1, mat_A_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.9)
+
+        mat_B_1 = MathTex("B =", "\\begin{pmatrix} z_1 \\\\ \\vdots \\\\ r \cdot z_i \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_B_2 = MathTex("B =", "\\begin{pmatrix} s_1 & {\cdots} & r \cdot s_j & \cdots & s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        
+        matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
+
+        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Kapitel lernen wir einige wichtige Eigenschaften der Determinante einer Matrix kennen. 
+                Wir <bookmark mark="set"/>schreiben Mat n R für die Menge der n Kreuz n Matrizen mit reellen Einträgen.
+                
+                <bookmark mark="A"/> Sei A eine n Kreuz n Matrix und r ein Skalar. Wir schreiben <bookmark mark="row"/> Matrizen auch in der Form <bookmark mark="column"/> ... oder ..., wobei z i für die i-te Zeile und s j für die j-te Spalte der Matrix steht.
+                Wenn B die <bookmark mark="B_1"/> Matrix ist, die entsteht durch Multiplikation eines jeden Eintrags einer Zeile oder Spalte von A mit einem Skalar r, dann gilt,
+                dass <bookmark mark="result"/> die Determinante von B gleich r Mal der Determinante von A ist. Ist also insbesondere eine Zeile oder eine Spalte von A gleich null, so ist die Determinante von A gleich null.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("set")
+            self.play(Write(set[1]), run_time=0.5)
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set[0]), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("row")
+            self.play(Write(mat_A_1), run_time=0.5)
+
+            self.wait_until_bookmark("column")
+            self.play(Write(mat_A_2), run_time=0.5)
+
+            self.wait_until_bookmark("B_1")
+            self.play(Unwrite(matrices_1), run_time = 0.5)
+            self.play(Write(mat_B_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mat_B_2), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
+
+            # Wait for 4 seconds at the end of the animation
+            self.wait(4)
+
+##################################### 
+#####################################
+class LinAlg_1_Determinant_prop_2(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("r \in \mathbb{R}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        mat_A_1 = MathTex("A = \\begin{pmatrix} z_1 \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_A_2 = MathTex("A = \\begin{pmatrix} s_1 &\cdots& s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+
+        matrices_1 = VGroup(mat_A_1, mat_A_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.9)
+
+        mat_B_1 = MathTex("B =", "\\begin{pmatrix} z_1 \\\\ \\vdots \\\\ r \cdot z_i \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_B_2 = MathTex("B =", "\\begin{pmatrix} s_1 & {\cdots} & r \cdot s_j & \cdots & s_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        
+        matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
+
+        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                In diesem Kapitel lernen wir einige wichtige Eigenschaften der Determinante einer Matrix kennen. 
+                Wir <bookmark mark="set"/>schreiben Mat n R für die Menge der n Kreuz n Matrizen mit reellen Einträgen.
+                
+                <bookmark mark="A"/> Sei A eine n Kreuz n Matrix und r ein Skalar. Wir schreiben <bookmark mark="row"/> Matrizen auch in der Form <bookmark mark="column"/> ... oder ..., wobei z i für die i-te Zeile und s j für die j-te Spalte der Matrix steht.
+                Wenn B die <bookmark mark="B_1"/> Matrix ist, die entsteht durch Multiplikation eines jeden Eintrags einer Zeile oder Spalte von A mit einem Skalar r, dann gilt,
+                dass <bookmark mark="result"/> die Determinante von B gleich r Mal der Determinante von A ist. Ist also insbesondere eine Zeile oder eine Spalte von A gleich null, so ist die Determinante von A gleich null.
+
                 Sei A eine <bookmark mark="title_in"/> n Kreuz n Matrix. Wenn B die Matrix ist, die entsteht indem man ein Vielfaches einer Zeile oder Spalte von A zu einer anderen Zeile oder Spalte von A dazurechnet, dann gilt,
                 dass die Determinante von B gleich der Determinante von A ist. Sind insbesondere zwei Zeilen oder zwei Spalte von A proportional, so ist die Determinante von A gleich null.
                 """
         ) as tracker:
             
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.wait_until_bookmark("set")
+            self.play(Write(set[1]), run_time=0.5)
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set[0]), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("row")
+            self.play(Write(mat_A_1), run_time=0.5)
+
+            self.wait_until_bookmark("column")
+            self.play(Write(mat_A_2), run_time=0.5)
+
+            self.wait_until_bookmark("B_1")
+            self.play(Unwrite(matrices_1), run_time = 0.5)
+            self.play(Write(mat_B_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mat_B_2), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
