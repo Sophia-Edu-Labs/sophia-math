@@ -3474,7 +3474,35 @@
       },
       "15q": {
         "question": "Consider the function $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ with $f(x)=e^{-\\sqrt{x^2+1}+1}$. Which of the following statements is true?",
-        "answerOptions": "[\"$f$ has a zero on $[0,1]$\", \"$f$ has a maximum on $[0,1]$\", \"$f$ is not continuous\" ,\"$f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]"
+        "answerOptions": "[\"$f$ has a zero on $[0,1]$\", \"$f$ has a maximum on $[0,1]$\", \"$f$ is not continuous\" ,\"$f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]",
+        "answer_a": "a) $f$ has a zero on $[0,1]$",
+        "answer_b": "b) $f$ has maximum on $[0,1]$",
+        "answer_c": "c) $f$ isn't continuous",
+        "answer_d": "d) $f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$",
+        "voiceover": "Let f be a function that maps from the interval from <bookmark mark=\"f_in_1\"/>negative pi to pi into the real numbers, and whose function rule <bookmark mark=\"f_in_2\"/>is e to the power minus the root of x to the power of 2 plus 1 plus 1. Which of the following statements is universally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f has a zero in the interval from zero to one. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f has a maximum in the interval from zero to one. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The function f is not continuous. ...\nOr <bookmark mark=\"answer_d_in\"/>statement d: The function f has the indefinite integral capital f of x is equal to x times e raised to the power of minus the root of x squared plus 1 plus 1. ...",
+        "sol": "$f$ has Min and Max on $[-\\\\pi,\\\\pi]$"
+      },
+      "15a": {
+        "voiceover": "We have a continuous function on a closed interval. We <bookmark mark=\"implication_in\"/>can then apply the theorem of minimum and maximum, and <bookmark mark=\"sol_in\"/>know that the function f has a minimum and a maximum on the interval from minus pi to pi.\nSo <bookmark mark=\"b_green\"/>the statement b is true."
+      },
+      "16q": {
+        "question": "Which of the following is true for the function $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=13x^3-3x$?",
+        "answerOptions": "[\"$f$ is odd\", \"$f$ has no zeros\", \"There are exactly $3$ values $x\\in\\mathbb R$ where $f'(x)=0$\", \"$f$ has no indefinite integral\"]",
+        "answer_a": "a) $f$ is odd",
+        "answer_b": "b) $f$ has no zeros",
+        "answer_c": "c) There are 3 values $x$ with $f'(x)=0$",
+        "answer_d": "d) $f$ has no indefinite integral",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>f be a function that maps from the real numbers into the real numbers, with the <bookmark mark=\"f_in_2\"/>function rule 13 times x to the power of 3 minus 3 times x. Which of the following statements is true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f is odd. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f has no zeros. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: There are exactly three x's in the real numbers for which the derivative of f at the point x is zero. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: The function f has no indefinite integral. ..."
+      },
+      "16a": {
+        "voiceover": "The function f is a polynomial with <bookmark mark=\"deg_three\"/>a coefficient of degree three, and <bookmark mark=\"odd\"/>a coefficient of degree one. So f has only odd powers, and the function f <bookmark mark=\"a_green\"/>is odd."
+      },
+      "18q": {
+        "answer_a": "a) There exists $\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$",
+        "answer_b": "b) $f$ not integrable on $[0,1]$",
+        "answer_c": "c) $f$ has no maximum on $[0,2]$",
+        "answer_d": "d) None of the options",
+        "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous function with $f(x)>0$ for all $x\\in[0,1]$. Which of these statements is true?"
       }
     },
     "practice_limits": {
