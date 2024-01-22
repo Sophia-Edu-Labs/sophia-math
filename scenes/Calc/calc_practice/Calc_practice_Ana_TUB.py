@@ -3816,6 +3816,13 @@ class Calc_practice_MC_18_d(SophiaCursorScene):
 ##################################### 
 class Calc_practice_MC_19_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.19q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.19q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -3823,23 +3830,17 @@ class Calc_practice_MC_19_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        f = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$ differenzierbar, gerade", color=c1t, font_size=fs2).set_y(2)
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x)=0$ für alle $x\\in\\mathbb R$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x)=0$ für $x=0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei f <bookmark mark=func_in"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass die Funktion f injektiv ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.19q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3872,12 +3873,12 @@ class Calc_practice_MC_19_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        f = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$\\\\ differenzierbar, gerade", color=c1t, font_size=fs2).set_y(2)
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f(x)=0$ für alle $x\\in\\mathbb R$", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f'(x)=0$ für $x=0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
@@ -3888,10 +3889,7 @@ class Calc_practice_MC_19_a(SophiaCursorScene):
         self.add(f, answers)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachten wir ein <bookmark mark="plot_in"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark="highlight_x_0"/>x gleich Null geben.
-Also ist <bookmark mark="b_green"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein.
-"""
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3907,7 +3905,137 @@ Also ist <bookmark mark="b_green"/>die Aussage b wahr, denn dafür, dass es eine
             self.wait_until_bookmark("b_green")
             self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
 
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
 
+class Calc_practice_MC_19_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_19_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_19_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.19q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.19q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex("d) $f(x)=x^3$", color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+
+        cords = self.add_cords([-2,2,1], [0,4,1], x_ticks=[-2,2], y_ticks=[2,4], width=2, height=2)
+        plane = cords[0]
+        graph = plane.plot(lambda x: x**2, color=RED)
+
+        self.add(f, answers)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.19a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("plot_in")
+            self.play(Write(plane), f.animate.shift(UP*1.4), answers.animate.shift(DOWN))
+            self.add_pencil_sound(1)
+            self.play(Create(graph), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_0")
+            self.play(Indicate(plane.y_axis, color=RED, scale_factor=1.5))
+
+            self.wait_until_bookmark("b_green")
+            self.play(answer_b.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED))
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)

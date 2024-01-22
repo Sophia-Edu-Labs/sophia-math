@@ -3510,6 +3510,18 @@
       },
       "18a": {
         "voiceover": "Since f is continuous, we can <bookmark mark=\"implication_in\"/>apply the mean value theorem, and we get <bookmark mark=\"solution\"/>that there is an xi,\nsuch that the definite integral from zero to one of f of x dx is equal to f of xi, where xi is in the open interval from zero to one.\nSo <bookmark mark=\"a_green\"/>the statement a is true."
+      },
+      "19q": {
+        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differentiable, even",
+        "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
+        "answer_a": "a) $f(x)=0$ for all $x\\\\in\\\\mathbb R$",
+        "answer_b": "b) $f'(x)=0$ for $x=0$",
+        "answer_c": "c) $f$ is injective",
+        "question": "Let $f:\\mathbb R\\rightarrow\\mathbb R$ be a differentiable, even function. Which of the following statements is true?",
+        "answerOptions": "[\"$f(x)=0$ for all $x\\in\\mathbb R$\", \"$f'(x)=0$ for $x=0$\", \"$f$ is injective\", \"$f(x)=x^3$\"]"
+      },
+      "19a": {
+        "voiceover": "Let's look at a <bookmark mark=\"plot_in\"/>graphic example of an even, differentiable function. As we can see, there must be an extreme point at <bookmark mark=\"highlight_x_0\"/>x equal to zero.\nSo <bookmark mark=\"b_green\"/>the statement b is true, because for there to be an extreme point at x equal to zero, the derivative of f at x must be equal to zero."
       }
     },
     "practice_limits": {

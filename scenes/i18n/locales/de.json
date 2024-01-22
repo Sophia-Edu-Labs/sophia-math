@@ -3536,6 +3536,18 @@
       },
       "18a": {
         "voiceover": "Da f stetig ist, können wir <bookmark mark=\"implication_in\"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark=\"solution\"/>dass es ein xi gibt,\nsodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.\nAlso ist <bookmark mark=\"a_green\"/>die Aussage a wahr."
+      },
+      "19q": {
+        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differenzierbar, gerade",
+        "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
+        "answer_a": "a) $f(x)=0$ für alle $x\\\\in\\\\mathbb R$",
+        "answer_b": "b) $f'(x)=0$ für $x=0$",
+        "answer_c": "c) $f$ ist injektiv",
+        "question": "Sei $f:\\mathbb R\\rightarrow\\mathbb R$ eine differenzierbare, gerade Funktion. \nWelche der folgenden Aussagen ist wahr?",
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f$ ist injektiv\", \"$ \nf(x)=x^3$\"]"
+      },
+      "19a": {
+        "voiceover": "Betrachten wir ein <bookmark mark=\"plot_in\"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark=\"highlight_x_0\"/>x gleich Null geben.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein."
       }
     },
     "practice_limits": {
