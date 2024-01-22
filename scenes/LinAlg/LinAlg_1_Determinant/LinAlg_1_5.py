@@ -1543,7 +1543,7 @@ class LinAlg_1_Determinant_prop_1(SophiaCursorScene):
         
         matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
 
-        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+        property = MathTex("\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
 
         box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
         mobject = VGroup(box, property)
@@ -1598,7 +1598,7 @@ class LinAlg_1_Determinant_prop_1_e(SophiaCursorScene):
         title = self.add_title("Determinante")
         self.add(title)
 
-        property = MathTex("\\Rightarrow", "\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        property = MathTex("\det(B) = r \cdot \det(A)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
 
         box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
         mobject = VGroup(box, property)
@@ -1653,7 +1653,7 @@ class LinAlg_1_Determinant_prop_2(SophiaCursorScene):
         
         matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
 
-        property = MathTex("\\Rightarrow", "\det(B) = \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+        property = MathTex("\det(B) = \det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
 
         box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
         mobject = VGroup(box, property)
@@ -1682,98 +1682,216 @@ class LinAlg_1_Determinant_prop_2(SophiaCursorScene):
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_5_I_3(SophiaCursorScene):
+
+##################################### 
+#####################################
+class LinAlg_1_Determinant_prop_3(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("1 \leq i < j \leq n", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        mat_B_1= MathTex("B =", "\\begin{pmatrix} z_1 \\\\ \\vdots \\\\ z_j  \\\\ \\vdots \\\\ z_i \\\\ \\vdots \\\\ z_n \\end{pmatrix}", color=c1t, font_size=fs2)
+        mat_B_2 = MathTex("B =", "\\begin{pmatrix} s_1 \cdots s_j \cdots s_i \cdots & s_n \\end{pmatrix}", color=c1t, font_size=fs2)
         
+        matrices_2 = VGroup(mat_B_1, mat_B_2).arrange(DOWN, buff=.4).next_to(scalar, DOWN, buff=.4).scale(.8)
+
+        property = MathTex("\det(B) = -\det(A)", color=c1t, font_size=fs2).next_to(matrices_2, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Sei A eine <bookmark mark="title_in"/> n Kreuz n Matrix. Wenn B die Matrix ist, die entsteht indem man zwei Spalten oder zwei Zeilen von A vertauscht, dann gilt,
-                dass die Determinante von B gleich Minus der Determinante von A ist. Sind insbesondere zwei Zeilen oder zwei Spalte von A gleich, so ist die Determinante von A gleich null.
+                Sei A <bookmark mark="A"/> eine n Kreuz n Matrix und i kleiner als j und beide zwischen 1 und n.
+                Sei B <bookmark mark="B_1"/> die Matrix, die entsteht wenn man die i-te mit der j-ten Spalte beziehungsweise Zeilen von A vertauscht. Dann gilt,
+                <bookmark mark="result"/> dass die Determinante von B gleich Minus der Determinante von A ist. Sind also insbesondere zwei Zeilen oder zwei Spalte von A gleich, so ist die Determinante von A gleich null.
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("B_1")
+            self.play(Write(mat_B_1), run_time=0.5)
+            self.wait(1)
+            self.play(Write(mat_B_2), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-
-class LinAlg_1_5_I_5_I_4(SophiaCursorScene):
+##################################### 
+#####################################
+class LinAlg_1_Determinant_prop_4(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("A, B \in", "\mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
         
+        property_1 = MathTex("\det(A B) = \det(A) \det(B)", color=c1t, font_size=fs2)
+
+        box_1 = SurroundingRectangle(property_1, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject_1 = VGroup(box_1, property_1).next_to(set, DOWN, buff=.5).scale(.9)
+
+        property_2 = MathTex("\det(A B) = \det(B A)", color=c1t, font_size=fs2)
+
+        box_2 = SurroundingRectangle(property_2, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject_2 = VGroup(box_2, property_2).next_to(mobject_1, DOWN, buff=.5).scale(.9)
+
+        property_3 = MathTex("\det(A^{-1}) = \\frac{1}{\det(A)}", color=c1t, font_size=fs2)
+
+        box_3 = SurroundingRectangle(property_3, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject_3 = VGroup(box_3, property_3).next_to(mobject_2, DOWN, buff=.5).scale(.9)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Sind A und B <bookmark mark="title_in"/> zwei n Kreuz n Matrizen, so gilt, dass die Determinante des Produkts A Mal B gleich dem Produkt der Determinanten von A und B ist. 
-                Daraus können wir zwei weitere Eigenschaften ableiten. Erstens: Die Determinante von A mal B ist immer gleich der Determinante von B mal A. Und Zweitens: Ist A invertierbar, so gilt, dass
-                die Determinante der Inversen von A gegeben ist durch Eins durch die Determiante von A.
+                Sind A <bookmark mark="A"/> und B zwei n Kreuz n Matrizen, so gilt, dass die <bookmark mark="result_1"/> Determinante des Produkts A Mal B gleich dem Produkt der Determinanten von A und B ist. 
+                Daraus können wir zwei weitere Eigenschaften ableiten. Erstens: Die <bookmark mark="result_2"/> Determinante von A mal B ist immer gleich der Determinante von B mal A. Und Zweitens: Ist A invertierbar, dann ist ja die Determinante von A nicht gleich null und
+                es gilt, <bookmark mark="result_3"/> dass die Determinante der Inversen von A gegeben ist durch Eins durch die Determinante von A.
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set), run_time=0.5)
+
+            self.wait_until_bookmark("result_1")
+            self.play(Write(mobject_1), run_time=0.5)
+
+            self.wait_until_bookmark("result_2")
+            self.play(Write(mobject_2), run_time=0.5)
+
+            self.wait_until_bookmark("result_3")
+            self.play(Write(mobject_3), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
+##################################### 
+#####################################
+class LinAlg_1_Determinant_prop_5(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
+        self.add(title)
+
+        set = MathTex("I_n \in \mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+
+        identity = MathTex("I_n = \\begin{pmatrix} 1 & 0 & \cdots & 0 \\\\ 0 & 1 & \cdots & 0 \\\\  & & \\ddots &  \\\\ 0 & \cdots & 0 & 1 \\end{pmatrix}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.5).scale(.9)
         
+        property_1 = MathTex("\det(I_n) = 1", color=c1t, font_size=fs2)
+        box_1 = SurroundingRectangle(property_1, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject_1 = VGroup(box_1, property_1).next_to(identity, DOWN, buff=.5)
+
+        mobject_1.generate_target()
+        mobject_1.target.shift(3*UP)
+
+        mat = MathTex("A = (a_{ij})_{ij} \in \mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(set, DOWN, buff=1)          
+        trans = MathTex("A^t = (a_{ji})_{ij}", color=c1t, font_size=fs2).next_to(mat, DOWN, buff=.5)
+        
+        property_2 = MathTex("\det(A^t) = \det(A)", color=c1t, font_size=fs2)
+
+        box_2 = SurroundingRectangle(property_2, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject_2 = VGroup(box_2, property_2).next_to(trans, DOWN, buff=.5)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Ist A eine <bookmark mark="title_in"/> n Kreuz n Matrix, so gilt, dass die Determinante der Transponierten von A gleich der Determinante von A ist.
+                Wir schreiben <bookmark mark="I"/> I n für die n Kreuz n Identitätsmatrix. Das ist ja <bookmark mark="identity"/> die Matrix, wo alle Einträge auf der Hauptdiagonale gleich eins sind und null ausserhalb. 
+                Die <bookmark mark="result_1"/> Determinante der Identitätsmatrix ist immer gleich eins. 
+                Sei <bookmark mark="clean_up"/> nun A eine n Kreuz n Matrix. Die Transponierte <bookmark mark="trans"/> der Matrix A ist ja die Matrix, die entsteht, wenn man den Eintrag an der Stelle i j mit dem Eintrag an der Stelle j i vertauscht.
+                Dann gilt, <bookmark mark="result_2"/> dass die Determinante der Transponierten von A gleich der Determinante von A ist.
                 """
         ) as tracker:
+
+            self.wait_until_bookmark("I")
+            self.play(Write(set), run_time=0.5)
+
+            self.wait_until_bookmark("identity")
+            self.play(Write(identity), run_time=0.5)
+
+            self.wait_until_bookmark("result_1")
+            self.play(Write(mobject_1), run_time=0.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.play(Unwrite(set), Unwrite(identity), run_time=.5)
+            self.play(MoveToTarget(mobject_1))
+            self.play(Write(mat), run_time=0.5)
             
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+            self.wait_until_bookmark("trans")
+            self.play(Write(trans), run_time=0.5)
+
+            self.wait_until_bookmark("result_2")
+            self.play(Write(mobject_2), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
-
-class LinAlg_1_5_I_5_I_5(SophiaCursorScene):
+#####################################
+#####################################
+class LinAlg_1_Determinant_prop_6(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
+        self.add_mathgrid()
 
         title = self.add_title("Determinante")
-        
+        self.add(title)
+
+        set = MathTex("A \in \mathrm{Mat}_n(\mathbb{R})", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.5)
+        scalar = MathTex("r \in \mathbb{R}", color=c1t, font_size=fs2).next_to(set, DOWN, buff=.2)
+
+        property = MathTex("\det(r \cdot A) = r^n \cdot \det(A)", color=c1t, font_size=fs2).next_to(scalar, DOWN, buff=.5)
+
+        box = SurroundingRectangle(property, color=BLUE, buff=MED_SMALL_BUFF)
+        mobject = VGroup(box, property)
+
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Ist A eine <bookmark mark="title_in"/> n Kreuz n Matrix und r ein Skalar, so gilt, dass die Determinante von r mal A gleich r hoch n mal der Determinante von A ist.
+                Sei A <bookmark mark="A"/> eine n Kreuz n Matrix und r ein Skalar. Wir schreiben  <bookmark mark="row"/> Matrizen auch in der Zeilen- <bookmark mark="column"/> ... oder ... Spaltenform, wobei z i für die i-te Zeile und s j für die j-te Spalte der Matrix steht.
+                So gilt, dass die <bookmark mark="result"/> Determinante von r mal A gleich r hoch n mal der Determinante von A ist.
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("title_in")
-            self.play(Write(title))
+
+            self.wait_until_bookmark("A")
+            self.play(Write(set), run_time=0.5)
+            self.play(Write(scalar), run_time=0.5)
+
+            self.wait_until_bookmark("result")
+            self.play(Write(mobject), run_time=0.5)
 
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
+
+
 
 PROTOTYPES=[
 ##########################################################################
