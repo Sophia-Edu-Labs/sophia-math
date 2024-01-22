@@ -13,7 +13,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
 import ast 
 
 
@@ -5407,6 +5407,25 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 ##################################### Intermediate value theorem
 #####################################
 class Calc_practice_ivt_10_q(SophiaCursorScene):
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["""Wir berechnen die Funktionswerte an den Intervallgrenzen und erhalten $f(0) = 0-1-1 = -2 < 0$ bzw. $f(3) = 81-1-27= 53 > 0$.
+                             
+Die Funktion $f$ ist als Summe stetiger Funktionen wieder stetig im Intervall $[0, 3]$.
+Nach dem Zwischenwertsatz nimmt $f$ jeden Wert zwischen -2 und 53 an also auch speziell den Wert 0.
+""",
+"""
+Der Schüler hat vergessen, den Zwischenwertsatz anzuwenden. 
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = """Beweisen Sie, dass die Funktion $f(x) = 3x^3 - 1 - 3^x$ im Intervall $[0, 3]$ mindestens eine Nullstelle besitzt.""",
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+    
 
     # Main method for constructing the animation
     def construct(self):
@@ -5468,6 +5487,51 @@ class Calc_practice_ivt_10_a(SophiaCursorScene):
 Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
 Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
 Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
+
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
+
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = """
+Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark="steady"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.
+Da die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark="intervall_limits"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.
+Weil f ja stetig ist, folgt dann aus <bookmark mark="ivt"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.
+Du hast in deiner Lösung den Zwischenwertsatz nicht ausreichend angewendet. Wenn du es so machst, wie hier erläutert, hast du keine Probleme in der Klausur von 'Pi-hard Nabben, dem Formel-Boss, Bro.'
 """
 
         # Action Sequence
@@ -5849,5 +5913,9 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
     
 ]

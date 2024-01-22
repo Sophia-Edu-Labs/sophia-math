@@ -35,6 +35,12 @@ class SophiaFreeTextTaskDetail():
     # A dictionary that will associate every key in the matcher with some optional settings that can be used to specify which equality should be used when comparing the entered answer for a key with the one specified in the correct answer.
     answerOptionsEquality: Optional[Dict[str, Dict[str, Any]]] = None
 
+@dataclass
+class SophiaLLMQuestionCheckDetail():
+    # This will be used as the fallback answer option index, if the user input does not match any of the answer options explicitly (if it is not correct)
+    fallbackOptionIndex: int
+    # Those are special input snippets that are available when evaluating with an LLM (i.e, if the user has a real text input)
+    specialInputSnippets: Optional[List[str]] = None
 
 
 @dataclass
@@ -45,6 +51,8 @@ class SophiaTaskDefinition():
     questionVideoPrototypeID: Optional[str] = None
     # If set, this question will be rendered as a free text question
     freeTextDetail: Optional[SophiaFreeTextTaskDetail] = None
+    # If set, this question will be rendered as a LLM question
+    llmCheckDetails: Optional[SophiaLLMQuestionCheckDetail] = None
 
 
     # Function that will return the question text, but without the Latex-Like math sequences of "$[...]$" and "$$[...]$$"
