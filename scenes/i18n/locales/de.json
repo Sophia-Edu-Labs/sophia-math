@@ -3502,7 +3502,26 @@
       },
       "15q": {
         "question": "Betrachte die Funktion $f:[-\\pi,\\pi]\\rightarrow \\mathbb R$ mit $f(x)=e^{-\\sqrt{x^2 1} 1}$. \nWelche der folgenden Aussagen ist wahr?",
-        "answerOptions": "[\"$f$ hat Nullstelle auf $[0,1]$\", \"$f$ hat Maximum auf $[0,1]$\", \"$f$ ist nicht stetig\" ,\"$f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]"
+        "answerOptions": "[\"$f$ hat Nullstelle auf $[0,1]$\", \"$f$ hat Maximum auf $[0,1]$\", \"$f$ ist nicht stetig\" ,\"$f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$\"]",
+        "answer_a": "a) $f$ hat Nullstelle auf $[0,1]$",
+        "answer_b": "b) $f$ hat Maximum auf $[0,1]$",
+        "answer_c": "c) $f$ ist nicht stetig",
+        "answer_d": "d) $f$ hat Stammfunktion \\\\$F(x)=xe^{-\\sqrt{x^2 1} 1}$",
+        "voiceover": "Sei f eine Funktion, die von dem Intervall von <bookmark mark=\"f_in_1\"/>minus pi bis pi in die reellen Zahlen abbildet, und deren Funktionsvorschrift <bookmark mark=\"f_in_2\"/>lautet e hoch minus Wurzel von x hoch 2 plus 1 plus 1. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f hat eine Nullstelle im Intervall von Null bis Eins. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat ein Maximum im Intervall von Null bis Eins. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Funktion f ist nicht stetig. ...\nOder <bookmark mark=\"answer_d_in\"/>Aussage d: Die Funktion f hat die Stammfunktion groß f von x ist gleich x mal e hoch minus Wurzel von x hoch 2 plus 1 plus 1. ...",
+        "sol": "$f$ hat Min und Max auf $[-\\pi,\\pi]$"
+      },
+      "15a": {
+        "voiceover": "Wir haben ja eine stetige Funktion auf einem Intervall. Wir <bookmark mark=\"implication_in\"/>können dann den Satz von Minimum und Maximum anwenden, und <bookmark mark=\"sol_in\"/>wissen, dass die Funktion f ein Minimum und ein Maximum auf dem Intervall von minus pi bis pi hat.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr."
+      },
+      "16q": {
+        "answer_a": "a) $f$ ist ungerade",
+        "answer_b": "b) $f$ hat keine Nullstellen",
+        "answer_c": "c) Es gibt 3 Werte $x$ mit $f'(x)=0$",
+        "answer_d": "d) $f$ hat keine Stammfunktion",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, mit cer <bookmark mark=\"f_in_2\"/>Funktionsvorschrift 13 mal x hoch 3 minus 3 mal x. Welche der folgenden Aussagen ist wahr?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat keine Nullstellen. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Es gibt genau drei x in den reellen Zahlen, für die die Ableitung von f an der Stelle x gleich Null ist. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Die Funktion f hat keine Stammfunktion. ..."
+      },
+      "16a": {
+        "voiceover": "Die Funktion f ist ein Polynom mit <bookmark mark=\"deg_three\"/>einem Koeffizienten von Grad drei, und <bookmark mark=\"odd\"/>einem Koeffizient von Grad eins. Also hat f nur ungerade Potenzen, und die Funktion f <bookmark mark=\"a_green\"/>ist ungerade."
       }
     },
     "practice_limits": {
