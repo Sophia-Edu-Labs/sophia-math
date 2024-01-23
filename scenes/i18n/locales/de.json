@@ -3415,7 +3415,7 @@
       "1q": {
         "question-text": "Was gilt für die Komposition $g\\circ f$?",
         "answer-options": "[\"$g\\circ f$ ist injektiv\", \"$g\\circ f$ ist surjektiv\", \"$g\\circ f$ existiert nicht\", \"$(g\\circ f)(x)=x$ für alle $x\\in[0,\\infty)$\"]",
-        "answer-a": "$g\\\\circ f$ ist injektiv",
+        "answer-a": "$g\\circ f$ ist injektiv",
         "answer-b": "$g\\circ f$ ist surjektiv",
         "answer-c": "$g\\circ f$ existiert nicht",
         "answer-d": "$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$",
@@ -3503,7 +3503,7 @@
         "voiceover": "Betrachten wir zunächst die<bookmark mark=\"f_1_in\"/> Funktion f von x gleich eins. Diese Funktion ist differenzierbar und ungerade. Also sind a und c <bookmark mark=\"a_c_red\"/>schon mal falsch, denn die Funktion f ist nicht Null und die Ableitung von f an der Stelle x gleich Null ist nicht ungleich Null.\n<bookmark mark=\"f_2_in\"/>Betrachten wir nun die Funktion f von x gleich x. Diese Funktion ist auch differenzierbar und ungerade. Also ist<bookmark mark=\"b_red\"/> b auch falsch, weil die Ableitung von f überall gleich eins ist, also ist f Strich von Null nicht Null.\nEs bleibt also <bookmark mark=\"d_green\"/>nur noch d übrig, und das ist auch die richtige Antwort."
       },
       "10q": {
-        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"\\int_{-a}^{a \n}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ für alle $a> \n0$\", \"$f$ ist nicht integrierbar\"]",
+        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$\", \"$f$ ist nicht integrierbar\"]",
         "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige, gerade Funktion. \nWelche der folgenden Aussagen ist wahr:",
         "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade",
         "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$",
@@ -3518,7 +3518,7 @@
       "11q": {
         "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die stetig und gerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist surjektiv. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f ist injektiv. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Funktion f hat kein Maximum. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f von x ist kleiner als Null für alle x in der Menge von 0, 1, 2, 3. ...",
         "question": "Welche der folgenden Aussagen gilt für eine stetige, gerade Funktion $f:\\mathbb R \\rightarrow \\mathbb R$?",
-        "answerOptions": "[\"$f$ ist surjektiv\", \"$f$ ist injektiv\", \"$f$ hat kein Maximum\", \"$f(x)>0$ für alle $x\\in\\{0,1,2,3 \n\\}$\"]",
+        "answerOptions": "[\"$f$ ist surjektiv\", \"$f$ ist injektiv\", \"$f$ hat kein Maximum\", \"$f(x)>0$ für alle $x\\in\\{0,1,2,3\\}$\"]",
         "answer_a": "a) $f$ ist surjektiv",
         "answer_b": "b) $f$ ist injektiv",
         "answer_c": "c) $f$ hat kein Maximum",
@@ -3555,7 +3555,9 @@
         "answer_b": "b) $f$ hat keine Nullstellen",
         "answer_c": "c) Es gibt 3 Werte $x$ mit $f'(x)=0$",
         "answer_d": "d) $f$ hat keine Stammfunktion",
-        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, mit cer <bookmark mark=\"f_in_2\"/>Funktionsvorschrift 13 mal x hoch 3 minus 3 mal x. Welche der folgenden Aussagen ist wahr?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat keine Nullstellen. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Es gibt genau drei x in den reellen Zahlen, für die die Ableitung von f an der Stelle x gleich Null ist. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Die Funktion f hat keine Stammfunktion. ..."
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, mit cer <bookmark mark=\"f_in_2\"/>Funktionsvorschrift 13 mal x hoch 3 minus 3 mal x. Welche der folgenden Aussagen ist wahr?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f ist ungerade. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Funktion f hat keine Nullstellen. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Es gibt genau drei x in den reellen Zahlen, für die die Ableitung von f an der Stelle x gleich Null ist. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Die Funktion f hat keine Stammfunktion. ...",
+        "answerOptions": "[\"$f$ ist ungerade\", \"$f$ hat keine Nullstellen\", \"Es gibt genau $3$ Werte $x\\in\\mathbb R$, wobei $f'(x)=0$\", \"$f$ hat kein unbestimmtes Integral\"]",
+        "question": "Welche der folgenden Aussagen gilt für die Funktion $f:\\mathbb R \\rightarrow \\mathbb R$, $f(x)=13x^3-3x$?"
       },
       "16a": {
         "voiceover": "Die Funktion f ist ein Polynom mit <bookmark mark=\"deg_three\"/>einem Koeffizienten von Grad drei, und <bookmark mark=\"odd\"/>einem Koeffizient von Grad eins. Also hat f nur ungerade Potenzen, und die Funktion f <bookmark mark=\"a_green\"/>ist ungerade."
@@ -3566,7 +3568,7 @@
         "answer_b": "b) $f$ nicht integrierbar auf $[0,1]$",
         "answer_c": "c) $f$ hat kein Maximum auf $[0,2]$",
         "answer_d": "d) Keine der Optionen",
-        "answerOptions": "[\"Es existiert $\\xi\\in]0,1[$, sodass das Rechteck mit Höhe $f(\\xi)$ und Breite $1$ die Fläche $A=\\int_0^1f(x)dx$ hat\", \"$f$ ist nicht integrierbar auf [0,1]$\", \"$f$ hat kein Maximum auf $[0,2]$\", \"Keine der Optionen\"]",
+        "answerOptions": "[\"Es existiert $\\\\xi\\in]0,1[$, sodass das Rechteck mit Höhe $f(\\\\xi)$ und Breite $1$ die Fläche $A=\\int_0^1f(x)dx$ hat\", \"$f$ ist nicht integrierbar auf [0,1]$\", \"$f$ hat kein Maximum auf $[0,2]$\", \"Keine der Optionen\"]",
         "voiceover": "Sei f eine<bookmark mark=\"f_in_1\"/>stetige Funktion, die von den reellen Zahlen in die reellen Zahlen abbildet, für die gilt, dass <bookmark mark=\"f_in_2\"/>f von x größer als Null für alle x in dem Intervall von Null bis Eins. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass es ein xi in dem offenen Intervall von Null bis Eins gibt, sodass das Rechteck mit der Höhe f von xi und der Breite Eins die Fläche A hat, wobei A das bestimmte Integral von Null bis Eins von f von x dx ist? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Funktion f nicht integrierbar ist auf dem Intervall von Null bis Eins? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f kein Maximum hat auf dem Intervall von Null bis Zwei? ...\nOder ist es <bookmark mark=\"answer_d_in\"/>Aussage d, dass keine der obigen Möglichkeiten zutrifft? ...",
         "solution": "Es gibt $\\xi\\in]0,1[$, sodass\\\\ $\\int_0^1f(x)dx=f(\\xi)$"
       },
@@ -3580,7 +3582,7 @@
         "answer_b": "b) $f'(x)=0$ für $x=0$",
         "answer_c": "c) $f$ ist injektiv",
         "question": "Sei $f:\\mathbb R\\rightarrow\\mathbb R$ eine differenzierbare, gerade Funktion. \nWelche der folgenden Aussagen ist wahr?",
-        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f$ ist injektiv\", \"$ \nf(x)=x^3$\"]"
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f$ ist injektiv\", \"$f(x)=x^3$\"]"
       },
       "19a": {
         "voiceover": "Betrachten wir ein <bookmark mark=\"plot_in\"/>graphisches Beispiel für eine gerade, differenzierbare Funktion. Wie wir sehen, muss es einen Extrempunkt bei <bookmark mark=\"highlight_x_0\"/>x gleich Null geben.\nAlso ist <bookmark mark=\"b_green\"/>die Aussage b wahr, denn dafür, dass es eine Extremstelle an der Stelle x gleich Null gibt, muss die Ableitung von f an der Stelle x gleich Null gleich Null sein."
@@ -3627,7 +3629,9 @@
         "answer_a": "a) Es gibt genau $4$ Lösungen",
         "answer_b": "b) Es gibt unendlich viele Lösungen",
         "answer_c": "c) Für alle Lösungen gilt $|z=1|$",
-        "answer_d": "d) Es gibt nur reele Lösungen"
+        "answer_d": "d) Es gibt nur reele Lösungen",
+        "answerOptions": "[\"Es gibt genau $4$-Lösungen\", \"Es gibt unendlich viele Lösungen\", \"Es gilt $|z=1|$ für alle Lösungen\", \"Es gibt nur reellwertige Lösungen\"]",
+        "question": "Welche der folgenden Aussagen trifft auf die Gleichung $z^4=-1+i$ zu?"
       },
       "17a": {
         "voiceover": "Zuerst <bookmark mark=\"step_1\"/> ziehen wir die vierte Wurzel auf beiden Seiten der Gleichung. \nDann bleibt <bookmark mark=\"equation_2\"/>, dass z gleich der vierten Wurzel aus minus eins plus i ist.\n\nDa die k-te Wurzel in den komplexen Zahlen immer k-Lösungen hat, wissen wir<bookmark mark=\"highlight_sol\"/>, dass es hier vier Lösungen gibt."

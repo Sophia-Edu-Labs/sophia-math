@@ -3815,6 +3815,13 @@ class Calc_practice_MC_16_d(SophiaCursorScene):
 ##################################### 
 class Calc_practice_MC_17_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.17q.answerOptions")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Calc_1.Practice_MC.17q.question")
+        )
+    
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
