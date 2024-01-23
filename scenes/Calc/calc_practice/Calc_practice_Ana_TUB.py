@@ -1684,6 +1684,47 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
 #
         
 
+class Calc_practice_MC_7_a(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Defining the equation and answer options
+        equation = MathTex("z^6 = (1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        answers = VGroup(
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
+        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation, DOWN, buff=0.8)
+
+        # Voiceover text
+        voiceover_text = self.translate("Calc_1.Practice_MC.7q.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("eq_in")
+            self.play(Write(equation))
+
+            self.wait_until_bookmark("ans_a_in")
+            self.play(Write(answers[0]))
+
+            self.wait_until_bookmark("ans_b_in")
+            self.play(Write(answers[1]))
+
+            self.wait_until_bookmark("ans_c_in")
+            self.play(Write(answers[2]))
+
+            self.wait_until_bookmark("ans_d_in")
+            self.play(Write(answers[3]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+        
+
 ##################################### 
 #####################################
 class Calc_practice_MC_8_q(SophiaCursorScene):
