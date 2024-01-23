@@ -557,31 +557,42 @@ class LinAlg_1_Determinant_geo_1(SophiaCursorScene):
         title = self.add_title("Determinante")
         self.add(title)
 
-        cursor = AltCursor(stroke_width=0.0, idle=True)
+        mat = MathTex("A = \\begin{pmatrix} a \\ b \\\\ c \\ d  \\end{pmatrix}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=.6)
+        map = MathTex("A : \mathbb{R}^2 \\to \mathbb{R}^2", color=c1t, font_size=fs2).next_to(mat, DOWN, buff=.6)
+        
+        ax = Axes(x_range=[-0.5, 3, 1], y_range=[-0.5, 3, 1], tips=False)
+        
+        basis = self.get_basis_vectors()
 
-        cords = self.add_cords([0, 3, 1], [0, 3, 1], x_ticks = [], y_ticks=[]).shift(DOWN*0.6)
-        self.add(cords)
-        plane = cords[0]
-
+        #cursor = AltCursor(stroke_width=0.0, idle=True)
+        #cords = self.add_cords([0, 3, 1], [0, 3, 1], x_ticks = [], y_ticks=[]).shift(DOWN*0.6)
+        #self.add(cords)
+        #plane = cords[0]
         #plane = NumberPlane()
-
-        e_1 = Vector([1, 0])
-        e_2 = Vector([0, 1])
-        label_1 = e_1.coordinate_label()
-        label_2 = e_2.coordinate_label()
-
-        self.add(plane, e_1, e_2, label_1, label_2)
+        #e_1 = Vector([1, 0])
+        #e_2 = Vector([0, 1])
+        #label_1 = e_1.coordinate_label()
+        #label_2 = e_2.coordinate_label()
+        #self.add(plane, e_1, e_2, label_1, label_2)
         
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                In diesem Kapitel lernen wir, was die geometrische Interpretation der Determinante einer 2 Kreuz 2 Matrix ist. Wir wissen ja bereits, dass wir eine 2 Kreuz 2 Matrix A als lineare Abbildung von R zwei nach R zwei ansehen können.  
-                Betrachte das Einheitsquadrat, das von den beiden Standardvektoren eins null und null eins aufgespannt wird.
-                Wir werden sehen, dass der Betrag der Determinante das Mass für die Veränderung des Flächeninhalts dieses Quadrats ist.
-                Das Vorzeichen der Determinante hat ebenfalls eine geometrische Bedeutung. Wir werden sehen, dass das Vorzeichen positiv ist genau dann, wenn die Orientierung der beiden Vektoren unter der Abbildung A erhalten bleibt.
+                <bookmark mark="mat"/> <bookmark mark="map"/> <bookmark mark="vec"/>
                 """
         ) as tracker:
+            #In diesem Kapitel lernen wir, was die geometrische Interpretation der Determinante einer 2 Kreuz 2 Matrix ist. Wir wissen ja bereits, dass wir eine 2 Kreuz 2 Matrix A auch als lineare Abbildung von R zwei nach R zwei ansehen können. Betrachte das Einheitsquadrat, das von den beiden Standardvektoren eins null und null eins aufgespannt wird. Wir werden sehen, dass der Betrag der Determinante das Mass für die Veränderung des Flächeninhalts dieses Quadrats ist. Das Vorzeichen der Determinante hat ebenfalls eine geometrische Bedeutung. Wir werden sehen, dass das Vorzeichen positiv ist genau dann, wenn die Orientierung der beiden Vektoren unter der Abbildung A erhalten bleibt.
 
+            self.wait_until_bookmark("mat")
+            self.play(Write(mat), run_time=0.5)
+            self.wait(1)
+
+            self.wait_until_bookmark("map")
+            self.play(Write(map), run_time=0.5)
+            self.wait(1)
+
+            self.wait_until_bookmark("vec")
+            self.play(Create(ax), Create(basis), run_time=0.5)
             # Wait for 4 seconds at the end of the animation
             self.wait(4)
 
