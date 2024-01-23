@@ -3462,7 +3462,7 @@
       },
       "6q": {
         "voiceover": "Seien <bookmark mark=\"domain_in\"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.\n<bookmark mark=\"question_in\"/>Welche der folgenden Aussagen gilt?\nAussage <bookmark mark=\"answer_a_in\"/>a: f ist differenzierbar. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: f ist nicht integrierbar. ...\nOder Antwort <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
-        "answer-options": "[\"$f$ ist differenzierbar\",\"Falls $\\int_{a}^{b} f(x)dx = 0$, dann gibt es ein $\\xi \\in [a,b]$ mit $f(\\xi) = 0$\",\"$f$ ist nicht integrierbar\",\"Keine der obigen Aussagen kann im Allgemeinen getroffen werden.\"]",
+        "answer-options": "[\"$f$ ist differenzierbar\",\"Falls $\\int_{a}^{b} f(x)dx = 0$, dann gibt es ein $\\\\xi \\in [a,b]$ mit $f(\\\\xi) = 0$\",\"$f$ ist nicht integrierbar\",\"Keine der obigen Aussagen kann im Allgemeinen getroffen werden.\"]",
         "question-text": "Seien $a$, $b$ Elemente der reellen Zahlen mit $a < b$ und sei $f$ eine stetige Funktion auf dem Intervall $[a, b]$. Welche der folgenden Aussagen gilt?"
       },
       "6a": {
@@ -3491,7 +3491,7 @@
       },
       "9q": {
         "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine differenzierbare, ungerade Funktion. \nWelche dieser Aussagen trifft im Allgemeinen zu?",
-        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f'(x)\\neq0$ für $x \n=0$\", \"Keine dieser Aussagen gilt im Allgemeinen“]",
+        "answerOptions": "[\"$f(x)=0$ für alle $x\\in\\mathbb R$\", \"$f'(x)=0$ für $x=0$\", \"$f'(x)\\neq0$ für $x=0$\", \"Keine dieser Aussagen gilt im Allgemeinen\"]",
         "voiceover": "Sei <bookmark mark=\"f_in_1\"/>f eine Funktion von den reellen Zahlen in die reellen Zahlen, <bookmark mark=\"f_in_2\"/>die differenzierbar und ungerade ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f von x ist Null für alle x in den reellen Zahlen. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Die Ableitung von f an der Stelle x ist Null für x gleich Null. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Die Ableitung von f an der Stelle x ist nicht Null für x gleich Null. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
         "answer_a": "a) $f(x) = 0$ für alle $x$",
         "answer_b": "b) $f'(x) = 0$ für $x = 0$",
@@ -3608,6 +3608,29 @@
         "answer-d": "d) Nur reelwertige Lösungen",
         "answer-c": "c) $\\left| z \\right|= 1$ für alle Lösungen",
         "voiceover": "Wenn wir einfach 1 + i viermal mit sich selbst multiplizieren, <bookmark mark=\"multiply\"/>, erhalten wir als Ergebnis minus vier.\n\nWir ziehen dann <bookmark mark=\"step_1\"/> die sechste Wurzel auf beiden Seiten und erhalten, dass <bookmark mark=\"equation_3\"/> z gleich der sechsten Wurzel von minus vier ist.\n\nUnd wir wissen, dass es k komplexwertige Lösungen gibt, wenn wir die k-te Wurzel einer reellen Zahl ziehen. \nWir wissen also, dass es <bookmark mark=\"solution\"/>sechs Lösungen für diese Gleichung gibt."
+      },
+      "14q": {
+        "let_p": "Sei $p$ ein Polynom",
+        "answer_a": "a) $p$ hat $\\geq4$ versch. Nullstellen",
+        "answer_b": "b) $p$ hat mind. $1$ reelen Linearfaktor",
+        "answer_c": "c) $p$ hat keine komplexe\\\\ Linearfaktorzerlegung",
+        "answer_d": "d) $p$ hat keine reele Nullstelle",
+        "voiceover": "Sei <bookmark mark=\"f_in_1\"/>p ein Polynom, <bookmark mark=\"f_in_2\"/>was durch die Funktionsvorschrift z hoch 3 minus 22 mal z hoch 2 plus 7 mal z minus 1 gegeben ist. Welche der folgenden Aussagen gilt allgemein?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Das Polynom p hat mindestens vier verschiedene Nullstellen. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Das Polynom p hat mindestens einen reellen Linearfaktor. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Das Polynom p hat keine komplexe Linearfaktorzerlegung. ...\nOder Aussage <bookmark mark=\"answer_d_in\"/>d: Das Polynom p hat keine reelle Nullstelle. ...",
+        "question": "Welche der Aussagen trifft auf das Polynom $p(z)=z^3-22z^2 7z-1$ zu?",
+        "answerOptions": "[\"$p$ hat $\\geq4$ verschiedene Nullstellen\", \"$p$ hat mindestens $1$ linearen Faktor\", \"$p$ hat keine komplexe lineare Faktorzerlegung\", \"$p$ hat keine reellwertige Nullstelle\"]"
+      },
+      "14a": {
+        "voiceover": "Da der Grad des Polynoms gleich 3 ist, wissen wir, dass es mindestens eine reelle Nullstelle gibt. \nDas bedeutet, dass <bookmark mark=\"highlight_sol\"/> es mindestens einen reellwertigen Linearfaktor geben muss."
+      },
+      "17q": {
+        "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 4 gleich minus 1 plus i. Welche der folgenden Aussagen gilt für alle<bookmark mark=\"z_in\"/> Lösungen z aus den komplexen Zahlen c?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass es genau vier Lösungen gibt? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass es unendlich viele Lösungen gibt? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass für alle Lösungen der Betrag von z gleich Eins ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass es nur reelle Lösungen gibt? ...",
+        "answer_a": "a) Es gibt genau $4$ Lösungen",
+        "answer_b": "b) Es gibt unendlich viele Lösungen",
+        "answer_c": "c) Für alle Lösungen gilt $|z=1|$",
+        "answer_d": "d) Es gibt nur reele Lösungen"
+      },
+      "17a": {
+        "voiceover": "Zuerst <bookmark mark=\"step_1\"/> ziehen wir die vierte Wurzel auf beiden Seiten der Gleichung. \nDann bleibt <bookmark mark=\"equation_2\"/>, dass z gleich der vierten Wurzel aus minus eins plus i ist.\n\nDa die k-te Wurzel in den komplexen Zahlen immer k-Lösungen hat, wissen wir<bookmark mark=\"highlight_sol\"/>, dass es hier vier Lösungen gibt."
       }
     },
     "practice_limits": {

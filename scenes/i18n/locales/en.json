@@ -3587,7 +3587,7 @@
         "answer-d": "d) Is not integrable"
       },
       "6q": {
-        "answer-options": "[\"$f$ is differentiable\", \"If $\\int_{a}^{b} f(x)dx = 0$, then there is a $\\xi \\in [a,b]$ with $f(\\xi) = 0$\",\"$f$ is not integrable\", \"None of the above statements can be made in general\"].",
+        "answer-options": "[\"$f$ is differentiable\", \"If $\\int_{a}^{b} f(x)dx = 0$, then there is a $\\\\xi \\in [a,b]$ with $f(\\\\xi) = 0$\",\"$f$ is not integrable\", \"None of the above statements can be made in general\"]",
         "question-text": "Let $a$, $b$ be elements of real numbers with $a < b$ and let $f$ be a continuous function on the interval $[a, b]$. Which of the following statements is true?",
         "voiceover": "Let <bookmark mark=\"domain_in\"/>a and b be elements of the real numbers, with a smaller than b, and let f be a continuous function on the interval from a to b.\n<bookmark mark=\"question_in\"/>Which of the following statements is true?\nStatement <bookmark mark=\"answer_a_in\"/>a: f is differentiable. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: If the definite integral from a to b of f of x dx is zero, then there is a xi in the interval from a to b such that f of xi is zero. Statement <bookmark mark=\"answer_c_in\"/>c: f is not integrable. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: None of the above statements can be made in general. "
       },
@@ -3616,6 +3616,29 @@
         "answer-c": "c) $\\left| z \\right| = 1$ for all solutions",
         "answer-d": "d) Only real-valued solutions",
         "voiceover": "If we just multiply 1 + i by itself 4 times, <bookmark mark=\"multiply\"/>, we get negative four as a result.\nWe then <bookmark mark=\"step_1\"/> take the sixth root on both sides, and we get that <bookmark mark=\"equation_3\"/> z is equal to the sixth root of negative four.\nAnd we know, that if we take the k-th root of a real number, there are k complex-valued solutions. So we know that <bookmark mark=\"solution\"/>there are 6 solutions to this equation."
+      },
+      "14q": {
+        "let_p": "Let $p$ be a polynomial",
+        "answer_a": "a) $p$ has $\\geq4$ different zeros",
+        "answer_b": "b) $p$ has at least $1$ real linear factor",
+        "answer_c": "c) $p$ has no complex \\\\linear factor decomposition",
+        "answer_d": "d) $p$ has no real-valued zero",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>p be a polynomial, <bookmark mark=\"f_in_2\"/>which is given by the expression z to the power of 3 minus 22 times z squared plus 7 times z minus 1. Which of the following statements is generally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The polynomial p has at least four different zeros. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The polynomial p has at least one real linear factor. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The polynomial p has no complex linear factors decomposition. Or statement <bookmark mark=\"answer_d_in\"/>d: The polynomial p has no real zero. ...",
+        "question": "Which of the statements is true for the polynomial $p(z)=z^3-22z^2+7z-1$?",
+        "answerOptions": "[\"$p$ has $\\geq4$ different zeros\", \"$p$ has at least $1$ linear factor\", \"$p$ has no complex linear factor decomposition\", \"$p$ has no real-valued zero\"]"
+      },
+      "14a": {
+        "voiceover": "Since the degree of the polynomial is 3, we know that there is at least one real-valued zero. This means, that <bookmark mark=\"highlight_sol\"/> there has to be at least one real-valued linear factor."
+      },
+      "17q": {
+        "voiceover": "Consider the equation <bookmark mark=\"eq_in\"/>z to the power of 4 equals negative 1 plus i. Which of the following statements is true for all<bookmark mark=\"z_in\"/> solutions z from the complex numbers c?\nIs it <bookmark mark=\"answer_a_in\"/>statement a that there are exactly four solutions? ...\nIs it <bookmark mark=\"answer_b_in\"/>statement b that there are infinitely many solutions? ...\nIs it <bookmark mark=\"answer_c_in\"/>statement c that the absolute value of z equals one for all solutions? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that there are only real solutions? ...",
+        "answer_a": "a) There are exactly $4$ solutions",
+        "answer_b": "b) There are infinitely many solutions",
+        "answer_c": "c) It holds that $|z=1|$ for all solutions",
+        "answer_d": "d) There are only real-valued solutions"
+      },
+      "17a": {
+        "voiceover": "First, we'll <bookmark mark=\"step_1\"/> take the fourth root on both sides of the equation. We're then left <bookmark mark=\"equation_2\"/> with the equation that z is  equal to the fourth root of negative one plus i.\nSince the k-th root in the complex number always has k solution, we<bookmark mark=\"highlight_sol\"/> know that there are four solutions here."
       }
     },
     "practice_limits": {

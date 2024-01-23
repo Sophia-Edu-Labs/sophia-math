@@ -1682,7 +1682,6 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 #
-        
 
 class Calc_practice_MC_7_a(SophiaCursorScene):
 
@@ -1705,11 +1704,7 @@ class Calc_practice_MC_7_a(SophiaCursorScene):
         self.add(answers, equation_1)
 
         # Voiceover text
-        voiceover_text = """
-If we just multiply 1 + i by itself 4 times, <bookmark mark="multiply"/>, we get negative four as a result.
-We then <bookmark mark="step_1"/> take the sixth root on both sides, and we get that <bookmark mark="equation_3"/> z is equal to the sixth root of negative four.
-And we know, that if we take the k-th root of a real number, there are k complex-valued solutions. So we know that <bookmark mark="solution"/>there are 6 solutions to this equation.
-"""
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.7a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -1730,7 +1725,132 @@ And we know, that if we take the k-th root of a real number, there are k complex
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 #
-        
+class Calc_practice_MC_7_b(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Defining the equation and answer options
+        equation_1 = MathTex("z^6 =", "(1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        equation_2 = MathTex("z^6 =", " (1 + i)^4", "=-4", color=c1t, font_size=fs2).move_to(equation_1)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[6]{\Box}", color=c1t, font_size=fs2).next_to(equation_2, DOWN, buff=0.2)
+        equation_3 = MathTex("z =", r" \sqrt[6]{-4}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=0.2)
+        answers = VGroup(
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
+        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation_1, DOWN, buff=0.8)
+
+        self.add(answers, equation_1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.7a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("multiply")
+            self.play(TransformMatchingTex(equation_1, equation_2), run_time=.5)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+            
+            self.wait_until_bookmark("equation_3")
+            self.play(Write(equation_3), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(answers[0].animate.set_color(GREEN), answers[1].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_7_c(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Defining the equation and answer options
+        equation_1 = MathTex("z^6 =", "(1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        equation_2 = MathTex("z^6 =", " (1 + i)^4", "=-4", color=c1t, font_size=fs2).move_to(equation_1)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[6]{\Box}", color=c1t, font_size=fs2).next_to(equation_2, DOWN, buff=0.2)
+        equation_3 = MathTex("z =", r" \sqrt[6]{-4}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=0.2)
+        answers = VGroup(
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
+        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation_1, DOWN, buff=0.8)
+
+        self.add(answers, equation_1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.7a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("multiply")
+            self.play(TransformMatchingTex(equation_1, equation_2), run_time=.5)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+            
+            self.wait_until_bookmark("equation_3")
+            self.play(Write(equation_3), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(answers[0].animate.set_color(GREEN), answers[1].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_7_d(SophiaCursorScene):
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        # Defining the equation and answer options
+        equation_1 = MathTex("z^6 =", "(1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        equation_2 = MathTex("z^6 =", " (1 + i)^4", "=-4", color=c1t, font_size=fs2).move_to(equation_1)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[6]{\Box}", color=c1t, font_size=fs2).next_to(equation_2, DOWN, buff=0.2)
+        equation_3 = MathTex("z =", r" \sqrt[6]{-4}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=0.2)
+        answers = VGroup(
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
+        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation_1, DOWN, buff=0.8)
+
+        self.add(answers, equation_1)
+
+        # Voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.7a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("multiply")
+            self.play(TransformMatchingTex(equation_1, equation_2), run_time=.5)
+
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+            
+            self.wait_until_bookmark("equation_3")
+            self.play(Write(equation_3), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(answers[0].animate.set_color(GREEN), answers[1].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#     
 
 ##################################### 
 #####################################
@@ -3064,6 +3184,13 @@ class Calc_practice_MC_12_d(SophiaCursorScene):
 ##################################### 
 class Calc_practice_MC_14_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.14q.answerOptions")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Practice_MC.14q.question")
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -3071,25 +3198,20 @@ class Calc_practice_MC_14_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        f_definition = Tex("Sei $p$ ein Polynom", color=c1t, font_size=fs2)
+        let_p = self.translate("Calc_1.Practice_MC.14q.let_p")
+        f_definition = Tex(let_p, color=c1t, font_size=fs2)
         f_property = MathTex("p(z)=z^3-22z^2+7z-1", color=c1t, font_size=fs2)
         f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $p$ hat $\\geq4$ versch. Nullstellen", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $p$ hat mind. $1$ reelen Linearfaktor", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $p$ hat keine komplexe Linearfaktorzerlegung", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $p$ hat keine reele Nullstelle", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.14q.answer_a"), color=c1t, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.14q.answer_b"), color=c1t, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.14q.answer_c"), color=c1t, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.14q.answer_d"), color=c1t, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Sei <bookmark mark="f_in_1"/>p ein Polynom, <bookmark mark="f_in_2"/>was durch die Funktionsvorschrift z hoch 3 minus 22 mal z hoch 2 plus 7 mal z minus 1 gegeben ist. Welche der folgenden Aussagen gilt allgemein?
-<bookmark mark="answer_a_in"/>Aussage a: Das Polynom p hat mindestens vier verschiedene Nullstellen. ...
-<bookmark mark="answer_b_in"/>Aussage b: Das Polynom p hat mindestens einen reellen Linearfaktor. ...
-<bookmark mark="answer_c_in"/>Aussage c: Das Polynom p hat keine komplexe Linearfaktorzerlegung. ...
-Oder Aussage <bookmark mark="answer_d_in"/>d: Das Polynom p hat keine reelle Nullstelle. ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.14q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3115,6 +3237,137 @@ Oder Aussage <bookmark mark="answer_d_in"/>d: Das Polynom p hat keine reelle Nul
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
+class Calc_practice_MC_14_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        let_p = self.translate("Calc_1.Practice_MC.14q.let_p")
+        f_definition = Tex(let_p, color=c1t, font_size=fs2)
+        f_property = MathTex("p(z)=z^3-22z^2+7z-1", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.9).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.14q.answer_a"), color=c1t, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.14q.answer_b"), color=c1t, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.14q.answer_c"), color=c1t, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.14q.answer_d"), color=c1t, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(f_info, answers)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.14a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answers[1].animate.set_color(GREEN), answers[0].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_14_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        let_p = self.translate("Calc_1.Practice_MC.14q.let_p")
+        f_definition = Tex(let_p, color=c1t, font_size=fs2)
+        f_property = MathTex("p(z)=z^3-22z^2+7z-1", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.9).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.14q.answer_a"), color=c1t, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.14q.answer_b"), color=c1t, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.14q.answer_c"), color=c1t, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.14q.answer_d"), color=c1t, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(f_info, answers)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.14a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answers[1].animate.set_color(GREEN), answers[0].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_14_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        let_p = self.translate("Calc_1.Practice_MC.14q.let_p")
+        f_definition = Tex(let_p, color=c1t, font_size=fs2)
+        f_property = MathTex("p(z)=z^3-22z^2+7z-1", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.9).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.14q.answer_a"), color=c1t, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.14q.answer_b"), color=c1t, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.14q.answer_c"), color=c1t, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.14q.answer_d"), color=c1t, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(f_info, answers)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.14a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answers[1].animate.set_color(GREEN), answers[0].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_14_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        let_p = self.translate("Calc_1.Practice_MC.14q.let_p")
+        f_definition = Tex(let_p, color=c1t, font_size=fs2)
+        f_property = MathTex("p(z)=z^3-22z^2+7z-1", color=c1t, font_size=fs2)
+        f_info = VGroup(f_definition, f_property).arrange(DOWN, buff=0.1, aligned_edge=LEFT).scale(.9).set_y(2)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.14q.answer_a"), color=c1t, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.14q.answer_b"), color=c1t, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.14q.answer_c"), color=c1t, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.14q.answer_d"), color=c1t, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_info, DOWN, buff=0.8)
+        self.add(f_info, answers)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.14a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answers[1].animate.set_color(GREEN), answers[0].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
 
 ##################################### 
 ##################################### 
@@ -3569,25 +3822,19 @@ class Calc_practice_MC_17_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
-        equation = MathTex("z^4=-1+i", color=c1t, font_size=fs2)
-        z_in_c = MathTex("z\\in\\mathbb C", color=c1t, font_size=fs2)
+        equation = MathTex(r"z^4=-1+i", color=c1t, font_size=fs2)
+        z_in_c = MathTex(r"z\in\mathbb C", color=c1t, font_size=fs2)
         complex_equation = VGroup(equation, z_in_c).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) Es gibt genau $4$ Lösungen", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Es gibt unendlich viele Lösungen", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) Für alle Lösungen gilt $|z=1|$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) Es gibt nur reele Lösungen", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.17q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.17q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.17q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.17q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(complex_equation, DOWN, buff=0.8)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachte die Gleichung <bookmark mark="eq_in"/>z hoch 4 gleich minus 1 plus i. Welche der folgenden Aussagen gilt für alle<bookmark mark="z_in"/> Lösungen z aus den komplexen Zahlen c?
-Ist es die <bookmark mark="answer_a_in"/>Aussage a, dass es genau vier Lösungen gibt? ...
-Ist es die <bookmark mark="answer_b_in"/>Aussage b, dass es unendlich viele Lösungen gibt? ...
-Ist es die <bookmark mark="answer_c_in"/>Aussage c, dass für alle Lösungen der Betrag von z gleich Eins ist? ...
-Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass es nur reelle Lösungen gibt? ...
-"""
+        voiceover_text = self.translate("Calc_1.Practice_MC.17q.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -3609,6 +3856,178 @@ Oder ist es die <bookmark mark="answer_d_in"/>Aussage d, dass es nur reelle Lös
 
             self.wait_until_bookmark("answer_d_in")
             self.play(Write(answer_d))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_17_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        equation_1 = MathTex(r"z^4=-1+i", color=c1t, font_size=fs2)
+        z_in_c = MathTex(r"z\in\mathbb C", color=c1t, font_size=fs2)
+        complex_equation = VGroup(equation_1, z_in_c).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[4]{\Box}", color=BLUE, font_size=fs2).next_to(complex_equation, DOWN, buff=.2)
+        equation_2 = MathTex(r"z=\sqrt[4]{-1+i}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.17q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.17q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.17q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.17q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(complex_equation, DOWN, buff=0.8)
+
+        self.add(answers, complex_equation)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.17a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("equation_2")
+            self.play(Write(equation_2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_17_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        equation_1 = MathTex(r"z^4=-1+i", color=c1t, font_size=fs2)
+        z_in_c = MathTex(r"z\in\mathbb C", color=c1t, font_size=fs2)
+        complex_equation = VGroup(equation_1, z_in_c).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[4]{\Box}", color=BLUE, font_size=fs2).next_to(complex_equation, DOWN, buff=.2)
+        equation_2 = MathTex(r"z=\sqrt[4]{-1+i}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.17q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.17q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.17q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.17q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(complex_equation, DOWN, buff=0.8)
+
+        self.add(answers, complex_equation)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.17a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("equation_2")
+            self.play(Write(equation_2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_17_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        equation_1 = MathTex(r"z^4=-1+i", color=c1t, font_size=fs2)
+        z_in_c = MathTex(r"z\in\mathbb C", color=c1t, font_size=fs2)
+        complex_equation = VGroup(equation_1, z_in_c).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[4]{\Box}", color=BLUE, font_size=fs2).next_to(complex_equation, DOWN, buff=.2)
+        equation_2 = MathTex(r"z=\sqrt[4]{-1+i}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.17q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.17q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.17q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.17q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(complex_equation, DOWN, buff=0.8)
+
+        self.add(answers, complex_equation)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.17a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("equation_2")
+            self.play(Write(equation_2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_MC_17_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        equation_1 = MathTex(r"z^4=-1+i", color=c1t, font_size=fs2)
+        z_in_c = MathTex(r"z\in\mathbb C", color=c1t, font_size=fs2)
+        complex_equation = VGroup(equation_1, z_in_c).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[4]{\Box}", color=BLUE, font_size=fs2).next_to(complex_equation, DOWN, buff=.2)
+        equation_2 = MathTex(r"z=\sqrt[4]{-1+i}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.17q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.17q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.17q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.17q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(complex_equation, DOWN, buff=0.8)
+
+        self.add(answers, complex_equation)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.17a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+
+            self.wait_until_bookmark("equation_2")
+            self.play(Write(equation_2), run_time=.5)
+
+            self.wait_until_bookmark("highlight_sol")
+            self.play(answer_a.animate.set_color(GREEN), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), answer_d.animate.set_color(RED), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -4067,62 +4486,14 @@ class Calc_practice_MC_19_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
-class Calc_practice_MC_20_q(SophiaCursorScene):
+# class Calc_practice_MC_20_q(SophiaCursorScene):
 
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.20q.answerOptions")),
-            correctAnswerIndex=1,
-            questionText = self.translate("Calc_1.Practice_MC.20q.question")
-        )
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        # Define the function text using MathTex
-        f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
-        f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
-        f = VGroup(f_1,f_2).arrange(DOWN, buff=.2).set_y(2)
-
-        # Define the answer options using Tex
-        answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
-        answer_b = Tex(self.translate("Calc_1.Practice_MC.20q.answer_b"), color=BLUE, font_size=fs3)
-        answer_c = Tex(self.translate("Calc_1.Practice_MC.20q.answer_c"), color=BLUE, font_size=fs3)
-        answer_d = Tex(self.translate("Calc_1.Practice_MC.20q.answer_d"), color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
-
-        # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.Practice_MC.20q.voiceover")
-
-        # Action Sequence
-        with self.voiceover(text=voiceover_text) as tracker:
-            
-            self.wait_until_bookmark("func_in")
-            self.play(Write(f))
-
-            self.wait_until_bookmark("answer_a_in")
-            self.play(Write(answer_a))
-
-            self.wait_until_bookmark("answer_b_in")
-            self.play(Write(answer_b))
-
-            self.wait_until_bookmark("answer_c_in")
-            self.play(Write(answer_c))
-
-            self.wait_until_bookmark("answer_d_in")
-            self.play(Write(answer_d))
-
-        # Wait for 4 seconds at the end of the animation
-        self.wait(4)
-
-
-
-
-# TODO
-# class Calc_practice_MC_20_a(SophiaCursorScene):
+#     def task_definition(self) -> SophiaTaskDefinition:
+#         return SophiaTaskDefinition(
+#             answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.20q.answerOptions")),
+#             correctAnswerIndex=1,
+#             questionText = self.translate("Calc_1.Practice_MC.20q.question")
+#         )
 
 #     # Main method for constructing the animation
 #     def construct(self):
@@ -4133,7 +4504,7 @@ class Calc_practice_MC_20_q(SophiaCursorScene):
 #         # Define the function text using MathTex
 #         f_1 = Tex("$f:\\mathbb R\\rightarrow\\mathbb R$", color=c1t, font_size=fs2)
 #         f_2 = Tex("$f(x)=\\cos(x)+2\\cos(2x)$", color=c1t, font_size=fs2)
-#         f = VGroup(f_1,f_2).set_y(2)
+#         f = VGroup(f_1,f_2).arrange(DOWN, buff=.2).set_y(2)
 
 #         # Define the answer options using Tex
 #         answer_a = Tex(self.translate("Calc_1.Practice_MC.20q.answer_a"), color=BLUE, font_size=fs3)
@@ -4143,7 +4514,8 @@ class Calc_practice_MC_20_q(SophiaCursorScene):
 #         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
 
 #         # Define the voiceover text
-#         voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.Practice_MC.20a.voiceover")
+#         voiceover_text = self.translate("Calc_1.Practice_MC.20q.voiceover")
+
 #         # Action Sequence
 #         with self.voiceover(text=voiceover_text) as tracker:
             
@@ -4164,6 +4536,7 @@ class Calc_practice_MC_20_q(SophiaCursorScene):
 
 #         # Wait for 4 seconds at the end of the animation
 #         self.wait(4)
+# #
 
 
 ##################################### Limits
@@ -6146,6 +6519,96 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_MC_3_b),
     PagePrototypeVideo.from_scene(Calc_practice_MC_3_c),
     PagePrototypeVideo.from_scene(Calc_practice_MC_3_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_4_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_4_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_5_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_5_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_5_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_6_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_6_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_6_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_6_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_6_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_6_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_7_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_7_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_7_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_7_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_7_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_7_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_8_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_8_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_8_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_8_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_8_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_8_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_9_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_9_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_9_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_9_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_9_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_9_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_10_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_10_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_10_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_10_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_10_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_10_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_11_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_11_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_11_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_11_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_11_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_11_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_12_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_12_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_12_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_12_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_12_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_12_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_14_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_14_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_14_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_14_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_14_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_14_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_15_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_15_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_15_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_15_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_15_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_15_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_16_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_16_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_16_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_16_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_16_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_16_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_17_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_17_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_17_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_17_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_17_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_17_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_18_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_18_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_18_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_18_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_18_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_18_d),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_19_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_MC_19_q),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_19_a),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_19_b),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_19_c),
+    PagePrototypeVideo.from_scene(Calc_practice_MC_19_d),
     PagePrototypeVideo.from_scene(Calc_practice_limits_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_limits_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_1_a),
