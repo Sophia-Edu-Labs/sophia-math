@@ -3473,7 +3473,9 @@
         "answer-d": "d) im Allgemeinen keine wahr"
       },
       "7q": {
-        "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 6 gleich (1 plus i) hoch 4. \nWelche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?\nAussage <bookmark mark=\"ans_a_in\"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_b_in\"/>b: Es gibt unendlich viele verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_c_in\"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...\nAussage <bookmark mark=\"ans_d_in\"/>d: Die Gleichung hat nur reelle Lösungen. ..."
+        "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 6 gleich (1 plus i) hoch 4. \nWelche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?\nAussage <bookmark mark=\"ans_a_in\"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_b_in\"/>b: Es gibt unendlich viele verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_c_in\"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...\nAussage <bookmark mark=\"ans_d_in\"/>d: Die Gleichung hat nur reelle Lösungen. ...",
+        "answer-options": "[\"Genau 6 Lösungen\", \"Unendlich viele Lösungen\", \"Für alle Lösungen gilt $|z| = 1$\", \"Nur reellwertige Lösungen\"]",
+        "question-text": "Was gilt für alle Lösungen $z\\in\\mathbbC$ der Gleichung $z^6 = (1 i)^4$?"
       },
       "8q": {
         "voiceover": "Seien <bookmark mark=\"f_in_1\"/>a und b Elemente der reellen Zahlen mit a kleiner als b und sei die Funktion f, <bookmark mark=\"f_in_2\"/>die von dem geschlossenen Intervall von a bis b in die reellen Zahlen abbildet, eine stetige Funktion. <bookmark mark=\"f_in_2\"/>Welche der folgenden Aussagen trifft zu?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f nimmt auf dem Intervall von a bis b kein Minimum an. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Der Bildbereich f von dem Intervall a, b lässt sich als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Der Bildbereich von f von dem Intervall a, b ist leer. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist auf dem Intervall von a bis b injektiv. ...",
@@ -3599,6 +3601,13 @@
         "answer-options": "[\"Die grüne Skizze\", \"Die blaue Skizze\", \"Die rote Skizze\", \"Die pinke Skizze\"]",
         "question-text": "Welche der Skizzen stellt die Menge $z\\in \\mathbb C$ dar, für die gilt, dass $|z - 1| = |z+i|$ ist?",
         "voiceover": "Betrachten wir die Menge <bookmark mark=\"set_in\"/>der komplexen Zahlen z, für die der Betrag von z minus 1 gleich dem Betrag von z plus i ist.\nWelche der folgenden Skizzen stellt <bookmark mark=\"cords_in\"/>diese Menge dar?\n<bookmark mark=\"green_in\"/> Ist es die grüne Skizze? ...\n<bookmark mark=\"blue_in\"/> Oder ist es die blaue Skizze? ...\n<bookmark mark=\"red_in\"/> Oder vielleicht die rote Skizze? ...\n<bookmark mark=\"pink_in\"/>Oder aber die pinke Skizze? ..."
+      },
+      "7a": {
+        "answer-a": "a) Genau $6$ Lösungen",
+        "answer-b": "b) Unendlich viele Lösungen",
+        "answer-d": "d) Nur reelwertige Lösungen",
+        "answer-c": "c) $\\left| z \\right|= 1$ für alle Lösungen",
+        "voiceover": "Wenn wir einfach 1 + i viermal mit sich selbst multiplizieren, <bookmark mark=\"multiply\"/>, erhalten wir als Ergebnis minus vier.\n\nWir ziehen dann <bookmark mark=\"step_1\"/> die sechste Wurzel auf beiden Seiten und erhalten, dass <bookmark mark=\"equation_3\"/> z gleich der sechsten Wurzel von minus vier ist.\n\nUnd wir wissen, dass es k komplexwertige Lösungen gibt, wenn wir die k-te Wurzel einer reellen Zahl ziehen. \nWir wissen also, dass es <bookmark mark=\"solution\"/>sechs Lösungen für diese Gleichung gibt."
       }
     },
     "practice_limits": {

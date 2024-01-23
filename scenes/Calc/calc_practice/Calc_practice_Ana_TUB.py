@@ -1691,34 +1691,41 @@ class Calc_practice_MC_7_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Defining the equation and answer options
-        equation = MathTex("z^6 = (1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        equation_1 = MathTex("z^6 =", "(1 + i)^4", color=c1t, font_size=fs2).set_y(2)
+        equation_2 = MathTex("z^6 =", " (1 + i)^4", "=-4", color=c1t, font_size=fs2).move_to(equation_1)
+        step_1 = MathTex(r"\Downarrow", r"\sqrt[6]{\Box}", color=c1t, font_size=fs2).next_to(equation_2, DOWN, buff=0.2)
+        equation_3 = MathTex("z =", r" \sqrt[6]{-4}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=0.2)
         answers = VGroup(
             Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
             Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
             Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
             Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
-        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation, DOWN, buff=0.8)
+        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation_1, DOWN, buff=0.8)
+
+        self.add(answers, equation_1)
 
         # Voiceover text
-        voiceover_text = self.translate("Calc_1.Practice_MC.7q.voiceover")
+        voiceover_text = """
+If we just multiply 1 + i by itself 4 times, <bookmark mark="multiply"/>, we get negative four as a result.
+We then <bookmark mark="step_1"/> take the sixth root on both sides, and we get that <bookmark mark="equation_3"/> z is equal to the sixth root of negative four.
+And we know, that if we take the k-th root of a real number, there are k complex-valued solutions. So we know that <bookmark mark="solution"/>there are 6 solutions to this equation.
+"""
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("eq_in")
-            self.play(Write(equation))
+            self.wait_until_bookmark("multiply")
+            self.play(TransformMatchingTex(equation_1, equation_2), run_time=.5)
 
-            self.wait_until_bookmark("ans_a_in")
-            self.play(Write(answers[0]))
+            self.wait_until_bookmark("step_1")
+            self.add_shift_sound(.5)
+            self.play(Write(step_1), answers.animate.shift(DOWN), run_time=.5)
+            
+            self.wait_until_bookmark("equation_3")
+            self.play(Write(equation_3), run_time=.5)
 
-            self.wait_until_bookmark("ans_b_in")
-            self.play(Write(answers[1]))
-
-            self.wait_until_bookmark("ans_c_in")
-            self.play(Write(answers[2]))
-
-            self.wait_until_bookmark("ans_d_in")
-            self.play(Write(answers[3]))
+            self.wait_until_bookmark("solution")
+            self.play(answers[0].animate.set_color(GREEN), answers[1].animate.set_color(RED), answers[2].animate.set_color(RED), answers[3].animate.set_color(RED), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)

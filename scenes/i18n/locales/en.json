@@ -3607,14 +3607,15 @@
       },
       "7q": {
         "answer-options": "[\"Exactly 6 solutions\", \"Infinitely many solutions\", \"For all solutions it holds that $|z| = 1$\", \"Only real-valued solutions\"]",
-        "question-text": "What holds for all solutions $z\\in\\mathbbC$ der Gleichung $z^6 = (1 + i)^4$?",
+        "question-text": "What holds for all solutions $z\\in\\mathbbC$ of $z^6 = (1 + i)^4$?",
         "voiceover": "Consider the equation <bookmark mark=\"eq_in\"/>z to the power of 6 equals (1 plus i) to the power of 4. \nWhich of the following statements is then true for the solutions zett in the complex numbers C?\nStatement <bookmark mark=\"ans_a_in\"/>a: The equation has exactly 6 different solutions. ...\nStatement <bookmark mark=\"ans_b_in\"/>b: There are infinitely many different solutions. ...\nStatement <bookmark mark=\"ans_c_in\"/>c: For all solutions, the absolute value of z is equal to 1. ...\nStatement <bookmark mark=\"ans_d_in\"/>d: The equation has only real valued solutions. ..."
       },
       "7a": {
         "answer-a": "a) Exactly $6$ solutions",
         "answer-b": "b) Infintely many solutions",
         "answer-c": "c) $\\left| z \\right| = 1$ for all solutions",
-        "answer-d": "d) Only real-valued solutions"
+        "answer-d": "d) Only real-valued solutions",
+        "voiceover": "If we just multiply 1 + i by itself 4 times, <bookmark mark=\"multiply\"/>, we get negative four as a result.\nWe then <bookmark mark=\"step_1\"/> take the sixth root on both sides, and we get that <bookmark mark=\"equation_3\"/> z is equal to the sixth root of negative four.\nAnd we know, that if we take the k-th root of a real number, there are k complex-valued solutions. So we know that <bookmark mark=\"solution\"/>there are 6 solutions to this equation."
       }
     },
     "practice_limits": {
