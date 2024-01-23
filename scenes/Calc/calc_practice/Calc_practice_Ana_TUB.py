@@ -5917,721 +5917,721 @@ class Calc_practice_limits_10_b(SophiaCursorScene):
 
 #
         
-# ##################################### Partial fraction decomposition
-# #####################################
-# class Calc_practice_pfd_1_q(SophiaCursorScene):
+##################################### Partial fraction decomposition
+#####################################
+class Calc_practice_pfd_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         pfd = self.translate("General.pfd")
-#         title = self.add_title(pfd)
-#         self.add(title)
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         pfd = MathTex(r"\frac{4x^2+2x+3}{x^3+x}", r"=\frac{Ax+B}{x^2+1}+\frac{C}{x}", color=c1t, font_size=fs3).set_y(2)
+        # Define the function text using MathTex
+        pfd = MathTex(r"\frac{4x^2+2x+3}{x^3+x}", r"=\frac{Ax+B}{x^2+1}+\frac{C}{x}", color=c1t, font_size=fs3).set_y(2)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachte die <bookmark mark="pfd_in"/>Funktion vier x quadrat plus zwei x plus drei geteilt durch x hoch drei plus x.
-# Wenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A x plus B geteilt durch x quadrat plus eins plus C geteilt durch x an.
-# <bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Betrachte die <bookmark mark="pfd_in"/>Funktion vier x quadrat plus zwei x plus drei geteilt durch x hoch drei plus x.
+Wenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A x plus B geteilt durch x quadrat plus eins plus C geteilt durch x an.
+<bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("pfd_in")
-#             self.play(Write(pfd[0]))
+            self.wait_until_bookmark("pfd_in")
+            self.play(Write(pfd[0]))
 
-#             self.wait_until_bookmark("ansatz_in")
-#             self.play(Write(pfd[1]))
+            self.wait_until_bookmark("ansatz_in")
+            self.play(Write(pfd[1]))
 
-#             self.wait_until_bookmark("qmark_in")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("qmark_in")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #####################################
-# class Calc_practice_pfd_2_q(SophiaCursorScene):
+#####################################
+class Calc_practice_pfd_2_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         pfd = self.translate("General.pfd")
-#         title = self.add_title(pfd)
-#         self.add(title)
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         pfd = MathTex(r"\frac{x^2+10x+18}{x(x^2+6x+9)}", r"=\frac{A}{x}+\frac{B}{x+3}+\frac{C}{(x+3)^2}", color=c1t, font_size=fs3).set_y(2)
+        # Define the function text using MathTex
+        pfd = MathTex(r"\frac{x^2+10x+18}{x(x^2+6x+9)}", r"=\frac{A}{x}+\frac{B}{x+3}+\frac{C}{(x+3)^2}", color=c1t, font_size=fs3).set_y(2)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Du hast die <bookmark mark="pfd_in"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.
-# Du sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.
-# <bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Du hast die <bookmark mark="pfd_in"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.
+Du sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.
+<bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("pfd_in")
-#             self.play(Write(pfd[0]))
+            self.wait_until_bookmark("pfd_in")
+            self.play(Write(pfd[0]))
 
-#             self.wait_until_bookmark("ansatz_in")
-#             self.play(Write(pfd[1]))
+            self.wait_until_bookmark("ansatz_in")
+            self.play(Write(pfd[1]))
 
-#             self.wait_until_bookmark("qmark_in")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("qmark_in")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
         
 
 
-# ##################################### Minimum and Maximum
-# #####################################
-# class Calc_practice_minmax_10_q(SophiaCursorScene):
+##################################### Minimum and Maximum
+#####################################
+class Calc_practice_minmax_10_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         limits = self.translate("words.Limits")
-#         title = self.add_title(limits)
-#         self.add(title)
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
-#         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
-#         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
-#         series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
+        # Define the function text using MathTex
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
 
-#         # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+        # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
-# Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
-# Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
+Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
+Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("a_1_in")
-#             self.play(Write(series_1), run_time=.5)
+            self.wait_until_bookmark("a_1_in")
+            self.play(Write(series_1), run_time=.5)
 
-#             self.wait_until_bookmark("a_2_in")
-#             self.play(Write(series_2[0]), run_time=.5)
+            self.wait_until_bookmark("a_2_in")
+            self.play(Write(series_2[0]), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_1")
-#             self.play(Write(series_3), run_time=.5)
+            self.wait_until_bookmark("b_n_in_1")
+            self.play(Write(series_3), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_2")
-#             self.play(TransformMatchingTex(series_3, series_4))
+            self.wait_until_bookmark("b_n_in_2")
+            self.play(TransformMatchingTex(series_3, series_4))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #
+#
         
-# ##################################### Intermediate value theorem
-# #####################################
-# class Calc_practice_ivt_10_q(SophiaCursorScene):
-#     def task_definition(self) -> SophiaTaskDefinition:
-#         return SophiaTaskDefinition(
-#             answerOptions = [
-# """Wir berechnen die Funktionswerte an den Intervallgrenzen und erhalten $f(0) = 0-1-1 = -2 < 0$ bzw. $f(3) = 81-1-27= 53 > 0$.                             
-# Die Funktion $f$ ist als Summe stetiger Funktionen wieder stetig im Intervall $[0, 3]$.
-# Nach dem Zwischenwertsatz nimmt $f$ jeden Wert zwischen -2 und 53 an also auch speziell den Wert 0.
-# Folgende Aspekte müssen genannt sein, damit die Lösung als korrekt zählt:
-# - Feststellung, dass die Funktion stetig ist
-# - Nennung des Zwischenwertsatzes
-# - Berechnung der Intervallgrenzen f(0) und f(3), oder: Feststellung, dass f(0)<0 ist und f(3)>0 ist.
-# """,
-# """
-# Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, den Zwischenwertsatz zu nennen. 
-# """,
-# """
-# Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, die Stetigkeit zu nennen
-# """,
-# """
-# Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, die Intervallgrenzen abzuprüfen, oder ihre Vorzeichen zu nennen.
-# """,
-# """
-# Die Antwort ist falsch.
-# """
-# ],
-#             correctAnswerIndex = 0,
-#             questionText = """Beweisen Sie, dass die Funktion $f(x) = 3x^3 - 1 - 3^x$ im Intervall $[0, 3]$ mindestens eine Nullstelle besitzt.""",
-#             llmCheckDetails=SophiaLLMQuestionCheckDetail(
-#                 fallbackOptionIndex=1,
-#                 specialInputSnippets = ["[ ]", "f"],
-#             )
-#         )
+##################################### Intermediate value theorem
+#####################################
+class Calc_practice_ivt_10_q(SophiaCursorScene):
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+"""We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
+As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
+According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
+The following aspects must be mentioned for the solution to count as correct:
+- Establishing that the function is continuous
+- Mention of the intermediate value theorem
+- Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
+""",
+"""
+The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
+""",
+"""
+Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
+""",
+"""
+Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
+""",
+"""
+The answer is incorrect.
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = """Prove that the function $f(x) = 3x^3 - 1 - 3^x$ has at least one zero in the interval $[0, 3]$.""",
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
     
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_ivt.10q.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10q.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("f_in")
-#             self.play(Write(func), run_time=.5)
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_in")
-#             self.play(Write(intervall), run_time=.5)
+            self.wait_until_bookmark("intervall_in")
+            self.play(Write(intervall), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
-# class Calc_practice_ivt_10_a(SophiaCursorScene):
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_a(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
-#         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
-#         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-#         bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
-#         self.add(func_and_interval)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("steady")
-#             self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_limits")
-#             self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
 
-#             self.wait_until_bookmark("ivt")
-#             self.play(Write(ivt, run_time=.5))
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
-# class Calc_practice_ivt_10_b(SophiaCursorScene):
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_b(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
-#         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
-#         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-#         bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
-#         self.add(func_and_interval)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_ivt")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_ivt")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("steady")
-#             self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_limits")
-#             self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
 
-#             self.wait_until_bookmark("ivt")
-#             self.play(Write(ivt, run_time=.5))
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
-# class Calc_practice_ivt_10_c(SophiaCursorScene):
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_c(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
-#         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
-#         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-#         bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
-#         self.add(func_and_interval)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_continuity")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_continuity")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("steady")
-#             self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_limits")
-#             self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
 
-#             self.wait_until_bookmark("ivt")
-#             self.play(Write(ivt, run_time=.5))
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
-# class Calc_practice_ivt_10_d(SophiaCursorScene):
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_d(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
-#         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
-#         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-#         bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
-#         self.add(func_and_interval)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_interval_limits")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_ivt.10a.forgot_interval_limits")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("steady")
-#             self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_limits")
-#             self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
 
-#             self.wait_until_bookmark("ivt")
-#             self.play(Write(ivt, run_time=.5))
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
-# class Calc_practice_ivt_10_e(SophiaCursorScene):
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_ivt_10_e(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the function text using MathTex
-#         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-#         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-#         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
-#         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
-#         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-#         bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
-#         self.add(func_and_interval)
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
+        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
+        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_ivt.10a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("steady")
-#             self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("steady")
+            self.play(Write(steady), run_time=.5)
 
-#             self.wait_until_bookmark("intervall_limits")
-#             self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("intervall_limits")
+            self.play(Write(intervall_limits, run_time=.5))
 
-#             self.wait_until_bookmark("ivt")
-#             self.play(Write(ivt, run_time=.5))
+            self.wait_until_bookmark("ivt")
+            self.play(Write(ivt, run_time=.5))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
         
-# ##################################### Mean value theorem #TODO
-# #####################################
-# class Calc_practice_mvt_10_q(SophiaCursorScene):
+##################################### Mean value theorem #TODO
+#####################################
+class Calc_practice_mvt_10_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         limits = self.translate("words.Limits")
-#         title = self.add_title(limits)
-#         self.add(title)
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
-#         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
-#         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
-#         series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
+        # Define the function text using MathTex
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
 
-#         # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+        # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
-# Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
-# Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
+Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
+Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("a_1_in")
-#             self.play(Write(series_1), run_time=.5)
+            self.wait_until_bookmark("a_1_in")
+            self.play(Write(series_1), run_time=.5)
 
-#             self.wait_until_bookmark("a_2_in")
-#             self.play(Write(series_2[0]), run_time=.5)
+            self.wait_until_bookmark("a_2_in")
+            self.play(Write(series_2[0]), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_1")
-#             self.play(Write(series_3), run_time=.5)
+            self.wait_until_bookmark("b_n_in_1")
+            self.play(Write(series_3), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_2")
-#             self.play(TransformMatchingTex(series_3, series_4))
+            self.wait_until_bookmark("b_n_in_2")
+            self.play(TransformMatchingTex(series_3, series_4))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #
+#
         
 
-# ##################################### Complex Numbers
-# #####################################
-# class Calc_practice_complex_1_q(SophiaCursorScene):
+##################################### Complex Numbers
+#####################################
+class Calc_practice_complex_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         complex_numbers = self.translate("General.complex_numbers")
-#         title = self.add_title(complex_numbers)
-#         self.add(title)
+        complex_numbers = self.translate("General.complex_numbers")
+        title = self.add_title(complex_numbers)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         complex_number = Tex(r"$z=\frac{c+3i}{1+2i}$", color=BLUE, font_size=fs1).set_y(2)
+        # Define the function text using MathTex
+        complex_number = Tex(r"$z=\frac{c+3i}{1+2i}$", color=BLUE, font_size=fs1).set_y(2)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachte die Komplexe Zahl <bookmark mark="complex_number_in"/>z, welche durch den Ausdruck c plus drei i geteilt durch eins plus zwei i definiert ist.
-# Was ist der <bookmark mark="qmark"/>Realteil von z? Und was ist der Imaginärteil von z?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Betrachte die Komplexe Zahl <bookmark mark="complex_number_in"/>z, welche durch den Ausdruck c plus drei i geteilt durch eins plus zwei i definiert ist.
+Was ist der <bookmark mark="qmark"/>Realteil von z? Und was ist der Imaginärteil von z?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("complex_number_in")
-#             self.play(Write(complex_number))
+            self.wait_until_bookmark("complex_number_in")
+            self.play(Write(complex_number))
 
-#             self.wait_until_bookmark("qmark")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #
+#
         
-# ##################################### Trig functions
-# #####################################
-# class Calc_practice_trig_1_q(SophiaCursorScene):
+##################################### Trig functions
+#####################################
+class Calc_practice_trig_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         trig_functions = self.translate("General.trig_functions")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
-#         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
-# Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
-# Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("func_in_1")
-#             self.play(Write(function[0]))
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
 
-#             self.wait_until_bookmark("func_in_2")
-#             self.play(Write(function[1]))
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
 
-#             self.wait_until_bookmark("period_in")
-#             self.play(Write(period))
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# class Calc_practice_trig_1_a(SophiaCursorScene):
+class Calc_practice_trig_1_a(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         trig_functions = self.translate("General.trig_functions")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
-#         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
-#         sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
-#         period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
-#         sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-#         sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-#         period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
+        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
 
-#         self.add
+        self.add
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Wir wissen ja, dass <bookmark mark="sine_period_1"/>Sinus von x gleich Sinus von x plus zwei Pi ist.
-# Also ist <bookmark mark="sine_period_2"/>die kleinste Periode von Sinus von x gleich zwei Pi.
-# Das ganze bedeutet jetzt aber auch,<bookmark mark="sine_3_period_a"/> dass der Sinus von 3 x gleich dem Sinus von 3 x plus zwei Pi ist.
-# Jetzt wollen wir ja die Periode wissen, also schreiben wir <bookmark mark="sine_3_period_b"/>drei x plus T in die Klammer, und wir erhalten, dass der Sinus von drei x plus T gleich dem Sinus von drei x plus zwei Pi ist.
-# Und dann lösen wir das ganze nach T auf, und <bookmark mark="period_3"/>wir erhalten, dass die Periode T gleich zwei Pi durch drei ist.
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Wir wissen ja, dass <bookmark mark="sine_period_1"/>Sinus von x gleich Sinus von x plus zwei Pi ist.
+Also ist <bookmark mark="sine_period_2"/>die kleinste Periode von Sinus von x gleich zwei Pi.
+Das ganze bedeutet jetzt aber auch,<bookmark mark="sine_3_period_a"/> dass der Sinus von 3 x gleich dem Sinus von 3 x plus zwei Pi ist.
+Jetzt wollen wir ja die Periode wissen, also schreiben wir <bookmark mark="sine_3_period_b"/>drei x plus T in die Klammer, und wir erhalten, dass der Sinus von drei x plus T gleich dem Sinus von drei x plus zwei Pi ist.
+Und dann lösen wir das ganze nach T auf, und <bookmark mark="period_3"/>wir erhalten, dass die Periode T gleich zwei Pi durch drei ist.
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("sine_period_1")
-#             self.add_shift_sound(.5)
-#             period.generate_target().move_to(period_3)
-#             self.play(Write(sine_period), MoveToTarget(period), qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("sine_period_1")
+            self.add_shift_sound(.5)
+            period.generate_target().move_to(period_3)
+            self.play(Write(sine_period), MoveToTarget(period), qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#             self.wait_until_bookmark("sine_period_2")
-#             self.play(Write(period_1), run_time=.5)
+            self.wait_until_bookmark("sine_period_2")
+            self.play(Write(period_1), run_time=.5)
 
-#             self.wait_until_bookmark("sine_3_period_a")
-#             self.play(Write(sine_3_period_a), run_time=.5)
+            self.wait_until_bookmark("sine_3_period_a")
+            self.play(Write(sine_3_period_a), run_time=.5)
 
-#             self.wait_until_bookmark("sine_3_period_b")
-#             self.play(TransformMatchingTex(sine_3_period_a, sine_3_period_b), run_time=.5)
+            self.wait_until_bookmark("sine_3_period_b")
+            self.play(TransformMatchingTex(sine_3_period_a, sine_3_period_b), run_time=.5)
 
-#             self.wait_until_bookmark("period_3")
-#             self.play(ReplacementTransform(period, period_3), run_time=.5)
-
-
-
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+            self.wait_until_bookmark("period_3")
+            self.play(ReplacementTransform(period, period_3), run_time=.5)
 
 
-# #####################################
-# class Calc_practice_trig_2_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-#         trig_functions = self.translate("General.trig_functions")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
 
-#         # Define the function text using MathTex
-#         function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\frac{\cos(5x)}{3}$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
-#         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+#####################################
+class Calc_practice_trig_2_q(SophiaCursorScene):
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachte die Funktion, die Funktion <bookmark mark="func_in_2"/>f von x gleich cosinus von 5 x geteilt durch drei, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
-# Was ist <bookmark mark="period_in"/>die kleinste Periode T von der Funktion f?
-# """
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\frac{\cos(5x)}{3}$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
 
-#             self.wait_until_bookmark("func_in_2")
-#             self.play(Write(function[1]))
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Betrachte die Funktion, die Funktion <bookmark mark="func_in_2"/>f von x gleich cosinus von 5 x geteilt durch drei, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T von der Funktion f?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
             
-#             self.wait_until_bookmark("func_in_1")
-#             self.play(Write(function[0]))
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
 
-#             self.wait_until_bookmark("period_in")
-#             self.play(Write(period))
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #
+#
         
-# ##################################### Steadiness
-# #####################################
-# class Calc_practice_steady_1_q(SophiaCursorScene):
+##################################### Steadiness
+#####################################
+class Calc_practice_steady_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         trig_functions = self.translate("General.trig_functions")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
-#         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
-# Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
-# Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
+Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
+Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("func_in_1")
-#             self.play(Write(function[0]))
+            self.wait_until_bookmark("func_in_1")
+            self.play(Write(function[0]))
 
-#             self.wait_until_bookmark("func_in_2")
-#             self.play(Write(function[1]))
+            self.wait_until_bookmark("func_in_2")
+            self.play(Write(function[1]))
 
-#             self.wait_until_bookmark("period_in")
-#             self.play(Write(period))
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("period_in")
+            self.play(Write(period))
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
 
-# #
+#
         
-# ##################################### MISC
-# #####################################
-# class Calc_practice_misc_10_q(SophiaCursorScene):
+##################################### MISC
+#####################################
+class Calc_practice_misc_10_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         limits = self.translate("words.Limits")
-#         title = self.add_title(limits)
-#         self.add(title)
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
-#         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
-#         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
-#         series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
+        # Define the function text using MathTex
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
+        series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
+        series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
 
-#         # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+        # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
-# Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
-# Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
-# """
+        # Define the voiceover text
+        voiceover_text = """
+Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
+Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
+Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
+"""
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("a_1_in")
-#             self.play(Write(series_1), run_time=.5)
+            self.wait_until_bookmark("a_1_in")
+            self.play(Write(series_1), run_time=.5)
 
-#             self.wait_until_bookmark("a_2_in")
-#             self.play(Write(series_2[0]), run_time=.5)
+            self.wait_until_bookmark("a_2_in")
+            self.play(Write(series_2[0]), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_1")
-#             self.play(Write(series_3), run_time=.5)
+            self.wait_until_bookmark("b_n_in_1")
+            self.play(Write(series_3), run_time=.5)
 
-#             self.wait_until_bookmark("b_n_in_2")
-#             self.play(TransformMatchingTex(series_3, series_4))
+            self.wait_until_bookmark("b_n_in_2")
+            self.play(TransformMatchingTex(series_3, series_4))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-# #
+#
 
 PROTOTYPES=[
 ##########################################################################
@@ -6751,11 +6751,11 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_q),
-    # PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_c),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_d),
-    # PagePrototypeVideo.from_scene(Calc_practice_ivt_10_e),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_c),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_d),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_e),
 ]
