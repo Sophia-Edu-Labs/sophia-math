@@ -3646,10 +3646,11 @@
         "voiceover-text": "Als erstes klammern wir den Begriff n hoch drei mal wurzel drei im Zähler und im Nenner aus. <bookmark mark=\"implication_1\"/>Dann erhalten wir im Zähler n hoch drei Wurzel n mal Klammer auf zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n Klammer zu. Und im Nenner n hoch drei Wurzel n mal Klammer auf drei plus vier durch n Wurzel n Klammer zu.\nDann können <bookmark mark=\"s_out_1\"/>wir das n hoch drei Wurzel n kürzen, und <bookmark mark=\"func_2_b\"/>wir erhalten zwei durch Wurzel n plus vier durch n hoch zwei Wurzel n, geteilt durch drei plus vier durch n Wurzel n.\nWenn wir dann <bookmark mark=\"implication_2\"/>n gegen unendlich gehen lassen, erhalten wir 0 plus 0 geteilt durch 3 plus 0, was gleich Null ist. Also ist der Grenzwert gleich Null."
       },
       "2q": {
-        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?",
+        "voiceover-text": "Jetzt <bookmark mark=\"giraffe_in\"/>suchen wir den <bookmark mark=\"limit_in\"/>Grenzwert für n gegen unendlich des <bookmark mark=\"term_in\"/>Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat.\nWas kommt da raus??"
       },
       "2a": {
-        "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat zwei, kleiner oder gleich eins durch n plus eins ist.\nDiese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist."
+        "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms n mal Sinus von n plus Sinus von n, geteilt durch n plus eins im Quadrat kleiner oder gleich eins durch n plus eins ist.\nDiese erhalten wir, indem wir beide Seiten durch n plus 1 teilen, und weil der Betrag des Sinus nie größer als eins ist.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n plus 1 <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n plus 1 gegen Null geht und betragsmässig grösser ist."
       },
       "3q": {
         "voiceover-text": "Jetzt betrachten wir den <bookmark mark=\"term_in\"/>Term 16 x hoch zwei geteilt durch den Tangens von x. Und wir suchen den <bookmark mark=\"limit_in\"/>Grenzwert für x gegen pi viertel.\nWas kommt da raus?",
@@ -3686,6 +3687,20 @@
       },
       "7a": {
         "voiceover-text": "Als erstes <bookmark mark=\"step_1_a\"/>wenden wir die Abschätzung an, dass der Betrag des Terms Cosinus geteilt durch n quadrat plus eins kleiner oder gleich eins durch n quadrat plus eins ist.\nDiese erhalten wir, indem wir den Betrag des Cosinus durch eins abschätzen.\nWir können ja sehr einfach sehen, dass die Folge 1 durch n quadrat plus eins <bookmark mark=\"step_1_b\"/>gegen Null geht, wenn n gegen unendlich geht.\nAlso können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass der Grenzwert <bookmark mark=\"step_2\"/>unserer Folge gleich Null ist, weil die Folge 1 durch n quadrat plus eins gegen Null geht und betragsmässig grösser ist."
+      },
+      "8q": {
+        "question-text": "Welchen Wert hat der Grenzwert $\\underset{x\\to0}{\\lim}\\frac{x^2-2}{\\cos(x)}$?",
+        "voiceover-text": "Was ist der<bookmark mark=\"limit_in\"/> Grenzwert für x gegen 0 von der Funktion<bookmark mark=\"func_in\"/> x quadrat minus zwei geteilt durch den Cosinus von x?"
+      },
+      "8a": {
+        "voiceover-text": "Wir können den Grenzwert einfach einsetzen, sodass x gleich Null ist und <bookmark mark=\"implication_1\"/>wir Null zum Quadrat minus zwei erhalten, dividiert durch den Cosinus von Null. \nDas ist gleich minus zwei, und das ist die Lösung."
+      },
+      "9q": {
+        "question-text": "Welchen Wert hat der Grenzwert $\\underset{x\\to0}{\\lim}\\frac{e^x-1}{\\sin(x)}$?",
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>e hoch x minus eins geteilt durch den Sinus von x.\n<bookmark mark=\"dog_in\"/>Was ist der Grenzwert dieser Funktion <bookmark mark=\"limit_in\"/>für x gegen 0?"
+      },
+      "9a": {
+        "voiceover-text": "Wenn wir den Grenzwert des Zählers, oder den Grenzwert des Nenners bilden, erkennen wir, dass beide gegen Null gehen, wenn x gegen Null geht.\nAlso können wir <bookmark mark=\"implication_1\"/>die Regel von L'Hopital anwenden, und wir erhalten, dass der Grenzwert gleich dem Grenzwert der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist.\nDas ist in diesem Fall gleich <bookmark mark=\"func_2_a\"/>dem Grenzwert für x gegen Null von e hoch x geteilt durch den Kosinus von x. Und <bookmark mark=\"func_2_b\"/>das ist gleich 1 durch 1, also ist die Lösung Eins."
       }
     },
     "practice_ivt": {

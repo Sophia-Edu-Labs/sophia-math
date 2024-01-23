@@ -6132,8 +6132,7 @@ class Calc_practice_ivt_10_d(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
-
-
+#
 class Calc_practice_ivt_10_e(SophiaCursorScene):
 
     # Main method for constructing the animation

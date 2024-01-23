@@ -3649,7 +3649,8 @@
         "voiceover-text": "Let's look at the term<bookmark mark=\"func_in\"/> 2 n to the power of three + 4 n, divided by 3 n to the power of three root n + 4 n squared.\nWhat <bookmark mark=\"limit_in\"/>is the limit of this term?"
       },
       "2q": {
-        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?"
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{n\\sin(n)+\\sin(n)}{(n+1)^2}$?",
+        "voiceover-text": "Now <bookmark mark=\"giraffe_in\"/>let's find the <bookmark mark=\"limit_in\"/>limit for n approaching infinity of the <bookmark mark=\"term_in\"/>term n times sine of n plus sine of n, divided by n plus one squared.\nWhat is the result?"
       },
       "1a": {
         "voiceover-text": "First, we factor out n to cubed root n in the enumerator and the denominator. <bookmark mark=\"implication_1\"/>This leaves us with n cubed root n times open bracket two over root n plus four over n squared root n close brakcet. And in the denominator, we get n cubed root n times open bracket three plus four over n root n close bracket. Then <bookmark mark=\"s_out_1\"/>we can reduce the n to the power of three root n, and <bookmark mark=\"func_2_b\"/>we get two over root n plus four over n to the power of two root n, divided by three plus four over n root n.\nIf we then let <bookmark mark=\"implication_2\"/>n go to infinity, we get 0 plus 0 divided by 3 plus 0, which equals zero. So the limit is zero."
@@ -3689,6 +3690,23 @@
       },
       "7a": {
         "voiceover-text": "First <bookmark mark=\"step_1_a\"/>we apply the bound that the absolute value of the term cosine divided by n squared plus one is less than or equal to one divided by n squared plus one.\nWe obtain this by upper bounding the absolute value of the cosine by one.\nWe can easily see that the sequence 1 divided by n squared plus one <bookmark mark=\"step_1_b\"/>goes to zero when n goes to infinity.\nSo we can apply <bookmark mark=\"implication_1\"/>the sandwich theorem, and we get that the limit <bookmark mark=\"step_2\"/>of our sequence is zero, because the sequence 1 by n squared plus one goes to zero and has a larger absolute value."
+      },
+      "2a": {
+        "voiceover-text": "First <bookmark mark=\"step_1_a\"/>we apply the estimate that the absolute value of the term n times the sine of n plus the sine of n divided by n plus one squared is less than or equal to one divided by n plus one.\nWe obtain this by dividing both sides by n plus one, and because the magnitude of the sine is never greater than one.\nWe can easily see that the sequence 1 over n plus 1 <bookmark mark=\"step_1_b\"/>goes to zero when n goes to infinity.\nSo we can apply <bookmark mark=\"implication_1\"/>the sandwich theorem, and we get that the limit <bookmark mark=\"step_2\"/>of our sequence is zero, because the sequence 1 over n plus 1 goes to zero and is greater in magnitude."
+      },
+      "8q": {
+        "question-text": "What is the value of the limit $\\underset{x\\to0}{\\lim}\\frac{x^2-2}{\\cos(x)}$?",
+        "voiceover-text": "What is the<bookmark mark=\"limit_in\"/> limit of the function<bookmark mark=\"func_in\"/> x squared minus two divided by the cosine of x for x approaching 0?"
+      },
+      "8a": {
+        "voiceover-text": "We can simply plug in the limit, so x equals zero and <bookmark mark=\"implication_1\"/>we obtain zero squared minus two, divided by the Cosinus of zero. This is equal to negative two, and that is the solution."
+      },
+      "9q": {
+        "question-text": "What is the value of the limit $\\underset{x\\to0}{\\lim}\\frac{e^x-1}{\\sin(x)}$?",
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>e to the power of x minus one divided by the sine of x.\n<bookmark mark=\"dog_in\"/>What is the limit of this function <bookmark mark=\"limit_in\"/>for x towards 0?"
+      },
+      "9a": {
+        "voiceover-text": "If we form the limit of the numerator, or the limit of the denominator, we realize that both go to zero when x goes to zero.\nSo we can <bookmark mark=\"implication_1\"/>apply L'Hopital's rule, and we get that the limit is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.\nIn this case, this is equal to <bookmark mark=\"func_2_a\"/>the limit for x against zero of e to the power of x divided by the cosine of x. And <bookmark mark=\"func_2_b\"/>this is equal to 1 divided by 1, so the solution is one."
       }
     },
     "practice_ivt": {
