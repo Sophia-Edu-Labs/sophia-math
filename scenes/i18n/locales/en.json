@@ -3417,7 +3417,7 @@
     "Practice_MC": {
       "1q": {
         "question-text": "Which is true for the composition $g\\circ f$?",
-        "answer-options": "[\"$g\\circ f$ is injective\", \"$g\\circ f$ ist surjective\", \"$g\\circ f$ doesn't exist\", \"$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$\"]",
+        "answer-options": "[\"$g\\circ f$ is injective\", \"$g\\circ f$ ist surjective\", \"$g\\circ f$ doesn't exist\", \"$(g\\circ f)(x)=x$ for all $x\\in[0,\\infty)$\"]",
         "answer-a": "$g\\\\circ f$ is injective",
         "answer-b": "$g\\circ f$ is surjective",
         "answer-c": "$g\\circ f$ doesn't exist",

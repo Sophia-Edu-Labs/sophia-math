@@ -3411,7 +3411,7 @@
     "Practice_MC": {
       "1q": {
         "question-text": "Was gilt für die Komposition $g\\circ f$?",
-        "answer-options": "[\"$g\\circ f$ ist injektiv\", \"$g\\circ f$ ist surjektiv\", \"$g\\circ f$ existiert nicht\", \"$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$\"]",
+        "answer-options": "[\"$g\\circ f$ ist injektiv\", \"$g\\circ f$ ist surjektiv\", \"$g\\circ f$ existiert nicht\", \"$(g\\circ f)(x)=x$ für alle $x\\in[0,\\infty)$\"]",
         "answer-a": "$g\\\\circ f$ ist injektiv",
         "answer-b": "$g\\circ f$ ist surjektiv",
         "answer-c": "$g\\circ f$ existiert nicht",
@@ -3635,7 +3635,7 @@
         "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"steady\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"intervall_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
         "forgot_ivt": "Fast richtig. Du hast nur vergessen, den Zwischenwertsatz anzuwenden. Sehen wir uns das ganze gemeinsam nochmal an.",
         "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
-        "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu nennen, die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für v von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
+        "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu prüfen, dass die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für f von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
       }
     }
   },

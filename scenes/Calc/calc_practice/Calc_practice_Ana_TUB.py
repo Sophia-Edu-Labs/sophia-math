@@ -5521,13 +5521,13 @@ Folgende Aspekte müssen genannt sein, damit die Lösung als korrekt zählt:
 - Berechnung der Intervallgrenzen f(0) und f(3), oder: Feststellung, dass f(0)<0 ist und f(3)>0 ist.
 """,
 """
-Fast richtig, der Schüler hat nur vergessen, den Zwischenwertsatz zu nennen. 
+Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, den Zwischenwertsatz zu nennen. 
 """,
 """
-Fast richtig, der Schüler hat nur vergessen, die Stetigkeit zu nennen
+Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, die Stetigkeit zu nennen
 """,
 """
-Fast richtig, der Schüler hat nur vergessen, die Intervallgrenzen abzuprüfen, oder ihre Vorzeichen zu nennen.
+Fast richtig, der Schüler hat alles richig gemacht und nichts falsches, er hat nur vergessen, die Intervallgrenzen abzuprüfen, oder ihre Vorzeichen zu nennen.
 """,
 """
 Die Antwort ist falsch.
@@ -5547,10 +5547,6 @@ Die Antwort ist falsch.
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
 
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
@@ -5580,9 +5576,6 @@ class Calc_practice_ivt_10_a(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
 
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
@@ -5620,10 +5613,6 @@ class Calc_practice_ivt_10_b(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
-
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
@@ -5659,10 +5648,6 @@ class Calc_practice_ivt_10_c(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
 
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
@@ -5700,10 +5685,6 @@ class Calc_practice_ivt_10_d(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
-
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
@@ -5740,10 +5721,6 @@ class Calc_practice_ivt_10_e(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
-
-        limits = self.translate("words.Limits")
-        title = self.add_title(limits)
-        self.add(title)
 
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
