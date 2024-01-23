@@ -1640,14 +1640,9 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=[
-                "Genau 6 Lösungen", 
-                "Unendlich viele Lösungen", 
-                "Für alle Lösungen gilt $|z| = 1$",
-                "Nur reelle Lösungen"
-            ],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.7q.answer-options")),
             correctAnswerIndex=0,
-            questionText = r"Was gilt für die Lösungen $z\in\mathbbC$ der Gleichung $z^6 = (1 + i)^4$?"
+            questionText = self.translate("Calc_1.Practice_MC.7q.question-text")
         )
 
     def construct(self):
@@ -1657,10 +1652,10 @@ class Calc_practice_MC_7_q(SophiaCursorScene):
         # Defining the equation and answer options
         equation = MathTex("z^6 = (1 + i)^4", color=c1t, font_size=fs2).set_y(2)
         answers = VGroup(
-            Tex("a) Genau $6$ Lösungen", color=BLUE, font_size=fs3),
-            Tex("b) Unendlich viele Lösungen", color=BLUE, font_size=fs3),
-            Tex(r"c) Für alle Lösungen gilt $\left| z \right| = 1$", color=BLUE, font_size=fs3),
-            Tex("d) Nur reelle Lösungen", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.7a.answer-d"), color=BLUE, font_size=fs3)
         ).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(equation, DOWN, buff=0.8)
 
         # Voiceover text

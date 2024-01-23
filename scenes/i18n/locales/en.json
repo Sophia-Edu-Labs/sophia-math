@@ -3604,6 +3604,16 @@
         "answer-c": "c) $f([a,b]) = \\\\emptyset$",
         "answer-d": "d) $f$ ist injective",
         "voiceover": "If the function f is continuous and the domain of definition is the interval a, b, we can apply <bookmark mark=\"ivt\"/>the intermediate value theorem.\nIt then follows,<bookmark mark=\"solution\"/> that the image area of f from a to b is an interval.\nSo <bookmark mark=\"turn_b_green\"/>the statement b is true: We can write the image area of f from a to b as an interval c, d with c, d element of the real numbers and c less than or equal to d."
+      },
+      "7q": {
+        "answer-options": "[\"Exactly 6 solutions\", \"Infinitely many solutions\", \"For all solutions it holds that $|z| = 1$\", \"Only real-valued solutions\"]",
+        "question-text": "What holds for all solutions $z\\in\\mathbbC$ der Gleichung $z^6 = (1 + i)^4$?"
+      },
+      "7a": {
+        "answer-a": "a) Exactly $6$ solutions",
+        "answer-b": "b) Infintely many solutions",
+        "answer-c": "c) $\\left| z \\right| = 1$ for all solutions",
+        "answer-d": "d) Only real-valued solutions"
       }
     },
     "practice_limits": {
