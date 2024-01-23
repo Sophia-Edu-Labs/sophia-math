@@ -3707,6 +3707,13 @@
       },
       "9a": {
         "voiceover-text": "If we form the limit of the numerator, or the limit of the denominator, we realize that both go to zero when x goes to zero.\nSo we can <bookmark mark=\"implication_1\"/>apply L'Hopital's rule, and we get that the limit is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.\nIn this case, this is equal to <bookmark mark=\"func_2_a\"/>the limit for x against zero of e to the power of x divided by the cosine of x. And <bookmark mark=\"func_2_b\"/>this is equal to 1 divided by 1, so the solution is one."
+      },
+      "10q": {
+        "voiceover-text": "Let's look at the convergent <bookmark mark=\"a_1_in\"/>sequence a n. We know that a n <bookmark mark=\"a_2_in\"/>converges to zero, i.e. that the limit of the sequence is zero.\nLet us now consider a new <bookmark mark=\"b_n_in_1\"/>sequence b n, which we define as minus one to the power of n times a n divided by two.\nWhat is <bookmark mark=\"b_n_in_2\"/>the limit of b n for n towards infinity?",
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}b_n=\\underset{n\\to\\infty}{\\lim}(-1)^n\\frac{a_n}2$?"
+      },
+      "10a": {
+        "voiceover-text": "Since b n is nothing other than \"a\" n, alternately multiplied by a half and minus a half, we can <bookmark mark=\"upper_limit_a\"/>upper bound the absolute value of b n by \"a\" n.\nSo we can <bookmark mark=\"implication_1\"/>apply the sandwich theorem, and we get that <bookmark mark=\"solution\"/>the limit of b n for n towards infinity is zero."
       }
     },
     "practice_ivt": {

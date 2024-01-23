@@ -3701,6 +3701,13 @@
       },
       "9a": {
         "voiceover-text": "Wenn wir den Grenzwert des Zählers, oder den Grenzwert des Nenners bilden, erkennen wir, dass beide gegen Null gehen, wenn x gegen Null geht.\nAlso können wir <bookmark mark=\"implication_1\"/>die Regel von L'Hopital anwenden, und wir erhalten, dass der Grenzwert gleich dem Grenzwert der Ableitung des Zählers geteilt durch die Ableitung des Nenners ist.\nDas ist in diesem Fall gleich <bookmark mark=\"func_2_a\"/>dem Grenzwert für x gegen Null von e hoch x geteilt durch den Kosinus von x. Und <bookmark mark=\"func_2_b\"/>das ist gleich 1 durch 1, also ist die Lösung Eins."
+      },
+      "10q": {
+        "voiceover-text": "Betrachten wir die konvergente <bookmark mark=\"a_1_in\"/>Folge a n. Wir wissen, dass a n <bookmark mark=\"a_2_in\"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.\nBetrachten wir jetzt eine neue <bookmark mark=\"b_n_in_1\"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.\nWas ist <bookmark mark=\"b_n_in_2\"/>der Grenzwert von b n für n gegen unendlich?",
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}b_n=\\underset{n\\to\\infty}{\\lim}(-1)^n\\frac{a_n}2$?"
+      },
+      "10a": {
+        "voiceover-text": "Da b n nichts anderes ist als \"a\" n, abwechselnd mit ein halb und minus ein halb multipliziert, können wir <bookmark mark=\"upper_limit_a\"/>den Betrag von b n nach oben durch \"a\" n abschätzen.\nWir wissen ja, <bookmark mark=\"upper_limit_b\"/>dass a n gegen null konvergiert. Also können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass <bookmark mark=\"solution\"/>der Grenzwert von b n für n gegen unendlich gleich Null ist."
       }
     },
     "practice_ivt": {
