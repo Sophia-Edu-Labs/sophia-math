@@ -2894,7 +2894,8 @@
     "for_all_n": "für alle $n$",
     "pfd": "Partialbruchzerlegung",
     "complex_numbers": "Komplexe Zahlen",
-    "trig_functions": "Trigonometrische Funktionen"
+    "trig_functions": "Trigonometrische Funktionen",
+    "does-not-exist": "existiert nicht"
   },
   "LinAlg": {
     "14I1": {
@@ -3439,16 +3440,23 @@
         "voiceover": "Der komplexe Absolutbetrag von einer komplexen Zahl z ist der Abstand von z zum <bookmark mark=\"highlight_origin\"/>Ursprung. ...\nFolglich ist der Betrag von <bookmark mark=\"higlight_abs_1\"/>z minus 1 gleich dem Abstand von z<bookmark mark=\"move_z_1\"/> zur Zahl 1.\nUnd der Betrag von <bookmark mark=\"higlight_abs_2\"/>z plus i ist gleich dem Abstand von z zur<bookmark mark=\"write_z_i\"/> Zahl minus i.\nDann ist die Gleichung also erfüllt, wenn z gleich weit von 1 und minus i entfernt ist.\nDas ist der Fall<bookmark mark=\"higlight_blue\"/> für alle Punkte auf der blauen Geraden. ...\nAlso ist die richtige Antwort, dass es die blaue Skizze ist. ..."
       },
       "4a": {
-        "voiceover": "Da die Teilfolge <bookmark mark=\"highlight_evens\"/>a 2 n gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit geradem Index gegen den Wert a. ...\nUnd da die Teilfolge <bookmark mark=\"highlight_odds\"/>a 2 n plus 1 auch gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit ungeradem Index ebenfalls gegen a. ...\nWenn wir diese beiden Teilfolgen kombinieren, erhalten wir die Teilfolge, die aus allen Elementen von a n mit geradem oder ungeradem Index, also aus allen Elementen von a n besteht. Und diese konvergiert dann ja weiterhin gegen a...\nAlso  ist der Grenzwert von a n <bookmark mark=\"show_solution\"/>gleich a, und die richtigae Aussage ist b. ..."
+        "voiceover": "Da die Teilfolge <bookmark mark=\"highlight_evens\"/>a 2 n gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit geradem Index gegen den Wert a. ...\nUnd da die Teilfolge <bookmark mark=\"highlight_odds\"/>a 2 n plus 1 auch gegen a konvergiert, konvergiert die Teilfolge aller Elemente mit ungeradem Index ebenfalls gegen a. ...\nWenn wir diese beiden Teilfolgen kombinieren, erhalten wir die Teilfolge, die aus allen Elementen von a n mit geradem oder ungeradem Index, also aus allen Elementen von a n besteht. Und diese konvergiert dann ja weiterhin gegen a...\nAlso  ist der Grenzwert von a n <bookmark mark=\"show_solution\"/>gleich a, und die richtige Aussage ist b. ..."
       },
       "4q": {
-        "voiceover": "Sei <bookmark mark=\"a_n_in_1\"/>a_n eine Folge von reellen Zahlen, die für alle n in den natürlichen Zahlen definiert ist.\nWir wissen, dass der Grenzwert der Teilfolge a 2 n <bookmark mark=\"a_n_in_2\"/> für n gegen unendlich gleich a ist. Und wir wissen auch, <bookmark mark=\"a_n_in_3\"/>dass der Grenzwert der Teilfolge a 2 n plus 1 gleich a ist.\nWelche der folgenden Aussagen trifft auf den Grenzwert von a n zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Der Grenzwert von a n ist gleich 2 a. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Der Grenzwert von a n ist gleich a. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Der Grenzwert von a n ist gleich 2 a plus 1. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Der Grenzwert von a n existiert nicht. ..."
+        "voiceover": "Sei <bookmark mark=\"a_n_in_1\"/>a_n eine Folge von reellen Zahlen, die für alle n in den natürlichen Zahlen definiert ist.\nWir wissen, dass der Grenzwert der Teilfolge a 2 n <bookmark mark=\"a_n_in_2\"/> für n gegen unendlich gleich a ist. Und wir wissen auch, <bookmark mark=\"a_n_in_3\"/>dass der Grenzwert der Teilfolge a 2 n plus 1 gleich a ist.\nWelche der folgenden Aussagen trifft auf den Grenzwert von a n zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Der Grenzwert von a n ist gleich 2 a. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Der Grenzwert von a n ist gleich a. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Der Grenzwert von a n ist gleich 2 a plus 1. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Der Grenzwert von a n existiert nicht. ...",
+        "question-text": "Welche der folgenden Aussagen trifft auf den Grenzwert $\\lim_{n\\to\\infty}\\left(a_n\\right)_{n\\in\\mathbb N}$ zu?"
       },
       "5q": {
-        "voiceover": "Betrachten wir die Funktion f, die <bookmark mark=\"f_definition\"/>von dem Intervall minus pi bis pi in die reellen Zahlen abbildet, \nund deren Funktionsvorschrift lautet: <bookmark mark=\"f_formula\"/>f von x ist gleich zwei mal dem Absolutbetrag von x plus vier. \nWelche der folgenden Aussagen trifft auf die Funktion f zu? <bookmark mark=\"question\"/>\nBesitzt die Funktion im Intervall von null bis eins eine Nullstelle? <bookmark mark=\"answer_1\"/>\nHat sie eine lokale Extremstelle bei x gleich null? <bookmark mark=\"answer_2\"/>\nIst sie streng monoton wachsend? <bookmark mark=\"answer_3\"/>\nOder ist sie etwa nicht integrierbar? <bookmark mark=\"answer_4\"/>"
+        "voiceover": "Betrachten wir die Funktion f, die <bookmark mark=\"f_definition\"/>von dem Intervall minus pi bis pi in die reellen Zahlen abbildet, \nund deren Funktionsvorschrift lautet: <bookmark mark=\"f_formula\"/>f von x ist gleich zwei mal dem Absolutbetrag von x plus vier. \nWelche der folgenden Aussagen trifft auf die Funktion f zu? <bookmark mark=\"question\"/>\nBesitzt die Funktion im Intervall von null bis eins eine Nullstelle? <bookmark mark=\"answer_1\"/>\nHat sie eine lokale Extremstelle bei x gleich null? <bookmark mark=\"answer_2\"/>\nIst sie streng monoton wachsend? <bookmark mark=\"answer_3\"/>\nOder ist sie etwa nicht integrierbar? <bookmark mark=\"answer_4\"/>",
+        "answer-options": "[\"Sie besitzt im Intervall $[0, 1]$ eine Nullstelle.\",\"Sie hat eine lokale Extremstelle bei $x = 0$.\",\"Sie ist streng monoton wachsend.\",\"Sie ist nicht integrierbar.\"]",
+        "question-text": "Welche der folgenden Aussagen trifft auf die Funktion $f$ zu?"
       },
       "5a": {
-        "voiceover": "Wenn wir die Funktion <bookmark mark=\"plot_in\"/>einmal graphisch darstellen, können wir unschwer erkennen, dass die Funktion keine Nullstelle besitzt, und nicht streng monoton wachsend ist.\nWir können auch sehen, dass die Funktion <bookmark mark=\"maximum\"/>eine lokale Extremstelle bei x gleich null hat, ein Minimum mit y gleich Vier.\nUnd wir können auch direkt erkennen, dass die Funktion integrierbar ist."
+        "voiceover": "Wenn wir die Funktion <bookmark mark=\"plot_in\"/>einmal graphisch darstellen, können wir unschwer erkennen, dass die Funktion keine Nullstelle besitzt, und nicht streng monoton wachsend ist.\nWir können auch sehen, dass die Funktion <bookmark mark=\"maximum\"/>eine lokale Extremstelle bei x gleich null hat, ein Minimum mit y gleich Vier.\nUnd wir können auch direkt erkennen, dass die Funktion integrierbar ist.",
+        "answer-a": "a) Besitzt Nullstelle in $[0,1]$",
+        "answer-b": "b) Hat lokale Extremstelle $x = 0$",
+        "answer-c": "c) Ist streng monoton wachsend",
+        "answer-d": "d) Ist nicht integrierbar"
       },
       "6q": {
         "voiceover": "Seien <bookmark mark=\"domain_in\"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.\n<bookmark mark=\"question_in\"/>Welche der folgenden Aussagen gilt?\nAussage <bookmark mark=\"answer_a_in\"/>a: f ist differenzierbar. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: f ist nicht integrierbar. ...\nOder Antwort <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ..."
@@ -3574,6 +3582,11 @@
       },
       "20a": {
         "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...\n"
+      },
+      "3q": {
+        "answer-options": "[\"Die grüne Skizze\", \"Die blaue Skizze\", \"Die rote Skizze\", \"Die pinke Skizze\"]",
+        "question-text": "Welche der Skizzen stellt die Menge $z\\in \\mathbb C$ dar, für die gilt, dass $|z - 1| = |z+i|$ ist?",
+        "voiceover": "Betrachten wir die Menge <bookmark mark=\"set_in\"/>der komplexen Zahlen z, für die der Betrag von z minus 1 gleich dem Betrag von z plus i ist.\nWelche der folgenden Skizzen stellt <bookmark mark=\"cords_in\"/>diese Menge dar?\n<bookmark mark=\"green_in\"/> Ist es die grüne Skizze? ...\n<bookmark mark=\"blue_in\"/> Oder ist es die blaue Skizze? ...\n<bookmark mark=\"red_in\"/> Oder vielleicht die rote Skizze? ...\n<bookmark mark=\"pink_in\"/>Oder aber die pinke Skizze? ..."
       }
     },
     "practice_limits": {

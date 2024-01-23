@@ -2894,7 +2894,8 @@
     "for_all_n": "for all $n$",
     "pfd": "Partial fraction decomposition",
     "complex_numbers": "Complex Numbers",
-    "trig_functions": "Trigonometric Functions"
+    "trig_functions": "Trigonometric Functions",
+    "does-not-exist": "doesn't exist"
   },
   "LinAlg": {
     "14I1": {
@@ -3554,6 +3555,33 @@
       },
       "2a": {
         "voiceover": "If f is differentiable on the closed interval 0, 1, we can apply the intermediate value theorem and obtain that there is an x in the open interval from 0 to 1, so that the derivative f prime of x is equal to 0. ... <bookmark mark=\"a_green\"/>So a is correct. ....\nIf we have no further conditions, it is possible that the derivative of f does not exist at any point. ... <bookmark mark=\"b_red\"/>So b is false. ...\nThe function you see <bookmark mark=\"graph_in\"/>here is an example in which<bookmark mark=\"c_d_red\"/> condition c and d are fulfilled, but there is no x between 0 and 1, so that the derivative of f at the point x is 0.\nThis is because the function is integrable and has a local extremum. However, the derivative is nowhere equal to zero. <bookmark mark=\"c_d_red\"/>So c and d are also false. ..."
+      },
+      "3q": {
+        "answer-options": "[\"The green sketch\", \"The blue sketch\", \"The red sketch\", \"The pink sketch\"]",
+        "question-text": "Which of the sketches represents the set $z\\in \\mathbb C$ for which it holds that $|z - 1| = |z+i|$?",
+        "voiceover": "Let us consider the set <bookmark mark=\"set_in\"/>of complex numbers z for which the absolute value of z minus 1 is equal to the absolute value of z plus i.\nWhich of the following sketches represents <bookmark mark=\"cords_in\"/>this set?\n<bookmark mark=\"green_in\"/>Is it the green sketch? ...\n<bookmark mark=\"blue_in\"/> Or is it the blue sketch? ...\n<bookmark mark=\"red_in\"/> Or maybe the red sketch? ...\n<bookmark mark=\"pink_in\"/>Or is it the pink sketch? ..."
+      },
+      "3a": {
+        "voiceover": "The absolute value of a complex number z is the distance from z to the <bookmark mark=\"highlight_origin\"/>origin. ...\nConsequently, the absolute value of <bookmark mark=\"higlight_abs_1\"/>z minus 1 is equal to the distance from z<bookmark mark=\"move_z_1\"/> to the number 1.\nAnd the absolute value of <bookmark mark=\"higlight_abs_2\"/>z plus i is equal to the distance from z to the<bookmark mark=\"write_z_i\"/> number minus i.\nThis is the case<bookmark mark=\"higlight_blue\"/> for all points on the blue line. ...\nSo the correct answer is that it is the blue sketch. ..."
+      },
+      "4q": {
+        "question-text": "Which of the following statements applies to the limit value $\\lim_{n\\to\\infty}\\left(a_n\\right)_{n\\in\\mathbb N}$?",
+        "voiceover": "Let <bookmark mark=\"a_n_in_1\"/>a_n be a sequence of real numbers that is defined for all n in the natural numbers.\nWe know that the limit of the subsequence a 2 n <bookmark mark=\"a_n_in_2\"/> is equal to a for n towards infinity. And we also know <bookmark mark=\"a_n_in_3\"/>that the limit of the subsequence a 2 n plus 1 is equal to a.\nWhich of the following statements applies to the limit of a n?\nStatement <bookmark mark=\"answer_a_in\"/>a: The limit of a n is equal to 2 a. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: The limit of a n is equal to a. ...\nStatement <bookmark mark=\"answer_c_in\"/>c: The limit of a n is equal to 2 a plus 1. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: The limit of a n does not exist. ..."
+      },
+      "4a": {
+        "voiceover": "Since the subsequence <bookmark mark=\"highlight_evens\"/>a 2 n converges to a, the subsequence of all elements with even index converges to the value a. ...\nAnd since the subsequence <bookmark mark=\"highlight_odds\"/>a 2 n plus 1 also converges to a, the subsequence of all elements with odd index also converges to a. ...\nIf we combine these two subsequences, we obtain the subsequence that consists of all elements of a n with even or odd index, i.e. all elements of a n. And this then also converges towards a...\nSo the limit value of a n <bookmark mark=\"show_solution\"/>is equal to a, and the correct statement is b. ..."
+      },
+      "5q": {
+        "answer-options": "[\"It has a zero in the interval $[0, 1]$.\", \"It has a local extreme point at $x = 0$.\", \"It is strictly monotonically increasing.\", \"It is not integrable.\"].",
+        "question-text": "Which of the following statements about the function $f$ is true?",
+        "voiceover": "Let us consider the function f, which maps <bookmark mark=\"f_definition\"/>f from the interval minus pi to pi into the real numbers, \nand whose function formula is: <bookmark mark=\"f_formula\"/>f of x is equal to two times the absolute value of x plus four. \nWhich of the following statements applies to the function f? <bookmark mark=\"question\"/>\nDoes the function have a zero in the interval from zero to one? <bookmark mark=\"answer_1\"/>\nDoes it have a local extreme at x equal to zero? <bookmark mark=\"answer_2\"/>\nIs it strictly monotonically increasing? <bookmark mark=\"answer_3\"/>\nOr is it not integrable? <bookmark mark=\"answer_4\"/>"
+      },
+      "5a": {
+        "voiceover": "If we plot the function <bookmark mark=\"plot_in\"/>, we can easily see that the function has no zero and is not strictly monotonically increasing.\nWe can also see that the function <bookmark mark=\"maximum\"/>has a local extreme at x equal to zero and a minimum with y equal to four.\nAnd we can also see directly that the function is integrable.",
+        "answer-a": "a) Has zero in $[0,1]$",
+        "answer-b": "b) Has a local extremum at $x=0$",
+        "answer-c": "c) Is strictly monotonically increasing",
+        "answer-d": "d) Is not integrable"
       }
     },
     "practice_limits": {
