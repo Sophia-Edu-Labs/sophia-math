@@ -2936,7 +2936,8 @@
     "Determinant": "Determinante",
     "Limits": "Grenzwerte",
     "mvt": "Mittelwertsatz",
-    "continuous": "stetig"
+    "continuous": "stetig",
+    "ivt": "Zwischenwertsatz"
   },
   "Func_6_P": {
     "22": {
@@ -3480,7 +3481,11 @@
         "answerOptions": "[\"$f$ nimmt auf $[a,b]$ kein Minimum an\",\n\"$f([a,b])$ lässt sich als Intervall $[c,d]$ schreiben mit $c,d\\in\\mathbb R$ und $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ ist auf $[a,b]$ injektiv\"]"
       },
       "8a": {
-        "voiceover": "Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark=\"ivt\"/>den Zwischenwertsatz anwenden.\nDaraus folgt dann,<bookmark mark=\"solution\"/> dass der Bildbereich von f von a bis b ein Intervall ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d."
+        "voiceover": "Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark=\"ivt\"/>den Zwischenwertsatz anwenden.\nDaraus folgt dann,<bookmark mark=\"solution\"/> dass der Bildbereich von f von a bis b ein Intervall ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d.",
+        "answer-a": "a) $f$ nimmt kein Minimum an",
+        "answer-b": "b) $f([a,b])$ ist Intervall $[c,d]$",
+        "answer-c": "c) $f([a,b]) = \\\\emptyset$",
+        "answer-d": "d) $f$ ist injektiv"
       },
       "9q": {
         "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine differenzierbare, ungerade Funktion. \nWelche dieser Aussagen trifft im Allgemeinen zu?",

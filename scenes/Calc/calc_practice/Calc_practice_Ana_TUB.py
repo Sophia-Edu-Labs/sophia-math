@@ -693,9 +693,9 @@ class Calc_practice_MC_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=["Die grüne Skizze", "Die blaue Skizze", "Die rote Skizze", "Die pinke Skizze"],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.3q.answer-options")),
             correctAnswerIndex=1,
-            questionText = "Welche der Skizzen stellt die Menge $z\\in \\mathbb C$ dar, für die gilt, dass $|z - 1| = |z+i|$ ist?"
+            questionText = self.translate("Calc_1.Practice_MC.3q.question-text")
         )
 
     # Main method for constructing the animation
@@ -715,15 +715,7 @@ class Calc_practice_MC_3_q(SophiaCursorScene):
         
         # Action Sequence
         with self.voiceover(
-                text=
-                """
-Betrachten wir die Menge <bookmark mark="set_in"/>der komplexen Zahlen z, für die der Betrag von z minus 1 gleich dem Betrag von z plus i ist.
-Welche der folgenden Skizzen stellt <bookmark mark="cords_in"/>diese Menge dar?
-<bookmark mark="green_in"/> Ist es die grüne Skizze? ...
-<bookmark mark="blue_in"/> Oder ist es die blaue Skizze? ...
-<bookmark mark="red_in"/> Oder vielleicht die rote Skizze? ...
-<bookmark mark="pink_in"/>Oder aber die pinke Skizze? ...
-"""
+                text=self.translate("Calc_1.Practice_MC.3q.voiceover")
         ) as tracker:
             
             self.wait_until_bookmark("set_in")
@@ -1005,9 +997,9 @@ class Calc_practice_MC_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=["$\\lim_{n\\to\\infty}a_{n}=2a$", "$\\lim_{n\\to\\infty}a_{n}=a$", "$\\lim_{n\\to\\infty}a_{n}=2a+1$", "$\\lim_{n\\to\\infty}a_{n}$ existiert nicht"],
+            answerOptions=["$\\lim_{n\\to\\infty}a_{n}=2a$", "$\\lim_{n\\to\\infty}a_{n}=a$", "$\\lim_{n\\to\\infty}a_{n}=2a+1$", "$\\lim_{n\\to\\infty}a_{n}$ "+self.translate("General.does-not-exist")],
             correctAnswerIndex=1,
-            questionText = "Welche der folgenden Aussagen trifft auf den Grenzwert $\\lim_{n\\to\\infty}\\left(a_n\\right)_{n\\in\\mathbb N}$ zu?"
+            questionText = self.translate("Calc_1.Practice_MC.4q.question-text")
         )
 
     # Main method for constructing the animation
@@ -1212,14 +1204,9 @@ class Calc_practice_MC_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=[
-                "Sie besitzt im Intervall [0, 1] eine Nullstelle.",
-                "Sie hat eine lokale Extremstelle bei x = 0.",
-                "Sie ist streng monoton wachsend.",
-                "Sie ist nicht integrierbar."
-            ],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.5q.answer-options")),
             correctAnswerIndex=1,
-            questionText = self.translate("Welche der folgenden Aussagen trifft auf die Funktion f zu?")
+            questionText = self.translate("Calc_1.Practice_MC.5q.question-text")
         )
 
     def construct(self):
@@ -1233,10 +1220,10 @@ class Calc_practice_MC_5_q(SophiaCursorScene):
         f_group = VGroup(f_definition, f_formula).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2)
 
         answers = [
-            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
-            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
-            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
-            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-d"), color=BLUE, font_size=fs3)
         ]
 
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
@@ -1279,10 +1266,10 @@ class Calc_practice_MC_5_a(SophiaCursorScene):
         plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
 
         answers = [
-            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
-            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
-            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
-            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-d"), color=BLUE, font_size=fs3)
         ]
 
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
@@ -1318,10 +1305,10 @@ class Calc_practice_MC_5_b(SophiaCursorScene):
         plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
 
         answers = [
-            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
-            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
-            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
-            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-d"), color=BLUE, font_size=fs3)
         ]
 
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
@@ -1357,10 +1344,10 @@ class Calc_practice_MC_5_c(SophiaCursorScene):
         plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
 
         answers = [
-            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
-            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
-            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
-            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-d"), color=BLUE, font_size=fs3)
         ]
 
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
@@ -1396,10 +1383,10 @@ class Calc_practice_MC_5_d(SophiaCursorScene):
         plot_right = plane.plot(lambda x: 2*x + 4, color=RED, x_range=[0,4,1000])
 
         answers = [
-            Tex(r"a) Besitzt Nullstelle in $[0,1]$", color=BLUE, font_size=fs3),
-            Tex(r"b) Hat lokale Extremstelle $x = 0$", color=BLUE, font_size=fs3),
-            Tex(r"c) Ist streng monoton wachsend", color=BLUE, font_size=fs3),
-            Tex(r"d) Ist nicht integrierbar", color=BLUE, font_size=fs3)
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-a"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-b"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-c"), color=BLUE, font_size=fs3),
+            Tex(self.translate("Calc_1.Practice_MC.5a.answer-d"), color=BLUE, font_size=fs3)
         ]
 
         answer_group = VGroup(*answers).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(f_group, DOWN, buff=1)
@@ -1422,16 +1409,12 @@ class Calc_practice_MC_5_d(SophiaCursorScene):
 #####################################
 #MC, Mittelwertsatz Integral
 class Calc_practice_MC_6_q(SophiaCursorScene):
+
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=[
-                "$f$ ist differenzierbar",
-                "Falls $\\int_{a}^{b} f(x) \\, dx = 0$, dann gibt es ein $\\xi \\in [a,b]$ mit $f(\\xi) = 0$",
-                "$f$ ist nicht integrierbar",
-                "Keine der obigen Aussagen kann im Allgemeinen getroffen werden."
-            ],
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.6q.answer-options")),
             correctAnswerIndex=1,
-            questionText=self.translate("Seien $a$, $b$ Elemente der reellen Zahlen mit $a < b$ und sei $f$ eine stetige Funktion auf dem Intervall $[a, b]$. Welche der folgenden Aussagen gilt?")
+            questionText=self.translate("Calc_1.Practice_MC.6q.question-text")
         )
 
     def construct(self):
@@ -1439,15 +1422,16 @@ class Calc_practice_MC_6_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the formulas
+        continuous = self.translate("words.continuous")
         domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
-        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", f"\\text{{ {continuous}}}", font_size=fs2, color=c1t)
         domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
 
         # Define the answer options
-        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.6a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.6a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.6a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.6a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
 
         # The voiceover and animation sequence
@@ -1481,8 +1465,9 @@ class Calc_practice_MC_6_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the formulas
+        continuous = self.translate("words.continuous")
         domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
-        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", f"\\text{{ {continuous}}}", font_size=fs2, color=c1t)
         domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
         downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
         mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
@@ -1491,10 +1476,10 @@ class Calc_practice_MC_6_a(SophiaCursorScene):
 
 
         # Define the answer options
-        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.6a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.6a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.6a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.6a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
         self.add(domain_and_f, answers)
 
@@ -1524,8 +1509,9 @@ class Calc_practice_MC_6_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the formulas
+        continuous = self.translate("words.continuous")
         domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
-        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", f"\\text{{ {continuous}}}", font_size=fs2, color=c1t)
         domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
         downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
         mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
@@ -1534,10 +1520,10 @@ class Calc_practice_MC_6_b(SophiaCursorScene):
 
 
         # Define the answer options
-        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.6a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.6a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.6a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.6a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
         self.add(domain_and_f, answers)
 
@@ -1567,8 +1553,9 @@ class Calc_practice_MC_6_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the formulas
+        continuous = self.translate("words.continuous")
         domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
-        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", f"\\text{{ {continuous}}}", font_size=fs2, color=c1t)
         domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
         downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
         mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
@@ -1577,10 +1564,10 @@ class Calc_practice_MC_6_c(SophiaCursorScene):
 
 
         # Define the answer options
-        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.6a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.6a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.6a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.6a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
         self.add(domain_and_f, answers)
 
@@ -1610,8 +1597,9 @@ class Calc_practice_MC_6_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the formulas
+        continuous = self.translate("words.continuous")
         domain = MathTex("a, b \\in \\mathbb{R}", ",", "a < b", font_size=fs2, color=c1t)
-        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", "\\text{ stetig}", font_size=fs2, color=c1t)
+        function_f = MathTex("f : [a, b] \\rightarrow \\mathbb{R}", f"\\text{{ {continuous}}}", font_size=fs2, color=c1t)
         domain_and_f = VGroup(domain, function_f).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
         downarrow_1 = MathTex("\\Downarrow", font_size=fs2, color=c1t).next_to(domain_and_f, DOWN, buff=.2)
         mvt = VGroup(MathTex("\\exists \\xi \\in [a,b] :", font_size=fs3, color=c1t), MathTex("f(\\xi) = \\frac{1}{b-a} \\int_{a}^{b} f(x) \\, dx", font_size=fs3, color=c1t)).arrange(DOWN, buff=.1).next_to(downarrow_1, DOWN, buff=.2)
@@ -1620,10 +1608,10 @@ class Calc_practice_MC_6_d(SophiaCursorScene):
 
 
         # Define the answer options
-        answer_a = Tex("a) f ist differenzierbar", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) Falls $\\int_{a}^{b} f(x) \\, dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) f ist nicht integrierbar", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) im Allgemeinen keine wahr", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.6a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.6a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.6a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.6a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.3, aligned_edge=LEFT).next_to(domain_and_f, DOWN, buff=0.5)
         self.add(domain_and_f, answers)
 
@@ -1719,15 +1707,16 @@ class Calc_practice_MC_8_q(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
+        continuos = self.translate("words.continuous")
         f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
-        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ "+continuos, color=c1t, font_size=fs2)
         f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.8a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.8a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.8a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.8a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         # Define the voiceover text
@@ -1766,19 +1755,21 @@ class Calc_practice_MC_8_a(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
+        continuos = self.translate("words.continuous")
         f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
-        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ "+continuos, color=c1t, font_size=fs2)
         f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        ivt = self.translate("words.ivt")
+        downarrow_ivt = Tex("$\\Downarrow$", " "+ivt, font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
         downarrow_ivt[1].scale(.8)
         solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.8a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.8a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.8a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.8a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         self.add(f_definition, answers)
@@ -1811,19 +1802,21 @@ class Calc_practice_MC_8_b(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
+        continuos = self.translate("words.continuous")
         f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
-        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ "+continuos, color=c1t, font_size=fs2)
         f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        ivt = self.translate("words.ivt")
+        downarrow_ivt = Tex("$\\Downarrow$", " "+ivt, font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
         downarrow_ivt[1].scale(.8)
         solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.8a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.8a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.8a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.8a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         self.add(f_definition, answers)
@@ -1856,19 +1849,21 @@ class Calc_practice_MC_8_c(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
+        continuos = self.translate("words.continuous")
         f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
-        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ "+continuos, color=c1t, font_size=fs2)
         f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        ivt = self.translate("words.ivt")
+        downarrow_ivt = Tex("$\\Downarrow$", " "+ivt, font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
         downarrow_ivt[1].scale(.8)
         solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.8a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.8a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.8a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.8a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         self.add(f_definition, answers)
@@ -1901,19 +1896,21 @@ class Calc_practice_MC_8_d(SophiaCursorScene):
         self.add_mathgrid()
 
         # Define the function text using MathTex
+        continuos = self.translate("words.continuous")
         f_edges = MathTex("a,b \\in \\mathbb R, \\, a < b", color=c1t, font_size=fs2)
-        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ stetig", color=c1t, font_size=fs2)
+        f_interval = Tex("$f:[a,b]\\rightarrow\\mathbb{R}$ "+continuos, color=c1t, font_size=fs2)
         f_definition = VGroup(f_edges, f_interval).arrange(DOWN, buff=0.1, aligned_edge=LEFT).set_y(2)
-        downarrow_ivt = Tex("$\\Downarrow$", " Zwischenwertsatz", font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
+        ivt = self.translate("words.ivt")
+        downarrow_ivt = Tex("$\\Downarrow$", " "+ivt, font_size=fs2, color=c1t).next_to(f_definition, DOWN, buff=.4)
         downarrow_ivt[1].scale(.8)
         solution = Tex("$f([a,b]) = [c,d]$", font_size=fs2, color=c1t).next_to(downarrow_ivt, DOWN, buff=.4)
 
 
         # Define the answer options using Tex
-        answer_a = Tex("a) $f$ nimmt kein Minimum an", color=BLUE, font_size=fs3)
-        answer_b = Tex("b) $f([a,b])$ als Intervall $[c,d]$", color=BLUE, font_size=fs3)
-        answer_c = Tex("c) $f([a,b]) = \\emptyset$", color=BLUE, font_size=fs3)
-        answer_d = Tex("d) $f$ ist injektiv", color=BLUE, font_size=fs3)
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.8a.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.8a.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.8a.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.8a.answer-d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f_definition, DOWN, buff=0.5)
 
         self.add(f_definition, answers)

@@ -2936,7 +2936,8 @@
     "Determinant": "Determinant",
     "Limits": "Limits",
     "mvt": "mean value theorem",
-    "continuous": "continuous"
+    "continuous": "continuous",
+    "ivt": "intermediate value thm"
   },
   "Words": {
     "base": "base",
@@ -3449,7 +3450,8 @@
       },
       "8q": {
         "question": "Let $a,b\\in\\mathbb R$ with $a<b$ and let $f:[a,b]\\rightarrow\\mathbb R$ be a continuous function. Which of the following statements ist true?",
-        "answerOptions": "[\"$f$ doesn't have a minimum on $[a,b]$\",\n\"$f([a,b])$ can be written as an interval $[c,d]$ with $c,d\\in\\mathbb R$ and $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ is injective on $[a,b]$\"]"
+        "answerOptions": "[\"$f$ doesn't have a minimum on $[a,b]$\",\n\"$f([a,b])$ can be written as an interval $[c,d]$ with $c,d\\in\\mathbb R$ and $c\\leq d$\",\n\"$f([a,b]) = \\\\emptyset$\",\n\"$f$ is injective on $[a,b]$\"]",
+        "voiceover": "Let <bookmark mark=\"f_in_1\"/>a and b be elements of the real numbers with a smaller than b and let the function f, <bookmark mark=\"f_in_2\"/>which maps from the closed interval from a to b into the real numbers, be a continuous function. <bookmark mark=\"f_in_2\"/>Which of the following statements is true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f does not have a minimum on the interval from a to b. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The image area f of the interval a, b can be written as interval c, d with c, d element of the real numbers and c less than or equal to d. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The image area of f of the interval a, b is empty. ...\n<bookmark mark=\"answer_d_in\"/>Or statement d: The function f is injective on the interval from a to b. ..."
       },
       "9a": {
         "voiceover": "Let us first consider the<bookmark mark=\"f_1_in\"/> function f of x equal to one. This function is differentiable and odd. So a and c <bookmark mark=\"a_c_red\"/>are already wrong, because the function f is not zero and the derivative of f at the point x equals zero is not non-zero.\n<bookmark mark=\"f_2_in\"/>Let us now consider the function f of x equal to x. This function is also differentiable and odd. So<bookmark mark=\"b_red\"/> b is also false, because the derivative of f is equal to one everywhere, so f prime of zero is not zero.\nSo <bookmark mark=\"d_green\"/>only d remains, and that is also the correct answer."
@@ -3595,6 +3597,13 @@
         "answer-c": "c) $f$ is not integrable",
         "answer-d": "d) None always true",
         "voiceover": "Let's consider the<bookmark mark=\"look_at_b\"/>case b, so let the integral of f on the interval from a to b be equal to zero.\nIf we apply the <bookmark mark=\"mvt\"/>mean value theorem, we get that there is an Xi on the interval from a to b such that f of Xi is equal to 1 by b minus a times the integral of f of x dx.\n<bookmark mark=\"look_at_c\"/>If we now insert that the integral of f of x on the interval a b is zero, we get that there is an Xi in the interval from a to b such that f of Xi is zero.\nSo <bookmark mark=\"turn_b_green\"/>the statement b is true."
+      },
+      "8a": {
+        "answer-a": "a) $f$ does not take a minimum",
+        "answer-b": "b) $f([a,b])$ is intervall $[c,d]$",
+        "answer-c": "c) $f([a,b]) = \\\\emptyset$",
+        "answer-d": "d) $f$ ist injective",
+        "voiceover": "If the function f is continuous and the domain of definition is the interval a, b, we can apply <bookmark mark=\"ivt\"/>the intermediate value theorem.\nIt then follows,<bookmark mark=\"solution\"/> that the image area of f from a to b is an interval.\nSo <bookmark mark=\"turn_b_green\"/>the statement b is true: We can write the image area of f from a to b as an interval c, d with c, d element of the real numbers and c less than or equal to d."
       }
     },
     "practice_limits": {
