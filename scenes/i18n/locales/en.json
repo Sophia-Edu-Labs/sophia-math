@@ -2935,7 +2935,8 @@
     "invertible": "invertible",
     "Determinant": "Determinant",
     "Limits": "Limits",
-    "mvt": "mean value theorem"
+    "mvt": "mean value theorem",
+    "continuous": "continuous"
   },
   "Words": {
     "base": "base",
@@ -3582,6 +3583,18 @@
         "answer-b": "b) Has a local extremum at $x=0$",
         "answer-c": "c) Is strictly monotonically increasing",
         "answer-d": "d) Is not integrable"
+      },
+      "6q": {
+        "answer-options": "[\"$f$ is differentiable\", \"If $\\int_{a}^{b} f(x)dx = 0$, then there is a $\\xi \\in [a,b]$ with $f(\\xi) = 0$\",\"$f$ is not integrable\", \"None of the above statements can be made in general\"].",
+        "question-text": "Let $a$, $b$ be elements of real numbers with $a < b$ and let $f$ be a continuous function on the interval $[a, b]$. Which of the following statements is true?",
+        "voiceover": "Let <bookmark mark=\"domain_in\"/>a and b be elements of the real numbers, with a smaller than b, and let f be a continuous function on the interval from a to b.\n<bookmark mark=\"question_in\"/>Which of the following statements is true?\nStatement <bookmark mark=\"answer_a_in\"/>a: f is differentiable. ...\nStatement <bookmark mark=\"answer_b_in\"/>b: If the definite integral from a to b of f of x dx is zero, then there is a xi in the interval from a to b such that f of xi is zero. Statement <bookmark mark=\"answer_c_in\"/>c: f is not integrable. ...\nOr statement <bookmark mark=\"answer_d_in\"/>d: None of the above statements can be made in general. "
+      },
+      "6a": {
+        "answer-a": "a) $f$ is differentiable",
+        "answer-b": "b) If $\\int_{a}^{b} f(x)dx = 0$, then\\\\$\\exists\\xi \\in [a,b]$ such that $f(\\xi) = 0$",
+        "answer-c": "c) $f$ is not integrable",
+        "answer-d": "d) None always true",
+        "voiceover": "Let's consider the<bookmark mark=\"look_at_b\"/>case b, so let the integral of f on the interval from a to b be equal to zero.\nIf we apply the <bookmark mark=\"mvt\"/>mean value theorem, we get that there is an Xi on the interval from a to b such that f of Xi is equal to 1 by b minus a times the integral of f of x dx.\n<bookmark mark=\"look_at_c\"/>If we now insert that the integral of f of x on the interval a b is zero, we get that there is an Xi in the interval from a to b such that f of Xi is zero.\nSo <bookmark mark=\"turn_b_green\"/>the statement b is true."
       }
     },
     "practice_limits": {

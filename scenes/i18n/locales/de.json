@@ -2935,7 +2935,8 @@
     "invertible": "Invertierbar",
     "Determinant": "Determinante",
     "Limits": "Grenzwerte",
-    "mvt": "Mittelwertsatz"
+    "mvt": "Mittelwertsatz",
+    "continuous": "stetig"
   },
   "Func_6_P": {
     "22": {
@@ -3459,10 +3460,16 @@
         "answer-d": "d) Ist nicht integrierbar"
       },
       "6q": {
-        "voiceover": "Seien <bookmark mark=\"domain_in\"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.\n<bookmark mark=\"question_in\"/>Welche der folgenden Aussagen gilt?\nAussage <bookmark mark=\"answer_a_in\"/>a: f ist differenzierbar. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: f ist nicht integrierbar. ...\nOder Antwort <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ..."
+        "voiceover": "Seien <bookmark mark=\"domain_in\"/>a und b Elemente der reellen Zahlen, mit a kleiner als b, und sei f eine stetige Funktion auf dem Intervall von a bis b.\n<bookmark mark=\"question_in\"/>Welche der folgenden Aussagen gilt?\nAussage <bookmark mark=\"answer_a_in\"/>a: f ist differenzierbar. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Falls das bestimmte Integral von a bis b von f von x dx gleich null ist, dann gibt es ein xi im Intervall von a bis b, so dass f von xi gleich null ist. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: f ist nicht integrierbar. ...\nOder Antwort <bookmark mark=\"answer_d_in\"/>d: Keine der obigen Aussagen kann im Allgemeinen getroffen werden. ...",
+        "answer-options": "[\"$f$ ist differenzierbar\",\"Falls $\\int_{a}^{b} f(x)dx = 0$, dann gibt es ein $\\xi \\in [a,b]$ mit $f(\\xi) = 0$\",\"$f$ ist nicht integrierbar\",\"Keine der obigen Aussagen kann im Allgemeinen getroffen werden.\"]",
+        "question-text": "Seien $a$, $b$ Elemente der reellen Zahlen mit $a < b$ und sei $f$ eine stetige Funktion auf dem Intervall $[a, b]$. Welche der folgenden Aussagen gilt?"
       },
       "6a": {
-        "voiceover": "Betrachten wir den<bookmark mark=\"look_at_b\"/> Fall b, also sei das Integral von f auf dem Intervall von a bis b gleich null.\nWenn wir den <bookmark mark=\"mvt\"/>Mittelwertsatz der Integralrechnung anwenden, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich 1 durch b minus a mal dem Integral von f von x dx ist.\n<bookmark mark=\"look_at_c\"/>Wenn wir nun einsetzen, dass das Integral von f von x auf dem Intervall a b gleich null ist, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich null ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr."
+        "voiceover": "Betrachten wir den<bookmark mark=\"look_at_b\"/> Fall b, also sei das Integral von f auf dem Intervall von a bis b gleich null.\nWenn wir den <bookmark mark=\"mvt\"/>Mittelwertsatz der Integralrechnung anwenden, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich 1 durch b minus a mal dem Integral von f von x dx ist.\n<bookmark mark=\"look_at_c\"/>Wenn wir nun einsetzen, dass das Integral von f von x auf dem Intervall a b gleich null ist, erhalten wir, dass es ein Xi im Intervall von a bis b gibt, so dass f von Xi gleich null ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr.",
+        "answer-a": "a) $f$ ist differenzierbar",
+        "answer-b": "b) Falls $\\int_{a}^{b} f(x)dx = 0$, so\\\\$\\exists\\xi \\in [a,b]$ mit $f(\\xi) = 0$",
+        "answer-c": "c) $f$ ist nicht integrierbar",
+        "answer-d": "d) im Allgemeinen keine wahr"
       },
       "7q": {
         "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 6 gleich (1 plus i) hoch 4. \nWelche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?\nAussage <bookmark mark=\"ans_a_in\"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_b_in\"/>b: Es gibt unendlich viele verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_c_in\"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...\nAussage <bookmark mark=\"ans_d_in\"/>d: Die Gleichung hat nur reelle Lösungen. ..."
