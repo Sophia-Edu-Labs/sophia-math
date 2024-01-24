@@ -5928,7 +5928,7 @@ class Calc_practice_pfd_1_q(SophiaCursorScene):
             questionText = self.translate("Calc_1.practice_pfd.10q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
                 fallbackOptionIndex=1,
-                answerOptionMatcher="$A=\key{a}$, $B=\key{b}$, $C=\key{c}$",
+                answerOptionMatcher="$A=\key{A}$, $B=\key{B}$, $C=\key{C}$",
                 answerOptionsTypes={
                     "A": "number",
                     "B": "number",
@@ -6227,7 +6227,7 @@ class Calc_practice_pfd_2_a(SophiaCursorScene):
 
         # Define the voiceover text
         voiceover_text = """
-                
+              aaa  
 """
 
         # Action Sequence
@@ -6237,14 +6237,14 @@ class Calc_practice_pfd_2_a(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
-#
+#TODO
 
         
 
 
 ##################################### Minimum and Maximum
 #####################################
-class Calc_practice_minmax_10_q(SophiaCursorScene):
+class Calc_practice_minmax_1_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6591,6 +6591,23 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 #####################################
 class Calc_practice_complex_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$Re(z)=2$, $Im(z)=-1$", "$Re(z)=0$, $Im(z)=0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_complex.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$Re(z)=\key{Re}$, $Im(z)=\key{Im}$",
+                answerOptionsTypes={
+                    "Re": "number",
+                    "Im": "number",
+                }
+            )
+        )
+
+    #
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -6602,15 +6619,12 @@ class Calc_practice_complex_1_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        complex_number = Tex(r"$z=\frac{c+3i}{1+2i}$", color=BLUE, font_size=fs1).set_y(2)
+        complex_number = Tex(r"$z=\frac{4+3i}{1+2i}$", color=c1t, font_size=fs2).set_y(2)
 
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachte die Komplexe Zahl <bookmark mark="complex_number_in"/>z, welche durch den Ausdruck c plus drei i geteilt durch eins plus zwei i definiert ist.
-Was ist der <bookmark mark="qmark"/>Realteil von z? Und was ist der Imaginärteil von z?
-"""
+        voiceover_text = self.translate("Calc_1.practice_complex.01q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -6625,7 +6639,85 @@ Was ist der <bookmark mark="qmark"/>Realteil von z? Und was ist der Imaginärtei
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
-#
+
+class Calc_practice_complex_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        complex_numbers = self.translate("General.complex_numbers")
+        title = self.add_title(complex_numbers)
+        self.add(title)
+
+        # Define the function text using MathTex
+        complex_number_1 = MathTex(r"z={{4+3i}\over", r"{1+2i}}", color=c1t, font_size=fs2).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\cdot\tfrac{(1-2i)}{(1-2i)}", color=BLUE, font_size=fs2)
+        step_1[1].scale(.9)
+        complex_number_2_a = MathTex(r"z={{(4+3i)(1-2i)}\over", r"{(1+2i)", r"(1-2i)}}", color=c1t, font_size=fs2)
+        complex_number_2_b = MathTex(r"z={{(4+3i)(1-2i)}\over", r"{1+4}}", color=c1t, font_size=fs2)
+        complex_number_2 = VGroup(complex_number_2_a, complex_number_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        step_2 = Tex(r"$\Downarrow$", r" "+self.translate("words.expand"), color=BLUE, font_size=fs2)
+        step_2[1].scale(.9)
+        complex_number_3_a = MathTex(r"z=", r"\tfrac15", r"(4+3i-8i-6i^2)", color=c1t, font_size=fs2)
+        complex_number_3_b = MathTex(r"z=", r"\tfrac15", r"(10-5i)", color=c1t, font_size=fs2)
+        complex_number_3_c = MathTex(r"z=", r"2-i", color=c1t, font_size=fs2)
+        complex_number_3 = VGroup(complex_number_3_a, complex_number_3_b, complex_number_3_c)
+        steps = VGroup(step_1, complex_number_2, step_2, complex_number_3).arrange(DOWN, buff=.2).scale(.9).next_to(complex_number_1, DOWN, buff=.2)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
+        self.add(qmark, complex_number_1)
+
+        # Define the voiceover text
+        voiceover_text = """
+First, we want <bookmark mark="qmark"/>to get rid of the complex number in <bookmark mark="denominator_1"/>the denominator. To do this, we <bookmark mark="step_1"/>multiply both enumerator and denominator with 1 minus 2i.
+<bookmark mark="complex_number_2_a"/>We then get <bookmark mark="denominator_2_a"/>1 plus 2 i times<bookmark mark="denominator_2_b"/> one minus 2 i in the denominator. ... This is a difference of squares, so we can <bookmark mark="complex_number_2_b"/>simplify the denominator to one plus four.
+Next, we <bookmark mark="step_2"/>expand the enumerator, and get that <bookmark mark="complex_number_3_a"/>z equals one over five times 4 + 3 i minus 8 i minus 6 i squared. ... Adding things up and replacing the i squared with negative one gives us <bookmark mark="complex_number_3_b"/>one over five times 10 minus 5 i. Finally, we perform the division <bookmark mark="complex_number_3_c"/>and get that z equals two minus i.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("denominator_1")
+            self.play(Indicate(complex_number_1[-1], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("complex_number_2_a")
+            self.play(Write(complex_number_2_a))
+
+            self.wait_until_bookmark("denominator_2_a")
+            self.play(Indicate(complex_number_2_a[-2], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("denominator_2_b")
+            self.play(Indicate(complex_number_2_a[-1], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("complex_number_2_b")
+            self.play(TransformMatchingTex(complex_number_2_a, complex_number_2_b))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("complex_number_3_a")
+            self.play(Write(complex_number_3_a))
+
+            self.wait_until_bookmark("complex_number_3_b")
+            self.play(TransformMatchingTex(complex_number_3_a, complex_number_3_b))
+
+            self.wait_until_bookmark("complex_number_3_c")
+            self.play(TransformMatchingTex(complex_number_3_b, complex_number_3_c))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
         
 ##################################### Trig functions
 #####################################
@@ -6990,6 +7082,38 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_5_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_6_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_6_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_6_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_6_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_7_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_7_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_7_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_7_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_8_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_8_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_8_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_8_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_9_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_9_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_9_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_9_b),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_10_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_limits_10_q),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_10_a),
+    PagePrototypeVideo.from_scene(Calc_practice_limits_10_b),
 ########################################################### Partial fraction decomposition
     PagePrototypeVideo.from_scene(Calc_practice_pfd_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_pfd_1_q),

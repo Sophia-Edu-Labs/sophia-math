@@ -2895,7 +2895,9 @@
     "pfd": "Partial fraction decomposition",
     "complex_numbers": "Complex Numbers",
     "trig_functions": "Trigonometric Functions",
-    "does-not-exist": "doesn't exist"
+    "does-not-exist": "doesn't exist",
+    "real_part": "real part",
+    "imaginary_part": "imaginary part"
   },
   "LinAlg": {
     "14I1": {
@@ -2937,7 +2939,8 @@
     "Limits": "Limits",
     "mvt": "mean value theorem",
     "continuous": "continuous",
-    "ivt": "intermediate value thm"
+    "ivt": "intermediate value thm",
+    "expand": "expand"
   },
   "Words": {
     "base": "base",
@@ -3739,6 +3742,17 @@
       },
       "02q": {
         "voiceover-text": "You are given the <bookmark mark=\"pfd_in\"/>function x squared plus ten x plus eighteen divided by x times open bracket x squared plus six x plus nine close bracket.\nYou now have to carry out a partial fraction decomposition with the approach <bookmark mark=\"ansatz_in\"/>A over x plus B over x plus three plus C over open bracket x plus three close bracket squared.\n<bookmark mark=\"qmark_in\"/>What are the coefficients A, B and C?"
+      }
+    },
+    "practice_complex": {
+      "01q": {
+        "voiceover-text": "Consider the complex number <bookmark mark=\"complex_number_in\"/>z, which is defined by the expression 4 plus three i divided by one plus two i.\nWhat is the <bookmark mark=\"qmark\"/>real part of z? And what is the imaginary part of z?"
+      },
+      "1q": {
+        "question-text": "What are real and imaginary parts of the fraction $\\frac{4+3i}{1+2i}$?"
+      },
+      "01a": {
+        "voiceover-text": "First, we want <bookmark mark=\"qmark\"/>to get rid of the complex number in <bookmark mark=\"denominator_1\"/>the denominator. To do this, we <bookmark mark=\"step_1\"/>multiply both enumerator and denominator with 1 minus 2i.\n<bookmark mark=\"complex_number_2_a\"/>We then get <bookmark mark=\"denominator_2_a\"/>1 plus 2 i times<bookmark mark=\"denominator_2_b\"/> one minus 2 i in the denominator. ... This is a difference of squares, so we can <bookmark mark=\"complex_number_2_b\"/>simplify the denominator to one plus four.\nNext, we <bookmark mark=\"step_2\"/>expand the enumerator, and get that <bookmark mark=\"complex_number_3_a\"/>z equals one over five times 4 + 3 i minus 8 i minus 6 i squared. ... Adding things up and replacing the i squared with negative one gives us <bookmark mark=\"complex_number_3_b\"/>one over five times 10 minus 5 i. Finally, we perform the division <bookmark mark=\"complex_number_3_c\"/>and get that z equals two minus i."
       }
     }
   },

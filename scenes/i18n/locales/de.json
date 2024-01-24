@@ -2895,7 +2895,9 @@
     "pfd": "Partialbruchzerlegung",
     "complex_numbers": "Komplexe Zahlen",
     "trig_functions": "Trigonometrische Funktionen",
-    "does-not-exist": "existiert nicht"
+    "does-not-exist": "existiert nicht",
+    "real_part": "Realteil",
+    "imaginary_part": "Imaginärteil"
   },
   "LinAlg": {
     "14I1": {
@@ -2937,7 +2939,8 @@
     "Limits": "Grenzwerte",
     "mvt": "Mittelwertsatz",
     "continuous": "stetig",
-    "ivt": "Zwischenwertsatz"
+    "ivt": "Zwischenwertsatz",
+    "expand": "ausmultiplizieren"
   },
   "Func_6_P": {
     "22": {
@@ -3733,6 +3736,14 @@
       },
       "02q": {
         "voiceover-text": "Du hast die <bookmark mark=\"pfd_in\"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.\nDu sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark=\"ansatz_in\"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.\n<bookmark mark=\"qmark_in\"/>Was sind dann die Koeffizienten A, B und C?"
+      }
+    },
+    "practice_complex": {
+      "01q": {
+        "voiceover-text": "Betrachte die Komplexe Zahl <bookmark mark=\"complex_number_in\"/>z, welche durch den Ausdruck 4 plus drei i geteilt durch eins plus zwei i definiert ist.\nWas ist der <bookmark mark=\"qmark\"/>Realteil von z? Und was ist der Imaginärteil von z?"
+      },
+      "1q": {
+        "question-text": "Was sind Real- und Imaginärteile des Bruchs $\\frac{4+3i}{1+2i}$?"
       }
     }
   },
