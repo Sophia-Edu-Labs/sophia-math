@@ -1054,7 +1054,7 @@ class LinAlg_1_Determinant_3x3_1(SophiaCursorScene):
         with self.voiceover(
                 text=""" 
                 In diesem Kapitel lernen wir, wie man die <bookmark mark="number"/> Determinante einer 3 Kreuz 3 Matrix berechnen kann. <break time="0.8s"/>  
-                Dafür gibt es auch eine <bookmark mark="sarrus"/> einfache Formel, die sich die Regel von Sarrus nennt. <break time="0.4s"/>
+                Dafür gibt es auch eine <bookmark mark="sarrus"/> einfache Formel, die sich die Regel von Sarrü nennt. <break time="0.4s"/>
                 Wir <bookmark mark="det_1"/> betrachten also eine allgemeine 3 Kreuz 3 Matrix A. Für <bookmark mark="det_2"/> die Berechnung der Determinante von A, wenden wir die folgende Hilfskonstruktion an.
                 Wir <bookmark mark="extended"/> basteln aus der Matrix A eine erweiterte Matrix, indem wir die ersten zwei Spalten der Matrix A nochmal hinten dranhängen. 
                 Die Determinante berechnet sich dann wie folgt: <bookmark mark="diag_1"/>  Wir bilden das Produkt der Einträge auf der ersten <bookmark mark="diag_2"/> Diagonale, dann das Produkt der Einträge auf der zweiten Diagonale <bookmark mark="diag_3"/> und schliesslich das Produkt der Einträge auf der dritten Diagonale und summieren das Ganze. 
@@ -1911,5 +1911,6 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_q),
     PagePrototypeQuestion.from_scene(LinAlg_1_Determinant_intro_3_q),
     PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_a),
-    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_b)
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_intro_3_b),
+    PagePrototypeVideo.from_scene(LinAlg_1_Determinant_3x3_1),
 ]

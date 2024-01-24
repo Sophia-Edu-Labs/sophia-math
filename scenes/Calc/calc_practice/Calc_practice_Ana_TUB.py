@@ -5921,6 +5921,22 @@ class Calc_practice_limits_10_b(SophiaCursorScene):
 #####################################
 class Calc_practice_pfd_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$A=1$, $B=2$, $C=3$", "$A=0$, $B=0$, $C=0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_pfd.10q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$A=\key{a}$, $B=\key{b}$, $C=\key{c}$",
+                answerOptionsTypes={
+                    "A": "number",
+                    "B": "number",
+                    "C": "number",
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -5937,11 +5953,7 @@ class Calc_practice_pfd_1_q(SophiaCursorScene):
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
         # Define the voiceover text
-        voiceover_text = """
-Betrachte die <bookmark mark="pfd_in"/>Funktion vier x quadrat plus zwei x plus drei geteilt durch x hoch drei plus x.
-Wenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A x plus B geteilt durch x quadrat plus eins plus C geteilt durch x an.
-<bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
-"""
+        voiceover_text = self.translate("Calc_1.practice_pfd.01q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5958,6 +5970,202 @@ Wenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansa
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+
+
+class Calc_practice_pfd_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
+
+        # Define the function text using MathTex
+        pfd = MathTex(r"{{4x^2+2x+3}", r"\over", r"{x^3+x}}", r"=", r"{{Ax+B}", r"\over", r"{x^2+1}}", r"+", r"{{C}", r"\over", r"{x}}", color=c1t, font_size=fs3).set_y(2)
+        en_0, en_1, en_2, den_0, den_1, den_2 = pfd[0], pfd[4], pfd[8], pfd[2], pfd[6], pfd[10]
+        eq_1_a = MathTex(r"4x^2 = Ax^2+Cx^2", color=c1t, font_size=fs2)
+        eq_1_b = MathTex(r"4x^2 = Ax^2+3x^2", color=c1t, font_size=fs2)
+        eq_1_c = MathTex(r"1 = A", color=c1t, font_size=fs2)
+        eq_1 = VGroup(eq_1_a, eq_1_b, eq_1_c).arrange(ORIGIN, aligned_edge=LEFT)
+        eq_2_a = MathTex(r"2x = Bx", color=c1t, font_size=fs2)
+        eq_2_b = MathTex(r"2 = B", color=c1t, font_size=fs2)
+        eq_2 = VGroup(eq_2_a, eq_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        eq_3 = MathTex(r"3 = C", color=c1t, font_size=fs2)
+        eqs = VGroup(eq_3, eq_2, eq_1).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(pfd, DOWN, buff=.6)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
+        
+        self.add(qmark, pfd)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_6")+self.translate("Calc_1.practice_pfd.01a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("qmark_out")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_denoms")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("left_enum")
+            self.play(en_1.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("right_denom")
+            self.play(den_2.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("right_enum")
+            self.play(en_2.animate.set_color(RED), den_2.animate.set_color(c1t), en_1.animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("left_denom")
+            self.play(den_1.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("higlight_original_enum")
+            self.play(en_0.animate.set_color(RED), den_1.animate.set_color(c1t), en_2.animate.set_color(c1t), run_time=.5)
+            self.wait(1)
+            self.play(en_0.animate.set_color(c1t))
+
+            self.wait_until_bookmark("eq_3")
+            self.play(Write(eq_3), run_time=.5)
+
+            self.wait_until_bookmark("higlight_left_denom_2")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("eq_2")
+            self.play(Write(eq_2_a), run_time=.5)
+
+            self.wait_until_bookmark("right_denom_2")
+            self.play(Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("eq_1")
+            self.play(Write(eq_1_a), run_time=.5)
+
+            self.wait_until_bookmark("highlight_left_denom_3")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("right_denom_3")
+            self.play(Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("transform_eq_2")
+            self.play(TransformMatchingTex(eq_2_a, eq_2_b), run_time=.5)
+
+            self.wait_until_bookmark("highlight_eq_3")
+            self.play(Indicate(eq_3, color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("transform_eq_1_a")
+            self.play(TransformMatchingTex(eq_1_a, eq_1_b))
+
+            self.wait_until_bookmark("transform_eq_1_b")
+            self.play(TransformMatchingTex(eq_1_b, eq_1_c))
+
+            self.wait_until_bookmark("turn_green")
+            self.play(eq_1_c.animate.set_color(GREEN), eq_2_b.animate.set_color(GREEN), eq_3.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_pfd_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
+
+        # Define the function text using MathTex
+        pfd = MathTex(r"{{4x^2+2x+3}", r"\over", r"{x^3+x}}", r"=", r"{{Ax+B}", r"\over", r"{x^2+1}}", r"+", r"{{C}", r"\over", r"{x}}", color=c1t, font_size=fs3).set_y(2)
+        en_0, en_1, en_2, den_0, den_1, den_2 = pfd[0], pfd[4], pfd[8], pfd[2], pfd[6], pfd[10]
+        eq_1_a = MathTex(r"4x^2 = Ax^2+Cx^2", color=c1t, font_size=fs2)
+        eq_1_b = MathTex(r"4x^2 = Ax^2+3x^2", color=c1t, font_size=fs2)
+        eq_1_c = MathTex(r"1 = A", color=c1t, font_size=fs2)
+        eq_1 = VGroup(eq_1_a, eq_1_b, eq_1_c).arrange(ORIGIN, aligned_edge=LEFT)
+        eq_2_a = MathTex(r"2x = Bx", color=c1t, font_size=fs2)
+        eq_2_b = MathTex(r"2 = B", color=c1t, font_size=fs2)
+        eq_2 = VGroup(eq_2_a, eq_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        eq_3 = MathTex(r"3 = C", color=c1t, font_size=fs2)
+        eqs = VGroup(eq_3, eq_2, eq_1).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(pfd, DOWN, buff=.6)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
+        
+        self.add(qmark, pfd)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_6")+self.translate("Calc_1.practice_pfd.01a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("qmark_out")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_denoms")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("left_enum")
+            self.play(en_1.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("right_denom")
+            self.play(den_2.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("right_enum")
+            self.play(en_2.animate.set_color(RED), den_2.animate.set_color(c1t), en_1.animate.set_color(c1t), run_time=.5)
+
+            self.wait_until_bookmark("left_denom")
+            self.play(den_1.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("higlight_original_enum")
+            self.play(en_0.animate.set_color(RED), den_1.animate.set_color(c1t), en_2.animate.set_color(c1t), run_time=.5)
+            self.wait(1)
+            self.play(en_0.animate.set_color(c1t))
+
+            self.wait_until_bookmark("eq_3")
+            self.play(Write(eq_3), run_time=.5)
+
+            self.wait_until_bookmark("higlight_left_denom_2")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("eq_2")
+            self.play(Write(eq_2_a), run_time=.5)
+
+            self.wait_until_bookmark("right_denom_2")
+            self.play(Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("eq_1")
+            self.play(Write(eq_1_a), run_time=.5)
+
+            self.wait_until_bookmark("highlight_left_denom_3")
+            self.play(Indicate(den_1, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("right_denom_3")
+            self.play(Indicate(den_2, color=RED, scale_factor=1.4), run_time=2)
+
+            self.wait_until_bookmark("transform_eq_2")
+            self.play(TransformMatchingTex(eq_2_a, eq_2_b), run_time=.5)
+
+            self.wait_until_bookmark("highlight_eq_3")
+            self.play(Indicate(eq_3, color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("transform_eq_1_a")
+            self.play(TransformMatchingTex(eq_1_a, eq_1_b))
+
+            self.wait_until_bookmark("transform_eq_1_b")
+            self.play(TransformMatchingTex(eq_1_b, eq_1_c))
+
+            self.wait_until_bookmark("turn_green")
+            self.play(eq_1_c.animate.set_color(GREEN), eq_2_b.animate.set_color(GREEN), eq_3.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
 #####################################
 class Calc_practice_pfd_2_q(SophiaCursorScene):
@@ -5978,11 +6186,7 @@ class Calc_practice_pfd_2_q(SophiaCursorScene):
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
 
         # Define the voiceover text
-        voiceover_text = """
-Du hast die <bookmark mark="pfd_in"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.
-Du sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_in"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.
-<bookmark mark="qmark_in"/>Was sind dann die Koeffizienten A, B und C?
-"""
+        voiceover_text = self.translate("Calc_1.practice_pfd.02q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -5996,6 +6200,40 @@ Du sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark="ansatz_i
             self.wait_until_bookmark("qmark_in")
             self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
+class Calc_practice_pfd_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        pfd = self.translate("General.pfd")
+        title = self.add_title(pfd)
+        self.add(title)
+
+        # Define the function text using MathTex
+        pfd = MathTex(r"{{x^2+10x+18}", r"\over", r"{x(x^2+6x+9)}}", r"=", r"{{A}", r"\over", r"{x}}", r"+", r"{{B}", r"\over", r"{x+3}}", r"+", r"{{C}", r"\over", r"{(x+3)^2}}", color=c1t, font_size=fs3).set_y(2)
+        en_0, en_1, en_2, en_3, den_0, den_1, den_2, den_3 = pfd[0], pfd[4], pfd[8], pfd[12], pfd[2], pfd[6], pfd[10], pfd[14]
+
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
+        self.add(qmark, pfd)
+
+        # Define the voiceover text
+        voiceover_text = """
+                
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait(2)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -6056,7 +6294,7 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
         
 ##################################### Intermediate value theorem
 #####################################
-class Calc_practice_ivt_10_q(SophiaCursorScene):
+class Calc_practice_ivt_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
@@ -6116,7 +6354,7 @@ The answer is incorrect.
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
-class Calc_practice_ivt_10_a(SophiaCursorScene):
+class Calc_practice_ivt_1_a(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6153,7 +6391,7 @@ class Calc_practice_ivt_10_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
-class Calc_practice_ivt_10_b(SophiaCursorScene):
+class Calc_practice_ivt_1_b(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6189,7 +6427,7 @@ class Calc_practice_ivt_10_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
-class Calc_practice_ivt_10_c(SophiaCursorScene):
+class Calc_practice_ivt_1_c(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6225,7 +6463,7 @@ class Calc_practice_ivt_10_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
-class Calc_practice_ivt_10_d(SophiaCursorScene):
+class Calc_practice_ivt_1_d(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6261,7 +6499,7 @@ class Calc_practice_ivt_10_d(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
-class Calc_practice_ivt_10_e(SophiaCursorScene):
+class Calc_practice_ivt_1_e(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -6634,7 +6872,7 @@ Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
 #
 
 PROTOTYPES=[
-##########################################################################
+########################################################### MC
     PagePrototypeVideo.from_scene(Calc_practice_MC_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_MC_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_MC_1_a),
@@ -6743,6 +6981,7 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_MC_19_b),
     PagePrototypeVideo.from_scene(Calc_practice_MC_19_c),
     PagePrototypeVideo.from_scene(Calc_practice_MC_19_d),
+########################################################### Limits
     PagePrototypeVideo.from_scene(Calc_practice_limits_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_limits_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_1_a),
@@ -6751,11 +6990,17 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_limits_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_limits_2_b),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_q),
-    PagePrototypeQuestion.from_scene(Calc_practice_ivt_10_q),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_a),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_b),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_c),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_d),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_10_e),
-]
+########################################################### Partial fraction decomposition
+    PagePrototypeVideo.from_scene(Calc_practice_pfd_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_pfd_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_pfd_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_pfd_1_b),
+########################################################### Intermediate Value Theorem
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_ivt_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_c),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_d),
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_e)
+    ]

@@ -3726,6 +3726,20 @@
         "forgot_continuity": "That's almost it. You forgot to mention that the function is continuous, which is a requirement for the intermediate value theorem. Let's have another look together...",
         "forgot_interval_limits": "That's almost it. You forgot to mention that the values of the limits are negative for f of zero, and positive for f of three. Let's have another look together..."
       }
+    },
+    "practice_pfd": {
+      "01q": {
+        "voiceover-text": "Consider the <bookmark mark=\"pfd_in\"/>function four x squared plus two x plus three divided by x to the power of three plus x.\nLet's apply a partial fraction decomposition with the approach <bookmark mark=\"ansatz_in\"/>A x plus B divided by x squared plus one plus C divided by x.\n<bookmark mark=\"qmark_in\"/>What are the coefficients A, B and C then?"
+      },
+      "10q": {
+        "question-text": "Consider the parital fraction decomposition of the expression $\\frac{4x^2+2x+3}{x^3+x}=\\frac{Ax+B}{x^2+1}+\\frac{C}{x}$. What are the values of $A,B$ and $C$?"
+      },
+      "01a": {
+        "voiceover-text": "If we wanted to <bookmark mark=\"qmark_out\"/>add the two fractions on the right hand side, we would need a common denominator.\nTo achieve that, we would multiply <bookmark mark=\"highlight_denoms\"/> the denominators and then add the sum of the <bookmark mark=\"left_enum\"/>enumerator on the left multiplied by the <bookmark mark=\"right_denom\"/>denominator on the right plus the <bookmark mark=\"right_enum\"/>enumerator on the right multiplied by the <bookmark mark=\"left_denom\"/>denominator on the left.\nSince that sum would have to be equal to the <bookmark mark=\"higlight_original_enum\"/>enumerator of the original fraction, we can identify the coefficients A, B and C as follows:\nWe will <bookmark mark=\"eq_3\"/>need one summand to be equal to three, which can only be achieved from multiplying C with one from the <bookmark mark=\"higlight_left_denom_2\"/>denominator on the left.\nWe will also <bookmark mark=\"eq_2\"/>need one summand to be equal to two x, which we can get from multiplying B with the <bookmark mark=\"right_denom_2\"/>denominator on the right.\nFinally, we <bookmark mark=\"eq_1\"/>need 4 x squared, which we can get from multiplying Ax with the <bookmark mark=\"right_denom_3\"/> right denominator or from multiplying C with the <bookmark mark=\"highlight_left_denom_3\"/>x squared in the left denominator.\nNow that we have these three equations, we can immediately see that <bookmark mark=\"transform_eq_2\"/>b is equal to two and that <bookmark mark=\"highlight_eq_3\"/>c is equal to three.\nNow we plug in C into equation one and <bookmark mark=\"transform_eq_1_a\"/>get that 4 x squared is equal to A x squared plus 3 x squared. So <bookmark mark=\"transform_eq_1_b\"/>A has to be equal to one. And that's it<bookmark mark=\"turn_green\"/>: C is equal to 3, B is equal to 2, and A is equal to one."
+      },
+      "02q": {
+        "voiceover-text": "You are given the <bookmark mark=\"pfd_in\"/>function x squared plus ten x plus eighteen divided by x times open bracket x squared plus six x plus nine close bracket.\nYou now have to carry out a partial fraction decomposition with the approach <bookmark mark=\"ansatz_in\"/>A over x plus B over x plus three plus C over open bracket x plus three close bracket squared.\n<bookmark mark=\"qmark_in\"/>What are the coefficients A, B and C?"
+      }
     }
   },
   "Func_6_P_scaling_exp": {

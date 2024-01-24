@@ -3720,6 +3720,20 @@
         "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
         "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu prüfen, dass die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für f von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
       }
+    },
+    "practice_pfd": {
+      "01q": {
+        "voiceover-text": "Betrachte die <bookmark mark=\"pfd_in\"/>Funktion vier x quadrat plus zwei x plus drei geteilt durch x hoch drei plus x.\nWenden wir darauf eine Partialbruchzerlegung mit dem Ansatz <bookmark mark=\"ansatz_in\"/>A x plus B geteilt durch x quadrat plus eins plus C geteilt durch x an.\n<bookmark mark=\"qmark_in\"/>Was sind dann die Koeffizienten A, B und C?"
+      },
+      "10q": {
+        "question-text": "Betrachte die Paritalbruchzerlegung des Ausdrucks $\\frac{4x^2+2x+3}{x^3+x}=\\frac{Ax+B}{x^2+1} \\frac{C}{x}$. \nWas sind die Werte von $A,B$ und $C$?"
+      },
+      "01a": {
+        "voiceover-text": "Wenn wir <bookmark mark=\"qmark_out\"/>die beiden Brüche auf der rechten Seite addieren wollen, brauchen wir einen gemeinsamen Nenner.\nUm diesen zu erhalten, multiplizieren wir <bookmark mark=\"highlight_denoms\"/> die Nenner und addieren dann die Summe des <bookmark mark=\"left_enum\"/>Zählers auf der linken Seite multipliziert mit dem <bookmark mark=\"right_denom\"/>Nenner auf der rechten Seite plus den <bookmark mark=\"right_enum\"/>Zähler auf der rechten Seite multipliziert mit dem <bookmark mark=\"left_denom\"/>Nenner auf der linken Seite.\nDa diese Summe gleich dem <bookmark mark=\"higlight_original_enum\"/>Zähler des ursprünglichen Bruches ist, können wir die Koeffizienten A, B und C wie folgt bestimmen:\nWir <bookmark mark=\"eq_3\"/>brauchen einen Summanden, der gleich drei ist, was nur durch Multiplikation von C mit Eins aus dem <bookmark mark=\"higlight_left_denom_2\"/>Nenner auf der linken Seite erreicht werden kann.\nAußerdem <bookmark mark=\"eq_2\"/>brauchen wir einen Summanden, der gleich zwei x ist, was wir durch Multiplikation von B mit dem <bookmark mark=\"right_denom_2\"/>Nenner auf der rechten Seite erreichen können.\nSchließlich <bookmark mark=\"eq_1\"/>brauchen wir 4 x zum Quadrat, die wir durch Multiplikation von Ax mit dem <bookmark mark=\"right_denom_3\"/> rechten Nenner oder durch Multiplikation von C mit dem <bookmark mark=\"highlight_left_denom_3\"/>x Quadrat im linken Nenner erhalten können.\nMit diesen drei Gleichungen sehen wir sofort, dass <bookmark mark=\"transform_eq_2\"/>b gleich zwei ist und dass <bookmark mark=\"highlight_eq_3\"/>c gleich drei ist.\nJetzt setzen wir C in Gleichung eins ein und <bookmark mark=\"transform_eq_1_a\"/>erhalten, dass 4 x Quadrat gleich A x Quadrat plus 3 x Quadrat ist. Also <bookmark mark=\"transform_eq_1_b\" /> muss A gleich eins sein. Und das war's<bookmark mark=\"turn_green\"/>: C ist gleich 3, B ist gleich 2, und A ist gleich eins."
+      },
+      "02q": {
+        "voiceover-text": "Du hast die <bookmark mark=\"pfd_in\"/>Funktion x quadrat plus zehn x plus achtzehn geteilt durch x mal Klammer auf x quadrat plus sechs x plus neun Klammer zu, gegeben.\nDu sollst nun eine Partialbruchzerlegung mit dem Ansatz <bookmark mark=\"ansatz_in\"/>A durch x plus B durch x plus drei plus C durch Klammer auf x plus drei Klammer zu hoch zwei durchführen.\n<bookmark mark=\"qmark_in\"/>Was sind dann die Koeffizienten A, B und C?"
+      }
     }
   },
   "Func_6_P_scaling_exp": {
