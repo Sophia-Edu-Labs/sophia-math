@@ -6367,10 +6367,10 @@ class Calc_practice_ivt_1_a(SophiaCursorScene):
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        continuous = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -6379,8 +6379,8 @@ class Calc_practice_ivt_1_a(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("steady")
-            self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
 
             self.wait_until_bookmark("intervall_limits")
             self.play(Write(intervall_limits, run_time=.5))
@@ -6403,10 +6403,10 @@ class Calc_practice_ivt_1_b(SophiaCursorScene):
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        continuous = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -6415,8 +6415,8 @@ class Calc_practice_ivt_1_b(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("steady")
-            self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
 
             self.wait_until_bookmark("intervall_limits")
             self.play(Write(intervall_limits, run_time=.5))
@@ -6439,10 +6439,10 @@ class Calc_practice_ivt_1_c(SophiaCursorScene):
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        continuous = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -6451,8 +6451,8 @@ class Calc_practice_ivt_1_c(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("steady")
-            self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
 
             self.wait_until_bookmark("intervall_limits")
             self.play(Write(intervall_limits, run_time=.5))
@@ -6475,10 +6475,10 @@ class Calc_practice_ivt_1_d(SophiaCursorScene):
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        continuous = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -6487,8 +6487,8 @@ class Calc_practice_ivt_1_d(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("steady")
-            self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
 
             self.wait_until_bookmark("intervall_limits")
             self.play(Write(intervall_limits, run_time=.5))
@@ -6511,10 +6511,10 @@ class Calc_practice_ivt_1_e(SophiaCursorScene):
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
         intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
         func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-        steady = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
+        continuous = Tex(r"$\bullet$ $f$ stetig", color=BLUE, font_size=fs2)
         intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ Zwischenwertsatz\\$\Rightarrow$ Nullstelle", color=BLUE, font_size=fs2)
-        bullets = VGroup(steady, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -6523,8 +6523,8 @@ class Calc_practice_ivt_1_e(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("steady")
-            self.play(Write(steady), run_time=.5)
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
 
             self.wait_until_bookmark("intervall_limits")
             self.play(Write(intervall_limits, run_time=.5))
@@ -6990,7 +6990,7 @@ Was ist <bookmark mark="period_in"/>die kleinste Periode T von der Funktion f?
         
 ##################################### Steadiness
 ##################################### #TODO
-class Calc_practice_steady_1_q(SophiaCursorScene):
+class Calc_practice_continuous_1_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -7010,7 +7010,7 @@ class Calc_practice_steady_1_q(SophiaCursorScene):
         
 
         # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.practice_steady.1q.voiceover-text")
+        voiceover_text = self.translate("Calc_1.practice_continuous.1q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -7025,6 +7025,82 @@ class Calc_practice_steady_1_q(SophiaCursorScene):
             self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
+#
+class Calc_practice_continuous_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.steadiness")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
+        left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
+        left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
+        right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
+        right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
+        right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"-1", color=c1t, font_size=fs3)
+        right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
+        limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
+        
+
+        self.add(function)
+
+
+        
+
+        # Define the voiceover text
+        voiceover_text = """
+First, notice that the functions one plus b e to the power of x, as well as negative sine of x over x minus pi are continuous functions, so the function f is continuous for all x that are not equal to pi.
+Now in order to make sure that the function is continuous at x equals pi, we have to make sure that the left sided limit for x approaching pi and the right sided limit for x approaching pi are equal to the value of f of pi.
+So let's start computing the <bookmark mark="left_1_a"/>left sided limit for x approaching pi of f of x. This is <bookmark mark="left_1_b"/>equal to the left sided limit for x approaching pi of one plus b e to the power of x.
+And for that, we can just plug in pi for x, and <bookmark mark="left_2"/>that that is equal to one plus b e to the power of pi.
+Next, we compute the <bookmark mark="right_1_a"/>right sided limit for x approaching pi of f of x. This is equal to the right sided limit for x approaching pi of <bookmark mark="right_1_b"/>negative sine of x over x minus pi.
+If we plugged in pi for x, we would divide zero by zero, so we can use LOpitals rule and compute the limit of the fraction of the derivatives instead. This gives us the right sided limit for x approaching pi of <bookmark mark="right_2"/> negative cosine of x over one.
+And that is just <bookmark mark="right_3"/>equal to one.
+So now to make sure, that both limits are equal to the value of f at x equals pi, we just<bookmark mark="sol_in"/> set b to zero, and a to one.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("left_1_a")
+            self.play(Write(left_limit_1[0]))
+
+            self.wait_until_bookmark("left_1_b")
+            self.play(Write(left_limit_1[1]))
+
+            self.wait_until_bookmark("left_2")
+            self.play(TransformMatchingTex(left_limit_1, left_limit_2))
+
+            self.wait_until_bookmark("right_1_a")
+            self.play(Write(right_limit_1[0]))
+
+            self.wait_until_bookmark("right_1_b")
+            self.play(Write(right_limit_1[1]))
+
+            self.wait_until_bookmark("right_2")
+            self.play(TransformMatchingTex(right_limit_1, right_limit_2))
+
+            self.wait_until_bookmark("right_3")
+            self.play(TransformMatchingTex(right_limit_2, right_limit_3))
+
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+            
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 

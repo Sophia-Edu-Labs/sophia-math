@@ -3646,6 +3646,12 @@
       },
       "17a": {
         "voiceover": "First, we'll <bookmark mark=\"step_1\"/> take the fourth root on both sides of the equation. We're then left <bookmark mark=\"equation_2\"/> with the equation that z is  equal to the fourth root of negative one plus i.\nSince the k-th root in the complex number always has k solution, we<bookmark mark=\"highlight_sol\"/> know that there are four solutions here."
+      },
+      "21q": {
+        "answer_a": "It incrases monotonously",
+        "answer_b": "$a_n>0$ for all $n\\in\\mathbb N$",
+        "answer_c": "It doesn't converge",
+        "answer_d": "It is unbounded"
       }
     },
     "practice_limits": {
@@ -3767,8 +3773,14 @@
       }
     },
     "practice_steady": {
+      "1q": {}
+    },
+    "practice_continuous": {
       "1q": {
         "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>piecewise function f, which is defined as 1 + b e to the power of x for x smaller than pi, a for x equal to pi, and negative sine of x over x minus pi for x greater than pi. <bookmark mark=\"qmark\"/>\nFor what values of a and b is this function continuous?"
+      },
+      "1a": {
+        "voiceover-text": "First, notice that the functions one plus b e to the power of x, as well as negative sine of x over x minus pi are continuous functions, so the function f is continuous for all x that are not equal to pi.\nNow in order to make sure that the function is continuous at x equals pi, we have to make sure that the left sided limit for x approaching pi and the right sided limit for x approaching pi are equal to the value of f of pi.\nSo let's start computing the <bookmark mark=\"left_1_a\"/>left sided limit for x approaching pi of f of x. This is <bookmark mark=\"left_1_b\"/>equal to the left sided limit for x approaching pi of one plus b e to the power of x.\nAnd for that, we can just plug in pi for x, and <bookmark mark=\"left_2\"/>that that is equal to one plus b e to the power of pi.\nNext, we compute the <bookmark mark=\"right_1_a\"/>right sided limit for x approaching pi of f of x. This is equal to the right sided limit for x approaching pi of <bookmark mark=\"right_1_b\"/>negative sine of x over x minus pi.\nIf we plugged in pi for x, we would divide zero by zero, so we can use LOpitals rule and compute the limit of the fraction of the derivatives instead. This gives us the right sided limit for x approaching pi of <bookmark mark=\"right_2\"/> negative cosine of x over one.\nAnd that is just <bookmark mark=\"right_3\"/>equal to one.\nSo now to make sure, that both limits are equal to the value of f at x equals pi, we just<bookmark mark=\"sol_in\"/> set b to zero, and a to one."
       }
     }
   },
