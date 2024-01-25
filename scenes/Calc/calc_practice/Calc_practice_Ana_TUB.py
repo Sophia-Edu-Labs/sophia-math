@@ -6242,7 +6242,7 @@ class Calc_practice_pfd_2_a(SophiaCursorScene):
         
 
 
-##################################### Minimum and Maximum
+##################################### Minimum and Maximum #TODO
 #####################################
 class Calc_practice_minmax_1_q(SophiaCursorScene):
 
@@ -6671,11 +6671,80 @@ class Calc_practice_complex_1_a(SophiaCursorScene):
         self.add(qmark, complex_number_1)
 
         # Define the voiceover text
-        voiceover_text = """
-First, we want <bookmark mark="qmark"/>to get rid of the complex number in <bookmark mark="denominator_1"/>the denominator. To do this, we <bookmark mark="step_1"/>multiply both enumerator and denominator with 1 minus 2i.
-<bookmark mark="complex_number_2_a"/>We then get <bookmark mark="denominator_2_a"/>1 plus 2 i times<bookmark mark="denominator_2_b"/> one minus 2 i in the denominator. ... This is a difference of squares, so we can <bookmark mark="complex_number_2_b"/>simplify the denominator to one plus four.
-Next, we <bookmark mark="step_2"/>expand the enumerator, and get that <bookmark mark="complex_number_3_a"/>z equals one over five times 4 + 3 i minus 8 i minus 6 i squared. ... Adding things up and replacing the i squared with negative one gives us <bookmark mark="complex_number_3_b"/>one over five times 10 minus 5 i. Finally, we perform the division <bookmark mark="complex_number_3_c"/>and get that z equals two minus i.
-"""
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.practice_complex.01a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("denominator_1")
+            self.play(Indicate(complex_number_1[-1], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("complex_number_2_a")
+            self.play(Write(complex_number_2_a))
+
+            self.wait_until_bookmark("denominator_2_a")
+            self.play(Indicate(complex_number_2_a[-2], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("denominator_2_b")
+            self.play(Indicate(complex_number_2_a[-1], color=RED, scale_factor=1.4), run_time=1)
+
+            self.wait_until_bookmark("complex_number_2_b")
+            self.play(TransformMatchingTex(complex_number_2_a, complex_number_2_b))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("complex_number_3_a")
+            self.play(Write(complex_number_3_a))
+
+            self.wait_until_bookmark("complex_number_3_b")
+            self.play(TransformMatchingTex(complex_number_3_a, complex_number_3_b))
+
+            self.wait_until_bookmark("complex_number_3_c")
+            self.play(TransformMatchingTex(complex_number_3_b, complex_number_3_c))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_complex_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        complex_numbers = self.translate("General.complex_numbers")
+        title = self.add_title(complex_numbers)
+        self.add(title)
+
+        # Define the function text using MathTex
+        complex_number_1 = MathTex(r"z={{4+3i}\over", r"{1+2i}}", color=c1t, font_size=fs2).set_y(2)
+        step_1 = MathTex(r"\Downarrow", r"\cdot\tfrac{(1-2i)}{(1-2i)}", color=BLUE, font_size=fs2)
+        step_1[1].scale(.9)
+        complex_number_2_a = MathTex(r"z={{(4+3i)(1-2i)}\over", r"{(1+2i)", r"(1-2i)}}", color=c1t, font_size=fs2)
+        complex_number_2_b = MathTex(r"z={{(4+3i)(1-2i)}\over", r"{1+4}}", color=c1t, font_size=fs2)
+        complex_number_2 = VGroup(complex_number_2_a, complex_number_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        step_2 = Tex(r"$\Downarrow$", r" "+self.translate("words.expand"), color=BLUE, font_size=fs2)
+        step_2[1].scale(.9)
+        complex_number_3_a = MathTex(r"z=", r"\tfrac15", r"(4+3i-8i-6i^2)", color=c1t, font_size=fs2)
+        complex_number_3_b = MathTex(r"z=", r"\tfrac15", r"(10-5i)", color=c1t, font_size=fs2)
+        complex_number_3_c = MathTex(r"z=", r"2-i", color=c1t, font_size=fs2)
+        complex_number_3 = VGroup(complex_number_3_a, complex_number_3_b, complex_number_3_c)
+        steps = VGroup(step_1, complex_number_2, step_2, complex_number_3).arrange(DOWN, buff=.2).scale(.9).next_to(complex_number_1, DOWN, buff=.2)
+
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
+        self.add(qmark, complex_number_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.practice_complex.01a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -6718,10 +6787,24 @@ Next, we <bookmark mark="step_2"/>expand the enumerator, and get that <bookmark 
         self.wait(6)
 
 
-        
 ##################################### Trig functions
 #####################################
 class Calc_practice_trig_1_q(SophiaCursorScene):
+
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [r"$\frac{2\Pi}{3}$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_trig.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -6740,11 +6823,7 @@ class Calc_practice_trig_1_q(SophiaCursorScene):
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
 
         # Define the voiceover text
-        voiceover_text = """
-Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
-Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
-Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
-"""
+        voiceover_text = self.translate("Calc_1.practice_trig.1q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -6756,7 +6835,8 @@ Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion b
             self.play(Write(function[1]))
 
             self.wait_until_bookmark("period_in")
-            self.play(Write(period))
+            self.play(Write(period), run_time=1)
+            self.wait(.5)
             self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
@@ -6788,13 +6868,7 @@ class Calc_practice_trig_1_a(SophiaCursorScene):
         self.add
 
         # Define the voiceover text
-        voiceover_text = """
-Wir wissen ja, dass <bookmark mark="sine_period_1"/>Sinus von x gleich Sinus von x plus zwei Pi ist.
-Also ist <bookmark mark="sine_period_2"/>die kleinste Periode von Sinus von x gleich zwei Pi.
-Das ganze bedeutet jetzt aber auch,<bookmark mark="sine_3_period_a"/> dass der Sinus von 3 x gleich dem Sinus von 3 x plus zwei Pi ist.
-Jetzt wollen wir ja die Periode wissen, also schreiben wir <bookmark mark="sine_3_period_b"/>drei x plus T in die Klammer, und wir erhalten, dass der Sinus von drei x plus T gleich dem Sinus von drei x plus zwei Pi ist.
-Und dann lösen wir das ganze nach T auf, und <bookmark mark="period_3"/>wir erhalten, dass die Periode T gleich zwei Pi durch drei ist.
-"""
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_trig.1a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -6816,7 +6890,55 @@ Und dann lösen wir das ganze nach T auf, und <bookmark mark="period_3"/>wir erh
             self.wait_until_bookmark("period_3")
             self.play(ReplacementTransform(period, period_3), run_time=.5)
 
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
+class Calc_practice_trig_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.trig_functions")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
+        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
+        period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
+        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
+        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
+
+        self.add
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_trig.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("sine_period_1")
+            self.add_shift_sound(.5)
+            period.generate_target().move_to(period_3)
+            self.play(Write(sine_period), MoveToTarget(period), qmark.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("sine_period_2")
+            self.play(Write(period_1), run_time=.5)
+
+            self.wait_until_bookmark("sine_3_period_a")
+            self.play(Write(sine_3_period_a), run_time=.5)
+
+            self.wait_until_bookmark("sine_3_period_b")
+            self.play(TransformMatchingTex(sine_3_period_a, sine_3_period_b), run_time=.5)
+
+            self.wait_until_bookmark("period_3")
+            self.play(ReplacementTransform(period, period_3), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -6863,11 +6985,11 @@ Was ist <bookmark mark="period_in"/>die kleinste Periode T von der Funktion f?
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
-
+#TODO
 #
         
 ##################################### Steadiness
-#####################################
+##################################### #TODO
 class Calc_practice_steady_1_q(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -6876,34 +6998,30 @@ class Calc_practice_steady_1_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        trig_functions = self.translate("General.trig_functions")
+        trig_functions = self.translate("General.steadiness")
         title = self.add_title(trig_functions)
         self.add(title)
 
         # Define the function text using MathTex
-        function = Tex(r"$f:\mathbb R \rightarrow \mathbb R$", r" $f(x)=\sin(3x)+2$", color=BLUE, font_size=fs3).scale(1.1).set_y(2.4)
-        period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
-
-        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-.4,0]).scale(.4)
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-1,0]).scale(.4)
+        
 
         # Define the voiceover text
-        voiceover_text = """
-Du hast eine Funktion gegeben, die <bookmark mark="func_in_1"/>von den reellen Zahlen in die reellen Zahlen abbildet.
-Der Term der Funktion lautet <bookmark mark="func_in_2"/>f von x gleich Sinus von drei x plus zwei.
-Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion besitzt?
-"""
+        voiceover_text = self.translate("Calc_1.practice_steady.1q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             
-            self.wait_until_bookmark("func_in_1")
-            self.play(Write(function[0]))
+            self.wait_until_bookmark("func_in")
+            self.play(Write(function))
 
-            self.wait_until_bookmark("func_in_2")
-            self.play(Write(function[1]))
-
-            self.wait_until_bookmark("period_in")
-            self.play(Write(period))
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait(1)
             self.add_shift_sound(0.5)
             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
 
@@ -6914,7 +7032,7 @@ Was ist <bookmark mark="period_in"/>die kleinste Periode T, die diese Funktion b
 #
         
 ##################################### MISC
-#####################################
+##################################### #TODO
 class Calc_practice_misc_10_q(SophiaCursorScene):
 
     # Main method for constructing the animation
@@ -7126,5 +7244,11 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_b),
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_c),
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_d),
-    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_e)
+    PagePrototypeVideo.from_scene(Calc_practice_ivt_1_e),
+########################################################### Complex Numbers
+    PagePrototypeVideo.from_scene(Calc_practice_complex_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_complex_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_complex_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_complex_1_b),
+
     ]

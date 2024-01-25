@@ -2897,7 +2897,8 @@
     "trig_functions": "Trigonometrische Funktionen",
     "does-not-exist": "existiert nicht",
     "real_part": "Realteil",
-    "imaginary_part": "Imaginärteil"
+    "imaginary_part": "Imaginärteil",
+    "steadiness": "Stetigkeit"
   },
   "LinAlg": {
     "14I1": {
@@ -2940,7 +2941,8 @@
     "mvt": "Mittelwertsatz",
     "continuous": "stetig",
     "ivt": "Zwischenwertsatz",
-    "expand": "ausmultiplizieren"
+    "expand": "ausmultiplizieren",
+    "for": "für"
   },
   "Func_6_P": {
     "22": {
@@ -3744,6 +3746,23 @@
       },
       "1q": {
         "question-text": "Was sind Real- und Imaginärteile des Bruchs $\\frac{4+3i}{1+2i}$?"
+      },
+      "01a": {
+        "voiceover-text": "Zunächst wollen wir <bookmark mark=\"qmark\"/>die komplexe Zahl im <bookmark mark=\"denominator_1\"/>Nenner loswerden. Dazu <bookmark mark=\"step_1\"/>multiplizieren wir sowohl Zähler als auch Nenner mit 1 minus 2i.\n<bookmark mark=\"complex_number_2_a\"/>Wir erhalten dann <bookmark mark=\"denominator_2_a\"/>1 plus 2 i mal<bookmark mark=\"denominator_2_b\"/> eins minus 2 i im Nenner. ... Das ist eine binomische Formel, so dass wir <bookmark mark=\"complex_number_2_b\"/>den Nenner auf eins plus vier vereinfachen können.\nAls nächstes <bookmark mark=\"step_2\"/>erweitern wir den Zähler und erhalten, dass <bookmark mark=\"complex_number_3_a\"/>z gleich ein fünftel mal 4 + 3 i minus 8 i minus 6 i zum Quadrat ist. ... Wenn wir alles zusammenzählen und das i Quadrat durch minus 1 ersetzen, erhalten wir <bookmark mark=\"complex_number_3_b\"/>ein fünftel mal 10 minus 5 i. Schließlich führen wir die Division <bookmark mark=\"complex_number_3_c\"/>aus und erhalten, dass z gleich zwei minus i ist."
+      }
+    },
+    "practice_trig": {
+      "1q": {
+        "voiceover-text": "Du hast eine Funktion gegeben, die <bookmark mark=\"func_in_1\"/>von den reellen Zahlen in die reellen Zahlen abbildet.\nDer Term der Funktion lautet <bookmark mark=\"func_in_2\"/>f von x gleich Sinus von drei x plus zwei.\nWas ist <bookmark mark=\"period_in\"/>die kleinste Periode T, die diese Funktion besitzt?",
+        "question-text": "Was ist die kürzeste Periode der Funktion $f(x)=\\sin(3x)+2$?"
+      },
+      "1a": {
+        "voiceover-text": "Wir wissen ja, dass <bookmark mark=\"sine_period_1\"/>Sinus von x gleich Sinus von x plus zwei Pi ist.\nAlso ist <bookmark mark=\"sine_period_2\"/>die kleinste Periode von Sinus von x gleich zwei Pi.\nDas ganze bedeutet jetzt aber auch,<bookmark mark=\"sine_3_period_a\"/> dass der Sinus von 3 x gleich dem Sinus von 3 x plus zwei Pi ist.\nJetzt wollen wir ja die Periode wissen, also schreiben wir <bookmark mark=\"sine_3_period_b\"/>drei x plus T in die Klammer, und wir erhalten, dass der Sinus von drei x plus T gleich dem Sinus von drei x plus zwei Pi ist.\nUnd dann lösen wir das ganze nach T auf, und <bookmark mark=\"period_3\"/>wir erhalten, dass die Periode T gleich zwei Pi durch drei ist."
+      }
+    },
+    "practice_steady": {
+      "1q": {
+        "voiceover-text": "Betrachte die<bookmark mark=\"func_in\"/> stückweise Funktion f, die definiert ist als 1 + b e hoch x für x kleiner als pi, a für x gleich pi und minus Sinus von x durch x minus pi für x größer als pi.<bookmark mark=\"qmark\"/>\n\nFür welche Werte von a und b ist diese Funktion stetig?"
       }
     }
   },

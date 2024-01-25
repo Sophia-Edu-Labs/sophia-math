@@ -2897,7 +2897,8 @@
     "trig_functions": "Trigonometric Functions",
     "does-not-exist": "doesn't exist",
     "real_part": "real part",
-    "imaginary_part": "imaginary part"
+    "imaginary_part": "imaginary part",
+    "steadiness": "steadiness"
   },
   "LinAlg": {
     "14I1": {
@@ -2940,7 +2941,8 @@
     "mvt": "mean value theorem",
     "continuous": "continuous",
     "ivt": "intermediate value thm",
-    "expand": "expand"
+    "expand": "expand",
+    "for": "for"
   },
   "Words": {
     "base": "base",
@@ -3753,6 +3755,20 @@
       },
       "01a": {
         "voiceover-text": "First, we want <bookmark mark=\"qmark\"/>to get rid of the complex number in <bookmark mark=\"denominator_1\"/>the denominator. To do this, we <bookmark mark=\"step_1\"/>multiply both enumerator and denominator with 1 minus 2i.\n<bookmark mark=\"complex_number_2_a\"/>We then get <bookmark mark=\"denominator_2_a\"/>1 plus 2 i times<bookmark mark=\"denominator_2_b\"/> one minus 2 i in the denominator. ... This is a difference of squares, so we can <bookmark mark=\"complex_number_2_b\"/>simplify the denominator to one plus four.\nNext, we <bookmark mark=\"step_2\"/>expand the enumerator, and get that <bookmark mark=\"complex_number_3_a\"/>z equals one over five times 4 + 3 i minus 8 i minus 6 i squared. ... Adding things up and replacing the i squared with negative one gives us <bookmark mark=\"complex_number_3_b\"/>one over five times 10 minus 5 i. Finally, we perform the division <bookmark mark=\"complex_number_3_c\"/>and get that z equals two minus i."
+      }
+    },
+    "practice_trig": {
+      "1q": {
+        "voiceover-text": "You're given a function f that maps <bookmark mark=\"func_in_1\"/> from the real numbers to the real numbers.\nThe term of the function is <bookmark mark=\"func_in_2\"/>f of x equals the sine of three x plus two.\nWhat is <bookmark mark=\"period_in\"/>the smallest period T of this function?",
+        "question-text": "What is the shortest period of the function $f(x)=\\sin(3x)+2$?"
+      },
+      "1a": {
+        "voiceover-text": "We know that <bookmark mark=\"sine_period_1\"/>the sine of x is equal to the sine of x plus two pi.\nSo <bookmark mark=\"sine_period_2\"/>the smallest period of sine of x equals two pi.\nThis now also means,<bookmark mark=\"sine_3_period_a\"/> that the sine of 3 x is equal to the sine of 3 x plus two pi.\nNow we want to know the period, so we write <bookmark mark=\"sine_3_period_b\"/>three x plus T in the brackets, and we get that the sine of three x plus T is equal to the sine of three x plus two pi.\nAnd then we solve for T, and <bookmark mark=\"period_3\"/>we get that the period T is equal to two pi divided by three."
+      }
+    },
+    "practice_steady": {
+      "1q": {
+        "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>piecewise function f, which is defined as 1 + b e to the power of x for x smaller than pi, a for x equal to pi, and negative sine of x over x minus pi for x greater than pi. <bookmark mark=\"qmark\"/>\nFor what values of a and b is this function continuous?"
       }
     }
   },
