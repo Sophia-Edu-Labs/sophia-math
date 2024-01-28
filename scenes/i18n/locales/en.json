@@ -2899,7 +2899,10 @@
     "real_part": "real part",
     "imaginary_part": "imaginary part",
     "steadiness": "steadiness",
-    "ivt": "intermediate value theorem"
+    "ivt": "intermediate value theorem",
+    "induction": "induction",
+    "induction_base": "Base case",
+    "induction_step": "Induction step"
   },
   "LinAlg": {
     "14I1": {
@@ -2944,7 +2947,8 @@
     "ivt": "intermediate value thm",
     "expand": "expand",
     "for": "for",
-    "Zero": "Zero"
+    "Zero": "Zero",
+    "elements": "elements"
   },
   "Words": {
     "base": "base",
@@ -3538,7 +3542,7 @@
       },
       "19q": {
         "f": "differentiable, even",
-        "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
+        "voiceover": "Let f <bookmark mark=\"func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
         "answer_a": "a) $f(x)=0$ for all $x\\in\\mathbb R$",
         "answer_b": "b) $f'(x)=0$ for $x=0$",
         "answer_c": "c) $f$ is injective",
@@ -3669,6 +3673,9 @@
         "voiceover": "Consider the polynomial <bookmark mark=\"polynomial_in\"/> p of z equals z to the power of 5 - i times z squared minus two times i.\nIt has a <bookmark mark=\"zero_in\"/>zero at z equals i. Which of the following statements is now true?\nIs it statement <bookmark mark=\"statement_a\"/>a that the polynomial has another zero at z equals negative i?\nOr is it statement <bookmark mark=\"statement_b\"/>b that the polynomial is not divisible by z minus i?\nOr statement c, <bookmark mark=\"statement_c\"/>, that the polynomial is bounded?\nOr statement d, <bookmark mark=\"statement_d\"/>that the polynomial has at most 5 zeros?",
         "question": "Which of the following statements about the polynomial $p(z)=z^5-i\\cdot z^2-2i$ is true?",
         "answerOptions": "[\"$z=-i$ is another zero\", \"$p$ is not divisible by $(z-i)$\", \"$p$ is bounded\". \"$p$ has $\\leq5$ zeros\"]"
+      },
+      "23a": {
+        "voiceover": "A polynomial of degree k can't have more than k zeros. This is a consequence of the fundamental theorem of algebra.\nWe can see that p is of degree 5, so p has at most 5 zeros, so <bookmark mark=\"highlight_d\"/>statement d is correct."
       }
     },
     "practice_limits": {
@@ -3741,7 +3748,8 @@
         "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}b_n=\\underset{n\\to\\infty}{\\lim}(-1)^n\\frac{a_n}2$?"
       },
       "10a": {
-        "voiceover-text": "Since b n is nothing other than \"a\" n, alternately multiplied by a half and minus a half, we can <bookmark mark=\"upper_limit_a\"/>upper bound the absolute value of b n by \"a\" n.\nSo we can <bookmark mark=\"implication_1\"/>apply the sandwich theorem, and we get that <bookmark mark=\"solution\"/>the limit of b n for n towards infinity is zero."
+        "voiceover-text": "Since b n is nothing other than \"a\" n, alternately multiplied by one half and negative one half, we can use \"a\" n <bookmark mark=\"upper_limit_a\"/>to upper bound the absolute value of b n.\nWe know <bookmark mark=\"upper_limit_b\"/>that \"a\" n converges to zero. So we can <bookmark mark=\"implication_1\"/>apply the sandwich theorem, and we get that <bookmark mark=\"solution\"/>the limit of b n for n towards infinity is zero.",
+        "convergent-sequence": "convergent sequence"
       }
     },
     "practice_ivt": {
@@ -3798,6 +3806,13 @@
       },
       "1a": {
         "voiceover-text": "First, notice that the functions one plus b e to the power of x, as well as negative sine of x over x minus pi are continuous functions, so the function f is continuous for all x that are not equal to pi.\nNow in order to make sure that the function is continuous at x equals pi, we have to make sure that the left sided limit for x approaching pi and the right sided limit for x approaching pi are equal to the value of f of pi.\nSo let's start computing the <bookmark mark=\"left_1_a\"/>left sided limit for x approaching pi of f of x. This is <bookmark mark=\"left_1_b\"/>equal to the left sided limit for x approaching pi of one plus b e to the power of x.\nAnd for that, we can just plug in pi for x, and <bookmark mark=\"left_2\"/>that that is equal to one plus b e to the power of pi.\nNext, we compute the <bookmark mark=\"right_1_a\"/>right sided limit for x approaching pi of f of x. This is equal to the right sided limit for x approaching pi of <bookmark mark=\"right_1_b\"/>negative sine of x over x minus pi.\nIf we plugged in pi for x, we would divide zero by zero, so we can use LOpitals rule and compute the limit of the fraction of the derivatives instead. This gives us the right sided limit for x approaching pi of <bookmark mark=\"right_2\"/> negative cosine of x over one.\nAnd that is just <bookmark mark=\"right_3\"/>equal to one.\nSo now to make sure, that both limits are equal to the value of f at x equals pi, we just<bookmark mark=\"sol_in\"/> set b to zero, and a to one."
+      }
+    },
+    "practice_induction": {
+      "1q": {
+        "voiceover-text": "The power set <bookmark mark=\"def_in\"/>P of a set s is defined as the set, which contains all subsets x of s.\nThe power set of <bookmark mark=\"ex_in_1\"/>the set that contains zero and one for example, is <bookmark mark=\"ex_in_2\"/>the set containing the empty set, the set containing zero, the set containing one and the set containing zero and one.\nNow use mathematical induction to show <bookmark mark=\"theorem_in\"/>that there are two to the power of n elements in the power set of a set containing n elements.",
+        "thm_1": "The power set of a ",
+        "thm_2": "set with $n$ elements contains"
       }
     }
   },

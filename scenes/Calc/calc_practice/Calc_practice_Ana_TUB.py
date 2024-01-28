@@ -219,7 +219,7 @@ class Calc_practice_MC_1_b(SophiaCursorScene):
             self.wait_until_bookmark("highlight_interval")
             self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
 
-            self.wait_until_bookmark("intervall_f_range")
+            self.wait_until_bookmark("interval_f_range")
             self.add_shift_sound(0.5)
             self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
 
@@ -301,7 +301,7 @@ class Calc_practice_MC_1_c(SophiaCursorScene):
             self.wait_until_bookmark("highlight_interval")
             self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
 
-            self.wait_until_bookmark("intervall_f_range")
+            self.wait_until_bookmark("interval_f_range")
             self.add_shift_sound(0.5)
             self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
 
@@ -383,7 +383,7 @@ class Calc_practice_MC_1_d(SophiaCursorScene):
             self.wait_until_bookmark("highlight_interval")
             self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
 
-            self.wait_until_bookmark("intervall_f_range")
+            self.wait_until_bookmark("interval_f_range")
             self.add_shift_sound(0.5)
             self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
 
@@ -4278,8 +4278,9 @@ class Calc_practice_MC_19_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        # Define the function text using MathTex
-        f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+        # # Define the function text using MathTex
+        # f = Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2).set_y(2)
+        f = VGroup(Tex(r"$f:\mathbb R\rightarrow\mathbb R$", color=c1t, font_size=fs2), Tex(self.translate("Calc_1.Practice_MC.19q.f"), color=c1t, font_size=fs2)).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
 
         # Define the answer options using Tex
         answer_a = Tex(self.translate("Calc_1.Practice_MC.19q.answer_a"), color=BLUE, font_size=fs3)
@@ -4295,7 +4296,7 @@ class Calc_practice_MC_19_q(SophiaCursorScene):
         with self.voiceover(text=voiceover_text) as tracker:
             
             self.wait_until_bookmark("func_in")
-            self.play(Write(f))
+            self.play(Write(f), run_time=1)
 
             self.wait_until_bookmark("answer_a_in")
             self.play(Write(answer_a))
@@ -4550,7 +4551,7 @@ class Calc_practice_MC_21_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.21q.answerOptions")),
-            correctAnswerIndex=1,
+            correctAnswerIndex=2,
             questionText = self.translate("Calc_1.Practice_MC.21q.question")
         )
 
@@ -4818,7 +4819,7 @@ class Calc_practice_MC_23_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions= ast.literal_eval(self.translate("Calc_1.Practice_MC.23q.answerOptions")),
-            correctAnswerIndex=1,
+            correctAnswerIndex=3,
             questionText = self.translate("Calc_1.Practice_MC.23q.question")
         )
     
@@ -4890,29 +4891,121 @@ class Calc_practice_MC_23_a(SophiaCursorScene):
         answer_d = Tex(self.translate("Calc_1.Practice_MC.23q.answer_d"), color=BLUE, font_size=fs3)
         answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(polynomial_with_zero, DOWN, buff=0.8)
 
+        self.add(answers, polynomial_with_zero)
+
         # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.Practice_MC.23q.voiceover")
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.23a.voiceover")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
 
-            self.wait_until_bookmark("polynomial_in")
-            self.play(Write(polynomial), run_time=1)
+            self.wait_until_bookmark("highlight_d")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), run_time=.5)
 
-            self.wait_until_bookmark("zero_in")
-            self.play(Write(zero_tex), run_time=1)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_23_b(SophiaCursorScene):
 
-            self.wait_until_bookmark("statement_a")
-            self.play(Write(answer_a), run_time=.5)
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-            self.wait_until_bookmark("statement_b")
-            self.play(Write(answer_b), run_time=.5)
+        # Define the function text using MathTex
+        zero = self.translate("words.Zero")
+        polynomial = MathTex(r"p(z)=z^5-i\cdot z^2-2i", color=c1t, font_size=fs2)
+        zero_tex = Tex(zero, r": $z=i$", color=c1t, font_size=fs2)
+        polynomial_with_zero = VGroup(polynomial, zero_tex).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
 
-            self.wait_until_bookmark("statement_c")
-            self.play(Write(answer_c), run_time=.5)
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.23q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.23q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.23q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.23q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(polynomial_with_zero, DOWN, buff=0.8)
 
-            self.wait_until_bookmark("statement_d")
-            self.play(Write(answer_d), run_time=.5)
+        self.add(answers, polynomial_with_zero)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.23a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_d")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_23_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        zero = self.translate("words.Zero")
+        polynomial = MathTex(r"p(z)=z^5-i\cdot z^2-2i", color=c1t, font_size=fs2)
+        zero_tex = Tex(zero, r": $z=i$", color=c1t, font_size=fs2)
+        polynomial_with_zero = VGroup(polynomial, zero_tex).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.23q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.23q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.23q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.23q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(polynomial_with_zero, DOWN, buff=0.8)
+
+        self.add(answers, polynomial_with_zero)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.Practice_MC.23a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_d")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+class Calc_practice_MC_23_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        zero = self.translate("words.Zero")
+        polynomial = MathTex(r"p(z)=z^5-i\cdot z^2-2i", color=c1t, font_size=fs2)
+        zero_tex = Tex(zero, r": $z=i$", color=c1t, font_size=fs2)
+        polynomial_with_zero = VGroup(polynomial, zero_tex).arrange(DOWN, buff=0.2, aligned_edge=LEFT).set_y(2.4)
+
+        # Define the answer options using Tex
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.23q.answer_a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.23q.answer_b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.23q.answer_c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.23q.answer_d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(polynomial_with_zero, DOWN, buff=0.8)
+
+        self.add(answers, polynomial_with_zero)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.Practice_MC.23a.voiceover")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_d")
+            self.play(answer_d.animate.set_color(GREEN), answer_a.animate.set_color(RED), answer_b.animate.set_color(RED), answer_c.animate.set_color(RED), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
@@ -6162,7 +6255,8 @@ class Calc_practice_limits_10_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        convergent_sequence = self.translate("Calc_1.practice_limits.10a.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
@@ -6205,7 +6299,8 @@ class Calc_practice_limits_10_a(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        convergent_sequence = self.translate("Calc_1.practice_limits.10a.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
@@ -6253,7 +6348,8 @@ class Calc_practice_limits_10_b(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
+        convergent_sequence = self.translate("Calc_1.practice_limits.10a.convergent-sequence")
+        series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ "+convergent_sequence, color=c1t, font_size=fs3)
         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
@@ -6663,7 +6759,145 @@ class Calc_practice_pfd_1_b(SophiaCursorScene):
 #         self.wait(6)
 
 # #
+
+##################################### Induction proof
+#####################################
+class Calc_practice_induction_1_q(SophiaCursorScene):
+
+#     def task_definition(self) -> SophiaTaskDefinition:
+#         return SophiaTaskDefinition(
+#             answerOptions = [
+# """We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
+# As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
+# According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
+# The following aspects must be mentioned for the solution to count as correct:
+# - Establishing that the function is continuous
+# - Mention of the intermediate value theorem
+# - Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
+# """,
+# """
+# The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
+# """,
+# """
+# Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
+# """,
+# """
+# Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
+# """,
+# """
+# The answer is incorrect.
+# """
+# ],
+#             correctAnswerIndex = 0,
+#             questionText = """Prove that the function $f(x) = 3x^3 - 1 - 3^x$ has at least one zero in the interval $[0, 3]$.""",
+#             llmCheckDetails=SophiaLLMQuestionCheckDetail(
+#                 fallbackOptionIndex=1,
+#                 specialInputSnippets = ["[ ]", "f"],
+#             )
+#         )
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        power_set_definition = MathTex(r"\mathcal P(S)=\{x | x\subseteq S\}", color=c1t, font_size=fs2)
+        power_set_example = MathTex(r"\mathcal P(\{0,1\})", r"=\{\emptyset,\{0\},\{1\},\{0,1\}\}", color=c3t, font_size=fs3)
+        power_set = VGroup(power_set_definition, power_set_example).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
+        theorem = VGroup(VGroup(Tex(self.translate("Calc_1.practice_induction.1q.thm_1"), color=c1t, font_size=fs3), Tex(self.translate("Calc_1.practice_induction.1q.thm_2"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT), MathTex("2^n", color=BLUE, font_size=fs2), Tex(self.translate("words.elements"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(power_set, DOWN, buff=.8)
+        theorem[1].set_x(0)
+
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.1q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("def_in")
+            self.play(Write(power_set_definition), run_time=.5)
+
+            self.wait_until_bookmark("ex_in_1")
+            self.play(Write(power_set_example[0]), run_time=.5)
+
+            self.wait_until_bookmark("ex_in_2")
+            self.play(Write(power_set_example[1]), run_time=.5)
+
+            self.wait_until_bookmark("theorem_in")
+            self.play(Write(theorem), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_induction_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
         
+        # Define the function text using MathTex
+        power_set_definition = MathTex(r"\mathcal P(S)=\{x | x\subseteq S\}", color=c1t, font_size=fs2)
+        power_set_example = MathTex(r"\mathcal P(\{0,1\})", r"=\{\emptyset,\{0\},\{1\},\{0,1\}\}", color=c3t, font_size=fs3)
+        power_set = VGroup(power_set_definition, power_set_example).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
+        theorem = VGroup(VGroup(Tex(self.translate("Calc_1.practice_induction.1q.thm_1"), color=c1t, font_size=fs3), Tex(self.translate("Calc_1.practice_induction.1q.thm_2"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT), MathTex("2^n", color=BLUE, font_size=fs2), Tex(self.translate("words.elements"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(power_set, DOWN, buff=.8)
+        theorem[1].set_x(0)
+
+        self.add(power_set, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs2)
+        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\{\emptyset|}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
+        
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs2)
+        elements = MathTex(r"\{\S_{n+1}\}", r"=\{\S_{n}\}", r"\cup x_{n+1}", color=c3t, font_size=fs3).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(induction_step, DOWN, buff=.2)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{\S_{n+1}\})", r"=\{p|p\in \mathcal P(\{\S_{n}\})\}", r"\cup\{p\cup x_{n+1}|p\in\mathcal P(\{\S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{\S_{n+1}\})|", r"2|\mathcal P(\{\S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+
+
+
+        # Define the voiceover text
+        voiceover_text = """
+Let's start with the induction base, <bookmark mark="base_in"/>which means we need to show that the statement is true for n equal to zero.
+If a set has zero elements, that set is <bookmark mark="emptyset_in"/> going to be the empty set. And the <bookmark mark="emptyset_powerset_in"/>power set of the emptyset is the set, that only contains the emptyset.
+So the power set of the emptyset contains<bookmark mark="base_in_1"/> one element, which is equal to <bookmark mark="base_in_2"/>two to the power of zero. So the statement is true for n equals zero and we've completed the induction base.
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(VGroup(power_set, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(base), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_in")
+            self.play(Write(power_set_base[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_powerset_in")
+            self.play(Write(power_set_base[0][0]), Write(power_set_base[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(power_set_base[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(power_set_base[1][1]), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 ##################################### Intermediate value theorem
 #####################################
 class Calc_practice_ivt_1_q(SophiaCursorScene):
@@ -7249,12 +7483,13 @@ class Calc_practice_trig_1_a(SophiaCursorScene):
         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
         sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
         period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
-        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
+
+        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=c1t, font_size=fs3).next_to(period_1, DOWN, buff=.4)
+        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=c1t, font_size=fs3).next_to(period_1, DOWN, buff=.4)
+        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=c1t, font_size=fs3).next_to(sine_3_period_b, DOWN, buff=.4)
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
 
-        self.add
+        self.add(function, period, qmark)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_trig.1a.voiceover-text")
@@ -7299,12 +7534,13 @@ class Calc_practice_trig_1_b(SophiaCursorScene):
         period = MathTex(r"\Rightarrow T=?", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
         sine_period = MathTex(r"\sin(x)", r"=\sin(x+2\pi)", color=BLUE, font_size=fs2).next_to(function, DOWN, buff=.4)
         period_1 = MathTex(r"\Rightarrow T=2\pi", color=BLUE, font_size=fs2).next_to(sine_period, DOWN, buff=.4)
-        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=BLUE, font_size=fs2).next_to(period_1, DOWN, buff=.4)
-        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=BLUE, font_size=fs2).next_to(period_3, DOWN, buff=.4)
+
+        sine_3_period_a = MathTex(r"\sin(3x)", r"=\sin(3x+2\pi)", color=c1t, font_size=fs3).next_to(period_1, DOWN, buff=.4)
+        sine_3_period_b = MathTex(r"\sin(3(x+T))", r"=\sin(3x+2\pi)", color=c1t, font_size=fs3).next_to(period_1, DOWN, buff=.4)
+        period_3 = MathTex(r"\Rightarrow T=\frac{2\pi}3", color=c1t, font_size=fs3).next_to(sine_3_period_b, DOWN, buff=.4)
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([0,-.4,0]).scale(.4)
 
-        self.add
+        self.add(function, period, qmark)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_trig.1a.voiceover-text")

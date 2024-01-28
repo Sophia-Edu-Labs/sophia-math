@@ -2899,7 +2899,10 @@
     "real_part": "Realteil",
     "imaginary_part": "Imaginärteil",
     "steadiness": "Stetigkeit",
-    "ivt": "Zwischenwertsatz"
+    "ivt": "Zwischenwertsatz",
+    "induction": "Vollständige Induktion",
+    "induction_base": "Induktionsanfang",
+    "induction_step": "Induktionsschritt"
   },
   "LinAlg": {
     "14I1": {
@@ -2944,7 +2947,8 @@
     "ivt": "Zwischenwertsatz",
     "expand": "ausmultiplizieren",
     "for": "für",
-    "Zero": "Nullstelle"
+    "Zero": "Nullstelle",
+    "elements": "Elemente"
   },
   "Func_6_P": {
     "22": {
@@ -3584,7 +3588,7 @@
       },
       "19q": {
         "f": "differenzierbar, gerade",
-        "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
+        "voiceover": "Sei f <bookmark mark=\"func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
         "answer_a": "a) $f(x)=0$ für alle $x\\in\\mathbb R$",
         "answer_b": "b) $f'(x)=0$ für $x=0$",
         "answer_c": "c) $f$ ist injektiv",
@@ -3663,6 +3667,9 @@
         "voiceover": "Betrachte das Polynom <bookmark mark=\"polynomial_in\"/> p von z gleich z hoch 5 -i mal z quadrat minus zwei i.\nEs hat eine <bookmark mark=\"zero_in\"/>Nullstelle bei z gleich i. Welche der folgenden Aussagen stimmt nun:\nIst es Aussage <bookmark mark=\"statement_a\"/>a, dass das Polynom eine weitere Nullstelle bei z gleich minus i hat?\nOder ist es Aussage <bookmark mark=\"statement_b\"/>b, dass das Polynom nicht durch z minus i teilbar ist?\nOder Aussage c, <bookmark mark=\"statement_c\"/>, dass das Polynom beschränkt ist?\nOder jedoch Aussage d, <bookmark mark=\"statement_d\"/>dass das Polynom höchstens 5 Nullstellen besitzt?",
         "question": "Welche der folgenden Aussagen über das Polynom $p(z)=z^5-i\\cdot z^2-2i$ ist wahr?",
         "answerOptions": "[\"$z=-i$ ist eine weitere Nullstelle\", \"$p$ ist nicht durch $(z-i)$ teilbar\", \"$p$ ist beschränkt\", \"$p$ hat $\\leq5$ Nullstellen\"]"
+      },
+      "23a": {
+        "voiceover": "Ein Polynom vom Grad k kann nicht mehr als k Nullstellen haben. \nDas ist eine Konsequenz des Grundsatzes der Algebra.\n\nWir können ja sehen, dass p vom Grad 5 ist. Also hat p höchstens 5 Nullstellen, und <bookmark mark=\"highlight_d\"/>Aussage d ist korrekt."
       }
     },
     "practice_limits": {
@@ -3735,7 +3742,8 @@
         "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}b_n=\\underset{n\\to\\infty}{\\lim}(-1)^n\\frac{a_n}2$?"
       },
       "10a": {
-        "voiceover-text": "Da b n nichts anderes ist als \"a\" n, abwechselnd mit ein halb und minus ein halb multipliziert, können wir <bookmark mark=\"upper_limit_a\"/>den Betrag von b n nach oben durch \"a\" n abschätzen.\nWir wissen ja, <bookmark mark=\"upper_limit_b\"/>dass a n gegen null konvergiert. Also können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass <bookmark mark=\"solution\"/>der Grenzwert von b n für n gegen unendlich gleich Null ist."
+        "voiceover-text": "Da b n nichts anderes ist als \"a\" n, abwechselnd mit ein halb und minus ein halb multipliziert, können wir <bookmark mark=\"upper_limit_a\"/>den Betrag von b n nach oben durch \"a\" n abschätzen.\nWir wissen ja, <bookmark mark=\"upper_limit_b\"/>dass a n gegen null konvergiert. Also können wir <bookmark mark=\"implication_1\"/>das Sandwich-Theorem anwenden, und wir erhalten, dass <bookmark mark=\"solution\"/>der Grenzwert von b n für n gegen unendlich gleich Null ist.",
+        "convergent-sequence": "konvergente Folge"
       }
     },
     "practice_ivt": {
@@ -3792,6 +3800,13 @@
       },
       "1a": {
         "voiceover-text": "Zunächst ist zu beachten, dass die Funktionen eins plus b e hoch x sowie minus Sinus von x durch x minus pi stetige Funktionen sind, so dass die Funktion f für alle x, die ungleich pi sind, stetig ist.\nUm nun sicherzustellen, dass die Funktion bei x gleich pi stetig ist, müssen wir sicherstellen, dass sowohl der linksseitige Grenzwert für x gegen pi als auch der rechtsseitige Grenzwert für x gegen pi gleich dem Wert von f für pi sind.\nBeginnen wir also mit der Berechnung der linksseitigen Grenzwert für x gegen pi von f von x. Dieser ist <bookmark mark=\"left_1_b\"/>gleich dem linksseitigen Grenzwert für x gegen pi von eins plus b e hoch x.\nUnd da können wir einfach pi für x einsetzen, und erhalten <bookmark mark=\"left_2\"/>dass dies gleich eins plus b e hoch pi ist.\nAls Nächstes berechnen wir den <bookmark mark=\"right_1_a\"/>rechtsseitigen Grenzwert für x gegen pi von f von x. Das ist gleich dem rechtsseitigen Grenzwert für x gegen pi von <bookmark mark=\"right_1_b\"/>minus Sinus  x durch x minus pi.\nWenn wir pi für x einsetzen würden, würden wir Null durch Null teilen, also können wir stattdessen LOpitals Regel verwenden und Berechnen den Limes der  Ableitungen. So erhalten wir den rechtsseitigen Grenzwert für x für x gegen pi von <bookmark mark=\"right_2\"/> minus Kosinus von x durch eins.\nUnd das ist eben <bookmark mark=\"right_3\"/>gleich eins.\nUm also sicherzustellen, dass beide Grenzwerte gleich dem Wert von f bei x gleich pi sind, setzen wir einfach <bookmark mark=\"sol_in\"/> b auf Null und a auf Eins."
+      }
+    },
+    "practice_induction": {
+      "1q": {
+        "voiceover-text": "Die Potenzmenge <bookmark mark=\"def_in\"/>P einer Menge s ist definiert als die Menge, die alle Teilmengen x von s enthält.\n\nBeispielsweise entält <bookmark mark=\"ex_in_1\"/> die Potenzmenge der Menge Null Eins, <bookmark mark=\"ex_in_2\"/>die leere Menge, die Menge, die Null enthält, die Menge, die Eins enthält und die Menge, die Null und Eins enthält.\n\nVerwende nun vollständige Induktion, um zu zeigen, dass <bookmark mark=\"theorem_in\"/> die Potenzmenge einer Menge mit n Elementen zwei hoch n Elemente enthält.",
+        "thm_1": "Die Potenzmenge einer",
+        "thm_2": "$n$-elementigen Menge enthält"
       }
     }
   },
