@@ -6858,20 +6858,27 @@ class Calc_practice_induction_1_a(SophiaCursorScene):
 
         self.add(power_set, theorem)
 
-        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs2)
-        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\{\emptyset|}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
-        
-        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs2)
-        elements = MathTex(r"\{\S_{n+1}\}", r"=\{\S_{n}\}", r"\cup x_{n+1}", color=c3t, font_size=fs3).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(induction_step, DOWN, buff=.2)
-        power_set_step = VGroup(MathTex(r"\mathcal P(\{\S_{n+1}\})", r"=\{p|p\in \mathcal P(\{\S_{n}\})\}", r"\cup\{p\cup x_{n+1}|p\in\mathcal P(\{\S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{\S_{n+1}\})|", r"2|\mathcal P(\{\S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\emptyset)|=|\{\emptyset\}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, power_set_base)
 
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        elements = MathTex(r"S_{n+1}", r"=S_{n}", r"\cup x_{n+1}", color=c3t, font_size=fs3).next_to(induction_step, DOWN, buff=.2)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({\S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        step_group = VGroup(induction_step, elements, power_set_step)
 
 
         # Define the voiceover text
         voiceover_text = """
-Let's start with the induction base, <bookmark mark="base_in"/>which means we need to show that the statement is true for n equal to zero.
+Let's start with <bookmark mark="base_in"/>the induction base, which means we need to show that the statement is true for n equal to zero.
 If a set has zero elements, that set is <bookmark mark="emptyset_in"/> going to be the empty set. And the <bookmark mark="emptyset_powerset_in"/>power set of the emptyset is the set, that only contains the emptyset.
-So the power set of the emptyset contains<bookmark mark="base_in_1"/> one element, which is equal to <bookmark mark="base_in_2"/>two to the power of zero. So the statement is true for n equals zero and we've completed the induction base.
+So the power set of the emptyset contains<bookmark mark="base_in_1"/> one element, which is equal to <bookmark mark="base_in_2"/>two to the power of zero. So the statement is true for n equals zero<bookmark mark="basegroup_green"/> and we've completed the induction base.
+Now, <bookmark mark="transition"/>let's turn to <bookmark mark="step_in"/>the induction step. This means we need to show, that if the statement is true for n, it is also true for n plus one.
+So we're looking at a set <bookmark mark="elements_in_1"/>s n plus one, containing n plus one elements. It consists of the set <bookmark mark="elements_in_2"/>s n, which contains n elements, and the element <bookmark mark="elements_in_3"/>x n plus one.
+Now what does <bookmark mark="power_set_in_1"/>the power set of s n plus one look like? ...
+It contains <bookmark mark="power_set_in_2"/>all sets p that are a subset of S n. And it also contains the union of <bookmark mark="power_set_in_3"/>all sets p that are a subset of S n with the element x n plus one. These two sets, so the subsets of s n and the subsets of s n combined with x n plus one make up the power set of S n plus one.
+So the <bookmark mark="cardinality_in_1"/>power set of S n plus one contains two times as many elements as <bookmark mark="cardinality_in_2"/>the power set of S n, because each of the sets it consists of contains that many elements. And since S n contains two to the power of n elements, S n plus one contains <bookmark mark="cardinality_in_3"/>two to the power of n plus one elements.
+And with that, we've <bookmark mark="stepgroup_green"/>completed the induction step, and the proof by induction is complete.
 """
 
         # Action Sequence
@@ -6894,6 +6901,46 @@ So the power set of the emptyset contains<bookmark mark="base_in_1"/> one elemen
 
             self.wait_until_bookmark("base_in_2")
             self.play(Write(power_set_base[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("basegroup_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("transition")
+            self.add_shift_sound(.5)
+            self.play(base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(induction_step), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_1")
+            self.play(Write(elements[0]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_2")
+            self.play(Write(elements[1]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_3")
+            self.play(Write(elements[2]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_1")
+            self.play(Write(power_set_step[0][0]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_2")
+            self.play(Write(power_set_step[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_3")
+            self.play(Write(power_set_step[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_1")
+            self.play(Write(power_set_step[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_2")
+            self.play(Write(power_set_step[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_3")
+            self.play(Write(power_set_step[1][2]), run_time=.5)
+
+            self.wait_until_bookmark("stepgroup_green")
+            self.play(step_group.animate.set_color(GREEN), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
