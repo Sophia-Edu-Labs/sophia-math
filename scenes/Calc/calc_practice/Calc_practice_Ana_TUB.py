@@ -137,7 +137,7 @@ class Calc_practice_MC_1_a(SophiaCursorScene):
             self.wait_until_bookmark("highlight_interval")
             self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
 
-            self.wait_until_bookmark("intervall_f_range")
+            self.wait_until_bookmark("interval_f_range")
             self.add_shift_sound(0.5)
             self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
 
@@ -4117,7 +4117,7 @@ class Calc_practice_MC_18_a(SophiaCursorScene):
         answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
         answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.4)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
@@ -4158,7 +4158,7 @@ class Calc_practice_MC_18_b(SophiaCursorScene):
         answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
         answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.4)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
@@ -4199,7 +4199,7 @@ class Calc_practice_MC_18_c(SophiaCursorScene):
         answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
         answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.4)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
@@ -4240,7 +4240,7 @@ class Calc_practice_MC_18_d(SophiaCursorScene):
         answer_b = Tex(self.translate("Calc_1.Practice_MC.18q.answer_b"), color=BLUE, font_size=fs3)
         answer_c = Tex(self.translate("Calc_1.Practice_MC.18q.answer_c"), color=BLUE, font_size=fs3)
         answer_d = Tex(self.translate("Calc_1.Practice_MC.18q.answer_d"), color=BLUE, font_size=fs3)
-        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.8)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(f, DOWN, buff=0.4)
 
         # Define the voiceover text
         voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.Practice_MC.18a.voiceover")
