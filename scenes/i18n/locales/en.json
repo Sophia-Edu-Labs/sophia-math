@@ -3761,6 +3761,9 @@
         "forgot_ivt": "That's almost it. You forgot to apply the intermediate value theorem. Let's have another look together.",
         "forgot_continuity": "That's almost it. You forgot to mention that the function is continuous, which is a requirement for the intermediate value theorem. Let's have another look together...",
         "forgot_interval_limits": "That's almost it. You forgot to mention that the values of the limits are negative for f of zero, and positive for f of three. Let's have another look together..."
+      },
+      "1q": {
+        "question-text": "Prove that the function $f(x) = 3x^3 - 1 - 3^x$ has at least one zero in the interval $[0, 3]$."
       }
     },
     "practice_pfd": {
@@ -3812,7 +3815,13 @@
       "1q": {
         "voiceover-text": "The power set <bookmark mark=\"def_in\"/>P of a set s is defined as the set, which contains all subsets x of s.\nThe power set of <bookmark mark=\"ex_in_1\"/>the set that contains zero and one for example, is <bookmark mark=\"ex_in_2\"/>the set containing the empty set, the set containing zero, the set containing one and the set containing zero and one.\nNow use mathematical induction to show <bookmark mark=\"theorem_in\"/>that there are two to the power of n elements in the power set of a set containing n elements.",
         "thm_1": "The power set of a ",
-        "thm_2": "set with $n$ elements contains"
+        "thm_2": "set with $n$ elements contains",
+        "question-text": "Prove that the power set of a set with $n$ elements contains $2^n$ elements using induction."
+      },
+      "1a": {
+        "voiceover-text": "Let's start with <bookmark mark=\"base_in\"/>the induction base, which means we need to show that the statement is true for n equal to zero.\nIf n equals zero, we're looking at a set with zero elements. And if a set has zero elements, that set has <bookmark mark=\"emptyset_in\"/>to be the empty set. And the <bookmark mark=\"emptyset_powerset_in\"/>power set of the emptyset is the set, that only contains the emptyset.\nSo the power set of the empty set contains<bookmark mark=\"base_in_1\"/> one element. And since one is equal to <bookmark mark=\"base_in_2\"/>two to the power of zero, the statement is true for n equals zero<bookmark mark=\"basegroup_green\"/> and we've completed the induction base.\nNow, <bookmark mark=\"transition\"/>let's turn to <bookmark mark=\"step_in\"/>the induction step. This means we need to show, that if the statement is true for n, it is also true for n plus one.\nSo we're looking at a set <bookmark mark=\"elements_in_1\"/>s n plus one, containing n plus one elements. It consists of the set <bookmark mark=\"elements_in_2\"/>s n, which contains n elements, and the element <bookmark mark=\"elements_in_3\"/>x n plus one.\nNow what does <bookmark mark=\"power_set_in_1\"/>the power set of s n plus one look like? ...\nIt contains <bookmark mark=\"power_set_in_2\"/>all sets p that are a subset of S n. And it also contains the union of <bookmark mark=\"power_set_in_3\"/>all sets p that are a subset of S n with the element x n plus one. These two sets, so the subsets of s n and the subsets of s n combined with x n plus one make up the power set of S n plus one.\nSo the <bookmark mark=\"cardinality_in_1\"/>power set of S n plus one contains two times as many elements as <bookmark mark=\"cardinality_in_2\"/>the power set of S n, because each of the sets it consists of contains that many elements. And since S n contains two to the power of n elements, S n plus one contains <bookmark mark=\"cardinality_in_3\"/>two to the power of n plus one elements.\nAnd with that, we've <bookmark mark=\"stepgroup_green\"/>completed the induction step, and the proof by induction is complete.",
+        "base_correct": "You did the base correctly, but not the step...",
+        "step_correct": "You did the induction step correctly, but not the base..."
       }
     }
   },

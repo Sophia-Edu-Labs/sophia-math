@@ -3755,6 +3755,9 @@
         "forgot_ivt": "Fast richtig. Du hast nur vergessen, den Zwischenwertsatz anzuwenden. Sehen wir uns das ganze gemeinsam nochmal an.",
         "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
         "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu prüfen, dass die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für f von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
+      },
+      "1q": {
+        "question-text": "Beweise, dass die Funktion $f(x) = 3x^3 - 1 - 3^x$ mindestens eine Nullstelle im Intervall $[0, 3]$ hat."
       }
     },
     "practice_pfd": {
@@ -3806,7 +3809,13 @@
       "1q": {
         "voiceover-text": "Die Potenzmenge <bookmark mark=\"def_in\"/>P einer Menge s ist definiert als die Menge, die alle Teilmengen x von s enthält.\n\nBeispielsweise entält <bookmark mark=\"ex_in_1\"/> die Potenzmenge der Menge Null Eins, <bookmark mark=\"ex_in_2\"/>die leere Menge, die Menge, die Null enthält, die Menge, die Eins enthält und die Menge, die Null und Eins enthält.\n\nVerwende nun vollständige Induktion, um zu zeigen, dass <bookmark mark=\"theorem_in\"/> die Potenzmenge einer Menge mit n Elementen zwei hoch n Elemente enthält.",
         "thm_1": "Die Potenzmenge einer",
-        "thm_2": "$n$-elementigen Menge enthält"
+        "thm_2": "$n$-elementigen Menge enthält",
+        "question-text": "Beweise mittels vollständiger Induktion, dass die Potenzmenge einer $n$-elementigen Menge $2^n$ Elemente enthält."
+      },
+      "1a": {
+        "voiceover-text": "Beginnen wir mit <bookmark mark=\"base_in\"/>der Induktionsbasis, also müssen wir zeigen, dass die Aussage für n gleich Null wahr ist.\nWenn n gleich Null ist, haben wir eine Menge mit Null Elementen. Und wenn eine Menge null Elemente hat, muss diese Menge <bookmark mark=\"emptyset_in\"/>die leere Menge sein. Und die <bookmark mark=\"emptyset_powerset_in\"/>Potenzmenge der leeren Menge ist die Menge, die nur die leere Menge enthält.\nDie Potenzmenge der leeren Menge enthält also<bookmark mark=\"base_in_1\"/> ein Element. Und da eins gleich <bookmark mark=\"base_in_2\"/>zwei hoch Null ist, ist die Aussage wahr für n gleich Null<bookmark mark=\"basegroup_green\"/> und wir haben die Induktionsbasis abgeschlossen.\nNun <bookmark mark=\"transition\"/>wenden wir uns <bookmark mark=\"step_in\"/>dem Induktionsschritt zu. Das heißt, wir müssen zeigen, dass, wenn die Aussage für n wahr ist, sie auch für n plus eins wahr ist.\nWir betrachten also eine Menge <bookmark mark=\"elements_in_1\"/>s n plus eins, die n plus eins Elemente enthält. Sie besteht aus der Menge <bookmark mark=\"elements_in_2\"/>s n, die n Elemente enthält, und dem Element <bookmark mark=\"elements_in_3\"/>x n plus eins.\nWie sieht nun <bookmark mark=\"power_set_in_1\"/>die Potenzmenge von s n plus eins aus? ...\nSie enthält <bookmark mark=\"power_set_in_2\"/>alle Mengen p, die eine Teilmenge von S n sind. Und sie enthält auch die Vereinigung von <bookmark mark=\"power_set_in_3\" />allen Mengen p, die eine Teilmenge von S n mit dem Element x n plus eins sind. Diese beiden Mengen, also die Teilmengen von s n und die Teilmengen von s n kombiniert mit x n plus eins, bilden die Potenzmenge von S n plus eins.\nDie <bookmark mark=\"cardinality_in_1\"/>Potenzmenge von S n plus eins enthält also doppelt so viele Elemente wie <bookmark mark=\"cardinality_in_2\"/>die Potenzmenge von S n, weil jede der Mengen, aus denen sie besteht, so viele Elemente enthält wie S n. Und da S n zwei hoch n Elemente enthält, enthält S n plus eins <bookmark mark=\"cardinality_in_3\"/>zwei hoch n plus eins Elemente.\nUnd damit haben wir <bookmark mark=\"stepgroup_green\"/>den Induktionsschritt abgeschlossen, und der Induktionsbeweis ist vollständig.",
+        "base_correct": "Die Induktionsbasis hat gestimmt, der Schritt aber nicht.",
+        "step_correct": "Du hast den Induktionsschritt richtig gemacht, aber nicht die Induktionsbasis ..."
       }
     }
   },

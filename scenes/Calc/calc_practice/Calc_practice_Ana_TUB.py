@@ -6864,7 +6864,7 @@ class Calc_practice_induction_1_a(SophiaCursorScene):
 
         induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
         elements = MathTex(r"S_{n+1}", r"=S_{n}", r"\cup x_{n+1}", color=c3t, font_size=fs3).next_to(induction_step, DOWN, buff=.2)
-        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({\S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
         step_group = VGroup(induction_step, elements, power_set_step)
 
 
