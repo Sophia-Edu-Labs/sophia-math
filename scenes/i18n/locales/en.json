@@ -2898,7 +2898,8 @@
     "does-not-exist": "doesn't exist",
     "real_part": "real part",
     "imaginary_part": "imaginary part",
-    "steadiness": "steadiness"
+    "steadiness": "steadiness",
+    "ivt": "intermediate value theorem"
   },
   "LinAlg": {
     "14I1": {
@@ -2942,7 +2943,8 @@
     "continuous": "continuous",
     "ivt": "intermediate value thm",
     "expand": "expand",
-    "for": "for"
+    "for": "for",
+    "Zero": "Zero"
   },
   "Words": {
     "base": "base",
@@ -3481,7 +3483,7 @@
         "answer_a": "a) $f$ is surjective",
         "answer_b": "b) $f$ is injective",
         "answer_c": "c) $f$ has no maximum",
-        "answer_d": "d) $f(x)<0$ for all $x\\\\in\\\\{0,1,2,3\\\\}$"
+        "answer_d": "d) $f(x)<0$ for all $x\\in\\{0,1,2,3\\}$"
       },
       "11a": {
         "voiceover": "Let's<bookmark mark=\"reorganize\"/> simply enter all the values:<bookmark mark=\"f_1\"/> f of 1 is equal to one minus one squared, which is zero. <bookmark mark=\"f_2\"/>f of 2 is equal to two minus one squared, which is one. And <bookmark mark=\"f_3\"/>f of 3 is equal to three minus one squared, which is four.\nSo we see that no two different x values are mapped to the same y value. So <bookmark mark=\"b_green\"/>the function f is injective."
@@ -3504,7 +3506,7 @@
         "answer_c": "c) $f$ isn't continuous",
         "answer_d": "d) $f$ has indefinite integral \\\\$F(x)=xe^{-\\sqrt{x^2+1}+1}$",
         "voiceover": "Let f be a function that maps from the interval from <bookmark mark=\"f_in_1\"/>negative pi to pi into the real numbers, and whose function rule <bookmark mark=\"f_in_2\"/>is e to the power minus the root of x to the power of 2 plus 1 plus 1. Which of the following statements is universally true?\n<bookmark mark=\"answer_a_in\"/>Statement a: The function f has a zero in the interval from zero to one. ...\n<bookmark mark=\"answer_b_in\"/>Statement b: The function f has a maximum in the interval from zero to one. ...\n<bookmark mark=\"answer_c_in\"/>Statement c: The function f is not continuous. ...\nOr <bookmark mark=\"answer_d_in\"/>statement d: The function f has the indefinite integral capital f of x is equal to x times e raised to the power of minus the root of x squared plus 1 plus 1. ...",
-        "sol": "$f$ has Min and Max on $[-\\\\pi,\\\\pi]$"
+        "sol": "$f$ has Min and Max on $[-\\pi,\\pi]$"
       },
       "15a": {
         "voiceover": "We have a continuous function on a closed interval. We <bookmark mark=\"implication_in\"/>can then apply the theorem of minimum and maximum, and <bookmark mark=\"sol_in\"/>know that the function f has a minimum and a maximum on the interval from minus pi to pi.\nSo <bookmark mark=\"b_green\"/>the statement b is true."
@@ -3522,22 +3524,22 @@
         "voiceover": "The function f is a polynomial with <bookmark mark=\"deg_three\"/>a coefficient of degree three, and <bookmark mark=\"odd\"/>a coefficient of degree one. So f has only odd powers, and the function f <bookmark mark=\"a_green\"/>is odd."
       },
       "18q": {
-        "answer_a": "a) There exists $\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$",
+        "answer_a": "a) There exists $\\xi\\in]0,1[$, so that the \\\\rectangle with height $f(\\xi)$ and \\\\ width $1$has area $A=\\int_0^1f(x)dx$",
         "answer_b": "b) $f$ not integrable on $[0,1]$",
         "answer_c": "c) $f$ has no maximum on $[0,2]$",
         "answer_d": "d) None of the options",
         "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous function with $f(x)>0$ for all $x\\in[0,1]$. Which of these statements is true?",
         "answerOptions": "[\"a) There exists $\\\\xi\\in]0,1[$, so that the rectangle\\\\ with height $f(\\\\xi)$ and width $1$\\\\ has area $A=\\int_0^1f(x)dx$\", \"$f$ is not integrable on [0,1]$\", \"$f$ has no maximum on $[0,2]$\", \"None of the options\"]",
         "voiceover": "Let f be a<bookmark mark=\"f_in_1\"/>continuous function that maps from the real numbers into the real numbers, for which it holds that <bookmark mark=\"f_in_2\"/>f of x is greater than zero for all x in the interval from zero to one. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that there is a xi in the open interval from zero to one such that the rectangle with height f of xi and width one has area A, where A is the definite integral from zero to one of f of x dx? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the function f is not integrable on the interval from zero to one? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f has no maximum on the interval from zero to two? ...\nOr is it <bookmark mark=\"answer_d_in\"/>statement d that none of the above possibilities apply? ...",
-        "solution": "There is  $\\\\xi\\\\in]0,1[$, such that\\\\\\\\ $\\\\int_0^1f(x)dx=f(\\\\xi)$"
+        "solution": "There is  $\\xi\\in]0,1[$, such that\\\\ $\\int_0^1f(x)dx=f(\\xi)$"
       },
       "18a": {
         "voiceover": "Since f is continuous, we can <bookmark mark=\"implication_in\"/>apply the mean value theorem, and we get <bookmark mark=\"solution\"/>that there is an xi,\nsuch that the definite integral from zero to one of f of x dx is equal to f of xi, where xi is in the open interval from zero to one.\nSo <bookmark mark=\"a_green\"/>the statement a is true."
       },
       "19q": {
-        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differentiable, even",
+        "f": "differentiable, even",
         "voiceover": "Let f <bookmark mark=func_in\"/>be an even, differentiable function from the real numbers into the real numbers. Which of the following statements is generally true?\nIs it the <bookmark mark=\"answer_a_in\"/>statement a that the function f of x is equal to zero for all x in the real numbers? ...\nIs it the <bookmark mark=\"answer_b_in\"/>statement b that the derivative of f at the point x is zero for x equal to zero? ...\nIs it the <bookmark mark=\"answer_c_in\"/>statement c that the function f is injective? ...\nOr is it the <bookmark mark=\"answer_d_in\"/>statement d that the function f of x equals x to the power of 3? ...",
-        "answer_a": "a) $f(x)=0$ for all $x\\\\in\\\\mathbb R$",
+        "answer_a": "a) $f(x)=0$ for all $x\\in\\mathbb R$",
         "answer_b": "b) $f'(x)=0$ for $x=0$",
         "answer_c": "c) $f$ is injective",
         "question": "Let $f:\\mathbb R\\rightarrow\\mathbb R$ be a differentiable, even function. Which of the following statements is true?",
@@ -3606,7 +3608,7 @@
       "8a": {
         "answer-a": "a) $f$ does not take a minimum",
         "answer-b": "b) $f([a,b])$ is intervall $[c,d]$",
-        "answer-c": "c) $f([a,b]) = \\\\emptyset$",
+        "answer-c": "c) $f([a,b]) = \\emptyset$",
         "answer-d": "d) $f$ ist injective",
         "voiceover": "If the function f is continuous and the domain of definition is the interval a, b, we can apply <bookmark mark=\"ivt\"/>the intermediate value theorem.\nIt then follows,<bookmark mark=\"solution\"/> that the image area of f from a to b is an interval.\nSo <bookmark mark=\"turn_b_green\"/>the statement b is true: We can write the image area of f from a to b as an interval c, d with c, d element of the real numbers and c less than or equal to d."
       },
@@ -3648,10 +3650,25 @@
         "voiceover": "First, we'll <bookmark mark=\"step_1\"/> take the fourth root on both sides of the equation. We're then left <bookmark mark=\"equation_2\"/> with the equation that z is  equal to the fourth root of negative one plus i.\nSince the k-th root in the complex number always has k solution, we<bookmark mark=\"highlight_sol\"/> know that there are four solutions here."
       },
       "21q": {
-        "answer_a": "It incrases monotonously",
-        "answer_b": "$a_n>0$ for all $n\\in\\mathbb N$",
-        "answer_c": "It doesn't converge",
-        "answer_d": "It is unbounded"
+        "answer_a": "a) It incrases monotonously",
+        "answer_b": "b) $a_n>0$ for all $n\\in\\mathbb N$",
+        "answer_c": "c) It doesn't converge",
+        "answer_d": "d) It is unbounded",
+        "voiceover": "Consider the sequence <bookmark mark=\"sequence_in_1\"/>\"a\" n, where the element \"a\" n <bookmark mark=\"sequence_in_2\"/>is defined as negative one to the power of n times the fraction 3 n squared plus one over 2 n minus n squared plus 1. <bookmark mark=\"sequence_in_3\"/>Which of the following statements is true?\nIs it statement a, which says <bookmark mark=\"answer_a_in\"/>that the sequence increases monotonously?\nOr is ist statement b, which says <bookmark mark=\"answer_b_in\"/>that the a n is larger than zero, for all values of n?\nIs it statement c, which says <bookmark mark=\"answer_c_in\"/>that the sequence \"a\" n doesn't converge?\nOr is it statement d, which says <bookmark mark=\"answer_d_in\"/>that the sequence \"a\" n is unbounded?",
+        "question": "Which of the following is true for the sequence $\\left(a_n\\right)_{n\\in\\mathbb N}$ with $a_n=\\left(-1\\right)^n\\cdot\\tfrac{3n^2+1}{2n-n^2+1}$?",
+        "answerOptions": "[\"$(a_n)$ increases monotonously\", \"$a_n>0$ for all $n\\in\\mathbb N$\", \"$(a_n)$ doesn't converge\", \"$a_n$ is unbounded\"]"
+      },
+      "21a": {
+        "voiceover": "If we only consider the <bookmark mark=\"highlight_second_part\"/>second part of the sequence, and<bookmark mark=\"transform_second_part\"/> we compute its limit<bookmark mark=\"limit_in\"/> for n going towards infinity, we can see that that is<bookmark mark=\"three_in\"/> equal to three. ...\nBut now this term is multiplied <bookmark mark=\"highlight_neg_one\"/>by negative one to the power of n, which alternates between one and negative one. This means, that for large n, the sequence will jump between values very close to three, and very close to negative three. So<bookmark mark=\"highlight_solution\"/> the sequence doesn't converge."
+      },
+      "23q": {
+        "answer_a": "$z=-i$ is another zero",
+        "answer_b": "$p$ is not divisible by $(z-i)$",
+        "answer_c": "$p$ is bounded",
+        "answer_d": "$p$ has $\\leq5$ zeros",
+        "voiceover": "Consider the polynomial <bookmark mark=\"polynomial_in\"/> p of z equals z to the power of 5 - i times z squared minus two times i.\nIt has a <bookmark mark=\"zero_in\"/>zero at z equals i. Which of the following statements is now true?\nIs it statement <bookmark mark=\"statement_a\"/>a that the polynomial has another zero at z equals negative i?\nOr is it statement <bookmark mark=\"statement_b\"/>b that the polynomial is not divisible by z minus i?\nOr statement c, <bookmark mark=\"statement_c\"/>, that the polynomial is bounded?\nOr statement d, <bookmark mark=\"statement_d\"/>that the polynomial has at most 5 zeros?",
+        "question": "Which of the following statements about the polynomial $p(z)=z^5-i\\cdot z^2-2i$ is true?",
+        "answerOptions": "[\"$z=-i$ is another zero\", \"$p$ is not divisible by $(z-i)$\", \"$p$ is bounded\". \"$p$ has $\\leq5$ zeros\"]"
       }
     },
     "practice_limits": {
@@ -3732,7 +3749,7 @@
         "voiceover-text": "Let's consider the function <bookmark mark=\"f_in\"/>f of x equals three x to the power of three minus one minus three to the power of x.\nProve that the function has at least one zero on<bookmark mark=\"interval_in\"/>the closed interval from zero to three."
       },
       "10a": {
-        "voiceover-text": "The function f of x equals 3 x to the power of three minus one minus three to the power of x <bookmark mark=\"steady\"/>is continuous because it is a composition of continuous functions.\nAs the function is continuous, we can now apply the intermediate value theorem. We calculate that the function assumes the values <bookmark mark=\"interval_limits\"/>f of zero equals minus two and f of three equals fifty-three at the interval limits.\nBecause f is continuous, it follows from <bookmark mark=\"ivt\"/>the intermediate value theorem that the function has at least one zero on the interval from zero to three, as it assumes all values between minus two and fifty-three on the interval.",
+        "voiceover-text": "The function f of x equals 3 x to the power of three minus one minus three to the power of x <bookmark mark=\"continuous\"/>is continuous because it is a composition of continuous functions.\nAs the function is continuous, we can now apply the intermediate value theorem. We calculate that the function assumes the values <bookmark mark=\"interval_limits\"/>f of zero equals minus two and f of three equals fifty-three at the interval limits.\nBecause f is continuous, it follows from <bookmark mark=\"ivt\"/>the intermediate value theorem that the function has at least one zero on the interval from zero to three, as it assumes all values between minus two and fifty-three on the interval.",
         "forgot_ivt": "That's almost it. You forgot to apply the intermediate value theorem. Let's have another look together.",
         "forgot_continuity": "That's almost it. You forgot to mention that the function is continuous, which is a requirement for the intermediate value theorem. Let's have another look together...",
         "forgot_interval_limits": "That's almost it. You forgot to mention that the values of the limits are negative for f of zero, and positive for f of three. Let's have another look together..."

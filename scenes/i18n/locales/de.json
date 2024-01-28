@@ -2898,7 +2898,8 @@
     "does-not-exist": "existiert nicht",
     "real_part": "Realteil",
     "imaginary_part": "Imaginärteil",
-    "steadiness": "Stetigkeit"
+    "steadiness": "Stetigkeit",
+    "ivt": "Zwischenwertsatz"
   },
   "LinAlg": {
     "14I1": {
@@ -2942,7 +2943,8 @@
     "continuous": "stetig",
     "ivt": "Zwischenwertsatz",
     "expand": "ausmultiplizieren",
-    "for": "für"
+    "for": "für",
+    "Zero": "Nullstelle"
   },
   "Func_6_P": {
     "22": {
@@ -3491,7 +3493,7 @@
         "voiceover": "Wenn die Funktion f stetig ist, und der Definitionsbereich das Intervall a, b ist, können wir ja <bookmark mark=\"ivt\"/>den Zwischenwertsatz anwenden.\nDaraus folgt dann,<bookmark mark=\"solution\"/> dass der Bildbereich von f von a bis b ein Intervall ist.\nAlso ist <bookmark mark=\"turn_b_green\"/>die Aussage b wahr: Wir können den Bildbereich von f von a bis b als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d.",
         "answer-a": "a) $f$ nimmt kein Minimum an",
         "answer-b": "b) $f([a,b])$ ist Intervall $[c,d]$",
-        "answer-c": "c) $f([a,b]) = \\\\emptyset$",
+        "answer-c": "c) $f([a,b]) = \\emptyset$",
         "answer-d": "d) $f$ ist injektiv"
       },
       "9q": {
@@ -3527,7 +3529,7 @@
         "answer_a": "a) $f$ ist surjektiv",
         "answer_b": "b) $f$ ist injektiv",
         "answer_c": "c) $f$ hat kein Maximum",
-        "answer_d": "d) $f(x)<0$ für alle $x\\\\in\\\\{0,1,2,3\\\\}$"
+        "answer_d": "d) $f(x)<0$ für alle $x\\in\\{0,1,2,3\\}$"
       },
       "11a": {
         "voiceover": "Setzen wir<bookmark mark=\"reorganize\"/> einfach mal alle werte ein:<bookmark mark=\"f_1\"/> f von 1 ist gleich eins minus eins im Quadrat, also Null. <bookmark mark=\"f_2\"/>f von 2 ist gleich zwei minus eins im Quadrat, also eins. Und <bookmark mark=\"f_3\"/>f von 3 ist gleich drei minus eins im Quadrat, also vier.\nWir sehen also, dass keine zwei unterschiedlichen x Werte auf den gleichen y Wert abgebildet werden. Also ist <bookmark mark=\"b_green\"/>die Funktion f injektiv."
@@ -3569,7 +3571,7 @@
       },
       "18q": {
         "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige Funktion mit $f(x)>0$ für alle $x\\in[0,1]$. \nWelche dieser Aussagen ist wahr?",
-        "answer_a": "a) Es existiert $\\xi\\in]0,1[$, sodass das Rechteck\\\\ mit Höhe $f(\\xi)$ und Breite $1$\\\\ die Fläche $A=\\int_0^1f(x)dx$ hat ",
+        "answer_a": "a) Es existiert $\\xi\\in]0,1[$, sodass das \\\\Rechteck mit Höhe $f(\\xi)$ und \\\\Breite $1$ die Fläche $A=\\int_0^1f(x)dx$ hat ",
         "answer_b": "b) $f$ nicht integrierbar auf $[0,1]$",
         "answer_c": "c) $f$ hat kein Maximum auf $[0,2]$",
         "answer_d": "d) Keine der Optionen",
@@ -3581,9 +3583,9 @@
         "voiceover": "Da f stetig ist, können wir <bookmark mark=\"implication_in\"/>den Mittelwertsatz anwenden, und wir erhalten, <bookmark mark=\"solution\"/>dass es ein xi gibt,\nsodass das bestimmte Integral von Null bis Eins von f von x dx gleich f von xi ist, wobei xi in dem offenen Intervall von Null bis Eins liegt.\nAlso ist <bookmark mark=\"a_green\"/>die Aussage a wahr."
       },
       "19q": {
-        "f": "$f:\\\\mathbb R\\\\rightarrow\\\\mathbb R$ differenzierbar, gerade",
+        "f": "differenzierbar, gerade",
         "voiceover": "Sei f <bookmark mark=func_in\"/>eine gerade, differenzierbare Funktion von den reellen Zahlen in die reellen Zahlen. Welche der folgenden Aussagen gilt allgemein?\nIst es die <bookmark mark=\"answer_a_in\"/>Aussage a, dass die Funktion f von x gleich Null ist für alle x in den reellen Zahlen? ...\nIst es die <bookmark mark=\"answer_b_in\"/>Aussage b, dass die Ableitung von f an der Stelle x gleich Null ist für x gleich Null? ...\nIst es die <bookmark mark=\"answer_c_in\"/>Aussage c, dass die Funktion f injektiv ist? ...\nOder ist es die <bookmark mark=\"answer_d_in\"/>Aussage d, dass die Funktion f von x gleich x hoch 3 ist? ...",
-        "answer_a": "a) $f(x)=0$ für alle $x\\\\in\\\\mathbb R$",
+        "answer_a": "a) $f(x)=0$ für alle $x\\in\\mathbb R$",
         "answer_b": "b) $f'(x)=0$ für $x=0$",
         "answer_c": "c) $f$ ist injektiv",
         "question": "Sei $f:\\mathbb R\\rightarrow\\mathbb R$ eine differenzierbare, gerade Funktion. \nWelche der folgenden Aussagen ist wahr?",
@@ -3642,10 +3644,25 @@
         "voiceover": "Zuerst <bookmark mark=\"step_1\"/> ziehen wir die vierte Wurzel auf beiden Seiten der Gleichung. \nDann bleibt <bookmark mark=\"equation_2\"/>, dass z gleich der vierten Wurzel aus minus eins plus i ist.\n\nDa die k-te Wurzel in den komplexen Zahlen immer k-Lösungen hat, wissen wir<bookmark mark=\"highlight_sol\"/>, dass es hier vier Lösungen gibt."
       },
       "21q": {
-        "answer_a": "Sie wächst monoton",
-        "answer_b": "$a_n>0$ für alle $n\\in\\mathbb N$",
-        "answer_c": "Sie konvergiert nicht",
-        "answer_d": "Sie ist unbeschränkt"
+        "answer_a": "a) Sie wächst monoton",
+        "answer_b": "b) $a_n>0$ für alle $n\\in\\mathbb N$",
+        "answer_c": "c) Sie konvergiert nicht",
+        "answer_d": "d) Sie ist unbeschränkt",
+        "voiceover": "Betrachten wir die Folge <bookmark mark=\"sequence_in_1\"/>\"a\" n, wobei das Element \"a\" n <bookmark mark=\"sequence_in_2\"/>definiert ist als minus eine hoch n mal den Bruch 3 n Quadrat plus eins durch 2 n minus n Quadrat plus 1. <bookmark mark=\"sequence_in_3\"/>Welche der folgenden Aussagen ist wahr?\nIst es Aussage a, die besagt, <bookmark mark=\"answer_a_in\"/>dass die Folge monoton steigt?\nOder ist es Aussage b, die besagt, <bookmark mark=\"answer_b_in\"/>dass das a n für alle Werte von n größer als Null ist?\nIst es Aussage c, die besagt, <bookmark mark=\"answer_c_in\"/>dass die Folge \"a\" n nicht konvergiert?\nOder ist es Aussage d, die besagt, <bookmark mark=\"answer_d_in\"/>dass die Folge \"a\" n unbeschränkt ist?",
+        "question": "Welche der folgenden Aussagen gilt für die Folge $\\left(a_n\\right)_{n\\in\\mathbb N}$ mit $a_n=\\left(-1\\right)^n\\cdot\\tfrac{3n^2+1? \n}{2n-n^2+1}$?",
+        "answerOptions": "[\"$(a_n)$ steigt monoton\", \"$a_n>0$ für alle $n\\in\\mathbb N$\", \"$(a_n)$ konvergiert nicht\", \"$a_n$ ist unbeschränkt\"]"
+      },
+      "21a": {
+        "voiceover": "Wenn wir nur den <bookmark mark=\"highlight_second_part\"/>zweiten Teil der Folge betrachten und<bookmark mark=\"transform_second_part\"/> dessen Grenzwert<bookmark mark=\"limit_in\"/> für n gegen unendlich berechnen, sehen wir, dass der <bookmark mark=\"three_in\"/> gleich drei ist. ...\nAber der zweite Teil der Folge wird ja noch <bookmark mark=\"highlight_neg_one\"/>mit minus Eins hoch n multipliziert, und dieser Ausdruck ist ja abwechselnd gleich minus eins und eins. Das bedeutet, dass für große n die Folge zwischen Werten  um drei und um minus drei springt. Also<bookmark mark=\"highlight_solution\"/> konvergiert die Folge nicht."
+      },
+      "23q": {
+        "answer_a": "$z=-i$ ist auch Nullstelle",
+        "answer_b": "$p$ ist nicht durch $(z-i)$ teilbar",
+        "answer_c": "$p$ ist beschränkt",
+        "answer_d": "$p$ hat $\\leq5$ Nullstellen",
+        "voiceover": "Betrachte das Polynom <bookmark mark=\"polynomial_in\"/> p von z gleich z hoch 5 -i mal z quadrat minus zwei i.\nEs hat eine <bookmark mark=\"zero_in\"/>Nullstelle bei z gleich i. Welche der folgenden Aussagen stimmt nun:\nIst es Aussage <bookmark mark=\"statement_a\"/>a, dass das Polynom eine weitere Nullstelle bei z gleich minus i hat?\nOder ist es Aussage <bookmark mark=\"statement_b\"/>b, dass das Polynom nicht durch z minus i teilbar ist?\nOder Aussage c, <bookmark mark=\"statement_c\"/>, dass das Polynom beschränkt ist?\nOder jedoch Aussage d, <bookmark mark=\"statement_d\"/>dass das Polynom höchstens 5 Nullstellen besitzt?",
+        "question": "Welche der folgenden Aussagen über das Polynom $p(z)=z^5-i\\cdot z^2-2i$ ist wahr?",
+        "answerOptions": "[\"$z=-i$ ist eine weitere Nullstelle\", \"$p$ ist nicht durch $(z-i)$ teilbar\", \"$p$ ist beschränkt\", \"$p$ hat $\\leq5$ Nullstellen\"]"
       }
     },
     "practice_limits": {
@@ -3726,7 +3743,7 @@
         "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"f_in\"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.\nBeweise, dass die Funktion auf<bookmark mark=\"intervall_in\"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt."
       },
       "10a": {
-        "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"steady\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"intervall_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
+        "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"continuous\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"intervall_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
         "forgot_ivt": "Fast richtig. Du hast nur vergessen, den Zwischenwertsatz anzuwenden. Sehen wir uns das ganze gemeinsam nochmal an.",
         "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
         "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu prüfen, dass die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für f von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
