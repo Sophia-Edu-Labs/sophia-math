@@ -7615,6 +7615,73 @@ class Calc_practice_trig_1_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+##################################### MERKVIDEO: VOLLSTÄNDIGE INDUKTION
+#####################################
+class Calc_practice_induc_1(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title("Mathematical Induction")
+        self.add(title)
+
+        p_n = MathTex("Statement:", "P(n)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
+        self.add(p_n[0])
+
+        p_0 = MathTex("\\bullet P(0)", color=c1t, font_size=fs2)
+        p_1 = MathTex("\\bullet P(1)", color=c1t, font_size=fs2)
+        p_2 = MathTex("\\bullet P(2)", color=c1t, font_size=fs2)
+        p_v = MathTex("\\bullet \\vdots", color=c1t, font_size=fs2)
+        p = VGroup(p_0, p_1, p_2, p_v).arrange(DOWN, buff=.6).next_to(p_n, DOWN, buff=1)
+
+        base_1 = MathTex("1) Base case:", color=c1t, font_size=fs2)
+        base_2 = MathTex("\\bullet Prove that P(0) is true!", color=c1t, font_size=fs2)
+        box_base_1 = SurroundingRectangle(base_1, color=BLUE, buff=MED_SMALL_BUFF)
+        box_base_2 = VGroup(box_base_1, base_1)
+        base = VGroup(box_base_2, base_2).arrange(DOWN, buff=.6).next_to(title, DOWN, buff=1)
+
+        step_1 = MathTex("2) Induction step:", color=c1t, font_size=fs2)
+        step_2 = MathTex("Prove that P(k) \\Rightarrow P(k+1)!", color=c1t, font_size=fs2)
+        box_step_1 = SurroundingRectangle(step_1, color=BLUE, buff=MED_SMALL_BUFF)
+        box_step_2 = VGroup(box_step_1, step_1)
+        step = VGroup(box_step_2, step_2).arrange(DOWN, buff=.6).next_to(base, DOWN, buff=1)
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+                Mathematical induction is a method for proving that <bookmark mark="stat"/> a mathematical statement P n is true for every natural number n, that is, that the infinitely <bookmark mark="list"/>many cases P 0, P 1, P 2, and so on, all hold.
+                A proof by induction consists of two cases. <bookmark mark="base_1"/> First, the base case, where you prove that the statement P 0 is true without assuming any knowledge of other cases.
+                <bookmark mark="step_1"/> Then, the induction step, where you assume that <bookmark mark="step_1"/> the statement is true for a natural number k and you prove that it is also true for k plus 1. 
+                With these two steps you establish that the statement holds for every natural number n. Note however that the base case does not necessarily begin with 0, but often with 1, or any other natural number.
+                """
+        ) as tracker:
+            
+            self.wait_until_bookmark("stat")
+            self.play(Write(p_n[1]))
+
+            self.wait_until_bookmark("list")
+            self.play(Write(p_0), Write(p_1), Write(p_2), Write(p_v))
+
+            self.wait_until_bookmark("base_1")
+            self.play(Unwrite(p_n), Unwrite(p))
+            self.wait(.5)
+            self.play(Write(box_base_2))
+            self.wait(0.5)
+            self.play(Write(base_2))
+
+            self.wait_until_bookmark("step_1")
+            self.play(Write(box_step_2))
+
+            self.wait_until_bookmark("step_2")   
+            self.play(Write(step_2))   
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 
 #####################################
 # class Calc_practice_trig_2_q(SophiaCursorScene):
