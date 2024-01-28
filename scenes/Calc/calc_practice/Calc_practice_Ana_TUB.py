@@ -6764,37 +6764,46 @@ class Calc_practice_pfd_1_b(SophiaCursorScene):
 #####################################
 class Calc_practice_induction_1_q(SophiaCursorScene):
 
-#     def task_definition(self) -> SophiaTaskDefinition:
-#         return SophiaTaskDefinition(
-#             answerOptions = [
-# """We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
-# As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
-# According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
-# The following aspects must be mentioned for the solution to count as correct:
-# - Establishing that the function is continuous
-# - Mention of the intermediate value theorem
-# - Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
-# """,
-# """
-# The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
-# """,
-# """
-# Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
-# """,
-# """
-# Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
-# """,
-# """
-# The answer is incorrect.
-# """
-# ],
-#             correctAnswerIndex = 0,
-#             questionText = """Prove that the function $f(x) = 3x^3 - 1 - 3^x$ has at least one zero in the interval $[0, 3]$.""",
-#             llmCheckDetails=SophiaLLMQuestionCheckDetail(
-#                 fallbackOptionIndex=1,
-#                 specialInputSnippets = ["[ ]", "f"],
-#             )
-#         )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+"""
+To prove that the power set of a set with \( n \) elements contains \( 2^n \) elements using mathematical induction, we follow these steps:
+1. **Base Case:** Show the statement is true for a small value of \( n \), usually \( n = 0 \).
+2. **Inductive Step:** Assume the statement is true for some \( n = k \) (where \( k \) is a non-negative integer), and then prove it for \( n = k + 1 \).
+### Base Case (n = 0)
+Consider a set \( S \) with no elements, i.e., \( S = \{\} \). The power set of \( S \), denoted \( \mathcal{P}(S) \), contains only the empty set: \( \mathcal{P}(S) = \{\{\}\} \). 
+The number of elements in \( \mathcal{P}(S) \) is 1, which is \( 2^0 \) (since \( 2^0 = 1 \)). So, the statement holds true for \( n = 0 \).
+### Inductive Step
+Assume that the statement is true for a set with \( k \) elements, where \( k \) is any non-negative integer. That is, assume any set with \( k \) elements has a power set containing \( 2^k \) elements.
+Now consider a set \( T \) with \( k + 1 \) elements. We can write \( T = S \cup \{x\} \), where \( S \) is a set with \( k \) elements and \( x \) is an element not in \( S \).
+The power set of \( T \), \( \mathcal{P}(T) \), consists of all subsets of \( S \) (which, by our inductive hypothesis, number \( 2^k \)) plus all subsets of \( S \) with \( x \) added to them.
+For each subset of \( S \), there is a corresponding unique subset in \( \mathcal{P}(T) \) that includes the element \( x \). Since there are \( 2^k \) subsets of \( S \), adding \( x \) to each of these subsets creates another \( 2^k \) subsets.
+Thus, the total number of subsets in \( \mathcal{P}(T) \) is \( 2^k \) (subsets of \( S \)) plus \( 2^k \) (subsets of \( S \) with \( x \) added), which equals \( 2^k + 2^k = 2 \times 2^k = 2^{k+1} \).
+This proves that a set with \( k + 1 \) elements has a power set containing \( 2^{k+1} \) elements.
+Since the statement is true for \( n = 0 \) (base case) and true for \( n = k \) implies it is true for \( n = k + 1 \) (inductive step), by the principle of mathematical induction, the statement is true for all non-negative integers \( n \).
+This completes the induction proof.
+For this answer to be correct, the student needs to:
+- do the induction base, explicitly mentioning the empty set
+- do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+""",
+"""
+The student did the base correctly, but not the step
+""",
+"""
+The student did the step correctly, but not the base.
+""",
+"""
+The answer is incorrect.
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_induction.1q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
     
 
     # Main method for constructing the animation
@@ -6869,17 +6878,7 @@ class Calc_practice_induction_1_a(SophiaCursorScene):
 
 
         # Define the voiceover text
-        voiceover_text = """
-Let's start with <bookmark mark="base_in"/>the induction base, which means we need to show that the statement is true for n equal to zero.
-If a set has zero elements, that set is <bookmark mark="emptyset_in"/> going to be the empty set. And the <bookmark mark="emptyset_powerset_in"/>power set of the emptyset is the set, that only contains the emptyset.
-So the power set of the emptyset contains<bookmark mark="base_in_1"/> one element, which is equal to <bookmark mark="base_in_2"/>two to the power of zero. So the statement is true for n equals zero<bookmark mark="basegroup_green"/> and we've completed the induction base.
-Now, <bookmark mark="transition"/>let's turn to <bookmark mark="step_in"/>the induction step. This means we need to show, that if the statement is true for n, it is also true for n plus one.
-So we're looking at a set <bookmark mark="elements_in_1"/>s n plus one, containing n plus one elements. It consists of the set <bookmark mark="elements_in_2"/>s n, which contains n elements, and the element <bookmark mark="elements_in_3"/>x n plus one.
-Now what does <bookmark mark="power_set_in_1"/>the power set of s n plus one look like? ...
-It contains <bookmark mark="power_set_in_2"/>all sets p that are a subset of S n. And it also contains the union of <bookmark mark="power_set_in_3"/>all sets p that are a subset of S n with the element x n plus one. These two sets, so the subsets of s n and the subsets of s n combined with x n plus one make up the power set of S n plus one.
-So the <bookmark mark="cardinality_in_1"/>power set of S n plus one contains two times as many elements as <bookmark mark="cardinality_in_2"/>the power set of S n, because each of the sets it consists of contains that many elements. And since S n contains two to the power of n elements, S n plus one contains <bookmark mark="cardinality_in_3"/>two to the power of n plus one elements.
-And with that, we've <bookmark mark="stepgroup_green"/>completed the induction step, and the proof by induction is complete.
-"""
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_induction.1a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -6945,6 +6944,304 @@ And with that, we've <bookmark mark="stepgroup_green"/>completed the induction s
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+class Calc_practice_induction_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        power_set_definition = MathTex(r"\mathcal P(S)=\{x | x\subseteq S\}", color=c1t, font_size=fs2)
+        power_set_example = MathTex(r"\mathcal P(\{0,1\})", r"=\{\emptyset,\{0\},\{1\},\{0,1\}\}", color=c3t, font_size=fs3)
+        power_set = VGroup(power_set_definition, power_set_example).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
+        theorem = VGroup(VGroup(Tex(self.translate("Calc_1.practice_induction.1q.thm_1"), color=c1t, font_size=fs3), Tex(self.translate("Calc_1.practice_induction.1q.thm_2"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT), MathTex("2^n", color=BLUE, font_size=fs2), Tex(self.translate("words.elements"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(power_set, DOWN, buff=.8)
+        theorem[1].set_x(0)
+
+        self.add(power_set, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\emptyset)|=|\{\emptyset\}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, power_set_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        elements = MathTex(r"S_{n+1}", r"=S_{n}", r"\cup x_{n+1}", color=c3t, font_size=fs3).next_to(induction_step, DOWN, buff=.2)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        step_group = VGroup(induction_step, elements, power_set_step)
+
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.1a.base_correct")+self.translate("Calc_1.practice_induction.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(VGroup(power_set, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(base), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_in")
+            self.play(Write(power_set_base[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_powerset_in")
+            self.play(Write(power_set_base[0][0]), Write(power_set_base[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(power_set_base[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(power_set_base[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("basegroup_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("transition")
+            self.add_shift_sound(.5)
+            self.play(base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(induction_step), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_1")
+            self.play(Write(elements[0]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_2")
+            self.play(Write(elements[1]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_3")
+            self.play(Write(elements[2]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_1")
+            self.play(Write(power_set_step[0][0]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_2")
+            self.play(Write(power_set_step[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_3")
+            self.play(Write(power_set_step[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_1")
+            self.play(Write(power_set_step[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_2")
+            self.play(Write(power_set_step[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_3")
+            self.play(Write(power_set_step[1][2]), run_time=.5)
+
+            self.wait_until_bookmark("stepgroup_green")
+            self.play(step_group.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_induction_1_c(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        power_set_definition = MathTex(r"\mathcal P(S)=\{x | x\subseteq S\}", color=c1t, font_size=fs2)
+        power_set_example = MathTex(r"\mathcal P(\{0,1\})", r"=\{\emptyset,\{0\},\{1\},\{0,1\}\}", color=c3t, font_size=fs3)
+        power_set = VGroup(power_set_definition, power_set_example).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
+        theorem = VGroup(VGroup(Tex(self.translate("Calc_1.practice_induction.1q.thm_1"), color=c1t, font_size=fs3), Tex(self.translate("Calc_1.practice_induction.1q.thm_2"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT), MathTex("2^n", color=BLUE, font_size=fs2), Tex(self.translate("words.elements"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(power_set, DOWN, buff=.8)
+        theorem[1].set_x(0)
+
+        self.add(power_set, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\emptyset)|=|\{\emptyset\}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, power_set_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        elements = MathTex(r"S_{n+1}", r"=S_{n}", r"\cup x_{n+1}", color=c3t, font_size=fs3).next_to(induction_step, DOWN, buff=.2)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        step_group = VGroup(induction_step, elements, power_set_step)
+
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.1a.step_correct")+self.translate("Calc_1.practice_induction.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(VGroup(power_set, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(base), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_in")
+            self.play(Write(power_set_base[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_powerset_in")
+            self.play(Write(power_set_base[0][0]), Write(power_set_base[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(power_set_base[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(power_set_base[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("basegroup_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("transition")
+            self.add_shift_sound(.5)
+            self.play(base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(induction_step), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_1")
+            self.play(Write(elements[0]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_2")
+            self.play(Write(elements[1]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_3")
+            self.play(Write(elements[2]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_1")
+            self.play(Write(power_set_step[0][0]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_2")
+            self.play(Write(power_set_step[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_3")
+            self.play(Write(power_set_step[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_1")
+            self.play(Write(power_set_step[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_2")
+            self.play(Write(power_set_step[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_3")
+            self.play(Write(power_set_step[1][2]), run_time=.5)
+
+            self.wait_until_bookmark("stepgroup_green")
+            self.play(step_group.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_induction_1_d(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        power_set_definition = MathTex(r"\mathcal P(S)=\{x | x\subseteq S\}", color=c1t, font_size=fs2)
+        power_set_example = MathTex(r"\mathcal P(\{0,1\})", r"=\{\emptyset,\{0\},\{1\},\{0,1\}\}", color=c3t, font_size=fs3)
+        power_set = VGroup(power_set_definition, power_set_example).arrange(DOWN, buff=.1, aligned_edge=LEFT).set_y(1.8)
+        theorem = VGroup(VGroup(Tex(self.translate("Calc_1.practice_induction.1q.thm_1"), color=c1t, font_size=fs3), Tex(self.translate("Calc_1.practice_induction.1q.thm_2"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.1, aligned_edge=LEFT), MathTex("2^n", color=BLUE, font_size=fs2), Tex(self.translate("words.elements"), color=c1t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(power_set, DOWN, buff=.8)
+        theorem[1].set_x(0)
+
+        self.add(power_set, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        power_set_base = VGroup(MathTex(r"\mathcal P(", r"\emptyset", r")=\{\emptyset\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\emptyset)|=|\{\emptyset\}|=1", r"=2^0", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, power_set_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        elements = MathTex(r"S_{n+1}", r"=S_{n}", r"\cup x_{n+1}", color=c3t, font_size=fs3).next_to(induction_step, DOWN, buff=.2)
+        power_set_step = VGroup(MathTex(r"\mathcal P(\{S_{n+1}\})", r"=\{p|p\in \mathcal P(\{S_{n}\})\}", r"\\\cup\{p\cup x_{n+1}|p\in\mathcal P(\{S_{n}\})\}", color=c3t, font_size=fs3), MathTex(r"|\mathcal P(\{S_{n+1}\})|", r"=2|\mathcal P({S_{n}\})|", r"=2^{n+1}", color=c3t, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(elements, DOWN, buff=.8)
+        step_group = VGroup(induction_step, elements, power_set_step)
+
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_induction.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.add_shift_sound(0.5)
+            self.play(VGroup(power_set, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_in")
+            self.play(Write(base), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_in")
+            self.play(Write(power_set_base[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("emptyset_powerset_in")
+            self.play(Write(power_set_base[0][0]), Write(power_set_base[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(power_set_base[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(power_set_base[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("basegroup_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("transition")
+            self.add_shift_sound(.5)
+            self.play(base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("step_in")
+            self.play(Write(induction_step), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_1")
+            self.play(Write(elements[0]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_2")
+            self.play(Write(elements[1]), run_time=.5)
+
+            self.wait_until_bookmark("elements_in_3")
+            self.play(Write(elements[2]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_1")
+            self.play(Write(power_set_step[0][0]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_2")
+            self.play(Write(power_set_step[0][1]), run_time=.5)
+
+            self.wait_until_bookmark("power_set_in_3")
+            self.play(Write(power_set_step[0][2]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_1")
+            self.play(Write(power_set_step[1][0]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_2")
+            self.play(Write(power_set_step[1][1]), run_time=.5)
+
+            self.wait_until_bookmark("cardinality_in_3")
+            self.play(Write(power_set_step[1][2]), run_time=.5)
+
+            self.wait_until_bookmark("stepgroup_green")
+            self.play(step_group.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
 ##################################### Intermediate value theorem
 #####################################
 class Calc_practice_ivt_1_q(SophiaCursorScene):
@@ -6973,7 +7270,7 @@ The answer is incorrect.
 """
 ],
             correctAnswerIndex = 0,
-            questionText = """Prove that the function $f(x) = 3x^3 - 1 - 3^x$ has at least one zero in the interval $[0, 3]$.""",
+            questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
                 fallbackOptionIndex=1,
                 specialInputSnippets = ["[ ]", "f"],
@@ -7611,73 +7908,6 @@ class Calc_practice_trig_1_b(SophiaCursorScene):
 
             self.wait_until_bookmark("period_3")
             self.play(ReplacementTransform(period, period_3), run_time=.5)
-
-        # Wait for 4 seconds at the end of the animation
-        self.wait(6)
-
-##################################### MERKVIDEO: VOLLSTÄNDIGE INDUKTION
-#####################################
-class Calc_practice_induc_1(SophiaCursorScene):
-
-    # Main method for constructing the animation
-    def construct(self):
-        # Adding initial components to the scene
-        super().construct()
-        self.add_mathgrid()
-
-        title = self.add_title("Mathematical Induction")
-        self.add(title)
-
-        p_n = MathTex("Statement:", "P(n)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
-        self.add(p_n[0])
-
-        p_0 = MathTex("\\bullet P(0)", color=c1t, font_size=fs2)
-        p_1 = MathTex("\\bullet P(1)", color=c1t, font_size=fs2)
-        p_2 = MathTex("\\bullet P(2)", color=c1t, font_size=fs2)
-        p_v = MathTex("\\bullet \\vdots", color=c1t, font_size=fs2)
-        p = VGroup(p_0, p_1, p_2, p_v).arrange(DOWN, buff=.6).next_to(p_n, DOWN, buff=1)
-
-        base_1 = MathTex("1) Base case:", color=c1t, font_size=fs2)
-        base_2 = MathTex("\\bullet Prove that P(0) is true!", color=c1t, font_size=fs2)
-        box_base_1 = SurroundingRectangle(base_1, color=BLUE, buff=MED_SMALL_BUFF)
-        box_base_2 = VGroup(box_base_1, base_1)
-        base = VGroup(box_base_2, base_2).arrange(DOWN, buff=.6).next_to(title, DOWN, buff=1)
-
-        step_1 = MathTex("2) Induction step:", color=c1t, font_size=fs2)
-        step_2 = MathTex("Prove that P(k) \\Rightarrow P(k+1)!", color=c1t, font_size=fs2)
-        box_step_1 = SurroundingRectangle(step_1, color=BLUE, buff=MED_SMALL_BUFF)
-        box_step_2 = VGroup(box_step_1, step_1)
-        step = VGroup(box_step_2, step_2).arrange(DOWN, buff=.6).next_to(base, DOWN, buff=1)
-
-        # Action Sequence
-        with self.voiceover(
-                text=""" 
-                Mathematical induction is a method for proving that <bookmark mark="stat"/> a mathematical statement P n is true for every natural number n, that is, that the infinitely <bookmark mark="list"/>many cases P 0, P 1, P 2, and so on, all hold.
-                A proof by induction consists of two cases. <bookmark mark="base_1"/> First, the base case, where you prove that the statement P 0 is true without assuming any knowledge of other cases.
-                <bookmark mark="step_1"/> Then, the induction step, where you assume that <bookmark mark="step_1"/> the statement is true for a natural number k and you prove that it is also true for k plus 1. 
-                With these two steps you establish that the statement holds for every natural number n. Note however that the base case does not necessarily begin with 0, but often with 1, or any other natural number.
-                """
-        ) as tracker:
-            
-            self.wait_until_bookmark("stat")
-            self.play(Write(p_n[1]))
-
-            self.wait_until_bookmark("list")
-            self.play(Write(p_0), Write(p_1), Write(p_2), Write(p_v))
-
-            self.wait_until_bookmark("base_1")
-            self.play(Unwrite(p_n), Unwrite(p))
-            self.wait(.5)
-            self.play(Write(box_base_2))
-            self.wait(0.5)
-            self.play(Write(base_2))
-
-            self.wait_until_bookmark("step_1")
-            self.play(Write(box_step_2))
-
-            self.wait_until_bookmark("step_2")   
-            self.play(Write(step_2))   
-
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
