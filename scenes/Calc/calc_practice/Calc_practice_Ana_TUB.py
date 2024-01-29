@@ -8100,6 +8100,178 @@ class Calc_practice_induction_2_d(SophiaCursorScene):
         self.wait(6)
 #
 
+#####################################
+#####################################
+class Calc_practice_induction_3_q(SophiaCursorScene):
+
+#     def task_definition(self) -> SophiaTaskDefinition:
+#         return SophiaTaskDefinition(
+#             answerOptions = [
+# """
+# Base Case (n = 0):
+# When n = 0, we have:
+# 0^2 + 0 = 0, which is an even number. So, the statement is true for the base case.
+# Inductive Step
+# We want to prove that (k + 1)^2 + (k + 1) is also even.
+# Start with the expression (k + 1)^2 + (k + 1):
+# (k + 1)^2 + (k + 1) = k^2 + 2k + 1 + k + 1
+# Now, we can use our inductive hypothesis:
+# k^2 + k is even, so we can write it as 2m for some integer m.
+# Now, let's rewrite the expression:
+# 2m + 1 + 2k + 1
+# Now, combine like terms:
+# 2m + 2k + 2
+# Factor out the common factor of 2:
+# 2(m + k + 1)
+# Since (m + k + 1) is an integer (as the sum of integers is an integer), we can rewrite the expression as:
+# 2 * integer
+# Therefore, (k + 1)^2 + (k + 1) is an even number.
+
+# For this answer to be correct, the student needs to:
+# - do the induction base, explicitly mentioning the empty set
+# - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+# """,
+# """
+# The student did the base correctly, but not the step
+# """,
+# """
+# The student did the step correctly, but not the base.
+# """,
+# """
+# The answer is incorrect.
+# """
+# ],
+        #     correctAnswerIndex = 0,
+        #     questionText = self.translate("Calc_1.practice_induction.2q.question-text"),
+        #     llmCheckDetails=SophiaLLMQuestionCheckDetail(
+        #         fallbackOptionIndex=1,
+        #         specialInputSnippets = ["[ ]", "f"],
+        #     )
+        # )
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=1,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\tfrac{a_n+5}{2}", color=c3t, font_size=fs2)).scale(.9).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+
+        theorem = MathTex(r"a_n=", r"5", r"-", r"{{4}", r"\over", r"{2^n}}", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.3q.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("sequence_in_1")
+            self.play(Write(a_n_0), run_time=.5)
+
+            self.wait_until_bookmark("sequence_in_2")
+            self.play(Write(a_n_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("sequence_in_3")
+            self.play(Write(a_n_1[1]), run_time=.5)
+
+            self.wait_until_bookmark("theorem_in")
+            self.play(Write(theorem))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_induction_3_a(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=1,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\tfrac{a_n+5}{2}", color=c3t, font_size=fs2)).scale(.9).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+        theorem = MathTex(r"a_n=", r"5", r"-", r"{{4}", r"\over", r"{2^n}}", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+        self.add(a_n, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"a_0=5-\frac{4}{1}", r"=1", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"a_{n+1}=", r"{{a_n", r"+5}\over{2}}", color=c3t, font_size=fs3)
+        term_1_a, term_1_b = VGroup(term_1[0], term_1[2]), term_1[1] 
+        term_2 = MathTex(r"=", r"{{5", r"-", r"\tfrac{4}{2^n}", r"+5", r"}\over{2}}", color=c3t, font_size=fs3)
+        fives, frac = VGroup(term_2[1], term_2[-2]).copy().set_color(RED), VGroup(term_2[3], term_2[3], term_2[5]).copy().set_color(RED)
+        term_2_a, term_2_b = VGroup(term_2[0], term_2[1], term_2[2], term_2[5]), VGroup(term_2[3], term_2[4])
+        term_3 = MathTex(r"=", r"5", r"-", r"{{4}\over", r"{2^{n+1}}}", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = """
+We'll start with <bookmark mark="base_case_in"/>the base case, so the case for n equals zero. If we <bookmark mark="base_term_in"/>plug this into our formula, we get that "a" zero is equal to 5 minus 4 over one, which is equal to one. And the definition of a zero is also one. So <bookmark mark="base_green"/>we've already completed the base case.
+Next, we'll <bookmark mark="induction_step_in"/>perform the induction step. So we're now assuming that the formula can be used for the element with index n.
+Now, <bookmark mark="term_1_in"/>a n plus one, by our recursion rule, is equal to a n plus five, divided by two.
+Next, we can <bookmark mark="term_2_in_1"/>copy the term and plug in five minus 4 over 2 to the power of n for<bookmark mark="term_2_in_2"/> "a" n, and get 5 minus 4 over 2 to the power of n plus 5, all divided by 2.
+Now <bookmark mark="term_3_in_1_a"/>the two fives over two make a <bookmark mark="term_3_in_1_b"/>5, and <bookmark mark="term_3_in_2_a"/>4 over 2 to the power of n, divided by two can be rewritten as<bookmark mark="term_3_in_2_b"/> 4 over 2 to the power of n plus 1.
+And with that, we're at the value of the formula for n plus one. So we've also <bookmark mark="step_green"/>completed the induction step, and our proof by induction is finished.
+"""
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), VGroup(a_n, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+
+            self.wait_until_bookmark("term_2_in_1")
+            self.play(ReplacementTransform(term_1_a.copy(), term_2_a))
+
+            self.wait_until_bookmark("term_2_in_2")
+            self.play(ReplacementTransform(term_1_b.copy(), term_2_b))
+
+            self.wait_until_bookmark("term_3_in_1_a")
+            self.play(FadeIn(fives), run_time=.5)
+
+            self.wait_until_bookmark("term_3_in_1_b")
+            self.play(ReplacementTransform(fives, term_3[1]), Write(term_3[0]))
+
+            self.wait_until_bookmark("term_3_in_2_a")
+            self.play(FadeIn(frac), run_time=.5)
+
+            self.wait_until_bookmark("term_3_in_2_b")
+            self.play(ReplacementTransform(frac, VGroup(term_3[3], term_3[4])), Write(term_3[2]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
 ##################################### Intermediate value theorem
 #####################################
