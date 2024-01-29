@@ -8189,55 +8189,100 @@ class Calc_practice_induc_1(SophiaCursorScene):
         title = self.add_title("Mathematical Induction")
         self.add(title)
 
-        p_n = MathTex("Statement:", "P(n)", color=c1t, font_size=fs2).next_to(title, DOWN, buff=1)
-        self.add(p_n[0])
+        #formula = MathTex(r"\sum_{i=1}^n i ={n{n+1}\over", r"2}", color=c1t, font_size=fs2).set_y(2)
+        formula = MathTex("\sum_{i=1}^n i = \\frac{n (n+1)}{2}", color=c1t, font_size=fs2).next_to(title, DOWN, buff=0.8)
+        self.add(formula)
 
-        p_0 = MathTex("\\bullet P(0)", color=c1t, font_size=fs2)
-        p_1 = MathTex("\\bullet P(1)", color=c1t, font_size=fs2)
-        p_2 = MathTex("\\bullet P(2)", color=c1t, font_size=fs2)
-        p_v = MathTex("\\bullet \\hdots", color=c1t, font_size=fs2)
-        p = VGroup(p_0, p_1, p_2, p_v).arrange(DOWN, buff=.6, aligned_edge=LEFT).next_to(p_n, DOWN, buff=1)
+        f_1 = MathTex("\\bullet ", " \sum_{i=1}^1 i = \\frac{1 (1+1)}{2}", color=c1t, font_size=fs2)
+        f_2 = MathTex("\\bullet ", " \sum_{i=1}^2 i = \\frac{2 (2+1)}{2}", color=c1t, font_size=fs2)
+        f_3 = MathTex("\\bullet ", " \sum_{i=1}^3 i = \\frac{3 (3+1)}{2}", color=c1t, font_size=fs2)
+        f_4 = MathTex("\\bullet ", " ...", color=c1t, font_size=fs2)
+        f_cases = VGroup(f_1, f_2, f_3, f_4).arrange(DOWN, buff=.6, aligned_edge=LEFT).next_to(formula, DOWN, buff=0.3).scale(.7)
 
-        base_1 = MathTex("1) Base case:", color=c1t, font_size=fs2)
-        base_2 = MathTex("\\bullet Prove that P(0) is true!", color=c1t, font_size=fs2)
+        slow = ImageMobject(assets_folder / "img" / "slow_numbers.png").shift(LEFT*5).scale(.5)
+
+        domino = ImageMobject(assets_folder / "img" / "dominos.png").shift(LEFT*5).scale(.5)
+        
+        base_1 = Tex("1) Base case", color=c1t, font_size=fs2)
+        base_2 = MathTex("n = 1: \\,", " \sum_{i=1}^1 i", "=", "\\frac{1(1+1)}{2}", color=c1t, font_size=fs2)
         box_base_1 = SurroundingRectangle(base_1, color=BLUE, buff=MED_SMALL_BUFF)
         box_base_2 = VGroup(box_base_1, base_1)
-        base = VGroup(box_base_2, base_2).arrange(DOWN, buff=.6).next_to(title, DOWN, buff=1)
+        base = VGroup(box_base_2, base_2).arrange(DOWN, buff=.6).next_to(formula, DOWN, buff=0.3).scale(.8)
 
-        step_1 = MathTex("2) Induction step:", color=c1t, font_size=fs2)
-        step_2 = MathTex("Prove that P(k) \\Rightarrow P(k+1)!", color=c1t, font_size=fs2)
+        step_1 = Tex("2) Induction step", color=c1t, font_size=fs2)
+        step_2 = MathTex("\sum_{i=1}^{k+1} i =", "\sum_{i=1}^{k} i", "+ (k+1)", color=c1t, font_size=fs2)
         box_step_1 = SurroundingRectangle(step_1, color=BLUE, buff=MED_SMALL_BUFF)
         box_step_2 = VGroup(box_step_1, step_1)
-        step = VGroup(box_step_2, step_2).arrange(DOWN, buff=.6).next_to(base, DOWN, buff=1)
+        step = VGroup(box_step_2, step_2).arrange(DOWN, buff=.6).next_to(formula, DOWN, buff=0.3).scale(.8)
 
+        step_int = MathTex("\sum_{i=1}^{k+1} i =", "\\frac{k(k+1)}{2}", "+ (k+1)", color=c1t, font_size=fs2).move_to(step_2).scale(.8)
+        step_sol = MathTex("\sum_{i=1}^{k+1} i =", "\\frac{(k+1)((k+1)+1)}{2}", color=c1t, font_size=fs2).move_to(step_int).scale(.8)
+        
         # Action Sequence
         with self.voiceover(
                 text=""" 
-                Mathematical induction is a method for proving that <bookmark mark="stat"/> a mathematical statement P n is true for every natural number n, that is, that the infinitely <bookmark mark="list"/>many cases P 0, P 1, P 2, and so on, all hold.
-                A proof by induction consists of two cases. <bookmark mark="base_1"/> First, the base case, where you prove that the statement P 0 is true without assuming any knowledge of other cases.
-                <bookmark mark="step_1"/> Then, the induction step, where you assume that <bookmark mark="step_2"/> the statement is true for a natural number k and you prove that it is also true for k plus 1. 
-                With these two steps you establish that the statement holds for every natural number n. Note however that the base case does not necessarily begin with 0, but often with 1, or any other natural number.
+                Suppose you want to prove that for every natural number n, this formula for the sum of all numbers from 1 to n holds. 
+                Now, you could prove this <bookmark mark="case"/> formula case by case. <break time="1.5s"/>
+                But since <bookmark mark="slow_1"/> there are infinitely many natural numbers, this is impractical... Luckily, there is a quicker <bookmark mark="slow_2"/> method, called mathematical induction.
+                This <bookmark mark="domino_1"/> method works like a falling chain of dominos.
+                In order for the whole chain of dominos to fall, we need to ensure that the first domino falls and that whenever one domino falls, also the next one falls, right?
+                <bookmark mark="domino_2"/>  
+                So, as for <bookmark mark="base_1"/> the base case, it is easy to see that the formula holds for n equal to 1. <break time="1.5s"/>
+                Next, in the induction step, we <bookmark mark="step_1"/> assume that the formula holds for n equals k and we want to use this to prove that it also holds for k plus 1.
+                To this end, <bookmark mark="step_2"/> we split the sum up into the sum from 1 to k and the last term. Now, we use that the formula <bookmark mark="step_3"/> already holds for n equals k. <break time="1.5s"/>
+                Summing these <bookmark mark="step_4"/> two terms gives the desired result...
                 """
         ) as tracker:
-            
-            self.wait_until_bookmark("stat")
-            self.play(Write(p_n[1]))
 
-            self.wait_until_bookmark("list")
-            self.play(Write(p_0), Write(p_1), Write(p_2), Write(p_v))
+            self.wait_until_bookmark("case")
+            self.play(Write(f_1), run_time=0.5)
+            self.play(Write(f_2), run_time=0.5)
+            self.play(Write(f_3), run_time=0.5)
+            self.play(Write(f_4), run_time=0.5)
+
+            self.wait_until_bookmark("slow_1")
+            self.add_shift_sound(0.5)
+            self.play(slow.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("slow_2")
+            self.add_shift_sound(0.5)
+            self.play(slow.animate(run_time=0.5).shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("domino_1")
+            self.play(Unwrite(f_cases), run_time=1)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(domino.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("domino_2")
+            self.add_shift_sound(0.5)
+            self.play(domino.animate(run_time=0.5).shift(5*RIGHT), run_time=.5) 
 
             self.wait_until_bookmark("base_1")
-            self.play(Unwrite(p_n), Unwrite(p))
+            self.play(Write(box_base_2), run_time=0.5)
+            self.play(Write(base_2[0]), run_time=0.5)
             self.wait(.5)
-            self.play(Write(box_base_2))
-            self.wait(0.5)
-            self.play(Write(base_2))
+            self.play(Write(base_2[1]), run_time=0.5)
+            self.wait(.5)
+            self.play(Write(base_2[3]), run_time=0.5)
+            self.wait(.5)
+            self.play(Write(base_2[2]), run_time=0.5)
 
             self.wait_until_bookmark("step_1")
-            self.play(Write(box_step_2))
+            self.play(Unwrite(base), run_time=0.5)
+            self.play(Write(box_step_2), run_time=0.5)  
+            self.wait(0.5)
+            self.play(Write(step_2[0]), run_time=0.5)
 
-            self.wait_until_bookmark("step_2")   
-            self.play(Write(step_2))   
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2[1]), run_time=0.5)
+            self.play(Write(step_2[2]), run_time=0.5)
+
+            self.wait_until_bookmark("step_3")
+            self.play(TransformMatchingTex(step_2, step_int), run_time=3)
+            
+            self.wait_until_bookmark("step_4")
+            self.play(TransformMatchingTex(step_int, step_sol), run_time=3)
 
 
         # Wait for 4 seconds at the end of the animation
