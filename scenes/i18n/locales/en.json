@@ -2902,7 +2902,11 @@
     "ivt": "intermediate value theorem",
     "induction": "induction",
     "induction_base": "Base case",
-    "induction_step": "Induction step"
+    "induction_step": "Induction step",
+    "is_even": "is even",
+    "chain_rule": "Chain rule",
+    "quotient_rule": "Quotient rule",
+    "linearity": "linearity"
   },
   "LinAlg": {
     "14I1": {
@@ -2948,7 +2952,9 @@
     "expand": "expand",
     "for": "for",
     "Zero": "Zero",
-    "elements": "elements"
+    "elements": "elements",
+    "derivatives": "derivatives",
+    "integrals": "Integrals"
   },
   "Words": {
     "base": "base",
@@ -3822,6 +3828,37 @@
         "voiceover-text": "Let's start with <bookmark mark=\"base_in\"/>the induction base, which means we need to show that the statement is true for n equal to zero.\nIf n equals zero, we're looking at a set with zero elements. And if a set has zero elements, that set has <bookmark mark=\"emptyset_in\"/>to be the empty set. And the <bookmark mark=\"emptyset_powerset_in\"/>power set of the emptyset is the set, that only contains the emptyset.\nSo the power set of the empty set contains<bookmark mark=\"base_in_1\"/> one element. And since one is equal to <bookmark mark=\"base_in_2\"/>two to the power of zero, the statement is true for n equals zero<bookmark mark=\"basegroup_green\"/> and we've completed the induction base.\nNow, <bookmark mark=\"transition\"/>let's turn to <bookmark mark=\"step_in\"/>the induction step. This means we need to show, that if the statement is true for n, it is also true for n plus one.\nSo we're looking at a set <bookmark mark=\"elements_in_1\"/>s n plus one, containing n plus one elements. It consists of the set <bookmark mark=\"elements_in_2\"/>s n, which contains n elements, and the element <bookmark mark=\"elements_in_3\"/>x n plus one.\nNow what does <bookmark mark=\"power_set_in_1\"/>the power set of s n plus one look like? ...\nIt contains <bookmark mark=\"power_set_in_2\"/>all sets p that are a subset of S n. And it also contains the union of <bookmark mark=\"power_set_in_3\"/>all sets p that are a subset of S n with the element x n plus one. These two sets, so the subsets of s n and the subsets of s n combined with x n plus one make up the power set of S n plus one.\nSo the <bookmark mark=\"cardinality_in_1\"/>power set of S n plus one contains two times as many elements as <bookmark mark=\"cardinality_in_2\"/>the power set of S n, because each of the sets it consists of contains that many elements. And since S n contains two to the power of n elements, S n plus one contains <bookmark mark=\"cardinality_in_3\"/>two to the power of n plus one elements.\nAnd with that, we've <bookmark mark=\"stepgroup_green\"/>completed the induction step, and the proof by induction is complete.",
         "base_correct": "You did the base correctly, but not the step...",
         "step_correct": "You did the induction step correctly, but not the base..."
+      },
+      "2q": {
+        "voiceover-text": "Prove that <bookmark mark=\"thm_in\"/>n squared plus n is even for all natural numbers n using induction. To show that it is even, you can show that n squared plus n is divisible by two.",
+        "question-text": "Prove that $n^2+n$ is even for all $n\\in\\mathbb N$ using induction"
+      },
+      "2a": {
+        "voiceover-text": "Starting with the <bookmark mark=\"base_in\"/>base case, we get the <bookmark mark=\"base_in_1\"/>term 0 squared plus 0, which <bookmark mark=\"base_in_2\"/>is equal to zero. So <bookmark mark=\"base_green\"/>we've completed the base case, because zero is even.\nNow for the <bookmark mark=\"step_in\"/>induction step, we want to show that if the statement holds for n, it also holds for n plus one. So we'll now assume that n squared plus n is even, and we want to show that <bookmark mark=\"term_1_in\"/>n plus one squared plus n plus one is even as well.\nIf we use the binomial formula, we can write this as <bookmark mark=\"term_2_in\"/>n squared plus 2 n plus one, plus n plus one.\nAnd now we'll just move the terms around to get <bookmark mark=\"term_3_in\"/>n squared plus n plus two n plus two. ...\nNow, we know that <bookmark mark=\"term_3_a\"/>n squared plus n is even, because we assumed that the statement holds for n. And we also know that <bookmark mark=\"term_3_b\"/>two n is even, because it's two times n, and n is an integer. And finally, <bookmark mark=\"term_3_c\"/>two is even as well.\nSo since the sum of even numbers is even as well, we've <bookmark mark=\"step_green\"/>also completed the induction step, and our proof by induction is complete.",
+        "step_not_base": "You did the induction step correctly, but not the base case.",
+        "base_not_case": "You did the induction base correctly, but not the induction step."
+      }
+    },
+    "practice_derivatives": {
+      "1q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the logarithm of negative one over x. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?"
+      },
+      "1a": {
+        "voiceover-text": "Notice, that the function we're looking at is the concatenation of the <bookmark mark=\"outer_func\"/>logarithm, and the function <bookmark mark=\"inner_func\"/>negative one over x. This means that we'll have to <bookmark mark=\"chain_rule\"/>apply the chain rule to compute the derivative.\nSo we start by computing the derivative of <bookmark mark=\"add_outer_func\"/>the outer function, which is equal to <bookmark mark=\"transform_outer_func\"/>one over negative one over x, because the derivative of the logarithm is the inverse of its argument.\nAnd then we compute the derivative of <bookmark mark=\"add_inner_func\"/>the inner function, which is <bookmark mark=\"transform_inner_func\"/>equal to one over x squared, and multiply the two. If we perform the multiplication we get the final <bookmark mark=\"solution\"/>solution negative one over x."
+      },
+      "2q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the cosine of x, divided by x squared minus four. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?"
+      },
+      "2a": {
+        "voiceover-text": "To compute the derivative of this function, we'll use the<bookmark mark=\"quotient_rule\"/>, because it is a quotient of two functions. The quotient rule says, that the derivative of the quotient is equal to the derivative of the numerator function times the denominator function, minus the numerator function times the derivative of the denominator function, all over the square of the denominator function.\nSo first<bookmark mark=\"frac_in\"/>, we compute the derivative of the numerator, which is <bookmark mark=\"el_1\"/>the negative sine of x and multiply it with <bookmark mark=\"el_2\"/>the denominator x squared minus 4. From this, we subtract the product of the enumerator, <bookmark mark=\"el_3\"/>which is the cosine of x multiplied with <bookmark mark=\"el_4\"/>the derivative of the denominator, 2 x.\nAnd then all of that is divided by <bookmark mark=\"el_5\"/>the denominator squared, which is x squared minus four, squared.\nAnd that's it, that's the derivative we were looking for."
+      }
+    },
+    "practice_integrals": {
+      "1q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals one over the square root of x plus one over one plus x. What is the <bookmark mark=\"int_transform\"/>indefinite integral of that function?"
+      },
+      "1a": {
+        "voiceover-text": "The first thing we do, is apply <bookmark mark=\"linearity\"/>the linearity of the integral, to turn the integral of a sum into <bookmark mark=\"integral_2\"/>the sum of two integrals. Next, <bookmark mark=\"step_2\"/>we compute the integrals individually. The indefinite integral of one over the squareroot of x is equal<bookmark mark=\"part_1\"/>2 times the square root of x. And the indefinite integral of one over x plus one is equal <bookmark mark=\"part_2\"/>to the logarithm of the absolute value of one plus x.\nBoth of these are standard integrals that you should memorize, but you can verify them by computing their derivative. Anyway, that's it, we've computed the indefinite integral."
       }
     }
   },

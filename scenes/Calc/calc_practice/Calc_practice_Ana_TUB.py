@@ -6383,8 +6383,479 @@ class Calc_practice_limits_10_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
+
+##################################### Derivatives
+#####################################
+class Calc_practice_derivatives_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$0$", "$2$"],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_limits.10q.question-text"),
+    #         freeTextDetail=SophiaFreeTextTaskDetail(
+    #             fallbackOptionIndex=1,
+    #             answerOptionMatcher="$\key{a}$",
+    #             answerOptionsTypes={
+    #                 "a": "number"
+    #             }
+    #         )
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"\ln\left(-\frac{1}{x}\right)", r"\,", color=c1t, font_size=fs2).set_y(2)
+        derivative = MathTex(r"\frac{d}{dx}", r"\ln\left(-\frac{1}{x}\right)", r"=\,\,?", color=c1t, font_size=fs2).set_y(2)
+
+        # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_derivatives.1q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(function))
+
+            self.wait_until_bookmark("derivative_transform")
+            self.play(ReplacementTransform(function[0], derivative[0]), ReplacementTransform(function[1], derivative[1]), ReplacementTransform(function[2], derivative[2]), )
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
+
+class Calc_practice_derivatives_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        chain_rule = self.translate("General.chain_rule")
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}", r"\ln\left(", r"-\frac{1}{x}", r"\right)", r"=\,\,?", color=c1t, font_size=fs2).set_y(2)
+        outer_func, inner_func = VGroup(derivative_1[1], derivative_1[3]), derivative_1[2]
+        step_1 = Tex(r"$\Downarrow$ ", chain_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"\frac{1}{\tfrac{-1}{x}}", r"\cdot", r"\left(\frac{1}{x^2}\right)", r"=-\frac{1}{x}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+
+        self.add(derivative_1)
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_derivatives.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("outer_func")
+            self.play(outer_func.animate.set_color(RED), run_time=1)
+
+            self.wait_until_bookmark("inner_func")
+            self.play(outer_func.animate.set_color(c1t), inner_func.animate.set_color(RED), run_time=1)
+
+            self.wait_until_bookmark("chain_rule")
+            self.play(inner_func.animate.set_color(c1t), Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("add_outer_func")
+            of_copy = VGroup(outer_func, inner_func).copy().set_color(RED)
+            self.play(FadeIn(of_copy), run_time=.5)
+
+            self.wait_until_bookmark("transform_outer_func")
+            self.play(ReplacementTransform(of_copy, derivative_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("add_inner_func")
+            if_copy = inner_func.copy().set_color(RED)
+            self.play(FadeIn(if_copy), run_time=.5)
+
+            self.wait_until_bookmark("transform_inner_func")
+            self.play(ReplacementTransform(if_copy, derivative_2[2]), Write(derivative_2[1]), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(derivative_2[-1]), run_time=.5)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+class Calc_practice_derivatives_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        chain_rule = self.translate("General.chain_rule")
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}", r"\ln\left(", r"-\frac{1}{x}", r"\right)", r"=\,\,?", color=c1t, font_size=fs2).set_y(2)
+        outer_func, inner_func = VGroup(derivative_1[1], derivative_1[3]), derivative_1[2]
+        step_1 = Tex(r"$\Downarrow$ ", chain_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"\frac{1}{\tfrac{-1}{x}}", r"\cdot", r"\left(\frac{1}{x^2}\right)", r"=-\frac{1}{x}", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.4)
+
+        self.add(derivative_1)
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_derivatives.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("outer_func")
+            self.play(outer_func.animate.set_color(RED), run_time=1)
+
+            self.wait_until_bookmark("inner_func")
+            self.play(outer_func.animate.set_color(c1t), inner_func.animate.set_color(RED), run_time=1)
+
+            self.wait_until_bookmark("chain_rule")
+            self.play(inner_func.animate.set_color(c1t), Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("add_outer_func")
+            of_copy = VGroup(outer_func, inner_func).copy().set_color(RED)
+            self.play(FadeIn(of_copy), run_time=.5)
+
+            self.wait_until_bookmark("transform_outer_func")
+            self.play(ReplacementTransform(of_copy, derivative_2[0]), run_time=.5)
+
+            self.wait_until_bookmark("add_inner_func")
+            if_copy = inner_func.copy().set_color(RED)
+            self.play(FadeIn(if_copy), run_time=.5)
+
+            self.wait_until_bookmark("transform_inner_func")
+            self.play(ReplacementTransform(if_copy, derivative_2[2]), Write(derivative_2[1]), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(Write(derivative_2[-1]), run_time=.5)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
+#####################################
+#####################################
+class Calc_practice_derivatives_2_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$0$", "$2$"],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_limits.10q.question-text"),
+    #         freeTextDetail=SophiaFreeTextTaskDetail(
+    #             fallbackOptionIndex=1,
+    #             answerOptionMatcher="$\key{a}$",
+    #             answerOptionsTypes={
+    #                 "a": "number"
+    #             }
+    #         )
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"\left(", r"{{\cos(x)}", r"\over", r"{x^2-4}}", r"\right)", r"\,", color=c1t, font_size=fs2).set_y(2)
+        derivative = MathTex(r"\frac{d}{dx}", r"\left(", r"{{\cos(x)}", r"\over", r"{x^2-4}}", r"\right)", r"\,\,=?", color=c1t, font_size=fs2).set_y(2)
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_derivatives.2q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(function))
+
+            self.wait_until_bookmark("derivative_transform")
+            self.play(*[ReplacementTransform(function[idx], derivative[idx])for idx in range(6)], Write(derivative[-1]))
+
+        
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
 #
         
+class Calc_practice_derivatives_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        quotient_rule = self.translate("General.quotient_rule")
+
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}", r"\left(", r"{{\cos(x)}", r"\over", r"{x^2-4}}", r"\right)", r"\,\,=?", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", quotient_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"{{-\sin(x)", r"(x^2-4)", r"-", r"\cos(x)", r"(2x)}", r"\over", r"{(x^2-4)^2}}", color=c1t, font_size=fs2).scale(.8).next_to(step_1, DOWN, buff=.4)
+
+        step_1[1].scale(.8)
+        self.add(derivative_1)
+        
+
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.practice_derivatives.2a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("quotient_rule")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("frac_in")
+            self.play(Write(derivative_2[5]))
+
+            self.wait_until_bookmark("el_1")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[0]))
+
+            self.wait_until_bookmark("el_2")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[1]))
+
+            self.wait_until_bookmark("el_3")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[3]), Write(derivative_2[2]))
+
+            self.wait_until_bookmark("el_4")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[4]))
+
+            self.wait_until_bookmark("el_5")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[6]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+        
+class Calc_practice_derivatives_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        quotient_rule = self.translate("General.quotient_rule")
+
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}", r"\left(", r"{{\cos(x)}", r"\over", r"{x^2-4}}", r"\right)", r"\,\,=?", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", quotient_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"{{-\sin(x)", r"(x^2-4)", r"-", r"\cos(x)", r"(2x)}", r"\over", r"{(x^2-4)^2}}", color=c1t, font_size=fs2).scale(.8).next_to(step_1, DOWN, buff=.4)
+
+        step_1[1].scale(.8)
+        self.add(derivative_1)
+        
+
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.practice_derivatives.2a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("quotient_rule")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("frac_in")
+            self.play(Write(derivative_2[5]))
+
+            self.wait_until_bookmark("el_1")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[0]))
+
+            self.wait_until_bookmark("el_2")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[1]))
+
+            self.wait_until_bookmark("el_3")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[3]), Write(derivative_2[2]))
+
+            self.wait_until_bookmark("el_4")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[4]))
+
+            self.wait_until_bookmark("el_5")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[6]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
+        
+##################################### Integrals
+#####################################
+class Calc_practice_integrals_1_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$0$", "$2$"],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_limits.10q.question-text"),
+    #         freeTextDetail=SophiaFreeTextTaskDetail(
+    #             fallbackOptionIndex=1,
+    #             answerOptionMatcher="$\key{a}$",
+    #             answerOptionsTypes={
+    #                 "a": "number"
+    #             }
+    #         )
+    #     )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\,", color=c1t, font_size=fs2).set_y(2)
+        integral = MathTex(r"\int\left(", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_integrals.1q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(function), run_time=1)
+
+            self.wait_until_bookmark("int_transform")
+            self.play(TransformMatchingTex(function, integral))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+
+class Calc_practice_integrals_1_a(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+
+        linearity = self.translate("General.linearity")
+        # Define the function text using MathTex
+        integral_1 = MathTex(r"\int\left(", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+        int_1_a, int_1_plus, int_1_b = VGroup(integral_1[0], integral_1[1], integral_1[2], integral_1[3], integral_1[8]), integral_1[4], VGroup(integral_1[0], integral_1[5], integral_1[6], integral_1[7], integral_1[8])
+        self.add(integral_1)
+        step_1 = Tex(r"$\Downarrow$ ", linearity, color=BLUE, font_size=fs2).next_to(integral_1, DOWN, buff=.2)
+        integral_2 = MathTex(r"\int", r"{{1}", r"\over", r"{\sqrt x}}", r"dx", r"+", r"\int", r"{{1}", r"\over", r"{1+x}}", r"dx", color=c1t, font_size=fs2).set_y(2).next_to(step_1, DOWN, buff=.4)
+        part_1, part_2, integral_l, integral_plus, integral_r = VGroup(integral_2[1], integral_2[2], integral_2[3]), VGroup(integral_2[7], integral_2[8], integral_2[9]), VGroup(integral_2[0], integral_2[1], integral_2[2], integral_2[3], integral_2[4]), integral_2[5], VGroup(integral_2[6], integral_2[7], integral_2[8], integral_2[9], integral_2[10])
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs2).next_to(integral_2, DOWN, buff=.2)
+        integral_3 = MathTex(r"2\sqrt x", r"+", r"\ln(|1+x|)", color=c1t, font_size=fs2).set_y(2).next_to(step_2, DOWN, buff=.2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_integrals.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("linearity")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("integral_2")
+            self.play(ReplacementTransform(int_1_a.copy(), integral_l), ReplacementTransform(int_1_plus.copy(), integral_plus), ReplacementTransform(int_1_b.copy(), integral_r))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=1)
+
+            self.wait_until_bookmark("part_1")
+            self.play(ReplacementTransform(part_1.copy(), integral_3[0]))
+
+            self.wait_until_bookmark("part_2")
+            self.play(ReplacementTransform(part_2.copy(), integral_3[2]), Write(integral_3[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+class Calc_practice_integrals_1_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+
+        linearity = self.translate("General.linearity")
+        # Define the function text using MathTex
+        integral_1 = MathTex(r"\int\left(", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+        int_1_a, int_1_plus, int_1_b = VGroup(integral_1[0], integral_1[1], integral_1[2], integral_1[3], integral_1[8]), integral_1[4], VGroup(integral_1[0], integral_1[5], integral_1[6], integral_1[7], integral_1[8])
+        self.add(integral_1)
+        step_1 = Tex(r"$\Downarrow$ ", linearity, color=BLUE, font_size=fs2).next_to(integral_1, DOWN, buff=.2)
+        integral_2 = MathTex(r"\int", r"{{1}", r"\over", r"{\sqrt x}}", r"dx", r"+", r"\int", r"{{1}", r"\over", r"{1+x}}", r"dx", color=c1t, font_size=fs2).set_y(2).next_to(step_1, DOWN, buff=.4)
+        part_1, part_2, integral_l, integral_plus, integral_r = VGroup(integral_2[1], integral_2[2], integral_2[3]), VGroup(integral_2[7], integral_2[8], integral_2[9]), VGroup(integral_2[0], integral_2[1], integral_2[2], integral_2[3], integral_2[4]), integral_2[5], VGroup(integral_2[6], integral_2[7], integral_2[8], integral_2[9], integral_2[10])
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs2).next_to(integral_2, DOWN, buff=.2)
+        integral_3 = MathTex(r"2\sqrt x", r"+", r"\ln(|1+x|)", color=c1t, font_size=fs2).set_y(2).next_to(step_2, DOWN, buff=.2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_integrals.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("linearity")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("integral_2")
+            self.play(ReplacementTransform(int_1_a.copy(), integral_l), ReplacementTransform(int_1_plus.copy(), integral_plus), ReplacementTransform(int_1_b.copy(), integral_r))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=1)
+
+            self.wait_until_bookmark("part_1")
+            self.play(ReplacementTransform(part_1.copy(), integral_3[0]))
+
+            self.wait_until_bookmark("part_2")
+            self.play(ReplacementTransform(part_2.copy(), integral_3[2]), Write(integral_3[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
+
 ##################################### Partial fraction decomposition
 #####################################
 class Calc_practice_pfd_1_q(SophiaCursorScene):
@@ -7240,6 +7711,394 @@ class Calc_practice_induction_1_d(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+
+
+#####################################
+#####################################
+class Calc_practice_induction_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+"""
+Base Case (n = 0):
+When n = 0, we have:
+0^2 + 0 = 0, which is an even number. So, the statement is true for the base case.
+Inductive Step
+We want to prove that (k + 1)^2 + (k + 1) is also even.
+Start with the expression (k + 1)^2 + (k + 1):
+(k + 1)^2 + (k + 1) = k^2 + 2k + 1 + k + 1
+Now, we can use our inductive hypothesis:
+k^2 + k is even, so we can write it as 2m for some integer m.
+Now, let's rewrite the expression:
+2m + 1 + 2k + 1
+Now, combine like terms:
+2m + 2k + 2
+Factor out the common factor of 2:
+2(m + k + 1)
+Since (m + k + 1) is an integer (as the sum of integers is an integer), we can rewrite the expression as:
+2 * integer
+Therefore, (k + 1)^2 + (k + 1) is an even number.
+
+For this answer to be correct, the student needs to:
+- do the induction base, explicitly mentioning the empty set
+- do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+""",
+"""
+The student did the base correctly, but not the step
+""",
+"""
+The student did the step correctly, but not the base.
+""",
+"""
+The answer is incorrect.
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_induction.2q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_even = self.translate("General.is_even")
+        forall = self.translate("General.for_all_n")
+        thm = Tex("$n^2+n$ ", is_even, " "+forall, r"$\in\mathbb N$", color=c1t, font_size=fs3).set_y(2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2q.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("thm_in")
+            self.play(Write(thm), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_even = self.translate("General.is_even")
+        forall = self.translate("General.for_all_n")
+        thm = Tex("$n^2+n$ ", is_even, " "+forall, r"$\in\mathbb N$", color=c1t, font_size=fs3).set_y(2)
+        self.add(thm)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"0^2+0", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"(n+1)^2+(n+1)", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"=", r"n^2", r"+", r"2n", r"+", r"1", r"+", r"n", r"+1", color=c3t, font_size=fs3)
+        term_3 = MathTex(r"=", r"n^2", r"+", r"n", r"+", r"2n", r"+", r"2", color=c3t, font_size=fs3)
+        term_3_a, term_3_b, term_3_c = VGroup(term_3[1], term_3[2], term_3[3]), term_3[5], term_3[7]
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_induction.2a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            
+            self.wait_until_bookmark("base_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), thm.animate.shift(5*RIGHT), run_time=.5)
+            
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(term_base[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(term_base[1]), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+            
+            self.wait_until_bookmark("step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2_in")
+            self.play(TransformMatchingTex(term_1.copy(), term_2))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(TransformMatchingTex(term_2.copy(), term_3))
+
+            self.wait_until_bookmark("term_3_a")
+            self.play(term_3_a.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_b")
+            self.play(term_3_b.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_c")
+            self.play(term_3_c.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_induction_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_even = self.translate("General.is_even")
+        forall = self.translate("General.for_all_n")
+        thm = Tex("$n^2+n$ ", is_even, " "+forall, r"$\in\mathbb N$", color=c1t, font_size=fs3).set_y(2)
+        self.add(thm)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"0^2+0", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"(n+1)^2+(n+1)", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"=", r"n^2", r"+", r"2n", r"+", r"1", r"+", r"n", r"+1", color=c3t, font_size=fs3)
+        term_3 = MathTex(r"=", r"n^2", r"+", r"n", r"+", r"2n", r"+", r"2", color=c3t, font_size=fs3)
+        term_3_a, term_3_b, term_3_c = VGroup(term_3[1], term_3[2], term_3[3]), term_3[5], term_3[7]
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.base_not_case")+self.translate("Calc_1.practice_induction.2a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            
+            self.wait_until_bookmark("base_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), thm.animate.shift(5*RIGHT), run_time=.5)
+            
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(term_base[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(term_base[1]), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+            
+            self.wait_until_bookmark("step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2_in")
+            self.play(TransformMatchingTex(term_1.copy(), term_2))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(TransformMatchingTex(term_2.copy(), term_3))
+
+            self.wait_until_bookmark("term_3_a")
+            self.play(term_3_a.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_b")
+            self.play(term_3_b.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_c")
+            self.play(term_3_c.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_induction_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_even = self.translate("General.is_even")
+        forall = self.translate("General.for_all_n")
+        thm = Tex("$n^2+n$ ", is_even, " "+forall, r"$\in\mathbb N$", color=c1t, font_size=fs3).set_y(2)
+        self.add(thm)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"0^2+0", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"(n+1)^2+(n+1)", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"=", r"n^2", r"+", r"2n", r"+", r"1", r"+", r"n", r"+1", color=c3t, font_size=fs3)
+        term_3 = MathTex(r"=", r"n^2", r"+", r"n", r"+", r"2n", r"+", r"2", color=c3t, font_size=fs3)
+        term_3_a, term_3_b, term_3_c = VGroup(term_3[1], term_3[2], term_3[3]), term_3[5], term_3[7]
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.step_not_base")+self.translate("Calc_1.practice_induction.2a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            
+            self.wait_until_bookmark("base_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), thm.animate.shift(5*RIGHT), run_time=.5)
+            
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(term_base[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(term_base[1]), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+            
+            self.wait_until_bookmark("step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2_in")
+            self.play(TransformMatchingTex(term_1.copy(), term_2))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(TransformMatchingTex(term_2.copy(), term_3))
+
+            self.wait_until_bookmark("term_3_a")
+            self.play(term_3_a.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_b")
+            self.play(term_3_b.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_c")
+            self.play(term_3_c.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_induction_2_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_even = self.translate("General.is_even")
+        forall = self.translate("General.for_all_n")
+        thm = Tex("$n^2+n$ ", is_even, " "+forall, r"$\in\mathbb N$", color=c1t, font_size=fs3).set_y(2)
+        self.add(thm)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"0^2+0", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"(n+1)^2+(n+1)", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"=", r"n^2", r"+", r"2n", r"+", r"1", r"+", r"n", r"+1", color=c3t, font_size=fs3)
+        term_3 = MathTex(r"=", r"n^2", r"+", r"n", r"+", r"2n", r"+", r"2", color=c3t, font_size=fs3)
+        term_3_a, term_3_b, term_3_c = VGroup(term_3[1], term_3[2], term_3[3]), term_3[5], term_3[7]
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.practice_induction.2a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            
+            self.wait_until_bookmark("base_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), thm.animate.shift(5*RIGHT), run_time=.5)
+            
+            self.wait_until_bookmark("base_in_1")
+            self.play(Write(term_base[0]), run_time=.5)
+
+            self.wait_until_bookmark("base_in_2")
+            self.play(Write(term_base[1]), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+            
+            self.wait_until_bookmark("step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1), run_time=.5)
+
+            self.wait_until_bookmark("term_2_in")
+            self.play(TransformMatchingTex(term_1.copy(), term_2))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(TransformMatchingTex(term_2.copy(), term_3))
+
+            self.wait_until_bookmark("term_3_a")
+            self.play(term_3_a.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_b")
+            self.play(term_3_b.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("term_3_c")
+            self.play(term_3_c.animate.set_color(GREEN_D), run_time=.5)
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
 
 ##################################### Intermediate value theorem
@@ -8400,6 +9259,19 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_pfd_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_pfd_1_a),
     PagePrototypeVideo.from_scene(Calc_practice_pfd_1_b),
+########################################################### Intermediate Value 
+    PagePrototypeVideo.from_scene(Calc_practice_induction_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_induction_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_1_c),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_1_d),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_induction_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_2_c),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_2_d),
 ########################################################### Intermediate Value Theorem
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_ivt_1_q),

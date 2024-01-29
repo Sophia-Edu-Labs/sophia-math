@@ -2902,7 +2902,11 @@
     "ivt": "Zwischenwertsatz",
     "induction": "Vollständige Induktion",
     "induction_base": "Induktionsanfang",
-    "induction_step": "Induktionsschritt"
+    "induction_step": "Induktionsschritt",
+    "is_even": "ist gerade",
+    "chain_rule": "Kettenregel",
+    "quotient_rule": "Quotientenregel",
+    "linearity": "Linearität"
   },
   "LinAlg": {
     "14I1": {
@@ -2948,7 +2952,9 @@
     "expand": "ausmultiplizieren",
     "for": "für",
     "Zero": "Nullstelle",
-    "elements": "Elemente"
+    "elements": "Elemente",
+    "derivatives": "Ableitungen",
+    "integrals": "Integrale"
   },
   "Func_6_P": {
     "22": {
@@ -3816,6 +3822,37 @@
         "voiceover-text": "Beginnen wir mit <bookmark mark=\"base_in\"/>der Induktionsbasis, also müssen wir zeigen, dass die Aussage für n gleich Null wahr ist.\nWenn n gleich Null ist, haben wir eine Menge mit Null Elementen. Und wenn eine Menge null Elemente hat, muss diese Menge <bookmark mark=\"emptyset_in\"/>die leere Menge sein. Und die <bookmark mark=\"emptyset_powerset_in\"/>Potenzmenge der leeren Menge ist die Menge, die nur die leere Menge enthält.\nDie Potenzmenge der leeren Menge enthält also<bookmark mark=\"base_in_1\"/> ein Element. Und da eins gleich <bookmark mark=\"base_in_2\"/>zwei hoch Null ist, ist die Aussage wahr für n gleich Null<bookmark mark=\"basegroup_green\"/> und wir haben die Induktionsbasis abgeschlossen.\nNun <bookmark mark=\"transition\"/>wenden wir uns <bookmark mark=\"step_in\"/>dem Induktionsschritt zu. Das heißt, wir müssen zeigen, dass, wenn die Aussage für n wahr ist, sie auch für n plus eins wahr ist.\nWir betrachten also eine Menge <bookmark mark=\"elements_in_1\"/>s n plus eins, die n plus eins Elemente enthält. Sie besteht aus der Menge <bookmark mark=\"elements_in_2\"/>s n, die n Elemente enthält, und dem Element <bookmark mark=\"elements_in_3\"/>x n plus eins.\nWie sieht nun <bookmark mark=\"power_set_in_1\"/>die Potenzmenge von s n plus eins aus? ...\nSie enthält <bookmark mark=\"power_set_in_2\"/>alle Mengen p, die eine Teilmenge von S n sind. Und sie enthält auch die Vereinigung von <bookmark mark=\"power_set_in_3\" />allen Mengen p, die eine Teilmenge von S n mit dem Element x n plus eins sind. Diese beiden Mengen, also die Teilmengen von s n und die Teilmengen von s n kombiniert mit x n plus eins, bilden die Potenzmenge von S n plus eins.\nDie <bookmark mark=\"cardinality_in_1\"/>Potenzmenge von S n plus eins enthält also doppelt so viele Elemente wie <bookmark mark=\"cardinality_in_2\"/>die Potenzmenge von S n, weil jede der Mengen, aus denen sie besteht, so viele Elemente enthält wie S n. Und da S n zwei hoch n Elemente enthält, enthält S n plus eins <bookmark mark=\"cardinality_in_3\"/>zwei hoch n plus eins Elemente.\nUnd damit haben wir <bookmark mark=\"stepgroup_green\"/>den Induktionsschritt abgeschlossen, und der Induktionsbeweis ist vollständig.",
         "base_correct": "Die Induktionsbasis hat gestimmt, der Schritt aber nicht.",
         "step_correct": "Du hast den Induktionsschritt richtig gemacht, aber nicht die Induktionsbasis ..."
+      },
+      "2q": {
+        "voiceover-text": "Beweise mit vollständiger Induktion, dass <bookmark mark=\"thm_in\"/>n Quadrat plus n für alle natürlichen Zahlen n gerade ist. \nUm zu zeigen, dass es gerade ist, kannst du zeigen, dass n Quadrat plus n durch zwei teilbar ist.",
+        "question-text": "Beweise mit vollständiger Induktion, dass $n^2+n$ für alle $n\\in\\mathbb N$ gerade ist"
+      },
+      "2a": {
+        "voiceover-text": "Wir beginnen mit der Induktionsbasis, beziehungsweise dem Induktionsanfang. also den Fall n gleich Null.<bookmark mark=\"base_in\"/>Dafür erhalten wir den <bookmark mark=\"base_in_1\"/>Term 0  Quadrat plus 0, was <bookmark mark=\"base_in_2\"/>gleich Null ist. Damit <bookmark mark=\"base_green\"/>haben wir den Basisfall abgeschlossen, denn Null ist gerade.\nFür den <bookmark mark=\"step_in\"/>Induktionsschritt wollen wir nun zeigen, dass, wenn die Aussage für n gilt, sie auch für n plus eins gilt. Wir nehmen also an, dass n zum Quadrat plus n gerade ist, und wir wollen zeigen, dass <bookmark mark=\"term_1_in\"/>n plus eins zum Quadrat plus n plus eins ebenfalls gerade ist.\nWenn wir die Binomialformel verwenden, können wir das ganze als <bookmark mark=\"term_2_in\"/>n Quadrat plus 2 n plus eins, plus n plus eins schreiben.\nUnd jetzt verschieben wir einfach die Terme, um <bookmark mark=\"term_3_in\"/>n Quadrat plus n plus zwei n plus zwei zu erhalten. ...\nWir hatten ja angenommen, dass <bookmark mark=\"term_3_a\"/>n Quadrat plus n gerade ist. Und wir wissen auch, dass <bookmark mark=\"term_3_b\"/>zwei n gerade ist, weil es zwei mal n ist und n eine ganze Zahl ist. Und schließlich ist <bookmark mark=\"term_3_c\"/>zwei ebenfalls gerade.\nDa also die Summe der geraden Zahlen ebenfalls gerade ist, haben wir <bookmark mark=\"step_green\"/>auch den Induktionsschritt abgeschlossen, und unser Induktionsbeweis ist vollständig.",
+        "step_not_base": "Du hast den Induktionsschritt richtig gemacht, aber nicht den Induktionsanfang.",
+        "base_not_case": "Du hast den Induktionsanfang richtig gemacht, aber nicht den Induktionsschritt."
+      }
+    },
+    "practice_derivatives": {
+      "1q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"f_in\"/>f von x gleich dem Logarithmus von minus eins durch x. \nBerechne die <bookmark mark=\"derivative_transform\"/>Ableitung dieser Funktion..."
+      },
+      "1a": {
+        "voiceover-text": "Beachte, dass die Funktion, die Verkettung des <bookmark mark=\"outer_func\"/>Logarithmus mit der Funktion <bookmark mark=\"inner_func\"/>minus eins durch x ist. Das bedeutet, dass wir <bookmark mark=\"chain_rule\"/>die Kettenregel anwenden müssen, um die Ableitung zu berechnen.\nWir beginnen also mit der Berechnung der Ableitung von <bookmark mark=\"add_outer_func\"/>der äußeren Funktion, die gleich <bookmark mark=\"transform_outer_func\"/>eins durch minus eins durch x ist, denn die Ableitung des Logarithmus ist der Kehrwert des Arguments.\nDann berechnen wir die Ableitung von <bookmark mark=\"add_inner_func\"/>der inneren Funktion, die <bookmark mark=\"transform_inner_func\"/>gleich eins durch x Quadrat ist, und multiplizieren die beiden. Wenn wir die Multiplikation durchführen, erhalten wir die finale <bookmark mark=\"solution\"/>Lösung minus eins durch x."
+      },
+      "2q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"f_in\"/>f von x gleich dem Kosinus von x, dividiert durch x Quadrat minus vier. \nBerechne die <bookmark mark=\"derivative_transform\"/>Ableitung dieser Funktion."
+      },
+      "2a": {
+        "voiceover-text": "Um die Ableitung der Funktion zu berechnen, verwenden wir die<bookmark mark=\"quotient_rule\"/>Quotientenregel, da die Funktion aus dem Quotienten zweier Funktionen besteht. Die Quotientenregel besagt, dass die Ableitung des Quotienten gleich der Ableitung des Zählers mal dem Nenner ist, minus dem Zähler mal der Ableitung des Nenners, alles geteilt durch das Quadrat des Nenners.\nZuerst<bookmark mark=\"frac_in\"/> berechnen wir also die Ableitung des Zählers, die <bookmark mark=\"el_1\"/>gleich minus dem Sinus von x ist, und multiplizieren sie mit <bookmark mark=\"el_2\"/>dem Nenner, x  Quadrat minus 4. Davon subtrahieren wir das Produkt des Zählers, <bookmark mark=\"el_3\"/>also dem Kosinus von x multipliziert mit <bookmark mark=\"el_4\"/>der Ableitung des Nenners, 2 x.\nUnd dann wird das Ganze durch <bookmark mark=\"el_5\"/>das Quadrat des Nenners geteilt, also x Quadrat minus vier, zum Quadrat.\nUnd das war's, das ist die Ableitung, die wir gesucht haben."
+      }
+    },
+    "practice_integrals": {
+      "1q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x gleich eins durch Wurzel x plus eins durch eins plus x. \nWas ist das <bookmark mark=\"int_transform\"/>unbestimmte Integral dieser Funktion?"
+      },
+      "1a": {
+        "voiceover-text": "Als erstes wenden wir <bookmark mark=\"linearity\"/>die Linearität des Integrals an, um das Integral der Summe in <bookmark mark=\"integral_2\"/>eine Summe von zwei Integralen zu verwandeln. Als nächstes <bookmark mark=\"step_2\"/>berechnen wir die Integrale einzeln. Das unbestimmte Integral von eins durch die Wurzel von x ist gleich<bookmark mark=\"part_1\"/>2 mal die Wurzel von x. Und das unbestimmte Integral von eins durch x plus eins ist gleich <bookmark mark=\"part_2\"/>dem Logarithmus des Absolutwerts von eins plus x.\nBeides sind Standardintegrale, die du dir einprägen solltest, aber du kannst sie überprüfen, indem du ihre Ableitung berechnest. Wie auch immer, das war's. ... wir haben das gesuchte unbestimmte Integral berechnet."
       }
     }
   },
