@@ -24,11 +24,10 @@ class Calc_1_Derivative_1_q(SophiaCursorScene):
             questionText = self.translate("Calc_1.Derivative.1q.question-text")
         )
 
-    # Main method for constructing the animation
     def construct(self):
-        # Adding initial components to the scene
         super().construct()
         self.add_mathgrid()
+
 
         title = self.add_title(self.translate("Calc_1.Derivative.1q.title"))
         
@@ -36,26 +35,25 @@ class Calc_1_Derivative_1_q(SophiaCursorScene):
         eq = MathTex(r'f(x) = |x|sin(x)', color=c1t, font_size=fs2)
         maps = MathTex(r'f: \mathbb{R} \rightarrow \mathbb{R}', color=c1t, font_size=fs2).next_to(eq, DOWN*1.3, aligned_edge=LEFT)
         diff = Tex(self.translate("Calc_1.Derivative.1q.question"), color=c1t, font_size=fs3).next_to(eq, UP*1.3, aligned_edge=LEFT)
+        derivative = MathTex(r"f'(x)?", color=c1t, font_size=fs2).next_to(maps, DOWN*1.3, aligned_edge=LEFT)
         # Action Sequence
         with self.voiceover(
                 text=self.translate("Calc_1.Derivative.1q.voiceover")
         ) as tracker:
-            
-            self.play(Write(title))
-            self.wait_until_bookmark("qstart")
-            self.add_shift_sound(0.5)
-            self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
-            self.add_shift_sound(0.5)
+            self.add_shift_sound(1)
+            self.play(Write(title), qmark.animate.shift(RIGHT*5))
             self.wait_until_bookmark("qend")
+            self.add_shift_sound(1)
             self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
             self.wait_until_bookmark("function")
             self.play(Write(eq))
+            self.wait_until_bookmark("real")
+            self.play(Write(maps), run_time=1.5)
             self.wait_until_bookmark("diff")
             self.play(Write(diff))
-            self.wait_until_bookmark("real")
-            self.play(Write(maps))
+            self.wait_until_bookmark("der")
+            self.play(Write(derivative))
 
-        # Wait for 4 seconds at the end of the animation
         self.wait(4)
 
 
