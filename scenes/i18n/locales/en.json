@@ -3786,7 +3786,7 @@
     "Derivative": {
       "1q": {
         "title": "Differentiability Analysis ",
-        "voiceover": "Let's explore this question together! <bookmark mark=\\\"qend\\\"/> We're dealing with a function <bookmark mark=\\\"function\\\"/>—let's call it f. This function, is a real-valued function <bookmark mark=\\\"real\\\"/>—meaning it takes real numbers and gives back real numbers. Our task is to figure out if f is differentiable<bookmark mark=\\\"diff\\\"/> at x of zero equals zero. In other words, we want to find out<bookmark mark=\\\"der\\\"/> if the derivative exists at this point or not.",
+        "voiceover": "Let's explore this question together! <bookmark mark=\"qend\"/> We're dealing with a function <bookmark mark=\"function\"/>—let's call it f. This function, is a real-valued function <bookmark mark=\"real\"/>—meaning it takes real numbers and gives back real numbers. Our task is to figure out if f is differentiable<bookmark mark=\"diff\"/> at x of zero equals zero. In other words, we want to find out<bookmark mark=\"der\"/> if the derivative exists at this point or not.",
         "question": "Differentiable at $x_0 = 0$?",
         "question-text": "Is the function differentiable at x_0 = 0?"
       },
