@@ -3776,6 +3776,11 @@
       "1a": {
         "voiceover-text": "Zunächst ist zu beachten, dass die Funktionen eins plus b e hoch x sowie minus Sinus von x durch x minus pi stetige Funktionen sind, so dass die Funktion f für alle x, die ungleich pi sind, stetig ist.\nUm nun sicherzustellen, dass die Funktion bei x gleich pi stetig ist, müssen wir sicherstellen, dass sowohl der linksseitige Grenzwert für x gegen pi als auch der rechtsseitige Grenzwert für x gegen pi gleich dem Wert von f für pi sind.\nBeginnen wir also mit der Berechnung der linksseitigen Grenzwert für x gegen pi von f von x. Dieser ist <bookmark mark=\"left_1_b\"/>gleich dem linksseitigen Grenzwert für x gegen pi von eins plus b e hoch x.\nUnd da können wir einfach pi für x einsetzen, und erhalten <bookmark mark=\"left_2\"/>dass dies gleich eins plus b e hoch pi ist.\nAls Nächstes berechnen wir den <bookmark mark=\"right_1_a\"/>rechtsseitigen Grenzwert für x gegen pi von f von x. Das ist gleich dem rechtsseitigen Grenzwert für x gegen pi von <bookmark mark=\"right_1_b\"/>minus Sinus  x durch x minus pi.\nWenn wir pi für x einsetzen würden, würden wir Null durch Null teilen, also können wir stattdessen LOpitals Regel verwenden und Berechnen den Limes der  Ableitungen. So erhalten wir den rechtsseitigen Grenzwert für x für x gegen pi von <bookmark mark=\"right_2\"/> minus Kosinus von x durch eins.\nUnd das ist eben <bookmark mark=\"right_3\"/>gleich eins.\nUm also sicherzustellen, dass beide Grenzwerte gleich dem Wert von f bei x gleich pi sind, setzen wir einfach <bookmark mark=\"sol_in\"/> b auf Null und a auf Eins."
       }
+    },
+    "Derivative": {
+      "1q": {
+        "voiceover": ""
+      }
     }
   },
   "Func_6_P_scaling_exp": {

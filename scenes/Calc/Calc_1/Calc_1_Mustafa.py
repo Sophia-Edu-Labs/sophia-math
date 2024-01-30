@@ -57,87 +57,49 @@ class Calc_1_Derivative_1_q(SophiaCursorScene):
         self.wait(4)
 
 
-# class Calc_1_Derivative_1_a(SophiaCursorScene):
+class Calc_1_Derivative_1_a(SophiaCursorScene):
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
+            correctAnswerIndex=1,
+            questionText = self.translate("Calc_1.Derivative.1q.question-text")
+        )
 
-#     def task_definition(self) -> SophiaTaskDefinition:
-#         return SophiaTaskDefinition(
-#             answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
-#             correctAnswerIndex=1,
-#             questionText = self.translate("Calc_1.Sequences.1q.question-text")
-#         )
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+        title = self.add_title(self.translate("Calc_1.Derivative.1q.title"))
+        
+        eq = MathTex(r'f(x) = |x|sin(x)', color=c1t, font_size=fs2)
+        maps = MathTex(r'f: \mathbb{R} \rightarrow \mathbb{R}', color=c1t, font_size=fs2).next_to(eq, DOWN*1.3, aligned_edge=LEFT)
+        diff = Tex(self.translate("Calc_1.Derivative.1q.question"), color=c1t, font_size=fs3).next_to(eq, UP*1.3, aligned_edge=LEFT)
+        derivative = MathTex(r"f'(x)?", color=c1t, font_size=fs2).next_to(maps, DOWN*1.3, aligned_edge=LEFT)
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+        limit_rule = MathTex(r'\lim_{h \nearrow  0} \frac{x_0+h - f(x_0)}{h}', color=c3, font_size=fs3).shift(UP*1.5).align_to(title, LEFT)
+        eq1 = MathTex(r'=\lim_{h \nearrow  0} \frac{|h|sin(h) - |0|sin(0)}{h}', color=c3, font_size=fs3).next_to(limit_rule, DOWN, buff=0.1, aligned_edge=LEFT)
+        eq2 = MathTex(r'=\lim_{h \nearrow  0} sin(h) = 0', color=c3, font_size=fs3).next_to(eq1, DOWN, buff=0.1, aligned_edge=LEFT)
+        
+        limit_rule2 = MathTex(r'\lim_{h \searrow  0} \frac{x_0+h - f(x_0)}{h}', color=c3, font_size=fs3).next_to(eq2, DOWN*2, aligned_edge=LEFT)
+        eq3 = MathTex(r'=\lim_{h \searrow  0} \frac{|h|sin(h) - |0|sin(0)}{h}', color=c3, font_size=fs3).next_to(limit_rule2, DOWN, buff=0.1, aligned_edge=LEFT)
+        eq4 = MathTex(r'=\lim_{h \searrow  0} (-sin(h)) = 0', color=c3, font_size=fs3).next_to(eq3, DOWN, buff=0.1, aligned_edge=LEFT)
 
-#         title = self.add_title(self.translate("Calc_1.Derivative.1q.title"))
+        with self.voiceover(
+                text=self.translate("Calc_1.Derivative.1a.voiceover")
+        ) as tracker:
+            self.add(title, eq, maps, diff, derivative)
+            self.play(FadeOut(eq, maps, diff, derivative))
+            self.wait_until_bookmark("rhs")
+            self.play(Write(limit_rule), run_time=0.7)
+            self.play(Write(eq1), run_time=0.7)
+            self.wait_until_bookmark("rhs_last")
+            self.play(Write(eq2), run_time=0.7)
 
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
-#         sequence_1 = MathTex("1, 2, 3, 4, \\hdots", color=c1t, font_size=fs2)
-#         sequence_2 = MathTex("1, 4, 9, 16, \\hdots", color=c1t, font_size=fs2)
-#         sequence_3 = MathTex("2, 3, 5, 7, 11 \\hdots", color=c1t, font_size=fs2)
-#         sequences_start = VGroup(sequence_1, sequence_2, sequence_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1)
+            self.wait_until_bookmark("lhs")
+            self.play(Write(limit_rule2), run_time=0.7)
+            self.play(Write(eq3), run_time=0.7)
+            self.wait_until_bookmark("lhs_last")
+            self.play(Write(eq4), run_time=0.7)
 
-#         mathematics, stats_and_econ, cs = self.translate("Calc_1.Sequences.1q.application-areas").split("|||")
-#         application_area_1 = Tex(f"$\\bullet$ {mathematics}", color=c1t, font_size=fs2)
-#         application_area_2 = Tex(f"$\\bullet$ {stats_and_econ}", color=c1t, font_size=fs2)
-#         application_area_3 = Tex(f"$\\bullet$ {cs}", color=c1t, font_size=fs2)
-#         application_areas = VGroup(application_area_1, application_area_2, application_area_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(0.95).move_to(sequences_start)
-
-#         decimal_places, even_numbers, infinite_dice_rolls = self.translate("Calc_1.Sequences.1q.examples").split("|||")
-#         example_1 = Tex(f"$1)$ {decimal_places}", color=c1t, font_size=fs2)
-#         example_2 = Tex(f"$2)$ {even_numbers}", color=c1t, font_size=fs2)
-#         example_3 = Tex(f"$3)$ {infinite_dice_rolls}", color=c1t, font_size=fs2)
-#         examples = VGroup(example_1, example_2, example_3).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(0.85).move_to(sequences_start)
-
-#         # Action Sequence
-#         with self.voiceover(
-#                 text=self.translate("Calc_1.Derivative.1a.voiceover")
-#         ) as tracker:
-            
-#             self.wait_until_bookmark("title_in")
-#             self.play(Write(title))
-
-#             self.wait_until_bookmark("qmark_in")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
-
-#             self.wait_until_bookmark("qmark_out")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
-
-#             self.wait_until_bookmark("sequence_1_in")
-#             self.play(Write(sequence_1))
-
-#             self.wait_until_bookmark("sequence_2_in")
-#             self.play(Write(sequence_2))
-
-#             self.wait_until_bookmark("sequence_3_in")
-#             self.play(Write(sequence_3))
-
-#             self.wait_until_bookmark("unwrite_sequences")
-#             self.play(Unwrite(sequences_start), run_time=.5)
-
-#             self.wait_until_bookmark("application_area_1")
-#             self.play(Write(application_area_1))
-
-#             self.wait_until_bookmark("application_area_2")
-#             self.play(Write(application_area_2))
-
-#             self.wait_until_bookmark("application_area_3")
-#             self.play(Write(application_area_3))
-
-#             self.wait_until_bookmark("example_1")
-#             self.play(Unwrite(application_areas), run_time=.5)
-#             self.play(Write(example_1))
-
-#             self.wait_until_bookmark("example_2")
-#             self.play(Write(example_2))
-
-#             self.wait_until_bookmark("example_3")
-#             self.play(Write(example_3))
-
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(4)
+            self.wait_until_bookmark("match")
+            self.play(Indicate(eq2, scale_factor=1.2, color=c1t), Indicate(eq4, scale_factor=1.2, color=c1t), run_time=2)
+        self.wait(4)
