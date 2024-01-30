@@ -3839,18 +3839,24 @@
         "base_not_case": "You did the induction base correctly, but not the induction step."
       },
       "3q": {
-        "voiceover-text": "We're given a<bookmark mark=\"sequence_in_1\"/>sequence \"a\" n, that is defined recursively. ... \"A\" <bookmark mark=\"sequence_in_2\"/>zero is defined as one, and <bookmark mark=\"sequence_in_3\"/>\"a\" n plus one is defined as \"a\" n plus five, divided by two.\nUsing natural induction, show that <bookmark mark=\"theorem_in\"/>the element \"a\" n can also directly be computed using the formula \"a\" n equals five minus four over two to the power of n."
+        "voiceover-text": "We're given a<bookmark mark=\"sequence_in_1\"/>sequence \"a\" n, that is defined recursively. ... \"A\" <bookmark mark=\"sequence_in_2\"/>zero is defined as one, and <bookmark mark=\"sequence_in_3\"/>\"a\" n plus one is defined as \"a\" n plus five, divided by two.\nUsing natural induction, show that <bookmark mark=\"theorem_in\"/>the element \"a\" n can also directly be computed using the formula \"a\" n equals five minus four over two to the power of n.",
+        "question-text": "Consider the sequence $\\left(a_n\\right)_{n\\in\\mathbb N}$ that is recursively defined as $a_0=1$, $a_{n+1}=\\tfrac{a_n+5}{2}$. Prove that we can explicitly compute each element using the formula $a_n=5-{{4}\\over{2^n}}$ using induction."
+      },
+      "3a": {
+        "voiceover-text": "We'll start with <bookmark mark=\"base_case_in\"/>the base case, so the case for n equals zero. If we <bookmark mark=\"base_term_in\"/>plug this into our formula, we get that \"a\" zero is equal to 5 minus 4 over one, which is equal to one. And the definition of \"a\" zero is also one. So <bookmark mark=\"base_green\"/>we've already completed the base case.\nNext, we'll <bookmark mark=\"induction_step_in\"/>perform the induction step. So we're now assuming that the formula can be used for the element with index n, and we want to show that we can also use it for \"a\" n plus one.\nNow, <bookmark mark=\"term_1_in\"/>\"a\" n plus one, by our recursion rule, is equal to a n plus five, divided by two.\nWe can then<bookmark mark=\"term_2_in_1\"/>copy the term and plug in<bookmark mark=\"term_2_in_2\"/> five minus 4 over 2 to the power of n for \"a\" n, and get 5 minus 4 over 2 to the power of n plus 5, all divided by 2.\nNow <bookmark mark=\"term_3_in_1_a\"/>the two fives over two <bookmark mark=\"term_3_in_1_b\"/>make a 5, and <bookmark mark=\"term_3_in_2_a\"/>4 over 2 to the power of n, divided by two can be rewritten as<bookmark mark=\"term_3_in_2_b\"/> 4 over 2 to the power of n plus 1.\nAnd with that, we're at the value of the formula for n plus one. So we've also <bookmark mark=\"step_green\"/>completed the induction step, and our proof by induction is finished."
       }
     },
     "practice_derivatives": {
       "1q": {
-        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the logarithm of negative one over x. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?"
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the logarithm of negative one over x. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?",
+        "question-text": "Compute the derivative $\\frac{d}{dx}\\ln\\left(-\\frac1x\\right)$"
       },
       "1a": {
         "voiceover-text": "Notice, that the function we're looking at is the concatenation of the <bookmark mark=\"outer_func\"/>logarithm, and the function <bookmark mark=\"inner_func\"/>negative one over x. This means that we'll have to <bookmark mark=\"chain_rule\"/>apply the chain rule to compute the derivative.\nSo we start by computing the derivative of <bookmark mark=\"add_outer_func\"/>the outer function, which is equal to <bookmark mark=\"transform_outer_func\"/>one over negative one over x, because the derivative of the logarithm is the inverse of its argument.\nAnd then we compute the derivative of <bookmark mark=\"add_inner_func\"/>the inner function, which is <bookmark mark=\"transform_inner_func\"/>equal to one over x squared, and multiply the two. If we perform the multiplication we get the final <bookmark mark=\"solution\"/>solution negative one over x."
       },
       "2q": {
-        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the cosine of x, divided by x squared minus four. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?"
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the cosine of x, divided by x squared minus four. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?",
+        "question-text": "Compute the derivative $\\frac{d}{dx}\\left(\\frac{\\cos(x)}{x^2-4}\\right)$"
       },
       "2a": {
         "voiceover-text": "To compute the derivative of this function, we'll use the<bookmark mark=\"quotient_rule\"/>, because it is a quotient of two functions. The quotient rule says, that the derivative of the quotient is equal to the derivative of the numerator function times the denominator function, minus the numerator function times the derivative of the denominator function, all over the square of the denominator function.\nSo first<bookmark mark=\"frac_in\"/>, we compute the derivative of the numerator, which is <bookmark mark=\"el_1\"/>the negative sine of x and multiply it with <bookmark mark=\"el_2\"/>the denominator x squared minus 4. From this, we subtract the product of the enumerator, <bookmark mark=\"el_3\"/>which is the cosine of x multiplied with <bookmark mark=\"el_4\"/>the derivative of the denominator, 2 x.\nAnd then all of that is divided by <bookmark mark=\"el_5\"/>the denominator squared, which is x squared minus four, squared.\nAnd that's it, that's the derivative we were looking for."
@@ -3858,7 +3864,8 @@
     },
     "practice_integrals": {
       "1q": {
-        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals one over the square root of x plus one over one plus x. What is the <bookmark mark=\"int_transform\"/>indefinite integral of that function?"
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals one over the square root of x plus one over one plus x. What is the <bookmark mark=\"int_transform\"/>indefinite integral of that function?",
+        "question-text": "Compute the integral $\\int\\left({{1}\\over{\\sqrt x}}+{{1}\\over{1+x}}\\right)dx$"
       },
       "1a": {
         "voiceover-text": "The first thing we do, is apply <bookmark mark=\"linearity\"/>the linearity of the integral, to turn the integral of a sum into <bookmark mark=\"integral_2\"/>the sum of two integrals. Next, <bookmark mark=\"step_2\"/>we compute the integrals individually. The indefinite integral of one over the squareroot of x is equal<bookmark mark=\"part_1\"/>2 times the square root of x. And the indefinite integral of one over x plus one is equal <bookmark mark=\"part_2\"/>to the logarithm of the absolute value of one plus x.\nBoth of these are standard integrals that you should memorize, but you can verify them by computing their derivative. Anyway, that's it, we've computed the indefinite integral."
