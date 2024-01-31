@@ -3793,6 +3793,15 @@
       "1a": {
         "voiceover": "To figure this out, let's start by finding the difference on the<bookmark mark=\"rhs\"/> right-hand side at<bookmark mark=\"rhs_last\"/>  the point x of 0 = 0. Then let's<bookmark mark=\"lhs\"/> do the same for the<bookmark mark=\"lhs_last\"/> left-hand side. Since the<bookmark mark=\"match\"/> left and right differences match up, it means that f is differentiable at x of 0 = 0."
       }
+    },
+    "Limit": {
+      "1q": {
+        "title": "Limit Challenge",
+        "voiceover": "We've got an interesting<bookmark mark=\"qend\"/> challenge lined up for you! It's all about finding<bookmark mark=\"lim\"/> a limit as 't' gets closer and closer to 1 in<bookmark mark=\"eq\"/> this equation. What do you think happens? Can you solve it?"
+      },
+      "1a": {
+        "voiceover": "Let's solve it together. First, notice that if we plug in t=1 directly<bookmark mark=\"plug\"/>, we get an indeterminate form zero over zero. This is where l'Hôpital's Rule<bookmark mark=\"def\"/> comes in handy. This involves taking the derivative<bookmark mark=\"num\"/> of the numerator. and the<bookmark mark=\"den\"/> derivative of the denominator separately. After applying l'Hôpital's Rule,<bookmark mark=\"plug2\"/> plug in t=1 again. So, the limit<bookmark mark=\"final\"/> of the given expression as t approaches 1 is −6 over 5."
+      }
     }
   },
   "Func_6_P_scaling_exp": {

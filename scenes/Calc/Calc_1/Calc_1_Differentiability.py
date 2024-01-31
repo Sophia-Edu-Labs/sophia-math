@@ -17,12 +17,12 @@ from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, Sophi
 import ast 
 
 class Calc_1_Derivative_1_q(SophiaCursorScene):
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
-            correctAnswerIndex=1,
-            questionText = self.translate("Calc_1.Derivative.1q.question-text")
-        )
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
+    #         correctAnswerIndex=1,
+    #         questionText = self.translate("Calc_1.Derivative.1q.question-text")
+    #     )
 
     def construct(self):
         super().construct()
@@ -58,13 +58,6 @@ class Calc_1_Derivative_1_q(SophiaCursorScene):
 
 
 class Calc_1_Derivative_1_a(SophiaCursorScene):
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
-            correctAnswerIndex=1,
-            questionText = self.translate("Calc_1.Derivative.1q.question-text")
-        )
-
     def construct(self):
         super().construct()
         self.add_mathgrid()
