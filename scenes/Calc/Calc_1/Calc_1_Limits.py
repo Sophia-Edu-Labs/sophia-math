@@ -80,3 +80,45 @@ class Calc_1_Limit_1_a(SophiaCursorScene):
             self.wait_until_bookmark("final")
             self.play(Write(last))
         self.wait(4)
+
+class Calc_1_Limit_2_q(SophiaCursorScene):
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
+    #         correctAnswerIndex=1,
+    #         questionText = self.translate("Calc_1.Derivative.1q.question-text")
+    #     )
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Limit.2q.title"))
+        
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
+        eq = MathTex(r'(a_n)_{n \in \mathbb{N}} = a_1, a_2, a_3, \ldots', color=c1t, font_size=fs2)
+        eq2 = MathTex(r'(b_n)_{n \in \mathbb{N}}', color=c1t, font_size=fs2).next_to(eq[0][9], RIGHT)
+        bn = MathTex(r'b_n \neq 0', color=c1t, font_size=fs2).next_to(eq2, DOWN, aligned_edge=LEFT)
+        final = MathTex(r'\left(\frac{a_n}{b_n}\right)_{n \in \mathbb{N}}', color=c1t, font_size=fs2).shift(DOWN*2)
+        VGroup(eq, eq2, bn, final).shift(UP)
+
+        with self.voiceover(
+                text=self.translate("Calc_1.Limit.2q.voiceover")
+        ) as tracker:
+            self.add_shift_sound(1)
+            self.play(Write(title), qmark.animate.shift(RIGHT*5))
+            self.wait_until_bookmark("qend")
+            self.add_shift_sound(1) 
+            self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
+            self.play(Write(eq))
+            self.wait_until_bookmark("ngrow")
+            self.play(Indicate(eq[0][2], scale_factor=1.2, color=c4))
+            self.wait_until_bookmark("conv")
+            self.play(FadeOut(eq[0][7:]))
+            self.play(Write(eq2))
+            self.wait_until_bookmark("neqz")
+            self.play(Write(bn))
+            self.wait_until_bookmark("fin")
+            self.play(Write(final))
+            
+        self.wait(4)
