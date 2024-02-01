@@ -93,7 +93,7 @@ class Calc_1_Limit_2_q(SophiaCursorScene):
         super().construct()
         self.add_mathgrid()
 
-        title = self.add_title(self.translate("Calc_1.Limit.2q.title"))
+        title = self.add_title(self.translate("````Calc_1.Limit.2q.title````"))
         
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
         eq = MathTex(r'(a_n)_{n \in \mathbb{N}} = a_1, a_2, a_3, \ldots', color=c1t, font_size=fs2)
@@ -163,4 +163,71 @@ class Calc_1_Limit_2_a(SophiaCursorScene):
             self.play(AnimationGroup(ReplacementTransform(last[0][:], last_lim[0][6:15]), Write(last_lim[0][:6]), lag_ratio=0.2))
             self.wait_until_bookmark("last")
             self.play(Write(last_lim[0][15:]))
+        self.wait(4)
+
+
+class Calc_1_Limit_3_q(SophiaCursorScene):
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
+    #         correctAnswerIndex=1,
+    #         questionText = self.translate("Calc_1.Derivative.1q.question-text")
+    #     )
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Limit.3q.title"))
+        
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").shift(LEFT*5).scale(.8)
+        eq = MathTex(r'\lim_{n \to \infty} \frac{4n^4-12n^2+3n^3}{n^3(2n+1)}', color=c1t, font_size=fs2)
+
+        with self.voiceover(
+                text=self.translate("Calc_1.Limit.3q.voiceover")
+        ) as tracker:
+            self.add_shift_sound(1)
+            self.play(Write(title), qmark.animate.shift(RIGHT*5))
+            self.wait_until_bookmark("qend")
+            self.add_shift_sound(1) 
+            self.play(qmark.animate.shift(RIGHT*5), run_time=.5)
+            self.wait_until_bookmark("write")
+            self.play(Write(eq))
+        self.wait(4)
+
+class Calc_1_Limit_3_a(SophiaCursorScene):
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions=ast.literal_eval(self.translate("Calc_1_Derivative_1_q.answer-options")),
+    #         correctAnswerIndex=1,
+    #         questionText = self.translate("Calc_1.Derivative.1q.question-text")
+    #     )
+
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Limit.3a.title"))
+        
+    
+        eq = MathTex(r'\lim_{n \to \infty} \frac{4n^4-12n^2+3n^3}{n^3(2n+1)}', color=c1t, font_size=fs2)
+        eq_cp = eq.copy().shift(UP)
+        eq2 = MathTex(r'= \lim_{n \to \infty} \frac{n^4(4-\frac{12}{n^2}+\frac{3}{n})}{n^4(2+\frac{1}{n^4})}', color=c3, font_size=fs2).next_to(eq_cp, DOWN * 1.5, aligned_edge=LEFT)
+        eq2_factored = MathTex(r'= \lim_{n \to \infty} \frac{4-\frac{12}{n^2}+\frac{3}{n}}{2+\frac{1}{n^4}}', color=c3, font_size=fs2).next_to(eq_cp, DOWN * 1.5, aligned_edge=LEFT)
+        eq3 = MathTex(r'= \lim_{n \to \infty} \frac{4-\frac{12}{\infty^2}+\frac{3}{\infty}}{2+\frac{1}{\infty^4}}', color=c3, font_size=fs2).move_to(eq2).align_to(eq2, LEFT)
+        eq4 = MathTex(r'= \frac{4-0+0}{2+0} = 2}', color=c3, font_size=fs2).next_to(eq2, DOWN * 1.5, aligned_edge=LEFT)
+
+        with self.voiceover(
+                text=self.translate("Calc_1.Limit.3a.voiceover")
+        ) as tracker:
+            self.add(title)
+            self.play(ReplacementTransform(eq[0][:], eq_cp[0][:]))
+            self.wait_until_bookmark('pow')
+            self.play(Write(eq2))
+            self.wait_until_bookmark('cancel')
+            self.play(TransformMatchingShapes(eq2[0][:], eq2_factored[0][:]))
+            self.wait_until_bookmark('inf')            
+            self.play(ReplacementTransform(eq2_factored[0][:], eq3[0][:]))
+            self.wait_until_bookmark('two')                        
+            self.play(Write(eq4))
         self.wait(4)
