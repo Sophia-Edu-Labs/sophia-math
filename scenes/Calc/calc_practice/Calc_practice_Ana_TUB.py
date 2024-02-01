@@ -6867,6 +6867,202 @@ class Calc_practice_integrals_1_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)        
 #
+##################################### 
+#####################################
+class Calc_practice_integrals_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+"""
+\frac{x^2}{2} \ln\left(\frac{x}{2}\right) - \frac{x^2}{4}, or \frac{x^2}{2} (\ln\left(\frac{x}{2}\right) - \frac{1}{2}) + C or an equivalent statement. It is also fine, if the student forgets the +c
+""",
+"""
+The answer is incorrect.
+"""
+],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_integrals.2q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"x\ln\left(\frac x2\right)", r"\,", color=c1t, font_size=fs2).set_y(2)
+        integral = MathTex(r"\int ", r"x\ln\left(\frac x2\right)", r"dx", color=c1t, font_size=fs2).set_y(2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_integrals.2q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(function), run_time=1)
+
+            self.wait_until_bookmark("int_transform")
+            self.play(TransformMatchingTex(function, integral))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+
+class Calc_practice_integrals_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        partial_integration = self.translate("General.partial_integration")
+        integral_1 = MathTex(r"\int ", r"x", r"\ln\left(\frac x2\right)", r"dx", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", partial_integration, color=BLUE, font_size=fs3).next_to(integral_1, DOWN, buff=.2)
+        integral_2_a =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot \frac12x^2", r"-", r"\int ", r"\frac12x^2", r"\cdot", r"\frac1x", r"dx", color=c1t, font_size=fs3)
+        integral_2_b =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot \frac12x^2", r"-", r"\int ", r"\frac12x", r"dx", color=c1t, font_size=fs3)
+        integral_2 = VGroup(integral_2_a, integral_2_b).arrange(ORIGIN, aligned_edge=LEFT).next_to(step_1, DOWN, buff=.2)
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs3).next_to(integral_2, DOWN, buff=.2)
+        integral_3 =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot\frac12x^2", r"-", r"\frac14x^2", color=c1t, font_size=fs3).next_to(step_2, DOWN, buff=.2)
+        integration_by_parts = MathTex(r"\int ", r"u", r" \, dv", r" = ", r"u", r"v - \int ", r"v", r" \, du", color=c1t, font_size=fs2).move_to(integral_3)
+
+        self.add(integral_1)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_integrals.2a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("highlight_func")
+            self.play(Indicate(VGroup(integral_1[1], integral_1[2]), color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("integration_by_parts_in")
+            self.play(Write(integration_by_parts), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_dv")
+            self.play(Indicate(VGroup(integral_1[1], integration_by_parts[2]), color=RED, scale_factor=1), run_time=3)
+
+            self.wait_until_bookmark("highlight_ln_u")
+            self.play(Indicate(VGroup(integral_1[2], integration_by_parts[1]), color=RED, scale_factor=1), run_time=3)
+
+            self.wait_until_bookmark("u_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[0]), run_time=1)
+
+            self.wait_until_bookmark("dv_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[1]), run_time=1)
+
+            self.wait_until_bookmark("vdu_int")
+            self.play(Write(integral_2_a[2]), Write(integral_2_a[3]), run_time=1)
+
+            self.wait_until_bookmark("v_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[4]), run_time=1)
+
+            self.wait_until_bookmark("du_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[6]), Write(integral_2_a[5]), run_time=1)
+
+            self.wait_until_bookmark("simplify")
+            self.play(TransformMatchingTex(integral_2_a, integral_2_b), Unwrite(integration_by_parts))
+
+            self.wait_until_bookmark("step_2_in")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(integral_3))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_integrals_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        partial_integration = self.translate("General.partial_integration")
+        integral_1 = MathTex(r"\int ", r"x", r"\ln\left(\frac x2\right)", r"dx", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", partial_integration, color=BLUE, font_size=fs3).next_to(integral_1, DOWN, buff=.2)
+        integral_2_a =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot \frac12x^2", r"-", r"\int ", r"\frac12x^2", r"\cdot", r"\frac1x", r"dx", color=c1t, font_size=fs3)
+        integral_2_b =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot \frac12x^2", r"-", r"\int ", r"\frac12x", r"dx", color=c1t, font_size=fs3)
+        integral_2 = VGroup(integral_2_a, integral_2_b).arrange(ORIGIN, aligned_edge=LEFT).next_to(step_1, DOWN, buff=.2)
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs3).next_to(integral_2, DOWN, buff=.2)
+        integral_3 =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot\frac12x^2", r"-", r"\frac14x^2", color=c1t, font_size=fs3).next_to(step_2, DOWN, buff=.2)
+        integration_by_parts = MathTex(r"\int ", r"u", r" \, dv", r" = ", r"u", r"v - \int ", r"v", r" \, du", color=c1t, font_size=fs2).move_to(integral_3)
+
+        self.add(integral_1)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_integrals.2a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("highlight_func")
+            self.play(Indicate(VGroup(integral_1[1], integral_1[2]), color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("integration_by_parts_in")
+            self.play(Write(integration_by_parts), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_dv")
+            self.play(Indicate(VGroup(integral_1[1], integration_by_parts[2]), color=RED, scale_factor=1), run_time=3)
+
+            self.wait_until_bookmark("highlight_ln_u")
+            self.play(Indicate(VGroup(integral_1[2], integration_by_parts[1]), color=RED, scale_factor=1), run_time=3)
+
+            self.wait_until_bookmark("u_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[0]), run_time=1)
+
+            self.wait_until_bookmark("dv_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[1]), run_time=1)
+
+            self.wait_until_bookmark("vdu_int")
+            self.play(Write(integral_2_a[2]), Write(integral_2_a[3]), run_time=1)
+
+            self.wait_until_bookmark("v_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[4]), run_time=1)
+
+            self.wait_until_bookmark("du_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[6]), Write(integral_2_a[5]), run_time=1)
+
+            self.wait_until_bookmark("simplify")
+            self.play(TransformMatchingTex(integral_2_a, integral_2_b), Unwrite(integration_by_parts))
+
+            self.wait_until_bookmark("step_2_in")
+            self.play(Write(step_2))
+
+            self.wait_until_bookmark("solution_in")
+            self.play(Write(integral_3))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 
 ##################################### Partial fraction decomposition
 #####################################
@@ -9549,6 +9745,138 @@ class Calc_practice_induc_1(SophiaCursorScene):
             
             self.wait_until_bookmark("step_4")
             self.play(TransformMatchingTex(step_int, step_sol), run_time=3)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
+class Calc_explain_convergence_limit(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.limit"))
+        self.add(title)
+
+        rec = Rectangle(height=2.2, width=3.4, color="#deebfc", fill_color="#deebfc", fill_opacity=1).move_to([0,1.8,0])
+        cords = NumberPlane(x_range=[0, 15, 2], y_range=[-4, 4, .5], x_length=3, y_length=1.8, background_line_style={"stroke_opacity": 0, "stroke_color": BLACK, "stroke_width": 2}, axis_config={"include_tip": True, 'tip_width': 0.05, 'tip_height': 0.05, "stroke_width":1, "stroke_color":c1t, "decimal_number_config":{"num_decimal_places": 0}, "color":c1t}, x_axis_config={"numbers_to_include":[], "label_direction":DOWN}, y_axis_config={"numbers_to_include":[], "label_direction":RIGHT}).move_to(rec)
+        labels = VGroup(*[cords.get_x_axis_label(Tex("x", color=c1t, font_size=fs3), direction=UP), cords.get_y_axis_label(Tex("y", color=c1t, font_size=fs3), direction=ORIGIN)])
+        cords.set_color(c1t)
+        def is_full(cords, l):
+            if l.get_angle() == 0:
+                return (2*round(cords.p2c(l.get_start())[1],2))%2 == 0
+            else:
+                return (2*round(cords.p2c(l.get_start())[0],2))%2 == 0
+        bl = [DashedVMobject(l.set_stroke_opacity(.8), dashed_ratio=.5, num_dashes=40) if is_full(cords, l) else DashedVMobject(l.set_stroke_opacity(.4), dashed_ratio=.2, num_dashes=40) for l in cords.background_lines]
+        for l in bl:
+            l.set_stroke(color=GREY_B, opacity=1)
+        bl = VGroup(*bl)
+        coord_sys_1 = VGroup(rec, bl, cords)
+        coord_sys_2 = coord_sys_1.copy().next_to(coord_sys_1, DOWN, buff=.4)
+        coord_sys_2[0].set_color("#ffde91")
+        cords_2 = coord_sys_2[2]
+
+
+        seq_1_1, line_1_1 = VGroup(*[Dot(cords.c2p(n, 6*np.sin(n)/(n**0.9+0.01)), color=ORANGE, radius=.05) for n in range(1,15)]), cords.plot(lambda n: 6*np.sin(n)/(n**0.9+0.01), color=ORANGE, stroke_width=1)
+        seq_1_2, line_1_2 = VGroup(*[Dot(cords.c2p(n, -3/(n+0.01)), color="#1300bd", radius=.05) for n in range(1,15)]), cords.plot(lambda n: -3/(n+0.01), x_range=[3/4,15,0.0001], color="#1300bd", stroke_width=1)
+
+        seq_2_1, line_2_1 = VGroup(*[Dot(cords_2.c2p(n, 4*np.sin(n)), color=PURPLE, radius=.05) for n in range(15)]), cords_2.plot(lambda n: 4*np.sin(n), color=PURPLE, stroke_width=1)
+        f_help = lambda x: 1.5 - 0.2*x
+        seq_2_2, line_2_2 = VGroup(*[Dot(cords_2.c2p(n, f_help(n)), color=PINK, radius=.05) for n in range(15)]), cords_2.plot(f_help, color=PINK, stroke_width=1)
+
+        epsilon = ValueTracker(3)
+        lines_1 = VGroup(Line(cords.c2p(0,0), cords.c2p(0,0), color=GREY, stroke_width=1).add_updater(lambda m: m.put_start_and_end_on(cords.c2p(0,epsilon.get_value()), cords.c2p(15,epsilon.get_value()))), Line(cords.c2p(0,0), cords.c2p(0,0), color=GREY, stroke_width=1).add_updater(lambda m: m.put_start_and_end_on(cords.c2p(0,-epsilon.get_value()), cords.c2p(15,-epsilon.get_value()))))
+        eps = VGroup(MathTex(r"\varepsilon", color=c1t, font_size=fs2).add_updater(lambda m: m.move_to(cords.c2p(17, epsilon.get_value()/2))), MathTex(r"\varepsilon", color=c1t, font_size=fs2).add_updater(lambda m: m.move_to(cords.c2p(17, -epsilon.get_value()/2))))
+        n_tracker = ValueTracker(1)
+        line_vert = Line(cords.c2p(0,0), cords.c2p(0,0), color=c1t, stroke_width=3).add_updater(lambda m: m.put_start_and_end_on(cords.c2p(n_tracker.get_value(),-4), cords.c2p(n_tracker.get_value(),4)))
+        n_tex = MathTex(r"N", color=c1t, font_size=fs2).add_updater(lambda m: m.move_to(cords.c2p(n_tracker.get_value(), -4.8)))
+
+        epsilon_2 = ValueTracker(3)
+        lines_2 = VGroup(Line(cords_2.c2p(0,0), cords_2.c2p(0,0), color=GREY, stroke_width=1).add_updater(lambda m: m.put_start_and_end_on(cords_2.c2p(0,epsilon_2.get_value()), cords_2.c2p(15,epsilon_2.get_value()))), Line(cords_2.c2p(0,0), cords_2.c2p(0,0), color=GREY, stroke_width=1).add_updater(lambda m: m.put_start_and_end_on(cords_2.c2p(0,-epsilon_2.get_value()), cords_2.c2p(15,-epsilon_2.get_value()))))
+        
+        formula = VGroup(MathTex(r"\forall \varepsilon >0\,", r"\exists N\in \mathbb {N}\,", r"\forall n\in \mathbb {N}:", color=c1t, font_size=fs2), MathTex(r"n\geq N", r"\implies", r" |x_{n}-x|<\varepsilon", color=c1t, font_size=fs2).scale(.85)).arrange(DOWN, buff=.4).next_to(coord_sys_1, DOWN, buff=.4)
+        description = VGroup(Tex(r"The sequence $\left(a_n\right)_{n\in\mathbb N}$ converges", color=BLUE, font_size=fs3), Tex(r"$a$ is the limit of $\left(a_n\right)_{n\in\mathbb N}$", color=BLUE, font_size=fs3)).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(formula, DOWN, buff=.5)
+
+        g = VGroup()
+        for d in seq_1_1:
+            if cords.p2c(d.get_center())[0]>n_tracker.get_value():
+                g.add(d)
+        for d in seq_1_2:
+            if cords.p2c(d.get_center())[0]>n_tracker.get_value():
+                g.add(d)
+
+
+        # Action Sequence
+        with self.voiceover(
+                text=""" 
+So ... this <bookmark mark="seq_1_in"/> ... is a sequence. And this <bookmark mark="seq_2_in"/> ... is also a sequence. <bookmark mark="yellow_in"/> And so are...<bookmark mark="seq_34_in"/>these two. ...
+But there is one crucial difference between the sequences in the blue and the yellow box: The <bookmark mark="move_blue"/> sequences in the blue box seem to keep getting closer and closer to the value zero: As you can see, if we create a corridor arround it and make it smaller, the values with a higher index are all inside the corridor.
+The <bookmark mark="move_yellow"/>sequences in the yellow box on the other hand don't seem to approach a specific value. If we create a corridor and make it smaller, some elements will be in it, and others won't.
+If,<bookmark mark="yellow_out"/> like in the blue box, a sequence gets closer and closer to a value, we say that<bookmark mark="description_1_in"/> the sequence converges. And we call <bookmark mark="description_in_2"/>the value a that it approaches the limit of the sequence. But how do we formalize that concept?
+A sequence converges against a, <bookmark mark="epsilon"/> if for any epsilon greater than zero, we can find a <bookmark mark="n"/>natural number n, such that <bookmark mark="greater_than_n"/>for all integers n greater than that chosen N, their <bookmark mark="small_distance"/>distance to a is smaller than epsilon.
+Or, put in other words: No matter how small of a distance to a we chose, there exists an index, such that all elements that come after it will be within that distance.
+                """
+        ) as tracker:
+
+            self.play(Write(coord_sys_1), run_time=.5)
+
+            self.wait_until_bookmark("seq_1_in")
+            self.play(Write(seq_1_1), run_time=1)
+            self.play(Write(line_1_1), run_time=.5)
+
+            self.wait_until_bookmark("seq_2_in")
+            self.play(Write(seq_1_2), run_time=1)
+            self.play(Write(line_1_2), run_time=.5)
+
+            self.wait_until_bookmark("yellow_in")
+            self.play(Write(coord_sys_2), run_time=1)
+
+            self.wait_until_bookmark("seq_34_in")
+            self.play(Write(seq_2_1), Write(seq_2_2), run_time=1)
+            self.play(Write(line_2_1), Write(line_2_2), run_time=.5)
+
+            self.wait_until_bookmark("move_blue")
+            self.play(Write(lines_1), run_time=1)
+            [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords.p2c(m.get_center())[1])>epsilon.get_value() else m.set_color(GREEN)) for d in seq_1_1]
+            [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords.p2c(m.get_center())[1])>epsilon.get_value() else m.set_color(GREEN)) for d in seq_1_2]
+            self.play(epsilon.animate.set_value(.6), run_time=4)
+
+            self.wait_until_bookmark("move_yellow")
+            self.play(Write(lines_2))
+            [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords_2.p2c(m.get_center())[1])>epsilon_2.get_value() else m.set_color(GREEN)) for d in seq_2_1]
+            [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords_2.p2c(m.get_center())[1])>epsilon_2.get_value() else m.set_color(GREEN)) for d in seq_2_2]
+            self.play(epsilon_2.animate.set_value(.6), run_time=4)
+
+            self.wait_until_bookmark("yellow_out")
+            self.play(Unwrite(coord_sys_2), Unwrite(lines_2), Unwrite(seq_2_1), Unwrite(seq_2_2), Unwrite(line_2_1), Unwrite(line_2_2), run_time=1)
+            
+            self.wait_until_bookmark("description_1_in")
+            self.play(Write(description[0]))
+
+            self.wait_until_bookmark("description_1_in")
+            self.play(Write(description[1]))
+
+            self.wait_until_bookmark("epsilon")
+            [d.clear_updaters().set_color(ORANGE) for d in seq_1_1], [d.clear_updaters().set_color("#1300bd") for d in seq_1_2], 
+            epsilon.set_value(4)
+            self.play(Write(formula[0][0]), Write(eps))
+            self.play(epsilon.animate.set_value(.8))
+
+            self.wait_until_bookmark("n")
+            self.play(Write(formula[0][1]), Write(formula[0][2]), Write(line_vert))
+            self.play(n_tracker.animate.set_value(10), epsilon.animate.set_value(0.8), run_time=3)
+
+            self.wait_until_bookmark("greater_than_n")
+            [d.add_updater(lambda m: m.set_color(PURE_BLUE) if cords.p2c(m.get_center())[0]>n_tracker.get_value() else None) for d in seq_1_1]
+            [d.add_updater(lambda m: m.set_color(PURE_BLUE) if cords.p2c(m.get_center())[0]>n_tracker.get_value() else None) for d in seq_1_2]
+            self.play(Write(formula[0][2]), Write(formula[1][0]), run_time=1)
+
+            self.wait_until_bookmark("small_distance")
+            self.play(Write(formula[1][1]), Write(formula[1][2]), g.animate.set_color(GREEN))
 
 
         # Wait for 4 seconds at the end of the animation

@@ -2906,7 +2906,9 @@
     "is_even": "is even",
     "chain_rule": "Chain rule",
     "quotient_rule": "Quotient rule",
-    "linearity": "linearity"
+    "linearity": "linearity",
+    "partial_integration": "Integration by parts",
+    "limit": "limit"
   },
   "LinAlg": {
     "14I1": {
@@ -3869,6 +3871,13 @@
       },
       "1a": {
         "voiceover-text": "The first thing we do, is apply <bookmark mark=\"linearity\"/>the linearity of the integral, to turn the integral of a sum into <bookmark mark=\"integral_2\"/>the sum of two integrals. Next, <bookmark mark=\"step_2\"/>we compute the integrals individually. The indefinite integral of one over the squareroot of x is equal<bookmark mark=\"part_1\"/>2 times the square root of x. And the indefinite integral of one over x plus one is equal <bookmark mark=\"part_2\"/>to the logarithm of the absolute value of one plus x.\nBoth of these are standard integrals that you should memorize, but you can verify them by computing their derivative. Anyway, that's it, we've computed the indefinite integral."
+      },
+      "2q": {
+        "voiceover-text": "Look at the function <bookmark mark=\"func_in\"/>f of x equals x times the natural logarithm of x over two. What is the <bookmark mark=\"int_transform\"/>indefinite integral of that function?",
+        "question-text": "Compute the integral $\\int x\\ln\\left(\\frac x2\\right)dx$"
+      },
+      "2a": {
+        "voiceover-text": "We're going to use <bookmark mark=\"step_1_in\"/>integration by parts, because the function <bookmark mark=\"highlight_func\"/> can be seen as the partial derivative of another function. Or put differently, we'll use integration by parts to avoid having to deal with the logarithm.\nFor Integration by parts, we use the <bookmark mark=\"integration_by_parts_in\"/> formula Integral of u dv equals u times v minus integral of v du.\nSo now we only need to choose which part is u and which part is dv. We'll choose <bookmark mark=\"highlight_x_dv\"/>x as dv, and <bookmark mark=\"highlight_ln_u\"/>the logarithm of x over 2 as u, because x is easier to integrate than the logarithm.\nSo for u v, we get <bookmark mark=\"u_transform\"/>the logarithm of x over two times<bookmark mark=\"dv_transform\"/> x squared over two, because that's the integral of x.\nAnd for the integral of v du, we<bookmark mark=\"vdu_int\"/> get the integral of <bookmark mark=\"v_transform\"/>one half x squared times <bookmark mark=\"du_transform\"/> one over x, which is the derivative of the logarithm of x over two.\nNow we'll simplify the term under the integral to <bookmark mark=\"simplify\"/>one half x. ...\nAnd as a last <bookmark mark=\"step_2_in\"/>step, we'll compute the integral of one half x, and we get <bookmark mark=\"solution_in\"/>the solution ln of x over two times one half x squared minus one over four times x squared."
       }
     }
   },

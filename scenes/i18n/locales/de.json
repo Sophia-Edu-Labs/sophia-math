@@ -2906,7 +2906,9 @@
     "is_even": "ist gerade",
     "chain_rule": "Kettenregel",
     "quotient_rule": "Quotientenregel",
-    "linearity": "Linearität"
+    "linearity": "Linearität",
+    "partial_integration": "Partielle Integration",
+    "limit": "Grenzwert"
   },
   "LinAlg": {
     "14I1": {
@@ -3436,7 +3438,7 @@
         "answer-b": "$g\\circ f$ ist surjektiv",
         "answer-c": "$g\\circ f$ existiert nicht",
         "answer-d": "$(g\\circ f)(x)=x\\, \\forall x\\in[0,\\infty)$",
-        "voiceover": "Seien die Funktion<bookmark mark=\"f_in_1\"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"f_in_2\"/>und x auf x minus 1 quadrat abbildet, sowie die Funktion <bookmark mark=\"g_in_1\"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"g_in_2\"/>und x auf e hoch x abbildet, gegeben.\nWelche der folgenden Aussagen trifft auf die Komposition <bookmark mark=\"g_circ_f_in\"/>g nach f zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Die Komposition g nach f ist injektiv. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Die Komposition g nach f ist surjektiv. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Die Komposition g nach f existiert nicht. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...",
+        "voiceover": "Seien die Funktion<bookmark mark=\"f_in_1\"/> f, welche von dem halboffenen Intervall von 1 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"f_in_2\"/>und x auf x quadrat minus 1 abbildet, sowie die Funktion <bookmark mark=\"g_in_1\"/>g, welche von dem halboffenen Intervall von 0 bis unendlich in die reellen Zahlen abbildet, <bookmark mark=\"g_in_2\"/>und x auf e hoch x abbildet, gegeben.\nWelche der folgenden Aussagen trifft auf die Komposition <bookmark mark=\"g_circ_f_in\"/>g nach f zu?\nAussage <bookmark mark=\"answer_a_in\"/>a: Die Komposition g nach f ist injektiv. ...\nAussage <bookmark mark=\"answer_b_in\"/>b: Die Komposition g nach f ist surjektiv. ...\nAussage <bookmark mark=\"answer_c_in\"/>c: Die Komposition g nach f existiert nicht. ...\nOder aussage <bookmark mark=\"answer_d_in\"/>d: Die Komposition g nach f ist für alle x in dem halboffenen Intervall von 0 bis unendlich gleich x. ...",
         "is_injective": "$\\bullet$ $g\\circ f$ ist injektiv",
         "not_surjective": "$\\bullet$ $g\\circ f$ ist nicht surjektiv"
       },
@@ -3863,6 +3865,13 @@
       },
       "1a": {
         "voiceover-text": "Als erstes wenden wir <bookmark mark=\"linearity\"/>die Linearität des Integrals an, um das Integral der Summe in <bookmark mark=\"integral_2\"/>eine Summe von zwei Integralen zu verwandeln. Als nächstes <bookmark mark=\"step_2\"/>berechnen wir die Integrale einzeln. Das unbestimmte Integral von eins durch die Wurzel von x ist gleich<bookmark mark=\"part_1\"/>2 mal die Wurzel von x. Und das unbestimmte Integral von eins durch x plus eins ist gleich <bookmark mark=\"part_2\"/>dem Logarithmus des Absolutwerts von eins plus x.\nBeides sind Standardintegrale, die du dir einprägen solltest, aber du kannst sie überprüfen, indem du ihre Ableitung berechnest. Wie auch immer, das war's. ... wir haben das gesuchte unbestimmte Integral berechnet."
+      },
+      "2q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x  gleich x mal dem natürlichen Logarithmus von x durch zwei. Was ist das <bookmark mark=\"int_transform\"/>unbestimmte Integral dieser Funktion?",
+        "question-text": "Berechne das Integral $\\int x\\ln\\left(\\frac x2\\right)dx$"
+      },
+      "2a": {
+        "voiceover-text": "Wir benutzen  <bookmark mark=\"step_1_in\"/>partielle Integration, da die Funktion <bookmark mark=\"highlight_func\"/> als partielle Ableitung einer anderen Funktion betrachtet werden kann. Oder anders ausgedrückt, wir verwenden partielle Integration, um den Logarithmus zu umgehen.\nFür die Integration durch Teile verwenden wir die <bookmark mark=\"integration_by_parts_in\"/> Formel Integral von u dv ist gleich u mal v minus Integral von v du.\nJetzt müssen wir also nur noch entscheiden, welcher Teil u und welcher Teil dv ist. Wir wählen <bookmark mark=\"highlight_x_dv\"/>x als dv und <bookmark mark=\"highlight_ln_u\"/>den Logarithmus von x durch 2 als u, weil x leichter zu integrieren ist als der Logarithmus.\nFür u v erhalten wir also <bookmark mark=\"u_transform\"/>den Logarithmus von x durch 2 mal<bookmark mark=\"dv_transform\"/> x Quadrat durch 2, denn das ist das Integral von x.\nUnd für das Integral von v du erhalten wir<bookmark mark=\"vdu_int\"/> das Integral von <bookmark mark=\"v_transform\"/>ein halb x Quadrat mal <bookmark mark=\"du_transform\"/> eins durch x, was die Ableitung des Logarithmus von x durch zwei ist.\nJetzt vereinfachen wir den Term unter dem Integral zu <bookmark mark=\"simplify\"/>ein halb x. ...\nUnd als letzten <bookmark mark=\"step_2_in\"/>Schritt berechnen wir das Integral von ein halb x, und wir erhalten <bookmark mark=\"solution_in\"/>die Lösung ln x durch zwei mal ein halb x Quadrat minus eins durch vier mal x Quadrat."
       }
     }
   },
