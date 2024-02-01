@@ -122,3 +122,45 @@ class Calc_1_Limit_2_q(SophiaCursorScene):
             self.play(Write(final))
             
         self.wait(4)
+
+class Calc_1_Limit_2_a(SophiaCursorScene):
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("Calc_1.Limit.2a.title"))
+        
+        eq = MathTex(r'(a_n)_{n \in \mathbb{N}} = a_1, a_2, a_3, \ldots', color=c1t, font_size=fs2)
+        eq2 = MathTex(r'(b_n)_{n \in \mathbb{N}}', color=c1t, font_size=fs2).next_to(eq[0][9], RIGHT)
+        bn = MathTex(r'b_n \neq 0', color=c1t, font_size=fs2).next_to(eq2, DOWN, aligned_edge=LEFT)
+        final = MathTex(r'\left(\frac{a_n}{b_n}\right)_{n \in \mathbb{N}}', color=c1t, font_size=fs2).shift(DOWN*2)
+        prev_scene = VGroup(eq[0][:7], eq2, bn, final).shift(UP)
+        prev_scene2 = prev_scene.copy().shift(UP*1.5)
+
+        a_n = MathTex(r'a_n = \frac{1}{n+1}', color=c3, font_size=fs3).next_to(prev_scene2[-1], DL).shift(RIGHT/3)
+        b_n = MathTex(r'b_n = \frac{1}{(n+1)^2}', color=c3, font_size=fs3).next_to(prev_scene2[-1], DR).shift(LEFT/1.65)
+        a_o_b = MathTex(r'\frac{a_n}{b_n} = \frac{\frac{1}{n+1}}{\frac{1}{(n+1)^2}}\frac{(n+1)^2}{(n+1)^2}', color=c3, font_size=fs2).next_to(prev_scene2[-1], DOWN*4)
+        a_o_b_s = MathTex(r'\frac{a_n}{b_n} = \frac{(n+1)^2}{n+1}', color=c3, font_size=fs2).move_to(a_o_b).align_to(a_o_b, LEFT)
+        last = MathTex(r'\frac{a_n}{b_n} = n+1', color=c3, font_size=fs2).move_to(a_o_b_s).align_to(a_o_b_s, LEFT)
+        last_lim = MathTex(r'\lim_{n \to \infty} \frac{a_n}{b_n} = n+1 = \infty', color=c3, font_size=fs2).move_to(last).align_to(last, LEFT)
+
+        with self.voiceover(
+                text=self.translate("Calc_1.Limit.2a.voiceover")
+        ) as tracker:
+            self.add(title)
+            self.play(prev_scene.animate.shift(UP*1.5))
+            self.wait_until_bookmark("seq")
+            self.play(Write(a_n))
+            self.play(Write(b_n))
+            self.wait_until_bookmark("plug")
+            self.play(Write(a_o_b[0][:-13]))
+            self.wait_until_bookmark("sim")
+            self.play(Write(a_o_b[0][-13:]))
+            self.wait_until_bookmark("cancel")
+            self.play(AnimationGroup(ReplacementTransform(a_o_b[0][:6], a_o_b_s[0][:6]), TransformMatchingShapes(a_o_b[0][6:], a_o_b_s[0][6:])))
+            self.wait_until_bookmark("inft")
+            self.play(AnimationGroup(ReplacementTransform(a_o_b_s[0][:6], last[0][:6]), ReplacementTransform(a_o_b_s[0][6:], last[0][6:])))
+            self.play(AnimationGroup(ReplacementTransform(last[0][:], last_lim[0][6:15]), Write(last_lim[0][:6]), lag_ratio=0.2))
+            self.wait_until_bookmark("last")
+            self.play(Write(last_lim[0][15:]))
+        self.wait(4)

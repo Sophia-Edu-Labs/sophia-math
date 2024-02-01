@@ -3805,6 +3805,10 @@
       "2q": {
         "voiceover": "Let's dive into sequences, convergence, and a fascinating<bookmark mark=\"qend\"/> challenge. In mathematics, a sequence is an ordered list. A sequence converges if its terms approach a limit<bookmark mark=\"ngrow\"/> as n grows. Can you provide two<bookmark mark=\"conv\"/> convergent sequences a and b, where b doesn't<bookmark mark=\"neqz\"/> equal 0, ensuring that<bookmark mark=\"fin\"/> a n over b n diverges?",
         "title": "Sequences and Convergence"
+      },
+      "2a": {
+        "title": "Sequences and Convergence",
+        "voiceover": "Let's assume these are<bookmark mark=\"seq\"/> the two sequences. Now, let's plug the values<bookmark mark=\"plug\"/> into a_n over b_n. To simplify let's multiply both the numerator and<bookmark mark=\"sim\"/> denominator by n + 1 squared. Then<bookmark mark=\"cancel\"/> cancel out the common factor of n+1. As n <bookmark mark=\"inft\"/>approaches infinity, n+1 also goes to infinity. Therefore, ​​a_n over b_n tends to<bookmark mark=\"last\"/> infinity."
       }
     }
   },
