@@ -9430,173 +9430,232 @@ class Calc_practice_trig_1_b(SophiaCursorScene):
 # #
         
 ##################################### Steadiness
-##################################### #TODO
-# class Calc_practice_continuous_1_q(SophiaCursorScene):
+#####################################
+class Calc_practice_continuous_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$a=1$, $b=0$", "$a=2$, $b=2$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_continuous.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number"
+                }
+            )
+        )
 
-#         trig_functions = self.translate("General.steadiness")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+    #
 
-#         # Define the function text using MathTex
-#         for_string = self.translate("words.for")
-#         func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
-#         function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-1,0]).scale(.4)
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.continuity")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-1,0]).scale(.4)
+
+        case_0 = VGroup(*[function[0][idx] for idx in range(10)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,15)]), VGroup(*[function[0][idx] for idx in range(15,22)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(22,23)]), VGroup(*[function[0][idx] for idx in range(23,30)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(30,41)]), VGroup(*[function[0][idx] for idx in range(41,47)])
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_continuous.1q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(case_0), run_time=1)
+
+            self.wait_until_bookmark("case_1_a")
+            self.play(Write(case_1_a), run_time=.5)
+
+            self.wait_until_bookmark("case_1_b")
+            self.play(Write(case_1_b), run_time=.5)
+
+            self.wait_until_bookmark("case_2_ab")
+            self.play(Write(case_2_a), Write(case_2_b), run_time=.5)
+
+            self.wait_until_bookmark("case_3_a")
+            self.play(Write(case_3_a), run_time=.5)
+
+            self.wait_until_bookmark("case_3_b")
+            self.play(Write(case_3_b), run_time=.5)
+
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_continuous_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.steadiness")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
+        left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
+        left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
+        right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
+        right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
+        right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"1", color=c1t, font_size=fs3)
+        right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
+        limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
+
+        case_0 = VGroup(*[function[0][idx] for idx in range(10)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,15)]), VGroup(*[function[0][idx] for idx in range(15,22)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(22,23)]), VGroup(*[function[0][idx] for idx in range(23,30)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(30,41)]), VGroup(*[function[0][idx] for idx in range(41,47)])
         
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_continuous.1q.voiceover-text")
+        self.add(function)
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_continuous.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_1_a")
+            self.play(case_1_a.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("highlight_2_a")
+            self.play(case_3_a.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("reset_highlight_a")
+            self.play(case_1_a.animate.set_color(c1t), case_3_a.animate.set_color(c1t), run_time=.5)
             
-#             self.wait_until_bookmark("func_in")
-#             self.play(Write(function))
+            self.wait_until_bookmark("left_1_a")
+            self.play(Write(left_limit_1[0]))
 
-#             self.wait_until_bookmark("qmark")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
-#             self.wait(1)
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait_until_bookmark("left_1_b")
+            self.play(Write(left_limit_1[1]))
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+            self.wait_until_bookmark("left_2")
+            self.play(TransformMatchingTex(left_limit_1, left_limit_2))
 
+            self.wait_until_bookmark("right_1_a")
+            self.play(Write(right_limit_1[0]))
 
-# #
-# class Calc_practice_continuous_1_a(SophiaCursorScene):
+            self.wait_until_bookmark("right_1_b")
+            self.play(Write(right_limit_1[1]))
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+            self.wait_until_bookmark("right_2")
+            self.play(TransformMatchingTex(right_limit_1, right_limit_2))
 
-#         trig_functions = self.translate("General.steadiness")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+            self.wait_until_bookmark("right_3")
+            self.play(TransformMatchingTex(right_limit_2, right_limit_3))
 
-#         # Define the function text using MathTex
-#         for_string = self.translate("words.for")
-#         func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
-#         function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
-#         left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
-#         left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
-#         left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
-#         right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
-#         right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
-#         right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"1", color=c1t, font_size=fs3)
-#         right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
-#         sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
-#         limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+            
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_continuous_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.steadiness")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
+        left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
+        left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
+        right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
+        right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
+        right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"1", color=c1t, font_size=fs3)
+        right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
+        limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
         
+        case_0 = VGroup(*[function[0][idx] for idx in range(10)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,15)]), VGroup(*[function[0][idx] for idx in range(15,22)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(22,23)]), VGroup(*[function[0][idx] for idx in range(23,30)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(30,41)]), VGroup(*[function[0][idx] for idx in range(41,47)])
 
-#         self.add(function)
+        self.add(function)
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_continuous.1a.voiceover-text")
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_continuous.1a.voiceover-text")
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("left_1_a")
-#             self.play(Write(left_limit_1[0]))
+            self.wait_until_bookmark("highlight_1_a")
+            self.play(case_1_a.animate.set_color(RED), run_time=.5)
 
-#             self.wait_until_bookmark("left_1_b")
-#             self.play(Write(left_limit_1[1]))
+            self.wait_until_bookmark("highlight_1_b")
+            self.play(case_1_b.animate.set_color(RED), run_time=.5)
 
-#             self.wait_until_bookmark("left_2")
-#             self.play(TransformMatchingTex(left_limit_1, left_limit_2))
-
-#             self.wait_until_bookmark("right_1_a")
-#             self.play(Write(right_limit_1[0]))
-
-#             self.wait_until_bookmark("right_1_b")
-#             self.play(Write(right_limit_1[1]))
-
-#             self.wait_until_bookmark("right_2")
-#             self.play(TransformMatchingTex(right_limit_1, right_limit_2))
-
-#             self.wait_until_bookmark("right_3")
-#             self.play(TransformMatchingTex(right_limit_2, right_limit_3))
-
-#             self.wait_until_bookmark("sol_in")
-#             self.play(Write(sol))
+            self.wait_until_bookmark("reset_highlight_a")
+            self.play(case_1_a.animate.set_color(c1t), case_1_b.animate.set_color(c1t), run_time=.5)
             
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+            self.wait_until_bookmark("left_1_a")
+            self.play(Write(left_limit_1[0]))
 
-# class Calc_practice_continuous_1_b(SophiaCursorScene):
+            self.wait_until_bookmark("left_1_b")
+            self.play(Write(left_limit_1[1]))
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+            self.wait_until_bookmark("left_2")
+            self.play(TransformMatchingTex(left_limit_1, left_limit_2))
 
-#         trig_functions = self.translate("General.steadiness")
-#         title = self.add_title(trig_functions)
-#         self.add(title)
+            self.wait_until_bookmark("right_1_a")
+            self.play(Write(right_limit_1[0]))
 
-#         # Define the function text using MathTex
-#         for_string = self.translate("words.for")
-#         func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
-#         function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
-#         left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
-#         left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
-#         left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
-#         right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
-#         right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
-#         right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"1", color=c1t, font_size=fs3)
-#         right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
-#         sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
-#         limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
-        
+            self.wait_until_bookmark("right_1_b")
+            self.play(Write(right_limit_1[1]))
 
-#         self.add(function)
+            self.wait_until_bookmark("right_2")
+            self.play(TransformMatchingTex(right_limit_1, right_limit_2))
 
-#         # Define the voiceover text
-#         voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_continuous.1a.voiceover-text")
+            self.wait_until_bookmark("right_3")
+            self.play(TransformMatchingTex(right_limit_2, right_limit_3))
 
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
             
-#             self.wait_until_bookmark("left_1_a")
-#             self.play(Write(left_limit_1[0]))
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-#             self.wait_until_bookmark("left_1_b")
-#             self.play(Write(left_limit_1[1]))
-
-#             self.wait_until_bookmark("left_2")
-#             self.play(TransformMatchingTex(left_limit_1, left_limit_2))
-
-#             self.wait_until_bookmark("right_1_a")
-#             self.play(Write(right_limit_1[0]))
-
-#             self.wait_until_bookmark("right_1_b")
-#             self.play(Write(right_limit_1[1]))
-
-#             self.wait_until_bookmark("right_2")
-#             self.play(TransformMatchingTex(right_limit_1, right_limit_2))
-
-#             self.wait_until_bookmark("right_3")
-#             self.play(TransformMatchingTex(right_limit_2, right_limit_3))
-
-#             self.wait_until_bookmark("sol_in")
-#             self.play(Write(sol))
-            
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-
-
-#
         
 ##################################### MISC
 ##################################### #TODO
@@ -10101,9 +10160,8 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_trig_1_a),
     PagePrototypeVideo.from_scene(Calc_practice_trig_1_b),
 ########################################################### Continuous
-    # PagePrototypeVideo.from_scene(Calc_practice_continuous_1_q),
-    # PagePrototypeQuestion.from_scene(Calc_practice_continuous_1_q),
-    # PagePrototypeVideo.from_scene(Calc_practice_continuous_1_a),
-    # PagePrototypeVideo.from_scene(Calc_practice_continuous_1_q),
-
-    ]
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_continuous_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_1_b),
+]
