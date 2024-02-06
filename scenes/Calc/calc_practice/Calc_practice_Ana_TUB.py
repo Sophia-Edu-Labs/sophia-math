@@ -9813,10 +9813,10 @@ class Calc_explain_convergence_limit(SophiaCursorScene):
         # Action Sequence
         with self.voiceover(
                 text=""" 
-So ... this <bookmark mark="seq_1_in"/> ... is a sequence. And this <bookmark mark="seq_2_in"/> ... is also a sequence. <bookmark mark="yellow_in"/> And so are...<bookmark mark="seq_34_in"/>these two. ...
+So <bookmark mark="seq_1_in"/>... this  ... is a sequence. And <bookmark mark="seq_2_in"/>this ... is also a sequence. <bookmark mark="yellow_in"/> And so are...<bookmark mark="seq_34_in"/>these two. ...
 But there is one crucial difference between the sequences in the blue and the yellow box: The <bookmark mark="move_blue"/> sequences in the blue box seem to keep getting closer and closer to the value zero: As you can see, if we create a corridor arround it and make it smaller, the values with a higher index are all inside the corridor.
-The <bookmark mark="move_yellow"/>sequences in the yellow box on the other hand don't seem to approach a specific value. If we create a corridor and make it smaller, some elements will be in it, and others won't.
-If,<bookmark mark="yellow_out"/> like in the blue box, a sequence gets closer and closer to a value, we say that<bookmark mark="description_1_in"/> the sequence converges. And we call <bookmark mark="description_in_2"/>the value a that it approaches the limit of the sequence. But how do we formalize that concept?
+The sequences in the yellow box on the other hand don't seem to approach a specific value. If <bookmark mark="move_yellow"/>we create a corridor and make it smaller, some elements will be in it, and others won't.
+If,<bookmark mark="yellow_out"/> like in the blue box, a sequence gets closer and closer to a value, we say that<bookmark mark="description_1_in"/> the sequence converges. And we call <bookmark mark="description_2_in"/>the value a that it approaches the limit of the sequence. But how do we formalize that concept?
 A sequence converges against a, <bookmark mark="epsilon"/> if for any epsilon greater than zero, we can find a <bookmark mark="n"/>natural number n, such that <bookmark mark="greater_than_n"/>for all integers n greater than that chosen N, their <bookmark mark="small_distance"/>distance to a is smaller than epsilon.
 Or, put in other words: No matter how small of a distance to a we chose, there exists an index, such that all elements that come after it will be within that distance.
                 """
@@ -9843,25 +9843,25 @@ Or, put in other words: No matter how small of a distance to a we chose, there e
             self.play(Write(lines_1), run_time=1)
             [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords.p2c(m.get_center())[1])>epsilon.get_value() else m.set_color(GREEN)) for d in seq_1_1]
             [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords.p2c(m.get_center())[1])>epsilon.get_value() else m.set_color(GREEN)) for d in seq_1_2]
-            self.play(epsilon.animate.set_value(.6), run_time=4)
+            self.play(epsilon.animate.set_value(.6), run_time=6)
 
             self.wait_until_bookmark("move_yellow")
             self.play(Write(lines_2))
             [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords_2.p2c(m.get_center())[1])>epsilon_2.get_value() else m.set_color(GREEN)) for d in seq_2_1]
             [d.add_updater(lambda m: m.set_color(RED) if np.abs(cords_2.p2c(m.get_center())[1])>epsilon_2.get_value() else m.set_color(GREEN)) for d in seq_2_2]
-            self.play(epsilon_2.animate.set_value(.6), run_time=4)
+            self.play(epsilon_2.animate.set_value(.6), run_time=6)
 
             self.wait_until_bookmark("yellow_out")
             self.play(Unwrite(coord_sys_2), Unwrite(lines_2), Unwrite(seq_2_1), Unwrite(seq_2_2), Unwrite(line_2_1), Unwrite(line_2_2), run_time=1)
             
             self.wait_until_bookmark("description_1_in")
-            self.play(Write(description[0]))
+            [d.clear_updaters().set_color(ORANGE) for d in seq_1_1], [d.clear_updaters().set_color("#1300bd") for d in seq_1_2]
+            self.play(Write(description[0]), run_time=.8)
 
-            self.wait_until_bookmark("description_1_in")
-            self.play(Write(description[1]))
+            self.wait_until_bookmark("description_2_in")
+            self.play(Write(description[1]), run_time=.8)
 
             self.wait_until_bookmark("epsilon")
-            [d.clear_updaters().set_color(ORANGE) for d in seq_1_1], [d.clear_updaters().set_color("#1300bd") for d in seq_1_2], 
             epsilon.set_value(4)
             self.play(Write(formula[0][0]), Write(eps))
             self.play(epsilon.animate.set_value(.8))
