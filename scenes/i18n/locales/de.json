@@ -3697,7 +3697,7 @@
       },
       "3q": {
         "voiceover-text": "Jetzt betrachten wir den <bookmark mark=\"term_in\"/>Term 16 x hoch zwei geteilt durch den Tangens von x. Und wir suchen den <bookmark mark=\"limit_in\"/>Grenzwert für x gegen pi viertel.\nWas kommt da raus?",
-        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)$?"
+        "question-text": "Was ist der Wert des Grenzwertes $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)}$?"
       },
       "3a": {
         "voiceover-text": "Hier können wir den gesuchten Grenzwert einfach einsetzen. Wir <bookmark mark=\"step_1_a\"/>erhalten dann 16 mal pi hoch zwei durch vier quadrat, und das geteilt durch den Tangens von pi viertel.\nDer Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark=\"step_1_b\"/>pi quadrat als Ergebnis unseres Grenzwertes.."

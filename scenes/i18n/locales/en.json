@@ -3700,7 +3700,7 @@
       },
       "3q": {
         "voiceover-text": "Now we look at the <bookmark mark=\"term_in\"/>term 16 x to the power of two divided by the tangent of x. And we look for the <bookmark mark=\"limit_in\"/>limit value for x towards pi over four.\nWhat is the result?",
-        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)$?"
+        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{16x^2}{\\tan(x)}$?"
       },
       "3a": {
         "voiceover-text": "Here we can simply insert the limit we are looking for. We <bookmark mark=\"step_1_a\"/>then get 16 times pi to the power of two divided by four squared, and that divided by the tangent of pi over four.\nThe tangent of pi over four is equal to one, and we get <bookmark mark=\"step_1_b\"/>pi squared as the result of our limit."

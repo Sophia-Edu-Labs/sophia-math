@@ -425,7 +425,7 @@ class Calc_practice_MC_1_d(SophiaCursorScene):
 
 ##################################### 
 #####################################
-# MC, Mean Value Theorem
+# MC, Mean Value Theorem, Differentiable
 class Calc_practice_MC_2_q(SophiaCursorScene):
 
 
@@ -992,7 +992,7 @@ class Calc_practice_MC_3_d(SophiaCursorScene):
 
 ##################################### 
 #####################################
-# MC
+# MC: Limits
 class Calc_practice_MC_4_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1199,7 +1199,7 @@ class Calc_practice_MC_4_d(SophiaCursorScene):
 
 ##################################### 
 #####################################
-# MC,
+# MC, Extremum
 class Calc_practice_MC_5_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1636,6 +1636,7 @@ class Calc_practice_MC_6_d(SophiaCursorScene):
 
 ##################################### 
 #####################################
+# MC, Complex Numbers
 class Calc_practice_MC_7_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -1854,6 +1855,7 @@ class Calc_practice_MC_7_d(SophiaCursorScene):
 
 ##################################### 
 #####################################
+# MC, Continuity
 class Calc_practice_MC_8_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -2100,6 +2102,7 @@ class Calc_practice_MC_8_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, even/odd
 class Calc_practice_MC_9_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -2153,7 +2156,6 @@ class Calc_practice_MC_9_q(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
-#
         
 class Calc_practice_MC_9_a(SophiaCursorScene):
 
@@ -2353,6 +2355,7 @@ class Calc_practice_MC_9_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, integrals
 class Calc_practice_MC_10_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -2665,6 +2668,7 @@ class Calc_practice_MC_10_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, injective
 class Calc_practice_MC_11_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -2927,6 +2931,7 @@ class Calc_practice_MC_11_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, limits
 class Calc_practice_MC_12_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -3182,6 +3187,7 @@ class Calc_practice_MC_12_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, partial fraction decomposition
 class Calc_practice_MC_14_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -3371,6 +3377,7 @@ class Calc_practice_MC_14_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, Extreme value theorem
 class Calc_practice_MC_15_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -3595,6 +3602,7 @@ class Calc_practice_MC_15_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, Even/odd functions
 class Calc_practice_MC_16_q(SophiaCursorScene):
     
 
@@ -3812,6 +3820,7 @@ class Calc_practice_MC_16_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, Complex Numbers
 class Calc_practice_MC_17_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -4041,6 +4050,7 @@ class Calc_practice_MC_17_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, Mean value theorem for integrals
 class Calc_practice_MC_18_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -4094,7 +4104,6 @@ class Calc_practice_MC_18_q(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
-
 
 class Calc_practice_MC_18_a(SophiaCursorScene):
 
@@ -4263,6 +4272,7 @@ class Calc_practice_MC_18_d(SophiaCursorScene):
 
 ##################################### 
 ##################################### 
+# MC, Even/odd functions
 class Calc_practice_MC_19_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
@@ -5308,7 +5318,7 @@ class Calc_practice_limits_3_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["$\pi^2$", "$1$"],
+            answerOptions = ["${\pi}^{2}$", "$1$"],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_limits.3q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
