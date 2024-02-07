@@ -7329,6 +7329,20 @@ class Calc_practice_pfd_1_b(SophiaCursorScene):
 #####################################
 class Calc_practice_minmax_1_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$3$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_minmax.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -7381,20 +7395,81 @@ class Calc_practice_minmax_1_a(SophiaCursorScene):
         implication_1 = MathTex(r"\Downarrow", color=BLUE, font_size=fs2).next_to(derivative, DOWN, buff=.4)
         zero_1_a = Tex("", r"$x=3$", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.4)
         zero_1_b = Tex(critical_point_at, r"$x=3$", color=c1t, font_size=fs2).move_to(zero_1_a)
-        global_max = Tex(global_maximum_at, r"$x=3$", color=c1t, font_size=fs2).move_to(zero_1_b)
+        global_max = Tex(global_maximum_at, r"$x=3$", color=c1t, font_size=fs2).scale(.95).move_to(zero_1_b)
         derivative_2 = MathTex(r"s''(x)=-4", r"<0", color=c1t, font_size=fs2).scale(.95).next_to(implication_1, DOWN, buff=.4)
         self.add(beam, func)
         
 
         # Define the voiceover text
-        voiceover_text = """
-        In order to find the maximum strength of the beam, we need to determine the maximum value of the function s.
-        The <bookmark mark="beam_out"/>first thing we do is find the critical points of the function by computing the derivative and setting it equal to zero.
-        The derivative <bookmark mark="derivative_in"/>of s is equal to negative four x plus 12. If we want that to be equal to<bookmark mark="implication_1"/> zero, we get that<bookmark mark="zero_1"/>x is equal to three.
-        So we have exactly one critical point<bookmark mark="critical_point"/>, which is at x equal to three.
-        Now let's <bookmark mark="clean_up"/>analyze this critical point. In order to find out, if it's a minimum or a maximum, we compute the second derivative of s, which <bookmark mark="derivative_2_in"/>is equal to negative four, so <bookmark mark="derivative_2_neg"/>it's always less than zero.
-        This means, that the critical point at x equals three is a maximum, so <bookmark mark="solution"/>we have a global maximum at x equals three.
-        """
+        voiceover_text = self.translate("General.correct_6")+self.translate("Calc_1.practice_minmax.01a.voiceover-text")
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("beam_out")
+            self.add_shift_sound(.5)
+            self.play(beam.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("derivative_in")
+            self.play(Write(derivative[0]))
+
+            self.wait_until_bookmark("derivative_in")
+            self.play(Write(derivative[1]), Write(implication_1))
+
+            self.wait_until_bookmark("zero_1")
+            self.play(Write(zero_1_a), run_time=0.5)
+
+            self.wait_until_bookmark("critical_point")
+            self.play(TransformMatchingTex(zero_1_a, zero_1_b), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            zero_1_b.generate_target().move_to(derivative)
+            self.add_shift_sound(.5)
+            self.play(Unwrite(derivative), MoveToTarget(zero_1_b), run_time=.5)
+
+            self.wait_until_bookmark("derivative_2_in")
+            self.play(Write(derivative_2[0]))
+
+            self.wait_until_bookmark("derivative_2_neg")
+            self.play(Write(derivative_2[1]))
+
+            self.wait_until_bookmark("solution")
+            derivative_2.generate_target().move_to(zero_1_b)
+            self.add_shift_sound(.5)
+            self.play(Write(global_max), Unwrite(zero_1_b), MoveToTarget(derivative_2), run_time=.5)
+
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_minmax_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        critical_point_at = self.translate("General.critical_point_at")
+        global_maximum_at = self.translate("General.global_maximum_at")
+        beam = ImageMobject(assets_folder / "img" / "aluminum_beam.png").set_y(-1).scale(.45)
+        func = MathTex(r"s(x)=-2x^2+12x+20", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        derivative = MathTex(r"s'(x)=-4x+12", r"\overset!=0", color=c1t, font_size=fs2).scale(.95).next_to(func, DOWN, buff=.4)
+        implication_1 = MathTex(r"\Downarrow", color=BLUE, font_size=fs2).next_to(derivative, DOWN, buff=.4)
+        zero_1_a = Tex("", r"$x=3$", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.4)
+        zero_1_b = Tex(critical_point_at, r"$x=3$", color=c1t, font_size=fs2).move_to(zero_1_a)
+        global_max = Tex(global_maximum_at, r"$x=3$", color=c1t, font_size=fs2).scale(.95).move_to(zero_1_b)
+        derivative_2 = MathTex(r"s''(x)=-4", r"<0", color=c1t, font_size=fs2).scale(.95).next_to(implication_1, DOWN, buff=.4)
+        self.add(beam, func)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_6")+self.translate("Calc_1.practice_minmax.01a.voiceover-text")
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
             

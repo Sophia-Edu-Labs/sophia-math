@@ -3902,6 +3902,12 @@
     "practice_minmax": {
       "01q": {
         "voiceover-text": "A manufacturing company is producing <bookmark mark=\"beam_in\"/>aluminum beams. The strength of the beams as a function of the cross sectional area x is described by the<bookmark mark=\"func_in\"/> function s of x equals negative 2 x squared + 12 x + 20.\nWhat value for the cross sectional area x maximizes the stability of the beam?"
+      },
+      "01a": {
+        "voiceover-text": "In order to find the maximum strength of the beam, we need to determine the maximum value of the function s.\nThe <bookmark mark=\"beam_out\"/>first thing we do is find the critical points of the function by computing the derivative and setting it equal to zero.\nThe derivative <bookmark mark=\"derivative_in\"/>of s is equal to negative four x plus 12. If we want that to be equal to<bookmark mark=\"implication_1\"/> zero, we get that<bookmark mark=\"zero_1\"/>x is equal to three.\nSo we have exactly one critical point<bookmark mark=\"critical_point\"/>, which is at x equal to three.\nNow let's <bookmark mark=\"clean_up\"/>analyze this critical point. In order to find out, if it's a minimum or a maximum, we compute the second derivative of s, which <bookmark mark=\"derivative_2_in\"/>is equal to negative four, so <bookmark mark=\"derivative_2_neg\"/>it's always less than zero.\nThis means, that the critical point at x equals three is a maximum, so <bookmark mark=\"solution\"/>we have a global maximum at x equals three.\nSo our solution is x equals three."
+      },
+      "1q": {
+        "question-text": "For what value of $x$ is the strength $s$, which is described by the function $s(x)=-2x^2+12x+20$, maximized?"
       }
     }
   },

@@ -3895,6 +3895,12 @@
     "practice_minmax": {
       "01q": {
         "voiceover-text": "Ein Industrieunternehmen stellt <bookmark mark=\"beam_in\"/>Aluminiumträger her. Die Stabilität der Träger in Abhängigkeit von der Querschnittsfläche x wird durch die<bookmark mark=\"func_in\"/> Funktion s von x gleich minus 2 x Quadrat + 12 x + 20 beschrieben.\nWelcher Wert für die Querschnittsfläche x maximiert die Stabilität des Trägers?"
+      },
+      "01a": {
+        "voiceover-text": "Um die maximale Stärke des Balkens zu ermitteln, müssen wir den maximalen Wert der Funktion s bestimmen.\nDazu müssen wir zunächst die kritischen Punkte der Funktion finden, indem wir die Ableitung berechnen und sie gleich Null setzen.\nDie Ableitung <bookmark mark=\"derivative_in\"/>von s ist gleich minus vier x plus 12. Wenn wir wollen, dass die Ableitung gleich<bookmark mark=\"implication_1\"/> Null ist, erhalten wir, dass<bookmark mark=\"zero_1\"/>x gleich drei ist.\nWir haben also genau einen kritischen Punkt<bookmark mark=\"critical_point\"/>, und der liegt bei x gleich drei.\nNun wollen wir <bookmark mark=\"clean_up\" />den kritischen Punkt analysieren. Um herauszufinden, ob es sich um ein Minimum oder ein Maximum handelt, berechnen wir die zweite Ableitung von s. Diese <bookmark mark=\"derivative_2_in\"/> ist gleich minus vier, also <bookmark mark=\"derivative_2_neg\"/>ist sie immer kleiner als Null.\nDas bedeutet, dass der kritische Punkt bei x gleich drei ein Maximum ist, also <bookmark mark=\"solution\"/>haben wir ein globales Maximum bei x gleich drei.\nUnsere Lösung ist also x gleich drei."
+      },
+      "1q": {
+        "question-text": "Für welchen Wert von $x$ ist die Stärke $s$, die durch die Funktion $s(x)=-2x^2+12x+20$ beschrieben wird, maximal?"
       }
     }
   },
