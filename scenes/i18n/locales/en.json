@@ -2898,7 +2898,7 @@
     "does-not-exist": "doesn't exist",
     "real_part": "real part",
     "imaginary_part": "imaginary part",
-    "steadiness": "steadiness",
+    "steadiness": "Continuity",
     "ivt": "intermediate value theorem",
     "induction": "induction",
     "induction_base": "Base case",
@@ -3829,7 +3829,11 @@
         "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>piecewise function f, which is defined <bookmark mark=\"case_1_a\"/>as 2 x squared minus 2 <bookmark mark=\"case_1_b\"/>for x smaller than 2, <bookmark mark=\"case_2_ab\"/>a for x equal to 2, <bookmark mark=\"case_3_a\"/>and 2 x plus b <bookmark mark=\"case_3_b\"/>for x greater than 2. <bookmark mark=\"qmark\"/>\nWhat do we have to set a and b to, to ensure that the function is continuous?"
       },
       "3q": {
-        "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>piecewise function f, which is defined <bookmark mark=\"case_1_a\"/>as 1 + b e to the power of x <bookmark mark=\"case_1_b\"/>for x smaller than pi, <bookmark mark=\"case_2_ab\"/>a for x equal to pi, <bookmark mark=\"case_3_a\"/>and negative sine of x over x minus pi <bookmark mark=\"case_3_b\"/>for x greater than pi. <bookmark mark=\"qmark\"/>\nFor what values of a and b is this function continuous?"
+        "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>piecewise function f, which is defined <bookmark mark=\"case_1_a\"/>as b - e to the power of x <bookmark mark=\"case_1_b\"/>for negative x, <bookmark mark=\"case_2_ab\"/>a for x equal to 0, <bookmark mark=\"case_3_a\"/>and four times e to the power of x minus one, divided by the sine of x <bookmark mark=\"case_3_b\"/>for positive x. <bookmark mark=\"qmark\"/>\nFor what values of a and b is this function continuous?",
+        "question-text": "For what values of $a$ and $b$ is the function continuous?"
+      },
+      "3a": {
+        "voiceover-text": "We know that the functions<bookmark mark=\"highlight_1_a\"/> b - e to the power of x, as well <bookmark mark=\"highlight_2_a\"/>as 4 times e to the power of x minus one over the sine of x are continuous functions, so the function f is continuous for all x that are not equal to 0.<bookmark mark=\"reset_highlight_a\"/>\nNow to ensure that the function is continuous at x equals 0, we have to make sure that the left sided limit for x approaching 0 and the right sided limit for x approaching 0 are equal to the value of f of 0.\nSo let's start computing the <bookmark mark=\"left_1_a\"/>left sided limit for x approaching 0 of f of x. This is <bookmark mark=\"left_1_b\"/>equal to the left sided limit for x approaching 0 of b minus e to the power of x.\nAnd for that, we can just plug in 0 for x, and <bookmark mark=\"left_2\"/>that is equal to b minus e to the power of zero, which <bookmark mark=\"left_3\"/>is equal to b minus one.\nNext, we compute the <bookmark mark=\"right_1_a\"/>right sided limit for x approaching 0 of f of x. This is equal to the right sided limit for x approaching 0 of <bookmark mark=\"right_1_b\"/>4 times e to the power of x minus one, divided by the sine of x.\nIf we plugged in 0 for x, we would divide zero by zero, so we can use LOpitals rule and compute the limit of the fraction of the derivatives instead. This gives us the right sided limit for x approaching 0 of 4 times <bookmark mark=\"right_2\"/> e to the power of x over the cosine of x. And that is just <bookmark mark=\"right_3\"/>equal to four, because both e to the power of zero and the cosine of zero are equal to one.\nSo now to make sure, that both limits are equal to the value of f at x equals 0, we just<bookmark mark=\"sol_in\"/> set b to 5, and \"a\" to 4."
       }
     },
     "practice_induction": {

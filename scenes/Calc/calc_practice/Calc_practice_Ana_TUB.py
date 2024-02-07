@@ -9893,20 +9893,20 @@ class Calc_practice_continuous_2_b(SophiaCursorScene):
 #####################################
 class Calc_practice_continuous_3_q(SophiaCursorScene):
 
-    def task_definition(self) -> SophiaTaskDefinition:
-        return SophiaTaskDefinition(
-            answerOptions = ["$a=1$, $b=0$", "$a=2$, $b=2$"],
-            correctAnswerIndex = 0,
-            questionText = self.translate("Calc_1.practice_continuous.1q.question-text"),
-            freeTextDetail=SophiaFreeTextTaskDetail(
-                fallbackOptionIndex=1,
-                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
-                answerOptionsTypes={
-                    "a": "number",
-                    "b": "number"
-                }
-            )
-        )
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$a=1$, $b=0$", "$a=2$, $b=2$"],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_continuous.1q.question-text"),
+    #         freeTextDetail=SophiaFreeTextTaskDetail(
+    #             fallbackOptionIndex=1,
+    #             answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
+    #             answerOptionsTypes={
+    #                 "a": "number",
+    #                 "b": "number"
+    #             }
+    #         )
+    #     )
 
     #
 
@@ -9922,17 +9922,18 @@ class Calc_practice_continuous_3_q(SophiaCursorScene):
 
         # Define the function text using MathTex
         for_string = self.translate("words.for")
-        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        func_string = fr"f(x)=\begin{{cases}}b - e^{{x}}& \text{{{for_string} }} x < 0, \\a & \text{{{for_string} }} x = 0, \\4\frac{{e^x-1}}{{\sin(x)}} & \text{{{for_string} }} x > 0\end{{cases}}"
         function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-1,0]).scale(.4)
 
+        for_offset = int(self.translate("General.for_offset"))
         case_0 = VGroup(*[function[0][idx] for idx in range(10)])
-        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,15)]), VGroup(*[function[0][idx] for idx in range(15,22)])
-        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(22,23)]), VGroup(*[function[0][idx] for idx in range(23,30)])
-        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(30,41)]), VGroup(*[function[0][idx] for idx in range(41,47)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,14)]), VGroup(*[function[0][idx] for idx in range(14,21+for_offset)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(21+for_offset,22+for_offset)]), VGroup(*[function[0][idx] for idx in range(22+for_offset, 29+2*for_offset)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(29+2*for_offset,41+2*for_offset)]), VGroup(*[function[0][idx] for idx in range(40+2*for_offset,46+3*for_offset)])
         
         # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.practice_continuous.1q.voiceover-text")
+        voiceover_text = self.translate("Calc_1.practice_continuous.3q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -9979,28 +9980,33 @@ class Calc_practice_continuous_3_a(SophiaCursorScene):
 
         # Define the function text using MathTex
         for_string = self.translate("words.for")
-        func_string = fr"f(x)=\begin{{cases}}1 + be^{{x}}& \text{{{for_string} }} x < \pi, \\a & \text{{{for_string} }} x = \pi, \\-\frac{{\sin(x)}}{{x - \pi}} & \text{{{for_string} }} x > \pi,\end{{cases}}"
+        func_string = fr"f(x)=\begin{{cases}}b - e^{{x}}& \text{{{for_string} }} x < 0, \\a & \text{{{for_string} }} x = 0, \\4\frac{{e^x-1}}{{\sin(x)}} & \text{{{for_string} }} x > 0\end{{cases}}"
         function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
-        left_limit_1 = MathTex(r"\underset{x\nearrow\pi}{\lim}f(x) = ", r"\underset{x\nearrow\pi}{\lim} (1 + be^x)", color=c1t, font_size=fs3)
-        left_limit_2 = MathTex(r"\underset{x\nearrow\pi}{\lim} f(x) =", r" 1 + be^\pi", color=c1t, font_size=fs3)
-        left_limit = VGroup(left_limit_1, left_limit_2).arrange(ORIGIN, aligned_edge=LEFT)
-        right_limit_1 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r"\underset{x\searrow\pi}{\lim} \left( -\tfrac{\sin(x)}{x - \pi} \right)", color=c1t, font_size=fs3)
-        right_limit_2 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x) = ", r" \underset{x\searrow\pi}{\lim} \left( -\tfrac{\cos(x)}{1} \right)", color=c1t, font_size=fs3)
-        right_limit_3 = MathTex(r"\underset{x\searrow\pi}{\lim} f(x)= ", r"1", color=c1t, font_size=fs3)
+        left_limit_1 = MathTex(r"\underset{x\nearrow0}{\lim}f(x) = ", r"\underset{x\nearrow0}{\lim} (b-e^x)", color=c1t, font_size=fs3)
+        left_limit_2 = MathTex(r"\underset{x\nearrow0}{\lim} f(x) =",  r"b-", r"e^0", color=c1t, font_size=fs3)
+        left_limit_3 = MathTex(r"\underset{x\nearrow0}{\lim} f(x) =",  r"b-", r"1", color=c1t, font_size=fs3)
+        left_limit = VGroup(left_limit_1, left_limit_2, left_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        right_limit_1 = MathTex(r"\underset{x\searrow0}{\lim} f(x) = ", r"\underset{x\searrow0}{\lim} \left( 4\tfrac{e^x-1}{\sin(x)} \right)", color=c1t, font_size=fs3)
+        right_limit_2 = MathTex(r"\underset{x\searrow0}{\lim} f(x) = ", r" \underset{x\searrow0}{\lim} \left( 4\tfrac{e^x}{\cos(x)} \right)", color=c1t, font_size=fs3)
+        right_limit_3 = MathTex(r"\underset{x\searrow0}{\lim} f(x)= ", r"4", color=c1t, font_size=fs3)
         right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
         sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
         limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
 
+        # Define the function text using MathTex
+        
+
+        for_offset = int(self.translate("General.for_offset"))
         case_0 = VGroup(*[function[0][idx] for idx in range(10)])
-        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,15)]), VGroup(*[function[0][idx] for idx in range(15,22)])
-        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(22,23)]), VGroup(*[function[0][idx] for idx in range(23,30)])
-        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(30,41)]), VGroup(*[function[0][idx] for idx in range(41,47)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,14)]), VGroup(*[function[0][idx] for idx in range(14,21+for_offset)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(21+for_offset,22+for_offset)]), VGroup(*[function[0][idx] for idx in range(22+for_offset, 29+2*for_offset)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(29+2*for_offset,41+2*for_offset)]), VGroup(*[function[0][idx] for idx in range(40+2*for_offset,46+3*for_offset)])
         
 
         self.add(function)
 
         # Define the voiceover text
-        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_continuous.1a.voiceover-text")
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_continuous.3a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -10022,6 +10028,9 @@ class Calc_practice_continuous_3_a(SophiaCursorScene):
 
             self.wait_until_bookmark("left_2")
             self.play(TransformMatchingTex(left_limit_1, left_limit_2))
+
+            self.wait_until_bookmark("left_3")
+            self.play(TransformMatchingTex(left_limit_2, left_limit_3))
 
             self.wait_until_bookmark("right_1_a")
             self.play(Write(right_limit_1[0]))
