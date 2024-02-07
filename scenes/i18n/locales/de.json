@@ -2909,7 +2909,8 @@
     "linearity": "Linearität",
     "partial_integration": "Partielle Integration",
     "limit": "Grenzwert",
-    "continuity": "Stetigkeit"
+    "continuity": "Stetigkeit",
+    "for_offset": "1"
   },
   "LinAlg": {
     "14I1": {
@@ -3813,6 +3814,12 @@
       },
       "1a": {
         "voiceover-text": "Zunächst ist zu beachten, dass die Funktionen<bookmark mark=\"highlight_1_a\"/> eins plus b e hoch x <bookmark mark=\"highlight_2_a\"/>sowie minus Sinus von x durch x minus pi stetige Funktionen sind, so dass die Funktion f für alle x, die ungleich pi sind, stetig ist.<bookmark mark=\"reset_highlight_a\"/>\nUm nun sicherzustellen, dass die Funktion bei x gleich pi stetig ist, müssen wir sicherstellen, dass sowohl der linksseitige Grenzwert für x gegen pi als auch der rechtsseitige Grenzwert für x gegen pi gleich dem Wert von f für pi sind.\nBeginnen wir also mit der Berechnung des <bookmark mark=\"left_1_a\"/>linksseitigen Grenzwerts für x gegen pi von f von x. Dieser ist <bookmark mark=\"left_1_b\"/>gleich dem linksseitigen Grenzwert für x gegen pi von eins plus b e hoch x.\nUnd da können wir einfach pi für x einsetzen, und erhalten <bookmark mark=\"left_2\"/>dass dies gleich eins plus b e hoch pi ist.\nAls Nächstes berechnen wir den <bookmark mark=\"right_1_a\"/>rechtsseitigen Grenzwert für x gegen pi von f von x. Das ist gleich dem rechtsseitigen Grenzwert für x gegen pi von <bookmark mark=\"right_1_b\"/>minus Sinus  x durch x minus pi.\nWenn wir pi für x einsetzen würden, würden wir Null durch Null teilen, also können wir stattdessen LOpitals Regel verwenden und Berechnen den Limes der  Ableitungen. So erhalten wir den rechtsseitigen Grenzwert für x für x gegen pi von <bookmark mark=\"right_2\"/> minus Kosinus von x durch eins.\nUnd das ist eben <bookmark mark=\"right_3\"/>gleich eins.\nUm also sicherzustellen, dass beide Grenzwerte gleich dem Wert von f bei x gleich pi sind, setzen wir einfach <bookmark mark=\"sol_in\"/> b auf Null und a auf Eins."
+      },
+      "2a": {
+        "voiceover-text": "Zunächst stellen wir fest, dass die Funktionen <bookmark mark=\"highlight_1_a\"/> 2 x Quadrat minus zwei sowie <bookmark mark=\"highlight_2_a\"/>2 x plus b stetige Funktionen sind, so dass die Funktion f für alle x ungleich 2 stetig ist.<bookmark mark=\"reset_highlight_a\"/>\nUm nun sicherzustellen, dass die Funktion bei x gleich 2 stetig ist, müssen wir sicherstellen, dass der linksseitige Grenzwert für x gegen 2 und der rechtsseitige Grenzwert für x gegen 2 gleich dem Wert von f von 2 sind.\nBeginnen wir also mit der Berechnung des <bookmark mark=\"left_1_a\"/>linkseitigen Grenzwerts für x gegen 2 von f von x. Dieser ist <bookmark mark=\"left_1_b\"/>gleich dem linksseitigen Grenzwert für x gegen 2 von 2 x zum Quadrat minus 2.\nWir können hier einfach 2 für x einsetzen, und <bookmark mark=\"left_2\"/> das ist gleich 2 mal 2 zum Quadrat minus zwei, also <bookmark mark=\"left_3\" />gleich 6.\nAls Nächstes berechnen wir den <bookmark mark=\"right_1_a\"/>rechtsseitigen Grenzwert für x gegen 2 von f von x. Dieser ist gleich dem rechtsseitigen Grenzwert für x gegen 2 von <bookmark mark=\"right_1_b\"/>2 x plus b.\nWir können sehen, dass dieser <bookmark mark=\"right_2\"/> gleich 4 plus b ist.\nUm nun sicherzustellen, dass beide Grenzwerte gleich dem Wert von f bei x gleich 2 sind, setzen wir einfach <bookmark mark=\"sol_in\"/> a auf 6 und b auf 2."
+      },
+      "2q": {
+        "voiceover-text": "Betrachte die <bookmark mark=\"func_in\"/>stückweise definierte Funktion f, die <bookmark mark=\"case_1_a\"/>als 2 x Quadrat minus 2 <bookmark mark=\"case_1_b\"/>für x kleiner als 2 definiert ist, <bookmark mark=\"case_2_ab\"/>a für x gleich 2, <bookmark mark=\"case_3_a\"/>und 2 x plus b <bookmark mark=\"case_3_b\"/>für x größer als 2. <bookmark mark=\"qmark\"/>\nFür welche Werte von a und b ist die Funktion stetig?"
       }
     },
     "practice_induction": {
