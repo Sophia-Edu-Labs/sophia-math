@@ -9429,7 +9429,7 @@ class Calc_practice_trig_1_b(SophiaCursorScene):
 # #TODO
 # #
         
-##################################### Steadiness
+##################################### Continuity
 #####################################
 class Calc_practice_continuous_1_q(SophiaCursorScene):
 
@@ -9656,7 +9656,47 @@ class Calc_practice_continuous_1_b(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 
-        
+#####################################
+#####################################
+class Calc_practice_continuous_2_q(SophiaCursorScene):
+    # Main method for constructing the animation
+    def construct(self):
+        super().construct()
+        self.add_mathgrid()
+
+        continuity_concept = self.translate("General.continuity")
+        title = self.add_title(continuity_concept)
+        self.add(title)
+
+        # Define the new function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}2x^2 + 3x + 1& \text{{{for_string} }} x \leq 1, \\c \cdot \ln(x + 2) & \text{{{for_string} }} x > 1,\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5, -1, 0]).scale(.4)
+
+        case_0 = VGroup(*[function[0][idx] for idx in range(10)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10, 23)]), VGroup(*[function[0][idx] for idx in range(23, 38)])
+
+        # Define the voiceover text
+        voiceover_text = """
+Consider the piecewise function f, which is defined as 2x squared plus 3x plus 1 for x less than or equal to 1, and c times the natural logarithm of x plus 2 for x greater than 1.
+For what value of c is this function continuous at x equals 1?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            self.play(Write(case_0), run_time=1)
+            self.play(Write(case_1_a), run_time=.5)
+            self.play(Write(case_1_b), run_time=.5)
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        self.wait(6)
+
+
 ##################################### MISC
 ##################################### #TODO
 # class Calc_practice_misc_10_q(SophiaCursorScene):
@@ -10117,6 +10157,10 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_integrals_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_a),
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_integrals_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_2_b),
 ########################################################### Partial fraction decomposition
     PagePrototypeVideo.from_scene(Calc_practice_pfd_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_pfd_1_q),
