@@ -7324,130 +7324,117 @@ class Calc_practice_pfd_1_b(SophiaCursorScene):
         self.wait(6)
 #
 
-#####################################
-# class Calc_practice_pfd_2_q(SophiaCursorScene):
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         pfd = self.translate("General.pfd")
-#         title = self.add_title(pfd)
-#         self.add(title)
-
-#         # Define the function text using MathTex
-#         pfd = MathTex(r"\frac{x^2+10x+18}{x(x^2+6x+9)}", r"=\frac{A}{x}+\frac{B}{x+3}+\frac{C}{(x+3)^2}", color=c1t, font_size=fs3).set_y(2)
-
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,0,0]).scale(.45)
-
-#         # Define the voiceover text
-#         voiceover_text = self.translate("Calc_1.practice_pfd.02q.voiceover-text")
-
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
-            
-#             self.wait_until_bookmark("pfd_in")
-#             self.play(Write(pfd[0]))
-
-#             self.wait_until_bookmark("ansatz_in")
-#             self.play(Write(pfd[1]))
-
-#             self.wait_until_bookmark("qmark_in")
-#             self.add_shift_sound(0.5)
-#             self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
-
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-
-
-# class Calc_practice_pfd_2_a(SophiaCursorScene):
-
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
-
-#         pfd = self.translate("General.pfd")
-#         title = self.add_title(pfd)
-#         self.add(title)
-
-#         # Define the function text using MathTex
-#         pfd = MathTex(r"{{x^2+10x+18}", r"\over", r"{x(x^2+6x+9)}}", r"=", r"{{A}", r"\over", r"{x}}", r"+", r"{{B}", r"\over", r"{x+3}}", r"+", r"{{C}", r"\over", r"{(x+3)^2}}", color=c1t, font_size=fs3).set_y(2)
-#         en_0, en_1, en_2, en_3, den_0, den_1, den_2, den_3 = pfd[0], pfd[4], pfd[8], pfd[12], pfd[2], pfd[6], pfd[10], pfd[14]
-
-
-#         qmark = ImageMobject(assets_folder / "img" / "qmark.png").scale(.45)
-#         self.add(qmark, pfd)
-
-#         # Define the voiceover text
-#         voiceover_text = """
-#               aaa  
-# """
-
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
-            
-#             self.wait(2)
-
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
-# #TODO
-
-        
-
 
 ##################################### Minimum and Maximum #TODO
 #####################################
-# class Calc_practice_minmax_1_q(SophiaCursorScene):
+class Calc_practice_minmax_1_q(SophiaCursorScene):
 
-#     # Main method for constructing the animation
-#     def construct(self):
-#         # Adding initial components to the scene
-#         super().construct()
-#         self.add_mathgrid()
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-#         limits = self.translate("words.Limits")
-#         title = self.add_title(limits)
-#         self.add(title)
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
 
-#         # Define the function text using MathTex
-#         series_1 = Tex(r"$\left(a_n\right)_{n\in\mathbb N}$ konvergente Folge", color=c1t, font_size=fs3)
-#         series_2 = Tex(r"$\underset{n\to\infty}{\lim}a_n=0$", color=c1t, font_size=fs3)
-#         series = VGroup(series_1, series_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
-#         series_3 = Tex("", r"$b_n=$", "", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).next_to(series, DOWN, buff=.4).set_x(0)
-#         series_4 = Tex(r"$\underset{n\to\infty}{\lim}$", r"$b_n=$", r"$\underset{n\to\infty}{\lim}$", r"$(-1)^n\frac{a_n}2$", color=BLUE, font_size=fs2).move_to(series_3)
+        # Define the function text using MathTex
+        beam = ImageMobject(assets_folder / "img" / "aluminum_beam.png").move_to([-5,-1,0]).scale(.45)
+        func = MathTex(r"s(x)=-2x^2+12x+20", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        
 
-#         # lion = ImageMobject(assets_folder / "img" / "lion_thinking.png").move_to([-5,-.6,0]).scale(.5)
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_minmax.01q.voiceover-text")
 
-#         # Define the voiceover text
-#         voiceover_text = """
-# Betrachten wir die konvergente <bookmark mark="a_1_in"/>Folge a n. Wir wissen, dass a n <bookmark mark="a_2_in"/>gegen Null konvergiert, also dass der Grenzwert der Folge gleich Null ist.
-# Betrachten wir jetzt eine neue <bookmark mark="b_n_in_1"/>Folge b n, die wir als minus eins hoch n mal a n geteilt durch zwei definieren.
-# Was ist <bookmark mark="b_n_in_2"/>der Grenzwert von b n für n gegen unendlich?
-# """
-
-#         # Action Sequence
-#         with self.voiceover(text=voiceover_text) as tracker:
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
             
-#             self.wait_until_bookmark("a_1_in")
-#             self.play(Write(series_1), run_time=.5)
+            self.wait_until_bookmark("beam_in")
+            self.add_shift_sound(.5)
+            self.play(beam.animate.shift(5*RIGHT), run_time=.5)
 
-#             self.wait_until_bookmark("a_2_in")
-#             self.play(Write(series_2[0]), run_time=.5)
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func))
 
-#             self.wait_until_bookmark("b_n_in_1")
-#             self.play(Write(series_3), run_time=.5)
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
-#             self.wait_until_bookmark("b_n_in_2")
-#             self.play(TransformMatchingTex(series_3, series_4))
+class Calc_practice_minmax_1_a(SophiaCursorScene):
 
-#         # Wait for 4 seconds at the end of the animation
-#         self.wait(6)
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
 
-# #
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        critical_point_at = self.translate("General.critical_point_at")
+        global_maximum_at = self.translate("General.global_maximum_at")
+        beam = ImageMobject(assets_folder / "img" / "aluminum_beam.png").set_y(-1).scale(.45)
+        func = MathTex(r"s(x)=-2x^2+12x+20", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        derivative = MathTex(r"s'(x)=-4x+12", r"\overset!=0", color=c1t, font_size=fs2).scale(.95).next_to(func, DOWN, buff=.4)
+        implication_1 = MathTex(r"\Downarrow", color=BLUE, font_size=fs2).next_to(derivative, DOWN, buff=.4)
+        zero_1_a = Tex("", r"$x=3$", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.4)
+        zero_1_b = Tex(critical_point_at, r"$x=3$", color=c1t, font_size=fs2).move_to(zero_1_a)
+        global_max = Tex(global_maximum_at, r"$x=3$", color=c1t, font_size=fs2).move_to(zero_1_b)
+        derivative_2 = MathTex(r"s''(x)=-4", r"<0", color=c1t, font_size=fs2).scale(.95).next_to(implication_1, DOWN, buff=.4)
+        self.add(beam, func)
+        
+
+        # Define the voiceover text
+        voiceover_text = """
+        In order to find the maximum strength of the beam, we need to determine the maximum value of the function s.
+        The <bookmark mark="beam_out"/>first thing we do is find the critical points of the function by computing the derivative and setting it equal to zero.
+        The derivative <bookmark mark="derivative_in"/>of s is equal to negative four x plus 12. If we want that to be equal to<bookmark mark="implication_1"/> zero, we get that<bookmark mark="zero_1"/>x is equal to three.
+        So we have exactly one critical point<bookmark mark="critical_point"/>, which is at x equal to three.
+        Now let's <bookmark mark="clean_up"/>analyze this critical point. In order to find out, if it's a minimum or a maximum, we compute the second derivative of s, which <bookmark mark="derivative_2_in"/>is equal to negative four, so <bookmark mark="derivative_2_neg"/>it's always less than zero.
+        This means, that the critical point at x equals three is a maximum, so <bookmark mark="solution"/>we have a global maximum at x equals three.
+        """
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("beam_out")
+            self.add_shift_sound(.5)
+            self.play(beam.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("derivative_in")
+            self.play(Write(derivative[0]))
+
+            self.wait_until_bookmark("derivative_in")
+            self.play(Write(derivative[1]), Write(implication_1))
+
+            self.wait_until_bookmark("zero_1")
+            self.play(Write(zero_1_a), run_time=0.5)
+
+            self.wait_until_bookmark("critical_point")
+            self.play(TransformMatchingTex(zero_1_a, zero_1_b), run_time=1)
+
+            self.wait_until_bookmark("clean_up")
+            zero_1_b.generate_target().move_to(derivative)
+            self.add_shift_sound(.5)
+            self.play(Unwrite(derivative), MoveToTarget(zero_1_b), run_time=.5)
+
+            self.wait_until_bookmark("derivative_2_in")
+            self.play(Write(derivative_2[0]))
+
+            self.wait_until_bookmark("derivative_2_neg")
+            self.play(Write(derivative_2[1]))
+
+            self.wait_until_bookmark("solution")
+            derivative_2.generate_target().move_to(zero_1_b)
+            self.add_shift_sound(.5)
+            self.play(Write(global_max), Unwrite(zero_1_b), MoveToTarget(derivative_2), run_time=.5)
+
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
 
 ##################################### Induction proof
 #####################################
@@ -9893,22 +9880,20 @@ class Calc_practice_continuous_2_b(SophiaCursorScene):
 #####################################
 class Calc_practice_continuous_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$a=1$, $b=0$", "$a=2$, $b=2$"],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_continuous.1q.question-text"),
-    #         freeTextDetail=SophiaFreeTextTaskDetail(
-    #             fallbackOptionIndex=1,
-    #             answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
-    #             answerOptionsTypes={
-    #                 "a": "number",
-    #                 "b": "number"
-    #             }
-    #         )
-    #     )
-
-    #
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$a=4$, $b=5$", "$a=0$, $b=0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_continuous.3q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
+                answerOptionsTypes={
+                    "a": "number",
+                    "b": "number"
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -9990,7 +9975,7 @@ class Calc_practice_continuous_3_a(SophiaCursorScene):
         right_limit_2 = MathTex(r"\underset{x\searrow0}{\lim} f(x) = ", r" \underset{x\searrow0}{\lim} \left( 4\tfrac{e^x}{\cos(x)} \right)", color=c1t, font_size=fs3)
         right_limit_3 = MathTex(r"\underset{x\searrow0}{\lim} f(x)= ", r"4", color=c1t, font_size=fs3)
         right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
-        sol = MathTex(r"\Rightarrow a=1, \, b=0", color=GREEN, font_size=fs3)
+        sol = MathTex(r"\Rightarrow a=4, \, b=5", color=GREEN, font_size=fs3)
         limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
 
         # Define the function text using MathTex
@@ -10007,6 +9992,90 @@ class Calc_practice_continuous_3_a(SophiaCursorScene):
 
         # Define the voiceover text
         voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_continuous.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+
+            self.wait_until_bookmark("highlight_1_a")
+            self.play(case_1_a.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("highlight_2_a")
+            self.play(case_3_a.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("reset_highlight_a")
+            self.play(case_1_a.animate.set_color(c1t), case_3_a.animate.set_color(c1t), run_time=.5)
+            
+            self.wait_until_bookmark("left_1_a")
+            self.play(Write(left_limit_1[0]))
+
+            self.wait_until_bookmark("left_1_b")
+            self.play(Write(left_limit_1[1]))
+
+            self.wait_until_bookmark("left_2")
+            self.play(TransformMatchingTex(left_limit_1, left_limit_2))
+
+            self.wait_until_bookmark("left_3")
+            self.play(TransformMatchingTex(left_limit_2, left_limit_3))
+
+            self.wait_until_bookmark("right_1_a")
+            self.play(Write(right_limit_1[0]))
+
+            self.wait_until_bookmark("right_1_b")
+            self.play(Write(right_limit_1[1]))
+
+            self.wait_until_bookmark("right_2")
+            self.play(TransformMatchingTex(right_limit_1, right_limit_2))
+
+            self.wait_until_bookmark("right_3")
+            self.play(TransformMatchingTex(right_limit_2, right_limit_3))
+
+            self.wait_until_bookmark("sol_in")
+            self.play(Write(sol))
+            
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_continuous_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.steadiness")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        for_string = self.translate("words.for")
+        func_string = fr"f(x)=\begin{{cases}}b - e^{{x}}& \text{{{for_string} }} x < 0, \\a & \text{{{for_string} }} x = 0, \\4\frac{{e^x-1}}{{\sin(x)}} & \text{{{for_string} }} x > 0\end{{cases}}"
+        function = MathTex(func_string, font_size=fs3, color=c1t).set_y(1.4)
+        left_limit_1 = MathTex(r"\underset{x\nearrow0}{\lim}f(x) = ", r"\underset{x\nearrow0}{\lim} (b-e^x)", color=c1t, font_size=fs3)
+        left_limit_2 = MathTex(r"\underset{x\nearrow0}{\lim} f(x) =",  r"b-", r"e^0", color=c1t, font_size=fs3)
+        left_limit_3 = MathTex(r"\underset{x\nearrow0}{\lim} f(x) =",  r"b-", r"1", color=c1t, font_size=fs3)
+        left_limit = VGroup(left_limit_1, left_limit_2, left_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        right_limit_1 = MathTex(r"\underset{x\searrow0}{\lim} f(x) = ", r"\underset{x\searrow0}{\lim} \left( 4\tfrac{e^x-1}{\sin(x)} \right)", color=c1t, font_size=fs3)
+        right_limit_2 = MathTex(r"\underset{x\searrow0}{\lim} f(x) = ", r" \underset{x\searrow0}{\lim} \left( 4\tfrac{e^x}{\cos(x)} \right)", color=c1t, font_size=fs3)
+        right_limit_3 = MathTex(r"\underset{x\searrow0}{\lim} f(x)= ", r"4", color=c1t, font_size=fs3)
+        right_limit = VGroup(right_limit_1, right_limit_2, right_limit_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = MathTex(r"\Rightarrow a=4, \, b=5", color=GREEN, font_size=fs3)
+        limits = VGroup(left_limit, right_limit, sol).arrange(DOWN, buff=.2).set_y(-.5)
+
+        # Define the function text using MathTex
+        
+
+        for_offset = int(self.translate("General.for_offset"))
+        case_0 = VGroup(*[function[0][idx] for idx in range(10)])
+        case_1_a, case_1_b = VGroup(*[function[0][idx] for idx in range(10,14)]), VGroup(*[function[0][idx] for idx in range(14,21+for_offset)])
+        case_2_a, case_2_b = VGroup(*[function[0][idx] for idx in range(21+for_offset,22+for_offset)]), VGroup(*[function[0][idx] for idx in range(22+for_offset, 29+2*for_offset)])
+        case_3_a, case_3_b = VGroup(*[function[0][idx] for idx in range(29+2*for_offset,41+2*for_offset)]), VGroup(*[function[0][idx] for idx in range(40+2*for_offset,46+3*for_offset)])
+        
+
+        self.add(function)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_continuous.3a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:

@@ -2910,7 +2910,9 @@
     "partial_integration": "Partielle Integration",
     "limit": "Grenzwert",
     "continuity": "Stetigkeit",
-    "for_offset": "1"
+    "for_offset": "1",
+    "critical_point_at": "kritischer Punkt bei ",
+    "global_maximum_at": "Globales Maximum bei "
   },
   "LinAlg": {
     "14I1": {
@@ -3888,6 +3890,11 @@
       },
       "2a": {
         "voiceover-text": "Wir benutzen  <bookmark mark=\"step_1_in\"/>partielle Integration, da die Funktion <bookmark mark=\"highlight_func\"/> als partielle Ableitung einer anderen Funktion betrachtet werden kann. Oder man könnte auch sagen, dass wir partielle Integration verwenden, um den Logarithmus zu umgehen.\nFür die partielle Integration verwenden wir die <bookmark mark=\"integration_by_parts_in\"/> Formel Integral von u d v ist gleich u mal v minus Integral von v d u.\nJetzt müssen wir also nur noch entscheiden, welcher Teil u und welcher Teil d v ist. Wir wählen <bookmark mark=\"highlight_x_dv\"/>x als d v und <bookmark mark=\"highlight_ln_u\"/>den Logarithmus von x durch 2 als u, weil x leichter zu integrieren ist als der Logarithmus.\nFür u v erhalten wir also <bookmark mark=\"u_transform\"/>den Logarithmus von x durch 2 mal<bookmark mark=\"dv_transform\"/> x Quadrat durch 2, denn das ist das Integral von x.\nUnd für das Integral von v d u erhalten wir<bookmark mark=\"vdu_int\"/> das Integral von <bookmark mark=\"v_transform\"/>ein halb x Quadrat mal <bookmark mark=\"du_transform\"/> eins durch x, was die Ableitung des Logarithmus von x durch zwei ist.\nWir vereinfachen dann noch den Term unter dem Integral zu <bookmark mark=\"simplify\"/>ein halb x. ...\nUnd als letzten <bookmark mark=\"step_2_in\"/>Schritt berechnen wir das Integral von ein halb x, und wir erhalten <bookmark mark=\"solution_in\"/>die Lösung ln x durch zwei mal ein halb x Quadrat minus eins viertel x Quadrat."
+      }
+    },
+    "practice_minmax": {
+      "01q": {
+        "voiceover-text": "Ein Industrieunternehmen stellt <bookmark mark=\"beam_in\"/>Aluminiumträger her. Die Stabilität der Träger in Abhängigkeit von der Querschnittsfläche x wird durch die<bookmark mark=\"func_in\"/> Funktion s von x gleich minus 2 x Quadrat + 12 x + 20 beschrieben.\nWelcher Wert für die Querschnittsfläche x maximiert die Stabilität des Trägers?"
       }
     }
   },
