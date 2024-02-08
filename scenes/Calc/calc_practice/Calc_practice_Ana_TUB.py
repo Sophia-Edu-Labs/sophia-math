@@ -7886,46 +7886,46 @@ class Calc_practice_induction_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-To prove that the power set of a set with \( n \) elements contains \( 2^n \) elements using mathematical induction, we follow these steps:
-1. **Base Case:** Show the statement is true for a small value of \( n \), usually \( n = 0 \).
-2. **Inductive Step:** Assume the statement is true for some \( n = k \) (where \( k \) is a non-negative integer), and then prove it for \( n = k + 1 \).
-### Base Case (n = 0)
-Consider a set \( S \) with no elements, i.e., \( S = \{\} \). The power set of \( S \), denoted \( \mathcal{P}(S) \), contains only the empty set: \( \mathcal{P}(S) = \{\{\}\} \). 
-The number of elements in \( \mathcal{P}(S) \) is 1, which is \( 2^0 \) (since \( 2^0 = 1 \)). So, the statement holds true for \( n = 0 \).
-### Inductive Step
-Assume that the statement is true for a set with \( k \) elements, where \( k \) is any non-negative integer. That is, assume any set with \( k \) elements has a power set containing \( 2^k \) elements.
-Now consider a set \( T \) with \( k + 1 \) elements. We can write \( T = S \cup \{x\} \), where \( S \) is a set with \( k \) elements and \( x \) is an element not in \( S \).
-The power set of \( T \), \( \mathcal{P}(T) \), consists of all subsets of \( S \) (which, by our inductive hypothesis, number \( 2^k \)) plus all subsets of \( S \) with \( x \) added to them.
-For each subset of \( S \), there is a corresponding unique subset in \( \mathcal{P}(T) \) that includes the element \( x \). Since there are \( 2^k \) subsets of \( S \), adding \( x \) to each of these subsets creates another \( 2^k \) subsets.
-Thus, the total number of subsets in \( \mathcal{P}(T) \) is \( 2^k \) (subsets of \( S \)) plus \( 2^k \) (subsets of \( S \) with \( x \) added), which equals \( 2^k + 2^k = 2 \times 2^k = 2^{k+1} \).
-This proves that a set with \( k + 1 \) elements has a power set containing \( 2^{k+1} \) elements.
-Since the statement is true for \( n = 0 \) (base case) and true for \( n = k \) implies it is true for \( n = k + 1 \) (inductive step), by the principle of mathematical induction, the statement is true for all non-negative integers \( n \).
-This completes the induction proof.
-For this answer to be correct, the student needs to:
-- do the induction base, explicitly mentioning the empty set
-- do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
-""",
-"""
-The student did the base correctly, but not the step
-""",
-"""
-The student did the step correctly, but not the base.
-""",
-"""
-The answer is incorrect.
-"""
-],
+                """
+                To prove that the power set of a set with \( n \) elements contains \( 2^n \) elements using mathematical induction, we follow these steps:
+                1. **Base Case:** Show the statement is true for a small value of \( n \), usually \( n = 0 \).
+                2. **Inductive Step:** Assume the statement is true for some \( n = k \) (where \( k \) is a non-negative integer), and then prove it for \( n = k + 1 \).
+                ### Base Case (n = 0)
+                Consider a set \( S \) with no elements, i.e., \( S = \{\} \). The power set of \( S \), denoted \( \mathcal{P}(S) \), contains only the empty set: \( \mathcal{P}(S) = \{\{\}\} \). 
+                The number of elements in \( \mathcal{P}(S) \) is 1, which is \( 2^0 \) (since \( 2^0 = 1 \)). So, the statement holds true for \( n = 0 \).
+                ### Inductive Step
+                Assume that the statement is true for a set with \( k \) elements, where \( k \) is any non-negative integer. That is, assume any set with \( k \) elements has a power set containing \( 2^k \) elements.
+                Now consider a set \( T \) with \( k + 1 \) elements. We can write \( T = S \cup \{x\} \), where \( S \) is a set with \( k \) elements and \( x \) is an element not in \( S \).
+                The power set of \( T \), \( \mathcal{P}(T) \), consists of all subsets of \( S \) (which, by our inductive hypothesis, number \( 2^k \)) plus all subsets of \( S \) with \( x \) added to them.
+                For each subset of \( S \), there is a corresponding unique subset in \( \mathcal{P}(T) \) that includes the element \( x \). Since there are \( 2^k \) subsets of \( S \), adding \( x \) to each of these subsets creates another \( 2^k \) subsets.
+                Thus, the total number of subsets in \( \mathcal{P}(T) \) is \( 2^k \) (subsets of \( S \)) plus \( 2^k \) (subsets of \( S \) with \( x \) added), which equals \( 2^k + 2^k = 2 \times 2^k = 2^{k+1} \).
+                This proves that a set with \( k + 1 \) elements has a power set containing \( 2^{k+1} \) elements.
+                Since the statement is true for \( n = 0 \) (base case) and true for \( n = k \) implies it is true for \( n = k + 1 \) (inductive step), by the principle of mathematical induction, the statement is true for all non-negative integers \( n \).
+                This completes the induction proof.
+                For this answer to be correct, the student needs to:
+                - do the induction base, explicitly mentioning the empty set
+                - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+                """,
+                """
+                The student did the base correctly, but not the step
+                """,
+                """
+                The student did the step correctly, but not the base.
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_induction.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
                 fallbackOptionIndex=1,
                 specialInputSnippets = ["[ ]", "f"],
             )
-        )
-    
+                        )
+                    
 
-    # Main method for constructing the animation
+                    # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
         super().construct()
@@ -7962,7 +7962,6 @@ The answer is incorrect.
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
-#
 
 class Calc_practice_induction_1_a(SophiaCursorScene):
 
@@ -9146,7 +9145,7 @@ class Calc_practice_induction_3_d(SophiaCursorScene):
 
 #####################################
 #####################################
-class Calc_practice_induction_3_q(SophiaCursorScene):
+class Calc_practice_induction_4_q(SophiaCursorScene):
 
     # Main method for constructing the animation
     def construct(self):
@@ -9159,17 +9158,13 @@ class Calc_practice_induction_3_q(SophiaCursorScene):
 
         # Define the function text using MathTex
         a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
-        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.9).arrange(RIGHT, buff=.4)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.8).arrange(RIGHT, buff=.4)
         a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
 
         theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
 
         # Define the voiceover text
-        voiceover_text = """
-        
-        Consider the sequence <bookmark mark="sequence_in_1"/>"a" n, which is defined recursively.
-        We set <bookmark mark="sequence_in_2"/>"a" zero to the square root of two, and <bookmark mark="sequence_in_3"/>a n plus one is defined as the squareroot of "a" n plus two.
-        """
+        voiceover_text = self.translate("Calc_1.practice_induction.4q.voiceover-text")
         
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -9189,6 +9184,188 @@ class Calc_practice_induction_3_q(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
+class Calc_practice_induction_4_a(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.8).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+        theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+        self.add(a_n, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"a_0=\sqrt2", r"\leq2", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"a_{n+1}=", r"\sqrt{a_n+2}", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"\leq", r"{\sqrt{2+2}}", r"=", r"2", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_induction.4a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), VGroup(a_n, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+            
+            self.wait_until_bookmark("term_2_in_1")
+            self.play(Write(term_2[0]), Write(term_2[1]))
+
+            self.wait_until_bookmark("term_2_in_2")
+            self.play(Write(term_2[2]), Write(term_2[3]))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+#####################################
+#####################################
+class Calc_practice_induction_5_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        is_divisible_by_5 = self.translate("General.is_divisible_by_5")
+        forall = self.translate("General.for_all")
+        theorem_strings = [r"$6^n-1$", is_divisible_by_5, forall+r" $n\in\mathbb N$"]
+        theorem = VGroup(*[Tex(thm_string, color=BLUE, font_size=fs2) for thm_string in theorem_strings]).arrange(DOWN, buff=.2).set_y(1.2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.5q.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+    
+            self.wait_until_bookmark("theorem_in")
+            for idx in range(3):
+                self.play(Write(theorem[idx]), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_5_a(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_divisible_by_5 = self.translate("General.is_divisible_by_5")
+        forall = self.translate("General.for_all")
+        theorem_strings = [r"$6^n-1$", is_divisible_by_5, forall+r" $n\in\mathbb N$"]
+        theorem = VGroup(*[Tex(thm_string, color=BLUE, font_size=fs2) for thm_string in theorem_strings]).arrange(DOWN, buff=.2).set_y(1.2)
+        self.add(theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"6^0-1=1-1", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base).scale(1.1)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"6^{n+1}-1=", r"6\cdot", r"6^n", r"-1", color=c3t, font_size=fs3)
+        term_2_a = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+6-1", color=c3t, font_size=fs3)
+        term_2_b = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+5", color=c3t, font_size=fs3)
+        term_2 = VGroup(term_2_a, term_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        term_3 = MathTex(r"5(6m+1)", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.1).next_to(induction_step, DOWN, buff=.6)
+        explainer_1 = MathTex(r"6^n", r"-1", r"=", r"5m", font_size=fs2, color=BLUE)
+        explainer_2 = MathTex(r"6^n", r"=", r"5m", r"+1", font_size=fs2, color=BLUE)
+        explainer = VGroup(explainer_1, explainer_2).next_to(terms, DOWN, buff=.2)
+        step = VGroup(induction_step, term_1, term_2_b, term_3)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_induction.5a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), theorem.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_1")
+            self.play(Write(term_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_2")
+            self.play(*[Write(term_1[idx]) for idx in range(1, 4)], run_time=.5)
+
+            self.wait_until_bookmark("explainer_1_in")
+            self.play(Write(explainer_1), run_time=1)
+
+            self.wait_until_bookmark("explainer_2_in")
+            self.play(TransformMatchingTex(explainer_1, explainer_2))
+
+            self.wait_until_bookmark("term_2_a_transforms")
+            self.play(ReplacementTransform(VGroup(explainer_2[2].copy(), explainer_2[3].copy()), term_2_a[1]))
+            self.play( ReplacementTransform(term_1[2].copy(), term_2_a[0]), ReplacementTransform(term_1[3].copy(), term_2_a[2]), run_time=1)
+            
+            self.wait_until_bookmark("term_2_a_complete")
+            self.play(Write(VGroup(term_2_a[3], term_2_a[4])), Unwrite(explainer_2))
+
+            self.wait_until_bookmark("term_2_b")
+            self.play(TransformMatchingTex(term_2_a, term_2_b))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(Write(term_3))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+
 
 ##################################### Intermediate value theorem
 #####################################
@@ -10102,11 +10279,11 @@ class Calc_practice_continuous_1_b(SophiaCursorScene):
             self.wait_until_bookmark("highlight_1_a")
             self.play(case_1_a.animate.set_color(RED), run_time=.5)
 
-            self.wait_until_bookmark("highlight_1_b")
-            self.play(case_1_b.animate.set_color(RED), run_time=.5)
+            self.wait_until_bookmark("highlight_2_a")
+            self.play(case_3_a.animate.set_color(RED), run_time=.5)
 
             self.wait_until_bookmark("reset_highlight_a")
-            self.play(case_1_a.animate.set_color(c1t), case_1_b.animate.set_color(c1t), run_time=.5)
+            self.play(case_1_a.animate.set_color(c1t), case_3_a.animate.set_color(c1t), run_time=.5)
             
             self.wait_until_bookmark("left_1_a")
             self.play(Write(left_limit_1[0]))
