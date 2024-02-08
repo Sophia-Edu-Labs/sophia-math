@@ -2912,7 +2912,9 @@
     "continuity": "Stetigkeit",
     "for_offset": "1",
     "critical_point_at": "kritischer Punkt bei ",
-    "global_maximum_at": "Globales Maximum bei "
+    "global_maximum_at": "Globales Maximum bei ",
+    "product_rule": "Produktregel",
+    "sum_rule": "Summenregel"
   },
   "LinAlg": {
     "14I1": {
@@ -3821,7 +3823,8 @@
         "voiceover-text": "Zunächst stellen wir fest, dass die Funktionen <bookmark mark=\"highlight_1_a\"/> 2 x Quadrat minus zwei sowie <bookmark mark=\"highlight_2_a\"/>2 x plus b stetige Funktionen sind, so dass die Funktion f für alle x ungleich 2 stetig ist.<bookmark mark=\"reset_highlight_a\"/>\nUm nun sicherzustellen, dass die Funktion bei x gleich 2 stetig ist, müssen wir sicherstellen, dass der linksseitige Grenzwert für x gegen 2 und der rechtsseitige Grenzwert für x gegen 2 gleich dem Wert von f von 2 sind.\nBeginnen wir also mit der Berechnung des <bookmark mark=\"left_1_a\"/>linkseitigen Grenzwerts für x gegen 2 von f von x. Dieser ist <bookmark mark=\"left_1_b\"/>gleich dem linksseitigen Grenzwert für x gegen 2 von 2 x zum Quadrat minus 2.\nWir können hier einfach 2 für x einsetzen, und <bookmark mark=\"left_2\"/> das ist gleich 2 mal 2 zum Quadrat minus zwei, also <bookmark mark=\"left_3\" />gleich 6.\nAls Nächstes berechnen wir den <bookmark mark=\"right_1_a\"/>rechtsseitigen Grenzwert für x gegen 2 von f von x. Dieser ist gleich dem rechtsseitigen Grenzwert für x gegen 2 von <bookmark mark=\"right_1_b\"/>2 x plus b.\nWir können sehen, dass dieser <bookmark mark=\"right_2\"/> gleich 4 plus b ist.\nUm nun sicherzustellen, dass beide Grenzwerte gleich dem Wert von f bei x gleich 2 sind, setzen wir einfach <bookmark mark=\"sol_in\"/> a auf 6 und b auf 2."
       },
       "2q": {
-        "voiceover-text": "Betrachte die <bookmark mark=\"func_in\"/>stückweise definierte Funktion f, die <bookmark mark=\"case_1_a\"/>als 2 x Quadrat minus 2 <bookmark mark=\"case_1_b\"/>für x kleiner als 2 definiert ist, <bookmark mark=\"case_2_ab\"/>a für x gleich 2, <bookmark mark=\"case_3_a\"/>und 2 x plus b <bookmark mark=\"case_3_b\"/>für x größer als 2. <bookmark mark=\"qmark\"/>\nFür welche Werte von a und b ist die Funktion stetig?"
+        "voiceover-text": "Betrachte die <bookmark mark=\"func_in\"/>stückweise definierte Funktion f, die <bookmark mark=\"case_1_a\"/>als 2 x Quadrat minus 2 <bookmark mark=\"case_1_b\"/>für x kleiner als 2 definiert ist, <bookmark mark=\"case_2_ab\"/>a für x gleich 2, <bookmark mark=\"case_3_a\"/>und 2 x plus b <bookmark mark=\"case_3_b\"/>für x größer als 2. <bookmark mark=\"qmark\"/>\nFür welche Werte von a und b ist die Funktion stetig?",
+        "question-text": "Für welche Werte von $a$ und $b$ ist die Funktion stetig?"
       },
       "3q": {
         "voiceover-text": "Gegeben sei die <bookmark mark=\"func_in\"/>stückweise Funktion f, die <bookmark mark=\"case_1_a\"/>als b - e hoch x <bookmark mark=\"case_1_b\"/>für negative x, definiert ist \n<bookmark mark=\"case_2_ab\"/>als a für x gleich 0, <bookmark mark=\"case_3_a\"/>und als viermal e hoch x minus eins geteilt durch Sinus von x <bookmark mark=\"case_3_b\"/>für \npositive x. \n<bookmark mark=\"qmark\"/>\nFür welche Werte von a und b ist diese Funktion stetig?",
@@ -3874,6 +3877,20 @@
       },
       "2a": {
         "voiceover-text": "Um die Ableitung der Funktion zu berechnen, verwenden wir die<bookmark mark=\"quotient_rule\"/>Quotientenregel, da die Funktion aus dem Quotienten zweier Funktionen besteht. Die Quotientenregel besagt, dass die Ableitung des Quotienten gleich der Ableitung des Zählers mal dem Nenner ist, minus dem Zähler mal der Ableitung des Nenners, alles geteilt durch das Quadrat des Nenners.\nZuerst<bookmark mark=\"frac_in\"/> berechnen wir also die Ableitung des Zählers, die <bookmark mark=\"el_1\"/>gleich minus dem Sinus von x ist, und multiplizieren sie mit <bookmark mark=\"el_2\"/>dem Nenner, x  Quadrat minus 4. Davon subtrahieren wir das Produkt des Zählers, <bookmark mark=\"el_3\"/>also dem Kosinus von x multipliziert mit <bookmark mark=\"el_4\"/>der Ableitung des Nenners, 2 x.\nUnd dann wird das Ganze durch <bookmark mark=\"el_5\"/>das Quadrat des Nenners geteilt, also x Quadrat minus vier, zum Quadrat.\nUnd das war's, das ist die Ableitung, die wir gesucht haben."
+      },
+      "3q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"f_in\"/>f von x gleich x Quadrat mal e hoch x. \nWas ist die <bookmark mark=\"derivative_transform\"/>Ableitung dieser Funktion?",
+        "question-text": "Berechne die Ableitung $\\frac{d}{dx}\\left(x^2\\cdot e^x\\right)$"
+      },
+      "3a": {
+        "voiceover-text": "Wir benutzen hier die <bookmark mark=\"product_rule_in\"/>Produktregel.\nDie Produktregel besagt, dass die Ableitung von f mal g gleich f mal die Ableitung von g plus g mal die Ableitung von x ist.\nAlso <bookmark mark=\"f_x_squared\"/>setzen wir x Quadrat zu f und <bookmark mark=\"g_e_x\"/>e hoch x zu g.\nSomit erhalten wir, dass unsere Ableitung gleich<bookmark mark=\"f\"/> x Quadrat mal <bookmark mark=\"g_prime\"/>die Ableitung von e hoch x plus <bookmark mark=\"g\"/>e hoch x mal <bookmark mark=\"f_prime\"/>die Ableitung von x Quadrat ist.\nBerechnen wir nun die Ableitungen. Die Ableitung von e hoch x ist<bookmark mark=\"solve_g_prime\"/> gleich e hoch x, und die Ableitung von x Quadrat <bookmark mark=\"solve_f_prime\"/> ist gleich zwei x.\nJetzt können wir noch e hoch x ausklammern, und<bookmark mark=\"factor_out\"/> wir erhalten die endgültige Lösung e hoch x mal Klammer auf x Quadrat plus 2 x Klammer zu."
+      },
+      "4q": {
+        "voiceover-text": "Was ist die Ableitung der Funktion <bookmark mark=\"f_in\"/>f von x gleich Sinus von x plus dem natürlichen Logarithmus von x Quadrat?",
+        "question-text": "Berechne die Ableitung der Funktion $f(x)=\\sin(x)+\\ln\\left(x^2\\right)$."
+      },
+      "4a": {
+        "voiceover-text": "Die Funktion, für die wir die Ableitung berechnen wollen, ist eine Summe von zwei Funktionen, also wenden wir <bookmark mark=\"step_1\"/>die Summenregel an: ...\nDie Ableitung einer Summe ist gleich <bookmark mark=\"derivative_3\"/>der Summe der Ableitungen. Nun müssen wir <bookmark mark=\"step_2_a\"/>die einzelnen Ableitungen berechnen. ...\nDie Ableitung des Sinus von x ist <bookmark mark=\"sine_prime\"/> gleich dem Kosinus von x. Um nun die Ableitung des natürlichen Logarithmus von x zum Quadrat zu berechnen, müssen wir <bookmark mark=\"step_2_b\"/>die Kettenregel anwenden. ...\nDie Kettenregel besagt, dass die Ableitung einer Komposition von Funktionen gleich der Ableitung der äußeren Funktion mal der Ableitung der inneren Funktion ist. ...\nDie Ableitung von <bookmark mark=\"highlight_outer\"/> der äußeren Funktion <bookmark mark=\"outer_derivative\"/> ist gleich eins durch x Quadrat, weil die Ableitung des natürlichen Logarithmus gleich eins durch sein Argument ist. ...\nWir multiplizieren das <bookmark mark=\"highlight_inner\"/>mit der Ableitung der inneren Funktion, die <bookmark mark=\"inner_derivative\"/> gleich 2 x ist. ...\nJetzt können wir <bookmark mark=\"highlight_rewrite\" />eins durch x quadriert mal zwei x<bookmark mark=\"solution\" /> als 2 durch x umschreiben und erhalten die Lösung Kosinus von x plus 2 durch x."
       }
     },
     "practice_integrals": {

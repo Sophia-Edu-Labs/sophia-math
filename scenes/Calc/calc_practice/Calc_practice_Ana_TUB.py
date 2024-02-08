@@ -6571,13 +6571,13 @@ class Calc_practice_derivatives_2_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-\frac{-\sin(x)(x^2-4)-\cos(x)(2x)}{(x^2-4)^2} or an equivalent statement
-""",
-"""
-The answer is incorrect.
-"""
-],
+            """
+            \frac{-\sin(x)(x^2-4)-\cos(x)(2x)}{(x^2-4)^2} or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_derivatives.2q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -6725,8 +6725,376 @@ class Calc_practice_derivatives_2_b(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)        
-#
+
+#####################################
+#####################################
+class Calc_practice_derivatives_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+            """
+            e^x(x^2+2x) or e^x(2x+x^2) or e^x*2x+e^x*x^2 or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_derivatives.3q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"x^2\cdot e^x", r"\,", color=c1t, font_size=fs2).set_y(2)
+        derivative = MathTex(r"\frac{d}{dx}\left(", r"x^2\cdot e^x", r"\right)\,\,=?", color=c1t, font_size=fs2).set_y(2)
         
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_derivatives.3q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(function))
+
+            self.wait_until_bookmark("derivative_transform")
+            self.play(*[ReplacementTransform(function[idx], derivative[idx])for idx in range(2)], Write(derivative[-1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+
+class Calc_practice_derivatives_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        product_rule = self.translate("General.product_rule")
+        derivative_1 = MathTex(r"\frac{d}{dx}\left(", r"x^2", r"\cdot", r"e^x", r"\right)\,\,=?", color=c1t, font_size=fs2).set_y(2)
+        derivative_2 = MathTex(r"\frac{d}{dx}\left(", r"x^2", r"\cdot", r"e^x", r"\right)", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", product_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_3 = MathTex(r"x^2", r"\cdot", r"\frac{d}{dx}", r"e^x", r"+", r"e^x", r"\cdot", r"\frac{d}{dx}", r"x^2", color=c1t, font_size=fs2)
+        derivative_4 = MathTex(r"x^2", r"\cdot", r"e^x", r"+", r"e^x", r"\cdot", r"\frac{d}{dx}", r"x^2", color=c1t, font_size=fs2)
+        derivative_5 = MathTex(r"x^2", r"\cdot", r"e^x", r"+", r"e^x", r"\cdot", r"2x", color=c1t, font_size=fs2)
+        derivative_6 = MathTex(r"e^x", r"\cdot", r"\left(", r"x^2", r"+", r"2x", r"\right)",color=c1t, font_size=fs2)
+        derivative_3_to_6 =VGroup(derivative_3, derivative_4, derivative_5, derivative_6).next_to(step_1, DOWN, buff=.4)
+        
+        self.add(derivative_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.practice_derivatives.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("product_rule_in")
+            self.play(Write(step_1), TransformMatchingTex(derivative_1, derivative_2))
+
+            self.wait_until_bookmark("f_x_squared")
+            self.play(derivative_2[1].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("g_e_x")
+            self.play(derivative_2[1].animate.set_color(c1t), derivative_2[3].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("f")
+            self.play(ReplacementTransform(derivative_2[1].copy(), derivative_3[0]), derivative_2[3].animate.set_color(c1t), run_time=1)
+
+            self.wait_until_bookmark("g_prime")
+            self.play(ReplacementTransform(derivative_2[3].copy(), VGroup(derivative_3[2], derivative_3[3])), Write(derivative_3[1]), run_time=1)
+
+            self.wait_until_bookmark("g")
+            self.play(ReplacementTransform(derivative_2[3].copy(), derivative_3[5]), Write(derivative_3[4]), run_time=1)
+
+            self.wait_until_bookmark("f_prime")
+            self.play(ReplacementTransform(derivative_2[1].copy(), VGroup(derivative_3[7], derivative_3[8])), Write(derivative_3[6]), run_time=1)
+
+            self.wait_until_bookmark("solve_g_prime")
+            self.play(TransformMatchingTex(derivative_3, derivative_4), run_time=1)
+
+            self.wait_until_bookmark("solve_f_prime")
+            self.play(TransformMatchingTex(derivative_4, derivative_5), run_time=1)
+
+            self.wait_until_bookmark("factor_out")
+            self.play(TransformMatchingTex(derivative_5, derivative_6), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_derivatives_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        product_rule = self.translate("General.product_rule")
+        derivative_1 = MathTex(r"\frac{d}{dx}\left(", r"x^2", r"\cdot", r"e^x", r"\right)\,\,=?", color=c1t, font_size=fs2).set_y(2)
+        derivative_2 = MathTex(r"\frac{d}{dx}\left(", r"x^2", r"\cdot", r"e^x", r"\right)", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", product_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_3 = MathTex(r"x^2", r"\cdot", r"\frac{d}{dx}", r"e^x", r"+", r"e^x", r"\cdot", r"\frac{d}{dx}", r"x^2", color=c1t, font_size=fs2)
+        derivative_4 = MathTex(r"x^2", r"\cdot", r"e^x", r"+", r"e^x", r"\cdot", r"\frac{d}{dx}", r"x^2", color=c1t, font_size=fs2)
+        derivative_5 = MathTex(r"x^2", r"\cdot", r"e^x", r"+", r"e^x", r"\cdot", r"2x", color=c1t, font_size=fs2)
+        derivative_6 = MathTex(r"e^x", r"\cdot", r"\left(", r"x^2", r"+", r"2x", r"\right)",color=c1t, font_size=fs2)
+        derivative_3_to_6 =VGroup(derivative_3, derivative_4, derivative_5, derivative_6).next_to(step_1, DOWN, buff=.4)
+        
+        self.add(derivative_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.practice_derivatives.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("product_rule_in")
+            self.play(Write(step_1), TransformMatchingTex(derivative_1, derivative_2))
+
+            self.wait_until_bookmark("f_x_squared")
+            self.play(derivative_2[1].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("g_e_x")
+            self.play(derivative_2[1].animate.set_color(c1t), derivative_2[3].animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("f")
+            self.play(ReplacementTransform(derivative_2[1].copy(), derivative_3[0]), derivative_2[3].animate.set_color(c1t), run_time=1)
+
+            self.wait_until_bookmark("g_prime")
+            self.play(ReplacementTransform(derivative_2[3].copy(), VGroup(derivative_3[2], derivative_3[3])), Write(derivative_3[1]), run_time=1)
+
+            self.wait_until_bookmark("g")
+            self.play(ReplacementTransform(derivative_2[3].copy(), derivative_3[5]), Write(derivative_3[4]), run_time=1)
+
+            self.wait_until_bookmark("f_prime")
+            self.play(ReplacementTransform(derivative_2[1].copy(), VGroup(derivative_3[7], derivative_3[8])), Write(derivative_3[6]), run_time=1)
+
+            self.wait_until_bookmark("solve_g_prime")
+            self.play(TransformMatchingTex(derivative_3, derivative_4), run_time=1)
+
+            self.wait_until_bookmark("solve_f_prime")
+            self.play(TransformMatchingTex(derivative_4, derivative_5), run_time=1)
+
+            self.wait_until_bookmark("factor_out")
+            self.play(TransformMatchingTex(derivative_5, derivative_6), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)   
+
+#####################################
+#####################################
+class Calc_practice_derivatives_4_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+            """
+            cos(x)+2/x or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_derivatives.4q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        derivative = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)+\ln\left(x^2\right)", r"\right)=?", color=c1t, font_size=fs2).scale(.95).set_y(2)
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_derivatives.4q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(derivative))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_derivatives_4_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        scale_factor = .85
+        derivative_1 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"+", r"\ln\left(x^2\right)", r"\right)=?", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        derivative_2 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"+", r"\ln\left(x^2\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", self.translate("General.sum_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_1, DOWN, buff=.4)
+        derivative_3 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"\right)", r"+", r"\frac{d}{dx}\left(", r"\ln\left(", r"x^2", r"\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_1, DOWN, buff=.4)
+        step_2 = Tex(r"$\Downarrow$ ", self.translate("General.chain_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_3, DOWN, buff=.4)
+        derivative_4 = MathTex(r"\cos(x)", r"+", r"\tfrac{1}{x^2}", r"\cdot", r"2x", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_2, DOWN, buff=.4)
+        derivative_5 = MathTex(r"\cos(x)", r"+", r"\tfrac{2}{x}", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_2, DOWN, buff=.4)
+        self.add(derivative_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_derivatives.4a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), TransformMatchingTex(derivative_1, derivative_2), run_time=1)
+
+            self.wait_until_bookmark("derivative_3")
+            self.play(Write(derivative_3), run_time=1)
+
+            self.wait_until_bookmark("step_2_a")
+            self.play(Write(step_2[0]), run_time=1)
+
+            self.wait_until_bookmark("sine_prime")
+            self.play(ReplacementTransform(VGroup(derivative_3[0], derivative_3[1], derivative_3[2]).copy(), derivative_4[0]), run_time=1)
+
+            self.wait_until_bookmark("step_2_b")
+            self.play(Write(step_2[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_outer")
+            outer = VGroup(derivative_3[5], derivative_3[6], derivative_3[7]).copy()
+            self.play(outer.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("outer_derivative")
+            self.play(ReplacementTransform(outer, derivative_4[2]), Write(derivative_4[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_inner")
+            inner = derivative_3[6].copy()
+            self.play(inner.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("inner_derivative")
+            self.play(ReplacementTransform(inner, derivative_4[4]), Write(derivative_4[3]), run_time=1)
+
+            self.wait_until_bookmark("highlight_rewrite")
+            rewrite = VGroup(derivative_4[2], derivative_4[3], derivative_4[4])
+            self.play(rewrite.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(ReplacementTransform(derivative_4[0], derivative_5[0]), ReplacementTransform(derivative_4[1], derivative_5[1]), ReplacementTransform(rewrite, derivative_5[2]), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+class Calc_practice_derivatives_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        scale_factor = .85
+        derivative_1 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"+", r"\ln\left(x^2\right)", r"\right)=?", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        derivative_2 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"+", r"\ln\left(x^2\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", self.translate("General.sum_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_1, DOWN, buff=.4)
+        derivative_3 = MathTex(r"\frac{d}{dx}\left(", r"\sin(x)", r"\right)", r"+", r"\frac{d}{dx}\left(", r"\ln\left(", r"x^2", r"\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_1, DOWN, buff=.4)
+        step_2 = Tex(r"$\Downarrow$ ", self.translate("General.chain_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_3, DOWN, buff=.4)
+        derivative_4 = MathTex(r"\cos(x)", r"+", r"\tfrac{1}{x^2}", r"\cdot", r"2x", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_2, DOWN, buff=.4)
+        derivative_5 = MathTex(r"\cos(x)", r"+", r"\tfrac{2}{x}", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_2, DOWN, buff=.4)
+        self.add(derivative_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_derivatives.4a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), TransformMatchingTex(derivative_1, derivative_2), run_time=1)
+
+            self.wait_until_bookmark("derivative_3")
+            self.play(Write(derivative_3), run_time=1)
+
+            self.wait_until_bookmark("step_2_a")
+            self.play(Write(step_2[0]), run_time=1)
+
+            self.wait_until_bookmark("sine_prime")
+            self.play(ReplacementTransform(VGroup(derivative_3[0], derivative_3[1], derivative_3[2]).copy(), derivative_4[0]), run_time=1)
+
+            self.wait_until_bookmark("step_2_b")
+            self.play(Write(step_2[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_outer")
+            outer = VGroup(derivative_3[5], derivative_3[6], derivative_3[7]).copy()
+            self.play(outer.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("outer_derivative")
+            self.play(ReplacementTransform(outer, derivative_4[2]), Write(derivative_4[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_inner")
+            inner = derivative_3[6].copy()
+            self.play(inner.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("inner_derivative")
+            self.play(ReplacementTransform(inner, derivative_4[4]), Write(derivative_4[3]), run_time=1)
+
+            self.wait_until_bookmark("highlight_rewrite")
+            rewrite = VGroup(derivative_4[2], derivative_4[3], derivative_4[4])
+            self.play(rewrite.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("solution")
+            self.play(ReplacementTransform(derivative_4[0], derivative_5[0]), ReplacementTransform(derivative_4[1], derivative_5[1]), ReplacementTransform(rewrite, derivative_5[2]), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+
 ##################################### Integrals
 #####################################
 class Calc_practice_integrals_1_q(SophiaCursorScene):
@@ -6734,13 +7102,13 @@ class Calc_practice_integrals_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-"2\sqrt x+\ln(|1+x|)" or an equivalent statement
-""",
-"""
-The answer is incorrect.
-"""
-],
+            """
+            "2\sqrt x+\ln(|1+x|)" or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_integrals.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -6884,13 +7252,13 @@ class Calc_practice_integrals_2_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-\frac{x^2}{2} \ln\left(\frac{x}{2}\right) - \frac{x^2}{4}, or \frac{x^2}{2} (\ln\left(\frac{x}{2}\right) - \frac{1}{2}) + C or an equivalent statement. It is also fine, if the student forgets the +c
-""",
-"""
-The answer is incorrect.
-"""
-],
+                """
+                \frac{x^2}{2} \ln\left(\frac{x}{2}\right) - \frac{x^2}{4}, or \frac{x^2}{2} (\ln\left(\frac{x}{2}\right) - \frac{1}{2}) + C or an equivalent statement. It is also fine, if the student forgets the +c
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_integrals.2q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -10650,7 +11018,20 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_derivatives_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_derivatives_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_derivatives_2_b),
-########################################################### Integrals
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_derivatives_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_derivatives_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_4_b),
+########################################################### MinMax
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_minmax_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_1_b),
+    ########################################################### Integrals
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_integrals_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_a),
@@ -10706,4 +11087,12 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_continuous_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_continuous_1_a),
     PagePrototypeVideo.from_scene(Calc_practice_continuous_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_continuous_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_continuous_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_continuous_3_b),
 ]

@@ -2912,7 +2912,9 @@
     "continuity": "continuity",
     "for_offset": "0",
     "critical_point_at": "critical point at ",
-    "global_maximum_at": "global maximum at "
+    "global_maximum_at": "global maximum at ",
+    "product_rule": "product rule",
+    "sum_rule": "sum rule"
   },
   "LinAlg": {
     "14I1": {
@@ -3881,6 +3883,20 @@
       },
       "2a": {
         "voiceover-text": "To compute the derivative of this function, we'll use the<bookmark mark=\"quotient_rule\"/>quotient rule, because it is a quotient of two functions. The quotient rule says, that the derivative of the quotient is equal to the derivative of the numerator function times the denominator function, minus the numerator function times the derivative of the denominator function, all over the square of the denominator function.\nSo first<bookmark mark=\"frac_in\"/>, we compute the derivative of the numerator, which is <bookmark mark=\"el_1\"/>the negative sine of x and multiply it with <bookmark mark=\"el_2\"/>the denominator x squared minus 4. From this, we subtract the product of the enumerator, <bookmark mark=\"el_3\"/>which is the cosine of x multiplied with <bookmark mark=\"el_4\"/>the derivative of the denominator, 2 x.\nAnd then all of that is divided by <bookmark mark=\"el_5\"/>the denominator squared, which is x squared minus four, squared.\nAnd that's it, that's the derivative we were looking for."
+      },
+      "3q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals x squared times e to the power of x. What is the <bookmark mark=\"derivative_transform\"/>derivative of that function?",
+        "question-text": "Compute the derivative $\\frac{d}{dx}\\left(x^2\\cdot e^x\\right)$"
+      },
+      "3a": {
+        "voiceover-text": "We're going to use the <bookmark mark=\"product_rule_in\"/>product rule here.\nThe product rule says that the derivative of f times g is equal to f times the derivative of g plus g times the derivative of x.\nSo <bookmark mark=\"f_x_squared\"/>we set x squared to  f and <bookmark mark=\"g_e_x\"/>e to the power of x to g.\nNow we get that our derivative is equal to<bookmark mark=\"f\"/> x squared times <bookmark mark=\"g_prime\"/>the derivative of e to the power of x plus <bookmark mark=\"g\"/>e to the power of x times <bookmark mark=\"f_prime\"/>the derivative of x squared.\nNow let's compute the derivatives. The derivative of e to the power of x is<bookmark mark=\"solve_g_prime\"/> equal to e to the power of x, and the derivative of x squared <bookmark mark=\"solve_f_prime\"/>is equal to two x.\nNow we can factor out e to the power of x, and<bookmark mark=\"factor_out\"/> we get the final solution e to the power of x times open bracket x squared plus 2 x)"
+      },
+      "4q": {
+        "voiceover-text": "What is the derivative of the function <bookmark mark=\"f_in\"/>f of x equals sine of x plus the natural logarithm of x squared?",
+        "question-text": "Compute the derivative of the function $f(x)=\\sin(x)+\\ln\\left(x^2\\right)$."
+      },
+      "4a": {
+        "voiceover-text": "The function for which we want to compute the derivative is a sum of two functions, so we <bookmark mark=\"step_1\"/>apply the sum rule: ...\nThe derivative of a sum is equal to <bookmark mark=\"derivative_3\"/>the sum of the derivatives. Now we need to compute <bookmark mark=\"step_2_a\"/>the individual derivatives. ...\nThe derivative of the sine of x is<bookmark mark=\"sine_prime\"/> equal to the cosine of x. Now to compute the derivative of the natural logarithm of x squared, we need to <bookmark mark=\"step_2_b\"/>apply the chain rule. ...\nThe chain rule says that the derivative of a composition of functions is equal to the derivative of the outer function times the derivative of the inner function. ...\nThe derivative of<bookmark mark=\"highlight_outer\"/> the outer function <bookmark mark=\"outer_derivative\"/>is equal to one over x squared, because the derivative of the natural logarithm is equal to one over its argument. ...\nWe multiply that <bookmark mark=\"highlight_inner\"/>with the derivative of the inner function, which is<bookmark mark=\"inner_derivative\"/> equal to 2 x. ...\nNow we can<bookmark mark=\"highlight_rewrite\"/>rewrite one over x squared times two x<bookmark mark=\"solution\"/> as 2 over x, and get the solution cosine of x plus 2 over x. "
       }
     },
     "practice_integrals": {
