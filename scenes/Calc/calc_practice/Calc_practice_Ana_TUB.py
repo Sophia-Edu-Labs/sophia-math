@@ -8368,40 +8368,40 @@ class Calc_practice_induction_2_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-Base Case (n = 0):
-When n = 0, we have:
-0^2 + 0 = 0, which is an even number. So, the statement is true for the base case.
-Inductive Step
-We want to prove that (k + 1)^2 + (k + 1) is also even.
-Start with the expression (k + 1)^2 + (k + 1):
-(k + 1)^2 + (k + 1) = k^2 + 2k + 1 + k + 1
-Now, we can use our inductive hypothesis:
-k^2 + k is even, so we can write it as 2m for some integer m.
-Now, let's rewrite the expression:
-2m + 1 + 2k + 1
-Now, combine like terms:
-2m + 2k + 2
-Factor out the common factor of 2:
-2(m + k + 1)
-Since (m + k + 1) is an integer (as the sum of integers is an integer), we can rewrite the expression as:
-2 * integer
-Therefore, (k + 1)^2 + (k + 1) is an even number.
+            """
+            Base Case (n = 0):
+            When n = 0, we have:
+            0^2 + 0 = 0, which is an even number. So, the statement is true for the base case.
+            Inductive Step
+            We want to prove that (k + 1)^2 + (k + 1) is also even.
+            Start with the expression (k + 1)^2 + (k + 1):
+            (k + 1)^2 + (k + 1) = k^2 + 2k + 1 + k + 1
+            Now, we can use our inductive hypothesis:
+            k^2 + k is even, so we can write it as 2m for some integer m.
+            Now, let's rewrite the expression:
+            2m + 1 + 2k + 1
+            Now, combine like terms:
+            2m + 2k + 2
+            Factor out the common factor of 2:
+            2(m + k + 1)
+            Since (m + k + 1) is an integer (as the sum of integers is an integer), we can rewrite the expression as:
+            2 * integer
+            Therefore, (k + 1)^2 + (k + 1) is an even number.
 
-For this answer to be correct, the student needs to:
-- do the induction base, explicitly mentioning the empty set
-- do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
-""",
-"""
-The student did the base correctly, but not the step
-""",
-"""
-The student did the step correctly, but not the base.
-""",
-"""
-The answer is incorrect.
-"""
-],
+            For this answer to be correct, the student needs to:
+            - do the induction base, explicitly mentioning the empty set
+            - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+            """,
+            """
+            The student did the base correctly, but not the step
+            """,
+            """
+            The student did the step correctly, but not the base.
+            """,
+            """
+            The answer is incorrect.
+            """
+                ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_induction.2q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -8755,31 +8755,31 @@ class Calc_practice_induction_3_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
-To prove that \( a_n = 5 - \frac{4}{2^n} \) for the sequence defined by \( a_0 = 1 \) and \( a_{n+1} = \frac{a_n + 5}{2} \), we use induction.
+                """
+                To prove that \( a_n = 5 - \frac{4}{2^n} \) for the sequence defined by \( a_0 = 1 \) and \( a_{n+1} = \frac{a_n + 5}{2} \), we use induction.
 
-**Base Case:** For \( n = 0 \), \( a_0 = 1 \) and \( 5 - \frac{4}{2^0} = 1 \). So, the base case holds.
+                **Base Case:** For \( n = 0 \), \( a_0 = 1 \) and \( 5 - \frac{4}{2^0} = 1 \). So, the base case holds.
 
-**Inductive Step:** Assume \( a_k = 5 - \frac{4}{2^k} \) for some \( k \). We show it holds for \( k+1 \):
+                **Inductive Step:** Assume \( a_k = 5 - \frac{4}{2^k} \) for some \( k \). We show it holds for \( k+1 \):
 
-\[ a_{k+1} = \frac{a_k + 5}{2} = \frac{5 - \frac{4}{2^k} + 5}{2} = 5 - \frac{4}{2^{k+1}} \]
+                \[ a_{k+1} = \frac{a_k + 5}{2} = \frac{5 - \frac{4}{2^k} + 5}{2} = 5 - \frac{4}{2^{k+1}} \]
 
-Thus, by induction, \( a_n = 5 - \frac{4}{2^n} \) for all \( n \).
+                Thus, by induction, \( a_n = 5 - \frac{4}{2^n} \) for all \( n \).
 
-For this answer to be correct, the student needs to:
-- do the induction base, explicitly mentioning the empty set
-- do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
-""",
-"""
-The student did the base correctly, but not the step
-""",
-"""
-The student did the step correctly, but not the base.
-""",
-"""
-The answer is incorrect.
-"""
-],
+                For this answer to be correct, the student needs to:
+                - do the induction base, explicitly mentioning the empty set
+                - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+                """,
+                """
+                The student did the base correctly, but not the step
+                """,
+                """
+                The student did the step correctly, but not the base.
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_induction.3q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -9144,33 +9144,79 @@ class Calc_practice_induction_3_d(SophiaCursorScene):
         self.wait(6)
 #
 
+#####################################
+#####################################
+class Calc_practice_induction_3_q(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.9).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+
+        theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+
+        # Define the voiceover text
+        voiceover_text = """
+        
+        Consider the sequence <bookmark mark="sequence_in_1"/>"a" n, which is defined recursively.
+        We set <bookmark mark="sequence_in_2"/>"a" zero to the square root of two, and <bookmark mark="sequence_in_3"/>a n plus one is defined as the squareroot of "a" n plus two.
+        """
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("sequence_in_1")
+            self.play(Write(a_n_0), run_time=.5)
+
+            self.wait_until_bookmark("sequence_in_2")
+            self.play(Write(a_n_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("sequence_in_3")
+            self.play(Write(a_n_1[1]), run_time=.5)
+
+            self.wait_until_bookmark("theorem_in")
+            self.play(Write(theorem))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
 ##################################### Intermediate value theorem
 #####################################
 class Calc_practice_ivt_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
-As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
-According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
-The following aspects must be mentioned for the solution to count as correct:
-- Establishing that the function is continuous
-- Mention of the intermediate value theorem
-- Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
-""",
-"""
-The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
-""",
-"""
-Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
-""",
-"""
-Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
-""",
-"""
-The answer is incorrect.
-"""
-],
+                """We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
+                As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
+                According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
+                The following aspects must be mentioned for the solution to count as correct:
+                - Establishing that the function is continuous
+                - Mention of the intermediate value theorem
+                - Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
+                """,
+                """
+                The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
+                """,
+                """
+                Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
+                """,
+                """
+                Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -11058,12 +11104,12 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_b),
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_c),
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_d),
-    PagePrototypeVideo.from_scene(Calc_practice_induction_3_q),
-    PagePrototypeQuestion.from_scene(Calc_practice_induction_3_q),
-    PagePrototypeVideo.from_scene(Calc_practice_induction_3_a),
-    PagePrototypeVideo.from_scene(Calc_practice_induction_3_b),
-    PagePrototypeVideo.from_scene(Calc_practice_induction_3_c),
-    PagePrototypeVideo.from_scene(Calc_practice_induction_3_d),
+    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_q),
+    # PagePrototypeQuestion.from_scene(Calc_practice_induction_3_q),
+    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_a),
+    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_b),
+    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_c),
+    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_d),
 ########################################################### Intermediate Value Theorem
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_ivt_1_q),
