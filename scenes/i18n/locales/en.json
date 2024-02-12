@@ -2916,7 +2916,10 @@
     "product_rule": "product rule",
     "sum_rule": "sum rule",
     "is_divisible_by_5": "is divisible by $5$",
-    "for_all": "for all"
+    "for_all": "for all",
+    "minmax": "Extreme Value Theorem",
+    "closed_interval": "closed interval",
+    "mvt": "Mean value theorem"
   },
   "LinAlg": {
     "14I1": {
@@ -2964,7 +2967,9 @@
     "Zero": "Zero",
     "elements": "elements",
     "derivatives": "derivatives",
-    "integrals": "Integrals"
+    "integrals": "Integrals",
+    "min": "Minimum",
+    "differentiable": "differentiable"
   },
   "Words": {
     "base": "base",
@@ -3484,7 +3489,7 @@
         "voiceover": "Let us first consider the<bookmark mark=\"f_1_in\"/> function f of x equal to one. This function is differentiable and odd. So a and c <bookmark mark=\"a_c_red\"/>are already wrong, because the function f is not zero and the derivative of f at the point x equals zero is not non-zero.\n<bookmark mark=\"f_2_in\"/>Let us now consider the function f of x equal to x. This function is also differentiable and odd. So<bookmark mark=\"b_red\"/> b is also false, because the derivative of f is equal to one everywhere, so f prime of zero is not zero.\nSo <bookmark mark=\"d_green\"/>only d remains, and that is also the correct answer."
       },
       "10q": {
-        "answerOptions": "[\"The function $g:\\mathbb R \\rightarrow \\mathbb R$ defined as $g(x)=f(x)\\cdot \\cos(x)$ is uneven\", \"\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ for all $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ for all $a>0$\", \"$f$ is not integrable\"]",
+        "answerOptions": "[\"The function $g:\\mathbb R \\\\rightarrow \\mathbb R$ defined as $g(x)=f(x)\\cdot \\cos(x)$ is uneven\", \"$\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ for all $a>0$\", \"$\\int_{-a}^{a}f(x)dx=0$ for all $a>0$\", \"$f$ is not integrable\"]",
         "question": "Let $f:\\mathbb R \\rightarrow \\mathbb R$ be a continuous, even function. Which of the following statements is true:",
         "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ is odd",
         "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\for all $a>0$",
@@ -3634,7 +3639,7 @@
       },
       "7q": {
         "answer-options": "[\"Exactly 6 solutions\", \"Infinitely many solutions\", \"For all solutions it holds that $|z| = 1$\", \"Only real-valued solutions\"]",
-        "question-text": "What holds for all solutions $z\\in\\mathbbC$ of $z^6 = (1 + i)^4$?",
+        "question-text": "What holds for all solutions $z\\in\\mathbb C$ of $z^6 = (1 + i)^4$?",
         "voiceover": "Consider the equation <bookmark mark=\"eq_in\"/>z to the power of 6 equals (1 plus i) to the power of 4. \nWhich of the following statements is then true for the solutions zett in the complex numbers C?\nStatement <bookmark mark=\"ans_a_in\"/>a: The equation has exactly 6 different solutions. ...\nStatement <bookmark mark=\"ans_b_in\"/>b: There are infinitely many different solutions. ...\nStatement <bookmark mark=\"ans_c_in\"/>c: For all solutions, the absolute value of z is equal to 1. ...\nStatement <bookmark mark=\"ans_d_in\"/>d: The equation has only real valued solutions. ..."
       },
       "7a": {
@@ -3871,13 +3876,15 @@
         "voiceover-text": "We'll start with <bookmark mark=\"base_case_in\"/>the base case, so the case for n equals zero. If we <bookmark mark=\"base_term_in\"/>plug this into our formula, we get that \"a\" zero is equal to 5 minus 4 over one, which is equal to one. And the definition of \"a\" zero is also one. So <bookmark mark=\"base_green\"/>we've already completed the base case.\nNext, we'll <bookmark mark=\"induction_step_in\"/>perform the induction step. So we're now assuming that the formula can be used for the element with index n, and we want to show that we can also use it for \"a\" n plus one.\nNow, <bookmark mark=\"term_1_in\"/>\"a\" n plus one, by our recursion rule, is equal to a n plus five, divided by two.\nWe can then<bookmark mark=\"term_2_in_1\"/>copy the term and plug in<bookmark mark=\"term_2_in_2\"/> five minus 4 over 2 to the power of n for \"a\" n, and get 5 minus 4 over 2 to the power of n plus 5, all divided by 2.\nNow <bookmark mark=\"term_3_in_1_a\"/>the two fives over two <bookmark mark=\"term_3_in_1_b\"/>make a 5, and <bookmark mark=\"term_3_in_2_a\"/>4 over 2 to the power of n, divided by two can be rewritten as<bookmark mark=\"term_3_in_2_b\"/> 4 over 2 to the power of n plus 1.\nAnd with that, we're at the value of the formula for n plus one. So we've also <bookmark mark=\"step_green\"/>completed the induction step, and our proof by induction is finished."
       },
       "4q": {
-        "voiceover-text": "Consider the sequence <bookmark mark=\"sequence_in_1\"/>\"a\" n, which is defined recursively.\nWe set <bookmark mark=\"sequence_in_2\"/>\"a\" zero to the square root of two, and <bookmark mark=\"sequence_in_3\"/>a n plus one is defined as the squareroot of \"a\" n plus two.\nUse natural induction to show, that <bookmark mark=\"theorem_in\"/>the sequence is upper bounded by the value 2."
+        "voiceover-text": "Consider the sequence <bookmark mark=\"sequence_in_1\"/>\"a\" n, which is defined recursively.\nWe set <bookmark mark=\"sequence_in_2\"/>\"a\" zero to the square root of two, and <bookmark mark=\"sequence_in_3\"/>a n plus one is defined as the squareroot of \"a\" n plus two.\nUse natural induction to show, that <bookmark mark=\"theorem_in\"/>the sequence is upper bounded by the value 2.",
+        "question-text": "Use natural induction to prove that $a_n\\leq2$ for all $n\\in\\mathbb N$."
       },
       "4a": {
         "voiceover-text": "For our proof by induction we need to show that the statement holds for the base case where n is equal to zero, and then we show that if it holds for n, it also holds for n plus one.\nSo let's start with<bookmark mark=\"base_case_in\"/> the base case. The sequence element a zero <bookmark mark=\"base_term_in\"/>is defined as the square root of two, which is less than two, so<bookmark mark=\"base_green\"/> the statement is satisfied for the base case.\nNext, let's consider the induction step<bookmark mark=\"induction_step_in\"/>. We assume that the statement holds for n, and we need to show that it also holds for n plus one. The sequence element a n plus one is defined <bookmark mark=\"term_1_in\"/>as the square root of a n plus two. Since a n is less than two, a n plus one <bookmark mark=\"term_2_in_1\"/>is less than the square root of two plus two, which is <bookmark mark=\"term_2_in_2\"/>equal to two. So<bookmark mark=\"step_green\"/> the statement is also satisfied for the induction step.\nNow we have completed the base case and the induction step, so we've completed our proof by induction."
       },
       "5q": {
-        "voiceover-text": "use natural induction, to show <bookmark mark=\"theorem_in\"/>that 6 to the power of n -1 is divisible by 5 for all natural numbers n."
+        "voiceover-text": "use natural induction, to show <bookmark mark=\"theorem_in\"/>that 6 to the power of n -1 is divisible by 5 for all natural numbers n.",
+        "question-text": "Use natural induction to show that $6^n-1$ is divisible by $5$ for all $n\\in\\mathbb N$."
       },
       "5a": {
         "voiceover-text": "For this proof by induction we'll cover the base case where n equals zero, and then the induction step, in which we show that if the statement holds for n, it also holds for n plus one.\nSo let's start with the<bookmark mark=\"base_case_in\"/> base case where n is zero. For n equals zero, we get that<bookmark mark=\"base_term_in\"/> 6 to the power of zero minus one is equal to 1-1, which is equal to zero. And zero is divisible by 5, because we can write it as 0 times 5. So <bookmark mark=\"base_green\"/>we've completed the base case.\nNow for the <bookmark mark=\"induction_step_in\"/>induction step. So we're now assuming that the statement holds for n, and we want to show, that it also holds for n plus one. So we're now assuming that six to the power of n -1 is divisible by five.\nNow we get <bookmark mark=\"term_1_in_1\"/>six to the power of n plus one minus 1, which is <bookmark mark=\"term_1_in_2\"/>equal to 6 times 6 to the power of n, minus one.\nNow since six to the power of n minus one is divisible by five, we can write it <bookmark mark=\"explainer_1_in\"/>as five times m for some integer m. If we add one on both sides, we get <bookmark mark=\"explainer_2_in\"/>that six to the power of n is equal to 5m minus one. And that we \n<bookmark mark=\"term_2_a_transforms\"/>plug into our formula, and get 6 times 5 m plus one minus one. If we <bookmark mark=\"term_2_a_complete\"/>multiply this out, we get 30 m plus six minus one, which<bookmark mark=\"term_2_b\"/>is equal to 30 m plus 5.\nFinally, we can rewrite this as <bookmark mark=\"term_3_in\"/>five times six m plus one, so the term is divisible by five. We've now<bookmark mark=\"step_green\"/> completed the induction step, so we're done with our proof."
@@ -3938,6 +3945,16 @@
       },
       "1q": {
         "question-text": "For what value of $x$ is the strength $s$, which is described by the function $s(x)=-2x^2+12x+20$, maximized?"
+      },
+      "02a": {
+        "voiceover-text": "First, observe that the function f <bookmark mark=\"continuous\"/>is continuous, because it is the composition of continouos functions.\nNext, notice that the interval<bookmark mark=\"closed_interval\"/> that we're looking at is a closed intervall.\nThese two facts together mean that we can<bookmark mark=\"evt\"/> apply the extreme value theorem: A continuous function on a closed interval has a maximum and a minimum.\nSo our function, which is continuous, has a minimum on the closed interval from 2 to 4.",
+        "forgot_continuity": "Almost, you just forgot to mention that $f$ is continuous"
+      },
+      "02q": {
+        "voiceover-text": "Consider the function<bookmark mark=\"f_in\"/> f of x equals 4 x cubed minus 4 to the power of x cosine of x plus x.\nDoes the function have a minimum on the <bookmark mark=\"interval_in\"/>closed interval from two to four?"
+      },
+      "2q": {
+        "question-text": "Does the function $f(x)=4x^3-4^{x\\cos(x)+x}$ have a minimum on the interval $[2,4]$? Explain your reasoning."
       }
     }
   },

@@ -6401,13 +6401,13 @@ class Calc_practice_derivatives_1_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-"""
--\frac{1}{x} or: -x^{-1} or an equivalent statement
-""",
-"""
-The answer is incorrect.
-"""
-],
+            """
+            -\frac{1}{x} or: -x^{-1} or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_derivatives.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
@@ -7094,6 +7094,387 @@ class Calc_practice_derivatives_4_b(SophiaCursorScene):
         self.wait(6)
 #
 
+##################################### Mean value theorem
+#####################################
+class Calc_practice_mvt_1_q(SophiaCursorScene):
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = [
+    #             """We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
+    #             As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
+    #             According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
+    #             The following aspects must be mentioned for the solution to count as correct:
+    #             - Establishing that the function is continuous
+    #             - Mention of the intermediate value theorem
+    #             - Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
+    #             """,
+    #             """
+    #             The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
+    #             """,
+    #             """
+    #             Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
+    #             """,
+    #             """
+    #             Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
+    #             """,
+    #             """
+    #             The answer is incorrect.
+    #             """
+    #             ],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
+    #         llmCheckDetails=SophiaLLMQuestionCheckDetail(
+    #             fallbackOptionIndex=1,
+    #             specialInputSnippets = ["[ ]", "f"],
+    #         )
+    #     )
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^3-3x^2+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2).set_y(1.8)
+
+        # Define the voiceover text
+        voiceover_text = """We're given the function <bookmark mark="f_in"/>f of x equals x cubed minus 3 x squared plus 2, and we're only considering the <bookmark mark="interval_in"/>closed interval from 0 to 3.
+        Prove that the derivative f prime of x has at least one zero on that interval without actually computing f prime."""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func), run_time=.5)
+
+            self.wait_until_bookmark("interval_in")
+            self.play(Write(interval), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_mvt_1_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        differentiable = self.translate("words.differentiable")
+        mvt = self.translate("General.mvt")
+        zero = self.translate("words.Zero")
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^3-3x^2+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        differentiable = Tex(r"$f$ "+differentiable, color=BLUE, font_size=fs2)
+        arrow_1 = Tex(r"$\Downarrow$ ", mvt, color=BLUE, font_size=fs2)
+        exists_c = Tex(r"$\exists c\in(0,3):$", color=c1t, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"\frac{f(b)-f(a)}{b-a}", color=c1t, font_size=fs2)
+        f_prime_2 = MathTex(r"f'(c)=", r"\frac{2-2}{3-0}", color=c1t, font_size=fs2)
+        f_prime_3 = MathTex(r"f'(c)=", r"0", color=c1t, font_size=fs2)
+        f_prime = VGroup(f_prime_1, f_prime_2, f_prime_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = VGroup(exists_c, f_prime).arrange(DOWN, buff=.2, aligned_edge=LEFT)
+        steps = VGroup(differentiable, arrow_1, sol).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = """
+            The function f of x equals x cubed minus 3 x squared plus 2 <bookmark mark="differentiable"/>is differentiable because it is a composition of differentiable functions. So it is also differentiable on the closed interval from 0 to 3.
+            Since we have a differentiable function on a closed interval a b, we can apply the<bookmark mark="mvt_in"/> mean value theorem, which states that there<bookmark mark="exists_c"/> exists a value c in the open interval from 0 to 3,
+            such that <bookmark mark="f_prime_1"/>f prime of c is equal to the fraction f of b minus f of a over b minus a.
+            If we plug in 0 for "a" and 3 for b, <bookmark mark="f_prime_2"/>we get that there exists a value c for which f prime of c is equal to 2 minus 2 over 3, which <bookmark mark="f_prime_3"/> is equal to zero.
+            So now we can see, that the mean value theorem implies that there exists a value c in the open interval from 0 to 3 for which f prime of c is equal to zero. And this<bookmark mark="all_green"/> is our solution.
+            """
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("differentiable")
+            self.play(Write(differentiable), run_time=.5)
+
+            self.wait_until_bookmark("mvt_in")
+            self.play(Write(arrow_1), run_time=1)
+
+            self.wait_until_bookmark("exists_c")
+            self.play(Write(exists_c), run_time=1)
+
+            self.wait_until_bookmark("f_prime_1")
+            self.play(Write(f_prime_1), run_time=1)
+
+            self.wait_until_bookmark("f_prime_2")
+            self.play(TransformMatchingTex(f_prime_1, f_prime_2), run_time=1)
+
+            self.wait_until_bookmark("f_prime_3")
+            self.play(TransformMatchingTex(f_prime_2, f_prime_3), run_time=1)
+
+            self.wait_until_bookmark("all_green")
+            self.play(VGroup(differentiable, arrow_1, exists_c, f_prime_3, func_and_interval).animate.set_color(GREEN_D), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+#####################################
+#####################################
+class Calc_practice_mvt_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.1q.answer-options")),
+            correctAnswerIndex=0,
+            questionText = self.translate("Calc_1.Practice_MC.1q.question-text")
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(x)=x^2-1", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_1 = MathTex("g:[0,\\infty)\\rightarrow\\mathbb{R}, ", color=c1t, font_size=fs2)
+        g_2 = MathTex("g(x)=e^x", color=c1t, font_size=fs2)
+        g = VGroup(g_1, g_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_circ_f = MathTex("g\\circ f:[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
+
+        answer_a = Tex(2, color=BLUE, font_size=fs3)
+        answer_b = Tex(0, color=BLUE, font_size=fs3)
+        answer_c = Tex(-2, color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("Calc_1.Practice_MC.1q.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_in_1")
+            self.play(Write(f[0]))
+
+            self.wait_until_bookmark("f_in_2")
+            self.play(Write(f[1]))
+
+            self.wait_until_bookmark("g_in_1")
+            self.play(Write(g[0]))
+
+            self.wait_until_bookmark("g_in_2")
+            self.play(Write(g[1]))
+
+            self.wait_until_bookmark("g_circ_f_in")
+            self.play(Write(g_circ_f))
+
+            self.wait_until_bookmark("answer_a_in")
+            self.play(Write(answer_a))
+
+            self.wait_until_bookmark("answer_b_in")
+            self.play(Write(answer_b))
+
+            self.wait_until_bookmark("answer_c_in")
+            self.play(Write(answer_c))
+
+            self.wait_until_bookmark("answer_d_in")
+            self.play(Write(answer_d))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
+
+class Calc_practice_mvt_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        f_1 = MathTex("f:", "[1,\\infty)", "\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        f_2 = MathTex("f(x)=", "x^2-1", color=c1t, font_size=fs2)
+        f = VGroup(f_1, f_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_1 = MathTex("g:", "[0,\\infty)", "\\rightarrow\\mathbb{R}, ", color=c1t, font_size=fs2)
+        g_2 = MathTex("g(x)=", "e", "^x", color=c1t, font_size=fs2)
+        g = VGroup(g_1, g_2).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        g_circ_f = MathTex("g\\circ f", ":[1,\\infty)\\rightarrow\\mathbb{R}", color=c1t, font_size=fs2)
+        g_circ_f_plugged_in = MathTex("(g\\circ f)(x)", "=e", "^{x^2-1}", color=c1t, font_size=fs2)
+        f_g_fg = VGroup(f, g, g_circ_f).arrange(DOWN, buff=0.4, aligned_edge=LEFT).set_y(1.4)
+
+        is_injective = Tex(self.translate("Calc_1.Practice_MC.1q.is_injective"), color=BLUE, font_size=fs3)
+        not_surjective = Tex(self.translate("Calc_1.Practice_MC.1q.not_surjective"), color=BLUE, font_size=fs3)
+        not_equal = Tex("$\\bullet$  $f(2)=e^3\\neq 1$", color=BLUE, font_size=fs3)
+        observations = VGroup(is_injective, not_surjective, not_equal).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f_plugged_in, DOWN, buff=0.6).shift(UP*2)
+        
+
+        answer_a = Tex(self.translate("Calc_1.Practice_MC.1q.answer-a"), color=BLUE, font_size=fs3)
+        answer_b = Tex(self.translate("Calc_1.Practice_MC.1q.answer-b"), color=BLUE, font_size=fs3)
+        answer_c = Tex(self.translate("Calc_1.Practice_MC.1q.answer-c"), color=BLUE, font_size=fs3)
+        answer_d = Tex(self.translate("Calc_1.Practice_MC.1q.answer-d"), color=BLUE, font_size=fs3)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(g_circ_f, DOWN, buff=0.5)
+
+        self.add(f_g_fg, answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_3")+self.translate("Calc_1.Practice_MC.1a.voiceover")
+        ) as tracker:
+            
+            self.wait_until_bookmark("f_stays")
+            self.add_shift_sound(0.5)
+            self.play(VGroup(g, g_circ_f, answers).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_interval")
+            self.play(Indicate(f_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("interval_f_range")
+            self.add_shift_sound(0.5)
+            self.play(g_1[1].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_in")
+            self.add_shift_sound(0.5)
+            self.play(g_1[0].animate.shift(5*LEFT), g_1[2].animate.shift(5*LEFT), g_2.animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("highlight_def_g")
+            self.play(Indicate(g_1[1], color=RED, scale_factor=1.4))
+
+            self.wait_until_bookmark("g_f_in")
+            g_circ_f.set_color(GREEN)
+            self.add_shift_sound(0.5)
+            self.play(g_circ_f[0].animate.shift(5*LEFT), run_time=.5)
+
+            self.wait_until_bookmark("g_circ_f")
+            self.play(ReplacementTransform(g_circ_f[0], g_circ_f_plugged_in[0]), run_time=.5)
+            self.wait(.5)
+            self.play(ReplacementTransform(g_circ_f[1].copy(), g_circ_f_plugged_in[1]), run_time=.5)
+            self.play(ReplacementTransform(f_2[1].copy(), g_circ_f_plugged_in[2]), run_time=.5)
+
+            self.wait_until_bookmark("clean_up")
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(f), Unwrite(g), g_circ_f_plugged_in.animate.shift(2*UP), run_time=.5)
+
+            self.wait_until_bookmark("injective")
+            self.play(Write(is_injective))
+
+            self.wait_until_bookmark("surjective")
+            self.play(Write(not_surjective))
+
+            self.wait_until_bookmark("gfx_neq_x")
+            self.play(Write(not_equal))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+#####################################
+#####################################
+class Calc_practice_mvt_3_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_limits.1q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^2-4x+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[1,3]", color=c1t, font_size=fs2) 
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2).set_y(1.8)
+
+        exists_c = Tex(r"$\exists c\in(0,3):$", color=BLUE, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"?", BLUE=c1t, font_size=fs2)
+        c = VGroup(exists_c, f_prime_1).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_and_interval, DOWN, buff=.4)
+
+
+        # Define the voiceover text
+        voiceover_text = """Consider the <bookmark mark="func_in"/>function f of x equals x squared minus 4 x plus 2.
+        If we apply the mean value theorem to that function on the <bookmark mark="interval_in"/> closed interval from 1 to 3, then there exists a c in the open interval from one to three for which the value of the <bookmark mark="f_prime_in"/>derivative f prime of c is equal to what?"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func), run_time=1)
+
+            self.wait_until_bookmark("interval_in")
+            self.play(Write(interval), run_time=1)
+
+            self.wait_until_bookmark("f_prime_in")
+            self.play(Write(c), run_time=1)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_mvt_3_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.Limits")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"\underset{n\to\infty}{\lim}", r"\frac{2n^3+4n}{3n^3\sqrt{n}+4n^2}", color=c1t, font_size=fs2).set_y(2.2)
+        implication_1 = Tex(r"$\Downarrow$", " $=$", color=BLUE, font_size=fs2).next_to(func, DOWN, buff=.2)
+        func_2_a = MathTex(r"\underset{n\to\infty}{\lim}", r"{{n^3\sqrt n", r"(\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n})}", r"\over{n^3\sqrt{n}", r"(3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).next_to(implication_1, DOWN, buff=.2)
+        func_2_b = MathTex(r"\underset{n\to\infty}{\lim}", r"{{", r"\tfrac{2}{\sqrt n}+\tfrac{4}{n^2\sqrt n}}", r"\over{", r"3+\tfrac4{n\sqrt n})}}", color=c1t, font_size=fs2).move_to(func_2_a)
+        implication_2 = Tex(r"$\Downarrow$", r"$\underset{n\to\infty}{\lim}$", color=BLUE, font_size=fs2).next_to(func_2_b, DOWN, buff=.2)
+        func_3 = MathTex(r"\frac{0+0}{3+0}", r"=0", color=c1t, font_size=fs2).next_to(implication_2, DOWN, buff=.2)
+        crosses = VGroup(Cross(func_2_a[1]), Cross(func_2_a[1].copy().shift(0.2*RIGHT).set_y(func_2_a[3].get_y()))).set_color(RED)
+
+        baboon = ImageMobject(assets_folder / "img" / "baboon_thinking.png").set_y(-.6).scale(.5)
+        self.add(baboon, func)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_limits.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("implication_1")
+            self.add_shift_sound(0.5)
+            self.play(baboon.animate.shift(5*RIGHT), Write(implication_1), Write(func_2_a), run_time=.5)
+
+            self.wait_until_bookmark("s_out_1")
+            self.play(Write(crosses), run_time=.5)
+
+            self.wait_until_bookmark("func_2_b")
+            self.play(TransformMatchingTex(func_2_a, func_2_b), Unwrite(crosses))
+
+            self.wait_until_bookmark("implication_2")
+            self.play(Write(implication_2), Write(func_3))
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+#
 
 ##################################### Integrals
 #####################################
@@ -7879,6 +8260,188 @@ class Calc_practice_minmax_1_b(SophiaCursorScene):
         self.wait(6)
 
 
+#####################################
+#####################################
+class Calc_practice_minmax_2_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+                """The Extreme Value Theorem (Satz von Maximum und Minimum) states that if a function is continuous on a closed interval \([a, b]\), then it attains both its minimum and maximum values at some points within the interval.
+                    The function \(f(x) = 4x^3 - 4^{x\cos(x) + x}\) combines polynomial and exponential components. Polynomials are continuous everywhere, and the exponential function \(4^u\), where \(u = x\cos(x) + x\), is also continuous for all real numbers because the composition of continuous functions is continuous. Hence, \(f(x)\) is continuous on the interval \([2, 4]\).
+                    Since \(f(x)\) is continuous on the closed interval \([2, 4]\), by the Extreme Value Theorem, it must attain a minimum value on this interval. Therefore, \(f(x)\) does have a minimum on the interval \([2, 4]\).
+                The following aspects must be mentioned for the solution to count as correct:
+                - Establishing that the function is continuous
+                - Mention of the Extreme value theorem (German: Satz von Maximum und Minimum)
+                """,
+                """
+                The student mentioned the Extreme value theorem (German: Satz von Maximum und Minimum). he just forgot to mention the continuity of the function.
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_minmax.2q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=4x^3-4^{x\cos(x)+x}", color=c1t, font_size=fs2)
+        interval = MathTex(r"[2,4]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2).set_y(1.8)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_minmax.02q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(func), run_time=.5)
+
+            self.wait_until_bookmark("interval_in")
+            self.play(Write(interval), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_minmax_2_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        continuous = self.translate("words.continuous")
+        minmax = self.translate("General.minmax")
+        closed_interval = self.translate("General.closed_interval")
+        min_word = self.translate("words.min")
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=4x^3-4^{x\cos(x)+x}", color=c1t, font_size=fs2)
+        interval = MathTex(r"[2,4]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+
+        continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $[2,4]$ ", closed_interval, color=BLUE, font_size=fs2)
+        evt = Tex(r"$\bullet$ ", minmax, r"\\$\Rightarrow\exists$ ", min_word, color=BLUE, font_size=fs2)
+        bullets = VGroup(continuous, interval_limits, evt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_2")+self.translate("Calc_1.practice_minmax.02a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
+
+            self.wait_until_bookmark("closed_interval")
+            self.play(Write(interval_limits, run_time=.5))
+
+            self.wait_until_bookmark("evt")
+            self.play(Write(evt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_minmax_2_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        continuous = self.translate("words.continuous")
+        minmax = self.translate("General.minmax")
+        closed_interval = self.translate("General.closed_interval")
+        min_word = self.translate("words.min")
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=4x^3-4^{x\cos(x)+x}", color=c1t, font_size=fs2)
+        interval = MathTex(r"[2,4]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+
+        continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $[2,4]$ ", closed_interval, color=BLUE, font_size=fs2)
+        evt = Tex(r"$\bullet$ ", minmax, r"\\$\Rightarrow\exists$ ", min_word, color=BLUE, font_size=fs2)
+        bullets = VGroup(continuous, interval_limits, evt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_minmax.02a.forgot_continuity")+self.translate("Calc_1.practice_minmax.02a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
+
+            self.wait_until_bookmark("closed_interval")
+            self.play(Write(interval_limits, run_time=.5))
+
+            self.wait_until_bookmark("evt")
+            self.play(Write(evt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_minmax_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        continuous = self.translate("words.continuous")
+        minmax = self.translate("General.minmax")
+        closed_interval = self.translate("General.closed_interval")
+        min_word = self.translate("words.min")
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=4x^3-4^{x\cos(x)+x}", color=c1t, font_size=fs2)
+        interval = MathTex(r"[2,4]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+
+        continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $[2,4]$ ", closed_interval, color=BLUE, font_size=fs2)
+        evt = Tex(r"$\bullet$ ", minmax, r"\\$\Rightarrow\exists$ ", min_word, color=BLUE, font_size=fs2)
+        bullets = VGroup(continuous, interval_limits, evt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_2")+self.translate("Calc_1.practice_minmax.02a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("continuous")
+            self.play(Write(continuous), run_time=.5)
+
+            self.wait_until_bookmark("closed_interval")
+            self.play(Write(interval_limits, run_time=.5))
+
+            self.wait_until_bookmark("evt")
+            self.play(Write(evt, run_time=.5))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 ##################################### Induction proof
 #####################################
 class Calc_practice_induction_1_q(SophiaCursorScene):
@@ -9147,6 +9710,41 @@ class Calc_practice_induction_3_d(SophiaCursorScene):
 #####################################
 class Calc_practice_induction_4_q(SophiaCursorScene):
 
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+        answerOptions = [
+            """
+            To show that \(a_n \leq 2\) for all \(n \in \mathbb{N}\) given \(a_0 = \sqrt{2}\) and \(a_{n+1} = \sqrt{a_n + 2}\), we use mathematical induction.
+            **Base Case:**
+            For \(n=0\), \(a_0 = \sqrt{2}\). Clearly, \(a_0 \leq 2\) since \(\sqrt{2} < 2\).
+            **Inductive Step:**
+            Assume \(a_n \leq 2\) for some \(n \geq 0\). We need to show \(a_{n+1} \leq 2\).
+            Given \(a_{n+1} = \sqrt{a_n + 2}\), by our inductive hypothesis, \(a_n \leq 2\).
+            Thus, \(a_{n+1} = \sqrt{a_n + 2} \leq \sqrt{2 + 2} = \sqrt{4} = 2\).
+            Therefore, if \(a_n \leq 2\), then \(a_{n+1} \leq 2\).
+            By the principle of mathematical induction, \(a_n \leq 2\) for all \(n \in \mathbb{N}\).
+            For this answer to be correct, the student needs to:
+            - do the induction base, explicitly mentioning the empty set
+            - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+            """,
+            """
+            The student did the base correctly, but not the step
+            """,
+            """
+            The student did the step correctly, but not the base.
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
+        correctAnswerIndex = 0,
+        questionText = self.translate("Calc_1.practice_induction.4q.question-text"),
+        llmCheckDetails=SophiaLLMQuestionCheckDetail(
+            fallbackOptionIndex=1,
+            specialInputSnippets = ["[ ]", "f"],
+        )
+    )
+
     # Main method for constructing the animation
     def construct(self):
         # Adding initial components to the scene
@@ -9247,9 +9845,236 @@ class Calc_practice_induction_4_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
+class Calc_practice_induction_4_b(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.8).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+        theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+        self.add(a_n, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"a_0=\sqrt2", r"\leq2", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"a_{n+1}=", r"\sqrt{a_n+2}", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"\leq", r"{\sqrt{2+2}}", r"=", r"2", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.base_not_case")+self.translate("Calc_1.practice_induction.4a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), VGroup(a_n, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+            
+            self.wait_until_bookmark("term_2_in_1")
+            self.play(Write(term_2[0]), Write(term_2[1]))
+
+            self.wait_until_bookmark("term_2_in_2")
+            self.play(Write(term_2[2]), Write(term_2[3]))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_4_c(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.8).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+        theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+        self.add(a_n, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"a_0=\sqrt2", r"\leq2", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"a_{n+1}=", r"\sqrt{a_n+2}", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"\leq", r"{\sqrt{2+2}}", r"=", r"2", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.step_not_base")+self.translate("Calc_1.practice_induction.4a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), VGroup(a_n, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+            
+            self.wait_until_bookmark("term_2_in_1")
+            self.play(Write(term_2[0]), Write(term_2[1]))
+
+            self.wait_until_bookmark("term_2_in_2")
+            self.play(Write(term_2[2]), Write(term_2[3]))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_4_d(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        a_n_0 = MathTex(r"\left(a_n\right)_{n\in\mathbb N}", color=c1t, font_size=fs2)
+        a_n_1 = VGroup(MathTex(r"a_0=\sqrt2,", color=c3t, font_size=fs2), MathTex(r"a_{n+1}=\sqrt{a_n+2}", color=c3t, font_size=fs2)).scale(.8).arrange(RIGHT, buff=.4)
+        a_n = VGroup(a_n_0, a_n_1).arrange(DOWN, buff=.4, aligned_edge=LEFT).set_y(1.8)
+        theorem = MathTex(r"a_n", r"\leq", r"2", r"\,\forall n\in\mathbb N", color=BLUE, font_size=fs2)
+        self.add(a_n, theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"a_0=\sqrt2", r"\leq2", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base)
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"a_{n+1}=", r"\sqrt{a_n+2}", color=c3t, font_size=fs3)
+        term_2 = MathTex(r"\leq", r"{\sqrt{2+2}}", r"=", r"2", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.2).next_to(induction_step, DOWN, buff=.6)
+        step = VGroup(induction_step, terms)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_induction.4a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), VGroup(a_n, theorem).animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in")
+            self.play(Write(term_1))
+            
+            self.wait_until_bookmark("term_2_in_1")
+            self.play(Write(term_2[0]), Write(term_2[1]))
+
+            self.wait_until_bookmark("term_2_in_2")
+            self.play(Write(term_2[2]), Write(term_2[3]))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 #####################################
 #####################################
 class Calc_practice_induction_5_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+                """
+                To show that \(6^n - 1\) is divisible by 5 for all \(n \in \mathbb{N}\) using mathematical induction, we proceed as follows:
+                **Base Case:**
+                For \(n=1\), \(6^1 - 1 = 5\), which is clearly divisible by 5.
+                **Inductive Step:**
+                Assume \(6^n - 1\) is divisible by 5 for some \(n \geq 1\). We need to show \(6^{n+1} - 1\) is also divisible by 5.
+                Consider \(6^{n+1} - 1\). This can be rewritten as \(6 \cdot 6^n - 1\).
+                Expanding this using our assumption, we get:
+                \[6 \cdot 6^n - 1 = 6(6^n - 1) + 6 - 1\]
+                Since \(6^n - 1\) is divisible by 5 by our inductive hypothesis, let \(6^n - 1 = 5k\) for some integer \(k\). Then:
+                \[6(6^n - 1) + 6 - 1 = 6 \cdot 5k + 5 = 5(6k + 1)\]
+                This shows \(6^{n+1} - 1\) is divisible by 5, as it is expressed as \(5\) times an integer (\(6k + 1\)).
+                Therefore, by the principle of mathematical induction, \(6^n - 1\) is divisible by 5 for all \(n \in \mathbb{N}\).
+                For this answer to be correct, the student needs to:
+                - do the induction base, explicitly mentioning the empty set
+                - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
+                """,
+                """
+                The student did the base correctly, but not the step
+                """,
+                """
+                The student did the step correctly, but not the base.
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_induction.5q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -9364,6 +10189,264 @@ class Calc_practice_induction_5_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
+class Calc_practice_induction_5_b(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_divisible_by_5 = self.translate("General.is_divisible_by_5")
+        forall = self.translate("General.for_all")
+        theorem_strings = [r"$6^n-1$", is_divisible_by_5, forall+r" $n\in\mathbb N$"]
+        theorem = VGroup(*[Tex(thm_string, color=BLUE, font_size=fs2) for thm_string in theorem_strings]).arrange(DOWN, buff=.2).set_y(1.2)
+        self.add(theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"6^0-1=1-1", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base).scale(1.1)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"6^{n+1}-1=", r"6\cdot", r"6^n", r"-1", color=c3t, font_size=fs3)
+        term_2_a = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+6-1", color=c3t, font_size=fs3)
+        term_2_b = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+5", color=c3t, font_size=fs3)
+        term_2 = VGroup(term_2_a, term_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        term_3 = MathTex(r"5(6m+1)", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.1).next_to(induction_step, DOWN, buff=.6)
+        explainer_1 = MathTex(r"6^n", r"-1", r"=", r"5m", font_size=fs2, color=BLUE)
+        explainer_2 = MathTex(r"6^n", r"=", r"5m", r"+1", font_size=fs2, color=BLUE)
+        explainer = VGroup(explainer_1, explainer_2).next_to(terms, DOWN, buff=.2)
+        step = VGroup(induction_step, term_1, term_2_b, term_3)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.base_not_case")+self.translate("Calc_1.practice_induction.5a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), theorem.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_1")
+            self.play(Write(term_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_2")
+            self.play(*[Write(term_1[idx]) for idx in range(1, 4)], run_time=.5)
+
+            self.wait_until_bookmark("explainer_1_in")
+            self.play(Write(explainer_1), run_time=1)
+
+            self.wait_until_bookmark("explainer_2_in")
+            self.play(TransformMatchingTex(explainer_1, explainer_2))
+
+            self.wait_until_bookmark("term_2_a_transforms")
+            self.play(ReplacementTransform(VGroup(explainer_2[2].copy(), explainer_2[3].copy()), term_2_a[1]))
+            self.play( ReplacementTransform(term_1[2].copy(), term_2_a[0]), ReplacementTransform(term_1[3].copy(), term_2_a[2]), run_time=1)
+            
+            self.wait_until_bookmark("term_2_a_complete")
+            self.play(Write(VGroup(term_2_a[3], term_2_a[4])), Unwrite(explainer_2))
+
+            self.wait_until_bookmark("term_2_b")
+            self.play(TransformMatchingTex(term_2_a, term_2_b))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(Write(term_3))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_5_c(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_divisible_by_5 = self.translate("General.is_divisible_by_5")
+        forall = self.translate("General.for_all")
+        theorem_strings = [r"$6^n-1$", is_divisible_by_5, forall+r" $n\in\mathbb N$"]
+        theorem = VGroup(*[Tex(thm_string, color=BLUE, font_size=fs2) for thm_string in theorem_strings]).arrange(DOWN, buff=.2).set_y(1.2)
+        self.add(theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"6^0-1=1-1", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base).scale(1.1)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"6^{n+1}-1=", r"6\cdot", r"6^n", r"-1", color=c3t, font_size=fs3)
+        term_2_a = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+6-1", color=c3t, font_size=fs3)
+        term_2_b = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+5", color=c3t, font_size=fs3)
+        term_2 = VGroup(term_2_a, term_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        term_3 = MathTex(r"5(6m+1)", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.1).next_to(induction_step, DOWN, buff=.6)
+        explainer_1 = MathTex(r"6^n", r"-1", r"=", r"5m", font_size=fs2, color=BLUE)
+        explainer_2 = MathTex(r"6^n", r"=", r"5m", r"+1", font_size=fs2, color=BLUE)
+        explainer = VGroup(explainer_1, explainer_2).next_to(terms, DOWN, buff=.2)
+        step = VGroup(induction_step, term_1, term_2_b, term_3)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_induction.2a.step_not_base")+self.translate("Calc_1.practice_induction.5a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), theorem.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_1")
+            self.play(Write(term_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_2")
+            self.play(*[Write(term_1[idx]) for idx in range(1, 4)], run_time=.5)
+
+            self.wait_until_bookmark("explainer_1_in")
+            self.play(Write(explainer_1), run_time=1)
+
+            self.wait_until_bookmark("explainer_2_in")
+            self.play(TransformMatchingTex(explainer_1, explainer_2))
+
+            self.wait_until_bookmark("term_2_a_transforms")
+            self.play(ReplacementTransform(VGroup(explainer_2[2].copy(), explainer_2[3].copy()), term_2_a[1]))
+            self.play( ReplacementTransform(term_1[2].copy(), term_2_a[0]), ReplacementTransform(term_1[3].copy(), term_2_a[2]), run_time=1)
+            
+            self.wait_until_bookmark("term_2_a_complete")
+            self.play(Write(VGroup(term_2_a[3], term_2_a[4])), Unwrite(explainer_2))
+
+            self.wait_until_bookmark("term_2_b")
+            self.play(TransformMatchingTex(term_2_a, term_2_b))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(Write(term_3))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_induction_5_d(SophiaCursorScene):    
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        title = self.add_title(self.translate("General.induction"))
+        self.add(title)
+
+        # Define the function text using MathTex
+        is_divisible_by_5 = self.translate("General.is_divisible_by_5")
+        forall = self.translate("General.for_all")
+        theorem_strings = [r"$6^n-1$", is_divisible_by_5, forall+r" $n\in\mathbb N$"]
+        theorem = VGroup(*[Tex(thm_string, color=BLUE, font_size=fs2) for thm_string in theorem_strings]).arrange(DOWN, buff=.2).set_y(1.2)
+        self.add(theorem)
+
+        base = Tex(self.translate("General.induction_base"), r" $(n=0)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_base = MathTex(r"6^0-1=1-1", r"=0", color=c3t, font_size=fs3).next_to(base, DOWN, buff=.8)
+        base_group = VGroup(base, term_base).scale(1.1)
+
+        induction_step = Tex(self.translate("General.induction_step"), r" $(n\to n+1)$:", color=c1t, font_size=fs3).set_y(2.2)
+        term_1 = MathTex(r"6^{n+1}-1=", r"6\cdot", r"6^n", r"-1", color=c3t, font_size=fs3)
+        term_2_a = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+6-1", color=c3t, font_size=fs3)
+        term_2_b = MathTex(r"6\cdot", r"(5m+1)", r"-1", r"=", r"30m+5", color=c3t, font_size=fs3)
+        term_2 = VGroup(term_2_a, term_2_b).arrange(ORIGIN, aligned_edge=LEFT)
+        term_3 = MathTex(r"5(6m+1)", color=c3t, font_size=fs3)
+        terms = VGroup(term_1, term_2, term_3).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(1.1).next_to(induction_step, DOWN, buff=.6)
+        explainer_1 = MathTex(r"6^n", r"-1", r"=", r"5m", font_size=fs2, color=BLUE)
+        explainer_2 = MathTex(r"6^n", r"=", r"5m", r"+1", font_size=fs2, color=BLUE)
+        explainer = VGroup(explainer_1, explainer_2).next_to(terms, DOWN, buff=.2)
+        step = VGroup(induction_step, term_1, term_2_b, term_3)
+        
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_induction.5a.voiceover-text")
+        
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("base_case_in")
+            self.add_shift_sound(.5)
+            self.play(Write(base), theorem.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("base_term_in")
+            self.play(Write(term_base), run_time=.5)
+
+            self.wait_until_bookmark("base_green")
+            self.play(base_group.animate.set_color(GREEN), run_time=.5)
+
+            self.wait_until_bookmark("induction_step_in")
+            self.add_shift_sound(.5)
+            self.play(Write(induction_step), base_group.animate.shift(5*RIGHT), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_1")
+            self.play(Write(term_1[0]), run_time=.5)
+
+            self.wait_until_bookmark("term_1_in_2")
+            self.play(*[Write(term_1[idx]) for idx in range(1, 4)], run_time=.5)
+
+            self.wait_until_bookmark("explainer_1_in")
+            self.play(Write(explainer_1), run_time=1)
+
+            self.wait_until_bookmark("explainer_2_in")
+            self.play(TransformMatchingTex(explainer_1, explainer_2))
+
+            self.wait_until_bookmark("term_2_a_transforms")
+            self.play(ReplacementTransform(VGroup(explainer_2[2].copy(), explainer_2[3].copy()), term_2_a[1]))
+            self.play( ReplacementTransform(term_1[2].copy(), term_2_a[0]), ReplacementTransform(term_1[3].copy(), term_2_a[2]), run_time=1)
+            
+            self.wait_until_bookmark("term_2_a_complete")
+            self.play(Write(VGroup(term_2_a[3], term_2_a[4])), Unwrite(explainer_2))
+
+            self.wait_until_bookmark("term_2_b")
+            self.play(TransformMatchingTex(term_2_a, term_2_b))
+
+            self.wait_until_bookmark("term_3_in")
+            self.play(Write(term_3))
+
+            self.wait_until_bookmark("step_green")
+            self.play(step.animate.set_color(GREEN), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
 
 
@@ -9411,8 +10494,8 @@ class Calc_practice_ivt_1_q(SophiaCursorScene):
 
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
 
         # Define the voiceover text
         voiceover_text = self.translate("Calc_1.practice_ivt.10q.voiceover-text")
@@ -9423,8 +10506,8 @@ class Calc_practice_ivt_1_q(SophiaCursorScene):
             self.wait_until_bookmark("f_in")
             self.play(Write(func), run_time=.5)
 
-            self.wait_until_bookmark("intervall_in")
-            self.play(Write(intervall), run_time=.5)
+            self.wait_until_bookmark("interval_in")
+            self.play(Write(interval), run_time=.5)
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
@@ -9442,12 +10525,12 @@ class Calc_practice_ivt_1_a(SophiaCursorScene):
         zero = self.translate("words.Zero")
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
-        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ ", ivt, r"\\$\Rightarrow$ ", zero, color=BLUE, font_size=fs2)
-        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, interval_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -9459,8 +10542,8 @@ class Calc_practice_ivt_1_a(SophiaCursorScene):
             self.wait_until_bookmark("continuous")
             self.play(Write(continuous), run_time=.5)
 
-            self.wait_until_bookmark("intervall_limits")
-            self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("interval_limits")
+            self.play(Write(interval_limits, run_time=.5))
 
             self.wait_until_bookmark("ivt")
             self.play(Write(ivt, run_time=.5))
@@ -9482,12 +10565,12 @@ class Calc_practice_ivt_1_b(SophiaCursorScene):
         zero = self.translate("words.Zero")
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
-        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ ", ivt, r"\\$\Rightarrow$ ", zero, color=BLUE, font_size=fs2)
-        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, interval_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -9499,8 +10582,8 @@ class Calc_practice_ivt_1_b(SophiaCursorScene):
             self.wait_until_bookmark("continuous")
             self.play(Write(continuous), run_time=.5)
 
-            self.wait_until_bookmark("intervall_limits")
-            self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("interval_limits")
+            self.play(Write(interval_limits, run_time=.5))
 
             self.wait_until_bookmark("ivt")
             self.play(Write(ivt, run_time=.5))
@@ -9522,12 +10605,12 @@ class Calc_practice_ivt_1_c(SophiaCursorScene):
         zero = self.translate("words.Zero")
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
-        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ ", ivt, r"\\$\Rightarrow$ ", zero, color=BLUE, font_size=fs2)
-        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, interval_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -9539,8 +10622,8 @@ class Calc_practice_ivt_1_c(SophiaCursorScene):
             self.wait_until_bookmark("continuous")
             self.play(Write(continuous), run_time=.5)
 
-            self.wait_until_bookmark("intervall_limits")
-            self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("interval_limits")
+            self.play(Write(interval_limits, run_time=.5))
 
             self.wait_until_bookmark("ivt")
             self.play(Write(ivt, run_time=.5))
@@ -9562,12 +10645,12 @@ class Calc_practice_ivt_1_d(SophiaCursorScene):
         zero = self.translate("words.Zero")
         # Define the function text using MathTex
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
-        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ ", ivt, r"\\$\Rightarrow$ ", zero, color=BLUE, font_size=fs2)
-        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, interval_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -9579,8 +10662,8 @@ class Calc_practice_ivt_1_d(SophiaCursorScene):
             self.wait_until_bookmark("continuous")
             self.play(Write(continuous), run_time=.5)
 
-            self.wait_until_bookmark("intervall_limits")
-            self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("interval_limits")
+            self.play(Write(interval_limits, run_time=.5))
 
             self.wait_until_bookmark("ivt")
             self.play(Write(ivt, run_time=.5))
@@ -9601,12 +10684,12 @@ class Calc_practice_ivt_1_e(SophiaCursorScene):
         ivt = self.translate("General.ivt")
         zero = self.translate("words.Zero")
         func = MathTex(r"f(x)=3x^3-1-3^x", color=c1t, font_size=fs2)
-        intervall = MathTex(r"[0,3]", color=c1t, font_size=fs2)
-        func_and_interval = VGroup(func, intervall).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
         continuous = Tex(r"$\bullet$ $f$ "+continuous, color=BLUE, font_size=fs2)
-        intervall_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
+        interval_limits = Tex(r"$\bullet$ $f(0)=-2$,\,", r"$f(3)=53$", color=BLUE, font_size=fs2)
         ivt = Tex(r"$\bullet$ ", ivt, r"\\$\Rightarrow$ ", zero, color=BLUE, font_size=fs2)
-        bullets = VGroup(continuous, intervall_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        bullets = VGroup(continuous, interval_limits, ivt).arrange(DOWN, buff=.2, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
         self.add(func_and_interval)
 
         # Define the voiceover text
@@ -9618,8 +10701,8 @@ class Calc_practice_ivt_1_e(SophiaCursorScene):
             self.wait_until_bookmark("continuous")
             self.play(Write(continuous), run_time=.5)
 
-            self.wait_until_bookmark("intervall_limits")
-            self.play(Write(intervall_limits, run_time=.5))
+            self.wait_until_bookmark("interval_limits")
+            self.play(Write(interval_limits, run_time=.5))
 
             self.wait_until_bookmark("ivt")
             self.play(Write(ivt, run_time=.5))
@@ -11081,7 +12164,16 @@ Or, put in other words: No matter how small of a distance to a we chose, there e
         self.wait(6)
 
 
+class Intro_ana_tub(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+
 PROTOTYPES=[
+########################################################### STUFF for Prototypes
+    PagePrototypeVideo.from_scene(Intro_ana_tub),
 ########################################################### MC
     PagePrototypeVideo.from_scene(Calc_practice_MC_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_MC_1_q),
@@ -11254,6 +12346,11 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_minmax_1_q),
     PagePrototypeVideo.from_scene(Calc_practice_minmax_1_a),
     PagePrototypeVideo.from_scene(Calc_practice_minmax_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_minmax_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_2_c),
     ########################################################### Integrals
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_integrals_1_q),
@@ -11281,12 +12378,24 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_b),
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_c),
     PagePrototypeVideo.from_scene(Calc_practice_induction_2_d),
-    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_q),
-    # PagePrototypeQuestion.from_scene(Calc_practice_induction_3_q),
-    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_a),
-    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_b),
-    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_c),
-    # PagePrototypeVideo.from_scene(Calc_practice_induction_3_d),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_induction_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_3_c),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_3_d),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_induction_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_4_c),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_4_d),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_induction_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_5_b),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_5_c),
+    PagePrototypeVideo.from_scene(Calc_practice_induction_5_d),
 ########################################################### Intermediate Value Theorem
     PagePrototypeVideo.from_scene(Calc_practice_ivt_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_ivt_1_q),

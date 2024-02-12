@@ -2916,7 +2916,10 @@
     "product_rule": "Produktregel",
     "sum_rule": "Summenregel",
     "is_divisible_by_5": "ist teilbar durch $5$",
-    "for_all": "für alle"
+    "for_all": "für alle",
+    "minmax": "Satz von Max. und Min.",
+    "closed_interval": "Abgeschlossenes Intervall",
+    "mvt": "Mittelwertsatz"
   },
   "LinAlg": {
     "14I1": {
@@ -2964,7 +2967,9 @@
     "Zero": "Nullstelle",
     "elements": "Elemente",
     "derivatives": "Ableitungen",
-    "integrals": "Integrale"
+    "integrals": "Integrale",
+    "min": "Minimum",
+    "differentiable": "differenzierbar"
   },
   "Func_6_P": {
     "22": {
@@ -3502,7 +3507,7 @@
       "7q": {
         "voiceover": "Betrachte die Gleichung <bookmark mark=\"eq_in\"/>z hoch 6 gleich (1 plus i) hoch 4. \nWelche der folgeden Aussagen gilt dann für die Lösungen zett in den Komplexen Zahlen C?\nAussage <bookmark mark=\"ans_a_in\"/>a: Die Gleichung hat genau 6 verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_b_in\"/>b: Es gibt unendlich viele verschiedene Lösungen. ...\nAussage <bookmark mark=\"ans_c_in\"/>c: Für alle Lösungen gilt, dass der Betrag von z gleich 1 ist. ...\nAussage <bookmark mark=\"ans_d_in\"/>d: Die Gleichung hat nur reelle Lösungen. ...",
         "answer-options": "[\"Genau 6 Lösungen\", \"Unendlich viele Lösungen\", \"Für alle Lösungen gilt $|z| = 1$\", \"Nur reellwertige Lösungen\"]",
-        "question-text": "Was gilt für alle Lösungen $z\\in\\mathbbC$ der Gleichung $z^6 = (1 i)^4$?"
+        "question-text": "Was gilt für alle Lösungen $z\\in\\mathbb C$ der Gleichung $z^6 = (1 i)^4$?"
       },
       "8q": {
         "voiceover": "Seien <bookmark mark=\"f_in_1\"/>a und b Elemente der reellen Zahlen mit a kleiner als b und sei die Funktion f, <bookmark mark=\"f_in_2\"/>die von dem geschlossenen Intervall von a bis b in die reellen Zahlen abbildet, eine stetige Funktion. <bookmark mark=\"f_in_2\"/>Welche der folgenden Aussagen trifft zu?\n<bookmark mark=\"answer_a_in\"/>Aussage a: Die Funktion f nimmt auf dem Intervall von a bis b kein Minimum an. ...\n<bookmark mark=\"answer_b_in\"/>Aussage b: Der Bildbereich f von dem Intervall a, b lässt sich als Intervall c, d schreiben mit c, d Element der reellen Zahlen und c kleiner gleich d. ...\n<bookmark mark=\"answer_c_in\"/>Aussage c: Der Bildbereich von f von dem Intervall a, b ist leer. ...\n<bookmark mark=\"answer_d_in\"/>Oder Aussage d: Die Funktion f ist auf dem Intervall von a bis b injektiv. ...",
@@ -3530,7 +3535,7 @@
         "voiceover": "Betrachten wir zunächst die<bookmark mark=\"f_1_in\"/> Funktion f von x gleich eins. Diese Funktion ist differenzierbar und ungerade. Also sind a und c <bookmark mark=\"a_c_red\"/>schon mal falsch, denn die Funktion f ist nicht Null und die Ableitung von f an der Stelle x gleich Null ist nicht ungleich Null.\n<bookmark mark=\"f_2_in\"/>Betrachten wir nun die Funktion f von x gleich x. Diese Funktion ist auch differenzierbar und ungerade. Also ist<bookmark mark=\"b_red\"/> b auch falsch, weil die Ableitung von f überall gleich eins ist, also ist f Strich von Null nicht Null.\nEs bleibt also <bookmark mark=\"d_green\"/>nur noch d übrig, und das ist auch die richtige Antwort."
       },
       "10q": {
-        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$\", \"$f$ ist nicht integrierbar\"]",
+        "answerOptions": "[\"Die Funktion $g:\\mathbb R \\\\rightarrow \\mathbb R$ mit $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade\", \"$\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$ für alle $a>0$\", \"$\\int_{-a}^{a}f(x)dx=0$ für alle $a>0$\", \"$f$ ist nicht integrierbar\"]",
         "question": "Sei $f:\\mathbb R \\rightarrow \\mathbb R$ eine stetige, gerade Funktion. \nWelche der folgenden Aussagen ist wahr:",
         "answer_a": "a) $g(x)=f(x)\\cdot \\cos(x)$ ist ungerade",
         "answer_b": "b) $\\int_{-a}^{a}f(x)dx=2\\int_0^af(x)dx$\\\\für alle $a>0$",
@@ -3764,10 +3769,10 @@
     },
     "practice_ivt": {
       "10q": {
-        "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"f_in\"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.\nBeweise, dass die Funktion auf<bookmark mark=\"intervall_in\"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt."
+        "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"f_in\"/>f von x gleich drei x hoch drei minus eins minus drei hoch x.\nBeweise, dass die Funktion auf<bookmark mark=\"interval_in\"/>dem geschlossenen Intervall von Null bis drei mindestens eine Nullstelle besitzt."
       },
       "10a": {
-        "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"continuous\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"intervall_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
+        "voiceover-text": "Die Funktion f von x gleich 3 x hoch drei minus eins minus drei hoch x <bookmark mark=\"continuous\"/>ist stetig, weil sie eine Komposition stetiger Funktionen ist.\nDa die Funktion stetig ist, können wir nun den Zwischenwertsatz anwenden. Wir berechnen, dass die Funktion an den Intervallgrenzen die Werte  <bookmark mark=\"interval_limits\"/>f von Null gleich minus zwei und f von drei gleich dreiundfünfzig annimmt.\nWeil f ja stetig ist, folgt dann aus <bookmark mark=\"ivt\"/>dem Zwischenwertsatz, dass die Funktion auf dem Intervall von Null bis drei mindestens eine Nullstelle besitzt, da sie auf dem Intervall alle Werte zwischen minus zwei und dreiundfünfzig annimmt.",
         "forgot_ivt": "Fast richtig. Du hast nur vergessen, den Zwischenwertsatz anzuwenden. Sehen wir uns das ganze gemeinsam nochmal an.",
         "forgot_continuity": "Fast richtig. Du hast nur vergessen, zu nennen, dass die FUnktion stetig ist, und das ist eine Voraussetzung für den Zwischenwertsatz. Sehen wir uns das ganze gemeinsam nochmal an... ",
         "forgot_interval_limits": "Fast richtig. Du hast nur vergessen, zu prüfen, dass die Funktionswerte an den Intervallgrenzen positiv sind für f von Null, und negativ für f von drei. Sehen wir uns das ganze gemeinsam nochmal an... "
@@ -3865,13 +3870,15 @@
         "voiceover-text": "Wir beginnen mit <bookmark mark=\"base_case_in\"/>dem Induktionsanfang, also dem Fall für n gleich Null. Wenn wir <bookmark mark=\"base_term_in\"/> das in die Formel einsetzen, erhalten wir, dass \"a\" Null gleich 5 minus 4 durch eins ist, also gleich eins. Und die Definition von \"a\" Null ist auch Eins. Damit <bookmark mark=\"base_green\"/>haben wir den Induktionsanfang bereits abgeschlossen.\nAls nächstes führen wir <bookmark mark=\"induction_step_in\"/>den Induktionsschritt durch. Wir gehen jetzt also davon aus, dass die Formel für das Element mit dem Index n verwendet werden kann, und wir wollen zeigen, dass wir sie auch für \"a\" n plus eins verwenden können.\nNun, <bookmark mark=\"term_1_in\"/>\"a\" n plus eins ist nach unserer Rekursionsregel gleich a n plus fünf, geteilt durch zwei.\nWir können dann <bookmark mark=\"term_2_in_1\"/> den Term kopieren und in <bookmark mark=\"term_2_in_2\"/> fünf minus 4 durch 2 hoch n für \"a\" n einsetzen, und erhalten 5 minus 4 durch 2 hoch n plus 5, alles geteilt durch 2.\nJetzt <bookmark mark=\"term_3_in_1_a\"/>ergeben die zwei Fünfer durch zwei <bookmark mark=\"term_3_in_1_b\"/>eine 5, und <bookmark mark=\"term_3_in_2_a\"/>4 durch 2 hoch n, geteilt durch zwei, kann umgeschrieben werden als<bookmark mark=\"term_3_in_2_b\"/>4 durch 2 hoch n plus 1.\nUnd damit sind wir bei dem Wert der Formel für n plus 1. Damit haben wir auch <bookmark mark=\"step_green\"/>den Induktionsschritt abgeschlossen, und unser Beweis durch Induktion ist beendet."
       },
       "4q": {
-        "voiceover-text": "Betrachten wir die Folge <bookmark mark=\"sequence_in_1\"/>\"a\" n, die rekursiv definiert ist.\nWir setzen <bookmark mark=\"sequence_in_2\"/>\"a\" null auf die Wurzel von zwei, und <bookmark mark=\"sequence_in_3\"/>a n plus eins ist definiert als die Wurzel von \"a\" n plus zwei.\nZeige durch natürliche Induktion, dass <bookmark mark=\"theorem_in\"/>die Folge nach oben durch den Wert 2 begrenzt ist."
+        "voiceover-text": "Betrachten wir die Folge <bookmark mark=\"sequence_in_1\"/>\"a\" n, die rekursiv definiert ist.\nWir setzen <bookmark mark=\"sequence_in_2\"/>\"a\" null auf die Wurzel von zwei, und <bookmark mark=\"sequence_in_3\"/>a n plus eins ist definiert als die Wurzel von \"a\" n plus zwei.\nZeige durch natürliche Induktion, dass <bookmark mark=\"theorem_in\"/>die Folge nach oben durch den Wert 2 begrenzt ist.",
+        "question-text": "Zeige mit vollständiger Induktion, dass $a_n\\leq2$ für alle $n\\in\\mathbb N$ gilt."
       },
       "4a": {
         "voiceover-text": "Für unseren Induktionsbeweis müssen wir zeigen, dass die Aussage für den Induktionsanfang gilt, in dem n gleich Null ist, und dann zeigen wir, dass sie, wenn sie für n gilt, auch für n plus eins gilt.\nBeginnen wir also mit<bookmark mark=\"base_case_in\"/> dem Induktionsanfang. Das Folgenelement a Null <bookmark mark=\"base_term_in\"/> ist ja definiert als die Wurzek von zwei, also ist das ELement kleiner als zwei. also<bookmark mark=\"base_green\"/> ist der Induktionsanfang erfüllt.\nBetrachten wir nun den Induktionsschritt<bookmark mark=\"induction_step_in\"/>. Wir nehmen an, dass die Aussage für n gilt, und wir müssen zeigen, dass sie auch für n plus eins gilt. Das Element a n plus eins ist definiert <bookmark mark=\"term_1_in\"/>als die Wurzel aus a n plus zwei. Da a n kleiner als zwei ist, ist a n plus eins <bookmark mark=\"term_2_in_1\"/>kleiner als die Wurzel zwei plus zwei, was <bookmark mark=\"term_2_in_2\"/>gleich zwei ist. Also<bookmark mark=\"step_green\"/> ist die Aussage auch für den Induktionsschritt erfüllt.\nJetzt haben wir den Basisfall und den Induktionsschritt abgeschlossen, also haben wir unseren Beweis durch Induktion beendet."
       },
       "5q": {
-        "voiceover-text": "zeige durch vollständige Induktion, <bookmark mark=\"theorem_in\"/>dass 6 hoch n -1 für alle natürlichen Zahlen n durch 5 teilbar ist."
+        "voiceover-text": "zeige durch vollständige Induktion, <bookmark mark=\"theorem_in\"/>dass 6 hoch n -1 für alle natürlichen Zahlen n durch 5 teilbar ist.",
+        "question-text": "Zeige mit vollständiger Induktion, dass $6^n-1$ für alle $n\\in\\mathbb N$ durch $5$ teilbar ist."
       },
       "5a": {
         "voiceover-text": "Für den Induktionsbeweis betrachten wir den Induktionsanfang, in dem n gleich Null ist, und dann den Induktionsschritt, in dem wir zeigen, dass die Aussage, wenn sie für n gilt, auch für n plus eins gilt.\nBeginnen wir also mit dem<bookmark mark=\"base_case_in\"/> Induktionsanfang, in dem n gleich Null ist. Für n gleich Null erhalten wir, dass<bookmark mark=\"base_term_in\"/> 6 hoch Null minus Eins gleich 1-1 ist, was gleich Null ist. Und Null ist durch 5 teilbar, denn wir können es als 0 mal 5 schreiben. Damit <bookmark mark=\"base_green\"/> haben wir den Induktionsanfang abgeschlossen.\nJetzt kommen wir zum <bookmark mark=\"induction_step_in\"/>Induktionsschritt. Wir nehmen also an, dass die Aussage für n gilt, und wir wollen zeigen, dass sie auch für n plus eins gilt. Wir nehmen also an, dass sechs hoch n -1 durch fünf teilbar ist.\nAlso erhalten wir <bookmark mark=\"term_1_in_1\"/>sechs hoch n plus eins minus 1, was <bookmark mark=\"term_1_in_2\"/>gleich 6 mal 6 hoch n, minus eins ist.\nDa sechs hoch n minus eins durch fünf teilbar ist, können wir es <bookmark mark=\"explainer_1_in\"/>als fünf mal m für eine ganze Zahl m schreiben. Wenn wir auf beiden Seiten eins addieren, erhalten wir <bookmark mark=\"explainer_2_in\"/>dass sechs hoch n gleich 5m minus eins ist. Das setzen wir dann\n<bookmark mark=\"term_2_a_transforms\"/>in unsere Formel ein und erhalten 6 mal 5 m plus eins minus eins. Wenn wir <bookmark mark=\"term_2_a_complete\"/>das ausmultiplizieren, erhalten wir 30 m plus sechs minus eins, was<bookmark mark=\"term_2_b\"/>gleich 30 m plus 5 ist.\nDas können wir dann umschreiben als <bookmark mark=\"term_3_in\"/>fünf mal sechs m plus eins, also ist der Term durch fünf teilbar. Wir haben damit<bookmark mark=\"step_green\"/> den Induktionsschritt abgeschlossen und sind mit unserem Beweis fertig."
@@ -3932,6 +3939,16 @@
       },
       "1q": {
         "question-text": "Für welchen Wert von $x$ ist die Stärke $s$, die durch die Funktion $s(x)=-2x^2+12x+20$ beschrieben wird, maximal?"
+      },
+      "02a": {
+        "voiceover-text": "Beachte zunächst, dass die Funktion f <bookmark mark=\"continuous\"/> stetig ist, denn sie ist eine Komposition von stetigen Funktionen.\nAußerdem ist das Intervall<bookmark mark=\"closed_interval\"/>, das wir betrachten, ein geschlossenes Intervall.\nDiese beiden Tatsachen zusammen bedeuten, dass wir<bookmark mark=\"evt\"/> den Satz von Maximum und Minimum anwenden können: Eine stetige Funktion auf einem geschlossenen Intervall hat ein Maximum und ein Minimum.\nUnsere Funktion, die stetig ist, hat also ein Minimum auf dem geschlossenen Intervall von 2 bis 4.",
+        "forgot_continuity": "Fast, du hast nur vergessen zu erwähnen, dass $f$ stetig ist"
+      },
+      "02q": {
+        "voiceover-text": "Betrachten wir die Funktion<bookmark mark=\"f_in\"/> f von x gleich 4 x hoch drei minus 4 hoch x Kosinus von x plus x.\nHat die Funktion ein Minimum auf dem <bookmark mark=\"interval_in\"/>geschlossenen Intervall von zwei bis vier?"
+      },
+      "2q": {
+        "question-text": "Hat die Funktion $f(x)=4x^3-4^{x\\cos(x)+x}$ ein Minimum auf dem Intervall $[2,4]$? Begründe deine Antwort."
       }
     }
   },
