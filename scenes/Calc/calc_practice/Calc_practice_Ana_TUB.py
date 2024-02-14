@@ -11025,7 +11025,7 @@ class Calc_practice_trig_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = [r"$\frac{2\Pi}{3}$", r"$1$"],
+            answerOptions = [r"$\frac{2{\pi}}{3}$", r"$1$"],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_trig.1q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
