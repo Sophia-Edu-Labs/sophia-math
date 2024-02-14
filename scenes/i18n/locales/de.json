@@ -3912,6 +3912,9 @@
       },
       "4a": {
         "voiceover-text": "Die Funktion, für die wir die Ableitung berechnen wollen, ist eine Summe von zwei Funktionen, also wenden wir <bookmark mark=\"step_1\"/>die Summenregel an: ...\nDie Ableitung einer Summe ist gleich <bookmark mark=\"derivative_3\"/>der Summe der Ableitungen. Nun müssen wir <bookmark mark=\"step_2_a\"/>die einzelnen Ableitungen berechnen. ...\nDie Ableitung des Sinus von x ist <bookmark mark=\"sine_prime\"/> gleich dem Kosinus von x. Um nun die Ableitung des natürlichen Logarithmus von x zum Quadrat zu berechnen, müssen wir <bookmark mark=\"step_2_b\"/>die Kettenregel anwenden. ...\nDie Kettenregel besagt, dass die Ableitung einer Komposition von Funktionen gleich der Ableitung der äußeren Funktion mal der Ableitung der inneren Funktion ist. ...\nDie Ableitung von <bookmark mark=\"highlight_outer\"/> der äußeren Funktion <bookmark mark=\"outer_derivative\"/> ist gleich eins durch x Quadrat, weil die Ableitung des natürlichen Logarithmus gleich eins durch sein Argument ist. ...\nWir multiplizieren das <bookmark mark=\"highlight_inner\"/>mit der Ableitung der inneren Funktion, die <bookmark mark=\"inner_derivative\"/> gleich 2 x ist. ...\nJetzt können wir <bookmark mark=\"highlight_rewrite\" />eins durch x quadriert mal zwei x<bookmark mark=\"solution\" /> als 2 durch x umschreiben und erhalten die Lösung Kosinus von x plus 2 durch x."
+      },
+      "5q": {
+        "voiceover-text": "Was ist die Ableitung der Funktion <bookmark mark=\"f_in\"/>f von x gleich dem natürlichen Logarithmus von x plus dem Sinus von e hoch x?"
       }
     },
     "practice_integrals": {

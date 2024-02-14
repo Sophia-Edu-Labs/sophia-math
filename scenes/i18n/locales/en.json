@@ -3918,6 +3918,9 @@
       },
       "4a": {
         "voiceover-text": "The function for which we want to compute the derivative is a sum of two functions, so we <bookmark mark=\"step_1\"/>apply the sum rule: ...\nThe derivative of a sum is equal to <bookmark mark=\"derivative_3\"/>the sum of the derivatives. Now we need to compute <bookmark mark=\"step_2_a\"/>the individual derivatives. ...\nThe derivative of the sine of x is<bookmark mark=\"sine_prime\"/> equal to the cosine of x. Now to compute the derivative of the natural logarithm of x squared, we need to <bookmark mark=\"step_2_b\"/>apply the chain rule. ...\nThe chain rule says that the derivative of a composition of functions is equal to the derivative of the outer function times the derivative of the inner function. ...\nThe derivative of<bookmark mark=\"highlight_outer\"/> the outer function <bookmark mark=\"outer_derivative\"/>is equal to one over x squared, because the derivative of the natural logarithm is equal to one over its argument. ...\nWe multiply that <bookmark mark=\"highlight_inner\"/>with the derivative of the inner function, which is<bookmark mark=\"inner_derivative\"/> equal to 2 x. ...\nNow we can<bookmark mark=\"highlight_rewrite\"/>rewrite one over x squared times two x<bookmark mark=\"solution\"/> as 2 over x, and get the solution cosine of x plus 2 over x. "
+      },
+      "5q": {
+        "voiceover-text": "What is the derivative of the function <bookmark mark=\"f_in\"/>f of x equals the natural logarithm of x plus the sine of e to the power of x?"
       }
     },
     "practice_integrals": {
