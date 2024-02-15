@@ -3914,7 +3914,18 @@
         "voiceover-text": "Die Funktion, für die wir die Ableitung berechnen wollen, ist eine Summe von zwei Funktionen, also wenden wir <bookmark mark=\"step_1\"/>die Summenregel an: ...\nDie Ableitung einer Summe ist gleich <bookmark mark=\"derivative_3\"/>der Summe der Ableitungen. Nun müssen wir <bookmark mark=\"step_2_a\"/>die einzelnen Ableitungen berechnen. ...\nDie Ableitung des Sinus von x ist <bookmark mark=\"sine_prime\"/> gleich dem Kosinus von x. Um nun die Ableitung des natürlichen Logarithmus von x zum Quadrat zu berechnen, müssen wir <bookmark mark=\"step_2_b\"/>die Kettenregel anwenden. ...\nDie Kettenregel besagt, dass die Ableitung einer Komposition von Funktionen gleich der Ableitung der äußeren Funktion mal der Ableitung der inneren Funktion ist. ...\nDie Ableitung von <bookmark mark=\"highlight_outer\"/> der äußeren Funktion <bookmark mark=\"outer_derivative\"/> ist gleich eins durch x Quadrat, weil die Ableitung des natürlichen Logarithmus gleich eins durch sein Argument ist. ...\nWir multiplizieren das <bookmark mark=\"highlight_inner\"/>mit der Ableitung der inneren Funktion, die <bookmark mark=\"inner_derivative\"/> gleich 2 x ist. ...\nJetzt können wir <bookmark mark=\"highlight_rewrite\" />eins durch x quadriert mal zwei x<bookmark mark=\"solution\" /> als 2 durch x umschreiben und erhalten die Lösung Kosinus von x plus 2 durch x."
       },
       "5q": {
-        "voiceover-text": "Was ist die Ableitung der Funktion <bookmark mark=\"f_in\"/>f von x gleich dem natürlichen Logarithmus von x plus dem Sinus von e hoch x?"
+        "voiceover-text": "Was ist die Ableitung der Funktion <bookmark mark=\"f_in\"/>f von x gleich dem natürlichen Logarithmus von x plus dem Sinus von e hoch x?",
+        "question-text": "Berechne die Ableitung $\\frac{d}{dx}\\left(\\ln(x)+\\sin(e^x)\\right)$"
+      },
+      "5a": {
+        "voiceover-text": "Die Funktion, für die wir die Ableitung berechnen wollen, ist die Summe von zwei Funktionen, dem natürlichen Logarithmus und der Sinusfunktion. Also wenden wir <bookmark mark=\"step_1\"/>die Summenregel an: ...\nDie Summenregel besagt, dass die Ableitung einer Summe gleich <bookmark mark=\"derivative_3\"/>der Summe der Ableitungen ist. Also berechnen wir jetzt <bookmark mark=\"step_2_a\"/>die einzelnen Ableitungen. ...\nDie Ableitung des natürlichen Logarithmus von x ist<bookmark mark=\"sine_prime\"/> gleich eins durch x. Um nun die Ableitung des Sinus von e hoch x zu berechnen, müssen wir <bookmark mark=\"step_2_b\"/>die Kettenregel anwenden. ...\nDie Kettenregel besagt, dass die Ableitung einer Komposition von Funktionen gleich der Ableitung der äußeren Funktion mal der Ableitung der inneren Funktion ist. ...\nDie Ableitung von<bookmark mark=\"highlight_outer\"/> der äußeren Funktion <bookmark mark=\"outer_derivative\"/> ist gleich dem Kosinus von e hoch x, weil die Ableitung des Sinus der Kosinus ist. ...\nWir multiplizieren das <bookmark mark=\"highlight_inner\"/>mit der Ableitung der inneren Funktion, die <bookmark mark=\"inner_derivative\"/> e hoch x ist, denn die Ableitung der Exponentialfunktion ist die Exponentialfunktion.\nUnd das ist unsere Lösung: Eins durch x plus den Kosinus von e hoch x mal e hoch x."
+      },
+      "6q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"f_in\"/>f von x gleich dem natürlichen Logarithmus von x, geteilt durch x hoch drei minus c. \nKannst du die <bookmark mark=\"derivative_transform\"/>Ableitung dieser Funktion berechnen?",
+        "question-text": "Berechne die Ableitung $\\frac{d}{dx}\\left(\\frac{\\ln(x)}{x^3-z}\\right)$"
+      },
+      "6a": {
+        "voiceover-text": "Um die Ableitung dieser Funktion zu berechnen, verwenden wir die<bookmark mark=\"quotient_rule\"/>Quotientenregel, da es sich um den Quotienten von zwei Funktionen handelt. Die Quotientenregel besagt, dass die Ableitung des Quotienten gleich der Ableitung der Zählerfunktion mal der Nennerfunktion ist, minus der Zählerfunktion mal der Ableitung der Nennerfunktion, alles geteilt durch das Quadrat der Nennerfunktion.\nAlso berechnen wir zunächst<bookmark mark=\"frac_in\"/> die Ableitung des Zählers, die <bookmark mark=\"el_1\"/>eins durch x ist, und multiplizieren sie mit <bookmark mark=\"el_2\"/>dem Nenner x hoch drei minus z. Davon subtrahieren wir das Produkt des Zählers, <bookmark mark=\"el_3\"]also den natürlichen Logarithmus von x multipliziert mit <bookmark mark=\"el_4\"]der Ableitung des Nenners, also 3 x zum Quadrat.\nUnd dann wird das Ganze durch <bookmark mark=\"el_5\"/>den Nenner zum Quadrat geteilt, also x hoch drei minus z zum Quadrat.\nUnd das war's, das ist die Ableitung, die wir gesucht haben."
       }
     },
     "practice_integrals": {
@@ -3952,6 +3963,34 @@
       },
       "2q": {
         "question-text": "Hat die Funktion $f(x)=4x^3-4^{x\\cos(x)+x}$ ein Minimum auf dem Intervall $[2,4]$? Begründe deine Antwort."
+      }
+    },
+    "practice_mvt": {
+      "1q": {
+        "voiceover-text": "Wir haben die Funktion <bookmark mark=\"f_in\"/>f von x gleich x hoch 3 minus 3 x zum Quadrat plus 2, und wir betrachten nur das <bookmark mark=\"interval_in\"/>geschlossene Intervall von 0 bis 3.\nBeweise, dass die Ableitung f strich von x mindestens eine Nullstelle in diesem Intervall hat, ohne die ableitung tatsächlich zu berechnen."
+      },
+      "1a": {
+        "voiceover-text": "Die Funktion f von x ist gleich x hoch 3 minus 3 x Quadrat plus 2 <bookmark mark=\"differentiable\"/>ist differenzierbar, weil sie eine Komposition von differenzierbaren Funktionen ist. Sie ist also auch auf dem geschlossenen Intervall von 0 bis 3 differenzierbar.\nDa wir eine differenzierbare Funktion auf einem geschlossenen Intervall a b haben, können wir den<bookmark mark=\"mvt_in\"/> Mittelwertsatz anwenden, der besagt, dass es<bookmark mark=\"exists_c\"/> einen Wert c im offenen Intervall von 0 bis 3 gibt,\nso dass <bookmark mark=\"f_prime_1\"/>f strich von c gleich dem Bruch f von b minus f von a durch b minus a ist.\nWenn wir 0 für \"a\" und 3 für b einsetzen, <bookmark mark=\"f_prime_2\"/> erhalten wir, dass es einen Wert c gibt, für den f strich von c gleich 2 minus 2 durch 3 ist, was <bookmark mark=\"f_prime_3\"/> gleich Null ist.\nWir sehen also, dass der Mittelwertsatz impliziert, dass es einen Wert c im offenen Intervall von 0 bis 3 gibt, für den f strich von c gleich Null ist. Und dies<bookmark mark=\"all_green\"/> ist unsere Lösung.",
+        "forgot_differentiability": "Fast richtig, du hast nur vergessen zu erwähnen, dass die Funktion im Intervall differenzierbar ist.",
+        "derivative": "Du hast die Ableitung berechnet, aber wir suchen nach einer Lösung, die die Ableitung nicht verwendet."
+      },
+      "2q": {
+        "voiceover-text": "Welche der folgenden Funktionen erfüllt nicht die Anforderungen des Mittelwertsatzes für das <bookmark mark=\"interval_in\"/>geschlossene Intervall von minus eins bis eins:\nIst es die <bookmark mark=\"answer_a_in\"/>Funktion f von x gleich x hoch drei? ... Oder ist es die <bookmark mark=\"answer_b_in\"/>Funktion g von x ist gleich 1 durch x? ... Oder <bookmark mark=\"answer_c_in\"/> ist es die Funktion h von x gleich dem Betrag von x? ... Oder <bookmark mark=\"answer_d_in\"/>ist es die Funktion i von x gleich dem Sinus von x?"
+      },
+      "2a": {
+        "voiceover-text": "Um den Mittelwertsatz anwenden zu können, muss unsere Funktion auf dem geschlossenen Intervall von a bis b stetig und auf dem offenen Intervall von a bis b differenzierbar sein. ...\nAlle vier Funktionen sind auf dem geschlossenen Intervall von a bis b stetig. Die Funktionen <bookmark mark=\"a_b_grey\"/>f von x ist gleich x hoch drei und g von x ist gleich eins durch x sind ebenfalls differenzierbar auf dem Intervall von minus eins bis eins.\nDie <bookmark mark=\"c_red\"/>Funktion h von x gleich dem Absolutwert von x ist dagegen nicht auf dem Intervall von minus eins bis eins differenzierbar, weil sie bei x gleich null nicht differenzierbar ist.\nDie <bookmark mark=\"d_grey\"/>Funktion i von x gleich dem Sinus von x ist wiederum auf dem Intervall differenzierbar. Die richtige Antwort ist also c."
+      },
+      "3a": {
+        "voiceover-text": "Der Mittelwertsatz besagt, dass, wenn f auf einem geschlossenen Intervall differenzierbar ist, es ein c im offenen Intervall mit denselben Grenzen gibt, so dass <bookmark mark=\"f_prime_2\"/>f strich von c gleich dem Bruch von f von b minus f von a geteilt durch b minus a ist, wobei a und b die Intervallgrenzen sind.\nWir können <bookmark mark=\"f_prime_3\"/>für b die Zahl 3 und für a die Zahl 1 einsetzen und dann f von 3 und f von 1 berechnen. Damit <bookmark mark=\"f_prime_4\"/>bleibt uns 6 - 2 durch 3 - 1, was <bookmark mark=\"f_prime_5\"/>gleich 4 durch 2 ist, also 2. Unser Endergebnis ist also zwei."
+      },
+      "3q": {
+        "voiceover-text": "Betrachten wir die <bookmark mark=\"func_in\"/>Funktion f von x gleich x Quadrat minus 2 x plus 3.\nWenn wir den Mittelwertsatz auf diese Funktion auf dem <bookmark mark=\"interval_in\"/> geschlossenen Intervall von 1 bis 3 anwenden, dann wissen wir, dass es<bookmark mark=\"exists_in\"/> ein c im offenen Intervall von eins bis drei gibt, für das der Wert der <bookmark mark=\"f_prime_in\"/>Ableitung f prime von c gleich  was ist ?",
+        "question-text": "Für die Funktion $f(x) = x^2 - 2x+3$ auf $[1, 3]$ gibt es nach dem Mittelwertsatz ein $c \\in (1, 3)$, wobei $f'(c \n) = ?$"
+      }
+    },
+    "Practice_mvt": {
+      "2q": {
+        "question-text": "Welche Funktion erfüllt die Anforderungen des Mittelwertsatzes für das Intervall $[-1,1]$ nicht?"
       }
     }
   },

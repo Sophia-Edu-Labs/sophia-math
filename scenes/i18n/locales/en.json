@@ -3920,7 +3920,18 @@
         "voiceover-text": "The function for which we want to compute the derivative is a sum of two functions, so we <bookmark mark=\"step_1\"/>apply the sum rule: ...\nThe derivative of a sum is equal to <bookmark mark=\"derivative_3\"/>the sum of the derivatives. Now we need to compute <bookmark mark=\"step_2_a\"/>the individual derivatives. ...\nThe derivative of the sine of x is<bookmark mark=\"sine_prime\"/> equal to the cosine of x. Now to compute the derivative of the natural logarithm of x squared, we need to <bookmark mark=\"step_2_b\"/>apply the chain rule. ...\nThe chain rule says that the derivative of a composition of functions is equal to the derivative of the outer function times the derivative of the inner function. ...\nThe derivative of<bookmark mark=\"highlight_outer\"/> the outer function <bookmark mark=\"outer_derivative\"/>is equal to one over x squared, because the derivative of the natural logarithm is equal to one over its argument. ...\nWe multiply that <bookmark mark=\"highlight_inner\"/>with the derivative of the inner function, which is<bookmark mark=\"inner_derivative\"/> equal to 2 x. ...\nNow we can<bookmark mark=\"highlight_rewrite\"/>rewrite one over x squared times two x<bookmark mark=\"solution\"/> as 2 over x, and get the solution cosine of x plus 2 over x. "
       },
       "5q": {
-        "voiceover-text": "What is the derivative of the function <bookmark mark=\"f_in\"/>f of x equals the natural logarithm of x plus the sine of e to the power of x?"
+        "voiceover-text": "What is the derivative of the function <bookmark mark=\"f_in\"/>f of x equals the natural logarithm of x plus the sine of e to the power of x?",
+        "question-text": "Compute the derivative $\\frac{d}{dx}\\left(\\ln(x)+\\sin(e^x)\\right)$"
+      },
+      "5a": {
+        "voiceover-text": "The function for which we want to compute the derivative is a sum of two functions, the natural logarithm and the sine function. So we <bookmark mark=\"step_1\"/>apply the sum rule: ...\nThe sum rule says that the derivative of a sum is equal to <bookmark mark=\"derivative_3\"/>the sum of the derivatives. So we'll now need to compute <bookmark mark=\"step_2_a\"/>the individual derivatives. ...\nThe derivative of the natural logarithm of x is<bookmark mark=\"sine_prime\"/> equal to one over x. Now to compute the derivative of the sine of e to the power of x, we need to <bookmark mark=\"step_2_b\"/>apply the chain rule. ...\nThe chain rule says that the derivative of a composition of functions is equal to the derivative of the outer function times the derivative of the inner function. ...\nThe derivative of<bookmark mark=\"highlight_outer\"/> the outer function <bookmark mark=\"outer_derivative\"/>is equal to the cosine of e to the power of x, because the derivative of the sine is the cosine. ...\nWe multiply that <bookmark mark=\"highlight_inner\"/>with the derivative of the inner function, which is<bookmark mark=\"inner_derivative\"/> e to the power of x, because the derivative of the exponential function is the exponential function.\nAnd that's our solution: one over x plus the cosine of e to the power of x times e to the power of x."
+      },
+      "6q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"f_in\"/>f of x equals the natural logarithm of x, divided by x cubed minus c. Can you compute the <bookmark mark=\"derivative_transform\"/>derivative of that function?",
+        "question-text": "Compute the derivative $\\frac{d}{dx}\\left(\\frac{\\ln(x)}{x^3-z}\\right)$"
+      },
+      "6a": {
+        "voiceover-text": "To compute the derivative of this function, we'll use the<bookmark mark=\"quotient_rule\"/>quotient rule, because it is a quotient of two functions. The quotient rule says, that the derivative of the quotient is equal to the derivative of the numerator function times the denominator function, minus the numerator function times the derivative of the denominator function, all over the square of the denominator function.\nSo first<bookmark mark=\"frac_in\"/>, we compute the derivative of the numerator, which is <bookmark mark=\"el_1\"/>one over x and multiply it with <bookmark mark=\"el_2\"/>the denominator x cubed minus z. From this, we subtract the product of the enumerator, <bookmark mark=\"el_3\"/>which is the natural logarithm of x multiplied with <bookmark mark=\"el_4\"/>the derivative of the denominator, which is 3 x squared.\nAnd then all of that is divided by <bookmark mark=\"el_5\"/>the denominator squared, which is x cubed minus z, squared.\nAnd that's it, that's the derivative we were looking for."
       }
     },
     "practice_integrals": {
@@ -3958,6 +3969,34 @@
       },
       "2q": {
         "question-text": "Does the function $f(x)=4x^3-4^{x\\cos(x)+x}$ have a minimum on the interval $[2,4]$? Explain your reasoning."
+      }
+    },
+    "practice_mvt": {
+      "1q": {
+        "voiceover-text": "We're given the function <bookmark mark=\"f_in\"/>f of x equals x cubed minus 3 x squared plus 2, and we're only considering the <bookmark mark=\"interval_in\"/>closed interval from 0 to 3. Prove that the derivative f prime of x has at least one zero on that interval without actually computing f prime."
+      },
+      "1a": {
+        "voiceover-text": "The function f of x equals x cubed minus 3 x squared plus 2 <bookmark mark=\"differentiable\"/>is differentiable because it is a composition of differentiable functions. So it is also differentiable on the closed interval from 0 to 3.\nSince we have a differentiable function on a closed interval a b, we can apply the<bookmark mark=\"mvt_in\"/> mean value theorem, which states that there<bookmark mark=\"exists_c\"/> exists a value c in the open interval from 0 to 3,\nsuch that <bookmark mark=\"f_prime_1\"/>f prime of c is equal to the fraction f of b minus f of a over b minus a.\nIf we plug in 0 for \"a\" and 3 for b, <bookmark mark=\"f_prime_2\"/>we get that there exists a value c for which f prime of c is equal to 2 minus 2 over 3, which <bookmark mark=\"f_prime_3\"/> is equal to zero.\nSo now we can see, that the mean value theorem implies that there exists a value c in the open interval from 0 to 3 for which f prime of c is equal to zero. And this<bookmark mark=\"all_green\"/> is our solution.",
+        "forgot_differentiability": "Almost right, you just forgot to mention that the function is differentiable on the interval.",
+        "derivative": "You computed the derivative, but we're looking for a solution that does not use the derivative."
+      },
+      "2q": {
+        "voiceover-text": "Which of the following functions does not satisfy the requirements for the mean value theorem on the <bookmark mark=\"interval_in\"/>closed interval from negative one to one:\nIs it the <bookmark mark=\"answer_a_in\"/>function f of x equals x cubed? ... Or is it the <bookmark mark=\"answer_b_in\"/>function g of x equals 1 over x? ... Or <bookmark mark=\"answer_c_in\"/> is it the function h of x equals the absolute value of x? ... Or <bookmark mark=\"answer_d_in\"/>is it the function i of x equal to the sine of x?"
+      },
+      "2a": {
+        "voiceover-text": "In order to apply the Mean value theorem, our function has to be continuous on the closed interval from a to b, and differentiable on the open interval from a to b. ...\nAll of the four functions are continuous on the closed interval from a to b. The functions <bookmark mark=\"a_b_grey\"/>f of x equals x cubed, and g of x equals one over x are also differentiable on the interval from negative one to one.\nThe <bookmark mark=\"c_red\"/>function h of x equal to the absolute value of x on the other hand is not differentiable on the interval from negative one to one, because it is not differentiable at x equals zero.\nThe <bookmark mark=\"d_grey\"/>function i of x equals the sine of x is differentiable on the interval again. So the correct answer is c."
+      },
+      "3a": {
+        "voiceover-text": "The mean value theorem states that if f is differentiable on a closed interval, there exists a c in the open interval with the same limits, such that <bookmark mark=\"f_prime_2\"/>f prime of c is equal to the fraction of f of b minus f of a over b minus a, where a and b are the interval limits.\nWe can <bookmark mark=\"f_prime_3\"/>plug in 3 for b and 1 for \"a\", and then compute f of 3 and f of one. This <bookmark mark=\"f_prime_4\"/>leaves us with 6 - 2 over 3 - 1, which <bookmark mark=\"f_prime_5\"/>is equal to 4 over 2, which is 2. So our final result is two."
+      },
+      "3q": {
+        "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>function f of x equals x squared minus 2 x plus 3.\nIf we apply the mean value theorem to that function on the <bookmark mark=\"interval_in\"/> closed interval from 1 to 3, then we know that there<bookmark mark=\"exists_in\"/> exists a c in the open interval from one to three for which the value of the <bookmark mark=\"f_prime_in\"/>derivative f prime of c is equal to what?",
+        "question-text": "For the function $f(x) = x^2 - 2x + 3$ on $[1, 3]$, by the mean value theorem, there exists a $c \\in (1, 3)$ where $f'(c) = ?$"
+      }
+    },
+    "Practice_mvt": {
+      "2q": {
+        "question-text": "Which of these does not satisfy the requirements for the mean value theorem on the interval $[-1,1]$?"
       }
     }
   },

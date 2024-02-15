@@ -7098,23 +7098,23 @@ class Calc_practice_derivatives_4_b(SophiaCursorScene):
 #####################################
 class Calc_practice_derivatives_5_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = [
-    #         """
-    #         cos(x)+2/x or an equivalent statement
-    #         """,
-    #         """
-    #         The answer is incorrect.
-    #         """
-    #         ],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_derivatives.4q.question-text"),
-    #         llmCheckDetails=SophiaLLMQuestionCheckDetail(
-    #             fallbackOptionIndex=1,
-    #             specialInputSnippets = ["[ ]", "f"],
-    #         )
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+            """
+            1/x+e^x*cos(e^x) or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_derivatives.5q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -7165,7 +7165,7 @@ class Calc_practice_derivatives_5_a(SophiaCursorScene):
         self.add(derivative_1)
 
         # Define the voiceover text
-        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_derivatives.4a.voiceover-text")
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_derivatives.5a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -7202,41 +7202,264 @@ class Calc_practice_derivatives_5_a(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
+class Calc_practice_derivatives_5_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        
+        # Define the function text using MathTex
+        scale_factor = .85
+        derivative_1 = MathTex(r"\frac{d}{dx}\left(", r"\ln(x)+", r"\sin\left(e^x\right)", r"\right)=?", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        derivative_2 = MathTex(r"\frac{d}{dx}\left(", r"\ln(x)", r"+", r"\sin\left(e^x\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", self.translate("General.sum_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_1, DOWN, buff=.4)
+        derivative_3 = MathTex(r"\frac{d}{dx}\left(", r"\ln(x)", r"\right)", r"+", r"\frac{d}{dx}\left(", r"\sin\left(", r"e^x", r"\right)", r"\right)", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_1, DOWN, buff=.4)
+        step_2 = Tex(r"$\Downarrow$ ", self.translate("General.chain_rule"), color=BLUE, font_size=fs2).scale(scale_factor).next_to(derivative_3, DOWN, buff=.4)
+        derivative_4 = MathTex(r"\frac1x", r"+", r"\cos(e^x)", r"\cdot", r"e^x", color=c1t, font_size=fs2).scale(scale_factor).next_to(step_2, DOWN, buff=.4)
+        self.add(derivative_1)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_derivatives.5a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1")
+            self.play(Write(step_1), TransformMatchingTex(derivative_1, derivative_2), run_time=1)
+
+            self.wait_until_bookmark("derivative_3")
+            self.play(Write(derivative_3), run_time=1)
+
+            self.wait_until_bookmark("step_2_a")
+            self.play(Write(step_2[0]), run_time=1)
+
+            self.wait_until_bookmark("sine_prime")
+            self.play(ReplacementTransform(VGroup(derivative_3[0], derivative_3[1], derivative_3[2]).copy(), derivative_4[0]), run_time=1)
+
+            self.wait_until_bookmark("step_2_b")
+            self.play(Write(step_2[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_outer")
+            outer = VGroup(derivative_3[5], derivative_3[6], derivative_3[7]).copy()
+            self.play(outer.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("outer_derivative")
+            self.play(ReplacementTransform(outer, derivative_4[2]), Write(derivative_4[1]), run_time=1)
+
+            self.wait_until_bookmark("highlight_inner")
+            inner = derivative_3[6].copy()
+            self.play(inner.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("inner_derivative")
+            self.play(ReplacementTransform(inner, derivative_4[4]), Write(derivative_4[3]), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+#####################################
+#####################################
+class Calc_practice_derivatives_6_q(SophiaCursorScene):
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+            """
+            \frac{\frac{1}{x}(x^3-z)-ln(x)(x^3-z)}{(x^3-z)^2} or an equivalent statement
+            """,
+            """
+            The answer is incorrect.
+            """
+            ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_derivatives.6q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        # Define the function text using MathTex
+        function = MathTex(r"f(x)=", r"\left(", r"{{\ln(x)}", r"\over", r"{x^3-z}}", r"\right)", r"\,", color=c1t, font_size=fs2).set_y(2)
+        derivative = MathTex(r"\frac{d}{dx}", r"\left(",  r"{{\ln(x)}", r"\over", r"{x^3-z}}", r"\right)", r"=?", color=c1t, font_size=fs2).set_y(2)
+        
+        # Define the voiceover tex
+        voiceover_text = self.translate("Calc_1.practice_derivatives.6q.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_in")
+            self.play(Write(function))
+
+            self.wait_until_bookmark("derivative_transform")
+            self.play(*[ReplacementTransform(function[idx], derivative[idx])for idx in range(6)], Write(derivative[-1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+
+        
+class Calc_practice_derivatives_6_a(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        quotient_rule = self.translate("General.quotient_rule")
+
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}",  r"\left(" r"{{\ln(x)}", r"\over", r"{x^3-z}}", r"\right)", r"=?", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", quotient_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"{{\frac1x", r"(x^3-z)", r"-", r"\ln(x)", r"(3x^2)}", r"\over", r"{(x^3-z)^2}}", color=c1t, font_size=fs2).scale(.8).next_to(step_1, DOWN, buff=.4)
+
+        step_1[1].scale(.8)
+        self.add(derivative_1)
+        
+
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.practice_derivatives.6a.voiceover-text")
+
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("quotient_rule")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("frac_in")
+            self.play(Write(derivative_2[5]))
+
+            self.wait_until_bookmark("el_1")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[0]))
+
+            self.wait_until_bookmark("el_2")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[1]))
+
+            self.wait_until_bookmark("el_3")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[3]), Write(derivative_2[2]))
+
+            self.wait_until_bookmark("el_4")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[4]))
+
+            self.wait_until_bookmark("el_5")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[6]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+        
+class Calc_practice_derivatives_6_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        limits = self.translate("words.derivatives")
+        title = self.add_title(limits)
+        self.add(title)
+
+        quotient_rule = self.translate("General.quotient_rule")
+
+        # Define the function text using MathTex
+        derivative_1 = MathTex(r"\frac{d}{dx}",  r"\left(" r"{{\ln(x)}", r"\over", r"{x^3-z}}", r"\right)", r"=?", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", quotient_rule, color=BLUE, font_size=fs2).next_to(derivative_1, DOWN, buff=.4)
+        derivative_2 = MathTex(r"{{\frac1x", r"(x^3-z)", r"-", r"\ln(x)", r"(3x^2)}", r"\over", r"{(x^3-z)^2}}", color=c1t, font_size=fs2).scale(.8).next_to(step_1, DOWN, buff=.4)
+
+        step_1[1].scale(.8)
+        self.add(derivative_1)
+        
+
+        
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.practice_derivatives.6a.voiceover-text")
+
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("quotient_rule")
+            self.play(Write(step_1))
+
+            self.wait_until_bookmark("frac_in")
+            self.play(Write(derivative_2[5]))
+
+            self.wait_until_bookmark("el_1")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[0]))
+
+            self.wait_until_bookmark("el_2")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[1]))
+
+            self.wait_until_bookmark("el_3")
+            self.play(ReplacementTransform(derivative_1[2].copy(), derivative_2[3]), Write(derivative_2[2]))
+
+            self.wait_until_bookmark("el_4")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[4]))
+
+            self.wait_until_bookmark("el_5")
+            self.play(ReplacementTransform(derivative_1[4].copy(), derivative_2[6]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
 
 ##################################### Mean value theorem
 #####################################
 class Calc_practice_mvt_1_q(SophiaCursorScene):
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = [
-    #             """We calculate the function values at the interval limits and obtain $f(0) = 0-1-1 = -2 < 0$ and $f(3) = 81-1-27= 53 > 0$.                             
-    #             As a sum of continuous functions, the function $f$ is again continuous in the interval $[0, 3]$.
-    #             According to the intermediate value theorem, $f$ assumes any value between -2 and 53, i.e. specifically also the value 0.
-    #             The following aspects must be mentioned for the solution to count as correct:
-    #             - Establishing that the function is continuous
-    #             - Mention of the intermediate value theorem
-    #             - Calculation of the interval limits f(0) and f(3), or: Determination that f(0)<0 and f(3)>0.
-    #             """,
-    #             """
-    #             The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. he just forgot to mention the intermediate value theorem.
-    #             """,
-    #             """
-    #             Almost right, The student did the calculation of the interval limits f(0) and f(3), or: determined that f(0)<0 and f(3)>0. He applied the intermediate value theorem. he just forgot to mention the continuity
-    #             """,
-    #             """
-    #             Almost right, the student mentioned continuity and the intermediate value theorem. he just forgot to check the interval limits or to name their signs.
-    #             """,
-    #             """
-    #             The answer is incorrect.
-    #             """
-    #             ],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
-    #         llmCheckDetails=SophiaLLMQuestionCheckDetail(
-    #             fallbackOptionIndex=1,
-    #             specialInputSnippets = ["[ ]", "f"],
-    #         )
-    #     )
+
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+                """
+                    The correct answer:
+                    Steps:
+                    - Continuity: \(f(x)\) is a polynomial / composition of continuous functions,, hence continuous on \([0, 3]\).
+                    - differentiability: \(f(x)\) is also differentiable on \((0, 3)\).
+
+                    Mean Value Theorem (MVT) application:
+                    - f(0) = 2
+                    - f(3) = 2
+                    - MVT Conclusion: Since f(0) = f(3), there exists at least one point c in ((0, 3) where f'(c) = (2-2)/(3-0)=0.
+                                    """,
+                    """
+                    The student found an answer, but computed the derivative, which was explicitly forbidden.
+                    """,
+                    """
+                    Almost right, the student mentioned the mean value theorem, but forgot to test for differentiability
+                    """,
+                    """
+                    The answer is incorrect.
+                    """
+                ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
     
 
     # Main method for constructing the animation
@@ -7251,8 +7474,7 @@ class Calc_practice_mvt_1_q(SophiaCursorScene):
         func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2).set_y(1.8)
 
         # Define the voiceover text
-        voiceover_text = """We're given the function <bookmark mark="f_in"/>f of x equals x cubed minus 3 x squared plus 2, and we're only considering the <bookmark mark="interval_in"/>closed interval from 0 to 3.
-        Prove that the derivative f prime of x has at least one zero on that interval without actually computing f prime."""
+        voiceover_text = self.translate("Calc_1.practice_mvt.1q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -7293,13 +7515,175 @@ class Calc_practice_mvt_1_a(SophiaCursorScene):
         self.add(func_and_interval)
 
         # Define the voiceover text
-        voiceover_text = """
-            The function f of x equals x cubed minus 3 x squared plus 2 <bookmark mark="differentiable"/>is differentiable because it is a composition of differentiable functions. So it is also differentiable on the closed interval from 0 to 3.
-            Since we have a differentiable function on a closed interval a b, we can apply the<bookmark mark="mvt_in"/> mean value theorem, which states that there<bookmark mark="exists_c"/> exists a value c in the open interval from 0 to 3,
-            such that <bookmark mark="f_prime_1"/>f prime of c is equal to the fraction f of b minus f of a over b minus a.
-            If we plug in 0 for "a" and 3 for b, <bookmark mark="f_prime_2"/>we get that there exists a value c for which f prime of c is equal to 2 minus 2 over 3, which <bookmark mark="f_prime_3"/> is equal to zero.
-            So now we can see, that the mean value theorem implies that there exists a value c in the open interval from 0 to 3 for which f prime of c is equal to zero. And this<bookmark mark="all_green"/> is our solution.
-            """
+        voiceover_text = self.translate("General.correct_4")+self.translate("Calc_1.practice_mvt.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("differentiable")
+            self.play(Write(differentiable), run_time=.5)
+
+            self.wait_until_bookmark("mvt_in")
+            self.play(Write(arrow_1), run_time=1)
+
+            self.wait_until_bookmark("exists_c")
+            self.play(Write(exists_c), run_time=1)
+
+            self.wait_until_bookmark("f_prime_1")
+            self.play(Write(f_prime_1), run_time=1)
+
+            self.wait_until_bookmark("f_prime_2")
+            self.play(TransformMatchingTex(f_prime_1, f_prime_2), run_time=1)
+
+            self.wait_until_bookmark("f_prime_3")
+            self.play(TransformMatchingTex(f_prime_2, f_prime_3), run_time=1)
+
+            self.wait_until_bookmark("all_green")
+            self.play(VGroup(differentiable, arrow_1, exists_c, f_prime_3, func_and_interval).animate.set_color(GREEN_D), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+class Calc_practice_mvt_1_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        differentiable = self.translate("words.differentiable")
+        mvt = self.translate("General.mvt")
+        zero = self.translate("words.Zero")
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^3-3x^2+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        differentiable = Tex(r"$f$ "+differentiable, color=BLUE, font_size=fs2)
+        arrow_1 = Tex(r"$\Downarrow$ ", mvt, color=BLUE, font_size=fs2)
+        exists_c = Tex(r"$\exists c\in(0,3):$", color=c1t, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"\frac{f(b)-f(a)}{b-a}", color=c1t, font_size=fs2)
+        f_prime_2 = MathTex(r"f'(c)=", r"\frac{2-2}{3-0}", color=c1t, font_size=fs2)
+        f_prime_3 = MathTex(r"f'(c)=", r"0", color=c1t, font_size=fs2)
+        f_prime = VGroup(f_prime_1, f_prime_2, f_prime_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = VGroup(exists_c, f_prime).arrange(DOWN, buff=.2, aligned_edge=LEFT)
+        steps = VGroup(differentiable, arrow_1, sol).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_mvt.1a.derivative")+self.translate("Calc_1.practice_mvt.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("differentiable")
+            self.play(Write(differentiable), run_time=.5)
+
+            self.wait_until_bookmark("mvt_in")
+            self.play(Write(arrow_1), run_time=1)
+
+            self.wait_until_bookmark("exists_c")
+            self.play(Write(exists_c), run_time=1)
+
+            self.wait_until_bookmark("f_prime_1")
+            self.play(Write(f_prime_1), run_time=1)
+
+            self.wait_until_bookmark("f_prime_2")
+            self.play(TransformMatchingTex(f_prime_1, f_prime_2), run_time=1)
+
+            self.wait_until_bookmark("f_prime_3")
+            self.play(TransformMatchingTex(f_prime_2, f_prime_3), run_time=1)
+
+            self.wait_until_bookmark("all_green")
+            self.play(VGroup(differentiable, arrow_1, exists_c, f_prime_3, func_and_interval).animate.set_color(GREEN_D), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_mvt_1_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        differentiable = self.translate("words.differentiable")
+        mvt = self.translate("General.mvt")
+        zero = self.translate("words.Zero")
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^3-3x^2+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        differentiable = Tex(r"$f$ "+differentiable, color=BLUE, font_size=fs2)
+        arrow_1 = Tex(r"$\Downarrow$ ", mvt, color=BLUE, font_size=fs2)
+        exists_c = Tex(r"$\exists c\in(0,3):$", color=c1t, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"\frac{f(b)-f(a)}{b-a}", color=c1t, font_size=fs2)
+        f_prime_2 = MathTex(r"f'(c)=", r"\frac{2-2}{3-0}", color=c1t, font_size=fs2)
+        f_prime_3 = MathTex(r"f'(c)=", r"0", color=c1t, font_size=fs2)
+        f_prime = VGroup(f_prime_1, f_prime_2, f_prime_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = VGroup(exists_c, f_prime).arrange(DOWN, buff=.2, aligned_edge=LEFT)
+        steps = VGroup(differentiable, arrow_1, sol).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("Calc_1.practice_mvt.1a.forgot_differentiability")+self.translate("Calc_1.practice_mvt.1a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("differentiable")
+            self.play(Write(differentiable), run_time=.5)
+
+            self.wait_until_bookmark("mvt_in")
+            self.play(Write(arrow_1), run_time=1)
+
+            self.wait_until_bookmark("exists_c")
+            self.play(Write(exists_c), run_time=1)
+
+            self.wait_until_bookmark("f_prime_1")
+            self.play(Write(f_prime_1), run_time=1)
+
+            self.wait_until_bookmark("f_prime_2")
+            self.play(TransformMatchingTex(f_prime_1, f_prime_2), run_time=1)
+
+            self.wait_until_bookmark("f_prime_3")
+            self.play(TransformMatchingTex(f_prime_2, f_prime_3), run_time=1)
+
+            self.wait_until_bookmark("all_green")
+            self.play(VGroup(differentiable, arrow_1, exists_c, f_prime_3, func_and_interval).animate.set_color(GREEN_D), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+
+class Calc_practice_mvt_1_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        differentiable = self.translate("words.differentiable")
+        mvt = self.translate("General.mvt")
+        zero = self.translate("words.Zero")
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^3-3x^2+2", color=c1t, font_size=fs2)
+        interval = MathTex(r"[0,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2, aligned_edge=LEFT).set_y(1.8)
+        differentiable = Tex(r"$f$ "+differentiable, color=BLUE, font_size=fs2)
+        arrow_1 = Tex(r"$\Downarrow$ ", mvt, color=BLUE, font_size=fs2)
+        exists_c = Tex(r"$\exists c\in(0,3):$", color=c1t, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"\frac{f(b)-f(a)}{b-a}", color=c1t, font_size=fs2)
+        f_prime_2 = MathTex(r"f'(c)=", r"\frac{2-2}{3-0}", color=c1t, font_size=fs2)
+        f_prime_3 = MathTex(r"f'(c)=", r"0", color=c1t, font_size=fs2)
+        f_prime = VGroup(f_prime_1, f_prime_2, f_prime_3).arrange(ORIGIN, aligned_edge=LEFT)
+        sol = VGroup(exists_c, f_prime).arrange(DOWN, buff=.2, aligned_edge=LEFT)
+        steps = VGroup(differentiable, arrow_1, sol).arrange(DOWN, buff=.4, aligned_edge=LEFT).scale(.9).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(func_and_interval)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_4")+self.translate("Calc_1.practice_mvt.1a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -7332,12 +7716,12 @@ class Calc_practice_mvt_1_a(SophiaCursorScene):
 #####################################
 class Calc_practice_mvt_2_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions=ast.literal_eval(self.translate("Calc_1.Practice_MC.1q.answer-options")),
-    #         correctAnswerIndex=0,
-    #         questionText = self.translate("Calc_1.Practice_MC.1q.question-text")
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions=[r"$f(x)=x^3$", r"$g(x)=\frac1x$", r"$h(x)=|x|$", r"$i(x)=\sin(x)$"],
+            correctAnswerIndex=2,
+            questionText = self.translate("Calc_1.Practice_mvt.2q.question-text")
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -7358,9 +7742,7 @@ class Calc_practice_mvt_2_q(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""Which of the following functions does not satisfy the requirements for the mean value theorem on the <bookmark mark="interval_in"/>closed interval from negative one to one:
-                Is it the <bookmark mark="answer_a_in"/>function f of x equals x cubed? ... Or is it the <bookmark mark="answer_b_in"/>function g of x equals 1 over x? ... Or <bookmark mark="answer_c_in"/> is it the function h of x equals the absolute value of x? ... Or <bookmark mark="answer_d_in"/>is it the function i of x equal to the sine of x?
-                """
+                text=self.translate("Calc_1.practice_mvt.2q.voiceover-text")
         ) as tracker:
 
             self.wait_until_bookmark("interval_in")
@@ -7406,12 +7788,7 @@ class Calc_practice_mvt_2_a(SophiaCursorScene):
 
         # Action Sequence
         with self.voiceover(
-                text="""
-                In order to apply the Mean value theorem, our function has to be continuous on the closed interval from a to b, and differentiable on the open interval from a to b. ...
-                All of the four functions are continuous on the closed interval from a to b. The functions <bookmark mark="a_b_grey"/>f of x equals x cubed, and g of x equals one over x are also differentiable on the interval from negative one to one.
-                The <bookmark mark="c_red"/>function h of x equal to the absolute value of x on the other hand is not differentiable on the interval from negative one to one, because it is not differentiable at x equals zero.
-                The <bookmark mark="d_grey"/>function i of x equals the sine of x is differentiable on the interval again. So the correct answer is c.
-                """
+                text=self.translate("General.incorrect_1")+self.translate("Calc_1.practice_mvt.2a.voiceover-text")
         ) as tracker:
             
             self.wait_until_bookmark("a_b_grey")
@@ -7422,26 +7799,131 @@ class Calc_practice_mvt_2_a(SophiaCursorScene):
 
             self.wait_until_bookmark("d_grey")
             self.play(answer_d.animate.set_color(GREY), run_time=.5)
+#
+class Calc_practice_mvt_2_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        mvt = self.translate("General.mvt")
+        title = self.add_title(mvt)
+        interval = MathTex(r"[-1,1]", font_size=fs2, color=c1t).next_to(title, DOWN, buff=.4)
+        self.add(title, interval)
+
+        answer_a = MathTex(r"a)\,f(x)=x^3", color=BLUE, font_size=fs2)
+        answer_b = MathTex(r"b)\,g(x)=\frac{1}{x}", color=BLUE, font_size=fs2)
+        answer_c = MathTex(r"c)\,h(x)=|x|", color=BLUE, font_size=fs2)
+        answer_d = MathTex(r"d)\,i(x)=\sin(x)", color=BLUE, font_size=fs2)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(interval, DOWN, buff=1)
+
+        self.add(answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Calc_1.practice_mvt.2a.voiceover-text")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_b_grey")
+            self.play(VGroup(answer_a, answer_b).animate.set_color(GREY), run_time=.5)
+
+            self.wait_until_bookmark("c_red")
+            self.play(answer_c.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("d_grey")
+            self.play(answer_d.animate.set_color(GREY), run_time=.5)
+#
+class Calc_practice_mvt_2_c(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        mvt = self.translate("General.mvt")
+        title = self.add_title(mvt)
+        interval = MathTex(r"[-1,1]", font_size=fs2, color=c1t).next_to(title, DOWN, buff=.4)
+        self.add(title, interval)
+
+        answer_a = MathTex(r"a)\,f(x)=x^3", color=BLUE, font_size=fs2)
+        answer_b = MathTex(r"b)\,g(x)=\frac{1}{x}", color=BLUE, font_size=fs2)
+        answer_c = MathTex(r"c)\,h(x)=|x|", color=BLUE, font_size=fs2)
+        answer_d = MathTex(r"d)\,i(x)=\sin(x)", color=BLUE, font_size=fs2)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(interval, DOWN, buff=1)
+
+        self.add(answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.correct_1")+self.translate("Calc_1.practice_mvt.2a.voiceover-text")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_b_grey")
+            self.play(VGroup(answer_a, answer_b).animate.set_color(GREY), run_time=.5)
+
+            self.wait_until_bookmark("c_red")
+            self.play(answer_c.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("d_grey")
+            self.play(answer_d.animate.set_color(GREY), run_time=.5)
+#
+class Calc_practice_mvt_2_d(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        mvt = self.translate("General.mvt")
+        title = self.add_title(mvt)
+        interval = MathTex(r"[-1,1]", font_size=fs2, color=c1t).next_to(title, DOWN, buff=.4)
+        self.add(title, interval)
+
+        answer_a = MathTex(r"a)\,f(x)=x^3", color=BLUE, font_size=fs2)
+        answer_b = MathTex(r"b)\,g(x)=\frac{1}{x}", color=BLUE, font_size=fs2)
+        answer_c = MathTex(r"c)\,h(x)=|x|", color=BLUE, font_size=fs2)
+        answer_d = MathTex(r"d)\,i(x)=\sin(x)", color=BLUE, font_size=fs2)
+        answers = VGroup(answer_a, answer_b, answer_c, answer_d).arrange(DOWN, buff=0.2, aligned_edge=LEFT).next_to(interval, DOWN, buff=1)
+
+        self.add(answers)
+
+        # Action Sequence
+        with self.voiceover(
+                text=self.translate("General.incorrect_1")+self.translate("Calc_1.practice_mvt.2a.voiceover-text")
+        ) as tracker:
+            
+            self.wait_until_bookmark("a_b_grey")
+            self.play(VGroup(answer_a, answer_b).animate.set_color(GREY), run_time=.5)
+
+            self.wait_until_bookmark("c_red")
+            self.play(answer_c.animate.set_color(RED), run_time=.5)
+
+            self.wait_until_bookmark("d_grey")
+            self.play(answer_d.animate.set_color(GREY), run_time=.5)
+#
 
 
 #####################################
 #####################################
 class Calc_practice_mvt_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = ["$0$", "$1$"],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_limits.1q.question-text"),
-    #         freeTextDetail=SophiaFreeTextTaskDetail(
-    #             fallbackOptionIndex=1,
-    #             answerOptionMatcher="$\key{a}$",
-    #             answerOptionsTypes={
-    #                 "a": "number"
-    #             }
-    #         )
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$2$", "$0$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_mvt.3q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -7460,8 +7942,7 @@ class Calc_practice_mvt_3_q(SophiaCursorScene):
 
 
         # Define the voiceover text
-        voiceover_text = """Consider the <bookmark mark="func_in"/>function f of x equals x squared minus 2 x plus 3.
-        If we apply the mean value theorem to that function on the <bookmark mark="interval_in"/> closed interval from 1 to 3, then we know that there<bookmark mark="exists_in"/> exists a c in the open interval from one to three for which the value of the <bookmark mark="f_prime_in"/>derivative f prime of c is equal to what?"""
+        voiceover_text = self.translate("Calc_1.practice_mvt.3q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -7481,6 +7962,7 @@ class Calc_practice_mvt_3_q(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(4)
+
 
 class Calc_practice_mvt_3_a(SophiaCursorScene):
 
@@ -7508,10 +7990,54 @@ class Calc_practice_mvt_3_a(SophiaCursorScene):
 
 
         # Define the voiceover text
-        voiceover_text = """
-        The mean value theorem states that if f is differentiable on a closed interval, there exists a c in the open interval with the same limits, such that <bookmark mark="f_prime_2"/>f prime of c is equal to the fraction of f of b minus f of a over b minus a, where a and b are the interval limits.
-        We can <bookmark mark="f_prime_3"/>plug in 3 for b and 1 for "a", and then compute f of 3 and f of one. This <bookmark mark="f_prime_4"/>leaves us with 6 - 2 over 3 - 1, which <bookmark mark="f_prime_5"/>is equal to 4 over 2, which is 2. So our final result is two.
-        """
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.practice_mvt.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("f_prime_2")
+            self.play(TransformMatchingTex(f_prime_1, f_prime_2), run_time=1)
+            
+            self.wait_until_bookmark("f_prime_3")
+            self.play(TransformMatchingTex(f_prime_2, f_prime_3), run_time=1)
+            
+            self.wait_until_bookmark("f_prime_4")
+            self.play(TransformMatchingTex(f_prime_3, f_prime_4), run_time=1)
+            
+            self.wait_until_bookmark("f_prime_5")
+            self.play(TransformMatchingTex(f_prime_4, f_prime_5), run_time=1)
+
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(4)
+
+class Calc_practice_mvt_3_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=x^2-2x+3", color=c1t, font_size=fs2)
+        interval = MathTex(r"[1,3]", color=c1t, font_size=fs2)
+        func_and_interval = VGroup(func, interval).arrange(DOWN, buff=.2).set_y(1.8)
+        self.add(func_and_interval)
+
+        exists_c = Tex(r"$\exists c\in(1,3):$", color=BLUE, font_size=fs2)
+        f_prime_1 = MathTex(r"f'(c)=", r"?", color=BLUE, font_size=fs2)
+        f_prime_2 = MathTex(r"f'(c)=", r"\frac{f(b)-f(a)}{b-a}", color=c1t, font_size=fs2)
+        f_prime_3 = MathTex(r"f'(c)=", r"\frac{f(3)-f(1)}{3-1}", color=c1t, font_size=fs2)
+        f_prime_4 = MathTex(r"f'(c)=", r"\frac{6-2}{3-1}", color=c1t, font_size=fs2)
+        f_prime_5 = MathTex(r"f'(c)=", r"\frac{4}{2}=2", color=c1t, font_size=fs2)
+        f_prime = VGroup(f_prime_1, f_prime_2, f_prime_3, f_prime_4, f_prime_5).arrange(ORIGIN, aligned_edge=LEFT)
+        c = VGroup(exists_c, f_prime).arrange(DOWN, buff=.2, aligned_edge=LEFT).next_to(func_and_interval, DOWN, buff=.4)
+        self.add(exists_c, f_prime_1)
+
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.practice_mvt.3a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -8498,6 +9024,67 @@ class Calc_practice_minmax_2_c(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
 #
+
+#####################################
+#####################################
+class Calc_practice_minmax_3_q(SophiaCursorScene):
+
+    # def task_definition(self) -> SophiaTaskDefinition:
+    #     return SophiaTaskDefinition(
+    #         answerOptions = ["$a=1$, $b=0$", "$a=2$, $b=2$"],
+    #         correctAnswerIndex = 0,
+    #         questionText = self.translate("Calc_1.practice_continuous.1q.question-text"),
+    #         freeTextDetail=SophiaFreeTextTaskDetail(
+    #             fallbackOptionIndex=1,
+    #             answerOptionMatcher="$a=\key{a}$, $b=\key{b}$",
+    #             answerOptionsTypes={
+    #                 "a": "number",
+    #                 "b": "number"
+    #             }
+    #         )
+    #     )
+
+    #
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        trig_functions = self.translate("General.continuity")
+        title = self.add_title(trig_functions)
+        self.add(title)
+
+        # Define the function text using MathTex
+        func = MathTex(r"f(x)=", r"2x^3", r"-", r"24x", r"+", r"44", color=c1t, font_size=fs2).set_y(2)
+        qmark = ImageMobject(assets_folder / "img" / "qmark.png").move_to([-5,-1,0]).scale(.4)
+
+        # Define the voiceover text
+        voiceover_text = """
+Consider the function <bookmark mark="func_in"/>f of x equals 2 x cubed minus 24 x + 44.
+What <bookmark mark="qmark"/>are the critical points of this function?
+"""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("func_in")
+            self.play(Write(func), run_time=1)
+
+            self.wait_until_bookmark("qmark")
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+            self.wait(1)
+            self.add_shift_sound(0.5)
+            self.play(qmark.animate.shift(5*RIGHT), run_time=.5)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
+
+
+
 ##################################### Induction proof
 #####################################
 class Calc_practice_induction_1_q(SophiaCursorScene):
@@ -11025,7 +11612,7 @@ class Calc_practice_trig_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = [r"$\frac{2\Pi}{3}$", r"$1$"],
+            answerOptions = [r"$\frac{2{\pi}}{3}$", r"$1$"],
             correctAnswerIndex = 0,
             questionText = self.translate("Calc_1.practice_trig.1q.question-text"),
             freeTextDetail=SophiaFreeTextTaskDetail(
@@ -12421,6 +13008,31 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_derivatives_4_q),
     PagePrototypeVideo.from_scene(Calc_practice_derivatives_4_a),
     PagePrototypeVideo.from_scene(Calc_practice_derivatives_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_derivatives_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_5_b),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_6_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_derivatives_6_q),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_6_a),
+    PagePrototypeVideo.from_scene(Calc_practice_derivatives_6_b),
+    ########################################################### Derivatives
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_1_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_mvt_1_q),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_1_a),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_1_b),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_1_c),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_1_d),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_2_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_mvt_2_q),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_2_a),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_2_c),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_2_d),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_mvt_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_mvt_3_b),
 ########################################################### MinMax
     PagePrototypeVideo.from_scene(Calc_practice_minmax_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_minmax_1_q),

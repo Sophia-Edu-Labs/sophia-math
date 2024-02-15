@@ -10,7 +10,7 @@ from manim import *
 from PIL import Image
 import numpy as np
 from pathlib import Path
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
 import ast
 
 
@@ -23,9 +23,16 @@ class Func_6_1_I_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions = ["2","3", "4", "8"],
+            answerOptions = ["$2$","$3$", "$4$", "$8$"],
             correctAnswerIndex = 2,
-            questionText = self.translate("Func_6_1.1I1q.question.how-do-you-pay-the-artist") 
+            questionText = self.translate("Func_6_1.1I1q.question.how-do-you-pay-the-artist"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
         )
 
 
@@ -591,9 +598,16 @@ class Func_6_1_I_1_1_q(SophiaCursorScene):
 
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
-            answerOptions=["16", "4", "8", "7"],
+            answerOptions=["$16$", "$4$", "$8$", "$7$"],
             correctAnswerIndex=0,
-            questionText=self.translate("Func_6_1.I11.question.how-fast-does-the-rumor-spread")
+            questionText=self.translate("Func_6_1.I11.question.how-fast-does-the-rumor-spread"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
         )
 
     # Main method for constructing the animation
@@ -3131,7 +3145,16 @@ class Func_6_1_I_7_c(SophiaCursorScene):
 
         self.wait(4)
 
+
+class dj_wissen_macht(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+
 PROTOTYPES=[
+    PagePrototypeVideo.from_scene(dj_wissen_macht),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_q),
     PagePrototypeQuestion.from_scene(Func_6_1_I_1_q),
     PagePrototypeVideo.from_scene(Func_6_1_I_1_a),
