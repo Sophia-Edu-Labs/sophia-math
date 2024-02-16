@@ -7454,7 +7454,7 @@ class Calc_practice_mvt_1_q(SophiaCursorScene):
                     """
                 ],
             correctAnswerIndex = 0,
-            questionText = self.translate("Calc_1.practice_ivt.1q.question-text"),
+            questionText = self.translate("Calc_1.practice_mvt.1q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
                 fallbackOptionIndex=1,
                 specialInputSnippets = ["[ ]", "f"],

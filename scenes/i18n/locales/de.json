@@ -3716,7 +3716,7 @@
         "voiceover-text": "Hier können wir den gesuchten Grenzwert einfach einsetzen. Wir <bookmark mark=\"step_1_a\"/>erhalten dann 16 mal pi hoch zwei durch vier quadrat, und das geteilt durch den Tangens von pi viertel.\nDer Tangens von pi viertel ist gleich eins, und wir erhalten <bookmark mark=\"step_1_b\"/>pi quadrat als Ergebnis unseres Grenzwertes.."
       },
       "4q": {
-        "question-text": "Welchen Wert hat der Grenzwert $\\underset{n\\to\\infty}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
+        "question-text": "Welchen Wert hat der Grenzwert $\\underset{x\\to\\frac{{\\pi}}{2}}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
         "voiceover-text": "Jetzt <bookmark mark=\"lion_in\"/> suchen wir den Grenzwert <bookmark mark=\"limit_in\"/>für x gegen pi halbe des<bookmark mark=\"term_in\"/> Terms Sinus von zwei x geteilt durch den Kosinus von x."
       },
       "4a": {
@@ -3967,7 +3967,8 @@
     },
     "practice_mvt": {
       "1q": {
-        "voiceover-text": "Wir haben die Funktion <bookmark mark=\"f_in\"/>f von x gleich x hoch 3 minus 3 x zum Quadrat plus 2, und wir betrachten nur das <bookmark mark=\"interval_in\"/>geschlossene Intervall von 0 bis 3.\nBeweise, dass die Ableitung f strich von x mindestens eine Nullstelle in diesem Intervall hat, ohne die ableitung tatsächlich zu berechnen."
+        "voiceover-text": "Wir haben die Funktion <bookmark mark=\"f_in\"/>f von x gleich x hoch 3 minus 3 x zum Quadrat plus 2, und wir betrachten nur das <bookmark mark=\"interval_in\"/>geschlossene Intervall von 0 bis 3.\nBeweise, dass die Ableitung f strich von x mindestens eine Nullstelle in diesem Intervall hat, ohne die ableitung tatsächlich zu berechnen.",
+        "question-text": "Beweise dass die Ableitung $f'$ der Funktion $f(x)=x^3-3x^2+2$ eine Nullstelle im Intervall $[0,3]$ hat, ohne $f'$ zu berechnen"
       },
       "1a": {
         "voiceover-text": "Die Funktion f von x ist gleich x hoch 3 minus 3 x Quadrat plus 2 <bookmark mark=\"differentiable\"/>ist differenzierbar, weil sie eine Komposition von differenzierbaren Funktionen ist. Sie ist also auch auf dem geschlossenen Intervall von 0 bis 3 differenzierbar.\nDa wir eine differenzierbare Funktion auf einem geschlossenen Intervall a b haben, können wir den<bookmark mark=\"mvt_in\"/> Mittelwertsatz anwenden, der besagt, dass es<bookmark mark=\"exists_c\"/> einen Wert c im offenen Intervall von 0 bis 3 gibt,\nso dass <bookmark mark=\"f_prime_1\"/>f strich von c gleich dem Bruch f von b minus f von a durch b minus a ist.\nWenn wir 0 für \"a\" und 3 für b einsetzen, <bookmark mark=\"f_prime_2\"/> erhalten wir, dass es einen Wert c gibt, für den f strich von c gleich 2 minus 2 durch 3 ist, was <bookmark mark=\"f_prime_3\"/> gleich Null ist.\nWir sehen also, dass der Mittelwertsatz impliziert, dass es einen Wert c im offenen Intervall von 0 bis 3 gibt, für den f strich von c gleich Null ist. Und dies<bookmark mark=\"all_green\"/> ist unsere Lösung.",

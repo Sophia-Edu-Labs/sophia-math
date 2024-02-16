@@ -3719,7 +3719,7 @@
         "voiceover-text": "Here we can simply insert the limit we are looking for. We <bookmark mark=\"step_1_a\"/>then get 16 times pi to the power of two divided by four squared, and that divided by the tangent of pi over four.\nThe tangent of pi over four is equal to one, and we get <bookmark mark=\"step_1_b\"/>pi squared as the result of our limit."
       },
       "4q": {
-        "question-text": "What is the value of the limit $\\underset{n\\to\\infty}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
+        "question-text": "What is the value of the limit $\\underset{x\\to\\frac{{\\pi}}{2}}{\\lim}\\frac{\\sin(2x)}{\\cos(x)}$?",
         "voiceover-text": "Now: What is <bookmark mark=\"lion_in\"/> the limit <bookmark mark=\"limit_in\"/>for x approaching pi halves for the<bookmark mark=\"term_in\"/> term sine of two x divided by the cosine of x."
       },
       "4a": {
@@ -3973,7 +3973,8 @@
     },
     "practice_mvt": {
       "1q": {
-        "voiceover-text": "We're given the function <bookmark mark=\"f_in\"/>f of x equals x cubed minus 3 x squared plus 2, and we're only considering the <bookmark mark=\"interval_in\"/>closed interval from 0 to 3. Prove that the derivative f prime of x has at least one zero on that interval without actually computing f prime."
+        "voiceover-text": "We're given the function <bookmark mark=\"f_in\"/>f of x equals x cubed minus 3 x squared plus 2, and we're only considering the <bookmark mark=\"interval_in\"/>closed interval from 0 to 3. Prove that the derivative f prime of x has at least one zero on that interval without actually computing f prime.",
+        "question-text": "Prove that the derivative $f'$ of the function $f(x)=x^3-3x^2+2$ has a zero on the interval $[0,3]$ without computing $f'$"
       },
       "1a": {
         "voiceover-text": "The function f of x equals x cubed minus 3 x squared plus 2 <bookmark mark=\"differentiable\"/>is differentiable because it is a composition of differentiable functions. So it is also differentiable on the closed interval from 0 to 3.\nSince we have a differentiable function on a closed interval a b, we can apply the<bookmark mark=\"mvt_in\"/> mean value theorem, which states that there<bookmark mark=\"exists_c\"/> exists a value c in the open interval from 0 to 3,\nsuch that <bookmark mark=\"f_prime_1\"/>f prime of c is equal to the fraction f of b minus f of a over b minus a.\nIf we plug in 0 for \"a\" and 3 for b, <bookmark mark=\"f_prime_2\"/>we get that there exists a value c for which f prime of c is equal to 2 minus 2 over 3, which <bookmark mark=\"f_prime_3\"/> is equal to zero.\nSo now we can see, that the mean value theorem implies that there exists a value c in the open interval from 0 to 3 for which f prime of c is equal to zero. And this<bookmark mark=\"all_green\"/> is our solution.",
