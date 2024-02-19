@@ -2919,7 +2919,8 @@
     "for_all": "for all",
     "minmax": "Extreme Value Theorem",
     "closed_interval": "closed interval",
-    "mvt": "Mean value theorem"
+    "mvt": "Mean value theorem",
+    "critical_points": "critical points"
   },
   "LinAlg": {
     "14I1": {
@@ -3608,7 +3609,7 @@
       },
       "5q": {
         "answer-options": "[\"It has a zero in the interval $[0, 1]$.\", \"It has a local extreme point at $x = 0$.\", \"It is strictly monotonically increasing.\", \"It is not integrable.\"]",
-        "question-text": "Which of the following statements about the function $f$ is true?",
+        "question-text": "Which of the following statements about the function $f(x)=2|x|+4$ is true?",
         "voiceover": "Let us consider the function f, which maps <bookmark mark=\"f_definition\"/>f from the interval minus pi to pi into the real numbers, \nand whose function formula is: <bookmark mark=\"f_formula\"/>f of x is equal to two times the absolute value of x plus four. \nWhich of the following statements applies to the function f? <bookmark mark=\"question\"/>\nDoes the function have a zero in the interval from zero to one? <bookmark mark=\"answer_1\"/>\nDoes it have a local extreme at x equal to zero? <bookmark mark=\"answer_2\"/>\nIs it strictly monotonically increasing? <bookmark mark=\"answer_3\"/>\nOr is it not integrable? <bookmark mark=\"answer_4\"/>"
       },
       "5a": {
@@ -3948,6 +3949,15 @@
       },
       "2a": {
         "voiceover-text": "We're going to use <bookmark mark=\"step_1_in\"/>integration by parts, because the function <bookmark mark=\"highlight_func\"/> can be seen as the partial derivative of another function. Or put differently, we'll use integration by parts to avoid having to deal with the logarithm.\nFor Integration by parts, we use the <bookmark mark=\"integration_by_parts_in\"/> formula Integral of u d v equals u times v minus integral of v d u.\nSo now we only need to choose which part is u and which part is d v. We'll choose <bookmark mark=\"highlight_x_dv\"/>x as d v, and <bookmark mark=\"highlight_ln_u\"/>the logarithm of x over 2 as u, because x is easier to integrate than the logarithm.\nSo for u v, we get <bookmark mark=\"u_transform\"/>the logarithm of x over two times<bookmark mark=\"dv_transform\"/> x squared over two, because that's the integral of x.\nAnd for the integral of v d u, we<bookmark mark=\"vdu_int\"/> get the integral of <bookmark mark=\"v_transform\"/>one half x squared times <bookmark mark=\"du_transform\"/> one over x, which is the derivative of the logarithm of x over two.\nNow we'll simplify the term under the integral to <bookmark mark=\"simplify\"/>one half x. ...\nAnd as a last <bookmark mark=\"step_2_in\"/>step, we'll compute the integral of one half x, and we get <bookmark mark=\"solution_in\"/>the solution ln of x over two times one half x squared minus one quarter times x squared."
+      },
+      "3q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals x times e to the power of x. What is the <bookmark mark=\"int_transform\"/>indefinite integral of that function?"
+      },
+      "4q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals the cosine of x squared plus e to the power of negative x squared plus x to the power of four times the cosine of pi times x. What is <bookmark mark=\"int_transform\"/>the value of the integral of that function from negative ten to ten?"
+      },
+      "4a": {
+        "voiceover-text": "First, notice that the functionis an even function, because it is the sum of <bookmark mark=\"el_1\"/>the cosine of x squared, <bookmark mark=\"el_2\"/>e to the power of negative x squared, as well <bookmark mark=\"el_3\"/>as x to the power of four times the cosine of pi times x. And each of these is an even function, so the sum of all of them is an even function too.\n\nNow, notice that the integration <bookmark mark=\"limits\"/>limits are negative ten and ten. We know that if we integrate an even function from negative a to a, then the value of the integral is always zero. So <bookmark mark=\"sol\"/> the value of this integral also has to be zero."
       }
     },
     "practice_minmax": {
@@ -3969,6 +3979,30 @@
       },
       "2q": {
         "question-text": "Does the function $f(x)=4x^3-4^{x\\cos(x)+x}$ have a minimum on the interval $[2,4]$? Explain your reasoning."
+      },
+      "3q": {
+        "question-text": "What are the critical points of the function $f(x)=2x^3-24x+44$ in ascending order?"
+      },
+      "03q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals 2 x cubed minus 24 x + 44.\nWhat <bookmark mark=\"qmark\"/>are the critical points of this function?"
+      },
+      "03a": {
+        "voiceover-text": "The critical points of a function are all values of x where the derivative of x is equal to zero. So we start by <bookmark mark=\"f_prime_1\"/> computing f prime.\n2 x cubed from the original function turns <bookmark mark=\"f_prime_2\"/>into 6 x squared, 24 x from the original function turns <bookmark mark=\"f_prime_3\"/>into 24, and the 44 is a constant, so it disappears.\nWe now <bookmark mark=\"f_prime_4\"/>set this equal to zero, to get our solution that <bookmark mark=\"solution\"/>x is equal to 2 or negative two. So the critical points are negative two and two."
+      },
+      "4q": {
+        "question-text": "How many mimima and how many maxima does $f(x)=x^4-2x^2+0.5$ have on $[-1.5,1.5]$?"
+      },
+      "04q": {
+        "voiceover-text": "Consider the <bookmark mark=\"func_in\"/>function f of x equals x to the power of four minux 2 x squared plus one half.\nYou can see <bookmark mark=\"graph_in\"/>what it looks like in this plot.\nHow many local minima, and how many local maxima does f have on<bookmark mark=\"interval_in\"/> the closed interval from negative one point five to one point five?"
+      },
+      "04a": {
+        "voiceover-text": "We can easily find the answer to this question visually.\nThe function has <bookmark mark=\"minima_in\"/>two local minima, one at x equals negative one, and one at x equals one.\nAnd the function has <bookmark mark=\"maxima_in\"/>three local maxima, one at x equals zero, one at x equals negative one point five, and one at x equals one point five."
+      },
+      "05q": {
+        "voiceover-text": "Consider the function <bookmark mark=\"func_in\"/>f of x equals the sine of x times x squared. Which of the following statements is NOT true?\nStatement <bookmark mark=\"answer_a_in\"/>number one: F has infintely many local maxima.\nStatement <bookmark mark=\"answer_b_in\"/>number two: F has no global maxima.\nStatement <bookmark mark=\"answer_c_in\"/>number three: F is differentiable everywhere.\nStatement <bookmark mark=\"answer_d_in\"/>number four: The limit of f for x approaching infinity is infinity."
+      },
+      "05a": {
+        "voiceover-text": "Let's go through the statements one by one.\nBut first, we'll <bookmark mark=\"plot_in\"/>plot the function to get an understanding of what it looks like.\nSo we can see that the first statement is <bookmark mark=\"a_green\"/>true, as we move away from x equals zero in either direction, we get infinitely many local maxima with increasing x value.\nThe second statement<bookmark mark=\"b_green\"/> is also true, as for each maximum, we can find one of greater magnitude by moving further away from the origin.\nThe third statement is also<bookmark mark=\"c_green\"/> true, because f is a composition of differentiable functions.\nLastly, the fourth statementis <bookmark mark=\"d_red\"/>not true, as f oscilates between very large positive and very large negative values as x tends to infinity."
       }
     },
     "practice_mvt": {
@@ -3998,6 +4032,17 @@
     "Practice_mvt": {
       "2q": {
         "question-text": "Which of these does not satisfy the requirements for the mean value theorem on the interval $[-1,1]$?"
+      }
+    },
+    "Practice_minmax": {
+      "5": {
+        "answer-a": "infinitely many local maxima",
+        "answer-b": "no global maxima",
+        "answer-c": "$f$ is differentiable everywhere",
+        "answer-d": "$\\overset{\\lim}{x\\to\\infty}f(x)=\\infty$"
+      },
+      "5q": {
+        "question": "Which of these statements about the $f(x)=\\sin(x)\\cdot x^2$ is NOT true?"
       }
     }
   },

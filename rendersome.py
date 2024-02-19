@@ -28,7 +28,9 @@ if __name__ == "__main__":
         print(f"  {m}")
         clsses = get_module_manim_sophiascene_classes(m, add_parent_folder_to_sys_path=True, result_sorted=True)
         STRICT_SCENE_FILTER = [
-        "Calc_practice_ivt_1_q", "Calc_practice_ivt_1_a", "Calc_practice_ivt_1_b", "Calc_practice_ivt_1_c", "Calc_practice_ivt_1_d", "Calc_practice_ivt_1_e",
+        "Calc_practice_minmax_3_q","Calc_practice_minmax_3_a","Calc_practice_minmax_3_b","Calc_practice_minmax_3_c","Calc_practice_minmax_3_d",
+        "Calc_practice_minmax_4_q","Calc_practice_minmax_4_a","Calc_practice_minmax_4_b","Calc_practice_minmax_4_c","Calc_practice_minmax_4_d",
+        "Calc_practice_minmax_5_q","Calc_practice_minmax_5_a","Calc_practice_minmax_5_b","Calc_practice_minmax_5_c","Calc_practice_minmax_5_d",
         ]
         clsses = [c for c in clsses if c.__name__ in STRICT_SCENE_FILTER]
         print(clsses)

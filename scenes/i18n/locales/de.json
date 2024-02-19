@@ -2919,7 +2919,8 @@
     "for_all": "für alle",
     "minmax": "Satz von Max. und Min.",
     "closed_interval": "Abgeschlossenes Intervall",
-    "mvt": "Mittelwertsatz"
+    "mvt": "Mittelwertsatz",
+    "critical_points": "Kritische Punkte"
   },
   "LinAlg": {
     "14I1": {
@@ -3483,7 +3484,7 @@
       "5q": {
         "voiceover": "Betrachten wir die Funktion f, die <bookmark mark=\"f_definition\"/>von dem Intervall minus pi bis pi in die reellen Zahlen abbildet, \nund deren Funktionsvorschrift lautet: <bookmark mark=\"f_formula\"/>f von x ist gleich zwei mal dem Absolutbetrag von x plus vier. \nWelche der folgenden Aussagen trifft auf die Funktion f zu? <bookmark mark=\"question\"/>\nBesitzt die Funktion im Intervall von null bis eins eine Nullstelle? <bookmark mark=\"answer_1\"/>\nHat sie eine lokale Extremstelle bei x gleich null? <bookmark mark=\"answer_2\"/>\nIst sie streng monoton wachsend? <bookmark mark=\"answer_3\"/>\nOder ist sie etwa nicht integrierbar? <bookmark mark=\"answer_4\"/>",
         "answer-options": "[\"Sie besitzt im Intervall $[0, 1]$ eine Nullstelle.\",\"Sie hat eine lokale Extremstelle bei $x = 0$.\",\"Sie ist streng monoton wachsend.\",\"Sie ist nicht integrierbar.\"]",
-        "question-text": "Welche der folgenden Aussagen trifft auf die Funktion $f$ zu?"
+        "question-text": "Welche der folgenden Aussagen trifft auf die Funktion $f(x)=2|x|+4$ zu?"
       },
       "5a": {
         "voiceover": "Wenn wir die Funktion <bookmark mark=\"plot_in\"/>einmal graphisch darstellen, können wir unschwer erkennen, dass die Funktion keine Nullstelle besitzt, und nicht streng monoton wachsend ist.\nWir können auch sehen, dass die Funktion <bookmark mark=\"maximum\"/>eine lokale Extremstelle bei x gleich null hat, ein Minimum mit y gleich Vier.\nUnd wir können auch direkt erkennen, dass die Funktion integrierbar ist.",
@@ -3963,6 +3964,30 @@
       },
       "2q": {
         "question-text": "Hat die Funktion $f(x)=4x^3-4^{x\\cos(x)+x}$ ein Minimum auf dem Intervall $[2,4]$? Begründe deine Antwort."
+      },
+      "3q": {
+        "question-text": "Was sind die kritischen Punkte der Funktion $f(x)=2x^3-24x+44$ in aufsteigender Reihenfolge?"
+      },
+      "03q": {
+        "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"func_in\"/>f von x gleich 2 x hoch drei minus 24 x + 44.\nWas <bookmark mark=\"qmark\"/>sind die kritischen Punkte dieser Funktion?"
+      },
+      "03a": {
+        "voiceover-text": "Die kritischen Punkte einer Funktion sind alle Werte von x, bei denen die Ableitung von x gleich Null ist. Wir beginnen also damit, <bookmark mark=\"f_prime_1\"/> die Ableitung zu berechnen.\n2 x hoch drei von der ursprünglichen Funktion wird <bookmark mark=\"f_prime_2\"/>zu 6 x  Quadrat, 24 x von der ursprünglichen Funktion wird <bookmark mark=\"f_prime_3\"/>zu 24, und die 44 ist eine Konstante, also verschwindet sie.\nWir setzen das <bookmark mark=\"f_prime_4\"/>gleich Null, um unsere Lösung zu erhalten, dass <bookmark mark=\"solution\"/>x gleich 2 oder minus zwei ist. Die kritischen Punkte sind also minus zwei und zwei."
+      },
+      "4q": {
+        "question-text": "Wie viele Mimima und wie viele Maxima hat $f(x)=x^4-2x^2+0.5$ auf $[-1,5,1,5]$?"
+      },
+      "04q": {
+        "voiceover-text": "Betrachten wir die <bookmark mark=\"func_in\"/>Funktion f von x gleich x hoch vier minus 2 x Quadrat plus ein Halb.\nIn diesem Graphen kannst du sehen <bookmark mark=\"graph_in\"/>wie die Funktion aussieht.\nWie viele lokale Minima und wie viele lokale Maxima hat f auf<bookmark mark=\"interval_in\"/>dem geschlossenen Intervall von minus eins Komma fünf bis eins Komma fünf?"
+      },
+      "04a": {
+        "voiceover-text": "Wir können die Antwort auf diese Frage leicht visuell finden.\nDie Funktion hat <bookmark mark=\"minima_in\"/>zwei lokale Minima, eines bei x gleich minus eins und eines bei x gleich eins.\nUnd die Funktion hat <bookmark mark=\"maxima_in\"/>drei lokale Maxima, eines bei x gleich Null, eines bei x gleich minus eins Komma fünf und eines bei x gleich eins Komma fünf."
+      },
+      "05q": {
+        "voiceover-text": "Betrachten wir die Funktion <bookmark mark=\"func_in\"/>f von x ist gleich dem Sinus von x mal x Quadrat. Welche der folgenden Aussagen ist NICHT wahr?\nAussage <bookmark mark=\"answer_a_in\"/>Nummer 1: F hat unendlich viele lokale Maxima.\nAussage <bookmark mark=\"answer_b_in\"/>Nummer 2: F hat keine globalen Maxima.\nAussage <bookmark mark=\"answer_c_in\"/>Nummer drei: F ist überall differenzierbar.\nAussage <bookmark mark=\"answer_d_in\"/>Nummer vier: Der Grenzwert von f für x gegen unendlich, ist unendlich."
+      },
+      "05a": {
+        "voiceover-text": "Gehen wir die Aussagen eine nach der anderen durch.\nAls erstes stellen wir <bookmark mark=\"plot_in\"/>die Funktion mal graphisch dar, um zu sehen, wie sie aussieht.\nWir sehen also, dass die erste Aussage <bookmark mark=\"a_green\"/>wahr ist. Wenn wir uns von x gleich Null in beide Richtungen entfernen, erhalten wir unendlich viele lokale Maxima mit zunehmendem x-Wert.\nDie zweite Aussage<bookmark mark=\"b_green\"/> ist ebenfalls wahr, da wir für jedes Maximum ein größeres finden können, wenn wir uns weiter vom Ursprung entfernen.\nDie dritte Aussage ist ebenfalls<bookmark mark=\"c_green\"/> wahr, da f eine Komposition differenzierbarer Funktionen ist.\nDie vierte Aussage schließlich ist <bookmark mark=\"d_red\"/>nicht wahr, da f zwischen sehr großen positiven und sehr großen negativen Werten wechselt, wenn x gegen unendlich strebt."
       }
     },
     "practice_mvt": {
@@ -3992,6 +4017,16 @@
     "Practice_mvt": {
       "2q": {
         "question-text": "Welche Funktion erfüllt die Anforderungen des Mittelwertsatzes für das Intervall $[-1,1]$ nicht?"
+      }
+    },
+    "Practice_minmax": {
+      "5": {
+        "answer-a": "unendlich viele lokale Maxima",
+        "answer-b": "keine globalen Maxima",
+        "answer-c": "$f$ ist überall differenzierbar"
+      },
+      "5q": {
+        "question": "Welche dieser Aussagen über $f(x)=\\sin(x)\\cdot x^2$ ist NICHT wahr?"
       }
     }
   },
