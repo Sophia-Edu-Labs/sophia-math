@@ -8158,7 +8158,7 @@ class Calc_practice_integrals_1_a(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)        
-
+#
 class Calc_practice_integrals_1_b(SophiaCursorScene):
 
 
@@ -8409,23 +8409,23 @@ class Calc_practice_integrals_2_b(SophiaCursorScene):
 #####################################
 class Calc_practice_integrals_3_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = [
-    #             """
-    #             \frac{x^2}{2} \ln\left(\frac{x}{2}\right) - \frac{x^2}{4}, or \frac{x^2}{2} (\ln\left(\frac{x}{2}\right) - \frac{1}{2}) + C or an equivalent statement. It is also fine, if the student forgets the +c
-    #             """,
-    #             """
-    #             The answer is incorrect.
-    #             """
-    #             ],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_integrals.2q.question-text"),
-    #         llmCheckDetails=SophiaLLMQuestionCheckDetail(
-    #             fallbackOptionIndex=1,
-    #             specialInputSnippets = ["[ ]", "f"],
-    #         )
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = [
+                """
+                "e^x\cdot x-e^x + C or an equivalent statement. It is also fine, if the student forgets the +c
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_integrals.3q.question-text"),
+            llmCheckDetails=SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex=1,
+                specialInputSnippets = ["[ ]", "f"],
+            )
+        )
 
     # Main method for constructing the animation
     def construct(self):
@@ -8481,15 +8481,7 @@ class Calc_practice_integrals_3_a(SophiaCursorScene):
 
         self.add(integral_1)
         # Define the voiceover text
-        voiceover_text = """
-        We're going to use <bookmark mark="step_1_in"/>integration by parts here, because that makes it easier to deal with the product.
-        For Integration by parts, we use the <bookmark mark="integration_by_parts_in"/> formula Integral of u d v equals u times v minus integral of v d u.
-        So now we only need to choose which part is u and which part is d v. We'll choose <bookmark mark="highlight_x_dv"/>e to the power of x as d v, and <bookmark mark="highlight_ln_u"/>x as u.
-        So for u v, we get <bookmark mark="u_transform"/>e to the power of x, multiplied with<bookmark mark="dv_transform"/> x, because e to the power of x is the integral of e to the power of x.
-        And for the integral of v d u, we<bookmark mark="vdu_int"/> get the integral of <bookmark mark="v_transform"/>e to the power of x <bookmark mark="du_transform"/> times one, because one is the derivative of x. ...
-        We know that the indefinite integral of e to the power of x is just e to the power of x. So our final solution is<bookmark mark="sol"/>e to the power of x times x minus e to the power of x.
-        """
-
+        voiceover_text = self.translate("General.correct_3")+self.translate("Calc_1.practice_integrals.3a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -8532,29 +8524,98 @@ class Calc_practice_integrals_3_a(SophiaCursorScene):
 
         # Wait for 4 seconds at the end of the animation
         self.wait(6)
+#
+class Calc_practice_integrals_3_b(SophiaCursorScene):
 
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        partial_integration = self.translate("General.partial_integration")
+        #    integral_1 = MathTex(r"\int ", r"x", r"\ln\left(\frac x2\right)", r"dx", color=c1t, font_size=fs2).set_y(2)
+        integral_1 = MathTex(r"\int ", r"x", r"\cdot e^x", r"dx", color=c1t, font_size=fs2).set_y(2)
+        step_1 = Tex(r"$\Downarrow$ ", partial_integration, color=BLUE, font_size=fs3).next_to(integral_1, DOWN, buff=.2)
+        integral_2_a =  MathTex(r"e^x", r"\cdot x", r"-", r"\int ", r"e^x", r"\cdot", r"1", r"dx", color=c1t, font_size=fs2).next_to(step_1, DOWN, buff=.2)
+        sol =  MathTex(r"e^x", r"\cdot x", r"-", r"e^x", color=GREEN, font_size=fs2).next_to(step_1, DOWN, buff=.3)
+        # step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs3).next_to(integral_2, DOWN, buff=.2)
+        # integral_3 =  MathTex(r"\ln\left(\frac x2\right)", r"\cdot\frac12x^2", r"-", r"\frac14x^2", color=c1t, font_size=fs3).next_to(step_2, DOWN, buff=.2)
+        integration_by_parts = MathTex(r"\int ", r"u", r" \, dv", r" = ", r"u", r"v - \int ", r"v", r" \, du", color=c1t, font_size=fs2).next_to(integral_2_a, DOWN, buff=.6)#.move_to(integral_3)
+
+        self.add(integral_1)
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_3")+self.translate("Calc_1.practice_integrals.3a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("step_1_in")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("integration_by_parts_in")
+            self.play(Write(integration_by_parts), run_time=1)
+
+            self.wait_until_bookmark("highlight_x_dv")
+            self.play(Indicate(VGroup(integral_1[2], integration_by_parts[2]), color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("highlight_ln_u")
+            self.play(Indicate(VGroup(integral_1[1], integration_by_parts[1]), color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("u_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[0]), run_time=1)
+
+            self.wait_until_bookmark("dv_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[1]), run_time=1)
+
+            self.wait_until_bookmark("vdu_int")
+            self.play(Write(integral_2_a[2]), Write(integral_2_a[3]), run_time=1)
+
+            self.wait_until_bookmark("v_transform")
+            self.play(ReplacementTransform(integral_1[1].copy(), integral_2_a[4]), run_time=1)
+
+            self.wait_until_bookmark("du_transform")
+            self.play(ReplacementTransform(integral_1[2].copy(), integral_2_a[6]), Write(integral_2_a[5]), run_time=1)
+
+            self.wait_until_bookmark("sol")
+            self.play(TransformMatchingTex(integral_2_a, sol), run_time=1)
+
+            # self.wait_until_bookmark("step_2_in")
+            # self.play(Write(step_2))
+
+            # self.wait_until_bookmark("solution_in")
+            # self.play(Write(integral_3))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)
+#
 
 ##################################### 
 #####################################
 class Calc_practice_integrals_4_q(SophiaCursorScene):
 
-    # def task_definition(self) -> SophiaTaskDefinition:
-    #     return SophiaTaskDefinition(
-    #         answerOptions = [
-    #             """
-    #             \frac{x^2}{2} \ln\left(\frac{x}{2}\right) - \frac{x^2}{4}, or \frac{x^2}{2} (\ln\left(\frac{x}{2}\right) - \frac{1}{2}) + C or an equivalent statement. It is also fine, if the student forgets the +c
-    #             """,
-    #             """
-    #             The answer is incorrect.
-    #             """
-    #             ],
-    #         correctAnswerIndex = 0,
-    #         questionText = self.translate("Calc_1.practice_integrals.2q.question-text"),
-    #         llmCheckDetails=SophiaLLMQuestionCheckDetail(
-    #             fallbackOptionIndex=1,
-    #             specialInputSnippets = ["[ ]", "f"],
-    #         )
-    #     )
+    def task_definition(self) -> SophiaTaskDefinition:
+        return SophiaTaskDefinition(
+            answerOptions = ["$0$", "$1$"],
+            correctAnswerIndex = 0,
+            questionText = self.translate("Calc_1.practice_integrals.4q.question-text"),
+            freeTextDetail=SophiaFreeTextTaskDetail(
+                fallbackOptionIndex=1,
+                answerOptionMatcher="$\key{a}$",
+                answerOptionsTypes={
+                    "a": "number"
+                }
+            )
+        )
+
+        
+
+
 
     # Main method for constructing the animation
     def construct(self):
@@ -8605,7 +8666,50 @@ class Calc_practice_integrals_4_a(SophiaCursorScene):
         limits = integral[1]
 
         # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.practice_integrals.4a.voiceover-text")
+        voiceover_text = self.translate("General.correct_1")+self.translate("Calc_1.practice_integrals.4a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("el_1")
+            self.play(Indicate(el_1, color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("el_2")
+            self.play(Indicate(el_2, color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("el_3")
+            self.play(Indicate(el_3, color=RED, scale_factor=1), run_time=2)
+
+            self.wait_until_bookmark("limits")
+            self.play(Indicate(limits, color=RED, scale_factor=1), run_time=3)
+
+            self.wait_until_bookmark("sol")
+            self.play(Write(zero), run_time=1)
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)  
+
+class Calc_practice_integrals_4_b(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+        # Define the function text using MathTex
+        integral = MathTex(r"\int\limits", r"_{-10}^{10} ", r"\cos(x^2)", r" +", r" e^{-x^2}", r" +", r" x^4 \cos(\pi x)", r"dx", color=c1t, font_size=fs3).set_y(2)
+        self.add(integral)
+        zero = MathTex(r"\Rightarrow =0", color=GREEN, font_size=fs2).next_to(integral, DOWN, buff=.2)
+        el_1, el_2, el_3 = integral[2], integral[4], integral[6]
+        limits = integral[1]
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_1")+self.translate("Calc_1.practice_integrals.4a.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -8635,15 +8739,15 @@ class Calc_practice_integrals_5_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-            """
-            "2\sqrt x+\ln(|1+x|)" or an equivalent statement
-            """,
-            """
-            The answer is incorrect.
-            """
-            ],
+                """
+                "-\cos(x)-\frac{1}{x} + C or an equivalent statement. It is also fine, if the student forgets the +c
+                """,
+                """
+                The answer is incorrect.
+                """
+                ],
             correctAnswerIndex = 0,
-            questionText = self.translate("Calc_1.practice_integrals.1q.question-text"),
+            questionText = self.translate("Calc_1.practice_integrals.5q.question-text"),
             llmCheckDetails=SophiaLLMQuestionCheckDetail(
                 fallbackOptionIndex=1,
                 specialInputSnippets = ["[ ]", "f"],
@@ -8661,11 +8765,11 @@ class Calc_practice_integrals_5_q(SophiaCursorScene):
         self.add(title)
 
         # Define the function text using MathTex
-        function = MathTex(r"f(x)=", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\,", color=c1t, font_size=fs2).set_y(2)
-        integral = MathTex(r"\int\left(", r"{{1}", r"\over", r"{\sqrt x}}", r"+", r"{{1}", r"\over", r"{1+x}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+        function = MathTex(r"f(x)=", r"\sin(x)", r"+", r"{{1}", r"\over", r"{x^2}}", r"\,", color=c1t, font_size=fs2).set_y(2)
+        integral = MathTex(r"\int\left(" , r"\sin(x)", r"+", r"{{1}", r"\over", r"{x^2}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
 
         # Define the voiceover text
-        voiceover_text = self.translate("Calc_1.practice_integrals.1q.voiceover-text")
+        voiceover_text = self.translate("Calc_1.practice_integrals.5q.voiceover-text")
 
         # Action Sequence
         with self.voiceover(text=voiceover_text) as tracker:
@@ -8679,7 +8783,104 @@ class Calc_practice_integrals_5_q(SophiaCursorScene):
         # Wait for 4 seconds at the end of the animation
         self.wait(6)        
 
+class Calc_practice_integrals_5_a(SophiaCursorScene):
 
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+
+        linearity = self.translate("General.linearity")
+        # Define the function text using MathTex
+        integral_1 = MathTex(r"\int\left(" , r"\sin(x)", r"+", r"{{1}", r"\over", r"{x^2}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+        int_1_a, int_1_plus, int_1_b = VGroup(integral_1[0], integral_1[1]), integral_1[2], VGroup(integral_1[0], integral_1[3], integral_1[4], integral_1[5], integral_1[-1])
+        self.add(integral_1)
+        step_1 = Tex(r"$\Downarrow$ ", linearity, color=BLUE, font_size=fs2).next_to(integral_1, DOWN, buff=.2)
+        integral_2 = MathTex(r"\int", r"\sin(x)", r"dx", r"+", r"\int", r"{{1}", r"\over", r"{x^2}}", r"dx", color=c1t, font_size=fs2).set_y(2).next_to(step_1, DOWN, buff=.4)
+        part_1, part_2, integral_l, integral_plus, integral_r = VGroup(integral_2[1]), VGroup(integral_2[5], integral_2[6], integral_2[7]), VGroup(integral_2[0], integral_2[1], integral_2[2]), integral_2[3], VGroup(integral_2[4], integral_2[5], integral_2[6], integral_2[7], integral_2[8])
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs2).next_to(integral_2, DOWN, buff=.2)
+        integral_3 = MathTex(r"-\cos(x)", r"-", r"\frac{1}{x}", color=c1t, font_size=fs2).set_y(2).next_to(step_2, DOWN, buff=.2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.correct_5")+self.translate("Calc_1.practice_integrals.5a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("linearity")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("integral_2")
+            self.play(ReplacementTransform(int_1_a.copy(), integral_l), ReplacementTransform(int_1_plus.copy(), integral_plus), ReplacementTransform(int_1_b.copy(), integral_r))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=1)
+
+            self.wait_until_bookmark("part_1")
+            self.play(ReplacementTransform(part_1.copy(), integral_3[0]))
+
+            self.wait_until_bookmark("part_2")
+            self.play(ReplacementTransform(part_2.copy(), integral_3[2]), Write(integral_3[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
+class Calc_practice_integrals_5_b(SophiaCursorScene):
+
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+
+        integrals = self.translate("words.integrals")
+        title = self.add_title(integrals)
+        self.add(title)
+
+
+        linearity = self.translate("General.linearity")
+        # Define the function text using MathTex
+        integral_1 = MathTex(r"\int\left(" , r"\sin(x)", r"+", r"{{1}", r"\over", r"{x^2}}", r"\right)dx", color=c1t, font_size=fs2).set_y(2)
+        int_1_a, int_1_plus, int_1_b = VGroup(integral_1[0], integral_1[1]), integral_1[2], VGroup(integral_1[0], integral_1[3], integral_1[4], integral_1[5], integral_1[-1])
+        self.add(integral_1)
+        step_1 = Tex(r"$\Downarrow$ ", linearity, color=BLUE, font_size=fs2).next_to(integral_1, DOWN, buff=.2)
+        integral_2 = MathTex(r"\int", r"\sin(x)", r"dx", r"+", r"\int", r"{{1}", r"\over", r"{x^2}}", r"dx", color=c1t, font_size=fs2).set_y(2).next_to(step_1, DOWN, buff=.4)
+        part_1, part_2, integral_l, integral_plus, integral_r = VGroup(integral_2[1]), VGroup(integral_2[5], integral_2[6], integral_2[7]), VGroup(integral_2[0], integral_2[1], integral_2[2]), integral_2[3], VGroup(integral_2[4], integral_2[5], integral_2[6], integral_2[7], integral_2[8])
+        step_2 = Tex(r"$\Downarrow$", color=BLUE, font_size=fs2).next_to(integral_2, DOWN, buff=.2)
+        integral_3 = MathTex(r"-\cos(x)", r"-", r"\frac{1}{x}", color=c1t, font_size=fs2).set_y(2).next_to(step_2, DOWN, buff=.2)
+
+        # Define the voiceover text
+        voiceover_text = self.translate("General.incorrect_5")+self.translate("Calc_1.practice_integrals.5a.voiceover-text")
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text) as tracker:
+            
+            self.wait_until_bookmark("linearity")
+            self.play(Write(step_1), run_time=1)
+
+            self.wait_until_bookmark("integral_2")
+            self.play(ReplacementTransform(int_1_a.copy(), integral_l), ReplacementTransform(int_1_plus.copy(), integral_plus), ReplacementTransform(int_1_b.copy(), integral_r))
+
+            self.wait_until_bookmark("step_2")
+            self.play(Write(step_2), run_time=1)
+
+            self.wait_until_bookmark("part_1")
+            self.play(ReplacementTransform(part_1.copy(), integral_3[0]))
+
+            self.wait_until_bookmark("part_2")
+            self.play(ReplacementTransform(part_2.copy(), integral_3[2]), Write(integral_3[1]))
+
+        # Wait for 4 seconds at the end of the animation
+        self.wait(6)        
+#
 
 ##################################### Partial fraction decomposition
 #####################################
@@ -13799,6 +14000,20 @@ PROTOTYPES=[
     PagePrototypeVideo.from_scene(Calc_practice_minmax_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_minmax_2_b),
     PagePrototypeVideo.from_scene(Calc_practice_minmax_2_c),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_minmax_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_minmax_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_minmax_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_5_b),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_5_c),
+    PagePrototypeVideo.from_scene(Calc_practice_minmax_5_d),
     ########################################################### Integrals
     PagePrototypeVideo.from_scene(Calc_practice_integrals_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_integrals_1_q),
@@ -13808,6 +14023,18 @@ PROTOTYPES=[
     PagePrototypeQuestion.from_scene(Calc_practice_integrals_2_q),
     PagePrototypeVideo.from_scene(Calc_practice_integrals_2_a),
     PagePrototypeVideo.from_scene(Calc_practice_integrals_2_b),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_3_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_integrals_3_q),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_3_a),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_3_b),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_4_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_integrals_4_q),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_4_a),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_4_b),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_5_q),
+    PagePrototypeQuestion.from_scene(Calc_practice_integrals_5_q),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_5_a),
+    PagePrototypeVideo.from_scene(Calc_practice_integrals_5_b),
 ########################################################### Partial fraction decomposition
     PagePrototypeVideo.from_scene(Calc_practice_pfd_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_pfd_1_q),

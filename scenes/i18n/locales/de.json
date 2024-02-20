@@ -3943,6 +3943,27 @@
       },
       "2a": {
         "voiceover-text": "Wir benutzen  <bookmark mark=\"step_1_in\"/>partielle Integration, da die Funktion <bookmark mark=\"highlight_func\"/> als partielle Ableitung einer anderen Funktion betrachtet werden kann. Oder man könnte auch sagen, dass wir partielle Integration verwenden, um den Logarithmus zu umgehen.\nFür die partielle Integration verwenden wir die <bookmark mark=\"integration_by_parts_in\"/> Formel Integral von u d v ist gleich u mal v minus Integral von v d u.\nJetzt müssen wir also nur noch entscheiden, welcher Teil u und welcher Teil d v ist. Wir wählen <bookmark mark=\"highlight_x_dv\"/>x als d v und <bookmark mark=\"highlight_ln_u\"/>den Logarithmus von x durch 2 als u, weil x leichter zu integrieren ist als der Logarithmus.\nFür u v erhalten wir also <bookmark mark=\"u_transform\"/>den Logarithmus von x durch 2 mal<bookmark mark=\"dv_transform\"/> x Quadrat durch 2, denn das ist das Integral von x.\nUnd für das Integral von v d u erhalten wir<bookmark mark=\"vdu_int\"/> das Integral von <bookmark mark=\"v_transform\"/>ein halb x Quadrat mal <bookmark mark=\"du_transform\"/> eins durch x, was die Ableitung des Logarithmus von x durch zwei ist.\nWir vereinfachen dann noch den Term unter dem Integral zu <bookmark mark=\"simplify\"/>ein halb x. ...\nUnd als letzten <bookmark mark=\"step_2_in\"/>Schritt berechnen wir das Integral von ein halb x, und wir erhalten <bookmark mark=\"solution_in\"/>die Lösung ln x durch zwei mal ein halb x Quadrat minus eins viertel x Quadrat."
+      },
+      "5a": {
+        "voiceover-text": "Als erstes wenden wir <bookmark mark=\"linearity\"/>die Linearität des Integrals an, um das Integral einer Summe in <bookmark mark=\"integral_2\"/>die Summe zweier Integrale zu verwandeln. Als nächstes <bookmark mark=\"step_2\"/>berechnen wir die Integrale einzeln. Das unbestimmte Integral des Sinus von x ist gleich<bookmark mark=\"part_1\"/>dem Negativen  Kosinus von x. Und das unbestimmte Integral von eins durch x  Quadrat ist gleich <bookmark mark=\"part_2\"/>minus eins durch x.\nBeides sind Standardintegrale, die du dir merken solltest, aber du kannst sie überprüfen, indem du ihre Ableitung berechnest. Wie auch immer, das war's, wir haben das unbestimmte Integral berechnet."
+      },
+      "5q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x  gleich dem Sinus von x plus eins durch x  Quadrat. Was ist das <bookmark mark=\"int_transform\"/>unbestimmte Integral dieser Funktion?",
+        "question-text": "Berechne das Integral $\\int\\left(\\sin(x)+{{1}\\over{x^2}}\\right)dx$"
+      },
+      "3q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x gleich x mal e hoch x. \nWas ist das <bookmark mark=\"int_transform\"/>unbestimmte Integral dieser Funktion?",
+        "question-text": "Berechne das Integral $\\int x\\cdot e^xdx$"
+      },
+      "3a": {
+        "voiceover-text": "Wir benutzen hier die <bookmark mark=\"step_1_in\"/>partielle Integration, weil das den Umgang mit dem Produkt erleichtert.\nFür die partielle Integration verwenden wir die <bookmark mark=\"integration_by_parts_in\"/> Formel Integral von u d v ist gleich u mal v minus Integral von v d u.\nJetzt müssen wir nur noch festlegen, welcher Teil u und welcher Teil d v ist. Wir wählen <bookmark mark=\"highlight_x_dv\"/>e hoch x als d v, und <bookmark mark=\"highlight_ln_u\"/>x als u.\nFür u v erhalten wir also <bookmark mark=\"u_transform\"/>e hoch x, multipliziert mit<bookmark mark=\"dv_transform\"/> x, denn e hoch x ist das Integral von e hoch x.\nUnd für das Integral von v d u erhalten wir<bookmark mark=\"vdu_int\"/> das Integral von <bookmark mark=\"v_transform\"/>e hoch x <bookmark mark=\"du_transform\"/> mal eins, weil eins die Ableitung von x ist. ...\nWir wissen, dass das unbestimmte Integral von e hoch x einfach e hoch x ist. Unsere endgültige Lösung ist also<bookmark mark=\"sol\"/>e hoch x mal x minus e hoch x."
+      },
+      "4q": {
+        "voiceover-text": "Betrachte die Funktion <bookmark mark=\"func_in\"/>f von x gleich dem Kosinus von x Quadrat plus e hoch minus x Quadrat plus x hoch vier mal dem Kosinus von pi mal x. Wie lautet <bookmark mark=\"int_transform\"/>der Wert des Integrals dieser Funktion von minus zehn bis zehn?",
+        "question-text": "Berechne das Integral $\\int\\limits_{-10}^{10}\\cos(x^2) + e^{-x^2} + x^4 \\cos(\\pi x)dx$"
+      },
+      "4a": {
+        "voiceover-text": "Beachte zunächst, dass die Funktion eine achsensymmetrische Funktion ist, denn sie ist die Summe von <bookmark mark=\"el_1\"/>dem Kosinus von x  Quadrat, <bookmark mark=\"el_2\"/>e hoch minus x  Quadrat sowie <bookmark mark=\"el_3\"/>sowie x hoch viermal den Kosinus von pi mal x. Und jede dieser Funktionen ist eine achsensymmetrische Funktion, also ist die Summe aller Funktionen auch achsensymmetrisch.\n\nBeachte nun, dass wir <bookmark mark=\"limits\"/>von minus zehn bis zehn integrieren. Wir wissen, dass, wenn wir eine achsensymmetrische Funktion von minnus a bis a integrieren, das dann der Wert des Integrals immer Null ist. Also <bookmark mark=\"sol\"/> muss der Wert dieses Integrals auch Null sein."
       }
     },
     "practice_minmax": {
