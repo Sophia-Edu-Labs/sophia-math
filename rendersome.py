@@ -14,7 +14,7 @@ if __name__ == "__main__":
     ########################################################
     #print(found_scene_modules)
     #print("--------")
-    filenames_to_render = ["Calc_practice_Ana_TUB.py"]
+    filenames_to_render = ["people_scenes.py"]
     found_scene_modules = [m for m in found_scene_modules if any(filename in m.name for filename in filenames_to_render)]
     # found_scene_modules = [m for m in found_scene_modules if not any(filename in m.name for filename in filenames_no_render)]
     print (f"-------- [ found the following  (n={len(found_scene_modules)}) modules ] --------")
@@ -28,9 +28,7 @@ if __name__ == "__main__":
         print(f"  {m}")
         clsses = get_module_manim_sophiascene_classes(m, add_parent_folder_to_sys_path=True, result_sorted=True)
         STRICT_SCENE_FILTER = [
-        "Calc_practice_minmax_3_q","Calc_practice_minmax_3_a","Calc_practice_minmax_3_b","Calc_practice_minmax_3_c","Calc_practice_minmax_3_d",
-        "Calc_practice_minmax_4_q","Calc_practice_minmax_4_a","Calc_practice_minmax_4_b","Calc_practice_minmax_4_c","Calc_practice_minmax_4_d",
-        "Calc_practice_minmax_5_q","Calc_practice_minmax_5_a","Calc_practice_minmax_5_b","Calc_practice_minmax_5_c","Calc_practice_minmax_5_d",
+            "Func_6_1_I_1_q_magda",
         ]
         clsses = [c for c in clsses if c.__name__ in STRICT_SCENE_FILTER]
         print(clsses)

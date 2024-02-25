@@ -55,7 +55,7 @@ class ElevenlabsVoiceoverService(SpeechService):
     def __init__(
         self,
         model_id: str = DEFAULT_MODEL,
-        voice_name: str = "nat",
+        voice_name: str = "magda",
         should_use_history: bool = True,
         **kwargs,
     ):

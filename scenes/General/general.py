@@ -103,7 +103,7 @@ def write_class(input_string, class_name):
     simple_commands.append("tex_elements_steps = []")
 
     for idx, step in enumerate(steps):
-        simple_commands.append(f"tex = Tex(\"{step}\", font_size=fs2, color=BLUE if \"\Downarrow\" in \"{step}\" else c1t)")
+        simple_commands.append(f"tex = Tex(r\"{step}\", font_size=fs2, color=BLUE if \"\Downarrow\" in \"{step}\" else c1t)")
         simple_commands.append("tex.scale(3.4/max(3.4, tex.get_width()))")
         simple_commands.append("tex_elements_steps.append(tex)")
         # tex = Tex(step, font_size=fs2, color=BLUE if "\Downarrow" in step else c1t)
@@ -144,7 +144,7 @@ class {class_name}(SophiaCursorScene):
 
     class_string += fr"""
         # Action Sequence
-        with self.voiceover(text=voiceover_text) as tracker:
+        with self.voiceover(text=voiceover_text, subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
             
             eos = [] # elements on screen"""
 
@@ -161,6 +161,14 @@ class {class_name}(SophiaCursorScene):
         if idx==0:
             play_commands.append(f"""self.play(*[Unwrite(el) for el in eos], run_time=.8)""")
             play_commands.append(f"""eos = []""")
+        elif idx%6==0:
+            play_commands.append(f"""shift_diff = eos[0].get_y()-eos[-1].get_y()""")
+            play_commands.append(f"""self.add_shift_sound(0.5)""")
+            play_commands.append(f"""shift_diff = eos[0].get_y()-eos[-1].get_y()""")
+            play_commands.append(f"""self.add_shift_sound(0.5)""")
+            play_commands.append(f"""self.play(Unwrite(VGroup(*[eos[idx] for idx in range(len(eos)-1)])), eos[-1].animate.shift(UP*shift_diff), run_time=.5)""")
+            play_commands.append(f"""eos = [eos[-1]]""")
+            play_commands.append(f"""[tex_elements_steps[idx2].shift(UP*shift_diff) for idx2 in range({idx}, {len(steps)})]""")
         play_commands.append(f"""eos.append(tex_elements_steps[{idx}])""")
         play_commands.append(f"""self.play(Write(tex_elements_steps[{idx}]), run_time=1)""")
 
@@ -376,7 +384,77 @@ plt.savefig("media/fig.svg")
 \end{verbatim}
 \end{frame}
                 """
-write_class(pres, "test_autoscene")
+pres = r"""
+\begin{frame}{Approach}
+\begin{itemize}
+\item Differentiate
+% (Voiceover: "First, we'll differentiate the function with respect to x. Differentiation allows us to find the rate at which the function's value changes as x changes.")
+\item Solve $f'(x)=0$
+% (Voiceover: "Next, we'll find the value of x where the derivative equals zero. This step helps us locate points where the tangent to the graph is horizontal, indicating potential maxima or minima.")
+\item Substitute 
+x
+x
+% (Voiceover: "Finally, we'll substitute the x-value we found into the original function to determine the y-coordinate of our high point, confirming its position on the graph.")
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Step-by-Step Solution}
+\begin{itemize}
+\item $f(x) = 2 \cdot \sqrt{10x - x^2}$
+% (Voiceover: "We start with our function, which is two times the square root of ten times x minus x squared. This function describes a curve on the interval from zero to ten.")
+\item $\Downarrow$ Differentiate
+% (Voiceover: "To find where the tangent to this curve is horizontal, we differentiate the function. This involves applying the derivative rules to the square root function.")
+\item $f'(x) = \frac{10 - 2x}{\sqrt{10x - x^2}}$
+% (Voiceover: "The derivative simplifies to ten minus two x over the square root of ten x minus x squared. This expression tells us the slope of the tangent at any point x.")
+\item $\Downarrow$ Solve $f'(x)=0$
+% (Voiceover: "Setting the derivative equal to zero allows us to solve for x. We're looking for where the slope of the tangent, and hence the derivative, is zero.")
+\item $10 - 2x = 0$
+% (Voiceover: "Solving this equation gives us the critical point. It's a simple linear equation, leading to a single value of x.")
+\item $\Downarrow$ Simplify
+% (Voiceover: "By simplifying the equation, we find that x equals five. This is where the function has a horizontal tangent.")
+\item $x = 5$
+% (Voiceover: "")
+\item $\Downarrow$ Substitute 
+x
+x
+% (Voiceover: "Next, we substitute x equals five back into the original function. This step will give us the y-coordinate of the high point.")
+\item $f(5) = 2 \cdot \sqrt{10(5) - 5^2}$
+% (Voiceover: "The substitution simplifies to two times the square root of twenty-five, which results in the y-coordinate of our high point.")
+\item $\Downarrow$ Simplify
+% (Voiceover: "After simplification, we find that the function value at x equals five is ten. Therefore, the coordinates of the high point on the graph are (5, 10).")
+\item $f(5) = 10$
+% (Voiceover: "")
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Visualization}
+% (Voiceover: "The plot showcases the function f of x equals two times the square root of ten times x minus x squared, across the domain zero to ten. The curve represents the graph of the function, highlighting its shape and the high point at the coordinates (5, 10). This point, marked on the graph, indicates the location where the tangent line is horizontal, which corresponds to the maximum height of the function within the given domain. The plot helps visualize the behavior of the function, demonstrating how it increases to its peak at x equals five before decreasing, consistent with our earlier analysis.")
+\begin{verbatim}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    return 2 * np.sqrt(10*x - x**2)
+
+x = np.linspace(0, 10, 400)
+
+y = f(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label='f(x) = $2 \cdot \sqrt{10x - x^2}$')
+plt.scatter([5], [10], color='red', zorder=5, label='High Point (5, 10)')
+plt.title('Graph of $f(x) = 2 \cdot \sqrt{10x - x^2}$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+
+plt.savefig("media/fig.svg")
+\end{verbatim}
+\end{frame}
+"""
+# write_class(pres, "test_autoscene")
 
 
 class test_autoscene(SophiaCursorScene):
@@ -478,6 +556,140 @@ plt.savefig("media/fig.svg")
             self.wait_until_bookmark("step_8")
             eos.append(tex_elements_steps[8])
             self.play(Write(tex_elements_steps[8]), run_time=1)
+            self.wait_until_bookmark("visualization")
+            self.play(*[Unwrite(el) for el in eos], run_time=.8)
+            self.play(Create(plot), run_time=1)
+
+        self.wait(4)
+
+
+
+
+
+class test_autoscene(SophiaCursorScene):
+    
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+        self.add_mathgrid()
+        tex_elements_approach = []
+        tex = Tex(rf"1) ", "Differentiate", font_size=fs2, color=c1t)
+        tex_elements_approach.append(tex)
+        tex = Tex(rf"2) ", "Substitute ", font_size=fs2, color=c1t)
+        tex_elements_approach.append(tex)
+        approach_group = VGroup(*tex_elements_approach).arrange(DOWN, buff=.2, aligned_edge=LEFT).to_edge(UP, buff=1)
+        tex_elements_steps = []
+        tex = Tex(r"$f(x) = 2 \cdot \sqrt{10x - x^2}$", font_size=fs2, color=BLUE if "\Downarrow" in "$f(x) = 2 \cdot \sqrt{10x - x^2}$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$\Downarrow$ Differentiate", font_size=fs2, color=BLUE if "\Downarrow" in "$\Downarrow$ Differentiate" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$f'(x) = \frac{10 - 2x}{\sqrt{10x - x^2}}$", font_size=fs2, color=BLUE if "\Downarrow" in "$f'(x) = \frac{10 - 2x}{\sqrt{10x - x^2}}$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$\Downarrow$ Solve $f'(x)=0$", font_size=fs2, color=BLUE if "\Downarrow" in "$\Downarrow$ Solve $f'(x)=0$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$10 - 2x = 0$", font_size=fs2, color=BLUE if "\Downarrow" in "$10 - 2x = 0$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$\Downarrow$ Simplify", font_size=fs2, color=BLUE if "\Downarrow" in "$\Downarrow$ Simplify" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$x = 5$", font_size=fs2, color=BLUE if "\Downarrow" in "$x = 5$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$\Downarrow$ Substitute ", font_size=fs2, color=BLUE if "\Downarrow" in "$\Downarrow$ Substitute " else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$f(5) = 2 \cdot \sqrt{10(5) - 5^2}$", font_size=fs2, color=BLUE if "\Downarrow" in "$f(5) = 2 \cdot \sqrt{10(5) - 5^2}$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$\Downarrow$ Simplify", font_size=fs2, color=BLUE if "\Downarrow" in "$\Downarrow$ Simplify" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        tex = Tex(r"$f(5) = 10$", font_size=fs2, color=BLUE if "\Downarrow" in "$f(5) = 10$" else c1t)
+        tex.scale(3.4/max(3.4, tex.get_width()))
+        tex_elements_steps.append(tex)
+        steps_group = VGroup(*tex_elements_steps).arrange(DOWN, buff=.2).to_edge(UP, buff=1)
+        exec("""
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    return 2 * np.sqrt(10*x - x**2)
+
+x = np.linspace(0, 10, 400)
+
+y = f(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label='f(x) = $2 \cdot \sqrt{10x - x^2}$')
+plt.scatter([5], [10], color='red', zorder=5, label='High Point (5, 10)')
+plt.title('Graph of $f(x) = 2 \cdot \sqrt{10x - x^2}$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+
+plt.savefig("media/fig.svg")
+""")
+        plot = SVGMobject("media/fig.svg").scale(1.2).set_y(1) 
+        voiceover_text = """<bookmark mark="approach_0"/>First, we'll differentiate the function with respect to x. Differentiation allows us to find the rate at which the function's value changes as x changes. <bookmark mark="approach_1"/>Next, we'll find the value of x where the derivative equals zero. This step helps us locate points where the tangent to the graph is horizontal, indicating potential maxima or minima. ... <bookmark mark="step_0"/>We start with our function, which is two times the square root of ten times x minus x squared. This function describes a curve on the interval from zero to ten.... <bookmark mark="step_1"/>To find where the tangent to this curve is horizontal, we differentiate the function. This involves applying the derivative rules to the square root function.... <bookmark mark="step_2"/>The derivative simplifies to ten minus two x over the square root of ten x minus x squared. This expression tells us the slope of the tangent at any point x.... <bookmark mark="step_3"/>Setting the derivative equal to zero allows us to solve for x. We're looking for where the slope of the tangent, and hence the derivative, is zero.... <bookmark mark="step_4"/>Solving this equation gives us the critical point. It's a simple linear equation, leading to a single value of x.... <bookmark mark="step_5"/>By simplifying the equation, we find that x equals five. This is where the function has a horizontal tangent.... <bookmark mark="step_6"/>... <bookmark mark="step_7"/>Next, we substitute x equals five back into the original function. This step will give us the y-coordinate of the high point.... <bookmark mark="step_8"/>The substitution simplifies to two times the square root of twenty-five, which results in the y-coordinate of our high point.... <bookmark mark="step_9"/>After simplification, we find that the function value at x equals five is ten. Therefore, the coordinates of the high point on the graph are (5, 10).... <bookmark mark="step_10"/>... <bookmark mark="visualization"/>The plot showcases the function f of x equals two times the square root of ten times x minus x squared, across the domain zero to ten. The curve represents the graph of the function, highlighting its shape and the high point at the coordinates (5, 10). This point, marked on the graph, indicates the location where the tangent line is horizontal, which corresponds to the maximum height of the function within the given domain. The plot helps visualize the behavior of the function, demonstrating how it increases to its peak at x equals five before decreasing, consistent with our earlier analysis."""
+
+        # Action Sequence
+        with self.voiceover(text=voiceover_text, subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
+            
+            eos = [] # elements on screen            self.wait_until_bookmark("approach_0") 
+            eos.append(tex_elements_approach[0])
+            self.play(Write(tex_elements_approach[0]), run_time=1)
+            self.wait_until_bookmark("approach_1") 
+            eos.append(tex_elements_approach[1])
+            self.play(Write(tex_elements_approach[1]), run_time=1)
+            self.wait_until_bookmark("step_0")
+            self.play(*[Unwrite(el) for el in eos], run_time=.8)
+            eos = []
+            eos.append(tex_elements_steps[0])
+            self.play(Write(tex_elements_steps[0]), run_time=1)
+            self.wait_until_bookmark("step_1")
+            eos.append(tex_elements_steps[1])
+            self.play(Write(tex_elements_steps[1]), run_time=1)
+            self.wait_until_bookmark("step_2")
+            eos.append(tex_elements_steps[2])
+            self.play(Write(tex_elements_steps[2]), run_time=1)
+            self.wait_until_bookmark("step_3")
+            eos.append(tex_elements_steps[3])
+            self.play(Write(tex_elements_steps[3]), run_time=1)
+            self.wait_until_bookmark("step_4")
+            eos.append(tex_elements_steps[4])
+            self.play(Write(tex_elements_steps[4]), run_time=1)
+            self.wait_until_bookmark("step_5")
+            eos.append(tex_elements_steps[5])
+            self.play(Write(tex_elements_steps[5]), run_time=1)
+            self.wait_until_bookmark("step_6")
+            shift_diff = eos[0].get_y()-eos[-1].get_y()
+            self.add_shift_sound(0.5)
+            shift_diff = eos[0].get_y()-eos[-1].get_y()
+            self.add_shift_sound(0.5)
+            self.play(Unwrite(VGroup(*[eos[idx] for idx in range(len(eos)-1)])), eos[-1].animate.shift(UP*shift_diff), run_time=.5)
+            eos = [eos[-1]]
+            [tex_elements_steps[idx2].shift(UP*shift_diff) for idx2 in range(6, 11)]
+            eos.append(tex_elements_steps[6])
+            self.play(Write(tex_elements_steps[6]), run_time=1)
+            self.wait_until_bookmark("step_7")
+            eos.append(tex_elements_steps[7])
+            self.play(Write(tex_elements_steps[7]), run_time=1)
+            self.wait_until_bookmark("step_8")
+            eos.append(tex_elements_steps[8])
+            self.play(Write(tex_elements_steps[8]), run_time=1)
+            self.wait_until_bookmark("step_9")
+            eos.append(tex_elements_steps[9])
+            self.play(Write(tex_elements_steps[9]), run_time=1)
+            self.wait_until_bookmark("step_10")
+            eos.append(tex_elements_steps[10])
+            self.play(Write(tex_elements_steps[10]), run_time=1)
             self.wait_until_bookmark("visualization")
             self.play(*[Unwrite(el) for el in eos], run_time=.8)
             self.play(Create(plot), run_time=1)
