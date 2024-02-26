@@ -28,7 +28,7 @@ if __name__ == "__main__":
         print(f"  {m}")
         clsses = get_module_manim_sophiascene_classes(m, add_parent_folder_to_sys_path=True, result_sorted=True)
         STRICT_SCENE_FILTER = [
-            "Func_6_1_I_1_q_magda",
+            "Func_6_1_I_1_magda_q", "Func_6_1_I_1_magda_a", "Func_6_1_I_1_magda_b", "Func_6_1_I_1_magda_c", "Func_6_1_I_1_magda_d",
         ]
         clsses = [c for c in clsses if c.__name__ in STRICT_SCENE_FILTER]
         print(clsses)
