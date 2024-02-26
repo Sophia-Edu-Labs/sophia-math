@@ -1,0 +1,5 @@
+# Ignore .pdf files in all subdirectories
+**/*.pdf
+
+# Ignore "svgs" directory in all subdirectories
+svgs/
