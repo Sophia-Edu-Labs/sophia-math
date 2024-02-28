@@ -125,7 +125,7 @@
 #let highlightLabelledBox(label, id: "defaultmorphid", bgcolor: yellow, w: 20pt, h: 20pt, dx: 0pt, dy: 0pt) = {
   return place(top+left)[
         #locate(loc => {
-      let elems = query(<meq>, loc)
+      let elems = query(label, loc)
       let elem = elems.first()
       let pos = elem.location().position()
       style(styles => {
