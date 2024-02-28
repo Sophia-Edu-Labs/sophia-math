@@ -2,6 +2,7 @@
 # Import necessary libraries and modules
 from dataclasses import dataclass
 import json
+import tempfile
 from typing import Tuple as TupleType, List as ListType, Union as Union, Set as SetType
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import *
@@ -277,7 +278,7 @@ class AutoSlideVoiceover():
 class AutoSlideScene(BeamerPagesMorphScene):
     def parse_voiceovers(self):
         # command to query the voiceovers
-        command = f"typst query --root {self.scene_folder.parent} {self.scene_typst_path} \"<voiceover>\""
+        command = f"typst query --root {self.scene_py.parent.parent} {self.scene_typst_path} \"<voiceover>\""
 
         # run the command and capture the output string
         result = os.popen(command).read()
@@ -328,11 +329,11 @@ class AutoSlideScene(BeamerPagesMorphScene):
 
     def render_svgs_from_typs(self):
         # run `typst compile --root ../ scene.typ svgs/{n}.svg` on shell
-        #1. ensure svg path exists
-        self.svgs_path.mkdir(parents=True, exist_ok=True)
+        # create a new temporary directory for the svg (using the system default temp directory)
+        self.svgs_path = Path(tempfile.mkdtemp())
 
         # run the command to render the svgs
-        command = f"typst compile --root {self.scene_folder.parent} {self.scene_typst_path} {self.svgs_path}/{{n}}.svg"
+        command = f"typst compile --root {self.scene_py.parent.parent} {self.scene_typst_path} {self.svgs_path}/{{n}}.svg"
 
         # run the command
         result = os.system(command)
@@ -345,10 +346,9 @@ class AutoSlideScene(BeamerPagesMorphScene):
         self.svg_files = sorted(self.svgs_path.glob("*.svg"), key=lambda x: int(x.stem))
 
     # reads the necessary information from typs files
-    def parse_typst_scene_folder(self, scene_folder: Path):
-        self.scene_folder = scene_folder
-        self.svgs_path = scene_folder / "svgs"
-        self.scene_typst_path = scene_folder / "scene.typ"
+    def parse_corresponding_typst_scene(self, scene_py: Path):
+        self.scene_py = scene_py
+        self.scene_typst_path = scene_py.with_suffix(".typ")
 
         # then render the svgs from the scene.typ file
         self.render_svgs_from_typs()
