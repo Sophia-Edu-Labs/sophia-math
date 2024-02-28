@@ -7,9 +7,7 @@ from sophialib.morphing.sophiamorphscene import AutoSlideScene
 class ExampleScene(AutoSlideScene):
     def construct(self):
         # parse the corresponding typst
-        self.parse_typst_scene_folder(
-            Path(__file__).parent
-        )
+        self.parse_corresponding_typst_scene(Path(__file__))
 
         # Adding initial components to the scene
         super().construct()

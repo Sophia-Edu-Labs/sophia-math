@@ -79,4 +79,5 @@
 
   oh man oh man 
   #morphchildren([Hallo Welt, was ist das nur für ein langer Text], id: "contentid")
+  #image(".typst-images/join-up-header.png", width: 80%)
 ]
