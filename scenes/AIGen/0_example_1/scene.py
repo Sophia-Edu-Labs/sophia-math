@@ -16,3 +16,4 @@ class ExampleScene(AutoSlideScene):
         # self.auto_slide()
 
         self.auto_slide_with_voiceover()
+        

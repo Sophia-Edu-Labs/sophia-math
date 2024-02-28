@@ -401,7 +401,7 @@ class AutoSlideScene(BeamerPagesMorphScene):
                 # create the voiceover string
                 voiceover_string = " ".join([f"<bookmark mark=\"{v.pageIndex}\"/> {v.text}" for v in consecutive_voiceovers])
 
-                with self.voiceover(text=voiceover_string) as tracker:
+                with self.voiceover(text=voiceover_string, subcaption='NOT AVAILABLE DUE TO BUG') as tracker:
                     for v in consecutive_voiceovers:
                         self.wait_until_bookmark(f"{v.pageIndex}")
                         self.morph_page(v.pageIndex)

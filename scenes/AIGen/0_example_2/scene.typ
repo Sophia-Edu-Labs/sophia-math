@@ -12,7 +12,7 @@
   #slide()[
 
 #only("1")[
-  #voiceover("Die Aufgabe, die wir heute lösen werden, ist die Bestimmung einer Stammfunktion der Funktion")
+  #voiceover("So n")
 ]
 Berechne eine Stammfunktion von
 #v(40pt)
