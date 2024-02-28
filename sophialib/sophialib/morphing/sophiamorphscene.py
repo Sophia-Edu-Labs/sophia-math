@@ -301,13 +301,17 @@ class AutoSlideScene(BeamerPagesMorphScene):
         self.voiceovers = unique_list
 
         # merge voiceover texts, if they are on the same pageIndex
-        for i in range(len(self.voiceovers)):
+        i = 0
+        while i < len(self.voiceovers):
             if i == 0:
+                i += 1
                 continue
             if self.voiceovers[i].pageIndex == self.voiceovers[i-1].pageIndex:
                 self.voiceovers[i-1] = self.voiceovers[i-1].appended_text(self.voiceovers[i].text)
                 self.voiceovers.pop(i)
                 i -= 1
+            else: 
+                i += 1
 
     def voiceover_for_page(self, page_index: int) -> UnionType[AutoSlideVoiceover, None]:
         for v in self.voiceovers:
