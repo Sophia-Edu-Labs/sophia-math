@@ -22,7 +22,9 @@
 				"/downloads/manim-sideview-extension.vsix",
 				"GitHub.copilot",
 				"lokalise.i18n-ally",
-				"thibault-vanderseypen.i18n-json-editor"
+				"thibault-vanderseypen.i18n-json-editor",
+				"nvarner.typst-lsp",
+				"mgt19937.typst-preview"
 			]
 		}
 	},
