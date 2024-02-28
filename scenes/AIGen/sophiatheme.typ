@@ -122,7 +122,11 @@
     })
 }
 
-#let highlightLabelledBox(label, id: "defaultmorphid", bgcolor: yellow, w: 20pt, h: 20pt, dx: 0pt, dy: 0pt) = {
+#let highlightLabelledBox(label, id: "defaultmorphid", bgcolor: rgb(219, 242, 38, 150), w: 20pt, h: 20pt, dx: 0pt, dy: 0pt) = {
+  let bgcolorwithtransparency = rgb(
+    bgcolor.components().at(0), 
+    bgcolor.components().at(1), 
+    bgcolor.components().at(2), 150)
   return place(top+left)[
         #locate(loc => {
       let elems = query(label, loc)
@@ -131,7 +135,7 @@
       style(styles => {
           let size = measure(elem,styles)      
             [#place(top + left, dx: (pos.x)-55pt+dx, dy: (pos.y)-55pt+dy)[
-              #link(id)[#rect(fill: bgcolor, width: w, height: h)]]]
+              #link(id)[#rect(fill: bgcolorwithtransparency, width: w, height: h)]]]
           })
       })
       ]
