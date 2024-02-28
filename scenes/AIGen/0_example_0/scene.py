@@ -1,5 +1,3 @@
-
-
 from pathlib import Path
 from sophialib.morphing.sophiamorphscene import AutoSlideScene
 
