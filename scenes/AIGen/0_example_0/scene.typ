@@ -43,12 +43,15 @@ Berechne die Ableitung von
 #v(10pt)
 #only("2")[#voiceover("Um die Ableitung von Sinus von ln von x zu finden, müssen wir")]
 #only("3-")[#align(center)[#text(fill:aqua)[⇓ Kettenregel]]]
-#only("3")[#voiceover("die Kettenregel anwenden.")]
+#only("3")[#voiceover("die Kettenregel anwenden, denn Sinus von ln von x ist eine zusammengesetzte Funktion.")]  
 #v(10pt)
 #only("4-")[$f'(x) = "cos"("ln"(x)) dot 1/x + 2x$]
 #only("4")[#voiceover("Die Ableitung von Sinus von ln von x ist Cosinus von ln von x mal 1 durch x. Die Ableitung von x Quadrat ist")]
 #only("5")[#voiceover("2x. Also addieren wir Cosinus von ln von x mal 1 durch x zu 2x.")]
 #v(10pt)
-#only("6-")[$f'(x) = "cos"("ln"(x)) / x + 2x$]
-#only("6")[#voiceover("Die endgültige Ableitung der Funktion ist also Cosinus von ln von x geteilt durch x plus 2x.")]
+#only("6-")[#align(center)[#text(fill:aqua)[⇓ Vereinfachen]]]
+#only("6")[#voiceover("Zum Schluss können wir das ganze noch etwas vereinfachen,")]
+#v(10pt)
+#only("7-")[$f'(x) = "cos"("ln"(x)) / x + 2x$]
+#only("7")[#voiceover("und wir erhalten die endgültige Ableitung der Funktion, nämlich Cosinus von ln von x geteilt durch x plus 2x.")]
 ]
