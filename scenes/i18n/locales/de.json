@@ -4049,6 +4049,11 @@
       "5q": {
         "question": "Welche dieser Aussagen über $f(x)=\\sin(x)\\cdot x^2$ ist NICHT wahr?"
       }
+    },
+    "Derivative": {
+      "1q": {
+        "voiceover": ""
+      }
     }
   },
   "Func_6_P_scaling_exp": {

@@ -4056,6 +4056,42 @@
       "5q": {
         "question": "Which of these statements about the $f(x)=\\sin(x)\\cdot x^2$ is NOT true?"
       }
+    },
+    "Derivative": {
+      "1q": {
+        "title": "Differentiability Analysis ",
+        "voiceover": "Let's explore this question together! <bookmark mark=\"qend\"/> We're dealing with a function <bookmark mark=\"function\"/>—let's call it f. This function, is a real-valued function <bookmark mark=\"real\"/>—meaning it takes real numbers and gives back real numbers. Our task is to figure out if f is differentiable<bookmark mark=\"diff\"/> at x of zero equals zero. In other words, we want to find out<bookmark mark=\"der\"/> if the derivative exists at this point or not.",
+        "question": "Differentiable at $x_0 = 0$?",
+        "question-text": "Is the function differentiable at x_0 = 0?"
+      },
+      "1a": {
+        "voiceover": "To figure this out, let's start by finding the difference on the<bookmark mark=\"rhs\"/> right-hand side at<bookmark mark=\"rhs_last\"/>  the point x of 0 = 0. Then let's<bookmark mark=\"lhs\"/> do the same for the<bookmark mark=\"lhs_last\"/> left-hand side. Since the<bookmark mark=\"match\"/> left and right differences match up, it means that f is differentiable at x of 0 = 0."
+      }
+    },
+    "Limit": {
+      "1q": {
+        "title": "Limit Challenge",
+        "voiceover": "We've got an interesting<bookmark mark=\"qend\"/> challenge lined up for you! It's all about finding<bookmark mark=\"lim\"/> a limit as 't' gets closer and closer to 1 in<bookmark mark=\"eq\"/> this equation. What do you think happens? Can you solve it?"
+      },
+      "1a": {
+        "voiceover": "Let's solve it together. First, notice that if we plug in t=1 directly<bookmark mark=\"plug\"/>, we get an indeterminate form zero over zero. This is where l'Hôpital's Rule<bookmark mark=\"def\"/> comes in handy. This involves taking the derivative<bookmark mark=\"num\"/> of the numerator. and the<bookmark mark=\"den\"/> derivative of the denominator separately. After applying l'Hôpital's Rule,<bookmark mark=\"plug2\"/> plug in t=1 again. So, the limit<bookmark mark=\"final\"/> of the given expression as t approaches 1 is −6 over 5."
+      },
+      "2q": {
+        "voiceover": "Let's dive into sequences, convergence, and a fascinating<bookmark mark=\"qend\"/> challenge. In mathematics, a sequence is an ordered list. A sequence converges if its terms approach a limit<bookmark mark=\"ngrow\"/> as n grows. Can you provide two<bookmark mark=\"conv\"/> convergent sequences a and b, where b doesn't<bookmark mark=\"neqz\"/> equal 0, ensuring that<bookmark mark=\"fin\"/> a n over b n diverges?",
+        "title": "Sequences and Convergence"
+      },
+      "2a": {
+        "title": "Sequences and Convergence",
+        "voiceover": "Let's assume these are<bookmark mark=\"seq\"/> the two sequences. Now, let's plug the values<bookmark mark=\"plug\"/> into a_n over b_n. To simplify let's multiply both the numerator and<bookmark mark=\"sim\"/> denominator by n + 1 squared. Then<bookmark mark=\"cancel\"/> cancel out the common factor of n+1. As n <bookmark mark=\"inft\"/>approaches infinity, n+1 also goes to infinity. Therefore, ​​a_n over b_n tends to<bookmark mark=\"last\"/> infinity."
+      },
+      "3q": {
+        "title": "Limit Challenge",
+        "voiceover": "We have an intriguing<bookmark mark=\"qend\"/> challenge for you! Can you solve<bookmark mark=\"write\"/> this limit equation! and find the final answer!"
+      },
+      "3a": {
+        "title": "Limit Challenge",
+        "voiceover": "Let's solve this question. First Let's factor out <bookmark mark=\"pow\"/>n power 4 from both numerator and denomenator. The n power 4 terms<bookmark mark=\"cancel\"/> will cancel out, simplifying the equation. Next, substitute all instances of n<bookmark mark=\"inf\"/> with infinity. Calculate this expression to obtain the<bookmark mark=\"two\"/> result, which is 2."
+      }
     }
   },
   "Func_6_P_scaling_exp": {
@@ -4077,5 +4113,8 @@
     "4": {
       "voiceover": "Now: Quick recap on how to find the value of a for an exponential function of <bookmark mark=\"term_in\"/>the form f of x equals a times b to the power of x plus c.\nWhat we do is we<bookmark mark=\"step_1_in\"/> plug in x equals zero, and we get that <bookmark mark=\"term_1_in\"/>f of zero equals a times b to the power of zero plus c, and since b to the power of zero is equal to one, this is<bookmark mark=\"term_2_in\"/> simply equal to a plus c.\nIf we then subtract c from both sides, we <bookmark mark=\"step_2_in\"/>get that a equals f of zero minus c. And this is the takeaway now that you should memorize: For a function <bookmark mark=\"indicate_term\"/>of the form f of x equals a times b to the power of x plus c, the value of a is <bookmark mark=\"rectangle_in\"/>equal to f of zero minus c."
     }
+  },
+  "Calc_1_Derivative_1_q": {
+    "answer-options": "<bookmark mark=\"qstart\"/>Let's tackle this question. Can you determine if the. C<bookmark mark=\"qend\"/> function<bookmark mark=\"function\"/>. f of x = absolute of x sin x is differentiable at point x of 0 = 0?<bookmark mark=\"real\"/> f is a real-valued function, mapping real numbers to real numbers.."
   }
 }
