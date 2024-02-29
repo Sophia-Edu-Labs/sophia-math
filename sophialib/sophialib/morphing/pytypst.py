@@ -21,6 +21,11 @@ def _write_output_content(code: str, type: Literal["svg", "txt", "png"], output:
         raise ValueError(f"Unknown type: {type}")
     
     current_contents = []
+    # if the file does not exist, then create it (inlcuding the parent directories if necessary)
+    if not output_json_path.exists():
+        output_json_path.parent.mkdir(parents=True, exist_ok=True)
+        output_json_path.touch()
+
     with open(output_json_path) as f:
         try: 
             current_contents = json.load(f)
@@ -49,7 +54,7 @@ def _write_output_content(code: str, type: Literal["svg", "txt", "png"], output:
 
     
     # write the updated contents back to the file
-    with open(output_json_path, "w") as f:
+    with open(output_json_path, "w", encoding="utf-8") as f:
         json.dump(current_contents, f, indent=4)
     
 
