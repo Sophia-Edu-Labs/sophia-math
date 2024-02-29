@@ -46,6 +46,8 @@ def _write_output_content(code: str, type: Literal["svg", "txt", "png"], output:
     # optionally add the possibility to output an error message through the content json 
     if error_msg is not None:
         dict_to_write["error"] = error_msg
+    else:
+        dict_to_write["error"] = None
 
     # loop through the current contents and check if there is one with the given code, then update it, otherwise just add the new one
     for i, content in enumerate(current_contents):
