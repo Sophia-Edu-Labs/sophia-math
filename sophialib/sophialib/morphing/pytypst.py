@@ -1,3 +1,6 @@
+# To run with debugger use the following two arguments
+# /workspaces/sophia-math/scenes/AIGen/scenes/0_example_0.typ /workspaces/sophia-math/scenes/AIGen/.typst-images/contents.json
+
 from io import StringIO
 import json
 import pathlib
