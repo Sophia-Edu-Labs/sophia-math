@@ -22,7 +22,7 @@ Berechne die Ableitung von
 
     # Define the function f(x) = x^2
     def f(x):
-        return x ** 3 - 20
+        return x ** 7 - 20
 
     # Generate x values
     x = np.linspace(-10, 10, 400)
@@ -47,6 +47,10 @@ Berechne die Ableitung von
   width: 300pt),
 caption: $f(x) = x^3 - 2$
 )
+#pycontent(```
+# return "$f(x) = x^3 - 2$"
+return f"${'-'.join([str(i) for i in range(0, 100)])}$"
+```)
 
 #v(40pt)
 #only("2-")[#text()[$ f(x) = "sin"("ln"(x)) + x^2 $]]

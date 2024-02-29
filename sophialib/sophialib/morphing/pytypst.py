@@ -70,18 +70,23 @@ def _make_fig(code: str):
     return fig
 
 
-def _make_content(code: str):
-    code_pieces = code.rsplit("\n", 1)
-    if len(code_pieces) == 1:
-        code = "out = " + code
-    else:
-        code, last_line = code_pieces
-        last_line = "out = " + last_line
-        code = code + "\n" + last_line
-        
-    exec(code)
+def _make_content_through_def(code: str):
+    processed_code = textwrap.dedent(code).strip()
+
+    # indent the code again
+    processed_code = textwrap.indent(processed_code, "    ")
     
-    return out
+    # create code defining a function
+    l, g = locals().copy(), globals().copy()
+    code_to_run = f"""
+def _content_func():
+    {processed_code}
+result = _content_func()
+    """
+        
+    exec(code_to_run, g, l)
+    
+    return l["result"]
 
 
 def _make_contents(
@@ -152,7 +157,7 @@ def _make_contents(
         processed_code = textwrap.dedent(code).strip()
             
         try: 
-            out = _make_content(processed_code)
+            out = _make_content_through_def(processed_code)
         except Exception as e:
             _write_output_content(processed_code, "txt", "", contents_path, error_msg=str(e))
             continue
