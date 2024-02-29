@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import json
 import tempfile
 from typing import Tuple as TupleType, List as ListType, Union as Union, Set as SetType
+from sophialib.morphing.pytypst import _make_contents
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
@@ -345,10 +346,17 @@ class AutoSlideScene(BeamerPagesMorphScene):
         # get the paths to the rendered svgs
         self.svg_files = sorted(self.svgs_path.glob("*.svg"), key=lambda x: int(x.stem))
 
+    # method to create the contents.json file for the scene
+    def create_python_contents(self): 
+        _make_contents(self.scene_typst_path, self.scene_typst_path.parent.parent / ".typst-images/contents.json")
+
     # reads the necessary information from typs files
     def parse_corresponding_typst_scene(self, scene_py: Path):
         self.scene_py = scene_py
         self.scene_typst_path = scene_py.with_suffix(".typ")
+
+        # create the contents.json file for the scene (BEFORE rendering creating the typst output file!)
+        self.create_python_contents()
 
         # then render the svgs from the scene.typ file
         self.render_svgs_from_typs()
