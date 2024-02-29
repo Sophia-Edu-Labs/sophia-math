@@ -27,6 +27,49 @@ class MappedSVGMobject(SVGMobject):
         self.svgids = []
         SVGMobject.__init__(self, file_name=svg_file,**kwargs)
 
+
+    def process_subitem(self, node, parentGroups):
+        result = []
+        newMob = None
+
+        if isinstance(node, (se.Group, se.Use)):
+            for subitem in node:
+                newResults = self.process_subitem(subitem, parentGroups + [node])
+                result.extend(newResults)
+            
+            return result
+        elif isinstance(node, se.Path):
+            newMob = self.path_to_mobject(node)
+        elif isinstance(node, se.SimpleLine):
+            newMob = self.line_to_mobject(node)
+        elif isinstance(node, se.Rect):
+            newMob = self.rect_to_mobject(node)
+        elif isinstance(node, (se.Circle, se.Ellipse)):
+            newMob = self.ellipse_to_mobject(node)
+        elif isinstance(node, se.Polygon):
+            newMob = self.polygon_to_mobject(node)
+        elif isinstance(node, se.Polyline):
+            newMob = self.polyline_to_mobject(node)
+        elif isinstance(node, se.Text):
+            newMob = self.text_to_mobject(node)
+        elif isinstance(node, se.Use) or type(node) == se.SVGElement:
+            # print(f"Unsupported element type: {type(node)}")
+            pass
+        else:
+            print(f"Unsupported element type: {type(node)}")
+            pass
+        
+        if newMob is None or not newMob.has_points():
+            return result
+        
+        self.apply_style_to_mobject(newMob, node)
+        if isinstance(node, se.Transformable) and node.apply:
+            self.handle_transform(newMob, node.transform)
+
+        result.append((newMob, parentGroups))
+
+        return result
+
     def get_mobjects_from(self, svg: se.SVG) -> TupleType[ListType[VMobject], ListType[UnionType[str, None]]]:
         """Convert the elements of the SVG to a list of mobjects.
 
@@ -35,42 +78,18 @@ class MappedSVGMobject(SVGMobject):
         svg
             The parsed SVG file.
         """
-        result = []
+        
+            
+
+        result = self.process_subitem(svg, [])
+
+        newMobs = []
         parentGroupIDs = []
-        for shape in svg.elements():
-            # access more attributes via:
-            # shape.values["attributes"]
-            if isinstance(shape, se.Group):
-                continue
-            elif isinstance(shape, se.Path):
-                mob = self.path_to_mobject(shape)
-            elif isinstance(shape, se.SimpleLine):
-                mob = self.line_to_mobject(shape)
-            elif isinstance(shape, se.Rect):
-                mob = self.rect_to_mobject(shape)
-            elif isinstance(shape, (se.Circle, se.Ellipse)):
-                mob = self.ellipse_to_mobject(shape)
-            elif isinstance(shape, se.Polygon):
-                mob = self.polygon_to_mobject(shape)
-            elif isinstance(shape, se.Polyline):
-                mob = self.polyline_to_mobject(shape)
-            elif isinstance(shape, se.Text):
-                mob = self.text_to_mobject(shape)
-            elif isinstance(shape, se.Use) or type(shape) == se.SVGElement:
-                continue
-            else:
-                logger.warning(f"Unsupported element type: {type(shape)}")
-                continue
-            if mob is None or not mob.has_points():
-                continue
-            self.apply_style_to_mobject(mob, shape)
-            if isinstance(shape, se.Transformable) and shape.apply:
-                self.handle_transform(mob, shape.transform)
-            result.append(mob)
-            # get all parent groups of the current shape
-            parents = list(svg.select(lambda s: isinstance(s, se.Group) and shape in s.select()))
-            parentGroupIDs.append([] if len(parents) == 0 else list(filter(lambda i: i is not None, map(lambda p: p.values["attributes"].get("morphtag", None), parents))))
-        return result, parentGroupIDs
+        for mob, parentGroups in result:
+            newMobs.append(mob)
+            parentGroupIDs.append([] if len(parentGroups) == 0 else list(filter(lambda i: i is not None, map(lambda p: p.values["attributes"].get("morphtag", None), parentGroups))))
+        
+        return newMobs, parentGroupIDs
 
 
     def generate_mobject(self) -> None:
