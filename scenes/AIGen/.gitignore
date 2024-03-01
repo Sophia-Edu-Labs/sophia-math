@@ -3,3 +3,6 @@
 
 # Ignore "svgs" directory in all subdirectories
 svgs/
+
+# ignore everything in the .typst-images folder
+.typst-images/*

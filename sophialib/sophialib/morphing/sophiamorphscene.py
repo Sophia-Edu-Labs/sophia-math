@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import json
 import tempfile
 from typing import Tuple as TupleType, List as ListType, Union as Union, Set as SetType
+from sophialib.morphing.pytypst import _make_contents
 from sophialib.page_prototypes.prototype import PagePrototypeQuestion, PagePrototypeVideo
 from sophialib.styles.sophiascene import *
 from sophialib.styles.styleconstants import *
@@ -26,6 +27,80 @@ class MappedSVGMobject(SVGMobject):
         self.svgids = []
         SVGMobject.__init__(self, file_name=svg_file,**kwargs)
 
+
+    def process_subitem(self, node, parentGroups):
+        result = []
+        newMob = None
+
+        if isinstance(node, (se.Group, se.Use)):
+            for subitem in node:
+                newResults = self.process_subitem(subitem, parentGroups + [node])
+                result.extend(newResults)
+            
+            return result
+        elif isinstance(node, se.Path):
+            newMob = self.path_to_mobject(node)
+        elif isinstance(node, se.SimpleLine):
+            newMob = self.line_to_mobject(node)
+        elif isinstance(node, se.Rect):
+            newMob = self.rect_to_mobject(node)
+        elif isinstance(node, (se.Circle, se.Ellipse)):
+            newMob = self.ellipse_to_mobject(node)
+        elif isinstance(node, se.Polygon):
+            newMob = self.polygon_to_mobject(node)
+        elif isinstance(node, se.Polyline):
+            newMob = self.polyline_to_mobject(node)
+        elif isinstance(node, se.Text):
+            newMob = self.text_to_mobject(node)
+        elif isinstance(node, se.Image):
+            # we only support svg, so check media type
+            if node.media_type[0] == "image/svg+xml":
+                #write the data from the node to a temporary file
+                tmp = tempfile.NamedTemporaryFile(suffix=".svg", delete=False)
+                string_data = node.data.decode("utf-8")
+
+                # Step 2: Write the string to a file
+                with open(tmp.name, "w") as file:
+                    file.write(string_data)
+                
+                # Step 3: Create a new SVGMobject from the temporary file
+                newMob = SVGMobject(tmp.name)
+                newMob.stretch_to_fit_height(node.height)
+                newMob.stretch_to_fit_width(node.width)
+                newMob.shift(
+                    np.array([node.x + node.width / 2, node.y + node.height / 2, 0.0])
+                )
+                newMob.flip(RIGHT)  # Flip y (Idk why this is necessary, but it is)
+            else:
+                print(f"Unsupported media type: {node.media_type}")
+                pass
+
+        elif isinstance(node, se.Use) or type(node) == se.SVGElement:
+            # print(f"Unsupported element type: {type(node)}")
+            pass
+        else:
+            print(f"Unsupported element type: {type(node)}")
+            pass
+        
+        # exclude VGroups (see svg image handling above)
+        if newMob is None or (not newMob.has_points() and not isinstance(newMob, SVGMobject)):
+            return result
+        
+        if not isinstance(newMob, SVGMobject):
+            self.apply_style_to_mobject(newMob, node)
+        
+        if isinstance(node, se.Transformable) and node.apply:
+            self.handle_transform(newMob, node.transform)
+
+        if isinstance(newMob, SVGMobject):
+         # add the submobjects to the results
+            for submobj in newMob:
+                result.append((submobj, parentGroups))
+        else:
+            result.append((newMob, parentGroups))
+
+        return result
+
     def get_mobjects_from(self, svg: se.SVG) -> TupleType[ListType[VMobject], ListType[UnionType[str, None]]]:
         """Convert the elements of the SVG to a list of mobjects.
 
@@ -34,42 +109,18 @@ class MappedSVGMobject(SVGMobject):
         svg
             The parsed SVG file.
         """
-        result = []
+        
+            
+
+        result = self.process_subitem(svg, [])
+
+        newMobs = []
         parentGroupIDs = []
-        for shape in svg.elements():
-            # access more attributes via:
-            # shape.values["attributes"]
-            if isinstance(shape, se.Group):
-                continue
-            elif isinstance(shape, se.Path):
-                mob = self.path_to_mobject(shape)
-            elif isinstance(shape, se.SimpleLine):
-                mob = self.line_to_mobject(shape)
-            elif isinstance(shape, se.Rect):
-                mob = self.rect_to_mobject(shape)
-            elif isinstance(shape, (se.Circle, se.Ellipse)):
-                mob = self.ellipse_to_mobject(shape)
-            elif isinstance(shape, se.Polygon):
-                mob = self.polygon_to_mobject(shape)
-            elif isinstance(shape, se.Polyline):
-                mob = self.polyline_to_mobject(shape)
-            elif isinstance(shape, se.Text):
-                mob = self.text_to_mobject(shape)
-            elif isinstance(shape, se.Use) or type(shape) == se.SVGElement:
-                continue
-            else:
-                logger.warning(f"Unsupported element type: {type(shape)}")
-                continue
-            if mob is None or not mob.has_points():
-                continue
-            self.apply_style_to_mobject(mob, shape)
-            if isinstance(shape, se.Transformable) and shape.apply:
-                self.handle_transform(mob, shape.transform)
-            result.append(mob)
-            # get all parent groups of the current shape
-            parents = list(svg.select(lambda s: isinstance(s, se.Group) and shape in s.select()))
-            parentGroupIDs.append([] if len(parents) == 0 else list(filter(lambda i: i is not None, map(lambda p: p.values["attributes"].get("morphtag", None), parents))))
-        return result, parentGroupIDs
+        for mob, parentGroups in result:
+            newMobs.append(mob)
+            parentGroupIDs.append([] if len(parentGroups) == 0 else list(filter(lambda i: i is not None, map(lambda p: p.values["attributes"].get("morphtag", None), parentGroups))))
+        
+        return newMobs, parentGroupIDs
 
 
     def generate_mobject(self) -> None:
@@ -124,8 +175,11 @@ class BeamerPagesMorphScene(SophiaCursorScene):
         if not np.allclose(mobj1.get_center(), mobj2.get_center(), atol=1e-8):
             return False
         
+        p1 = mobj1.get_points()
+        p2 = mobj2.get_points()
+
         # Compare shapes by comparing their points (This works for some Mobjects like Polygon but might not be sufficient for all types)
-        if not np.allclose(mobj1.get_points(), mobj2.get_points(), atol=1e-8):
+        if p1.shape != p2.shape or not np.allclose(p1, p2, atol=1e-8):
             return False
         
         # Compare colors
@@ -345,10 +399,17 @@ class AutoSlideScene(BeamerPagesMorphScene):
         # get the paths to the rendered svgs
         self.svg_files = sorted(self.svgs_path.glob("*.svg"), key=lambda x: int(x.stem))
 
+    # method to create the contents.json file for the scene
+    def create_python_contents(self): 
+        _make_contents(self.scene_typst_path, self.scene_typst_path.parent.parent / ".typst-images/contents.json")
+
     # reads the necessary information from typs files
     def parse_corresponding_typst_scene(self, scene_py: Path):
         self.scene_py = scene_py
         self.scene_typst_path = scene_py.with_suffix(".typ")
+
+        # create the contents.json file for the scene (BEFORE rendering creating the typst output file!)
+        self.create_python_contents()
 
         # then render the svgs from the scene.typ file
         self.render_svgs_from_typs()

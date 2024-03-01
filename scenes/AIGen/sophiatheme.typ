@@ -168,3 +168,39 @@
       #manualvoiceover(text, pageIndex: counter(page).at(loc).first(), step: logic.logical-slide.at(loc).first(), substep: logic.subslide.at(loc).first())
   ])
 ]
+
+#let pyimage(code, width: auto, height: auto) = {
+  let contents = json(".typst-images/contents.json")
+
+  for content in contents {
+    // return content.code
+    // return code.text
+    if content.code == code.text {
+      if content.keys().contains("error") and content.error != none{
+        return box(fill: red, width: width, height: height)[#content.error]
+      }
+      return image.decode(content.output, format: "svg", width: width, height: height)
+    }
+  }
+
+  return box(fill: red, width: width, height: height)[Image not found]
+}
+
+#let pycontent(code, width: auto, height: auto) = {
+  let contents = json(".typst-images/contents.json")
+
+  for content in contents {
+    // return content.code
+    // return code.text
+    if content.code == code.text {
+      if content.keys().contains("error") and content.error != none{
+        return box(fill: red, width: width, height: height)[#content.error]
+      }
+
+      return box(width: width, height: height)[#eval(content.output)]
+    }
+  }
+
+  return box(fill: red, width: width, height: height)[Content not found]
+}
+

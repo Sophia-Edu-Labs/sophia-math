@@ -1,0 +1,13 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate typst python images/contents",
+            "type": "shell",
+            "command": "python -m sophialib.morphing.pytypst ${file} ${workspaceFolder}/scenes/AIGen/.typst-images/contents.json",
+            "problemMatcher": []
+        }
+    ]
+}
