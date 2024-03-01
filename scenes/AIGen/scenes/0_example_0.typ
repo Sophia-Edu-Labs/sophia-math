@@ -12,9 +12,10 @@
 #slide()[
 
 #only("1")[
+  hello #morphbox(bgcolor: red)[world]
   #voiceover("Die Aufgabe, die wir lösen müssen, ist die Berechnung der Ableitung der Funktion")
-]
-Berechne die Ableitung von
+
+// #morphchildren(id: "plot")[
 #figure(
   pyimage(```
     import matplotlib.pyplot as plt
@@ -22,7 +23,7 @@ Berechne die Ableitung von
 
     # Define the function f(x) = x^2
     def f(x):
-        return x ** 7 - 20
+        return x ** 2 - 20
 
     # Generate x values
     x = np.linspace(-10, 10, 400)
@@ -47,16 +48,62 @@ Berechne die Ableitung von
   width: 300pt),
 caption: $f(x) = x^3 - 2$
 )
-#pycontent(```
-# return "$f(x) = x^3 - 2$"
-return f"${'-'.join([str(i) for i in range(0, 100)])}$"
-```)
+// ]
+#place(top+left, dx: 50pt, dy: 80pt)[
+  #box(fill: red)[
+    #text(size: 30pt, weight: "bold", fill: blue)[
+      Okayyy
+    ]
+  ]
+]
+]
+// #pycontent(```
+// # return "$f(x) = x^3 - 2$"
+// return f"${'-'.join([str(i) for i in range(0, 100)])}$"
+// ```)
 
-#v(40pt)
-#only("2-")[#text()[$ f(x) = "sin"("ln"(x)) + x^2 $]]
+// #v(40pt)
+#only("2-")[
+  #morphbox(bgcolor: red)[hello] world
+  #text()[$ f(x) = "sin"("ln"(x)) + x^2 $]
+]
 #only("2")[
   #voiceover("f von x gleich Sinus von ln von x plus x Quadrat.")
+  // #morphchildren(id: "plot")[
+#figure(
+  pyimage(```
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    # Define the function f(x) = x^2
+    def f(x):
+        return x ** 2 - 20
+
+    # Generate x values
+    x = np.linspace(-10, 10, 400)
+
+    # Generate y values by applying the function to x values
+    y = f(x)
+
+    # Create the plot
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y, label='f(x) = $x^2$')
+
+    # Label the axes
+    plt.xlabel('x')
+    plt.ylabel('f(x)')
+
+    # Add a legend
+    plt.legend()
+
+    # Display the plot
+    plt.show()
+    ```, 
+  width: 300pt),
+caption: $f(x) = x^3 - 2$
+)
 ]
+// ]
 ]
 
 #slide()[
