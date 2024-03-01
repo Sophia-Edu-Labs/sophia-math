@@ -85,7 +85,7 @@ def _make_content_through_def(code: str):
     l, g = locals().copy(), globals().copy()
     code_to_run = f"""
 def _content_func():
-    {processed_code}
+{processed_code}
 result = _content_func()
     """
         
