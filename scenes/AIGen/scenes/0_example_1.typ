@@ -13,9 +13,9 @@
 #slide()[
 
 #only("1")[
-#voiceover("Unsere Aufgabe ist es, die Extremstellen der gegebenen Funktion zu finden und zu bestimmen, welcher Art sie sind.")
+#voiceover("Unsere Aufgabe ist es, die Extremstellen der gegebenen Funktion zu finden und zu bestimmen, welcher Art sie sind. Die Funktion lautet")
 ]
-Berechne die Extremstellen und bestimme ihre Art für
+Extremstellen untersuchen
 #v(40pt)
 #only("2-")[#text()[$ f(x) = x^3 - 6x^2 + 9x + 1 $]]
 #only("2")[
@@ -25,49 +25,65 @@ Berechne die Extremstellen und bestimme ihre Art für
 
 #slide()[
 #only("1")[
-#voiceover("Zur Lösung dieser Aufgabe benötigen wir die erste und zweite Ableitung der Funktion.")
+#voiceover("Zur Lösung dieser Aufgabe berechnen wir zunächst die erste Ableitung der Funktion. Anschließend setzen wir die Ableitung gleich null, um die kritischen Punkte zu finden. ")
 ]
 #only("2")[
-#voiceover("Beginnen wir mit dem Lösungsprozess!")
+#voiceover("Dann überprüfen wir die kritischen Punkte mit der zweiten Ableitung, um die Art der Extremstellen zu bestimmen. Beginnen wir also mit dem Lösungsprozess!")
 ]
 #text(size: 30pt, weight: "bold")[Ansatz]
 #v(40pt)
-#only("1-")[- Berechnung der ersten Ableitung]
-#only("2-")[- Überprüfung der kritischen Punkte mit der zweiten Ableitung]
+#only("1-")[- Este Ableitung für kritische Punkte]
+#only("2-")[- Zweite Ableitung für Art der kritischen Punkte]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Berechnung der ersten Ableitung]
+#text(size: 30pt, weight: "bold")[1. Ableitung]
 #v(40pt)
 #only("1-")[$f(x) = x^3 - 6x^2 + 9x + 1$]
-#only("1")[#voiceover("Wir beginnen mit der gegebenen Funktion f von x gleich x hoch drei minus sechs x Quadrat plus neun x plus eins.")]
+#only("1")[#voiceover("Wir beginnen mit der gegebenen Funktion f von x gleich x hoch drei minus sechs x Quadrat plus neun x plus eins. Davon wollen wir die erste Ableitung berechnen. ")]
 #v(10pt)
-#only("2-")[$f'(x) = 3x^2 - 12x + 9$]
-#only("2")[#voiceover("Die erste Ableitung der Funktion ist drei x Quadrat minus zwölf x plus neun.")]
+#only("2-")[#align(center)[#text(fill:aqua)[⇓ Potenzregel]]]
+#only("2")[#voiceover("Die Funktion ist eine Summe von Potenzen, daher wenden wir die Potenzregel an. ")]
+#v(10pt)
+#only("3-")[$f'(x) = 3x^2 - 12x + 9$]
+#only("3")[#voiceover("Die Ableitung von x hoch drei ist drei x Quadrat, die Ableitung von minus sechs x Quadrat ist minus zwölf x und die Ableitung von neun x ist neun. Die Ableitung von eins ist null, also fällt sie weg.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Finden der kritischen Punkte]
+#text(size: 30pt, weight: "bold")[Kritische Punkte]
 #v(40pt)
-#only("1")[#voiceover("Um die kritischen Punkte zu finden, setzen wir die erste Ableitung gleich null.")]
+$f'(x) = 3x^2 - 12x + 9$
+#v(10pt)
+#only("1-")[#align(center)[#text(fill:aqua)[⇓ Gleich Null setzen]]]
+#only("1")[#voiceover("Um die kritischen Punkte zu finden, setzen wir dann die erste Ableitung gleich null.")]
 #v(10pt)
 #only("2-")[$0 = 3x^2 - 12x + 9$]
-#only("2")[#voiceover("Null gleich drei x Quadrat minus zwölf x plus neun.")]
+#only("2")[#voiceover("Dann erhalten wir Null gleich drei x Quadrat minus zwölf x plus neun.")]
 #v(10pt)
-#only("3-")[$x = 1, x = 3$]
-#only("3")[#voiceover("Durch das Lösen der Gleichung erhalten wir zwei kritische Punkte: x gleich eins und x gleich drei.")]
+#only("3-")[#align(center)[#text(fill:aqua)[⇓ Quadratische Gleichung]]]
+#only("3")[#voiceover("Das ist eine normale quadratische Gleichung, die wir zum Beispiel mit der Mitternachtsformel lösen können.")]
+#v(10pt)
+#only("4-")[$x = 1, x = 3$]
+#only("4")[#voiceover("Dann erhalten wir x gleich eins und x gleich drei als Nullstellen, und somit auch als kritische Punkte.")]
+#only("4")[#voiceover("Jetzt wo wir die kritischen Punkte gefunden haben, setzen wir diese in die zweite Ableitung ein, um die Art der kritischen Punkte zu ermitteln.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Überprüfung mit der zweiten Ableitung]
+#text(size: 30pt, weight: "bold")[2. Ableitung]
 #v(40pt)
-#only("1-")[$f''(x) = 6x - 12$]
-#only("1")[#voiceover("Die zweite Ableitung der Funktion ist sechs x minus zwölf.")]
+$f'(x) = 3x^2 - 12x + 9$
 #v(10pt)
-#only("2")[#voiceover("Wir setzen die kritischen Punkte in die zweite Ableitung ein, um die Art der Extremstellen zu bestimmen.")]
+#only("1-")[#align(center)[#text(fill:aqua)[⇓ Ableiten]]]
+#only("1")[#voiceover("Beginnen wir also damit, die Ableitung erneut abzuleiten.")]
+
+#only("2-")[$f''(x) = 6x - 12$]
+#only("2")[#voiceover("Die Ableitung von drei x Quadrat ist sechs x, und die Ableitung von minus zwölf x ist minus zwölf. Die Ableitung von neun ist null, also fällt sie weg. Daher erhalten wir sechs x minus zwölf als zweite Ableitung.")]
+
+#only("3-")[#align(center)[#text(fill:aqua)[⇓ Kritische Punkte einsetzen]]]
+#only("3")[#voiceover("Als nächstes setzen wir die kritischen Punkte in die zweite Ableitung ein, um die Art der Extremstellen zu bestimmen.")]
 #v(10pt)
-#only("3-")[$f''(1) = -6, f''(3) = 6$]
-#only("3")[#voiceover("Für x gleich eins ist die zweite Ableitung negativ, was auf ein lokales Maximum hinweist. Für x gleich drei ist die zweite Ableitung positiv, was ein lokales Minimum anzeigt.")]
+#only("4-")[$f''(1) = -6, f''(3) = 6$]
+#only("4")[#voiceover("Für x gleich eins ist die zweite Ableitung negativ. Das bedeutet, dass wir für x gleich eins ein lokales Maximum haben. Für x gleich drei ist die zweite Ableitung positiv. Das bedeutet, dass wir für x gleich drei ein lokales Minimum haben.")]
 ]
 
 #slide()[
@@ -75,7 +91,14 @@ Berechne die Extremstellen und bestimme ihre Art für
 #v(40pt)
 #only("1-")[
 - Lokales Maximum bei  $x = 1$
-- lokales Minimum bei  $x = 3$
 ]
-#only("1")[#voiceover("Zusammenfassend haben wir ein lokales Maximum bei x gleich eins und ein lokales Minimum bei x gleich drei gefunden.")]
+#only("1")[
+#voiceover("Wir haben also ein lokales Maximum bei x gleich eins gefunden, ..." )
+]
+#only("2-")[
+- Lokales Minimum bei  $x = 3$
+]
+#only("2")[
+#voiceover("... und ein lokales Minimum bei x gleich drei. Das sind die Ergebnisse unserer Untersuchung der Extremstellen der Funktion f von x gleich x hoch drei minus sechs x Quadrat plus neun x plus eins.")
+]
 ]

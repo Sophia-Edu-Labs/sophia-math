@@ -9,10 +9,10 @@
 //apply theme (and default setup)
 #show: sophia-theme
   
-  #slide()[
+#slide()[
 
 #only("1")[
-  #voiceover("Die Aufgabe, die wir heute lösen werden, ist die Bestimmung einer Stammfunktion der Funktion")
+  #voiceover("Jetzt wird also ein integral gelöst.")
 ]
 Berechne eine Stammfunktion von
 #v(40pt)
