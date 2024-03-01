@@ -42,7 +42,7 @@ Compute the derivative of
 #only("1")[#voiceover("So we'll start with the function f of x equals e to the power of x squared.")]
 #v(10pt)
 #only("2")[#voiceover("As I said, we'll use the chain rule to compute this derivative.")]
-#only("3-")[#align(center)[#text(fill:aqua)[⇓ Kettenregel]]]
+#only("3-")[#align(center)[#text(fill:aqua)[⇓ Chain Rule]]]
 #only("3")[#voiceover("So the chain rule says that we first have to compute the derivative of the outer function, and then multiply it with the derivative of the inner function. The derivative of the exponential function is the exponential function. So we get e to the power of x squared times the derivative of x squared, which is two x. So we get 2x times e to the power of x squared.")]  
 #v(10pt)
 #only("4-")[$f'(x) = 2x dot e^(x^2) - 1$]
