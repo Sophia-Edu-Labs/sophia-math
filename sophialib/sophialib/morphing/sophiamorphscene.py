@@ -144,8 +144,11 @@ class BeamerPagesMorphScene(SophiaCursorScene):
         if not np.allclose(mobj1.get_center(), mobj2.get_center(), atol=1e-8):
             return False
         
+        p1 = mobj1.get_points()
+        p2 = mobj2.get_points()
+
         # Compare shapes by comparing their points (This works for some Mobjects like Polygon but might not be sufficient for all types)
-        if not np.allclose(mobj1.get_points(), mobj2.get_points(), atol=1e-8):
+        if p1.shape != p2.shape or not np.allclose(p1, p2, atol=1e-8):
             return False
         
         # Compare colors
