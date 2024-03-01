@@ -175,7 +175,7 @@
   for content in contents {
     // return content.code
     // return code.text
-    if content.code == code.text {
+    if content.code == code.text.trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
@@ -192,7 +192,7 @@
   for content in contents {
     // return content.code
     // return code.text
-    if content.code == code.text {
+    if content.code == code.text.trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
