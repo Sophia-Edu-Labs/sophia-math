@@ -52,6 +52,29 @@ class MappedSVGMobject(SVGMobject):
             newMob = self.polyline_to_mobject(node)
         elif isinstance(node, se.Text):
             newMob = self.text_to_mobject(node)
+        elif isinstance(node, se.Image):
+            # we only support svg, so check media type
+            if node.media_type[0] == "image/svg+xml":
+                #write the data from the node to a temporary file
+                tmp = tempfile.NamedTemporaryFile(suffix=".svg", delete=False)
+                string_data = node.data.decode("utf-8")
+
+                # Step 2: Write the string to a file
+                with open(tmp.name, "w") as file:
+                    file.write(string_data)
+                
+                # Step 3: Create a new SVGMobject from the temporary file
+                newMob = SVGMobject(tmp.name)
+                newMob.stretch_to_fit_height(node.height)
+                newMob.stretch_to_fit_width(node.width)
+                newMob.shift(
+                    np.array([node.x + node.width / 2, node.y + node.height / 2, 0.0])
+                )
+                newMob.flip(RIGHT)  # Flip y (Idk why this is necessary, but it is)
+            else:
+                print(f"Unsupported media type: {node.media_type}")
+                pass
+
         elif isinstance(node, se.Use) or type(node) == se.SVGElement:
             # print(f"Unsupported element type: {type(node)}")
             pass
@@ -59,14 +82,22 @@ class MappedSVGMobject(SVGMobject):
             print(f"Unsupported element type: {type(node)}")
             pass
         
-        if newMob is None or not newMob.has_points():
+        # exclude VGroups (see svg image handling above)
+        if newMob is None or (not newMob.has_points() and not isinstance(newMob, SVGMobject)):
             return result
         
-        self.apply_style_to_mobject(newMob, node)
+        if not isinstance(newMob, SVGMobject):
+            self.apply_style_to_mobject(newMob, node)
+        
         if isinstance(node, se.Transformable) and node.apply:
             self.handle_transform(newMob, node.transform)
 
-        result.append((newMob, parentGroups))
+        if isinstance(newMob, SVGMobject):
+         # add the submobjects to the results
+            for submobj in newMob:
+                result.append((submobj, parentGroups))
+        else:
+            result.append((newMob, parentGroups))
 
         return result
 
