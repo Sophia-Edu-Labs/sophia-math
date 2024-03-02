@@ -6,8 +6,10 @@
 
 #import "../sophiatheme.typ": *
 
-//apply theme (and default setup)
-#show: sophia-theme
+  //apply theme (and default setup)
+  #show: sophia-theme
+
+  #set text(lang: "de")
   
 #slide()[
 
