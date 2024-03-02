@@ -32,7 +32,7 @@ def get_dynamic_typst_scene(file_path: Path, ):
 from sophialib.morphing.sophiamorphscene import AutoSlideScene
 from pathlib import Path
 
-class DYNAMIC_TYPST_{file_path.stem}(AutoSlideScene):
+class AI_{file_path.stem}(AutoSlideScene):
     def construct(self):
         # parse the corresponding typst
 
