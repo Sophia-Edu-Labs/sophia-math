@@ -3,6 +3,7 @@ aiosqlite==0.18.0
 alabaster==0.7.13
 annotated-types==0.5.0
 anyio==3.6.2
+api.video==1.2.8
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 arrow==1.2.3
@@ -106,7 +107,7 @@ notebook_shim==0.2.2
 numba==0.58.0
 numpy==1.24.2
 openai==1.2.3
-openai-whisper==20230314
+openai-whisper==20231117
 opencv-python==4.7.0.72
 packaging==23.0
 pandocfilters==1.5.0
@@ -168,7 +169,7 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 sphinxext-opengraph==0.8.1
 srt==3.5.3
-stable-ts==2.11.1
+stable-ts==2.15.8
 stack-data==0.6.2
 svgelements==1.9.1
 sympy==1.12
