@@ -8,12 +8,16 @@
 
 //apply theme (and default setup)
 #show: sophia-theme
-
+#show figure.caption: it => [
+  #set text(size: 20pt)
+  #it.body
+]
+#set text(lang: "de")
 
 #slide()[
 
 #only("1")[
-#voiceover("Unsere Aufgabe ist es, die Extremstellen der gegebenen Funktion zu finden und zu bestimmen, welcher Art sie sind. Die Funktion lautet")
+#voiceover("Unsere Aufgabe ist es, die Extremstellen der Funktion zu finden und zu bestimmen, welcher Art sie sind. Die Funktion lautet")
 ]
 Extremstellen untersuchen
 #v(40pt)
@@ -33,7 +37,7 @@ Extremstellen untersuchen
 #text(size: 30pt, weight: "bold")[Ansatz]
 #v(40pt)
 #only("1-")[- Este Ableitung für kritische Punkte]
-#only("2-")[- Zweite Ableitung für Art der kritischen Punkte]
+#only("2-")[- Zweite Ableitung für Art der Extremstellen]
 ]
 
 #slide()[
@@ -82,8 +86,58 @@ $f'(x) = 3x^2 - 12x + 9$
 #only("3-")[#align(center)[#text(fill:aqua)[⇓ Kritische Punkte einsetzen]]]
 #only("3")[#voiceover("Als nächstes setzen wir die kritischen Punkte in die zweite Ableitung ein, um die Art der Extremstellen zu bestimmen.")]
 #v(10pt)
-#only("4-")[$f''(1) = -6, f''(3) = 6$]
-#only("4")[#voiceover("Für x gleich eins ist die zweite Ableitung negativ. Das bedeutet, dass wir für x gleich eins ein lokales Maximum haben. Für x gleich drei ist die zweite Ableitung positiv. Das bedeutet, dass wir für x gleich drei ein lokales Minimum haben.")]
+#only("4-")[$f''(1) = -6$	→ Maximum]
+#only("4")[#voiceover("Für x gleich eins ist die zweite Ableitung negativ. Das bedeutet, dass wir für x gleich eins ein lokales Maximum haben. ")]
+#only("5-")[$f''(3) = 6$ 	→ Minimum]
+#only("5")[#voiceover("Und für x gleich drei ist die zweite Ableitung positiv. Das bedeutet, dass wir für x gleich drei ein lokales Minimum haben.")]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung]
+
+#only("1")[
+  #voiceover("Lasst uns die Extremstellen nun visualisieren.")
+]
+#v(60pt)
+#only("2-")[
+#box()[
+  #morphchildren(id: "plot")[
+#figure(
+  pyimage(```
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Defining the function
+def f(x):
+    return x**3 - 6*x**2 + 9*x + 1
+
+# Generating x values
+x = np.linspace(0, 5, 400)
+
+# Generating y values
+y = f(x)
+
+# Plotting the function
+plt.figure(figsize=(8, 6))
+plt.plot(x, y)
+
+# Marking the extrema
+plt.scatter([1, 3], [f(1), f(3)], color='red', s=100)  # Points of extrema
+
+plt.grid(True)
+
+# Showing the plot
+plt.show()
+    ```, 
+  width: 360pt),
+caption: [Extremstellen von $f(x)=x^3 - 6x^2 + 9x + 1$] 
+)
+]
+]
+]
+#only("2")[
+  #voiceover("Hier seht ihr den Graphen der Funktion x hoch drei Minus sechs x Quadrat plus neun x plus eins. Die roten Punkte markieren die Extremstellen, die wir gefunden haben. Wir sehen also das lokale Maximum bei x gleich eins und das lokales Minimum bei x gleich drei.")
+]
 ]
 
 #slide()[
