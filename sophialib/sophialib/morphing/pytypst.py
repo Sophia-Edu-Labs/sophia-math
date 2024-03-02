@@ -67,7 +67,8 @@ def _make_fig(code: str):
     plt.figure()  # Don't overwrite our current figure.
     
     with matplotlib.rc_context():
-        exec(code)
+        g = {} # globals should be clean
+        exec(code, g) # IMPORTANT: do not use locals, because only then it defaults to the global scope for nested functions inside code (this way, we allow properly nesting of functions)
     
     # Not the plt.figure() from above, just in case the code creates a new figure.
     fig = plt.gcf()
@@ -82,7 +83,8 @@ def _make_content_through_def(code: str):
     processed_code = textwrap.indent(processed_code, "    ")
     
     # create code defining a function
-    l, g = locals().copy(), globals().copy()
+    g = {} # globals should be clean
+    l = {} # locals should be clean
     code_to_run = f"""
 def _content_func():
 {processed_code}
@@ -108,6 +110,9 @@ def _make_contents(
     # read the conents of the typst file
     with open(typstfile_path) as f:
         typst_doc = f.read()
+
+        # remove all lines that starts with "//" (comments)
+        typst_doc = "\n".join([line for line in typst_doc.split("\n") if not line.strip().startswith("//")])
     
     # look up for init code    
     inits = list(pyinit_re.finditer(typst_doc))
