@@ -6,8 +6,11 @@ RENDER_RESULTS_FOLDER = WORKSPACE_FOLDER / "renderresults"
 
 SCENES_FOLDER = WORKSPACE_FOLDER / "scenes"
 
+EXAMPLES_FOLDER = SCENES_FOLDER / "AIGen" / "scenes"
+
 # The folder where the assets for scenes are stored
 SCENES_ASSETS_FOLDER = SCENES_FOLDER / "assets"
 
 # The folder where the locales are stored
 LOCALES_PATH = SCENES_FOLDER / "i18n" / "locales"
+

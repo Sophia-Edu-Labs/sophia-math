@@ -12,42 +12,84 @@
 #slide()[
 
 #only("1")[
-  #voiceover("Hello my friends, this is your Homeboy Barack! Let's practice how to compute the derivative of a function..")
+  #voiceover("Lasst uns üben, wie man Ableitungen berechnet.")
 ]
-Compute the derivative of
+Berechne die Ableitung von
 #v(40pt)
 #only("2-")[#text()[$ f(x) = e^(x^2) - x $]]
 #only("2")[
-  #voiceover("We'll be looking at the function f of x equals e to the power of x squared minus x.")
+  #voiceover("f von x gleich e hoch x quadrat minus x.")
 ]
 ]
 
 #slide()[
 #only("1")[
-  #voiceover("To compute the derivative, we'll use the chain rule on e to the power of x squared.")
+  #voiceover("Um diese Aufgabe zu bewältigen, verwenden wir die Kettenregel und die Grundregeln der Ableitung.")
 ]
 #only("2")[
-  #voiceover("And the basic rules for derivatives for x. Now let's get into it!")
+  #voiceover("Lasst uns in den Lösungsprozess einsteigen!")
 ]
-#text(size: 30pt, weight: "bold")[Approach]
+#text(size: 30pt, weight: "bold")[Ansatz]
 #v(40pt)
-    #only("1-")[- Chain Rule für $e^(x^2)$]
-    #only("2-")[- Basic Rules für $-x$]
+    #only("1-")[- Kettenregel für $e^(x^2)$]
+    #only("2-")[- Grundregel für $-x$]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Step-by-Step solution]
+#text(size: 30pt, weight: "bold")[Lösungsschritte]
 #v(40pt)
 #only("1-")[$f(x) = e^(x^2) - x$]
-#only("1")[#voiceover("So we'll start with the function f of x equals e to the power of x squared.")]
+#only("1")[#voiceover("Beginnen wir mit der Funktion f von x gleich e hoch x quadrat.")]
 #v(10pt)
-#only("2")[#voiceover("As I said, we'll use the chain rule to compute this derivative.")]
-#only("3-")[#align(center)[#text(fill:aqua)[⇓ Chain Rule]]]
-#only("3")[#voiceover("So the chain rule says that we first have to compute the derivative of the outer function, and then multiply it with the derivative of the inner function. The derivative of the exponential function is the exponential function. So we get e to the power of x squared times the derivative of x squared, which is two x. So we get 2x times e to the power of x squared.")]  
+#only("2")[#voiceover("Um die Ableitung von e hoch x quadrat zu finden, müssen wir die Kettenregel anwenden.")]
+#only("3-")[#align(center)[#text(fill:aqua)[⇓ Kettenregel]]]
+#only("3")[#voiceover("Da e hoch x quadrat eine verkettete Funktion ist, leiten wir zunächst die äußere Funktion ab, was uns hoch x quadrat gibt, denn die Ableitung der e Funktion ist die e Funktion selbst. Das multiplizieren wir dann mit der Ableitung der inneren Funktion, also mit 2 x.")]  
 #v(10pt)
 #only("4-")[$f'(x) = 2x dot e^(x^2) - 1$]
-#only("4")[#voiceover("And the derivative of negative x is negative one. So we get the final result: f prime of x equals 2x times e to the power of x squared minus one.")]
-]
+#only("4")[#voiceover("Die Ableitung von minus x ist minus 1. Also, ist die Ableitung unserer Funktion gleich 2 x mal e hoch x quadrat minus eins.")]
 #v(10pt)
-#only("5")[#voiceover("That's it from my side. Thanks for listening you kings and queens. Don't forget to follow swipemath and now it's your turn to practice!")
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung]
+
+#only("1")[
+  #voiceover("Lasst uns das ganze nun visualisieren.")
+]
+#v(60pt)
+#only("2-")[
+#box()[
+  #morphchildren(id: "plot")[
+#figure(
+  pyimage(```
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    # Define the function f(x) = x^2
+    def f(x):
+        return 2*x *2.71828182846** x - 1
+
+    # Generate x values
+    x = np.linspace(-10, 10, 400)
+
+    # Generate y values by applying the function to x values
+    y = f(x)
+
+    # Create the plot
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y)
+
+
+    # Display the plot
+    plt.show()
+    ```, 
+  width: 300pt),
+caption: $f'(x) = 2 dot x dot e^x - 1$  
+)
+]
+]
+]
+#only("2")[
+  #voiceover("Hier seht ihr den Graphen der Ableitung f strich von x gleich 2 x mal e hoch x minus 1.")
+]
 ]
