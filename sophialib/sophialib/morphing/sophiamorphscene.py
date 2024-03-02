@@ -472,3 +472,6 @@ class AutoSlideScene(BeamerPagesMorphScene):
             else:
                 self.wait(time_per_slide)
                 i += 1
+
+        # add a default of 4 seconds at the end
+        self.wait(4)
