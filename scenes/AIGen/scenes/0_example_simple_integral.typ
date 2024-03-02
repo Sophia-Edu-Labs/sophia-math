@@ -52,6 +52,3 @@ Berechne eine Stammfunktion von
 #only("6")[#voiceover("Das Integral von drei ist drei mal x.")]
 #only("7")[#voiceover("Und dann fügen wir noch die Integrationskonstante c hinzu. Die Lösung ist also F von x gleich ein Viertel mal x hoch vier minus zwei mal x hoch drei plus drei mal x plus c.")]
 ]
-
-
-
