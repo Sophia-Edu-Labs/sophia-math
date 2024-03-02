@@ -130,29 +130,26 @@ plt.grid(True)
 plt.show()
     ```, 
   width: 360pt),
-caption: [Extremstellen von $f(x)=x^3 - 6x^2 + 9x + 1$] 
+caption: [$f(x)=x^3 - 6x^2 + 9x + 1$] 
 )
 ]
 ]
 ]
 #only("2")[
-  #voiceover("Hier seht ihr den Graphen der Funktion x hoch drei Minus sechs x Quadrat plus neun x plus eins. Die roten Punkte markieren die Extremstellen, die wir gefunden haben. Wir sehen also das lokale Maximum bei x gleich eins und das lokales Minimum bei x gleich drei.")
-]
+  #voiceover("Hier seht ihr den Graphen der Funktion x hoch drei Minus sechs x Quadrat plus neun x plus eins. Die roten Punkte markieren die Extremstellen, die wir gefunden haben.")
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Ergebnis]
 #v(40pt)
-#only("1-")[
+#only("3-")[
 - Lokales Maximum bei  $x = 1$
 ]
-#only("1")[
+#only("3")[
 #voiceover("Wir haben also ein lokales Maximum bei x gleich eins gefunden, ..." )
 ]
-#only("2-")[
+#only("4-")[
 - Lokales Minimum bei  $x = 3$
 ]
-#only("2")[
-#voiceover("... und ein lokales Minimum bei x gleich drei. Das sind die Ergebnisse unserer Untersuchung der Extremstellen der Funktion f von x gleich x hoch drei minus sechs x Quadrat plus neun x plus eins.")
+#only("4")[
+#voiceover("... und ein lokales Minimum bei x gleich drei.")
 ]
 ]
