@@ -6,7 +6,8 @@ RENDER_RESULTS_FOLDER = WORKSPACE_FOLDER / "renderresults"
 
 SCENES_FOLDER = WORKSPACE_FOLDER / "scenes"
 
-EXAMPLES_FOLDER = SCENES_FOLDER / "AIGen" / "scenes"
+EXAMPLES_FOLDER = SCENES_FOLDER / "AIGen" / "scenes_examples"
+GENSCENES_FOLDER = SCENES_FOLDER / "AIGen" / "scenes_generated"
 
 # The folder where the assets for scenes are stored
 SCENES_ASSETS_FOLDER = SCENES_FOLDER / "assets"
