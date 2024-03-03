@@ -16,16 +16,17 @@
   // use latex!
   answerOptions: ("$b_3 = 3$", "$b_3 = 4$", "$b_3 = 5$", "$b_3 = 6$"),
   correctAnswerIndex: 0,
-  llmCheckDetails: (
-    fallbackOptionIndex: 1
-  ), 
+  // llmCheckDetails: (
+  //   fallbackOptionIndex: 1
+  // ), 
   freeTextDetail: (
     fallbackOptionIndex: 1,
     answerOptionsEquality: (
       roundingDecimalPlaces: 2,
       tolerance: 0.1
-    )
-  )
+    ),
+    answerOptionsMatcher:("b_3 = ")
+  ),
 )
   
 #slide()[
