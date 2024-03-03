@@ -4,14 +4,16 @@ import os
 from pathlib import Path
 from sophialib.constants.directories import SCENES_FOLDER
 from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes
-from sophialib.page_prototypes.prototype import PagePrototype, PagePrototypeVideo, get_page_prototype_variables
+from sophialib.page_prototypes.prototype import PagePrototype, PagePrototypeQuestion, PagePrototypeVideo, get_page_prototype_variables
 from sophialib.styles.sophiascene import SophiaScene
 from typing import Type, Tuple
+
+SCENES_FOLDER_TO_USE = SCENES_FOLDER / "AIGen" / "scenes"
 
 def find_manim_scenes_in_directory():
     classes:list[Tuple[Path,Type[SophiaScene]]] = []
 
-    for pf in Path(SCENES_FOLDER).glob("**/*.py"):
+    for pf in Path(SCENES_FOLDER_TO_USE).glob("**/*.py"):
         scene_classes = get_module_manim_sophiascene_classes(pf, add_parent_folder_to_sys_path=True) # we need relative like imports from the same folder
         for scene_class in scene_classes:
             classes.append((pf, scene_class))
@@ -21,7 +23,7 @@ def find_manim_scenes_in_directory():
 def find_page_prototypes_in_directory():
     all_prototypes: list[Tuple[Path, Type[PagePrototype]]] = []
 
-    for pf in Path(SCENES_FOLDER).glob("**/*.py"):
+    for pf in Path(SCENES_FOLDER_TO_USE).glob("**/*.py"):
         prototypes = get_page_prototype_variables(pf, add_parent_folder_to_sys_path=True) # we need relative like imports from the same folder
         for pt in prototypes:
             all_prototypes.append((pf, pt))
@@ -40,6 +42,19 @@ for path, scene_class in scenes_per_dir:
     if not any(pt.prototypeID == potential_prototype.prototypeID for _, pt in prototypes_per_dir):
         prototypes_per_dir.append((path, potential_prototype))
 
+##########################################
+        
+############### Typst based prototypes ################
+# for every typst file in the corresponding folder, check if the metadata defined some question definitions (and always add them to the prototypes)
+for typst_file in Path(SCENES_FOLDER_TO_USE).glob("**/*.typ"):
+    # for every typst file, create a prototype for the video
+    potential_prototype_video = PagePrototypeVideo.from_typst_file_path(typst_file)
+    prototypes_per_dir.append((typst_file, potential_prototype_video))
+
+    # if we can query metadata from the document, also create the corresponding question prototype based on that
+    if typst_file.stem.endswith("_q"):
+        potential_prototype_question_2 = PagePrototypeQuestion.from_typst_file_path(typst_file)
+        prototypes_per_dir.append((typst_file, potential_prototype_question_2))
 ##########################################
 
 # ensure that every prototype ID is unique, otherwise raise an error that indicates the paths to the conflicting prototypes

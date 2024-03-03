@@ -1,12 +1,14 @@
 import importlib.util
 import inspect
 import itertools
+import json
+import os
 from pathlib import Path
 import sys
 from typing import List, Literal, Type, Union, Optional, Dict
 
 from sophialib.styles.sophiascene import SophiaQuestionInfo, SophiaScene
-from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
+from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
 
 class PagePrototype:
     def __init__(self, prototypeID: str, type: Union[Literal['video'], Literal['question']]):
@@ -34,6 +36,14 @@ class PagePrototypeVideo(PagePrototype):
         return PagePrototypeVideo(
             prototypeID = f"VIDEO_{scene.__name__}",
         )
+    
+    # Factory method to create a PagePrototypeVideo from a path to a typst file (i.e. basically from the name of the file path)
+    @staticmethod
+    def from_typst_file_path(typst_file_path: Path):
+        return PagePrototypeVideo(
+            prototypeID = f"VIDEO_{typst_file_path.stem}"
+        )
+
 
 class PagePrototypeQuestion(PagePrototype):
     def __init__(
@@ -106,6 +116,53 @@ class PagePrototypeQuestion(PagePrototype):
             task_definition = task_def,
             unprefixed_prototypeID = sceneWithQuestionInfoType.__name__
         )
+    
+    # Factory method to create a PagePrototypeQuestion from a path to a typst file (i.e. basically from the name of the file path and the corresponding question metadata in the document)
+    # Raises an exception if such a question metadata could not be found
+    @staticmethod
+    def from_typst_file_path(typst_file_path: Path):
+        command = f"typst query --root {typst_file_path.parent.parent} {typst_file_path} \"<questiondefinition>\""
+
+        # run the command and capture the output string
+        result = os.popen(command).read()
+
+        # parse the result json
+        parsed = json.loads(result)
+
+        # if there is no question definition, raise an exception
+        if len(parsed) == 0:
+            raise Exception(f"No question definition found in {typst_file_path}")
+        
+        # if there are multiple question definitions, raise an exception
+        if len(parsed) > 1:
+            raise Exception(f"Multiple question definitions found in {typst_file_path}")
+        
+        # get the question definition
+        question_definition = parsed[0]
+        
+        # create a sophia task def based on the queried metadata
+        sophia_task_def = SophiaTaskDefinition(
+            answerOptions = question_definition["answerOptions"],
+            correctAnswerIndex = question_definition["correctAnswerIndex"],
+            questionText = question_definition["questionText"],
+            questionVideoPrototypeID = None,
+            freeTextDetail = None if question_definition["freeTextDetail"] is None else SophiaFreeTextTaskDetail(
+                fallbackOptionIndex = question_definition["freeTextDetail"]["fallbackOptionIndex"],
+                answerOptionMatcher = question_definition["freeTextDetail"]["answerOptionMatcher"],
+                answerOptionDescriptions = question_definition["freeTextDetail"]["answerOptionDescriptions"],
+                answerOptionsTypes = question_definition["freeTextDetail"]["answerOptionsTypes"],
+                answerOptionsEquality = question_definition["freeTextDetail"]["answerOptionsEquality"],
+            ),
+            llmCheckDetails = None if question_definition["llmCheckDetails"] is None else SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex = question_definition["llmCheckDetails"]["fallbackOptionIndex"],
+                specialInputSnippets = question_definition["llmCheckDetails"]["specialInputSnippets"],
+            )
+        )
+
+        return PagePrototypeQuestion.from_task_definition(
+            sophia_task_def
+        )
+
 
 
 

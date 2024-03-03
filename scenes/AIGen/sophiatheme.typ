@@ -169,6 +169,12 @@
   ])
 ]
 
+#let questionDef(questionText: text, answerOptions: array, correctAnswerIndex: int, freeTextDetail: dictionary, llmCheckDetails: dictionary) = {
+  return [
+    #metadata((questionText: questionText, answerOptions: answerOptions, correctAnswerIndex: correctAnswerIndex, freeTextDetail: freeTextDetail, llmCheckDetails: llmCheckDetails))<questiondefinition>
+  ]
+}
+
 #let pyimage(code, width: auto, height: auto) = {
   let contents = json(".typst-images/contents.json")
 

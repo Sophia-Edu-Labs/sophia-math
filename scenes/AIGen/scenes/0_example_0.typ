@@ -6,10 +6,27 @@
 
 #import "../sophiatheme.typ": *
 
-  //apply theme (and default setup)
-  #show: sophia-theme
+//apply theme (and default setup)
+#show: sophia-theme
 
-  #set text(lang: "de")
+#set text(lang: "de")
+
+#questionDef(
+  questionText: "Was ist der Wert von $b_3$?",
+  // use latex!
+  answerOptions: ("$b_3 = 3$", "$b_3 = 4$", "$b_3 = 5$", "$b_3 = 6$"),
+  correctAnswerIndex: 0,
+  llmCheckDetails: (
+    fallbackOptionIndex: 1
+  ), 
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      roundingDecimalPlaces: 2,
+      tolerance: 0.1
+    )
+  )
+)
   
 #slide()[
 
