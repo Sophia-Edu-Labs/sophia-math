@@ -138,7 +138,40 @@ class PagePrototypeQuestion(PagePrototype):
             raise Exception(f"Multiple question definitions found in {typst_file_path}")
         
         # get the question definition
-        question_definition = parsed[0]
+        question_definition = parsed[0]["value"]
+
+        # check if free text details are specified
+        free_text_detail = None
+        if "freeTextDetail" in question_definition:
+            free_text_detail = SophiaFreeTextTaskDetail(
+                fallbackOptionIndex = question_definition["freeTextDetail"]["fallbackOptionIndex"],
+            )
+
+            # modify this free text detail to include the answerOptionMatcher, answerOptionDescriptions, answerOptionsTypes and answerOptionsEquality
+            if "answerOptionMatcher" in question_definition["freeTextDetail"]:
+                free_text_detail.answerOptionMatcher = question_definition["freeTextDetail"]["answerOptionMatcher"]
+            
+            if "answerOptionDescriptions" in question_definition["freeTextDetail"]:
+                free_text_detail.answerOptionDescriptions = question_definition["freeTextDetail"]["answerOptionDescriptions"]
+
+            if "answerOptionsTypes" in question_definition["freeTextDetail"]:
+                free_text_detail.answerOptionsTypes = question_definition["freeTextDetail"]["answerOptionsTypes"]
+            
+            if "answerOptionsEquality" in question_definition["freeTextDetail"]:
+                free_text_detail.answerOptionsEquality = question_definition["freeTextDetail"]["answerOptionsEquality"]
+
+
+        # check if there are llm check details
+        llm_check_details = None
+        if "llmCheckDetails" in question_definition:
+            llm_check_details = SophiaLLMQuestionCheckDetail(
+                fallbackOptionIndex = question_definition["llmCheckDetails"]["fallbackOptionIndex"],
+            )
+
+            if "specialInputSnippets" in question_definition["llmCheckDetails"]:
+                llm_check_details.specialInputSnippets = question_definition["llmCheckDetails"]["specialInputSnippets"]
+            
+            
         
         # create a sophia task def based on the queried metadata
         sophia_task_def = SophiaTaskDefinition(
@@ -146,21 +179,13 @@ class PagePrototypeQuestion(PagePrototype):
             correctAnswerIndex = question_definition["correctAnswerIndex"],
             questionText = question_definition["questionText"],
             questionVideoPrototypeID = None,
-            freeTextDetail = None if question_definition["freeTextDetail"] is None else SophiaFreeTextTaskDetail(
-                fallbackOptionIndex = question_definition["freeTextDetail"]["fallbackOptionIndex"],
-                answerOptionMatcher = question_definition["freeTextDetail"]["answerOptionMatcher"],
-                answerOptionDescriptions = question_definition["freeTextDetail"]["answerOptionDescriptions"],
-                answerOptionsTypes = question_definition["freeTextDetail"]["answerOptionsTypes"],
-                answerOptionsEquality = question_definition["freeTextDetail"]["answerOptionsEquality"],
-            ),
-            llmCheckDetails = None if question_definition["llmCheckDetails"] is None else SophiaLLMQuestionCheckDetail(
-                fallbackOptionIndex = question_definition["llmCheckDetails"]["fallbackOptionIndex"],
-                specialInputSnippets = question_definition["llmCheckDetails"]["specialInputSnippets"],
-            )
+            freeTextDetail = free_text_detail,
+            llmCheckDetails = llm_check_details
         )
 
         return PagePrototypeQuestion.from_task_definition(
-            sophia_task_def
+            sophia_task_def,
+            unprefixed_prototypeID = typst_file_path.stem
         )
 
 
