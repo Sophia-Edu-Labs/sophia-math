@@ -4,7 +4,7 @@ from typing import Callable, List, Type
 from manim import tempconfig
 from sophialib.filehelpers.extract import extract_audio_to_path
 from sophialib.filehelpers.hashing import hash_audio_at_path
-from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes
+from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes, get_module_typst_scene
 import multiprocessing as mp 
 
 
@@ -91,7 +91,10 @@ def render_all_scenes_in_module(module_path: Path, output_dir: Path, media_paren
     """Renders all scenes in a module. Returns True if successful, False otherwise."""
     try:
         # get all scene classes in module
-        scene_classes = get_module_manim_sophiascene_classes(module_path, add_parent_folder_to_sys_path=True) # add parent folder to sys path, to allow relative imports
+        if module_path.suffix == ".typ":
+            scene_classes = [get_module_typst_scene(module_path)]
+        else: 
+            scene_classes = get_module_manim_sophiascene_classes(module_path, add_parent_folder_to_sys_path=True) # add parent folder to sys path, to allow relative imports
 
 
         # render all scenes

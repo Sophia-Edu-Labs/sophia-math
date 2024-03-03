@@ -24,3 +24,41 @@ def get_module_manim_sophiascene_classes(file_path: Path, add_parent_folder_to_s
 
     return results
 
+
+
+
+def get_dynamic_typst_scene(file_path: Path, ):
+    return f"""
+from sophialib.morphing.sophiamorphscene import AutoSlideScene
+from pathlib import Path
+
+class AI_{file_path.stem}(AutoSlideScene):
+    def construct(self):
+        # parse the corresponding typst
+
+        self.parse_corresponding_typst_scene(
+            Path("{str(file_path)}")
+        )
+        
+
+        # Adding initial components to the scene
+        super().construct()
+
+        self.auto_slide_with_voiceover()
+"""
+
+    
+
+def get_module_typst_scene(file_path: Path ):
+    """Takes the file at the given path and returns an on-the-fly generated scene based on the given typst file. Only returns a single scene!"""
+
+    module_name = file_path.stem
+
+
+    spec = importlib.util.spec_from_loader(module_name, loader=None)
+    temp_module = importlib.util.module_from_spec(spec)
+    exec(get_dynamic_typst_scene(file_path), temp_module.__dict__)
+
+    results = [obj for name, obj in inspect.getmembers(temp_module) if inspect.isclass(obj) and obj.__module__ == module_name and issubclass(obj, SophiaScene) and not inspect.isabstract(obj)]
+
+    return results[0]
