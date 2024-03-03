@@ -41,7 +41,7 @@ class PagePrototypeVideo(PagePrototype):
     @staticmethod
     def from_typst_file_path(typst_file_path: Path):
         return PagePrototypeVideo(
-            prototypeID = f"VIDEO_{typst_file_path.stem}"
+            prototypeID = f"VIDEO_AI_{typst_file_path.stem}"
         )
 
 
@@ -185,7 +185,7 @@ class PagePrototypeQuestion(PagePrototype):
 
         return PagePrototypeQuestion.from_task_definition(
             sophia_task_def,
-            unprefixed_prototypeID = typst_file_path.stem
+            unprefixed_prototypeID = f"AI_{typst_file_path.stem}"
         )
 
 
