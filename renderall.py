@@ -13,8 +13,7 @@ if __name__ == "__main__":
     ########################################################
     #print(found_scene_modules)
     #print("--------")
-    filenames_to_render = ["Calc_integral_05_q.typ", "Calc_integral_05_a.typ", "Calc_integral_05_b.typ",
-                            "Calc_integral_06_q.typ", "Calc_integral_06_a.typ", "Calc_integral_06_b.typ",]
+    filenames_to_render = ["Calc_integral_07_q.typ", "Calc_integral_07_a.typ", "Calc_integral_07_b.typ",]
     found_scene_modules = [m for m in found_scene_modules if any(filename in m.name for filename in filenames_to_render)]
     # found_scene_modules = [m for m in found_scene_modules if not any(filename in m.name for filename in filenames_no_render)]
     print (f"-------- [ found the following  (n={len(found_scene_modules)}) modules ] --------")
