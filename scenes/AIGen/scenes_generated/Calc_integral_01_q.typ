@@ -6,20 +6,23 @@
 ]
 
 #slide()[
-  #voiceover("Was ist die Stammfunktion")
-  Stammfunktion von
-  #v(40pt)
-  #only("1-")[$ f(x) = 3e^((-2x)) + 1/(2x) $]
-  #only("1")[  
-    #voiceover("der Funktion f von x ist gleich dreimal e hoch minus zwei mal x plus eins geteilt durch zwei mal x.")
-  ]
+
+#only("1")[
+  #voiceover("Betrachte")
+]
+Berechne eine Stammfunktion von
+#v(40pt)
+#only("2-")[#text()[$ f(x) = 4x^3 - 6x + 2e^x $]]
+#only("2")[
+  #voiceover("die Funktion f von x gleich vier mal x hoch drei minus sechs mal x plus zwei mal e hoch x. Was ist die Stammfunktion von f?")
+]
 ]
 
 
 #questionDef(
-  questionText: "Was ist die Stammfunktion der Funktion $f(x)=3 e^{-2x}+\frac{1}{2x}$?",
+  questionText: "Was ist die Stammfunktion der Funktion $f(x)=4x^3-6x+2e^x$?",
   // use latex!
-  answerOptions: ("Die Stammfunktion ist $F(x)=-3/2 e^{-2x}+1/2 ln(x)+c$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
+  answerOptions: ("Die Stammfunktion ist $F(x)=x^4-3x^2+2e^x+c$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (
     fallbackOptionIndex: 1
