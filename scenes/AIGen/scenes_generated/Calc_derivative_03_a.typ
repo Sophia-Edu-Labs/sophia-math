@@ -6,7 +6,8 @@
 ]
 
 #slide()[
-  #voiceover("Richtig, toll gemacht. Ermitteln wir also die Ableitung")
+  #only("1")[  #voiceover("Richtig, toll gemacht. Ermitteln wir also die Ableitung")]
+  // #only("1")[  #voiceover("Hallo ihr Lieben und willkommen zu mathe mit kylie! In diesem Video ermitteln wir die Ableitung")]
   Gesucht: Ableitung der Funktion
   #v(40pt)
   #only("2-")[#text()[$ f(x) = 1/4 x^4 + sin(x) $]]
@@ -46,4 +47,5 @@
   #only("4-")[$f'(x) = (1/4)  dot 4 x^3$]#only("5-")[$ + cos(x)$]
   #only("4")[#voiceover("Die Ableitung von ein Viertel x hoch vier ist also vier viertel, also ein mal x hoch drei.")]
   #only("5")[#voiceover("Und die Ableitung des Sinus von x ist der Kosinus von x. Also lautet die Ableitung der Funktion f von x ein mal x hoch drei plus der Kosinus von x.")]
+  // #only("6")[#voiceover("Das wars auch schon von mir, danke fürs schauen und übt fleißig Mathe. Und nicht vergessen sophia zu folgen! Kuss Kuss, eure kylie")]
 ]

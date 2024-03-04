@@ -6,12 +6,12 @@
 ]
 
 #slide()[
-  #voiceover("Zuerst bestimmen wir die Ableitung der Funktion")
+  #voiceover("Nun sei die Funktion")
   Gesucht: Ableitung der Funktion
   #v(40pt)
   #only("2-")[#text()[$ f(x) = 1/4 x^4 + sin(x) $]]
   #only("2")[  
-    #voiceover("der Funktion f von x gleich ein Viertel x hoch vier plus der Sinus von x.")
+    #voiceover("f von x gleich ein Viertel x hoch vier plus der Sinus von x gegeben. Bestimme die Ableitung dieser Funktion...")
   ]
 ]
 

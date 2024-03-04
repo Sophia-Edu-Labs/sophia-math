@@ -5,10 +5,9 @@
 #it.body
 ]
 
-#slide()
-[
+#slide()[
   #only("1")[
-    #voiceover("Beginnen wir mit der Bestimmung der Ableitung der gegebenen Funktion.")
+    #voiceover("Wir haben die Funktion .")
   ]
   Gesucht: Ableitung der Funktion
   #v(40pt)
@@ -16,7 +15,7 @@
     #text()[$ f(x) = 3x^3 + 2x^5 - 3x $]
   ]
   #only("2")[
-    #voiceover("Wir haben die Funktion f von x gleich drei mal x hoch drei plus zwei mal x hoch fünf minus drei mal x.")
+    #voiceover("f von x gleich drei mal x hoch drei plus zwei mal x hoch fünf minus drei mal x gegeben. Was ist die Ableitung dieser Funktion?")
   ]
 ]
 

@@ -9,7 +9,7 @@
 
 #only("1")[
 
-  #voiceover("Beginnen wir mit der Aufgabe, die Ableitung der gegebenen Funktion zu finden.")
+  #voiceover("Betrachten wir die Funktion")
 
 ]
 
@@ -21,7 +21,7 @@ Gesucht: Ableitung der Funktion
 
 #only("2")[
 
-  #voiceover("Betrachten wir die Funktion f von x gleich null komma fünf x hoch vier minus zwei mal x Quadrat plus drei mal x minus zwei.")
+  #voiceover("f von x gleich null komma fünf x hoch vier minus zwei mal x Quadrat plus drei mal x minus zwei. Was ist die ABleitung dieser Funktion?")
 
 ]
 

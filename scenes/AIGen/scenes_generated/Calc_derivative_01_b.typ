@@ -9,7 +9,7 @@
 
 #only("1")[
 
-  #voiceover("Fast richtig, aber wir müssen tatsächlich eine Ableitung finden.")
+  #voiceover("Fast richtig! Gehen wir gemeinsam Schritt für Schritt durch die Lösung.")
 
 ]
 
@@ -27,7 +27,7 @@ Gesucht: Ableitung der Funktion
 
 ]
 
-#slide([
+#slide()[
 
 #only("1")[
 
@@ -51,7 +51,7 @@ Gesucht: Ableitung der Funktion
 
 ]
 
-#slide([
+#slide()[
 
 #text(size: 30pt, weight: "bold")[Lösungsschritte]
 
