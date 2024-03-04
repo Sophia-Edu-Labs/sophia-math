@@ -9,7 +9,7 @@ from sophialib.styles.sophiascene import SophiaScene
 from typing import Type, Tuple
 
 SCENES_FOLDER_TO_USE = SCENES_FOLDER
-AIGEN_SCENES_FOLDER = SCENES_FOLDER_TO_USE / "AIGen" / "scenes"
+AIGEN_SCENES_FOLDER = SCENES_FOLDER_TO_USE / "AIGen" / "scenes_generated"
 
 def find_manim_scenes_in_directory():
     classes:list[Tuple[Path,Type[SophiaScene]]] = []

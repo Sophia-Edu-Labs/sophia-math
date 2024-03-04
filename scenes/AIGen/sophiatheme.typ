@@ -169,7 +169,7 @@
   ])
 ]
 
-#let questionDef(questionText: text, answerOptions: array, correctAnswerIndex: int, freeTextDetail: dictionary, llmCheckDetails: dictionary) = {
+#let questionDef(questionText: text, answerOptions: array, correctAnswerIndex: int, freeTextDetail: none, llmCheckDetails: none) = {
   return [
     #metadata((questionText: questionText, answerOptions: answerOptions, correctAnswerIndex: correctAnswerIndex, freeTextDetail: freeTextDetail, llmCheckDetails: llmCheckDetails))<questiondefinition>
   ]

@@ -142,7 +142,7 @@ class PagePrototypeQuestion(PagePrototype):
 
         # check if free text details are specified
         free_text_detail = None
-        if "freeTextDetail" in question_definition:
+        if "freeTextDetail" in question_definition and question_definition["freeTextDetail"] is not None:
             free_text_detail = SophiaFreeTextTaskDetail(
                 fallbackOptionIndex = question_definition["freeTextDetail"]["fallbackOptionIndex"],
             )
@@ -163,7 +163,7 @@ class PagePrototypeQuestion(PagePrototype):
 
         # check if there are llm check details
         llm_check_details = None
-        if "llmCheckDetails" in question_definition:
+        if "llmCheckDetails" in question_definition and question_definition["llmCheckDetails"] is not None:
             llm_check_details = SophiaLLMQuestionCheckDetail(
                 fallbackOptionIndex = question_definition["llmCheckDetails"]["fallbackOptionIndex"],
             )
