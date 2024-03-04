@@ -86,16 +86,18 @@ def render_scenes(scenes: List[Type[SophiaScene]],
 
 
 
+def scene_classes_from_module_path(module_path: Path, add_parent_folder_to_sys_path: bool = False, result_sorted: bool = False):
+    """Returns all scene classes in the given module."""
+    if module_path.suffix == ".typ":
+        return [get_module_typst_scene(module_path)]
+    else: 
+        return get_module_manim_sophiascene_classes(module_path, add_parent_folder_to_sys_path=add_parent_folder_to_sys_path, result_sorted=result_sorted)
+
 
 def render_all_scenes_in_module(module_path: Path, output_dir: Path, media_parent_folder: Path, test_run_with_last_frame: bool = False, disable_progressbar: bool = False):
     """Renders all scenes in a module. Returns True if successful, False otherwise."""
     try:
-        # get all scene classes in module
-        if module_path.suffix == ".typ":
-            scene_classes = [get_module_typst_scene(module_path)]
-        else: 
-            scene_classes = get_module_manim_sophiascene_classes(module_path, add_parent_folder_to_sys_path=True) # add parent folder to sys path, to allow relative imports
-
+        scene_classes = scene_classes_from_module_path(module_path, add_parent_folder_to_sys_path=True) # add parent folder to sys path, to allow relative imports
 
         # render all scenes
         render_scenes(scene_classes, output_dir, media_parent_folder, test_run_with_last_frame, disable_progressbar, rethrow_exceptions=True)
