@@ -6,8 +6,11 @@
 ]
 
 #slide()[
+  // #only("1")[
+  //   #voiceover("Richtig, klasse.")
+  // ]
   #only("1")[
-    #voiceover("Richtig, klasse.")
+    #voiceover("Hi, Timothy hier. Üben wir mal eine Mathe Aufgabe.")
   ]
   Gesucht: Ableitung der Funktion
   #v(40pt)
@@ -15,8 +18,11 @@
     #text()[$ f(x) = 1/2 x^2 + "ln"(x) $]
   ]
   #only("2")[
-    #voiceover("Wir haben ja die Funktion f von x gleich ein halb mal x Quadrat plus der natürliche Logarithmus von x.")
+    #voiceover("Wir haben die Funktion f von x gleich ein halb mal x Quadrat plus der natürliche Logarithmus von x.")
   ]
+  // #only("2")[
+  //   #voiceover("Wir haben ja die Funktion f von x gleich ein halb mal x Quadrat plus der natürliche Logarithmus von x.")
+  // ]
 ]
 
 #slide()[
@@ -65,8 +71,11 @@
   #only("5")[
     #voiceover("Und die Ableitung des natürlichen Logarithmus von x ist 1 geteilt durch x.")
   ]
+  // #only("6")[
+  //   #voiceover("Zusammengesetzt ergibt sich die Ableitung der Funktion als x plus 1 geteilt durch x.")
+  // ]  
   #only("6")[
-    #voiceover("Zusammengesetzt ergibt sich die Ableitung der Funktion als x plus 1 geteilt durch x.")
+    #voiceover("Zusammengesetzt ergibt sich die Ableitung der Funktion als x plus 1 geteilt durch x. So, das wars schon, toll! Vergiss nicht, Sophia zu folgen für mehr Mathe Videos. Machts gut!")
   ]
   #v(10pt)
   #only("6-")[
