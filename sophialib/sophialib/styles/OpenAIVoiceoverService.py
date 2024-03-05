@@ -96,6 +96,10 @@ class OpenAIVoiceoverService(SpeechService):
 
         # iterate over all texts
         for t in texts:
+            # raise an error, if the text is empty
+            if not t:
+                raise ValueError("Text input is empty.")
+            
             with parallel_request_sem:
                 # should be audio bytes in mp3 format
                 try_again_count = 10
