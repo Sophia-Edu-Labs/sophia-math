@@ -73,11 +73,7 @@ Gesucht: Ableitung der Funktion
 
 #v(10pt)
 
-#only("4-")[$f'(x) = 2x^3$]
-
-#only("5-")[$ - 4x$]
-
-#only("6-")[$ + 3$]
+#only("4-")[$f'(x) = 2x^3$]#only("5-")[$ - 4x$]#only("6-")[$ + 3$]
 
 #only("4")[#voiceover("Die Ableitung von einhalb x hoch vier ist also zwei mal x hoch drei.")]
 
