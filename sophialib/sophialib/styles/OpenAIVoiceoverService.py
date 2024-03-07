@@ -90,12 +90,16 @@ class OpenAIVoiceoverService(SpeechService):
         return audio_bytes
 
         
-    def generateMultipleAudiosAndCombine(self, texts: List[str]) -> Union[bytes,Iterator[bytes]]:
+    def generateMultipleAudiosAndCombine(self, texts: List[str], split_breaktimes: List[float]) -> Union[bytes,Iterator[bytes]]:
         # array of bytes that will contain the audio bytes of all generated audios
         all_audios_bytes = []
 
         # iterate over all texts
         for t in texts:
+            # raise an error, if the text is empty
+            if not t:
+                raise ValueError("Text input is empty.")
+            
             with parallel_request_sem:
                 # should be audio bytes in mp3 format
                 try_again_count = 10
@@ -141,7 +145,40 @@ class OpenAIVoiceoverService(SpeechService):
             
             # combine all temporary files using ffmpeg
             combined_audio_file = os.path.join(temp_dir, "combined_audio.mp3")
-            os.system(f"ffmpeg -y -i \"concat:{'|'.join(temp_files)}\" -c copy {combined_audio_file}")
+            ffmpeg_cmd = f"ffmpeg -y -i \"concat:{'|'.join(temp_files)}\" -c copy {combined_audio_file}"
+            if split_breaktimes and len(split_breaktimes) == len(texts) - 1:
+                # Initialize filter_complex_parts with an empty list
+                filter_complex_parts = []
+
+                # Apply adelay to each subsequent file, starting with the second
+                for i, delay in enumerate(split_breaktimes, start=1):
+                    delay_ms = int(delay * 1000)  # Convert seconds to milliseconds
+                    # For each file after the first, apply delay
+                    if i < len(temp_files):  # Ensure we're not exceeding the list of files
+                        filter_complex_parts.append(f"[{i}:a]adelay={delay_ms}|{delay_ms}[a{i}];")
+
+                # Concatenate the first audio with delayed audios
+                # Start with the first audio file
+                concat_part = "[0:a]"
+                # Add each delayed audio to the concat_part
+                for i in range(1, len(temp_files)):
+                    concat_part += f"[a{i}]"
+                # Complete the concat command
+                concat_part += f"concat=n={len(temp_files)}:v=0:a=1[out]"
+
+                # Add the concat_part to filter_complex_parts
+                filter_complex_parts.append(concat_part)
+
+                # Join all parts for the filter_complex argument
+                filter_complex = ''.join(filter_complex_parts)
+
+                # Generate the full FFmpeg command
+                inputs = ''.join(f"-i \"{file}\" " for file in temp_files)
+                ffmpeg_cmd = f"ffmpeg -y {inputs} -filter_complex \"{filter_complex}\" -map \"[out]\" {combined_audio_file}"
+
+            
+            # run the command
+            os.system(ffmpeg_cmd)
 
             # read combined audio file and return its bytes
             with open(combined_audio_file, "rb") as f:
@@ -179,9 +216,12 @@ class OpenAIVoiceoverService(SpeechService):
         if split_tags:
             # split the input_text at every split tag
             input_texts = re.split(split_regex, input_text)
+            # a split tag could either be <split /> or <split breaktime="1.4s" />, if a breaktime is given, we will extract it, otherwise we will use a default one of zero
+            split_breaktimes = [float(re.search(r'breaktime="(\d*\.?\d*)s"', tag).group(1)) if re.search(r'breaktime="(\d*\.?\d*)s"', tag) else 0 for tag in split_tags]
         else:
             # if no split tags are contained, just use the input_text as is
             input_texts = [input_text]
+            split_breaktimes = []
 
         # make sure that every input text is no longer than allowed character limit
         if any(len(t) > self._user_character_limit_per_request for t in input_texts):
@@ -212,7 +252,7 @@ class OpenAIVoiceoverService(SpeechService):
         
         
         # create the audio bytes for each of the splitted input texts by using the openai api
-        audio_bytes = self.generateMultipleAudiosAndCombine(input_texts)
+        audio_bytes = self.generateMultipleAudiosAndCombine(input_texts, split_breaktimes)
 
         # save audio bytes to file
         with open(output_path, "wb") as f:
