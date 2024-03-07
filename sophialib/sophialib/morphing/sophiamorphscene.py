@@ -15,6 +15,7 @@ import numpy as np
 from pathlib import Path
 from sophialib.tasks.sophiataskdefinition import SophiaTaskDefinition
 import ast
+import subprocess
 
 from xml.etree import ElementTree as ET
 
@@ -26,6 +27,14 @@ class MappedSVGMobject(SVGMobject):
     def __init__(self, svg_file, **kwargs):
         self.svgids = []
         SVGMobject.__init__(self, file_name=svg_file,**kwargs)
+
+    def clean_svg(self, svg_path: Path):
+        pdf_path = svg_path.with_suffix('.pdf')
+        # use svg2pdf to convert the svg to a pdf
+        subprocess.call(f"svg2pdf {str(svg_path)} {str(pdf_path)}", shell = True)
+
+        # use pdf2svg to convert the pdf back to a clean svg
+        subprocess.call(f"pdf2svg {str(pdf_path)} {svg_path}", shell = True)
 
 
     def process_subitem(self, node, parentGroups):
@@ -62,6 +71,9 @@ class MappedSVGMobject(SVGMobject):
                 # Step 2: Write the string to a file
                 with open(tmp.name, "w") as file:
                     file.write(string_data)
+
+                # Step 2.1 clean the svg
+                self.clean_svg(Path(tmp.name))
                 
                 # Step 3: Create a new SVGMobject from the temporary file
                 newMob = SVGMobject(tmp.name)
