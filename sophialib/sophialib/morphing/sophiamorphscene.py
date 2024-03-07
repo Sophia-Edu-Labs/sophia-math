@@ -41,7 +41,7 @@ def svg_has_unsupported_elements(svg_path: Path) -> bool:
         elif isinstance(shape, se.Polyline):
             continue
         elif isinstance(shape, se.Text):
-            continue
+            return True
         elif isinstance(shape, se.Use) or type(shape) == se.SVGElement:
             continue
         else:
