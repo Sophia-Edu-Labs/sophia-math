@@ -22,6 +22,32 @@ from xml.etree import ElementTree as ET
 import svgelements as se
 
 
+def svg_has_unsupported_elements(svg_path: Path) -> bool:
+    svg = se.SVG.parse(svg_path)
+
+    for shape in svg.elements():
+        if isinstance(shape, se.Group):
+            continue
+        elif isinstance(shape, se.Path):
+            continue
+        elif isinstance(shape, se.SimpleLine):
+            continue
+        elif isinstance(shape, se.Rect):
+            continue
+        elif isinstance(shape, (se.Circle, se.Ellipse)):
+            continue
+        elif isinstance(shape, se.Polygon):
+            continue
+        elif isinstance(shape, se.Polyline):
+            continue
+        elif isinstance(shape, se.Text):
+            continue
+        elif isinstance(shape, se.Use) or type(shape) == se.SVGElement:
+            continue
+        else:
+            return True
+        
+    return False
 
 class MappedSVGMobject(SVGMobject):
     def __init__(self, svg_file, **kwargs):
@@ -72,8 +98,9 @@ class MappedSVGMobject(SVGMobject):
                 with open(tmp.name, "w") as file:
                     file.write(string_data)
 
-                # Step 2.1 clean the svg
-                self.clean_svg(Path(tmp.name))
+                # Step 2.1 clean the svg, but only if it contains unsupported element types
+                if svg_has_unsupported_elements(Path(tmp.name)):
+                    self.clean_svg(Path(tmp.name))
                 
                 # Step 3: Create a new SVGMobject from the temporary file
                 newMob = SVGMobject(tmp.name)
