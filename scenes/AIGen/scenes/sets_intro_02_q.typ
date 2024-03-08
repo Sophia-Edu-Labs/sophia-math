@@ -120,6 +120,6 @@ caption: [],
 #questionDef(
   questionText: "Welche der Aussagen ist falsch",
   // use latex!
-  answerOptions: ("$a\in X$", "$d\in X$", "$e\notin X$", "$f\in X$"),
+  answerOptions: ("$a\in X$", "$d\in X$", "$e\not\in X$", "$f\in X$"),
   correctAnswerIndex: 3,
 )
