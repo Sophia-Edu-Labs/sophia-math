@@ -96,7 +96,7 @@ caption: [],
     answerOptionsEquality: (
       a: (
         roundingDecimalPlaces: 2,
-        tolerance: 0
+        tolerance: none
         )
       ),
       answerOptionMatcher:("$|X|=\key{a}, |Y|=\key{b}$"),
