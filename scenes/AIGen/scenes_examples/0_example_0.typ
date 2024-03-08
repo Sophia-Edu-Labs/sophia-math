@@ -22,10 +22,12 @@
   freeTextDetail: (
     fallbackOptionIndex: 1,
     answerOptionsEquality: (
-      roundingDecimalPlaces: 2,
-      tolerance: 0.1
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: 0.1
+      )
     ),
-    answerOptionsMatcher:("b_3 = ")
+    answerOptionMatcher:("$b_3 = \\key{a}")
   ),
 )
   

@@ -94,10 +94,12 @@ caption: [],
   freeTextDetail: (
     fallbackOptionIndex: 1,
     answerOptionsEquality: (
-      roundingDecimalPlaces: 2,
-      tolerance: 0
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: 0
+        )
       ),
-      answerOptionsMatcher:("$|X|=\key{a}, |Y|=\key{b}$"),
+      answerOptionMatcher:("$|X|=\key{a}, |Y|=\key{b}$"),
       answerOptionsTypes: (
         "a": "number",
         "b": "number"

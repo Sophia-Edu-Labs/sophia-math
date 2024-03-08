@@ -32,9 +32,11 @@
   freeTextDetail: (
     fallbackOptionIndex: 1,
     answerOptionsEquality: (
-      roundingDecimalPlaces: 2,
-      tolerance: 0
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: 0
+        )
       ),
-      answerOptionsMatcher:("$\\key{a}$")
+      answerOptionMatcher:("$\\key{a}$")
   ),
 )
