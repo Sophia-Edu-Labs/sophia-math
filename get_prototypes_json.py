@@ -9,7 +9,7 @@ from sophialib.styles.sophiascene import SophiaScene
 from typing import Type, Tuple
 
 SCENES_FOLDER_TO_USE = SCENES_FOLDER
-AIGEN_SCENES_FOLDER = SCENES_FOLDER_TO_USE / "AIGen" / "scenes_generated"
+AIGEN_SCENES_FOLDER_1, AIGEN_SCENES_FOLDER_2 = SCENES_FOLDER_TO_USE / "AIGen" / "scenes_generated", SCENES_FOLDER_TO_USE / "AIGen" / "scenes"
 
 def find_manim_scenes_in_directory():
     classes:list[Tuple[Path,Type[SophiaScene]]] = []
@@ -47,15 +47,16 @@ for path, scene_class in scenes_per_dir:
         
 ############### Typst based prototypes ################
 # for every typst file in the corresponding folder, check if the metadata defined some question definitions (and always add them to the prototypes)
-for typst_file in Path(AIGEN_SCENES_FOLDER).glob("**/*.typ"):
-    # for every typst file, create a prototype for the video
-    potential_prototype_video = PagePrototypeVideo.from_typst_file_path(typst_file)
-    prototypes_per_dir.append((typst_file, potential_prototype_video))
+for scene_folder in [AIGEN_SCENES_FOLDER_1, AIGEN_SCENES_FOLDER_2]:
+    for typst_file in Path(scene_folder).glob("**/*.typ"):
+        # for every typst file, create a prototype for the video
+        potential_prototype_video = PagePrototypeVideo.from_typst_file_path(typst_file)
+        prototypes_per_dir.append((typst_file, potential_prototype_video))
 
-    # if we can query metadata from the document, also create the corresponding question prototype based on that
-    if typst_file.stem.endswith("_q"):
-        potential_prototype_question_2 = PagePrototypeQuestion.from_typst_file_path(typst_file)
-        prototypes_per_dir.append((typst_file, potential_prototype_question_2))
+        # if we can query metadata from the document, also create the corresponding question prototype based on that
+        if typst_file.stem.endswith("_q"):
+            potential_prototype_question_2 = PagePrototypeQuestion.from_typst_file_path(typst_file)
+            prototypes_per_dir.append((typst_file, potential_prototype_question_2))
 ##########################################
 
 # ensure that every prototype ID is unique, otherwise raise an error that indicates the paths to the conflicting prototypes
