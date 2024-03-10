@@ -13,8 +13,10 @@ if __name__ == "__main__":
     ########################################################
     #print(found_scene_modules)
     #print("--------")
-    filenames_to_render = ["sets_intro_01.typ","sets_intro_02_q.typ","sets_intro_02_a.typ","sets_intro_02_b.typ","sets_intro_02_c.typ","sets_intro_02_d.typ","sets_intro_03.typ",
-    "binom_intro_01", "binom_intro_02_a", "binom_intro_02_b", "binom_intro_02_q", "binom_intro_03_a", "binom_intro_03_b", "binom_intro_03_q"
+    filenames_to_render = ["LaPlace_intro_01.typ", "LaPlace_intro_02_q.typ", "LaPlace_intro_02_a.typ", "LaPlace_intro_02_b.typ",
+                            "LaPlace_intro_03_q.typ", "LaPlace_intro_03_a.typ", "LaPlace_intro_03_b.typ",
+                            "LaPlace_intro_04_q.typ", "LaPlace_intro_04_a.typ", "LaPlace_intro_04_b.typ",
+                            "LaPlace_intro_05_a.typ", "LaPlace_intro_05_b.typ", "LaPlace_intro_05_c.typ",
     ]
     found_scene_modules = [m for m in found_scene_modules if any(filename in m.name for filename in filenames_to_render)]
     # found_scene_modules = [m for m in found_scene_modules if not any(filename in m.name for filename in filenames_no_render)]
