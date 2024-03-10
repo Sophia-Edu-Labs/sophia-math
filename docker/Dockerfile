@@ -10,7 +10,8 @@ RUN apt-get update \
     vlc \
     curl \
     rubberband-cli \
-    libssl-dev
+    libssl-dev \
+    pdf2svg
 
 # Copy requirements.txt
 COPY ./docker/requirements.txt /tmp/requirements.txt
@@ -28,6 +29,9 @@ ENV PATH="$HOME/.cargo/bin:${PATH}"
 
 # install typst as user
 RUN cargo install --git https://github.com/geroembser/typst --locked --branch linktags typst-cli
+
+# install svg2pdf
+RUN cargo install svg2pdf-cli
 
 # back to root afterwards, to be "clean"
 USER root
