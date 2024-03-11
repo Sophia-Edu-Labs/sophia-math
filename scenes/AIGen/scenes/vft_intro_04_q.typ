@@ -40,3 +40,23 @@ $->$ Wie viele mögen nur Star Wars?
 #voiceover("Nutze nun eine Vierfeldertafel um herauszufinden, wie viele nur Star Wars mögen")
 ]
 ]
+
+#questionDef(
+  questionText: "Wie viele Schüler mögen nur Star Wars?",
+  // use latex!
+  answerOptions: ("$10$", "$0$"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: none
+        )
+      ),
+      answerOptionMatcher:("$\key{a}$"),
+      answerOptionsTypes: (
+        "a": "number"
+      )
+  ),
+)

@@ -25,7 +25,7 @@
 ]
 
 #questionDef(
-  questionText: "Was ist der Wert von $\tfrac{11!}{9!}$?",
+  questionText: "Was ist der Wert von $\\tfrac{11!}{9!}$?",
   // use latex!
   answerOptions: ("$110$", "$0$"),
   correctAnswerIndex: 0,

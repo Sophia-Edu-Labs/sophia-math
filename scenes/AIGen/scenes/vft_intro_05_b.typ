@@ -308,7 +308,7 @@ align: horizon,
 ]
 #v(40pt)
 #only("1")[
-#voiceover("Sehr gut, das ist richtig. Betrachten wir also die Vierfeldertafel.")
+#voiceover("Das stimmt so nicht, schade. Betrachten wir die Vierfeldertafel.")
 ]
 #only("2")[
 #voiceover("Da wir eine Gesamtzahl von zweihundert Personen haben, können wir diese Zahl in die untere rechte Ecke eintragen.")

@@ -71,7 +71,7 @@ align: horizon,
 #only("2-")[- #text(weight:"bold")[Kunst:] 16 Schülerinnen]
 #only("3-")[- #text(weight:"bold")[Musik:] 9 Schülerinnen]
 #only("1")[
-#voiceover("Super, das ist richtig. Um die Anzahl der Schülerinnen zu ermitteln, die Kunst bevorzugen, ")
+#voiceover("Das ist leider falsch. Lass uns die Lösung gemeinsam anschauen. Um die Anzahl der Schülerinnen zu ermitteln, die Kunst bevorzugen, ")
 ]
 #only("2")[#voiceover("addieren wir die Werte in der linken Spalte. Das ergibt 9 + 7, also 16 Schülerinnen, die Kunst lieber mögen. Für die Anzahl der Schülerinnen, die Musik bevorzugen, ")
 ]

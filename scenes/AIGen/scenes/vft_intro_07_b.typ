@@ -182,7 +182,7 @@ align: horizon,
 ]
 #v(40pt)
 #only("1")[
-#voiceover("Super, das ist richtig...")
+#voiceover("Das stimmt so leider nicht ganz...")
 ]
 #only("2")[
 #voiceover("Wir beginnen mit einer leeren Vierfeldertafel und tragen unten rechts 100% ein, da das die Gesamtheit aller Mitarbeiter repräsentiert.")
