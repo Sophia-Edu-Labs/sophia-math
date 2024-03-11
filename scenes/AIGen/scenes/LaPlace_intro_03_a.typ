@@ -48,7 +48,7 @@ $(6,6)}$]
 #voiceover("Als nächstes zählen wir die günstigen Ergebnisse, also die Würfe, bei denen das Produkt der Augenzahlen größer als 12 ist.")
 ]
 #only("2")[
-#voiceover("Das ist der Fall für die Kombinationen: (3 5), (3 6), (4 4), (4 5), (4 6), (5 3), (5 4), (5 5), (5 6), (6 3), (6 4), (6 5) und (6 6).")
+#voiceover("Das ist der Fall für die Kombinationen: (drei fünf), (drei sechs), (vier vier), (vier fünf), (vier sechs), (fünf drei), (fünf vier), (fünf fünf), (fünf sechs), (sechs drei), (sechs vier), (sechs fünf) und (sechs sechs).")
 ]
 #only("3")[
 #voiceover("Es gibt also insgesamt 13 günstige Ergebnisse.")

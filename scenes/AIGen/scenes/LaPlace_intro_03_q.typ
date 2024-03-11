@@ -33,3 +33,20 @@ $ P(E) = ✔/📊 $
 #voiceover("Wende dazu die Laplace-Formel an, die besagt, dass die Wahrscheinlichkeit eines Ereignisses gleich der Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse ist.")
 ]
 ]
+
+#questionDef(
+  questionText: "Wie groß ist die Wahrscheinlichkeit, dass das Produkt der Augenzahlen bei zweimaligem Würfeln $>12$ ist?",
+  // use latex!
+  answerOptions: ("$\\frac{13}{36}$", "$0$"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: none,
+        tolerance: 0.01
+        )
+      ),
+      answerOptionMatcher:("$\\key{a}$")
+  ),
+)

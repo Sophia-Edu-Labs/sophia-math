@@ -33,3 +33,20 @@ $ P(E) = ✔/📊 $
 #voiceover("Wende dazu die Laplace-Formel an, die besagt, dass die Wahrscheinlichkeit eines Ereignisses gleich der Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse ist.")
 ]
 ]
+
+#questionDef(
+  questionText: "Wie groß ist die Wahrscheinlichkeit, dass beim dreimaligen Würfeln mindestens eine $6$ gewürfelt wird?",
+  // use latex!
+  answerOptions: ("$\\frac{91}{216}$", "$0$"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: none,
+        tolerance: 0.01
+        )
+      ),
+      answerOptionMatcher:("$\\key{a}$")
+  ),
+)

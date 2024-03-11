@@ -18,7 +18,7 @@
 #v(20pt)
 #only("3-")[- Beispiel: Wahrscheinlichkeit, eine 6 zu würfeln = 1/6]
 #only("1")[
-#voiceover("Wahrscheinlichkeit ist ein Maß dafür, wie sehr wir es erwarten können, dass ein bestimmtes Ereignis eintritt.")
+#voiceover("Beginnen wir damit, zu verstehen was eine Wahrscheinlichkeit ist. Die Wahrscheinlichkeit ist ein Maß dafür, wie sehr wir es erwarten können, dass ein bestimmtes Ereignis eintritt.")
 ]
 #only("2")[
 #voiceover("Wahrscheinlichkeiten werden als Werte zwischen 0 und 1 angegeben. 0 bedeutet, das Ereignis ist unmöglich, 1 bedeutet, es tritt sicher ein.")

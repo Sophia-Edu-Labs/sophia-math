@@ -23,7 +23,7 @@ $ P(E) = ("günstige "✔)/("mögliche "📊) $
 #only("1-")[#text(size: 24pt, weight: "bold")[Mögliche Ergebnisse]]
 #v(40pt)
 #only("1-")[- 6 Möglichkeiten pro Wurf]
-#only("2-")[- $6 * 6 = 36$ mögliche Ergebnisse]
+#only("2-")[- $6 dot 6 = 36$ mögliche Ergebnisse]
 #only("3-")[
 $📊 = 36$
 ]
