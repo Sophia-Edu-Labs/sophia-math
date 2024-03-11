@@ -2,7 +2,6 @@ from pathlib import Path
 from sophialib.morphing.sophiamorphscene import AutoSlideScene
 
 
-# Use this scene, to render a typst scene with the sideview extension. This scene is excluded from the default renderall script
 class Holland_Calc_integral_07_q(AutoSlideScene):
     def construct(self):
         ########################
