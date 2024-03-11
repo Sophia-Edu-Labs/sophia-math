@@ -7,13 +7,16 @@ from sophialib.constants.directories import SCENES_FOLDER, WORKSPACE_FOLDER
 def find_repository_scene_module_paths(result_sorted: bool = False) -> List[Path]:
     paths = []
 
-    SCENE_BASEFOLDER = SCENES_FOLDER / "AIGen" / "scenes"
+    SCENE_BASEFOLDERS = [ SCENES_FOLDER / "AIGen" / "scenes", 
+                         SCENES_FOLDER / "AIGen" / "scenes_examples", 
+                         SCENES_FOLDER / "AIGen" / "scenes_generated"]
 
-    for pf in Path(SCENE_BASEFOLDER).glob("**/*.py"):
-        paths.append(pf)
-    
-    for pf in Path(SCENE_BASEFOLDER).glob("**/*.typ"):
-        paths.append(pf)
+    for SCENE_BASEFOLDER in SCENE_BASEFOLDERS:
+        for pf in Path(SCENE_BASEFOLDER).glob("**/*.py"):
+            paths.append(pf)
+        
+        for pf in Path(SCENE_BASEFOLDER).glob("**/*.typ"):
+            paths.append(pf)
 
     # remove the path to a file with "render_sideview.py" (because that is just indended to be used for development)
     paths = [p for p in paths if p.name != "render_sideview.py"]

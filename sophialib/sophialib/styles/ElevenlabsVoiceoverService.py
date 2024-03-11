@@ -83,10 +83,16 @@ class ElevenlabsVoiceoverService(SpeechService):
         # get all voices
         self.voices = Voices.from_api()
 
+        # if voice name is none, use rachel
+        if voice_name is None:
+            voice_name = "Rachel"
+
         # Make sure the given voice name is in the voices list, otherwise throw an exception
         if voice_name not in [ v.name for v in self.voices]:
             raise ValueError(f"Voice name {voice_name} not found in voices list gotten from elevenlabs api!")
         self.voice_name = voice_name
+
+        print(f"Available voices: {', '.join([v.name for v in self.voices])}")
 
         # get current elevenlabs user
         self.user = User.from_api()
