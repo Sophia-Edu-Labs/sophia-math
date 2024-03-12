@@ -104,6 +104,6 @@ caption: [],
 #voiceover("Der Schnitt einer Menge A mit der leeren Menge ergibt immer die leere Menge, da es keine gemeinsamen Elemente gibt.")
 ]
 #only("4-")[
-- Absorbierendes Element: $A sect emptyset = emptyset$
+- Absorbierung: $A sect emptyset = emptyset$
 ]
 ]
