@@ -18,7 +18,7 @@ Welche Aussage trifft #text(weight: "bold")[zu]?
 #only("-3")[- $Z subset Y$]#only("4-")[#text(fill:red)[- $Z subset Y$]]
 #v(10pt)
 #only("-4")[- $X subset Y$]#only("5-")[#text(fill:red)[- $X subset Y$]]
-#only("1")[#voiceover("Das stimmt nicht.")]
+#only("1")[#voiceover("Genau, das ist die richtige Antwort.")]
 #only("2")[#voiceover("X ist keine Teilmenge von Z, da alle Elemente von X, also 2, 4, 6 und 8, auch in Z enthalten sind.")]
 #only("3")[#voiceover("Die Aussage, dass üpsilon keine echte Teilmenge von X ist, trifft zu, da üpsilon Elemente enthält, die nicht in X sind, wie zum Beispiel 1, 3 und 5.")]
 #only("4")[#voiceover("Z ist keine echte Teilmenge von üpsilon, da Z Elemente wie 10 und 12 enthält, die nicht in üpsilon vorkommen.")]

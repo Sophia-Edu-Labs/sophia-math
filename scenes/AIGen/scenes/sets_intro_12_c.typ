@@ -18,7 +18,7 @@ Welche Aussage ist #text(weight: "bold")[falsch]?
 #only("-3")[- $X sect Z = {4, 6}$]#only("4-")[#text(fill:green)[- $X sect Z = {4, 6}$]]
 #v(10pt)
 #only("-4")[- $X sect Y sect Z = {4}$]#only("5-")[#text(fill:green)[- $X sect Y sect Z = {4}$]]
-#only("1")[#voiceover("Das ist absolut korrekt, klasse!")]
+#only("1")[#voiceover("Das ist leider falsch, schade...")]
 #only("2")[#voiceover("Die Aussage, dass der Schnitt von X und Y die Menge bestehend aus 1, 2, 3 und 4 ergibt, ist falsch. Der Schnitt von X und Y enthält nur die Elemente 2 und 4, da nur diese in beiden Mengen vorkommen.")]
 #only("3")[#voiceover("Die Aussage, dass der Schnitt von Y und Z die Menge bestehend aus 3 und 4 ergibt, ist korrekt, da 3 und 4 die einzigen Elemente sind, die sowohl in Y als auch in Z enthalten sind.")]
 #only("4")[#voiceover("Auch die Aussage, dass der Schnitt von X und Z die Menge bestehend aus 4 und 6 ergibt, ist korrekt, da 4 und 6 die gemeinsamen Elemente von X und Z sind.")]

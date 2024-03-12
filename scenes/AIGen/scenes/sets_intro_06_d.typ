@@ -19,7 +19,7 @@ Welche Aussage ist #text(weight: "bold")[falsch]?
 #v(10pt)
 #only("-4")[- $C subset B$]#only("5-")[#text(fill:red)[- $C subset B$]]
 
-#only("1")[#voiceover("Das ist leider falsch, schade...")]
+#only("1")[#voiceover("mensch toll, das ist richtig...")]
 #only("2")[#voiceover("A ist Teilmenge von B, da alle Elemente von A, also 1, 2 und 3, auch in B enthalten sind.")]
 #only("3")[#voiceover("B ist tatsächlich keine Teilmenge von A, denn vier ist in B enthalten, aber nicht in A.")]
 #only("4")[#voiceover("A ist echte Teilmenge von B, da alle Elemente von A, also 1, 2 und 3, auch in B enthalten sind, B aber zusätzlich noch das Element 4 enthält.")]

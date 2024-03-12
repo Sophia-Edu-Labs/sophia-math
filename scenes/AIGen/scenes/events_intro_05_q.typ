@@ -49,3 +49,13 @@ $->$ Wie sieht der #text(weight: "bold")[Ereignisraum $Omega$] für den dreimali
 #only("3-")[
 #text(weight: "bold")[Tipp]: Ein Ergebnis ist ein Tripel $(a, b, c)$, , wobei $a,b, c in {K,Z}$]
 ]
+
+#questionDef(
+  questionText: "Was ist der Ereignisraum beim dreimaligen Münzwurf?",
+  // use latex!
+  answerOptions: ("$Omega = {(K,K,K), (K,K,Z),(K,Z,K), (K,Z,Z), (Z,K,K),(Z,K,Z), (Z,Z,K), (Z,Z,Z)}$ oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
+  correctAnswerIndex: 0,
+  llmCheckDetails: (
+    fallbackOptionIndex: 1
+  ),
+)

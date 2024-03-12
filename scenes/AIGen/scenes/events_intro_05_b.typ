@@ -4,7 +4,7 @@
 #set text(lang: "de")
 #slide()[
 #only("1")[
-#voiceover("Super, das ist Richtig! Hier ist die Lösung für den Ereignisraum beim dreimaligen Münzwurf.")
+#voiceover("Das ist leider falsch... Hier ist die Lösung für den Ereignisraum beim dreimaligen Münzwurf.")
 ]
 #only("1-")[
 #text(size: 26pt, weight: "bold")[₡ Dreimaliger Münzwurf ₡]

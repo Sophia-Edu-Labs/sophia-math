@@ -25,3 +25,23 @@ $ |Omega|=? $
 #voiceover("Diese können wir auch mit dem Omega umgeben von zwei senkrechten Strichen darstellen, das ist dann die Mengenschreibweise...")
 ]
 ]
+
+#questionDef(
+  questionText: "Was ist $|\Omega|$, die Mächtigkeit des Ergebnisraums?",
+  // use latex!
+  answerOptions: ("$|\Omega|=8$", "$|\Omega|=0$"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: none
+        )
+      ),
+      answerOptionMatcher:("$|\Omega|=\key{a}$"),
+      answerOptionsTypes: (
+        "a": "number"
+      )
+  ),
+)
