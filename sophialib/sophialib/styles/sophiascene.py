@@ -166,6 +166,9 @@ class SophiaScene(VoiceoverScene):
             speechs = OpenAIVoiceoverService()
         elif os.environ.get('SPEECH_SERVICE') == 'elevenlabs':
             speechs = ElevenlabsVoiceoverService(should_use_history=True)
+            if self.elevenlabsvoiceoverride: 
+                speechs = ElevenlabsVoiceoverService(should_use_history=False, voice_name=self.elevenlabsvoiceoverride)
+
         else:
             ##################################################################
             ##################################################################
