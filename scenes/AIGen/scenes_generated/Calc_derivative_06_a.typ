@@ -87,9 +87,7 @@ $+ "cos"(x)$
 #only("9")[
 #voiceover("Setzen wir alles zusammen, erhalten wir die gesuchte Ableitung der Funktion als x Quadrat minus zwei mal e hoch x plus Kosinus x.")
 ]
-// #only("9")[
-// #voiceover("Das wars von mir, folgt noch Sophia und viel Spaß beim üben!!!")
-// ]
+
 #v(20pt)
 #only("9-")[
 #text()[$arrow.r$ Ergebnis:

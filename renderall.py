@@ -13,13 +13,19 @@ if __name__ == "__main__":
     ########################################################
     #print(found_scene_modules)
     #print("--------")
-    filenames_to_render = ["vft_intro_01.typ",
-                            "vft_intro_02_q.typ", "vft_intro_02_a.typ", "vft_intro_02_b.typ",
-                            "vft_intro_03.typ",
-                            "vft_intro_04_q.typ", "vft_intro_04_a.typ", "vft_intro_04_b.typ",
-                            "vft_intro_05_q.typ", "vft_intro_05_a.typ", "vft_intro_05_b.typ",
-                            "vft_intro_06_q.typ", "vft_intro_06_a.typ", "vft_intro_06_b.typ",
-                            "vft_intro_07_q.typ", "vft_intro_07_a.typ", "vft_intro_07_b.typ",
+    filenames_to_render = ["Calc_derivative_01_a.typ", "Calc_derivative_01_b.typ", "Calc_derivative_01_q.typ"
+                             "Calc_derivative_02_a.typ", "Calc_derivative_02_b.typ", "Calc_derivative_02_q.typ",
+                                "Calc_derivative_03_a.typ", "Calc_derivative_03_b.typ", "Calc_derivative_03_q.typ",
+                                "Calc_derivative_04_a.typ", "Calc_derivative_04_b.typ", "Calc_derivative_04_q.typ",
+                                "Calc_derivative_05_a.typ", "Calc_derivative_05_b.typ", "Calc_derivative_05_q.typ",
+                                "Calc_derivative_06_a.typ", "Calc_derivative_06_b.typ", "Calc_derivative_06_q.typ",
+        # "vft_intro_01.typ",
+        #                     "vft_intro_02_q.typ", "vft_intro_02_a.typ", "vft_intro_02_b.typ",
+        #                     "vft_intro_03.typ",
+        #                     "vft_intro_04_q.typ", "vft_intro_04_a.typ", "vft_intro_04_b.typ",
+        #                     "vft_intro_05_q.typ", "vft_intro_05_a.typ", "vft_intro_05_b.typ",
+        #                     "vft_intro_06_q.typ", "vft_intro_06_a.typ", "vft_intro_06_b.typ",
+        #                     "vft_intro_07_q.typ", "vft_intro_07_a.typ", "vft_intro_07_b.typ",
     ]
     found_scene_modules = [m for m in found_scene_modules if any(filename in m.name for filename in filenames_to_render)]
     # found_scene_modules = [m for m in found_scene_modules if not any(filename in m.name for filename in filenames_no_render)]

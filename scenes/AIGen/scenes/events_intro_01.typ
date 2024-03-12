@@ -10,7 +10,7 @@
 
 #slide()[
   #only("1")[
-    #voiceover("Hi, hier ist Leonardo, und ich erklär euch jetzt ein wenig Mathe: Konkret: Was ist der Unterschied zwischen Ergebnis und Ereignis beim Zufallsexperimenten?")
+    #voiceover("Was ist ein Ergebnis, und was ist ein Ereignis beim Zufallsexperimenten?")
   ]
 
   #text(size: 30pt, weight: "bold")[Ergebnis und Ereignis]
@@ -111,6 +111,6 @@
 #voiceover("Zusammengefasst ist ein Ergebnis das Resultat eines einzelnen Zufallsexperiments.")
 ]
 #only("2")[
-#voiceover("Ein Ereignis fasst hingegen mehrere Ergebnisse mit einer gemeinsamen Eigenschaft zusammen. Beim Beispiel des zweimaligen Würfelns ist 3 5 ein mögliches Ergebnis, während  ...SUMME IST GERADE ... ein Ereignis darstellt, das mehrere Ergebnisse umfasst. Gut das wars schon. Danke fürs zuhören und ganz wichtig: folgt sophia auf tiktok. Bis bald!")
+#voiceover("Ein Ereignis fasst hingegen mehrere Ergebnisse mit einer gemeinsamen Eigenschaft zusammen. Beim Beispiel des zweimaligen Würfelns ist 3 5 ein mögliches Ergebnis, während  ...SUMME IST GERADE ... ein Ereignis darstellt, das mehrere Ergebnisse umfasst.")
 ]
 ]

@@ -13792,12 +13792,20 @@ class Intro_ana_fuh(SophiaCursorScene):
         # Adding initial components to the scene
         super().construct()
 
+class Intro_mindflakes(SophiaCursorScene):
+
+    # Main method for constructing the animation
+    def construct(self):
+        # Adding initial components to the scene
+        super().construct()
+
 PROTOTYPES=[
 ########################################################### STUFF for Prototypes
     PagePrototypeVideo.from_scene(Intro_ana_tub),
     PagePrototypeVideo.from_scene(Intro_ana_fub),
     PagePrototypeVideo.from_scene(Intro_ana_fuh),
     PagePrototypeVideo.from_scene(Intro_ana_tum),
+    PagePrototypeVideo.from_scene(Intro_mindflakes),
 ########################################################### MC
     PagePrototypeVideo.from_scene(Calc_practice_MC_1_q),
     PagePrototypeQuestion.from_scene(Calc_practice_MC_1_q),

@@ -31,8 +31,15 @@
 #only("4")[
 #voiceover("Welche der folgenden Aussagen über die Beziehungen zwischen diesen Mengen ist falsch?")
 ]
-#only("5")[#voiceover("Ist es die Aussage 'A ist Teilmenge von B'?")]
-#only("6")[#voiceover("Oder die Aussage 'B ist keine Teilmenge von A'?")]
-#only("7")[#voiceover("Oder ist es die Aussage 'A ist eine echte Teilmenge von B'?")]
-#only("8")[#voiceover("Oder, letzte Option: Ist die Aussage 'C ist eine echte Teilmenge von B' falsch?")]
+#only("5")[#voiceover("Ist es die Aussage A ist Teilmenge von B?")]
+#only("6")[#voiceover("Oder die Aussage B ist keine Teilmenge von A?")]
+#only("7")[#voiceover("Oder ist es die Aussage A ist eine echte Teilmenge von B?")]
+#only("8")[#voiceover("Oder, letzte Option: Ist die Aussage C ist eine echte Teilmenge von B falsch?")]
 ]
+
+#questionDef(
+  questionText: "Welche der Aussagen ist falsch?",
+  // use latex!
+  answerOptions: ("$A\subseteq B$", "$B\\not\\subset$", "$A\subset B$", "$C\subset B$"),
+  correctAnswerIndex: 3,
+)
