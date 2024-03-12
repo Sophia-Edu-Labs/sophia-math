@@ -45,7 +45,7 @@ for k, v in elements_B.items():
   #Copy code
   ax.plot(v[0], v[1], 'o', color='red') # Point
   ax.text(v[0], v[1] + 0.1, k, color='black', fontsize=16) # Label
-  
+
 # Add the circles to the plot
 ax.add_artist(circle_A)
 ax.add_artist(circle_B)
