@@ -8,7 +8,7 @@
 #slide()[
 
 #only("1")[
-  #voiceover("Genau richtig, klasse Arbeit! ... Wir müssen also die Stammfunktion.")
+  #voiceover("Das stimmt leider nicht, schade ... ... Wir müssen also die Stammfunktion.")
 ]
 Berechne eine Stammfunktion von
 #v(40pt)

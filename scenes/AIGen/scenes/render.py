@@ -4,7 +4,7 @@ from sophialib.morphing.sophiamorphscene import AutoSlideScene
 
 class ExampleScene(AutoSlideScene):
     def construct(self):
-        filename = "sets_intro_13_a.typ"
+        filename = "independence_intro_01.typ"
         self.parse_corresponding_typst_scene(Path(__file__).parent / filename)
         super().construct()
         self.auto_slide_with_voiceover()

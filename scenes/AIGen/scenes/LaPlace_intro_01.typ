@@ -34,7 +34,11 @@
 #v(20pt)
 #only("2-")[- Berechnet Wahrscheinlichkeit eines Ereignisses E]
 #v(20pt)
-#only("3-")[- Beispiel: P("Augensumme ist 7") = 6/36 = 1/6]
+#only("3-")[- Beispiel: P("Gerade Augenzahl")]
+#only("4-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}|]
+#only("5-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}| = 3/6]
+#only("6-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}| = 1/2]
+
 #only("1")[
 #voiceover("Die Laplace-Formel ist eine Methode zur Berechnung von Wahrscheinlichkeiten. Sie lautet: Die Wahrscheinlichkeit eines Ereignisses E ist gleich der Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse.")
 ]
@@ -42,7 +46,16 @@
 #voiceover("Mit dieser Formel lässt sich die Wahrscheinlichkeit für jedes beliebige Ereignis in einem Zufallsexperiment berechnen, sofern alle Ergebnisse gleich wahrscheinlich sind.")
 ]
 #only("3")[
-#voiceover("Nehmen wir als Beispiel zweimaliges Würfeln. Die Wahrscheinlichkeit, dass die Augensumme 7 ist, beträgt 6 durch 36, also 1 sechstel. Denn es gibt 6 günstige Ergebnisse, die zur Summe 7 führen, bei insgesamt 36 möglichen Ergebnissen.")
+#voiceover("Nehmen wir als Beispiel den einmaligen Würfelwurf. Angenommen, wir wollen wissen wie wahrscheinlich es ist, dass wir eine gerade Augenzahl würfeln.")
+]
+#only("4")[
+#voiceover("Dafür müssen wir die Anzahl der günstigen Ergebnisse und die Anzahl der möglichen Ergebnisse bestimmen. Die günstigen Ergebnisse sind die geraden Zahlen 2, 4 und 6. Die möglichen Ergebnisse sind die Zahlen 1 bis 6.")
+]
+#only("5")[
+#voiceover("Die Menge der günstigen enthält drei Elemente, nämlich 2, 4 und 6. Die Menge der möglichen Ergebnisse enthält sechs Elemente, nämlich 1, 2, 3, 4, 5 und 6.")
+]
+#only("6")[
+#voiceover("Die Wahrscheinlichkeit, eine gerade Augenzahl zu würfeln, beträgt also 3/6 oder 1/2.")
 ]
 ]
 #slide()[
