@@ -40,6 +40,6 @@
 #questionDef(
   questionText: "Welche der Aussagen ist falsch?",
   // use latex!
-  answerOptions: ("$A\subseteq B$", "$B\\not\\subset$", "$A\subset B$", "$C\subset B$"),
+  answerOptions: ("$A\subseteq B$", "$B\\not\\subset A$", "$A\subset B$", "$C\subset B$"),
   correctAnswerIndex: 3,
 )

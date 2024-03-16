@@ -14,7 +14,7 @@ Welche der folgenden Optionen ist #text(weight: "bold")[KEIN] Ergebnis?
 #only("-3")[- Beide Würfe gerade Augenzahlen]#only("4-")[#text(fill:red)[- Beide Würfe gerade Augenzahlen]]
 #v(10pt)
 #only("-4")[- 2. Wurf ⚃, 1. Wurf ⚁]#only("5-")[#text(fill:green)[- 2. Wurf ⚃, 1. Wurf ⚁]]
-#only("1")[#voiceover("Genau, das hast du richtig erkannt.")]
+#only("1")[#voiceover("Das ist leider falsch...")]
 #only("2")[#voiceover("Beide Würfe Sechs ist ein mögliches Ergebnis bei einem zweimaligen Würfelwurf.")]
 #only("3")[#voiceover("Auch der erste Wurf Eins und der zweite Wurf Zwei ist ein konkretes Ergebnis, das eintreten kann.")]
 #only("4")[#voiceover("Die Option 'Beide Würfe gerade Augenzahlen' ist kein einzelnes Ergebnis, sondern ein Ereignis, das mehrere Ergebnisse umfasst, nämlich (2 2), (2 4), (2 6), (4 2), und so weiter ...")]
