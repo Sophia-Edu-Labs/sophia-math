@@ -17,7 +17,7 @@ RUN apt-get update \
 COPY ./docker/requirements.txt /tmp/requirements.txt
 
 # install requirements
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --default-timeout=1000 -r /tmp/requirements.txt
 
 # install rust (as user)
 USER manimuser
