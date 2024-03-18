@@ -38,7 +38,7 @@
 ]
 ]
 #questionDef(
-questionText: "Welches Ereignispaar ist am ehesten stochastisch unabhängig?",
+questionText: "Welches Ereignispaar ist stochastisch unabhängig?",
 answerOptions: ("A: Herz gezogen, B: Bube gezogen", "A: Kreuz gezogen, B: Schwarze Karte gezogen", "A: Ass gezogen, B: König gezogen"),
 correctAnswerIndex: 0,
 )

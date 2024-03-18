@@ -62,7 +62,7 @@ $ P(A union B) = P(A) + P(B) - P(A sect B) $
 #questionDef(
   questionText: "Was ist $P(A\cup B)$?",
   // use latex!
-  answerOptions: ("$\\frac{2}{3}$", "$0$"),
+  answerOptions: ("$0.8$", "$0$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,

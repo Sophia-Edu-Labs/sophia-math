@@ -25,10 +25,10 @@ BEGRIFFE UND TOOLS
 0.3 stochastische Tools: Fakultät und Binomialkoeffizient - hier lässt sich zeigen, dass man das auch im Kopf gut berechnen kann mit kürzen und so
 
 AUFGABENTYPEN
-1 Laplace-Formel + Übungen -> "Done"
-2 Baumdiagramm + Übungen -> "Done"
-3 Vierfeldertafel + Übungen -> "Done"
-4 Additionssatz + Übungen -> "Done" 
+1 Laplace-Formel + Übungen -> "App"
+2 Baumdiagramm + Übungen -> "App"
+3 Vierfeldertafel + Übungen -> "App"
+4 Additionssatz + Übungen -> "Dones" 
 5 stochastische Unabhängigkeit + Übung -> "Done" 
 6 Bedingte Wahrscheinlichkeit + Übung -> "Done" 
 7 Binomialverteiluung + Übungen 

@@ -19,7 +19,7 @@ B: Kugel mit Zahl größer als 7
 #v(10pt)
 #only("4-")[$P(B) = 3/10$]
 #only("1")[
-#voiceover("Das ist richtig, toll... Ereignis A ist, dass eine Kugel mit einer geraden Zahl gezogen wird, und Ereignis B ist, dass eine Kugel mit einer Zahl größer als 7 gezogen wird.")
+#voiceover("Das stimmt nicht, schade... Ereignis A ist, dass eine Kugel mit einer geraden Zahl gezogen wird, und Ereignis B ist, dass eine Kugel mit einer Zahl größer als 7 gezogen wird.")
 ]
 #only("2")[
 #voiceover("Im ersten Schritt bestimmen wir die Wahrscheinlichkeit für Ereignis B.")

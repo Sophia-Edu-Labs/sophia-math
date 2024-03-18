@@ -13,7 +13,7 @@
 #v(10pt)
 #only("-3")[#text()[- D: Fehlentscheidung]]#only("4-")[#text(fill:green)[- D: Fehlentscheidung]]
 #only("1")[
-#voiceover("Das stimmt leider nicht... Betrachten wir die Ereignisse B, C und D und überlegen uns, ob sie stochastisch unabhängig von Ereignis A, Eine Fußballmannschaft gewinnt ein Spiel, sind..")
+#voiceover("Toll, das stimmt. ... Betrachten wir die Ereignisse B, C und D und überlegen uns, ob sie stochastisch unabhängig von Ereignis A, Eine Fußballmannschaft gewinnt ein Spiel, sind..")
 ]
 #only("2")[
 #voiceover("Ereignis B: Die Mannschaft gewinnt auch ihr nächstes Spiel. Der Ausgang eines Spiels kann durchaus die Wahrscheinlichkeit beeinflussen, dass die Mannschaft auch das nächste Spiel gewinnt. Ein Sieg kann der Mannschaft Selbstvertrauen geben und ihre Siegeschancen im nächsten Spiel erhöhen. Daher sind diese Ereignisse wahrscheinlich nicht unabhängig.")

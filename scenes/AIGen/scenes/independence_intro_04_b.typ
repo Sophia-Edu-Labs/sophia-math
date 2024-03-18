@@ -14,7 +14,7 @@
 #only("-4")[- A: Ein gezogenes Blatt ist ein Ass]#only("5-")[#text(fill:red)[- A: Ein gezogenes Blatt ist ein Ass]]
 #only("-4")[- B: Das gezogene Blatt ist ein König]#only("5-")[#text(fill:red)[- B: Das gezogene Blatt ist ein König]]
 #only("1")[
-#voiceover("Das ist richtig, top. Betrachten wir die drei Kartenspiel-Beispiele nacheinander und überlegen, welches Ereignispaar am ehesten stochastisch unabhängig ist.")
+#voiceover("Das ist leider falsch. Betrachten wir die drei Kartenspiel-Beispiele nacheinander und überlegen, welches Ereignispaar am ehesten stochastisch unabhängig ist.")
 ]
 #only("2-3")[
 #voiceover("Beginnen wir mit A - ein gezogenes Blatt ist ein Herz, und B - das gezogene Blatt ist ein Bube. Die Wahrscheinlichkeit, einen Buben zu ziehen, ist für jede Farbe gleich, nämlich 4 von 52 oder etwa 7,7%. Ob das Blatt ein Herz ist oder nicht, beeinflusst diese Wahrscheinlichkeit nicht. Diese Ereignisse sind also unabhängig.")

@@ -77,19 +77,3 @@ $ P(A union B) = 2/5 + 3/5 - 1/5 $
 ]
 ]
 
-#questionDef(
-  questionText: "Was ist $P(A\cup B)$?",
-  // use latex!
-  answerOptions: ("$0.8$", "$0$"),
-  correctAnswerIndex: 0,
-  freeTextDetail: (
-    fallbackOptionIndex: 1,
-    answerOptionsEquality: (
-      a: (
-        roundingDecimalPlaces: 2,
-        tolerance: none
-        )
-      ),
-      answerOptionMatcher:("$\\key{a}$")
-  ),
-)

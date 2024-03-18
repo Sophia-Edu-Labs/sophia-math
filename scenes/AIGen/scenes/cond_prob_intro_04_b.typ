@@ -19,7 +19,7 @@ B: Kugel mit durch 2 teilbarer Zahl
 #v(10pt)
 #only("4-")[$P(B) = 5/10 = 1/2$]
 #only("1")[
-#voiceover("Das ist richtig, toll. Ereignis A ist, dass eine Kugel mit einer durch 3 teilbaren Zahl gezogen wird, und Ereignis B ist, dass eine Kugel mit einer durch 2 teilbaren Zahl gezogen wird.")
+#voiceover("Das ist leider falsch, schade. Ereignis A ist, dass eine Kugel mit einer durch 3 teilbaren Zahl gezogen wird, und Ereignis B ist, dass eine Kugel mit einer durch 2 teilbaren Zahl gezogen wird.")
 ]
 #only("2")[
 #voiceover("Im ersten Schritt bestimmen wir die Wahrscheinlichkeit für Ereignis B.")

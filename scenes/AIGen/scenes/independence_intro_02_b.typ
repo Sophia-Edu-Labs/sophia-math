@@ -14,7 +14,7 @@
 #only("-3")[- A: Es ist Winter]#only("4-")[#text(fill:red)[- A: Es ist Winter]]
 #only("-3")[- B: Heute scheint die Sonne]#only("4-")[#text(fill:red)[- B: Heute scheint die Sonne]]
 #only("1")[
-#voiceover("Schade, das ist leider falsch... Schauen wir uns die Paare nacheinander an und überlegen, welches am ehesten die Kriterien für stochastische Unabhängigkeit erfüllt.")
+#voiceover("Super, das ist richtig... Schauen wir uns die Paare nacheinander an und überlegen, welches am ehesten die Kriterien für stochastische Unabhängigkeit erfüllt.")
 ]
 #only("2")[
 #voiceover("Regen und Sonnenschein am selben Tag schließen sich gegenseitig weitgehend aus. Wenn es regnet, ist die Wahrscheinlichkeit für Sonnenschein sehr gering, und umgekehrt. Diese beiden Ereignisse sind also definitiv nicht unabhängig.")

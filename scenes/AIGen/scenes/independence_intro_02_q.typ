@@ -1,4 +1,4 @@
-#import "../sophiatheme.typ": *
+  #import "../sophiatheme.typ": *
 //apply theme (and default setup)
 #show: sophia-theme
 #set text(lang: "de")
@@ -39,6 +39,6 @@
 ]
 #questionDef(
 questionText: "Welches Ereignispaar ist stochastisch unabhängig?",
-answerOptions: ("A: Regen heute, B: Sonnenschein heute", "A: Es is tSonntag und B: Sonnenschein heute", "A: Es ist Winter und B: Sonnenschein heute"),
+answerOptions: ("A: Regen heute, B: Sonnenschein heute", "A: Es ist Sonntag und B: Sonnenschein heute", "A: Es ist Winter und B: Sonnenschein heute"),
 correctAnswerIndex: 1,
 )
