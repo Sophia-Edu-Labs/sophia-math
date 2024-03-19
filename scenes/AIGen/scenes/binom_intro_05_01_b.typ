@@ -15,7 +15,7 @@ Welcher Binomialkoeffizient gibt die Anzahl der Möglichkeiten an?
 #only("-2")[- $ binom(12,4) $]#only("3-")[#text(fill:green)[- $ binom(12,4) $]]
 #v(10pt)
 #only("-3")[- $ binom(4,12) $]#only("4-")[#text(fill:red)[- $ binom(4,12) $]]
-#only("1")[#voiceover("Das ist leider falsch. Schauen wir uns die Optionen der Reihe nach an...")]
+#only("1")[#voiceover("Klasse, das stimmt. Schauen wir uns die Optionen der Reihe nach an...")]
 #only("2")[#voiceover("Der Binomialkoeffizient von 12 über 3 ist nicht korrekt. Er würde die Anzahl der Möglichkeiten angeben, 3 Personen aus 12 auszuwählen, nicht 4.")]
 #only("3")[#voiceover("Der Binomialkoeffizient von 12 über 4 ist die richtige Antwort. Er gibt genau die Anzahl der Möglichkeiten an, 4 Personen aus einer Gruppe von 12 auszuwählen.")]
 #only("4")[#voiceover("Der Binomialkoeffizient von 4 über 12 ist nicht definiert, da der obere Index nicht größer als der untere sein kann. Außerdem würde er, wenn er definiert wäre, die Anzahl der Möglichkeiten angeben, 12 Personen aus 4 auszuwählen, was in unserem Kontext keinen Sinn ergibt.")]
