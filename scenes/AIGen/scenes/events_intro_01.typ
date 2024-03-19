@@ -10,17 +10,17 @@
 
 #slide()[
   #only("1")[
-    #voiceover("Was ist ein Ergebnis, und was ist ein Ereignis beim Zufallsexperimenten?")
+    #voiceover("Was ist der Unterschied zwischen einem Ergebnis und einem Ereignis bei Zufallsexperimenten?")
   ]
 
   #text(size: 30pt, weight: "bold")[Ergebnis und Ereignis]
 
   #v(40pt)
 
-  #only("2-")[#align(center)[⚅⚄ Zweimaliger Würfelwurf ⚀⚁]]
+  #only("2-")[#align(center)[⚅ Einmaliger Würfelwurf ⚀]]
 
   #only("2")[
-    #voiceover("Betrachten wir das Beispiel eines zweimaligen Würfelwurfs mit einem fairen Würfel. ...")
+    #voiceover("Betrachten wir das Beispiel eines einmaligen Würfelwurfs mit einem fairen Würfel. ...")
   ]
 ]
 
@@ -33,22 +33,22 @@
 
   #v(20pt)
 
-  #only("2-")[- Beispiele: (1,3), (4,4), (6,2)]
+  #only("2-")[- Beispiele: 1, 2, 3, 4, 5, 6]
 
   #v(20pt)
 
-  #only("3-")[- Insgesamt: $6 dot 6 = 36$ ⚂⚅]
+  #only("3-")[- Insgesamt: 6 mögliche Ergebnisse ⚀⚁⚂⚃⚄⚅]
 
   #only("1")[
-    #voiceover("Ein Ergebnis ist das Resultat eines einzelnen Zufallsexperiments. In unserem Beispiel: Das Ergebnis des zweimaligen Würfelns.")
+    #voiceover("Ein Ergebnis ist das Resultat eines einzelnen Zufallsexperiments. In unserem Beispiel: Das Ergebnis des einmaligen Würfelns.")
   ]
 
   #only("2")[
-    #voiceover("1, 3 ist ein Beispiel für ein Ergebnis in unserem Fall. 4 4 und 6 2 sind weitere Beispiele.")
+    #voiceover("1, 2, 3, 4, 5 und 6 sind die möglichen Ergebnisse in unserem Fall.")
   ]
 
   #only("3")[
-    #voiceover("Insgesamt gibt es 6 mal 6, also 36 mögliche Ergebnisse: Wir können sechs verschiedene Augenzahlen im ersten Wurf mit sechs verschiedenen Augenzahlen im zweiten Wurf kombinieren. ... Ok ein Ergebnis ist also das, was wir nach einem Durchgang des Zufallsexperiments erhalten.")
+    #voiceover("Insgesamt gibt es 6 mögliche Ergebnisse: Die Augenzahlen 1 bis 6. ... Ok, ein Ergebnis ist also das, was wir nach einem Durchgang des Zufallsexperiments erhalten.")
   ]
 ]
 
@@ -61,56 +61,43 @@
 
   #v(20pt)
 
-  #only("2-")[- Beispiel: "Summe der Augenzahlen ist 7" → ⚀ + ⚅ = 7]
+  #only("2-")[- Beispiel: "Die Augenzahl ist gerade" $->E_1 = {2, 4, 6}$]
 
   #v(20pt)
 
-  #only("3-")[- Beispiel: "In beiden Würfen ist die Augenzahl gerade" → ⚁ gerade, ⚃ gerade]
+  #only("3-")[- Beispiel: "Die Augenzahl ist größer als 3" $->E_2 = {4, 5, 6}$]
 
   #only("1")[
-    #voiceover("Ok, jetzt die Frage: Was ist ein Ereignis. Ein Ereignis fasst mehrere Ergebnisse zusammen, die eine gemeinsame Eigenschaft haben.")
+    #voiceover("Jetzt die Frage: Was ist ein Ereignis? Ein Ereignis fasst mehrere Ergebnisse zusammen, die eine gemeinsame Eigenschaft haben.")
   ]
 
   #only("2")[
-    #voiceover("Ein Beispiel für ein Ereignis ist 'Die Summe der Augenzahlen ist 7'.")
+    #voiceover("Ein Beispiel für ein Ereignis ist 'Die Augenzahl ist gerade'. In Mengenschreibweise: E1 ist die Menge der Ergebnisse 2, 4 und 6.")
   ]
 
   #only("3")[
-    #voiceover("Ein weiteres Beispiel ist 'In beiden Würfen ist die Augenzahl gerade'.")
+    #voiceover("Ein weiteres Beispiel ist 'Die Augenzahl ist größer als 3'. In Mengenschreibweise: E2 ist die Menge der Ergebnisse 4, 5 und 6.")
   ]
 ]
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Wahrscheinlichkeit eines Ereignisses]
+  #text(size: 30pt, weight: "bold")[Zusammenfassung]
 
   #v(40pt)
 
-  #only("1-")[$ P(E) = ("günstige Ergebnisse" ✔)/("mögliche Ergebnisse" 📊) $]
+  #only("1-")[- Ergebnis: Resultat eines einzelnen Zufallsexperiments]
 
   #v(20pt)
 
-  #only("2-")[Beispiel: $ P("Summe ist 7") = 6/36 = 1/6 $]
+  #only("2-")[- Ereignis: Fasst Ergebnisse mit gemeinsamer Eigenschaft zusammen, Mengenschreibweise: $E = {...}$]
+
+  #v(20pt)
 
   #only("1")[
-    #voiceover("Die Wahrscheinlichkeit eines Ereignisses berechnet sich als Quotient aus der Anzahl der günstigen Ergebnisse und der Gesamtzahl der möglichen Ergebnisse.")
+    #voiceover("Zusammengefasst ist ein Ergebnis das Resultat eines einzelnen Zufallsexperiments.")
   ]
 
   #only("2")[
-    #voiceover("Zum Beispiel ist die Wahrscheinlichkeit, dass die Summe 7 ist, gleich 6 durch 36, also ein Sechstel.")
+    #voiceover("Ein Ereignis fasst hingegen mehrere Ergebnisse mit einer gemeinsamen Eigenschaft zusammen. In der Mengenschreibweise wird ein Ereignis E als Menge von Ergebnissen dargestellt. Beim Beispiel des einmaligen Würfelns ist 3 ein mögliches Ergebnis, während 'AUGENZAHL IST GERADE' ein Ereignis darstellt, das mehrere Ergebnisse umfasst.")
   ]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung]
-#v(40pt)
-#only("1-")[- Ergebnis: Resultat eines einzelnen Zufallsexperiments]
-#v(20pt)
-#only("2-")[- Ereignis: Fasst Ergebnisse mit gemeinsamer Eigenschaft zusammen]
-#v(20pt)
-#only("1")[
-#voiceover("Zusammengefasst ist ein Ergebnis das Resultat eines einzelnen Zufallsexperiments.")
-]
-#only("2")[
-#voiceover("Ein Ereignis fasst hingegen mehrere Ergebnisse mit einer gemeinsamen Eigenschaft zusammen. Beim Beispiel des zweimaligen Würfelns ist 3 5 ein mögliches Ergebnis, während  ...SUMME IST GERADE ... ein Ereignis darstellt, das mehrere Ergebnisse umfasst.")
-]
 ]

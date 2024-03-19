@@ -6,9 +6,9 @@
 ]
 
 #slide()[
-  // #only("1")[
-  //   #voiceover("Genau, super erkannt! Lösen wir die Ableitung gemeinsam ...")
-  // ]
+  #only("1")[
+    #voiceover("Genau, super erkannt! Lösen wir die Ableitung gemeinsam ...")
+  ]
   Gesucht: Ableitung der Funktion
   #v(40pt)
   #only("2-")[
@@ -73,6 +73,6 @@
     #voiceover("Die Ableitung von zwei mal x hoch fünf ist zehn mal x hoch vier.")
   ]
   #only("6")[
-    #voiceover("Die Ableitung von minus drei mal x ist minus drei. Und damit haben wir alle Terme differenziert. ... Die vollständige Ableitung von f von x ist also neun mal x hoch zwei plus zehn mal x hoch vier minus drei. Seht ihr, was ich kann?")
+    #voiceover("und die Ableitung von minus drei mal x ist minus drei. Und damit haben wir alle Terme differenziert. ... Die vollständige Ableitung von f von x ist also neun mal x hoch zwei plus zehn mal x hoch vier minus drei.")
   ]
 ]

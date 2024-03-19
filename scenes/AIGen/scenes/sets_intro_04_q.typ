@@ -22,7 +22,7 @@
   #v(40pt)
 
 #only("2")[
-  #voiceover("X und üpsilon. Was ist die Mächtigkeit von X? Und was ist die Mächtigkeit von üpsilon?")
+  #voiceover("A und B.")
   ]
 
 #only("2-")[
@@ -32,10 +32,22 @@
   pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.legend_handler import HandlerPatch
+import matplotlib.patches as mpatches
+
+class HandlerCircle(HandlerPatch):
+    def create_artists(self, legend, orig_handle,
+                        xdescent, ydescent, width, height, fontsize, trans):
+        # Adjust the radius here for a smaller circle in the legend
+        radius = width // 8  # Decreased radius for a smaller circle
+        circle = mpatches.Circle((radius - xdescent + width // 2, height // 2 - ydescent),
+                                 radius, facecolor=orig_handle.get_facecolor(),
+                                 edgecolor=orig_handle.get_edgecolor(),
+                                 linewidth=orig_handle.get_linewidth(), transform=trans)
+        return [circle]
 
 # Define initial and additional elements together with two outside elements
-# Adjusting point 'd' position (now referred to as 'P_4') to the left
-elements_coordinates = [(-0.5, 0.5), (0.5, -0.5), (0.3, -0.7), (-1.0, -0.2), (1.5, 0), (-1.2, 1.2), (0, 1)]  # Added new point
+elements_coordinates = [(-0.5, 0.5), (0.5, -0.5), (0.3, -0.7), (-1.0, -0.2), (1.5, 0), (-1.2, 1.2), (0, 1)]
 
 # Generate names a, b, c, ... for each element
 elements_names = [f'{chr(97+i)}' for i in range(len(elements_coordinates))]
@@ -49,11 +61,9 @@ ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 3)
 ax.set_aspect('equal')
 
-# Increase the radius of the first circle representing set X, and move it a bit to the left
-circle_x = plt.Circle((-0.5, 0), 1.5, color='green', fill=False, linewidth=3, label='Set X')  # Increased radius to 1.5
-
-# Increase the radius of the second circle representing set Y with a larger radius and different color
-circle_y = plt.Circle((1.2, 0.5), 2, color='orange', fill=False, linewidth=3, label='Set Y')  # Increased radius to 2
+# Draw the circles representing the sets and rename them to A and B
+circle_a = plt.Circle((-0.5, 0), 1.5, color='green', fill=False, linewidth=3, label='Menge A')  # Renamed to Set A
+circle_b = plt.Circle((1.2, 0.5), 2, color='orange', fill=False, linewidth=3, label='Menge B')  # Renamed to Set B
 
 # Add the elements to the plot
 for k, v in elements.items():
@@ -61,14 +71,14 @@ for k, v in elements.items():
     ax.text(v[0], v[1] + 0.1, k, color='black', fontsize=12)  # Label
 
 # Add the circles to the plot
-ax.add_artist(circle_x)
-ax.add_artist(circle_y)
+ax.add_artist(circle_a)
+ax.add_artist(circle_b)
 
-# Add legend and grid
-ax.legend(fontsize=16, loc='upper left')
+# Register the custom handler with the modified smaller circle for the legend
+plt.legend(handler_map={mpatches.Circle: HandlerCircle()}, fontsize=16, loc='upper left')
+
+# Add grid and clean up axes
 ax.grid(True)
-
-# Hide the axes for a cleaner look
 ax.set_xticks([])
 ax.set_yticks([])
 ax.spines['top'].set_visible(False)
@@ -78,6 +88,7 @@ ax.spines['left'].set_visible(False)
 
 plt.show()
 
+
     ```, 
   width: 360pt),
 caption: [], 
@@ -85,11 +96,24 @@ caption: [],
 ]
 ]
 ]
+#v(30pt)
+#only("3-")[
+  - $|A|=?$
+]
+#only("4-")[
+  - $|B|=?$
+]
+#only("3")[
+  #voiceover("Bestimme die Mächtigkeit der Menge A,")
+]
+#only("4")[
+  #voiceover("und bestimme die Mächtigkeit der Menge B!")
+  ]
 ]
 #questionDef(
-  questionText: "Was ist $|X|$, die Mächtigkeit von X? Und was ist $|Y|$, die Mächtigkeit von Y?",
+  questionText: "Was ist $|A|$, die Mächtigkeit von A? Und was ist $|B|$, die Mächtigkeit von B?",
   // use latex!
-  answerOptions: ("$|X|=6, |Y|=5$", "$|X|=0, |Y|=0$"),
+  answerOptions: ("$|A|=6, |B|=5$", "$|A|=0, |B|=0$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,
@@ -99,7 +123,7 @@ caption: [],
         tolerance: none
         )
       ),
-      answerOptionMatcher:("$|X|=\key{a}, |Y|=\key{b}$"),
+      answerOptionMatcher:("$|A|=\key{a}, |B|=\key{b}$"),
       answerOptionsTypes: (
         "a": "number",
         "b": "number"

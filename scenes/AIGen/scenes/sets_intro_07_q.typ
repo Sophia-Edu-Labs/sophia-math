@@ -38,6 +38,6 @@
 #questionDef(
 questionText: "Welche der Aussagen trifft zu?",
 // use latex!
-answerOptions: ("$X\subseteq Z$", "$Y\not\subset X$", "$Z\subset Y$", "$X\subset Y$"),
+answerOptions: ("$X\subseteq Z$", "$Y\\not\subset X$", "$Z\subset Y$", "$X\subset Y$"),
 correctAnswerIndex: 1,
 )

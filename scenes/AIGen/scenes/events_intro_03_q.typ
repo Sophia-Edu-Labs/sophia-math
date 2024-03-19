@@ -37,5 +37,5 @@ Welche der folgenden Optionen ist ein #text(weight: "bold")[Ergebnis]?
 questionText: "Welche Option ist ein Ergebnis beim dreimaligen Würfeln?",
 answerOptions: ("Alle Würfe $1$", "Nur $1$er und $2$er", "$1$. Wurf gerade, $2$. Wurf ungerade, $3$. Wurf gerade",
 "$1$. Wurf $1$, $2$. Wurf $>1$. Wurf, $3$. Wurf $<2$. Wurf"),
-correctAnswerIndex: 3
+correctAnswerIndex: 0
 )

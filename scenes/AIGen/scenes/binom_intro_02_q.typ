@@ -14,17 +14,17 @@
 ]
   #slide()[
 #only("1")[
-  #voiceover("Jetzt bist du dran, üben wir mit einem Beispiel: Was ist die Fakultät von 6")
+  #voiceover("Jetzt bist du dran, üben wir mit einem Beispiel: Was ist die Fakultät von 5")
 ]
 #text(size: 30pt, weight: "bold")[Fakultät!]
 #v(40pt)
-#only("1-")[#text()[$ 6! = ? $]]
+#only("1-")[#text()[$ 5! = ? $]]
 ]
 
 #questionDef(
   questionText: "Was ist der Wert von $6!$?",
   // use latex!
-  answerOptions: ("$720$", "$0$"),
+  answerOptions: ("$120$", "$0$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,

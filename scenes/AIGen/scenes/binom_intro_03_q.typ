@@ -14,10 +14,10 @@
 ]
   #slide()[
 #only("1")[
-  #voiceover("Ok noch eine Aufgabe und ich geb dir einen Tipp: Bei dieser Aufgabe gibt es einen Trick, der dir das leben einfacher macht!")
+  #voiceover("Jetzt die Frage an dich:")
 ]
 #only("2")[
-  #voiceover("Welchen Wert hat 11 Fakultät geteilt durch 9 Fakultät?")
+  #voiceover("Berechne den Wert von 5 Fakultät geteilt durch 3 Fakultät. Tipp: Bei dieser Aufgabe gibt es einen Trick, der dir das leben einfacher macht!")
 ]
 #text(size: 30pt, weight: "bold")[Fakultät!]
 #v(40pt)
@@ -25,9 +25,9 @@
 ]
 
 #questionDef(
-  questionText: "Was ist der Wert von $\\tfrac{11!}{9!}$?",
+  questionText: "Was ist der Wert von $\\tfrac{5!}{3!}$?",
   // use latex!
-  answerOptions: ("$110$", "$0$"),
+  answerOptions: ("$20$", "$0$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,

@@ -11,6 +11,7 @@
 #only("1-")[Ereignisse:]
 #v(10pt)
 A: Kugel mit gerader Zahl
+
 B: Kugel mit Zahl größer als 7
 #v(20pt)
 #only("2-")[Schritt 1: Bestimme $P(B)$]

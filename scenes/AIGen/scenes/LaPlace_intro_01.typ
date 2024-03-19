@@ -35,9 +35,7 @@
 #only("2-")[- Berechnet Wahrscheinlichkeit eines Ereignisses E]
 #v(20pt)
 #only("3-")[- Beispiel: P("Gerade Augenzahl")]
-#only("4-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}|]
-#only("5-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}| = 3/6]
-#only("6-")[- Beispiel: P("Gerade Augenzahl") = |{2,4,6}|/|{1,2,3,4,5,6}| = 1/2]
+#only("4")[$ P("Gerade") = (|"Günstige"|)/(|"Mögliche"|)$]#only("5")[$ P("Gerade") = (|{2,4,6}|)/(|{1,2,3,4,5,6}|) $]#only("6-")[$ P("Gerade") = (|{2,4,6}|)/(|{1,2,3,4,5,6}|) = 1/2$ ]
 
 #only("1")[
 #voiceover("Die Laplace-Formel ist eine Methode zur Berechnung von Wahrscheinlichkeiten. Sie lautet: Die Wahrscheinlichkeit eines Ereignisses E ist gleich der Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse.")
@@ -49,13 +47,13 @@
 #voiceover("Nehmen wir als Beispiel den einmaligen Würfelwurf. Angenommen, wir wollen wissen wie wahrscheinlich es ist, dass wir eine gerade Augenzahl würfeln.")
 ]
 #only("4")[
-#voiceover("Dafür müssen wir die Anzahl der günstigen Ergebnisse und die Anzahl der möglichen Ergebnisse bestimmen. Die günstigen Ergebnisse sind die geraden Zahlen 2, 4 und 6. Die möglichen Ergebnisse sind die Zahlen 1 bis 6.")
+#voiceover("Dafür müssen wir die Anzahl der günstigen Ergebnisse und die Anzahl der möglichen Ergebnisse bestimmen.")
 ]
 #only("5")[
-#voiceover("Die Menge der günstigen enthält drei Elemente, nämlich 2, 4 und 6. Die Menge der möglichen Ergebnisse enthält sechs Elemente, nämlich 1, 2, 3, 4, 5 und 6.")
+#voiceover("Die günstigen Ergebnisse sind die geraden Zahlen 2, 4 und 6. Die möglichen Ergebnisse sind die Zahlen 1 bis 6. Die Menge der günstigen enthält also drei Elemente, nämlich 2, 4 und 6. Die Menge der möglichen Ergebnisse enthält sechs Elemente, nämlich 1, 2, 3, 4, 5 und 6.")
 ]
 #only("6")[
-#voiceover("Die Wahrscheinlichkeit, eine gerade Augenzahl zu würfeln, beträgt also 3/6 oder 1/2.")
+#voiceover("Die Wahrscheinlichkeit, eine gerade Augenzahl zu würfeln, beträgt also drei sechstel, also ein halb.")
 ]
 ]
 #slide()[
@@ -88,7 +86,7 @@
 #voiceover("Fassen wir zusammen: Wahrscheinlichkeit ist ein Maß dafür, wie sehr wir ein Ereignis erwarten können.")
 ]
 #only("2")[
-#voiceover("Die Wahrscheinlichkeit eines Ereignisses E lässt sich mit der Laplace-Formel berechnen als Quotient aus der Anzahl der günstigen und der Anzahl der möglichen Ergebnisse.")
+#voiceover("Die Wahrscheinlichkeit eines Ereignisses E lässt sich mit der Laplace-Formel berechnen als Quotient aus der Anzahl der günstigen und der Anzahl der möglichen Ergebnisse. Dafür schreiben wir diese einfach als Menge, und teilen dann die jeweiligen Mächtigkeiten.")
 ]
 #only("3")[
 #voiceover("Voraussetzung für die Anwendbarkeit der Laplace-Formel ist, dass es endlich viele, gleich wahrscheinliche Ergebnisse gibt. Mit diesem Wissen kannst du jetzt einfache Wahrscheinlichkeiten berechnen!")

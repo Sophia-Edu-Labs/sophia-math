@@ -70,23 +70,20 @@ $P(A|B) = (P(A sect B))/(P(B))$
 
 ]
 ]
+
 #questionDef(
 questionText: "Was ist $P(A|B)$?",
-
 // use latex!
-answerOptions: ("$\frac{2}{3}$", "0"),
+answerOptions: ("$\frac{2}{3}$", "$\frac{1}{2}$"),
 correctAnswerIndex: 0,
-
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (
 roundingDecimalPlaces: 2,
-
 tolerance: none
 )
 ),
 answerOptionMatcher:("$\key{a}$")
 ),
-
 )

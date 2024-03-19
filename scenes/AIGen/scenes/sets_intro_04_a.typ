@@ -15,11 +15,6 @@
   
 
 #slide()[
-  #only("1")[
-    #voiceover("Das ist richtig, toll gemacht! ")
-  ]
-#text(size: 30pt, weight: "bold")[Mächtigkeit]
-  #v(40pt)
 
 #box()[
   #morphchildren(id: "plot")[
@@ -27,10 +22,22 @@
   pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.legend_handler import HandlerPatch
+import matplotlib.patches as mpatches
+
+class HandlerCircle(HandlerPatch):
+    def create_artists(self, legend, orig_handle,
+                        xdescent, ydescent, width, height, fontsize, trans):
+        # Adjust the radius here for a smaller circle in the legend
+        radius = width // 8  # Decreased radius for a smaller circle
+        circle = mpatches.Circle((radius - xdescent + width // 2, height // 2 - ydescent),
+                                 radius, facecolor=orig_handle.get_facecolor(),
+                                 edgecolor=orig_handle.get_edgecolor(),
+                                 linewidth=orig_handle.get_linewidth(), transform=trans)
+        return [circle]
 
 # Define initial and additional elements together with two outside elements
-# Adjusting point 'd' position (now referred to as 'P_4') to the left
-elements_coordinates = [(-0.5, 0.5), (0.5, -0.5), (0.3, -0.7), (-1.0, -0.2), (1.5, 0), (-1.2, 1.2), (0, 1)]  # Added new point
+elements_coordinates = [(-0.5, 0.5), (0.5, -0.5), (0.3, -0.7), (-1.0, -0.2), (1.5, 0), (-1.2, 1.2), (0, 1)]
 
 # Generate names a, b, c, ... for each element
 elements_names = [f'{chr(97+i)}' for i in range(len(elements_coordinates))]
@@ -44,11 +51,9 @@ ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 3)
 ax.set_aspect('equal')
 
-# Increase the radius of the first circle representing set X, and move it a bit to the left
-circle_x = plt.Circle((-0.5, 0), 1.5, color='green', fill=False, linewidth=3, label='Set X')  # Increased radius to 1.5
-
-# Increase the radius of the second circle representing set Y with a larger radius and different color
-circle_y = plt.Circle((1.2, 0.5), 2, color='orange', fill=False, linewidth=3, label='Set Y')  # Increased radius to 2
+# Draw the circles representing the sets and rename them to A and B
+circle_a = plt.Circle((-0.5, 0), 1.5, color='green', fill=False, linewidth=3, label='Menge A')  # Renamed to Set A
+circle_b = plt.Circle((1.2, 0.5), 2, color='orange', fill=False, linewidth=3, label='Menge B')  # Renamed to Set B
 
 # Add the elements to the plot
 for k, v in elements.items():
@@ -56,14 +61,14 @@ for k, v in elements.items():
     ax.text(v[0], v[1] + 0.1, k, color='black', fontsize=12)  # Label
 
 # Add the circles to the plot
-ax.add_artist(circle_x)
-ax.add_artist(circle_y)
+ax.add_artist(circle_a)
+ax.add_artist(circle_b)
 
-# Add legend and grid
-ax.legend(fontsize=16, loc='upper left')
+# Register the custom handler with the modified smaller circle for the legend
+plt.legend(handler_map={mpatches.Circle: HandlerCircle()}, fontsize=16, loc='upper left')
+
+# Add grid and clean up axes
 ax.grid(True)
-
-# Hide the axes for a cleaner look
 ax.set_xticks([])
 ax.set_yticks([])
 ax.spines['top'].set_visible(False)
@@ -73,23 +78,24 @@ ax.spines['left'].set_visible(False)
 
 plt.show()
 
+
     ```, 
   width: 360pt),
 caption: [], 
 )
 ]
 ]
-#v(60pt)
-#only("2-")[
-- $|X|= 6$
-  ]
+
+#v(30pt)
+#only("-1")[- $|A|=?$]#only("2-")[- $|A|=6$]
+#only("-2")[- $|B|=?$]#only("3-")[- $|B|=5$]
+#only("1")[
+  #voiceover("Super, das ist richtig! Die Menge A enthält ja die Elemente a,b, c, d, f und g. Das sind ja sechs Elemente. Also ")
+]
 #only("2")[
-  #voiceover("Die Mächtigkeit der Menge X beträgt 6, denn die Punkte a,b, c, d, f und g sind in der Menge X enthalten. ")
-  ]
-#only("3-")[
-- $|Y|= 5$
-  ]
+  #voiceover("ist die Mächtigkeit der Menge A gleich 6! Und die Menge B enthält die Elemente a, b, c, e und g. Das sind fünf Elemente. Also")
+]
 #only("3")[
-  #voiceover("Und die Mächtigkeit der Menge üpsilon beträgt 5, denn die Punkte a, b, c, e und g sind in der Menge üpsilon enthalten. ")
+  #voiceover("ist die Mächtigkeit der Menge B gleich 5!")
   ]
 ]

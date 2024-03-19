@@ -47,6 +47,6 @@
   #voiceover("Fun fact Nummer zwei: Die Fakultät von 0 ist 1. ... Das muss man sich einfach merken.")
 ]
 #only("3")[
-  #voiceover("Und zum Abschied: fact Nummer drei: Die Fakultät von 7 ist 5040. schon krass, wie schnell das wächst, oder?!")
+  #voiceover("Und zum Abschied: fact Nummer drei: Die Fakultät von 7 ist fünf tausend vierzig. schon krass, wie schnell das wächst, oder?!")
 ]
 ]

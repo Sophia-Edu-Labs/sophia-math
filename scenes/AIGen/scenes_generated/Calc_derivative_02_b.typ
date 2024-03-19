@@ -73,6 +73,6 @@
     #voiceover("Die Ableitung von zwei mal x hoch fünf ist zehn mal x hoch vier.")
   ]
   #only("6")[
-    #voiceover("Die Ableitung von minus drei mal x ist minus drei. Und damit haben wir alle Terme differenziert. ... Die vollständige Ableitung von f von x ist also neun mal x hoch zwei plus zehn mal x hoch vier minus drei.")
+    #voiceover("und die Ableitung von minus drei mal x ist minus drei. Und damit haben wir alle Terme differenziert. ... Die vollständige Ableitung von f von x ist also neun mal x hoch zwei plus zehn mal x hoch vier minus drei.")
   ]
 ]

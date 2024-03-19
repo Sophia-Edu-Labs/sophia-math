@@ -9,7 +9,7 @@
 
 #only("1")[
 
-  #voiceover("Fast richtig! Gehen wir gemeinsam Schritt für Schritt durch die Lösung.")
+  #voiceover("Das stimmt leider nicht ganz... Gehen wir gemeinsam Schritt für Schritt durch die Lösung.")
 
 ]
 
