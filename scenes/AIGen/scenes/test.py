@@ -1,59 +1,25 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.legend_handler import HandlerPatch
-import matplotlib.patches as mpatches
 
-class HandlerCircle(HandlerPatch):
-    def create_artists(self, legend, orig_handle,
-                        xdescent, ydescent, width, height, fontsize, trans):
-        # Adjust the radius here for a smaller circle in the legend
-        radius = width // 8  # Decreased radius for a smaller circle
-        circle = mpatches.Circle((radius - xdescent + width // 2, height // 2 - ydescent),
-                                 radius, facecolor=orig_handle.get_facecolor(),
-                                 edgecolor=orig_handle.get_edgecolor(),
-                                 linewidth=orig_handle.get_linewidth(), transform=trans)
-        return [circle]
+def f(x):
+    return np.log(4-x) + 1/x
 
-# Define initial and additional elements together with two outside elements
-elements_coordinates = [(-0.5, 0.5), (0.3, -0.7), (-1.0, -0.2), (1.5, 0), (0, 1)]
+x = np.linspace(-5, 5, 400)
+y = np.where((x < 4) & (~((x > -0.1) & (x < 0.1))), f(x), np.nan)
 
-# Generate names a, b, c, ... for each element
-elements_names = [f'{chr(97+i)}' for i in range(len(elements_coordinates))]
+plt.figure(figsize=(8, 6))
+plt.plot(x, y)
 
-# Convert to dictionary for easy handling
-elements = dict(zip(elements_names, elements_coordinates))
+plt.scatter([0], [0], color='red', s=100, label='Nicht definiert') # Point of discontinuity
+plt.scatter([4], [0], color='red', s=100) # Point of discontinuity
 
-# Define the figure and axis
-fig, ax = plt.subplots()
-ax.set_xlim(-3, 3)
-ax.set_ylim(-3, 3)
-ax.set_aspect('equal')
+# Drawing a red line at y=0 from x=4 to x=5
+plt.plot([4, 5], [0, 0], color='red', linewidth=4) # This replaces the plt.axhline call for this specific segment
 
-# Draw the circles representing the sets and rename them to A and B
-circle_a = plt.Circle((-0.5, 0), 1.5, color='green', fill=False, linewidth=3, label='Menge A')  # Renamed to Set A
-circle_b = plt.Circle((1.2, 0.5), 2, color='orange', fill=False, linewidth=3, label='Menge B')  # Renamed to Set B
+plt.xlim(-5, 5)
+plt.ylim(-5, 5)
 
-# Add the elements to the plot
-for k, v in elements.items():
-    ax.plot(v[0], v[1], 'o', color='purple')  # Point
-    ax.text(v[0], v[1] + 0.1, k, color='black', fontsize=12)  # Label
-
-# Add the circles to the plot
-ax.add_artist(circle_a)
-ax.add_artist(circle_b)
-
-# Register the custom handler with the modified smaller circle for the legend
-plt.legend(handler_map={mpatches.Circle: HandlerCircle()}, fontsize=16, loc='upper left')
-
-# Add grid and clean up axes
-ax.grid(True)
-ax.set_xticks([])
-ax.set_yticks([])
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['bottom'].set_visible(False)
-ax.spines['left'].set_visible(False)
-
-plt.show()
+plt.grid(True)
+plt.legend()
 
 plt.savefig("test.png")

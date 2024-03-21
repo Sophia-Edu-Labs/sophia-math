@@ -1,0 +1,32 @@
+Funktionen und Graphen
+
+1. Definitions- und Wertebereich Polstellen mit und ohne Vorzeichenwechsel; behebbare Definitionslücken
+2. Grenzwertverhalten und Asymptoten
+3. Achsen- und Punktsymmetrie
+4. Schnittpunkte mit den Koordinatenachsen
+5. Stetigkeit und Differenzierbarkeit
+6. Funktionsgraphen spiegeln, verschieben und strecken
+7. UmkehrfunktionFunktionen und Graphen
+
+
+Differentialrechnung
+
+1. Ableitung von Potenz-, Exponential-, Logarithmus- und Sinusfunktionen
+2. Ableitungsregeln (Summen-, Faktor-, Produkt-, Quotienten-, Kettenregel)
+3. Mittlere und lokale Änderungsrate
+4. Tangenten- und Normalengleichung
+5. Schnittwinkel eines Graphen mit der x-Achse
+6. Monotonie; Hoch-, Tief- und Terrassenpunkte
+7. Krümmung; Wendepunkte
+8. Newton-Verfahren
+
+
+Integralrechnung
+
+1. Stammfunktion von Potenz-, Exponential-, Logarithmus- und Sinusfunktionen
+2. Integrationsregeln
+3. a. Fläche unter einer Kurve
+3. b. Fläche zwischen zwei Kurven
+4. Ins Unendliche reichende Flächen
+5. Bestimmung eines Bestands aus einer Änderungsrate
+6. Integralfunktionen
