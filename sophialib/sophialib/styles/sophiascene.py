@@ -60,6 +60,13 @@ class SophiaScene(VoiceoverScene):
 
     def current_locale(self) -> str:
         return CURRENT_LOCALE
+    
+    def current_elevenlabs_voice(self) -> Optional[str]:
+        # if the current speech service from the environment is elevenlabs, use the voice from the environment, otherwise no specific voice
+        if os.environ.get('SPEECH_SERVICE') == 'elevenlabs':
+            return self.elevenlabsvoiceoverride if hasattr(self, "elevenlabsvoiceoverride") else os.getenv("ELEVENLABS_VOICE")
+        
+        return None
 
     def translate(self, key: str, fallback: Optional[str] = None) -> str:
         # use the translate helpers to search for the given key in the translation files

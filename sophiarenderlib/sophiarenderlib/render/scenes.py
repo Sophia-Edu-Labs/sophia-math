@@ -18,7 +18,8 @@ def render_scene(sc: Type[SophiaScene], output_dir: Path, scene_media_folder: Pa
     if test_run_with_last_frame:
         output_path = (output_dir/sc.__module__/f"{sc.__name__}_lastframe.png").resolve()
     else: 
-        locale_prefix = f"{sc().current_locale().upper()}_" if include_locale_in_file else ""
+        elevenlabs_voice_name = sc().current_elevenlabs_voice()
+        locale_prefix = f"{sc().current_locale().upper()}{'['+elevenlabs_voice_name+']' if elevenlabs_voice_name is not None else ''}_" if include_locale_in_file else ""
         output_path = (output_dir/sc.__module__/f"{locale_prefix}{sc.__name__}.mp4").resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True) #make sure always exist
     config = {"quality": quality, "preview": False, "output_file": str(output_path), "disable_caching": True, "media_dir": scene_media_folder} # disable caching is important for manim-voiceover (due to a bug in manim)
