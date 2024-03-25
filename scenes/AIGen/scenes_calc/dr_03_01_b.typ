@@ -13,7 +13,7 @@
 #only("6-")[- Grenzwerte für $x -> 0^-$ und $x -> 0^+$]
 #only("7-")[- Wertebereich von $f(x)$]
 #only("1")[
-#voiceover("Richtig, toll gemacht. Wir suchen ja den Wertebereich")
+#voiceover("Das stimmt leider nicht. Wir suchen ja den Wertebereich")
 ]
 #only("2")[
 #voiceover("der Funktion f von x gleich e hoch x plus eins durch x Quadrat.")
