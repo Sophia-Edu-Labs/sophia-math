@@ -36,10 +36,11 @@
 ]
 ]
 
+
 #questionDef(
   questionText: "Wie oft muss man mindestens einen fairen sechsseitigen Würfel werfen, damit man mit einer Wahrscheinlichkeit von mindestens $95\%$ mindestens eine Drei würfelt?",
   // use latex!
-  answerOptions: ("$11 mal", "$0$$ mal"),
+  answerOptions: ("$11$ mal", "$0$ mal"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,

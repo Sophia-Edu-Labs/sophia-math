@@ -21,7 +21,7 @@ import numpy as np
 mu = 7
 sigma = 2
 x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
-y = 1/(sigma np.sqrt(2 np.pi)) np.exp( - (x - mu)*2 / (2 sigma*2))
+y = 1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2))
 fig, ax = plt.subplots(figsize=(6, 4))
 ax.plot(x, y)
 ax.set_xlabel('X')

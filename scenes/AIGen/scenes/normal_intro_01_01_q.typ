@@ -55,10 +55,10 @@ plt.show()
 
   #questionDef(
     questionText: "Bestimme den Erwartungswert μ der dargestellten Normalverteilung:",
-    answerOptions: ("μ = 85", "μ = 0"),
-    correctAnswerIndex: 1,
+    answerOptions: ("μ = 100", "μ = 0"),
+    correctAnswerIndex: 0,
     freeTextDetail: (
-      fallbackOptionIndex: 2,
+      fallbackOptionIndex: 1,
       answerOptionsEquality: ( 
         a: (
           roundingDecimalPlaces: 0,

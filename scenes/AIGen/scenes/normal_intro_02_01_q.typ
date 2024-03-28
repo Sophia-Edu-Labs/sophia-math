@@ -57,11 +57,11 @@ Bestimme $P(X > 550)$]
 ]
 #questionDef(
 
-questionText: "Bestimme P(X > 550) für die gegebene Normalverteilung:",
+questionText: "Bestimme P(X > 550) für die gegebene Normalverteilung, gib die Lösung auf ganze Prozent gerundet an.",
 answerOptions: ("P(X > 550) ≈ 16%","P(X > 550) ≈ 0%"),
 correctAnswerIndex: 0,
 freeTextDetail: (
-fallbackOptionIndex: 2,
+fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (roundingDecimalPlaces: 1, tolerance: 0.1)),
 answerOptionMatcher:("P(X > 550) ≈ \\key{a}%"),

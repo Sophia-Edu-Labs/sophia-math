@@ -36,10 +36,12 @@
 ]
 ]
 
+
+
 #questionDef(
   questionText: "Wie oft muss man mindestens einen fairen sechsseitigen Würfel werfen, damit man mit einer Wahrscheinlichkeit von mindestens $99\%$ mindestens eine durch $3$ teilbare Zahl würfelt?",
   // use latex!
-  answerOptions: ("$12 mal", "$0$$ mal"),
+  answerOptions: ("$12$ mal", "$0$ mal"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,

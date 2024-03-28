@@ -22,8 +22,8 @@ mu = 0
 sigma1 = 7
 sigma2 = 8
 x = np.linspace(mu - 3*max(sigma1, sigma2), mu + 3*max(sigma1, sigma2), 100)
-y1 = 1/(sigma1 np.sqrt(2 np.pi)) np.exp( - (x - mu)*2 / (2 sigma1*2))
-y2 = 1/(sigma2 np.sqrt(2 np.pi)) np.exp( - (x - mu)*2 / (2 sigma2*2))
+y1 = 1/(sigma1 np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma1**2))
+y2 = 1/(sigma2 np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma2**2))
 fig, ax = plt.subplots(figsize=(6, 4))
 ax.plot(x, y1, color='green', label='Verteilung 1')
 ax.plot(x, y2, color='orange', label='Verteilung 2')
