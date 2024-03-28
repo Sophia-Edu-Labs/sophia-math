@@ -6,7 +6,7 @@
 #it.body
 ]
 #slide()[
-#text(size: 30pt, weight: "bold")[Bernoulli-Verteilung: Lotterie]
+#text(size: 30pt, weight: "bold")[Bernoulli-Verteilung]
 #v(20pt)
 #only("2-")[Erfolg: Gewinn > Lospreis]
 #v(20pt)

@@ -21,7 +21,7 @@
 #v(10pt)
 #only("6-")[$p = 1/6+1/6=1/3$]
 #only("1")[
-#voiceover("Klasse, das stimmt. Lass uns die Erfolgswahrscheinlichkeit für das Würfelspiel berechnen.")
+#voiceover("Leider nicht ganz richtig. Lass uns die Erfolgswahrscheinlichkeit für das Würfelspiel berechnen.")
 ]
 #only("2")[
 #voiceover("Ein Erfolg liegt vor, wenn der Gewinn mindestens 15 Euro beträgt.")

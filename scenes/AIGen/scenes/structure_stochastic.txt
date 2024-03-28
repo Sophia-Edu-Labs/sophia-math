@@ -32,7 +32,7 @@ AUFGABENTYPEN
 5 stochastische Unabhängigkeit + Übung -> "Done" 
 6 Bedingte Wahrscheinlichkeit + Übung -> "Done" 
 7 Binomialverteiluung + Übungen 
-8 Erwartungswert + Übung
+8 Erwartungswert + Übung -> "Done" 
 9 3M Aufgaben + Übung
 10 Normalverteilung + Übung
 
