@@ -91,6 +91,7 @@ class ElevenlabsVoiceoverService(SpeechService):
         if voice_name not in [ v.name for v in self.voices]:
             raise ValueError(f"Voice name {voice_name} not found in voices list gotten from elevenlabs api!")
         self.voice_name = voice_name
+        self.voice_id = [v.voice_id for v in self.voices if v.name == voice_name][0]
 
         print(f"Available voices: {', '.join([v.name for v in self.voices])}")
 
@@ -113,7 +114,7 @@ class ElevenlabsVoiceoverService(SpeechService):
         
         # iterate over all history items and break if the text was found or the item is older than max_days_ago (if iteration is finished before, try to request more pages)
         for item in history: # when iterating over history, the elevenlabs api will automatically retrieve the pages
-            if item.text == text:
+            if item.text == text and item.voice_id == self.voice_id:
                 # get the audio bytes from the history item
                 return item.audio
             elif item.date < max_days_ago:
