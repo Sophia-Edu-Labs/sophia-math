@@ -13,13 +13,14 @@
 #text(size: 30pt, weight: "bold")[Binomialverteilung]
 #v(40pt)
 #only("2-")[
-$n = 10$ (Anzahl Versuche)
+- $n = 10$ (Anzahl Versuche)
 ]
 #only("3-")[
-$p = 0,5$ (Erfolgswahrscheinlichkeit)
+- $p = 0,5$ (Wahrscheinlichkeit)
 ]
 #only("4-")[
-$k = 5$ (gesuchte Anzahl Erfolge)
+- $k = 5$ (gesuchte Anzahl Erfolge)
+#v(30pt)
 ]
 #only("2")[
 #voiceover("Da wir die Münze zehn mal werfen, ist n gleich zehn.")
@@ -44,12 +45,14 @@ $=binom(10,5) dot 0.5^10$
 
 ]
 #only("7-")[
-$=252 dot 0.5^10 approx 25% $
+$=252 dot 0.5^10$
+
+$approx 25% $
 ]
 #only("6")[
 #voiceover("Wir können dann den Ausdruck null komma fünf hoch fünf mal 1 minus null komma fünf hoch 10 minus fünf als null komma fünf hoch 10 vereinfachen.")
 ]
-#only("8")[
+#only("7")[
 #voiceover("und erhalten dann zweihundertzweiundfünfzig mal Null komma fünf hoch 10, was ungefähr 25 Prozent ergibt.")
 ]
 ]

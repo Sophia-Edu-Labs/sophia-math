@@ -36,4 +36,4 @@ AUFGABENTYPEN
 9 3M Aufgaben + Übung
 10 Normalverteilung + Übung
 
-cond_prob_intro_3_ab
+FAILED: Bernoulli_intro_1, AI_sets_intro_04_01_a

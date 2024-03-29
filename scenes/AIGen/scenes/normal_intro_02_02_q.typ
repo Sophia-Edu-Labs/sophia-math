@@ -64,15 +64,15 @@ Berechne $P(X < 485 approx "mm")$]
 #questionDef(
 questionText: "Bestimme die Wahrscheinlichkeit P dafür, dass eine zufällig ausgewählte Schraube kürzer als 485 mm ist, auf Prozent gerundet.",
 answerOptions: (
-"P(X < 485 mm) ≈ 7%",
-"P(X < 485 mm) ≈ 93%"
+"$P(X < 485 mm) ≈ 7$%",
+"P(X < 485 mm) ≈ 93$%"
 ),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (roundingDecimalPlaces: 1, tolerance: 0.1)),
-answerOptionMatcher:("P(X < 485~mm) ≈ \\key{a}%"),
+answerOptionMatcher:("$P(X < 485 mm) ≈ \\key{a}$%"),
 answerOptionsTypes: (
 "a": "number",
 )
