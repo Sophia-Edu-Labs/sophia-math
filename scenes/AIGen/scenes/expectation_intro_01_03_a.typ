@@ -93,4 +93,4 @@ $E(X) = 0 dot 1/2 + 30 dot 1/6 + 60 dot 1/3$]
 #voiceover("Das ist gleich 0 plus 5 plus 20, was insgesamt 25 ergibt. Also beträgt der Erwartungswert des Gewinns 25 Euro.")
 ]
 ]
-]
+

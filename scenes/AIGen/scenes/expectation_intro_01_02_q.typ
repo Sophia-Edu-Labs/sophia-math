@@ -77,8 +77,8 @@ $ E(X) = sum_(i=1)^n x_i dot p_i $
 
 #questionDef(  
 questionText: "Was ist der Erwartungswert $E(X)$ der Anzahl der Eurostücke bei einem Gebrauch der Zaubertasse?", 
-answerOptions: ("$1$", "$3$", "$5$"),
-correctAnswerIndex: 1,
+answerOptions: ("$3$", "$0$"),
+correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
@@ -87,6 +87,6 @@ roundingDecimalPlaces: 2,
 tolerance: none  
 )
 ),
-answerOptionMatcher:("$\\\\key{a}$")
+answerOptionMatcher:("$\\key{a}$")
 ),
 )

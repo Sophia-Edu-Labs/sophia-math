@@ -17,6 +17,8 @@
 #voiceover("Wie oft muss man mindestens einen fairen sechsseitigen Würfel werfen, damit man mit einer Wahrscheinlichkeit von mindestens 95 Prozent mindestens eine gerade Zahl würfelt?")
 ]
 #v(40pt)
+]
+
 #questionDef(
 questionText: "Wie oft muss man mindestens einen fairen sechsseitigen Würfel werfen, damit man mit einer Wahrscheinlichkeit von mindestens $95\%$ mindestens eine gerade Zahl würfelt?",
 answerOptions: ("$4$ mal", "$0$ mal"),
@@ -35,4 +37,3 @@ answerOptionsTypes: (
 )
 ),
 )
-]

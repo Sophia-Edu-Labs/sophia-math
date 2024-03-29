@@ -17,13 +17,13 @@
 #v(10pt)
 ]
 #only("3-")[
-- Niete (0€): 60%
+- Niete (0€): 50%
 ]
 #only("4-")[
-- Trostpreis (10€): 30% 
+- Trostpreis (5 €): 40% 
 ]
 #only("5-")[
-- Hauptgewinn (50€): 10%
+- Gewinn (20 Euro): 10%
 ]
 #only("6-")[
 Berechne den Erwartungswert des Gewinns bei diesem Losspiel.
@@ -36,13 +36,13 @@ Berechne den Erwartungswert des Gewinns bei diesem Losspiel.
 #voiceover("Bei einem Losspiel gibt es folgende Gewinnmöglichkeiten:")
 ]
 #only("3")[
-#voiceover("Eine Niete mit 0 Euro und einer Wahrscheinlichkeit von 60 Prozent,")
+#voiceover("Eine Niete mit 0 Euro und einer Wahrscheinlichkeit von 50 Prozent,")
 ]
 #only("4")[
-#voiceover("einen Trostpreis von 10 Euro mit einer Wahrscheinlichkeit von 30 Prozent ")
+#voiceover("einen Trostpreis von 5 Euro mit einer Wahrscheinlichkeit von 40 Prozent ")
 ]
 #only("5")[
-#voiceover("und einen Hauptgewinn von 50 Euro mit einer Wahrscheinlichkeit von 10 Prozent.")
+#voiceover("und einen Hauptgewinn von 20 Euro mit einer Wahrscheinlichkeit von 10 Prozent.")
 ]
 #only("6")[
 #voiceover("Berechne den Erwartungswert des Gewinns bei diesem Losspiel.")
