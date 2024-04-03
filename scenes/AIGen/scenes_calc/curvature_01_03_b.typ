@@ -23,7 +23,7 @@
 #only("5-")[$->$ Rechtsgekrümmt]
 
 #only("1")[
-#voiceover("Das ist leider falsch. Wir haben die Funktion f von x gleich minus x hoch vier minus zwei x Quadrat plus vier x.")
+#voiceover("Super, das ist richtig. Wir haben die Funktion f von x gleich minus x hoch vier minus zwei x Quadrat plus vier x.")
 ]
 
 #only("2")[
