@@ -41,7 +41,7 @@
 #questionDef(
   questionText: "Wie viele Schüler mögen Kunst lieber? Und wie viele bevorzugen Musik?",
   // use latex!
-  answerOptions: ("$Kunst:16, Musik:9$", "$Kunst:0, Musik:0$"),
+  answerOptions: ("Kunst:$16$, Musik:$9$", "Kunst:$0$, Musik:$0$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,
@@ -51,7 +51,7 @@
         tolerance: none
         )
       ),
-      answerOptionMatcher:("$Kunst:\key{a}, Musik:\key{b}$"),
+      answerOptionMatcher:("Kunst:$\key{a}, Musik:$\key{b}$"),
       answerOptionsTypes: (
         "a": "number",
         "b": "number"

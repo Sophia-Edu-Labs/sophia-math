@@ -11,13 +11,18 @@ Funktionen und Graphen
 
 Differentialrechnung
 
-1. Ableitung von Potenz-, Exponential-, Logarithmus- und Sinusfunktionen
-2. Ableitungsregeln (Summen-, Faktor-, Produkt-, Quotienten-, Kettenregel)
+1. Polynome Ableiten: Monome, Summen und Faktorregel
+linear_derivative
+2. Sinus- und Exponentialfunktionen ableiten
+expln_derivative, trig_derivative
+3. Ableitungsregeln: Produktregel, Kettenregel, Quotientenregel
+chainrule, productrule, quotientrule
 3. Mittlere und lokale Änderungsrate
 4. Tangenten- und Normalengleichung
 5. Schnittwinkel eines Graphen mit der x-Achse
-6. Monotonie; Hoch-, Tief- und Terrassenpunkte
-7. Krümmung; Wendepunkte
+6. Monotonie; , Krümmung; Wendepunkte
+
+7. Hoch-, Tief- und Terrassenpunkte
 8. Newton-Verfahren
 
 

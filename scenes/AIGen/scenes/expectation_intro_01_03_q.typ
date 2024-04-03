@@ -94,8 +94,8 @@ $ E(X) = sum_(i=1)^n x_i dot p_i $
 
 #questionDef(  
 questionText: "Was ist der Erwartungswert $E(X)$ des Gewinns bei diesem Würfelspiel?", 
-answerOptions: ("$25€$", "$0€$"),
-correctAnswerIndex: 2,
+answerOptions: ("$25$", "$0$"),
+correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
@@ -104,6 +104,6 @@ roundingDecimalPlaces: 2,
 tolerance: none  
 )
 ),
-answerOptionMatcher:("$\\key{a}€$")
+answerOptionMatcher:("$\\key{a}$")
 ),
 )

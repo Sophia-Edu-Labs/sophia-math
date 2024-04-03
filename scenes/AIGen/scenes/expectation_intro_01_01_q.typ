@@ -21,7 +21,7 @@
 ]
 #only("4-")[
 - Trostpreis (5 €): 40% 
-]
+]33
 #only("5-")[
 - Gewinn (20 Euro): 10%
 ]
@@ -76,8 +76,8 @@ $ E(X) = sum_(i=1)^n x_i dot p_i $
 ]
 
 #questionDef(  
-questionText: "Was ist der Erwartungswert $E(X)$ des Gewinns bei diesem Losspiel?",
-answerOptions: ("$4€$", "$0€$"),
+questionText: "Was ist der Erwartungswert $E(X)$ des Gewinns bei diesem Losspiel in Euro?",
+answerOptions: ("$4$", "$0$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,  
