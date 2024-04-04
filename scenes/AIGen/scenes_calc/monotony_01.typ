@@ -8,9 +8,9 @@
 #only("1")[
 #voiceover("Monotonie trifft eine Aussage darüber, ob eine Funktion sich nur in eine Richtung entwickelt.")
 ]
-#only("2-")[- Monoton steigend: Funktion nimmt zu]
-#only("3-")[- Monoton fallend: Funktion nimmt ab]
-#only("4-")[- Ableitung gibt Auskunft über Monotonie]
+#only("2-")[- Monoton steigend: Funktion $arrow.t$]
+#only("3-")[- Monoton fallend: Funktion $arrow.b$]
+#only("4-")[- Ableitung bestimmt Monotonie]
 #only("2")[
 #voiceover("Eine Funktion ist monoton steigend, wenn sie immer größer wird, wenn x größer wird.")
 ]
@@ -25,9 +25,9 @@
 #text(size: 30pt, weight: "bold")[Monotonie bestimmen]
 #v(40pt)
 #only("1-")[- Ableitung der Funktion bilden]
-#only("2-")[- Vorzeichen der Ableitung untersuchen]
-#only("3-")[- Positiv ⇒ monoton steigend]
-#only("4-")[- Negativ ⇒ monoton fallend]
+#only("2-")[- Vorzeichen untersuchen]
+#only("3-")[- Positiv $->$ monoton steigend]
+#only("4-")[- Negativ $->$ monoton fallend]
 #only("1")[
 #voiceover("Um die Monotonie einer Funktion zu bestimmen, bilden wir also zuerst ihre Ableitung.")
 ]

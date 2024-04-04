@@ -21,8 +21,10 @@ chainrule, productrule, quotientrule
 4. Tangenten- und Normalengleichung
 5. Schnittwinkel eines Graphen mit der x-Achse
 6. Monotonie; , Krümmung; Wendepunkte
+monotony, curvature
 
 7. Hoch-, Tief- und Terrassenpunkte
+
 8. Newton-Verfahren
 
 

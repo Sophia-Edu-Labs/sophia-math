@@ -9,7 +9,7 @@
 #only("3-")[- $f''(x) = 12x^2 - 12$]
 #only("4-")[- $f''(x) = 0$ für $x = plus.minus 1$]
 #only("1")[
-#voiceover("Super, das stimmt genau! Wir wollen die Wendepunkte der Funktion f von x gleich x hoch vier minus sechs x Quadrat plus eins bestimmen.")
+#voiceover("Leider falsch... Wir wollen die Wendepunkte der Funktion f von x gleich x hoch vier minus sechs x Quadrat plus eins bestimmen.")
 ]
 #only("2")[
 #voiceover("Zuerst bilden wir die erste Ableitung. Sie lautet f Strich von x gleich vier x hoch drei minus zwölf x.")
