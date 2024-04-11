@@ -34,7 +34,4 @@ width: 360pt)
 questionText: "Ist die Funktion $f(x) = x^2 + x$ linksgekrümmt, rechtsgekrümmt oder keines von beiden?", 
 answerOptions: ("Linksgekrümmt", "Rechtsgekrümmt", "Keines von beiden"),
 correctAnswerIndex: 0,
-llmCheckDetails: (
-  fallbackOptionIndex: 0
-),
 )

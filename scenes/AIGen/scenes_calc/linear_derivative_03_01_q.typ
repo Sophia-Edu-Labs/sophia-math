@@ -16,7 +16,7 @@ Gesucht: Ableitung der Funktion
 ]
 
 #questionDef(
-  questionText: "Berechne die Ableitung der Funktion $f(x) = 3x^3 - 1/5 dot x^5$.",
+  questionText: "Berechne die Ableitung der Funktion $f(x) = 3x^3 - 1/5 x^5$.",
   answerOptions: ("Die Ableitung ist $f'(x) = 9x^2 - x^4$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (

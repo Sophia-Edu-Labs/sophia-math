@@ -21,7 +21,7 @@
 ]
 #text(size: 30pt, weight: "bold")[Fakultät!]
 #v(40pt)
-#only("2-")[#text(size: 45pt)[$ 11!/9! = ? $]]
+#only("2-")[#text(size: 45pt)[$ 5!/3! = ? $]]
 ]
 
 #questionDef(

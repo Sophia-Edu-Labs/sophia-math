@@ -47,7 +47,7 @@ $ D = \{x ∈ RR | ... \} $
 ]
 
 #questionDef(
-questionText: "Bestimme den Definitionsbereich von $f(x) = ln(4-x) + 1/x$.",
+questionText: "Bestimme den Definitionsbereich von $f(x) = ln(4-x) + \\frac1x$.",
 answerOptions: ("D = {x ∈ RR | x < 4, x ≠ 0} oder eine äquivalente Aussage. Dabei muss nur der Inhalt stimmen, die Schreibweise ist nicht wichtig.", "Die Antwort ist falsch."), 
 correctAnswerIndex: 0,
 llmCheckDetails: (

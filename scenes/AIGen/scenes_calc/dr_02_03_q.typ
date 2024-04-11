@@ -31,7 +31,7 @@ $ D = {x ∈ RR | ... } $
 #v(20pt)
 ]
 #questionDef(
-questionText: "Bestimme den Definitionsbereich von $h(x) = sqrt(3x+9) - 1/(x^2-4)$.",
+questionText: "Bestimme den Definitionsbereich von $h(x) = \sqrt(3x+9) - 1/(x^2-4)$.",
 answerOptions: ("D = {x ∈ RR | x ≥ -3, x ≠ -2, x ≠ 2} oder eine äquivalente Aussage. Dabei muss nur der Inhalt stimmen, die Schreibweise ist nicht wichtig.", "Die Antwort ist falsch."),
 correctAnswerIndex: 0,
 llmCheckDetails: (

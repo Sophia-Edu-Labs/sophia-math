@@ -51,10 +51,7 @@ width: 360pt),
 ]
 
 #questionDef(
-questionText: "Welche Aussage trifft zu?", 
-answerOptions: ("Rot: monoton steigend, Blau: monoton fallend", "Rot: monoton fallend, Blau: monoton steigend", "Beide monoton steigend", "Beide monoton fallend"),
-correctAnswerIndex: 3,
-llmCheckDetails: (
-  fallbackOptionIndex: 0
-),
+  questionText: "Welche Aussage trifft zu?", 
+  answerOptions: ("Rot: monoton steigend, Blau: monoton fallend", "Rot: monoton fallend, Blau: monoton steigend", "Beide monoton steigend", "Beide monoton fallend"),
+  correctAnswerIndex: 3,
 )

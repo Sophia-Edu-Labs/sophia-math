@@ -51,7 +51,7 @@
         tolerance: none
         )
       ),
-      answerOptionMatcher:("Kunst:$\key{a}, Musik:$\key{b}$"),
+      answerOptionMatcher:("Kunst:$\key{a}$, Musik:$\key{b}$"),
       answerOptionsTypes: (
         "a": "number",
         "b": "number"

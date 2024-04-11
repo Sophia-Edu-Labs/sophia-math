@@ -15,7 +15,7 @@
 #questionDef(
 questionText: "An welcher Stelle hat die Funktion $f(x) = 2x^3 - 4x$ einen Wendepunkt?", 
   // use latex!
-  answerOptions: ("$x=0$", "$|x|=1$"),
+  answerOptions: ("$x=0$", "$x=1$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,
@@ -25,7 +25,7 @@ questionText: "An welcher Stelle hat die Funktion $f(x) = 2x^3 - 4x$ einen Wende
         tolerance: none
         )
       ),
-      answerOptionMatcher:("$|x|=\key{a}$"),
+      answerOptionMatcher:("$x=\key{a}$"),
       answerOptionsTypes: (
         "a": "number",
       )

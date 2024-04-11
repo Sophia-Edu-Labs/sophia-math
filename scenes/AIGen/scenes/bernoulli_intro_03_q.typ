@@ -49,7 +49,7 @@ Was ist die Erfolgswahrscheinlichkeit $p$, mindestens 15 Euro Gewinn zu erzielen
 #questionDef(
 questionText: "Berechne die Erfolgswahrscheinlichkeit $p$ für das Bernoulli-Experiment.",
 // use latex!
-answerOptions: ("$\frac13$", "$\frac12$"),
+answerOptions: ("$\frac{1}{3}$", "$\frac{1}{2}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,

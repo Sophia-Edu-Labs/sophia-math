@@ -17,7 +17,13 @@ Gesucht: Ableitung der Funktion
 
 #slide()[
 #only("1")[
-  #voiceover("Wir wenden die Summenregel an und leiten jeden Summanden einzeln ab. Für die Ableitung der einzelnen Summanden nutzen wir die Ableitungsregeln für Sinus und Kosinus sowie die Faktorregel.")
+  #voiceover("Wir wenden die Summenregel an und leiten jeden Summanden einzeln ab.")
+]
+#only("2")[
+  #voiceover("Für die Ableitung der einzelnen Summanden nutzen wir die Ableitungsregeln für Sinus und Kosinus,")
+]
+#only("3")[
+  #voiceover("sowie die Faktorregel.")
 ]
 
 #text(size: 30pt, weight: "bold")[Ansatz]

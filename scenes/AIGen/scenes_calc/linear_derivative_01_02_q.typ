@@ -22,7 +22,7 @@ Gesucht: Ableitung der Funktion
 ]
 
 #questionDef(
-  questionText: "Was ist die Ableitung der Funktion $f(x) = x^(-3)$?",
+  questionText: "Was ist die Ableitung der Funktion $f(x) = x^{-3}$?",
   answerOptions: ("Die Ableitung ist $f'(x)=-3x^(-4)$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (

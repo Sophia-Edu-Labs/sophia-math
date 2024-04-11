@@ -22,7 +22,7 @@
 ]
 
 #questionDef(
-  questionText: "Was ist der Wert von $6!$?",
+  questionText: "Was ist der Wert von $5!$?",
   // use latex!
   answerOptions: ("$120$", "$0$"),
   correctAnswerIndex: 0,

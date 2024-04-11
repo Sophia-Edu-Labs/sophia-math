@@ -16,8 +16,8 @@ Gesucht: Ableitung der Funktion
 ]
 
 #questionDef(
-  questionText: "Was ist die Ableitung der Funktion $f(x) = 0.5x^4 + x^(-3)$?",
-  answerOptions: ("Die Ableitung ist $f'(x) = 2x^3 - 3x^(-4)$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
+  questionText: "Was ist die Ableitung der Funktion $f(x) = 0.5x^4 + x^{-3}$?",
+  answerOptions: ("Die Ableitung ist $f'(x) = 2x^3 - 3x^{-4}$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (
     fallbackOptionIndex: 1

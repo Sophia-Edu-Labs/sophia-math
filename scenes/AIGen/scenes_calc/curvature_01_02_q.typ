@@ -16,7 +16,4 @@
 questionText: "Ist die Funktion $f(x) = x^3 + 2x - 4$ linksgekrümmt, rechtsgekrümmt oder keines von beiden?", 
 answerOptions: ("Linksgekrümmt", "Rechtsgekrümmt", "Keines von beiden"),
 correctAnswerIndex: 2,
-llmCheckDetails: (
-  fallbackOptionIndex: 2
-),
 )

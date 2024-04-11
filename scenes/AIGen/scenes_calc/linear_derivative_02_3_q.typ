@@ -16,7 +16,7 @@ Gesucht: Ableitung der Funktion
 ]
 
 #questionDef(
-  questionText: "Was ist die Ableitung der Funktion $f(x) = x^(-2) - x$?",
+  questionText: "Was ist die Ableitung der Funktion $f(x) = x^{-2} - x$?",
   answerOptions: ("Die Ableitung ist $f'(x) = -2x^(-3) - 1$, oder eine äquivalente Aussage.", "Die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (

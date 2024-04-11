@@ -16,7 +16,4 @@
 questionText: "Ist die Funktion $f(x) = x^4 + 2x^2 - 4x$ linksgekrümmt, rechtsgekrümmt oder keines von beiden?", 
 answerOptions: ("Linksgekrümmt", "Rechtsgekrümmt", "Keines von beiden"),
 correctAnswerIndex: 1,
-llmCheckDetails: (
-  fallbackOptionIndex: 0
-),
 )

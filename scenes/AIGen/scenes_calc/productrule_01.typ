@@ -49,7 +49,7 @@ $ = u(x) dot v'(x) + v(x) dot u'(x)$]
 #only("4-")[$f'(x) = x dot e^x + e^x$]
 
 #only("1")[
-  #voiceover("Beginnen wir mit der Funktion f von x gleich e hoch x. Dann wenden wir die Produktregel an und erhalten,")
+  #voiceover("Beginnen wir mit der Funktion f von x gleich x mal e hoch x. Dann wenden wir die Produktregel an und erhalten,")
 ]
 #only("2")[
   #voiceover("dass die Ableitung von f von x gleich x mal die Ableitung von e hoch x plus e hoch x mal die Ableitung von x ist.")

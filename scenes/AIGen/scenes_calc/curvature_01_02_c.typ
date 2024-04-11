@@ -14,7 +14,7 @@
 #v(40pt)
 #only("6-")[$->$ weder Links- noch Rechtsgekrümmt]
 #only("1")[
-#voiceover("Das ist leider falsch. Wir haben die Funktion f von x gleich x hoch drei plus zwei x minus vier.")
+#voiceover("Toll, das stimmt. Wir haben die Funktion f von x gleich x hoch drei plus zwei x minus vier.")
 ]
 #only("2")[
 #voiceover("Die erste Ableitung dieser Funktion ist f Strich von x gleich drei x hoch zwei plus zwei. Leiten wir das ganze erneut ab, erhalten wir")

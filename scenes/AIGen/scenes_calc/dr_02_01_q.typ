@@ -31,7 +31,7 @@ $ D = \{x ∈ RR | ... \} $
 #v(20pt)
 ]
 #questionDef(
-questionText: "Bestimme den Definitionsbereich von $g(x) = sqrt(x-1) + 1/(x-2)$.",
+questionText: "Bestimme den Definitionsbereich von $g(x) = \sqrt{x-1} + \\frac{1}{x-2}$.",
 answerOptions: ("D = {x ∈ RR | x ≥ 1, x ≠ 2} oder eine äquivalente Aussage. Dabei muss nur der Inhalt stimmen, die Schreibweise ist nicht wichtig.", "Die Antwort ist falsch."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
