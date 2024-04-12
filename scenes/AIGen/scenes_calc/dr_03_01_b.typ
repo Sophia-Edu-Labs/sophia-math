@@ -115,10 +115,10 @@ width: 360pt),
 #v(40pt)
 
 #only("3-")[
-Wertebereich: $[0, infinity)$
+Wertebereich: $(0, infinity)$
 ]
 
 #only("3")[
-#voiceover("Der Wertebereich von f ist also das Intervall von 0 bis plus unendlich, das heißt alle reellen Zahlen größer oder gleich 0.")]
+#voiceover("Der Wertebereich von f ist also das offene Intervall von 0 bis plus unendlich, das heißt alle reellen Zahlen größer als 0.")]
 
-]]
+]

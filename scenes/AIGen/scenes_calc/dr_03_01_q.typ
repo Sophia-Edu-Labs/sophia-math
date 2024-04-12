@@ -18,7 +18,7 @@
 
 #questionDef(
 questionText: "Bestimme den Wertebereich von $f(x) = e^x + 1/x^2$.",
-answerOptions: ("[0, ∞) oder eine äquivalente Aussage. Dabei muss nur der Inhalt stimmen, die Schreibweise ist nicht wichtig.", "Die Antwort ist falsch."),
+answerOptions: ("(0, ∞) oder eine äquivalente Aussage. Dabei muss nur der Inhalt stimmen, die Schreibweise ist nicht wichtig.", "Die Antwort ist falsch."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1),
