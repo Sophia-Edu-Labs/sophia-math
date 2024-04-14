@@ -6,7 +6,7 @@
         {
             "label": "Generate typst python images/contents",
             "type": "shell",
-            "command": "python -m sophialib.morphing.pytypst ${file} ${workspaceFolder}/scenes/AIGen/.typst-images/contents.json",
+            "command": "python -m sophialib.morphing.pytypst ${file} ${workspaceFolder}/scenes/AIGen/.typst-images/contents.json && python -m sophialib.morphing.pytypst ${file} ${workspaceFolder}/internal/VideoGen/.typst-images/contents.json",
             "problemMatcher": []
         }
     ]
