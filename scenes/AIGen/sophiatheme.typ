@@ -1,4 +1,5 @@
 #import "@preview/polylux:0.3.1": *   
+#import "@local/svg-emoji:0.1.0": setup-emoji, github // only if you want to use GH names for emojis
 
 #let slide = polylux-slide
 
@@ -7,6 +8,9 @@
 ) = {
   set page(paper: "presentation-16-9", flipped: true, fill: rgb(0%,0%, 0%, 0%))
   set text(size: 25pt)
+  
+  // also first install the emoji hook! (see: https://github.com/polazarus/typst-svg-emoji)
+  show: setup-emoji
 
   body
 }

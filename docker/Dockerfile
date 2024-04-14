@@ -11,7 +11,8 @@ RUN apt-get update \
     curl \
     rubberband-cli \
     libssl-dev \
-    pdf2svg
+    pdf2svg \
+    git
 
 # Copy requirements.txt
 COPY ./docker/requirements.txt /tmp/requirements.txt
@@ -32,6 +33,9 @@ RUN cargo install --git https://github.com/geroembser/typst --locked --branch li
 
 # install svg2pdf
 RUN cargo install svg2pdf-cli
+
+# install typst-svg-emoji workaround
+RUN TYPST_SVG_EMOJI_PKG=$HOME/.local/share/typst/packages/local/svg-emoji/0.1.0 && mkdir -p $TYPST_SVG_EMOJI_PKG && git clone --recurse-submodules https://github.com/polazarus/typst-svg-emoji $TYPST_SVG_EMOJI_PKG
 
 # back to root afterwards, to be "clean"
 USER root
