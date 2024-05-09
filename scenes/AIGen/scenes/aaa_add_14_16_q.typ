@@ -19,7 +19,7 @@
 ]
 #questionDef(
 questionText: "Was erhältst du, wenn du $\\frac{1}{4}$ und $\\frac{1}{6}$ addierst?",
-answerOptions: ("$\\frac{1}{10}$", "$\\frac{2}{10}$", "$\\frac{1}{24}$", "$\\frac{2}{24}$", "$\\frac{5}{12}$", "0"),
+answerOptions: ("$\\frac{1}{10}$", "$\\frac{2}{10}$", "$\\frac{1}{24}$", "$\\frac{2}{24}$", "$\\frac{5}{12}$", "$0$"),
 correctAnswerIndex: 4,
 freeTextDetail: (
 fallbackOptionIndex: 5,

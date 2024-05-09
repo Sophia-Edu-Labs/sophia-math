@@ -20,7 +20,7 @@
 
 #questionDef(
   questionText: "Was ist $\\frac{1}{2}+\\frac{1}{3}$?",
-  answerOptions: ("$\\frac{1}{5}$", "$\\frac{2}{5}$", "$\\frac{1}{6}$", "$\\frac{3}{6}$", "$\\frac{5}{6}$", "0"),
+  answerOptions: ("$\\frac{1}{5}$", "$\\frac{2}{5}$", "$\\frac{1}{6}$", "$\\frac{3}{6}$", "$\\frac{5}{6}$", "$0$"),
   correctAnswerIndex: 4,
   freeTextDetail: (
     fallbackOptionIndex: 5,
