@@ -9,7 +9,11 @@ from sophialib.styles.sophiascene import SophiaScene
 from typing import Type, Tuple
 
 SCENES_FOLDER_TO_USE = SCENES_FOLDER
-AIGEN_SCENES_FOLDER_1, AIGEN_SCENES_FOLDER_2, AIGEN_SCENES_FOLDER_3, AIGEN_SCENES_FOLDER_4 = SCENES_FOLDER_TO_USE / "AIGen" / "scenes_generated", SCENES_FOLDER_TO_USE / "AIGen" / "scenes", SCENES_FOLDER_TO_USE / "AIGen" / "scenes_calc", SCENES_FOLDER_TO_USE / "AIGen" / "scenes_AnaLina"
+#use os to find all the folders within the scenes_folder
+subfolders = [Path(f.path) for f in os.scandir(SCENES_FOLDER_TO_USE) if f.is_dir()]
+
+
+
 
 def find_manim_scenes_in_directory():
     classes:list[Tuple[Path,Type[SophiaScene]]] = []
@@ -47,7 +51,7 @@ for path, scene_class in scenes_per_dir:
         
 ############### Typst based prototypes ################
 # for every typst file in the corresponding folder, check if the metadata defined some question definitions (and always add them to the prototypes)
-for scene_folder in [AIGEN_SCENES_FOLDER_1, AIGEN_SCENES_FOLDER_2, AIGEN_SCENES_FOLDER_3, AIGEN_SCENES_FOLDER_4]:
+for scene_folder in subfolders:
     for typst_file in Path(scene_folder).glob("**/*.typ"):
         # for every typst file, create a prototype for the video
         potential_prototype_video = PagePrototypeVideo.from_typst_file_path(typst_file)
