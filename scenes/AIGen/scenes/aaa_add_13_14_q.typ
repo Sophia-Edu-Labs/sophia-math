@@ -10,11 +10,11 @@
 #only("2-")[
 #align(center)[Berechne $1/3 + 1/4$]
 ]
-#only("1-")[
-#voiceover("Ich habe eine Aufgabe für dich. Bist du bereit?")
+#only("1")[
+#voiceover("Üben wir das Addieren von Brüchen.")
 ]
-#only("2-")[
-#voiceover("Hier ist deine Aufgabe: Berechne ein Drittel plus ein Viertel.")
+#only("2")[
+#voiceover("Berechne ein Drittel plus ein Viertel.")
 ]
 ]
 

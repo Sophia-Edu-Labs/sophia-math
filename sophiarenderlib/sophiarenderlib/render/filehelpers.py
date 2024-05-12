@@ -10,7 +10,9 @@ def find_repository_scene_module_paths(result_sorted: bool = False) -> List[Path
     SCENE_BASEFOLDERS = [ SCENES_FOLDER / "AIGen" / "scenes", 
                          SCENES_FOLDER / "AIGen" / "scenes_examples", 
                          SCENES_FOLDER / "AIGen" / "scenes_generated", 
-                         SCENES_FOLDER / "AIGen" / "scenes_calc"]
+                         SCENES_FOLDER / "AIGen" / "scenes_calc",
+                         SCENES_FOLDER / "AIGen" / "scenes_AnaLina",
+                         ]
 
     for SCENE_BASEFOLDER in SCENE_BASEFOLDERS:
         for pf in Path(SCENE_BASEFOLDER).glob("**/*.py"):

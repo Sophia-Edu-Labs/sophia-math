@@ -14,13 +14,13 @@
 #voiceover("Ich habe eine Aufgabe für dich. Bist du bereit?")
 ]
 #only("2")[
-#voiceover("Hier ist deine Aufgabe: Berechne ein Drittel plus ein Fünftel.")
+#voiceover("Berechne die Summe ein Drittel plus ein Fünftel.")
 ]
 ]
 
 #questionDef(
   questionText: "Was ist $\\frac{1}{3}+\\frac{1}{5}$?",
-  answerOptions: ("$\\frac{1}{8}$", "$\\frac{2}{8}$", "$\\frac{1}{15}$", "$\\frac{4}{15}$", "$\\frac{8}{15}$", "$0$"),
+  answerOptions: ("$\\frac{1}{8}$", "$\\frac{2}{8}$", "$\\frac{1}{15}$", "$\\frac{2}{15}$", "$\\frac{8}{15}$", "$0$"),
   correctAnswerIndex: 4,
   freeTextDetail: (
     fallbackOptionIndex: 5,

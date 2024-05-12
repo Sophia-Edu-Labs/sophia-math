@@ -11,16 +11,16 @@
 #align(center)[Berechne $1/2 + 1/3$]
 ]
 #only("1")[
-#voiceover("Ich habe eine Aufgabe für dich. Bist du bereit?")
+#voiceover("Hier ist noch eine Aufgabe, in der wir das Addieren von Brüchen üben.")
 ]
 #only("2")[
-#voiceover("Hier ist deine Aufgabe: Berechne ein halb plus ein Drittel.")
+#voiceover("Berechne ein halb plus ein Drittel.")
 ]
 ]
 
 #questionDef(
   questionText: "Was ist $\\frac{1}{2}+\\frac{1}{3}$?",
-  answerOptions: ("$\\frac{1}{5}$", "$\\frac{2}{5}$", "$\\frac{1}{6}$", "$\\frac{3}{6}$", "$\\frac{5}{6}$", "$0$"),
+  answerOptions: ("$\\frac{1}{5}$", "$\\frac{2}{5}$", "$\\frac{1}{6}$", "$\\frac{2}{6}$", "$\\frac{5}{6}$", "$0$"),
   correctAnswerIndex: 4,
   freeTextDetail: (
     fallbackOptionIndex: 5,

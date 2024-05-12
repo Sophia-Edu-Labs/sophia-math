@@ -9,30 +9,30 @@
 #v(40pt)
 #align(center)[Berechne $1/2 + 1/3$]
 #v(40pt)
-#only("2-")[Deine Antwort: $3/6$]
+#only("2-")[Deine Antwort: $2/6$]
 #only("1")[
 #voiceover("Wir sollen ein halb plus ein Drittel berechnen.")
 ]
 #only("2")[
-#voiceover("Und deine Antwort ist drei sechstel. Das ist schon sehr nah dran, aber noch nicht ganz richtig.")
+#voiceover("Und deine Antwort ist zwei sechstel. Das ist schon nah dran, aber leider noch nicht ganz richtig.")
 ]
 ]
 #slide()[
 #text(size: 30pt, weight: "bold")[Dein Fehler]
 #v(40pt)
-#only("1-")[Dein Fehler: $ 1/2 + 1/3 ≠ (1+1)/(2 dot 3) $]
+#only("1-")[Dein Fehler: $ 1/2 + 1/3 ≠ (1+1)/(2 + 3) $]
 #v(20pt)
-#only("2-")[🛠️ Du hast die Nenner richtig multipliziert, um den gemeinsamen Nenner zu finden]
+#only("2-")[🛠️ Du hast die Nenner richtig addiert, um den gemeinsamen Nenner zu finden]
 #v(20pt)
 #only("3-")[🛠️ Aber die Zähler musst du anders anpassen]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du die Zähler einfach addiert und die Nenner multipliziert hast. Ein halb plus ein Drittel ist nicht gleich eins plus eins geteilt durch zwei mal drei.")
+#voiceover("Dein Fehler ist, dass du die Zähler und Nenner einfach addiert hast. Ein halb plus ein Drittel ist nicht gleich eins plus eins geteilt durch zwei plus drei.")
 ]
 #only("2")[
-#voiceover("Du hast die Nenner richtig multipliziert, um den gemeinsamen Nenner zu finden. Das ist schon mal gut.")
+#voiceover("Du hast die Nenner addiert, um den gemeinsamen Nenner zu finden. Das ist leider nicht richtig, aber ein guter Ansatz.")
 ]
 #only("3")[
-#voiceover("Aber die Zähler kannst du nicht einfach addieren. Du musst sie anders anpassen.")
+#voiceover("Die Zähler kannst du auch nicht einfach addieren. Du musst sie anders anpassen.")
 ]
 ]
 #slide()[
@@ -92,11 +92,11 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Fazit]
 #v(40pt)
-#only("1-")[Daher ist $1/2 + 1/3 = 5/6$, nicht $3/6$.]
+#only("1-")[Daher ist $1/2 + 1/3 = 5/6$, nicht $2/6$.]
 #v(20pt)
 #only("2-")[Merke dir: 🧮 Beim Addieren von Brüchen, finde zuerst den gemeinsamen Nenner und erweitere dann die Brüche entsprechend!]
 #only("1")[
-#voiceover("Daher ist ein halb plus ein Drittel gleich fünf sechstel, nicht drei sechstel.")
+#voiceover("Daher ist ein halb plus ein Drittel gleich fünf sechstel, nicht zwei sechstel.")
 ]
 #only("2")[
 #voiceover("Denk immer daran: Finde beim Addieren von Brüchen zuerst den gemeinsamen Nenner und erweitere dann die Brüche entsprechend!")
