@@ -20,7 +20,7 @@
 
 #questionDef(
   questionText: "Was ist $2/3 + 3/10$?",
-  answerOptions: ("$5/13$", "$5/30$", "$13/30$", "$29/30$", "$0$"),
+  answerOptions: ("$\\frac{5}{13}$", "$\\frac{5}{30}$", "$\\frac{13}{30}$", "$\\frac{29}{30}$", "$0$"),
   correctAnswerIndex: 3,
   freeTextDetail: (
     fallbackOptionIndex: 4,
