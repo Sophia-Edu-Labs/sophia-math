@@ -1,18 +1,1 @@
-import matplotlib.pyplot as plt
-import numpy as np
-mu = 500
-sigma = 50
-x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
-y = 1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2))
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.plot(x, y)
-ax.fill_between(x, y, 0, where=(x > 550), alpha=0.5, color='red')
-ax.text(560, 0.002, 'P(X > 550) ≈ 16%', fontsize=12, color='red')
-ax.set_xlabel('X')
-ax.set_ylabel('Dichte')
-ax.set_title(f'Normalverteilung mit μ={mu} und σ={sigma}')
-ax.grid(True)
-plt.tight_layout()
-
-
-plt.savefig("test.png")
+my_string = "#slide()[\n#text(size: 30pt, weight: \"bold\")[Dimension Formula]  \n#v(40pt)\n#only(\"1-\")[Explain the dimension formula: $\\dim(\\text{Ker} , T) + \\dim(\\text{Im} , T) = \\dim(V)$.]\n#v(20pt)\n#only(\"2-\")[Exercise 1 (MC): The dimension formula is \\_\\_\\_\\_\\_. \na) $\\dim(\\text{Ker} , T) + \\dim(\\text{Im} , T) = \\dim(V)$\nb) $\\dim(\\text{Ker} , T) = \\dim(\\text{Im} , T)$ \nc) $\\dim(\\text{Im} , T) = \\dim(V)$\nd) $\\dim(\\text{Ker} , T) = \\dim(V)$]\n#v(20pt)\n#only(\"3-\")[Solution: a) $\\dim(\\text{Ker} , T) + \\dim(\\text{Im} , T) = \\dim(V)$]  \n#v(20pt)\n#only(\"4-\")[Exercise 2 (NUM): Given $T: \\mathbb{R}^3 \\rightarrow \\mathbb{R}^2$. If $\\dim(\\text{Ker} , T) = 1$, find $\\dim(\\text{Im} , T)$.]\n#v(20pt)\n#only(\"5-\")[Solution: $\\dim(\\text{Im} , T) = \\dim(\\mathbb{R}^3) - \\dim(\\text{Ker} , T) = 3 - 1 = 2$]\n#v(20pt)  \n#only(\"6-\")[Summary: The dimension formula connects the dimensions of the kernel and the image of a linear map with the dimension of the domain vector space.]\n#only(\"1\")[\n#voiceover(\"There's an important relationship between the dimensions of the kernel and image of a linear map T, and the dimension of the domain vector space V. This is given by the dimension formula: the dimension of the kernel of T plus the dimension of the image of T equals the dimension of V.\")  \n]\n#only(\"2\")[\n#voiceover(\"Let's check your understanding. The dimension formula states that: a) the dimension of the kernel of T plus the dimension of the image of T equals the dimension of V, b) the dimension of the kernel of T equals the dimension of the image of T, c) the dimension of the image of T equals the dimension of V, or d) the dimension of the kernel of T equals the dimension of V. Which one is correct?\")\n]\n#only(\"3\")[\n#voiceover(\"The correct answer is a) the dimension of the kernel of T plus the dimension of the image of T equals the dimension of V.\")\n]\n#only(\"4\")[\n#voiceover(\"Now, let's solve a numerical exercise. Given a linear map T from $\\mathbb{R}^3$ to $\\mathbb{R}^2$, if the dimension of the kernel of T is 1, what is the dimension of the image of T?\")\n]\n#only(\"5\")[\n#voiceover(\"Using the dimension formula, we find that the dimension of the image of T is equal to the dimension of $\\mathbb{R}^3$ minus the dimension of the kernel of T, which is 3 minus 1, resulting in 2.\")\n]\n#only(\"6\")[\n#voiceover(\"To summarize, the dimension formula connects the dimensions of the kernel and the image of a linear map with the dimension of the domain vector space.\")\n]\n]"
