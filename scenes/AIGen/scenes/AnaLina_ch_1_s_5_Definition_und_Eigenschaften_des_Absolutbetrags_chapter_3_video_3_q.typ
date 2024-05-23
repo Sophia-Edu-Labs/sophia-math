@@ -1,7 +1,7 @@
 #import "../sophiatheme.typ": *
 #questionDef(
 questionText: "Lösen Sie die Ungleichung $|x - 2| > 5$.",
-answerOptions: ("x < -3 \quad \text{oder} \quad x > 7", "x > -3 \quad \text{und} \quad x < 7"),
+answerOptions: ("x < -3 \quad \\text{oder} \quad x > 7", "x > -3 \quad \\text{und} \quad x < 7"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,

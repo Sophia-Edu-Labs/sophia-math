@@ -59,7 +59,7 @@
         #box()[
             #morphchildren(id: "plot")[
                 #figure(
-                    pyimage(`
+                    pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 

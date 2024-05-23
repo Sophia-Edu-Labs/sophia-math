@@ -38,6 +38,6 @@
 #questionDef(
 questionText: "Welche der Aussagen über die Schnittmengen ist falsch?",
 // use latex!
-answerOptions: ("$A \\ \cap B = \{1, 2, 3, 4\}$", "$B \cap C = \{3, 4\}$", "$A \\ \cap C = \{4, 6\}$", "$A \cap B \cap C = \{4\}$"),
+answerOptions: ("$A \\\\ \cap B = \{1, 2, 3, 4\}$", "$B \cap C = \{3, 4\}$", "$A \\\\ \cap C = \{4, 6\}$", "$A \cap B \cap C = \{4\}$"),
 correctAnswerIndex: 0,
 )

@@ -1,6 +1,6 @@
 #import "../sophiatheme.typ": *
 #questionDef(
-  questionText: "Wie viele Elemente enthält die Menge $\{x \mid x < 5 \text{ und } x \text{ ist eine natürliche Zahl}\}$?",
+  questionText: "Wie viele Elemente enthält die Menge $\{x \mid x < 5 \\text{ und } x \\text{ ist eine natürliche Zahl}\}$?",
   answerOptions: ("4", "0"),
   correctAnswerIndex: 0,
   freeTextDetail: (

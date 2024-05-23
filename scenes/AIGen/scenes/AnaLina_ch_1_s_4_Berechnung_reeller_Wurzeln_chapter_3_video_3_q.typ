@@ -1,6 +1,6 @@
 #import "../sophiatheme.typ": *
 #questionDef(
-questionText: "Ein Würfel hat ein Volumen von $125 \, \text{cm}^3$. Berechnen Sie die Länge einer Seite des Würfels.",
+questionText: "Ein Würfel hat ein Volumen von $125 \, \\text{cm}^3$. Berechnen Sie die Länge einer Seite des Würfels.",
 answerOptions: ("5", "0"),
 correctAnswerIndex: 0,
 freeTextDetail: (

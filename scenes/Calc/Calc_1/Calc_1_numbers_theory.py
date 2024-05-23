@@ -680,11 +680,11 @@ class ConditionalProbabilityDefinition(SophiaCursorScene):
                 text=
                 """
 In probability theory, the conditional probability is a fundamental concept. 
-<bookmark mark="def_title"/>Definition 2.2.1: Conditional Probability. <bookmark mark="formula"/>If \( A \) and \( B \) are events with \( P(B) > 0 \),
-then the conditional probability of \( A \) given \( B \), denoted by \( P(A|B) \), is defined as the ratio of the probability of \( A \) intersect \( B \) to the probability of \( B \).
-The formula is \( P(A|B) = P(A \cap B) / P(B) \).
+<bookmark mark="def_title"/>Definition 2.2.1: Conditional Probability. <bookmark mark="formula"/>If $ A $ and $ B $ are events with $ P(B) > 0 $,
+then the conditional probability of $ A $ given $ B $, denoted by $ P(A|B) $, is defined as the ratio of the probability of $ A $ intersect $ B $ to the probability of $ B $.
+The formula is $ P(A|B) = P(A \cap B) / P(B) $.
 Let's break this down. 
-<bookmark mark="prior_posterior"/>Here \( A \) is the event whose uncertainty we want to update, and \( B \) is the evidence we observe. We call \( P(A) \) the prior probability of \( A \) and \( P(A|B) \) the posterior probability of \( A \). The terms "prior" and "posterior" are used to signify before and after updating our belief based on the new evidence \( B \).
+<bookmark mark="prior_posterior"/>Here $ A $ is the event whose uncertainty we want to update, and $ B $ is the evidence we observe. We call $ P(A) $ the prior probability of $ A $ and $ P(A|B) $ the posterior probability of $ A $. The terms "prior" and "posterior" are used to signify before and after updating our belief based on the new evidence $ B $.
 """
         ) as tracker:
 

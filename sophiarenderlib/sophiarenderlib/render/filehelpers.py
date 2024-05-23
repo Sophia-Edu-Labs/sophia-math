@@ -13,6 +13,7 @@ def find_repository_scene_module_paths(result_sorted: bool = False) -> List[Path
                          SCENES_FOLDER / "AIGen" / "scenes_calc",
                          SCENES_FOLDER / "AIGen" / "scenes_AnaLina",
                         SCENES_FOLDER / "AIGen" / "scenes_mathbuch",
+                        SCENES_FOLDER / "AIGen" / "scenes_school",
                          ]
 
     for SCENE_BASEFOLDER in SCENE_BASEFOLDERS:

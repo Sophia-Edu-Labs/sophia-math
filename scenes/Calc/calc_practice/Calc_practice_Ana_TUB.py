@@ -7435,8 +7435,8 @@ class Calc_practice_mvt_1_q(SophiaCursorScene):
                 """
                     The correct answer:
                     Steps:
-                    - Continuity: \(f(x)\) is a polynomial / composition of continuous functions,, hence continuous on \([0, 3]\).
-                    - differentiability: \(f(x)\) is also differentiable on \((0, 3)\).
+                    - Continuity: $f(x)$ is a polynomial / composition of continuous functions,, hence continuous on $[0, 3]$.
+                    - differentiability: $f(x)$ is also differentiable on $(0, 3)$.
 
                     Mean Value Theorem (MVT) application:
                     - f(0) = 2
@@ -9326,9 +9326,9 @@ class Calc_practice_minmax_2_q(SophiaCursorScene):
     def task_definition(self) -> SophiaTaskDefinition:
         return SophiaTaskDefinition(
             answerOptions = [
-                """The Extreme Value Theorem (Satz von Maximum und Minimum) states that if a function is continuous on a closed interval \([a, b]\), then it attains both its minimum and maximum values at some points within the interval.
-                    The function \(f(x) = 4x^3 - 4^{x\cos(x) + x}\) combines polynomial and exponential components. Polynomials are continuous everywhere, and the exponential function \(4^u\), where \(u = x\cos(x) + x\), is also continuous for all real numbers because the composition of continuous functions is continuous. Hence, \(f(x)\) is continuous on the interval \([2, 4]\).
-                    Since \(f(x)\) is continuous on the closed interval \([2, 4]\), by the Extreme Value Theorem, it must attain a minimum value on this interval. Therefore, \(f(x)\) does have a minimum on the interval \([2, 4]\).
+                """The Extreme Value Theorem (Satz von Maximum und Minimum) states that if a function is continuous on a closed interval $[a, b]$, then it attains both its minimum and maximum values at some points within the interval.
+                    The function $f(x) = 4x^3 - 4^{x\cos(x) + x}$ combines polynomial and exponential components. Polynomials are continuous everywhere, and the exponential function $4^u$, where $u = x\cos(x) + x$, is also continuous for all real numbers because the composition of continuous functions is continuous. Hence, $f(x)$ is continuous on the interval $[2, 4]$.
+                    Since $f(x)$ is continuous on the closed interval $[2, 4]$, by the Extreme Value Theorem, it must attain a minimum value on this interval. Therefore, $f(x)$ does have a minimum on the interval $[2, 4]$.
                 The following aspects must be mentioned for the solution to count as correct:
                 - Establishing that the function is continuous
                 - Mention of the Extreme value theorem (German: Satz von Maximum und Minimum)
@@ -10050,20 +10050,20 @@ class Calc_practice_induction_1_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions = [
                 """
-                To prove that the power set of a set with \( n \) elements contains \( 2^n \) elements using mathematical induction, we follow these steps:
-                1. **Base Case:** Show the statement is true for a small value of \( n \), usually \( n = 0 \).
-                2. **Inductive Step:** Assume the statement is true for some \( n = k \) (where \( k \) is a non-negative integer), and then prove it for \( n = k + 1 \).
+                To prove that the power set of a set with $ n $ elements contains $ 2^n $ elements using mathematical induction, we follow these steps:
+                1. **Base Case:** Show the statement is true for a small value of $ n $, usually $ n = 0 $.
+                2. **Inductive Step:** Assume the statement is true for some $ n = k $ (where $ k $ is a non-negative integer), and then prove it for $ n = k + 1 $.
                 ### Base Case (n = 0)
-                Consider a set \( S \) with no elements, i.e., \( S = \{\} \). The power set of \( S \), denoted \( \mathcal{P}(S) \), contains only the empty set: \( \mathcal{P}(S) = \{\{\}\} \). 
-                The number of elements in \( \mathcal{P}(S) \) is 1, which is \( 2^0 \) (since \( 2^0 = 1 \)). So, the statement holds true for \( n = 0 \).
+                Consider a set $ S $ with no elements, i.e., $ S = \{\} $. The power set of $ S $, denoted $ \mathcal{P}(S) $, contains only the empty set: $ \mathcal{P}(S) = \{\{\}\} $. 
+                The number of elements in $ \mathcal{P}(S) $ is 1, which is $ 2^0 $ (since $ 2^0 = 1 $). So, the statement holds true for $ n = 0 $.
                 ### Inductive Step
-                Assume that the statement is true for a set with \( k \) elements, where \( k \) is any non-negative integer. That is, assume any set with \( k \) elements has a power set containing \( 2^k \) elements.
-                Now consider a set \( T \) with \( k + 1 \) elements. We can write \( T = S \cup \{x\} \), where \( S \) is a set with \( k \) elements and \( x \) is an element not in \( S \).
-                The power set of \( T \), \( \mathcal{P}(T) \), consists of all subsets of \( S \) (which, by our inductive hypothesis, number \( 2^k \)) plus all subsets of \( S \) with \( x \) added to them.
-                For each subset of \( S \), there is a corresponding unique subset in \( \mathcal{P}(T) \) that includes the element \( x \). Since there are \( 2^k \) subsets of \( S \), adding \( x \) to each of these subsets creates another \( 2^k \) subsets.
-                Thus, the total number of subsets in \( \mathcal{P}(T) \) is \( 2^k \) (subsets of \( S \)) plus \( 2^k \) (subsets of \( S \) with \( x \) added), which equals \( 2^k + 2^k = 2 \times 2^k = 2^{k+1} \).
-                This proves that a set with \( k + 1 \) elements has a power set containing \( 2^{k+1} \) elements.
-                Since the statement is true for \( n = 0 \) (base case) and true for \( n = k \) implies it is true for \( n = k + 1 \) (inductive step), by the principle of mathematical induction, the statement is true for all non-negative integers \( n \).
+                Assume that the statement is true for a set with $ k $ elements, where $ k $ is any non-negative integer. That is, assume any set with $ k $ elements has a power set containing $ 2^k $ elements.
+                Now consider a set $ T $ with $ k + 1 $ elements. We can write $ T = S \cup \{x\} $, where $ S $ is a set with $ k $ elements and $ x $ is an element not in $ S $.
+                The power set of $ T $, $ \mathcal{P}(T) $, consists of all subsets of $ S $ (which, by our inductive hypothesis, number $ 2^k $) plus all subsets of $ S $ with $ x $ added to them.
+                For each subset of $ S $, there is a corresponding unique subset in $ \mathcal{P}(T) $ that includes the element $ x $. Since there are $ 2^k $ subsets of $ S $, adding $ x $ to each of these subsets creates another $ 2^k $ subsets.
+                Thus, the total number of subsets in $ \mathcal{P}(T) $ is $ 2^k $ (subsets of $ S $) plus $ 2^k $ (subsets of $ S $ with $ x $ added), which equals $ 2^k + 2^k = 2 \times 2^k = 2^{k+1} $.
+                This proves that a set with $ k + 1 $ elements has a power set containing $ 2^{k+1} $ elements.
+                Since the statement is true for $ n = 0 $ (base case) and true for $ n = k $ implies it is true for $ n = k + 1 $ (inductive step), by the principle of mathematical induction, the statement is true for all non-negative integers $ n $.
                 This completes the induction proof.
                 For this answer to be correct, the student needs to:
                 - do the induction base, explicitly mentioning the empty set
@@ -10918,15 +10918,15 @@ class Calc_practice_induction_3_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions = [
                 """
-                To prove that \( a_n = 5 - \frac{4}{2^n} \) for the sequence defined by \( a_0 = 1 \) and \( a_{n+1} = \frac{a_n + 5}{2} \), we use induction.
+                To prove that $ a_n = 5 - \frac{4}{2^n} $ for the sequence defined by $ a_0 = 1 $ and $ a_{n+1} = \frac{a_n + 5}{2} $, we use induction.
 
-                **Base Case:** For \( n = 0 \), \( a_0 = 1 \) and \( 5 - \frac{4}{2^0} = 1 \). So, the base case holds.
+                **Base Case:** For $ n = 0 $, $ a_0 = 1 $ and $ 5 - \frac{4}{2^0} = 1 $. So, the base case holds.
 
-                **Inductive Step:** Assume \( a_k = 5 - \frac{4}{2^k} \) for some \( k \). We show it holds for \( k+1 \):
+                **Inductive Step:** Assume $ a_k = 5 - \frac{4}{2^k} $ for some $ k $. We show it holds for $ k+1 $:
 
                 \[ a_{k+1} = \frac{a_k + 5}{2} = \frac{5 - \frac{4}{2^k} + 5}{2} = 5 - \frac{4}{2^{k+1}} \]
 
-                Thus, by induction, \( a_n = 5 - \frac{4}{2^n} \) for all \( n \).
+                Thus, by induction, $ a_n = 5 - \frac{4}{2^n} $ for all $ n $.
 
                 For this answer to be correct, the student needs to:
                 - do the induction base, explicitly mentioning the empty set
@@ -11314,15 +11314,15 @@ class Calc_practice_induction_4_q(SophiaCursorScene):
         return SophiaTaskDefinition(
         answerOptions = [
             """
-            To show that \(a_n \leq 2\) for all \(n \in \mathbb{N}\) given \(a_0 = \sqrt{2}\) and \(a_{n+1} = \sqrt{a_n + 2}\), we use mathematical induction.
+            To show that $a_n \leq 2$ for all $n \in \mathbb{N}$ given $a_0 = \sqrt{2}$ and $a_{n+1} = \sqrt{a_n + 2}$, we use mathematical induction.
             **Base Case:**
-            For \(n=0\), \(a_0 = \sqrt{2}\). Clearly, \(a_0 \leq 2\) since \(\sqrt{2} < 2\).
+            For $n=0$, $a_0 = \sqrt{2}$. Clearly, $a_0 \leq 2$ since $\sqrt{2} < 2$.
             **Inductive Step:**
-            Assume \(a_n \leq 2\) for some \(n \geq 0\). We need to show \(a_{n+1} \leq 2\).
-            Given \(a_{n+1} = \sqrt{a_n + 2}\), by our inductive hypothesis, \(a_n \leq 2\).
-            Thus, \(a_{n+1} = \sqrt{a_n + 2} \leq \sqrt{2 + 2} = \sqrt{4} = 2\).
-            Therefore, if \(a_n \leq 2\), then \(a_{n+1} \leq 2\).
-            By the principle of mathematical induction, \(a_n \leq 2\) for all \(n \in \mathbb{N}\).
+            Assume $a_n \leq 2$ for some $n \geq 0$. We need to show $a_{n+1} \leq 2$.
+            Given $a_{n+1} = \sqrt{a_n + 2}$, by our inductive hypothesis, $a_n \leq 2$.
+            Thus, $a_{n+1} = \sqrt{a_n + 2} \leq \sqrt{2 + 2} = \sqrt{4} = 2$.
+            Therefore, if $a_n \leq 2$, then $a_{n+1} \leq 2$.
+            By the principle of mathematical induction, $a_n \leq 2$ for all $n \in \mathbb{N}$.
             For this answer to be correct, the student needs to:
             - do the induction base, explicitly mentioning the empty set
             - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n
@@ -11642,18 +11642,18 @@ class Calc_practice_induction_5_q(SophiaCursorScene):
         return SophiaTaskDefinition(
             answerOptions = [
                 """
-                To show that \(6^n - 1\) is divisible by 5 for all \(n \in \mathbb{N}\) using mathematical induction, we proceed as follows:
+                To show that $6^n - 1$ is divisible by 5 for all $n \in \mathbb{N}$ using mathematical induction, we proceed as follows:
                 **Base Case:**
-                For \(n=1\), \(6^1 - 1 = 5\), which is clearly divisible by 5.
+                For $n=1$, $6^1 - 1 = 5$, which is clearly divisible by 5.
                 **Inductive Step:**
-                Assume \(6^n - 1\) is divisible by 5 for some \(n \geq 1\). We need to show \(6^{n+1} - 1\) is also divisible by 5.
-                Consider \(6^{n+1} - 1\). This can be rewritten as \(6 \cdot 6^n - 1\).
+                Assume $6^n - 1$ is divisible by 5 for some $n \geq 1$. We need to show $6^{n+1} - 1$ is also divisible by 5.
+                Consider $6^{n+1} - 1$. This can be rewritten as $6 \cdot 6^n - 1$.
                 Expanding this using our assumption, we get:
                 \[6 \cdot 6^n - 1 = 6(6^n - 1) + 6 - 1\]
-                Since \(6^n - 1\) is divisible by 5 by our inductive hypothesis, let \(6^n - 1 = 5k\) for some integer \(k\). Then:
+                Since $6^n - 1$ is divisible by 5 by our inductive hypothesis, let $6^n - 1 = 5k$ for some integer $k$. Then:
                 \[6(6^n - 1) + 6 - 1 = 6 \cdot 5k + 5 = 5(6k + 1)\]
-                This shows \(6^{n+1} - 1\) is divisible by 5, as it is expressed as \(5\) times an integer (\(6k + 1\)).
-                Therefore, by the principle of mathematical induction, \(6^n - 1\) is divisible by 5 for all \(n \in \mathbb{N}\).
+                This shows $6^{n+1} - 1$ is divisible by 5, as it is expressed as $5$ times an integer ($6k + 1$).
+                Therefore, by the principle of mathematical induction, $6^n - 1$ is divisible by 5 for all $n \in \mathbb{N}$.
                 For this answer to be correct, the student needs to:
                 - do the induction base, explicitly mentioning the empty set
                 - do the induction step, correctly arguing why for n plus one, there are twice as many subsets as for n

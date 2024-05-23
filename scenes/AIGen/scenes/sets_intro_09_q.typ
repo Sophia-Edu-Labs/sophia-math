@@ -38,6 +38,6 @@
 #questionDef(
 questionText: "Welche der Aussagen über die Vereinigungen ist falsch?",
 // use latex!
-answerOptions: ("$A \\ \cup B = \{1, 2, 3, 4, 5\}$", "$B \cup C = \{2, 3, 4, 5, 6\}$", "$A \\ \cup C = \{1, 2, 3, 4, 5, 6\}$", "$A \cup B \cup C = \{1, 2, 3, 4, 5, 6\}$"),
+answerOptions: ("$A \\\\ \cup B = \{1, 2, 3, 4, 5\}$", "$B \cup C = \{2, 3, 4, 5, 6\}$", "$A \\\\ \cup C = \{1, 2, 3, 4, 5, 6\}$", "$A \cup B \cup C = \{1, 2, 3, 4, 5, 6\}$"),
 correctAnswerIndex: 2,
 )
