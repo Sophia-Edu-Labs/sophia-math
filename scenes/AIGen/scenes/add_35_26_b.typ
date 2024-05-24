@@ -9,7 +9,7 @@
 #v(40pt)
 #align(center)[Berechne $3/5 + 2/6$]
 #v(40pt)
-#text(size: 20pt)[Antwort des Schülers: $5/30$]
+//Antwort des Schülers: $5/30$
 #only("2-")[Deine Antwort: $5/30$]
 #only("1")[
 #voiceover("Wir sollen drei Fünftel plus zwei Sechstel berechnen.")
@@ -24,17 +24,17 @@
 #v(40pt)
 #only("1-")[Dein Fehler: $3/5 + 2/6 ≠ (3+2)/(5 dot 6)$]
 #v(20pt)
-#only("2-")[🛠️ Du hast den Zähler und den Nenner falsch kombiniert]
+#only("2-")[✅ Gemeinsamen Nenner gefunden]
 #v(20pt)
-#only("3-")[🛠️ Du musst die Brüche auf einen gemeinsamen Nenner bringen]
+#only("3-")[🛠️ Du musst aber auch die Nenner anpassen...]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du die Zähler und Nenner falsch kombiniert hast. Drei Fünftel plus zwei Sechstel ist nicht gleich fünf Dreißigstel.")
+#voiceover("Denn drei Fünftel plus zwei Sechstel ist nicht gleich drei plus zwei durch fünf mal sechs...")
 ]
 #only("2")[
-#voiceover("Denn du hast die Zähler und Nenner falsch kombiniert. Du musst die Brüche auf einen gemeinsamen Nenner bringen.")
+#voiceover("Du hast zwar ganz richtig einen gemeinsamen Nenner gefunden.")
 ]
 #only("3")[
-#voiceover("Du musst also die Brüche auf einen gemeinsamen Nenner bringen, um sie korrekt addieren zu können.")
+#voiceover("Allerdings musst du auch die Nenner anpassen, wenn du die Brüche addierst.")
 ]
 ]
 
@@ -79,31 +79,26 @@ width: 360pt),
 #v(20pt)
 #only("2-")[#text()[- Brüche haben verschiedene Nenner]]
 #v(20pt)
-#only("3-")[#text()[- Man kann sie nicht direkt addieren]]
-#v(20pt)
 #only("4-")[#text()[- Gemeinsamer Nenner: $times.square/30$]]
 #only("1")[
 #voiceover("Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir drei Fünftel und rechts zwei Sechstel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Fünftel und rechts Sechstel. Das bedeutet, dass wir sie nicht direkt addieren können.")
+#voiceover("Da diese Brüche verschiedene Nenner haben, müssen wir sie zuerst auf einen gemeinsamen Nenner bringen.")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche zuerst auf einen gemeinsamen Nenner bringen, sodass die Stücke gleich groß sind. Und erst dann kannst du sie addieren. Dabei musst du allerdings beachten, dass der Wert der Brüche erhalten bleibt.")
-]
-#only("4")[
-#voiceover("Und wie du schon richtig erkannt hast, ist der gemeinsame Nenner Dreißigstel.")
+#voiceover("und zwar auf dreißigstel, wie du schon richtig erkannt hast.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gemeinsamer Nenner, aber Zähler nicht angepasst]
+#text(size: 30pt, weight: "bold")[Zähler anpassen]
 // First Plot that covers the first fraction, which is 3/5
 #only("-2")[
 #box()[
 #morphchildren(id: "plot3")[
 #figure(
-pyimage(``` 
+pyimage(```
 import matplotlib.pyplot as plt
 from matplotlib.patches import Wedge
 
@@ -174,13 +169,13 @@ width: 360pt),
 #v(20pt)
 #only("3-")[#text()[- $2/6 = 10/30$]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche, die wir auf einen gemeinsamen Nenner bringen wollen. Beginnen wir mit drei Fünftel.")
+#voiceover("Wir müssen nur aufpassen, dass wir auch die Zähler anpassen, wenn wir die Nenner verändern.")
 ]
 #only("2")[
-#voiceover("Zunächst siehst du drei Fünftel, und daneben achtzehn Dreißigstel. Du kannst erkennen, dass der Wert gleich bleibt, nur die Darstellung ist anders. Also ist drei Fünftel gleich achtzehn Dreißigstel, und nicht gleich fünf Dreißigstel.")
+#voiceover("Aus drei Fünftel werden dann achtzehn Dreißigstel. Wir haben also sowohl den Zähler, als auch den Nenner mit sechs multipliziert. Und wie du siehst bleibt dann der Wert gleich.")
 ]
 #only("3")[
-#voiceover("Und hier siehst du zwei Sechstel und zehn Dreißigstel. Auch hier bleibt der Wert gleich, nur die Darstellung ist anders. Zwei Sechstel ist also gleich zehn Dreißigstel, und nicht gleich fünf Dreißigstel.")
+#voiceover("Und aus zwei Sechstel werden zehn Dreißigstel. Auch hier haben wir sowohl den Zähler, als auch den Nenner mit fünf multipliziert. Und auch hier bleibt der Wert gleich.")
 ]
 ]
 
@@ -257,19 +252,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Achtzehn Dreißigstel plus zehn Dreißigstel ist also gleich achtundzwanzig Dreißigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $3/5 + 2/6 = 28/30$, nicht $5/30$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist drei Fünftel plus zwei Sechstel gleich achtundzwanzig Dreißigstel, nicht fünf Dreißigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und passe dann auch die Zähler entsprechend an!")
 ]
 ]

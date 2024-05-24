@@ -10,7 +10,7 @@
 #text(size: 30pt, weight: "bold")[Matrix Representation with Change of Basis]
 // The title "Matrix Representation with Change of Basis" is shown on this slide
 #v(40pt)
-#only("1-")[To find the matrix representation of a linear mapping with respect to a new basis, we need to ____ the original matrix by the change of basis matrix.]
+#only("1-")[To find the matrix representation of a linear mapping with respect to a new basis, we need to \_\_\_\_ the original matrix by the change of basis matrix.]
 // The question is shown from slide 1 onward
 #v(40pt)
 #only("2-")[a) add]

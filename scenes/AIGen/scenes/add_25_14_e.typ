@@ -216,17 +216,3 @@ width: 360pt),
 #voiceover("Acht Zwanzigstel plus fünf Zwanzigstel ist also gleich dreizehn Zwanzigstel. Und das ist das korrekte Ergebnis.")
 ]
 ]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $2/5 + 1/4 = 13/20$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist zwei Fünftel plus ein Viertel gleich dreizehn Zwanzigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und addiere dann erst die Zähler!")
-]
-]

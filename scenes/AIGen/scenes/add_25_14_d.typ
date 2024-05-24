@@ -137,7 +137,7 @@ width: 360pt),
 #voiceover("Also haben wir jetzt acht Zwanzigstel statt zwei Fünftel,")
 ]
 #only("3")[
-#voiceover("und fünf Zwanzigstel statt einem Viertel. Du siehst, dass auf jeder Seite der Wert gleich ist, lediglich die Darstellung ist anders.")
+#voiceover("und fünf Zwanzigstel statt ein Viertel. Du siehst, dass auf jeder Seite der Wert gleich ist, lediglich die Darstellung ist anders.")
 ]
 ]
 
@@ -216,19 +216,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Acht Zwanzigstel plus fünf Zwanzigstel ist also gleich dreizehn Zwanzigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $2/5 + 1/4 = 13/20$.]
-#v(20pt)
-#only("2-")[Gut gemacht! 🎉]
-#only("1")[
-#voiceover("Also ist zwei Fünftel plus ein Viertel gleich dreizehn Zwanzigstel.")
-]
-#only("2")[
-#voiceover("Gut gemacht! Denke immer daran, die Brüche zuerst auf einen gemeinsamen Nenner zu bringen und dann die Zähler zu addieren. Du hast es richtig gemacht!")
 ]
 ]

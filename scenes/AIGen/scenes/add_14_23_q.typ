@@ -21,7 +21,7 @@
 #questionDef(
   questionText: "Was ist $\\frac{1}{4}+\\frac{2}{3}$?",
   answerOptions: ("$\\frac{3}{7}$", "$\\frac{3}{12}$", "$\\frac{7}{12}$", "$\\frac{11}{12}$", "$0$"),
-  correctAnswerIndex: 2,
+  correctAnswerIndex: 3,
   freeTextDetail: (
     fallbackOptionIndex: 4,
     answerOptionsEquality: (

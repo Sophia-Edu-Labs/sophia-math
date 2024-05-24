@@ -218,17 +218,3 @@ width: 360pt),
 #voiceover("Drei Zwölftel plus acht Zwölftel ist also gleich elf Zwölftel. Und das ist das korrekte Ergebnis.")
 ]
 ]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $1/4 + 2/3 = 11/12$.]
-#v(20pt)
-#only("2-")[Gut gemacht! 🎉]
-#only("1")[
-#voiceover("Also ist ein Viertel plus zwei Drittel gleich elf Zwölftel.")
-]
-#only("2")[
-#voiceover("Gut gemacht! Denke immer daran, die Brüche zuerst auf einen gemeinsamen Nenner zu bringen und dann die Zähler zu addieren. Du hast es richtig gemacht!")
-]
-]

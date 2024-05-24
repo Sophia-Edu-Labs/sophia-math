@@ -10,7 +10,7 @@
 #text(size: 30pt, weight: "bold")[Basis of a Vector Space]
 // The title "Basis of a Vector Space" is shown on this slide
 #v(40pt)
-#only("1-")[A basis is a set of vectors that ____ a vector space.]
+#only("1-")[A basis is a set of vectors that \_\_\_\_ a vector space.]
 // The statement with the blank is shown from slide 1 onward
 #v(40pt)
 #only("2-")[a) span]
@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe a set of vectors that divide a vector space,")]
 #only("5")[#voiceover("or is it none of the above?")]
 ]#questionDef(
-questionText: "A basis is a set of vectors that \\textbf{span} a vector space.",
+questionText: "A basis is a set of vectors that _____ a vector space.",
 answerOptions: ("span", "intersect", "divide", "none of the above"),
 correctAnswerIndex: 0,
 )

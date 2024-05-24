@@ -22,19 +22,19 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Dein Fehler]
 #v(40pt)
-#only("1-")[Dein Fehler: $2/5 + 1/4 ≠ (2+1)/(5 dot 4)$]
+#only("1-")[Dein Fehler: $2/5 + 1/4 ≠ (5+4)/(5 dot 4)$]
 #v(20pt)
-#only("2-")[🛠️ Du hast die Summe der Zähler durch das Produkt der Nenner geteilt]
+#only("2-")[✅ Gemeinsamen Nenner gefunden]
 #v(20pt)
-#only("3-")[🛠️ Du musst den Zähler anders bestimmen]
+#only("3-")[🛠️ Zähler falsch bestimmt]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du die Zähler und Nenner separat addiert und multipliziert hast. Zwei Fünftel plus ein Viertel ist nicht gleich neun Zwanzigstel.")
+#voiceover("Du hast die Summe der Nenner durch das Produkt der Nenner geteilt. Also fünf plus vier geteilt durch fünf mal vier. Das ist leider nicht richtig.")
 ]
 #only("2")[
-#voiceover("Indem du die Zähler und Nenner separat addierst und multiplizierst, veränderst du den Wert der Brüche. Das ist nicht richtig.")
+#voiceover("Du hast zwar einen gemeinsamen Nenner korrekt gefunden,")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche zuerst auf den gemeinsamen Nenner bringen, bevor du die Zähler addieren kannst.")
+#voiceover("aber den Zähler falsch ermittelt.")
 ]
 ]
 
@@ -79,25 +79,20 @@ width: 360pt),
 #v(20pt)
 #only("2-")[#text()[- Brüche haben verschiedene Nenner]]
 #v(20pt)
-#only("3-")[#text()[- Man kann sie nicht direkt addieren]]
-#v(20pt)
-#only("4-")[#text()[- Gemeinsamer Nenner: $20$]]
+#only("4-")[#text()[- Gemeinsamer Nenner: $times.square/20$]]
 #only("1")[
 #voiceover("Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir zwei Fünftel und rechts ein Viertel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Fünftel und rechts Viertel. Das bedeutet, dass wir sie nicht direkt addieren können.")
+#voiceover("Da diese Brüche verschiedene Nenner haben, müssen wir sie zuerst auf einen gemeinsamen Nenner bringen.")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche zuerst auf einen gemeinsamen Nenner bringen, sodass die Stücke gleich groß sind. Und erst dann kannst du sie addieren. Dabei musst du allerdings beachten, dass der Wert der Brüche erhalten bleibt.")
-]
-#only("4")[
-#voiceover("Und wie du schon richtig erkannt hast, ist der gemeinsame Nenner zwanzig.")
+#voiceover("und zwar auf zwanzigstel, wie du schon richtig erkannt hast.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gemeinsamer Nenner, aber Zähler nicht angepasst]
+#text(size: 30pt, weight: "bold")[Zähler anpassen]
 // First Plot that covers the first fraction, which is 2/5
 #only("-2")[
 #box()[
@@ -147,7 +142,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
         angle_start = (360 / num_parts) * i
         angle_end = (360 / num_parts) * (i + 1)
         color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num-parts/3))
         ax.add_patch(wedge)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -168,18 +163,17 @@ width: 360pt),
 )]
 ]
 ]
-#v(20pt)
 #only("2-")[#text()[- $2/5 = 8/20$]]
 #v(20pt)
 #only("3-")[#text()[- $1/4 = 5/20$]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche, die wir auf einen gemeinsamen Nenner bringen wollen. Beginnen wir mit zwei Fünftel.")
+#voiceover("Nun passen wir den Nenner an:")
 ]
 #only("2")[
-#voiceover("Zunächst siehst du zwei Fünftel, und daneben acht Zwanzigstel. Du kannst erkennen, dass der Wert gleich bleibt, nur die Darstellung ist anders. Also ist zwei Fünftel gleich acht Zwanzigstel, und nicht gleich neun Zwanzigstel.")
+#voiceover("Aus zwei Fünftel werden acht Zwanzigstel. Wir haben also sowohl den Zähler, als auch den Nenner mit vier multipliziert. Und wie du siehst bleibt dann der Wert gleich.")
 ]
 #only("3")[
-#voiceover("Und hier siehst du ein Viertel und fünf Zwanzigstel. Auch hier bleibt der Wert gleich, nur die Darstellung ist anders. Ein Viertel ist also gleich fünf Zwanzigstel, und nicht gleich neun Zwanzigstel.")
+#voiceover("Und aus ein Viertel werden fünf Zwanzigstel. Auch hier haben wir sowohl den Zähler, als auch den Nenner mit dem selben Wert multipliziert. Und auch hier bleibt der Wert gleich.")
 ]
 ]
 
@@ -197,7 +191,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
         angle_start = (360 / num_parts) * i
         angle_end = (360 / num_parts) * (i + 1)
         color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num-parts/3))
         ax.add_patch(wedge)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -230,7 +224,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
         angle_start = (360 / num_parts) * i
         angle_end = (360 / num_parts) * (i + 1)
         color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num-parts/3))
         ax.add_patch(wedge)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -256,19 +250,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Acht Zwanzigstel plus fünf Zwanzigstel ist also gleich dreizehn Zwanzigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $2/5 + 1/4 = 13/20$, nicht $9/20$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist zwei Fünftel plus ein Viertel gleich dreizehn Zwanzigstel, nicht neun Zwanzigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und passe dann auch die Zähler entsprechend an!")
 ]
 ]

@@ -10,7 +10,7 @@
 #text(size: 30pt, weight: "bold")[Linear Mapping]
 // The title "Linear Mapping" is shown on this slide
 #v(40pt)
-#only("1-")[To find the image of a vector under a linear mapping, we ____ the matrix by the vector.]
+#only("1-")[To find the image of a vector under a linear mapping, we \_\_\_\_ the matrix by the vector.]
 // The question is shown from slide 1 onward
 #v(40pt)
 #only("2-")[a) add]

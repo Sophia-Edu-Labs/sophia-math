@@ -12,10 +12,10 @@
 //Antwort des Schülers: $3/7$
 #only("2-")[Deine Antwort: $3/7$]
 #only("1")[
-#voiceover("Wir sollen ein Viertel plus zwei Drittel berechnen.")
+#voiceover("Die Aufgabe ist, ein Viertel plus zwei Drittel zu berechnen.")
 ]
 #only("2")[
-#voiceover("Und deine Antwort ist drei Siebtel. Das ist leider nicht richtig.")
+#voiceover("Und deine Antwort, drei Siebtel, ist leider nicht richtig.")
 ]
 ]
 
@@ -28,13 +28,13 @@
 #v(20pt)
 #only("3-")[🛠️ Du musst die Brüche zuerst auf den gemeinsamen Nenner bringen]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du die Zähler und Nenner separat addiert hast. Ein Viertel plus zwei Drittel ist nicht gleich eins plus zwei geteilt durch vier plus drei.")
+#voiceover("Du hast wohl einfach die Zähler addiert, und die Nenner addiert. Also eins plus zwei geteilt durch vier plus drei. Das stimmt aber leider nicht.")
 ]
 #only("2")[
-#voiceover("Denn indem du die Zähler und Nenner separat addierst, veränderst du den Wert der Brüche, aber...")
+#voiceover("Denn du darfst die Zähler und Nenner nicht einfach separat addieren.")
 ]
 #only("3")[
-#voiceover("...du musst die Brüche zuerst auf den gemeinsamen Nenner bringen, bevor du die Zähler addieren kannst.")
+#voiceover("Stattdessen musst du die Brüche zuerst auf den gemeinsamen Nenner bringen, also dass sie den gleichen Nenner haben. Erst dann kannst du die Zähler addieren.")
 ]
 ]
 
@@ -79,15 +79,15 @@ width: 360pt),
 #v(20pt)
 #only("2-")[#text()[- Brüche haben verschiedene Nenner]]
 #v(20pt)
-#only("3-")[#text()[- Man kann sie nicht direkt addieren]]
+#only("3-")[#text()[- Man kann nur bei gleichen Nennern addieren]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir ein Viertel und rechts zwei Drittel.")
+#voiceover("Suchen wir also den gemeinsamen Nenner. Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir ein Viertel und rechts zwei Drittel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Viertel und rechts Drittel. Das bedeutet, dass wir sie nicht direkt addieren können.")
+#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Viertel und rechts Drittel. Deswegen können wir auch nicht einfach die Zähler addieren.")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche also zuerst auf einen gemeinsamen Nenner bringen, sodass die Stücke gleich groß sind. Und erst dann kannst du sie addieren.")
+#voiceover("Denn das geht erst, wenn sie den gleichen Nenner haben. Denn nur dann sind die Stücke gleich groß und wir können sie addieren.")
 ]
 ]
 
@@ -131,13 +131,13 @@ width: 360pt),
 #v(20pt)
 #only("3-")[#text()[- $8/12 = 2/3$]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche mit einem gemeinsamen Nenner von zwölf.")
+#voiceover("Ein gemeinsamer Nenner wäre ja 12, denn 12 ist ein Vielfaches von 4 und 3.")
 ]
 #only("2")[
-#voiceover("Also haben wir jetzt drei Zwölftel statt einem Viertel,")
+#voiceover("Dann wandeln wir die Brüche um: Drei Zwölftel ist gleich einem Viertel.")
 ]
 #only("3")[
-#voiceover("und acht Zwölftel statt zwei Drittel. Du siehst, dass auf jeder Seite der Wert gleich ist, lediglich die Darstellung ist anders.")
+#voiceover("und acht Zwölftel statt zwei Drittel. Du siehst, dass auf jeder Seite der Wert gleich ist, wie davor. Lediglich die Darstellung ist anders.")
 ]
 ]
 
@@ -163,11 +163,9 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
     ax.set_title(title, fontsize=50)
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
-#first plot the fraction 3/12, which is equivalent to the fraction 1/4
-plot_fraction_circle(axs[0], 12, 3, '3/12')
-#then plot the fraction 8/12, which is equivalent to the fraction 2/3
-plot_fraction_circle(axs[1], 12, 8, '8/12')
+fig, ax = plt.subplots(figsize=(12, 5))
+#plot the sum of the two fractions
+plot_fraction_circle(ax, 12, 11, '3/12 + 8/12 = 11/12')
 
 plt.tight_layout()
 plt.show()
@@ -198,7 +196,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
 
 fig, ax = plt.subplots(figsize=(12, 5))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 12, 11, '3/12 + 8/12 = 11/12')
+plot_fraction_circle(ax, 12, 11, '11/12')
 
 plt.tight_layout()
 plt.show()
@@ -210,23 +208,9 @@ width: 360pt),
 #only("1-")[#text(weight: "bold")[Schritt 3:] Addiere die Zähler, behalte den gemeinsamen Nenner]
 #v(20pt)
 #only("1")[
-#voiceover("Jetzt kannst du die Brüche addieren. Du addierst die Zähler und behältst den gemeinsamen Nenner.")
+#voiceover("Jetzt haben beide Brücher den gleichen Nenner - und du kannst du die Brüche addieren. Du addierst die Zähler und behältst den gemeinsamen Nenner.")
 ]
 #only("2")[
 #voiceover("Drei Zwölftel plus acht Zwölftel ist also gleich elf Zwölftel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $1/4 + 2/3 = 11/12$, nicht $3/7$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist ein Viertel plus zwei Drittel gleich elf Zwölftel, nicht drei Siebtel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und addiere dann erst die Zähler!")
 ]
 ]

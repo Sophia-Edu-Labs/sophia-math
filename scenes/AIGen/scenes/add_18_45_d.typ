@@ -44,7 +44,7 @@
 #box()[
 #morphchildren(id: "plot1")[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Wedge
 
@@ -96,7 +96,7 @@ width: 360pt),
 #box()[
 #morphchildren(id: "plot2")[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Wedge
 
@@ -146,7 +146,7 @@ width: 360pt),
 #box()[
 #morphchildren(id: "plot2")[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Wedge
 
@@ -179,7 +179,7 @@ width: 360pt),
 $ #sym.arrow.b $
 #box()[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Wedge
 
@@ -216,19 +216,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Fünf Vierzigstel plus zweiunddreißig Vierzigstel ist also gleich siebenunddreißig Vierzigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $1/8 + 4/5 = 37/40$.]
-#v(20pt)
-#only("2-")[Gut gemacht! 🎉]
-#only("1")[
-#voiceover("Also ist ein Achtel plus vier Fünftel gleich siebenunddreißig Vierzigstel.")
-]
-#only("2")[
-#voiceover("Gut gemacht! Denke immer daran, die Brüche zuerst auf einen gemeinsamen Nenner zu bringen und dann die Zähler zu addieren. Du hast es richtig gemacht!")
 ]
 ]

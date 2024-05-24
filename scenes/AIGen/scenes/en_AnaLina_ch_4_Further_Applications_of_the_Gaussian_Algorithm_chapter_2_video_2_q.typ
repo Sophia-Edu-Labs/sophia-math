@@ -9,7 +9,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Linear Systems of Equations]
 #v(40pt)
-#only("1-")[A linear system of equations is solvable if the rank of the augmented matrix ____ the rank of the coefficient matrix.]
+#only("1-")[A linear system of equations is solvable if the rank of the augmented matrix \_\_\_\_ the rank of the coefficient matrix.]
 #v(40pt)
 #only("2-")[a) is greater than]
 #v(10pt)

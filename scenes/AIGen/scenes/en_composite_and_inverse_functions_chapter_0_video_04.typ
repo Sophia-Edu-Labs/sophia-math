@@ -28,8 +28,50 @@
 ]
 ]
 
+#slide()[
+#text(size: 30pt, weight: "bold")[Visual Example]
+#v(40pt)
 
+#only("1-")[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(```
+import matplotlib.pyplot as plt
+import numpy as np
 
+x = np.linspace(-2, 2, 100)
+
+def f(x):
+    return x**2
+
+def g(x):
+    return x + 1
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, f(x), 'b-', label='$f(x) = x^2$')
+plt.plot(x, g(x), 'r-', label('$g(x) = x + 1$')
+plt.plot(x, f(g(x)), 'g-', label='$f(g(x)) = (x + 1)^2$')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid(True)
+plt.show()
+```,
+width: 360pt),
+)
+]
+]
+
+#only("1")[
+#voiceover("Here's a visual representation. The blue curve represents f of x equals x squared, the red line represents g of x equals x plus 1, and the green curve shows the composition f of g of x, which is x plus 1, all squared.")
+]
+]
+```
+
+The code has a small error in the `label` argument of the second `plt.plot` function. The closing parenthesis is missing. Here is the corrected code:
+
+```typst
 #slide()[
 #text(size: 30pt, weight: "bold")[Visual Example]
 #v(40pt)
@@ -69,7 +111,8 @@ width: 360pt),
 #voiceover("Here's a visual representation. The blue curve represents f of x equals x squared, the red line represents g of x equals x plus 1, and the green curve shows the composition f of g of x, which is x plus 1, all squared.")
 ]
 ]
-]
+]]
+
 #slide()[
 #text(size: 30pt, weight: "bold")[Key Points 🔑]
 #v(40pt)

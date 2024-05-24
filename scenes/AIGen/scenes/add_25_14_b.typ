@@ -24,17 +24,17 @@
 #v(40pt)
 #only("1-")[Dein Fehler: $2/5 + 1/4 ≠ (2+1)/(5 dot 4)$]
 #v(20pt)
-#only("2-")[🛠️ Du hast zwar den gemeinsamen Nenner ermittelt, aber die Zähler nicht korrekt angepasst]
+#only("2-")[✅ Du hast den gemeinsamen Nenner gefunden!]
 #v(20pt)
-#only("3-")[🛠️ Du musst auch die Zähler anpassen, um die Brüche korrekt zu addieren]
+#only("3-")[🛠️ Du musst aber auch die Zähler anpassen...]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du zwar den gemeinsamen Nenner gefunden hast, aber die Zähler nicht korrekt angepasst hast. Zwei Fünftel plus ein Viertel ist nicht gleich drei Zwanzigstel.")
+#voiceover("Denn zwei Fünftel plus ein Viertel ist nicht gleich zwei plus eins durch fünf mal vier...")
 ]
 #only("2")[
-#voiceover("Denn du hast zwar den gemeinsamen Nenner richtig berechnet, aber die Zähler müssen ebenfalls angepasst werden, damit der Wert der Brüche erhalten bleibt.")
+#voiceover("Was richtig ist, ist dass der gemeinsame Nenner Zwanzigstel ist. Das hast du schon richtig erkannt.")
 ]
 #only("3")[
-#voiceover("Du musst also sowohl den Nenner als auch die Zähler anpassen, um die Brüche korrekt addieren zu können.")
+#voiceover("Allerdings musst du auch die Zähler anpassen, wenn du ihren Nenner veränderst! Denn sonst änderst du den Wert der Brüche.")
 ]
 ]
 
@@ -79,25 +79,20 @@ width: 360pt),
 #v(20pt)
 #only("2-")[#text()[- Brüche haben verschiedene Nenner]]
 #v(20pt)
-#only("3-")[#text()[- Man kann sie nicht direkt addieren]]
-#v(20pt)
 #only("4-")[#text()[- Gemeinsamer Nenner: $times.square/20$]]
 #only("1")[
 #voiceover("Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir zwei Fünftel und rechts ein Viertel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Fünftel und rechts Viertel. Das bedeutet, dass wir sie nicht direkt addieren können.")
+#voiceover("Da diese Brüche verschiedene Nenner haben, müssen wir sie zuerst auf einen gemeinsamen Nenner bringen.")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche zuerst auf einen gemeinsamen Nenner bringen, sodass die Stücke gleich groß sind. Und erst dann kannst du sie addieren. Dabei musst du allerdings beachten, dass der Wert der Brüche erhalten bleibt.")
-]
-#only("4")[
-#voiceover("und wie du schon richtig erkannt hast, ist der gemeinsame Nenner Zwanzigstel.")
+#voiceover("Und zwar auf Zwanzigstel, wie du schon richtig erkannt hast.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gemeinsamer Nenner, aber Zähler nicht angepasst]
+#text(size: 30pt, weight: "bold")[Zähler anpassen]
 // First Plot that covers the first fraction, which is 2/5
 #only("-2")[
 #box()[
@@ -174,13 +169,13 @@ width: 360pt),
 #v(20pt)
 #only("3-")[#text()[- $1/4 = 5/20$]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche, die wir auf einen gemeinsamen Nenner bringen wollen. Beginnen wir mit zwei Fünftel.")
+#voiceover("Wir müssen nur aufpassen, dass wir auch die Zähler anpassen, wenn wir die Nenner verändern.")
 ]
 #only("2")[
-#voiceover("Zunächst siehst du zwei Fünftel, und daneben acht Zwanzigstel. Du kannst erkennen, dass der Wert gleich bleibt, nur die Darstellung ist anders. Also sind zwei Fünftel gleich acht Zwanzigstel, und nicht gleich drei Zwanzigstel.")
+#voiceover("Aus zwei Fünftel werden dann acht Zwanzigstel. Wir haben also sowohl den Zähler, als auch den Nenner mit vier multipliziert. Und wie du siehst bleibt dann der Wert gleich.")
 ]
 #only("3")[
-#voiceover("Und hier siehst du ein Viertel und fünf Zwanzigstel. Auch hier bleibt der Wert gleich, nur die Darstellung ist anders. Ein Viertel ist also gleich fünf Zwanzigstel, und nicht gleich drei Zwanzigstel.")
+#voiceover("Und aus ein Viertel werden fünf Zwanzigstel. Auch hier haben wir sowohl den Zähler, als auch den Nenner mit dem selben Wert multipliziert. Und auch hier bleibt der Wert gleich.")
 ]
 ]
 
@@ -257,19 +252,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Acht Zwanzigstel plus fünf Zwanzigstel ist also gleich dreizehn Zwanzigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $2/5 + 1/4 = 13/20$, nicht $3/20$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist zwei Fünftel plus ein Viertel gleich dreizehn Zwanzigstel, nicht drei Zwanzigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und passe dann auch die Zähler entsprechend an!")
 ]
 ]

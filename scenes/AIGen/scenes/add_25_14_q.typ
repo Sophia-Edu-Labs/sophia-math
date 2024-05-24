@@ -11,7 +11,7 @@
 #align(center)[Berechne $2/5 + 1/4$]
 ]
 #only("1")[
-#voiceover("Hier ist eine weitere Aufgabe, um das Addieren von Brüchen zu üben.")
+#voiceover("Hier ist noch eine Aufgabe, in der wir das Addieren von Brüchen üben.")
 ]
 #only("2")[
 #voiceover("Berechne zwei Fünftel plus ein Viertel.")

@@ -163,11 +163,9 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
     ax.set_title(title, fontsize=50)
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
-#first plot the fraction 18/30, which is equivalent to the fraction 3/5
-plot_fraction_circle(axs[0], 30, 18, '18/30')
-#then plot the fraction 10/30, which is equivalent to the fraction 2/6
-plot_fraction_circle(axs[1], 30, 10, '10/30')
+fig, ax = plt.subplots(figsize=(12, 5))
+#plot the sum of the two fractions
+plot_fraction_circle(ax, 30, 28, '18/30 + 10/30 = 28/30')
 
 plt.tight_layout()
 plt.show()
@@ -198,7 +196,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
 
 fig, ax = plt.subplots(figsize=(12, 5))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 30, 28, '18/30 + 10/30 = 28/30')
+plot_fraction_circle(ax, 30, 28, '28/30 = 14/15')
 
 plt.tight_layout()
 plt.show()
@@ -213,20 +211,6 @@ width: 360pt),
 #voiceover("Jetzt kannst du die Brüche addieren. Du addierst die Zähler und behältst den gemeinsamen Nenner.")
 ]
 #only("2")[
-#voiceover("Achtzehn Dreißigstel plus zehn Dreißigstel ist also gleich achtundzwanzig Dreißigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $3/5 + 2/6 = 28/30$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist drei Fünftel plus zwei Sechstel gleich achtundzwanzig Dreißigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und addiere dann erst die Zähler!")
+#voiceover("Achtzehn Dreißigstel plus zehn Dreißigstel ist also gleich achtundzwanzig Dreißigstel. Das kann man noch weiter vereinfachen zu vierzehn Fünfzehntel. Und das ist das korrekte Ergebnis.")
 ]
 ]

@@ -10,7 +10,7 @@
 #text(size: 30pt, weight: "bold")[Change of Basis]
 // The title "Change of Basis" is shown on this slide
 #v(40pt)
-#only("1-")[Changing the basis involves finding a new set of ____ vectors.]
+#only("1-")[Changing the basis involves finding a new set of \_\_\_\_ vectors.]
 // The question is shown from slide 1 onward
 #v(40pt)
 #only("2-")[a) dependent]

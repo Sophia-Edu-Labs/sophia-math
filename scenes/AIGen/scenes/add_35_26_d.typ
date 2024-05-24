@@ -218,17 +218,3 @@ width: 360pt),
 #voiceover("Achtzehn Dreißigstel plus zehn Dreißigstel ist also gleich achtundzwanzig Dreißigstel. Und das ist das korrekte Ergebnis.")
 ]
 ]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $3/5 + 2/6 = 28/30$.]
-#v(20pt)
-#only("2-")[Gut gemacht! 🎉]
-#only("1")[
-#voiceover("Also ist drei Fünftel plus zwei Sechstel gleich achtundzwanzig Dreißigstel.")
-]
-#only("2")[
-#voiceover("Gut gemacht! Denke immer daran, die Brüche zuerst auf einen gemeinsamen Nenner zu bringen und dann die Zähler zu addieren. Du hast es richtig gemacht!")
-]
-]

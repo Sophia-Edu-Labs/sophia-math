@@ -24,17 +24,17 @@
 #v(40pt)
 #only("1-")[Dein Fehler: $1/8 + 4/5 ≠ (1+4)/(8 dot 5)$]
 #v(20pt)
-#only("2-")[🛠️ Du hast zwar den gemeinsamen Nenner ermittelt, aber die Zähler nicht korrekt angepasst]
+#only("2-")[✅ Du hast die Brüche addiert, aber...]
 #v(20pt)
-#only("3-")[🛠️ Du musst auch die Zähler anpassen, um die Brüche korrekt zu addieren]
+#only("3-")[🛠️ Du musst den gemeinsamen Nenner finden und die Zähler anpassen...]
 #only("1")[
-#voiceover("Dein Fehler ist, dass du zwar den gemeinsamen Nenner gefunden hast, aber die Zähler nicht korrekt angepasst hast. Ein Achtel plus vier Fünftel ist nicht gleich fünf Vierzigstel.")
+#voiceover("Denn ein Achtel plus vier Fünftel ist nicht gleich eins plus vier durch acht mal fünf...")
 ]
 #only("2")[
-#voiceover("Denn du hast zwar den gemeinsamen Nenner richtig berechnet, aber die Zähler müssen ebenfalls angepasst werden, damit der Wert der Brüche erhalten bleibt.")
+#voiceover("Was richtig ist, ist dass du die Brüche addiert hast, aber du musst den gemeinsamen Nenner finden und die Zähler anpassen.")
 ]
 #only("3")[
-#voiceover("Du musst also sowohl den Nenner als auch die Zähler anpassen, um die Brüche korrekt addieren zu können.")
+#voiceover("Denn sonst änderst du den Wert der Brüche.")
 ]
 ]
 
@@ -79,25 +79,20 @@ width: 360pt),
 #v(20pt)
 #only("2-")[#text()[- Brüche haben verschiedene Nenner]]
 #v(20pt)
-#only("3-")[#text()[- Man kann sie nicht direkt addieren]]
-#v(20pt)
 #only("4-")[#text()[- Gemeinsamer Nenner: $times.square/40$]]
 #only("1")[
 #voiceover("Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir ein Achtel und rechts vier Fünftel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Achtel und rechts Fünftel. Das bedeutet, dass wir sie nicht direkt addieren können.")
+#voiceover("Da diese Brüche verschiedene Nenner haben, müssen wir sie zuerst auf einen gemeinsamen Nenner bringen.")
 ]
 #only("3")[
-#voiceover("Du musst die Brüche zuerst auf einen gemeinsamen Nenner bringen, sodass die Stücke gleich groß sind. Und erst dann kannst du sie addieren. Dabei musst du allerdings beachten, dass der Wert der Brüche erhalten bleibt.")
-]
-#only("4")[
-#voiceover("und wie du schon richtig erkannt hast, ist der gemeinsame Nenner Vierzigstel.")
+#voiceover("und zwar auf vierzigstel.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gemeinsamer Nenner, aber Zähler nicht angepasst]
+#text(size: 30pt, weight: "bold")[Zähler anpassen]
 // First Plot that covers the first fraction, which is 1/8
 #only("-2")[
 #box()[
@@ -174,13 +169,13 @@ width: 360pt),
 #v(20pt)
 #only("3-")[#text()[- $4/5 = 32/40$]]
 #only("1")[
-#voiceover("Hier siehst du die Brüche, die wir auf einen gemeinsamen Nenner bringen wollen. Beginnen wir mit ein Achtel.")
+#voiceover("Wir müssen nur aufpassen, dass wir auch die Zähler anpassen, wenn wir die Nenner verändern.")
 ]
 #only("2")[
-#voiceover("Zunächst siehst du ein Achtel, und daneben fünf Vierzigstel. Du kannst erkennen, dass der Wert gleich bleibt, nur die Darstellung ist anders. Also ist ein Achtel gleich fünf Vierzigstel, und nicht gleich fünf Vierzigstel.")
+#voiceover("Aus ein Achtel werden dann fünf Vierzigstel. Wir haben also sowohl den Zähler, als auch den Nenner mit fünf multipliziert. Und wie du siehst bleibt dann der Wert gleich.")
 ]
 #only("3")[
-#voiceover("Und hier siehst du vier Fünftel und zweiunddreißig Vierzigstel. Auch hier bleibt der Wert gleich, nur die Darstellung ist anders. Vier Fünftel ist also gleich zweiunddreißig Vierzigstel, und nicht gleich fünf Vierzigstel.")
+#voiceover("Und aus vier Fünftel werden zweiunddreißig Vierzigstel. Auch hier haben wir sowohl den Zähler, als auch den Nenner mit acht multipliziert. Und auch hier bleibt der Wert gleich.")
 ]
 ]
 
@@ -206,11 +201,9 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
     ax.set_title(title, fontsize=50)
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
-#first plot the fraction 5/40, which is equivalent to the fraction 1/8
-plot_fraction_circle(axs[0], 40, 5, '5/40')
-#then plot the fraction 32/40, which is equivalent to the fraction 4/5
-plot_fraction_circle(axs[1], 40, 32, '32/40')
+fig, ax = plt.subplots(figsize=(12, 5))
+#plot the sum of the two fractions
+plot_fraction_circle(ax, 40, 37, '5/40 + 32/40 = 37/40')
 
 plt.tight_layout()
 plt.show()
@@ -241,7 +234,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
 
 fig, ax = plt.subplots(figsize=(12, 5))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 40, 37, '5/40 + 32/40 = 37/40')
+plot_fraction_circle(ax, 40, 37, '37/40')
 
 plt.tight_layout()
 plt.show()
@@ -257,19 +250,5 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Fünf Vierzigstel plus zweiunddreißig Vierzigstel ist also gleich siebenunddreißig Vierzigstel. Und das ist das korrekte Ergebnis.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(20pt)
-#only("1-")[Also ist $1/8 + 4/5 = 37/40$, nicht $5/40$.]
-#v(20pt)
-#only("2-")[Merke dir: 🧮 Beachte den Zähler beim Addieren von Brüchen]
-#only("1")[
-#voiceover("Also ist ein Achtel plus vier Fünftel gleich siebenunddreißig Vierzigstel, nicht fünf Vierzigstel.")
-]
-#only("2")[
-#voiceover("Denk immer daran: Beim Addieren von Brüchen mit verschiedenen Nennern, bringe sie zuerst auf den gemeinsamen Nenner und passe dann auch die Zähler entsprechend an!")
 ]
 ]
