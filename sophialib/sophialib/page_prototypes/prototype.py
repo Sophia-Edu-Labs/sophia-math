@@ -5,25 +5,49 @@ import json
 import os
 from pathlib import Path
 import sys
-from typing import List, Literal, Type, Union, Optional, Dict
+from typing import List, Literal, Tuple, Type, Union, Optional, Dict
 
+from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes
 from sophialib.styles.sophiascene import SophiaQuestionInfo, SophiaScene
 from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
+from sophialib.translation.currentlocale import CURRENT_LOCALE
+
+# util function that will parse lang_code and base_prototypeID from typ filename stem
+def parse_lang_code_and_base_prototypeID_from_typst_file_stem(stem: str) -> Tuple[str, str]:
+    # if the first element of the stem splitted by underscores is two characters long, then it is a language code
+    stem_parts = stem.split("_")
+    lang_code = CURRENT_LOCALE # default to CURRENT_LOCALE from environment
+    base_prototypeID = stem
+
+    if len(stem_parts[0]) == 2:
+        lang_code = stem_parts[0]
+        base_prototypeID = "_".join(stem_parts[1:])
+
+    # always make sure lang code is upper case
+    lang_code = lang_code.upper()
+
+    return lang_code, base_prototypeID
 
 class PagePrototype:
-    def __init__(self, prototypeID: str, type: Union[Literal['video'], Literal['question']]):
+    def __init__(self, prototypeID: str, type: Union[Literal['video'], Literal['question'], Literal['web']], lang_code: str):
         self.prototypeID = prototypeID
         self.type = type
+        self.lang_code = lang_code
 
     def to_json(self):
         return {
             "prototypeID": self.prototypeID,
-            "type": self.type
+            "type": self.type,
+            "lang_code": self.lang_code
         }
 
+    @property
+    def base_prototypeID(self):
+        return self.prototypeID.split("_", 1)[1]
+
 class PagePrototypeVideo(PagePrototype):
-    def __init__(self, prototypeID: str):
-        super().__init__(prototypeID, 'video')
+    def __init__(self, prototypeID: str, lang_code: str):
+        super().__init__(prototypeID, 'video', lang_code)
 
     def to_json(self):
         return {
@@ -35,13 +59,19 @@ class PagePrototypeVideo(PagePrototype):
     def from_scene(scene: SophiaScene):
         return PagePrototypeVideo(
             prototypeID = f"VIDEO_{scene.__name__}",
+            lang_code = scene().current_locale()
         )
     
     # Factory method to create a PagePrototypeVideo from a path to a typst file (i.e. basically from the name of the file path)
     @staticmethod
     def from_typst_file_path(typst_file_path: Path):
+        stem = typst_file_path.stem
+        
+        lang_code, base_prototypeID = parse_lang_code_and_base_prototypeID_from_typst_file_stem(stem)
+
         return PagePrototypeVideo(
-            prototypeID = f"VIDEO_AI_{typst_file_path.stem}"
+            prototypeID = f"VIDEO_AI_{base_prototypeID}", 
+            lang_code = lang_code
         )
 
 
@@ -49,6 +79,7 @@ class PagePrototypeQuestion(PagePrototype):
     def __init__(
         self,
         prototypeID: str,
+        lang_code: str,
         questionVideoPrototypeID: str,
         answerOptions: List[str],
         correctAnswerIndex: int,
@@ -56,7 +87,7 @@ class PagePrototypeQuestion(PagePrototype):
         freetext: Optional[Dict[str, Union[str, int, dict]]],
         llmCheckDetails: Optional[Dict[str, Union[str, int, dict, list]]],
     ):
-        super().__init__(prototypeID, 'question')
+        super().__init__(prototypeID, 'question', lang_code)
         self.questionVideoPrototypeID = questionVideoPrototypeID
         self.answerOptions = answerOptions
         self.correctAnswerIndex = correctAnswerIndex
@@ -83,9 +114,10 @@ class PagePrototypeQuestion(PagePrototype):
 
     # Factory method that will create a PagePrototypeQuestion from a SophiaTaskDefinition
     @staticmethod
-    def from_task_definition(task_definition: SophiaTaskDefinition, unprefixed_prototypeID: str):
+    def from_task_definition(task_definition: SophiaTaskDefinition, base_prototypeID: str, lang_code: str):
         return PagePrototypeQuestion(
-            prototypeID = f"QUESTION_{unprefixed_prototypeID}",
+            prototypeID = f"QUESTION_{base_prototypeID}",
+            lang_code = lang_code,
             questionVideoPrototypeID = task_definition.questionVideoPrototypeID,
             answerOptions = task_definition.answerOptions,
             correctAnswerIndex = task_definition.correctAnswerIndex,
@@ -112,9 +144,12 @@ class PagePrototypeQuestion(PagePrototype):
         
         task_def = sceneWithQuestionInfo.task_definition()
 
+        lang_code = sceneWithQuestionInfo.current_locale()
+
         return PagePrototypeQuestion.from_task_definition(
             task_definition = task_def,
-            unprefixed_prototypeID = sceneWithQuestionInfoType.__name__
+            base_prototypeID = sceneWithQuestionInfoType.__name__,
+            lang_code = lang_code,
         )
     
     # Factory method to create a PagePrototypeQuestion from a path to a typst file (i.e. basically from the name of the file path and the corresponding question metadata in the document)
@@ -183,27 +218,97 @@ class PagePrototypeQuestion(PagePrototype):
             llmCheckDetails = llm_check_details
         )
 
+        lang_code, base_prototypeID = parse_lang_code_and_base_prototypeID_from_typst_file_stem(typst_file_path.stem)
+
         return PagePrototypeQuestion.from_task_definition(
             sophia_task_def,
-            unprefixed_prototypeID = f"AI_{typst_file_path.stem}"
+            base_prototypeID = f"AI_{base_prototypeID}", 
+            lang_code = lang_code
         )
+    
 
+def parse_prototypes_for_typst_file(typst_file_path: Path) -> List[PagePrototype]:
+    # if not .typ file, raise exception
+    if typst_file_path.suffix != ".typ":
+        raise Exception(f"File {typst_file_path} is not a .typ file")
+    
+    prototypes: List[PagePrototype] = []
 
+    # always every .typ file corresponds to a single video
+    video_prototype = PagePrototypeVideo.from_typst_file_path(typst_file_path)
+    prototypes.append(video_prototype)
 
+    #if we can query metadata from the document, also create the corresponding question prototype based on that
+    if typst_file_path.stem.endswith("_q"):
+            question_prototype = PagePrototypeQuestion.from_typst_file_path(typst_file_path)
+            prototypes.append(question_prototype)
 
-def get_page_prototype_variables(file_path: Path, add_parent_folder_to_sys_path: bool = False):
-    """Takes the file at the given path and returns all classes in the file that are subclasses of PagePrototype. 
-    If add_parent_folder_to_sys_path is True, the parent folder of the file will be added to sys.path, which allows realtive imports in that folder."""
-    if add_parent_folder_to_sys_path:
-        sys.path.append(str(file_path.parent))
+    return prototypes
 
+def parse_prototypes_for_py_file(py_file_path: Path, fallback_to_default_and_ensure_prototype_for_all_scenes: bool = False, add_parent_folder_to_sys_path: bool = False) -> List[PagePrototype]:
+    # if not .py file, raise exception
+    if py_file_path.suffix != ".py":
+        raise Exception(f"File {py_file_path} is not a .py file")
+    
+    # Create the output list of PagePrototypes
+    prototypes: List[PagePrototype] = []
 
-    module_name = file_path.stem
-    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    # read the python content
+    module_name = py_file_path.stem
+    spec = importlib.util.spec_from_file_location(module_name, py_file_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    objs = [obj for name, obj in inspect.getmembers(module) if isinstance(obj, PagePrototype) or (isinstance(obj, list) and all(isinstance(v, PagePrototype) for v in obj))]
+    prototypes = [obj for name, obj in inspect.getmembers(module) if isinstance(obj, PagePrototype) or (isinstance(obj, list) and all(isinstance(v, PagePrototype) for v in obj))]
     # flatten objs, i.e. flatten an array of the form: [[a, b], c, [d, e]] -> [a, b, c, d, e]
-    objs = list(itertools.chain.from_iterable([e if isinstance(e, list) else [e] for e in objs]))
-    return objs
+    prototypes = list(itertools.chain.from_iterable([e if isinstance(e, list) else [e] for e in prototypes]))
+
+    # if it should fallback to ensure prototype for all manim scenes in the given file, do so 
+    if fallback_to_default_and_ensure_prototype_for_all_scenes: 
+        # get all manim scene classes in the module
+        manim_scene_classes = get_module_manim_sophiascene_classes(py_file_path, add_parent_folder_to_sys_path=add_parent_folder_to_sys_path)
+
+        # create the "potential" prototypes for all the manim scene classes
+
+        for scene_class in manim_scene_classes:
+            potential_prototype = PagePrototypeVideo.from_scene(scene_class)
+
+            # if the prototype is not already in the list, add it
+            if not any(pt.prototypeID == potential_prototype.prototypeID for pt in prototypes):
+                prototypes.append(potential_prototype)
+
+
+    return prototypes
+
+
+
+def parse_prototypes_for_file(file_path: Path, add_parent_folder_to_sys_path: bool = False) -> List[PagePrototype]:
+    """Takes the file at the given path and returns all classes in the file that are subclasses of PagePrototype.
+    If add_parent_folder_to_sys_path is True, the parent folder of the file will be added to sys.path, which allows realtive imports in that folder."""
+
+    # raise an exception if file_path does not exist
+    if not file_path.exists():
+        raise Exception(f"File {file_path} does not exist")
+    
+    # raise an exception if file_path does not end to ".typ" or ".py"
+    if file_path.suffix not in [".typ", ".py"]:
+        raise Exception(f"File {file_path} is not a .typ or .py file")
+    
+    if add_parent_folder_to_sys_path:
+        sys.path.append(str(file_path.parent))
+    
+    # Create the output list of PagePrototypes
+    prototypes: List[PagePrototype] = []
+
+    # if the file is a .typ file, use the parse_prototypes_for_typst_file function
+    if file_path.suffix == ".typ":
+        prototypes = parse_prototypes_for_typst_file(file_path)
+    
+    # if the file is a .py file, use the parse_prototypes_for_py_file function
+    if file_path.suffix == ".py":
+        prototypes = parse_prototypes_for_py_file(file_path, 
+                                                  add_parent_folder_to_sys_path=add_parent_folder_to_sys_path, 
+                                                  fallback_to_default_and_ensure_prototype_for_all_scenes=True)
+
+    return prototypes
+
