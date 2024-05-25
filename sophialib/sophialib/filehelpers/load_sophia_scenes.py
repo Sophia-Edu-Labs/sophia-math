@@ -4,6 +4,7 @@ import inspect
 from pathlib import Path
 import sys
 
+from sophialib.page_prototypes.filename_utils import parse_lang_code_and_base_prototypeID_from_typst_file_stem
 from sophialib.styles.sophiascene import SophiaScene
 
 def get_module_manim_sophiascene_classes(file_path: Path, add_parent_folder_to_sys_path: bool = False, result_sorted: bool = False):
@@ -28,11 +29,13 @@ def get_module_manim_sophiascene_classes(file_path: Path, add_parent_folder_to_s
 
 
 def get_dynamic_typst_scene(file_path: Path, ):
+    lang_code, base_prototypeID = parse_lang_code_and_base_prototypeID_from_typst_file_stem(file_path.stem)
+
     return f"""
 from sophialib.morphing.sophiamorphscene import AutoSlideScene
 from pathlib import Path
 
-class AI_{file_path.stem}(AutoSlideScene):
+class AI_{base_prototypeID}(AutoSlideScene):
     def construct(self):
         # parse the corresponding typst
 
@@ -52,8 +55,8 @@ class AI_{file_path.stem}(AutoSlideScene):
 def get_module_typst_scene(file_path: Path ):
     """Takes the file at the given path and returns an on-the-fly generated scene based on the given typst file. Only returns a single scene!"""
 
-    module_name = file_path.stem
-
+    lang_code, base_prototypeID = parse_lang_code_and_base_prototypeID_from_typst_file_stem(file_path.stem)
+    module_name = base_prototypeID
 
     spec = importlib.util.spec_from_loader(module_name, loader=None)
     temp_module = importlib.util.module_from_spec(spec)

@@ -8,25 +8,10 @@ import sys
 from typing import List, Literal, Tuple, Type, Union, Optional, Dict
 
 from sophialib.filehelpers.load_sophia_scenes import get_module_manim_sophiascene_classes
+from sophialib.page_prototypes.filename_utils import parse_lang_code_and_base_prototypeID_from_typst_file_stem
 from sophialib.styles.sophiascene import SophiaQuestionInfo, SophiaScene
 from sophialib.tasks.sophiataskdefinition import SophiaFreeTextTaskDetail, SophiaLLMQuestionCheckDetail, SophiaTaskDefinition
 from sophialib.translation.currentlocale import CURRENT_LOCALE
-
-# util function that will parse lang_code and base_prototypeID from typ filename stem
-def parse_lang_code_and_base_prototypeID_from_typst_file_stem(stem: str) -> Tuple[str, str]:
-    # if the first element of the stem splitted by underscores is two characters long, then it is a language code
-    stem_parts = stem.split("_")
-    lang_code = CURRENT_LOCALE # default to CURRENT_LOCALE from environment
-    base_prototypeID = stem
-
-    if len(stem_parts[0]) == 2:
-        lang_code = stem_parts[0]
-        base_prototypeID = "_".join(stem_parts[1:])
-
-    # always make sure lang code is upper case
-    lang_code = lang_code.upper()
-
-    return lang_code, base_prototypeID
 
 class PagePrototype:
     def __init__(self, prototypeID: str, type: Union[Literal['video'], Literal['question'], Literal['web']], lang_code: str):
