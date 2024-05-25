@@ -42,6 +42,10 @@ class SophiaQuestionInfo(ABC):
     def task_definition(self) -> SophiaTaskDefinition:
         pass
 
+    @abstractmethod
+    def current_locale(self) -> str:
+        pass
+
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
 
