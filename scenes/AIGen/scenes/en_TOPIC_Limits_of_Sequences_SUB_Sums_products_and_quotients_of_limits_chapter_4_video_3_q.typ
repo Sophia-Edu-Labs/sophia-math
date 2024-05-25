@@ -40,7 +40,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("The limit is $\\key{a}$."),
+answerOptionMatcher:("$\\key{a}$"),
 answerOptionsTypes: (
 "a": "number"
 )

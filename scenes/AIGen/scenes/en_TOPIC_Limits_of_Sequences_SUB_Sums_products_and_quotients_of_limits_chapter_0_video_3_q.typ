@@ -39,10 +39,10 @@ $lim_(n -> infinity) a_n = ?$
 ]
 ]#questionDef(
 questionText: "What is $\\lim_{n \\to \\infty} a_n$, where $a_n = \\frac{2}{n}$?",
-answerOptions: ("$0$", "$2$", "$1$", "$\\infty$"),
+answerOptions: ("$0$", "$2$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
-fallbackOptionIndex: 0,
+fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (
 roundingDecimalPlaces: 2,

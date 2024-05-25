@@ -34,7 +34,7 @@
 ]
 ]#questionDef(
 questionText: "What is the limit of the sequence $a_n = (1 + \frac{1}{n})^n$ as $n$ approaches infinity?",
-answerOptions: ("$e$", "$\infty$"),
+answerOptions: ("${e}$", "$1$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,

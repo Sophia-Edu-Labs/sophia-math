@@ -29,7 +29,7 @@ Find:
 ]
 ]#questionDef(
 questionText: "What is the value of $\\lim_{n \\to \\infty} \\left( \\frac{a_n}{b_n} \\right)$, where $a_n = \\frac{1}{n}$ and $b_n = 2$?",
-answerOptions: ("$0$", "$\\frac12$"),
+answerOptions: ("$0$", "$\\frac{1}{2}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,

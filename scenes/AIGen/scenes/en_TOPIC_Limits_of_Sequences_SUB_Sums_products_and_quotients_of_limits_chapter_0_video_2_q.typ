@@ -26,6 +26,6 @@
 #only("5")[#voiceover("or is it negative 1?")]
 ]#questionDef(
 questionText: "What is the limit of the sequence $a_n = \frac{1}{n}$ as $n$ approaches infinity?",
-answerOptions: ("1", "0", "$infinity$", "-1"),
+answerOptions: ("$1$", "$0$", "$\infty$", "$-1$"),
 correctAnswerIndex: 1,
 )

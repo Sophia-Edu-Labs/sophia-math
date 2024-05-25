@@ -193,7 +193,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
         angle_start = (360 / num_parts) * i
         angle_end = (360 / num_parts) * (i + 1)
         color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num-parts/3))
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
         ax.add_patch(wedge)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -226,7 +226,7 @@ def plot_fraction_circle(ax, num_parts, shaded_parts, title):
         angle_start = (360 / num_parts) * i
         angle_end = (360 / num_parts) * (i + 1)
         color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num-parts/3))
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
         ax.add_patch(wedge)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
