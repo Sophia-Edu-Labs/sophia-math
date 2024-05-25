@@ -24,25 +24,33 @@ for scene_path in scene_paths:
     prototypes_for_scene_path = [pt for pt in prototypes_for_scene_path if pt.base_prototypeID not in to_exclude]
     prototypes.extend(prototypes_for_scene_path)
 
+# grooup the prototypes by their upper-case locale in a dict
+prototypes_by_locale = {}
+for pt in prototypes:
+    locale = pt.lang_code.upper()
+    if locale not in prototypes_by_locale:
+        prototypes_by_locale[locale] = []
+    prototypes_by_locale[locale].append(pt)
 
-# ensure that every prototype ID is unique
-all_prototype_ids = [pt.prototypeID for pt in prototypes]
-if len(all_prototype_ids) != len(set(all_prototype_ids)):
-    # find all duplicate prototype ids
-    duplicate_prototype_ids = set([x for x in all_prototype_ids if all_prototype_ids.count(x) > 1])
+# ensure that every prototype ID is unique, per locale
+for l, pts in prototypes_by_locale.items():
+    all_prototype_ids = [pt.prototypeID for pt in pts]
+    if len(all_prototype_ids) != len(set(all_prototype_ids)):
+        # find all duplicate prototype ids
+        duplicate_prototype_ids = set([x for x in all_prototype_ids if all_prototype_ids.count(x) > 1])
 
-    # for each duplicate prototype id, print them out
-    for duplicate_prototype_id in duplicate_prototype_ids:
-        print(f"Found duplicate prototype id {duplicate_prototype_id}")
+        # for each duplicate prototype id, print them out
+        for duplicate_prototype_id in duplicate_prototype_ids:
+            print(f"Found duplicate prototype id {duplicate_prototype_id}")
 
-    # raise an error that indicates the paths to the conflicting prototypes
-    raise Exception(f"Found duplicate prototype ids: {duplicate_prototype_ids}")
+        # raise an error that indicates the paths to the conflicting prototypes
+        raise Exception(f"Found duplicate prototype ids: {duplicate_prototype_ids}")
 
 # determine the locale for which we want to generate the exported prototypes json file
 locale = os.environ.get("LOCALE", "en") # (we take it from the env)
 
-# filter all prootypes by the locale
-prototypes_to_export = [pt for pt in prototypes if pt.lang_code.upper() == locale.upper()]
+# filter all prototypes by the locale
+prototypes_to_export = prototypes_by_locale.get(locale.upper(), [])
 
 # sort the prototypes_to_export by their base prototypeID
 prototypes_to_export.sort(key=lambda x: x.base_prototypeID)
