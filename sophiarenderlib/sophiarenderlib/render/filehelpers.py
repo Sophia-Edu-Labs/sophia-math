@@ -12,6 +12,7 @@ SCENE_BASEFOLDERS = [
                     SCENES_FOLDER / "AIGen" / "scenes_mathbuch",
                     SCENES_FOLDER / "AIGen" / "scenes_school",
                     SCENES_FOLDER / "AIGen" / "scenes_stockmath",
+                    SCENES_FOLDER / "AIGen" / "scenes_tiktok",
                     ]
 
 def find_repository_scene_module_paths(result_sorted: bool = False, scene_basefolders_to_use: List[Path] = SCENE_BASEFOLDERS, stems_to_exclude: List[str] = []) -> List[Path]:
