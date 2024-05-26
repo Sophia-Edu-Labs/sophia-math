@@ -1,5 +1,42 @@
 #import "@preview/polylux:0.3.1": *   
-#import "@local/svg-emoji:0.1.0": setup-emoji, github // only if you want to use GH names for emojis
+#import "@local/svg-emoji:0.1.0": setup-emoji, github, noto, emoji-image // only if you want to use GH names for emojis
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+// EMOJI stuff, see: https://github.com/polazarus/typst-svg-emoji/blob/main/lib.typ
+// We need this manual mapping here, because the dict and the regexes in the typst-svg-emoji package seem to be broken for some emojis compounded from multiple unicode characters, like the number emojis below. Some people refer to this concept as "Unicode grapheme clusters".
+
+#let notooverridedict = noto.dict
+#notooverridedict.insert("1️⃣", "noto-emoji/svg/emoji_u0031_20e3.svg")
+#notooverridedict.insert("2️⃣", "noto-emoji/svg/emoji_u0032_20e3.svg")
+#notooverridedict.insert("3️⃣", "noto-emoji/svg/emoji_u0033_20e3.svg")
+#notooverridedict.insert("4️⃣", "noto-emoji/svg/emoji_u0034_20e3.svg")
+#notooverridedict.insert("5️⃣", "noto-emoji/svg/emoji_u0035_20e3.svg")
+#notooverridedict.insert("6️⃣", "noto-emoji/svg/emoji_u0036_20e3.svg")
+#notooverridedict.insert("7️⃣", "noto-emoji/svg/emoji_u0037_20e3.svg")
+#notooverridedict.insert("8️⃣", "noto-emoji/svg/emoji_u0038_20e3.svg")
+#notooverridedict.insert("9️⃣", "noto-emoji/svg/emoji_u0039_20e3.svg")
+#notooverridedict.insert("0️⃣", "noto-emoji/svg/emoji_u0030_20e3.svg")
+
+#let notooverride = (
+  dict: notooverridedict, 
+  regex: "0️⃣|1️⃣|2️⃣|3️⃣|4️⃣|5️⃣|6️⃣|7️⃣|8️⃣|9️⃣|🔟|"+noto.regex
+)
+
+//we need the override to use the modified noto again
+#let setup-emoji-overide(font: noto, height: 1em, body) = {
+    show regex(notooverride.regex): it => {
+        emoji-image(
+            alt: it.text,
+            height: height,
+            notooverride.dict.at(it.text)
+        )
+    }
+    // [with svg emoji font]
+    body
+}
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
 
 #let slide = polylux-slide
 
@@ -10,7 +47,7 @@
   set text(size: 25pt)
   
   // also first install the emoji hook! (see: https://github.com/polazarus/typst-svg-emoji)
-  show: setup-emoji
+  show: setup-emoji-overide
 
   body
 }
