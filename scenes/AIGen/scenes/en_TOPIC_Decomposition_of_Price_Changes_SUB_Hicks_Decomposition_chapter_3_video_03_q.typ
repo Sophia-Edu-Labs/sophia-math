@@ -7,69 +7,24 @@
 
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Hicks Decomposition Exercise]
-// The title "Hicks Decomposition Exercise" is shown on all slides
-
+#text(size: 30pt, weight: "bold")[Hicks Decomposition]
 #v(40pt)
-
-#only("1-")[Draw a graph showing the substitution and income effects of a price decrease for good X. 📉]
-// The exercise prompt is shown from slide 1 onward
-
+#only("1-")[What does the substitution effect represent in a Hicks Decomposition graph? 🤔]
 #v(40pt)
-
-#only("2-")[Consider: 🤔]
-// "Consider:" is shown from slide 2 onward
-
-#v(20pt)
-
-#only("3-")[- Initial and new budget constraints]
-// The first consideration is shown from slide 3 onward
-
-#v(20pt)
-
-#only("4-")[- Initial and new indifference curves]
-// The second consideration is shown from slide 4 onward
-
-#v(20pt)
-
-#only("5-")[- Movement from initial to new consumption bundle]
-// The third consideration is shown from slide 5 onward
-
-#v(20pt)
-
-#only("6-")[- Separating substitution and income effects]
-// The fourth consideration is shown from slide 6 onward
-
-#only("1")[
-#voiceover("For this exercise, draw a graph showing the substitution and income effects of a price decrease for good X.")
-]
-
-#only("2")[
-#voiceover("When creating your graph, consider the following elements:")
-]
-
-#only("3")[
-#voiceover("First, show the initial and new budget constraints, reflecting the price change.")
-]
-
-#only("4")[
-#voiceover("Next, include the initial and new indifference curves, demonstrating the consumer's preferences.")
-]
-
-#only("5")[
-#voiceover("Illustrate the movement from the initial to the new consumption bundle.")
-]
-
-#only("6")[
-#voiceover("Finally, separate the substitution and income effects in your graph.")
-]
-
+#only("2-")[a) Change in consumption due to a change in real income 💰]
+#v(10pt)
+#only("3-")[b) Change in consumption keeping utility constant 📈]
+#v(10pt)
+#only("4-")[c) Change in consumption due to a change in preferences 🧐]
+#v(10pt)
+#only("5-")[d) Change in consumption due to a change in quantity demanded 📊]
+#only("1")[#voiceover("Let's test your understanding of Hicks Decomposition. What does the substitution effect represent in a Hicks Decomposition graph?")]
+#only("2")[#voiceover("Is it the change in consumption due to a change in real income,")]
+#only("3")[#voiceover("or the change in consumption keeping utility constant,")]
+#only("4")[#voiceover("or maybe the change in consumption due to a change in preferences,")]
+#only("5")[#voiceover("or is it the change in consumption due to a change in quantity demanded?")]
 ]#questionDef(
-questionText: "Draw a graph showing the substitution and income effects of a price decrease for good $X$. Consider the initial and new budget constraints, initial and new indifference curves, movement from initial to new consumption bundle, and separating substitution and income effects.",
-answerOptions: ("The graph should correctly illustrate the substitution and income effects of a price decrease for good $X$, including the initial and new budget constraints, initial and new indifference curves, movement from initial to new consumption bundle, and separating substitution and income effects.", "The answer is incorrect."),
-correctAnswerIndex: 0,
-llmCheckDetails: (
-fallbackOptionIndex: 1
-),
+questionText: "What does the substitution effect represent in a Hicks Decomposition graph?",
+answerOptions: ("Change in consumption due to a change in real income", "Change in consumption keeping utility constant", "Change in consumption due to a change in preferences", "Change in consumption due to a change in quantity demanded"),
+correctAnswerIndex: 1
 )

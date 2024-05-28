@@ -34,7 +34,7 @@ fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (
 roundingDecimalPlaces: 2,
-tolerance: 2
+tolerance: 1.000001
 )
 ),
 answerOptionMatcher:("$\key{a}$€"),
@@ -43,3 +43,4 @@ answerOptionsTypes: (
 )
 ),
 )
+

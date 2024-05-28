@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe a change in utility,")]
 #only("5")[#voiceover("or is it a change in quantity?")]
 ]#questionDef(
-questionText: "The substitution effect shows changes in consumption due to a change in $_____$.",
+questionText: "The substitution effect shows changes in consumption due to a change in _____.",
 answerOptions: ("income", "price", "utility", "quantity"),
 correctAnswerIndex: 1,
 )

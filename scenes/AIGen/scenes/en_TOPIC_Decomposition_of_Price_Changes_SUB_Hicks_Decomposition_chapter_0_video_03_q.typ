@@ -33,5 +33,6 @@ Which effect is isolated first?
 
 #questionDef(
 questionText: "If the price of good $X$ increases, what effect does Hicks Decomposition isolate first?",
-answerOptions: ("Substitution effect", "Income effect")
+answerOptions: ("Substitution effect", "Income effect"),
+correctAnswerIndex: 0,
 )

@@ -13,7 +13,7 @@
 #v(20pt)
 #only("2-")[- Adjusted for the substitution effect]
 #v(20pt)
-#only("3-")[- Formula: $IE = x(p, m) - h(p, u)$]
+#only("3-")[- Formula: $I E = x(p, m) - h(p, u)$]
 #v(20pt)
 #only("4-")[- $x(p, m)$: Marshallian demand (actual consumption)]
 #v(20pt)

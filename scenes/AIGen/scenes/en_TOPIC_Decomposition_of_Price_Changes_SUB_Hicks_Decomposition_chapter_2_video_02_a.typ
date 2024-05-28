@@ -9,7 +9,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Income Effect]
 #v(40pt)
-The income effect shows changes in consumption due to a change in _______.
+The income effect shows changes in consumption due to a change in \_\_\_\_\_.
 #v(40pt)
 // From the start until section one, the option is black. From section 2 until the end it is then turned green, because it is correct. 
 #only("-1")[a) real income]#only("2-")[#text(fill:green)[a) real income]]

@@ -14,19 +14,19 @@
 ]
 
 #only("2-")[
-- Total effect: $\Delta x = x_1 - x_0$
+- Total effect: $Delta x = x_1 - x_0$
 ]
 
 #only("3-")[
-- Substitution effect: $\Delta x_s = x_s - x_0$
+- Substitution effect: $Delta x_s = x_s - x_0$
 ]
 
 #only("4-")[
-- Income effect: $\Delta x_i = x_1 - x_s$
+- Income effect: $Delta x_i = x_1 - x_s$
 ]
 
 #only("5-")[
-$ \Delta x = \Delta x_s + \Delta x_i$
+$ Delta x = Delta x_s + Delta x_i$
 ]
 
 #only("1")[

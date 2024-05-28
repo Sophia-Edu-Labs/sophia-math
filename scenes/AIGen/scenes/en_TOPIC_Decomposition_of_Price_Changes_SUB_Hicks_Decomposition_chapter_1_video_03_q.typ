@@ -24,4 +24,5 @@
 ]#questionDef(
 questionText: "If the price of good $X$ decreases, what happens to the quantity demanded of good $X$ due to the substitution effect?",
 answerOptions: ("Increases", "Decreases"),
+correctAnswerIndex: 0,
 )
