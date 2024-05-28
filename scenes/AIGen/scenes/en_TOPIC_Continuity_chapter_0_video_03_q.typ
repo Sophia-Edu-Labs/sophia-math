@@ -29,34 +29,11 @@ $lim_(x -> 1) (2x + 3)$
 ]
 
 #v(40pt)
+]
 
-#only("3-")[
 #questionDef(
-questionText: "What is the value of $lim_(x -> 1) (2x + 3)$?",
-answerOptions: ("5", "6"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$\key{a}$"),
-answerOptionsTypes: (
-"a": "number"
-)
-),
-)
-]
-
-#only("3")[
-#voiceover("Enter your answer in the text box below.")
-]
-]#questionDef(
 questionText: "What is the value of $\\lim_{x \\to 1} (2x + 3)$?",
-answerOptions: ("5", "6"),
+answerOptions: ("$5$", "$6$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,

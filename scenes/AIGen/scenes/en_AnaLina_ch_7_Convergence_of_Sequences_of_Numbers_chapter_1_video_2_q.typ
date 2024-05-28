@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or as n goes to infinity,")]
 #only("5")[#voiceover("or as n oscillates?")]
 ]#questionDef(
-questionText: "A sequence converges if its terms approach a specific value as $ n \\to \infty $.",
+questionText: "A sequence converges if its terms approach a specific value as ...?",
 answerOptions: ("n decreases", "n stays constant", "n goes to infinity", "n oscillates"),
 correctAnswerIndex: 2,
 )

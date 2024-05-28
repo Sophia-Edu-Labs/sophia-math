@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe L times M,")]
 #only("5")[#voiceover("or is it L divided by M?")]
 ]#questionDef(
-questionText: "If $\lim_{n \to \infty} a_n = L$ and $\lim_{n \to \infty} b_n = M$, then $\lim_{n \to \infty} (a_n + b_n)$ is \textbf{____}.",
+questionText: "If $\lim_{n \to \infty} a_n = L$ and $\lim_{n \to \infty} b_n = M$, then $\lim_{n \to \infty} (a_n + b_n)$ is ____.",
 answerOptions: ("$L + M$", "$L - M$", "$L M$", "$L / M$"),
 correctAnswerIndex: 0,
 )

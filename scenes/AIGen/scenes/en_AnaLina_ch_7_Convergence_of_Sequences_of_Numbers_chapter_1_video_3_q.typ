@@ -68,7 +68,7 @@ caption: [],
 ]
 
 ]#questionDef(
-questionText: "Does the sequence $a_n = \frac{1}{n}$ converge? If so, what is the limit as $n \\to \infty$?",
+questionText: "What is the limit of the sequence $a_n = \frac{1}{n}$ as $n \\to \infty$?",
 answerOptions: ("Yes, the limit is $0$", "Yes, the limit is $1$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
