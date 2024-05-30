@@ -1,8 +1,8 @@
 #import "../sophiatheme.typ": *
 #show: sophia-theme
-#show figure.caption: es => [
+#show figure.caption: it => [
 #set text(size: 20pt)
-#es.body
+#it.body
 ]
 
 #slide()[
@@ -15,10 +15,10 @@
 #v(20pt)
 #only("2-")[- Wichtige Berechnungen beinhalten Kraft, Fläche und Druck 📏]
 #only("2")[
-#voiceover("Die wichtigsten Berechnungen in der Hydraulik beinhalten Kraft, Fläche und Druck.")
+#voiceover("Die wichtigen Berechnungen in der Hydraulik beinhalten Kraft, Fläche und Druck.")
 ]
 #v(20pt)
-#only("3-")[$ F = P dot A $]
+#only("3-")[$ F = P \cdot A $]
 #only("3")[
 #voiceover("Kraft ist gleich Druck mal Fläche.")
 ]
@@ -35,7 +35,7 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Beispielproblem 🧩]
+#text(size: 30pt, weight: "bold")[Beispielaufgabe 🧩]
 #v(40pt)
 #only("1-")[Ein hydraulischer Lift hebt einen 6000 kg schweren Schiffsmotor um 2,0 m an.]
 #only("1")[
@@ -78,12 +78,12 @@
 #v(40pt)
 #only("1-")[1. Flüssigkeitsdruck: 14,7 bar]
 #only("1")[
-#voiceover("Der Flüssigkeitsdruck beträgt 14,7 bar.")
+#voiceover("Der Flüssigkeitsdruck wird mit 14,7 bar berechnet.")
 ]
 #v(10pt)
-#only("2-")[$ P = (m dot g) / A_("Presskolben") $]
+#only("2-")[$ P = (m \cdot g) / A_{\text{press piston}} $]
 #only("2")[
-#voiceover("Dies wird mit der Formel berechnet: Druck ist gleich Masse des Objekts mal Erdbeschleunigung, geteilt durch die Fläche des Presskolbens.")
+#voiceover("Dies wird mit der Formel berechnet: Druck ist gleich die Masse des Objekts mal die Erdbeschleunigung, geteilt durch die Fläche des Presskolbens.")
 ]
 #v(20pt)
 #only("3-")[2. Pumpenkraft: 740 N]
@@ -91,19 +91,19 @@
 #voiceover("Die Kraft der Pumpe beträgt 740 Newton.")
 ]
 #v(10pt)
-#only("4-")[$ F = P dot A_("Pumpenkolben") $]
+#only("4-")[$ F = P \cdot A_{\text{pump piston}} $]
 #only("4")[
-#voiceover("Dies wird berechnet als Druck mal Fläche des Pumpenkolbens.")
+#voiceover("Dies wird als Druck mal die Fläche des Pumpenkolbens berechnet.")
 ]
 #v(20pt)
 #only("5-")[3. Pumpenkolbenhübe: 320]
 #only("5")[
-#voiceover("Die Anzahl der erforderlichen Pumpenkolbenhübe beträgt 320.")
+#voiceover("Die Anzahl der benötigten Pumpenkolbenhübe beträgt 320.")
 ]
 #v(10pt)
-#only("6-")[$ n = (A_("Presskolben") / A_("Pumpenkolben")) dot ("Hubhöhe" / "Hublänge") $]
+#only("6-")[$ n = (A_{\text{press piston}} / A_{\text{pump piston}}) \cdot (\text{Hubhöhe} / \text{Hublänge}) $]
 #only("6")[
-#voiceover("Dies wird berechnet, indem das Verhältnis der Presskolbenfläche zur Pumpenkolbenfläche mit dem Verhältnis der Hubhöhe zur Hublänge multipliziert wird.")
+#voiceover("Dies wird berechnet, indem das Verhältnis der Fläche des Presskolbens zur Fläche des Pumpenkolbens mit dem Verhältnis der Hubhöhe zur Hublänge multipliziert wird.")
 ]
 ]
 
@@ -115,9 +115,9 @@
 #voiceover("Die wichtigsten Erkenntnisse sind: Hydraulik verwendet Flüssigkeitsdruck, um schwere Lasten zu heben.")
 ]
 #v(20pt)
-#only("2-")[- Druck, Kraft und Fläche sind miteinander verknüpft 🔄]
+#only("2-")[- Druck, Kraft und Fläche sind miteinander verbunden 🔄]
 #only("2")[
-#voiceover("Druck, Kraft und Fläche sind miteinander verknüpft.")
+#voiceover("Druck, Kraft und Fläche sind miteinander verbunden.")
 ]
 #v(20pt)
 #only("3-")[- Berechnungen beinhalten Verhältnisse von Kolbenflächen und Distanzen 📐]

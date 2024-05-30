@@ -8,64 +8,51 @@
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Balloon Liftoff 🎈]
+
 #v(40pt)
 
 #only("1-")[
-- Balloon lifts off when buoyant force > weight
+- Balloon in Uster at 464 m above sea level 🏔️
 ]
+
 #v(20pt)
 
 #only("2-")[
-- Uster is at 464 m above sea level 🏔️
+- Gondola and passenger volume neglected 🧳👤
 ]
+
 #v(20pt)
 
 #only("3-")[
-- Ignore volume of gondola and passengers 🧺👨‍👩‍👧
+#text(size: 24pt)[What is the minimum volume of the balloon for liftoff? 🤔]
 ]
 
 #only("1")[
-#voiceover("A balloon lifts off when the buoyant force acting on it is greater than its weight.")
+#voiceover("Consider a balloon in Uster at an altitude of 464 meters above sea level.")
 ]
 
 #only("2")[
-#voiceover("Consider a balloon in Uster, which is at an altitude of 464 meters above sea level.")
+#voiceover("The volume of the gondola and passengers can be neglected.")
 ]
 
 #only("3")[
-#voiceover("For simplicity, let's ignore the volume of the gondola and the passengers.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Question ❓]
-#v(40pt)
-
-#only("1-")[
-What must be the minimum volume of the balloon for it to lift off in Uster? 
+#voiceover("What must be the minimum volume of the balloon for it to lift off?")
 ]
 
-#only("1")[
-#voiceover("Given this scenario, what must be the minimum volume of the balloon for it to lift off in Uster?")
-]
-
-
-]
-#questionDef(
-questionText: "What is the minimum volume of the balloon in cubic meters for it to lift off in Uster at 464 m above sea level, ignoring the volume of the gondola and passengers?",
-answerOptions: ("$1088 \, m^3$", "$0 \, m^3$"),  
-correctAnswerIndex: 0,
+]#questionDef(
+questionText: "What is the minimum volume $V$ of the balloon for liftoff in Uster at $464 \text{ m}$ above sea level, neglecting the volume of the gondola and passengers?",
+answerOptions: ("$V = 1088 \text{ m}^3$", "$V = 0 \text{ m}^3$"),  correctAnswerIndex: 0,
 freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 0,
-tolerance: none
-)
-),
-answerOptionMatcher:("\key{a} \, m^3$"),
-answerOptionsTypes: (
-"a": "number"
-)
+  fallbackOptionIndex: 1,
+  answerOptionsEquality: (
+    V: (
+      roundingDecimalPlaces: 2,
+      tolerance: none
+    )
+  ),
+  answerOptionMatcher:("$V = \key{V} \text{ m}^3$"),
+  answerOptionsTypes: (
+    "V": "number"
+  )
 ),
 )

@@ -7,121 +7,124 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Balloon Physics 🎈]
+#text(size: 30pt, weight: "bold")[Balloon Liftoff 🎈]
 #v(40pt)
-#only("1-")[- Balloon inflated to 1550 m³ at start in Uster]
-#v(20pt)
-#only("2-")[- Volume remains constant while ascending]
-#v(20pt)
-#only("3-")[- How high can the balloon rise? 🌄]
+#only("1-")[That's not quite right. Let's go through the correct solution step by step.]
 #only("1")[
-#voiceover("That's not quite right. Let's go through the correct solution step by step. We know that the balloon is inflated to a volume of 1550 cubic meters at the start in Uster.")
-]
-#only("2")[
-#voiceover("This volume remains constant while the balloon is ascending.")
-]
-#only("3")[
-#voiceover("So the question is, how high can this balloon rise?")
+#voiceover("That's not quite right. Let's go through the correct solution step by step.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Approach 🧮]
+#text(size: 30pt, weight: "bold")[Given Information]
 #v(40pt)
-#only("1-")[- Use the barometric formula: $p(h) = p_0 e^(-mgh/(RT))$]
-#v(20pt)
-#only("2-")[- Solve for height $h$]
+#only("1-")[
+- Balloon lifts off when buoyant force = weight
+- Ignore volume of gondola and passengers
+- Uster is at 464 m above sea level
+]
 #only("1")[
-#voiceover("To solve this, we can use the barometric formula. This formula relates the pressure p at a height h to the pressure p naught at sea level.")
-]
-#only("2")[
-#voiceover("We can rearrange this formula to solve for the height h.")
+#voiceover("We are given that the balloon will lift off when the buoyant force equals the weight of the balloon. We can ignore the volume of the gondola and passengers. Also, Uster is at 464 meters above sea level.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Solution]
+#text(size: 30pt, weight: "bold")[Step 1: Buoyancy Equation]
 #v(40pt)
-#only("1-")[- Buoyancy condition: $rho_("air") V = m_("balloon")$]
-#v(20pt)
-#only("2-")[- Substitute in barometric formula and solve for $h$:]
-#v(10pt)
+#only("1-")[
+$"Buoyant Force" = ("Density of Air" - "Density of Heated Gas") dot "Volume of Balloon" dot g$
+]
 #only("2-")[
-$ 
-p_0 e^(-mgh/(RT)) = (m_("balloon"))/(V)
-$
+$F_B = (rho_("air") - rho_("heated gas")) dot V dot g$
 ]
-#v(10pt)
-#only("3-")[
-$
-h = -(RT)/(mg) ln((m_("balloon"))/(p_0 V))
-$
-]
-#v(20pt)
-#only("4-")[- Plug in values: $h = 2000 "m"$]
 #only("1")[
-#voiceover("First, we use the buoyancy condition. This says that at equilibrium, the density of air times the volume of the balloon equals the mass of the balloon.")
+#voiceover("The first step is to write out the equation for buoyant force. It is equal to the density of air minus the density of the heated gas inside the balloon, multiplied by the volume of the balloon and the acceleration due to gravity.")
 ]
 #only("2")[
-#voiceover("We can substitute this into the barometric formula and solve for h.")
-]
-#only("3")[
-#voiceover("After some rearranging, we get this formula for the height h.")
-]
-#only("4")[
-#voiceover("Now we just need to plug in the values. The gas constant R is about 8.31, the temperature T is about 288 Kelvin, the mass of air m is about 0.029 kg/mol, the acceleration due to gravity g is 9.81 m/s², the pressure at sea level p naught is about 101,325 Pa, and the volume V is 1550 m³. Plugging all of this in, we get a height of about 2000 meters!")
+#voiceover("We can express this mathematically as F sub B equals rho sub air minus rho sub heated gas, multiplied by V and g.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization 📊]
+#text(size: 30pt, weight: "bold")[Step 2: Equate Forces ⚖]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(```
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Parameters
-p0 = 101325 # Pressure at sea level (Pa)
-R = 8.31 # Gas constant (J/(mol·K))
-T = 288 # Temperature (K)
-m = 0.029 # Mass of air (kg/mol)
-g = 9.81 # Acceleration due to gravity (m/s²)
-V = 1550 # Volume of balloon (m³)
-M = 2000 # Mass of balloon (kg)
-
-# Height function
-def h(p):
-    return -(R*T)/(m*g) * np.log(M/(p*V))
-
-# Pressure range
-p = np.linspace(50000, 101325, 100)
-
-# Plot
-plt.figure(figsize=(8, 6))
-plt.plot(p, h(p), linewidth=2, color='blue')
-plt.xlabel('Pressure (Pa)', fontsize=14)
-plt.ylabel('Height (m)', fontsize=14)
-plt.title('Balloon Height vs Pressure', fontsize=16)
-plt.grid(True)
-plt.show()
-```,
-width: 360pt),
-caption: [],
-)
+#only("1-")[
+$"Buoyant Force" = "Weight of Balloon"$
 ]
+#only("2-")[
+$(rho_("air") - rho_("heated gas")) dot V dot g = m_("balloon") dot g$
 ]
 #only("1")[
-#voiceover("Here's a graph showing how the height of the balloon changes with pressure. As the pressure decreases, which happens as the balloon rises, the height increases.")
+#voiceover("The next step is to equate the buoyant force to the weight of the balloon.")
 ]
-#v(20pt)
-#only("2-")[At Uster's pressure (about 95,000 Pa), the balloon can rise to about 2000 m. 🎉]
 #only("2")[
-#voiceover("At the pressure in Uster, which is about 95,000 Pascals, we can see that the balloon can rise to a height of about 2000 meters. Well done!")
+#voiceover("So we have rho sub air minus rho sub heated gas, multiplied by V and g, equals m sub balloon multiplied by g.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Step 3: Solve for Volume]
+#v(40pt)
+#only("1-")[
+$V = (m_("balloon") dot g)/((rho_("air") - rho_("heated gas")) dot g)$
+]
+#only("2-")[
+$V = m_("balloon")/(rho_("air") - rho_("heated gas"))$
+]
+#only("1")[
+#voiceover("Now we can solve for the volume V. We divide both sides by rho sub air minus rho sub heated gas, multiplied by g.")
+]
+#only("2")[
+#voiceover("The g's cancel out, and we are left with V equals m sub balloon divided by rho sub air minus rho sub heated gas.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Step 4: Calculate Densities 🌡]
+#v(40pt)
+#only("1-")[
+- $rho_("air") = 1.225 "kg/m"^3$ at sea level
+- Uster is at 464 m, so $rho_("air") = 1.17 "kg/m"^3$
+- $rho_("heated gas") = 0.09 "kg/m"^3$
+]
+#only("1")[
+#voiceover("The last step is to calculate the densities and plug in the values. The density of air is 1.225 kilograms per cubic meter at sea level. But since Uster is at 464 meters, we need to adjust this value. At this altitude, the density of air is approximately 1.17 kilograms per cubic meter. The density of the heated gas inside the balloon is 0.09 kilograms per cubic meter.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Step 5: Plug In Values 🔢]
+#v(40pt)
+#only("1-")[
+$V = m_("balloon")/(1.17 - 0.09) = m_("balloon")/1.08$
+]
+#only("2-")[
+If $m_("balloon") = 1175 "kg"$, then:
+]
+#only("3-")[
+$V = 1175/1.08 = 1088 "m"^3$
+]
+#only("1")[
+#voiceover("We plug these values into our equation. V equals m sub balloon divided by 1.17 minus 0.09, which simplifies to m sub balloon divided by 1.08.")
+]
+#only("2")[
+#voiceover("If the mass of the balloon is 1175 kilograms, then...")
+]
+#only("3")[
+#voiceover("V equals 1175 divided by 1.08, which gives us 1088 cubic meters. This is the minimum volume the balloon needs to lift off in Uster.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Summary]
+#v(40pt)
+#only("1-")[
+- Equate buoyant force to weight of balloon
+- Solve for volume
+- Calculate densities based on altitude
+- Plug in values to get minimum volume
+]
+#only("1")[
+#voiceover("To summarize, we equated the buoyant force to the weight of the balloon, solved for volume, calculated the densities based on the altitude, and plugged in the values to get the minimum volume needed for liftoff.")
 ]
 ]

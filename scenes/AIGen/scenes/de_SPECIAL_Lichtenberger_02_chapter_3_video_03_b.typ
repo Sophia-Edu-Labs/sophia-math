@@ -5,125 +5,117 @@
 #it.body
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Ballonstart 🎈]
-#v(40pt)
-#only("1-")[Leider ist das nicht korrekt. Lass uns gemeinsam die Lösung Schritt für Schritt durchgehen.]
-#only("1")[
-#voiceover("Leider ist das nicht korrekt. Lass uns gemeinsam die Lösung Schritt für Schritt durchgehen.")
-]
-]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gegebene Informationen]
-#v(40pt)
-#only("1-")[
-- Der Ballon hebt ab, wenn die Auftriebskraft = Gewicht ist
-- Volumen der Gondel und Passagiere ignorieren
-- Uster liegt auf 464 m über dem Meeresspiegel
-]
-#only("1")[
-#voiceover("Es ist gegeben, dass der Ballon abhebt, wenn die Auftriebskraft dem Gewicht des Ballons entspricht. Wir können das Volumen der Gondel und der Passagiere ignorieren. Außerdem liegt Uster auf 464 Metern über dem Meeresspiegel.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Schritt 1: Auftriebsgleichung]
-#v(40pt)
-#only("1-")[
-$"Auftriebskraft" = ("Dichte der Luft" - "Dichte des erhitzten Gases") dot "Volumen des Ballons" dot g$
-]
-#only("2-")[
-$F_B = (rho_("Luft") - rho_("erhitztes Gas")) dot V dot g$
-]
-#only("1")[
-#voiceover("Der erste Schritt ist, die Gleichung für die Auftriebskraft aufzuschreiben. Sie ist gleich der Dichte der Luft minus der Dichte des erhitzten Gases im Ballon, multipliziert mit dem Volumen des Ballons und der Erdbeschleunigung.")
-]
-#only("2")[
-#voiceover("Wir können dies mathematisch als F_B gleich rho_Luft minus rho_erhitztes Gas, multipliziert mit V und g ausdrücken.")
-]
+  #text(size: 30pt, weight: "bold")[Ballonstart 🎈]
+  #v(40pt)
+  #only("1-")[- Minimales Volumen für den Start?]
+  #only("2-")[- Gegeben: 
+    - Ort: Uster (464 m über dem Meeresspiegel)
+    - Volumen der Gondel und Passagiere vernachlässigen
+  ]
+  #only("1")[
+    #voiceover("Leider ist das nicht korrekt. Lass uns gemeinsam Schritt für Schritt durchgehen, wie man das minimale Volumen berechnet.")
+  ]
+  #only("2")[
+    #voiceover("Um das minimale Volumen zu finden, müssen wir den Ort berücksichtigen, der in diesem Fall Uster auf 464 Metern über dem Meeresspiegel ist. Wir können auch das Volumen der Gondel und der Passagiere für diese Berechnung vernachlässigen.")
+  ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Schritt 2: Kräfte gleichsetzen ⚖]
-#v(40pt)
-#only("1-")[
-$"Auftriebskraft" = "Gewicht des Ballons"$
-]
-#only("2-")[
-$(rho_("Luft") - rho_("erhitztes Gas")) dot V dot g = m_("Ballon") dot g$
-]
-#only("1")[
-#voiceover("Der nächste Schritt ist, die Auftriebskraft dem Gewicht des Ballons gleichzusetzen.")
-]
-#only("2")[
-#voiceover("Also haben wir rho_Luft minus rho_erhitztes Gas, multipliziert mit V und g, gleich m_Ballon multipliziert mit g.")
-]
-]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritt 3: Volumen lösen]
-#v(40pt)
-#only("1-")[
-$V = (m_("Ballon") dot g)/((rho_("Luft") - rho_("erhitztes Gas")) dot g)$
-]
-#only("2-")[
-$V = m_("Ballon")/(rho_("Luft") - rho_("erhitztes Gas"))$
-]
-#only("1")[
-#voiceover("Jetzt können wir das Volumen V lösen. Wir teilen beide Seiten durch rho_Luft minus rho_erhitztes Gas, multipliziert mit g.")
-]
-#only("2")[
-#voiceover("Die g's kürzen sich heraus, und wir haben V gleich m_Ballon geteilt durch rho_Luft minus rho_erhitztes Gas.")
-]
+  #text(size: 30pt, weight: "bold")[Schritt 1: Auftriebsbedingung]
+  #v(40pt)
+  #only("1-")[Für den Start: $F_("Auftrieb") > F_("Schwerkraft")$]
+  #v(20pt)
+  #only("2-")[$(rho_("Luft") - rho_("erhitztes Gas")) dot g dot V > m_("Ballon") dot g$]
+  #only("1")[
+    #voiceover("Zuerst muss für den Ballonstart die Auftriebskraft größer sein als die Schwerkraft auf den Ballon.")
+  ]
+  #only("2")[
+    #voiceover("Wir können dies mathematisch ausdrücken als die Dichteunterschied zwischen Luft und dem erhitzten Gas im Ballon, multipliziert mit der Erdbeschleunigung und dem Volumen, muss größer sein als die Masse des Ballons multipliziert mit der Erdbeschleunigung.")
+  ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Schritt 4: Dichten berechnen 🌡]
-#v(40pt)
-#only("1-")[
-- $rho_("Luft") = 1.225 "kg/m"^3$ auf Meereshöhe
-- Uster liegt auf 464 m, daher $rho_("Luft") = 1.17 "kg/m"^3$
-- $rho_("erhitztes Gas") = 0.09 "kg/m"^3$
-]
-#only("1")[
-#voiceover("Der letzte Schritt ist, die Dichten zu berechnen und die Werte einzusetzen. Die Dichte der Luft beträgt 1,225 Kilogramm pro Kubikmeter auf Meereshöhe. Da Uster jedoch auf 464 Metern liegt, müssen wir diesen Wert anpassen. In dieser Höhe beträgt die Luftdichte etwa 1,17 Kilogramm pro Kubikmeter. Die Dichte des erhitzten Gases im Ballon beträgt 0,09 Kilogramm pro Kubikmeter.")
-]
-]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritt 5: Werte einsetzen 🔢]
-#v(40pt)
-#only("1-")[
-$V = m_("Ballon")/(1.17 - 0.09) = m_("Ballon")/1.08$
-]
-#only("2-")[
-Wenn $m_("Ballon") = 1175 "kg"$, dann:
-]
-#only("3-")[
-$V = 1175/1.08 = 1088 "m"^3$
-]
-#only("1")[
-#voiceover("Wir setzen diese Werte in unsere Gleichung ein. V ist gleich m_Ballon geteilt durch 1,17 minus 0,09, was sich zu m_Ballon geteilt durch 1,08 vereinfacht.")
-]
-#only("2")[
-#voiceover("Wenn die Masse des Ballons 1175 Kilogramm beträgt, dann...")
-]
-#only("3")[
-#voiceover("V ist gleich 1175 geteilt durch 1,08, was uns 1088 Kubikmeter ergibt. Dies ist das minimale Volumen, das der Ballon in Uster benötigt, um abzuheben.")
-]
+  #text(size: 30pt, weight: "bold")[Schritt 2: Volumen berechnen]
+  #v(40pt)
+  #only("1-")[$(rho_("Luft") - rho_("erhitztes Gas")) dot V > m_("Ballon")$]
+  #v(20pt)
+  #only("2-")[$V > (m_("Ballon"))/(rho_("Luft") - rho_("erhitztes Gas"))$]
+  #only("1")[
+    #voiceover("Wir können dies vereinfachen, indem wir beide Seiten durch die Erdbeschleunigung teilen.")
+  ]
+  #only("2")[
+    #voiceover("Um das minimale Volumen zu finden, lösen wir die Ungleichung nach V auf. Das minimale Volumen muss größer sein als die Masse des Ballons geteilt durch den Dichteunterschied zwischen Luft und dem erhitzten Gas.")
+  ]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung]
-#v(40pt)
-#only("1-")[
-- Auftriebskraft dem Gewicht des Ballons gleichsetzen
-- Volumen lösen
-- Dichten basierend auf der Höhe berechnen
-- Werte einsetzen, um das minimale Volumen zu erhalten
+  #text(size: 30pt, weight: "bold")[Schritt 3: Dichte der Luft berechnen]
+  #v(40pt)
+  #only("1-")[- Die Dichte der Luft hängt von der Höhe ab]
+  #v(20pt)
+  #only("2-")[- Auf Meereshöhe (0 m): $rho_("Luft, 0") = 1.225 "kg"/m^3$]
+  #v(20pt)
+  #only("3-")[- In der Höhe $h$: $rho_("Luft, h") = rho_("Luft, 0") dot e^(-0.00012 dot h)$]
+  #v(20pt)
+  #only("4-")[- Für Uster (464 m): $rho_("Luft, Uster") = 1.225 "kg"/m^3 dot e^(-0.00012 dot 464) = 1.17 "kg"/m^3$]
+  #only("1")[
+    #voiceover("Um weiterzumachen, müssen wir die Dichte der Luft kennen. Diese hängt von der Höhe ab.")
+  ]
+  #only("2")[
+    #voiceover("Auf Meereshöhe, also bei 0 Metern Höhe, beträgt die Dichte der Luft etwa 1.225 Kilogramm pro Kubikmeter.")
+  ]
+  #only("3")[
+    #voiceover("Für jede Höhe h kann die Dichte der Luft mit dieser Exponentialformel berechnet werden, wobei rho Luft 0 die Dichte auf Meereshöhe ist, e die mathematische Konstante ist und der Exponent negativ 0.00012 mal die Höhe h beträgt.")
+  ]
+  #only("4")[
+    #voiceover("Setzt man die Höhe von Uster, die 464 Meter beträgt, ein, erhält man eine Dichte von etwa 1.17 Kilogramm pro Kubikmeter.")
+  ]
 ]
-#only("1")[
-#voiceover("Zusammenfassend haben wir die Auftriebskraft dem Gewicht des Ballons gleichgesetzt, das Volumen gelöst, die Dichten basierend auf der Höhe berechnet und die Werte eingesetzt, um das minimale Volumen für den Abflug zu erhalten.")
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Schritt 4: Minimales Volumen berechnen]
+  #v(40pt)
+  #only("1-")[- Masse des Ballons: $m_("Ballon") = 800 "kg"$]
+  #v(20pt)
+  #only("2-")[- Dichte des erhitzten Gases: $rho_("erhitztes Gas") = 0.17 "kg"/m^3$]
+  #v(20pt)
+  #only("3-")[$V > (800 "kg")/(1.17 "kg"/m^3 - 0.17 "kg"/m^3)$]
+  #v(20pt)
+  #only("4-")[$V > 800 m^3$]
+  #only("1")[
+    #voiceover("Nehmen wir nun an, die Masse des Ballons beträgt 800 Kilogramm.")
+  ]
+  #only("2")[
+    #voiceover("Und die Dichte des erhitzten Gases im Ballon beträgt 0.17 Kilogramm pro Kubikmeter.")
+  ]
+  #only("3")[
+    #voiceover("Wir können diese Werte nun in unsere Ungleichung einsetzen. Das minimale Volumen muss größer sein als 800 Kilogramm geteilt durch den Dichteunterschied zwischen der Luft in Uster und dem erhitzten Gas.")
+  ]
+  #only("4")[
+    #voiceover("Berechnet man dies, stellt man fest, dass das minimale Volumen für den Ballonstart in Uster größer als 800 Kubikmeter sein muss.")
+  ]
 ]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Fazit]
+  #v(40pt)
+  #only("1-")[- Minimales Volumen für den Start in Uster: $V > 800 m^3$ 📏]
+  #v(20pt)
+  #only("2-")[Schlüsselfaktoren:
+    - Die Dichte der Luft nimmt mit der Höhe ab 🌬️
+    - Die Auftriebskraft muss die Schwerkraft übersteigen 🪁
+  ]
+  #only("1")[
+    #voiceover("Zusammenfassend muss das Volumen des Ballons in Uster, das auf einer Höhe von 464 Metern liegt, größer als 800 Kubikmeter sein, damit er abheben kann, vorausgesetzt, wir vernachlässigen das Volumen der Gondel und der Passagiere.")
+  ]
+  #only("2")[
+    #voiceover("Die Schlüsselfaktoren bei dieser Berechnung waren die Abnahme der Luftdichte mit der Höhe und die Anforderung, dass die Auftriebskraft die Schwerkraft übersteigen muss, damit der Start erfolgen kann.")
+  ]
 ]

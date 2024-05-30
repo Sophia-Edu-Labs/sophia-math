@@ -16,12 +16,12 @@
 #v(20pt)
 
 #only("2-")[- Dichteunterschied: Ballongas vs. Luft]
-#only("2")[#voiceover("Die Auftriebskraft hängt vom Dichteunterschied zwischen dem Gas im Ballon und der Luft außerhalb ab. Je leichter das Gas im Vergleich zur Luft ist, desto größer ist die Auftriebskraft.")]
+#only("2")[#voiceover("Die Auftriebskraft hängt vom Dichteunterschied zwischen dem Gas im Ballon und der Luft außen ab. Je leichter das Gas im Vergleich zur Luft ist, desto größer ist die Auftriebskraft.")]
 
 #v(20pt)
 
 #only("3-")[- Bedingungen für das Schweben auf konstanter Höhe]
-#only("3")[#voiceover("Damit ein Ballon auf konstanter Höhe schwebt, müssen bestimmte Bedingungen erfüllt sein. Die Auftriebskraft muss gleich dem Gewicht des Ballons sein. Dieses Gleichgewicht hält den Ballon auf einer stabilen Höhe.")]
+#only("3")[#voiceover("Damit ein Ballon auf konstanter Höhe schwebt, müssen bestimmte Bedingungen erfüllt sein. Die Auftriebskraft muss gleich dem Gewicht des Ballons sein. Dieses Gleichgewicht hält den Ballon in einer stabilen Höhe.")]
 ]
 
 #slide()[
@@ -62,12 +62,12 @@ width: 360pt),
 )
 ]
 ]
-#only("1")[#voiceover("Dieses Diagramm zeigt das typische Verhalten eines Ballons im Laufe der Zeit. Zunächst steigt der Ballon aufgrund der Auftriebskraft. Wenn die Auftriebskraft dem Gewicht entspricht, schwebt der Ballon auf konstanter Höhe. Wenn die Auftriebskraft abnimmt, zum Beispiel durch ein Leck, beginnt der Ballon zu fallen.")]
+#only("1")[#voiceover("Dieses Diagramm zeigt das typische Verhalten eines Ballons über die Zeit. Zunächst steigt der Ballon aufgrund der Auftriebskraft. Wenn die Auftriebskraft dem Gewicht entspricht, schwebt der Ballon auf konstanter Höhe. Wenn die Auftriebskraft abnimmt, zum Beispiel durch ein Leck, beginnt der Ballon zu fallen.")]
 
 #v(20pt)
 
 #only("2-")[$ F_("buoyant") = F_("weight") $  ⇒  Schweben]
-#only("2")[#voiceover("Denke daran, dass für das Schweben die Auftriebskraft gleich der Gewichtskraft sein muss. Dies ist die entscheidende Bedingung, damit ein Ballon eine stabile Höhe halten kann.")]
+#only("2")[#voiceover("Denke daran, dass für das Schweben die Auftriebskraft gleich der Gewichtskraft sein muss. Dies ist die entscheidende Bedingung, damit ein Ballon eine stabile Höhe beibehält.")]
 ]
 ]
 
@@ -77,7 +77,7 @@ width: 360pt),
 #v(40pt)
 
 #only("1-")[- Auftriebskraft hebt Ballons 🆙]
-#only("1")[#voiceover("Zusammenfassend lässt sich sagen, dass die Auftriebskraft, die durch den Dichteunterschied zwischen dem Ballongas und der Luft entsteht, die Ballons hebt.")]
+#only("1")[#voiceover("Zusammenfassend hebt die Auftriebskraft, die durch den Dichteunterschied zwischen dem Ballongas und der Luft entsteht, die Ballons.")]
 
 #v(20pt)
 

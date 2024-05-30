@@ -7,123 +7,61 @@
 
 
 #slide()[
-
-#only("1")[
-#voiceover("Not quite. Let's go through the correct solution step by step together.")
-]
-
-#text(size: 30pt, weight: "bold")[Problem]
-
+#text(size: 30pt, weight: "bold")[Air Pressure and Altitude]
 #v(40pt)
-
-#only("2-")[A wooden board floats in a container filled with water. A stone is on the board. The stone slips off the board and sinks to the bottom of the container. What happens to the water level?]
-// The problem statement is shown from slide 2 onward
-
-#only("2")[
-#voiceover("We have a wooden board floating in a container filled with water, and a stone is on the board. The stone then slips off the board and sinks to the bottom of the container. We need to determine what happens to the water level.")
-]
-
+#only("1-")[At which lake is the air pressure highest (assuming the same weather conditions)?]
+#v(40pt)
+// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false. 
+#only("-1")[a) At Lake Zurich]#only("2-")[#text(fill:red)[a) At Lake Zurich]]
+#v(10pt)
+// From the start until section two, the option is black. From section 3 until the end it is then turned red, because it is false.
+#only("-2")[b) At Lake Neuchâtel]#only("3-")[#text(fill:red)[b) At Lake Neuchâtel]]
+#v(10pt)
+// From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is false.
+#only("-3")[c) At Lake Klöntal]#only("4-")[#text(fill:red)[c) At Lake Klöntal]]
+#v(10pt)
+// From the start until section four, the option is black. From section 5 until the end it is then turned green, because it is correct.
+#only("-4")[d) At Lake Maggiore]#only("5-")[#text(fill:green)[d) At Lake Maggiore]]
+#only("1")[#voiceover("That's not quite right. Let's take a look at the correct solution.")]
+#only("2")[#voiceover("Lake Zurich is not the correct answer. It's located at a higher altitude compared to Lake Maggiore, so the air pressure there would be lower.")]
+#only("3")[#voiceover("Lake Neuchâtel is also incorrect. While it's at a lower altitude than Lake Zurich, it's still higher than Lake Maggiore.")]
+#only("4")[#voiceover("Lake Klöntal is situated at an even higher altitude than Lake Zurich and Lake Neuchâtel, so the air pressure there would be the lowest among the given options.")]
+#only("5")[#voiceover("The correct answer is d) At Lake Maggiore. Lake Maggiore has the lowest altitude among the given lakes, and since air pressure decreases with increasing altitude, the air pressure would be highest at Lake Maggiore.")]
 ]
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Approach]
-
+#text(size: 30pt, weight: "bold")[Explanation]
 #v(40pt)
+#only("1-")[Here's why Lake Maggiore has the highest air pressure:]
+#v(20pt)
+#only("2-")[🏔 Air pressure decreases with increasing altitude]
+#only("3-")[📏 Lake Maggiore has the lowest altitude among the given lakes]
+#only("4-")[⇒ Therefore, Lake Maggiore has the highest air pressure]
 
-#only("1-")[- Principle of buoyancy 🌊]
-// The approach of using the principle of buoyancy is shown from slide 1 onward
-
-#only("2-")[- Archimedes' principle 🧮]
-// The approach of using Archimedes' principle is shown from slide 2 onward
-
-#only("1")[
-#voiceover("To solve this, we'll use the principle of buoyancy and Archimedes' principle.")
-]
-
-#only("2")[
-#voiceover("Archimedes' principle states that the upward buoyant force exerted on a body immersed in a fluid is equal to the weight of the fluid that the body displaces.")
-]
-
+#only("1")[#voiceover("Let's understand why Lake Maggiore is the correct answer.")]
+#only("2")[#voiceover("A key concept to remember is that air pressure decreases as altitude increases. The higher you go, the lower the air pressure becomes.")]
+#only("3")[#voiceover("Among the lakes mentioned in the question, Lake Maggiore is located at the lowest altitude.")]
+#only("4")[#voiceover("Consequently, since Lake Maggiore is at the lowest altitude and air pressure is highest at lower altitudes, we can conclude that Lake Maggiore would have the highest air pressure among the given options.")]
 ]
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Solution]
-
-#v(40pt)
-
-#only("1-")[- Initially, the stone's weight is supported by the board 🪨]
-// The initial situation is described from slide 1 onward
-
-#v(10pt)
-
-#only("2-")[- The board displaces water equal to the combined weight of the board and the stone 🌊]
-// The displacement by the board is described from slide 2 onward
-
-#v(10pt)
-
-#only("3-")[- When the stone sinks, it displaces water equal to its own volume 🧊]
-// The displacement by the stone is described from slide 3 onward
-
-#v(10pt)
-
-#only("4-")[- The board now displaces less water, equal to its own weight 📏]
-// The new displacement by the board is described from slide 4 onward
-
-#v(10pt)
-
-#only("5-")[Therefore, the water level remains the same or drops slightly 📏]
-// The conclusion is shown from slide 5 onward
-
-#only("1")[#voiceover("Initially, when the stone is on the board, the stone's weight is supported by the board.")]
-
-#only("2")[#voiceover("The board displaces a volume of water equal to the combined weight of the board and the stone.")]
-
-#only("3")[#voiceover("When the stone slips off and sinks, it displaces a volume of water equal to its own volume.")]
-
-#only("4")[#voiceover("Now, the board is supporting only its own weight, so it displaces less water, equal to its own weight.")]
-
-#only("5")[#voiceover("The water displaced by the stone compensates for the reduction in water displaced by the board. Therefore, the water level remains the same or drops slightly, depending on the exact densities of the stone and the board.")]
-
-]
-
-#slide()[
-
 #text(size: 30pt, weight: "bold")[Visualization]
-
 #v(40pt)
-
-#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
 pyimage(```
 import matplotlib.pyplot as plt
-import numpy as np
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+lakes = ['Lake Klöntal', 'Lake Zurich', 'Lake Neuchâtel', 'Lake Maggiore']
+altitudes = [800, 400, 200, 100]  # Approximate altitudes in meters
 
-# First plot
-x = np.linspace(0, 10, 100)
-y = 4 * np.ones_like(x)
-ax1.fill_between(x, y, color='blue', alpha=0.5)
-ax1.plot([2, 8], [4.5, 4.5], color='brown', linewidth=10)
-ax1.scatter(5, 4.6, color='black', s=100)
-ax1.set_ylim(0, 6)
-ax1.set_title('Stone on the Board')
-ax1.set_xlabel('Container Width')
-ax1.set_ylabel('Water Level')
-
-# Second plot
-ax2.fill_between(x, y, color='blue', alpha=0.5)
-ax2.plot([2, 8], [4.2, 4.2], color='brown', linewidth=10)
-ax2.scatter(5, 3.8, color='black', s=100)
-ax2.set_ylim(0, 6)
-ax2.set_title('Stone at the Bottom')
-ax2.set_xlabel('Container Width')
-ax2.set_ylabel('Water Level')
-
+plt.figure(figsize=(8, 6))
+plt.barh(lakes, altitudes)
+plt.xlabel('Altitude (meters)')
+plt.ylabel('Lakes')
+plt.title('Altitude Comparison of Lakes')
+plt.grid(axis='x')
 plt.tight_layout()
 plt.show()
 ```,
@@ -131,32 +69,15 @@ width: 360pt),
 )
 ]
 ]
-#only("1")[
-#voiceover("Here's a visualization of the situation. In the first image, the stone is on the board, and the water level is higher due to the combined displacement of the board and the stone. In the second image, the stone is at the bottom, displacing its own volume, while the board displaces less water. The water level remains nearly the same.")
-]
-]
-
-]
-
-#slide()[
-
-#text(size: 30pt, weight: "bold")[Key Takeaways]
-
 #v(40pt)
+#only("1-")[This graph compares the altitudes of the lakes:]
+#v(20pt)
+#only("2-")[- Lake Maggiore has the lowest altitude 📏]
+#only("3-")[- Lower altitude ⇒ Higher air pressure 🌡]
+#only("4-")[So, Lake Maggiore has the highest air pressure among the given lakes 🏆]
 
-#only("1-")[- Buoyancy depends on the weight of the displaced fluid 🌊]
-// The key takeaway about buoyancy is shown from slide 1 onward
-
-#only("2-")[- Objects displace fluid equal to their own volume when fully submerged 🧊]
-// The key takeaway about displacement is shown from slide 2 onward
-
-#only("3-")[- Water level depends on the total volume of displaced fluid 📏]
-// The key takeaway about water level is shown from slide 3 onward
-
-#only("1")[#voiceover("Remember, buoyancy depends on the weight of the fluid displaced by an object.")]
-
-#only("2")[#voiceover("When an object is fully submerged, it displaces a volume of fluid equal to its own volume.")]
-
-#only("3")[#voiceover("The water level is determined by the total volume of fluid displaced by all objects in the container.")]
-
+#only("1")[#voiceover("This bar graph provides a visual comparison of the altitudes of the different lakes.")]
+#only("2")[#voiceover("As we can see, Lake Maggiore has the shortest bar, indicating that it is situated at the lowest altitude among the lakes.")]
+#only("3")[#voiceover("Remember, lower altitude corresponds to higher air pressure.")]
+#only("4")[#voiceover("Therefore, this graph reinforces our conclusion that Lake Maggiore would have the highest air pressure among the given options.")]
 ]

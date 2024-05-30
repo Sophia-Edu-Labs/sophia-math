@@ -6,9 +6,9 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Luftdruck und Höhe]
+#text(size: 30pt, weight: "bold")[Übung 2]
 #v(40pt)
-#only("1-")[An welchem See ist der Luftdruck am höchsten (unter der Annahme gleicher Wetterbedingungen)?]
+An welchem See ist der Luftdruck am höchsten (unter der Annahme gleicher Wetterbedingungen)?
 #v(40pt)
 // Von Anfang bis Abschnitt eins ist die Option schwarz. Ab Abschnitt 2 bis zum Ende wird sie dann rot, weil sie falsch ist.
 #only("-1")[a) Am Zürichsee]#only("2-")[#text(fill:red)[a) Am Zürichsee]]
@@ -18,29 +18,28 @@
 #v(10pt)
 // Von Anfang bis Abschnitt drei ist die Option schwarz. Ab Abschnitt 4 bis zum Ende wird sie dann rot, weil sie falsch ist.
 #only("-3")[c) Am Klöntalersee]#only("4-")[#text(fill:red)[c) Am Klöntalersee]]
-#v(10pt)
+#v(10pt)  
 // Von Anfang bis Abschnitt vier ist die Option schwarz. Ab Abschnitt 5 bis zum Ende wird sie dann grün, weil sie richtig ist.
 #only("-4")[d) Am Lago Maggiore]#only("5-")[#text(fill:green)[d) Am Lago Maggiore]]
-#only("1")[#voiceover("Leider nicht ganz richtig. Hier ist die Erklärung:")]
-#only("2")[#voiceover("Der Zürichsee ist nicht die richtige Antwort. Er liegt in einer höheren Höhe im Vergleich zum Lago Maggiore, daher wäre der Luftdruck dort niedriger.")]
-#only("3")[#voiceover("Der Neuenburgersee ist auch falsch. Obwohl er niedriger liegt als der Zürichsee, ist er immer noch höher als der Lago Maggiore.")]
-#only("4")[#voiceover("Der Klöntalersee liegt sogar höher als der Zürichsee und der Neuenburgersee, daher wäre der Luftdruck dort am niedrigsten unter den gegebenen Optionen.")]
-#only("5")[#voiceover("Die richtige Antwort ist d) Am Lago Maggiore. Der Lago Maggiore hat die niedrigste Höhe unter den gegebenen Seen, und da der Luftdruck mit zunehmender Höhe abnimmt, wäre der Luftdruck am Lago Maggiore am höchsten.")]
+#only("1")[#voiceover("Leider war das nicht korrekt. Hier ist das Video zur Erklärung.")]
+#only("2-5")[#voiceover("Lass uns sehen, warum d) Am Lago Maggiore die richtige Wahl ist.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Erklärung]
+#text(size: 30pt, weight: "bold")[Luftdruck und Höhe]
 #v(40pt)
-#only("1-")[Hier ist der Grund, warum der Lago Maggiore den höchsten Luftdruck hat:]
+#only("1-")[- Der Luftdruck nimmt mit zunehmender Höhe ab 🏔️]
 #v(20pt)
-#only("2-")[🏔 Der Luftdruck nimmt mit zunehmender Höhe ab]
-#only("3-")[📏 Der Lago Maggiore hat die niedrigste Höhe unter den gegebenen Seen]
-#only("4-")[⇒ Daher hat der Lago Maggiore den höchsten Luftdruck]
-
-#only("1")[#voiceover("Lass uns verstehen, warum der Lago Maggiore die richtige Antwort ist.")]
-#only("2")[#voiceover("Ein wichtiger Punkt, den man sich merken sollte, ist, dass der Luftdruck mit zunehmender Höhe abnimmt. Je höher man geht, desto niedriger wird der Luftdruck.")]
-#only("3")[#voiceover("Unter den in der Frage genannten Seen liegt der Lago Maggiore auf der niedrigsten Höhe.")]
-#only("4")[#voiceover("Folglich, da der Lago Maggiore auf der niedrigsten Höhe liegt und der Luftdruck auf niedrigeren Höhen am höchsten ist, können wir schließen, dass der Lago Maggiore den höchsten Luftdruck unter den gegebenen Optionen hat.")]
+#only("2-")[- Niedrigere Höhe ⇒ höherer Luftdruck]
+#v(20pt)  
+#only("3-")[- Höhen der Seen:]
+  - Lago Maggiore: 193 m
+  - Neuenburgersee: 429 m 
+  - Zürichsee: 406 m
+  - Klöntalersee: 848 m
+#only("1")[#voiceover("Es ist wichtig zu wissen, dass der Luftdruck mit zunehmender Höhe abnimmt.")]
+#only("2")[#voiceover("Das bedeutet, dass Orte in niedrigeren Höhen höheren Luftdruck haben werden als solche in höheren Höhen.")]
+#only("3")[#voiceover("Schauen wir uns die Höhen der gegebenen Seen an. Der Lago Maggiore liegt auf 193 Metern, der Neuenburgersee auf 429 Metern, der Zürichsee auf 406 Metern und der Klöntalersee auf 848 Metern.")]
 ]
 
 #slide()[
@@ -51,16 +50,13 @@
 #figure(
 pyimage(```
 import matplotlib.pyplot as plt
-
-seen = ['Klöntalersee', 'Zürichsee', 'Neuenburgersee', 'Lago Maggiore']
-höhen = [800, 400, 200, 100]  # Ungefähre Höhen in Metern
-
+seen = ['Lago Maggiore', 'Neuenburgersee', 'Zürichsee', 'Klöntalersee']
+höhen = [193, 429, 406, 848]
 plt.figure(figsize=(8, 6))
 plt.barh(seen, höhen)
-plt.xlabel('Höhe (Meter)')
-plt.ylabel('Seen')
-plt.title('Höhenvergleich der Seen')
-plt.grid(axis='x')
+plt.xlabel('Höhe (m)')
+plt.title('Höhen der Seen')
+plt.gca().invert_yaxis()  
 plt.tight_layout()
 plt.show()
 ```,
@@ -69,14 +65,25 @@ width: 360pt),
 ]
 ]
 #v(40pt)
-#only("1-")[Dieses Diagramm vergleicht die Höhen der Seen:]
+#only("1-")[Unter den gegebenen Seen hat der #text(fill:green, weight: "bold")[Lago Maggiore mit 193 m die niedrigste Höhe].]
 #v(20pt)
-#only("2-")[- Der Lago Maggiore hat die niedrigste Höhe 📏]
-#only("3-")[- Niedrigere Höhe ⇒ Höherer Luftdruck 🌡]
-#only("4-")[Also hat der Lago Maggiore den höchsten Luftdruck unter den gegebenen Seen 🏆]
+#only("2-")[Daher wird der #text(fill:green, weight: "bold")[Lago Maggiore den höchsten Luftdruck haben].]
+#only("1")[#voiceover("Dieses Diagramm zeigt deutlich, dass unter den gegebenen Seen der Lago Maggiore mit 193 Metern die niedrigste Höhe hat.")]  
+#only("2")[#voiceover("Folglich wird der Lago Maggiore den höchsten Luftdruck haben, vorausgesetzt, die Wetterbedingungen sind an allen Seen gleich.")]
+]
 
-#only("1")[#voiceover("Dieses Balkendiagramm bietet einen visuellen Vergleich der Höhen der verschiedenen Seen.")]
-#only("2")[#voiceover("Wie wir sehen können, hat der Lago Maggiore den kürzesten Balken, was darauf hinweist, dass er auf der niedrigsten Höhe unter den Seen liegt.")]
-#only("3")[#voiceover("Denke daran, dass eine niedrigere Höhe einem höheren Luftdruck entspricht.")]
-#only("4")[#voiceover("Daher bestätigt dieses Diagramm unsere Schlussfolgerung, dass der Lago Maggiore den höchsten Luftdruck unter den gegebenen Optionen hat.")]
+#slide()[  
+#text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse]
+#v(40pt)
+#only("1-")[- Der Luftdruck nimmt mit zunehmender Höhe ab 📉]
+#v(20pt)
+#only("2-")[- Niedrigere Höhe ⇒ höherer Luftdruck 🌡️]
+#v(20pt)
+#only("3-")[- Der Lago Maggiore hat die niedrigste Höhe unter den gegebenen Seen 🥇]
+#v(20pt)
+#only("4-")[⇒ Der Lago Maggiore hat den höchsten Luftdruck 🎉]
+#only("1")[#voiceover("Denke daran, dass der Luftdruck mit zunehmender Höhe abnimmt.")]
+#only("2")[#voiceover("Daher werden Orte in niedrigeren Höhen höheren Luftdruck haben.")]  
+#only("3")[#voiceover("Unter den Seen in der Frage hat der Lago Maggiore die niedrigste Höhe.")]
+#only("4")[#voiceover("Daher wird der Lago Maggiore den höchsten Luftdruck haben. Großartige Arbeit bei der Beantwortung dieser Frage!")]
 ]

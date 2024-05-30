@@ -7,42 +7,30 @@
 
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Floating Ice Cube 🧊]
-// The title "Floating Ice Cube" is shown on all slides
-
+#text(size: 30pt, weight: "bold")[Pressure and Buoyancy]
+// The title "Pressure and Buoyancy" is shown on this slide
 #v(40pt)
-
-#only("1-")[A glass filled with water has a floating ice cube.]
-// The statement "A glass filled with water has a floating ice cube." is shown from slide 1 onward
-
+#only("1-")[A small fish dives from a depth of 10 m to a depth of 30 m. What happens to its buoyancy?]
+// The question is shown from slide 1 onward
 #v(40pt)
-
-#only("2-")[The ice cube melts. 💧]
-// The statement "The ice cube melts." is shown from slide 2 onward
-
-#v(40pt)
-
-#only("3-")[What happens to the water level? 🌊]
-// The question "What happens to the water level?" is shown from slide 3 onward
-
-#only("1")[
-#voiceover("Consider a glass filled with water that has an ice cube floating in it.")
-]
-
-#only("2")[
-#voiceover("Now, the ice cube melts completely.")
-]
-
-#only("3")[
-#voiceover("What do you think will happen to the water level in the glass?")
-]
-
+#only("2-")[a) It approximately doubles. 📈]
+// Answer option a) is shown from slide 2 onward 
+#v(10pt)
+#only("3-")[b) It approximately triples. 📈📈]
+// Answer option b) is shown from slide 3 onward
+#v(10pt)
+#only("4-")[c) It approximately quadruples. 📈📈📈]
+// Answer option c) is shown from slide 4 onward
+#v(10pt) 
+#only("5-")[d) It remains about the same. 🐟]
+// Answer option d) is shown from slide 5 onward
+#only("1")[#voiceover("Let's test your knowledge on pressure and buoyancy. A small fish dives from a depth of 10 meters to a depth of 30 meters. What happens to its buoyancy?")]
+#only("2")[#voiceover("Does it approximately double,")]  
+#only("3")[#voiceover("or does it approximately triple,")]
+#only("4")[#voiceover("or maybe it approximately quadruples,")]
+#only("5")[#voiceover("or does it remain about the same?")]
 ]#questionDef(
-questionText: "In a glass filled with water, an ice cube floats. The ice cube melts. What happens to the water level?",
-answerOptions: ("The water level remains the same, as the melted ice adds the same volume of water as the displaced water of the ice cube.", "The answer is incorrect."),
-correctAnswerIndex: 0,
-llmCheckDetails: (
-fallbackOptionIndex: 1
-),
+questionText: "A small fish dives from a depth of $10 \, \text{m}$ to a depth of $30 \, \text{m}$. What happens to its buoyancy?",
+answerOptions: ("It approximately doubles.", "It approximately triples.", "It approximately quadruples.", "It remains about the same."),
+correctAnswerIndex: 3
 )

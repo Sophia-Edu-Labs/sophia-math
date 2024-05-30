@@ -9,12 +9,12 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Pressure and Water Level]
 #v(40pt)
-A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?
+#only("1-")[A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?]
 #v(40pt)
-// From the start until section one, the option is black. From section 2 until the end it is then turned green, because it is correct.
-#only("-1")[a) It remains the same.]#only("2-")[#text(fill:green)[a) It remains the same.]]
+// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false. 
+#only("-1")[a) It remains the same.]#only("2-")[#text(fill:red)[a) It remains the same.]]
 #v(10pt)
-// From the start until section two, the option is black. From section 3 until the end it is then turned red, because it is false.
+// From the start until section two, the option is black. From section 3 until the end it is then turned green, because it is correct.
 #only("-2")[b) It decreases.]#only("3-")[#text(fill:green)[b) It decreases.]]
 #v(10pt)
 // From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is false.
@@ -22,33 +22,36 @@ A boat passes over a fish, causing the water level directly above it to decrease
 #v(10pt)
 // From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is false.
 #only("-4")[d) Cannot be determined.]#only("5-")[#text(fill:red)[d) Cannot be determined.]]
-
-#only("1")[#voiceover("Not quite. Let's take a look at the correct solution.")]
-#only("2")[#voiceover("The pressure decreases as the boat passes over the fish. This is because pressure in a fluid is determined by the height of the fluid column above the point of interest.")]
-#only("3")[#voiceover("As the boat passes over, it displaces some of the water, effectively reducing the height of the water column above the fish. This reduction in the height of the water column leads to a decrease in pressure at the fish's depth.")]
-#only("4-5")[#voiceover("The other options are incorrect. The pressure neither remains the same nor increases, and it can be determined based on the information provided.")]
+#only("1")[#voiceover("Not quite, but don't worry. Here's the correct solution.")]
+#only("2")[#voiceover("Option a) is incorrect. The pressure does not remain the same when the water level decreases.")]
+#only("3")[#voiceover("Option b) is correct. As the water level decreases, so does the pressure exerted by the water on the fish.")]
+#only("4")[#voiceover("Option c) is incorrect. The pressure does not increase when the water level decreases.")]
+#only("5")[#voiceover("Option d) is also incorrect. We can determine what happens to the pressure based on the change in water level.")]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Explanation]
 #v(40pt)
-#only("1-")[- Pressure in a fluid depends on the height of the fluid column above 📏]
+#only("1-")[Water pressure is influenced by depth 🌊]
 #v(20pt)
-#only("2-")[- Boat displaces water as it passes, reducing the water level momentarily 🚤]
+#only("2-")[- Pressure $P$ is proportional to depth $h$: $P = rho g h$]
 #v(20pt)
-#only("3-")[- Reduced water level = reduced height of water column above fish 🐟]
+#only("3-")[$rho$ = density of water, $g$ = acceleration due to gravity]
 #v(20pt)
-#only("4-")[- Therefore, pressure at fish's depth decreases temporarily 👇]
-
-#only("1")[#voiceover("Pressure in a fluid is determined by the height of the fluid column above the point of interest. The greater the height of the fluid, the greater the pressure.")]
-#only("2")[#voiceover("When a boat passes over the fish, it displaces some of the water, causing the water level to decrease momentarily.")]
-#only("3")[#voiceover("This reduction in water level means that the height of the water column above the fish has decreased.")]
-#only("4")[#voiceover("As a result, the pressure at the fish's depth also decreases temporarily, as there is less water above the fish exerting downward pressure.")]
+#only("4-")[When the boat passes over the fish 🐟, the water level $h$ decreases ⬇]
+#v(20pt)
+#only("5-")[Therefore, the pressure $P$ on the fish also decreases ⬇]
+#only("1")[#voiceover("Let's understand why the pressure decreases.")]
+#only("2")[#voiceover("Water pressure is proportional to the depth. The formula is P equals rho g h, where P is pressure, rho is the density of water, g is the acceleration due to gravity, and h is the depth.")]
+#only("3")[#voiceover("Rho and g are constants in this scenario.")]
+#only("4")[#voiceover("When the boat passes over the fish, it causes the water level h directly above the fish to decrease.")]
+#only("5")[#voiceover("Since pressure is proportional to depth, as the depth h decreases, the pressure P on the fish also decreases.")]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Visualization]
 #v(40pt)
+#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -56,28 +59,41 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Set up the figure
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-# Normal water level
-x = np.linspace(0, 10, 100)
-y1 = np.ones_like(x) * 5
-ax1.plot(x, y1, 'b', linewidth=2, label='Water Level')
-ax1.scatter(5, 1, s=200, c='r', marker='o', label='Fish')
-ax1.set_ylim(0, 6)
-ax1.set_title('Normal Water Level')
-ax1.set_xlabel('Position')
+# Plot 1: Before the boat passes
+ax1.set_title('Before the Boat Passes')
+ax1.set_xlim(0, 10)
+ax1.set_ylim(0, 10)
+ax1.set_aspect('equal')
+ax1.set_xlabel('Distance')
 ax1.set_ylabel('Depth')
-ax1.legend()
 
-# Decreased water level due to boat
-y2 = np.ones_like(x) * 5
-y2[40:60] = 4  # Decrease water level where boat passes
-ax2.plot(x, y2, 'b', linewidth=2, label='Water Level')
-ax2.scatter(5, 1, s=200, c='r', marker='o', label='Fish')
-ax2.set_ylim(0, 6)
-ax2.set_title('Decreased Water Level (Boat Passing)')
-ax2.set_xlabel('Position')
+water_level_1 = 8
+fish_depth_1 = 6
+ax1.axhline(water_level_1, color='blue', linewidth=2, label='Water Level')
+ax1.plot([4, 6], [fish_depth_1, fish_depth_1], 'go', markersize=10, label='Fish')
+ax1.annotate(f'Pressure: {water_level_1 - fish_depth_1}', xy=(5, fish_depth_1), xytext=(5, 4), 
+             arrowprops=dict(facecolor='black', shrink=0.05))
+
+# Plot 2: After the boat passes
+ax2.set_title('After the Boat Passes')
+ax2.set_xlim(0, 10)
+ax2.set_ylim(0, 10)
+ax2.set_aspect('equal')
+ax2.set_xlabel('Distance')
 ax2.set_ylabel('Depth')
+
+water_level_2 = 7
+fish_depth_2 = 6
+ax2.plot([2, 8], [water_level_2, water_level_2], color='blue', linewidth=2, label='Water Level')
+ax2.plot([4, 6], [fish_depth_2, fish_depth_2], 'go', markersize=10, label='Fish')
+ax2.annotate(f'Pressure: {water_level_2 - fish_depth_2}', xy=(5, fish_depth_2), xytext=(5, 4), 
+             arrowprops=dict(facecolor='black', shrink=0.05))
+
+# Add legend
+ax1.legend()
 ax2.legend()
 
 plt.tight_layout()
@@ -87,24 +103,28 @@ width: 360pt),
 )
 ]
 ]
-
-#only("1")[#voiceover("Here's a visualization to help understand the concept. The left graph shows the normal water level with the fish at a certain depth.")]
-#only("2")[#voiceover("The right graph shows what happens when a boat passes over the fish. Notice how the water level decreases temporarily right above the fish.")]
-#only("3")[#voiceover("This decrease in water level corresponds to a decrease in the height of the water column above the fish.")]
-#only("4")[#voiceover("And as we learned, a decrease in the height of the water column results in a decrease in pressure at that depth.")]
+#only("1")[
+#voiceover("Here's a visualization to illustrate the concept. The first plot shows the situation before the boat passes over the fish. The water level is high, resulting in a higher pressure on the fish.")
+]
+#v(20pt)
+#only("2-")[
+#voiceover("The second plot shows what happens after the boat passes. The water level directly above the fish has decreased, leading to a decrease in pressure on the fish.")
+]
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
+#text(size: 30pt, weight: "bold")[Key Takeaways]
 #v(40pt)
-- Pressure in fluids depends on the height of the fluid column 💧
-- Boat passing reduces water level momentarily 🚤👇
-- Reduced water level = reduced pressure at fish's depth 🐟👇
-#v(40pt)
-#text(weight: "bold")[Key Takeaway: Pressure decreases as water level decreases 🔑]
-
-#only("1")[#voiceover("To summarize, pressure in fluids is determined by the height of the fluid column above the point of interest.")]
-#only("2")[#voiceover("When a boat passes over a fish, it reduces the water level momentarily.")]
-#only("3")[#voiceover("This reduction in water level corresponds to a reduction in pressure at the fish's depth.")]
-#only("4")[#voiceover("The key takeaway is that pressure decreases as water level decreases. Great work on understanding this concept!")]
+#only("1-")[- Pressure in a fluid is proportional to depth 📏]
+#v(20pt)
+#only("2-")[- As depth decreases, pressure decreases ⬇]
+#v(20pt)
+#only("3-")[- A boat passing over a fish reduces the water depth above the fish 🚤🐟]
+#v(20pt)
+#only("4-")[- Therefore, the pressure on the fish decreases ⬇]
+#only("1")[#voiceover("Let's summarize the key points.")]
+#only("2")[#voiceover("Pressure in a fluid, like water, is proportional to the depth. As the depth decreases, the pressure also decreases.")]
+#only("3")[#voiceover("When a boat passes over a fish, it reduces the water depth directly above the fish.")]
+#only("4")[#voiceover("As a result, the pressure on the fish decreases. Remember, depth and pressure are directly related in fluids.")]
 ]

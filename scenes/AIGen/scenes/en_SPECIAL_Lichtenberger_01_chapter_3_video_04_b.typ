@@ -7,79 +7,59 @@
 
 
 #slide()[
-
-#only("1")[
-#voiceover("That's not quite right. Let's go through the correct solution step by step.")
-]
-
-#text(size: 30pt, weight: "bold")[Why Steel Ships Float]
-
+#text(size: 30pt, weight: "bold")[Buoyancy and Volume]
 #v(40pt)
-
-#only("2-")[- Steel density: $p_("steel") = 7.8 g/cm^3$ 🔩]
-// The density of steel is shown from slide 2 onward
-
-#only("2")[
-#voiceover("First, we know that steel has a density of 7.8 grams per cubic centimeter.")
-]
-
-]
-
-
-#slide()[
-
-#text(size: 30pt, weight: "bold")[Buoyancy Principle]
-
+#only("1-")[Of three differently sized objects with the same mass, the one with the medium volume floats. Which other object also floats?]
 #v(40pt)
+// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is incorrect. 
+#only("-1")[a) the small one]#only("2-")[#text(fill:red)[a) the small one]]
+#v(10pt)
+// From the start until section two, the option is black. From section 3 until the end it is then turned green, because it is correct.
+#only("-2")[b) the large one]#only("3-")[#text(fill:green)[b) the large one]]
+#v(10pt)
+// From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is incorrect.
+#only("-3")[c) both]#only("4-")[#text(fill:red)[c) both]]
+#v(10pt)
+// From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is incorrect.
+#only("-4")[d) neither]#only("5-")[#text(fill:red)[d) neither]]
 
-#only("1-")[- Object floats if:
-  - Average density < Water density (1 g/cm³) 🌊]
-
-#only("2-")[- Depends on:
-  - Material density
-  - Object shape (volume) 🎈]
-
-#only("1")[
-#voiceover("An object floats if its average density is less than the density of water, which is 1 gram per cubic centimeter.")
-]
-
-#only("2")[
-#voiceover("This depends on both the density of the material and the shape of the object, which determines its volume.")
-]
-
+#only("1")[#voiceover("Great job! You've selected the correct answer. Let's go through the solution step by step.")]
 ]
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Steel Screw vs Ship]
-
+#text(size: 30pt, weight: "bold")[Key Concepts]
 #v(40pt)
+#only("1-")[- Buoyancy: upward force exerted by a fluid on an object 🌊]
+#v(20pt)
+#only("2-")[- Archimedes' principle: buoyant force equals weight of displaced fluid 🎈]
+#v(20pt)
+#only("3-")[- For objects with the same mass, larger volume $arrow$ more fluid displaced $arrow$ greater buoyancy 📈]
 
-#only("1-")[- Screw: 🔩
-  - Small volume
-  - High density (= material density)]
-
-#only("2-")[- Ship: 🚢 
-  - Large volume
-  - Low average density (< water density)]
-
-#only("1")[
-#voiceover("A steel screw has a small volume and a high density equal to the density of steel. This makes it sink.")
-]
-
-#only("2")[
-#voiceover("On the other hand, a steel ship has a large volume. This large volume includes a lot of air, which lowers the average density of the ship below the density of water, allowing it to float.")
-]
-
+#only("1")[#voiceover("First, let's recall that buoyancy is the upward force exerted by a fluid on an object immersed in it.")]
+#only("2")[#voiceover("Archimedes' principle states that the buoyant force on an object is equal to the weight of the fluid displaced by the object.")]
+#only("3")[#voiceover("For objects with the same mass, a larger volume means more fluid is displaced, resulting in a greater buoyant force.")]
 ]
 
 #slide()[
+#text(size: 30pt, weight: "bold")[Solution]
+#v(40pt)
+#only("1-")[- Given: Three objects with the same mass but different volumes]
+#v(20pt)
+#only("2-")[- The medium-volume object floats $arrow$ its buoyant force $>=$ its weight]
+#v(20pt)
+#only("3-")[- The large-volume object displaces more fluid than the medium one]
+#v(20pt)
+#only("4-")[- Thus, the large-volume object experiences an even greater buoyant force and also floats 🚢]
 
+#only("1")[#voiceover("In this problem, we have three objects with the same mass but different volumes.")]
+#only("2")[#voiceover("We know that the medium-volume object floats, which means its buoyant force is greater than or equal to its weight.")]
+#only("3")[#voiceover("The large-volume object will displace more fluid than the medium one, as it has a larger volume.")]
+#only("4")[#voiceover("Therefore, the large-volume object will experience an even greater buoyant force compared to the medium-volume object, and it will also float.")]
+]
+
+#slide()[
 #text(size: 30pt, weight: "bold")[Visualization]
-
 #v(40pt)
-
-#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -87,58 +67,45 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Set up the figure
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+volumes = ['Small', 'Medium', 'Large']
+buoyancy = [0.8, 1.2, 1.6]
 
-# Screw
-ax1.text(0.5, 0.7, '🔩', ha='center', fontsize=100)
-ax1.text(0.5, 0.3, 'Sinks', ha='center', fontsize=20)
-ax1.set_title('Steel Screw')
-ax1.axis('off')
-
-# Ship
-ax2.text(0.5, 0.7, '🚢', ha='center', fontsize=100)
-ax2.text(0.5, 0.3, 'Floats', ha='center', fontsize=20)
-ax2.set_title('Steel Ship')
-ax2.axis('off')
-
-plt.tight_layout()
+plt.figure(figsize=(8, 6))
+plt.bar(volumes, buoyancy, color=['red', 'green', 'green'], alpha=0.7)
+plt.axhline(1, color='black', linestyle='--', label='Weight')
+plt.ylim(0, 2)
+plt.xlabel('Object Volume')
+plt.ylabel('Buoyant Force (relative to weight)')
+plt.title('Buoyancy vs Volume (Same Mass)')
+plt.legend()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
+#v(40pt)
+#only("1-")[This graph shows the buoyant force relative to the object's weight for each volume.]
+#v(20pt)
+#only("2-")[The dashed line represents the weight. If buoyancy $>=$ weight, the object floats.]
+#v(20pt)
+#only("3-")[Both the medium and large objects have buoyancy $>$ weight, so they float. 🛥️]
 
-#only("1")[
-#voiceover("Here's a visual representation. The steel screw, being small and dense, sinks. The steel ship, being large and having a low average density, floats.")
-]
-
-]
+#only("1")[#voiceover("This graph visualizes the buoyant force relative to the object's weight for each volume.")]
+#only("2")[#voiceover("The dashed line represents the weight. If the buoyant force is greater than or equal to the weight, the object will float.")]
+#only("3")[#voiceover("We can see that both the medium and large objects have a buoyant force greater than their weight, so they will both float.")]
 ]
 
 #slide()[
-
-#text(size: 30pt, weight: "bold")[Key Takeaways]
-
+#text(size: 30pt, weight: "bold")[Conclusion]
 #v(40pt)
+#only("1-")[- For objects with the same mass, a larger volume results in greater buoyancy]
+#v(20pt)
+#only("2-")[- If the medium-volume object floats, the large-volume object will also float 🏊]
+#v(20pt)
+#only("3-")[- The small-volume object may not have enough buoyancy to float 🪨]
 
-#only("1-")[- Buoyancy depends on average density 🎈]
-
-#only("2-")[- Large volume + air pockets ⇒ low average density 🚢]
-
-#only("3-")[- This allows steel ships to float 🌊]
-
-#only("1")[
-#voiceover("The key takeaway is that buoyancy depends on the average density of an object.")
-]
-
-#only("2")[
-#voiceover("A large volume combined with air pockets results in a low average density.")
-]
-
-#only("3")[
-#voiceover("This is what allows steel ships to float, despite being made of a material that is denser than water.")
-]
-
+#only("1")[#voiceover("In conclusion, for objects with the same mass, a larger volume results in greater buoyancy due to more fluid being displaced.")]
+#only("2")[#voiceover("If the medium-volume object floats, the large-volume object will also float because it experiences an even greater buoyant force.")]
+#only("3")[#voiceover("The small-volume object, on the other hand, may not have enough buoyancy to overcome its weight and float.")]
 ]

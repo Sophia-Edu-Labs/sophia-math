@@ -7,27 +7,24 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Water Level Question]
+#text(size: 30pt, weight: "bold")[Air Pressure at Lakes 🌊]
 #v(40pt)
-#only("1-")[A wooden board floats in a container filled with water. A stone is on the board.]
-#v(20pt)
-#only("2-")[The stone slips off the board and sinks to the bottom of the container. 🪨]
+#only("1-")[At which lake is the air pressure highest (assuming the same weather conditions)?]
 #v(40pt)
-#only("3-")[What happens to the water level? 🌊]
-#only("1")[
-#voiceover("Consider the following scenario: A wooden board floats in a container filled with water. A stone is on the board.")
-]
-#only("2")[
-#voiceover("The stone then slips off the board and sinks to the bottom of the container.")
-]
-#only("3")[
-#voiceover("What do you think happens to the water level in this situation?")
-]
+#only("2-")[a) At Lake Zurich]
+#v(10pt)
+#only("3-")[b) At Lake Neuchâtel]
+#v(10pt)
+#only("4-")[c) At Lake Klöntal]
+#v(10pt)  
+#only("5-")[d) At Lake Maggiore]
+#only("1")[#voiceover("Let's test your understanding of air pressure at different altitudes. At which lake is the air pressure highest, assuming the same weather conditions at all lakes?")]
+#only("2")[#voiceover("Is it at Lake Zurich,")]
+#only("3")[#voiceover("or at Lake Neuchâtel,")]
+#only("4")[#voiceover("or maybe at Lake Klöntal,")]
+#only("5")[#voiceover("or is it at Lake Maggiore?")]
 ]#questionDef(
-questionText: "What happens to the water level when the stone slips off the board and sinks to the bottom of the container?",
-answerOptions: ("The water level remains the same or drops slightly.", "The water level rises."),
-correctAnswerIndex: 0,
-llmCheckDetails: (
-fallbackOptionIndex: 1
-),
+questionText: "At which lake is the air pressure highest (assuming the same weather conditions)?",  
+answerOptions: ("At Lake Zurich", "At Lake Neuchâtel", "At Lake Klöntal", "At Lake Maggiore"),
+correctAnswerIndex: 3
 )

@@ -6,71 +6,160 @@
 ]
 
 #slide()[
+
 #only("1")[
-#voiceover("Leider war das nicht ganz richtig. Lass uns die Lösung Schritt für Schritt durchgehen.")
+#voiceover("Leider nicht ganz richtig. Lass uns das Schritt für Schritt durchgehen.")
 ]
 
 #text(size: 30pt, weight: "bold")[Problemstellung]
 
 #v(40pt)
 
-#only("2-")[- Wasserbehälter in Höhe $h_0$]
-#only("3-")[- Hähne in Höhen $h_1 = -35 "m"$, $h_2 = -10 "m"$, $h_3 = 3 "m"$ relativ zum Behälter]
+#only("2-")[- Wasserbehälter mit drei Wasserhähnen]
+// Die Problemstellung wird ab Folie 2 gezeigt
 
-#only("2")[#voiceover("Wir haben einen Wasserbehälter in einer bestimmten Höhe h null.")]
-#only("3")[#voiceover("Die drei Hähne befinden sich in den Höhen h eins gleich minus fünfunddreißig Meter, h zwei gleich minus zehn Meter und h drei gleich drei Meter relativ zum Behälter.")]
+#only("3-")[- Wasserhähne befinden sich auf: 
+  - 35 m unterhalb 
+  - 10 m unterhalb
+  - 3 m oberhalb]
+// Die Positionen der Wasserhähne werden ab Folie 3 gezeigt
+
+#only("2")[
+#voiceover("Wir haben einen Wasserbehälter mit drei Wasserhähnen, die sich in unterschiedlichen Höhen relativ zum Behälter befinden.")
+]
+
+#only("3")[
+#voiceover("Der erste Wasserhahn befindet sich 35 Meter unterhalb des Behälters, der zweite 10 Meter unterhalb und der dritte 3 Meter oberhalb.")
+]
+
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Druckformel]
+
+#text(size: 30pt, weight: "bold")[Formel]
 
 #v(40pt)
 
-#only("1-")[$ P = P_0 - rho g h $]
+#only("1-")[$ P = P_("Behälter") - rho dot g dot h $]
+// Die Formel wird ab Folie 1 gezeigt
 
-#only("1")[#voiceover("Um den Überdruck an jedem Hahn zu berechnen, verwenden wir die hydrostatische Druckformel: P gleich P null minus rho g h, wobei P null der Druck am Behälter ist, rho die Dichte des Wassers, g die Erdbeschleunigung und h der Höhenunterschied zwischen dem Behälter und dem Hahn ist.")]
+#only("1")[
+#voiceover("Um den Überdruck an jedem Wasserhahn zu berechnen, verwenden wir die Formel P gleich P Behälter minus rho mal g mal h, wobei rho die Dichte des Wassers ist, g die Erdbeschleunigung und h der Höhenunterschied zwischen dem Behälter und dem Wasserhahn.")
+]
+
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Berechnungen]
+
+#text(size: 30pt, weight: "bold")[Lösung]
 
 #v(40pt)
 
-#only("1-")[- $rho = 1000 "kg/m"^3$, $g = 9.81 "m/s"^2$]
+#only("1-")[- Wasserhahn 1 (35 m unterhalb): ]
 
-#v(10pt)
+#only("2-")[$ P_1 = P_("Behälter") - 1000 "kg/m"^3 dot 9.81 "m/s"^2 dot (-35 "m") $]
 
-#only("2-")[- Hahn 1: $P_1 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-35 "m") = P_0 + 343500 "Pa" = P_0 + 3.4 "bar"$ 🚰]
+#only("3-")[$ P_1 = P_("Behälter") + 343350 "Pa" = P_("Behälter") + 3.4 "bar" $]
+// Die Lösung für Wasserhahn 1 wird schrittweise von Folie 1 bis 3 aufgebaut
 
-#v(10pt)
+#v(20pt)
 
-#only("3-")[- Hahn 2: $P_2 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-10 "m") = P_0 + 98100 "Pa" = P_0 + 1.0 "bar"$ 🚰]
+#only("4-")[- Wasserhahn 2 (10 m unterhalb):]
 
-#v(10pt)
+#only("5-")[$ P_2 = P_("Behälter") - 1000 "kg/m"^3 dot 9.81 "m/s"^2 dot (-10 "m") $]
 
-#only("4-")[- Hahn 3: $P_3 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(3 "m") = P_0 - 29430 "Pa" = P_0 - 0.3 "bar"$ 🚰]
+#only("6-")[$ P_2 = P_("Behälter") + 98100 "Pa" = P_("Behälter") + 1.0 "bar" $]
+// Die Lösung für Wasserhahn 2 wird schrittweise von Folie 4 bis 6 aufgebaut
 
-#only("1")[#voiceover("Wir verwenden die Dichte des Wassers, rho gleich tausend Kilogramm pro Kubikmeter, und die Erdbeschleunigung, g gleich neun Komma acht eins Meter pro Quadratsekunde.")]
+#v(20pt)
 
-#only("2")[#voiceover("Für Hahn eins haben wir P eins gleich P null minus tausend mal neun Komma acht eins mal minus fünfunddreißig. Das vereinfacht sich zu P null plus dreihundertdreiundvierzigtausendfünfhundert Pascal oder P null plus drei Komma vier Bar.")]
+#only("7-")[- Wasserhahn 3 (3 m oberhalb):]
 
-#only("3")[#voiceover("Ähnlich erhalten wir für Hahn zwei P zwei gleich P null plus achtundneunzigtausendeinhundert Pascal oder P null plus ein Bar.")]
+#only("8-")[$ P_3 = P_("Behälter") - 1000 "kg/m"^3 dot 9.81 "m/s"^2 dot (3 "m") $]
 
-#only("4")[#voiceover("Schließlich haben wir für Hahn drei P drei gleich P null minus neunundzwanzigtausendvierhundertdreißig Pascal oder P null minus null Komma drei Bar.")]
+#only("9-")[$ P_3 = P_("Behälter") - 29430 "Pa" = P_("Behälter") - 0.3 "bar" $]
+// Die Lösung für Wasserhahn 3 wird schrittweise von Folie 7 bis 9 aufgebaut
+
+#only("1")[#voiceover("Lass uns mit dem ersten Wasserhahn beginnen, der sich 35 Meter unterhalb des Behälters befindet.")]
+
+#only("2")[#voiceover("Wir setzen die Werte in die Formel ein. Die Dichte des Wassers beträgt 1000 Kilogramm pro Kubikmeter, die Erdbeschleunigung 9,81 Meter pro Quadratsekunde und die Höhe ist negativ 35 Meter, da sich der Wasserhahn unterhalb des Behälters befindet.")]
+
+#only("3")[#voiceover("Vereinfacht ergibt sich, dass der Überdruck am Wasserhahn 1 der Behälterdruck plus 343.350 Pascal oder 3,4 bar ist.")]
+
+#only("4")[#voiceover("Weiter geht es mit Wasserhahn 2, der sich 10 Meter unterhalb des Behälters befindet.")]
+
+#only("5")[#voiceover("Auch hier setzen wir die Werte in die Formel ein, wobei die Höhe diesmal negativ 10 Meter beträgt.")]
+
+#only("6")[#voiceover("Nach der Vereinfachung ergibt sich, dass der Überdruck am Wasserhahn 2 der Behälterdruck plus 98.100 Pascal oder 1,0 bar ist.")]
+
+#only("7")[#voiceover("Schließlich kommen wir zu Wasserhahn 3, der sich 3 Meter oberhalb des Behälters befindet.")]
+
+#only("8")[#voiceover("Wir setzen die Werte ein und beachten, dass die Höhe diesmal positiv 3 Meter beträgt, da sich der Wasserhahn oberhalb des Behälters befindet.")]
+
+#only("9")[#voiceover("Vereinfacht ergibt sich, dass der Überdruck am Wasserhahn 3 der Behälterdruck minus 29.430 Pascal oder minus 0,3 bar ist.")]
+
 ]
 
 #slide()[
+
+#text(size: 30pt, weight: "bold")[Visualisierung 📊]
+
+#v(40pt)
+
+#only("1-")[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(```
+import matplotlib.pyplot as plt
+import numpy as np
+
+heights = [-35, -10, 3]
+pressures = [3.4, 1.0, -0.3]
+
+plt.figure(figsize=(8, 6))
+plt.plot(heights, pressures, 'bo-')
+plt.xlabel('Höhe relativ zum Behälter (m)')
+plt.ylabel('Überdruck (bar)')
+plt.title('Überdruck bei verschiedenen Wasserhahnhöhen')
+plt.grid(True)
+plt.show()
+```,
+width: 360pt),
+)
+]
+]
+// Das Diagramm, das den Überdruck bei verschiedenen Wasserhahnhöhen visualisiert, wird ab Folie 1 gezeigt
+
+#only("1")[
+#voiceover("Hier ist ein Diagramm, das den Überdruck bei den verschiedenen Wasserhahnhöhen visualisiert. Die x-Achse zeigt die Höhe relativ zum Behälter in Metern und die y-Achse zeigt den Überdruck in bar. Wir sehen, dass der Überdruck linear abnimmt, wenn die Höhe zunimmt.")
+]
+
+]
+]
+
+#slide()[
+
 #text(size: 30pt, weight: "bold")[Zusammenfassung]
 
 #v(40pt)
 
-#only("1-")[- Hahn 1 (35 m darunter): Überdruck = 3.4 bar]
-#only("2-")[- Hahn 2 (10 m darunter): Überdruck = 1.0 bar]  
-#only("3-")[- Hahn 3 (3 m darüber): Überdruck = -0.3 bar]
+#only("1-")[- Der Überdruck hängt vom Höhenunterschied ab 📏]
 
-#only("1")[#voiceover("Zusammenfassend beträgt der Überdruck am Hahn eins, fünfunddreißig Meter unter dem Behälter, drei Komma vier Bar.")]
+#only("2-")[- Niedrigere Wasserhähne haben höheren Überdruck ⬇️]
 
-#only("2")[#voiceover("Der Überdruck am Hahn zwei, zehn Meter darunter, beträgt ein Bar.")]
+#only("3-")[- Wasserhähne oberhalb des Behälters haben negativen Überdruck ⬆️]
 
-#only("3")[#voiceover("Und der Überdruck am Hahn drei, drei Meter darüber, beträgt minus null Komma drei Bar.")]
+#only("1")[
+#voiceover("Zusammenfassend hängt der Überdruck an jedem Wasserhahn vom Höhenunterschied zwischen dem Wasserhahn und dem Behälter ab.")
+]
+
+#only("2")[
+#voiceover("Wasserhähne, die sich unterhalb des Behälters befinden, haben einen positiven Überdruck, wobei niedrigere Wasserhähne einen höheren Überdruck haben.")
+]
+
+#only("3")[
+#voiceover("Wasserhähne, die sich oberhalb des Behälters befinden, haben einen negativen Überdruck. Großartige Arbeit bei der Lösung dieses Problems!")
+]
+
 ]

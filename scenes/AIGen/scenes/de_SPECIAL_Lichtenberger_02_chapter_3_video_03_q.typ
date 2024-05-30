@@ -7,63 +7,51 @@
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Ballonstart 🎈]
+
 #v(40pt)
 
 #only("1-")[
-- Ein Ballon hebt ab, wenn die Auftriebskraft > Gewicht ist
+- Ballon in Uster auf 464 m über dem Meeresspiegel 🏔️
 ]
+
 #v(20pt)
 
 #only("2-")[
-- Uster liegt auf 464 m über dem Meeresspiegel 🏔️
+- Volumen der Gondel und Passagiere vernachlässigt 🧳👤
 ]
+
 #v(20pt)
 
 #only("3-")[
-- Volumen der Gondel und Passagiere ignorieren 🧺👨‍👩‍👧
+#text(size: 24pt)[Was ist das minimale Volumen des Ballons für den Start? 🤔]
 ]
 
 #only("1")[
-#voiceover("Ein Ballon hebt ab, wenn die Auftriebskraft, die auf ihn wirkt, größer ist als sein Gewicht.")
+#voiceover("Betrachte einen Ballon in Uster auf einer Höhe von 464 Metern über dem Meeresspiegel.")
 ]
 
 #only("2")[
-#voiceover("Betrachte einen Ballon in Uster, das sich auf einer Höhe von 464 Metern über dem Meeresspiegel befindet.")
+#voiceover("Das Volumen der Gondel und der Passagiere kann vernachlässigt werden.")
 ]
 
 #only("3")[
-#voiceover("Zur Vereinfachung ignorieren wir das Volumen der Gondel und der Passagiere.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Frage ❓]
-#v(40pt)
-
-#only("1-")[
-Was muss das Mindestvolumen des Ballons sein, damit er in Uster abhebt?
+#voiceover("Was muss das minimale Volumen des Ballons sein, damit er abhebt?")
 ]
 
-#only("1")[
-#voiceover("Angesichts dieses Szenarios, was muss das Mindestvolumen des Ballons sein, damit er in Uster abhebt?")
-]
-
-#questionDef(
-questionText: "Was ist das Mindestvolumen des Ballons in Kubikmetern, damit er in Uster auf 464 m über dem Meeresspiegel abhebt, unter Vernachlässigung des Volumens der Gondel und der Passagiere?",
-answerOptions: ("$1088 m^3$", "$0 m^3$"),  
-correctAnswerIndex: 0,
+]#questionDef(
+questionText: "Was ist das minimale Volumen $V$ des Ballons für den Start in Uster auf $464 \text{ m}$ über dem Meeresspiegel, wenn das Volumen der Gondel und Passagiere vernachlässigt wird?",
+answerOptions: ("$V = 1088 \text{ m}^3$", "$V = 0 \text{ m}^3$"),  correctAnswerIndex: 0,
 freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 0,
-tolerance: none
-)
+  fallbackOptionIndex: 1,
+  answerOptionsEquality: (
+    V: (
+      roundingDecimalPlaces: 2,
+      tolerance: none
+    )
+  ),
+  answerOptionMatcher:("$V = \key{V} \text{ m}^3$"),
+  answerOptionsTypes: (
+    "V": "number"
+  )
 ),
-answerOptionMatcher:("\key{a} $m^3$"),
-answerOptionsTypes: (
-"a": "number"
 )
-),
-)
-]

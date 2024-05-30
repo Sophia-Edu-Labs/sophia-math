@@ -7,27 +7,35 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Pump Piston Exercise 🏋️]
+#text(size: 30pt, weight: "bold")[Hydraulic Lift]
 #v(40pt)
 #only("1-")[
-- Hydraulic lift raises 6000 kg ship engine by 2.0 m 🚢
-- Pump piston area: 5.0 cm² 
-- Press piston area: 400 cm²
-- Pump piston stroke length: 50 cm
+- Piston area: 5.0 cm² 🔧
+]
+#v(20pt)
+#only("2-")[
+- Pressure in fluid: 14.7 bar 💧
 ]
 #only("1")[
-#voiceover("Consider a hydraulic lift that raises a ship engine weighing 6000 kg by 2.0 meters. The pump piston has an area of 5.0 square centimeters, while the press piston has an area of 400 square centimeters. The pump piston has a stroke length of 50 centimeters.")
-]
-#v(40pt)
-#only("2-")[
-❓ How many times must the pump piston be lowered? 
+#voiceover("Consider a hydraulic lift with a pump piston area of 5.0 square centimeters.")
 ]
 #only("2")[
-#voiceover("The question is: How many times must the pump piston be lowered to raise the engine by the given height?")
+#voiceover("The pressure in the fluid is 14.7 bar.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Question]
+#v(40pt)
+#only("1-")[
+What is the necessary force of the pump? 🤔
+]
+#only("1")[
+#voiceover("Based on this information, calculate the necessary force of the pump.")
 ]
 ]#questionDef(
-questionText: "How many times must the pump piston be lowered to raise the engine by $2.0 \, \text{m}$?",
-answerOptions: ("320", "160"),
+questionText: "What is the necessary force $F$ of the pump in Newtons (N)?",
+answerOptions: ("$F = 735 \text{ N}$", "$F = 0 \text{ N}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -37,7 +45,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$\key{a}$"),
+answerOptionMatcher:("$F = \key{a} \text{ N}$"),
 answerOptionsTypes: (
 "a": "number"
 )

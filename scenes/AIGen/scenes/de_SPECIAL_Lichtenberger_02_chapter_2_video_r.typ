@@ -12,7 +12,7 @@
   - Volumen des eingetauchten Objekts 📏
   - Dichte der Flüssigkeit 🧊]
 #only("1")[
-#voiceover("Lass uns rekapitulieren, was wir über den Auftrieb gelernt haben. Der Auftrieb hängt von zwei Hauptfaktoren ab: dem Volumen des eingetauchten Objekts und der Dichte der Flüssigkeit, in der sich das Objekt befindet.")
+#voiceover("Lass uns wiederholen, was wir über den Auftrieb gelernt haben. Der Auftrieb hängt von zwei Hauptfaktoren ab: dem Volumen des eingetauchten Objekts und der Dichte der Flüssigkeit, in der sich das Objekt befindet.")
 ]
 ]
 
@@ -69,7 +69,7 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("Dies beeinflusst, wie viel von einem Objekt, wie einem Eisberg, unter Wasser bleibt. Im Fall von Eisbergen sind etwa 89,9% des Eisbergs untergetaucht, während nur 10,1% über der Wasserlinie liegen.")
+#voiceover("Dies beeinflusst, wie viel von einem Objekt, wie einem Eisberg, unter Wasser bleibt. Im Fall von Eisbergen sind etwa 89,9 % des Eisbergs untergetaucht, während nur 10,1 % über der Wasserlinie liegen.")
 ]
 ]
 ]
@@ -82,6 +82,6 @@ width: 360pt),
   - Dichte der Flüssigkeit 🧊
 - Beeinflusst, wie viel von einem Objekt unter Wasser ist 🌊]
 #only("1")[
-#voiceover("Also denke daran, der Auftrieb wird durch das Volumen des eingetauchten Objekts und die Dichte der Flüssigkeit bestimmt, in der es sich befindet. Dies beeinflusst, wie viel von einem Objekt, wie einem Eisberg, unter Wasser bleibt.")
+#voiceover("Denke daran, der Auftrieb wird durch das Volumen des eingetauchten Objekts und die Dichte der Flüssigkeit bestimmt. Dies beeinflusst, wie viel von einem Objekt, wie einem Eisberg, unter Wasser bleibt.")
 ]
 ]

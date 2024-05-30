@@ -20,11 +20,11 @@
 ]
 
 #only("2")[
-#voiceover("Druck wird von verschiedenen Umweltfaktoren beeinflusst und ändert sich mit der Tiefe.")
+#voiceover("Der Druck wird von verschiedenen Umweltfaktoren beeinflusst und ändert sich mit der Tiefe.")
 ]
 
 #only("3")[
-#voiceover("Wir haben gesehen, wie Saugnäpfe aufgrund des Druckunterschieds innerhalb und außerhalb des Saugnapfes funktionieren.")
+#voiceover("Wir haben gesehen, wie Saugnäpfe funktionieren, aufgrund des Druckunterschieds innerhalb und außerhalb des Saugnapfes.")
 ]
 
 #only("4")[
@@ -43,7 +43,7 @@
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -76,7 +76,7 @@ width: 360pt),
 ]
 
 #only("2")[
-#voiceover("Druck steigt linear mit der Tiefe, wie in diesem Diagramm gezeigt.")
+#voiceover("Der Druck nimmt linear mit der Tiefe zu, wie in diesem Diagramm gezeigt.")
 ]
 
 #only("3")[
@@ -97,12 +97,12 @@ width: 360pt),
 
 #only("2-")[Es hilft, viele Phänomene zu erklären 🌍]
 
-#only("3-")[Von Saugnäpfen bis zum Luftdruck 🪣🏔️]
+#only("3-")[Von Saugnäpfen bis hin zu Luftdruck 🪣🏔️]
 
 #only("4-")[Erforsche und lerne weiter! 🚀]
 
 #only("1")[
-#voiceover("Zusammenfassend ist das Verständnis des Druckbegriffs entscheidend.")
+#voiceover("Abschließend ist das Verständnis des Druckbegriffs entscheidend.")
 ]
 
 #only("2")[
@@ -110,7 +110,7 @@ width: 360pt),
 ]
 
 #only("3")[
-#voiceover("Von der Funktionsweise von Saugnäpfen bis zur Variation des Luftdrucks mit der Höhe.")
+#voiceover("Von der Funktionsweise von Saugnäpfen bis hin zur Variation des Luftdrucks mit der Höhe.")
 ]
 
 #only("4")[

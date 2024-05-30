@@ -12,32 +12,35 @@
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(```
+pyimage(``` 
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Create the figure and axis
+# Set up the figure
 fig, ax = plt.subplots(figsize=(6, 6))
 
-# Draw the water line
-water_line = plt.axhline(y=0, color='blue', linestyle='-', linewidth=2, label='Wasserlinie')
+# Draw the water level
+water_level = 0.8
+ax.axhline(water_level, color='blue', linewidth=2, linestyle='--', label='Wasserstand')
 
 # Draw the iceberg
-iceberg = plt.Polygon([(-1, -4), (1, -4), (0.5, 2), (-0.5, 2)], closed=True, color='white', edgecolor='black', linewidth=2, label='Eisberg')
-ax.add_patch(iceberg)
+iceberg_height = 1.0
+iceberg_width = 1.0
+iceberg = plt.Rectangle((0, 0), iceberg_width, iceberg_height, color='white', edgecolor='black', linewidth=2)
+ax.add_artist(iceberg)
 
 # Add labels
-ax.text(0, 1, '10.1%', fontsize=20, ha='center', va='center')
-ax.text(0, -2, '89.9%', fontsize=20, ha='center', va='center')
+ax.text(0.5, 1.1, 'Eisberg', ha='center', va='bottom', fontsize=14)
+ax.text(1.1, water_level, 'Wasser', ha='left', va='center', fontsize=14, color='blue')
 
 # Set the limits and remove the ticks
-ax.set_xlim(-2, 2)
-ax.set_ylim(-5, 3)
+ax.set_xlim(-0.1, 1.5)
+ax.set_ylim(-0.1, 1.5)
 ax.set_xticks([])
 ax.set_yticks([])
 
 # Add legend
-ax.legend(handles=[water_line, iceberg], fontsize=12, loc='upper right')
+ax.legend(fontsize=12, loc='upper right')
 
 plt.show()
 ```,
@@ -46,28 +49,30 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("Betrachte diesen Eisberg, der im Wasser schwimmt.")
+#voiceover("Betrachte einen Eisberg, der im Wasser schwimmt.")
 ]
-#v(20pt)
+#v(40pt)
 #only("2-")[
-- Wie viel Prozent ist unter Wasser? 🤔
+#text(size: 24pt, weight: "bold")[Frage ❓]
+#v(20pt)
+Welcher Prozentsatz des Eisbergs ist unter Wasser? 🌊
 ]
 #only("2")[
-#voiceover("Wie viel Prozent des Eisbergs ist unter Wasser?")
+#voiceover("Die Frage lautet: Welcher Prozentsatz des Eisbergs ist unter Wasser?")
 ]
 ]
 
 
 ]#questionDef(
-questionText: "Wie viel Prozent des Eisbergs ist unter Wasser?",
-answerOptions: ("$89.9\%$", "$10.1\%$"),
+questionText: "Welcher Prozentsatz eines Eisbergs ist unter Wasser?",
+answerOptions: ("89.9\%", "50\%"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (
-roundingDecimalPlaces: 2,
-tolerance: none
+roundingDecimalPlaces: 1,
+tolerance: 1
 )
 ),
 answerOptionMatcher:("\key{a}\%"),

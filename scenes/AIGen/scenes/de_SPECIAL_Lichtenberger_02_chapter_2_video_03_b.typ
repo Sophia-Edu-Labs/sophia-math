@@ -5,145 +5,141 @@
 #it.body
 ]
 
-
 #slide()[
-#text(size: 30pt, weight: "bold")[Prozentsatz eines Eisbergs unter Wasser 🧊]
+#text(size: 30pt, weight: "bold")[Auftrieb eines Eisbergs 🧊]
 #v(40pt)
 #only("1-")[Großartig! 🎉 Das ist die richtige Antwort.]
 #v(20pt)
-#only("2-")[- $89.9%$ eines Eisbergs sind unter Wasser]
+#only("2-")[Lass uns sehen, wie wir das Schritt für Schritt berechnen können.]
 #only("1")[
-#voiceover("Leider ist das nicht ganz richtig. Lass uns im Video sehen, wie man die richtige Antwort berechnet.")
+#voiceover("Leider falsch. Hier ist die Erklärung:")
 ]
 #only("2")[
-#voiceover("Der Schlüssel zur Lösung dieses Problems liegt im Verständnis des Auftriebs und der Dichten von Eis und Wasser.")
+#voiceover("Lass uns sehen, wie wir Schritt für Schritt den Prozentsatz eines Eisbergs berechnen können, der unter Wasser ist.")
 ]
 ]
-
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Gegebene Informationen]
 #v(40pt)
-#only("1-")[- Dichte von Eis: $rho_("ice") = 920 "kg"/m^3$]
+#only("1-")[- Dichte von Eis: $rho_("ice") = 920 kg/m^3$]
 #v(20pt)
-#only("2-")[- Dichte von Wasser: $rho_("water") = 1000 "kg"/m^3$]
+#only("2-")[- Dichte von Wasser: $rho_("water") = 1000 kg/m^3$]
 #only("1")[
-#voiceover("Wir wissen, dass die Dichte von Eis ungefähr 920 Kilogramm pro Kubikmeter beträgt.")
+#voiceover("Wir wissen, dass die Dichte von Eis 920 Kilogramm pro Kubikmeter beträgt,")
 ]
 #only("2")[
-#voiceover("Und die Dichte von Wasser beträgt 1000 Kilogramm pro Kubikmeter.")
+#voiceover("und die Dichte von Wasser beträgt 1000 Kilogramm pro Kubikmeter.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Archimedes' Prinzip 🚢]
+#text(size: 30pt, weight: "bold")[Schritt 1: Archimedes' Prinzip]
 #v(40pt)
-#only("1-")[- Die Auftriebskraft entspricht dem Gewicht der verdrängten Flüssigkeit]
+#only("1-")[- Die Auftriebskraft entspricht dem Gewicht der verdrängten Flüssigkeit.]
 #v(20pt)
-#only("2-")[- $F_("buoyant") = rho_("water") g V_("displaced")$]
+#only("2-")[$ F_("buoyant") = rho_("water") V_("displaced") g $]
 #only("1")[
-#voiceover("Das Prinzip von Archimedes besagt, dass die Auftriebskraft auf ein Objekt gleich dem Gewicht der vom Objekt verdrängten Flüssigkeit ist.")
+#voiceover("Nach dem Prinzip von Archimedes entspricht die Auftriebskraft, die auf ein Objekt wirkt, dem Gewicht der vom Objekt verdrängten Flüssigkeit.")
 ]
 #only("2")[
-#voiceover("Mathematisch kann dies als die Auftriebskraft gleich der Dichte des Wassers mal der Erdbeschleunigung mal dem Volumen des verdrängten Wassers ausgedrückt werden.")
+#voiceover("Mathematisch kann dies ausgedrückt werden als: Die Auftriebskraft entspricht der Dichte des Wassers mal dem Volumen des verdrängten Wassers mal der Beschleunigung aufgrund der Schwerkraft.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gleichgewichtsbedingung ⚖️]
+#text(size: 30pt, weight: "bold")[Schritt 2: Gleichgewicht]
 #v(40pt)
-#only("1-")[- Im Gleichgewicht: $F_("buoyant") = F_("gravity")$]
+#only("1-")[- Damit der Eisberg schwimmt, muss die Auftriebskraft seinem Gewicht entsprechen.]
 #v(20pt)
-#only("2-")[- $rho_("water") g V_("displaced") = rho_("ice") g V_("ice")$]
+#only("2-")[$ rho_("water") V_("displaced") g = rho_("ice") V_("iceberg") g $]
 #only("1")[
-#voiceover("Damit der Eisberg im Gleichgewicht schwimmt, muss die Auftriebskraft der Gewichtskraft des Eisbergs entsprechen.")
+#voiceover("Damit der Eisberg im Gleichgewicht schwimmt, muss die Auftriebskraft dem Gewicht des Eisbergs entsprechen.")
 ]
 #only("2")[
-#voiceover("Das bedeutet, dass die Dichte des Wassers mal g mal das Volumen des verdrängten Wassers gleich der Dichte des Eises mal g mal dem Volumen des Eisbergs ist.")
+#voiceover("Das bedeutet, dass die Dichte des Wassers mal das Volumen des verdrängten Wassers mal g gleich der Dichte des Eises mal dem Volumen des Eisbergs mal g sein muss.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Lösung des Verhältnisses]
+#text(size: 30pt, weight: "bold")[Schritt 3: Vereinfachen]
 #v(40pt)
-#only("1-")[- Vereinfachen: $rho_("water") V_("displaced") = rho_("ice") V_("ice")$]
+#only("1-")[- Teile beide Seiten durch $g$:]
 #v(20pt)
-#only("2-")[- Durch $V_("ice")$ teilen: $rho_("water") (V_("displaced")/V_("ice")) = rho_("ice")$]
-#v(20pt) 
-#only("3-")[- Lösung: $V_("displaced")/V_("ice") = rho_("ice")/rho_("water")$]
+#only("2-")[$ rho_("water") V_("displaced") = rho_("ice") V_("iceberg") $]
 #only("1")[
-#voiceover("Wir können diese Gleichung vereinfachen, indem wir beide Seiten durch g teilen, was uns die Dichte des Wassers mal das verdrängte Volumen gleich der Dichte des Eises mal dem Volumen des Eisbergs ergibt.")
+#voiceover("Wir können beide Seiten der Gleichung durch g teilen, um sie zu vereinfachen.")
 ]
 #only("2")[
-#voiceover("Indem wir beide Seiten durch das Volumen des Eisbergs teilen, erhalten wir die Dichte des Wassers mal das Verhältnis des verdrängten Volumens zum Volumen des Eisbergs gleich der Dichte des Eises.")
-]
-#only("3")[
-#voiceover("Wenn wir das Verhältnis lösen, finden wir, dass das verdrängte Volumen geteilt durch das Volumen des Eisbergs gleich der Dichte des Eises geteilt durch die Dichte des Wassers ist.")
+#voiceover("Dies lässt uns mit der Dichte des Wassers mal dem verdrängten Volumen gleich der Dichte des Eises mal dem Volumen des Eisbergs.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Berechnung des Prozentsatzes 📊]
+#text(size: 30pt, weight: "bold")[Schritt 4: Unterwasseranteil]
 #v(40pt)
-#only("1-")[- $V_("displaced")/V_("ice") = 920 "kg"/m^3 / 1000 "kg"/m^3 = 0.92$]
+#only("1-")[- Teile beide Seiten durch $rho_("water") V_("iceberg")$:]
 #v(20pt)
-#only("2-")[- Prozentsatz unter Wasser: $0.92 * 100% = 92%$]
-#v(20pt)
-#only("3-")[- Genauer: $89.9%$]
+#only("2-")[$ V_("displaced")/V_("iceberg") = rho_("ice")/rho_("water") $]
 #only("1")[
-#voiceover("Wenn wir die Werte für die Dichten einsetzen, finden wir, dass das Verhältnis 920 geteilt durch 1000 ist, was 0.92 ergibt.")
+#voiceover("Jetzt teilen wir beide Seiten durch die Dichte des Wassers mal das Volumen des Eisbergs.")
 ]
 #only("2")[
-#voiceover("Um dies in einen Prozentsatz umzuwandeln, multiplizieren wir mit 100%, was uns 92% ergibt.")
-]
-#only("3")[
-#voiceover("Eine genauere Berechnung ergibt 89.9%. Daher sind ungefähr 89.9% eines Eisbergs unter Wasser.")
+#voiceover("Dies ergibt das Verhältnis des verdrängten Volumens zum Gesamtvolumen des Eisbergs, das dem Verhältnis der Dichte von Eis zur Dichte von Wasser entspricht.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung 📸]
+#text(size: 30pt, weight: "bold")[Schritt 5: Prozentsatz]
+#v(40pt)
+#only("1-")[- Um den Prozentsatz zu erhalten, multipliziere mit 100:]
+#v(20pt)
+#only("2-")[$ (rho_("ice")/rho_("water")) dot 100 = (920/1000) dot 100 = 92% $]
+#only("1")[
+#voiceover("Um diesen Bruch in einen Prozentsatz umzuwandeln, multiplizieren wir mit 100.")
+]
+#only("2")[
+#voiceover("Wenn wir die Werte für die Dichten von Eis und Wasser einsetzen, erhalten wir, dass 920 geteilt durch 1000, mal 100, gleich 92 Prozent ist.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung 📊]
 #v(40pt)
 #only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(```import matplotlib.pyplot as plt
+pyimage(```
+import matplotlib.pyplot as plt
 import numpy as np
 
-# Create a figure and axis
-fig, ax = plt.subplots(figsize=(6, 4))
+# Set up the figure
+fig, ax = plt.subplots(figsize=(6, 6))
 
-# Draw the water level
-water_level = 0.899
-ax.axhline(water_level, color='blue', linewidth=2, label='Water Level')
+# Draw the water
+water = plt.Rectangle((0, 0), 10, 4, color='skyblue')
+ax.add_patch(water)
 
 # Draw the iceberg
-iceberg = plt.Polygon([(0.2, 0), (0.8, 0), (0.8, 1), (0.2, 1)], closed=True, color='white', edgecolor='black', linewidth=2, label='Iceberg')
-ax.add_patch(iceberg)
+iceberg_underwater = plt.Rectangle((4, 0), 2, 3.68, color='white')
+iceberg_above = plt.Rectangle((4, 3.68), 2, 0.32, color='aliceblue')
+ax.add_patch(iceberg_underwater)
+ax.add_patch(iceberg_above)
 
-# Shade the underwater portion
-underwater = plt.Polygon([(0.2, 0), (0.8, 0), (0.8, water_level), (0.2, water_level)], closed=True, color='lightblue', label='Underwater Portion (89.9%)')
-ax.add_patch(underwater)
+# Add labels
+ax.text(5, 2, '92%', ha='center', va='center', fontsize=20)
+ax.text(5, 3.84, '8%', ha='center', va='center', fontsize=12)
 
-# Add labels and legend
-ax.set_xlabel('Width')
-ax.set_ylabel('Height')
-ax.set_title('Iceberg Buoyancy')
-ax.legend(handles=[iceberg, underwater], loc='upper right')
-
-# Set the limits and remove ticks
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
+# Set the limits and remove the ticks
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 5)
 ax.set_xticks([])
 ax.set_yticks([])
 
-plt.tight_layout()
+# Add a title
+ax.set_title('Iceberg Buoyancy', fontsize=20)
+
 plt.show()
 ```,
 width: 360pt),
@@ -151,26 +147,21 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("Hier ist eine Visualisierung eines Eisbergs, der im Wasser schwimmt. Die blaue Linie stellt den Wasserspiegel dar, und der hellblaue schattierte Bereich zeigt den unter Wasser liegenden Teil des Eisbergs, den wir auf etwa 89.9% des Gesamtvolumens berechnet haben.")
+#voiceover("Hier ist eine Visualisierung eines Eisbergs, der im Wasser schwimmt. Wie wir berechnet haben, sind 92% des Volumens des Eisbergs unter Wasser, während nur 8% über der Oberfläche sichtbar sind.")
 ]
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse 🔑]
+#text(size: 30pt, weight: "bold")[Fazit]
 #v(40pt)
-#only("1-")[- Der Auftrieb hängt von den Dichten des Objekts und der Flüssigkeit ab]
+#only("1-")[- 92% des Volumens eines Eisbergs sind unter Wasser. 🌊]
 #v(20pt)
-#only("2-")[- Im Gleichgewicht entspricht die Auftriebskraft der Gewichtskraft]
-#v(20pt)
-#only("3-")[- Das Verhältnis der Volumina entspricht dem Verhältnis der Dichten]
+#only("2-")[- Dies liegt am Verhältnis der Dichten von Eis und Wasser. ⚖️]
 #only("1")[
-#voiceover("Die wichtigsten Erkenntnisse aus diesem Problem sind, dass der Auftrieb von den Dichten des Objekts und der Flüssigkeit abhängt, in der es sich befindet.")
+#voiceover("Zusammenfassend haben wir herausgefunden, dass 92 Prozent des Volumens eines Eisbergs unter Wasser sind.")
 ]
 #only("2")[
-#voiceover("Im Gleichgewicht entspricht die Auftriebskraft der Gewichtskraft des Objekts.")
-]
-#only("3")[
-#voiceover("Und das Verhältnis des verdrängten Volumens zum Gesamtvolumen des Objekts entspricht dem Verhältnis der Dichte des Objekts zur Dichte der Flüssigkeit.")
+#voiceover("Dies ist eine direkte Folge des Verhältnisses der Dichten von Eis und Wasser, wie es durch das Prinzip des Auftriebs von Archimedes erklärt wird.")
 ]
 ]

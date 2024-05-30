@@ -6,16 +6,16 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung des Wasserdrucks 🌊]
+#text(size: 30pt, weight: "bold")[Wasserdruck Rückblick 🌊]
 #v(40pt)
 #only("1-")[- Der Wasserdruck nimmt mit der Tiefe zu 🏊‍♂️]
-#only("1")[#voiceover("Lass uns rekapitulieren, was wir über den Wasserdruck gelernt haben. Erstens, der Wasserdruck nimmt zu, je tiefer Du gehst.")]
+#only("1")[#voiceover("Lass uns rekapitulieren, was wir über Wasserdruck gelernt haben. Erstens, der Wasserdruck nimmt zu, je tiefer man geht.")]
 #v(20pt)
-#only("2-")[- Der Druck nimmt ab, wenn der Wasserspiegel über einem Objekt sinkt 📉]
-#only("2")[#voiceover("Zweitens, wenn der Wasserspiegel über einem Objekt sinkt, nimmt auch der Druck auf dieses Objekt ab.")]
+#only("2-")[- Der Druck nimmt ab, wenn der Wasserstand über einem Objekt sinkt 📉]
+#only("2")[#voiceover("Zweitens, wenn der Wasserstand über einem Objekt sinkt, nimmt auch der Druck auf dieses Objekt ab.")]
 #v(20pt)
-#only("3-")[- Objekte, die im Wasser eingetaucht sind, werden von diesen Druckänderungen beeinflusst 🚢]
-#only("3")[#voiceover("Schließlich werden Objekte, die im Wasser eingetaucht sind, von diesen Änderungen des Wasserdrucks beeinflusst.")]
+#only("3-")[- Objekte, die im Wasser getaucht sind, werden von diesen Druckänderungen beeinflusst 🚢]
+#only("3")[#voiceover("Schließlich werden Objekte, die im Wasser getaucht sind, von diesen Druckänderungen beeinflusst.")]
 ]
 
 #slide()[
@@ -79,11 +79,11 @@ width: 360pt),
 )
 ]
 ]
-#only("1")[#voiceover("Hier ist eine visuelle Darstellung. Der blaue Farbverlauf stellt die Wassertiefe dar, wobei dunkleres Blau eine größere Tiefe und höheren Druck anzeigt. Die roten Pfeile zeigen den zunehmenden Druck, je tiefer Du gehst.")]
+#only("1")[#voiceover("Hier ist eine visuelle Darstellung. Der blaue Farbverlauf repräsentiert die Wassertiefe, wobei dunkleres Blau eine größere Tiefe und höheren Druck anzeigt. Die roten Pfeile zeigen den zunehmenden Druck, je tiefer wir gehen.")]
 #v(20pt)
-#only("2")[#voiceover("Das Boot an der Oberfläche erfährt weniger Druck im Vergleich zum Fisch weiter unten.")]
+#only("2")[#voiceover("Das Boot an der Oberfläche erfährt weniger Druck im Vergleich zu dem Fisch weiter unten.")]
 #v(20pt)
-#only("3")[#voiceover("Wenn der Wasserspiegel sinken würde, würde auch der Druck auf den Fisch abnehmen.")]
+#only("3")[#voiceover("Wenn der Wasserstand sinken würde, würde auch der Druck auf den Fisch abnehmen.")]
 ]
 ]
 
@@ -91,11 +91,11 @@ width: 360pt),
 #text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse 🔑]
 #v(40pt)
 #only("1-")[- Tiefe und Wasserdruck stehen in direktem Zusammenhang 🤿]
-#only("1")[#voiceover("Die wichtigsten Erkenntnisse sind: Tiefe und Wasserdruck stehen in direktem Zusammenhang - je tiefer, desto höher der Druck.")]
+#only("1")[#voiceover("Die wichtigsten Erkenntnisse sind: Tiefe und Wasserdruck stehen in direktem Zusammenhang - je größer die Tiefe, desto höher der Druck.")]
 #v(20pt)
-#only("2-")[- Änderungen des Wasserspiegels beeinflussen den Druck auf eingetauchte Objekte 🌊]
-#only("2")[#voiceover("Änderungen des Wasserspiegels beeinflussen den Druck, den eingetauchte Objekte erfahren.")]
+#only("2-")[- Änderungen des Wasserstands beeinflussen den Druck auf getauchte Objekte 🌊]
+#only("2")[#voiceover("Änderungen des Wasserstands beeinflussen den Druck, den getauchte Objekte erfahren.")]
 #v(20pt)
-#only("3-")[- Das Verständnis davon ist entscheidend für maritime Aktivitäten und Konstruktionen 🛳️]
-#only("3")[#voiceover("Das Verständnis dieser Prinzipien ist entscheidend für alle maritimen Aktivitäten oder Konstruktionen.")]
+#only("3-")[- Das Verständnis dieser Prinzipien ist entscheidend für maritime Aktivitäten und Konstruktionen 🛳️]
+#only("3")[#voiceover("Das Verständnis dieser Prinzipien ist entscheidend für maritime Aktivitäten und Konstruktionen.")]
 ]

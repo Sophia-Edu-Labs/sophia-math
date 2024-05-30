@@ -7,124 +7,115 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Balloon Liftoff 🎈]
-#v(40pt)
-#only("1-")[Great job! That's the correct answer. Let's see how we can solve this step by step.]
-#only("1")[
-#voiceover("Great job! That's the correct answer. Let's see how we can solve this step by step.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Given Information]
-#v(40pt)
-#only("1-")[
-- Balloon lifts off when buoyant force = weight
-- Ignore volume of gondola and passengers
-- Uster is at 464 m above sea level
-]
-#only("1")[
-#voiceover("We are given that the balloon will lift off when the buoyant force equals the weight of the balloon. We can ignore the volume of the gondola and passengers. Also, Uster is at 464 meters above sea level.")
-]
+  #text(size: 30pt, weight: "bold")[Balloon Liftoff 🎈]
+  #v(40pt)
+  #only("1-")[- Minimum volume for liftoff?]
+  #only("2-")[- Given: 
+    - Location: Uster (464 m above sea level)
+    - Neglect volume of gondola and passengers
+  ]
+  #only("1")[
+    #voiceover("Great job! That's the correct minimum volume for the balloon to lift off in Uster. Now, let's see how we can calculate this step by step.")
+  ]
+  #only("2")[
+    #voiceover("To find the minimum volume, we need to consider the location, which is Uster at 464 meters above sea level. We can also neglect the volume of the gondola and passengers for this calculation.")
+  ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Step 1: Buoyancy Equation]
-#v(40pt)
-#only("1-")[
-$"Buoyant Force" = ("Density of Air" - "Density of Heated Gas") dot "Volume of Balloon" dot g$
-]
-#only("2-")[
-$F_B = (rho_("air") - rho_("heated gas")) dot V dot g$
-]
-#only("1")[
-#voiceover("The first step is to write out the equation for buoyant force. It is equal to the density of air minus the density of the heated gas inside the balloon, multiplied by the volume of the balloon and the acceleration due to gravity.")
-]
-#only("2")[
-#voiceover("We can express this mathematically as F sub B equals rho sub air minus rho sub heated gas, multiplied by V and g.")
-]
-]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Step 2: Equate Forces ⚖]
-#v(40pt)
-#only("1-")[
-$"Buoyant Force" = "Weight of Balloon"$
-]
-#only("2-")[
-$(rho_("air") - rho_("heated gas")) dot V dot g = m_("balloon") dot g$
-]
-#only("1")[
-#voiceover("The next step is to equate the buoyant force to the weight of the balloon.")
-]
-#only("2")[
-#voiceover("So we have rho sub air minus rho sub heated gas, multiplied by V and g, equals m sub balloon multiplied by g.")
-]
+  #text(size: 30pt, weight: "bold")[Step 1: Buoyancy Condition]
+  #v(40pt)
+  #only("1-")[For liftoff: $F_("buoyancy") > F_("gravity")$]
+  #v(20pt)
+  #only("2-")[$(rho_("air") - rho_("heated gas")) dot g dot V > m_("balloon") dot g$]
+  #only("1")[
+    #voiceover("First, for the balloon to lift off, the buoyancy force must be greater than the force of gravity on the balloon.")
+  ]
+  #only("2")[
+    #voiceover("We can express this mathematically as the density difference between air and the heated gas in the balloon, multiplied by the acceleration due to gravity and the volume, being greater than the mass of the balloon multiplied by the acceleration due to gravity.")
+  ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Step 3: Solve for Volume]
-#v(40pt)
-#only("1-")[
-$V = (m_("balloon") dot g)/((rho_("air") - rho_("heated gas")) dot g)$
-]
-#only("2-")[
-$V = m_("balloon")/(rho_("air") - rho_("heated gas"))$
-]
-#only("1")[
-#voiceover("Now we can solve for the volume V. We divide both sides by rho sub air minus rho sub heated gas, multiplied by g.")
-]
-#only("2")[
-#voiceover("The g's cancel out, and we are left with V equals m sub balloon divided by rho sub air minus rho sub heated gas.")
-]
-]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Step 4: Calculate Densities 🌡]
-#v(40pt)
-#only("1-")[
-- $rho_("air") = 1.225 "kg/m"^3$ at sea level
-- Uster is at 464 m, so $rho_("air") = 1.17 "kg/m"^3$
-- $rho_("heated gas") = 0.09 "kg/m"^3$
-]
-#only("1")[
-#voiceover("The last step is to calculate the densities and plug in the values. The density of air is 1.225 kilograms per cubic meter at sea level. But since Uster is at 464 meters, we need to adjust this value. At this altitude, the density of air is approximately 1.17 kilograms per cubic meter. The density of the heated gas inside the balloon is 0.09 kilograms per cubic meter.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Step 5: Plug In Values 🔢]
-#v(40pt)
-#only("1-")[
-$V = m_("balloon")/(1.17 - 0.09) = m_("balloon")/1.08$
-]
-#only("2-")[
-If $m_("balloon") = 1175 "kg"$, then:
-]
-#only("3-")[
-$V = 1175/1.08 = 1088 "m"^3$
-]
-#only("1")[
-#voiceover("We plug these values into our equation. V equals m sub balloon divided by 1.17 minus 0.09, which simplifies to m sub balloon divided by 1.08.")
-]
-#only("2")[
-#voiceover("If the mass of the balloon is 1175 kilograms, then...")
-]
-#only("3")[
-#voiceover("V equals 1175 divided by 1.08, which gives us 1088 cubic meters. This is the minimum volume the balloon needs to lift off in Uster.")
-]
+  #text(size: 30pt, weight: "bold")[Step 2: Solve for Volume]
+  #v(40pt)
+  #only("1-")[$(rho_("air") - rho_("heated gas")) dot V > m_("balloon")$]
+  #v(20pt)
+  #only("2-")[$V > (m_("balloon"))/(rho_("air") - rho_("heated gas"))$]
+  #only("1")[
+    #voiceover("We can simplify this by dividing both sides by the acceleration due to gravity.")
+  ]
+  #only("2")[
+    #voiceover("Now, to find the minimum volume, we solve the inequality for V. The minimum volume must be greater than the mass of the balloon divided by the density difference between air and the heated gas.")
+  ]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
-#v(40pt)
-#only("1-")[
-- Equate buoyant force to weight of balloon
-- Solve for volume
-- Calculate densities based on altitude
-- Plug in values to get minimum volume
+  #text(size: 30pt, weight: "bold")[Step 3: Calculate Density of Air]
+  #v(40pt)
+  #only("1-")[- Density of air depends on altitude]
+  #v(20pt)
+  #only("2-")[- At sea level (0 m): $rho_("air, 0") = 1.225 "kg"/m^3$]
+  #v(20pt)
+  #only("3-")[- At altitude $h$: $rho_("air, h") = rho_("air, 0") dot e^(-0.00012 dot h)$]
+  #v(20pt)
+  #only("4-")[- For Uster (464 m): $rho_("air, Uster") = 1.225 "kg"/m^3 dot e^(-0.00012 dot 464) = 1.17 "kg"/m^3$]
+  #only("1")[
+    #voiceover("To proceed, we need to know the density of air. This depends on the altitude.")
+  ]
+  #only("2")[
+    #voiceover("At sea level, or 0 meters altitude, the density of air is approximately 1.225 kilograms per cubic meter.")
+  ]
+  #only("3")[
+    #voiceover("For any altitude h, the density of air can be calculated using this exponential formula, where rho air 0 is the density at sea level, e is the mathematical constant, and the exponent is negative 0.00012 times the altitude h.")
+  ]
+  #only("4")[
+    #voiceover("Plugging in the altitude of Uster, which is 464 meters, we get a density of approximately 1.17 kilograms per cubic meter.")
+  ]
 ]
-#only("1")[
-#voiceover("To summarize, we equated the buoyant force to the weight of the balloon, solved for volume, calculated the densities based on the altitude, and plugged in the values to get the minimum volume needed for liftoff.")
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Step 4: Calculate Minimum Volume]
+  #v(40pt)
+  #only("1-")[- Mass of balloon: $m_("balloon") = 800 "kg"$]
+  #v(20pt)
+  #only("2-")[- Density of heated gas: $rho_("heated gas") = 0.17 "kg"/m^3$]
+  #v(20pt)
+  #only("3-")[$V > (800 "kg")/(1.17 "kg"/m^3 - 0.17 "kg"/m^3)$]
+  #v(20pt)
+  #only("4-")[$V > 800 m^3$]
+  #only("1")[
+    #voiceover("Now, let's say the mass of the balloon is 800 kilograms.")
+  ]
+  #only("2")[
+    #voiceover("And the density of the heated gas inside the balloon is 0.17 kilograms per cubic meter.")
+  ]
+  #only("3")[
+    #voiceover("We can now substitute these values into our inequality. The minimum volume must be greater than 800 kilograms divided by the difference between the density of air in Uster and the density of the heated gas.")
+  ]
+  #only("4")[
+    #voiceover("Calculating this, we find that the minimum volume for the balloon to lift off in Uster must be greater than 800 cubic meters.")
+  ]
 ]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Conclusion]
+  #v(40pt)
+  #only("1-")[- Minimum volume for liftoff in Uster: $V > 800 m^3$ 📏]
+  #v(20pt)
+  #only("2-")[Key factors:
+    - Density of air decreases with altitude 🌬️
+    - Buoyancy force must exceed gravity force 🪁
+  ]
+  #only("1")[
+    #voiceover("In conclusion, for the balloon to lift off in Uster, which is at an altitude of 464 meters, its volume must be greater than 800 cubic meters, assuming we neglect the volume of the gondola and passengers.")
+  ]
+  #only("2")[
+    #voiceover("The key factors in this calculation were the decrease in air density with altitude, and the requirement that the buoyancy force must exceed the force of gravity for liftoff to occur.")
+  ]
 ]

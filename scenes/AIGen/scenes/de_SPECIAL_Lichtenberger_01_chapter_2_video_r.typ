@@ -16,11 +16,11 @@
 ]
 
 #only("1")[
-#voiceover("In dieser Zusammenfassung werden wir noch einmal darauf eingehen, wie sich Druck und Auftrieb bei Tiefenänderungen im Wasser verhalten.")
+#voiceover("In dieser Zusammenfassung werden wir noch einmal betrachten, wie sich Druck und Auftrieb bei Tiefenänderungen im Wasser verhalten.")
 ]
 
 #only("2")[
-#voiceover("Wenn Objekte tiefer ins Wasser eintauchen, nimmt der Druck, dem sie ausgesetzt sind, erheblich zu. Dies liegt daran, dass das Gewicht des Wassers über ihnen mit der Tiefe zunimmt.")
+#voiceover("Wenn Objekte tiefer ins Wasser eintauchen, nimmt der Druck, den sie erfahren, erheblich zu. Dies liegt daran, dass das Gewicht des Wassers über ihnen mit der Tiefe zunimmt.")
 ]
 
 #only("3")[
@@ -73,7 +73,7 @@ caption: [],
 ]
 
 #only("3")[
-#voiceover("Dies liegt daran, dass der Auftrieb vom Volumen des vom Objekt verdrängten Wassers abhängt, das gleich bleibt, wenn sich die Größe und Form des Objekts nicht ändern.")
+#voiceover("Dies liegt daran, dass der Auftrieb vom Volumen des vom Objekt verdrängten Wassers abhängt, welches gleich bleibt, wenn sich die Größe und Form des Objekts nicht ändern.")
 ]
 
 ]
@@ -94,7 +94,7 @@ caption: [],
 ]
 
 #only("1")[
-#voiceover("Zusammenfassend lässt sich sagen, dass der Druck im Wasser linear mit der Tiefe zunimmt. Je tiefer ein Objekt geht, desto mehr Druck erfährt es.")
+#voiceover("Zusammenfassend solltest Du Dir merken, dass der Druck im Wasser linear mit der Tiefe zunimmt. Je tiefer ein Objekt geht, desto mehr Druck erfährt es.")
 ]
 
 #only("2")[
@@ -120,7 +120,7 @@ Das Verständnis von Druck- und Auftriebsänderungen mit der Tiefe ist entscheid
 ]
 
 #only("1")[
-#voiceover("Das Verständnis, wie sich Druck und Auftrieb mit der Tiefe ändern, ist entscheidend für verschiedene Bereiche wie Unterwassertechnik, Meeresbiologie und Wassersport und Aktivitäten.")
+#voiceover("Das Verständnis, wie sich Druck und Auftrieb mit der Tiefe ändern, ist entscheidend für verschiedene Bereiche wie Unterwassertechnik, Meeresbiologie und Wassersport und -aktivitäten.")
 ]
 
 #only("2")[

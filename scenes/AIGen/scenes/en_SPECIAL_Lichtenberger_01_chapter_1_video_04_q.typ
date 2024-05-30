@@ -7,27 +7,30 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Water Level Puzzle 🌊]
+#text(size: 30pt, weight: "bold")[Water Pressure]
+// The title "Water Pressure" is shown on this slide
 #v(40pt)
-#only("1-")[A wooden board floats in a bucket filled with water. A cup of water is on the board.]
-#v(20pt)
-#only("2-")[The water from the cup is poured into the bucket, and the empty cup is placed back on the board.]
+#only("1-")[A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?]
+// The question is shown from slide 1 onward
 #v(40pt)
-#only("3-")[What happens to the water level in the bucket? 🤔]
-#only("1")[
-#voiceover("Imagine a wooden board floating in a bucket filled with water. On top of the board, there's a cup of water.")
-]
-#only("2")[
-#voiceover("Now, the water from the cup is poured into the bucket, and the empty cup is placed back on the board.")
-]  
-#only("3")[
-#voiceover("Here's the question: What happens to the water level in the bucket after this action?")
-]
+#only("2-")[a) It remains the same.]
+// Answer option a) is shown from slide 2 onward
+#v(10pt)
+#only("3-")[b) It decreases.]
+// Answer option b) is shown from slide 3 onward
+#v(10pt)
+#only("4-")[c) It increases.]
+// Answer option c) is shown from slide 4 onward
+#v(10pt)
+#only("5-")[d) Cannot be determined.]
+// Answer option d) is shown from slide 5 onward
+#only("1")[#voiceover("Let's test your understanding of water pressure. A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?")]
+#only("2")[#voiceover("Does it remain the same,")]
+#only("3")[#voiceover("or does it decrease,")]
+#only("4")[#voiceover("or maybe increase,")]
+#only("5")[#voiceover("or can it not be determined from the given information?")]
 ]#questionDef(
-questionText: "After pouring the water from the cup into the bucket and placing the empty cup back on the floating board, what happens to the water level in the bucket?",
-answerOptions: ("The water level remains the same.", "The water level increases.", "The water level decreases.", "It depends on the size of the cup and the board."),
-correctAnswerIndex: 0,
-llmCheckDetails: (
-fallbackOptionIndex: 3
-),
+questionText: "A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?",
+answerOptions: ("It remains the same.", "It decreases.", "It increases.", "Cannot be determined."),
+correctAnswerIndex: 1
 )
