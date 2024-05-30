@@ -60,7 +60,7 @@ ax.text(0, present_value + 1, f'€{present_value:.2f}', ha='center', va='bottom
 ax.bar(year, future_value, width=0.5, color='g', alpha=0.7, label='Future Value')
 ax.text(year, future_value + 1, f'€{future_value:.2f}', ha='center', va='bottom')
 
-# Connect PV and FV with an arrow
+# Connect PV and F V with an arrow
 ax.annotate('', xy=(year, future_value), xytext=(0, present_value),
             arrowprops=dict(facecolor='black', shrink=0.05))
 

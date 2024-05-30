@@ -13,7 +13,7 @@
 #voiceover("Betrachten wir die folgende Übung: Wenn Du heute 100 Euro hast und es zu einem jährlichen Zinssatz von 5 Prozent investieren kannst, wie viel wird es in einem Jahr wert sein?")
 ]
 ]#questionDef(
-questionText: "Wenn Du heute 100 € hast und es zu einem jährlichen Zinssatz von 5\% investieren kannst, wie viel wird es in einem Jahr wert sein?",
+questionText: "Wenn Du heute 100 € hast und es zu einem jährlichen Zinssatz von 5% investieren kannst, wie viel wird es in einem Jahr wert sein?",
 answerOptions: ("$105$€", "$110$€"),
 correctAnswerIndex: 0,
 freeTextDetail: (

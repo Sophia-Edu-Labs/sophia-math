@@ -11,11 +11,11 @@
 #v(40pt)
 #only("1-")[- Gegeben: Endwert = 100 €, Abzinsungssatz = 5 %, Zeitraum = 1 Jahr]
 #v(20pt)
-#only("2-")[- Formel: $PV = FV / (1 + r)^n$]
+#only("2-")[- Formel: $P V = F V / (1 + r)^n$]
 #v(20pt)
-#only("3-")[- Berechnung: $PV = 100 / (1 + 0.05)^1$]
+#only("3-")[- Berechnung: $P V = 100 / (1 + 0.05)^1$]
 #v(20pt)
-#only("4-")[- Ergebnis: $PV = 95,24 €$]
+#only("4-")[- Ergebnis: $P V = 95,24 €$]
 
 #only("1")[
 #voiceover("Großartig! Das ist die richtige Antwort. Lass uns die Lösung Schritt für Schritt durchgehen. Gegeben ist, dass der Endwert 100 Euro beträgt, der Abzinsungssatz 5 % ist und der Zeitraum 1 Jahr.")
@@ -60,7 +60,7 @@ ax.text(0, present_value + 1, f'€{present_value:.2f}', ha='center', va='bottom
 ax.bar(year, future_value, width=0.5, color='g', alpha=0.7, label='Future Value')
 ax.text(year, future_value + 1, f'€{future_value:.2f}', ha='center', va='bottom')
 
-# Connect PV and FV with an arrow
+# Connect P V and F V with an arrow
 ax.annotate('', xy=(year, future_value), xytext=(0, present_value),
             arrowprops=dict(facecolor='black', shrink=0.05))
 
@@ -94,7 +94,7 @@ width: 360pt),
 #v(40pt)
 #only("1-")[- Der Barwert ist der aktuelle Wert einer zukünftigen Geldsumme 💰]
 #v(20pt)
-#only("2-")[- Er wird mit der Formel berechnet: $PV = FV / (1 + r)^n$ 📝]
+#only("2-")[- Er wird mit der Formel berechnet: $P V = F V / (1 + r)^n$ 📝]
 #v(20pt)
 #only("3-")[- Höhere Abzinsungssätze und längere Zeiträume führen zu niedrigeren Barwerten ⏳]
 #only("1")[
@@ -106,4 +106,4 @@ width: 360pt),
 #only("3")[
 #voiceover("Höhere Abzinsungssätze und längere Zeiträume führen zu niedrigeren Barwerten. Dies liegt daran, dass die Opportunitätskosten des Wartens auf das Geld mit der Zeit und den Zinssätzen steigen.")
 ]
-]
+]]

@@ -11,11 +11,11 @@
 #v(40pt)
 #only("1-")[- Given: Future Value = €100, Discount Rate = 5%, Time = 1 year]
 #v(20pt)
-#only("2-")[- Formula: $PV = FV / (1 + r)^n$]
+#only("2-")[- Formula: $P V = F V / (1 + r)^n$]
 #v(20pt)
-#only("3-")[- Calculation: $PV = 100 / (1 + 0.05)^1$]
+#only("3-")[- Calculation: $P V = 100 / (1 + 0.05)^1$]
 #v(20pt)
-#only("4-")[- Result: $PV = €95.24$]
+#only("4-")[- Result: $P V = €95.24$]
 
 #only("1")[
 #voiceover("Great job! That's the correct answer. Let's walk through the solution step by step. We are given that the future value is 100 euros, the discount rate is 5%, and the time is 1 year.")
@@ -60,7 +60,7 @@ ax.text(0, present_value + 1, f'€{present_value:.2f}', ha='center', va='bottom
 ax.bar(year, future_value, width=0.5, color='g', alpha=0.7, label='Future Value')
 ax.text(year, future_value + 1, f'€{future_value:.2f}', ha='center', va='bottom')
 
-# Connect PV and FV with an arrow
+# Connect P V and F V with an arrow
 ax.annotate('', xy=(year, future_value), xytext=(0, present_value),
             arrowprops=dict(facecolor='black', shrink=0.05))
 
@@ -94,7 +94,7 @@ width: 360pt),
 #v(40pt)
 #only("1-")[- Present Value is the current worth of a future sum of money 💰]
 #v(20pt)
-#only("2-")[- It's calculated using the formula: $PV = FV / (1 + r)^n$ 📝]
+#only("2-")[- It's calculated using the formula: $P V = F V / (1 + r)^n$ 📝]
 #v(20pt)
 #only("3-")[- Higher discount rates and longer time periods lead to lower Present Values ⏳]
 #only("1")[
@@ -106,4 +106,4 @@ width: 360pt),
 #only("3")[
 #voiceover("Higher discount rates and longer time periods will result in lower Present Values. This is because the opportunity cost of waiting for the money increases with time and interest rates.")
 ]
-]
+]]

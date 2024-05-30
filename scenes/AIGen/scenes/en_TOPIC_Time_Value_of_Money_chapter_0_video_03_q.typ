@@ -14,7 +14,7 @@
 #voiceover("Let's consider the following exercise: If you have 100 euros today and can invest it at an annual interest rate of 5 percent, how much will it be worth in one year?")
 ]
 ]#questionDef(
-questionText: "If you have €100 today and can invest it at an annual interest rate of 5\%, how much will it be worth in one year?",
+questionText: "If you have €100 today and can invest it at an annual interest rate of 5%, how much will it be worth in one year?",
 answerOptions: ("$105$€", "$110$€"),
 correctAnswerIndex: 0,
 freeTextDetail: (
