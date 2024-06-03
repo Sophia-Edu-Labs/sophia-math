@@ -42,8 +42,8 @@ What is the overpressure in the water pipe on the fourth floor? 🤔
 #voiceover("Your task is to determine: What is the overpressure in the water pipe on the fourth floor?")
 ]
 ]#questionDef(
-questionText: "What is the overpressure in the water pipe on the fourth floor, $14 \, \text{m}$ above the ground floor, if the overpressure on the ground floor is $4.0 \, \text{bar}$?",
-answerOptions: ("5.4 \, \text{bar}", "4.0 \, \text{bar}"),
+questionText: "What is the overpressure in the water pipe on the fourth floor, $14 \, \\text{m}$ above the ground floor, if the overpressure on the ground floor is $4.0 \, \text{bar}$?",
+answerOptions: ("$5.4 \, \\text{bar}$", "$4.0 \, \\text{bar}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -53,7 +53,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("\key{a} \, \text{bar}"),
+answerOptionMatcher:("$\key{a} \, \\text{bar}$"),
 answerOptionsTypes: (
 "a": "number"
 )

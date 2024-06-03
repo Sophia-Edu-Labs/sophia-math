@@ -7,53 +7,70 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Buoyancy and Depth]
+#text(size: 30pt, weight: "bold")[Ice Cube in Water 🧊💧]
 #v(40pt)
-#only("1-")[The small fish dives from a depth of 10 m to a depth of 30 m. What happens to its buoyancy?]
-#v(40pt)
-// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is incorrect.
-#only("-1")[a) It approximately doubles.]#only("2-")[#text(fill:red)[a) It approximately doubles.]]
-#v(10pt)
-// From the start until section two, the option is black. From section 3 until the end it is then turned red, because it is incorrect.
-#only("-2")[b) It approximately triples.]#only("3-")[#text(fill:red)[b) It approximately triples.]]
-#v(10pt)
-// From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is incorrect.
-#only("-3")[c) It approximately quadruples.]#only("4-")[#text(fill:red)[c) It approximately quadruples.]]
-#v(10pt)
-// From the start until section four, the option is black. From section 5 until the end it is then turned green, because it is correct.
-#only("-4")[d) It remains about the same.]#only("5-")[#text(fill:green)[d) It remains about the same.]]
-#only("1")[#voiceover("Not quite. Let's review the correct solution.")]
-#only("2")[#voiceover("Option a) is incorrect. Buoyancy does not double when diving from 10 m to 30 m.")]
-#only("3")[#voiceover("Option b) is also incorrect. Buoyancy does not triple either in this scenario.")]
-#only("4")[#voiceover("Option c) is incorrect as well. Buoyancy does not quadruple when the fish dives deeper.")]
-#only("5")[#voiceover("The correct answer is d) It remains about the same. Let's see why in the next slide.")]
+#only("1-")[- Ice cube floats in glass of water]
+#v(20pt)
+#only("2-")[- Ice cube melts]
+#v(20pt)
+#only("3-")[What happens to the water level? 🤔]
+#only("1")[
+#voiceover("Great job! You correctly identified that when a floating ice cube melts in a glass of water, the water level remains the same. Let's go through the explanation step by step.")
+]
+#only("2")[
+#voiceover("We have an ice cube floating in a glass of water. As the ice cube melts, it turns into water.")
+]
+#only("3")[
+#voiceover("The question is, what happens to the water level in the glass after the ice cube has completely melted?")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Explanation]
+#text(size: 30pt, weight: "bold")[Archimedes' Principle 🏛️]
 #v(40pt)
-#only("1-")[Buoyancy depends on:]
+#only("1-")[- Buoyant force equals weight of displaced fluid]
 #v(20pt)
-#only("2-")[1. 💧 Volume of water displaced]
-#v(10pt)
-#only("3-")[2. 🐟 Volume of the object (fish)]
-#v(40pt)
-#only("4-")[As the fish dives deeper, its volume stays constant. 📏]
-#v(20pt)
-#only("5-")[Therefore, the volume of water displaced also remains the same. 🌊]
-#v(20pt)
-#only("6-")[⇒ Buoyancy is unaffected by depth changes. 🎈]
-#only("1")[#voiceover("Buoyancy depends on two factors:")]
-#only("2")[#voiceover("First, the volume of water displaced by the object,")]
-#only("3")[#voiceover("and second, the volume of the object itself, in this case, the fish.")]
-#only("4")[#voiceover("As the fish dives from 10 meters to 30 meters, its volume does not change.")]
-#only("5")[#voiceover("As a result, the volume of water displaced by the fish also remains constant.")]
-#only("6")[#voiceover("This means that the buoyancy acting on the fish is not affected by the change in depth.")]
+#only("2-")[- Ice cube displaces its own weight in water]
+#only("1")[
+#voiceover("To understand this, we need to consider Archimedes' principle. It states that the buoyant force on an object is equal to the weight of the fluid displaced by the object.")
+]
+#only("2")[
+#voiceover("In our case, the floating ice cube is displacing its own weight in water. This is why it floats - the buoyant force balances the weight of the ice.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization]
+#text(size: 30pt, weight: "bold")[Melting Process 🔥]
 #v(40pt)
+#only("1-")[- Ice turns into water]
+#v(20pt)
+#only("2-")[- Volume of melted ice = Volume of displaced water]
+#only("1")[
+#voiceover("As the ice cube melts, it turns into water. The key point is that the volume of water produced by the melting ice is exactly equal to the volume of water that was displaced by the ice cube when it was floating.")
+]
+#only("2")[
+#voiceover("In other words, the melted ice just fills in the space that was previously occupied by the submerged part of the ice cube.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Water Level 📏]
+#v(40pt)
+#only("1-")[- No change in total volume of water]
+#v(20pt)
+#only("2-")[- Water level remains the same 🌊]
+#only("1")[
+#voiceover("Since the melted ice just replaces the water that was displaced by the ice cube, there is no change in the total volume of water in the glass.")
+]
+#only("2")[
+#voiceover("Therefore, the water level remains the same after the ice cube has completely melted. The ice cube, whether solid or melted, contributes the same amount to the volume and thus the level of the water in the glass.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualization 📊]
+#v(40pt)
+#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -61,38 +78,53 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-depths = [10, 30]
-buoyancy = [1, 1]
+# Create figure and axes
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
-plt.figure(figsize=(8, 6))
-plt.plot(depths, buoyancy, marker='o', linestyle='-', color='blue', label='Buoyancy')
-plt.xlabel('Depth (m)')
-plt.ylabel('Relative Buoyancy')
-plt.title('Buoyancy vs Depth')
-plt.legend()
-plt.grid(True)
-plt.annotate('10 m', (depths[0], buoyancy[0]), textcoords="offset points", xytext=(0,10), ha='center')
-plt.annotate('30 m', (depths[1], buoyancy[1]), textcoords="offset points", xytext=(0,10), ha='center')
+# Plot for before melting
+ax1.bar(1, 10, width=1, color='skyblue', edgecolor='black', linewidth=2)
+ax1.bar(1, 2, width=0.6, color='white', edgecolor='black', linewidth=2)
+ax1.set_ylim(0, 12)
+ax1.set_xlim(0, 2)
+ax1.set_xticks([])
+ax1.set_ylabel('Water Level')
+ax1.set_title('Before Melting')
+
+# Plot for after melting
+ax2.bar(1, 10, width=1, color='skyblue', edgecolor='black', linewidth=2)
+ax2.set_ylim(0, 12)
+ax2.set_xlim(0, 2)
+ax2.set_xticks([])
+ax2.set_title('After Melting')
+
+plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
-#v(40pt)
-#only("1-")[This graph shows that buoyancy remains constant as depth increases. 📈]
-#only("1")[#voiceover("This graph illustrates that buoyancy remains constant as the fish dives from 10 meters to 30 meters depth.")]
+#only("1")[
+#voiceover("Here's a visual representation. The left image shows the glass of water with the floating ice cube. The right image shows the glass after the ice has melted. As you can see, the water level is the same in both cases.")
+]
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Key Takeaways]
+#text(size: 30pt, weight: "bold")[Summary 📝]
 #v(40pt)
-#only("1-")[- Buoyancy depends on displaced water volume and object volume 🌊🐟]
+#only("1-")[- Archimedes' principle: Buoyant force = Weight of displaced fluid 🏛️]
 #v(20pt)
-#only("2-")[- If object volume is constant, buoyancy doesn't change with depth 📏🎈]
+#only("2-")[- Melted ice replaces displaced water 🔁]
 #v(20pt)
-#only("3-")[- For the diving fish, buoyancy remains about the same from 10 m to 30 m 🐠]
-#only("1")[#voiceover("To summarize, buoyancy is determined by the volume of water displaced and the volume of the object.")]
-#only("2")[#voiceover("If the object's volume remains constant, buoyancy will not change with depth.")]
-#only("3")[#voiceover("In the case of the small fish diving from 10 meters to 30 meters, its buoyancy remains approximately the same.")]
+#only("3-")[- No change in total water volume or level 🌊]
+#only("1")[
+#voiceover("To summarize, according to Archimedes' principle, a floating object displaces its own weight in fluid.")
+]
+#only("2")[
+#voiceover("When the ice cube melts, the resulting water just replaces the water that was displaced by the floating ice.")
+]
+#only("3")[
+#voiceover("As a result, there is no change in the total volume of water or the water level in the glass. The water level remains constant throughout the melting process.")
+]
 ]

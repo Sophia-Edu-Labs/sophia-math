@@ -1,0 +1,36 @@
+#import "../sophiatheme.typ": *
+#show: sophia-theme
+#show figure.caption: it => [
+#set text(size: 20pt)
+#it.body
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Loss Aversion]
+// The title "Loss Aversion" is shown on this slide
+#v(40pt)
+#only("1-")[Loss aversion refers to the tendency to \_\_\_\_\_.]
+// The statement with the blank is shown from slide 1 onward
+#v(40pt)
+#only("2-")[a) prefer gains over losses 📈]
+// Answer option a) is shown from slide 2 onward
+#v(10pt)
+#only("3-")[b) avoid losses more than acquiring gains 🛡️]
+// Answer option b) is shown from slide 3 onward
+#v(10pt)
+#only("4-")[c) follow the crowd 🐑]
+// Answer option c) is shown from slide 4 onward
+#v(10pt)
+#only("5-")[d) make rational decisions 🧠]
+// Answer option d) is shown from slide 5 onward
+#only("1")[#voiceover("Let's test your understanding of loss aversion. Loss aversion refers to the tendency to blank.")]
+#only("2")[#voiceover("Is it the tendency to prefer gains over losses,")]
+#only("3")[#voiceover("or is it the tendency to avoid losses more than acquiring gains,")]
+#only("4")[#voiceover("or maybe the tendency to follow the crowd,")]
+#only("5")[#voiceover("or is it the tendency to make rational decisions?")]
+]#questionDef(
+questionText: "Loss aversion refers to the tendency to _____.",
+answerOptions: ("prefer gains over losses", "avoid losses more than acquiring gains", "follow the crowd", "make rational decisions"),
+correctAnswerIndex: 1,
+)

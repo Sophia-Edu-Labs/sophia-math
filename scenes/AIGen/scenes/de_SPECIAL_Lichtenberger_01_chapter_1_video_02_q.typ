@@ -30,7 +30,7 @@
 #only("4")[#voiceover("oder vielleicht 1 bar,")]
 #only("5")[#voiceover("oder ist es 10 bar?")]
 ]#questionDef(
-questionText: "Ein Wasserhahn befindet sich $10 \, \text{m}$ unter der Wasseroberfläche in einem Reservoir. Wie hoch ist der Wasserdruck am Wasserhahn?",
-answerOptions: ("$0,01 \, \text{bar}$", "$0,1 \, \text{bar}$", "$1 \, \text{bar}$", "$10 \, \text{bar}$"),
+questionText: "Ein Wasserhahn befindet sich $10 \, \\text{m}$ unter der Wasseroberfläche in einem Reservoir. Wie hoch ist der Wasserdruck am Wasserhahn?",
+answerOptions: ("$0,01 \, \\text{bar}$", "$0,1 \, \\text{bar}$", "$1 \, \\text{bar}$", "$10 \, \\text{bar}$"),
 correctAnswerIndex: 2
 )

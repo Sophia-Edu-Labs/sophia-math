@@ -30,7 +30,7 @@
 ]
 ]#questionDef(
   questionText: "What is the $pH$ of the solution?",
-  answerOptions: ("3", "7"),
+  answerOptions: ("$3$", "$7$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,
@@ -40,7 +40,7 @@
         tolerance: none
         )
       ),
-    answerOptionMatcher:("\key{a}"),
+    answerOptionMatcher:("$\key{a}$"),
     answerOptionsTypes: (
       "a": "number"
     )

@@ -7,30 +7,45 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Water Pressure]
-// The title "Water Pressure" is shown on this slide
+#text(size: 30pt, weight: "bold")[Question]
 #v(40pt)
-#only("1-")[A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?]
-// The question is shown from slide 1 onward
+#only("1-")[
+- A wooden board floats in a bucket filled with water 🌊
+]
+#v(20pt)
+#only("2-")[
+- A cup of water is on the board 🥛
+]
+#v(20pt)
+#only("3-")[
+- The water from the cup is poured into the bucket 🫗
+]
+#v(20pt)
+#only("4-")[  
+- The empty cup is placed back on the board 🥤
+]
+#only("1")[
+#voiceover("Consider the following situation: A wooden board is floating in a bucket filled with water.")
+]
+#only("2")[
+#voiceover("On top of the board, there is a cup filled with water.")
+]
+#only("3")[
+#voiceover("Now, the water from the cup is poured into the bucket.")
+]
+#only("4")[
+#voiceover("And the empty cup is placed back on the board.")
+]
 #v(40pt)
-#only("2-")[a) It remains the same.]
-// Answer option a) is shown from slide 2 onward
-#v(10pt)
-#only("3-")[b) It decreases.]
-// Answer option b) is shown from slide 3 onward
-#v(10pt)
-#only("4-")[c) It increases.]
-// Answer option c) is shown from slide 4 onward
-#v(10pt)
-#only("5-")[d) Cannot be determined.]
-// Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's test your understanding of water pressure. A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?")]
-#only("2")[#voiceover("Does it remain the same,")]
-#only("3")[#voiceover("or does it decrease,")]
-#only("4")[#voiceover("or maybe increase,")]
-#only("5")[#voiceover("or can it not be determined from the given information?")]
+#only("5-")[What happens to the water level in the bucket? 🤔]
+#only("5")[
+#voiceover("What do you think happens to the water level in the bucket?")
+]
 ]#questionDef(
-questionText: "A boat passes over a fish, causing the water level directly above it to decrease. What happens to the pressure?",
-answerOptions: ("It remains the same.", "It decreases.", "It increases.", "Cannot be determined."),
-correctAnswerIndex: 1
+questionText: "What happens to the water level in the bucket after the water from the cup is poured into it and the empty cup is placed back on the board?",
+answerOptions: ("The water level remains the same or drops slightly, as the water from the cup is now in the bucket and the empty cup is no longer weighing down the board.", "The answer is incorrect."),
+correctAnswerIndex: 0,
+llmCheckDetails: (
+fallbackOptionIndex: 1
+),
 )

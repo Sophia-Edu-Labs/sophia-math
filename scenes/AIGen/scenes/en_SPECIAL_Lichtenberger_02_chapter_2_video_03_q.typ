@@ -66,7 +66,7 @@ What percentage of the iceberg is underwater? 🌊
 
 ]#questionDef(
 questionText: "What percentage of an iceberg is underwater?",
-answerOptions: ("89.9\%", "50\%"),
+answerOptions: ("$89.9\%$", "$50\%$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -76,7 +76,7 @@ roundingDecimalPlaces: 1,
 tolerance: 1
 )
 ),
-answerOptionMatcher:("\key{a}\%"),
+answerOptionMatcher:("$\key{a}\%$"),
 answerOptionsTypes: (
 "a": "number"
 )

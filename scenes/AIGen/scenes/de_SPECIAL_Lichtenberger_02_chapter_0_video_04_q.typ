@@ -6,47 +6,38 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Hydraulischer Lift]
+#text(size: 30pt, weight: "bold")[Hydraulikheber-Übung]
 #v(40pt)
 #only("1-")[
-- Kolbenfläche: 5,0 cm² 🔧
+- Pumpenkolbenfläche: 5,0 cm²
+- Presskolbenfläche: 400 cm² 
+- Hubhöhe: 50 cm
+]
+#only("1")[
+#voiceover("Betrachte einen Hydraulikheber mit einer Pumpenkolbenfläche von 5,0 Quadratzentimetern, einer Presskolbenfläche von 400 Quadratzentimetern und einer Hubhöhe von 50 Zentimetern.")
 ]
 #v(20pt)
 #only("2-")[
-- Druck in der Flüssigkeit: 14,7 bar 💧
-]
-#only("1")[
-#voiceover("Betrachte einen hydraulischen Lift mit einer Pumpkolbenfläche von 5,0 Quadratzentimetern.")
+#text(fill: aqua)[Wie oft muss der Pumpenkolben abgesenkt werden, um den Presskolben um 2,0 m anzuheben? 🤔]
 ]
 #only("2")[
-#voiceover("Der Druck in der Flüssigkeit beträgt 14,7 bar.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Frage]
-#v(40pt)
-#only("1-")[
-Was ist die notwendige Kraft der Pumpe? 🤔
-]
-#only("1")[
-#voiceover("Berechne basierend auf diesen Informationen die notwendige Kraft der Pumpe.")
+#voiceover("Die Frage ist: Wie oft muss der Pumpenkolben abgesenkt werden, um den Presskolben um 2,0 Meter anzuheben?")
 ]
 ]#questionDef(
-questionText: "Was ist die notwendige Kraft $F$ der Pumpe in Newton (N)?",
-answerOptions: ("$F = 735 \text{ N}$", "$F = 0 \text{ N}$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$F = \key{a} \text{ N}$"),
-answerOptionsTypes: (
-"a": "number"
-)
-),
+  questionText: "Wie oft muss der Pumpenkolben abgesenkt werden, wenn die Hubhöhe $50 \, \text{cm}$ beträgt?",
+  answerOptions: ("$320$", "$80$"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: none
+      )
+    ),
+    answerOptionMatcher:("$\\key{a}$"),
+    answerOptionsTypes: (
+      "a": "number"
+    )
+  ),
 )

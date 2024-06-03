@@ -41,8 +41,8 @@ Wie hoch ist der Überdruck in der Wasserleitung im vierten Stock? 🤔
 #voiceover("Deine Aufgabe ist es zu bestimmen: Wie hoch ist der Überdruck in der Wasserleitung im vierten Stock?")
 ]
 ]#questionDef(
-questionText: "Wie hoch ist der Überdruck in der Wasserleitung im vierten Stock, $14 \, \text{m}$ über dem Erdgeschoss, wenn der Überdruck im Erdgeschoss $4.0 \, \text{bar}$ beträgt?",
-answerOptions: ("5.4 \, \text{bar}", "4.0 \, \text{bar}"),
+questionText: "Wie hoch ist der Überdruck in der Wasserleitung im vierten Stock, $14 \, \\text{m}$ über dem Erdgeschoss, wenn der Überdruck im Erdgeschoss $4.0 \, \text{bar}$ beträgt?",
+answerOptions: ("$5.4 \, \\text{bar}$", "$4.0 \, \\text{bar}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -52,7 +52,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("\key{a} \, \text{bar}"),
+answerOptionMatcher:("$\key{a} \, \\text{bar}$"),
 answerOptionsTypes: (
 "a": "number"
 )

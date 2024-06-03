@@ -1,56 +1,37 @@
 #import "../sophiatheme.typ": *
 #show: sophia-theme
-#show figure.caption: it => [
+#show figure.caption: es => [
 #set text(size: 20pt)
-#it.body
+#es.body
 ]
+
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Ballonstart 🎈]
+#text(size: 30pt, weight: "bold")[Problem des Ballonaufstiegs]
 #v(40pt)
-
 #only("1-")[
-- Ein Ballon hebt ab, wenn die Auftriebskraft > Gewicht ist
+- Ballon zu Beginn in Uster auf 1550 m³ aufgeblasen 🎈
 ]
 #v(20pt)
-
 #only("2-")[
-- Uster liegt auf 464 m über dem Meeresspiegel 🏔️
+- Volumen bleibt beim Aufstieg konstant 📏
 ]
-#v(20pt)
-
-#only("3-")[
-- Volumen der Gondel und Passagiere ignorieren 🧺👨‍👩‍👧
-]
-
-#only("1")[
-#voiceover("Ein Ballon hebt ab, wenn die Auftriebskraft, die auf ihn wirkt, größer ist als sein Gewicht.")
-]
-
-#only("2")[
-#voiceover("Betrachte einen Ballon in Uster, das sich auf einer Höhe von 464 Metern über dem Meeresspiegel befindet.")
-]
-
-#only("3")[
-#voiceover("Zur Vereinfachung ignorieren wir das Volumen der Gondel und der Passagiere.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Frage ❓]
 #v(40pt)
-
-#only("1-")[
-Was muss das Mindestvolumen des Ballons sein, damit er in Uster abhebt?
+#only("3-")[
+❓ Wie hoch kann der Ballon steigen? 🌄
 ]
-
 #only("1")[
-#voiceover("Angesichts dieses Szenarios, was muss das Mindestvolumen des Ballons sein, damit er in Uster abhebt?")
+#voiceover("Betrachte einen Heißluftballon, der zu Beginn in Uster auf ein Volumen von 1550 Kubikmetern aufgeblasen wird.")
 ]
-
-#questionDef(
-questionText: "Was ist das Mindestvolumen des Ballons in Kubikmetern, damit er in Uster auf 464 m über dem Meeresspiegel abhebt, unter Vernachlässigung des Volumens der Gondel und der Passagiere?",
-answerOptions: ("$1088 m^3$", "$0 m^3$"),  
+#only("2")[
+#voiceover("Das Volumen des Ballons bleibt beim Aufstieg konstant.")
+]
+#only("3")[
+#voiceover("Die Frage ist: Wie hoch kann dieser Ballon steigen?")
+]
+]#questionDef(
+questionText: "Wie hoch kann der Ballon maximal steigen, wenn sein Anfangsvolumen $1550 \, \text{m}^3$ beträgt?",
+answerOptions: ("$2000 \, \text{m}$", "$1000 \, \text{m}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -60,10 +41,9 @@ roundingDecimalPlaces: 0,
 tolerance: none
 )
 ),
-answerOptionMatcher:("\key{a} $m^3$"),
+answerOptionMatcher:("$\key{a} \, \text{m}$"),
 answerOptionsTypes: (
 "a": "number"
 )
 ),
 )
-]

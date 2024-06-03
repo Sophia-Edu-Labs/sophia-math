@@ -7,24 +7,49 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Air Pressure at Lakes 🌊]
+
+#only("1")[
+#voiceover("Consider the following situation:")
+]
+
+#text(size: 30pt, weight: "bold")[Water Level Puzzle 🌊]
+// The title "Water Level Puzzle" is shown on all slides
+
 #v(40pt)
-#only("1-")[At which lake is the air pressure highest (assuming the same weather conditions)?]
+
+#only("2-")[
+- A wooden board floats in a container filled with water 🌿
+- A stone is on the board 🪨
+]
+// The setup is shown from slide 2 onward
+
 #v(40pt)
-#only("2-")[a) At Lake Zurich]
-#v(10pt)
-#only("3-")[b) At Lake Neuchâtel]
-#v(10pt)
-#only("4-")[c) At Lake Klöntal]
-#v(10pt)  
-#only("5-")[d) At Lake Maggiore]
-#only("1")[#voiceover("Let's test your understanding of air pressure at different altitudes. At which lake is the air pressure highest, assuming the same weather conditions at all lakes?")]
-#only("2")[#voiceover("Is it at Lake Zurich,")]
-#only("3")[#voiceover("or at Lake Neuchâtel,")]
-#only("4")[#voiceover("or maybe at Lake Klöntal,")]
-#only("5")[#voiceover("or is it at Lake Maggiore?")]
+
+#only("3-")[The stone slips off the board and sinks to the bottom of the container 🌊]
+// The event is described from slide 3 onward
+
+#v(40pt)
+
+#only("4-")[What happens to the water level? 🤔]
+// The question is posed from slide 4 onward
+
+#only("2")[
+#voiceover("A wooden board floats in a container filled with water. On top of the board, there is a stone.")
+]
+
+#only("3")[
+#voiceover("The stone slips off the board and sinks to the bottom of the container.")
+]
+
+#only("4")[
+#voiceover("What do you think happens to the water level in the container?")
+]
+
 ]#questionDef(
-questionText: "At which lake is the air pressure highest (assuming the same weather conditions)?",  
-answerOptions: ("At Lake Zurich", "At Lake Neuchâtel", "At Lake Klöntal", "At Lake Maggiore"),
-correctAnswerIndex: 3
+questionText: "What happens to the water level when the stone slips off the board and sinks to the bottom of the container?",
+answerOptions: ("The water level remains the same or drops slightly, as the stone is now in the water and no longer weighing down the board.", "The answer is incorrect."),
+correctAnswerIndex: 0,
+llmCheckDetails: (
+fallbackOptionIndex: 1
+),
 )

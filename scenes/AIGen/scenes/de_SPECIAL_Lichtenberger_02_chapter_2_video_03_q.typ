@@ -65,17 +65,17 @@ Welcher Prozentsatz des Eisbergs ist unter Wasser? 🌊
 
 ]#questionDef(
 questionText: "Welcher Prozentsatz eines Eisbergs ist unter Wasser?",
-answerOptions: ("89.9\%", "50\%"),
+answerOptions: ("$89.9$%", "$50$%"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
 a: (
 roundingDecimalPlaces: 1,
-tolerance: 1
+tolerance: 1.000001
 )
 ),
-answerOptionMatcher:("\key{a}\%"),
+answerOptionMatcher:("$\key{a}$%"),
 answerOptionsTypes: (
 "a": "number"
 )

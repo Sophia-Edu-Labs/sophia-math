@@ -7,47 +7,38 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Hydraulic Lift]
+#text(size: 30pt, weight: "bold")[Hydraulic Lift Exercise]
 #v(40pt)
 #only("1-")[
-- Piston area: 5.0 cm² 🔧
+- Pump piston area: 5.0 cm²
+- Press piston area: 400 cm² 
+- Stroke length: 50 cm
+]
+#only("1")[
+#voiceover("Consider a hydraulic lift with a pump piston area of 5.0 square centimeters, a press piston area of 400 square centimeters, and a stroke length of 50 centimeters.")
 ]
 #v(20pt)
 #only("2-")[
-- Pressure in fluid: 14.7 bar 💧
-]
-#only("1")[
-#voiceover("Consider a hydraulic lift with a pump piston area of 5.0 square centimeters.")
+#text(fill: aqua)[How many times must the pump piston be lowered to raise the press piston by 2.0 m? 🤔]
 ]
 #only("2")[
-#voiceover("The pressure in the fluid is 14.7 bar.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Question]
-#v(40pt)
-#only("1-")[
-What is the necessary force of the pump? 🤔
-]
-#only("1")[
-#voiceover("Based on this information, calculate the necessary force of the pump.")
+#voiceover("The question is: How many times must the pump piston be lowered to raise the press piston by 2.0 meters?")
 ]
 ]#questionDef(
-questionText: "What is the necessary force $F$ of the pump in Newtons (N)?",
-answerOptions: ("$F = 735 \text{ N}$", "$F = 0 \text{ N}$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$F = \key{a} \text{ N}$"),
-answerOptionsTypes: (
-"a": "number"
-)
-),
+  questionText: "How many times must the pump piston be lowered if its stroke length is $50 \, \text{cm}$?",
+  answerOptions: ("320", "80"),
+  correctAnswerIndex: 0,
+  freeTextDetail: (
+    fallbackOptionIndex: 1,
+    answerOptionsEquality: (
+      a: (
+        roundingDecimalPlaces: 2,
+        tolerance: none
+      )
+    ),
+    answerOptionMatcher:("\\key{a}"),
+    answerOptionsTypes: (
+      "a": "number"
+    )
+  ),
 )

@@ -81,7 +81,7 @@
 #voiceover("Der Flüssigkeitsdruck wird mit 14,7 bar berechnet.")
 ]
 #v(10pt)
-#only("2-")[$ P = (m \cdot g) / A_{\text{press piston}} $]
+#only("2-")[$ P = (m dot g) / A_("press piston") $]
 #only("2")[
 #voiceover("Dies wird mit der Formel berechnet: Druck ist gleich die Masse des Objekts mal die Erdbeschleunigung, geteilt durch die Fläche des Presskolbens.")
 ]
@@ -91,7 +91,7 @@
 #voiceover("Die Kraft der Pumpe beträgt 740 Newton.")
 ]
 #v(10pt)
-#only("4-")[$ F = P \cdot A_{\text{pump piston}} $]
+#only("4-")[$ F = P dot A_("pumo piston") $]
 #only("4")[
 #voiceover("Dies wird als Druck mal die Fläche des Pumpenkolbens berechnet.")
 ]
@@ -101,7 +101,7 @@
 #voiceover("Die Anzahl der benötigten Pumpenkolbenhübe beträgt 320.")
 ]
 #v(10pt)
-#only("6-")[$ n = (A_{\text{press piston}} / A_{\text{pump piston}}) \cdot (\text{Hubhöhe} / \text{Hublänge}) $]
+#only("6-")[$ n = (A_("press piston") / A_("pump piston")) dot ("Hubhöhe" / "Hublänge") $]
 #only("6")[
 #voiceover("Dies wird berechnet, indem das Verhältnis der Fläche des Presskolbens zur Fläche des Pumpenkolbens mit dem Verhältnis der Hubhöhe zur Hublänge multipliziert wird.")
 ]

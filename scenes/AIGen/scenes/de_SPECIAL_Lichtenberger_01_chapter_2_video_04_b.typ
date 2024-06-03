@@ -6,53 +6,70 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Auftrieb und Tiefe]
+#text(size: 30pt, weight: "bold")[Eiswürfel im Wasser 🧊💧]
 #v(40pt)
-#only("1-")[Der kleine Fisch taucht von einer Tiefe von 10 m auf eine Tiefe von 30 m. Was passiert mit seinem Auftrieb?]
-#v(40pt)
-// Von Anfang bis Abschnitt eins ist die Option schwarz. Ab Abschnitt 2 bis zum Ende wird sie rot, weil sie falsch ist.
-#only("-1")[a) Er verdoppelt sich ungefähr.]#only("2-")[#text(fill:red)[a) Er verdoppelt sich ungefähr.]]
-#v(10pt)
-// Von Anfang bis Abschnitt zwei ist die Option schwarz. Ab Abschnitt 3 bis zum Ende wird sie rot, weil sie falsch ist.
-#only("-2")[b) Er verdreifacht sich ungefähr.]#only("3-")[#text(fill:red)[b) Er verdreifacht sich ungefähr.]]
-#v(10pt)
-// Von Anfang bis Abschnitt drei ist die Option schwarz. Ab Abschnitt 4 bis zum Ende wird sie rot, weil sie falsch ist.
-#only("-3")[c) Er vervierfacht sich ungefähr.]#only("4-")[#text(fill:red)[c) Er vervierfacht sich ungefähr.]]
-#v(10pt)
-// Von Anfang bis Abschnitt vier ist die Option schwarz. Ab Abschnitt 5 bis zum Ende wird sie grün, weil sie richtig ist.
-#only("-4")[d) Er bleibt etwa gleich.]#only("5-")[#text(fill:green)[d) Er bleibt etwa gleich.]]
-#only("1")[#voiceover("Leider ist das nicht korrekt. Hier ist das Video zur Erklärung.")]
-#only("2")[#voiceover("Option a) ist falsch. Der Auftrieb verdoppelt sich nicht, wenn der Fisch von 10 m auf 30 m taucht.")]
-#only("3")[#voiceover("Option b) ist ebenfalls falsch. Der Auftrieb verdreifacht sich in diesem Szenario auch nicht.")]
-#only("4")[#voiceover("Option c) ist auch falsch. Der Auftrieb vervierfacht sich nicht, wenn der Fisch tiefer taucht.")]
-#only("5")[#voiceover("Die richtige Antwort ist d) Er bleibt etwa gleich. Lass uns im nächsten Slide sehen, warum das so ist.")]
+#only("1-")[- Ein Eiswürfel schwimmt in einem Glas Wasser]
+#v(20pt)
+#only("2-")[- Der Eiswürfel schmilzt]
+#v(20pt)
+#only("3-")[Was passiert mit dem Wasserspiegel? 🤔]
+#only("1")[
+#voiceover("Leider nicht ganz richtig. Lass uns die Erklärung Schritt für Schritt durchgehen.")
+]
+#only("2")[
+#voiceover("Wir haben einen Eiswürfel, der in einem Glas Wasser schwimmt. Wenn der Eiswürfel schmilzt, verwandelt er sich in Wasser.")
+]
+#only("3")[
+#voiceover("Die Frage ist, was passiert mit dem Wasserspiegel im Glas, nachdem der Eiswürfel vollständig geschmolzen ist?")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Erklärung]
+#text(size: 30pt, weight: "bold")[Archimedes' Prinzip 🏛️]
 #v(40pt)
-#only("1-")[Der Auftrieb hängt ab von:]
+#only("1-")[- Auftriebskraft entspricht dem Gewicht der verdrängten Flüssigkeit]
 #v(20pt)
-#only("2-")[1. 💧 Verdrängtes Wasservolumen]
-#v(10pt)
-#only("3-")[2. 🐟 Volumen des Objekts (Fisch)]
-#v(40pt)
-#only("4-")[Wenn der Fisch tiefer taucht, bleibt sein Volumen konstant. 📏]
-#v(20pt)
-#only("5-")[Daher bleibt auch das verdrängte Wasservolumen gleich. 🌊]
-#v(20pt)
-#only("6-")[⇒ Der Auftrieb wird durch Tiefenänderungen nicht beeinflusst. 🎈]
-#only("1")[#voiceover("Der Auftrieb hängt von zwei Faktoren ab:")]
-#only("2")[#voiceover("Erstens, vom Volumen des verdrängten Wassers,")]
-#only("3")[#voiceover("und zweitens, vom Volumen des Objekts selbst, in diesem Fall des Fisches.")]
-#only("4")[#voiceover("Wenn der Fisch von 10 Metern auf 30 Meter taucht, ändert sich sein Volumen nicht.")]
-#only("5")[#voiceover("Folglich bleibt auch das verdrängte Wasservolumen des Fisches konstant.")]
-#only("6")[#voiceover("Das bedeutet, dass der Auftrieb, der auf den Fisch wirkt, durch die Tiefenänderung nicht beeinflusst wird.")]
+#only("2-")[- Der Eiswürfel verdrängt sein eigenes Gewicht an Wasser]
+#only("1")[
+#voiceover("Um das zu verstehen, müssen wir das Archimedische Prinzip betrachten. Es besagt, dass die Auftriebskraft auf einen Körper gleich dem Gewicht der vom Körper verdrängten Flüssigkeit ist.")
+]
+#only("2")[
+#voiceover("In unserem Fall verdrängt der schwimmende Eiswürfel sein eigenes Gewicht an Wasser. Deshalb schwimmt er - die Auftriebskraft gleicht das Gewicht des Eises aus.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung]
+#text(size: 30pt, weight: "bold")[Schmelzprozess 🔥]
 #v(40pt)
+#only("1-")[- Eis wird zu Wasser]
+#v(20pt)
+#only("2-")[- Volumen des geschmolzenen Eises = Volumen des verdrängten Wassers]
+#only("1")[
+#voiceover("Wenn der Eiswürfel schmilzt, verwandelt er sich in Wasser. Der entscheidende Punkt ist, dass das Volumen des durch das schmelzende Eis erzeugten Wassers genau dem Volumen des Wassers entspricht, das durch den Eiswürfel verdrängt wurde, als er schwamm.")
+]
+#only("2")[
+#voiceover("Mit anderen Worten: Das geschmolzene Eis füllt einfach den Raum aus, der zuvor vom untergetauchten Teil des Eiswürfels eingenommen wurde.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Wasserspiegel 📏]
+#v(40pt)
+#only("1-")[- Keine Änderung des gesamten Wasservolumens]
+#v(20pt)
+#only("2-")[- Der Wasserspiegel bleibt gleich 🌊]
+#only("1")[
+#voiceover("Da das geschmolzene Eis einfach das verdrängte Wasser ersetzt, gibt es keine Änderung des gesamten Wasservolumens im Glas.")
+]
+#only("2")[
+#voiceover("Daher bleibt der Wasserspiegel nach dem vollständigen Schmelzen des Eiswürfels gleich. Der Eiswürfel, ob fest oder geschmolzen, trägt die gleiche Menge zum Volumen und damit zum Wasserspiegel im Glas bei.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung 📊]
+#v(40pt)
+#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -60,38 +77,53 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-depths = [10, 30]
-buoyancy = [1, 1]
+# Create figure and axes
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
-plt.figure(figsize=(8, 6))
-plt.plot(depths, buoyancy, marker='o', linestyle='-', color='blue', label='Auftrieb')
-plt.xlabel('Tiefe (m)')
-plt.ylabel('Relativer Auftrieb')
-plt.title('Auftrieb vs Tiefe')
-plt.legend()
-plt.grid(True)
-plt.annotate('10 m', (depths[0], buoyancy[0]), textcoords="offset points", xytext=(0,10), ha='center')
-plt.annotate('30 m', (depths[1], buoyancy[1]), textcoords="offset points", xytext=(0,10), ha='center')
+# Plot for before melting
+ax1.bar(1, 10, width=1, color='skyblue', edgecolor='black', linewidth=2)
+ax1.bar(1, 2, width=0.6, color='white', edgecolor='black', linewidth=2)
+ax1.set_ylim(0, 12)
+ax1.set_xlim(0, 2)
+ax1.set_xticks([])
+ax1.set_ylabel('Water Level')
+ax1.set_title('Before Melting')
+
+# Plot for after melting
+ax2.bar(1, 10, width=1, color='skyblue', edgecolor='black', linewidth=2)
+ax2.set_ylim(0, 12)
+ax2.set_xlim(0, 2)
+ax2.set_xticks([])
+ax2.set_title('After Melting')
+
+plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
-#v(40pt)
-#only("1-")[Dieses Diagramm zeigt, dass der Auftrieb bei zunehmender Tiefe konstant bleibt. 📈]
-#only("1")[#voiceover("Dieses Diagramm zeigt, dass der Auftrieb konstant bleibt, wenn der Fisch von 10 Metern auf 30 Meter Tiefe taucht.")]
+#only("1")[
+#voiceover("Hier ist eine visuelle Darstellung. Das linke Bild zeigt das Glas Wasser mit dem schwimmenden Eiswürfel. Das rechte Bild zeigt das Glas, nachdem das Eis geschmolzen ist. Wie du sehen kannst, ist der Wasserspiegel in beiden Fällen gleich.")
+]
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse]
+#text(size: 30pt, weight: "bold")[Zusammenfassung 📝]
 #v(40pt)
-#only("1-")[- Der Auftrieb hängt vom verdrängten Wasservolumen und vom Volumen des Objekts ab 🌊🐟]
+#only("1-")[- Archimedes' Prinzip: Auftriebskraft = Gewicht der verdrängten Flüssigkeit 🏛️]
 #v(20pt)
-#only("2-")[- Wenn das Volumen des Objekts konstant bleibt, ändert sich der Auftrieb nicht mit der Tiefe 📏🎈]
+#only("2-")[- Geschmolzenes Eis ersetzt verdrängtes Wasser 🔁]
 #v(20pt)
-#only("3-")[- Für den tauchenden Fisch bleibt der Auftrieb von 10 m bis 30 m etwa gleich 🐠]
-#only("1")[#voiceover("Zusammenfassend lässt sich sagen, dass der Auftrieb durch das verdrängte Wasservolumen und das Volumen des Objekts bestimmt wird.")]
-#only("2")[#voiceover("Wenn das Volumen des Objekts konstant bleibt, ändert sich der Auftrieb nicht mit der Tiefe.")]
-#only("3")[#voiceover("Im Fall des kleinen Fisches, der von 10 Metern auf 30 Meter taucht, bleibt sein Auftrieb etwa gleich.")]
+#only("3-")[- Keine Änderung des gesamten Wasservolumens oder -spiegels 🌊]
+#only("1")[
+#voiceover("Zusammenfassend: Nach dem Archimedischen Prinzip verdrängt ein schwimmender Körper sein eigenes Gewicht an Flüssigkeit.")
+]
+#only("2")[
+#voiceover("Wenn der Eiswürfel schmilzt, ersetzt das entstehende Wasser einfach das Wasser, das durch das schwimmende Eis verdrängt wurde.")
+]
+#only("3")[
+#voiceover("Daher gibt es keine Änderung des gesamten Wasservolumens oder des Wasserspiegels im Glas. Der Wasserspiegel bleibt während des gesamten Schmelzprozesses konstant.")
+]
 ]

@@ -5,72 +5,100 @@
 #it.body
 ]
 
+
 #slide()[
+#text(size: 30pt, weight: "bold")[Druckänderung]
+
+#v(40pt)
+
+#only("1-")[- Der Wasserspiegel im Reservoir sinkt um 2 m 🌊]
+
 #only("1")[
-#voiceover("Großartige Arbeit! Du hast den Überdruck für jeden Hahn korrekt berechnet. Lass uns die Lösung Schritt für Schritt durchgehen.")
+#voiceover("Großartig! Das ist die richtige Antwort. Lass uns die Lösung Schritt für Schritt durchgehen.")
 ]
 
-#text(size: 30pt, weight: "bold")[Problemstellung]
-
-#v(40pt)
-
-#only("2-")[- Wasserbehälter in Höhe $h_0$]
-#only("3-")[- Hähne in Höhen $h_1 = -35 "m"$, $h_2 = -10 "m"$, $h_3 = 3 "m"$ relativ zum Behälter]
-
-#only("2")[#voiceover("Wir haben einen Wasserbehälter in einer bestimmten Höhe h null.")]
-#only("3")[#voiceover("Die drei Hähne befinden sich in den Höhen h eins gleich minus fünfunddreißig Meter, h zwei gleich minus zehn Meter und h drei gleich drei Meter relativ zum Behälter.")]
+#only("2")[
+#voiceover("Uns wird gesagt, dass der Wasserspiegel im Reservoir um 2 Meter sinkt.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Druckformel]
+#text(size: 30pt, weight: "bold")[Vorgehensweise]
 
 #v(40pt)
 
-#only("1-")[$ P = P_0 - rho g h $]
+#only("1-")[- Die Druckänderung hängt von der Höhenänderung ab]
+// Die Vorgehensweise, die Höhenänderung zu berücksichtigen, wird ab Folie 1 gezeigt
 
-#only("1")[#voiceover("Um den Überdruck an jedem Hahn zu berechnen, verwenden wir die hydrostatische Druckformel: P gleich P null minus rho g h, wobei P null der Druck am Behälter ist, rho die Dichte des Wassers, g die Erdbeschleunigung und h der Höhenunterschied zwischen dem Behälter und dem Hahn ist.")]
+#only("2-")[- Verwende die Formel: $Delta P = rho dot g dot Delta h$]
+// Die Formel für die Druckänderung wird ab Folie 2 gezeigt
+
+#only("1")[
+#voiceover("Der Schlüssel hier ist zu erkennen, dass die Druckänderung von der Änderung der Höhe der Wassersäule abhängt.")
+]
+
+#only("2")[
+#voiceover("Wir können die Formel Delta P gleich rho mal g mal Delta h verwenden, wobei Delta P die Druckänderung ist, rho die Dichte des Wassers, g die Erdbeschleunigung und Delta h die Höhenänderung ist.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Berechnungen]
+#text(size: 30pt, weight: "bold")[Lösung]
 
 #v(40pt)
 
-#only("1-")[- $rho = 1000 "kg/m"^3$, $g = 9.81 "m/s"^2$]
+#only("1-")[- $Delta h = -2 "m"$]
+// Die Höhenänderung wird ab Folie 1 gezeigt
 
 #v(10pt)
 
-#only("2-")[- Hahn 1: $P_1 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-35 "m") = P_0 + 343500 "Pa" = P_0 + 3.4 "bar"$ 🚰]
+#only("2-")[#align(center)[#text(fill:aqua)[⇓ In die Formel einsetzen]]]
+// Das Einsetzen in die Formel wird ab Folie 2 in Aqua hervorgehoben
 
 #v(10pt)
 
-#only("3-")[- Hahn 2: $P_2 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-10 "m") = P_0 + 98100 "Pa" = P_0 + 1.0 "bar"$ 🚰]
+#only("3-")[$ Delta P = 1000 "kg/m"^3 dot 9.81 "m/s"^2 dot (-2 "m") $]
+// Die Formel mit eingesetzten Werten wird ab Folie 3 gezeigt
 
 #v(10pt)
 
-#only("4-")[- Hahn 3: $P_3 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(3 "m") = P_0 - 29430 "Pa" = P_0 - 0.3 "bar"$ 🚰]
+#only("4-")[#align(center)[#text(fill:aqua)[⇓ Berechnen]]]
+// Der Berechnungsschritt wird ab Folie 4 in Aqua hervorgehoben
 
-#only("1")[#voiceover("Wir verwenden die Dichte des Wassers, rho gleich tausend Kilogramm pro Kubikmeter, und die Erdbeschleunigung, g gleich neun Komma acht eins Meter pro Quadratsekunde.")]
+#v(10pt)
 
-#only("2")[#voiceover("Für Hahn eins haben wir P eins gleich P null minus tausend mal neun Komma acht eins mal minus fünfunddreißig. Das vereinfacht sich zu P null plus dreihundertdreiundvierzigtausendfünfhundert Pascal oder P null plus drei Komma vier Bar.")]
+#only("5-")[$ Delta P = -19620 "Pa" = -0.1962 "bar" $]
+// Das Endergebnis wird ab Folie 5 gezeigt
 
-#only("3")[#voiceover("Ähnlich erhalten wir für Hahn zwei P zwei gleich P null plus achtundneunzigtausendeinhundert Pascal oder P null plus ein Bar.")]
+#only("1")[
+#voiceover("Die Höhenänderung, Delta h, beträgt minus 2 Meter, da der Wasserspiegel sinkt.")
+]
 
-#only("4")[#voiceover("Schließlich haben wir für Hahn drei P drei gleich P null minus neunundzwanzigtausendvierhundertdreißig Pascal oder P null minus null Komma drei Bar.")]
+#only("2")[
+#voiceover("Wir setzen dies in unsere Formel ein.")
+]
+
+#only("3")[
+#voiceover("Delta P ist gleich tausend Kilogramm pro Kubikmeter, was die Dichte des Wassers ist, mal neun Komma acht eins Meter pro Quadratsekunde, was die Erdbeschleunigung ist, mal minus zwei Meter.")
+]
+
+#only("4")[
+#voiceover("Wir berechnen dies...")
+]
+
+#only("5")[
+#voiceover("Wir erhalten, dass Delta P gleich minus neunzehntausend sechshundertzwanzig Pascal oder minus null Komma eins neun sechs zwei Bar ist.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung]
+#text(size: 30pt, weight: "bold")[Fazit]
 
 #v(40pt)
 
-#only("1-")[- Hahn 1 (35 m darunter): Überdruck = 3.4 bar]
-#only("2-")[- Hahn 2 (10 m darunter): Überdruck = 1.0 bar]  
-#only("3-")[- Hahn 3 (3 m darüber): Überdruck = -0.3 bar]
+#only("1-")[- Der Druck sinkt um 0,1962 Bar pro Wasserhahn 📉]
 
-#only("1")[#voiceover("Zusammenfassend beträgt der Überdruck am Hahn eins, fünfunddreißig Meter unter dem Behälter, drei Komma vier Bar.")]
-
-#only("2")[#voiceover("Der Überdruck am Hahn zwei, zehn Meter darunter, beträgt ein Bar.")]
-
-#only("3")[#voiceover("Und der Überdruck am Hahn drei, drei Meter darüber, beträgt minus null Komma drei Bar.")]
+#only("1")[
+#voiceover("Daher sinkt der Druck um null Komma eins neun sechs zwei Bar pro Wasserhahn, unabhängig von ihrem Anfangsdruck, da sie alle die gleiche Höhenänderung der Wassersäule über ihnen erfahren.")
+]
 ]

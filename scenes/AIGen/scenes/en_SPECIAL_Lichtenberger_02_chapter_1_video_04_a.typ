@@ -7,71 +7,98 @@
 
 
 #slide()[
+#text(size: 30pt, weight: "bold")[Pressure Change]
+
+#v(40pt)
+
+#only("1-")[- Reservoir level drops by 2 m 🌊]
+
 #only("1")[
-#voiceover("Great job! You calculated the overpressure for each tap correctly. Let's go through the solution step by step.")
+#voiceover("Great job! That's the correct answer. Let's go through the solution step by step.")
 ]
 
-#text(size: 30pt, weight: "bold")[Problem Setup]
-
-#v(40pt)
-
-#only("2-")[- Water container at height $h_0$]
-#only("3-")[- Taps at heights $h_1 = -35 "m"$, $h_2 = -10 "m"$, $h_3 = 3 "m"$ relative to container]
-
-#only("2")[#voiceover("We have a water container at some height h naught.")]
-#only("3")[#voiceover("The three taps are located at heights h one equals minus thirty-five meters, h two equals minus ten meters, and h three equals three meters relative to the container.")]
+#only("2")[
+#voiceover("We're told that the reservoir level drops by 2 meters.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Pressure Formula]
+#text(size: 30pt, weight: "bold")[Approach]
 
 #v(40pt)
 
-#only("1-")[$ P = P_0 - rho g h $]
+#only("1-")[- Pressure change depends on height change]
+// The approach of considering the height change is shown from slide 1 onward
 
-#only("1")[#voiceover("To calculate the overpressure at each tap, we use the hydrostatic pressure formula: P equals P naught minus rho g h, where P naught is the pressure at the container, rho is the density of water, g is the acceleration due to gravity, and h is the height difference between the container and the tap.")]
+#only("2-")[- Use formula: $Delta P = rho dot g dot Delta h$]
+// The formula for pressure change is shown from slide 2 onward
+
+#only("1")[
+#voiceover("The key here is to recognize that the pressure change depends on the change in height of the water column.")
+]
+
+#only("2")[
+#voiceover("We can use the formula delta P equals rho times g times delta h, where delta P is the pressure change, rho is the density of water, g is the acceleration due to gravity, and delta h is the change in height.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Calculations]
+#text(size: 30pt, weight: "bold")[Solution]
 
 #v(40pt)
 
-#only("1-")[- $rho = 1000 "kg/m"^3$, $g = 9.81 "m/s"^2$]
+#only("1-")[- $Delta h = -2 "m"$]
+// The height change is shown from slide 1 onward
 
 #v(10pt)
 
-#only("2-")[- Tap 1: $P_1 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-35 "m") = P_0 + 343500 "Pa" = P_0 + 3.4 "bar"$ 🚰]
+#only("2-")[#align(center)[#text(fill:aqua)[⇓ Substitute into formula]]]
+// The substitution into the formula is highlighted in aqua from slide 2 onward
 
 #v(10pt)
 
-#only("3-")[- Tap 2: $P_2 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(-10 "m") = P_0 + 98100 "Pa" = P_0 + 1.0 "bar"$ 🚰]
+#only("3-")[$ Delta P = 1000 "kg/m"^3 dot 9.81 "m/s"^2 dot (-2 "m") $]
+// The formula with substituted values is shown from slide 3 onward
 
 #v(10pt)
 
-#only("4-")[- Tap 3: $P_3 = P_0 - (1000 "kg/m"^3)(9.81 "m/s"^2)(3 "m") = P_0 - 29430 "Pa" = P_0 - 0.3 "bar"$ 🚰]
+#only("4-")[#align(center)[#text(fill:aqua)[⇓ Calculate]]]
+// The calculation step is highlighted in aqua from slide 4 onward
 
-#only("1")[#voiceover("We'll use the density of water, rho equals one thousand kilograms per cubic meter, and the acceleration due to gravity, g equals nine point eight one meters per second squared.")]
+#v(10pt)
 
-#only("2")[#voiceover("For tap one, we have P one equals P naught minus one thousand times nine point eight one times negative thirty-five. This simplifies to P naught plus three hundred forty-three thousand five hundred pascals, or P naught plus three point four bar.")]
+#only("5-")[$ Delta P = -19620 "Pa" = -0.1962 "bar" $]
+// The final result is shown from slide 5 onward
 
-#only("3")[#voiceover("Similarly, for tap two, we get P two equals P naught plus ninety-eight thousand one hundred pascals, or P naught plus one bar.")]
+#only("1")[
+#voiceover("The change in height, delta h, is negative 2 meters, because the level drops.")
+]
 
-#only("4")[#voiceover("Finally, for tap three, we have P three equals P naught minus twenty-nine thousand four hundred thirty pascals, or P naught minus zero point three bar.")]
+#only("2")[
+#voiceover("We substitute this into our formula.")
+]
+
+#only("3")[
+#voiceover("Delta P equals one thousand kilograms per cubic meter, which is the density of water, times nine point eight one meters per second squared, which is the acceleration due to gravity, times negative two meters.")
+]
+
+#only("4")[
+#voiceover("Calculating this...")
+]
+
+#only("5")[
+#voiceover("We get that delta P equals negative nineteen thousand six hundred and twenty pascals, or negative zero point one nine six two bar.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
+#text(size: 30pt, weight: "bold")[Conclusion]
 
 #v(40pt)
 
-#only("1-")[- Tap 1 (35 m below): Overpressure = 3.4 bar]
-#only("2-")[- Tap 2 (10 m below): Overpressure = 1.0 bar]  
-#only("3-")[- Tap 3 (3 m above): Overpressure = -0.3 bar]
+#only("1-")[- Pressure decreases by 0.1962 bar for each tap 📉]
 
-#only("1")[#voiceover("In summary, the overpressure at tap one, thirty-five meters below the container, is three point four bar.")]
-
-#only("2")[#voiceover("The overpressure at tap two, ten meters below, is one bar.")]
-
-#only("3")[#voiceover("And the overpressure at tap three, three meters above, is negative zero point three bar.")]
+#only("1")[
+#voiceover("Therefore, the pressure decreases by zero point one nine six two bar for each tap, regardless of their initial pressure, because they all experience the same change in height of the water column above them.")
+]
 ]

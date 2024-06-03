@@ -7,77 +7,120 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Air Pressure and Altitude]
+#only("1")[
+#voiceover("Great job! That's the correct answer. Let's go through the solution step by step.")
+]
+
+#text(size: 30pt, weight: "bold")[Scenario]
 #v(40pt)
-#only("1-")[At which lake is the air pressure highest (assuming the same weather conditions)?]
-#v(40pt)
-// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false. 
-#only("-1")[a) At Lake Zurich]#only("2-")[#text(fill:red)[a) At Lake Zurich]]
-#v(10pt)
-// From the start until section two, the option is black. From section 3 until the end it is then turned red, because it is false.
-#only("-2")[b) At Lake Neuchâtel]#only("3-")[#text(fill:red)[b) At Lake Neuchâtel]]
-#v(10pt)
-// From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is false.
-#only("-3")[c) At Lake Klöntal]#only("4-")[#text(fill:red)[c) At Lake Klöntal]]
-#v(10pt)
-// From the start until section four, the option is black. From section 5 until the end it is then turned green, because it is correct.
-#only("-4")[d) At Lake Maggiore]#only("5-")[#text(fill:green)[d) At Lake Maggiore]]
-#only("1")[#voiceover("That's not quite right. Let's take a look at the correct solution.")]
-#only("2")[#voiceover("Lake Zurich is not the correct answer. It's located at a higher altitude compared to Lake Maggiore, so the air pressure there would be lower.")]
-#only("3")[#voiceover("Lake Neuchâtel is also incorrect. While it's at a lower altitude than Lake Zurich, it's still higher than Lake Maggiore.")]
-#only("4")[#voiceover("Lake Klöntal is situated at an even higher altitude than Lake Zurich and Lake Neuchâtel, so the air pressure there would be the lowest among the given options.")]
-#only("5")[#voiceover("The correct answer is d) At Lake Maggiore. Lake Maggiore has the lowest altitude among the given lakes, and since air pressure decreases with increasing altitude, the air pressure would be highest at Lake Maggiore.")]
+#only("2-")[- Wooden board floats in water 🌊]
+#only("3-")[- Stone on the board 🪨]
+#only("4-")[- Stone slips off and sinks ⬇]
+
+#only("2")[
+#voiceover("We have a wooden board floating in a container filled with water.")
+]
+#only("3")[
+#voiceover("There's a stone on the board.")
+]
+#only("4")[
+#voiceover("The stone slips off the board and sinks to the bottom of the container.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Explanation]
+#text(size: 30pt, weight: "bold")[Buoyancy Principles]
 #v(40pt)
-#only("1-")[Here's why Lake Maggiore has the highest air pressure:]
-#v(20pt)
-#only("2-")[🏔 Air pressure decreases with increasing altitude]
-#only("3-")[📏 Lake Maggiore has the lowest altitude among the given lakes]
-#only("4-")[⇒ Therefore, Lake Maggiore has the highest air pressure]
+#only("1-")[- Buoyant force equals weight of displaced water 🎈=💧]
+#only("2-")[- Board displaces water equal to its weight 🌊=🪵]
+#only("3-")[- Stone's weight supported by board, not water 🪨➡🪵]
 
-#only("1")[#voiceover("Let's understand why Lake Maggiore is the correct answer.")]
-#only("2")[#voiceover("A key concept to remember is that air pressure decreases as altitude increases. The higher you go, the lower the air pressure becomes.")]
-#only("3")[#voiceover("Among the lakes mentioned in the question, Lake Maggiore is located at the lowest altitude.")]
-#only("4")[#voiceover("Consequently, since Lake Maggiore is at the lowest altitude and air pressure is highest at lower altitudes, we can conclude that Lake Maggiore would have the highest air pressure among the given options.")]
+#only("1")[
+#voiceover("The buoyant force acting on an object equals the weight of the water it displaces.")
+]
+#only("2")[
+#voiceover("The floating board displaces a volume of water equal to its own weight.")
+]
+#only("3")[
+#voiceover("When the stone is on the board, its weight is supported by the board, not the water.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[What Happens]
+#v(40pt)
+#only("1-")[- Stone sinks, no longer displacing water via board 🪨⬇]
+#only("2-")[- Board rises, displacing less water 🪵⬆]
+#only("3-")[- Water level remains the same or drops slightly 🌊➡]
+
+#only("1")[
+#voiceover("When the stone sinks, it's no longer displacing water via the board.")
+]
+#only("2")[
+#voiceover("The board rises up, now displacing a volume of water equal to just its own weight.")
+]
+#only("3")[
+#voiceover("As a result, the water level remains the same or drops slightly, depending on the relative densities of the stone and water.")
+]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Visualization]
 #v(40pt)
+#only("1-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
 pyimage(```
 import matplotlib.pyplot as plt
+import numpy as np
 
-lakes = ['Lake Klöntal', 'Lake Zurich', 'Lake Neuchâtel', 'Lake Maggiore']
-altitudes = [800, 400, 200, 100]  # Approximate altitudes in meters
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-plt.figure(figsize=(8, 6))
-plt.barh(lakes, altitudes)
-plt.xlabel('Altitude (meters)')
-plt.ylabel('Lakes')
-plt.title('Altitude Comparison of Lakes')
-plt.grid(axis='x')
+# Scenario 1: Stone on the board
+ax1.fill_between([0, 10], [2, 2], color='blue', alpha=0.5)
+ax1.fill_between([3, 7], [2, 2], [2.5, 2.5], color='brown')
+ax1.scatter(5, 2.6, s=100, color='gray', marker='o')
+ax1.set_title('Stone on the Board')
+ax1.set_xlim(0, 10)
+ax1.set_ylim(0, 5)
+ax1.set_aspect('equal')
+
+# Scenario 2: Stone sunk
+ax2.fill_between([0, 10], [2, 2], color='blue', alpha=0.5)
+ax2.fill_between([4, 6], [2, 2], [2.3, 2.3], color='brown')
+ax2.scatter(5, 0.5, s=100, color='gray', marker='o')
+ax2.set_title('Stone Sunk')
+ax2.set_xlim(0, 10)
+ax2.set_ylim(0, 5)
+ax2.set_aspect('equal')
+
 plt.tight_layout()
 plt.show()
-```,
-width: 360pt),
-)
+```, width: 360pt))
 ]
 ]
-#v(40pt)
-#only("1-")[This graph compares the altitudes of the lakes:]
-#v(20pt)
-#only("2-")[- Lake Maggiore has the lowest altitude 📏]
-#only("3-")[- Lower altitude ⇒ Higher air pressure 🌡]
-#only("4-")[So, Lake Maggiore has the highest air pressure among the given lakes 🏆]
 
-#only("1")[#voiceover("This bar graph provides a visual comparison of the altitudes of the different lakes.")]
-#only("2")[#voiceover("As we can see, Lake Maggiore has the shortest bar, indicating that it is situated at the lowest altitude among the lakes.")]
-#only("3")[#voiceover("Remember, lower altitude corresponds to higher air pressure.")]
-#only("4")[#voiceover("Therefore, this graph reinforces our conclusion that Lake Maggiore would have the highest air pressure among the given options.")]
+#only("1")[
+#voiceover("Here's a visualization of what happens. On the left, we see the stone on the board, displacing water. On the right, after the stone sinks, the board rises up, displacing less water, and the water level remains about the same.")
+]
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Conclusion]
+#v(40pt)
+#only("1-")[- Stone's weight transferred from board to water 🪨➡🌊]
+#only("2-")[- Board displaces less water, rises 🪵⬆]
+#only("3-")[- Water level remains constant or drops slightly 🌊➡]
+
+#only("1")[
+#voiceover("In conclusion, when the stone sinks, its weight is transferred from the board to the water.")
+]
+#only("2")[
+#voiceover("The board, now displacing less water, rises.")
+]
+#only("3")[
+#voiceover("The water level remains constant or drops slightly, depending on the stone's density relative to water.")
+]
 ]

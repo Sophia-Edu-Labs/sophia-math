@@ -22,9 +22,9 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Gegebene Informationen]
 #v(40pt)
-#only("1-")[- Dichte von Eis: $rho_("ice") = 920 kg/m^3$]
+#only("1-")[- Dichte von Eis: $rho_("ice") = 920 "kg"/m^3$]
 #v(20pt)
-#only("2-")[- Dichte von Wasser: $rho_("water") = 1000 kg/m^3$]
+#only("2-")[- Dichte von Wasser: $rho_("water") = 1000 "kg"/m^3$]
 #only("1")[
 #voiceover("Wir wissen, dass die Dichte von Eis 920 Kilogramm pro Kubikmeter beträgt,")
 ]

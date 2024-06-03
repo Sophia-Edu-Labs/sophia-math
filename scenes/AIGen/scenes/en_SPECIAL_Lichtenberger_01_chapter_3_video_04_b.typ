@@ -7,105 +7,137 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Buoyancy and Volume]
-#v(40pt)
-#only("1-")[Of three differently sized objects with the same mass, the one with the medium volume floats. Which other object also floats?]
-#v(40pt)
-// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is incorrect. 
-#only("-1")[a) the small one]#only("2-")[#text(fill:red)[a) the small one]]
-#v(10pt)
-// From the start until section two, the option is black. From section 3 until the end it is then turned green, because it is correct.
-#only("-2")[b) the large one]#only("3-")[#text(fill:green)[b) the large one]]
-#v(10pt)
-// From the start until section three, the option is black. From section 4 until the end it is then turned red, because it is incorrect.
-#only("-3")[c) both]#only("4-")[#text(fill:red)[c) both]]
-#v(10pt)
-// From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is incorrect.
-#only("-4")[d) neither]#only("5-")[#text(fill:red)[d) neither]]
 
-#only("1")[#voiceover("Great job! You've selected the correct answer. Let's go through the solution step by step.")]
+#only("1")[
+#voiceover("That's not quite right. Let's go through the solution step by step to understand why steel ships float despite steel being denser than water.")
+]
+
+#text(size: 30pt, weight: "bold")[Why Steel Ships Float 🚢]
+
+#v(40pt)
+
+#only("2-")[- Steel density: $p_"steel" = 7.8 g/"cm"^3$ > Water density: $p_"water" = 1 g/"cm"^3$]
+// The densities of steel and water are shown from slide 2 onward
+
+#only("2")[
+#voiceover("First, let's note that steel has a density of 7.8 grams per cubic centimeter, which is greater than water's density of 1 gram per cubic centimeter.")
+]
+
+]
+
+
+#slide()[
+
+#only("1")[
+#voiceover("The key to understanding why steel ships float lies in the concept of buoyancy. Buoyancy is an upward force exerted by a fluid on an object immersed in it.")
+]
+
+#text(size: 30pt, weight: "bold")[Buoyancy 🌊]
+
+#v(40pt)
+
+#only("1-")[- Upward force exerted by fluid on immersed object]
+// The definition of buoyancy is shown from slide 1 onward
+
+#only("2-")[- Depends on volume of fluid displaced]
+// The dependence of buoyancy on displaced fluid volume is shown from slide 2 onward
+
+#only("3-")[- Archimedes' principle: $F_"buoyant" = p_"fluid" * g * V_"displaced"$]
+// Archimedes' principle is shown from slide 3 onward
+
+#only("2")[
+#voiceover("The magnitude of the buoyant force depends on the volume of the fluid displaced by the object.")
+]
+
+#only("3")[
+#voiceover("This is described by Archimedes' principle, which states that the buoyant force equals the density of the fluid times the acceleration due to gravity times the volume of fluid displaced.")
+]
+
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Key Concepts]
-#v(40pt)
-#only("1-")[- Buoyancy: upward force exerted by a fluid on an object 🌊]
-#v(20pt)
-#only("2-")[- Archimedes' principle: buoyant force equals weight of displaced fluid 🎈]
-#v(20pt)
-#only("3-")[- For objects with the same mass, larger volume $arrow$ more fluid displaced $arrow$ greater buoyancy 📈]
 
-#only("1")[#voiceover("First, let's recall that buoyancy is the upward force exerted by a fluid on an object immersed in it.")]
-#only("2")[#voiceover("Archimedes' principle states that the buoyant force on an object is equal to the weight of the fluid displaced by the object.")]
-#only("3")[#voiceover("For objects with the same mass, a larger volume means more fluid is displaced, resulting in a greater buoyant force.")]
+#only("1")[
+#voiceover("Now, let's consider the case of a steel ship. Although steel is denser than water, ships are designed to displace a large volume of water.")
+]
+
+#text(size: 30pt, weight: "bold")[Steel Ships 🚢]
+
+#v(40pt)
+
+#only("1-")[- Designed to displace large volume of water]
+// The design of steel ships to displace large water volumes is shown from slide 1 onward
+
+#only("2-")[- Hollow structure with air inside]
+// The hollow structure of steel ships is shown from slide 2 onward
+
+#only("3-")[- Average density < Water density]
+// The average density of steel ships being less than water density is shown from slide 3 onward
+
+#only("2")[
+#voiceover("This is achieved by creating a hollow structure with air inside, which significantly increases the volume without adding much mass.")
+]
+
+#only("3")[
+#voiceover("As a result, the average density of the ship, including the air inside, is less than the density of water.")
+]
+
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Solution]
-#v(40pt)
-#only("1-")[- Given: Three objects with the same mass but different volumes]
-#v(20pt)
-#only("2-")[- The medium-volume object floats $arrow$ its buoyant force $>=$ its weight]
-#v(20pt)
-#only("3-")[- The large-volume object displaces more fluid than the medium one]
-#v(20pt)
-#only("4-")[- Thus, the large-volume object experiences an even greater buoyant force and also floats 🚢]
 
-#only("1")[#voiceover("In this problem, we have three objects with the same mass but different volumes.")]
-#only("2")[#voiceover("We know that the medium-volume object floats, which means its buoyant force is greater than or equal to its weight.")]
-#only("3")[#voiceover("The large-volume object will displace more fluid than the medium one, as it has a larger volume.")]
-#only("4")[#voiceover("Therefore, the large-volume object will experience an even greater buoyant force compared to the medium-volume object, and it will also float.")]
+#only("1")[
+#voiceover("When the buoyant force equals the weight of the ship, the ship floats. This occurs when the mass of water displaced equals the mass of the ship.")
+]
+
+#text(size: 30pt, weight: "bold")[Floating Condition ⚖️]
+
+#v(40pt)
+
+#only("1-")[- $F_"buoyant" = W_"ship"$]
+// The condition for floating is shown from slide 1 onward
+
+#only("2-")[- $m_"displaced water" = m_"ship"$]
+// The condition in terms of displaced water mass equaling ship mass is shown from slide 2 onward
+
+#only("3-")[- $p_"water" * V_"displaced" = m_"ship"$]
+// The condition expressed using water density and displaced volume is shown from slide 3 onward
+
+#only("2")[
+#voiceover("In other words, the mass of water displaced by the ship equals the mass of the ship itself.")
+]
+
+#only("3")[
+#voiceover("This can be expressed as the density of water times the volume of water displaced equals the mass of the ship.")
+]
+
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization]
-#v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(```
-import matplotlib.pyplot as plt
-import numpy as np
 
-volumes = ['Small', 'Medium', 'Large']
-buoyancy = [0.8, 1.2, 1.6]
-
-plt.figure(figsize=(8, 6))
-plt.bar(volumes, buoyancy, color=['red', 'green', 'green'], alpha=0.7)
-plt.axhline(1, color='black', linestyle='--', label='Weight')
-plt.ylim(0, 2)
-plt.xlabel('Object Volume')
-plt.ylabel('Buoyant Force (relative to weight)')
-plt.title('Buoyancy vs Volume (Same Mass)')
-plt.legend()
-plt.show()
-```,
-width: 360pt),
-)
-]
-]
-#v(40pt)
-#only("1-")[This graph shows the buoyant force relative to the object's weight for each volume.]
-#v(20pt)
-#only("2-")[The dashed line represents the weight. If buoyancy $>=$ weight, the object floats.]
-#v(20pt)
-#only("3-")[Both the medium and large objects have buoyancy $>$ weight, so they float. 🛥️]
-
-#only("1")[#voiceover("This graph visualizes the buoyant force relative to the object's weight for each volume.")]
-#only("2")[#voiceover("The dashed line represents the weight. If the buoyant force is greater than or equal to the weight, the object will float.")]
-#only("3")[#voiceover("We can see that both the medium and large objects have a buoyant force greater than their weight, so they will both float.")]
+#only("1")[
+#voiceover("In summary, steel ships float because their design allows them to displace a volume of water with a mass equal to the ship's mass, despite steel being denser than water.")
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Conclusion]
-#v(40pt)
-#only("1-")[- For objects with the same mass, a larger volume results in greater buoyancy]
-#v(20pt)
-#only("2-")[- If the medium-volume object floats, the large-volume object will also float 🏊]
-#v(20pt)
-#only("3-")[- The small-volume object may not have enough buoyancy to float 🪨]
+#text(size: 30pt, weight: "bold")[Summary 📝]
 
-#only("1")[#voiceover("In conclusion, for objects with the same mass, a larger volume results in greater buoyancy due to more fluid being displaced.")]
-#only("2")[#voiceover("If the medium-volume object floats, the large-volume object will also float because it experiences an even greater buoyant force.")]
-#only("3")[#voiceover("The small-volume object, on the other hand, may not have enough buoyancy to overcome its weight and float.")]
+#v(40pt)
+
+#only("1-")[- Steel ships float due to buoyancy 🌊]
+// The role of buoyancy in steel ships floating is shown from slide 1 onward
+
+#only("2-")[- Designed to displace water mass equal to ship mass 🚢]
+// The design of steel ships to displace water mass equal to ship mass is shown from slide 2 onward
+
+#only("3-")[- Achieved through hollow structure and air inside 💨]
+// The role of hollow structure and air in achieving the necessary displacement is shown from slide 3 onward
+
+#only("2")[
+#voiceover("This is achieved by designing the ship to displace a volume of water with a mass equal to the ship's own mass.")
+]
+
+#only("3")[
+#voiceover("The hollow structure and air inside the ship make this possible, despite the high density of steel.")
+]
+
 ]

@@ -5,172 +5,93 @@
 #it.body
 ]
 
-
 #slide()[
-#text(size: 30pt, weight: "bold")[Prozentsatz eines Eisbergs unter Wasser 🧊]
+#text(size: 30pt, weight: "bold")[Fläche der Eisscholle]
 #v(40pt)
-#only("1-")[Großartig! 🎉 Das ist die richtige Antwort.]
-#v(20pt)
-#only("2-")[- $89.9%$ eines Eisbergs sind unter Wasser]
+#only("1-")[Großartig! 🎉 Du hast die Fläche der Eisscholle korrekt berechnet. Lass uns die Lösung Schritt für Schritt durchgehen.]
 #only("1")[
-#voiceover("Großartig! Du hast richtig berechnet, dass 89.9% eines Eisbergs unter Wasser sind. Lass uns sehen, wie wir zu dieser Antwort kommen.")
-]
-#only("2")[
-#voiceover("Der Schlüssel zur Lösung dieses Problems liegt im Verständnis des Auftriebs und der Dichten von Eis und Wasser.")
+#voiceover("Großartig! Du hast die Fläche der Eisscholle korrekt berechnet. Lass uns die Lösung Schritt für Schritt durchgehen.")
 ]
 ]
-
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Gegebene Informationen]
 #v(40pt)
-#only("1-")[- Dichte von Eis: $rho_("ice") = 920 "kg"/m^3$]
-#v(20pt)
-#only("2-")[- Dichte von Wasser: $rho_("water") = 1000 "kg"/m^3$]
+#only("1-")[
+- Masse des Eisbären: $m = 400 "kg"$
+- Eisscholle sinkt: $Delta h = 2.5 "cm" = 0.025 "m"$
+- Dichte des Wassers: $rho_("wasser") = 1000 "kg/m"^3$
+]
 #only("1")[
-#voiceover("Wir wissen, dass die Dichte von Eis ungefähr 920 Kilogramm pro Kubikmeter beträgt.")
-]
-#only("2")[
-#voiceover("Und die Dichte von Wasser beträgt 1000 Kilogramm pro Kubikmeter.")
+#voiceover("Zuerst fassen wir die gegebenen Informationen zusammen. Der Eisbär hat eine Masse von 400 Kilogramm. Wenn er auf die Eisscholle tritt, sinkt die Scholle um 2,5 Zentimeter oder 0,025 Meter tiefer ins Wasser. Wir wissen auch, dass die Dichte des Wassers 1000 Kilogramm pro Kubikmeter beträgt.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Archimedes' Prinzip 🚢]
+#text(size: 30pt, weight: "bold")[Auftriebsgesetz]
 #v(40pt)
-#only("1-")[- Die Auftriebskraft entspricht dem Gewicht der verdrängten Flüssigkeit]
+#only("1-")[Das Gewicht des verdrängten Wassers entspricht dem Gewicht des Objekts, das die Verdrängung verursacht.]
 #v(20pt)
-#only("2-")[- $F_("buoyant") = rho_("water") g V_("displaced")$]
+#only("2-")[In diesem Fall: $m_("eisbär") dot g = rho_("wasser") dot g dot Delta V$]
 #only("1")[
-#voiceover("Das Prinzip von Archimedes besagt, dass die Auftriebskraft auf ein Objekt gleich dem Gewicht der vom Objekt verdrängten Flüssigkeit ist.")
+#voiceover("Das Schlüsselprinzip, das wir zur Lösung dieses Problems verwenden werden, ist das Auftriebsgesetz. Es besagt, dass das Gewicht des verdrängten Wassers dem Gewicht des Objekts entspricht, das die Verdrängung verursacht.")
 ]
 #only("2")[
-#voiceover("Mathematisch kann dies als die Auftriebskraft gleich der Dichte des Wassers mal der Erdbeschleunigung mal dem Volumen des verdrängten Wassers ausgedrückt werden.")
+#voiceover("In diesem Fall bedeutet das, dass das Gewicht des Eisbären, gegeben durch seine Masse mal der Erdbeschleunigung, der Dichte des Wassers mal der Erdbeschleunigung mal der Volumenänderung des verdrängten Wassers entspricht.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Gleichgewichtsbedingung ⚖️]
+#text(size: 30pt, weight: "bold")[Berechnung der Fläche]
 #v(40pt)
-#only("1-")[- Im Gleichgewicht: $F_("buoyant") = F_("gravity")$]
+#only("1-")[Die Volumenänderung $Delta V$ kann als Fläche der Eisscholle $A$ mal der Höhenänderung $Delta h$ ausgedrückt werden.]
 #v(20pt)
-#only("2-")[- $rho_("water") g V_("displaced") = rho_("ice") g V_("ice")$]
+#only("2-")[$Delta V = A dot Delta h$]
+#v(20pt)
+#only("3-")[Einsetzen in die Auftriebsgleichung:]
+#v(10pt)
+#only("3-")[$m_("eisbär") dot g = rho_("wasser") dot g dot A dot Delta h$]
+#v(20pt)
+#only("4-")[Lösen für $A$:]
+#v(10pt)
+#only("4-")[$A = (m_("eisbär") dot g)/(rho_("wasser") dot g dot Delta h)$]
 #only("1")[
-#voiceover("Damit der Eisberg im Gleichgewicht schwimmt, muss die Auftriebskraft der Gewichtskraft des Eisbergs entsprechen.")
+#voiceover("Um die Fläche der Eisscholle zu finden, müssen wir die Volumenänderung in Bezug auf die Fläche ausdrücken. Die Volumenänderung entspricht der Fläche der Eisscholle mal der Höhenänderung.")
 ]
 #only("2")[
-#voiceover("Das bedeutet, dass die Dichte des Wassers mal g mal das Volumen des verdrängten Wassers gleich der Dichte des Eises mal g mal dem Volumen des Eisbergs ist.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Lösung des Verhältnisses]
-#v(40pt)
-#only("1-")[- Vereinfachen: $rho_("water") V_("displaced") = rho_("ice") V_("ice")$]
-#v(20pt)
-#only("2-")[- Durch $V_("ice")$ teilen: $rho_("water") (V_("displaced")/V_("ice")) = rho_("ice")$]
-#v(20pt) 
-#only("3-")[- Lösung: $V_("displaced")/V_("ice") = rho_("ice")/rho_("water")$]
-#only("1")[
-#voiceover("Wir können diese Gleichung vereinfachen, indem wir beide Seiten durch g teilen, was uns die Dichte des Wassers mal das verdrängte Volumen gleich der Dichte des Eises mal dem Volumen des Eisbergs ergibt.")
-]
-#only("2")[
-#voiceover("Indem wir beide Seiten durch das Volumen des Eisbergs teilen, erhalten wir die Dichte des Wassers mal das Verhältnis des verdrängten Volumens zum Volumen des Eisbergs gleich der Dichte des Eises.")
+#voiceover("Mathematisch schreiben wir das als Delta V gleich A mal Delta h.")
 ]
 #only("3")[
-#voiceover("Wenn wir das Verhältnis lösen, finden wir, dass das verdrängte Volumen geteilt durch das Volumen des Eisbergs gleich der Dichte des Eises geteilt durch die Dichte des Wassers ist.")
+#voiceover("Nun können wir diesen Ausdruck für Delta V in die Auftriebsgleichung einsetzen. Wir erhalten, dass die Masse des Eisbären mal g der Dichte des Wassers mal g mal der Fläche der Eisscholle mal der Höhenänderung entspricht.")
+]
+#only("4")[
+#voiceover("Um die Fläche A zu berechnen, teilen wir beide Seiten durch die Dichte des Wassers, g und Delta h. Dies gibt uns die Formel für die Fläche.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Berechnung des Prozentsatzes 📊]
-#v(40pt)
-#only("1-")[- $V_("displaced")/V_("ice") = 920 "kg"/m^3 / 1000 "kg"/m^3 = 0.92$]
-#v(20pt)
-#only("2-")[- Prozentsatz unter Wasser: $0.92 * 100% = 92%$]
-#v(20pt)
-#only("3-")[- Genauer: $89.9%$]
-#only("1")[
-#voiceover("Wenn wir die Werte für die Dichten einsetzen, finden wir, dass das Verhältnis 920 geteilt durch 1000 ist, was 0.92 ergibt.")
-]
-#only("2")[
-#voiceover("Um dies in einen Prozentsatz umzuwandeln, multiplizieren wir mit 100%, was uns 92% ergibt.")
-]
-#only("3")[
-#voiceover("Eine genauere Berechnung ergibt 89.9%. Daher sind ungefähr 89.9% eines Eisbergs unter Wasser.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung 📸]
+#text(size: 30pt, weight: "bold")[Einsetzen der Werte]
 #v(40pt)
 #only("1-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(```import matplotlib.pyplot as plt
-import numpy as np
-
-# Create a figure and axis
-fig, ax = plt.subplots(figsize=(6, 4))
-
-# Draw the water level
-water_level = 0.899
-ax.axhline(water_level, color='blue', linewidth=2, label='Water Level')
-
-# Draw the iceberg
-iceberg = plt.Polygon([(0.2, 0), (0.8, 0), (0.8, 1), (0.2, 1)], closed=True, color='white', edgecolor='black', linewidth=2, label='Iceberg')
-ax.add_patch(iceberg)
-
-# Shade the underwater portion
-underwater = plt.Polygon([(0.2, 0), (0.8, 0), (0.8, water_level), (0.2, water_level)], closed=True, color='lightblue', label='Underwater Portion (89.9%)')
-ax.add_patch(underwater)
-
-# Add labels and legend
-ax.set_xlabel('Width')
-ax.set_ylabel('Height')
-ax.set_title('Iceberg Buoyancy')
-ax.legend(handles=[iceberg, underwater], loc='upper right')
-
-# Set the limits and remove ticks
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_xticks([])
-ax.set_yticks([])
-
-plt.tight_layout()
-plt.show()
-```,
-width: 360pt),
-)
+$A = (400 "kg" dot 9.81 "m/s"^2)/(1000 "kg/m"^3 dot 9.81 "m/s"^2 dot 0.025 "m")$
 ]
+#v(20pt)
+#only("2-")[
+$A = 16 "m"^2$
 ]
 #only("1")[
-#voiceover("Hier ist eine Visualisierung eines Eisbergs, der im Wasser schwimmt. Die blaue Linie stellt den Wasserspiegel dar, und der hellblaue schattierte Bereich zeigt den unter Wasser liegenden Teil des Eisbergs, den wir auf etwa 89.9% des Gesamtvolumens berechnet haben.")
+#voiceover("Nun können wir die Werte einsetzen. Die Masse des Eisbären beträgt 400 Kilogramm, die Erdbeschleunigung beträgt 9,81 Meter pro Sekunde zum Quadrat, die Dichte des Wassers beträgt 1000 Kilogramm pro Kubikmeter und die Höhenänderung beträgt 0,025 Meter.")
 ]
+#only("2")[
+#voiceover("Wenn wir dies berechnen, erhalten wir, dass die Fläche der Eisscholle 16 Quadratmeter beträgt.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse 🔑]
+#text(size: 30pt, weight: "bold")[Fazit]
 #v(40pt)
-#only("1-")[- Der Auftrieb hängt von den Dichten des Objekts und der Flüssigkeit ab]
-#v(20pt)
-#only("2-")[- Im Gleichgewicht entspricht die Auftriebskraft der Gewichtskraft]
-#v(20pt)
-#only("3-")[- Das Verhältnis der Volumina entspricht dem Verhältnis der Dichten]
+#only("1-")[Die Fläche der Eisscholle beträgt $16 "m"^2$. 🧊]
 #only("1")[
-#voiceover("Die wichtigsten Erkenntnisse aus diesem Problem sind, dass der Auftrieb von den Dichten des Objekts und der Flüssigkeit abhängt, in der es sich befindet.")
-]
-#only("2")[
-#voiceover("Im Gleichgewicht entspricht die Auftriebskraft der Gewichtskraft des Objekts.")
-]
-#only("3")[
-#voiceover("Und das Verhältnis des verdrängten Volumens zum Gesamtvolumen des Objekts entspricht dem Verhältnis der Dichte des Objekts zur Dichte der Flüssigkeit.")
+#voiceover("Abschließend beträgt die Fläche der Eisscholle, auf die der Eisbär tritt, 16 Quadratmeter. Großartige Arbeit bei der Lösung dieses Problems!")
 ]
 ]
