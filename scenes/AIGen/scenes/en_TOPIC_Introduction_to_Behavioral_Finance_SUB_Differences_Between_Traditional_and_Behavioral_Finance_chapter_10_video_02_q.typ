@@ -29,4 +29,8 @@
 #only("3")[#voiceover("or are they mental shortcuts,")]
 #only("4")[#voiceover("or maybe market trends,")]
 #only("5")[#voiceover("or are they investment strategies?")]
-]
+]#questionDef(
+questionText: "Heuristics are _ _ _ _ _ .",
+answerOptions: ("complex algorithms", "mental shortcuts", "maybe market trends", "investment strategies"),
+correctAnswerIndex: 1,
+)

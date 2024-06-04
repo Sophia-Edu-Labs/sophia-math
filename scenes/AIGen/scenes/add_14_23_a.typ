@@ -4,6 +4,7 @@
 #set text(size: 20pt)
 #it.body
 ]
+
 #slide()[
 #text(size: 30pt, weight: "bold")[Aufgabe]
 #v(40pt)
@@ -46,27 +47,23 @@
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def plot_fraction_on_number_line(ax, fractions, labels, title):
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_xticks([i/12 for i in range(13)])
+    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
+    ax.set_yticks([])
+    ax.set_title(title, fontsize=20)
+    for frac, label in zip(fractions, labels):
+        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
+        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+fig, axs = plt.subplots(1, 2, figsize=(12, 3))
 
 #first plot the fraction 1/4
-plot_fraction_circle(axs[0], 4, 1, '1/4')
+plot_fraction_on_number_line(axs[0], [1/4], ['1/4'], '1/4')
 #then plot the fraction 2/3
-plot_fraction_circle(axs[1], 3, 2, '2/3')
+plot_fraction_on_number_line(axs[1], [2/3], ['2/3'], '2/3')
 
 plt.tight_layout()
 plt.show()
@@ -98,26 +95,22 @@ width: 360pt),
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def plot_fraction_on_number_line(ax, fractions, labels, title):
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_xticks([i/12 for i in range(13)])
+    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
+    ax.set_yticks([])
+    ax.set_title(title, fontsize=20)
+    for frac, label in zip(fractions, labels):
+        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
+        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+fig, axs = plt.subplots(1, 2, figsize=(12, 3))
 #first plot the fraction 3/12, which is equivalent to the fraction 1/4
-plot_fraction_circle(axs[0], 12, 3, '3/12')
+plot_fraction_on_number_line(axs[0], [3/12], ['3/12'], '3/12')
 #then plot the fraction 8/12, which is equivalent to the fraction 2/3
-plot_fraction_circle(axs[1], 12, 8, '8/12')
+plot_fraction_on_number_line(axs[1], [8/12], ['8/12'], '8/12')
 
 plt.tight_layout()
 plt.show()
@@ -148,24 +141,20 @@ width: 360pt),
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def plot_fraction_on_number_line(ax, fractions, labels, title):
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_xticks([i/12 for i in range(13)])
+    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
+    ax.set_yticks([])
+    ax.set_title(title, fontsize=20)
+    for frac, label in zip(fractions, labels):
+        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
+        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
 
-fig, ax = plt.subplots(figsize=(12, 5))
+fig, ax = plt.subplots(figsize=(12, 3))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 12, 11, '3/12 + 8/12 = 11/12')
+plot_fraction_on_number_line(ax, [11/12], ['11/12'], '3/12 + 8/12 = 11/12')
 
 plt.tight_layout()
 plt.show()
@@ -179,24 +168,20 @@ $ #sym.arrow.b $
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def plot_fraction_on_number_line(ax, fractions, labels, title):
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_xticks([i/12 for i in range(13)])
+    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
+    ax.set_yticks([])
+    ax.set_title(title, fontsize=20)
+    for frac, label in zip(fractions, labels):
+        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
+        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
 
-fig, ax = plt.subplots(figsize=(12, 5))
+fig, ax = plt.subplots(figsize=(12, 3))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 12, 11, '11/12')
+plot_fraction_on_number_line(ax, [11/12], ['11/12'], '11/12')
 
 plt.tight_layout()
 plt.show()

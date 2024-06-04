@@ -31,5 +31,6 @@
 #only("5")[#voiceover("or are they assumed to be unpredictable?")]
 ]#questionDef(
 questionText: "According to Traditional Finance, investors are assumed to be \$rational\$.",
-answerOptions: ("irrational", "influenced by biases", "rational", "unpredictable"), \ncorrectAnswerIndex: 2
+answerOptions: ("irrational", "influenced by biases", "rational", "unpredictable"),
+correctAnswerIndex: 2
 )

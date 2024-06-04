@@ -30,6 +30,7 @@
 #only("4")[#voiceover("or maybe market efficiency, which suggests prices reflect all available information,")]
 #only("5")[#voiceover("or is it utility maximization, where investors aim to maximize their satisfaction?")]
 ]#questionDef(
-questionText: "Which of the following is a psychological bias identified in behavioral finance?", \nanswerOptions: ("Overconfidence", "Rationality", "Market efficiency", "Utility maximization"),
+questionText: "Which of the following is a psychological bias identified in behavioral finance?", 
+answerOptions: ("Overconfidence", "Rationality", "Market efficiency", "Utility maximization"),
 correctAnswerIndex: 0
 )

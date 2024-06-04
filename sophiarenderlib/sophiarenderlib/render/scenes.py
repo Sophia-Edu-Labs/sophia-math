@@ -72,7 +72,7 @@ def render_scenes(scenes: List[Type[SophiaScene]],
     # render all scenes in module
     for sc in scenes:
         # create a new media folder for each scene
-        scene_media_folder = media_parent_folder / f"{sc.__module__}_{sc.__name__}_media"
+        scene_media_folder = media_parent_folder / f"{sc.__name__}_media"
         scene_media_folder.mkdir(parents=True, exist_ok=True)
 
         try: 

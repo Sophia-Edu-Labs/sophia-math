@@ -24,6 +24,7 @@
 #only("4")[#voiceover("or maybe seeking information that confirms one's beliefs,")]
 #only("5")[#voiceover("or is it none of the above?")]
 ]#questionDef(
-questionText: "What is confirmation bias?", \nanswerOptions: ("Seeking information that contradicts one's beliefs", "Ignoring information", "Seeking information that confirms one's beliefs", "None of the above"),
+questionText: "What is confirmation bias?", 
+answerOptions: ("Seeking information that contradicts one's beliefs", "Ignoring information", "Seeking information that confirms one's beliefs", "None of the above"),
 correctAnswerIndex: 2
 )

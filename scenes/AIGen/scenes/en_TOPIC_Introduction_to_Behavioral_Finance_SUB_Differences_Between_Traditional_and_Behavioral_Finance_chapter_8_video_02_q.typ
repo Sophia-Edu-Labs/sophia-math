@@ -10,7 +10,7 @@
 #text(size: 30pt, weight: "bold")[Behavioral Finance Criticism of EMH]
 // The title "Behavioral Finance Criticism of EMH" is shown on this slide
 #v(40pt)
-#only("1-")[Behavioral finance criticizes EMH by arguing that ____ can lead to market inefficiencies.]
+#only("1-")[Behavioral finance criticizes EMH by arguing that \_\_\_\_ can lead to market inefficiencies.]
 // The statement with the blank is shown from slide 1 onward
 #v(40pt)
 #only("2-")[a) rational behavior 🧠]

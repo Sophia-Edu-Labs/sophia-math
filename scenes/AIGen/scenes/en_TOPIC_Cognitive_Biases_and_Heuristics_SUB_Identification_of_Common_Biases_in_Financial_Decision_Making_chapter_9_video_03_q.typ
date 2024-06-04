@@ -30,6 +30,7 @@
 #only("4")[#voiceover("or does it have no effect at all,")]
 #only("5")[#voiceover("or does it improve rationality?")]
 ]#questionDef(
-questionText: "How can the availability heuristic affect financial decisions?", \nanswerOptions: ("It leads to accurate risk assessment", "It leads to overestimating unlikely events", "It has no effect", "It improves rationality"),
+questionText: "How can the availability heuristic affect financial decisions?", 
+answerOptions: ("It leads to accurate risk assessment", "It leads to overestimating unlikely events", "It has no effect", "It improves rationality"),
 correctAnswerIndex: 1
 )

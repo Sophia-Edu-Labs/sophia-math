@@ -29,5 +29,10 @@
 #only("3")[#voiceover("holding on to losing investments,")]
 #only("4")[#voiceover("more accurate predictions,")]
 #only("5")[#voiceover("or reduced risk?")]
-]#questionDef(
-questionText: "Loss aversion can lead to $_____$ . a)
+]
+
+#questionDef(
+questionText: "Loss aversion can lead to _____",
+answerOptions: ("better investment decisions", "holding on to losing investments", "more accurate predictions", "reduced risk"),
+correctAnswerIndex: 1,
+)
