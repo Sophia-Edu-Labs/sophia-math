@@ -7,21 +7,37 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Overconfidence Bias 🤔]
+#text(size: 30pt, weight: "bold")[Overconfidence Bias 🧠]
 #v(40pt)
-#only("1-")[- Overestimating one's abilities]
-#only("2-")[- Leads to excessive risk-taking in financial decisions 📉]
-#only("1")[
-#voiceover("Overconfidence bias is when individuals overestimate their own abilities.")
+#only("1-")[
+- Overestimating one's abilities 📈
 ]
+#v(20pt)
+#only("2-")[
+- Leads to excessive risk-taking 🎲
+]
+#v(20pt)
+#only("3-")[
+- Common in financial decisions 💰
+]
+
+#only("1")[
+#voiceover("Overconfidence bias is a cognitive bias where individuals overestimate their own abilities or knowledge.")
+]
+
 #only("2")[
-#voiceover("This leads to excessive risk-taking in financial decisions.")
+#voiceover("This bias can lead to excessive risk-taking, as people may believe they are more capable of making successful decisions than they actually are.")
+]
+
+#only("3")[
+#voiceover("Overconfidence bias is particularly common in financial decision-making, where it can result in suboptimal investments or trading strategies.")
 ]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Example 📊]
 #v(40pt)
+
 #only("1-")[
 #box()[
 #morphchildren(id: "plot")[
@@ -31,81 +47,69 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Data
-labels = ['Actual Skill', 'Perceived Skill']
-actual_skill = [5]
-perceived_skill = [8]
+actual_returns = 5
+estimated_returns = [10, 8, 12, 15, 6]
 
-x = np.arange(len(labels))  # the label locations
-width = 0.35  # the width of the bars
+# Create a bar chart
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.bar("Actual", actual_returns, color='blue', alpha=0.7, label='Actual Returns')
+ax.bar(range(len(estimated_returns)), estimated_returns, color='red', alpha=0.7, label='Estimated Returns')
 
-fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, actual_skill, width, label='Actual Skill', color='g')
-rects2 = ax.bar(x + width/2, perceived_skill, width, label='Perceived Skill', color='r')
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Skill Level')
-ax.set_title('Overconfidence Bias')
-ax.set_xticks(x)
-ax.set_xticklabels(labels)
+# Customize the chart
+ax.set_ylabel('Returns (%)')
+ax.set_title('Actual vs. Estimated Returns')
+ax.set_xticks(range(len(estimated_returns)))
+ax.set_xticklabels(['Investor ' + str(i+1) for i in range(len(estimated_returns))])
 ax.legend()
 
-def autolabel(rects):
-    """Attach a text label above each bar in *rects*, displaying its height."""
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate('{}'.format(height),
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
-                    textcoords="offset points",
-                    ha='center', va='bottom')
-
-autolabel(rects1)
-autolabel(rects2)
-
-fig.tight_layout()
-
+# Display the chart
+plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
-#only("1")[
-#voiceover("For example, an investor might rate their actual skill level at a 5, but due to overconfidence bias, they perceive their skill level as an 8.")
 ]
+
+#only("1")[
+#voiceover("Let's consider an example. Suppose the actual returns of an investment are 5%. However, due to overconfidence bias, investors might estimate their returns to be much higher, like 10%, 8%, 12%, 15%, or 6%.")
+]
+
+#only("2")[
+#voiceover("This chart illustrates the discrepancy between the actual returns (in blue) and the overconfident estimates made by individual investors (in red).")
+]
+
+#only("3")[
+#voiceover("Such overestimation of returns can lead investors to make risky decisions that may not align with the reality of the market.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Consequences 🔍]
+#text(size: 30pt, weight: "bold")[Mitigation Strategies 🛡️]
 #v(40pt)
-#only("1-")[- Overtrading]
-#only("2-")[- Underdiversification]
-#only("3-")[- Underestimating risks]
-#only("1")[
-#voiceover("This can lead to overtrading, as the investor believes they can time the market better than they actually can.")
+
+#only("1-")[
+- Seek out objective data 📊
 ]
-#only("2")[
-#voiceover("It can also lead to underdiversification, as the investor may believe they can pick winning stocks better than they actually can.")
+#v(20pt)
+#only("2-")[
+- Consider alternative perspectives 🔍
 ]
-#only("3")[
-#voiceover("Overall, overconfidence bias can cause investors to underestimate risks, leading to suboptimal financial decisions.")
-]
+#v(20pt)
+#only("3-")[
+- Be aware of one's biases 🧐
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Recap 🎬]
-#v(40pt)
-#only("1-")[- Overconfidence bias: overestimating one's abilities]
-#only("2-")[- Leads to excessive risk-taking 🎲]
-#only("3-")[- Can result in overtrading, underdiversification, underestimating risks]
 #only("1")[
-#voiceover("In summary, overconfidence bias is when individuals overestimate their own abilities.")
+#voiceover("To mitigate overconfidence bias, it's important to seek out objective data and base decisions on factual information rather than gut feelings.")
 ]
+
 #only("2")[
-#voiceover("This leads to excessive risk-taking in financial decisions.")
+#voiceover("Considering alternative perspectives and opinions can also help challenge one's own assumptions and overconfidence.")
 ]
+
 #only("3")[
-#voiceover("It can result in overtrading, underdiversification, and underestimating risks, all of which can negatively impact financial outcomes.")
+#voiceover("Most importantly, being aware of the existence of overconfidence bias and actively questioning one's own judgments can help reduce its impact on decision-making.")
 ]
 ]

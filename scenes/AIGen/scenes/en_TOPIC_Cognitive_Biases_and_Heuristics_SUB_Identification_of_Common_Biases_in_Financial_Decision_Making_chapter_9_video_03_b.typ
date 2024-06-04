@@ -7,9 +7,9 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Availability Heuristic]
+#text(size: 30pt, weight: "bold")[Great Job! 🎉]
 #v(40pt)
-#only("1-")[How can the availability heuristic affect financial decisions?]
+How can the availability heuristic affect financial decisions?
 #v(40pt)
 // From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is incorrect. 
 #only("-1")[a) It leads to accurate risk assessment]#only("2-")[#text(fill:red)[a) It leads to accurate risk assessment]]
@@ -22,60 +22,56 @@
 #v(10pt)
 // From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is incorrect.
 #only("-4")[d) It improves rationality]#only("5-")[#text(fill:red)[d) It improves rationality]]
-#v(40pt)
-
-#only("1")[#voiceover("That's absolutely right! Great job. Let's see why that answer is correct.")]
-// Very briefly Talk about a and why it is incorrect
-#only("2")[#voiceover("Option a) is incorrect. The availability heuristic does not lead to accurate risk assessment. In fact, it can lead to biased judgments.")]
-// Very briefly Talk about b and why it is correct
-#only("3")[#voiceover("Option b) is the correct answer. The availability heuristic can indeed lead to overestimating the likelihood of events that are more easily remembered or imagined, even if they are objectively unlikely.")]
-// Very briefly Talk about c and why it is incorrect
-#only("4")[#voiceover("Option c) is incorrect. The availability heuristic does have an effect on decision-making, so saying it has no effect is not accurate.")]
-// Very briefly Talk about d and why it is incorrect
-#only("5")[#voiceover("Option d) is also incorrect. The availability heuristic does not improve rationality. It can actually lead to less rational decisions by causing people to overweight easily recalled information.")]
+#only("1")[#voiceover("That's right, you chose the correct answer! Let's see why.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Explanation]
+#text(size: 30pt, weight: "bold")[Availability Heuristic]
 #v(40pt)
-#only("1-")[The availability heuristic is the tendency to overestimate the likelihood of events based on their availability in memory 🧠]
+#only("1-")[- Mental shortcut 🧠]
 #v(20pt)
-#only("2-")[This can lead to biases in financial decision-making 💰]
+#only("2-")[- Relies on immediate examples 📝]
 #v(20pt)
-#only("3-")[For example:]
-#v(10pt)
-#only("4-")[- Overestimating the probability of a stock market crash due to vivid memories of past crashes 📉]
+#only("3-")[- Overestimates likelihood of memorable events 📈]
+#v(20pt)
+#only("4-")[- Can lead to biased decisions 🚫]
 
-#only("1")[#voiceover("The availability heuristic is a mental shortcut where people judge the likelihood of events by how easily examples come to mind.")]
-#only("2")[#voiceover("In financial decision-making, this can lead to several biases.")]
-#only("3")[#voiceover("Let's consider a couple of examples.")]
-#only("4")[#voiceover("An investor might overestimate the probability of a stock market crash because dramatic crashes are more memorable than periods of steady growth.")]
+#only("1")[#voiceover("The availability heuristic is a mental shortcut that relies on immediate examples that come to mind.")]
+#only("2")[#voiceover("When making a decision, we often rely on information that's readily available in our memory, rather than examining other alternatives or procedures.")]
+#only("3")[#voiceover("This can lead us to overestimate the likelihood of events that are more memorable, even if they are actually uncommon.")]
+#only("4")[#voiceover("In financial decision-making, this bias can lead to inaccurate judgments and biased decisions.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Explanation (cont.)]
+#text(size: 30pt, weight: "bold")[Example]
 #v(40pt)
-#only("1-")[- Underestimating the risk of less memorable events, like gradual economic decline 📈]
+#only("1-")[- Vivid, recent stock market crash 📉]
 #v(20pt)
-#only("2-")[The availability heuristic can cause investors to make decisions based on biased perceptions rather than objective probabilities 🎲]
+#only("2-")[- Overestimate likelihood of future crash 😨]
+#v(20pt)
+#only("3-")[- Make overly cautious investment decisions 🔒]
+#v(20pt)
+#only("4-")[- Despite actual probability being low 📊]
 
-#only("1")[#voiceover("On the flip side, the same investor might underestimate the risk of a gradual economic decline because it's less vivid in memory.")]
-#only("2")[#voiceover("So in summary, the availability heuristic can cause investors to make judgments based on the ease of recall rather than the actual probabilities, leading to biased financial decisions.")]
+#only("1")[#voiceover("For instance, if there has been a vivid, well-publicized recent stock market crash, that event will be highly available in memory.")]
+#only("2")[#voiceover("Investors might then overestimate the likelihood of a future crash occurring.")]
+#only("3")[#voiceover("This could lead them to make overly cautious investment decisions, perhaps avoiding the stock market altogether.")]
+#only("4")[#voiceover("This would be an overreaction if the actual probability of another crash is quite low based on a broader analysis of market conditions.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Key Takeaways]
+#text(size: 30pt, weight: "bold")[Recap]
 #v(40pt)
-#only("1-")[- The availability heuristic is a cognitive bias 🧠]
+#only("1-")[- Availability heuristic: mental shortcut 🧠]
 #v(20pt)
-#only("2-")[- It leads to overestimating the likelihood of memorable events 📈]
+#only("2-")[- Overestimates likelihood of memorable events 📈]
 #v(20pt)
-#only("3-")[- This can cause biases in financial decision-making 💰]
+#only("3-")[- Can lead to biased financial decisions 🚫💰]
 #v(20pt)
-#only("4-")[- Investors should be aware of this bias and try to make decisions based on objective probabilities 🎲]
+#only("4-")[- Important to be aware of this bias 👀]
 
-#only("1")[#voiceover("The key thing to remember is that the availability heuristic is a cognitive bias, a systematic error in thinking.")]
-#only("2")[#voiceover("It causes people to overestimate the probability of events that are more easily recalled, often because they are dramatic or recent.")]
-#only("3")[#voiceover("In the context of financial decisions, this can lead to biases like overreacting to market fluctuations or underestimating long-term risks.")]
-#only("4")[#voiceover("As an investor, it's important to be aware of the availability heuristic and to try to base decisions on objective data and calculated probabilities rather than the vividness of memories. This can help minimize the impact of this bias on your financial choices.")]
+#only("1")[#voiceover("So in summary, the availability heuristic is a mental shortcut that relies on immediate examples that come to mind.")]
+#only("2")[#voiceover("It can cause us to overestimate the likelihood of events that are more memorable, even if they are actually uncommon.")]
+#only("3")[#voiceover("In financial decision-making, this can lead to biased, inaccurate judgments.")]
+#only("4")[#voiceover("It's important to be aware of this cognitive bias and to try to base financial decisions on a careful analysis of all relevant information, not just what's most readily available in memory.")]
 ]

@@ -7,27 +7,38 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Loss Aversion]
+#text(size: 30pt, weight: "bold")[Loss Aversion 📉]
 #v(40pt)
-#only("1-")[- Tendency to prefer avoiding losses over acquiring equivalent gains 📉💰]
-#v(20pt) 
-#only("2-")[- Example: More upset about losing \$100 than happy about gaining \$100]
-#v(20pt)
-#only("3-")[- Impacts financial decision-making 🏦💸]
+#only("1-")[- Tendency to prefer avoiding losses over acquiring equivalent gains 🙅‍♂️💰]
 #only("1")[
-#voiceover("Loss aversion is the tendency for people to prefer avoiding losses more than acquiring equivalent gains. In other words, the pain of losing is psychologically about twice as powerful as the pleasure of gaining.")
-]
-#only("2")[
-#voiceover("For example, if someone gave you $100, you would be quite happy. But if you lost $100, you would be more upset about it than you were happy about gaining the same amount.")  
-]
-#only("3")[
-#voiceover("This psychological bias can have a significant impact on how people make financial decisions, often leading to risk-averse behavior.")
+#voiceover("Loss aversion is the tendency for people to prefer avoiding losses rather than acquiring equivalent gains.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization]
+#text(size: 30pt, weight: "bold")[Example 🎰]
+#v(40pt)
+#only("1-")[- Given a coin flip:]
+#v(20pt)
+#only("2-")[  - Heads: Win \$100 💵]
+#only("3-")[  - Tails: Lose \$100 💸]
+#only("4-")[- Most people avoid this gamble! 🙅‍♀️]
+#only("1")[
+#voiceover("Let's consider an example. Imagine a coin flip where if it lands on heads, you win 100 dollars,")
+]
+#only("2")[
+#voiceover("and if it lands on tails, you lose 100 dollars.")
+]
+#only("3")[
+#voiceover("Even though the expected value of this gamble is zero, most people would avoid it.")
+]
+#only("4")[
+#voiceover("This is because the psychological impact of losing 100 dollars is greater than the attractiveness of winning 100 dollars.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualization 📊]
 #v(40pt)
 #only("1-")[
 #box()[
@@ -37,20 +48,27 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Data
 x = np.linspace(-10, 10, 100)
-y_gain = x**0.5
-y_loss = -2*(-x)**0.5
+y_gain = x
+y_loss = 2 * np.abs(x)
 
+# Create the plot
 fig, ax = plt.subplots(figsize=(6, 4))
-ax.plot(x[x>=0], y_gain[x>=0], 'g-', label='Gain')
-ax.plot(x[x<=0], y_loss[x<=0], 'r-', label='Loss')
-
-ax.set_xlabel('Change in Value')
-ax.set_ylabel('Psychological Impact')
-ax.set_title('Prospect Theory Value Function')
-ax.grid(True)
+ax.plot(x, y_gain, label='Gain')
+ax.plot(x, -y_loss, label='Loss')
+ax.fill_between(x, y_gain, alpha=0.3, where=(x > 0), color='green')
+ax.fill_between(x, -y_loss, alpha=0.3, where=(x < 0), color='red')
+ax.spines['left'].set_position('center')
+ax.spines['bottom'].set_position('center')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+ax.set_xlabel('Objective Value')
+ax.set_ylabel('Psychological Value')
+ax.set_title('Loss Aversion')
 ax.legend()
-
 plt.tight_layout()
 plt.show()
 ```,
@@ -59,45 +77,41 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("This graph illustrates the concept of loss aversion. The green line represents the psychological impact of gains, while the red line represents the impact of losses. Notice how the red line is steeper than the green line. This means that losses have a greater psychological impact than gains of the same magnitude.")
+#voiceover("This graph illustrates loss aversion. The green line represents gains, and the red line represents losses. Notice how the slope of the loss line is steeper than the gain line. This means that losses hurt more than equivalent gains, leading to loss-averse behavior.")
 ]
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Implications]
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions 💰]
 #v(40pt)
-#only("1-")[- Investors may hold onto losing investments too long 📉🕒]
-#v(20pt)
-#only("2-")[- May avoid risks even when the potential gain outweighs the potential loss 🎲❌]
-#v(20pt)
-#only("3-")[- Can lead to suboptimal financial decisions 🧮❌]
+#only("1-")[- Investors hold losing stocks too long 📉]
+#only("2-")[- Sell winning stocks too soon 📈]
+#only("3-")[- Avoid risky investments 🎲]
 #only("1")[
-#voiceover("One implication of loss aversion is that investors may hold onto losing investments for too long, hoping to avoid realizing the loss.")
+#voiceover("Loss aversion can significantly impact financial decisions. For example, investors may hold onto losing stocks for too long,")
 ]
 #only("2")[
-#voiceover("Another is that people may avoid risks even when the potential gain outweighs the potential loss, because the fear of loss is so powerful.")
+#voiceover("while selling winning stocks too soon.")
 ]
 #only("3")[
-#voiceover("Overall, loss aversion can lead to suboptimal financial decisions that are driven more by emotion than rational analysis.")
+#voiceover("They may also avoid risky investments altogether, even if they have a positive expected return.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
-#v(40pt)  
-#only("1-")[- Loss aversion: tendency to prefer avoiding losses over equivalent gains 📉💰]
-#v(20pt)
-#only("2-")[- Losses have about twice the psychological impact of gains 😢>😊]
-#v(20pt)
-#only("3-")[- Can lead to risk-averse, suboptimal financial decisions 🎲❌🧮]
+#text(size: 30pt, weight: "bold")[Summary 🎬]
+#v(40pt)
+#only("1-")[- Loss aversion: tendency to avoid losses over acquiring gains.]
+#only("2-")[- Losses hurt more than equivalent gains.]
+#only("3-")[- Can lead to suboptimal financial decisions.]
 #only("1")[
 #voiceover("In summary, loss aversion is the tendency to prefer avoiding losses over acquiring equivalent gains.")
 ]
-#only("2")[  
-#voiceover("Losses have about twice the psychological impact of gains.")
+#only("2")[
+#voiceover("This is because losses tend to hurt more than equivalent gains.")
 ]
 #only("3")[
-#voiceover("This bias can lead to risk-averse behavior and suboptimal financial decisions. Understanding loss aversion can help us make more rational, less emotionally-driven choices with our money.")
+#voiceover("Loss aversion can lead to suboptimal financial decisions, such as holding losing investments too long and avoiding risky but potentially profitable investments.")
 ]
 ]

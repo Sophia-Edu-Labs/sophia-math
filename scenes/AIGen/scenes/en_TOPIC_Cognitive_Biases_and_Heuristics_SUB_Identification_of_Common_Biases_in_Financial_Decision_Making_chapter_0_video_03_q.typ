@@ -7,24 +7,18 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Cognitive Biases in Financial Decisions]
-// The title "Cognitive Biases in Financial Decisions" is shown on this slide
+#text(size: 30pt, weight: "bold")[Cognitive Biases in Financial Decisions 🧠💰]
 #v(40pt)
-#only("1-")[How do cognitive biases affect financial decisions? 🤔]
-// The question is shown from slide 1 onward
+#only("1-")[How do cognitive biases affect financial decisions?]
 #v(40pt)
-#only("2-")[a) They make decisions more accurate 📈]
-// Answer option a) is shown from slide 2 onward
+#only("2-")[a) They make decisions more accurate 🎯]
 #v(10pt)
 #only("3-")[b) They cause systematic errors ❌]
-// Answer option b) is shown from slide 3 onward
 #v(10pt)
 #only("4-")[c) They have no effect 🤷]
-// Answer option c) is shown from slide 4 onward
 #v(10pt)
-#only("5-")[d) They improve rationality 🧠]
-// Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's test your understanding of cognitive biases. How do cognitive biases affect financial decisions?")]
+#only("5-")[d) They improve rationality 🧠✅]
+#only("1")[#voiceover("Let's test your understanding of cognitive biases in financial decision-making. How do cognitive biases affect financial decisions?")]
 #only("2")[#voiceover("Do they make decisions more accurate,")]
 #only("3")[#voiceover("or do they cause systematic errors,")]
 #only("4")[#voiceover("or maybe they have no effect at all,")]

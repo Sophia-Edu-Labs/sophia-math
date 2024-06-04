@@ -7,111 +7,78 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Loss Aversion Recap]
+#text(size: 30pt, weight: "bold")[Loss Aversion 📉]
+
 #v(40pt)
-#only("1")[
-#voiceover("Let's quickly recap what we learned about loss aversion. Loss aversion is the tendency to prefer avoiding losses rather than acquiring equivalent gains.")
-]
-#only("1-")[
-- Prefer avoiding losses over acquiring gains 📉
-]
+
+#only("1-")[- Tendency to prefer avoiding losses over acquiring equivalent gains]
+
 #v(20pt)
-#only("2")[
-#voiceover("For example, the pain of losing $100 is psychologically more powerful than the pleasure of gaining $100.")
-]
+
 #only("2-")[
-- Losing \$100 feels worse than gaining \$100 feels good 😟 > 😊
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(```
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create data
+x = np.linspace(-10, 10, 100)
+y_gain = x
+y_loss = 2 * np.abs(x)
+
+# Create plot
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(x, y_gain, label='Gain')
+ax.plot(x, -y_loss, label='Loss')
+ax.fill_between(x, -y_loss, alpha=0.3, color='red')
+ax.fill_between(x, y_gain, alpha=0.3, color='green')
+
+# Add labels and legend
+ax.set_xlabel('Outcome')
+ax.set_ylabel('Psychological Value')
+ax.set_title('Loss Aversion')
+ax.legend()
+
+# Show plot
+plt.tight_layout()
+plt.show()
+```, width: 360pt))
 ]
-#v(20pt)
-#only("3")[
-#voiceover("This bias can lead to risk-averse behavior when people evaluate a potential loss, leading to irrational financial decisions.")
-]
-#only("3-")[
-- Leads to risk-averse behavior and irrational decisions 🙅‍♂️
-]
-#v(20pt)
-#only("4")[
-#voiceover("Understanding and being aware of loss aversion can help improve financial decision-making by recognizing when this bias might be influencing your choices.")
-]
-#only("4-")[
-- Awareness can improve decision-making 🧠💡
 ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Key Takeaways]
-// The title "Key Takeaways" is shown on this slide
-#v(40pt)
 #only("1")[
-#voiceover("So, in summary, the key takeaways about loss aversion are:")
-]
-#only("1-")[
-1. Loss aversion is a cognitive bias 🧠
-]
-// This numbered point is shown from slide 1 onward
-#v(20pt)
-#only("2")[
-#voiceover("It causes people to feel the pain of a loss more intensely than the pleasure of an equivalent gain.")
-]
-#only("2-")[
-2. Losses feel more powerful than gains 📉 > 📈
-]
-// This numbered point is shown from slide 2 onward
-#v(20pt)
-#only("3")[
-#voiceover("This can lead to irrational, risk-averse behavior in financial decision-making.")
-]
-#only("3-")[
-3. Leads to risk-averse, irrational financial decisions 🙅‍♂️💸
-]
-// This numbered point is shown from slide 3 onward
-#v(20pt)
-#only("4")[
-#voiceover("Being aware of this bias can help you make more rational, balanced decisions when evaluating potential losses and gains.")
-]
-#only("4-")[
-4. Awareness is key to better decision-making 🔑🧠
-]
-// This numbered point is shown from slide 4 onward
+#voiceover("Loss aversion is the tendency to prefer avoiding losses over acquiring equivalent gains.")
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Overcoming Loss Aversion]
-// The title "Overcoming Loss Aversion" is shown on this slide
-#v(40pt)
-#only("1")[
-#voiceover("To overcome loss aversion in your financial decisions, consider the following tips:")
-]
-#only("1-")[
-1. Recognize the bias 🧐
-]
-// This numbered point is shown from slide 1 onward
-#v(20pt)
 #only("2")[
-#voiceover("Be aware of your emotional reactions to potential losses and gains. Acknowledge when you might be overemphasizing the impact of a loss.")
+#voiceover("This graph illustrates loss aversion. The red area represents the psychological impact of losses, while the green area represents the impact of gains. As you can see, the impact of a loss is much greater than the impact of an equivalent gain.")
 ]
-#only("2-")[
-2. Evaluate decisions objectively 🤔📊
-]
-// This numbered point is shown from slide 2 onward
-#v(20pt)
-#only("3")[
-#voiceover("Focus on the long-term implications and overall expected value of a decision, rather than just the potential for short-term losses.")
-]
+
 #only("3-")[
-3. Consider long-term outcomes 🔭📈
+- Example: The pain of losing \$100 is greater than the pleasure of finding \$100 💸
 ]
-// This numbered point is shown from slide 3 onward
-#v(20pt)
-#only("4")[
-#voiceover("Seek out diverse perspectives and advice to help balance your own biases when making important financial choices.")
+
+#only("3")[
+#voiceover("For example, the pain of losing 100 dollars is typically greater than the pleasure of finding 100 dollars.")
 ]
+
 #only("4-")[
-4. Get outside input 🗣️👥
+- Leads to risk-averse behavior in financial decisions 🙅‍♂️
 ]
-// This numbered point is shown from slide 4 onward
-#v(20pt)
+
+#only("4")[
+#voiceover("Loss aversion leads to risk-averse behavior in financial decisions, as people try to avoid potential losses.")
+]
+
+#only("5-")[
+- Part of Prospect Theory in behavioral economics 📊
+]
+
 #only("5")[
-#voiceover("By recognizing and actively working to counter loss aversion, you can make more rational, balanced financial decisions for your long-term success.")
+#voiceover("Loss aversion is a key part of Prospect Theory in behavioral economics, which describes how people make decisions under risk and uncertainty.")
 ]
+
 ]

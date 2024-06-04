@@ -24,13 +24,13 @@
 #v(10pt)
 #only("5-")[d) It improves rationality 🧠]
 // Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's test your knowledge on the representativeness heuristic. How can this cognitive bias affect financial decisions?")]
+#only("1")[#voiceover("Let's test your understanding of the representativeness heuristic. How can this heuristic affect financial decisions?")]
 #only("2")[#voiceover("Does it lead to accurate probability assessment,")]
 #only("3")[#voiceover("or does it lead to ignoring base rates,")]
-#only("4")[#voiceover("or maybe it has no effect at all,")]
+#only("4")[#voiceover("or perhaps it has no effect at all,")]
 #only("5")[#voiceover("or does it improve rationality in decision making?")]
 ]#questionDef(
 questionText: "How can the representativeness heuristic affect financial decisions?",
 answerOptions: ("It leads to accurate probability assessment", "It leads to ignoring base rates", "It has no effect", "It improves rationality"),
-correctAnswerIndex: 1
+correctAnswerIndex: 1,
 )

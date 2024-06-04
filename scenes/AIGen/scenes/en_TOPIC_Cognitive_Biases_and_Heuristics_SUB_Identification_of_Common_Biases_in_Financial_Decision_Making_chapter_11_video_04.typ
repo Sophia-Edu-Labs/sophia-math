@@ -7,67 +7,56 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Recap: Common Biases in Financial Decision-Making]
-
+#text(size: 30pt, weight: "bold")[Recap: Common Biases 🧠]
+#v(40pt)
 #only("1-")[
-- Overconfidence 🦸
-- Confirmation 🎯 
+- Overconfidence 😎
+- Confirmation 👍
 - Loss aversion 📉
 - Anchoring ⚓
 - Herd behavior 🐑
-- Recency ⏰
+- Recency 🆕 
 - Sunk cost fallacy 💸
 - Hindsight 🔙
-- Availability 🧠
+- Availability 📖
 - Representativeness 🖼️
 ]
 
 #only("1")[
-#voiceover("Let's recap the common biases in financial decision-making that we've covered. These include overconfidence, confirmation bias, loss aversion, anchoring, herd behavior, recency bias, the sunk cost fallacy, hindsight bias, the availability heuristic, and the representativeness heuristic.")
-]
-
-#only("2")[
-#voiceover("Remember, these biases generally cause systematic errors in our financial decisions. They lead us to make choices that deviate from rational, optimal decision-making.")
-]
-
-#only("3-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(```
-import matplotlib.pyplot as plt
-import numpy as np
-
-biases = ['Overconfidence', 'Confirmation', 'Loss Aversion', 'Anchoring', 'Herd Behavior', 
-          'Recency', 'Sunk Cost', 'Hindsight', 'Availability', 'Representativeness']
-impact = [0.8, 0.7, 0.9, 0.6, 0.8, 0.5, 0.7, 0.6, 0.8, 0.7]  
-
-fig, ax = plt.subplots(figsize=(10, 6))
-
-bars = ax.barh(biases, impact)
-
-ax.bar_label(bars, labels=[f"{x:.2f}" for x in impact], padding=8)  
-
-ax.set_xlim(0, 1)
-ax.set_xlabel('Impact on Financial Decisions')
-ax.set_ylabel('Cognitive Biases')
-ax.set_title('Impact of Cognitive Biases on Financial Decision-Making')
-
-plt.tight_layout()
-plt.show()
-```,
-width: 360pt),
-caption: [Impact of cognitive biases on financial decision-making. The higher the bar, the more the bias impacts financial decisions.],
-)
+#voiceover("Let's recap the common biases in financial decision-making we've covered. These include overconfidence, confirmation bias, loss aversion, anchoring, herd behavior, recency bias, the sunk cost fallacy, hindsight bias, the availability heuristic, and the representativeness heuristic.")
 ]
 ]
 
-#only("3")[
-#voiceover("This chart illustrates the relative impact each of these biases can have on our financial choices. Loss aversion, overconfidence, herd behavior, and the availability heuristic tend to have the strongest influence.")
+#slide()[
+#text(size: 30pt, weight: "bold")[Impact on Decisions 📊]
+#v(40pt)
+#only("1-")[These biases generally cause systematic errors in financial decisions. 🚫💰]
+
+#only("1")[
+#voiceover("It's important to remember that these biases generally cause systematic errors in our financial decisions. They can lead us to make choices that are not fully rational or optimal from a financial perspective.")
+]
 ]
 
-#only("4")[
-#voiceover("By being aware of these biases and actively working to counter them, we can improve the quality of our financial decisions. It's a continuous process of self-reflection and improvement.")
+#slide()[
+#text(size: 30pt, weight: "bold")[Awareness is Key 🔑]
+#v(40pt)
+#only("1-")[Being aware of these biases can help us make more rational and informed financial choices. 💡]
+
+#only("1")[
+#voiceover("The key is to be aware of these biases. By understanding how they can influence our thinking, we can take steps to counteract them and make more rational, informed financial choices.")
 ]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Conclusion]
+#v(40pt)
+#only("1-")[
+- Common biases affect financial decisions 📉
+- They cause systematic errors 🚫
+- Awareness can improve decision-making 💡
+]
+
+#only("1")[
+#voiceover("In conclusion, common biases like overconfidence, loss aversion, and the sunk cost fallacy can have a significant impact on our financial decision-making. They often lead to systematic errors. But by being aware of these biases, we can work to overcome them and make better financial choices.")
 ]
 ]

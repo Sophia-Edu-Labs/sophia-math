@@ -8,66 +8,98 @@
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Confirmation Bias]
+// The title "Confirmation Bias" is shown on all slides
 #v(40pt)
-#only("1-")[- Tendency to search for, interpret, and remember information that confirms one's preconceptions 🧠]
+#only("1-")[- Tendency to seek information that confirms preconceptions 🔍]
+// The point about seeking confirming information is shown from slide 1 onward
+#v(20pt)
+#only("2-")[- Interpret ambiguous information as supporting one's views 🧠]
+// The point about interpreting information to support one's views is shown from slide 2 onward
+#v(20pt)
+#only("3-")[- Remember information that reinforces prior beliefs 📚]
+// The point about remembering reinforcing information is shown from slide 3 onward
 #only("1")[
-#voiceover("Confirmation bias is the tendency to search for, interpret, and remember information that confirms one's preconceptions.")
+#voiceover("Confirmation bias is the tendency to search for information that confirms one's preconceptions.")
+]
+#only("2")[
+#voiceover("This means that people are more likely to interpret ambiguous information in a way that supports their existing views.")
+]
+#only("3")[
+#voiceover("They also tend to remember information that reinforces their prior beliefs more easily than information that challenges them.")
 ]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Example]
+// The title "Example" is shown on this slide
 #v(40pt)
-#only("1-")[- Believing that vaccines cause autism 💉]
+#only("1-")[- Investor believes a stock will perform well 📈]
+// The example setup is shown from slide 1 onward
 #v(20pt)
-#only("2-")[- Seeking out stories and anecdotes that support this belief 🔍]
+#only("2-")[- Seeks out positive news and analyst reports 📰]
+// The point about seeking positive information is shown from slide 2 onward
 #v(20pt)
-#only("3-")[- Ignoring or discounting scientific evidence to the contrary 🙈]
+#only("3-")[- Ignores or downplays negative information ❌]
+// The point about ignoring negative information is shown from slide 3 onward
+#v(20pt)
+#only("4-")[- Remembers the stock's past successes 💡]
+// The point about remembering past successes is shown from slide 4 onward
 #only("1")[
-#voiceover("For example, let's say someone believes that vaccines cause autism.")
+#voiceover("Let's consider an example. Suppose an investor believes that a particular stock will perform well.")
 ]
 #only("2")[
-#voiceover("Due to confirmation bias, they might actively seek out stories and anecdotes that support this belief.")
+#voiceover("Due to confirmation bias, the investor may seek out positive news about the company and focus on analyst reports that support their view.")
 ]
 #only("3")[
-#voiceover("At the same time, they might ignore or discount the overwhelming scientific evidence that shows no link between vaccines and autism.")
+#voiceover("They might ignore or downplay negative information that contradicts their belief.")
+]
+#only("4")[
+#voiceover("The investor is also more likely to remember the stock's past successes and forget about its failures.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Impact on Decision-Making]
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions]
+// The title "Impact on Financial Decisions" is shown on this slide
 #v(40pt)
-#only("1-")[- Can lead to poor decisions in various domains, including finance 💰]
+#only("1-")[- Leads to overconfidence in one's beliefs 😎]
+// The point about overconfidence is shown from slide 1 onward
 #v(20pt)
-#only("2-")[- Example: Investor believes a stock will perform well 📈]
+#only("2-")[- Causes investors to hold losing positions too long 📉]
+// The point about holding losing positions is shown from slide 2 onward
 #v(20pt)
-#only("3-")[- Seeks out information that confirms this belief, ignores warning signs 🚨]
+#only("3-")[- Results in under-diversified portfolios 🗂️]
+// The point about under-diversified portfolios is shown from slide 3 onward
 #only("1")[
-#voiceover("Confirmation bias can lead to poor decision-making in various domains, including finance.")
+#voiceover("Confirmation bias can lead to overconfidence in one's beliefs about an investment.")
 ]
 #only("2")[
-#voiceover("For instance, if an investor believes a particular stock will perform well, they might...")
+#voiceover("This can cause investors to hold on to losing positions for too long, hoping that their initial assessment will prove correct.")
 ]
 #only("3")[
-#voiceover("...seek out information that confirms this belief, while ignoring any warning signs that the stock might be overvalued or the company might be in trouble.")
+#voiceover("It can also result in under-diversified portfolios, as investors may favor investments that align with their preconceptions and avoid those that don't.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Overcoming Confirmation Bias]
+#text(size: 30pt, weight: "bold")[Summary]
+// The title "Summary" is shown on this slide
 #v(40pt)
-#only("1-")[- Actively seek out information that challenges your beliefs 🔎]
+#only("1-")[- Confirmation bias: Seeking information that confirms preconceptions 🔍]
+// The summary point about confirmation bias is shown from slide 1 onward
 #v(20pt)
-#only("2-")[- Consider alternative explanations and viewpoints 🌈]
+#only("2-")[- Impacts financial decisions by causing overconfidence and suboptimal portfolios 📊]
+// The summary point about the impact on financial decisions is shown from slide 2 onward
 #v(20pt)
-#only("3-")[- Base decisions on objective data and evidence 📊]
+#only("3-")[- Investors should actively seek out contradictory information 🔎]
+// The point about seeking contradictory information is shown from slide 3 onward
 #only("1")[
-#voiceover("To overcome confirmation bias, it's important to actively seek out information that challenges your existing beliefs.")
+#voiceover("In summary, confirmation bias is the tendency to seek out information that confirms one's preconceptions.")
 ]
 #only("2")[
-#voiceover("Try to consider alternative explanations and viewpoints, even if they contradict what you currently think.")
+#voiceover("In financial decision-making, this bias can lead to overconfidence, holding losing positions too long, and under-diversified portfolios.")
 ]
 #only("3")[
-#voiceover("Most importantly, aim to base your decisions on objective data and evidence, rather than just the information that confirms what you already believe.")
+#voiceover("To combat confirmation bias, investors should actively seek out information that contradicts their beliefs and consider alternative viewpoints.")
 ]
 ]

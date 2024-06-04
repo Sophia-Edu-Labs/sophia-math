@@ -22,45 +22,61 @@ What is the availability heuristic?
 #v(10pt)
 // From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is false.  
 #only("-4")[d) None of the above]#only("5-")[#text(fill:red)[d) None of the above]]
-#v(40pt)
 
-#only("1")[#voiceover("That's right, great job! 🎉 You correctly identified the availability heuristic.")]
-#only("2")[#voiceover("Option a) is incorrect. The availability heuristic is not about using statistical data, but rather about relying on memory.")]  
-#only("3")[#voiceover("Option b) is the correct answer. The availability heuristic is indeed the tendency to overestimate the likelihood of events based on their availability in memory. 🧠")]
-#only("4")[#voiceover("Option c) is incorrect. The availability heuristic doesn't involve ignoring memorable events, but rather overestimating their likelihood because they are memorable.")]
-#only("5")[#voiceover("And option d) is also incorrect, because one of the other options (b) is the correct definition of the availability heuristic.")]
+#only("1")[#voiceover("That's right, great job!")]
+#only("2")[#voiceover("Option a) Estimating likelihood based on statistical data is incorrect. The availability heuristic does not involve using statistical data.")]  
+#only("3")[#voiceover("Option b) Overestimating likelihood based on memory is the correct answer. The availability heuristic is indeed the tendency to overestimate the likelihood of events based on their availability in memory.")]
+#only("4")[#voiceover("Option c) Ignoring memorable events is also incorrect. The availability heuristic actually involves overemphasizing memorable events, not ignoring them.")]
+#only("5")[#voiceover("And option d) None of the above is incorrect, because option b) is the correct answer.")]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Explanation]
 #v(40pt)  
-#only("1-")[The availability heuristic is a mental shortcut that relies on immediate examples that come to mind. 🤔]
+#only("1-")[The availability heuristic is a mental shortcut that relies on immediate examples that come to a person's mind when evaluating a specific topic, concept, method or decision. 🧠]
 #v(20pt)
-#only("2-")[It operates on the notion that if something can be recalled, it must be important or at least more common. 📈]
-#v(20pt)  
-#only("3-")[However, this can lead to biases and overestimating the likelihood of events. ⚠]
-#v(20pt)
-#only("4-")[For example, after seeing several news reports about plane crashes, you might overestimate the probability of being in a plane crash. ✈]
+#only("2-")[Key points: ]
+#v(10pt)
+#only("3-")[- Estimating likelihood based on ease of recall 📖]
+#v(10pt)  
+#only("4-")[- Memorable events seem more probable ⭐]
+#v(10pt)
+#only("5-")[- Can lead to biases and errors in judgment ⚠]
 
-#only("1")[#voiceover("The availability heuristic is a mental shortcut that relies on immediate examples that come to mind when evaluating a specific topic, concept, method or decision.")]  
-#only("2")[#voiceover("It operates on the notion that if something can be recalled, it must be important, or at least more common than alternatives that are not as readily recalled.")]
-#only("3")[#voiceover("However, this heuristic can lead to systematic biases and cause people to overestimate the likelihood of events that are easily recalled.")]  
-#only("4")[#voiceover("For example, after seeing several news reports about plane crashes, you might overestimate the probability of being in a plane crash, even though plane crashes are quite rare.")]
+#only("1")[#voiceover("The availability heuristic is a mental shortcut that relies on immediate examples that come to a person's mind when evaluating a specific topic, concept, method or decision.")]
+#only("2")[#voiceover("Here are the key points to remember:")]  
+#only("3")[#voiceover("First, people estimate the likelihood of an event based on how easily examples come to mind, rather than on actual statistical probability.")]
+#only("4")[#voiceover("Second, events that are more memorable, vivid, or emotionally charged seem more probable than they really are.")]
+#only("5")[#voiceover("Finally, while heuristics can be useful, the availability heuristic can lead to systematic biases and errors in judgment and decision-making.")]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Example]
+#v(40pt)
+#only("1-")[After seeing several news reports about car thefts, you might start to believe that such crimes are more common than they are. 🚗�robber]
+#v(20pt)  
+#only("2-")[The availability of vivid examples in your memory makes car theft seem more likely. 🧠💭]
+#v(20pt)
+#only("3-")[However, the actual probability hasn't changed, only your perception of it. 📊🔍]
+
+#only("1")[#voiceover("For example, after seeing several news reports about car thefts, you might start to believe that such crimes are more common than they actually are.")]
+#only("2")[#voiceover("The availability of these vivid examples in your memory makes car theft seem more likely, even if the actual frequency hasn't increased.")]
+#only("3")[#voiceover("In reality, the probability of car theft hasn't changed, only your perception of it due to the availability heuristic.")]  
 ]
 
 #slide()[  
-#text(size: 30pt, weight: "bold")[Key Points]
+#text(size: 30pt, weight: "bold")[Recap]
 #v(40pt)
-#only("1-")[- Mental shortcut relying on immediate examples 🧠]
+#only("1-")[- Availability heuristic: estimating likelihood based on ease of recall 🧠]
+#v(20pt)
+#only("2-")[- Memorable events seem more probable ⭐]  
+#v(20pt)
+#only("3-")[- Can lead to biases and errors in judgment ⚠]
 #v(20pt)  
-#only("2-")[- Assumes easily recalled = more common 📊]
-#v(20pt)
-#only("3-")[- Can lead to biases & overestimation ⚠]  
-#v(20pt)
-#only("4-")[- Affects judgment & decision-making 🤔]
+#only("4-")[- Be aware of this cognitive bias in decision-making 🎯]
 
-#only("1")[#voiceover("To summarize, the availability heuristic is a mental shortcut that relies on immediate examples that come to mind.")]
-#only("2")[#voiceover("It assumes that if something can be easily recalled, it must be more common or likely.")]  
-#only("3")[#voiceover("However, this can lead to biases and cause people to overestimate the likelihood of events that are easily remembered.")]
-#only("4")[#voiceover("The availability heuristic can significantly affect our judgment and decision-making, especially in areas like financial decisions. 💰 It's important to be aware of this bias and to seek out actual data when making important decisions.")]  
+#only("1")[#voiceover("To recap, the availability heuristic is a cognitive shortcut where we estimate the likelihood of an event based on how easily examples come to mind.")]
+#only("2")[#voiceover("Events that are more memorable or emotionally charged seem more probable than they really are.")]
+#only("3")[#voiceover("This heuristic can lead to biases and errors in judgment and decision-making.")]
+#only("4")[#voiceover("It's important to be aware of the availability heuristic and to try to base decisions on objective data when possible, rather than just the most salient examples in our memory.")]
 ]

@@ -7,77 +7,57 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Hindsight Bias 🔙👀]
+#text(size: 30pt, weight: "bold")[Hindsight Bias Recap]
 #v(40pt)
+#only("1-")[- Tendency to see past events as predictable 🔮]
+#v(20pt)
+#only("2-")[- Occurs after the event has already happened ⏰]
+#v(20pt)
+#only("3-")[- Can lead to overconfidence in predicting future events 🚀]
 
-#only("1-")[
-- Seeing past events as predictable 🔮
-]
-
-#only("2-")[
-- Example: "I knew it all along" 💡
-]
-
-#only("3-")[
-- Affects financial decisions 💰
-]
-
-#only("4-")[
-- Leads to overconfidence in predicting future events 🙌
-]
-
-#only("1")[
-#voiceover("Hindsight bias is the tendency to see events as having been predictable after they have already occurred.")
-]
-
-#only("2")[
-#voiceover("For example, after an event has happened, people often say things like 'I knew it all along', even if they had no way of predicting it beforehand.")
-]
-
-#only("3")[
-#voiceover("This bias can affect financial decisions. When looking back at past investments or market movements, people may feel like they could have easily predicted the outcomes.")
-]
-
-#only("4")[
-#voiceover("However, this false sense of predictability can lead to overconfidence in one's ability to predict future events, which can result in poor decision making.")
-]
-
+#only("1")[#voiceover("Hindsight bias is the tendency to see events as having been predictable after they have already occurred.")]
+#only("2")[#voiceover("This bias occurs when looking back at events that have already taken place.")]
+#only("3")[#voiceover("Hindsight bias can lead to overconfidence in one's ability to predict future events, as past events seem more predictable in hindsight.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Avoiding Hindsight Bias 🚫]
+#text(size: 30pt, weight: "bold")[Example]
 #v(40pt)
+#only("1-")[- After a stock market crash 📉]
+#v(20pt)
+#only("2-")[- People may say it was "obvious" it would happen 🗣️]
+#v(20pt)
+#only("3-")[- But they didn't predict it before the crash 🤔]
 
-#only("1-")[
-- Recognize the bias 🧠
+#only("1")[#voiceover("For example, after a stock market crash, ...")]
+#only("2")[#voiceover("... people may say that it was obvious that the crash was going to happen.")]
+#only("3")[#voiceover("However, these same people likely did not predict the crash before it occurred, showing the effect of hindsight bias.")]
 ]
 
-#only("2-")[
-- Keep records of predictions 📝
+#slide()[
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions]
+#v(40pt)
+#only("1-")[- Can lead to overconfidence in future predictions 🔮]
+#v(20pt)
+#only("2-")[- May cause investors to take on more risk 🎲]
+#v(20pt)
+#only("3-")[- Important to be aware of and try to avoid 🧠]
+
+#only("1")[#voiceover("In financial decision-making, hindsight bias can lead to overconfidence in one's ability to predict future market movements.")]
+#only("2")[#voiceover("This overconfidence may cause investors to take on more risk than they should, believing they can predict market trends.")]
+#only("3")[#voiceover("It's important for investors to be aware of hindsight bias and try to avoid it when making financial decisions.")]
 ]
 
-#only("3-")[
-- Consider alternative outcomes 🤔
-]
+#slide()[
+#text(size: 30pt, weight: "bold")[Key Takeaways]
+#v(40pt)
+#only("1-")[- Hindsight bias: seeing past events as predictable 🔮]
+#v(20pt)
+#only("2-")[- Can lead to overconfidence in future predictions 🚀]
+#v(20pt)
+#only("3-")[- Be aware of it and try to avoid it in financial decisions 🧠💰]
 
-#only("4-")[
-- Stay humble and open-minded 🙏
-]
-
-#only("1")[
-#voiceover("To avoid hindsight bias, it's important to first recognize that it exists and can influence your thinking.")
-]
-
-#only("2")[
-#voiceover("One way to combat this bias is to keep records of your predictions before an event occurs. This way, you can compare your actual predictions to what you later feel you 'knew all along'.")
-]
-
-#only("3")[
-#voiceover("It's also helpful to consider alternative outcomes. Just because something happened one way doesn't mean it was the only possible outcome.")
-]
-
-#only("4")[
-#voiceover("Finally, stay humble and open-minded. Acknowledge that predicting the future is difficult, and that even when things seem obvious in hindsight, they may not have been so clear beforehand.")
-]
-
+#only("1")[#voiceover("To recap, hindsight bias is the tendency to see past events as having been more predictable than they actually were.")]
+#only("2")[#voiceover("This bias can lead to overconfidence in one's ability to predict future events, especially in financial markets.")]
+#only("3")[#voiceover("To make better financial decisions, it's crucial to be aware of hindsight bias and actively try to avoid it.")]
 ]

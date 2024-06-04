@@ -7,77 +7,77 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Sunk Cost Fallacy]
+#text(size: 30pt, weight: "bold")[The Sunk Cost Fallacy 💸]
 #v(40pt)
-#only("1-")[- Tendency to continue an endeavor 🚀]
+#only("1-")[- Tendency to continue an endeavor]
 #v(20pt)
-#only("2-")[- Once an investment has been made 💰⌛]
+#only("2-")[- Due to previous investment 💰⏳]
 #v(20pt)
-#only("3-")[- Even if it's no longer rational to do so 🤔❌]
+#only("3-")[- Even if it's no longer rational 🤔❌]
 #only("1")[
 #voiceover("The sunk cost fallacy is a tendency to continue an endeavor or project...")
 ]
 #only("2")[
-#voiceover("...once an investment in money, effort, or time has already been made.")
+#voiceover("...once an investment in money, effort, or time has been made.")
 ]
 #only("3")[
-#voiceover("This happens even when it's no longer rational to continue with the endeavor.")
+#voiceover("This happens even when continuing is no longer the rational choice.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Movie 🎥]
+#text(size: 30pt, weight: "bold")[Example: Movie Tickets 🎥]
 #v(40pt)
-#only("1-")[- You paid \$10 for a movie ticket 🎫💸]
+#only("1-")[- You bought expensive movie tickets 💸]
 #v(20pt)
-#only("2-")[- 30 minutes in, you realize the movie is terrible 😖]
+#only("2-")[- The movie is terrible 👎]
 #v(20pt)
-#only("3-")[- You feel compelled to watch the whole movie 📽️😩]
+#only("3-")[- You stay because you paid for it 🎟️]
 #only("1")[
-#voiceover("Let's say you paid 10 dollars for a movie ticket.")
+#voiceover("Imagine you bought expensive tickets for a movie.")
 ]
 #only("2")[
-#voiceover("30 minutes into the movie, you realize it's terrible and not enjoyable at all.")
+#voiceover("After it starts, you realize the movie is terrible.")
 ]
 #only("3")[
-#voiceover("Yet, you feel compelled to sit through the whole movie because you've already paid for the ticket. This is the sunk cost fallacy in action.")
+#voiceover("But you decide to stay until the end because you've already paid for the tickets. That's the sunk cost fallacy in action.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Why It's Irrational 🧠❌]
+#text(size: 30pt, weight: "bold")[Why It's Irrational 🧠]
 #v(40pt)
-#only("1-")[- Past costs are irrelevant to future decisions 📉]
+#only("1-")[- Past costs are irrelevant to future decisions]
 #v(20pt)
-#only("2-")[- Continuing won't recover sunk costs 🙅‍♂️💸]
+#only("2-")[- Staying wastes more time ⏰]
 #v(20pt)
-#only("3-")[- Better to cut losses and move on 🛑➡️]
+#only("3-")[- Leaving cuts losses 📉]
 #only("1")[
-#voiceover("The sunk cost fallacy is irrational because past costs should be irrelevant to future decisions.")
+#voiceover("The sunk cost fallacy is irrational because past costs should not affect future decisions.")
 ]
 #only("2")[
-#voiceover("Continuing with a suboptimal endeavor won't magically recover the sunk costs.")
+#voiceover("In the movie example, staying wastes even more of your valuable time.")
 ]
 #only("3")[
-#voiceover("It's often better to cut one's losses and move on to something more productive.")
+#voiceover("Leaving early would cut your losses and allow you to do something more enjoyable instead.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Overcoming the Fallacy 💪]
+#text(size: 30pt, weight: "bold")[Avoiding the Fallacy 🎯]
 #v(40pt)
-#only("1-")[- Recognize sunk costs as irrelevant 🧐]
+#only("1-")[- Ignore past investments when deciding 🙈]
 #v(20pt)
-#only("2-")[- Focus on future costs and benefits 📈]
+#only("2-")[- Base choices on future benefits 📈]
 #v(20pt)
-#only("3-")[- Be willing to change course 🔄🆕]
+#only("3-")[- Be willing to change course 🔀]
 #only("1")[
-#voiceover("To overcome the sunk cost fallacy, it's important to recognize that sunk costs are irrelevant to current and future decisions.")
+#voiceover("To avoid falling for the sunk cost fallacy, try to ignore past investments when making decisions.")
 ]
 #only("2")[
-#voiceover("Instead, one should focus on future costs and benefits when making decisions.")
+#voiceover("Instead, base your choices on expected future benefits.")
 ]
 #only("3")[
-#voiceover("Finally, be willing to change course when an endeavor is no longer worthwhile, regardless of past investments.")
+#voiceover("And be willing to change course if a project or endeavor is no longer worthwhile, regardless of what you've already put into it.")
 ]
 ]

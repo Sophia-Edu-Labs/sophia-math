@@ -11,7 +11,7 @@
 #v(40pt)
 #only("1-")[What is confirmation bias?]
 #v(40pt)
-// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false.
+// From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false. 
 #only("-1")[a) Seeking information that contradicts one's beliefs]#only("2-")[#text(fill:red)[a) Seeking information that contradicts one's beliefs]]
 #v(10pt)
 // From the start until section two, the option is black. From section 3 until the end it is then turned red, because it is false.
@@ -22,64 +22,43 @@
 #v(10pt)
 // From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is false.
 #only("-4")[d) None of the above]#only("5-")[#text(fill:red)[d) None of the above]]
-
-#only("1")[#voiceover("Great job! That's the correct answer.")]
-#only("2")[#voiceover("a) Seeking information that contradicts one's beliefs is incorrect. This would be the opposite of confirmation bias.")]
-#only("3")[#voiceover("b) Ignoring information is also incorrect. While confirmation bias can lead to ignoring contradictory information, it's not the definition of the bias itself.")]
-#only("4")[#voiceover("c) Seeking information that confirms one's beliefs is indeed the correct definition of confirmation bias. People tend to search for, interpret, favor, and recall information in a way that confirms or supports their prior beliefs or values.")]
-#only("5")[#voiceover("And d) None of the above is incorrect, as we've seen that option c) correctly defines confirmation bias.")]
+#only("1")[#voiceover("Great job, that's the correct answer! 🎉")]
+#only("2")[#voiceover("Option a) is incorrect. Seeking information that contradicts one's beliefs is actually the opposite of confirmation bias.")]
+#only("3")[#voiceover("Option b) is also incorrect. While ignoring information can be a part of confirmation bias, it's not the complete definition.")]
+#only("4")[#voiceover("Option c) is the correct answer. Confirmation bias is indeed the tendency to seek out information that confirms one's preexisting beliefs. 👍")]
+#only("5")[#voiceover("And option d) is incorrect, as one of the above options (c) is the correct definition of confirmation bias.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Confirmation Bias Example]
+#text(size: 30pt, weight: "bold")[Confirmation Bias Explained]
 #v(40pt)
-#only("1-")[🧑‍🔬 A researcher believes a hypothesis is true.]
+#only("1-")[- Tendency to search for, interpret, favor, and recall information that confirms or supports one's prior beliefs or values 🔍]
 #v(20pt)
-#only("2-")[🔍 They search for evidence that supports their hypothesis.]
+#only("2-")[- Gives more attention to evidence that supports what one already believes 👀]
 #v(20pt)
-#only("3-")[🙈 They ignore or downplay evidence that contradicts it.]
+#only("3-")[- Discounts or ignores evidence that contradicts one's beliefs 🙈]
 #v(20pt)
-#only("4-")[💡 This leads to a biased interpretation of data.]
-#v(20pt)
-#only("5-")[❌ The researcher's belief is reinforced, even if it's incorrect.]
+#only("4-")[- Can lead to overconfidence in personal beliefs and maintain or strengthen beliefs in the face of contrary evidence 🧠]
 
-#only("1")[#voiceover("Let's look at an example to illustrate confirmation bias.")]
-#only("2")[#voiceover("Imagine a researcher who believes a certain hypothesis is true. Due to confirmation bias, they might selectively search for evidence that supports their preconceived hypothesis.")]
-#only("3")[#voiceover("At the same time, they might ignore or downplay evidence that contradicts their belief.")]
-#only("4")[#voiceover("This leads to a biased interpretation of the data. The researcher focuses on information that confirms what they already believe and discounts information that would challenge their hypothesis.")]
-#only("5")[#voiceover("As a result, the researcher's belief is reinforced, even if the belief is actually incorrect. This is the danger of confirmation bias - it can lead us to maintain false beliefs despite evidence to the contrary.")]
+#only("1")[#voiceover("Confirmation bias is the tendency to search for, interpret, favor, and recall information in a way that confirms or supports one's prior beliefs or values.")]
+#only("2")[#voiceover("People displaying this bias tend to give more attention to evidence that supports what they already believe.")]
+#only("3")[#voiceover("On the flip side, they discount or completely ignore evidence that contradicts their beliefs.")]
+#only("4")[#voiceover("This bias can lead to overconfidence in personal beliefs and can maintain or strengthen beliefs in the face of contrary evidence. It's a very common bias that affects many areas of our lives, including financial decision-making. 💰")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Avoiding Confirmation Bias]
+#text(size: 30pt, weight: "bold")[Example in Financial Decision-Making]
 #v(40pt)
-#only("1-")[🎯 Actively seek out information that challenges your beliefs.]
+#only("1-")[- Investor believes a certain stock will perform well 📈]
 #v(20pt)
-#only("2-")[🤝 Consider alternative explanations and hypotheses.]
-#v(20pt)  
-#only("3-")[📊 Interpret data as objectively as possible.]
+#only("2-")[- Seeks out information that supports this belief (positive news, analyst reports, etc.) 📰]
 #v(20pt)
-#only("4-")[🧠 Be aware of your own biases and try to counteract them.]
+#only("3-")[- Ignores or downplays information that contradicts this belief (negative news, conflicting analyst reports, etc.) 📉]
+#v(20pt)
+#only("4-")[- Leads to overconfidence in the stock and potentially poor investment decisions 💸]
 
-#only("1")[#voiceover("To avoid confirmation bias, it's important to actively seek out information that challenges your existing beliefs.")]
-#only("2")[#voiceover("Consider alternative explanations and hypotheses, even if they conflict with what you currently think.")]
-#only("3")[#voiceover("When interpreting data, try to be as objective as possible. Don't just look for data that supports your view - consider all the evidence impartially.")]
-#only("4")[#voiceover("Most importantly, be aware of your own biases. We all have them. By acknowledging their existence, you can consciously try to counteract them in your decision making and information processing.")]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Recap]
-#v(40pt)
-#only("1-")[- Confirmation bias: seeking information that confirms beliefs 🧠]
-#v(20pt)
-#only("2-")[- Can lead to ignoring contradictory evidence 🙈]
-#v(20pt)
-#only("3-")[- Actively seek challenging information and consider alternatives 🎯]
-#v(20pt)
-#only("4-")[- Be aware of your own biases 🧐]
-
-#only("1")[#voiceover("To recap, confirmation bias is the tendency to seek out information that confirms our preexisting beliefs.")]
-#only("2")[#voiceover("This can lead us to ignore or discount evidence that contradicts what we believe.")]
-#only("3")[#voiceover("To counter this bias, we should actively seek out information that challenges our views and seriously consider alternative explanations.")]
-#only("4")[#voiceover("Most importantly, we need to be aware of our own biases. By acknowledging their existence, we can work to minimize their impact on our thinking and decision making.")]
+#only("1")[#voiceover("Here's an example of how confirmation bias can play out in financial decision-making. Let's say an investor believes a certain stock will perform well.")]
+#only("2")[#voiceover("Due to confirmation bias, the investor might seek out information that supports this belief, such as positive news articles or analyst reports about the stock.")]
+#only("3")[#voiceover("At the same time, the investor might ignore or downplay information that contradicts their belief, like negative news or conflicting analyst reports.")]
+#only("4")[#voiceover("This can lead to overconfidence in the stock and potentially poor investment decisions if the investor's belief is not aligned with the reality of the stock's performance. That's why it's important to be aware of confirmation bias and actively seek out diverse perspectives when making financial decisions. 🤔")]
 ]

@@ -7,46 +7,94 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Representativeness Heuristic Recap]
+#text(size: 30pt, weight: "bold")[Representativeness Heuristic 🧠]
 #v(40pt)
-#only("1-")[- Judging probability based on resemblance 🎭]
-#v(20pt)
-#only("2-")[- Example: Thinking a tall person is a basketball player 🏀]
-#v(20pt)
-#only("3-")[- Leads to ignoring base rates 📊]
-#v(20pt)
-#only("4-")[- Can affect financial decisions 💰]
-
+#only("1-")[
+- Tendency to judge probability based on resemblance 🎲
+]
 #only("1")[
 #voiceover("The representativeness heuristic is the tendency to judge the probability of an event by how much it resembles other events.")
 ]
+#v(20pt)
+#only("2-")[
+- Ignores base rates and statistical data 📊
+]
 #only("2")[
-#voiceover("For example, if we see a tall person, we might think they're more likely to be a basketball player, because they resemble our mental image of a typical basketball player.")
+#voiceover("This heuristic often leads people to ignore base rates and statistical data when making judgments.")
+]
+#v(20pt)
+#only("3-")[
+- Can lead to biased decisions in finance 💸
 ]
 #only("3")[
-#voiceover("However, this can lead us to ignore important information like base rates. There are many more tall people who aren't basketball players than there are tall basketball players.")
-]
-#only("4")[
-#voiceover("In financial decisions, the representativeness heuristic can lead us to make judgments based on superficial similarities rather than underlying probabilities. This can lead to inaccurate assessments of risk and value.")
+#voiceover("In financial decision-making, the representativeness heuristic can lead to biased decisions.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Key Takeaways]
+#text(size: 30pt, weight: "bold")[Example 🌐]
 #v(40pt)
-#only("1-")[- Representativeness heuristic: judging probability by resemblance 🎭]
-#v(20pt)
-#only("2-")[- Can lead to ignoring important information 🙈]
-#v(20pt)
-#only("3-")[- Be aware of this bias in financial decisions 🧠]
-
+#only("1-")[
+- Judging a company's potential based on how it resembles successful companies 📈
+]
 #only("1")[
-#voiceover("To recap, the representativeness heuristic is the tendency to judge the probability of an event by how much it resembles other events.")
+#voiceover("For example, an investor might judge a company's potential based on how much it resembles other successful companies, while ignoring important financial data.")
+]
+#v(20pt)
+#only("2-")[
+- Ignoring fundamental analysis and statistics 📉
 ]
 #only("2")[
-#voiceover("This can lead us to ignore important information like base rates.")
+#voiceover("This can lead to investing decisions that are not based on a company's actual financial health and future prospects.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Avoiding the Heuristic 🧩]
+#v(40pt)
+#only("1-")[
+- Be aware of the bias 🧐
+]
+#only("1")[
+#voiceover("To avoid the representativeness heuristic, it's important to first be aware of the bias.")
+]
+#v(20pt)
+#only("2-")[
+- Focus on data and statistical analysis 🔢
+]
+#only("2")[
+#voiceover("When making financial decisions, focus on data and statistical analysis rather than superficial resemblances.")
+]
+#v(20pt)
+#only("3-")[
+- Consider base rates and probabilities 🎲
 ]
 #only("3")[
-#voiceover("It's important to be aware of this cognitive bias, especially when making financial decisions, to ensure we're basing our judgments on accurate probabilities rather than superficial similarities.")
+#voiceover("Always consider base rates and probabilities, even if an event seems similar to others.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Recap 🎬]
+#v(40pt)
+#only("1-")[
+- Representativeness heuristic: judging probability based on resemblance 🧠
+]
+#only("1")[
+#voiceover("In summary, the representativeness heuristic is the tendency to judge the probability of an event by how much it resembles other events.")
+]
+#v(20pt)
+#only("2-")[
+- Can lead to biased financial decisions 💸
+]
+#only("2")[
+#voiceover("This heuristic can lead to biased financial decisions that ignore important data and probabilities.")
+]
+#v(20pt)
+#only("3-")[
+- Avoid by focusing on data and considering base rates 📊
+]
+#only("3")[
+#voiceover("To avoid the representativeness heuristic, focus on data and statistical analysis, and always consider base rates and probabilities.")
 ]
 ]

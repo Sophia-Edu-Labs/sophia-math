@@ -16,7 +16,7 @@
 #only("2-")[a) Ignoring past investments 🙈]
 // Answer option a) is shown from slide 2 onward
 #v(10pt)
-#only("3-")[b) Continuing an endeavor due to past investments 🏗️]
+#only("3-")[b) Continuing an endeavor due to past investments 💸]
 // Answer option b) is shown from slide 3 onward
 #v(10pt)
 #only("4-")[c) Making decisions based on future benefits 🔮]

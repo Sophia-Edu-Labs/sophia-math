@@ -9,30 +9,43 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Anchoring Bias 🧠⚓]
 #v(40pt)
-#only("1-")[- Relying too heavily on the first piece of information]
+#only("1-")[- Cognitive bias in decision-making]
 #v(20pt)
-#only("2-")[- Example: Estimating the price of a house 🏠💰]
+#only("2-")[- Relying too heavily on the first piece of information]
 #v(20pt)
-#only("3-")[- Anchor: Listing price of \$200,000]
-#v(20pt)
-#only("4-")[- Estimates influenced by the anchor, even if irrelevant]
+#only("3-")[- The "anchor" influences subsequent judgments]
 #only("1")[
-#voiceover("Anchoring bias is a cognitive bias where people rely too heavily on the first piece of information they encounter when making decisions or estimates.")
+#voiceover("Anchoring bias is a cognitive bias that affects our decision-making process.")
 ]
 #only("2")[
-#voiceover("For example, let's say you're trying to estimate the fair market value of a house.")
+#voiceover("It refers to the tendency to rely too heavily on the first piece of information we encounter when making decisions or estimates.")
 ]
 #only("3")[
-#voiceover("If the listing price is $200,000, this number can act as an anchor.")
-]
-#only("4")[
-#voiceover("Your subsequent estimates of the house's value may be influenced by this initial price, even if it's not an accurate reflection of the home's worth.")
+#voiceover("This initial piece of information, known as the 'anchor', influences our subsequent judgments, even if it's not directly relevant or accurate.")
 ]
 ]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Effects of Anchoring Bias 📊]
+#text(size: 30pt, weight: "bold")[Example: Car Price 🚗💰]
+#v(40pt)
+#only("1-")[- Anchor: Suggested retail price of \$20,000]
+#v(20pt)
+#only("2-")[- Influences negotiation and perception of value]
+#v(20pt)
+#only("3-")[- Difficulty adjusting away from the anchor]
+#only("1")[
+#voiceover("Let's consider an example. Suppose you're looking to buy a used car, and the seller mentions that the suggested retail price for the car when it was new was \$20,000.")
+]
+#only("2")[
+#voiceover("This price serves as an anchor. It can influence your negotiation strategy and your perception of the car's value, even if the car's current worth is significantly less.")
+]
+#only("3")[
+#voiceover("You might find it difficult to adjust your estimate of a fair price too far away from this anchor, even if other factors suggest you should.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Impact on Decisions 📊]
 #v(40pt)
 #only("1-")[
 #box()[
@@ -42,20 +55,13 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-actual_value = 180000
-anchor_value = 200000
+anchors = ['Low Anchor', 'High Anchor']
+estimates = [50, 80]
 
-estimates = np.random.normal(loc=(actual_value+anchor_value)/2, scale=10000, size=100)
-
-plt.figure(figsize=(8, 6))
-plt.hist(estimates, bins=20, alpha=0.5, color='skyblue', edgecolor='black')
-plt.axvline(actual_value, color='green', linestyle='dashed', linewidth=2, label='Actual Value')
-plt.axvline(anchor_value, color='red', linestyle='dashed', linewidth=2, label='Anchor Value')
-plt.xlabel('Estimated Value ($)')
-plt.ylabel('Frequency')
-plt.title('Distribution of Estimates')
-plt.legend()
-plt.tight_layout()
+plt.figure(figsize=(6, 4))
+plt.bar(anchors, estimates, color=['lightblue', 'lightgreen'], width=0.4)
+plt.ylabel('Estimate')
+plt.title('Impact of Anchoring on Estimates')
 plt.show()
 ```,
 width: 360pt),
@@ -63,52 +69,55 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("This graph shows how estimates can be skewed towards the anchor value. The green line represents the actual value of the house, while the red line is the anchor. As you can see, the estimates, shown by the blue bars, tend to cluster around a point between the actual value and the anchor.")
+#voiceover("Anchoring bias can significantly impact our decisions. As you can see in this graph, a low anchor leads to a lower estimate, while a high anchor leads to a higher estimate.")
 ]
-]
-
-
-No corrections are needed.]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Overcoming Anchoring Bias 🚀]
-#v(40pt)
-#only("1-")[- Be aware of potential anchors 🎯]
 #v(20pt)
-#only("2-")[- Seek out additional information 📚]
+#only("2-")[- Anchors can be arbitrary or irrelevant]
 #v(20pt)
-#only("3-")[- Consider the problem from different perspectives 🔍]
-#v(20pt)
-#only("4-")[- Make decisions based on objective data 📊]
-#only("1")[
-#voiceover("To overcome anchoring bias, the first step is to be aware of potential anchors that may influence your judgment.")
-]
+#only("3-")[- Affects various domains: pricing, negotiation, probability judgments]
 #only("2")[
-#voiceover("Seek out additional information from various sources to get a more comprehensive view.")
+#voiceover("Interestingly, anchors can be quite arbitrary or even irrelevant to the decision at hand. Yet, they still influence our judgments.")
 ]
 #only("3")[
-#voiceover("Try to consider the problem from different perspectives, and don't rely solely on your initial estimate.")
+#voiceover("Anchoring bias affects various domains, including pricing decisions, negotiations, and probability judgments.")
 ]
-#only("4")[
-#voiceover("Whenever possible, base your decisions on objective data rather than subjective impressions that may be influenced by anchors.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Mitigating Anchoring Bias 🛡️]
+#v(40pt)
+#only("1-")[- Be aware of potential anchors]
+#v(20pt)
+#only("2-")[- Consider multiple perspectives and data points]
+#v(20pt)
+#only("3-")[- Consciously adjust away from the anchor]
+#only("1")[
+#voiceover("To mitigate the effects of anchoring bias, it's important to be aware of potential anchors in our decision-making process.")
+]
+#only("2")[
+#voiceover("We should actively seek out multiple perspectives and additional data points to inform our judgments.")
+]
+#only("3")[
+#voiceover("When we recognize an anchor, we should consciously try to adjust our estimates away from it, considering whether it's truly relevant and accurate.")
 ]
 ]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Anchoring bias: Over-reliance on first information 🧠⚓]
+#only("1-")[- Anchoring bias: Over-reliance on initial information]
 #v(20pt)
-#only("2-")[- Can lead to skewed estimates and decisions 📊]
+#only("2-")[- Anchors influence subsequent judgments]
 #v(20pt)
-#only("3-")[- Overcome by awareness, diverse info, and objectivity 🎯📚]
+#only("3-")[- Be aware and seek multiple perspectives to mitigate bias]
 #only("1")[
-#voiceover("In summary, anchoring bias is the tendency to rely too heavily on the first piece of information encountered.")
+#voiceover("In summary, anchoring bias is the tendency to rely too heavily on the first piece of information we encounter.")
 ]
 #only("2")[
-#voiceover("This can lead to estimates and decisions that are skewed towards the anchor, even when it's not relevant or accurate.")
+#voiceover("These anchors can significantly influence our subsequent judgments and decisions, even when they're not directly relevant.")
 ]
 #only("3")[
-#voiceover("To mitigate anchoring bias, be aware of potential anchors, seek out diverse information, consider multiple perspectives, and strive for objectivity in your decision-making.")
+#voiceover("By being aware of potential anchors and actively seeking out multiple perspectives, we can work to mitigate the effects of anchoring bias in our decision-making process.")
 ]
 ]

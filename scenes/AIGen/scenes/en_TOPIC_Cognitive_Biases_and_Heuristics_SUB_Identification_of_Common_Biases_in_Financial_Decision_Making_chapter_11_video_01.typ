@@ -7,82 +7,127 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Common Financial Biases 💸🧠]
+#text(size: 30pt, weight: "bold")[Common Biases in Financial Decisions 🧠💰]
 #v(40pt)
-#only("1-")[- Overconfidence 🦸]
-#v(20pt)
-#only("2-")[- Confirmation 👍]
-#v(20pt) 
+#only("1-")[- Overconfidence bias 🦸]
+#only("2-")[- Confirmation bias 👍]
 #only("3-")[- Loss aversion 📉]
-#v(20pt)
-#only("4-")[- Anchoring ⚓]
+#only("4-")[- Anchoring bias ⚓]
+#only("5-")[- Herd behavior 🐑]
 #only("1")[
-#voiceover("Let's review some key biases that commonly affect financial decision-making. First, there's overconfidence bias. This is when people overestimate their abilities, leading to excessive risk-taking.")
+#voiceover("Let's briefly review the key common biases that affect financial decision-making. First, there's overconfidence bias, where individuals overestimate their own abilities, leading to excessive risk-taking.")
 ]
-#only("2")[  
-#voiceover("Next, confirmation bias. This is the tendency to seek out information that confirms our preexisting beliefs while ignoring contradictory evidence.")
+#only("2")[
+#voiceover("Next is confirmation bias, the tendency to search for information that confirms one's preconceptions.")
 ]
 #only("3")[
-#voiceover("Loss aversion is another big one. This is our tendency to strongly prefer avoiding losses over acquiring equivalent gains. We feel the pain of a loss more than the pleasure of an equal gain.")
-]  
+#voiceover("Loss aversion is the tendency to prefer avoiding losses rather than acquiring equivalent gains.")
+]
 #only("4")[
-#voiceover("Anchoring bias is when we rely too heavily on the first piece of information we receive when making decisions. This initial 'anchor' can skew our judgment.")
+#voiceover("Anchoring bias is the tendency to rely too heavily on the first piece of information encountered when making decisions.")
+]
+#only("5")[
+#voiceover("Herd behavior is the tendency to follow and mimic the actions of a larger group, often ignoring individual analysis.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[More Financial Biases 📊🤔]
-#v(40pt)  
-#only("1-")[- Herd behavior 🐑]
-#v(20pt)
-#only("2-")[- Recency 📆]
-#v(20pt)
-#only("3-")[- Sunk cost fallacy 💸⌛]
-#v(20pt)
-#only("4-")[- Hindsight 👀↩]
+#text(size: 30pt, weight: "bold")[Common Biases in Financial Decisions 🧠💰]
+#v(40pt)
+#only("1-")[- Recency bias ⏰]
+#only("2-")[- Sunk cost fallacy 💸]
+#only("3-")[- Hindsight bias 👀]
+#only("4-")[- Availability heuristic 📖]
+#only("5-")[- Representativeness heuristic 🎭]
 #only("1")[
-#voiceover("Herd behavior is the tendency to follow what others are doing. In investing, this can lead to bubbles and crashes as people buy or sell based on crowd psychology rather than fundamentals.")
+#voiceover("Recency bias is the tendency to weigh recent events more heavily than earlier events.")
 ]
 #only("2")[
-#voiceover("Recency bias is the tendency to overweight recent events. For example, investors might expect recent trends in the stock market to continue indefinitely into the future.")
+#voiceover("The sunk cost fallacy is the tendency to continue an endeavor once an investment in money, effort, or time has been made.")
 ]
-#only("3")[  
-#voiceover("The sunk cost fallacy is when we continue an endeavor because of previously invested resources, even when it's no longer rational to do so. We feel we've invested too much to quit.")
+#only("3")[
+#voiceover("Hindsight bias is the tendency to see events as having been predictable after they have already occurred.")
 ]
 #only("4")[
-#voiceover("Hindsight bias is the inclination to see past events as having been predictable. After something happens, we feel like we knew it was going to happen all along.")
-]  
+#voiceover("The availability heuristic is the tendency to overestimate the likelihood of events based on their availability in memory.")
+]
+#only("5")[
+#voiceover("Finally, the representativeness heuristic is the tendency to judge the probability of an event by how much it resembles other events.")
+]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Last Two Biases 🧮🔍]
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions 📈📉]
 #v(40pt)
-#only("1-")[- Availability heuristic 💭]
-#v(20pt)  
-#only("2-")[- Representativeness heuristic 🎰]
+#only("1-")[These biases can lead to:]
+#v(20pt)
+#only("2-")[- Overconfidence in abilities 🦸]
+#only("3-")[- Ignoring contradictory information 🙈]
+#only("4-")[- Avoiding risks 🚫]
+#only("5-")[- Relying on initial information ⚓]
+#only("6-")[- Following the crowd 🐑]
 #only("1")[
-#voiceover("The availability heuristic is a mental shortcut where we base the likelihood of an event on how easily examples come to mind. Dramatic events that get a lot of media coverage can seem more common than they are.")
+#voiceover("These biases can have a significant impact on financial decisions.")
 ]
 #only("2")[
-#voiceover("Finally, the representativeness heuristic is used when making judgments about the probability of an event under uncertainty. We often judge the likelihood of something belonging to a class based on how closely it resembles a typical member of that class.")
+#voiceover("Overconfidence can lead to excessive risk-taking.")
+]
+#only("3")[
+#voiceover("Confirmation bias can cause people to ignore contradictory information.")
+]
+#only("4")[
+#voiceover("Loss aversion can lead to an overly cautious approach, avoiding risks.")
+]
+#only("5")[
+#voiceover("Anchoring bias can cause people to rely too heavily on initial information.")
+]
+#only("6")[
+#voiceover("Herd behavior can lead to following the crowd, even if it's not the best decision.")
 ]
 ]
 
-#slide()[  
-#text(size: 30pt, weight: "bold")[Summary 📝]
+#slide()[
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions 📈📉]
 #v(40pt)
-#only("1-")[Key biases in financial decisions: 🧠💰]
+#only("1-")[These biases can lead to:]
 #v(20pt)
-#only("2-")[Overconfidence, confirmation, loss aversion, anchoring, herd behavior, recency, sunk cost fallacy, hindsight, availability, representativeness 📊📉📈]
-#v(20pt)
-#only("3-")[Awareness is the first step to better decisions! 🎯✅]
+#only("2-")[- Overemphasizing recent events ⏰]
+#only("3-")[- Continuing unprofitable investments 💸]
+#only("4-")[- Overconfidence in predictions 🔮]
+#only("5-")[- Overestimating memorable events 📖]
+#only("6-")[- Ignoring base rates 🎭]
 #only("1")[
-#voiceover("In summary, we covered a lot of ground!")  
+#voiceover("Recency bias can cause an overemphasis on recent events.")
 ]
 #only("2")[
-#voiceover("The key biases to watch out for in financial decision-making are overconfidence, confirmation bias, loss aversion, anchoring, herd behavior, recency bias, the sunk cost fallacy, hindsight bias, the availability heuristic, and the representativeness heuristic.")
+#voiceover("The sunk cost fallacy can lead to continuing unprofitable investments.")
 ]
-#only("3")[  
-#voiceover("Being aware of these common pitfalls is the first step to making better, more rational financial choices. Keep these in mind the next time you're making a big financial decision!")
+#only("3")[
+#voiceover("Hindsight bias can lead to overconfidence in the ability to predict events.")
+]
+#only("4")[
+#voiceover("The availability heuristic can lead to overestimating the likelihood of memorable events.")
+]
+#only("5")[
+#voiceover("And the representativeness heuristic can lead to ignoring base rates and probabilities.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Conclusion 🎓]
+#v(40pt)
+#only("1-")[- Cognitive biases are common in financial decisions 🧠💰]
+#v(20pt)
+#only("2-")[- They can lead to systematic errors 📉]
+#v(20pt)
+#only("3-")[- Awareness is key to making better decisions 🔑]
+#only("1")[
+#voiceover("In conclusion, cognitive biases are very common in financial decision-making.")
+]
+#only("2")[
+#voiceover("These biases can lead to systematic errors, causing people to make suboptimal decisions.")
+]
+#only("3")[
+#voiceover("Being aware of these biases is the first step in making better financial decisions.")
 ]
 ]

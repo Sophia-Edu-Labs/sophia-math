@@ -7,97 +7,62 @@
 
 
 #slide()[
-#only("1")[
-#voiceover("Let's recap the sunk cost fallacy.")
-]
 #text(size: 30pt, weight: "bold")[Sunk Cost Fallacy 💸]
-// The title "Sunk Cost Fallacy" is shown on this slide
 #v(40pt)
-#only("2")[
-#voiceover("The sunk cost fallacy is the tendency to continue an endeavor once an investment in money, effort, or time has been made.")
-]
-#only("2-")[
-- Tendency to continue an endeavor
-- Due to past investments (money 💰, effort ⏰, time ⌛)
-]
-// The key points about the sunk cost fallacy are shown from slide 2 onward
+#only("1-")[- Tendency to continue an endeavor once an investment has been made]
+#v(20pt)
+#only("2-")[- Investments can be in money, effort, or time]
+#v(20pt)
+#only("3-")[- Leads to continuing unprofitable investments]
+#v(20pt)
+#only("4-")[Example: Continuing a project that is over budget and behind schedule 📈⏰]
+#only("1")[#voiceover("The sunk cost fallacy is the tendency to continue an endeavor once an investment has been made.")]
+#only("2")[#voiceover("These investments can be in the form of money, effort, or time.")]
+#only("3")[#voiceover("This fallacy leads to continuing unprofitable investments, as people feel they have already put in too much to quit now.")]
+#only("4")[#voiceover("A common example is continuing a project that is over budget and behind schedule, because significant resources have already been invested, even if it would be more rational to cut losses and move on.")]
 ]
 
 #slide()[
-#only("1")[
-#voiceover("Here's an example to illustrate this concept.")
-]
-#text(size: 30pt, weight: "bold")[Example 🎥]
-// The title "Example" is shown on this slide
+#text(size: 30pt, weight: "bold")[Why It Happens 🧠]
 #v(40pt)
-#only("2")[
-#voiceover("Imagine you bought a movie ticket for \$10. After watching for 30 minutes, you realize you don't like the movie at all.")
-]
-#only("2-")[
-- Bought movie ticket for \$10 💸
-- Realized movie is bad after 30 minutes 😞
-]
-// The setup for the example is shown from slide 2 onward
+#only("1-")[- Emotional attachment to past decisions]
 #v(20pt)
-#only("3")[
-#voiceover("The sunk cost fallacy would lead you to continue watching the movie because you've already paid for the ticket, even though you're not enjoying it.")
-]
-#only("3-")[
-- Sunk cost fallacy: continue watching 🎥
-- Because ticket is already paid for 💸
-]
-// The sunk cost fallacy in action is shown from slide 3 onward
+#only("2-")[- Desire to avoid feeling of waste]
+#v(20pt)
+#only("3-")[- Bias towards loss aversion]
+#v(20pt)
+#only("4-")[- Failure to consider opportunity costs]
+#only("1")[#voiceover("The sunk cost fallacy happens due to an emotional attachment to past decisions.")]
+#only("2")[#voiceover("People want to avoid the feeling that their previous investments were a waste.")]
+#only("3")[#voiceover("It's also related to the bias of loss aversion, where we feel the pain of a loss more than the pleasure of an equivalent gain.")]
+#only("4")[#voiceover("Additionally, people often fail to consider the opportunity cost - what else could be done with the resources if they were not committed to the current endeavor.")]
 ]
 
 #slide()[
-#only("1")[
-#voiceover("However, this is not rational decision making.")
-]
-#text(size: 30pt, weight: "bold")[Rational Decision 🧠]
-// The title "Rational Decision" is shown on this slide
+#text(size: 30pt, weight: "bold")[Avoiding the Fallacy 🎯]
 #v(40pt)
-#only("2")[
-#voiceover("The \$10 for the ticket is a sunk cost. It's already spent and cannot be recovered, regardless of whether you continue watching or not.")
-]
-#only("2-")[
-- \$10 is a sunk cost 💸
-- Already spent, cannot be recovered 🚫
-]
-// The concept of sunk cost is explained from slide 2 onward
+#only("1-")[- Ignore past costs when making decisions]
 #v(20pt)
-#only("3")[
-#voiceover("The rational decision would be to base your choice on whether you expect to enjoy the rest of the movie, not on the money you've already spent.")
-]
-#only("3-")[
-- Rational decision: based on expected future enjoyment 😊
-- Not on past costs 💸
-]
-// The rational decision making process is shown from slide 3 onward
+#only("2-")[- Base decisions on future costs and benefits]
+#v(20pt)
+#only("3-")[- Be willing to admit mistakes and change course]
+#v(20pt)
+#only("4-")[- Consider opportunity costs]
+#only("1")[#voiceover("To avoid the sunk cost fallacy, it's important to ignore past costs when making decisions.")]
+#only("2")[#voiceover("Instead, base decisions on future costs and benefits.")]
+#only("3")[#voiceover("Be willing to admit mistakes and change course if needed.")]
+#only("4")[#voiceover("And always consider the opportunity costs - what else could be done with the resources.")]
 ]
 
 #slide()[
-#only("1")[
-#voiceover("In summary, the sunk cost fallacy is a common bias in financial decision making.")
-]
-#text(size: 30pt, weight: "bold")[Summary 📝]
-// The title "Summary" is shown on this slide
+#text(size: 30pt, weight: "bold")[Key Takeaway 🔑]
 #v(40pt)
-#only("2")[
-#voiceover("It leads people to continue investments or endeavors because of past costs, even when it's no longer rational to do so.")
-]
-#only("2-")[
-- Sunk cost fallacy: common bias 🧠💸
-- Leads to continuing investments due to past costs 💰⌛
-]
-// The summary points are shown from slide 2 onward
+#only("1-")[- Past costs are irrelevant for future decisions]
 #v(20pt)
-#only("3")[
-#voiceover("To make better decisions, it's important to recognize this bias and base choices on expected future outcomes, not irretrievable past costs.")
-]
-#only("3-")[
-- Recognize the bias 🎯
-- Base decisions on expected future outcomes 📈
-- Ignore irretrievable past costs 🚫💸
-]
-// The advice for better decision making is shown from slide 3 onward
+#only("2-")[- Focus on future costs and benefits]
+#v(20pt)
+#only("3-")[- Don't let emotional attachment to past decisions drive future ones]
+#only("1")[#voiceover("The key takeaway is that past costs are irrelevant for future decisions.")]
+#only("2")[#voiceover("Always focus on future costs and benefits when making decisions.")]
+#only("3")[#voiceover("And don't let emotional attachment to past decisions drive future ones. Rational decision-making is forward-looking.")]
 ]

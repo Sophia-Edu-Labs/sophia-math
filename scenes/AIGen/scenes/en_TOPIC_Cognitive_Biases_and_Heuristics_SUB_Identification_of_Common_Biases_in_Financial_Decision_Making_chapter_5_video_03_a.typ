@@ -9,7 +9,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Herd Behavior]
 #v(40pt)
-Exercise 2: How can herd behavior affect financial decisions?
+How can herd behavior affect financial decisions?
 #v(40pt)
 // From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is incorrect. 
 #only("-1")[a) It leads to independent decision-making]#only("2-")[#text(fill:red)[a) It leads to independent decision-making]]
@@ -22,64 +22,52 @@ Exercise 2: How can herd behavior affect financial decisions?
 #v(10pt)
 // From the start until section four, the option is black. From section 5 until the end it is then turned red, because it is incorrect.
 #only("-4")[d) It improves rationality]#only("5-")[#text(fill:red)[d) It improves rationality]]
-#only("1")[#voiceover("That's not quite right. Let's take a look at the correct solution.")]
-#only("2")[#voiceover("Option a) is incorrect. Herd behavior does not lead to independent decision-making. In fact, it's the opposite - it leads to following the decisions of others.")]
-#only("3")[#voiceover("Option b) is correct. Herd behavior is defined as the tendency to follow and mimic the actions of a larger group, often ignoring individual analysis. So it does lead to following the crowd.")]
-#only("4")[#voiceover("Option c) is incorrect. Herd behavior does have an effect on financial decisions. It can lead to bubbles and crashes in financial markets as people follow the crowd.")]
-#only("5")[#voiceover("Option d) is also incorrect. Herd behavior does not improve rationality. It can lead to irrational decisions as people ignore their own analysis and follow others.")]
+
+#only("1")[#voiceover("Not quite. Let me show you the correct solution.")]
+#only("2")[#voiceover("Option a) is incorrect. Herd behavior does not lead to independent decision-making. In fact, it's quite the opposite.")]
+#only("3")[#voiceover("Option b) is correct. Herd behavior leads to following the actions of a larger group, often ignoring individual analysis.")]
+#only("4")[#voiceover("Option c) is incorrect. Herd behavior does have an effect on financial decisions, as it can lead to irrational behavior.")]
+#only("5")[#voiceover("Option d) is also incorrect. Herd behavior does not improve rationality. It often leads to decisions based on the actions of others rather than rational analysis.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Herd Behavior Explained]
+#text(size: 30pt, weight: "bold")[Herd Behavior 🐑]
 #v(40pt)
-- Tendency to follow and mimic the actions of a larger group 🐑
+#only("1-")[- Tendency to follow and mimic the actions of a larger group]
 #v(20pt)
-- Often ignoring individual analysis 🙈
+#only("2-")[- Often ignoring individual analysis 🧠]
 #v(20pt)
-- Can lead to bubbles and crashes in financial markets 📈📉
+#only("3-")[- Can lead to irrational financial decisions 📉]
 #v(20pt)
-- Example: Dotcom bubble of the late 1990s 💻
-#only("1")[#voiceover("Let's break down herd behavior a bit more. Herd behavior is the tendency for individuals to follow and mimic the actions of a larger group.")]
-#only("2")[#voiceover("This often happens even when it means ignoring their own individual analysis. People start to think, 'if everyone else is doing it, it must be right'.")]
-#only("3")[#voiceover("In financial markets, this can lead to bubbles as everyone rushes to buy an asset, driving the price up. But it can also lead to crashes when the herd suddenly changes direction and starts selling.")]
-#only("4")[#voiceover("A classic example is the dotcom bubble of the late 1990s. Investors piled into internet stocks, often with little understanding of the companies, simply because everyone else was doing it. When the bubble eventually burst, many investors suffered significant losses.")]
+#only("4-")[- Example: Buying a stock because others are buying it 📈]
+
+#only("1")[#voiceover("Herd behavior is the tendency to follow and mimic the actions of a larger group.")]
+#only("2")[#voiceover("This often happens while ignoring one's own individual analysis.")]
+#only("3")[#voiceover("Herd behavior can lead to irrational financial decisions.")]
+#only("4")[#voiceover("For example, an investor might buy a stock simply because many others are buying it, without doing their own research on the company's fundamentals.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Herd Behavior Visualization]
+#text(size: 30pt, weight: "bold")[Herd Behavior in Markets 📊]
 #v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(``` 
+pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Simulate a simple herd behavior model
-def herd_model(n, threshold, p_initial):
-    opinions = np.random.choice([0, 1], size=n, p=[1-p_initial, p_initial])
-    for _ in range(10):  # Simulate 10 rounds
-        for i in range(n):
-            if np.random.rand() < threshold:
-                opinions[i] = np.random.choice(opinions)
-    return opinions
+# Simulate a herd behavior scenario
+days = np.arange(1, 31)
+price = np.ones(30)
+price[9:] = np.linspace(1, 10, 21)  # Price starts increasing from day 10
 
-n = 1000
-threshold = 0.3
-p_initial = 0.2
-
-opinions = herd_model(n, threshold, p_initial)
-
-plt.figure(figsize=(8, 4))
-plt.hist(opinions, bins=[-0.5, 0.5, 1.5], rwidth=0.8)
-plt.xticks([0, 1], ['Opinion 0', 'Opinion 1'])
-plt.ylabel('Number of Individuals')
-plt.title('Herd Behavior Simulation')
-plt.annotate(f'{np.mean(opinions):.2%} followed the herd', 
-             xy=(0.7, 200), xytext=(0.7, 300), 
-             arrowprops=dict(facecolor='black', shrink=0.05))
-
-plt.tight_layout()
+plt.figure(figsize=(8, 6))
+plt.plot(days, price)
+plt.title('Stock Price over Time')
+plt.xlabel('Day')
+plt.ylabel('Price ($)')
+plt.grid(True)
 plt.show()
 ```,
 width: 360pt),
@@ -87,31 +75,33 @@ width: 360pt),
 ]
 ]
 #v(40pt)
-#only("1-")[Here's a simulation of herd behavior:]
+#only("1-")[- Herd behavior can lead to price bubbles 🫧]
 #v(20pt)
-#only("2-")[- Each individual starts with their own opinion (0 or 1) 🧑‍🤝‍🧑]
-#only("3-")[- In each round, some individuals follow the herd 🐑]
-#only("4-")[- After several rounds, a significant majority follows the herd 📊]
+#only("2-")[- As more people buy, prices increase 📈]
+#v(20pt)
+#only("3-")[- Not based on fundamentals, but on others' actions 🙈]
+#v(20pt)
+#only("4-")[- Can result in market inefficiencies and crashes 💥]
 
-#only("1")[#voiceover("Let's look at a simple simulation of herd behavior. In this model, we have a thousand individuals, each starting with their own opinion, represented as 0 or 1.")]
-#only("2")[#voiceover("At the start, opinions are distributed based on an initial probability. Here, 20% start with opinion 1.")]
-#only("3")[#voiceover("In each round of the simulation, each individual has a 30% chance of abandoning their own opinion and instead adopting the opinion of a random other individual. This represents the 'herd following' behavior.")]
-#only("4")[#voiceover("After several rounds, we see a significant majority - in this case, about 80% - following the herd. This demonstrates how herd behavior can lead to a convergence of opinions or actions, even if those actions are not necessarily rational or optimal for each individual.")]
+#only("1")[#voiceover("In financial markets, herd behavior can lead to price bubbles.")]
+#only("2")[#voiceover("As more and more people buy an asset, its price increases, often rapidly.")]
+#only("3")[#voiceover("However, this price increase is not based on the asset's fundamental value, but rather on the actions of the herd.")]
+#only("4")[#voiceover("This can result in market inefficiencies and, eventually, crashes when the bubble bursts.")]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
+#text(size: 30pt, weight: "bold")[Avoiding Herd Behavior 🧠]
 #v(40pt)
-- Herd behavior is the tendency to follow the crowd 🐑
+#only("1-")[- Do your own research 📚]
 #v(20pt)
-- It can lead to irrational financial decisions 📉
+#only("2-")[- Base decisions on fundamentals, not others' actions 📊]
 #v(20pt)
-- It's important to be aware of and resist herd mentality 🧠
+#only("3-")[- Be aware of your own biases 🤔]
 #v(20pt)
-- Always do your own research and analysis 📚
+#only("4-")[- Have a long-term investment strategy 📅]
 
-#only("1")[#voiceover("In summary, herd behavior is the tendency for individuals to follow and mimic the actions of a larger group.")]
-#only("2")[#voiceover("In financial markets, this can lead to irrational decisions and contribute to bubbles and crashes.")]
-#only("3")[#voiceover("As an investor, it's important to be aware of herd mentality and to actively resist it. Just because everyone else is doing something doesn't mean it's the right thing to do.")]
-#only("4")[#voiceover("Always do your own research and analysis, and make decisions based on your own financial goals and risk tolerance. Don't just follow the herd.")]
+#only("1")[#voiceover("To avoid falling into the trap of herd behavior, it's important to do your own research.")]
+#only("2")[#voiceover("Base your investment decisions on the fundamentals of the assets, not on the actions of others.")]
+#only("3")[#voiceover("Be aware of your own biases and how they might influence your decisions.")]
+#only("4")[#voiceover("Finally, have a long-term investment strategy and stick to it, even when the herd is moving in a different direction.")]
 ]

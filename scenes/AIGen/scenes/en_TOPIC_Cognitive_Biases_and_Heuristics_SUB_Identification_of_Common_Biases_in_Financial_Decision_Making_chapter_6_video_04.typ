@@ -7,19 +7,11 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Recency Bias Recap]
+#text(size: 30pt, weight: "bold")[Recency Bias]
 #v(40pt)
-#only("1-")[- Tendency to weigh recent events more heavily 🕰️]
-#only("2-")[- Overemphasis on recent information 🔍]
-#only("3-")[- Can lead to biased financial decisions 💸]
+#only("1-")[- Weighing recent events more heavily than earlier events 🧮⏲️]
 #only("1")[
 #voiceover("Recency bias is the tendency to weigh recent events more heavily than earlier events.")
-]
-#only("2")[
-#voiceover("This means that people tend to overemphasize recent information when making decisions.")
-]
-#only("3")[
-#voiceover("In the context of financial decision-making, recency bias can lead to biased decisions that are overly influenced by recent market trends or news.")
 ]
 ]
 
@@ -35,29 +27,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Create data
-x = np.arange(1, 13)
-y = [100, 110, 105, 120, 115, 130, 125, 140, 135, 150, 145, 160]
+events = ['Event 1', 'Event 2', 'Event 3', 'Event 4', 'Event 5']
+weights = [0.1, 0.15, 0.2, 0.25, 0.3]
 
-# Create the plot
+# Create plot
 fig, ax = plt.subplots(figsize=(8, 6))
-ax.plot(x, y, marker='o', linestyle='-', color='blue')
+ax.bar(events, weights)
 
 # Add labels and title
-ax.set_xlabel('Month')
-ax.set_ylabel('Stock Price ($)')
-ax.set_title('Stock Price Over Time')
+ax.set_xlabel('Events')
+ax.set_ylabel('Weight')
+ax.set_title('Recency Bias: Weighing Recent Events More')
 
-# Add grid
-ax.grid(True)
+# Adjust layout
+fig.tight_layout()
 
-# Highlight recent months
-recent_months = np.arange(9, 13)
-ax.fill_between(recent_months, 0, 180, color='red', alpha=0.2, label='Recent Months')
-
-# Add legend
-ax.legend(loc='upper left')
-
-plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
@@ -65,47 +49,40 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("Consider this example of a stock price over a year. The red shaded area highlights the most recent months.")
-]
-#only("2")[
-#voiceover("An investor influenced by recency bias might focus too heavily on the recent upward trend, ignoring the overall pattern.")
-]
-#only("3")[
-#voiceover("This could lead to overconfidence in the stock and potentially risky investment decisions.")
+#voiceover("For example, if we have a series of events, recency bias would lead us to give more importance to the latest events, Event 4 and Event 5, compared to the earlier events.")
 ]
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Mitigation]
+#text(size: 30pt, weight: "bold")[Impact on Financial Decisions]
 #v(40pt)
-#only("1-")[- Be aware of the bias 🧠]
-#only("2-")[- Consider longer-term trends 📈]
-#only("3-")[- Seek out diverse information sources 📰]
+#only("1-")[- Overemphasis on recent performance 📈]
+#v(20pt)
+#only("2-")[- Neglecting long-term trends 📉]
 #only("1")[
-#voiceover("To mitigate recency bias, it's important to first be aware of its existence.")
+#voiceover("In financial decision-making, recency bias can lead to an overemphasis on recent performance.")
 ]
 #only("2")[
-#voiceover("When making financial decisions, consider longer-term trends and patterns, not just recent events.")
-]
-#only("3")[
-#voiceover("Seek out diverse information sources to get a more balanced perspective and avoid overreliance on recent news.")
+#voiceover("This can cause investors to neglect long-term trends and make decisions based on short-term fluctuations.")
 ]
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Key Takeaways]
+#text(size: 30pt, weight: "bold")[Recap]
 #v(40pt)
-#only("1-")[- Recency bias: overweighting recent events 🕰️]
-#only("2-")[- Can lead to biased financial decisions 💸]
-#only("3-")[- Mitigate by considering longer-term trends and diverse information 📈📰]
+#only("1-")[- Recency bias: weighing recent events more heavily 🧮⏲️]
+#v(20pt)
+#only("2-")[- Leads to overemphasis on recent performance in financial decisions 📈]
+#v(20pt)
+#only("3-")[- Can cause neglect of long-term trends 📉]
 #only("1")[
-#voiceover("In summary, recency bias is the tendency to overweight recent events.")
+#voiceover("To recap, recency bias is the tendency to weigh recent events more heavily than earlier events.")
 ]
 #only("2")[
-#voiceover("This can lead to biased financial decisions that are overly influenced by recent trends or news.")
+#voiceover("In financial decision-making, this can lead to an overemphasis on recent performance.")
 ]
 #only("3")[
-#voiceover("To mitigate recency bias, consider longer-term trends and seek out diverse information sources.")
+#voiceover("As a result, recency bias can cause investors to neglect long-term trends and make suboptimal decisions based on short-term fluctuations.")
 ]
 ]
