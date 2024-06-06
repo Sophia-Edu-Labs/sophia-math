@@ -59,7 +59,7 @@ width: 360pt))
 #only("1")[
 #voiceover("Hier ist ein Graph, der mehrere Potenzfunktionen zeigt. Beachte, wie sich die Form ändert, wenn der Exponent n größer wird.")
 ]
-]
+]]
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Eigenschaften]
