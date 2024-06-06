@@ -57,12 +57,12 @@
 - Anfangsbevölkerung: $P_0$
 - Wachstumsrate: $k$
 - Zeit: $t$
-- Bevölkerung: $P(t) = P_0 e^(kt)$
+- Bevölkerung: $P(t) = P_0 e^(k t)$
 ]
 #v(40pt)
 #only("2-")[Beispiel: $P_0 = 100$, $k = 0.1$, $t = 5$]
 #v(20pt)
-#only("3-")[$P(5) = 100 e^(0.1 mal 5) ≈ 165$]
+#only("3-")[$P(5) = 100 e^(0.1 dot 5) ≈ 165$]
 
 #only("1")[#voiceover("Beim Bevölkerungswachstum, wenn $P_0$ die Anfangsbevölkerung ist, $k$ die Wachstumsrate und $t$ die Zeit, dann wird die Bevölkerung zur Zeit $t$ durch $P von t gleich P_0 mal e hoch k t$ gegeben.")]
 #only("2")[#voiceover("Zum Beispiel, wenn die Anfangsbevölkerung 100 ist, die Wachstumsrate 0.1 ist, und wir die Bevölkerung nach 5 Zeiteinheiten wissen wollen,")]
@@ -76,12 +76,12 @@
 #only("1-")[
 - Masse: $m$
 - Geschwindigkeit: $v$
-- Kinetische Energie: $E_k = (1/2) mv^2$
+- Kinetische Energie: $E_k = (1/2) m v^2$
 ]
 #v(40pt)
 #only("2-")[Beispiel: $m = 1000 "kg"$, $E_k = 250000 "J"$]
 #v(20pt)
-#only("3-")[$v = Wurzel(2, (2 mal 250000)/1000) ≈ 22.4 "m/s"$]
+#only("3-")[$v = root(2, (2 dot 250000)/1000) ≈ 22.4 "m/s"$]
 
 #only("1")[#voiceover("In der Physik wird die kinetische Energie eines bewegten Objekts durch $E_k gleich ein halb mal Masse mal Geschwindigkeit Quadrat$ gegeben. Hier steht die Geschwindigkeit in Beziehung zur kinetischen Energie durch eine Potenzfunktion.")]
 #only("2")[#voiceover("Zum Beispiel, wenn ein Auto mit einer Masse von 1000 Kilogramm eine kinetische Energie von 250000 Joule hat,")]

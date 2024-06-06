@@ -9,12 +9,12 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Integral von $x^4$]
 #v(40pt)
-#only("1-")[- Finde $∫x^4 \, \mathrm{d}x$]
-#only("2-")[- Potenzregel: $∫x^n \, \mathrm{d}x = \frac{x^{n+1}}{n+1} + C$ für $n ≠ -1$]
-#only("3-")[- Hier ist $n=4$, also $∫x^4 \, \mathrm{d}x = \frac{x^{4+1}}{4+1} + C$]
-#only("4-")[- Vereinfache: $∫x^4 \, \mathrm{d}x = \frac{x^5}{5} + C$]
+#only("1-")[- Finde $∫x^4 dif x$]
+#only("2-")[- Potenzregel: $∫x^n dif x = (x^(n+1))/(n+1) + C$ für $n ≠ -1$]
+#only("3-")[- Hier ist $n=4$, also $∫x^4 dif x = (x^(4+1))/(4+1) + C$]
+#only("4-")[- Vereinfache: $∫x^4 dif x = (x^5)/(5) + C$]
 #only("1")[
-#voiceover("Großartig! Das ist die richtige Antwort. Lass uns Schritt für Schritt sehen, wie wir das lösen können.")
+#voiceover("Großartig, das ist die richtige Antwort. Lass uns Schritt für Schritt sehen, wie wir das lösen können.")
 ]
 #only("2")[
 #voiceover("Um das Integral von x hoch 4 zu finden, können wir die Potenzregel für Integrale verwenden. Sie besagt, dass das Integral von x hoch n gleich x hoch n plus 1, geteilt durch n plus 1, plus einer Konstante C ist. Dies gilt für alle n, die nicht gleich -1 sind.")

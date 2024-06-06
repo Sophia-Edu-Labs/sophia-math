@@ -23,7 +23,7 @@ Was stellt $a^(1/2)$ dar?
 // Von Anfang bis Abschnitt vier ist die Option schwarz. Ab Abschnitt 5 bis zum Ende wird sie dann rot, weil sie falsch ist.
 #only("-4")[d) die Kubikwurzel von $a$]#only("5-")[#text(fill:red)[d) die Kubikwurzel von $a$]]
 
-#only("1")[#voiceover("Das ist richtig, gute Arbeit!")]
+#only("1")[#voiceover("Richtig, toll gemacht!")]
 #only("2")[#voiceover("Die Option 'a zum Quadrat' ist falsch. $a$ hoch ein Halb stellt nicht $a$ zum Quadrat dar, das wäre $a$ hoch 2.")]
 #only("3")[#voiceover("Ebenso ist 'a hoch drei' falsch. $a$ hoch drei wäre $a$ hoch 3, nicht ein Halb.")]
 #only("4")[#voiceover("Die richtige Antwort ist 'die Quadratwurzel von $a$'. $a$ hoch ein Halb entspricht tatsächlich der Quadratwurzel von $a$.")]
@@ -33,7 +33,7 @@ Was stellt $a^(1/2)$ dar?
 #slide()[
 #text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Lösung]
 #v(40pt)
-#only("1-")[Erinnere Dich an die Regel: $a^(m/n) = \sqrt[n]{a^m}$]
+#only("1-")[Erinnere Dich an die Regel: $a^(m/n) = root(n,a^m)$]
 #v(20pt)
 #only("2-")[In diesem Fall, $a^(1/2)$, haben wir:]
 #v(10pt)
@@ -42,9 +42,9 @@ Was stellt $a^(1/2)$ dar?
 #v(20pt)
 #only("5-")[Einsetzen in die Regel:]
 #v(10pt)
-#only("6-")[$a^(1/2) = \sqrt[2]{a^1}$]
+#only("6-")[$a^(1/2) = root(2,a^1)$]
 #v(10pt)
-#only("7-")[$a^(1/2) = \sqrt[2]{a}$]
+#only("7-")[$a^(1/2) = root(2,a)$]
 #v(20pt)
 #only("8-")[Daher stellt $a^(1/2)$ die Quadratwurzel von $a$ dar. 📏🎉]
 

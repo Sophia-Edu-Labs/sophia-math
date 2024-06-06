@@ -48,39 +48,45 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-def visualize_original_fractions(frac1, frac2):
-    num1, den1 = frac1
-    num2, den2 = frac2
+def visualize_fraction(ax, num, den, color, title):
+    # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    
+    # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    
+    # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    
+    # Achsenbegrenzungen setzen
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 0.3)
+    
+    # Berechnung der Tick-Positionen und -Beschriftungen basierend auf dem Nenner
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    
+    # Setzen der x-Achsen-Ticks und -Beschriftungen
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    
+    # Entfernen der y-Achsen-Ticks für ein saubereres Aussehen
+    ax.set_yticks([])
+    
+    # Titel hinzufügen
+    ax.set_title(title)
 
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
+# Erstellen einer Figur mit zwei Unterplots, vertikal ausgerichtet
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
-    for i in range(1, den1):
-        ax1.axvline(i / den1, color='black', linestyle='--', linewidth=3)
-    ax1.add_patch(plt.Rectangle((0, 0), num1 / den1, 1, color='red', alpha=0.8))
-    ax1.text(num1 / (2 * den1), 0.5, f'{num1}/{den1}', ha='center', va='center', fontsize=44, color='white')
-    ax1.set_xlim(0, 1)
-    ax1.set_ylim(0, 1)
-    ax1.set_xticks(np.arange(0, 1 + 1/den1, 1/den1))
-    ax1.set_xticklabels([f'{i}/{den1}' for i in range(den1 + 1)])
-    ax1.set_yticks([])
+# Ersten Bruch 1/4 auf der Zahlenlinie plotten
+visualize_fraction(axs[0], 1, 4, 'red', '1/4')
+# Zweiten Bruch 2/3 auf der Zahlenlinie plotten
+visualize_fraction(axs[1], 2, 3, 'blue', '2/3')
 
-    for i in range(1, den2):
-        ax2.axvline(i / den2, color='black', linestyle='--', linewidth=3)
-    ax2.add_patch(plt.Rectangle((0, 0), num2 / den2, 1, color='blue', alpha=0.8))
-    ax2.text(num2 / (2 * den2), 0.5, f'{num2}/{den2}', ha='center', va='center', fontsize=44, color='white')
-    ax2.set_xlim(0, 1)
-    ax2.set_ylim(0, 1)
-    ax2.set_xticks(np.arange(0, 1 + 1/den2, 1/den2))
-    ax2.set_xticklabels([f'{i}/{den2}' for i in range(den2 + 1)])
-    ax2.set_yticks([])
-
-    plt.tight_layout()
-    plt.show()
-
-frac1 = (1, 4) 
-frac2 = (2, 3)
-
-visualize_original_fractions(frac1, frac2)
+plt.tight_layout()
+plt.show()
 ```,
 width: 360pt),
 )]
@@ -180,9 +186,7 @@ def visualize_sum_fraction(frac1, frac2):
 
     for i in range(1, 12):
         ax.axvline(i / 12, color='black', linestyle='--', linewidth=3)
-    ax.add_patch(plt.Rectangle((0, 0), (num1 + num2) / 
-
-12, 1, color='purple', alpha=0.8))
+    ax.add_patch(plt.Rectangle((0, 0), (num1 + num2) / 12, 1, color='purple', alpha=0.8))
     ax.text((num1 + num2) / (2 * 12), 0.5, f'{num1 + num2}/{12}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -208,5 +212,76 @@ width: 360pt),
 ]
 #only("2")[
 #voiceover("Drei Zwölftel plus acht Zwölftel ist also gleich elf Zwölftel. Und das ist das korrekte Ergebnis.")
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung der Brüche: Kreisdiagramme]
+#box()[
+#morphchildren(id: "plot4")[
+#figure(
+pyimage(```
+import matplotlib.pyplot as plt
+from matplotlib.patches import Wedge
+
+def plot_fraction_circle(ax, num_parts, shaded_parts, title):
+    for i in range(num_parts):
+        angle_start = (360 / num_parts) * i
+        angle_end = (360 / num_parts) * (i + 1)
+        color = 'blue' if i < shaded_parts else 'lightgray'
+        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
+        ax.add_patch(wedge)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.set_aspect('equal')
+    ax.set_title(title, fontsize=50)
+    ax.axis('off')
+
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
+plot_fraction_circle(axs[0], 4, 1, '1/4')
+plot_fraction_circle(axs[1], 3, 2, '2/3')
+
+plt.tight_layout()
+plt.show()
+```,
+width: 360pt),
+)]
+]
+]
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualisierung der Brüche: Zahlenstrahl]
+#box()[
+#morphchildren(id: "plot5")[
+#figure(
+pyimage(```
+import matplotlib.pyplot as plt
+import numpy as np
+
+def visualize_fraction(ax, num, den, color, title):
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 0.3)
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    ax.set_yticks([])
+    ax.set_title(title)
+
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
+
+visualize_fraction(axs[0], 1, 4, 'red', '1/4')
+visualize_fraction(axs[1], 2, 3, 'blue', '2/3')
+
+plt.tight_layout()
+plt.show()
+```,
+width: 360pt),
+)]
 ]
 ]

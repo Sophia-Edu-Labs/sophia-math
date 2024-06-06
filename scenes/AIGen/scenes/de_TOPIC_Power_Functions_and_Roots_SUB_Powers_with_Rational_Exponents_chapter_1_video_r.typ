@@ -20,10 +20,10 @@
 #text(size: 30pt, weight: "bold")[Rationaler Exponent zur Radikalform]
 #v(40pt)
 #only("1-")[
-- $a^(m/n) = \sqrt[n]{a^m}$
+- $a^(m/n) = root(n,a^m)$
 ]
 #only("2-")[
-- Beispiel: $16^(1/4) = \sqrt[4]{16} = 2$
+- Beispiel: $16^(1/4) = root(4,16) = 2$
 ]
 #only("1")[
 #voiceover("Um von der Form eines rationalen Exponenten zur Radikalform zu wechseln, verwenden wir die Formel a hoch m durch n gleich die n-te Wurzel von a hoch m.")
@@ -37,10 +37,10 @@
 #text(size: 30pt, weight: "bold")[Radikalform zum rationalen Exponenten]
 #v(40pt)
 #only("1-")[
-- $\sqrt[n]{a} = a^(1/n)$
+- $root(n,a) = a^(1/n)$
 ]
 #only("2-")[
-- Beispiel: $\sqrt[3]{27} = 27^(1/3) = 3$
+- Beispiel: $root(3,27) = 27^(1/3) = 3$
 ]
 #only("1")[
 #voiceover("Um von der Radikalform zur Form eines rationalen Exponenten zu wechseln, verwenden wir die Formel die n-te Wurzel von a gleich a hoch 1 durch n.")
@@ -57,7 +57,7 @@
 - In die Form umwandeln, die den Ausdruck vereinfacht
 ]
 #only("2-")[
-- Beispiel: $(27^(1/3))^2 = (\sqrt[3]{27})^2 = 3^2 = 9$
+- Beispiel: $(27^(1/3))^2 = (root(3,27))^2 = 3^2 = 9$
 ]
 #only("1")[
 #voiceover("Beim Vereinfachen von Ausdrücken mit rationalen Exponenten wähle die Form, die die Vereinfachung erleichtert.")
@@ -71,10 +71,10 @@
 #text(size: 30pt, weight: "bold")[Zusammenfassung]
 #v(40pt)
 #only("1-")[
-- Rationaler Exponent zur Radikalform: $a^(m/n) = \sqrt[n]{a^m}$ 📏
+- Rationaler Exponent zur Radikalform: $a^(m/n) = root(n,a^m)$ 📏
 ]
 #only("2-")[
-- Radikalform zum rationalen Exponenten: $\sqrt[n]{a} = a^(1/n)$ 📐
+- Radikalform zum rationalen Exponenten: $root(n,a) = a^(1/n)$ 📐
 ]
 #only("3-")[
 - Vereinfache, indem Du die bequemere Form wählst 🎯

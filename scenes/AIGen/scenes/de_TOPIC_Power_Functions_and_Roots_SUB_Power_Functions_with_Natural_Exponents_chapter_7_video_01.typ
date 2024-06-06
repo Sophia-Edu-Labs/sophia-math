@@ -48,7 +48,7 @@
 #v(20pt)
 #only("2-")[- Luftwiderstandskraft: $F_D = (1/2) ρ v^2 C_D A$ 🪂]
 #v(20pt)
-#only("3-")[- Druckverlust: $Δp = f (L/D) (ρ v^2 / 2)$ 🚰]
+#only("3-")[- Druckverlust: $Δ p = f (L/D) (ρ v^2 / 2)$ 🚰]
 #only("1")[
 #voiceover("Im Ingenieurwesen werden Potenzfunktionen in verschiedenen Kontexten verwendet, wie zum Beispiel in der Strömungsmechanik.")
 ]

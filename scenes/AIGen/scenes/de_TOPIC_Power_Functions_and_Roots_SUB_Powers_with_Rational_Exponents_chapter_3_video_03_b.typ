@@ -14,7 +14,7 @@
 #v(20pt)
 #only("3-")[- $= 3 3^(1/3)$]
 #v(20pt)
-#only("4-")[- $= 3 wurzel(3,3)$]
+#only("4-")[- $= 3 root(3,3)$]
 #only("1")[
 #voiceover("Das war leider nicht korrekt. Lass uns Schritt für Schritt sehen, wie wir den Ausdruck 5 mal die Kubikwurzel von 3 minus 2 mal die Kubikwurzel von 3 vereinfachen können.")
 ]
@@ -38,11 +38,11 @@
 #v(20pt)
 #only("3-")[- $= 3^(4/3)$]
 #v(20pt)
-#only("4-")[- $= wurzel(3,3^4)$]
+#only("4-")[- $= root(3,3^4)$]
 #v(20pt)
-#only("5-")[- $= wurzel(3,81)$]
+#only("5-")[- $= root(3,81)$]
 #v(20pt)
-#only("6-")[- $= 3^(4/3) = 3 ⋅ wurzel(3,3) ≈ 5.24 🎉$]
+#only("6-")[- $= 3^(4/3) = 3 ⋅ root(3,3) ≈ 5.24 🎉$]
 #only("1")[
 #voiceover("Das ist dasselbe wie 3 multipliziert mit der Kubikwurzel von 3.")
 ]

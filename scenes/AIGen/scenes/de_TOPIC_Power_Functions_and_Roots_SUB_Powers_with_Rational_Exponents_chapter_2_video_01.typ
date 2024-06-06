@@ -11,7 +11,7 @@
 #v(40pt)
 #only("1-")[$ a^(m/n) a^(p/q) = a^((m q+n p)/(n q)) $]
 #v(20pt)
-#only("2-")[Beispiel: $ 2^(1/2) 2^(1/3) = 2^((1 mal 3 + 2 mal 1)/(2 mal 3)) = 2^(5/6) $]
+#only("2-")[Beispiel: $ 2^(1/2) 2^(1/3) = 2^((1 dot 3 + 2 dot 1)/(2 dot 3)) = 2^(5/6) $]
 #only("1")[
 #voiceover("Um Ausdrücke mit rationalen Exponenten, die die gleiche Basis haben, zu multiplizieren, verwenden wir die folgende Regel: a hoch m durch n mal a hoch p durch q ist gleich a hoch mq plus np durch nq.")
 ]
@@ -26,7 +26,7 @@
 #v(40pt)
 #only("1-")[$ a^(m/n) / a^(p/q) = a^((m q-n p)/(n q)) $]
 #v(20pt)
-#only("2-")[Beispiel: $ 3^(2/3) / 3^(1/4) = 3^((2 mal 4 - 3 mal 1)/(3 mal 4)) = 3^(5/12) $]
+#only("2-")[Beispiel: $ 3^(2/3) / 3^(1/4) = 3^((2 dot 4 - 3 dot 1)/(3 dot 4)) = 3^(5/12) $]
 #only("1")[
 #voiceover("Um Ausdrücke mit rationalen Exponenten, die die gleiche Basis haben, zu dividieren, verwenden wir eine ähnliche Regel: a hoch m durch n geteilt durch a hoch p durch q ist gleich a hoch mq minus np durch nq.")
 ]

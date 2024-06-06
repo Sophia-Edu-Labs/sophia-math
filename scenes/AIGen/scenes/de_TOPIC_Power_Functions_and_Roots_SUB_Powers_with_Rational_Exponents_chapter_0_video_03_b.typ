@@ -8,7 +8,9 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Vereinfachung von $8^(1/3)$]
 #v(40pt)
-#only("1-")[🎉 Das ist richtig, tolle Arbeit! Lass uns sehen, wie wir das Schritt für Schritt vereinfachen können. 🧮]
+#only("1-")[Leider falsch...
+
+ Lass uns sehen, wie wir das Schritt für Schritt vereinfachen können. 🧮]
 #v(20pt)
 #only("2-")[- $8^(1/3) = (2^3)^(1/3)$]
 #v(20pt)

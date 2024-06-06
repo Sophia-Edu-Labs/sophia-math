@@ -28,7 +28,8 @@ $ (27/8)^(2/3) $
 ]
 // Emojis, die den Betrachter ermutigen, das Problem zu lösen, werden ab Folie 3 angezeigt
 ]#questionDef(
-  questionText: "Was ist die vereinfachte Form von $(\\frac{27}{8})^{\\frac{2}{3}}$?", \n  answerOptions: ("$\\frac{9}{4}$", "$1$"),
+  questionText: "Was ist die vereinfachte Form von $(\\frac{27}{8})^{\\frac{2}{3}}$?",
+    answerOptions: ("$\\frac{9}{4}$", "$1$"),
   correctAnswerIndex: 0,
   freeTextDetail: (
     fallbackOptionIndex: 1,
@@ -40,6 +41,6 @@ $ (27/8)^(2/3) $
     ),
     answerOptionMatcher:("$\\key{a}$"),
     answerOptionsTypes: (
-      "a": "number"  \n    )
+      "a": "number"      )
   ),
 )

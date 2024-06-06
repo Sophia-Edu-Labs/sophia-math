@@ -33,7 +33,7 @@ Was stellt $a^(1/2)$ dar?
 #slide()[
 #text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Lösung]
 #v(40pt)
-#only("1-")[Erinnere Dich an die Regel: $a^(m/n) = \sqrt[n]{a^m}$]
+#only("1-")[Erinnere Dich an die Regel: $a^(m/n) = root(n,a^m)$]
 #v(20pt)
 #only("2-")[In diesem Fall, $a^(1/2)$, haben wir:]
 #v(10pt)
@@ -42,9 +42,9 @@ Was stellt $a^(1/2)$ dar?
 #v(20pt)
 #only("5-")[Einsetzen in die Regel:]
 #v(10pt)
-#only("6-")[$a^(1/2) = \sqrt[2]{a^1}$]
+#only("6-")[$a^(1/2) = root(2,a^1)$]
 #v(10pt)
-#only("7-")[$a^(1/2) = \sqrt[2]{a}$]
+#only("7-")[$a^(1/2) = root(2,a)$]
 #v(20pt)
 #only("8-")[Daher stellt $a^(1/2)$ die Quadratwurzel von $a$ dar. 📏🎉]
 

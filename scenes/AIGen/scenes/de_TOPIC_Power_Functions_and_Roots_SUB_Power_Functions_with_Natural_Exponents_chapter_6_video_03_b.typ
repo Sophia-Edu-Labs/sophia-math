@@ -9,10 +9,10 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Integral von $x^4$]
 #v(40pt)
-#only("1-")[- Finde $∫x^4 \, \mathrm{d}x$]
-#only("2-")[- Potenzregel: $∫x^n \, \mathrm{d}x = \frac{x^{n+1}}{n+1} + C$ für $n ≠ -1$]
-#only("3-")[- Hier ist $n=4$, also $∫x^4 \, \mathrm{d}x = \frac{x^{4+1}}{4+1} + C$]
-#only("4-")[- Vereinfache: $∫x^4 \, \mathrm{d}x = \frac{x^5}{5} + C$]
+#only("1-")[- Finde $∫x^4 dif x$]
+#only("2-")[- Potenzregel: $∫x^n dif x = (x^(n+1))/(n+1) + C$ für $n ≠ -1$]
+#only("3-")[- Hier ist $n=4$, also $∫x^4 dif x = (x^(4+1))/(4+1) + C$]
+#only("4-")[- Vereinfache: $∫x^4 dif x = (x^5)/(5) + C$]
 #only("1")[
 #voiceover("Leider ist das nicht korrekt. Lass uns Schritt für Schritt sehen, wie wir das lösen können.")
 ]
