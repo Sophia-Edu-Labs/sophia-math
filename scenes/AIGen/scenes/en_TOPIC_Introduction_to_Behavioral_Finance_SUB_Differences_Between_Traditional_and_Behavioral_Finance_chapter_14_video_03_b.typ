@@ -9,7 +9,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Behavioral Finance]
 #v(40pt)
-#only("1-")[According to behavioral finance, investors are influenced by ___.]
+#only("1-")[According to behavioral finance, investors are influenced by \_\_\_\_\_\_.]
 #v(40pt)
 // From the start until section one, the option is black. From section 2 until the end it is then turned red, because it is false.
 #only("-1")[a) rational decisions]#only("2-")[#text(fill:red)[a) rational decisions]] 

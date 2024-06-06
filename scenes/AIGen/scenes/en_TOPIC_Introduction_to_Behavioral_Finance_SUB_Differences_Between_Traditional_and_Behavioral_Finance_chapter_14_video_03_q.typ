@@ -24,7 +24,7 @@
 #only("4")[#voiceover("psychological biases,")]
 #only("5")[#voiceover("or utility maximization?")]
 ]#questionDef(
-questionText: "According to behavioral finance, investors are influenced by $\textbf{psychological biases}$.",
+questionText: "According to behavioral finance, investors are influenced by ______.",
 answerOptions: ("rational decisions", "market efficiency", "psychological biases", "utility maximization"),
 correctAnswerIndex: 2,
 )

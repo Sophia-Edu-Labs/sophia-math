@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe to follow trends,")]
 #only("5")[#voiceover("or is it to avoid losses?")]
 ]#questionDef(
-questionText: "In traditional finance, rationality means investors make decisions to \underline{\hspace{3cm}}.", 
+questionText: "In traditional finance, rationality means investors make decisions to ____.", 
 answerOptions: ("minimize risk", "maximize utility", "follow trends", "avoid losses"),
 correctAnswerIndex: 1,
 )

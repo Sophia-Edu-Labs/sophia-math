@@ -25,7 +25,7 @@
 #only("4")[#voiceover("or is it likely,")]
 #only("5")[#voiceover("or is it common?")]
 ]#questionDef(
-questionText: "The Efficient Market Hypothesis (EMH) states that it is $\textbf{_____}$ to consistently achieve higher returns than the market average.",
+questionText: "The Efficient Market Hypothesis (EMH) states that it is ______ to consistently achieve higher returns than the market average.",
 answerOptions: ("easy", "impossible", "likely", "common"),
 correctAnswerIndex: 1,
 )

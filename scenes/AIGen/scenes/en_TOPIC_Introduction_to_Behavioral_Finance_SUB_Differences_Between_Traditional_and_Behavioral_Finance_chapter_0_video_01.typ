@@ -61,7 +61,7 @@
 #voiceover("The assumptions of rational investors and efficient markets lead to the recommendation of passive investment strategies, such as investing in index funds.")
 ]
 #only("2")[
-#voiceover("Furthermore, these assumptions suggest that market prices are always "fair", as they incorporate all known information and reflect the collective wisdom of all market participants.")
+#voiceover("Furthermore, these assumptions suggest that market prices are always \"fair\", as they incorporate all known information and reflect the collective wisdom of all market participants.")
 ]
 ]
 

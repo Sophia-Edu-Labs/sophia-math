@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe investor behavior that is predictable,")]
 #only("5")[#voiceover("or is it investor behavior that is efficient?")]
 ]#questionDef(
-questionText: "Behavioral Finance helps in understanding investor behavior that is _ _ _ _.",
+questionText: "Behavioral Finance helps in understanding investor behavior that is _____.",
 answerOptions: ("always rational", "influenced by psychological factors", "predictable", "efficient"),
 correctAnswerIndex: 1,
 )

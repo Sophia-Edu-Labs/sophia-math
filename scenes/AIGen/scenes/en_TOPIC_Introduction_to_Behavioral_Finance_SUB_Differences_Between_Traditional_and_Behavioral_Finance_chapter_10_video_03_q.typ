@@ -30,7 +30,7 @@
 #only("4")[#voiceover("better investment strategies,")]
 #only("5")[#voiceover("or reduced risk?")]
 ]#questionDef(
-questionText: "Using heuristics can lead to $_$_____.",
+questionText: "Using heuristics can lead to ______.",
 answerOptions: ("more accurate decisions", "biases", "better investment strategies", "reduced risk"),
 correctAnswerIndex: 1,
 )

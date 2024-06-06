@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or emotional,")]
 #only("5")[#voiceover("or unpredictable?")]
 ]#questionDef(
-questionText: "According to traditional finance, investors are assumed to be \$rational\$.",
+questionText: "According to traditional finance, investors are assumed to be _____.",
 answerOptions: ("irrational", "rational", "emotional", "unpredictable"),
 correctAnswerIndex: 1
 )

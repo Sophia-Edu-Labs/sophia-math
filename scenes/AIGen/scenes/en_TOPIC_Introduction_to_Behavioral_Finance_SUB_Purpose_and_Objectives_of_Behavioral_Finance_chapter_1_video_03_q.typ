@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe irrational,")]
 #only("5")[#voiceover("or are they predictable?")]
 ]#questionDef(
-questionText: "Behavioral Finance aims to explain why investors often make decisions that are \$_____\$.",
+questionText: "Behavioral Finance aims to explain why investors often make decisions that are _____.",
 answerOptions: ("rational", "optimal", "irrational", "predictable"),
 correctAnswerIndex: 2
 )

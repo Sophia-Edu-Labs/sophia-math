@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe it leads to market bubbles or crashes,")]
 #only("5")[#voiceover("or does it lead to reduced risk?")]
 ]#questionDef(
-questionText: "Herd behavior can lead to $\textbf{market bubbles or crashes}$.",
+questionText: "Herd behavior can lead to ______.",
 answerOptions: ("market stability", "accurate predictions", "market bubbles or crashes", "reduced risk"),
 correctAnswerIndex: 2,
 )

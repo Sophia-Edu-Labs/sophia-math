@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe they base their decisions on all available information,")]
 #only("5")[#voiceover("or do they base their decisions on market rumors?")]
 ]#questionDef(
-questionText: "According to traditional finance, rational investors base their decisions on $all\ available\ information$.",
-answerOptions: ("$emotions$", "$past\ experiences$", "$all\ available\ information$", "$market\ rumors$"),
+questionText: "According to traditional finance, rational investors base their decisions on ______.",
+answerOptions: ("emotions", "past experiences", "all available information", "market rumors"),
 correctAnswerIndex: 2,
 )

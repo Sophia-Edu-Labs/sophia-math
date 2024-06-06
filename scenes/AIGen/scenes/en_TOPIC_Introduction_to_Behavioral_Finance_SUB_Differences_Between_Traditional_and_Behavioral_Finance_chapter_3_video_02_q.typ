@@ -25,7 +25,7 @@
 #only("4")[#voiceover("are they influenced by emotions,")]
 #only("5")[#voiceover("or are they predictable?")]
 ]#questionDef(
-questionText: "In an efficient market, asset prices $\textbf{reflect\ all\ available\ information}$.",
+questionText: "In an efficient market, asset prices ______$.",
 answerOptions: ("are random", "reflect all available information", "are influenced by emotions", "are predictable"),
 correctAnswerIndex: 1,
 )

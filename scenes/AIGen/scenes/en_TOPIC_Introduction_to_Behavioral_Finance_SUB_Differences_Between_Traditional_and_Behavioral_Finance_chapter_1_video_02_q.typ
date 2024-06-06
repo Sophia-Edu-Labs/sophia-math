@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe technical factors,")]
 #only("5")[#voiceover("or mathematical factors?")]
 ]#questionDef(
-questionText: "Behavioral finance studies how _ _ _ _ factors affect financial decisions.",
+questionText: "Behavioral finance studies how ______ factors affect financial decisions.",
 answerOptions: ("economic", "psychological", "technical", "mathematical"),
 correctAnswerIndex: 1,
 )

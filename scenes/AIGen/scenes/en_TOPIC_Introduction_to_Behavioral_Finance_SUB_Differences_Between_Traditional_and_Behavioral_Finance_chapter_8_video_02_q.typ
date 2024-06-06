@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or utility maximization,")]
 #only("5")[#voiceover("or efficient markets?")]
 ]#questionDef(
-questionText: "Behavioral finance criticizes EMH by arguing that \textbf{psychological biases} can lead to market inefficiencies.",
+questionText: "Behavioral finance criticizes EMH by arguing that _____ can lead to market inefficiencies.",
 answerOptions: ("rational behavior", "psychological biases", "utility maximization", "efficient markets"),
 correctAnswerIndex: 1,
 )

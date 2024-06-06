@@ -24,7 +24,7 @@
 #only("4")[#voiceover("are they influenced by emotions,")]
 #only("5")[#voiceover("or are they predictable?")]
 ]#questionDef(
-questionText: "According to EMH, asset prices \$________\$ .",
+questionText: "According to EMH, asset prices ________ .",
 answerOptions: ("are random", "reflect all available information", "are influenced by emotions", "are predictable"),
 correctAnswerIndex: 1,
 )

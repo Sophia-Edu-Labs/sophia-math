@@ -25,7 +25,7 @@
 #only("4")[#voiceover("Excessive trading?")]
 #only("5")[#voiceover("Or reduced risk?")]
 ]#questionDef(
-questionText: "Overconfidence bias can lead to $_____$.",
+questionText: "Overconfidence bias can lead to _____.",
 answerOptions: ("better investment decisions", "more accurate predictions", "excessive trading", "reduced risk"),
 correctAnswerIndex: 2
 )

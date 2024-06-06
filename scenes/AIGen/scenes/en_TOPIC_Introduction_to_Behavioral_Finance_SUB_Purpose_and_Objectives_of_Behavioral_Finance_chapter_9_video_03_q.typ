@@ -25,7 +25,7 @@
 #only("4")[#voiceover("or are they assumed to be rational,")]
 #only("5")[#voiceover("or are they assumed to be unpredictable?")]
 ]#questionDef(
-questionText: "Market efficiency assumes that investors are \$_____\$.",
+questionText: "Market efficiency assumes that investors are _____.",
 answerOptions: ("irrational", "influenced by biases", "rational", "unpredictable"),
 correctAnswerIndex: 2,
 )

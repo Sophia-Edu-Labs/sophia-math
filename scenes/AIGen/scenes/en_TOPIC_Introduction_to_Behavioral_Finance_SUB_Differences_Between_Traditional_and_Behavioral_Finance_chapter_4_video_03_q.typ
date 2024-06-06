@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe the tendency to take more risks,")]
 #only("5")[#voiceover("or is it the tendency to ignore losses?")]
 ]#questionDef(
-questionText: "Loss aversion is the tendency to \$_____\$ .",
+questionText: "Loss aversion is the tendency to _____.",
 answerOptions: ("prefer gains over losses", "avoid losses more than acquiring gains", "take more risks", "ignore losses"),
 correctAnswerIndex: 1,
 )

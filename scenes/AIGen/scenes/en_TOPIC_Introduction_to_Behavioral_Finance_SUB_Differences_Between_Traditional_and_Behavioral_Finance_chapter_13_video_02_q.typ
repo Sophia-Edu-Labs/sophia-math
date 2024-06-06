@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe speculative investment strategies,")]
 #only("5")[#voiceover("or does it suggest high-risk investment strategies?")]
 ]#questionDef(
-questionText: "Traditional finance suggests \textbf{passive} investment strategies.",
+questionText: "Traditional finance suggests ______ investment strategies.",
 answerOptions: ("active", "passive", "speculative", "high-risk"),
 correctAnswerIndex: 1,
 )

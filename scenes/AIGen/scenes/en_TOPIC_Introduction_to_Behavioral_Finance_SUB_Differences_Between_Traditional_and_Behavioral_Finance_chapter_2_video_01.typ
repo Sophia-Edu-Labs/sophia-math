@@ -31,7 +31,7 @@
 #v(40pt)
 #only("1-")[- Investors choose the option with the highest expected utility]
 #v(20pt)
-#only("2-")[- Example: Invest in A (utility: $10) or B (utility: $8)?]
+#only("2-")[- Example: Invest in A (utility: \$10) or B (utility: \$8)?]
 #v(20pt)
 #only("3-")[- Rational investor chooses A 🅰️]
 #only("1")[
@@ -61,7 +61,7 @@
 #voiceover("As a result, market prices are thought to reflect all known information.")
 ]
 #only("3")[
-#voiceover("This implies that there is no systematic way to "beat the market" and achieve returns higher than the market average.")
+#voiceover("This implies that there is no systematic way to \"beat the market\" and achieve returns higher than the market average.")
 ]
 ]
 

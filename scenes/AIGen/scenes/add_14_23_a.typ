@@ -4,7 +4,6 @@
 #set text(size: 20pt)
 #it.body
 ]
-
 #slide()[
 #text(size: 30pt, weight: "bold")[Aufgabe]
 #v(40pt)
@@ -47,30 +46,44 @@
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
+import numpy as np
 
-def plot_fraction_on_number_line(ax, fractions, labels, title):
-    ax.set_xlim(0, 1)
-    ax.set_xticks([i/12 for i in range(13)])
-    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
-    ax.set_yticks([])
-    ax.set_title(title, fontsize=20)
-    for frac, label in zip(fractions, labels):
-        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
-        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
+def visualize_original_fractions(frac1, frac2):
+    num1, den1 = frac1
+    num2, den2 = frac2
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 3))
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
 
-#first plot the fraction 1/4
-plot_fraction_on_number_line(axs[0], [1/4], ['1/4'], '1/4')
-#then plot the fraction 2/3
-plot_fraction_on_number_line(axs[1], [2/3], ['2/3'], '2/3')
+    for i in range(1, den1):
+        ax1.axvline(i / den1, color='black', linestyle='--', linewidth=3)
+    ax1.add_patch(plt.Rectangle((0, 0), num1 / den1, 1, color='red', alpha=0.8))
+    ax1.text(num1 / (2 * den1), 0.5, f'{num1}/{den1}', ha='center', va='center', fontsize=44, color='white')
+    ax1.set_xlim(0, 1)
+    ax1.set_ylim(0, 1)
+    ax1.set_xticks(np.arange(0, 1 + 1/den1, 1/den1))
+    ax1.set_xticklabels([f'{i}/{den1}' for i in range(den1 + 1)])
+    ax1.set_yticks([])
 
-plt.tight_layout()
-plt.show()
+    for i in range(1, den2):
+        ax2.axvline(i / den2, color='black', linestyle='--', linewidth=3)
+    ax2.add_patch(plt.Rectangle((0, 0), num2 / den2, 1, color='blue', alpha=0.8))
+    ax2.text(num2 / (2 * den2), 0.5, f'{num2}/{den2}', ha='center', va='center', fontsize=44, color='white')
+    ax2.set_xlim(0, 1)
+    ax2.set_ylim(0, 1)
+    ax2.set_xticks(np.arange(0, 1 + 1/den2, 1/den2))
+    ax2.set_xticklabels([f'{i}/{den2}' for i in range(den2 + 1)])
+    ax2.set_yticks([])
+
+    plt.tight_layout()
+    plt.show()
+
+frac1 = (1, 4) 
+frac2 = (2, 3)
+
+visualize_original_fractions(frac1, frac2)
 ```,
 width: 360pt),
-)
-]
+)]
 ]
 #only("1-")[#text()[- Ursprüngliche Brüche]]
 #v(20pt)
@@ -93,27 +106,43 @@ width: 360pt),
 #box()[
 #morphchildren(id: "plot2")[
 #figure(
-pyimage(``` 
+pyimage(```
 import matplotlib.pyplot as plt
+import numpy as np
 
-def plot_fraction_on_number_line(ax, fractions, labels, title):
-    ax.set_xlim(0, 1)
-    ax.set_xticks([i/12 for i in range(13)])
-    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
-    ax.set_yticks([])
-    ax.set_title(title, fontsize=20)
-    for frac, label in zip(fractions, labels):
-        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
-        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
+def visualize_equivalent_fractions(frac1, frac2):
+    num1, den1 = frac1
+    num2, den2 = frac2
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 3))
-#first plot the fraction 3/12, which is equivalent to the fraction 1/4
-plot_fraction_on_number_line(axs[0], [3/12], ['3/12'], '3/12')
-#then plot the fraction 8/12, which is equivalent to the fraction 2/3
-plot_fraction_on_number_line(axs[1], [8/12], ['8/12'], '8/12')
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
 
-plt.tight_layout()
-plt.show()
+    for i in range(1, 12):
+        ax1.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+    ax1.add_patch(plt.Rectangle((0, 0), num1 / 12, 1, color='red', alpha=0.8))
+    ax1.text(num1 / (2 * 12), 0.5, f'{num1}/{12}', ha='center', va='center', fontsize=44, color='white')
+    ax1.set_xlim(0, 1)
+    ax1.set_ylim(0, 1)
+    ax1.set_xticks(np.arange(0, 1 + 1/12, 1/12))
+    ax1.set_xticklabels([f'{i}/{12}' for i in range(12 + 1)])
+    ax1.set_yticks([])
+
+    for i in range(1, 12):
+        ax2.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+    ax2.add_patch(plt.Rectangle((0, 0), num2 / 12, 1, color='blue', alpha=0.8))
+    ax2.text(num2 / (2 * 12), 0.5, f'{num2}/{12}', ha='center', va='center', fontsize=44, color='white')
+    ax2.set_xlim(0, 1)
+    ax2.set_ylim(0, 1)
+    ax2.set_xticks(np.arange(0, 1 + 1/12, 1/12))
+    ax2.set_xticklabels([f'{i}/{12}' for i in range(12 + 1)])
+    ax2.set_yticks([])
+
+    plt.tight_layout()
+    plt.show()
+
+frac1 = (3, 12) 
+frac2 = (8, 12)
+
+visualize_equivalent_fractions(frac1, frac2)
 ```,
 width: 360pt),
 )]
@@ -137,57 +166,39 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Korrekte Lösung: Addieren]
 #box()[
-#morphchildren(id: "plot2")[
+#morphchildren(id: "plot3")[
 #figure(
-pyimage(``` 
+pyimage(```
 import matplotlib.pyplot as plt
+import numpy as np
 
-def plot_fraction_on_number_line(ax, fractions, labels, title):
+def visualize_sum_fraction(frac1, frac2):
+    num1, den1 = frac1
+    num2, den2 = frac2
+
+    fig, ax = plt.subplots(figsize=(8, 3))
+
+    for i in range(1, 12):
+        ax.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+    ax.add_patch(plt.Rectangle((0, 0), (num1 + num2) / 
+
+12, 1, color='purple', alpha=0.8))
+    ax.text((num1 + num2) / (2 * 12), 0.5, f'{num1 + num2}/{12}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
-    ax.set_xticks([i/12 for i in range(13)])
-    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
+    ax.set_ylim(0, 1)
+    ax.set_xticks(np.arange(0, 1 + 1/12, 1/12))
+    ax.set_xticklabels([f'{i}/{12}' for i in range(12 + 1)])
     ax.set_yticks([])
-    ax.set_title(title, fontsize=20)
-    for frac, label in zip(fractions, labels):
-        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
-        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
+    plt.tight_layout()
+    plt.show()
 
-fig, ax = plt.subplots(figsize=(12, 3))
-#plot the sum of the two fractions
-plot_fraction_on_number_line(ax, [11/12], ['11/12'], '3/12 + 8/12 = 11/12')
+frac1 = (3, 12) 
+frac2 = (8, 12)
 
-plt.tight_layout()
-plt.show()
+visualize_sum_fraction(frac1, frac2)
 ```,
 width: 360pt),
-)
-]
-]
-$ #sym.arrow.b $
-#box()[
-#figure(
-pyimage(``` 
-import matplotlib.pyplot as plt
-
-def plot_fraction_on_number_line(ax, fractions, labels, title):
-    ax.set_xlim(0, 1)
-    ax.set_xticks([i/12 for i in range(13)])
-    ax.set_xticklabels([str(i/12) for i in range(13)], fontsize=10)
-    ax.set_yticks([])
-    ax.set_title(title, fontsize=20)
-    for frac, label in zip(fractions, labels):
-        ax.plot([0, frac], [0.5, 0.5], marker='|', markersize=20, color='blue')
-        ax.text(frac/2, 0.55, label, horizontalalignment='center', fontsize=15)
-
-fig, ax = plt.subplots(figsize=(12, 3))
-#plot the sum of the two fractions
-plot_fraction_on_number_line(ax, [11/12], ['11/12'], '11/12')
-
-plt.tight_layout()
-plt.show()
-```,
-width: 360pt),
-)
+)]
 ]
 #v(40pt)
 #only("1-")[#text(weight: "bold")[Schritt 3:] Addiere die Zähler, behalte den gemeinsamen Nenner]

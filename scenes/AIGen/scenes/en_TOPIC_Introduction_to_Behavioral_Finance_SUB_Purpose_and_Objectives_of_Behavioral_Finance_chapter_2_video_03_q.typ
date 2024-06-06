@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe to predict market trends,")]
 #only("5")[#voiceover("or is it to calculate financial ratios?")]
 ]#questionDef(
-questionText: "Behavioral Finance aims to develop strategies to $\textbf{mitigate biases}$.",
+questionText: "Behavioral Finance aims to develop strategies to ______.",
 answerOptions: ("maximize profits", "mitigate biases", "predict market trends", "calculate financial ratios"),
 correctAnswerIndex: 1,
 )

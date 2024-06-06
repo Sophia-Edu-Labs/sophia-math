@@ -9,7 +9,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Behavioral Finance and Market Efficiency]
 #v(40pt)
-According to behavioral finance, markets are _______.
+According to behavioral finance, markets are \_\_\_\_\_.
 #v(40pt)
 #only("-1")[a) always efficient]#only("2-")[#text(fill:red)[a) always efficient]]
 #v(10pt)

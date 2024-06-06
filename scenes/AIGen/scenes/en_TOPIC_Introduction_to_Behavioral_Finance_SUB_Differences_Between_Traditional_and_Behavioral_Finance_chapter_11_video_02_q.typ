@@ -30,7 +30,7 @@
 #only("4")[#voiceover("an initial piece of information,")]
 #only("5")[#voiceover("or market trends?")]
 ]#questionDef(
-questionText: "Anchoring bias occurs when individuals rely too heavily on $______$.",
+questionText: "Anchoring bias occurs when individuals rely too heavily on ______.",
 answerOptions: ("past experiences", "emotions", "an initial piece of information", "market trends"),
 correctAnswerIndex: 2,
 )

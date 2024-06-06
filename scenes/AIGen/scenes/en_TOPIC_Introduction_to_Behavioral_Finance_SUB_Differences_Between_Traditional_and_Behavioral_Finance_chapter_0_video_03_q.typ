@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe they are assumed to be efficient,")]
 #only("5")[#voiceover("or are they assumed to be random?")]
 ]#questionDef(
-questionText: "Traditional finance assumes that markets are $\textbf{efficient}$.",
+questionText: "Traditional finance assumes that markets are _____.",
 answerOptions: ("inefficient", "unpredictable", "efficient", "random"),
 correctAnswerIndex: 2,
 )

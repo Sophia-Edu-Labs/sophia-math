@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or is it likely,")]
 #only("5")[#voiceover("or is it common?")]
 ]#questionDef(
-questionText: "In an efficient market, it is $\textbf{impossible}$ to consistently achieve higher returns than the market average.",
+questionText: "In an efficient market, it is ______ to consistently achieve higher returns than the market average.",
 answerOptions: ("easy", "impossible", "likely", "common"),
 correctAnswerIndex: 1,
 )

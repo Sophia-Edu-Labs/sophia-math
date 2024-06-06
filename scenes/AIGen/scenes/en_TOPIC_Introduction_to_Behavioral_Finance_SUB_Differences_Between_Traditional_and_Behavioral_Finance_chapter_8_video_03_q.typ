@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or are they sometimes inefficient,")]
 #only("5")[#voiceover("or are they always predictable?")]
 ]#questionDef(
-questionText: "According to behavioral finance, markets are \$_____\$.",
+questionText: "According to behavioral finance, markets are _____.",
 answerOptions: ("always efficient", "never efficient", "sometimes inefficient", "always predictable"),
 correctAnswerIndex: 2,
 )

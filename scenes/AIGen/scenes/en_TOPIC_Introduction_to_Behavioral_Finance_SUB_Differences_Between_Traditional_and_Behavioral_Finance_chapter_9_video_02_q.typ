@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe by Markowitz and Sharpe,")]
 #only("5")[#voiceover("or was it developed by Merton and Scholes?")]
 ]#questionDef(
-questionText: "Prospect theory was developed by _ _ _ _ _ .",
+questionText: "Prospect theory was developed by ______.",
 answerOptions: ("Fama and French", "Kahneman and Tversky", "Markowitz and Sharpe", "Merton and Scholes"),
 correctAnswerIndex: 1,
 )

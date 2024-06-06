@@ -30,7 +30,7 @@
 #only("4")[#voiceover("overestimating or underestimating values,")]
 #only("5")[#voiceover("or reduced risk?")]
 ]#questionDef(
-questionText: "Anchoring bias can lead to \textbf{overestimating or underestimating values}.",
+questionText: "Anchoring bias can lead to ______.",
 answerOptions: ("more accurate decisions", "better investment strategies", "overestimating or underestimating values", "reduced risk"),
 correctAnswerIndex: 2,
 )

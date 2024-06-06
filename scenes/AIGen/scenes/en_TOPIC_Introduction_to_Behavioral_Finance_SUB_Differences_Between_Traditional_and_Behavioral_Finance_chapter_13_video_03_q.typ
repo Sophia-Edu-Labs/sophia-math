@@ -25,7 +25,7 @@
 #only("4")[#voiceover("or maybe active investment strategies,")]
 #only("5")[#voiceover("or does it suggest low-risk investment strategies?")]
 ]#questionDef(
-questionText: "Behavioral finance suggests \textbf{active} investment strategies to exploit market inefficiencies.",
+questionText: "Behavioral finance suggests \\textbf{active} investment strategies to exploit market inefficiencies.",
 answerOptions: ("passive", "conservative", "active", "low-risk"),
 correctAnswerIndex: 2,
 )
