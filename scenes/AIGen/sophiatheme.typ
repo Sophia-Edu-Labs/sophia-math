@@ -216,13 +216,25 @@
   ]
 }
 
+#let remove_empty_lines(str) = {
+  let lines = str.split("\n")
+  let non_empty_lines = lines.filter(line => line.trim() != "")
+  non_empty_lines.join("\n")
+}
+
+#let map_empty_lines(str) = {
+  let lines = str.split("\n")
+  let mapped_lines = lines.map(line => if line.trim() == "" { "\n" } else { line })
+  mapped_lines.join("")
+}
+
 #let pyimage(code, width: auto, height: auto) = {
   let contents = json(".typst-images/contents.json")
 
   for content in contents {
     // return content.code
     // return code.text
-    if content.code == code.text.trim() {
+    if map_empty_lines(content.code).trim() == map_empty_lines(code.text).trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
@@ -239,7 +251,7 @@
   for content in contents {
     // return content.code
     // return code.text
-    if content.code == code.text.trim() {
+    if map_empty_lines(content.code).trim() == map_empty_lines(code.text).trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
