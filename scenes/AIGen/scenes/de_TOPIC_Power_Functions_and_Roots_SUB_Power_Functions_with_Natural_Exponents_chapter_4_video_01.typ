@@ -76,7 +76,7 @@ width: 360pt),
 #v(40pt)
 #only("1-")[- Das Multiplizieren von Zahlen zwischen -1 und 1 macht sie kleiner 📉]
 #v(20pt)
-#only("2-")[- Beispiel: $0.5 multiply 0.5 = 0.25$, $0.5 multiply 0.5 multiply 0.5 = 0.125$]
+#only("2-")[- Beispiel: $0.5 dot 0.5 = 0.25$, $0.5 dot 0.5 dot 0.5 = 0.125$]
 #only("1")[
 #voiceover("Intuitiv ergibt das Sinn. Wenn Du Zahlen zwischen minus eins und eins multiplizierst, wird das Ergebnis kleiner.")
 ]
@@ -103,4 +103,4 @@ width: 360pt),
 #only("3")[
 #voiceover("Das ergibt intuitiv Sinn, da das Multiplizieren von Zahlen zwischen minus eins und eins zu kleineren Zahlen führt.")
 ]
-]
+]]

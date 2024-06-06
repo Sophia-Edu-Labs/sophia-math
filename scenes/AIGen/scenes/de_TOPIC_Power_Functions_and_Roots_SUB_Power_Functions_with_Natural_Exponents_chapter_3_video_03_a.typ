@@ -7,11 +7,11 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Verhalten, wenn $x \arrow infinity$]
+#text(size: 30pt, weight: "bold")[Verhalten, wenn $x arrow infinity$]
 #v(40pt)
-#only("1-")[- Betrachte $f(x) = x^6$ wenn $x \arrow infinity$]
-#only("2-")[- Erinnere dich: $f(x) = x^n \arrow infinity$ wenn $x \arrow infinity$ für $n > 0$]
-#only("3-")[- Hier: $n = 6 > 0$, also $f(x) = x^6 \arrow infinity$ wenn $x \arrow infinity$]
+#only("1-")[- Betrachte $f(x) = x^6$ wenn $x arrow infinity$]
+#only("2-")[- Erinnere dich: $f(x) = x^n arrow infinity$ wenn $x arrow infinity$ für $n > 0$]
+#only("3-")[- Hier: $n = 6 > 0$, also $f(x) = x^6 arrow infinity$ wenn $x arrow infinity$]
 #only("1")[
 #voiceover("Großartig! Das ist die richtige Antwort. Lass uns sehen, warum. Wir wollen das Verhalten der Funktion f von x gleich x hoch 6 bestimmen, wenn x gegen unendlich geht.")
 ]
@@ -42,14 +42,14 @@ plt.figure(figsize=(8, 6))
 plt.plot(x, y, 'b-', linewidth=2, label='$f(x) = x^6$')
 plt.xlabel('$x$', fontsize=14)
 plt.ylabel('$f(x)$', fontsize=14)
-plt.title('Verhalten von $f(x) = x^6$ wenn $x \arrow infinity$', fontsize=16)
+plt.title('Verhalten von $f(x) = x^6$ wenn $x arrow infinity$', fontsize=16)
 plt.grid(True)
 plt.legend(fontsize=12)
 
 plt.xlim(0, 5)
 plt.ylim(0, 20000)
 
-plt.annotate('$f(x) \arrow infinity$ wenn $x \arrow infinity$', xy=(4, 10000), xytext=(2, 15000),
+plt.annotate('$f(x) arrow infinity$ wenn $x arrow infinity$', xy=(4, 10000), xytext=(2, 15000),
              arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)
 
 plt.show()
@@ -61,16 +61,16 @@ width: 360pt),
 #only("1")[
 #voiceover("Wir können dieses Verhalten in einem Diagramm visualisieren. Wenn x immer größer wird und sich nach rechts auf der x-Achse bewegt, wachsen die Funktionswerte von f von x gleich x hoch 6 sehr schnell und streben gegen unendlich.")
 ]
-]
+]]
 
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Zusammenfassung]
 #v(40pt)
 #only("1-")[- Für Potenzfunktionen $f(x) = x^n$ mit $n > 0$:]
-#only("2-")[$\quad$- Wenn $x \arrow infinity$, dann $f(x) \arrow infinity$]
-#only("3-")[$\quad$- Wenn $x \arrow -infinity$, dann $f(x) \arrow infinity$ wenn $n$ gerade ist]
-#only("4-")[$\quad$- Wenn $x \arrow -infinity$, dann $f(x) \arrow -infinity$ wenn $n$ ungerade ist]
+#only("2-")[- Wenn $x arrow infinity$, dann $f(x) arrow infinity$]
+#only("3-")[- Wenn $x arrow -infinity$, dann $f(x) arrow infinity$ wenn $n$ gerade ist]
+#only("4-")[- Wenn $x arrow -infinity$, dann $f(x) arrow -infinity$ wenn $n$ ungerade ist]
 #only("1")[
 #voiceover("Zusammenfassend, für Potenzfunktionen der Form f von x gleich x hoch n, wobei n eine positive Zahl ist:")
 ]

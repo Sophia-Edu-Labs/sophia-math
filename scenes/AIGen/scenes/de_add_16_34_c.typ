@@ -44,29 +44,46 @@
 #box()[
 #morphchildren(id: "plot1")[
 #figure(
-pyimage(``` 
+pyimage(```
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
+import numpy as np
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def visualize_fraction(ax, num, den, color, title):
+    # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    
+    # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    
+    # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    
+    # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_ylim(0, 0.3)
+    
+    # Berechnung der Tick-Positionen und -Beschriftungen basierend auf dem Nenner
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    
+    # Setzen der x-Achsen-Ticks und -Beschriftungen
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    
+    # Entfernen der y-Achsen-Ticks für ein saubereres Aussehen
+    ax.set_yticks([])
+    
+    # Titel hinzufügen
+    ax.set_title(title)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+# Erstellen einer Figur mit zwei Unterplots, vertikal ausgerichtet
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
-#first plot the fraction 1/6
-plot_fraction_circle(axs[0], 6, 1, '1/6')
-#then plot the fraction 3/4
-plot_fraction_circle(axs[1], 4, 3, '3/4')
+# Ersten Bruch 1/6 auf der Zahlenlinie plotten
+visualize_fraction(axs[0], 1, 6, 'red', '1/6')
+# Zweiten Bruch 3/4 auf der Zahlenlinie plotten
+visualize_fraction(axs[1], 3, 4, 'blue', '3/4')
 
 plt.tight_layout()
 plt.show()
@@ -100,26 +117,27 @@ width: 360pt),
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
+import numpy as np
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def visualize_fraction(ax, num, den, color, title):
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_ylim(0, 0.3)
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    ax.set_yticks([])
+    ax.set_title(title)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
 #first subplot: 1/6 to 2/12
-plot_fraction_circle(axs[0], 6, 1, '1/6')
-plot_fraction_circle(axs[1], 12, 2, '2/12')
+visualize_fraction(axs[0], 1, 6, 'blue', '1/6')
+visualize_fraction(axs[1], 2, 12, 'blue', '2/12')
 
 plt.tight_layout()
 plt.show()
@@ -135,26 +153,27 @@ width: 360pt),
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
+import numpy as np
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def visualize_fraction(ax, num, den, color, title):
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_ylim(0, 0.3)
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    ax.set_yticks([])
+    ax.set_title(title)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
 #second subplot: 3/4 to 9/12
-plot_fraction_circle(axs[0], 4, 3, '3/4')
-plot_fraction_circle(axs[1], 12, 9, '9/12')
+visualize_fraction(axs[0], 3, 4, 'blue', '3/4')
+visualize_fraction(axs[1], 9, 12, 'blue', '9/12')
 
 plt.tight_layout()
 plt.show()
@@ -184,26 +203,27 @@ width: 360pt),
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
+import numpy as np
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def visualize_fraction(ax, num, den, color, title):
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_ylim(0, 0.3)
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    ax.set_yticks([])
+    ax.set_title(title)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 #first plot the fraction 2/12, which is equivalent to the fraction 1/6
-plot_fraction_circle(axs[0], 12, 2, '2/12')
+visualize_fraction(axs[0], 2, 12, 'blue', '2/12')
 #then plot the fraction 9/12, which is equivalent to the fraction 3/4
-plot_fraction_circle(axs[1], 12, 9, '9/12')
+visualize_fraction(axs[1], 9, 12, 'blue', '9/12')
 
 plt.tight_layout()
 plt.show()
@@ -217,24 +237,25 @@ $ #sym.arrow.b $
 #figure(
 pyimage(``` 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Wedge
+import numpy as np
 
-def plot_fraction_circle(ax, num_parts, shaded_parts, title):
-    for i in range(num_parts):
-        angle_start = (360 / num_parts) * i
-        angle_end = (360 / num_parts) * (i + 1)
-        color = 'blue' if i < shaded_parts else 'lightgray'
-        wedge = Wedge(center=(0.5, 0.5), r=0.4, theta1=angle_start, theta2=angle_end, facecolor=color, edgecolor='black', linewidth=max(4, 10-num_parts/3))
-        ax.add_patch(wedge)
+def visualize_fraction(ax, num, den, color, title):
+    for i in range(1, den):
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+    ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
     ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=50)
-    ax.axis('off')
+    ax.set_ylim(0, 0.3)
+    ticks = np.arange(0, 1 + 1/den, 1/den)
+    labels = [f'{i}/{den}' for i in range(len(ticks))]
+    ax.set_xticks(ticks)
+    ax.set_xticklabels(labels)
+    ax.set_yticks([])
+    ax.set_title(title)
 
-fig, ax = plt.subplots(figsize=(12, 5))
+fig, ax = plt.subplots(figsize=(8, 3))
 #plot the sum of the two fractions
-plot_fraction_circle(ax, 12, 11, '2/12 + 9/12 = 11/12')
+visualize_fraction(ax, 11, 12, 'blue', '2/12 + 9/12 = 11/12')
 
 plt.tight_layout()
 plt.show()

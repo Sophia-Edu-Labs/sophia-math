@@ -24,7 +24,7 @@
 #v(40pt)
 #only("1-")[$ f'(x) = n x^(n-1) $]
 #v(20pt)
-#only("2-")[Beispiel: $ f(x) = x^3 \rightarrow f'(x) = 3 x^2 $]
+#only("2-")[Beispiel: $ f(x) = x^3 arrow f'(x) = 3 x^2 $]
 #only("1")[
 #voiceover("Die Ableitung einer Potenzfunktion f von x gleich x hoch n ist f Strich von x gleich n mal x hoch n minus 1.")
 ]
@@ -40,7 +40,7 @@
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(``
+pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -78,9 +78,9 @@ width: 360pt),
 #v(20pt)
 #only("3-")[3. $f(x+h) = x^n + n x^(n-1) h + ... + h^n$]
 #v(20pt)
-#only("4-")[4. $f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$]
+#only("4-")[4. $f'(x) = \lim_{h \to 0} (f(x+h) - f(x))/h$]
 #v(20pt)
-#only("5-")[5. $f'(x) = \lim_{h \to 0} \frac{n x^{(n-1)} h + ...}{h} = n x^{(n-1)}$]
+#only("5-")[5. $f'(x) = \lim_{h \to 0} (n x^{(n-1)} h + ...)/h = n x^{(n-1)}$]
 #only("1")[
 #voiceover("Lass uns diese Formel beweisen. Wir beginnen mit der Funktion f von x gleich x hoch n.")
 ]
