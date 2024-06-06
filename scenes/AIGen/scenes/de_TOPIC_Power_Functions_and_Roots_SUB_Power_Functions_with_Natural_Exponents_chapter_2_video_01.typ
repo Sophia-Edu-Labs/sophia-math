@@ -59,7 +59,7 @@ width: 360pt),
 #voiceover("Gerade Potenzfunktionen, wie x quadrat, x hoch vier und x hoch sechs, sind symmetrisch zur y-Achse. Das bedeutet, wenn du den Graphen an der y-Achse spiegelst, sieht er gleich aus.")
 ]
 ]
-
+]
 #slide()[
 #text(size: 30pt, weight: "bold")[Symmetrie ungerader Potenzfunktionen]
 #v(40pt)
