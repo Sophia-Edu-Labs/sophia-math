@@ -23,7 +23,7 @@ What is $root(6, -64)$ in complex form? 🤔
 ]
 ]#questionDef(
 questionText: "What is $\sqrt[6]{-64}$ in complex form?",
-answerOptions: ("$-2i$", "$2i$"),
+answerOptions: ("$-2$i", "$2$i"),
 correctAnswerIndex: 1,
 freeTextDetail: (
 fallbackOptionIndex: 0,
@@ -33,7 +33,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$\key{a}i$"),
+answerOptionMatcher:("$\key{a}$i"),
 answerOptionsTypes: (
 "a": "number"
 )

@@ -76,17 +76,4 @@ width: 360pt),
 questionText: "Wenn $x$ gegen null geht, nähert sich $f(x) = x^7$ unendlich, einer von null verschiedenen Konstante, oder null?",
 answerOptions: ("Nähert sich null", "Nähert sich unendlich", "Nähert sich einer von null verschiedenen Konstante"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$f(x)$ nähert sich \key{a}, wenn $x$ gegen null geht."),
-answerOptionsTypes: (
-"a": "text"
-)
-),
 )

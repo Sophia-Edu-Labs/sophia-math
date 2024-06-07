@@ -26,6 +26,6 @@
 #only("5")[#voiceover("or could it be 16?")]
 ]#questionDef(
 questionText: "Simplify the expression $4^{(1/2)} \cdot 4^{(1/2)}$.",
-answerOptions: ("2", "4", "8", "16"),
+answerOptions: ("$2$", "$4$", "$8$", "$16$"),
 correctAnswerIndex: 1,
 )

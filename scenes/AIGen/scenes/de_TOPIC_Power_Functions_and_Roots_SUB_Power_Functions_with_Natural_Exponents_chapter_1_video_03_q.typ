@@ -55,17 +55,7 @@ width: 360pt))
 questionText: "Wie sieht der Graph von $f(x) = x^4$ aus?",
 answerOptions: ("Parabel, aber steiler als $f(x) = x^2$", "Gerade Linie"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("Die Form ist eine \key{a}, steiler als $f(x) = x^2$."),
-answerOptionsTypes: (
-"a": "text"
-)
+llmCheckDetails: (
+fallbackOptionIndex: 1
 ),
 )

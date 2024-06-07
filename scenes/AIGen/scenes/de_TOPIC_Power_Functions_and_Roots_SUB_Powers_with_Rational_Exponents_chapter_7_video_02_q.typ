@@ -25,6 +25,6 @@
 #only("5")[#voiceover("oder ist die Lösung x gleich sechzehn?")]
 ]#questionDef(
 questionText: "Löse $x^{1/2} = 4$.",
-answerOptions: ("2", "4", "8", "16"),
+answerOptions: ("$2$", "$4$", "$8$", "$16$"),
 correctAnswerIndex: 3
 )

@@ -73,7 +73,7 @@ answerOptionsTypes: (
 )
 ]#questionDef(
 questionText: "What is the value of $x$ that satisfies the equation $\sqrt[4]{x} = 3$?",
-answerOptions: ("$x = 81$", "$x = 1$"),
+answerOptions: ("$x=81$", "$x=1$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -83,7 +83,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$x = \key{a}$"),
+answerOptionMatcher:("$x=\key{a}$"),
 answerOptionsTypes: (
 "a": "number"
 )

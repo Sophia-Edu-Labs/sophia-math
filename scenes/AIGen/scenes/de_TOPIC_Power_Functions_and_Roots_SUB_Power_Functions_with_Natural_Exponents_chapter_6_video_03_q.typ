@@ -36,18 +36,7 @@ $integral f(x) dif x = ?$
   questionText: "Was ist $\int x^4 \, dx$?",
   answerOptions: ("$\frac{x^5}{5} + C$", "$\frac{x^4}{4} + C$"),
   correctAnswerIndex: 0,
-  freeTextDetail: (
-    fallbackOptionIndex: 1,
-    answerOptionsEquality: (
-      a: (
-        roundingDecimalPlaces: 2,
-        tolerance: none
-      )
-    ),
-    answerOptionMatcher:("$\frac{\key{a}x^5}{\key{b}} + C$"),
-    answerOptionsTypes: (
-      "a": "number",
-      "b": "number"
-    )
-  ),
+llmCheckDetails: (
+fallbackOptionIndex: 1
+),
 )

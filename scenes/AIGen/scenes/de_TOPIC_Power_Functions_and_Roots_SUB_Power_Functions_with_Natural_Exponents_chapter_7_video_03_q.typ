@@ -31,7 +31,7 @@
 ]
 ]#questionDef(
 questionText: "Was ist der Wert von $s$, der Seitenlänge des Würfels?",
-answerOptions: ("$s = 3$", "$s = 9$"),
+answerOptions: ("$s=3$", "$s=9$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -41,7 +41,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$s = \\key{a}$"),
+answerOptionMatcher:("$s=\\key{a}$"),
 answerOptionsTypes: (
 "a": "number"
 )

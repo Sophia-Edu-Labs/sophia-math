@@ -52,24 +52,6 @@ width: 360pt),
 ]
 ]
 
-#questionDef(
-questionText: "Welchen Wert hat $x$, der die Gleichung $root(4, x) = 3$ erfüllt?",
-answerOptions: ("$x = 81$", "$x = 1$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$x = \key{a}$"),
-answerOptionsTypes: (
-"a": "number"
-)
-),
-)
 ]#questionDef(
 questionText: "Welchen Wert hat $x$, der die Gleichung $\sqrt[4]{x} = 3$ erfüllt?",
 answerOptions: ("$x = 81$", "$x = 1$"),

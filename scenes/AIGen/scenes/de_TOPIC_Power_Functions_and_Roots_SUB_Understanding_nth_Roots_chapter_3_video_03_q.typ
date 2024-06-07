@@ -56,7 +56,7 @@ Was ist der vereinfachte Wert von $root(4, 81)$? 🤔
 ]
 ]#questionDef(
 questionText: "Was ist der vereinfachte Wert von $\\sqrt[4]{81}$?",
-answerOptions: ("3", "9"),
+answerOptions: ("$3$", "$9$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -66,7 +66,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("\key{a}"),
+answerOptionMatcher:("$\key{a}$"),
 answerOptionsTypes: (
 "a": "number"
 )

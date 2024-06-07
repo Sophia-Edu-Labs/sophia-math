@@ -28,7 +28,7 @@ $1/root(4, 5)$
 ]
 ]#questionDef(
 questionText: "Rationalize the expression $1/\sqrt[4]{5}$.",
-answerOptions: ("$\sqrt[4]{5^3}/5$", "$1/5$"),
+answerOptions: ("$\\frac{\sqrt[4]{5^3}}{5}$", "$\\frac{1}{5}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -38,10 +38,10 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$\key{a}/\key{b}$"),
+answerOptionMatcher:("$\\frac{\key{a}}{\key{b}}$"),
 answerOptionsTypes: (
-"a": "math",
-"b": "math"
+"a": "number",
+"b": "number"
 )
 ),
 )

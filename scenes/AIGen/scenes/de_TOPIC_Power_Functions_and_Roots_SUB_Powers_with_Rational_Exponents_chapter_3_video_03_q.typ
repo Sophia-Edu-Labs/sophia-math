@@ -24,19 +24,9 @@ $5 3^(1/3) - 2 3^(1/3)$
 ]
 ]#questionDef(
 questionText: "Was ist die vereinfachte Form des Ausdrucks $5 \cdot 3^{1/3} - 2 \cdot 3^{1/3}$?",
-answerOptions: ("$3 \cdot 3^{1/3}$", "$3 \cdot 3^{2/3}$"),
+answerOptions: ("$3\cdot3^{1/3}$", "$3\cdot3^{2/3}$"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$\key{a} \cdot 3^{1/3}$"),
-answerOptionsTypes: (
-"a": "number"
-)
+llmCheckDetails: (
+fallbackOptionIndex: 1
 ),
 )

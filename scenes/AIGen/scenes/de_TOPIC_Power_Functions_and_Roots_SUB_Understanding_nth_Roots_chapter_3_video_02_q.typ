@@ -9,7 +9,7 @@
 #text(size: 30pt, weight: "bold")[Vereinfachung von n-ten Wurzeln]
 // Der Titel "Vereinfachung von n-ten Wurzeln" wird auf dieser Folie angezeigt
 #v(40pt)
-#only("1-")[Vereinfache $\sqrt[3]{27}$.]
+#only("1-")[Vereinfache $root(3,27)$.]
 // Die Frage wird ab Folie 1 angezeigt
 #v(40pt)
 #only("2-")[a) 1]
@@ -30,6 +30,6 @@
 #only("5")[#voiceover("oder könnte es 4 sein?")]
 ]#questionDef(
 questionText: "Vereinfache $\sqrt[3]{27}$.",
-answerOptions: ("1", "2", "3", "4"),
+answerOptions: ("$1$", "$2$", "$3$", "$4$"),
 correctAnswerIndex: 2
 )

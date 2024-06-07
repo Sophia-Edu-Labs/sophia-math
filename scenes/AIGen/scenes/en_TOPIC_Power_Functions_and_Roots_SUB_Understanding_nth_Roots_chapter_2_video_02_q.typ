@@ -31,6 +31,6 @@
 #only("5")[#voiceover("or is it 9?")]
 ]#questionDef(
 questionText: "What is $\sqrt[3]{8 \times 8 \times 27}$?",
-answerOptions: ("2", "3", "6", "9"),
+answerOptions: ("$2$", "$3$", "$6$", "$9$"),
 correctAnswerIndex: 2
 )

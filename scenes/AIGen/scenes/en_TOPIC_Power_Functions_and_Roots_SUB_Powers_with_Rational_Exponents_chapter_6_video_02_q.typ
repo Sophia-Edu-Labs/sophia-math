@@ -31,6 +31,6 @@
 #only("5")[#voiceover("or could it be 16?")]
 ]#questionDef(
 questionText: "Simplify $(2^{(1/2)})^2$.",
-answerOptions: ("2", "4", "8", "16"),
+answerOptions: ("$2$", "$4$", "$8$", "$16$"),
 correctAnswerIndex: 0,
 )

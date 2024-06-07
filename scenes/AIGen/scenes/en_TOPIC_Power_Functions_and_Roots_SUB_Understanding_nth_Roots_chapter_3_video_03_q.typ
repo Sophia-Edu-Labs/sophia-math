@@ -57,7 +57,7 @@ What is the simplified value of $root(4, 81)$? 🤔
 ]
 ]#questionDef(
 questionText: "What is the simplified value of $\\sqrt[4]{81}$?",
-answerOptions: ("3", "9"),
+answerOptions: ("$3$", "$9$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -67,7 +67,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("\key{a}"),
+answerOptionMatcher:("$\key{a}$"),
 answerOptionsTypes: (
 "a": "number"
 )

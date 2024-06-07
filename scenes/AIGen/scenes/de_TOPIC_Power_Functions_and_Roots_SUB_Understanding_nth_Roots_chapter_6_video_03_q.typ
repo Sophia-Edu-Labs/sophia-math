@@ -81,17 +81,4 @@ width: 360pt),
 questionText: "Ist $\sqrt[4]{-16}$ reell?",
 answerOptions: ("Ja", "Nein"),
 correctAnswerIndex: 1,
-freeTextDetail: (
-fallbackOptionIndex: 0,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$key{a}$"),
-answerOptionsTypes: (
-"a": "string"
-)
-),
 )

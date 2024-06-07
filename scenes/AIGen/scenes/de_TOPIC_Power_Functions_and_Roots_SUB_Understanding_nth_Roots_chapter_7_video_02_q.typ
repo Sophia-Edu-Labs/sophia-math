@@ -9,7 +9,7 @@
 #text(size: 30pt, weight: "bold")[Komplexe n-te Wurzeln]
 // Der Titel "Komplexe n-te Wurzeln" wird auf dieser Folie angezeigt
 #v(40pt)
-#only("1-")[Was ist $\sqrt[4]{-16}$ in komplexer Form?]
+#only("1-")[Was ist $root(4,-16)$ in komplexer Form?]
 // Die Frage wird ab Folie 1 angezeigt
 #v(40pt)
 #only("2-")[a) 2i]

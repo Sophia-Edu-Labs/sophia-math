@@ -25,6 +25,6 @@
 #only("5")[#voiceover("or is the solution 10?")]
 ]#questionDef(
 questionText: "Solve $\sqrt[3]{x} = 2$",
-answerOptions: ("4", "6", "8", "10"),
+answerOptions: ("$4$", "$6$", "$8$", "$10$"),
 correctAnswerIndex: 2
 )

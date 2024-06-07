@@ -24,6 +24,7 @@
 #only("4")[#voiceover("maybe it's 3,")]
 #only("5")[#voiceover("or could it be 4?")]
 ]#questionDef(
-questionText: "What is the $3$rd root of $8$?", \nanswerOptions: ("$1$", "$2$", "$3$", "$4$"),
+questionText: "What is the $3$rd root of $8$?", 
+answerOptions: ("$1$", "$2$", "$3$", "$4$"),
 correctAnswerIndex: 1
 )

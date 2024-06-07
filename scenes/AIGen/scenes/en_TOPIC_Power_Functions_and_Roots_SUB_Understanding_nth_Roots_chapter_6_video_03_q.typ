@@ -81,18 +81,5 @@ width: 360pt),
 ]#questionDef(
 questionText: "Is $\sqrt[4]{-16}$ real?",
 answerOptions: ("Yes", "No"),
-correctAnswerIndex: 1,
-freeTextDetail: (
-fallbackOptionIndex: 0,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$key{a}$"),
-answerOptionsTypes: (
-"a": "string"
-)
-),
+correctAnswerIndex: 1
 )

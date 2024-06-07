@@ -70,19 +70,5 @@ Ist $f(x) = x^5$ symmetrisch bezüglich:
 ]
 ]#questionDef(
 questionText: "Ist die Funktion $f(x) = x^5$ symmetrisch bezüglich der y-Achse oder dem Ursprung?",
-answerOptions: ("Dem Ursprung", "Der y-Achse"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$f(x) = x^5$ ist symmetrisch bezüglich \\key{a}."),
-answerOptionsTypes: (
-"a": "string"
-)
-),
+answerOptions: ("Dem Ursprung", "Der y-Achse")
 )

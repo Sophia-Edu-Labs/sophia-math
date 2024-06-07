@@ -29,7 +29,7 @@
 #only("4")[#voiceover("oder vielleicht geht sie gegen einen konstanten Wert,")]
 #only("5")[#voiceover("oder oszilliert sie?")]
 ]#questionDef(
-questionText: "Was passiert mit $f(x) = x^3$, wenn $x$ gegen $infinity$ geht?",
-answerOptions: ("Geht gegen null", "Geht gegen $infinity$", "Geht gegen eine Konstante", "Oszilliert"),
+questionText: "Was passiert mit $f(x) = x^3$, wenn $x$ gegen $\\infty$ geht?",
+answerOptions: ("Geht gegen null", "Geht gegen $\\infty$", "Geht gegen eine Konstante", "Oszilliert"),
 correctAnswerIndex: 1,
 )

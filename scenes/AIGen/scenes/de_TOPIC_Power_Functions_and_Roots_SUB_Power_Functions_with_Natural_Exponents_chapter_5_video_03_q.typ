@@ -25,17 +25,7 @@ $f(x) = x^5$
 questionText: "Was ist die Ableitung der Funktion $f(x) = x^5$?",
 answerOptions: ("$f'(x) = 5x^4$", "$f'(x) = x^4$"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$f'(x) = {a}x^4$"),
-answerOptionsTypes: (
-"a": "number"
-)
+llmCheckDetails: (
+fallbackOptionIndex: 1
 ),
 )

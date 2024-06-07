@@ -32,18 +32,7 @@ $8^(2/3) / 8^(1/3)$
 questionText: "Was ist das vereinfachte Ergebnis von $8^{2/3} / 8^{1/3}$?",
 answerOptions: ("$8^{1/3}$", "$8^{3/2}$"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$8^{\key{a}/\key{b}}$"),
-answerOptionsTypes: (
-"a": "number",
-"b": "number"
-)
+llmCheckDetails: (
+fallbackOptionIndex: 1
 ),
 )

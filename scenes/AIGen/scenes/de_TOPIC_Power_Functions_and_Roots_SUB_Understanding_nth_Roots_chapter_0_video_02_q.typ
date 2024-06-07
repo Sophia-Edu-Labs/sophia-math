@@ -23,6 +23,7 @@
 #only("4")[#voiceover("vielleicht ist es 3,")]
 #only("5")[#voiceover("oder könnte es 4 sein?")]
 ]#questionDef(
-questionText: "Was ist die $3$. Wurzel von $8$?", \nanswerOptions: ("$1$", "$2$", "$3$", "$4$"),
+questionText: "Was ist die $3$. Wurzel von $8$?", 
+answerOptions: ("$1$", "$2$", "$3$", "$4$"),
 correctAnswerIndex: 1
 )

@@ -31,6 +31,6 @@
 #only("5")[#voiceover("or could it be 4?")]
 ]#questionDef(
 questionText: "Simplify $\sqrt[3]{27}$.",
-answerOptions: ("1", "2", "3", "4"),
+answerOptions: ("$1$", "$2$", "$3$", "$4$"),
 correctAnswerIndex: 2
 )

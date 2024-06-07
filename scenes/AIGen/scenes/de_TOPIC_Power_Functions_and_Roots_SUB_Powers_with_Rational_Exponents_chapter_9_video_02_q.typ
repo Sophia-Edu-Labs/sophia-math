@@ -32,4 +32,4 @@
 #questionDef(
 questionText: "Um $(a^{m/n})^p$ zu vereinfachen, verwenden wir die Regel _ _ _ _ _ .",
 answerOptions: ("$(a^{m/n})^p = a^{mnp}$", "$(a^{m/n})^p = a^{(mp)/n}$", "$(a^{m/n})^p = a^{m/(np)}$", "$(a^{m/n})^p = a^{n/(mp)}$"),
-correctAnswerIndex: 1,)
+correctAnswerIndex: 1)

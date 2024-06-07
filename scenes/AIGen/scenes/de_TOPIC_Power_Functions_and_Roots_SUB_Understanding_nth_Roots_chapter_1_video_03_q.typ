@@ -47,25 +47,7 @@ width: 360pt),
 #voiceover("Wie lautet die korrekte Notation für die 6. Wurzel von 64?")
 ]
 
-#questionDef(
-questionText: "Schreibe die 6. Wurzel von 64 in Notation.",
-answerOptions: ("$root(6, 64)$", "$root(64, 6)$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$root(\key{a}, \key{b})$"),
-answerOptionsTypes: (
-"a": "number",
-"b": "number"
-)
-),
-)
+
 ]#questionDef(
 questionText: "Schreibe die 6. Wurzel von 64 in Notation.",
 answerOptions: ("$\\sqrt[6]{64}$", "$\\sqrt[64]{6}$"),

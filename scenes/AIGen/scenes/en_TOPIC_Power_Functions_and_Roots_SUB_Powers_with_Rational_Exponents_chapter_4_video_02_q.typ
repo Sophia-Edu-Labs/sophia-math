@@ -31,6 +31,6 @@
 #only("5")[#voiceover("or is it negative 4?")]
 ]#questionDef(
 questionText: "Simplify $(-8)^{1/3}$.",
-answerOptions: ("2", "-2", "4", "-4"),
+answerOptions: ("$2$", "$-2$", "$4$", "$-4$"),
 correctAnswerIndex: 1,
 )

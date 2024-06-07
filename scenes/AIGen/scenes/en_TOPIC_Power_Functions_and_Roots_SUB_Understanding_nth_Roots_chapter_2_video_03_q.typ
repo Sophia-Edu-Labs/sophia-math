@@ -29,7 +29,8 @@ Remember:
 ]
 ]#questionDef(
 questionText: "What is $\sqrt[4]{\frac{16}{81}}$?",
-answerOptions: ("$\frac{2}{3}$", "$\frac{1}{2}$"), \ncorrectAnswerIndex: 0,
+answerOptions: ("$\frac{2}{3}$", "$\frac{1}{2}$"), 
+correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
@@ -40,6 +41,7 @@ tolerance: none
 ),
 answerOptionMatcher:("$\key{a}$"),
 answerOptionsTypes: (
-"a": "number"  \n)
+"a": "number"  
+)
 ),
 )

@@ -23,6 +23,7 @@
 #only("4")[#voiceover("oder vielleicht minus 9,")]
 #only("5")[#voiceover("oder ist es plus 9?")]
 ]#questionDef(
-questionText: "Was ist $\\sqrt[3]{-27}$?", \nanswerOptions: ("$-3$", "$3$", "$-9$", "$9$"),
+questionText: "Was ist $\\sqrt[3]{-27}$?", 
+answerOptions: ("$-3$", "$3$", "$-9$", "$9$"),
 correctAnswerIndex: 0,
 )
