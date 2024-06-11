@@ -7,28 +7,36 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Even and Odd Power Functions]
+#text(size: 30pt, weight: "bold")[Comparing Even and Odd Power Functions]
 #v(40pt)
-#only("1-")[- $f(x) = x^n$, where $n$ is a natural number]
+#only("1-")[- Even power functions: $f(x) = x^n$ with even $n$]
 #v(20pt)
-#only("2-")[- Even: $n = 2, 4, 6, ...$]
+#only("2-")[- Odd power functions: $f(x) = x^n$ with odd $n$]
 #v(20pt)
-#only("3-")[- Odd: $n = 1, 3, 5, ...$]
+#only("3-")[- Symmetry properties: y-axis symmetry for even, origin symmetry for odd]
+#v(20pt)
+#only("4-")[- Let's explore these properties with examples!]
 #only("1")[
-#voiceover("Power functions are of the form f of x equals x to the power of n, where n is a natural number.")
+#voiceover("In this video, we will compare even and odd power functions. Even power functions are of the form f of x equals x to the n, where n is an even number.")
 ]
 #only("2")[
-#voiceover("When n is even, like 2, 4, 6, and so on, we call the power function an even power function.")
+#voiceover("Odd power functions, on the other hand, are of the form f of x equals x to the n, where n is an odd number.")
 ]
 #only("3")[
-#voiceover("When n is odd, like 1, 3, 5, and so on, we call the power function an odd power function.")
+#voiceover("We will also look at their symmetry properties. Even power functions are symmetric about the y-axis, while odd power functions are symmetric about the origin.")
+]
+#only("4")[
+#voiceover("Let's explore these properties with some examples!")
 ]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Symmetry of Even Power Functions]
+#text(size: 30pt, weight: "bold")[Even Power Functions]
 #v(40pt)
-#only("1-")[
+#only("1-")[$f(x) = x^2$]
+#v(20pt)
+#only("2-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -36,38 +44,41 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(-2, 2, 100)
+x = np.linspace(-3, 3, 400)
+y = x**2
 
-plt.figure(figsize=(6, 6))
-plt.plot(x, x**2, label='$x^2$')
-plt.plot(x, x**4, label='$x^4$')
-plt.plot(x, x**6, label='$x^6$')
-plt.axhline(0, color='black', lw=0.5)
-plt.axvline(0, color='black', lw=0.5)
+plt.plot(x, y, label='$f(x) = x^2$')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
 plt.legend()
-plt.title('Even Power Functions')
-plt.xlabel('x')
-plt.ylabel('f(x)')
-plt.grid(True)
-plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
+]
+#v(20pt)
+#only("3-")[- Symmetric about the y-axis]
 #only("1")[
-#voiceover("Even power functions, like x squared, x to the fourth, and x to the sixth, are symmetric about the y-axis. This means if you reflect the graph across the y-axis, it looks the same.")
+#voiceover("Let's start with an even power function. Consider f of x equals x squared.")
+]
+#only("2")[
+#voiceover("Here is the graph of f of x equals x squared. Notice how the graph is symmetric about the y-axis.")
+]
+#only("3")[
+#voiceover("This symmetry means that if you fold the graph along the y-axis, both sides will match perfectly.")
 ]
 ]
 
-
-There are no errors in the provided code, and it follows the Typst syntax correctly.]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Symmetry of Odd Power Functions]
+#text(size: 30pt, weight: "bold")[Odd Power Functions]
 #v(40pt)
-#only("1-")[
+#only("1-")[$f(x) = x^3$]
+#v(20pt)
+#only("2-")[
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -75,42 +86,45 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(-2, 2, 100)
+x = np.linspace(-3, 3, 400)
+y = x**3
 
-plt.figure(figsize=(6, 6))
-plt.plot(x, x**1, label='$x^1$')
-plt.plot(x, x**3, label='$x^3$')
-plt.plot(x, x**5, label='$x^5$')
-plt.axhline(0, color='black', lw=0.5)
-plt.axvline(0, color='black', lw=0.5)
+plt.plot(x, y, label='$f(x) = x^3$')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
 plt.legend()
-plt.title('Odd Power Functions')
-plt.xlabel('x')
-plt.ylabel('f(x)')
-plt.grid(True)
-plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
+]
+#v(20pt)
+#only("3-")[- Symmetric about the origin]
 #only("1")[
-#voiceover("Odd power functions, like x, x cubed, and x to the fifth, are symmetric about the origin. This means if you rotate the graph 180 degrees around the origin, it looks the same.")
+#voiceover("Now, let's look at an odd power function. Consider f of x equals x cubed.")
+]
+#only("2")[
+#voiceover("Here is the graph of f of x equals x cubed. Notice how the graph is symmetric about the origin.")
+]
+#only("3")[
+#voiceover("This symmetry means that if you rotate the graph 180 degrees around the origin, both sides will match perfectly.")
 ]
 ]
-]
+
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Even power functions ($n = 2, 4, 6, ...$) are symmetric about the y-axis 📈]
+#only("1-")[- Even power functions: symmetric about the y-axis]
 #v(20pt)
-#only("2-")[- Odd power functions ($n = 1, 3, 5, ...$) are symmetric about the origin 🎯]
+#only("2-")[- Odd power functions: symmetric about the origin]
 #only("1")[
-#voiceover("In summary, even power functions, where the exponent is an even number, are symmetric about the y-axis.")
+#voiceover("To summarize, even power functions are symmetric about the y-axis.")
 ]
 #only("2")[
-#voiceover("Odd power functions, where the exponent is an odd number, are symmetric about the origin.")
+#voiceover("Odd power functions, on the other hand, are symmetric about the origin.")
 ]
 ]

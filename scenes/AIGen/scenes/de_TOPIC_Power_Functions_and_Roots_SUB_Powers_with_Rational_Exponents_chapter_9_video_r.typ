@@ -10,7 +10,7 @@
 #v(40pt)
 #only("1-")[- Rationale Exponenten repräsentieren Wurzeln 🌱]
 #v(20pt)
-#only("2-")[- $a^(m/n) = \sqrt[n]{a^m}$ ✅]
+#only("2-")[- $a^(m/n) = root(n, a^m)$ ✅]
 #v(20pt)
 #only("3-")[- Vereinfachen, multiplizieren, dividieren, Gleichungen lösen 🧮]
 #only("1")[
@@ -59,7 +59,7 @@
 #v(20pt)
 #only("2-")[- Beide Seiten auf den Kehrwert des Exponenten potenzieren]
 #v(20pt)
-#only("3-")[- Beispiel: $x^(1/2) = 4 \rightarrow x = 16$ 🎉]
+#only("3-")[- Beispiel: $x^(1/2) = 4 arrow x = 16$ 🎉]
 #only("1")[
 #voiceover("Um Gleichungen mit rationalen Exponenten zu lösen, isolieren wir zuerst den Term mit dem Exponenten.")
 ]

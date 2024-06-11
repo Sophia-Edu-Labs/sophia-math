@@ -7,94 +7,85 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Power Functions in Real Life 🌍]
+#text(size: 30pt, weight: "bold")[Applications of Power Functions]
 #v(40pt)
-#only("1-")[- Used in various fields 🔬⚙️]
+#only("1-")[- Power functions describe relationships where one quantity varies as a power of another 📈]
 #v(20pt)
-#only("2-")[- Physics, engineering, economics, etc. 🚀🏗️💰]
+#only("2-")[- Common form: $f(x) = k x^n$]
+#v(20pt)
+#only("3-")[- Examples: $f(x) = x^2$, $g(x) = 2 x^3$]
+#v(20pt)
+#only("4-")[- Used in physics, engineering, and more ⚙️]
 #only("1")[
-#voiceover("Power functions, which have the form $f(x) = x^n$ where $n$ is a constant, are used in various real-world applications across many different fields.")
+#voiceover("Power functions describe relationships where one quantity varies as a power of another. For example, the area of a square varies as the square of its side length.")
 ]
 #only("2")[
-#voiceover("They are particularly prevalent in physics, engineering, and economics, among others.")
+#voiceover("The common form of a power function is f of x equals k times x to the power of n, where k and n are constants.")
+]
+#only("3")[
+#voiceover("Some examples of power functions are f of x equals x squared, and g of x equals 2 times x cubed.")
+]
+#only("4")[
+#voiceover("Power functions are used in various fields like physics and engineering to model real-world phenomena.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Physics 🔭]
+#text(size: 30pt, weight: "bold")[Physics Applications]
 #v(40pt)
-#only("1-")[- Inverse square laws ↔️]
+#only("1-")[- Gravitational force: $F = G m_1 m_2 / r^2$ 🌍]
 #v(20pt)
-#only("2-")[- Gravity: $F = G m_1 m_2 / r^2$ 🪐]
+#only("2-")[- Kinetic energy: $K E = 1/2 m v^2$ ⚡]
 #v(20pt)
-#only("3-")[- Electrostatics: $F = k q_1 q_2 / r^2$ ⚡]
+#only("3-")[- Electrical power: $P = V^2 / R$ 🔋]
 #only("1")[
-#voiceover("In physics, power functions often appear in the form of inverse square laws.")
+#voiceover("In physics, power functions are used to describe various phenomena. For example, the gravitational force between two masses is given by F equals G times m1 times m2 over r squared.")
 ]
 #only("2")[
-#voiceover("For example, Newton's law of universal gravitation states that the gravitational force between two objects is proportional to the product of their masses and inversely proportional to the square of the distance between them.")
+#voiceover("Another example is kinetic energy, which is given by the formula KE equals one-half times m times v squared.")
 ]
 #only("3")[
-#voiceover("Similarly, Coulomb's law describes the electrostatic force between two charged particles as being proportional to the product of their charges and inversely proportional to the square of the distance between them.")
+#voiceover("Electrical power can also be described by a power function: P equals V squared over R.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Engineering 🏗️]
+#text(size: 30pt, weight: "bold")[Engineering Applications]
 #v(40pt)
-#only("1-")[- Fluid dynamics 🌊]
+#only("1-")[- Structural load: $L = k d^3$ 🏗️]
 #v(20pt)
-#only("2-")[- Drag force: $F_D = (1/2) ρ v^2 C_D A$ 🪂]
+#only("2-")[- Fluid dynamics: $Q = A v$ 💧]
 #v(20pt)
-#only("3-")[- Pressure drop: $Δp = f (L/D) (ρ v^2 / 2)$ 🚰]
+#only("3-")[- Heat transfer: $Q = h A (T_1 - T_2)$ 🔥]
 #only("1")[
-#voiceover("In engineering, power functions are used in various contexts, such as fluid dynamics.")
+#voiceover("In engineering, power functions are used to model structural loads. For example, the load L on a beam varies as the cube of its depth d.")
 ]
 #only("2")[
-#voiceover("The drag force experienced by an object moving through a fluid is proportional to the square of its velocity, as described by the drag equation.")
+#voiceover("In fluid dynamics, the flow rate Q is given by the product of the cross-sectional area A and the velocity v.")
 ]
 #only("3")[
-#voiceover("Similarly, the pressure drop in a pipe due to fluid friction is proportional to the square of the fluid's velocity, as given by the Darcy-Weisbach equation.")
+#voiceover("Heat transfer can also be described by a power function: Q equals h times A times the temperature difference T1 minus T2.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Economics 💰]
+#text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Cobb-Douglas production function 🏭]
+#only("1-")[- Power functions describe relationships where one quantity varies as a power of another 📈]
 #v(20pt)
-#only("2-")[- $Y = A L^α K^β$ 📈]
+#only("2-")[- Used in physics (e.g., gravitational force, kinetic energy) 🌍⚡]
 #v(20pt)
-#only("3-")[- Models relationship between inputs and output 🔧➡️🎁]
+#only("3-")[- Used in engineering (e.g., structural load, fluid dynamics) 🏗️💧]
 #only("1")[
-#voiceover("In economics, power functions are used in various models, such as the Cobb-Douglas production function.")
+#voiceover("To summarize, power functions describe relationships where one quantity varies as a power of another.")
 ]
 #only("2")[
-#voiceover("This function models the relationship between the inputs, typically labor and capital, and the output of a production process.")
+#voiceover("They are used in physics to describe phenomena like gravitational force and kinetic energy.")
 ]
 #only("3")[
-#voiceover("The exponents $α$ and $β$ represent the output elasticities of labor and capital, respectively, and determine the degree of the power function.")
-]
-]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Summary 🎬]
-#v(40pt)
-#only("1-")[- Power functions are widely used 🌐]
-#v(20pt)
-#only("2-")[- Appear in physics, engineering, economics 🔬🏗️💰]
-#v(20pt)
-#only("3-")[- Describe relationships between variables 🔗]
-#only("1")[
-#voiceover("In summary, power functions are widely used across various fields to model and describe real-world phenomena.")
-]
-#only("2")[
-#voiceover("They appear in physics, engineering, economics, and many other areas.")
-]
-#only("3")[
-#voiceover("Power functions are particularly useful for describing relationships between variables where one quantity varies as a power of another.")
+#voiceover("In engineering, power functions model structural loads and fluid dynamics.")
 ]
 ]

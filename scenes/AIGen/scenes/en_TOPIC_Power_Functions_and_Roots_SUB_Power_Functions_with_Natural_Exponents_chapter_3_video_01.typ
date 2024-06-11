@@ -7,28 +7,30 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Power Functions as $x → ∞$]
+#text(size: 30pt, weight: "bold")[Behavior of Power Functions as $x$ Approaches Infinity]
 #v(40pt)
-#only("1-")[- Consider $f(x) = x^n$, where $n ∈ NN$]
-#v(20pt)
-#only("2-")[- Examples: $f(x) = x^2$, $f(x) = x^3$, $f(x) = x^4$]
-#v(20pt)
-#only("3-")[- As $x$ gets larger, $f(x)$ gets larger too 📈]
-#only("1")[
-#voiceover("Let's look at the behavior of power functions of the form f of x equals x to the power of n, where n is a natural number, as x approaches infinity.")
-]
-#only("2")[
-#voiceover("Some examples of such functions are f of x equals x squared, f of x equals x cubed, and f of x equals x to the fourth power.")
-]
-#only("3")[
-#voiceover("As x gets larger and larger, the value of f of x also gets larger and larger.")
-]
+#only("1-")[- Let's explore what happens to $f(x) = x^n$ as $x$ gets larger and larger 🌠]
+#only("1")[#voiceover("Welcome! Today, we will explore what happens to the function f of x equals x to the power of n as x gets larger and larger.")]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization 📊]
+#text(size: 30pt, weight: "bold")[Power Functions]
 #v(40pt)
-#only("1-")[
+#only("1-")[- A power function is of the form $f(x) = x^n$]
+#v(20pt)
+#only("2-")[- Here, $n$ is a natural number (1, 2, 3, ...)]
+#v(20pt)
+#only("3-")[- As $x$ increases, we want to see how $f(x)$ behaves]
+#only("1")[#voiceover("First, let's understand what a power function is. A power function is of the form f of x equals x to the power of n.")]
+#only("2")[#voiceover("Here, n is a natural number, which means it can be 1, 2, 3, and so on.")]
+#only("3")[#voiceover("Now, as x increases, we want to see how the value of f of x behaves.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Example: $f(x) = x^2$]
+#v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -36,74 +38,47 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 5, 100)
+x = np.linspace(0, 10, 400)
+y = x**2
 
-plt.figure(figsize=(8, 6))
-
-for n in range(1, 5):
-    plt.plot(x, x**n, label=f'$x^{n}$')
-
+plt.plot(x, y, label='$f(x) = x^2$')
 plt.xlabel('$x$')
 plt.ylabel('$f(x)$')
-plt.title('Power Functions as $x → ∞$')
+plt.title('Graph of $f(x) = x^2$')
 plt.legend()
 plt.grid(True)
-
 plt.show()
 ```,
 width: 360pt),
 )
 ]
 ]
-#only("1")[
-#voiceover("Here's a visualization of some power functions. As you can see, as x gets larger, all the functions grow rapidly and approach infinity.")
-]
-]
+#only("1")[#voiceover("Let's take an example. Consider the function f of x equals x squared.")]
+#only("2")[#voiceover("As you can see from the graph, as x increases, the value of f of x also increases.")]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Formal Definition]
-#v(40pt)
-#only("1-")[For any $n ∈ NN$, as $x → ∞$, $f(x) = x^n → ∞$]
-#v(20pt)
-#only("2-")[Mathematically: $lim_(x→∞) x^n = ∞$]
-#only("1")[
-#voiceover("Formally, we can say that for any natural number n, as x approaches infinity, the function f of x equals x to the power of n also approaches infinity.")
-]
-#only("2")[
-#voiceover("Mathematically, we write this as the limit of x to the power of n, as x approaches infinity, equals infinity.")
-]
-]
+
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Intuition 💡]
+#text(size: 30pt, weight: "bold")[General Behavior]
 #v(40pt)
-#only("1-")[- Multiplying large numbers → even larger numbers]
+#only("1-")[- For any natural number $n$, $f(x) = x^n$ grows larger as $x$ increases]
 #v(20pt)
-#only("2-")[- Example: $10^2 = 100$, $10^3 = 1000$, $10^4 = 10000$]
-#only("1")[
-#voiceover("Intuitively, this makes sense. When we multiply large numbers, we get even larger numbers.")
+#only("2-")[- This means $f(x) arrow infinity$ as $x arrow infinity$]
+#only("1")[#voiceover("In general, for any natural number n, the function f of x equals x to the power of n grows larger as x increases.")]
+#only("2")[#voiceover("This means that f of x approaches infinity as x approaches infinity.")]
 ]
-#only("2")[
-#voiceover("For instance, 10 squared is 100, 10 cubed is 1000, and 10 to the fourth power is 10,000.")
-]
-]
+
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Power functions: $f(x) = x^n$, $n ∈ NN$]
+#only("1-")[- Power functions are of the form $f(x) = x^n$]
 #v(20pt)
-#only("2-")[- As $x → ∞$, $f(x) → ∞$]
+#only("2-")[- As $x$ increases, $f(x)$ also increases for any natural number $n$]
 #v(20pt)
-#only("3-")[- Multiplying large numbers yields even larger numbers]
-#only("1")[
-#voiceover("In summary, power functions are functions of the form f of x equals x to the power of n, where n is a natural number.")
-]
-#only("2")[
-#voiceover("As x approaches infinity, the value of f of x also approaches infinity.")
-]
-#only("3")[
-#voiceover("This is because multiplying large numbers together yields even larger numbers.")
-]
+#only("3-")[- Therefore, $f(x) arrow infinity$ as $x arrow infinity$]
+#only("1")[#voiceover("To summarize, power functions are of the form f of x equals x to the power of n.")]
+#only("2")[#voiceover("As x increases, the value of f of x also increases for any natural number n.")]
+#only("3")[#voiceover("Therefore, f of x approaches infinity as x approaches infinity.")]
 ]

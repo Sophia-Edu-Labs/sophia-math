@@ -52,25 +52,6 @@ width: 360pt),
 #voiceover("Here's a graph showing the function y equals the fourth root of x. The red dashed line represents y equals 3. Your task is to find the x-coordinate of the point where these two lines intersect.")
 ]
 ]
-
-#questionDef(
-questionText: "What is the value of $x$ that satisfies the equation $root(4, x) = 3$?",
-answerOptions: ("$x = 81$", "$x = 1$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$x = \key{a}$"),
-answerOptionsTypes: (
-"a": "number"
-)
-),
-)
 ]#questionDef(
 questionText: "What is the value of $x$ that satisfies the equation $\sqrt[4]{x} = 3$?",
 answerOptions: ("$x=81$", "$x=1$"),

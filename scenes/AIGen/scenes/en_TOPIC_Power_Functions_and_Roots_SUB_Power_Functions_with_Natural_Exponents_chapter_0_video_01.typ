@@ -7,28 +7,48 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Power Functions]
+#text(size: 30pt, weight: "bold")[Introduction to Power Functions]
 #v(40pt)
-#only("1-")[- Of the form $f(x) = x^n$]
+#only("1-")[- Power functions are essential in many areas of mathematics and science. 📘]
 #v(20pt)
-#only("2-")[- $n$ is a natural number 🔢]
+#only("2-")[- They help us understand growth, decay, and many natural phenomena. 🌱📉]
 #v(20pt)
-#only("3-")[- Examples: $f(x) = x^2$, $g(x) = x^5$]
+#only("3-")[- Let's explore what power functions are and why they are important. 🔍]
 #only("1")[
-#voiceover("Power functions are functions of the form f of x equals x to the power of n.")
+#voiceover("Power functions are essential in many areas of mathematics and science. ")
 ]
 #only("2")[
-#voiceover("Here, n is a natural number. That means it's a positive whole number like 1, 2, 3, and so on.")
+#voiceover("They help us understand growth, decay, and many natural phenomena.")
 ]
-#only("3")[
-#voiceover("Some examples of power functions are f of x equals x squared and g of x equals x to the fifth power.")
+#only("1")[
+#voiceover("Let's explore what power functions are and why they are important.")
 ]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Graphing Power Functions]
+#text(size: 30pt, weight: "bold")[Definition of Power Functions]
 #v(40pt)
-#only("1-")[
+#only("1-")[- A power function is of the form $f(x) = x^n$ where $n$ is a natural number. 🧮]
+#v(20pt)
+#only("2-")[- Example: $f(x) = x^2$ is a power function with $n = 2$.]
+#v(20pt)
+#only("3-")[- Example: $f(x) = x^3$ is a power function with $n = 3$.]
+#only("1")[
+#voiceover("A power function is of the form f of x equals x raised to the power of n, where n is a natural number.")
+]
+#only("2")[
+#voiceover("For example, f of x equals x squared is a power function with n equal to 2.")
+]
+#only("3")[
+#voiceover("Another example is f of x equals x cubed, which is a power function with n equal to 3.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Graphical Representation]
+#v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -36,79 +56,50 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(-2, 2, 100)
+x = np.linspace(-2, 2, 400)
+y1 = x**2
+y2 = x**3
 
-plt.figure(figsize=(6, 6))
-
-for n in range(1, 6):
-    y = x**n
-    plt.plot(x, y, label=f'$x^{n}$')
-
-plt.grid(True)
-plt.axhline(0, color='black', lw=0.5)
-plt.axvline(0, color='black', lw=0.5)
+plt.plot(x, y1, label='$f(x) = x^2$')
+plt.plot(x, y2, label='$f(x) = x^3$')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
 plt.legend()
-plt.title('Power Functions')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.tight_layout()
 plt.show()
 ```,
-width: 360pt))
+width: 360pt),
+)
 ]
 ]
-#only("1")[
-#voiceover("Here's a graph showing several power functions. Notice how the shape changes as the exponent, n, increases.")
-]
-]
-
-
-No corrections were needed.]
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Properties]
-#v(40pt)
-#only("1-")[- Domain: all real numbers ℝ]
 #v(20pt)
-#only("2-")[- Even $n$: Symmetric about y-axis 📈]
+#only("1-")[- The graph of $f(x) = x^2$ is a parabola opening upwards. 📈]
 #v(20pt)
-#only("3-")[- Odd $n$: Symmetric about origin 🎯]
+#only("2-")[- The graph of $f(x) = x^3$ is an S-shaped curve. 📉]
 #only("1")[
-#voiceover("Power functions are defined for all real numbers. That means their domain is the entire real line.")
+#voiceover("Let's look at the graphs of some power functions. The graph of f of x equals x squared is a parabola opening upwards.")
 ]
 #only("2")[
-#voiceover("When n is even, the graph is symmetric about the y-axis. That means if you fold the graph along the y-axis, the two halves will match perfectly.")
-]
-#only("3")[
-#voiceover("When n is odd, the graph is symmetric about the origin. If you rotate the graph 180 degrees around the origin, it will look exactly the same.")
+#voiceover("The graph of f of x equals x cubed is an S-shaped curve.")
 ]
 ]
+
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Power functions: $f(x) = x^n$]
+#only("1-")[- Power functions are of the form $f(x) = x^n$ where $n$ is a natural number. 📘]
 #v(20pt)
-#only("2-")[- $n$ is a natural number 🔢]
+#only("2-")[- Examples include $f(x) = x^2$ and $f(x) = x^3$. 🧮]
 #v(20pt)
-#only("3-")[- Domain: all real numbers ℝ]
-#v(20pt)
-#only("4-")[- Even $n$: Symmetric about y-axis 📈]
-#v(20pt)
-#only("5-")[- Odd $n$: Symmetric about origin 🎯]
+#only("3-")[- Graphs of power functions have distinct shapes. 📈📉]
 #only("1")[
-#voiceover("In summary, power functions are functions of the form f of x equals x to the power of n, where n is a natural number.")
+#voiceover("In summary, power functions are of the form f of x equals x raised to the power of n, where n is a natural number.")
 ]
 #only("2")[
-#voiceover("Remember, natural numbers are positive whole numbers like 1, 2, 3, and so on.")
+#voiceover("Examples include f of x equals x squared and f of x equals x cubed.")
 ]
 #only("3")[
-#voiceover("The domain of power functions is all real numbers.")
-]
-#only("4")[
-#voiceover("When the exponent, n, is even, the graph is symmetric about the y-axis.")
-]
-#only("5")[
-#voiceover("And when n is odd, the graph is symmetric about the origin.")
+#voiceover("The graphs of power functions have distinct shapes, such as the parabola for x squared and the S-shaped curve for x cubed.")
 ]
 ]

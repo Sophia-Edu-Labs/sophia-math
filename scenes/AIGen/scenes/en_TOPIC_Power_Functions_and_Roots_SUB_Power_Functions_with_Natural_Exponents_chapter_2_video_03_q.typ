@@ -72,17 +72,4 @@ Is $f(x) = x^5$ symmetric about:
 questionText: "Is the function $f(x) = x^5$ symmetric about the y-axis or the origin?",
 answerOptions: ("The origin", "The y-axis"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$f(x) = x^5$ is symmetric about \\key{a}."),
-answerOptionsTypes: (
-"a": "string"
-)
-),
 )

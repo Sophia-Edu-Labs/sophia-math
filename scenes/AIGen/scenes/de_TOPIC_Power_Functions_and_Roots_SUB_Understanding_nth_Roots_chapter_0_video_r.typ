@@ -29,7 +29,7 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Eigenschaften & Anwendungen 🧮]
 #v(40pt)
-#only("1-")[- Produktregel: $root(n, ab) = root(n, a) root(n, b)$]
+#only("1-")[- Produktregel: $root(n, a b) = root(n, a) root(n, b)$]
 #v(20pt)
 #only("2-")[- Quotientenregel: $root(n, a/b) = root(n, a) / root(n, b)$]
 #v(20pt)

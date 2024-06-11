@@ -27,7 +27,4 @@
 questionText: "Was passiert, wenn $x \\to \infty$, mit $f(x) = x^6$?",
 answerOptions: ("$f(x) \\to \infty$", "$f(x) \\to 0$", "$f(x)$ oszilliert", "$f(x)$ nähert sich einem konstanten Wert"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-)
 )

@@ -7,95 +7,80 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Integrals of Power Functions]
+#text(size: 30pt, weight: "bold")[Introduction to Integrals of Power Functions]
 #v(40pt)
-#only("1-")[- For $f(x) = x^n$, where $n ≠ -1$]
+#only("1-")[- Imagine you are calculating the area under the curve of $f(x) = x^n$.]
 #v(20pt)
-#only("2-")[- $integral x^n dif x = (x^(n+1))/(n+1) + C$]
+#only("2-")[- This is where integrals come into play. 🧮]
 #v(20pt)
-#only("3-")[- 🔑 Add 1 to the exponent, divide by new exponent]
+#only("3-")[- We will learn how to find the integral of $f(x) = x^n$.]
 #only("1")[
-#voiceover("Let's discuss the integral of power functions. We're considering functions of the form f of x equals x to the power of n, where n is not equal to negative one.")
+#voiceover("Imagine you are calculating the area under the curve of f of x equals x to the power of n. This is a common problem in calculus.")
 ]
 #only("2")[
-#voiceover("The integral of x to the power of n with respect to x is equal to x to the power of n plus one, divided by n plus one, plus a constant of integration C.")
+#voiceover("This is where integrals come into play. Integrals help us find the area under a curve.")
 ]
 #only("3")[
-#voiceover("The key steps are: add one to the exponent, then divide by this new exponent. Don't forget to add the constant of integration at the end!")
+#voiceover("In this video, we will learn how to find the integral of the power function f of x equals x to the power of n.")
 ]
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: $integral x^3 dif x$]
+#text(size: 30pt, weight: "bold")[Integral of $x^n$]
 #v(40pt)
-#only("1-")[- $f(x) = x^3$, so $n = 3$]
+#only("1-")[- The integral of $f(x) = x^n$ is $integral x^n dif x$.]
 #v(20pt)
-#only("2-")[- $integral x^3 dif x = (x^(3+1))/(3+1) + C$]
+#only("2-")[- For $n != -1$, the integral is $(x^(n+1))/(n+1) + C$.]
 #v(20pt)
-#only("3-")[- $= (x^4)/4 + C$]
+#only("3-")[- $C$ is the constant of integration. 📜]
 #only("1")[
-#voiceover("Let's look at an example. Consider the integral of x cubed with respect to x. Here, f of x equals x cubed, so n equals three.")
+#voiceover("The integral of the power function f of x equals x to the power of n is written as the integral of x to the power of n with respect to x.")
 ]
 #only("2")[
-#voiceover("Following our formula, the integral of x cubed is equal to x to the power of three plus one, divided by three plus one, plus C.")
+#voiceover("For n not equal to negative one, the integral of x to the power of n is equal to x to the power of n plus one, divided by n plus one, plus a constant C.")
 ]
 #only("3")[
-#voiceover("This simplifies to x to the fourth power divided by four, plus C. That's it!")
+#voiceover("The constant C is called the constant of integration. It accounts for any constant value that could be added to the function.")
 ]
 ]
+
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualizing the Integral]
+#text(size: 30pt, weight: "bold")[Step-by-Step Explanation]
 #v(40pt)
-#only("1-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(```
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.linspace(-2, 2, 100)
-y = x**3
-y_int = 1/4 * x**4
-
-plt.figure(figsize=(6, 4))
-plt.plot(x, y, label='$f(x)=x^3$')
-plt.plot(x, y_int, '--', label='$integral x^3 dif x = (x^4)/4 + C$')
-plt.legend(fontsize=12)
-plt.grid(True)
-plt.xlim(-2, 2)
-plt.ylim(-5, 5)
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Function and its Integral')
-plt.show()
-```,
-width: 360pt),
-)
-]
-]
+#only("1-")[- Consider $f(x) = x^2$.]
+#v(20pt)
+#only("2-")[- The integral is $integral x^2 dif x$.]
+#v(20pt)
+#only("3-")[- Applying the formula: $(x^(2+1))/(2+1) + C$.]
+#v(20pt)
+#only("4-")[- Simplifying: $(x^3)/3 + C$.]
 #only("1")[
-#voiceover("Here's a graph showing the function f of x equals x cubed in blue, and its integral, x to the fourth power divided by four plus C, in the dashed line. The integral is an antiderivative of the original function.")
+#voiceover("Let's consider an example where f of x equals x squared.")
+]
+#only("2")[
+#voiceover("The integral of x squared with respect to x is written as the integral of x squared d x.")
+]
+#only("3")[
+#voiceover("Applying the formula, we get x to the power of two plus one, divided by two plus one, plus the constant C.")
+]
+#only("4")[
+#voiceover("Simplifying this, we get x cubed divided by three, plus the constant C.")
 ]
 ]
-]
+
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Integral of power function: $integral x^n dif x = (x^(n+1))/(n+1) + C$]
+#only("1-")[- Integral of $x^n$: $integral x^n dif x = (x^(n+1))/(n+1) + C$ for $n != -1$.]
 #v(20pt)
-#only("2-")[- 🔑 Add 1 to exponent, divide by new exponent, add $C$]
-#v(20pt)
-#only("3-")[- Example: $integral x^3 dif x = (x^4)/4 + C$]
+#only("2-")[- $C$ is the constant of integration. 📜]
 #only("1")[
-#voiceover("To summarize, the integral of a power function x to the n, where n is not equal to negative one, is x to the power of n plus one, divided by n plus one, plus a constant C.")
+#voiceover("In summary, the integral of x to the power of n with respect to x is equal to x to the power of n plus one, divided by n plus one, plus a constant C, for n not equal to negative one.")
 ]
 #only("2")[
-#voiceover("Remember the key steps: add one to the exponent, divide by the new exponent, and don't forget to add the constant of integration C at the end.")
-]
-#only("3")[
-#voiceover("For example, the integral of x cubed is x to the fourth power divided by four, plus C.")
+#voiceover("Remember, the constant C is the constant of integration, which accounts for any constant value that could be added to the function.")
 ]
 ]

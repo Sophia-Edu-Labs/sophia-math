@@ -45,28 +45,8 @@ width: 360pt),
 ]
 #only("1")[
 #voiceover("What is the correct notation for the 6th root of 64?")
-]
-
+]]
 #questionDef(
-questionText: "Write the 6th root of 64 in notation.",
-answerOptions: ("$root(6, 64)$", "$root(64, 6)$"),
-correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$root(\key{a}, \key{b})$"),
-answerOptionsTypes: (
-"a": "number",
-"b": "number"
-)
-),
-)
-]#questionDef(
 questionText: "Write the 6th root of 64 in notation.",
 answerOptions: ("$\\sqrt[6]{64}$", "$\\sqrt[64]{6}$"),
 correctAnswerIndex: 0,

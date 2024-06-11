@@ -54,19 +54,9 @@ width: 360pt))
 ]
 ]#questionDef(
 questionText: "What is the shape of the graph of $f(x) = x^4$?",
-answerOptions: ("Parabola, but steeper than $f(x) = x^2$", "Straight line"),
+answerOptions: ("Parabola, but steeper than $f(x) = x^2$", "incorrect answer"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("The shape is a \key{a}, steeper than $f(x) = x^2$."),
-answerOptionsTypes: (
-"a": "text"
-)
+llmCheckDetails: (
+fallbackOptionIndex: 1
 ),
 )

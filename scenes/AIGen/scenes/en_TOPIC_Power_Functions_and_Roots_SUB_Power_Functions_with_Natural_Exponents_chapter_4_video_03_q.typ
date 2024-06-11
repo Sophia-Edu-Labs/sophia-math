@@ -77,17 +77,4 @@ width: 360pt),
 questionText: "As $x$ approaches zero, does $f(x) = x^7$ approach infinity, a non-zero constant, or zero?",
 answerOptions: ("Approach zero", "Approach infinity", "Approach a non-zero constant"),
 correctAnswerIndex: 0,
-freeTextDetail: (
-fallbackOptionIndex: 1,
-answerOptionsEquality: (
-a: (
-roundingDecimalPlaces: 2,
-tolerance: none
-)
-),
-answerOptionMatcher:("$f(x)$ approaches \key{a} as $x$ approaches zero."),
-answerOptionsTypes: (
-"a": "text"
-)
-),
 )

@@ -7,34 +7,48 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Power Functions]
+#text(size: 30pt, weight: "bold")[Behavior of Power Functions as $x$ Approaches Zero]
 #v(40pt)
-#only("1-")[- Of the form $f(x) = x^n$, where $n$ is a natural number 🔢]
-#only("1")[
-#voiceover("Let's consider power functions of the form f of x equals x to the power of n, where n is a natural number.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Behavior as $x arrow 0$]
-#v(40pt)
-#only("1-")[- As $x arrow 0$, $f(x) = x^n arrow 0$ for any natural number $n$]
+#only("1-")[- Introduction to Power Functions 📈]
 #v(20pt)
-#only("2-")[- Examples: $x^2 arrow 0$, $x^3 arrow 0$, $x^4 arrow 0$, as $x arrow 0$]
+#only("2-")[- $f(x) = x^n$ where $n$ is a natural number]
+#v(20pt)
+#only("3-")[- What happens as $x$ approaches zero? 🤔]
 #only("1")[
-#voiceover("We're interested in the behavior of these functions as x approaches zero. It turns out that as x approaches zero, the value of f of x equals x to the power of n also approaches zero, regardless of the value of n.")
+#voiceover("Welcome! Today, we will explore the behavior of power functions as x approaches zero. Let's dive in!")
 ]
 #only("2")[
-#voiceover("For example, x squared, x cubed, and x to the fourth power all approach zero as x approaches zero.")
+#voiceover("A power function is of the form f of x equals x to the power of n, where n is a natural number.")
+]
+#only("3")[
+#voiceover("Our main question is: What happens to the value of f of x as x approaches zero?")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualization]
+#text(size: 30pt, weight: "bold")[Exploring $f(x) = x^n$ as $x$ Approaches Zero]
 #v(40pt)
-#only("1-")[
+#only("1-")[- Consider $f(x) = x^2$]
+#v(20pt)
+#only("2-")[- As $x$ gets closer to zero, $f(x)$ gets closer to zero]
+#v(20pt)
+#only("3-")[- This is true for any natural number $n$]
+#only("1")[
+#voiceover("Let's start by considering a specific example: f of x equals x squared.")
+]
+#only("2")[
+#voiceover("As x gets closer to zero, the value of f of x, which is x squared, also gets closer to zero.")
+]
+#only("3")[
+#voiceover("This behavior is consistent for any natural number n. As x approaches zero, the value of f of x equals x to the power of n approaches zero.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Graphical Representation]
+#v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
@@ -42,23 +56,21 @@ pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(-1, 1, 100)
+x = np.linspace(-1, 1, 400)
+y1 = x**2
+y2 = x**3
+y3 = x**4
 
-plt.figure(figsize=(8, 6))
-
-for n in range(2, 6):
-    y = x**n
-    plt.plot(x, y, label=f'$x^{n}$')
-
-plt.xlim(-1, 1)
-plt.ylim(-0.1, 1)
-plt.axhline(0, color='black', linewidth=0.5)
-plt.axvline(0, color='black', linewidth=0.5)
-plt.legend(loc='upper right')
-plt.title('Power Functions as $x arrow 0$')
+plt.plot(x, y1, label='$x^2$')
+plt.plot(x, y2, label='$x^3$')
+plt.plot(x, y3, label='$x^4$')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.legend()
+plt.title('Behavior of $x^n$ as $x$ Approaches Zero')
 plt.xlabel('$x$')
 plt.ylabel('$f(x)$')
-plt.grid(True)
 plt.show()
 ```,
 width: 360pt),
@@ -66,22 +78,10 @@ width: 360pt),
 ]
 ]
 #only("1")[
-#voiceover("Here's a visualization of several power functions as x approaches zero. Notice how all the curves approach zero as x gets closer to zero, regardless of the exponent.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Intuition]
-#v(40pt)
-#only("1-")[- Multiplying numbers between -1 and 1 makes them smaller 📉]
-#v(20pt)
-#only("2-")[- Example: $0.5 multiply 0.5 = 0.25$, $0.5 multiply 0.5 multiply 0.5 = 0.125$]
-#only("1")[
-#voiceover("Intuitively, this makes sense. When you multiply numbers between negative one and one, the result gets smaller.")
+#voiceover("To better understand this, let's look at the graphs of x squared, x cubed, and x to the power of four.")
 ]
 #only("2")[
-#voiceover("For instance, zero point five times zero point five equals zero point two five, and zero point five times zero point five times zero point five equals zero point one two five.")
+#voiceover("Notice how, as x gets closer to zero, the values of all these functions also get closer to zero.")
 ]
 ]
 
@@ -89,18 +89,18 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Power functions: $f(x) = x^n$, $n$ is a natural number]
+#only("1-")[- Power functions: $f(x) = x^n$]
 #v(20pt)
-#only("2-")[- As $x arrow 0$, $f(x) arrow 0$ for any natural number $n$]
+#only("2-")[- As $x$ approaches zero, $f(x)$ approaches zero]
 #v(20pt)
-#only("3-")[- Intuition: Multiplying small numbers makes them smaller]
+#only("3-")[- True for any natural number $n$]
 #only("1")[
-#voiceover("In summary, power functions are of the form f of x equals x to the power of n, where n is a natural number.")
+#voiceover("To summarize, a power function is of the form f of x equals x to the power of n.")
 ]
 #only("2")[
-#voiceover("As x approaches zero, the value of f of x also approaches zero, regardless of the value of n.")
+#voiceover("As x approaches zero, the value of f of x also approaches zero.")
 ]
 #only("3")[
-#voiceover("This makes intuitive sense, as multiplying numbers between negative one and one results in smaller numbers.")
+#voiceover("This behavior holds true for any natural number n.")
 ]
 ]

@@ -10,7 +10,7 @@
 #v(40pt)
 #only("1-")[- Formale Definition: ]
 #v(20pt)
-#only("2-")[$a_n$ divergiert ins $Unendliche$, wenn $forall M > 0, exists N$ so dass $forall n >= N, a_n > M$]
+#only("2-")[$a_n$ divergiert ins $infinity$, wenn $forall M > 0, exists N$ so dass $forall n >= N, a_n > M$]
 #only("1")[
 #voiceover("Lass uns die formale Definition der Divergenz ins Unendliche wiederholen.")
 ]
@@ -26,7 +26,7 @@
 #box()[
 #morphchildren(id: "plot")[
 #figure(
-pyimage(``
+pyimage(```
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -66,11 +66,11 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Wichtige Punkte 🔑]
 #v(40pt)
-#only("1-")[- Die Folgenglieder wachsen unbegrenzt, wenn $n$ gegen $Unendliche$ geht]
+#only("1-")[- Die Folgenglieder wachsen unbegrenzt, wenn $n$ gegen $infinity$ geht]
 #v(20pt)
 #only("2-")[- Für jedes große $M$ kann man ein $N$ finden, so dass $a_n > M$ für alle $n >= N$]
 #v(20pt)
-#only("3-")[- Beispiel: $a_n = n^2$ divergiert ins $Unendliche$]
+#only("3-")[- Beispiel: $a_n = n^2$ divergiert ins $infinity$]
 #only("1")[
 #voiceover("Die wichtigen Punkte, die du dir merken solltest, sind:")
 ]
@@ -88,7 +88,7 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Zusammenfassung 🎬]
 #v(40pt)
-#only("1-")[- Divergenz ins $Unendliche$: $a_n$ wächst unbegrenzt]
+#only("1-")[- Divergenz ins $infinity$: $a_n$ wächst unbegrenzt]
 #v(20pt)
 #only("2-")[- Formale Definition: $forall M > 0, exists N$ so dass $forall n >= N, a_n > M$]
 #v(20pt)
