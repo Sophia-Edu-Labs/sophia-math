@@ -51,13 +51,13 @@ import numpy as np
 def visualize_fraction(ax, num, den, color, title):
     # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
     # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
@@ -123,9 +123,9 @@ def visualize_equivalent_fractions(frac1, frac2):
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
 
     for i in range(1, 12):
-        ax1.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+        ax1.axvline(i / 12, color='black', linestyle='--', linewidth=6)
     ax1.add_patch(plt.Rectangle((0, 0), num1 / 12, 1, color='red', alpha=0.8))
-    ax1.text(num1 / (2 * 12), 0.5, f'{num1}/{12}', ha='center', va='center', fontsize=44, color='white')
+    ax1.text(num1 / (2 * 12), 0.5, f'{num1}/{12}', ha='center', va='center', fontsize=33, color='white')
     ax1.set_xlim(0, 1)
     ax1.set_ylim(0, 1)
     ax1.set_xticks(np.arange(0, 1 + 1/12, 1/12))
@@ -133,9 +133,9 @@ def visualize_equivalent_fractions(frac1, frac2):
     ax1.set_yticks([])
 
     for i in range(1, 12):
-        ax2.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+        ax2.axvline(i / 12, color='black', linestyle='--', linewidth=6)
     ax2.add_patch(plt.Rectangle((0, 0), num2 / 12, 1, color='blue', alpha=0.8))
-    ax2.text(num2 / (2 * 12), 0.5, f'{num2}/{12}', ha='center', va='center', fontsize=44, color='white')
+    ax2.text(num2 / (2 * 12), 0.5, f'{num2}/{12}', ha='center', va='center', fontsize=33, color='white')
     ax2.set_xlim(0, 1)
     ax2.set_ylim(0, 1)
     ax2.set_xticks(np.arange(0, 1 + 1/12, 1/12))
@@ -185,9 +185,9 @@ def visualize_sum_fraction(frac1, frac2):
     fig, ax = plt.subplots(figsize=(8, 3))
 
     for i in range(1, 12):
-        ax.axvline(i / 12, color='black', linestyle='--', linewidth=3)
+        ax.axvline(i / 12, color='black', linestyle='--', linewidth=6)
     ax.add_patch(plt.Rectangle((0, 0), (num1 + num2) / 12, 1, color='purple', alpha=0.8))
-    ax.text((num1 + num2) / (2 * 12), 0.5, f'{num1 + num2}/{12}', ha='center', va='center', fontsize=44, color='white')
+    ax.text((num1 + num2) / (2 * 12), 0.5, f'{num1 + num2}/{12}', ha='center', va='center', fontsize=33, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.set_xticks(np.arange(0, 1 + 1/12, 1/12))

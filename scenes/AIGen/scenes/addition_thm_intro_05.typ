@@ -49,8 +49,8 @@ ax.set_xlim(-1.5, 1.5)
 ax.set_ylim(-1.5, 1.5)
 ax.set_aspect('equal')
 # Draw the circles representing the sets
-circle_A = plt.Circle((-0.5, 0), 0.8, color='blue', fill=False, linewidth=3, label='A: Gerade Zahlen')
-circle_B = plt.Circle((0.5, 0), 0.8, color='green', fill=False, linewidth=3, label='B: Zahlen > 4')
+circle_A = plt.Circle((-0.5, 0), 0.8, color='blue', fill=False, linewidth=6, label='A: Gerade Zahlen')
+circle_B = plt.Circle((0.5, 0), 0.8, color='green', fill=False, linewidth=6, label='B: Zahlen > 4')
 # Add the elements to the sets
 for k, v in elements_A.items():
   ax.plot(v[0], v[1], 'o', color='red') # Point
