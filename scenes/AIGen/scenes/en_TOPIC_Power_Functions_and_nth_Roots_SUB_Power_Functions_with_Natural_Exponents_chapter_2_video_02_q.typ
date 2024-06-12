@@ -24,7 +24,8 @@
 #v(10pt)
 #only("5-")[d) Hyperbola]
 // Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's explore the shape of the graph of the function f of x equals x squared. What is the shape of this graph?")]
+
+#only("1")[#voiceover("Let's test your knowledge on graphing power functions. What is the shape of the graph of f of x equals x squared?")]
 #only("2")[#voiceover("Is it a parabola,")]
 #only("3")[#voiceover("or is it a line,")]
 #only("4")[#voiceover("or maybe a circle,")]
@@ -34,6 +35,6 @@
 //Type: MC 
 #questionDef( 
 questionText: "What is the shape of the graph of $f(x) = x^2$?", 
-answerOptions: ("$\text{Parabola}$", "$\text{Line}$", "$\text{Circle}$", "$\text{Hyperbola}$"),
+answerOptions: ("Parabola", "Line", "Circle", "Hyperbola"),
 correctAnswerIndex: 0 
 )

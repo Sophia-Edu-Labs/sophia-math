@@ -8,102 +8,84 @@
 
 #slide()[
 #text(size: 30pt, weight: "bold")[Evaluating Power Functions]
-// The title "Evaluating Power Functions" is shown on this slide
 #v(40pt)
-#only("1-")[- $f(x) = x^3$]
+#only("1-")[- Given function: $f(x) = x^3$]
 #v(20pt)
 #only("2-")[- Evaluate at $x = 2$]
 #v(20pt)
-#only("3-")[- $f(2) = 2^3$]
+#only("3-")[- Substitute $x$ with $2$]
 #v(20pt)
-#only("4-")[- $f(2) = 8$]
-// The function $f(x) = x^3$ is shown on slide 1, the evaluation point $x = 2$ is shown on slide 2, the substitution $f(2) = 2^3$ is shown on slide 3, and the final result $f(2) = 8$ is shown on slide 4
+#only("4-")[- Calculate $2^3$]
+#v(20pt)
+#only("5-")[- Result: $f(2) = 8$]
 #only("1")[
-#voiceover("Great job on answering the question correctly! Let's go through the solution step-by-step. We start with the function f of x equals x cubed.")
+#voiceover("Great job on answering the question! Let's go through the solution step-by-step. We start with the given function, f of x equals x cubed.")
 ]
 #only("2")[
 #voiceover("Next, we need to evaluate this function at x equals 2.")
 ]
 #only("3")[
-#voiceover("We substitute 2 into the function, so we get f of 2 equals 2 cubed.")
+#voiceover("To do this, we substitute x with 2 in the function.")
 ]
 #only("4")[
-#voiceover("Finally, we calculate 2 cubed, which is 2 times 2 times 2, and that equals 8. So, f of 2 equals 8.")
+#voiceover("Now, we calculate 2 to the power of 3.")
+]
+#only("5")[
+#voiceover("Finally, we find that 2 to the power of 3 is 8. So, f of 2 equals 8.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Graphical Representation]
-// The title "Graphical Representation" is shown on this slide
+#text(size: 30pt, weight: "bold")[Substitution]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Define the function
-def f(x):
-    return x**3
-
-# Generate x values
-x = np.linspace(-3, 3, 400)
-y = f(x)
-
-# Create the plot
-plt.figure(figsize=(6, 4))
-plt.plot(x, y, label='$f(x) = x^3$', color='blue')
-plt.scatter([2], [f(2)], color='red')  # Highlight the point (2, 8)
-plt.text(2, f(2), '  (2, 8)', fontsize=12, verticalalignment='bottom')
-
-# Add labels and legend
-plt.xlabel('$x$')
-plt.ylabel('$f(x)$')
-plt.axhline(0, color='black',linewidth=0.5)
-plt.axvline(0, color='black',linewidth=0.5)
-plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
-plt.legend()
-
-# Display the plot
-plt.show()
-
-```,
-width: 360pt),
-caption: [],
-)
-]
-]
-// The graph of $f(x) = x^3$ is shown with the point (2, 8) highlighted
+#only("1-")[- $f(x) = x^3$]
+#v(20pt)
+#only("2-")[- $f(2) = 2^3$]
+#v(20pt)
+#only("3-")[- $2^3 = 2 \cdot 2 \cdot 2$]
+#v(20pt)
+#only("4-")[- $2 \cdot 2 = 4$]
+#v(20pt)
+#only("5-")[- $4 \cdot 2 = 8$]
 #only("1")[
-#voiceover("Let's also look at the graphical representation of the function f of x equals x cubed. Here, we have the graph of the function.")
+#voiceover("Let's break down the substitution process. We start with the function f of x equals x cubed.")
 ]
 #only("2")[
-#voiceover("We can see that at x equals 2, the function value is 8. This point is highlighted in red on the graph.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Summary]
-// The title "Summary" is shown on this slide
-#v(40pt)
-#only("1-")[- Function: $f(x) = x^3$]
-#v(20pt)
-#only("2-")[- Evaluation point: $x = 2$]
-#v(20pt)
-#only("3-")[- Result: $f(2) = 8$]
-// The function $f(x) = x^3$ is shown on slide 1, the evaluation point $x = 2$ is shown on slide 2, and the final result $f(2) = 8$ is shown on slide 3
-#only("1")[
-#voiceover("To summarize, we started with the function f of x equals x cubed.")
-]
-#only("2")[
-#voiceover("We evaluated this function at x equals 2.")
+#voiceover("Substitute x with 2, so we get f of 2 equals 2 cubed.")
 ]
 #only("3")[
-#voiceover("And we found that f of 2 equals 8.")
+#voiceover("Now, we need to calculate 2 cubed, which is 2 times 2 times 2.")
+]
+#only("4")[
+#voiceover("First, we multiply 2 by 2 to get 4.")
+]
+#only("5")[
+#voiceover("Then, we multiply 4 by 2 to get 8. So, f of 2 equals 8.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Result]
+#v(40pt)
+#only("1-")[- $f(2) = 8$]
+#v(20pt)
+#only("2-")[- $f(x) = x^3$]
+#v(20pt)
+#only("3-")[- $f(2) = 2^3$]
+#v(20pt)
+#only("4-")[- $2^3 = 8$]
+#only("1")[
+#voiceover("To summarize, we evaluated the function f of x equals x cubed at x equals 2 and found that f of 2 equals 8.")
+]
+#only("2")[
+#voiceover("We started with the function f of x equals x cubed.")
+]
+#only("3")[
+#voiceover("Substituted x with 2 to get f of 2 equals 2 cubed.")
+]
+#only("4")[
+#voiceover("And finally, we calculated 2 cubed to be 8. So, f of 2 equals 8.")
 ]
 ]

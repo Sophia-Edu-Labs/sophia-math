@@ -24,7 +24,7 @@
 #v(10pt)
 #only("5-")[d) Hyperbola]
 // Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's test your understanding of graphing power functions. What is the shape of the graph of f of x equals x cubed?")]
+#only("1")[#voiceover("Let's test your knowledge on graphing power functions. What is the shape of the graph of f of x equals x cubed?")]
 #only("2")[#voiceover("Is it a parabola,")]
 #only("3")[#voiceover("or is it a line,")]
 #only("4")[#voiceover("or maybe an S-curve,")]

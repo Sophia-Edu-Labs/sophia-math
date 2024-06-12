@@ -9,29 +9,30 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Evaluating Power Functions]
 #v(40pt)
+// Introduction to the problem
 #only("1-")[- Given: $f(x) = x^5$]
 #v(20pt)
-#only("2-")[- Evaluate at $x = 1$]
+#only("2-")[- Find: $f(1)$]
 #v(20pt)
-#only("3-")[- Substitute $x = 1$ into $f(x)$]
+#only("3-")[- Solution: Substitute $x = 1$ into $f(x)$]
 #v(20pt)
-#only("4-")[- Calculate $1^5$]
+#only("4-")[- Calculate: $f(1) = 1^5$]
 #v(20pt)
 #only("5-")[- Result: $f(1) = 1$]
 #only("1")[
 #voiceover("Let's review the correct solution step-by-step. We are given the function f of x equals x to the power of 5.")
 ]
 #only("2")[
-#voiceover("We need to evaluate this function at x equals 1.")
+#voiceover("We need to find the value of the function at x equals 1.")
 ]
 #only("3")[
-#voiceover("To do this, we substitute x equals 1 into the function.")
+#voiceover("To do this, we substitute x with 1 in the function f of x.")
 ]
 #only("4")[
-#voiceover("Next, we calculate 1 to the power of 5.")
+#voiceover("Now, we calculate the value. One to the power of five is one.")
 ]
 #only("5")[
-#voiceover("Finally, we find that f of 1 equals 1.")
+#voiceover("So, the result is f of 1 equals 1.")
 ]
 ]
 
@@ -39,14 +40,15 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Substitution]
 #v(40pt)
-#only("1-")[- Substitute $x = 1$ into $f(x)$]
+// Detailed substitution process
+#only("1-")[- $f(x) = x^5$]
 #v(20pt)
-#only("2-")[- $f(1) = 1^5$]
+#only("2-")[- Substitute $x = 1$: $f(1) = 1^5$]
 #only("1")[
-#voiceover("First, we substitute x equals 1 into the function f of x.")
+#voiceover("Let's look at the substitution process in more detail. We start with the function f of x equals x to the power of 5.")
 ]
 #only("2")[
-#voiceover("This gives us f of 1 equals 1 to the power of 5.")
+#voiceover("We substitute x with 1, so we get f of 1 equals 1 to the power of 5.")
 ]
 ]
 
@@ -54,23 +56,25 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Calculation]
 #v(40pt)
-#only("1-")[- Calculate $1^5$]
+// Calculation process
+#only("1-")[- $1^5 = 1 \cdot 1 \cdot 1 \cdot 1 \cdot 1$]
 #v(20pt)
 #only("2-")[- $1^5 = 1$]
 #only("1")[
-#voiceover("Next, we calculate 1 to the power of 5.")
+#voiceover("Now let's calculate the value. One to the power of five means multiplying one by itself five times.")
 ]
 #only("2")[
-#voiceover("Since any number to the power of 0 is 1, we have 1 to the power of 5 equals 1.")
+#voiceover("One times one times one times one times one equals one. So, one to the power of five is one.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Result]
+#text(size: 30pt, weight: "bold")[Conclusion]
 #v(40pt)
-#only("1-")[- Result: $f(1) = 1$]
+// Final result
+#only("1-")[- $f(1) = 1$]
 #only("1")[
-#voiceover("Therefore, the result is f of 1 equals 1.")
+#voiceover("In conclusion, we have found that f of 1 equals 1. Great job!")
 ]
 ]

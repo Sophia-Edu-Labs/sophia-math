@@ -7,16 +7,18 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Power Functions]
-#v(40pt)
 #only("1")[
-#voiceover("Here's an exercise in which we'll practice computing values of the power function.")
+#voiceover("Let's solve a simple exercise involving power functions.")
 ]
+#text(size: 30pt, weight: "bold")[Power Functions]
+// The title "Power Functions" is shown on this slide
+#v(40pt)
 #only("2-")[
 Calculate $ 2^3 $
 ]
+// The mathematical expression to calculate is shown from slide 2 onward
 #only("2")[
-#voiceover("Calculate the value of the function 2 raised to the power of 3. Or in other words: Calculate 2 cubed.")
+#voiceover("Calculate the value of two raised to the power of three.")
 ]
 ]
 

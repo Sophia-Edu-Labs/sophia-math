@@ -24,11 +24,11 @@
 #v(10pt)
 #only("5-")[d) $f(x) = x/n$]
 // Answer option d) is shown from slide 5 onward
-#only("1")[#voiceover("Let's explore the form of power functions with natural exponents. What is the form of a power function with a natural exponent?")]
-#only("2")[#voiceover("Is it $f$ of $x$ equals $x$ raised to the power of $n$,")]
-#only("3")[#voiceover("or is it $f$ of $x$ equals $n$ raised to the power of $x$,")]
-#only("4")[#voiceover("or maybe $f$ of $x$ equals $x$ plus $n$,")]
-#only("5")[#voiceover("or is it $f$ of $x$ equals $x$ divided by $n$?")]
+#only("1")[#voiceover("Let's explore power functions with natural exponents. What is the form of a power function with a natural exponent?")]
+#only("2")[#voiceover("Is it f of x equals x to the power of n,")]
+#only("3")[#voiceover("or is it f of x equals n to the power of x,")]
+#only("4")[#voiceover("or maybe f of x equals x plus n,")]
+#only("5")[#voiceover("or is it f of x equals x divided by n?")]
 ]
 
 //Type: MC 

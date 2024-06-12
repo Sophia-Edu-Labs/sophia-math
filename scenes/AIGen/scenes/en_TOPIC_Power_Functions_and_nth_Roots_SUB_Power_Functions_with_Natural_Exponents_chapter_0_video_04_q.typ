@@ -7,18 +7,18 @@
 
 
 #slide()[
+#only("1")[
+#voiceover("Let's solve a simple power function exercise.")
+]
 #text(size: 30pt, weight: "bold")[Power Functions]
 // The title "Power Functions" is shown on this slide
 #v(40pt)
-#only("1")[
-#voiceover("Here's an exercise in which we'll practice computing values of the power function.")
-]
 #only("2-")[
 Calculate $ 5^2 $
 ]
 // The mathematical expression to calculate is shown from slide 2 onward
 #only("2")[
-#voiceover("Calculate the value of the function x squared at x equals five. Or in other words: Calculate 5 squared.")
+#voiceover("Calculate the value of five squared.")
 ]
 ]
 
@@ -31,7 +31,7 @@ freeTextDetail: (
 fallbackOptionIndex: 1, // always 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
-tolerance: 1.01e-07),
+tolerance: 0.010000101),
 ), 
 answerOptionMatcher:("$\key{a}$"), 
 answerOptionsTypes: ("a": "number",

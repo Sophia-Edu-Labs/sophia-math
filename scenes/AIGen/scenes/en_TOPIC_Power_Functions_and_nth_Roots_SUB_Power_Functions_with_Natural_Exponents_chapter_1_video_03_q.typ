@@ -14,11 +14,11 @@
 // The title "Evaluating Power Functions" is shown on this slide
 #v(40pt)
 #only("2-")[
-Evaluate $ f(x) = x^4 $ at $ x = 3 $
+Evaluate $f(x) = x^4$ at $x = 3$
 ]
 // The mathematical expression to evaluate is shown from slide 2 onward
 #only("2")[
-#voiceover("Evaluate the power function f of x equals x to the power of 4 at x equals 3.")
+#voiceover("Evaluate the function f of x equals x to the power of 4 at x equals 3.")
 ]
 ]
 
