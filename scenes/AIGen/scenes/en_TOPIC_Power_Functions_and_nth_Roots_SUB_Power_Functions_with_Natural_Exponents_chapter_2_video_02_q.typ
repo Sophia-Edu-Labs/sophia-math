@@ -1,0 +1,39 @@
+#import "../sophiatheme.typ": *
+#show: sophia-theme
+#show figure.caption: it => [
+#set text(size: 20pt)
+#it.body
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Graphing Power Functions]
+// The title "Graphing Power Functions" is shown on this slide
+#v(40pt)
+#only("1-")[What is the shape of the graph of $f(x) = x^2$?]
+// The question is shown from slide 1 onward
+#v(40pt)
+#only("2-")[a) Parabola]
+// Answer option a) is shown from slide 2 onward
+#v(10pt)
+#only("3-")[b) Line]
+// Answer option b) is shown from slide 3 onward
+#v(10pt)
+#only("4-")[c) Circle]
+// Answer option c) is shown from slide 4 onward
+#v(10pt)
+#only("5-")[d) Hyperbola]
+// Answer option d) is shown from slide 5 onward
+#only("1")[#voiceover("Let's explore the shape of the graph of the function f of x equals x squared. What is the shape of this graph?")]
+#only("2")[#voiceover("Is it a parabola,")]
+#only("3")[#voiceover("or is it a line,")]
+#only("4")[#voiceover("or maybe a circle,")]
+#only("5")[#voiceover("or is it a hyperbola?")]
+]
+
+//Type: MC 
+#questionDef( 
+questionText: "What is the shape of the graph of $f(x) = x^2$?", 
+answerOptions: ("$\text{Parabola}$", "$\text{Line}$", "$\text{Circle}$", "$\text{Hyperbola}$"),
+correctAnswerIndex: 0 
+)
