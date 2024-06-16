@@ -34,7 +34,7 @@
 #voiceover("Denn du darfst die Zähler und Nenner nicht einfach separat addieren.")
 ]
 #only("3")[
-#voiceover("Stattdessen musst du die Brüche zuerst auf den gemeinsamen Nenner bringen, also dass sie den gleichen Nenner haben. Erst dann kannst du die Zähler addieren.")
+#voiceover("Stattdessen musst du die Brüche zuerst auf den gemeinsamen Nenner bringen, also dass sie den gleichen Nenner haben. Erst dann kannst du die Zähler addieren. Schauen wir uns das ganze graphisch an.")
 ]
 ]
 
@@ -97,13 +97,13 @@ width: 360pt),
 #v(20pt)
 #only("3-")[#text()[- Man kann nur bei gleichen Nennern addieren]]
 #only("1")[
-#voiceover("Suchen wir also den gemeinsamen Nenner. Hier siehst du die Brüche mit ihren ursprünglichen Nennern. Links haben wir ein Viertel und rechts zwei Drittel.")
+#voiceover("Hier siehst du die ursprünglichen Brüche. Oben haben wir ein Viertel, und unten sehen wir zwei Drittel.")
 ]
 #only("2")[
-#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Links haben wir Viertel und rechts Drittel. Deswegen können wir auch nicht einfach die Zähler addieren.")
+#voiceover("Diese Brüche haben verschiedene Nenner, also teilen wir sie in Stücke verschiedener Größe ein: Oben haben wir Viertel und rechts Drittel. Deswegen können wir auch nicht einfach die Zähler addieren. Weil wir dann Stücke verschiedenr Größe addieren würden.")
 ]
 #only("3")[
-#voiceover("Denn das geht erst, wenn sie den gleichen Nenner haben. Denn nur dann sind die Stücke gleich groß und wir können sie addieren.")
+#voiceover("Wir können also erst addieren, wenn wir den gleichen Nenner haben. Denn nur dann sind die Stücke gleich groß und wir können sie addieren.")
 ]
 ]
 
@@ -165,7 +165,7 @@ width: 360pt),
 #voiceover("Dann wandeln wir die Brüche um: Drei Zwölftel ist gleich einem Viertel.")
 ]
 #only("3")[
-#voiceover("und acht Zwölftel statt zwei Drittel. Du siehst, dass auf jeder Seite der Wert gleich ist, wie davor. Lediglich die Darstellung ist anders.")
+#voiceover("und acht Zwölftel ist gleich zwei Drittel. Du siehst, dass auf jeder Seite der Wert gleich ist, wie davor. Lediglich die Darstellung ist anders.")
 ]
 ]
 

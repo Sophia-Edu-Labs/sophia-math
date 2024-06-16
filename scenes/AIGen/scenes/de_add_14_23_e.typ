@@ -214,18 +214,19 @@ def visualize_fraction(ax, num, den, color, title):
     # Titel hinzufügen
     ax.set_title(title)
 
-# Erstellen einer Figur mit einem Unterplot
-fig, ax = plt.subplots(figsize=(8, 3))
+# Erstellen einer Figur mit zwei Unterplots, vertikal ausgerichtet
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
-# Summe der Brüche 3/12 und 8/12 plotten
-visualize_fraction(ax, 11, 12, 'purple', '3/12 + 8/12 = 11/12')
+# Ersten Bruch 3/12 plotten
+visualize_fraction(axs[0], 3, 12, 'red', '3/12')
+# Zweiten Bruch 8/12 plotten
+visualize_fraction(axs[1], 8, 12, 'blue', '8/12')
 
 plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
-)
-]
+)]
 ]
 $ #sym.arrow.b $
 #box()[

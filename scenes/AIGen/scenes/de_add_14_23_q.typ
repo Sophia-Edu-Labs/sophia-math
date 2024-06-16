@@ -13,7 +13,7 @@
 #align(center)[Berechne $1/4 + 2/3$]
 ]
 #only("1")[
-#voiceover("Hier ist eine weitere Aufgabe, um das Addieren von Brüchen zu üben.")
+#voiceover("Hier ist eine Aufgabe, um das Addieren von Brüchen zu üben.")
 ]
 #only("2")[
 #voiceover("Berechne ein Viertel plus zwei Drittel.")
