@@ -50,11 +50,11 @@ import numpy as np
 
 def visualize_fraction(ax, num, den, color, title):
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.3)
@@ -109,9 +109,9 @@ import numpy as np
 
 def visualize_fraction(ax, num, den, color, title):
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.3)
     ticks = np.arange(0, 1 + 1/den, 1/den)
@@ -145,9 +145,9 @@ import numpy as np
 
 def visualize_fraction(ax, num, den, color, title):
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.3)
     ticks = np.arange(0, 1 + 1/den, 1/den)
@@ -195,9 +195,9 @@ import numpy as np
 
 def visualize_fraction(ax, num, den, color, title):
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.3)
     ticks = np.arange(0, 1 + 1/den, 1/den)
@@ -230,9 +230,9 @@ import numpy as np
 
 def visualize_fraction(ax, num, den, color, title):
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.3)
     ticks = np.arange(0, 1 + 1/den, 1/den)

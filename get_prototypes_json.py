@@ -58,6 +58,39 @@ prototypes_to_export.sort(key=lambda x: x.base_prototypeID)
 # now create the json file that we wanna export
 json_to_export = []
 
+# Define the hardcoded entries
+hardcoded_entries = [
+    {
+        "prototypeID": "WEB_AI_0_example_web_1423",
+        "type": "web",
+        "url": "https://sophiaggb.vercel.app/a/klettfractions-addition-1423"
+    },
+    {
+        "prototypeID": "WEB_AI_0_example_web_1425",
+        "type": "web",
+        "url": "https://sophiaggb.vercel.app/a/klettfractions-addition-1425"
+    },
+    {
+        "prototypeID": "WEB_AI_0_example_web_1634",
+        "type": "web",
+        "url": "https://sophiaggb.vercel.app/a/klettfractions-addition-1634"
+    },
+    {
+        "prototypeID": "WEB_AI_0_example_web_1845",
+        "type": "web",
+        "url": "https://sophiaggb.vercel.app/a/klettfractions-addition-1845"
+    },
+    {
+        "prototypeID": "WEB_AI_0_example_web_3513",
+        "type": "web",
+        "url": "https://sophiaggb.vercel.app/a/klettfractions-addition-3513"
+    },
+]
+
+# Add hardcoded entries to the beginning of the export list
+json_to_export.extend(hardcoded_entries)
+
+
 # go through all scenes and add an entry to the export json
 for pt in prototypes_to_export:
     jsondict = pt.to_json()

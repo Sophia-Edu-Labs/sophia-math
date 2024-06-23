@@ -51,13 +51,13 @@ import numpy as np
 def visualize_fraction(ax, num, den, color, title):
     # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
     # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
@@ -120,13 +120,13 @@ import numpy as np
 def visualize_fraction(ax, num, den, color, title):
     # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
     # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
@@ -188,13 +188,13 @@ import numpy as np
 def visualize_fraction(ax, num, den, color, title):
     # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
     # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
@@ -214,18 +214,19 @@ def visualize_fraction(ax, num, den, color, title):
     # Titel hinzufügen
     ax.set_title(title)
 
-# Erstellen einer Figur mit einem Unterplot
-fig, ax = plt.subplots(figsize=(8, 3))
+# Erstellen einer Figur mit zwei Unterplots, vertikal ausgerichtet
+fig, axs = plt.subplots(2, 1, figsize=(8, 6))
 
-# Summe der Brüche 3/12 und 8/12 plotten
-visualize_fraction(ax, 11, 12, 'purple', '3/12 + 8/12 = 11/12')
+# Ersten Bruch 3/12 plotten
+visualize_fraction(axs[0], 3, 12, 'red', '3/12')
+# Zweiten Bruch 8/12 plotten
+visualize_fraction(axs[1], 8, 12, 'blue', '8/12')
 
 plt.tight_layout()
 plt.show()
 ```,
 width: 360pt),
-)
-]
+)]
 ]
 $ #sym.arrow.b $
 #box()[
@@ -237,13 +238,13 @@ import numpy as np
 def visualize_fraction(ax, num, den, color, title):
     # Vertikale Linien zur Unterteilung der Zahlenlinie basierend auf dem Nenner
     for i in range(1, den):
-        ax.axvline(i / den, color='black', linestyle='--', linewidth=1)
+        ax.axvline(i / den, color='black', linestyle='--', linewidth=6)
     
     # Rechteck zum Darstellen des Bruchs auf der Zahlenlinie
     ax.add_patch(plt.Rectangle((0, 0), num / den, 0.3, color=color, alpha=0.8))
     
     # Text zur Anzeige des Bruchs in der Mitte des farbigen Bereichs
-    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=44, color='white')
+    ax.text(num / (2 * den), 0.15, f'{num}/{den}', ha='center', va='center', fontsize=33, color='white')
     
     # Achsenbegrenzungen setzen
     ax.set_xlim(0, 1)
