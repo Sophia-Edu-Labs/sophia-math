@@ -63,6 +63,7 @@ caption: [Current vs Time]
 ]
 ]
 ]
+]
 
 #only("2-")[
 - Given: Current $I = 2.5$ A, Time $t = 8$ s

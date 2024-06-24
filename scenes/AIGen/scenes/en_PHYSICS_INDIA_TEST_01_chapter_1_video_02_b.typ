@@ -19,7 +19,7 @@ Which formula correctly represents current?
 #v(10pt)
 #only("-4")[d) $I = Q + t$]#only("5-")[#text(fill:red)[d) $I = Q + t$]]
 
-#only("1")[#voiceover("Not quite. Let's review the correct solution and break down each option to understand why.")]
+#only("1")[#voiceover("Great job! You've correctly identified the formula for electric current. Let's break down each option to understand why.")]
 #only("2")[#voiceover("Option a, I equals Q t, is incorrect. This formula multiplies charge and time, which doesn't give us current.")]
 #only("3")[#voiceover("Option b, I equals Q divided by t, is correct! This is the proper formula for electric current. Current is defined as the rate of flow of electric charge, which is mathematically expressed as charge divided by time.")]
 #only("4")[#voiceover("Option c, I equals t divided by Q, is incorrect. This inverts the correct relationship between charge and time for current.")]

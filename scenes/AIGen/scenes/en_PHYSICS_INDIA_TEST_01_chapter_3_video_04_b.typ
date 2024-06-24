@@ -159,6 +159,7 @@ plt.show()
       )
     ]
   ]
+  ]
 
   #only("1")[
     #voiceover("So, our final answer is that the electron moves a distance of 0.2 meters, or 20 centimeters, under the given conditions.")
