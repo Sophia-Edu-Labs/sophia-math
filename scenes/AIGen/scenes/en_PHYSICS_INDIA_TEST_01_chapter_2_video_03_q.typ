@@ -11,27 +11,30 @@
   #v(40pt)
 
   #only("1-")[
-    - Conductor: 5 × 10^22 free electrons per cm³
-    - Volume: 2 cm³
+    Consider a conductor with:
+    - 1000 free electrons per cubic millimeter
+    - Volume: 2 mm³
   ]
+
+  #v(20pt)
 
   #only("2-")[
     #text(size: 24pt, weight: "bold")[Question: How many free electrons in total? 🤔]
   ]
 
   #only("1")[
-    #voiceover("Let's consider a conductor with a specific concentration of free electrons.")
+    #voiceover("Let's consider a conductor with some interesting properties.")
   ]
 
   #only("2")[
-    #voiceover("Given that this conductor has 5 times 10 to the power of 22 free electrons per cubic centimeter, and we're looking at a volume of 2 cubic centimeters, calculate the total number of free electrons in this volume.")
+    #voiceover("If this conductor has 1000 free electrons per cubic millimeter, and we're looking at a volume of 2 cubic millimeters, how many free electrons are there in total?")
   ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "If a conductor has $5 \\times 10^{22}$ free electrons per cubic centimeter, what is the total number of free electrons in $2 \\text{ cm}^3$?", 
-answerOptions: ("$\text{Total number of free electrons} = 1e+23$", "$\text{Total number of free electrons} = -2e+23$"), 
+questionText: "If a conductor has $1000$ free electrons per cubic millimeter, what is the total number of free electrons in $2 	ext{ mm}^3$?", 
+answerOptions: ("$\text{Total number of free electrons} = 2000$", "$\text{Total number of free electrons} = -3996$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 

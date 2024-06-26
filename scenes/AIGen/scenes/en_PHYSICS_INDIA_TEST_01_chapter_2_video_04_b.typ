@@ -7,50 +7,25 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Free Electron Charge in a Conductor]
+  #text(size: 30pt, weight: "bold")[Free Electron Charge Calculation]
   #v(40pt)
 
   #only("1-")[
-    - Given: 3 cm³ of conductor
+    - Volume: 3 mm³
+    - Electron density: 500 electrons/mm³
+    - Charge of 1 million electrons: 1.6 × 10⁻⁴ C
   ]
-  #v(20pt)
+
   #only("2-")[
-    - Electron density: 8 × 10²¹ electrons/cm³
-  ]
-  #v(20pt)
-  #only("3-")[
-    - Charge of one electron: -1.6 × 10⁻¹⁹ C
+    #text(size: 24pt, weight: "bold")[Question: Total charge of free electrons? 🤔]
   ]
 
   #only("1")[
-    #voiceover("Not quite. Let's go through the correct solution step by step. We're dealing with a conductor that has a volume of 3 cubic centimeters.")
+    #voiceover("Unfortunately, that's not the correct answer. Let's walk through the correct solution step-by-step. We're given a conductor with a volume of 3 cubic millimeters, containing 500 free electrons per cubic millimeter. We also know that 1 million electrons carry a charge of 1.6 times 10 to the negative 4 Coulombs.")
   ]
+
   #only("2")[
-    #voiceover("The conductor has a free electron density of 8 times 10 to the power of 21 electrons per cubic centimeter.")
-  ]
-  #only("3")[
-    #voiceover("We also know that each electron carries a charge of negative 1.6 times 10 to the power of negative 19 coulombs.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Calculation Steps]
-  #v(40pt)
-
-  #only("1-")[
-    1. Calculate total number of electrons
-  ]
-  #v(20pt)
-  #only("2-")[
-    2. Determine total charge
-  ]
-
-  #only("1")[
-    #voiceover("To solve this problem, we'll follow two main steps. First, we'll calculate the total number of free electrons in our 3 cubic centimeter sample.")
-  ]
-  #only("2")[
-    #voiceover("Then, we'll determine the total charge by multiplying the number of electrons by the charge per electron.")
+    #voiceover("Our task is to calculate the total charge of all the free electrons in this 3 cubic millimeter volume. Let's break it down.")
   ]
 ]
 
@@ -60,53 +35,98 @@
   #v(40pt)
 
   #only("1-")[
-    $"Number of electrons" = "Volume" times "Electron density"$
+    - Volume: 3 mm³
+    - Electron density: 500 electrons/mm³
   ]
-  #v(20pt)
+
   #only("2-")[
-    $= 3 "cm"^3 times 8 times 10^21 "electrons/cm"^3$
+    #text(size: 24pt, weight: "bold")[Total electrons = Volume × Density]
   ]
-  #v(20pt)
+
   #only("3-")[
-    $= 24 times 10^21 "electrons"$
+    $"Total electrons" = 3 "mm"^3 × 500 "electrons/mm"^3 = 1500 "electrons"$
   ]
 
   #only("1")[
-    #voiceover("Let's start with step one. To find the total number of electrons, we multiply the volume by the electron density.")
+    #voiceover("First, let's calculate the total number of electrons in our sample. We have a volume of 3 cubic millimeters, and each cubic millimeter contains 500 electrons.")
   ]
+
   #only("2")[
-    #voiceover("That's 3 cubic centimeters times 8 times 10 to the power of 21 electrons per cubic centimeter.")
+    #voiceover("To find the total number of electrons, we multiply the volume by the electron density.")
   ]
+
   #only("3")[
-    #voiceover("This gives us 24 times 10 to the power of 21 electrons in total.")
+    #voiceover("This gives us 3 times 500, which equals 1500 electrons in total.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Step 2: Total Charge]
+  #text(size: 30pt, weight: "bold")[Step 2: Charge Conversion]
   #v(40pt)
 
   #only("1-")[
-    $"Total charge" = "Number of electrons" times "Charge per electron"$
+    - Charge of 1 million electrons: 1.6 × 10⁻⁴ C
+    - We have 1500 electrons
   ]
-  #v(20pt)
+
   #only("2-")[
-    $= 24 times 10^21 times (-1.6 times 10^(-19) "C")$
+    #text(size: 24pt, weight: "bold")[Conversion factor:]
   ]
-  #v(20pt)
+
   #only("3-")[
-    $= -3.84 times 10^3 "C"$
+    $(1.6 × 10^(-4) "C") / (10^6 "electrons") = 1.6 × 10^(-10) "C/electron"$
   ]
 
   #only("1")[
-    #voiceover("Now for step two. To find the total charge, we multiply the number of electrons by the charge per electron.")
+    #voiceover("Now, we need to convert the number of electrons to charge. We're given that 1 million electrons carry a charge of 1.6 times 10 to the negative 4 Coulombs.")
   ]
+
   #only("2")[
-    #voiceover("That's 24 times 10 to the power of 21, times negative 1.6 times 10 to the power of negative 19 coulombs.")
+    #voiceover("Let's calculate the charge per electron.")
   ]
+
   #only("3")[
-    #voiceover("This gives us a total charge of negative 3.84 times 10 to the power of 3 coulombs.")
+    #voiceover("Dividing 1.6 times 10 to the negative 4 Coulombs by 1 million electrons, we get 1.6 times 10 to the negative 10 Coulombs per electron.")
+  ]
+]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Step 3: Total Charge Calculation]
+  #v(40pt)
+
+  #only("1-")[
+    - Total electrons: 1500
+    - Charge per electron: 1.6 × 10⁻¹⁰ C/electron
+  ]
+
+  #only("2-")[
+    #text(size: 24pt, weight: "bold")[Total charge = Number of electrons × Charge per electron]
+  ]
+
+  #only("3-")[
+    $"Total charge" = 1500 "electrons" × (1.6 × 10^(-10) "C/electron")$
+  ]
+
+  #only("4-")[
+    $"Total charge" = 2.4 × 10^(-7) "C"$
+  ]
+
+  #only("1")[
+    #voiceover("Finally, let's calculate the total charge. We have 1500 electrons, and each electron carries a charge of 1.6 times 10 to the negative 10 Coulombs.")
+  ]
+
+  #only("2")[
+    #voiceover("To find the total charge, we multiply the number of electrons by the charge per electron.")
+  ]
+
+  #only("3")[
+    #voiceover("So, we multiply 1500 by 1.6 times 10 to the negative 10.")
+  ]
+
+  #only("4")[
+    #voiceover("This gives us a total charge of 2.4 times 10 to the negative 7 Coulombs.")
   ]
 ]
 
@@ -116,17 +136,27 @@
   #v(40pt)
 
   #only("1-")[
-    The total charge of free electrons in 3 cm³ of the conductor is:
+    #text(size: 24pt, weight: "bold")[The total charge of free electrons in 3 mm³ of the conductor is:]
   ]
-  #v(20pt)
+
   #only("2-")[
-    $-3.84 times 10^3 "C" = -3,840 "C"$
+    #text(size: 28pt, fill: blue)[2.4 × 10⁻⁷ C]
+  ]
+
+  #only("3-")[
+    - This is equivalent to 240 nanocoulombs (nC)
+    - Or 0.24 microcoulombs (µC)
   ]
 
   #only("1")[
-    #voiceover("So, our final answer for the total charge of free electrons in 3 cubic centimeters of this conductor is")
+    #voiceover("So, our final answer is:")
   ]
+
   #only("2")[
-    #voiceover("negative 3.84 times 10 to the power of 3 coulombs, or negative 3,840 coulombs. That's quite a large charge! This demonstrates the immense number of free electrons present in conductors, which is what allows them to conduct electricity so well.")
+    #voiceover("The total charge of free electrons in 3 cubic millimeters of the conductor is 2.4 times 10 to the negative 7 Coulombs.")
+  ]
+
+  #only("3")[
+    #voiceover("To put this in perspective, this is equivalent to 240 nanocoulombs or 0.24 microcoulombs. Great job on solving this problem!")
   ]
 ]

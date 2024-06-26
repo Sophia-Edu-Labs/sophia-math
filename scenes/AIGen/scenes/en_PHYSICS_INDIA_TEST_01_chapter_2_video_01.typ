@@ -52,51 +52,51 @@
   #text(size: 30pt, weight: "bold")[Conductors vs. Insulators]
   #v(40pt)
   #only("1-")[
-    #box()[
-      #morphchildren(id: "plot")[
-        #figure(
-          pyimage(
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
 ```
 
-            import matplotlib.pyplot as plt
-            import numpy as np
+  import matplotlib.pyplot as plt
+  import numpy as np
 
-            # Create figure and axis objects
-            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+  # Create figure and axis objects
+  fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
-            # Function to create random points
-            def random_points(n):
-                return np.random.rand(n, 2)
+  # Function to create random points
+  def random_points(n):
+      return np.random.rand(n, 2)
 
-            # Conductor
-            ax1.scatter(*random_points(50).T, c='blue', alpha=0.7, s=50)
-            ax1.set_title('Conductor')
-            ax1.set_xlim(0, 1)
-            ax1.set_ylim(0, 1)
-            ax1.set_xticks([])
-            ax1.set_yticks([])
+  # Conductor
+  ax1.scatter(*random_points(50).T, c='blue', alpha=0.7, s=50)
+  ax1.set_title('Conductor')
+  ax1.set_xlim(0, 1)
+  ax1.set_ylim(0, 1)
+  ax1.set_xticks([])
+  ax1.set_yticks([])
 
-            # Insulator
-            points = random_points(50)
-            ax2.scatter(points[:, 0], points[:, 1], c='red', alpha=0.7, s=50)
-            for point in points:
-                circle = plt.Circle(point, 0.05, fill=False, color='red')
-                ax2.add_artist(circle)
-            ax2.set_title('Insulator')
-            ax2.set_xlim(0, 1)
-            ax2.set_ylim(0, 1)
-            ax2.set_xticks([])
-            ax2.set_yticks([])
+  # Insulator
+  points = random_points(50)
+  ax2.scatter(points[:, 0], points[:, 1], c='red', alpha=0.7, s=50)
+  for point in points:
+      circle = plt.Circle(point, 0.05, fill=False, color='red')
+      ax2.add_artist(circle)
+  ax2.set_title('Insulator')
+  ax2.set_xlim(0, 1)
+  ax2.set_ylim(0, 1)
+  ax2.set_xticks([])
+  ax2.set_yticks([])
 
-            plt.tight_layout()
-            plt.show()
-          ```,
-          width: 360pt
-        ),
-      )
-    ]
-  ]
-  ]
+  plt.tight_layout()
+  plt.show()
+```,
+width: 360pt
+),
+)
+]
+]
+]
   #only("2-")[- Conductors: Many free electrons]
   #v(20pt)
   #only("3-")[- Insulators: Few or no free electrons]

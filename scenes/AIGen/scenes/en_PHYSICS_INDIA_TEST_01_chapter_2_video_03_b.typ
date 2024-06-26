@@ -7,90 +7,237 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Free Electrons in a Conductor]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Free Electrons in a Conductor]
+  #v(40pt)
 
-#only("1-")[- Given: 5 × 10^22 free electrons per cm³]
-#v(20pt)
-#only("2-")[- Volume: 2 cm³]
-#v(20pt)
-#only("3-")[- Goal: Calculate total number of free electrons]
+  #only("1-")[
+    #align(center)[
+      #box()[
+        #morphchildren(id: "plot")[
+          #figure(
+            pyimage(
+```
 
-#only("1")[
-#voiceover("Let's review the correct solution step by step. We're given that a conductor has 5 times 10 to the power of 22 free electrons per cubic centimeter.")
-]
+              import matplotlib.pyplot as plt
+              import numpy as np
 
-#only("2")[
-#voiceover("We need to find the total number of free electrons in 2 cubic centimeters.")
-]
+              fig, ax = plt.subplots(figsize=(8, 6))
 
-#only("3")[
-#voiceover("To do this, we'll multiply the number of free electrons per cubic centimeter by the total volume.")
-]
+              # Create a 2x1x1 cube
+              x = [0, 2, 2, 0, 0]
+              y = [0, 0, 1, 1, 0]
+              z = [0, 0, 0, 0, 0]
+
+              ax.plot(x, y, z, 'b')
+              ax.plot(x, y, [1]*5, 'b')
+              for i in range(4):
+                ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
+
+              # Add dots representing electrons
+              np.random.seed(42)
+              num_electrons = 20
+              x_electrons = np.random.rand(num_electrons) * 2
+              y_electrons = np.random.rand(num_electrons)
+              z_electrons = np.random.rand(num_electrons)
+
+              ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=50, alpha=0.6)
+
+              ax.set_xlabel('Length (mm)')
+              ax.set_ylabel('Width (mm)')
+              ax.set_zlabel('Height (mm)')
+              ax.set_title('2 mm³ Conductor with Free Electrons')
+
+              plt.tight_layout()
+              plt.show()
+            ```,
+            width: 360pt
+          ),
+          caption: []
+        )
+      ]
+    ]
+  ]
+
+  #only("2-")[
+    - Given: 1000 free electrons per mm³
+    - Volume: 2 mm³
+  ]
+
+  #only("3-")[
+    #text(size: 24pt, weight: "bold")[Question: How many free electrons in total? 🤔]
+  ]
+
+  #only("1")[
+    #voiceover("Let's review the correct solution step by step. Here we have a visualization of a 2 cubic millimeter conductor with some free electrons represented as red dots.")
+  ]
+
+  #only("2")[
+    #voiceover("We're given that there are 1000 free electrons per cubic millimeter, and we're looking at a volume of 2 cubic millimeters.")
+  ]
+
+  #only("3")[
+    #voiceover("Our task is to determine the total number of free electrons in this 2 cubic millimeter volume.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Calculation]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Solution Approach]
+  #v(40pt)
 
-#only("1-")[
-#align(center)[
-$"Total electrons" = "Electrons per cm³" × "Volume in cm³"$
-]
-]
+  #only("1-")[
+    1️⃣ Identify the given information
+  ]
 
-#v(20pt)
+  #only("2-")[
+    2️⃣ Set up the calculation
+  ]
 
-#only("2-")[
-#align(center)[
-$"Total electrons" = (5 × 10^22) × 2$
-]
-]
+  #only("3-")[
+    3️⃣ Perform the multiplication
+  ]
 
-#v(20pt)
+  #only("1")[
+    #voiceover("To solve this problem, we'll follow a simple three-step approach. First, we'll identify the given information.")
+  ]
 
-#only("3-")[
-#align(center)[
-$"Total electrons" = 10 × 10^22 = 1 × 10^23$
-]
-]
+  #only("2")[
+    #voiceover("Next, we'll set up the calculation based on this information.")
+  ]
 
-#only("1")[
-#voiceover("Let's set up our calculation. The total number of electrons is equal to the number of electrons per cubic centimeter multiplied by the volume in cubic centimeters.")
-]
-
-#only("2")[
-#voiceover("We substitute our values: 5 times 10 to the power of 22 for the electrons per cubic centimeter, and 2 for the volume.")
-]
-
-#only("3")[
-#voiceover("Simplifying this, we get 10 times 10 to the power of 22, which is equal to 1 times 10 to the power of 23.")
-]
+  #only("3")[
+    #voiceover("Finally, we'll perform the multiplication to get our answer.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Final Answer]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Step 1: Given Information]
+  #v(40pt)
 
-#only("1-")[
-#align(center)[
-#text(size: 24pt)[Total number of free electrons: $1 × 10^23$]
-]
+  #only("1-")[
+    - Electron density: 1000 electrons/mm³
+  ]
+
+  #only("2-")[
+    - Volume of conductor: 2 mm³
+  ]
+
+  #only("1")[
+    #voiceover("Let's start with what we know. We're given that there are 1000 free electrons in each cubic millimeter of the conductor.")
+  ]
+
+  #only("2")[
+    #voiceover("We're also told that we're looking at a volume of 2 cubic millimeters.")
+  ]
 ]
 
-#v(40pt)
 
-#only("2-")[
-#text(size: 20pt)[💡 This is equivalent to 100,000,000,000,000,000,000,000 electrons!]
+#slide()[
+  #text(size: 30pt, weight: "bold")[Step 2: Set Up Calculation]
+  #v(40pt)
+
+  #only("1-")[
+    Total electrons = Electron density × Volume
+  ]
+
+  #only("2-")[
+    $"Total electrons" = 1000 "electrons"/mm^3 × 2 mm^3$
+  ]
+
+  #only("1")[
+    #voiceover("Now, let's set up our calculation. To find the total number of electrons, we need to multiply the electron density by the volume.")
+  ]
+
+  #only("2")[
+    #voiceover("So, we'll multiply 1000 electrons per cubic millimeter by 2 cubic millimeters.")
+  ]
 ]
 
-#only("1")[
-#voiceover("So, our final answer is that there are 1 times 10 to the power of 23 free electrons in 2 cubic centimeters of this conductor.")
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Step 3: Perform Multiplication]
+  #v(40pt)
+
+  #only("1-")[
+    $"Total electrons" = 1000 "electrons"/mm^3 × 2 mm^3$
+  ]
+
+  #only("2-")[
+    $"Total electrons" = 2000 "electrons"$
+  ]
+
+  #only("1")[
+    #voiceover("Let's perform the multiplication. We have 1000 electrons per cubic millimeter times 2 cubic millimeters.")
+  ]
+
+  #only("2")[
+    #voiceover("This gives us a total of 2000 electrons.")
+  ]
 ]
 
-#only("2")[
-#voiceover("To put this enormous number into perspective, it's equivalent to one hundred sextillion electrons! This demonstrates the incredibly large number of free electrons present in conductors, which contributes to their ability to conduct electricity so well.")
-]
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Final Answer]
+  #v(40pt)
+
+  #only("1-")[
+    #text(size: 24pt, weight: "bold")[There are 2000 free electrons in 2 mm³ of the conductor. 🎉]
+  ]
+
+  #only("2-")[
+    #align(center)[
+      #box()[
+        #morphchildren(id: "plot")[
+          #figure(
+            pyimage(
+```
+
+              import matplotlib.pyplot as plt
+              import numpy as np
+
+              fig, ax = plt.subplots(figsize=(8, 6))
+
+              # Create a 2x1x1 cube
+              x = [0, 2, 2, 0, 0]
+              y = [0, 0, 1, 1, 0]
+              z = [0, 0, 0, 0, 0]
+
+              ax.plot(x, y, z, 'b')
+              ax.plot(x, y, [1]*5, 'b')
+              for i in range(4):
+                ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
+
+              # Add dots representing electrons
+              np.random.seed(42)
+              num_electrons = 200  # Increased for visibility
+              x_electrons = np.random.rand(num_electrons) * 2
+              y_electrons = np.random.rand(num_electrons)
+              z_electrons = np.random.rand(num_electrons)
+
+              ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=20, alpha=0.6)
+
+              ax.set_xlabel('Length (mm)')
+              ax.set_ylabel('Width (mm)')
+              ax.set_zlabel('Height (mm)')
+              ax.set_title('2 mm³ Conductor with 2000 Free Electrons')
+
+              plt.tight_layout()
+              plt.show()
+            ```,
+            width: 360pt
+          ),
+          caption: []
+        )
+      ]
+    ]
+  ]
+
+  #only("1")[
+    #voiceover("So, our final answer is that there are 2000 free electrons in 2 cubic millimeters of the conductor.")
+  ]
+
+  #only("2")[
+    #voiceover("Here's a visual representation of what 2000 electrons might look like in our 2 cubic millimeter volume. Each red dot represents 10 electrons for visibility. This gives us a sense of how densely packed these free electrons are within the conductor.")
+  ]
 ]

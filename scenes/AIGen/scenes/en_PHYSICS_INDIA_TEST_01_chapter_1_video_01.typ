@@ -68,22 +68,22 @@
           pyimage(
 ```
 
-            import matplotlib.pyplot as plt
-            import numpy as np
+      import matplotlib.pyplot as plt
+      import numpy as np
 
-            t = np.linspace(0, 10, 100)
-            Q = 5 * t  # Assuming a constant current of 5 A
+      t = np.linspace(0, 10, 100)
+      Q = 5 * t  # Assuming a constant current of 5 A
 
-            plt.figure(figsize=(8, 6))
-            plt.plot(t, Q, 'b-', linewidth=2)
-            plt.fill_between(t, Q, alpha=0.2)
-            plt.xlabel('Time (s)', fontsize=12)
-            plt.ylabel('Charge (C)', fontsize=12)
-            plt.title('Charge vs Time for Constant Current', fontsize=14)
-            plt.grid(True)
-            plt.annotate('Slope = Current', xy=(5, 25), xytext=(6, 15),
-                         arrowprops=dict(facecolor='black', shrink=0.05))
-            plt.show()
+      plt.figure(figsize=(8, 6))
+      plt.plot(t, Q, 'b-', linewidth=2)
+      plt.fill_between(t, Q, alpha=0.2)
+      plt.xlabel('Time (s)', fontsize=12)
+      plt.ylabel('Charge (C)', fontsize=12)
+      plt.title('Charge vs Time for Constant Current', fontsize=14)
+      plt.grid(True)
+      plt.annotate('Slope = Current', xy=(5, 25), xytext=(6, 15),
+                    arrowprops=dict(facecolor='black', shrink=0.05))
+      plt.show()
           ```,
           width: 360pt
           )

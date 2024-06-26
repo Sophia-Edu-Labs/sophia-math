@@ -7,33 +7,32 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Electron Movement in Electric Field]
+  #text(size: 30pt, weight: "bold")[Electron Movement in a Conductor]
   #v(40pt)
 
   #only("1-")[
-    - Electric field strength: 50 V/m
-    - Work done: 1.6 × 10^(-18) J
+    - Electric field: 5 V/m
+    - Work done: 4 × 10^(-4) J
+    - Number of electrons: 1 million
   ]
 
-  #v(20pt)
-
   #only("2-")[
-    #text(size: 24pt, weight: "bold")[Question: How far does the electron move? 🤔]
+    #text(size: 24pt, weight: "bold")[Question: How far do the electrons move? 🤔]
   ]
 
   #only("1")[
-    #voiceover("Consider an electron in an electric field with a strength of 50 volts per meter.")
+    #voiceover("Consider a conductor with an electric field of 5 volts per meter. A million electrons move through this field, and 4 times 10 to the negative 4 joules of work is done on them.")
   ]
 
   #only("2")[
-    #voiceover("If 1.6 times 10 to the power of negative 18 joules of work is done on the electron, how far does it move? Calculate the distance traveled by the electron in this scenario.")
+    #voiceover("Your task is to calculate how far these electrons would move under these conditions. Think about the relationship between work, force, and distance in an electric field.")
   ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "How far would an electron move in a conductor under an electric field of $50 \\text{ V/m}$ if $1.6 \\times 10^{-18} \\text{ J}$ of work is done on it?", 
-answerOptions: ("$d = 2e-20 \\text{ m}$", "$d = 4.0 \\text{ m}$"), 
+questionText: "How far would a million electrons move in a conductor under an electric field of $5 \\text{ V/m}$ if $4 \\times 10^{-4} \\text{ J}$ of work is done on them?", 
+answerOptions: ("$\text{Distance} = 5.0 \\text{ meters}$", "$\text{Distance} = -6.0 \\text{ meters}$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -41,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$d = \key{a} \\text{ m}$"), 
+answerOptionMatcher:("$\text{Distance} = \key{a} \\text{ meters}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

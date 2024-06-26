@@ -59,7 +59,7 @@
       ]
     ]
   ]
-
+  ]
   #only("2-")[
     #text(size: 24pt, weight: "bold")[Question: What is the surface area? 🤔]
   ]
