@@ -11,46 +11,46 @@
   #v(40pt)
 
   #only("1-")[
-    #align(center)[
-      #box()[
-        #morphchildren(id: "plot")[
-          #figure(
-            pyimage(
-              ```
-              import matplotlib.pyplot as plt
-              from mpl_toolkits.mplot3d import Axes3D
-              import numpy as np
+#align(center)[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+```
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
-              fig = plt.figure(figsize=(8, 6))
-              ax = fig.add_subplot(111, projection='3d')
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # Cube
-              r = [0, 1]
-              X, Y = np.meshgrid(r, r)
-              Z = np.ones_like(X)
+# Cube
+r = [0, 1]
+X, Y = np.meshgrid(r, r)
+Z = np.ones_like(X)
 
-              ax.plot_surface(X, Y, Z, alpha=0.5)
-              ax.plot_surface(X, Y, np.zeros_like(Z), alpha=0.5)
-              ax.plot_surface(Y, Z, X, alpha=0.5)
-              ax.plot_surface(Y, Z, np.ones_like(X), alpha=0.5)
-              ax.plot_surface(Z, X, Y, alpha=0.5)
-              ax.plot_surface(np.ones_like(Z), X, Y, alpha=0.5)
+ax.plot_surface(X, Y, Z, alpha=0.5)
+ax.plot_surface(X, Y, np.zeros_like(Z), alpha=0.5)
+ax.plot_surface(Y, Z, X, alpha=0.5)
+ax.plot_surface(Y, Z, np.ones_like(X), alpha=0.5)
+ax.plot_surface(Z, X, Y, alpha=0.5)
+ax.plot_surface(np.ones_like(Z), X, Y, alpha=0.5)
 
-              ax.set_xlabel('Length')
-              ax.set_ylabel('Width')
-              ax.set_zlabel('Height')
-              ax.set_title('Cube')
+ax.set_xlabel('Length')
+ax.set_ylabel('Width')
+ax.set_zlabel('Height')
+ax.set_title('Cube')
 
-              plt.show()
-              ```,
-              width: 360pt
-            ),
-            caption: []
-          )
-        ]
-      ]
-    ]
-  ]
+plt.show()
+```,
+width: 360pt
+),
+caption: []
+)
+]
+]
+]
+]
 
   #only("2-")[
     #text(size: 24pt, weight: "bold")[Question: How do you calculate the surface area of a cube? 🤔]

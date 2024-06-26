@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe it approximately quadruples,")]
 #only("5")[#voiceover("or does it remain about the same?")]
 ]#questionDef(
-questionText: "A small fish dives from a depth of $10 \text{ m}$ to a depth of $30 \text{ m}$. What happens to its buoyancy?", 
+questionText: "A small fish dives from a depth of $10 \\text{ m}$ to a depth of $30 \\text{ m}$. What happens to its buoyancy?", 
 answerOptions: ("It approximately doubles.", "It approximately triples.", "It approximately quadruples.", "It remains about the same."),
 correctAnswerIndex: 3,
 )

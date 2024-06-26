@@ -112,13 +112,13 @@ caption: [L-shaped building composed of two rectangular prisms]
 #text(size: 30pt, weight: "bold")[Calculation Steps]
 #v(20pt)
 #only("1-")[1. Surface area of main building:]
-#only("2-")[$SA_1 = 2(5 dot 3 + 5 dot 4 + 3 dot 4) = 94 "m"^2$]
+#only("2-")[$"SA"_1 = 2(5 dot 3 + 5 dot 4 + 3 dot 4) = 94 "m"^2$]
 #only("3-")[2. Surface area of extension:]
-#only("4-")[$SA_2 = 2(2 dot 2 + 2 dot 3 + 2 dot 3) = 32 "m"^2$]
+#only("4-")[$"SA"_2 = 2(2 dot 2 + 2 dot 3 + 2 dot 3) = 32 "m"^2$]
 #only("5-")[3. Overlapping area:]
-#only("6-")[$OA = 2 dot 3 = 6 "m"^2$]
+#only("6-")[$"OA" = 2 dot 3 = 6 "m"^2$]
 #only("7-")[4. Total surface area:]
-#only("8-")[$SA_"total" = SA_1 + SA_2 - OA = 94 + 32 - 6 = 120 "m"^2$]
+#only("8-")[$"SA"_"total" = "SA"_1 + "SA"_2 - "OA" = 94 + 32 - 6 = 120 "m"^2$]
 #only("1")[
 #voiceover("Let's calculate step by step. First, we find the surface area of the main building.")
 ]

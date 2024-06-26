@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe pH minus pOH equals 7,")]
 #only("5")[#voiceover("or is it pH minus pOH equals 14?")]
 ]#questionDef(
-questionText: "What is the relationship between $ \text{pH} $ and $ \text{pOH} $?",
-answerOptions: ("$ \text{pH} + \text{pOH} = 7 $", "$ \text{pH} + \text{pOH} = 14 $", "$ \text{pH} - \text{pOH} = 7 $", "$ \text{pH} - \text{pOH} = 14 $"),
+questionText: "What is the relationship between $ \\text{pH} $ and $ \\text{pOH} $?",
+answerOptions: ("$ \\text{pH} + \\text{pOH} = 7 $", "$ \\text{pH} + \\text{pOH} = 14 $", "$ \\text{pH} - \\text{pOH} = 7 $", "$ \\text{pH} - \\text{pOH} = 14 $"),
 correctAnswerIndex: 1,
 )

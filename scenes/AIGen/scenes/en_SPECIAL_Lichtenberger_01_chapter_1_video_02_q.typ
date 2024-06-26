@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe 1 bar,")]
 #only("5")[#voiceover("or is it 10 bar?")]
 ]#questionDef(
-questionText: "A faucet is located $10 \, \text{m}$ below the water surface in a reservoir. What is the water pressure at the faucet?",
-answerOptions: ("$0.01 \, \text{bar}$", "$0.1 \, \text{bar}$", "$1 \, \text{bar}$", "$10 \, \text{bar}$"),
+questionText: "A faucet is located $10 \, \\text{m}$ below the water surface in a reservoir. What is the water pressure at the faucet?",
+answerOptions: ("$0.01 \, \\text{bar}$", "$0.1 \, \\text{bar}$", "$1 \, \\text{bar}$", "$10 \, \\text{bar}$"),
 correctAnswerIndex: 2
 )

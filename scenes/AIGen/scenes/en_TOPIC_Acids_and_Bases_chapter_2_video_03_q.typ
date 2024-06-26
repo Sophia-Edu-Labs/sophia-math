@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe reacting with metals to produce hydrogen gas,")]
 #only("5")[#voiceover("or feeling slippery?")]
 ]#questionDef(
-questionText: "Which of the following is \textbf{NOT} a property of bases?",
+questionText: "Which of the following is \\textbf{NOT} a property of bases?",
 answerOptions: ("Bitter taste", "Conduct electricity", "React with metals to produce hydrogen gas", "Feel slippery"),
 correctAnswerIndex: 2,
 )

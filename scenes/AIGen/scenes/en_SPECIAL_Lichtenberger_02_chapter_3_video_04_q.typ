@@ -30,8 +30,8 @@
 #voiceover("The question is: How high can this balloon rise?")
 ]
 ]#questionDef(
-questionText: "What is the maximum height the balloon can reach, given its initial volume of $1550 \, \text{m}^3$?",
-answerOptions: ("$2000 \, \text{m}$", "$1000 \, \text{m}$"),
+questionText: "What is the maximum height the balloon can reach, given its initial volume of $1550 \, \\text{m}^3$?",
+answerOptions: ("$2000 \, \\text{m}$", "$1000 \, \\text{m}$"),
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -41,7 +41,7 @@ roundingDecimalPlaces: 0,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$\key{a} \, \text{m}$"),
+answerOptionMatcher:("$\key{a} \, \\text{m}$"),
 answerOptionsTypes: (
 "a": "number"
 )

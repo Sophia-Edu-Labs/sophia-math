@@ -41,25 +41,26 @@ pyimage(
 ```
 
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cube
+# Cube points and edges
 points = np.array([[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
                    [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]])
 edges = [[0, 1], [1, 2], [2, 3], [3, 0],
          [4, 5], [5, 6], [6, 7], [7, 4],
          [0, 4], [1, 5], [2, 6], [3, 7]]
 
+# Plot edges
 for edge in edges:
     ax.plot3D(*zip(*points[edge]), color="blue")
 
 # Highlight one face
 verts = [points[0], points[1], points[2], points[3]]
-ax.add_collection3d(plt.Poly3DCollection([verts], facecolors='red', alpha=0.5))
+ax.add_collection3d(Poly3DCollection([verts], facecolors='red', alpha=0.5))
 
 ax.set_xlabel('Length')
 ax.set_ylabel('Width')

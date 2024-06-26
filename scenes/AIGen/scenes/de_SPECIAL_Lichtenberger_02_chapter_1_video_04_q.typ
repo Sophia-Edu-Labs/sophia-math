@@ -43,8 +43,8 @@
 ]
 
 ]#questionDef(
-questionText: "Wenn der Wasserstand im Reservoir um 2 m sinkt, wie ändert sich der Druck an jedem Wasserhahn, der sich $35 \, \text{m}$ unterhalb, $10 \, \text{m}$ unterhalb und $3 \, \text{m}$ oberhalb des Reservoirs befindet?",
-answerOptions: ("Der Druck sinkt bei jedem Wasserhahn um $0.2 \, \text{bar}$.", "Die Druckänderung ist bei jedem Wasserhahn unterschiedlich."),
+questionText: "Wenn der Wasserstand im Reservoir um 2 m sinkt, wie ändert sich der Druck an jedem Wasserhahn, der sich $35 \, \\text{m}$ unterhalb, $10 \, \\text{m}$ unterhalb und $3 \, \\text{m}$ oberhalb des Reservoirs befindet?",
+answerOptions: ("Der Druck sinkt bei jedem Wasserhahn um $0.2 \, \\text{bar}$.", "Die Druckänderung ist bei jedem Wasserhahn unterschiedlich."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1

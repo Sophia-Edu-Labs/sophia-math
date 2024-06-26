@@ -20,6 +20,7 @@ pyimage(
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
+from itertools import product, combinations
 
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
@@ -116,7 +117,7 @@ caption: []
     #voiceover("Let's recap what we've learned. A cube is a three-dimensional shape with six equal square faces.")
   ]
 
-  #only("2")[
+  #only("2")[   
     #voiceover("The surface area of a cube is the total area of all these faces.")
   ]
 

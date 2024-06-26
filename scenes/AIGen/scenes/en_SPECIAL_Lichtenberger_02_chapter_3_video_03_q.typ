@@ -40,8 +40,8 @@
 ]
 
 ]#questionDef(
-questionText: "What is the minimum volume $V$ of the balloon for liftoff in Uster at $464 \text{ m}$ above sea level, neglecting the volume of the gondola and passengers?",
-answerOptions: ("$V = 1088 \text{ m}^3$", "$V = 0 \text{ m}^3$"),  correctAnswerIndex: 0,
+questionText: "What is the minimum volume $V$ of the balloon for liftoff in Uster at $464 \\text{ m}$ above sea level, neglecting the volume of the gondola and passengers?",
+answerOptions: ("$V = 1088 \\text{ m}^3$", "$V = 0 \\text{ m}^3$"),  correctAnswerIndex: 0,
 freeTextDetail: (
   fallbackOptionIndex: 1,
   answerOptionsEquality: (
@@ -50,7 +50,7 @@ freeTextDetail: (
       tolerance: none
     )
   ),
-  answerOptionMatcher:("$V = \key{V} \text{ m}^3$"),
+  answerOptionMatcher:("$V = \key{V} \\text{ m}^3$"),
   answerOptionsTypes: (
     "V": "number"
   )

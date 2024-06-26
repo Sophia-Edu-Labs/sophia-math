@@ -105,7 +105,7 @@ Express your answer in Pascals (Pa).
 #voiceover("Express your answer in Pascals.")
 ]
 ]#questionDef(
-questionText: "What is the pressure at a depth of 1000 m in seawater? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for seawater is $ 1020 \, \text{kg/m}^3 $, $ g = 9.81 \, \text{m/s}^2 $, and $ h = 1000 \, \text{m} $. Express your answer in Pascals (Pa).",
+questionText: "What is the pressure at a depth of 1000 m in seawater? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for seawater is $ 1020 \, \\text{kg/m}^3 $, $ g = 9.81 \, \\text{m/s}^2 $, and $ h = 1000 \, \\text{m} $. Express your answer in Pascals (Pa).",
 answerOptions: ("$10006200$ Pa", "$0$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

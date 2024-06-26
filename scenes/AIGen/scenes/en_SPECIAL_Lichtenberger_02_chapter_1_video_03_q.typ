@@ -55,8 +55,8 @@
 ]
 
 ]#questionDef(
-questionText: "Calculate the overpressure for each tap located at $35 \, \text{m}$ below, $10 \, \text{m}$ below, and $3 \, \text{m}$ above the water container.",
-answerOptions: ("The overpressures are $3.4 \, \text{bar}$, $1.0 \, \text{bar}$, and $-0.3 \, \text{bar}$ respectively, or an equivalent statement.", "The answer is incorrect."),
+questionText: "Calculate the overpressure for each tap located at $35 \, \\text{m}$ below, $10 \, \\text{m}$ below, and $3 \, \\text{m}$ above the water container.",
+answerOptions: ("The overpressures are $3.4 \, \\text{bar}$, $1.0 \, \\text{bar}$, and $-0.3 \, \\text{bar}$ respectively, or an equivalent statement.", "The answer is incorrect."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1

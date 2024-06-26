@@ -10,52 +10,52 @@
   #text(size: 30pt, weight: "bold")[L-Shaped Figure Surface Area]
   #v(40pt)
 
-  #only("1-")[
-    #align(center)[
-      #box()[
-        #morphchildren(id: "plot")[
-          #figure(
-            pyimage(
-              ```
-              import matplotlib.pyplot as plt
-              from mpl_toolkits.mplot3d import Axes3D
+#only("1-")[
+#align(center)[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+```
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
-              fig = plt.figure(figsize=(8, 6))
-              ax = fig.add_subplot(111, projection='3d')
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # First cuboid
-              x1 = [0, 7, 7, 0, 0]
-              y1 = [0, 0, 5, 5, 0]
-              z1 = [0, 0, 0, 0, 0]
-              ax.plot(x1, y1, z1, 'b')
-              ax.plot(x1, y1, [3]*5, 'b')
-              for i in range(4):
-                ax.plot([x1[i], x1[i]], [y1[i], y1[i]], [0, 3], 'b')
+# First cuboid
+x1 = [0, 7, 7, 0, 0]
+y1 = [0, 0, 5, 5, 0]
+z1 = [0, 0, 0, 0, 0]
+ax.plot(x1, y1, z1, 'b')
+ax.plot(x1, y1, [3]*5, 'b')
+for i in range(4):
+  ax.plot([x1[i], x1[i]], [y1[i], y1[i]], [0, 3], 'b')
 
-              # Second cuboid
-              x2 = [0, 3, 3, 0, 0]
-              y2 = [0, 0, 5, 5, 0]
-              z2 = [3, 3, 3, 3, 3]
-              ax.plot(x2, y2, z2, 'r')
-              ax.plot(x2, y2, [7]*5, 'r')
-              for i in range(4):
-                ax.plot([x2[i], x2[i]], [y2[i], y2[i]], [3, 7], 'r')
+# Second cuboid
+x2 = [0, 3, 3, 0, 0]
+y2 = [0, 0, 5, 5, 0]
+z2 = [3, 3, 3, 3, 3]
+ax.plot(x2, y2, z2, 'r')
+ax.plot(x2, y2, [7]*5, 'r')
+for i in range(4):
+  ax.plot([x2[i], x2[i]], [y2[i], y2[i]], [3, 7], 'r')
 
-              ax.set_xlabel('Length (cm)')
-              ax.set_ylabel('Width (cm)')
-              ax.set_zlabel('Height (cm)')
-              ax.set_title('L-Shaped Figure')
+ax.set_xlabel('Length (cm)')
+ax.set_ylabel('Width (cm)')
+ax.set_zlabel('Height (cm)')
+ax.set_title('L-Shaped Figure')
 
-              plt.show()
-              ```,
-              width: 360pt
-            ),
-            caption: []
-          )
-        ]
-      ]
-    ]
-  ]
+plt.show()
+```,
+width: 360pt
+),
+caption: []
+)
+]
+]
+]
+]
 
   #only("2-")[
     - Cuboid 1: 7 cm × 5 cm × 3 cm

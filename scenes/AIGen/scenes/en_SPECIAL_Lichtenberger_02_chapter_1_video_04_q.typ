@@ -43,8 +43,8 @@
 ]
 
 ]#questionDef(
-questionText: "If the reservoir level drops by 2 m, how much does the pressure change for each tap located at $35 \, \text{m}$ below, $10 \, \text{m}$ below, and $3 \, \text{m}$ above the reservoir?",
-answerOptions: ("The pressure decreases by $0.2 \, \text{bar}$ for each tap.", "The pressure change is different for each tap."),
+questionText: "If the reservoir level drops by 2 m, how much does the pressure change for each tap located at $35 \, \\text{m}$ below, $10 \, \\text{m}$ below, and $3 \, \\text{m}$ above the reservoir?",
+answerOptions: ("The pressure decreases by $0.2 \, \\text{bar}$ for each tap.", "The pressure change is different for each tap."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1

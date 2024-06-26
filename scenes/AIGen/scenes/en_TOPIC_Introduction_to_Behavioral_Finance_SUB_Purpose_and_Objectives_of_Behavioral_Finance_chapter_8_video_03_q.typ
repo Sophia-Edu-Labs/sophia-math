@@ -30,7 +30,7 @@
 #only("4")[#voiceover("or maybe ignoring biases,")]
 #only("5")[#voiceover("or is it predicting market trends?")]
 ]#questionDef(
-questionText: "Behavioral Finance can help in \textbf{developing financial policies}.",
+questionText: "Behavioral Finance can help in \\textbf{developing financial policies}.",
 answerOptions: ("making irrational decisions", "developing financial policies", "ignoring biases", "predicting market trends"),
 correctAnswerIndex: 1
 )

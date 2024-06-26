@@ -54,8 +54,8 @@
 ]
 
 ]#questionDef(
-questionText: "Berechne den Überdruck für jeden Hahn, der sich $35 \, \text{m}$ darunter, $10 \, \text{m}$ darunter und $3 \, \text{m}$ über dem Wasserbehälter befindet.",
-answerOptions: ("Die Überdrücke sind $3,4 \, \text{bar}$, $1,0 \, \text{bar}$ und $-0,3 \, \text{bar}$ jeweils, oder eine gleichwertige Aussage.", "Die Antwort ist falsch."),
+questionText: "Berechne den Überdruck für jeden Hahn, der sich $35 \, \\text{m}$ darunter, $10 \, \\text{m}$ darunter und $3 \, \\text{m}$ über dem Wasserbehälter befindet.",
+answerOptions: ("Die Überdrücke sind $3,4 \, \\text{bar}$, $1,0 \, \\text{bar}$ und $-0,3 \, \\text{bar}$ jeweils, oder eine gleichwertige Aussage.", "Die Antwort ist falsch."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1

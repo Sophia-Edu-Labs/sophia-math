@@ -23,7 +23,7 @@
 #only("4")[#voiceover("oder vielleicht vervierfacht er sich ungefähr,")]
 #only("5")[#voiceover("oder bleibt er etwa gleich?")]
 ]#questionDef(
-questionText: "Ein kleiner Fisch taucht von einer Tiefe von $10 \text{ m}$ auf eine Tiefe von $30 \text{ m}$. Was passiert mit seinem Auftrieb?", 
+questionText: "Ein kleiner Fisch taucht von einer Tiefe von $10 \\text{ m}$ auf eine Tiefe von $30 \\text{ m}$. Was passiert mit seinem Auftrieb?", 
 answerOptions: ("Er verdoppelt sich ungefähr.", "Er verdreifacht sich ungefähr.", "Er vervierfacht sich ungefähr.", "Er bleibt etwa gleich."),
 correctAnswerIndex: 3,
 )

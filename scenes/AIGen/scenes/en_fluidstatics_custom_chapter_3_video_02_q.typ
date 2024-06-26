@@ -79,7 +79,7 @@ Give your answer in Pascals. 📏
 #voiceover("Give your answer in Pascals.")
 ]
 ]#questionDef(
-questionText: "Convert a blood pressure of $120/80$ mmHg to Pascals. Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for mercury is $ 13545.9 \, \text{kg/m}^3 $. Give your answer in Pascals for systolic and diastolic pressure.",
+questionText: "Convert a blood pressure of $120/80$ mmHg to Pascals. Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for mercury is $ 13545.9 \, \\text{kg/m}^3 $. Give your answer in Pascals for systolic and diastolic pressure.",
 answerOptions: (
 "Systolic: $p=15936.73$ Pa, Diastolic: $p=10624.49$ Pa",
 "Systolic: $p=0$ Pa, Diastolic: $p=0$ Pa",

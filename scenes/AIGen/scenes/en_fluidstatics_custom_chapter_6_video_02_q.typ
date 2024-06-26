@@ -63,7 +63,7 @@ Answer in Pascals (Pa).
 #voiceover("Give your answer in Pascals.")
 ]
 ]#questionDef(
-questionText: "What is the required pump pressure to lift water to a height of 30 m? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for water is $1000 \, \text{kg/m}^3$. Answer in Pascals (Pa).",
+questionText: "What is the required pump pressure to lift water to a height of 30 m? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for water is $1000 \, \\text{kg/m}^3$. Answer in Pascals (Pa).",
 answerOptions: ("$294300$ Pa", "$30000$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

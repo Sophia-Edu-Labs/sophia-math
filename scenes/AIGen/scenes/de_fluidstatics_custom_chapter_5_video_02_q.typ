@@ -105,7 +105,7 @@ Gib deine Antwort in Pascal (Pa) an.
 #voiceover("Gib deine Antwort in Pascal an.")
 ]
 ]#questionDef(
-questionText: "Wie hoch ist der Druck in einer Tiefe von 1000 m im Meerwasser? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Meerwasser $ 1020 \, \text{kg/m}^3 $, $ g = 9.81 \, \text{m/s}^2 $ und $ h = 1000 \, \text{m} $ ist. Gib deine Antwort in Pascal (Pa) an.",
+questionText: "Wie hoch ist der Druck in einer Tiefe von 1000 m im Meerwasser? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Meerwasser $ 1020 \, \\text{kg/m}^3 $, $ g = 9.81 \, \\text{m/s}^2 $ und $ h = 1000 \, \\text{m} $ ist. Gib deine Antwort in Pascal (Pa) an.",
 answerOptions: ("$10006200$ Pa", "$0$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

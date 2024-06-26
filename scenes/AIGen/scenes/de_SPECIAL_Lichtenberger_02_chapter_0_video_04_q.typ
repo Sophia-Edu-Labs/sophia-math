@@ -24,7 +24,7 @@
 #voiceover("Die Frage ist: Wie oft muss der Pumpenkolben abgesenkt werden, um den Presskolben um 2,0 Meter anzuheben?")
 ]
 ]#questionDef(
-  questionText: "Wie oft muss der Pumpenkolben abgesenkt werden, wenn die Hubhöhe $50 \, \text{cm}$ beträgt?",
+  questionText: "Wie oft muss der Pumpenkolben abgesenkt werden, wenn die Hubhöhe $50 \, \\text{cm}$ beträgt?",
   answerOptions: ("$320$", "$80$"),
   correctAnswerIndex: 0,
   freeTextDetail: (

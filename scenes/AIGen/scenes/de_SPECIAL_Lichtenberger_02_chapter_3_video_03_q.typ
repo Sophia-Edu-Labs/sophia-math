@@ -39,8 +39,8 @@
 ]
 
 ]#questionDef(
-questionText: "Was ist das minimale Volumen $V$ des Ballons für den Start in Uster auf $464 \text{ m}$ über dem Meeresspiegel, wenn das Volumen der Gondel und Passagiere vernachlässigt wird?",
-answerOptions: ("$V = 1088 \text{ m}^3$", "$V = 0 \text{ m}^3$"),  correctAnswerIndex: 0,
+questionText: "Was ist das minimale Volumen $V$ des Ballons für den Start in Uster auf $464 \\text{ m}$ über dem Meeresspiegel, wenn das Volumen der Gondel und Passagiere vernachlässigt wird?",
+answerOptions: ("$V = 1088 \\text{ m}^3$", "$V = 0 \\text{ m}^3$"),  correctAnswerIndex: 0,
 freeTextDetail: (
   fallbackOptionIndex: 1,
   answerOptionsEquality: (
@@ -49,7 +49,7 @@ freeTextDetail: (
       tolerance: none
     )
   ),
-  answerOptionMatcher:("$V = \key{V} \text{ m}^3$"),
+  answerOptionMatcher:("$V = \key{V} \\text{ m}^3$"),
   answerOptionsTypes: (
     "V": "number"
   )

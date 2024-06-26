@@ -10,53 +10,53 @@
   #text(size: 30pt, weight: "bold")[Composite Figure Surface Area]
   #v(40pt)
 
-  #only("1-")[
-    #align(center)[
-      #box()[
-        #morphchildren(id: "plot")[
-          #figure(
-            pyimage(
-              ```
-              import matplotlib.pyplot as plt
-              from mpl_toolkits.mplot3d import Axes3D
-              import numpy as np
+#only("1-")[
+#align(center)[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+```
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
-              fig = plt.figure(figsize=(8, 6))
-              ax = fig.add_subplot(111, projection='3d')
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # Cuboid
-              x = [0, 6, 6, 0, 0]
-              y = [0, 0, 4, 4, 0]
-              z = [0, 0, 0, 0, 0]
-              ax.plot(x, y, z, 'b')
-              ax.plot(x, y, [3]*5, 'b')
-              for i in range(4):
-                ax.plot([x[i], x[i]], [y[i], y[i]], [0, 3], 'b')
+# Cuboid
+x = [0, 6, 6, 0, 0]
+y = [0, 0, 4, 4, 0]
+z = [0, 0, 0, 0, 0]
+ax.plot(x, y, z, 'b')
+ax.plot(x, y, [3]*5, 'b')
+for i in range(4):
+  ax.plot([x[i], x[i]], [y[i], y[i]], [0, 3], 'b')
 
-              # Cube on top
-              x = [1.5, 4.5, 4.5, 1.5, 1.5]
-              y = [0.5, 0.5, 3.5, 3.5, 0.5]
-              z = [3, 3, 3, 3, 3]
-              ax.plot(x, y, z, 'b')
-              ax.plot(x, y, [6]*5, 'b')
-              for i in range(4):
-                ax.plot([x[i], x[i]], [y[i], y[i]], [3, 6], 'b')
+# Cube on top
+x = [1.5, 4.5, 4.5, 1.5, 1.5]
+y = [0.5, 0.5, 3.5, 3.5, 0.5]
+z = [3, 3, 3, 3, 3]
+ax.plot(x, y, z, 'b')
+ax.plot(x, y, [6]*5, 'b')
+for i in range(4):
+  ax.plot([x[i], x[i]], [y[i], y[i]], [3, 6], 'b')
 
-              ax.set_xlabel('Length (cm)')
-              ax.set_ylabel('Width (cm)')
-              ax.set_zlabel('Height (cm)')
-              ax.set_title('Composite Figure: Cuboid with Cube on Top')
+ax.set_xlabel('Length (cm)')
+ax.set_ylabel('Width (cm)')
+ax.set_zlabel('Height (cm)')
+ax.set_title('Composite Figure: Cuboid with Cube on Top')
 
-              plt.show()
-              ```,
-              width: 360pt
-            ),
-            caption: []
-          )
-        ]
-      ]
-    ]
-  ]
+plt.show()
+```,
+width: 360pt
+),
+caption: []
+)
+]
+]
+]
+]
 
   #only("2-")[
     - Cuboid: 6 cm × 4 cm × 3 cm

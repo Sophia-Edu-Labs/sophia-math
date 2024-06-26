@@ -94,7 +94,7 @@ Calculate the pressure at a tap located 50 m below a reservoir. 💧
 ]
 
 ]#questionDef(
-questionText: "What is the pressure at the tap located 50 m below the reservoir? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for water is $1000 \, \text{kg/m}^3 $. Give your answer in Pascals.",
+questionText: "What is the pressure at the tap located 50 m below the reservoir? Use $ p = \rho \cdot g \cdot h $ where $ \rho $ for water is $1000 \, \\text{kg/m}^3 $. Give your answer in Pascals.",
 answerOptions: ("$490500$ Pa", "$0$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

@@ -31,7 +31,7 @@ What is the pressure in the fluid? 🤔💧
 ]
 ]#questionDef(
 questionText: "What is the pressure $P$ in the fluid?",
-answerOptions: ("$P = 14.7 \text{ bar}$", "$P = 0 \text{ bar}$"),  
+answerOptions: ("$P = 14.7 \\text{ bar}$", "$P = 0 \\text{ bar}$"),  
 correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
@@ -41,7 +41,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$P = \key{a} \text{ bar}$"),
+answerOptionMatcher:("$P = \key{a} \\text{ bar}$"),
 answerOptionsTypes: (
 "a": "number"
 )

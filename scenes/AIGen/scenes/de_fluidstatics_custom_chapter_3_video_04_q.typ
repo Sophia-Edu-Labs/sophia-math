@@ -38,7 +38,7 @@
 #voiceover("Berechne den Druckunterschied in Pascal.")
 ]
 ]#questionDef(
-questionText: "Was ist der Druckunterschied zwischen dem Kopf und dem Herzen in Pascal? Verwende die Formel $\Delta p = \rho \cdot g \cdot h$, wobei $\rho = 1060 \, \text{kg/m}^3$, $g = 9.81 \, \text{m/s}^2$ und $h = 0.5 \, \text{m}$ ist.",
+questionText: "Was ist der Druckunterschied zwischen dem Kopf und dem Herzen in Pascal? Verwende die Formel $\Delta p = \rho \cdot g \cdot h$, wobei $\rho = 1060 \, \\text{kg/m}^3$, $g = 9.81 \, \\text{m/s}^2$ und $h = 0.5 \, \\text{m}$ ist.",
 answerOptions: ("$5193$ Pa", "$0$Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

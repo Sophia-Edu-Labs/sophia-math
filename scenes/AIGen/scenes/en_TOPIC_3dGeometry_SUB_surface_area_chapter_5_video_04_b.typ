@@ -8,55 +8,55 @@
 
 #slide()[
   #text(size: 30pt, weight: "bold")[Surface Area of Composite Figures]
-  #v(40pt)
+#v(40pt)
 
-  #only("1-")[
-    #align(center)[
-      #box()[
-        #morphchildren(id: "plot")[
-          #figure(
-            pyimage(
-              ```
-              import matplotlib.pyplot as plt
-              from mpl_toolkits.mplot3d import Axes3D
-              import numpy as np
+#only("1-")[
+#align(center)[
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+```
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
-              fig = plt.figure(figsize=(8, 6))
-              ax = fig.add_subplot(111, projection='3d')
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # Rectangular prism
-              l, w, h = 8, 6, 4
-              x = [0, l, l, 0, 0]
-              y = [0, 0, w, w, 0]
-              z = [0, 0, 0, 0, 0]
-              ax.plot(x, y, z, 'b')
-              ax.plot(x, y, [h]*5, 'b')
-              for i in range(4):
-                ax.plot([x[i], x[i]], [y[i], y[i]], [0, h], 'b')
+# Rectangular prism
+l, w, h = 8, 6, 4
+x = [0, l, l, 0, 0]
+y = [0, 0, w, w, 0]
+z = [0, 0, 0, 0, 0]
+ax.plot(x, y, z, 'b')
+ax.plot(x, y, [h]*5, 'b')
+for i in range(4):
+  ax.plot([x[i], x[i]], [y[i], y[i]], [0, h], 'b')
 
-              # Cylindrical hole
-              r = 1
-              theta = np.linspace(0, 2*np.pi, 100)
-              x = r * np.cos(theta) + l/2
-              y = r * np.sin(theta) + w/2
-              ax.plot(x, y, [0]*100, 'r')
-              ax.plot(x, y, [h]*100, 'r')
+# Cylindrical hole
+r = 1
+theta = np.linspace(0, 2*np.pi, 100)
+x = r * np.cos(theta) + l/2
+y = r * np.sin(theta) + w/2
+ax.plot(x, y, [0]*100, 'r')
+ax.plot(x, y, [h]*100, 'r')
 
-              ax.set_xlabel('Length (cm)')
-              ax.set_ylabel('Width (cm)')
-              ax.set_zlabel('Height (cm)')
-              ax.set_title('Rectangular Prism with Cylindrical Hole')
+ax.set_xlabel('Length (cm)')
+ax.set_ylabel('Width (cm)')
+ax.set_zlabel('Height (cm)')
+ax.set_title('Rectangular Prism with Cylindrical Hole')
 
-              plt.show()
-              ```,
-              width: 360pt
-            ),
-            caption: []
-          )
-        ]
-      ]
-    ]
-  ]
+plt.show()
+```,
+width: 360pt
+),
+caption: []
+)
+]
+]
+]
+]
 
   #only("2-")[
     - Rectangular prism: 8 cm × 6 cm × 4 cm
@@ -120,7 +120,7 @@
   ]
 
   #only("2-")[
-    = $pi × (1 cm)^2$ = $pi$ cm²
+    = $pi × (1 "cm")^2$ = $pi$ cm²
   ]
 
   #only("3-")[

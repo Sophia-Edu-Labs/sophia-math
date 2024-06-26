@@ -18,37 +18,42 @@
             pyimage(
 ```
 
-              import matplotlib.pyplot as plt
-              import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
-              fig, ax = plt.subplots(figsize=(8, 6))
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # Create a 2x1x1 cube
-              x = [0, 2, 2, 0, 0]
-              y = [0, 0, 1, 1, 0]
-              z = [0, 0, 0, 0, 0]
+# Create a 2x1x1 cube
+x = [0, 2, 2, 0, 0]
+y = [0, 0, 1, 1, 0]
+z = [0, 0, 0, 0, 0]
 
-              ax.plot(x, y, z, 'b')
-              ax.plot(x, y, [1]*5, 'b')
-              for i in range(4):
-                ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
+# Bottom face
+ax.plot(x, y, z, 'b')
+# Top face
+ax.plot(x, y, [1]*5, 'b')
+# Vertical edges
+for i in range(4):
+    ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
 
-              # Add dots representing electrons
-              np.random.seed(42)
-              num_electrons = 20
-              x_electrons = np.random.rand(num_electrons) * 2
-              y_electrons = np.random.rand(num_electrons)
-              z_electrons = np.random.rand(num_electrons)
+# Add dots representing electrons
+np.random.seed(42)
+num_electrons = 20
+x_electrons = np.random.rand(num_electrons) * 2
+y_electrons = np.random.rand(num_electrons)
+z_electrons = np.random.rand(num_electrons)
 
-              ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=50, alpha=0.6)
+ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=50, alpha=0.6)
 
-              ax.set_xlabel('Length (mm)')
-              ax.set_ylabel('Width (mm)')
-              ax.set_zlabel('Height (mm)')
-              ax.set_title('2 mm³ Conductor with Free Electrons')
+ax.set_xlabel('Length (mm)')
+ax.set_ylabel('Width (mm)')
+ax.set_zlabel('Height (mm)')
+ax.set_title('2 mm³ Conductor with Free Electrons')
 
-              plt.tight_layout()
-              plt.show()
+plt.tight_layout()
+plt.show()
             ```,
             width: 360pt
           ),
@@ -56,7 +61,7 @@
         )
       ]
     ]
-  ]
+  ]]
 
   #only("2-")[
     - Given: 1000 free electrons per mm³
@@ -142,7 +147,7 @@
   ]
 
   #only("2-")[
-    $"Total electrons" = 1000 "electrons"/mm^3 × 2 mm^3$
+    $"Total electrons" = 1000 "electrons"/"mm"^3 × 2 "mm"^3$
   ]
 
   #only("1")[
@@ -160,7 +165,7 @@
   #v(40pt)
 
   #only("1-")[
-    $"Total electrons" = 1000 "electrons"/mm^3 × 2 mm^3$
+    $"Total electrons" = 1000 "electrons"/"mm"^3 × 2 "mm"^3$
   ]
 
   #only("2-")[
@@ -193,37 +198,42 @@
             pyimage(
 ```
 
-              import matplotlib.pyplot as plt
-              import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
-              fig, ax = plt.subplots(figsize=(8, 6))
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
 
-              # Create a 2x1x1 cube
-              x = [0, 2, 2, 0, 0]
-              y = [0, 0, 1, 1, 0]
-              z = [0, 0, 0, 0, 0]
+# Create a 2x1x1 cube
+x = [0, 2, 2, 0, 0]
+y = [0, 0, 1, 1, 0]
+z = [0, 0, 0, 0, 0]
 
-              ax.plot(x, y, z, 'b')
-              ax.plot(x, y, [1]*5, 'b')
-              for i in range(4):
-                ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
+# Bottom face
+ax.plot(x, y, z, 'b')
+# Top face
+ax.plot(x, y, [1]*5, 'b')
+# Vertical edges
+for i in range(4):
+    ax.plot([x[i], x[i]], [y[i], y[i]], [0, 1], 'b')
 
-              # Add dots representing electrons
-              np.random.seed(42)
-              num_electrons = 200  # Increased for visibility
-              x_electrons = np.random.rand(num_electrons) * 2
-              y_electrons = np.random.rand(num_electrons)
-              z_electrons = np.random.rand(num_electrons)
+# Add dots representing electrons
+np.random.seed(42)
+num_electrons = 200  # Adjusted for visibility
+x_electrons = np.random.rand(num_electrons) * 2
+y_electrons = np.random.rand(num_electrons)
+z_electrons = np.random.rand(num_electrons)
 
-              ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=20, alpha=0.6)
+ax.scatter(x_electrons, y_electrons, z_electrons, c='r', s=20, alpha=0.6)
 
-              ax.set_xlabel('Length (mm)')
-              ax.set_ylabel('Width (mm)')
-              ax.set_zlabel('Height (mm)')
-              ax.set_title('2 mm³ Conductor with 2000 Free Electrons')
+ax.set_xlabel('Length (mm)')
+ax.set_ylabel('Width (mm)')
+ax.set_zlabel('Height (mm)')
+ax.set_title('2 mm³ Conductor with 200 Free Electrons')
 
-              plt.tight_layout()
-              plt.show()
+plt.tight_layout()
+plt.show()
             ```,
             width: 360pt
           ),
@@ -231,7 +241,7 @@
         )
       ]
     ]
-  ]
+  ]]
 
   #only("1")[
     #voiceover("So, our final answer is that there are 2000 free electrons in 2 cubic millimeters of the conductor.")

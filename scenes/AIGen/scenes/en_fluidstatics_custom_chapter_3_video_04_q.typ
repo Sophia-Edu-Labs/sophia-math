@@ -38,7 +38,7 @@
 #voiceover("Calculate the pressure difference in Pascals.")
 ]
 ]#questionDef(
-questionText: "What is the pressure difference between the head and the heart in Pascals? Use the formula $\Delta p = \rho \cdot g \cdot h$, where $\rho = 1060 \, \text{kg/m}^3$, $g = 9.81 \, \text{m/s}^2$, and $h = 0.5 \, \text{m}$.",
+questionText: "What is the pressure difference between the head and the heart in Pascals? Use the formula $\Delta p = \rho \cdot g \cdot h$, where $\rho = 1060 \, \\text{kg/m}^3$, $g = 9.81 \, \\text{m/s}^2$, and $h = 0.5 \, \\text{m}$.",
 answerOptions: ("$5193$ Pa", "$0$Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

@@ -25,7 +25,7 @@
 #voiceover("The question is: How many times must the pump piston be lowered to raise the press piston by 2.0 meters?")
 ]
 ]#questionDef(
-  questionText: "How many times must the pump piston be lowered if its stroke length is $50 \, \text{cm}$?",
+  questionText: "How many times must the pump piston be lowered if its stroke length is $50 \, \\text{cm}$?",
   answerOptions: ("320", "80"),
   correctAnswerIndex: 0,
   freeTextDetail: (

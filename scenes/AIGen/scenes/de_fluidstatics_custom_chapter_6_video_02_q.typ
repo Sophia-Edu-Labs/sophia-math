@@ -62,7 +62,7 @@ Antwort in Pascal (Pa).
 #voiceover("Gib deine Antwort in Pascal an.")
 ]
 ]#questionDef(
-questionText: "Wie hoch ist der erforderliche Pumpendruck, um Wasser auf eine Höhe von 30 m zu heben? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Wasser $1000 \, \text{kg/m}^3$ beträgt. Antwort in Pascal (Pa).",
+questionText: "Wie hoch ist der erforderliche Pumpendruck, um Wasser auf eine Höhe von 30 m zu heben? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Wasser $1000 \, \\text{kg/m}^3$ beträgt. Antwort in Pascal (Pa).",
 answerOptions: ("$294300$ Pa", "$30000$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (

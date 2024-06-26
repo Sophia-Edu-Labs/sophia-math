@@ -28,7 +28,7 @@
 ]
 ]#questionDef(
 questionText: "Was ist die notwendige Kraft $F$ der Pumpe in Newton (N)?",
-answerOptions: ("$740 \text{ N}$", "$0 \text{ N}$"),  correctAnswerIndex: 0,
+answerOptions: ("$740 \\text{ N}$", "$0 \\text{ N}$"),  correctAnswerIndex: 0,
 freeTextDetail: (
 fallbackOptionIndex: 1,
 answerOptionsEquality: (
@@ -37,7 +37,7 @@ roundingDecimalPlaces: 2,
 tolerance: none
 )
 ),
-answerOptionMatcher:("$\key{a} \text{ N}$"),
+answerOptionMatcher:("$\key{a} \\text{ N}$"),
 answerOptionsTypes: (
 "a": "number" )
 ),

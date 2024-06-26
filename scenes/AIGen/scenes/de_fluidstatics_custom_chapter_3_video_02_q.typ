@@ -78,7 +78,7 @@ Gib deine Antwort in Pascal an. 📏
 #voiceover("Gib deine Antwort in Pascal an.")
 ]
 ]#questionDef(
-questionText: "Rechne einen Blutdruck von $120/80$ mmHg in Pascal um. Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Quecksilber $ 13545,9 \, \text{kg/m}^3 $ beträgt. Gib deine Antwort in Pascal für systolischen und diastolischen Druck an.",
+questionText: "Rechne einen Blutdruck von $120/80$ mmHg in Pascal um. Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Quecksilber $ 13545,9 \, \\text{kg/m}^3 $ beträgt. Gib deine Antwort in Pascal für systolischen und diastolischen Druck an.",
 answerOptions: (
 "Systolisch: $p=15936,73$ Pa, Diastolisch: $p=10624,49$ Pa",
 "Systolisch: $p=0$ Pa, Diastolisch: $p=0$ Pa",

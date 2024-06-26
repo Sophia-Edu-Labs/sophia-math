@@ -93,7 +93,7 @@ Berechne den Druck an einem Hahn, der sich 50 m unterhalb eines Reservoirs befin
 ]
 
 ]#questionDef(
-questionText: "Wie hoch ist der Druck an dem Hahn, der sich 50 m unterhalb des Reservoirs befindet? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Wasser $1000 \, \text{kg/m}^3 $ beträgt. Gib deine Antwort in Pascal an.",
+questionText: "Wie hoch ist der Druck an dem Hahn, der sich 50 m unterhalb des Reservoirs befindet? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Wasser $1000 \, \\text{kg/m}^3 $ beträgt. Gib deine Antwort in Pascal an.",
 answerOptions: ("$490500$ Pa", "$0$ Pa"),
 correctAnswerIndex: 0,
 freeTextDetail: (
