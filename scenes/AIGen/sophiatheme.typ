@@ -222,19 +222,71 @@
   non_empty_lines.join("\n")
 }
 
+#let dedent(s) = {
+  // Split the string into lines
+  let lines = s.split("\n")
+  
+  // Helper function to find minimum value in an array
+  let min_value(arr) = {
+    if arr.len() == 0 { return none }
+    let min = arr.at(0)
+    for val in arr {
+      if val < min { min = val }
+    }
+    min
+  }
+
+  //DEBUG:
+  // return lines
+  //     .filter(line => line.trim() != "").map(line => {
+  //       let leading_spaces = line.match(regex("^ *"))
+  //       if leading_spaces != none { str(leading_spaces.text.len()) } else { str(0) }
+  //     }).join("\n")
+  
+  // Find the minimum indentation
+  let min_indent = min_value(
+    lines
+      .filter(line => line.trim() != "")
+      .map(line => {
+        let leading_spaces = line.match(regex("^ *"))
+        if leading_spaces != none { leading_spaces.text.len() } else { 0 }
+      })
+  )
+
+  //DEBUG:
+  // return "min indent: "+str(min_indent)
+  
+  // If no lines with content, return original string
+  if min_indent == none { return s }
+  
+  // Remove the common indentation from each line
+  let dedented_lines = lines.map(line =>
+    if line.trim() != "" {
+      line.slice(min_indent, line.len())
+    } else {
+      line
+    }
+  )
+  
+  // Join the lines back into a single string
+  dedented_lines.join("\n")
+}
+
 #let map_empty_lines(str) = {
   let lines = str.split("\n")
   let mapped_lines = lines.map(line => if line.trim() == "" { "\n" } else { line })
-  mapped_lines.join("")
+  mapped_lines.join("\n")
 }
 
 #let pyimage(code, width: auto, height: auto) = {
   let contents = json(".typst-images/contents.json")
 
   for content in contents {
+    //DEBUG: 
+    // return raw(dedent(map_empty_lines(content.code)).trim())
     // return content.code
     // return code.text
-    if map_empty_lines(content.code).trim() == map_empty_lines(code.text).trim() {
+    if dedent(map_empty_lines(content.code)).trim() == dedent(map_empty_lines(code.text)).trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
@@ -245,13 +297,19 @@
   return box(fill: red, width: width, height: height)[Image not found]
 }
 
+#let pyimagedebug(code, width: auto, height: auto) = {
+  //uncomment the following to "undebug"
+  // return pyimage(code, width: width, height: height)
+  return raw(dedent(map_empty_lines(code.text)).trim())
+}
+
 #let pycontent(code, width: auto, height: auto) = {
   let contents = json(".typst-images/contents.json")
 
   for content in contents {
     // return content.code
     // return code.text
-    if map_empty_lines(content.code).trim() == map_empty_lines(code.text).trim() {
+    if dedent(map_empty_lines(content.code)).trim() == dedent(map_empty_lines(code.text)).trim() {
       if content.keys().contains("error") and content.error != none{
         return box(fill: red, width: width, height: height)[#content.error]
       }
