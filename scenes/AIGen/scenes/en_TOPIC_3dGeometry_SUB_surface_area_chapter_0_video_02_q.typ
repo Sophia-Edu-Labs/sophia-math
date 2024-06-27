@@ -100,6 +100,6 @@ caption: []
 //Type: MC 
 #questionDef( 
 questionText: "How do you calculate the surface area of a cube?", 
-answerOptions: ("$6 \\times \\text{side length}$", "$\text{side length} \\times \\text{side length}$", "$6 \\times (\text{side length} \\times \\text{side length})$", "$\text{side length} \\times \\text{side length} \\times \\text{side length}$"),
+answerOptions: ("$6 \\times \\text{side length}$", "$\\text{side length} \\times \\text{side length}$", "$6 \\times (\text{side length} \\times \\text{side length})$", "$\\text{side length} \\times \\text{side length} \\times \\text{side length}$"),
 correctAnswerIndex: 2 
 )

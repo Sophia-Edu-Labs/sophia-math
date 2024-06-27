@@ -80,7 +80,7 @@ Calculate the surface area of this cube.
 //Type: Numeric
 #questionDef(
 questionText: "What is the surface area of a cube with side length $4$ cm?", 
-answerOptions: ("$\text{Surface Area} = 96 \\text{ cm}^2$", "$\text{Surface Area} = -188 \\text{ cm}^2$"), 
+answerOptions: ("$\\text{Surface Area} = 96 \\text{ cm}^2$", "$\\text{Surface Area} = -188 \\text{ cm}^2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -88,7 +88,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.10000010100000001),
 ), 
-answerOptionMatcher:("$\text{Surface Area} = \key{a} \\text{ cm}^2$"), 
+answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ cm}^2$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

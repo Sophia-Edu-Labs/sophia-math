@@ -7,7 +7,7 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[L-Shaped Figure Surface Area]
+  #text(size: 30pt, weight: "bold")[Oberfläche der L-förmigen Figur]
   #v(40pt)
 
 #only("1-")[
@@ -58,31 +58,31 @@ caption: []
 ]
 
   #only("2-")[
-    - Cuboid 1: 7 cm × 5 cm × 3 cm
-    - Cuboid 2: 3 cm × 5 cm × 4 cm
+    - Quader 1: 7 cm × 5 cm × 3 cm
+    - Quader 2: 3 cm × 5 cm × 4 cm
   ]
 
   #only("3-")[
-    #text(size: 24pt, weight: "bold")[Question: Calculate the total surface area 📐]
+    #text(size: 24pt, weight: "bold")[Frage: Berechne die gesamte Oberfläche 📐]
   ]
 
   #only("1")[
-    #voiceover("Let's consider an L-shaped figure formed by two cuboids.")
+    #voiceover("Betrachten wir eine L-förmige Figur, die aus zwei Quadern besteht.")
   ]
 
   #only("2")[
-    #voiceover("The first cuboid measures 7 centimeters by 5 centimeters by 3 centimeters. The second cuboid, placed on top of part of the first, measures 3 centimeters by 5 centimeters by 4 centimeters.")
+    #voiceover("Der erste Quader misst 7 Zentimeter mal 5 Zentimeter mal 3 Zentimeter. Der zweite Quader, der auf einem Teil des ersten platziert ist, misst 3 Zentimeter mal 5 Zentimeter mal 4 Zentimeter.")
   ]
 
   #only("3")[
-    #voiceover("Your task is to calculate the total surface area of this L-shaped figure. Remember to consider which surfaces are exposed and which are hidden where the cuboids meet.")
+    #voiceover("Deine Aufgabe ist es, die gesamte Oberfläche dieser L-förmigen Figur zu berechnen. Denk daran, welche Flächen sichtbar sind und welche an den Verbindungsstellen der Quader verborgen sind.")
   ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "Calculate the surface area of an L-shaped figure formed by two cuboids: one $7 \\text{ cm} \\times 5 \\text{ cm} \\times 3 \\text{ cm}$ and another $3 \\text{ cm} \\times 5 \\text{ cm} \\times 4 \\text{ cm}$.", 
-answerOptions: ("$\\text{Surface Area} = 206 \\text{ cm}^2$", "$\\text{Surface Area} = -408 \\text{ cm}^2$"), 
+questionText: "Berechne die Oberfläche einer L-förmigen Figur, die aus zwei Quadern besteht: einer $7 \\text{ cm} \\times 5 \\text{ cm} \\times 3 \\text{ cm}$ und einem weiteren $3 \\text{ cm} \\times 5 \\text{ cm} \\times 4 \\text{ cm}$.", 
+answerOptions: ("$\\text{Oberfläche} = 206 \\text{ cm}^2$", "$\\text{Oberfläche} = -408 \\text{ cm}^2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -90,7 +90,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ cm}^2$"), 
+answerOptionMatcher:("$\\text{Oberfläche} = \key{a} \\text{ cm}^2$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

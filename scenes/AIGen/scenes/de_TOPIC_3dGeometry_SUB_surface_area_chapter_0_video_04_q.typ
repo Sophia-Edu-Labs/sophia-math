@@ -7,7 +7,7 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Surface Area of a Cube]
+#text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
 #v(40pt)
 
 #only("1-")[
@@ -57,7 +57,7 @@ plt.show()
 
 ```,
 width: 300pt),
-caption: [Cube with side length 7 m],
+caption: [Würfel mit Seitenlänge 7 m],
 )
 ]
 ]
@@ -67,22 +67,22 @@ caption: [Cube with side length 7 m],
 #v(20pt)
 
 #only("2-")[
-Find the surface area of this cube.
+Finde die Oberfläche dieses Würfels.
 ]
 
 #only("1")[
-#voiceover("Let's consider a cube.")
+#voiceover("Betrachten wir einen Würfel.")
 ]
 
 #only("2")[
-#voiceover("What is the surface area of a cube with side length 7 meters?")
+#voiceover("Wie groß ist die Oberfläche eines Würfels mit einer Seitenlänge von sieben Metern?")
 ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "What is the surface area of a cube with side length $7$ m?", 
-answerOptions: ("$\\text{Surface Area} = 294 \\text{ m}^2$", "$\\text{Surface Area} = -584 \\text{ m}^2$"), 
+questionText: "Wie groß ist die Oberfläche eines Würfels mit einer Seitenlänge von $7$ m?", 
+answerOptions: ("$\\text{Oberfläche} = 294 \\text{ m}^2$", "$\\text{Oberfläche} = -584 \\text{ m}^2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -90,7 +90,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ m}^2$"), 
+answerOptionMatcher:("$\\text{Oberfläche} = \key{a} \\text{ m}^2$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

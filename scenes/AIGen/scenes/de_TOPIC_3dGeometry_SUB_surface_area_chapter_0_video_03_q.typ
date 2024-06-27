@@ -7,12 +7,11 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Surface Area of a Cube]
+#text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
 #v(40pt)
 
 #only("1-")[
-#align(center)[
-#box(width: 200pt, height: 200pt)[
+#box()[
 #morphchildren(id: "plot")[
 #figure(
 pyimage(
@@ -44,8 +43,8 @@ for edge in edges:
     z = [vertices[edge[0]][2], vertices[edge[1]][2]]
     ax.plot(x, y, z, 'b')
 
-# Label side length
-ax.text(0.5, -0.1, -0.1, '7 m', fontsize=12)
+# Add label
+ax.text(0.5, 0.5, -0.1, '4 cm', ha='center', va='center')
 
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
@@ -57,9 +56,8 @@ plt.show()
 
 ```,
 width: 300pt),
-caption: [Cube with side length 7 m],
+caption: [Ein Würfel mit einer Kantenlänge von 4 cm],
 )
-]
 ]
 ]
 ]
@@ -67,30 +65,30 @@ caption: [Cube with side length 7 m],
 #v(20pt)
 
 #only("2-")[
-Find the surface area of this cube.
+Berechne die Oberfläche dieses Würfels.
 ]
 
 #only("1")[
-#voiceover("Let's consider a cube.")
+#voiceover("Betrachten wir einen Würfel mit einer Kantenlänge von 4 Zentimetern.")
 ]
 
 #only("2")[
-#voiceover("What is the surface area of a cube with side length 7 meters?")
+#voiceover("Wie groß ist die Oberfläche dieses Würfels?")
 ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "What is the surface area of a cube with side length $7$ m?", 
-answerOptions: ("$\\text{Surface Area} = 294 \\text{ m}^2$", "$\\text{Surface Area} = -584 \\text{ m}^2$"), 
+questionText: "Wie groß ist die Oberfläche eines Würfels mit einer Kantenlänge von $4$ cm?", 
+answerOptions: ("$\\text{Oberfläche} = 96 \\text{ cm}^2$", "$\\text{Oberfläche} = -188 \\text{ cm}^2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
-tolerance: 0.010000101),
+tolerance: 0.10000010100000001),
 ), 
-answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ m}^2$"), 
+answerOptionMatcher:("$\\text{Oberfläche} = \key{a} \\text{ cm}^2$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 
