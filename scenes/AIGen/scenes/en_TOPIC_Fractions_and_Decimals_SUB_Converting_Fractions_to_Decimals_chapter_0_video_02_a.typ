@@ -24,7 +24,7 @@ What is $3/10$ as a decimal?
 #only("-4")[d) $30$]#only("5-")[#text(fill:red)[d) $30$]]
 #v(40pt)
 
-#only("1")[#voiceover("Not quite, but let's go through the options to understand why the correct answer is a) 0.3.")]
+#only("1")[#voiceover("That's right, great job!")]
 #only("2")[#voiceover("Option a) 0.3 is correct. When you divide 3 by 10, you get 0.3.")]
 #only("3")[#voiceover("Option b) 3.0 is incorrect. 3.0 is the whole number three, which is much larger than 0.3.")]
 #only("4")[#voiceover("Option c) 0.03 is incorrect. 0.03 is three hundredths, which is much smaller than 0.3.")]
