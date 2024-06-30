@@ -7,16 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting Complex Fractions to Decimals]
-// The title "Converting Complex Fractions to Decimals" is shown on this slide
-#v(40pt)
-#only("1-")[Consider the fraction $9/20$]
-// The fraction is shown from slide 1 onward
-#v(40pt)
-#only("2-")[$arrow$ Convert it to a decimal $square/square$!]
-// The instruction to convert to a decimal is shown from slide 2 onward
-#only("1")[#voiceover("Let's test your knowledge on converting complex fractions to decimals. Consider the fraction nine over twenty.")]
-#only("2")[#voiceover("Can you convert it into a decimal, where we express it in the form of a number with a decimal point?")]
+  #text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
+  #v(40pt)
+
+  #only("1-")[Consider the fraction: $9/20$]
+  #v(20pt)
+
+  #only("2-")[Question: What is this fraction as a decimal? 🤔]
+
+  #only("1")[
+    #voiceover("Let's practice converting fractions to decimals. Consider the fraction nine twentieths.")
+  ]
+
+  #only("2")[
+    #voiceover("Your task is to convert this fraction, nine twentieths, into its decimal form. Take a moment to think about how you would approach this problem.")
+  ]
 ]
 
 //Type: FREE 

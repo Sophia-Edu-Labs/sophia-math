@@ -14,9 +14,9 @@
       #morphchildren(id: "plot")[
         #figure(
           pyimage(
-```
 
-            import matplotlib.pyplot as plt
+```
+import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
@@ -49,7 +49,7 @@ plt.show()
     ]
   ]]
   #only("1")[
-    #voiceover("Let's review the correct solution step-by-step. We have a cube with a side length of 7 meters. Here's a visualization of our cube.")
+    #voiceover("That's okay! Let's go through the correct solution step-by-step. We have a cube with a side length of 7 meters. Here's a visualization of our cube.")
   ]
 ]
 
@@ -70,16 +70,16 @@ plt.show()
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Step 2: Plug in the Values]
+  #text(size: 30pt, weight: "bold")[Step 2: Substitute Values]
   #v(40pt)
   #only("1-")[- Side length, $s = 7"m"$]
   #v(20pt)
   #only("2-")[- $"SA" = 6 × (7"m")^2$]
   #only("1")[
-    #voiceover("Now, let's plug in our known value. We're given that the side length is 7 meters.")
+    #voiceover("Now, let's substitute our known value. We're given that the side length is 7 meters.")
   ]
   #only("2")[
-    #voiceover("So, we substitute 7 meters for s in our formula. This gives us: Surface Area equals 6 times 7 meters squared.")
+    #voiceover("So we replace s with 7 meters in our formula. This gives us: Surface Area equals 6 times 7 meters squared.")
   ]
 ]
 
@@ -111,9 +111,9 @@ plt.show()
   #v(40pt)
   #only("2-")[💡 Remember: Units are important!]
   #only("1")[
-    #voiceover("So, our final answer is that the surface area of the cube is 294 square meters.")
+    #voiceover("So our final answer is that the surface area of the cube is 294 square meters.")
   ]
   #only("2")[
-    #voiceover("Remember, it's crucial to include the correct units in your answer. Here, we're dealing with area, so our units are square meters.")
+    #voiceover("Remember, it's important to include the correct units in your answer. Here, we're dealing with area, so our units are square meters.")
   ]
 ]

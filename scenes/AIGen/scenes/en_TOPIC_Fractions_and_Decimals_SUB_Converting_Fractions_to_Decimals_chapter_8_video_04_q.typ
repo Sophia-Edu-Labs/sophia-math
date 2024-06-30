@@ -7,20 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting More Complex Fractions to Decimals]
-// The title "Converting More Complex Fractions to Decimals" is shown on all slides
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Converting a Fraction to a Decimal]
+  #v(40pt)
 
-#only("1-")[Consider the fraction $7/20$]
-// The fraction 7/20 is shown from slide 1 onward
+  #only("1-")[Consider the fraction: $7/20$]
+  #v(20pt)
 
-#v(40pt)
+  #only("2-")[Question: What is this fraction as a decimal? 🤔]
 
-#only("2-")[$arrow$ Convert it to a decimal $square$!]
-// The instruction to convert to a decimal is shown from slide 2 onward
+  #only("1")[
+    #voiceover("Let's practice converting more complex fractions to decimals. Consider the fraction seven twentieths.")
+  ]
 
-#only("1")[#voiceover("Let's test your knowledge on converting more complex fractions to decimals. Consider the fraction seven over twenty.")]
-#only("2")[#voiceover("Can you convert it into a decimal number?")]
+  #only("2")[
+    #voiceover("Your task is to convert this fraction, seven twentieths, into its decimal form. Take a moment to think about how you might approach this problem.")
+  ]
 ]
 
 //Type: FREE 

@@ -7,89 +7,93 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Introduction to Converting Fractions to Decimals]
-#v(40pt)
-#only("1-")[- Imagine you have a fraction like $3/4$.]
-#v(20pt)
-#only("2-")[- How can we write this as a decimal number?]
-#v(20pt)
-#only("3-")[- We need to convert the denominator to a power of ten. 🔢]
-#v(20pt)
-#only("4-")[- Then, we can easily convert it to a decimal. ➗]
+  #text(size: 30pt, weight: "bold")[Converting Simple Fractions to Decimals]
+  #v(40pt)
+  
+  #only("1-")[- Sarah has 3/4 of a pizza 🍕]
+  #v(20pt)
+  #only("2-")[- How much is that in decimal form? 🤔]
+  #v(20pt)
+  #only("3-")[- We need a method to convert fractions to decimals! 🔢]
 
-#only("1")[
-#voiceover("Imagine you have a fraction, like three over four.")
-]
-#only("2")[
-#voiceover("And you want to write this fraction as a decimal number.")
-]
-#only("3")[
-#voiceover("To do this, we need to convert the denominator to a power of ten.")
-]
-#only("4")[
-#voiceover("Once we have a power of ten in the denominator, we can easily convert the fraction to a decimal.")
-]
+  #only("1")[
+    #voiceover("Imagine Sarah has three-quarters of a pizza left. That's easy to visualize, right?")
+  ]
+  #only("2")[
+    #voiceover("But what if we wanted to express this amount as a decimal? How would we do that?")
+  ]
+  #only("3")[
+    #voiceover("This is where we need a method to convert fractions to decimals. Let's learn how to do this, especially when the denominator isn't a power of ten.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Fractions to Decimals]
-#v(40pt)
-#only("1-")[- Step 1: Find a number to multiply both numerator and denominator by. 🔍]
-#v(20pt)
-#only("2-")[- Step 2: Multiply both numerator and denominator. ✖️]
-#v(20pt)
-#only("3-")[- Step 3: Write the fraction with the new denominator. 📝]
-#v(20pt)
-#only("4-")[- Step 4: Convert the fraction to a decimal. ➗]
+  #text(size: 30pt, weight: "bold")[The Challenge]
+  #v(40pt)
+  
+  #only("1-")[- Easy: 1/10 = 0.1, 3/100 = 0.03 ✅]
+  #v(20pt)
+  #only("2-")[- But what about 3/4? 🤷‍♀️]
+  #v(20pt)
+  #only("3-")[- We need to make the denominator a power of 10! 💡]
 
-#only("1")[
-#voiceover("Let's go through the steps to convert fractions to decimals. First, we need to find a number to multiply both the numerator and the denominator by.")
-]
-#only("2")[
-#voiceover("Next, we multiply both the numerator and the denominator by this number.")
-]
-#only("3")[
-#voiceover("Then, we write the fraction with the new denominator.")
-]
-#only("4")[
-#voiceover("Finally, we convert the fraction to a decimal.")
-]
+  #only("1")[
+    #voiceover("We know how to convert fractions to decimals when the denominator is already a power of ten. For example, one-tenth is zero point one, and three-hundredths is zero point zero three.")
+  ]
+  #only("2")[
+    #voiceover("But what about three-quarters? The denominator isn't a power of ten, so we can't directly write it as a decimal.")
+  ]
+  #only("3")[
+    #voiceover("The key is to transform the fraction so that its denominator becomes a power of ten. Let's see how we can do this!")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $3/4$ to a Decimal]
-#v(40pt)
-#only("1-")[- Step 1: Multiply $3/4$ by $25/25$.]
-#v(20pt)
-#only("2-")[- Step 2: $3 dot 25 = 75$ and $4 dot 25 = 100$.]
-#v(20pt)
-#only("3-")[- Step 3: $75/100$ is $0.75$.]
+  #text(size: 30pt, weight: "bold")[The Solution]
+  #v(40pt)
+  
+  #only("1-")[- Multiply numerator and denominator by the same number]
+  #v(20pt)
+  #only("2-")[$ 3/4 = (3 dot 25)/(4 dot 25) = 75/100 = 0.75 $]
+  #v(20pt)
+  #only("3-")[- We chose 25 because 4 × 25 = 100 (power of 10) 🎯]
 
-#only("1")[
-#voiceover("Let's go through an example. To convert three over four to a decimal, we first multiply three over four by twenty-five over twenty-five.")
-]
-#only("2")[
-#voiceover("Next, we multiply three by twenty-five, which gives us seventy-five, and four by twenty-five, which gives us one hundred.")
-]
-#only("3")[
-#voiceover("So we get seventy-five over one hundred, which is zero point seven five.")
-]
+  #only("1")[
+    #voiceover("Here's the trick: we can multiply both the numerator and denominator by the same number. This doesn't change the value of the fraction, but it can give us a denominator that's a power of ten.")
+  ]
+  #only("2")[
+    #voiceover("Let's try this with our three-quarters example. We'll multiply both top and bottom by twenty-five. Three times twenty-five is seventy-five, and four times twenty-five is one hundred. So three-quarters equals seventy-five hundredths, which we can easily write as zero point seven five.")
+  ]
+  #only("3")[
+    #voiceover("We chose twenty-five because when multiplied by four, it gives us one hundred, which is a power of ten. This is the key to our method!")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Summary]
-#v(40pt)
-#only("1-")[- Multiply numerator and denominator by the same number. ✖️]
-#v(20pt)
-#only("2-")[- Convert the fraction to a decimal. ➗]
+  #text(size: 30pt, weight: "bold")[Summary]
+  #v(40pt)
+  
+  #only("1-")[- To convert a fraction to a decimal:]
+  #v(20pt)
+  #only("2-")[1. Multiply numerator and denominator by same number]
+  #v(20pt)
+  #only("3-")[2. Choose a number that makes denominator a power of 10]
+  #v(20pt)
+  #only("4-")[3. Divide the new numerator by the new denominator]
 
-#only("1")[
-#voiceover("In summary, to convert a fraction to a decimal, we multiply the numerator and the denominator by the same number.")
-]
-#only("2")[
-#voiceover("Then, we convert the fraction to a decimal.")
-]
+  #only("1")[
+    #voiceover("Let's summarize our method for converting fractions to decimals when the denominator isn't already a power of ten.")
+  ]
+  #only("2")[
+    #voiceover("First, we multiply both the numerator and denominator by the same number. This ensures that the fraction's value doesn't change.")
+  ]
+  #only("3")[
+    #voiceover("Second, we choose this number carefully so that it makes the denominator a power of ten. This might take some trial and error or quick mental math.")
+  ]
+  #only("4")[
+    #voiceover("Finally, we divide the new numerator by the new denominator, which is now a power of ten, giving us our decimal result. And that's it! You can now convert any simple fraction to a decimal.")
+  ]
 ]

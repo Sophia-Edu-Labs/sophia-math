@@ -5,29 +5,27 @@
 #it.body
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
-// Der Titel "Umwandlung von Brüchen in Dezimalzahlen" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Was ist $4/5$ als Dezimalzahl?]
-// Die Frage wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[a) $0.8$]
-// Antwortmöglichkeit a) wird ab Folie 2 angezeigt
-#v(10pt)
-#only("3-")[b) $0.45$]
-// Antwortmöglichkeit b) wird ab Folie 3 angezeigt
-#v(10pt)
-#only("4-")[c) $0.75$]
-// Antwortmöglichkeit c) wird ab Folie 4 angezeigt
-#v(10pt)
-#only("5-")[d) $0.5$]
-// Antwortmöglichkeit d) wird ab Folie 5 angezeigt
-#only("1")[#voiceover("Lass uns dein Wissen über die Umwandlung von Brüchen in Dezimalzahlen testen. Was ist vier Fünftel als Dezimalzahl?")]
-#only("2")[#voiceover("Ist es null Komma acht,")]
-#only("3")[#voiceover("oder ist es null Komma vier fünf,")]
-#only("4")[#voiceover("oder vielleicht null Komma sieben fünf,")]
-#only("5")[#voiceover("oder ist es null Komma fünf?")]
+  #text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
+  #v(40pt)
+
+  #only("1-")[Was ist $4/5$ als Dezimalzahl?]
+  #v(20pt)
+
+  #only("2-")[a) 0,8]
+  #v(10pt)
+  #only("3-")[b) 0,45]
+  #v(10pt)
+  #only("4-")[c) 0,75]
+  #v(10pt)
+  #only("5-")[d) 0,5]
+
+  #only("1")[#voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Hier ist unsere Frage: Was ist vier Fünftel als Dezimalzahl?")]
+  #only("2")[#voiceover("Ist es null Komma acht,")]
+  #only("3")[#voiceover("oder null Komma vier fünf,")]
+  #only("4")[#voiceover("oder null Komma sieben fünf,")]
+  #only("5")[#voiceover("oder ist es null Komma fünf?")]
 ]
 
 //Typ: MC 

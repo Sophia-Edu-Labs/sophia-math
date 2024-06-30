@@ -7,202 +7,143 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Surface Area of Composite Figures]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Surface Area of Composite Figures]
+#v(40pt)
+How do you find the surface area of a composite figure?
+#v(40pt)
+#only("-1")[a) Multiply all dimensions]#only("2-")[#text(fill:red)[a) Multiply all dimensions]]
+#v(10pt)
+#only("-2")[b) Add the volumes of each part]#only("3-")[#text(fill:red)[b) Add the volumes of each part]]
+#v(10pt)
+#only("-3")[c) Add the surface areas of each part, subtracting overlapping areas]#only("4-")[#text(fill:green)[c) Add the surface areas of each part, subtracting overlapping areas]]
+#v(10pt)
+#only("-4")[d) Subtract the smaller figure from the larger]#only("5-")[#text(fill:red)[d) Subtract the smaller figure from the larger]]
 
-#only("1-")[
-#align(center)[
+#only("1")[#voiceover("Not quite. Let's go through each option to understand why c is the correct answer.")]
+#only("2")[#voiceover("Option a, multiply all dimensions, is incorrect. This would give us a volume, not a surface area.")]
+#only("3")[#voiceover("Option b, add the volumes of each part, is also wrong. We're looking for surface area, not volume.")]
+#only("4")[#voiceover("Option c is correct! To find the surface area of a composite figure, we add the surface areas of each part, making sure to subtract any overlapping areas.")]
+#only("5")[#voiceover("Option d, subtract the smaller figure from the larger, is incorrect. This method doesn't account for all surfaces and wouldn't give us the total surface area.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Understanding Composite Figures]
+#v(40pt)
+#only("1-")[- Composite figures = made up of multiple basic shapes 🧩]
+#v(20pt)
+#only("2-")[- Example: Cylinder on top of a cube 🎩]
+#v(20pt)
+#only("3-")[- Each part contributes to the total surface area 📊]
+
+#only("1")[#voiceover("Let's start by understanding what composite figures are. Composite figures are shapes made up of multiple basic shapes combined together.")]
+#only("2")[#voiceover("For example, imagine a cylinder sitting on top of a cube. This is a composite figure.")]
+#only("3")[#voiceover("Each part of this composite figure - the cylinder and the cube - contributes to the total surface area.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Step-by-Step Approach]
+#v(40pt)
+#only("1-")[1️⃣ Identify individual shapes]
+#v(20pt)
+#only("2-")[2️⃣ Calculate surface area of each shape]
+#v(20pt)
+#only("3-")[3️⃣ Identify overlapping areas]
+#v(20pt)
+#only("4-")[4️⃣ Subtract overlapping areas]
+#v(20pt)
+#only("5-")[5️⃣ Add remaining surface areas]
+
+#only("1")[#voiceover("Now, let's break down the process of finding the surface area of a composite figure. First, we need to identify the individual shapes that make up our composite figure.")]
+#only("2")[#voiceover("Next, we calculate the surface area of each individual shape.")]
+#only("3")[#voiceover("Then, we identify any areas where these shapes overlap.")]
+#only("4")[#voiceover("We subtract these overlapping areas to avoid counting them twice.")]
+#only("5")[#voiceover("Finally, we add up all the remaining surface areas to get our total.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Example: Cylinder on a Cube]
+#v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
 pyimage(
 ```
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-fig = plt.figure(figsize=(8, 6))
+fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cuboid
-x = [0, 6, 6, 0, 0]
-y = [0, 0, 4, 4, 0]
-z = [0, 0, 0, 0, 0]
-ax.plot(x, y, z, 'b')
-ax.plot(x, y, [3]*5, 'b')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [0, 3], 'b')
+# Cube
+r = [0, 2]
+for s, e in zip(np.array(list(zip(r, r, r))), np.array(list(zip(r[::-1], r[::-1], r[::-1])))):
+    ax.plot3D(*zip(s, e), color="b")
 
-# Cube on top
-x = [1.5, 4.5, 4.5, 1.5, 1.5]
-y = [0.5, 0.5, 3.5, 3.5, 0.5]
-z = [3, 3, 3, 3, 3]
-ax.plot(x, y, z, 'r')
-ax.plot(x, y, [6]*5, 'r')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [3, 6], 'r')
+# Cylinder
+x = np.linspace(0, 2, 100)
+z = np.linspace(2, 4, 100)
+Xc, Zc = np.meshgrid(x, z)
+Yc = np.sqrt(1 - (Xc-1)**2)
 
-ax.set_xlabel('Length (cm)')
-ax.set_ylabel('Width (cm)')
-ax.set_zlabel('Height (cm)')
-ax.set_title('Composite Figure: Cuboid with Cube on Top')
+ax.plot_surface(Xc, Yc+1, Zc, alpha=0.5)
+ax.plot_surface(Xc, -Yc+1, Zc, alpha=0.5)
+
+ax.set_xlim(0, 2)
+ax.set_ylim(0, 2)
+ax.set_zlim(0, 4)
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Cylinder on a Cube')
 
 plt.show()
+
 ```,
-width: 360pt
-),
-caption: []
+width: 360pt),
 )
 ]
 ]
-]
-]
 
-  #only("2-")[
-    - Cuboid: 6 cm × 4 cm × 3 cm
-    - Cube: 3 cm side length
-  ]
-
-  #only("1")[
-    #voiceover("Not quite, but let's walk through the correct solution step-by-step. We have a composite figure consisting of two parts.")
-  ]
-
-  #only("2")[
-    #voiceover("First, we have a cuboid with dimensions 6 centimeters by 4 centimeters by 3 centimeters. On top of it, we have a cube with a side length of 3 centimeters.")
-  ]
+#only("1")[#voiceover("Let's consider an example: a cylinder sitting on top of a cube. Here's a visual representation of our composite figure.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Step 1: Surface Area of Cuboid]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Calculating Surface Area]
+#v(40pt)
+#only("1-")[1. Cube surface area: $"SA"_"cube" = 6s^2$]
+#v(20pt)
+#only("2-")[2. Cylinder surface area: $"SA"_"cylinder" = 2pi r^2 + 2pi r h$]
+#v(20pt)
+#only("3-")[3. Overlapping area: $"SA"_"overlap" = pi r^2$]
+#v(20pt)
+#only("4-")[4. Total surface area: $"SA"_"total" = "SA"_"cube" + "SA"_"cylinder" - "SA"_"overlap"$]
 
-  #only("1-")[
-    Surface Area = 2(length × width + length × height + width × height)
-  ]
-
-  #only("2-")[
-    $"SA"_"cuboid" = 2(6 × 4 + 6 × 3 + 4 × 3)$
-  ]
-
-  #only("3-")[
-    $"SA"_"cuboid" = 2(24 + 18 + 12)$
-  ]
-
-  #only("4-")[
-    $"SA"_"cuboid" = 2(54) = 108 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Let's start by calculating the surface area of the cuboid. The formula for the surface area of a cuboid is twice the sum of the area of all faces.")
-  ]
-
-  #only("2")[
-    #voiceover("Substituting our values, we get 2 times the sum of 6 times 4, 6 times 3, and 4 times 3.")
-  ]
-
-  #only("3")[
-    #voiceover("Simplifying, we have 2 times the sum of 24, 18, and 12.")
-  ]
-
-  #only("4")[
-    #voiceover("This gives us 2 times 54, which equals 108 square centimeters.")
-  ]
+#only("1")[#voiceover("Let's calculate the surface area step by step. First, we calculate the surface area of the cube. It's given by six times the square of its side length.")]
+#only("2")[#voiceover("Next, we calculate the surface area of the cylinder. It's the sum of the areas of its two circular bases and its curved surface.")]
+#only("3")[#voiceover("Now, we identify the overlapping area. It's the bottom of the cylinder, which is a circle.")]
+#only("4")[#voiceover("Finally, we add the surface areas of the cube and cylinder, and subtract the overlapping area to get our total surface area.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Step 2: Surface Area of Cube]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Key Takeaways]
+#v(40pt)
+#only("1-")[- Break down composite figures into basic shapes 🧩]
+#v(20pt)
+#only("2-")[- Calculate surface area of each shape separately 🧮]
+#v(20pt)
+#only("3-")[- Remember to subtract overlapping areas ➖]
+#v(20pt)
+#only("4-")[- Practice with different combinations of shapes 🏋️]
 
-  #only("1-")[
-    Surface Area = 6 × side length squared
-  ]
-
-  #only("2-")[
-    $"SA"_"cube" = 6 × 3^2$
-  ]
-
-  #only("3-")[
-    $"SA"_"cube" = 6 × 9 = 54 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Now, let's calculate the surface area of the cube. The formula for the surface area of a cube is 6 times the square of its side length.")
-  ]
-
-  #only("2")[
-    #voiceover("With a side length of 3 centimeters, we have 6 times 3 squared.")
-  ]
-
-  #only("3")[
-    #voiceover("This gives us 6 times 9, which equals 54 square centimeters.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Step 3: Adjusting for Shared Face]
-  #v(40pt)
-
-  #only("1-")[
-    - Cube's bottom face = Cuboid's top face
-    - Area of shared face = 3 cm × 3 cm = 9 cm²
-  ]
-
-  #only("2-")[
-    Adjustment = -9 cm²
-  ]
-
-  #only("1")[
-    #voiceover("However, we need to be careful here. The bottom face of the cube is the same as the top face of the cuboid where they meet. We've counted this face twice in our calculations.")
-  ]
-
-  #only("2")[
-    #voiceover("This shared face has an area of 3 times 3, which is 9 square centimeters. We need to subtract this once from our total to avoid double-counting.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Step 4: Total Surface Area]
-  #v(40pt)
-
-  #only("1-")[
-    Total Surface Area = SA_cuboid + SA_cube - Shared Face
-  ]
-
-  #only("2-")[
-    $"Total SA" = 108 "cm"^2 + 54 "cm"^2 - 9 "cm"^2$
-  ]
-
-  #only("3-")[
-    $"Total SA" = 153 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Now, let's put it all together. The total surface area is the sum of the surface areas of the cuboid and the cube, minus the area of the shared face.")
-  ]
-
-  #only("2")[
-    #voiceover("Substituting our values, we have 108 square centimeters plus 54 square centimeters, minus 9 square centimeters.")
-  ]
-
-  #only("3")[
-    #voiceover("This gives us a total surface area of 153 square centimeters.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Final Answer]
-  #v(40pt)
-
-  #only("1-")[
-    The total surface area of the composite figure is 153 cm².
-  ]
-
-  #only("1")[
-    #voiceover("So, the final answer is that the total surface area of our composite figure is 153 square centimeters. Great job on solving this problem! Remember, when dealing with composite figures, it's important to consider how the individual shapes interact and avoid double-counting shared surfaces.")
-  ]
+#only("1")[#voiceover("To summarize, when dealing with composite figures, always start by breaking them down into basic shapes.")]
+#only("2")[#voiceover("Calculate the surface area of each shape separately using the appropriate formulas.")]
+#only("3")[#voiceover("Don't forget to identify and subtract any overlapping areas to avoid counting them twice.")]
+#only("4")[#voiceover("The more you practice with different combinations of shapes, the better you'll become at calculating surface areas of composite figures. Keep up the great work!")]
 ]

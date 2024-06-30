@@ -7,167 +7,113 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
-#v(40pt)
-#only("1-")[#align(center)[#box(width: 200pt, height: 200pt)[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
+  #text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
+  #v(40pt)
+  #only("1-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 
+```
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D, art3d
+from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
+from itertools import product, combinations
 
 fig = plt.figure(figsize=(8, 8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cube vertices
-vertices = np.array([[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
-                     [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]])
+# Cube
+r = [0, 4]
+for s, e in combinations(np.array(list(product(r, r, r))), 2):
+    if np.sum(np.abs(s-e)) == r[1]-r[0]:
+        ax.plot3D(*zip(s, e), color="b")
 
-# Cube faces
-faces = [[vertices[j] for j in [0, 1, 2, 3]],
-         [vertices[j] for j in [4, 5, 6, 7]], 
-         [vertices[j] for j in [0, 3, 7, 4]],
-         [vertices[j] for j in [1, 2, 6, 5]],
-         [vertices[j] for j in [0, 1, 5, 4]],
-         [vertices[j] for j in [2, 3, 7, 6]]]
+# Highlight one face
+verts = [(0, 0, 0), (0, 4, 0), (4, 4, 0), (4, 0, 0)]
+ax.add_collection3d(Poly3DCollection([verts], facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
 
-ax.add_collection3d(art3d.Poly3DCollection(faces, facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Cube with Side Length 4 cm')
 
-ax.set_xlabel('4 cm')
-ax.set_ylabel('4 cm')
-ax.set_zlabel('4 cm')
-
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_zlim(0, 1)
-
-plt.title("Würfel mit Kantenlänge 4 cm")
-plt.tight_layout()
 plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
-]]]
-#v(20pt)
-#only("2-")[- Formel: $"SA" = 6s^2$]
-#v(10pt)
-#only("3-")[- $s = 4 "cm"$]
-#v(10pt)
-#only("4-")[- $"SA" = 6 dot (4 "cm")^2$]
-#v(10pt)
-#only("5-")[- $"SA" = 6 dot 16 "cm"^2 = 96 "cm"^2$]
-
-#only("1")[
-#voiceover("Leider ist das nicht korrekt. Lass uns die Lösung Schritt für Schritt durchgehen. Hier haben wir einen Würfel mit einer Kantenlänge von 4 Zentimetern.")
-]
-#only("2")[
-#voiceover("Um die Oberfläche eines Würfels zu berechnen, verwenden wir die Formel: Oberfläche ist gleich 6 mal s Quadrat, wobei s die Länge einer Seite ist. Wir verwenden 6, weil ein Würfel 6 Flächen hat und jede Fläche ein Quadrat ist.")
-]
-#only("3")[
-#voiceover("In diesem Fall haben wir eine Kantenlänge, s, von 4 Zentimetern.")
-]
-#only("4")[
-#voiceover("Setzen wir das in unsere Formel ein. Wir erhalten: Oberfläche ist gleich 6 mal 4 Zentimeter zum Quadrat.")
-]
-#only("5")[
-#voiceover("Nun berechnen wir das. 4 zum Quadrat ist 16, also haben wir 6 mal 16 Quadratzentimeter. Das ergibt 96 Quadratzentimeter.")
-]
+          ```,
+          width: 360pt
+        ),
+        caption: []
+      )
+    ]
+  ]]
+  #only("1")[
+    #voiceover("Keine Sorge, das war eine knifflige Frage. Lass uns die Lösung Schritt für Schritt durchgehen. Wir haben einen Würfel mit einer Seitenlänge von 4 Zentimetern. Hier ist eine Visualisierung unseres Würfels.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visuelle Darstellung]
-#v(40pt)
-#only("1-")[#align(center)[#box(width: 300pt, height: 300pt)[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-fig, ax = plt.subplots(figsize=(10, 10))
-
-# Create a 4x4 grid
-grid = np.zeros((4, 4))
-
-# Function to draw a square
-def draw_square(x, y, size, color):
-    rect = plt.Rectangle((x, y), size, size, fill=True, facecolor=color, edgecolor='black')
-    ax.add_patch(rect)
-
-# Draw the unfolded cube
-draw_square(1, 1, 1, 'cyan')  # Front
-draw_square(0, 1, 1, 'lightblue')  # Left
-draw_square(2, 1, 1, 'skyblue')  # Right
-draw_square(1, 0, 1, 'paleturquoise')  # Bottom
-draw_square(1, 2, 1, 'mediumturquoise')  # Top
-draw_square(3, 1, 1, 'teal')  # Back
-
-# Set limits and remove axes
-ax.set_xlim(0, 4)
-ax.set_ylim(0, 3)
-ax.axis('off')
-
-# Add labels
-for i in range(6):
-    x = i % 4
-    y = 2 - (i // 4)
-    ax.text(x + 0.5, y + 0.5, f'4 cm', ha='center', va='center', fontsize=12)
-    ax.text(x + 0.5, y + 0.3, f'4 cm', ha='center', va='center', fontsize=12)
-
-plt.title("Entfalteter Würfel: 6 Flächen", fontsize=16)
-plt.tight_layout()
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
-]]]
-#v(20pt)
-#only("2-")[- Jede Fläche: $4 "cm" × 4 "cm" = 16 "cm"^2$]
-#v(10pt)
-#only("3-")[- Gesamt: $16 "cm"^2 × 6 "Flächen" = 96 "cm"^2$]
-
-#only("1")[
-#voiceover("Um das besser zu veranschaulichen, lassen wir unseren Würfel entfalten. Hier sehen wir alle sechs Flächen des Würfels flach ausgelegt.")
-]
-#only("2")[
-#voiceover("Jede Fläche ist ein Quadrat mit Seiten von 4 Zentimetern. Die Fläche jeder Seite ist daher 4 Zentimeter mal 4 Zentimeter, was 16 Quadratzentimeter ergibt.")
-]
-#only("3")[
-#voiceover("Da wir 6 dieser Flächen haben, multiplizieren wir 16 Quadratzentimeter mit 6, was uns unsere gesamte Oberfläche von 96 Quadratzentimetern ergibt.")
-]
+  #text(size: 30pt, weight: "bold")[Schritt 1: Formel erinnern]
+  #v(40pt)
+  #only("1-")[- Oberfläche eines Würfels = 6 × (Seitenlänge)²]
+  #v(20pt)
+  #only("2-")[- $"SA" = 6s^2$, wobei $s$ die Seitenlänge ist]
+  #only("1")[
+    #voiceover("Der erste Schritt ist, sich an die Formel für die Oberfläche eines Würfels zu erinnern. Die Oberfläche eines Würfels ist gleich sechs mal das Quadrat seiner Seitenlänge.")
+  ]
+  #only("2")[
+    #voiceover("Wir können das so schreiben: S A gleich 6 s Quadrat, wobei s die Seitenlänge darstellt.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Fazit]
-#v(40pt)
-#only("1-")[- Oberfläche = $96 "cm"^2$ 📏]
-#v(20pt)
-#only("2-")[- Denke daran: $"SA" = 6s^2$ für jeden Würfel 🧊]
-#v(20pt)
-#only("3-")[- Übe mit verschiedenen Kantenlängen! 💪]
+  #text(size: 30pt, weight: "bold")[Schritt 2: Werte einsetzen]
+  #v(40pt)
+  #only("1-")[- Seitenlänge, $s = 4"cm"$]
+  #v(20pt)
+  #only("2-")[- $"SA" = 6 × (4"cm")^2$]
+  #only("1")[
+    #voiceover("Nun, lass uns unseren bekannten Wert einsetzen. Uns wird gegeben, dass die Seitenlänge 4 Zentimeter beträgt.")
+  ]
+  #only("2")[
+    #voiceover("Also ersetzen wir s durch 4 Zentimeter in unserer Formel. Das ergibt: Oberfläche gleich 6 mal 4 Zentimeter im Quadrat.")
+  ]
+]
 
-#only("1")[
-#voiceover("Also, wir haben bestätigt, dass die Oberfläche eines Würfels mit einer Kantenlänge von 4 Zentimetern tatsächlich 96 Quadratzentimeter beträgt.")
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Schritt 3: Berechnen]
+  #v(40pt)
+  #only("1-")[- $"SA" = 6 × (4"cm")^2$]
+  #v(20pt)
+  #only("2-")[- $"SA" = 6 × 16"cm"^2$]
+  #v(20pt)
+  #only("3-")[- $"SA" = 96"cm"^2$]
+  #only("1")[
+    #voiceover("Nun lass uns berechnen. Zuerst quadrieren wir 4 Zentimeter.")
+  ]
+  #only("2")[
+    #voiceover("4 Zentimeter im Quadrat sind 16 Quadratzentimeter. Also wird unsere Gleichung zu 6 mal 16 Quadratzentimeter.")
+  ]
+  #only("3")[
+    #voiceover("Schließlich multiplizieren wir mit 6. 6 mal 16 ist 96. Also beträgt die Oberfläche 96 Quadratzentimeter.")
+  ]
 ]
-#only("2")[
-#voiceover("Denke daran, dass du für jeden Würfel immer die Formel verwenden kannst: Oberfläche ist gleich 6 mal s Quadrat, wobei s die Länge einer Seite ist.")
-]
-#only("3")[
-#voiceover("Um dein Verständnis zu festigen, versuche die Oberfläche für Würfel mit unterschiedlichen Kantenlängen zu berechnen. Das wird dir helfen, dich mit der Formel und dem Konzept wohler zu fühlen. Großartige Arbeit bei der Lösung dieses Problems!")
-]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Endergebnis]
+  #v(40pt)
+  #only("1-")[#text(size: 24pt)[Die Oberfläche des Würfels beträgt $96"cm"^2$]]
+  #v(40pt)
+  #only("2-")[💡 Denke daran: Einheiten sind wichtig!]
+  #only("1")[
+    #voiceover("Also lautet unser Endergebnis, dass die Oberfläche des Würfels 96 Quadratzentimeter beträgt.")
+  ]
+  #only("2")[
+    #voiceover("Denke daran, dass es wichtig ist, die richtigen Einheiten in deiner Antwort anzugeben. Hier haben wir es mit Fläche zu tun, also sind unsere Einheiten Quadratzentimeter.")
+  ]
 ]

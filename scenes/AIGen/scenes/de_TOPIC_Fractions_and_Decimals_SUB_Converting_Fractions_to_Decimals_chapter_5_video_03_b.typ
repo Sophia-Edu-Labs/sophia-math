@@ -8,83 +8,63 @@
 
 #slide()[
 #only("1")[
-#voiceover("Leider nicht ganz richtig. Lass uns die Lösung Schritt für Schritt gemeinsam durchgehen.")
+#voiceover("Leider ist das nicht die richtige Antwort. Lass uns das Video ansehen, um zu lernen, wie man drei Fünftel in eine Dezimalzahl umwandelt.")
 ]
-#text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
-#v(40pt)
-Was ist $3/5$ als Dezimalzahl?
-#v(40pt)
-#only("1-")[Die richtige Antwort ist $0.6$]
 
-#only("1")[
-#voiceover("Das ist richtig, gut gemacht! Die richtige Antwort ist null Komma sechs. Lass uns herausfinden, warum das so ist.")]
+#text(size: 30pt, weight: "bold")[Umwandlung von $3/5$ in eine Dezimalzahl]
+
+#v(40pt)
+
+#only("2-")[#text()[$3/5$]]
+#only("2")[
+#voiceover("Wir beginnen mit dem Bruch drei Fünftel.")
+]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritte zur Umwandlung von Brüchen in Dezimalzahlen]
+#text(size: 30pt, weight: "bold")[Schritt 1: Multiplizieren mit 2]
 #v(40pt)
-#only("1-")[- Schritt 1: Teile den Zähler durch den Nenner. ➗]
+#only("1-")[- Multipliziere sowohl den Zähler als auch den Nenner mit 2]
 #v(20pt)
-#only("2-")[- Schritt 2: Schreibe das Ergebnis als Dezimalzahl. ✍️]
+#only("2-")[$ 3/5 = (3 × 2)/(5 × 2) = 6/10 $]
+
 #only("1")[
-#voiceover("Bevor wir die Aufgabe lösen, eine kurze Erinnerung an die Schritte zur Umwandlung von Brüchen in Dezimalzahlen. Zuerst teilst du den Zähler durch den Nenner.")
+#voiceover("Unser erster Schritt ist, sowohl den Zähler als auch den Nenner mit 2 zu multiplizieren. Dies ändert den Wert des Bruchs nicht, aber es ergibt einen äquivalenten Bruch, der leichter in eine Dezimalzahl umgewandelt werden kann.")
 ]
 #only("2")[
-#voiceover("Als nächstes schreibst du das Ergebnis als Dezimalzahl.")
+#voiceover("Drei mal zwei ist sechs, und fünf mal zwei ist zehn. Also sind drei Fünftel gleich sechs Zehntel.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Beispiel: Umwandlung von $3/5$ in eine Dezimalzahl]
+#text(size: 30pt, weight: "bold")[Schritt 2: Die Dezimalzahl identifizieren]
 #v(40pt)
-#only("1-")[- Schritt 1: ➗ Teile $3$ durch $5$.]
+#only("1-")[- $6/10 = 0.6$]
 #v(20pt)
-#only("2-")[- Schritt 2: ✍️ Schreibe das Ergebnis als $0.6$.]
+#only("2-")[💡 Der Nenner 10 zeigt die Position des Dezimalpunkts an]
+
 #only("1")[
-#voiceover("Jetzt wenden wir diese Schritte auf den Bruch drei Fünftel an. Zuerst teilen wir drei durch fünf.")
+#voiceover("Nun, sechs Zehntel ist ein Bruch, den wir leicht als Dezimalzahl erkennen können. Es ist gleich null Komma sechs.")
 ]
 #only("2")[
-#voiceover("Das Ergebnis ist null Komma sechs. Also ist drei Fünftel als Dezimalzahl null Komma sechs.")
+#voiceover("Hier ist ein hilfreicher Tipp: Wenn der Nenner 10 ist, wird der Zähler zur Ziffer(n) nach dem Dezimalpunkt.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung der Division]
+#text(size: 30pt, weight: "bold")[Endgültige Antwort]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
+#only("1-")[$ 3/5 = 0.6 $]
+#v(20pt)
+#only("2-")[✅ Drei Fünftel als Dezimalzahl ist 0.6]
 
-import matplotlib.pyplot as plt
-
-# Data
-numerator = 3
-denominator = 5
-result = numerator / denominator
-
-# Plot
-fig, ax = plt.subplots()
-ax.bar(['3/5'], [result], color='skyblue')
-
-# Adding details
-ax.set_ylim(0, 1)
-ax.set_ylabel('Decimal Value')
-ax.set_title('Visualizing 3/5 as a Decimal')
-ax.text(0, result/2, '0.6', ha='center', va='center', color='black', fontsize=12)
-
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
 #only("1")[
-#voiceover("Um dies zu veranschaulichen, können wir sehen, dass das Teilen von drei durch fünf null Komma sechs ergibt. Dieses Balkendiagramm zeigt den Dezimalwert von drei Fünftel.")
+#voiceover("Daher können wir schließen, dass drei Fünftel als Dezimalzahl null Komma sechs ist.")
+]
+#only("2")[
+#voiceover("Und da hast du es! Wir haben erfolgreich drei Fünftel in seine Dezimalform umgewandelt. Denke daran, dass diese Methode, sowohl den Zähler als auch den Nenner mit derselben Zahl zu multiplizieren, um einen Nenner von 10 zu erhalten, sehr nützlich sein kann, um Brüche in Dezimalzahlen umzuwandeln.")
 ]
 ]

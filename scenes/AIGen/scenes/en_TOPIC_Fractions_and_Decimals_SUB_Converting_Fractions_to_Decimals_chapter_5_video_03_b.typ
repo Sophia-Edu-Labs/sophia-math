@@ -8,83 +8,63 @@
 
 #slide()[
 #only("1")[
-#voiceover("Not quite, but don't worry! Let's go through the correct solution step by step together.")
+#voiceover("Not quite. Let's walk through the solution step by step to understand how we convert three-fifths to a decimal.")
 ]
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
-#v(40pt)
-What is $3/5$ as a decimal?
-#v(40pt)
-#only("1-")[The correct answer is $0.6$]
 
-#only("1")[
-#voiceover("That's right, well done! The correct answer is zero point six. Let's find out why this is the case.")]
+#text(size: 30pt, weight: "bold")[Converting 3/5 to a Decimal]
+
+#v(40pt)
+
+#only("2-")[#text()[$3/5$]]
+#only("2")[
+#voiceover("We start with the fraction three-fifths.")
+]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Fractions to Decimals]
+#text(size: 30pt, weight: "bold")[Step 1: Multiply by 2]
 #v(40pt)
-#only("1-")[- Step 1: Divide the numerator by the denominator. ➗]
+#only("1-")[- Multiply both numerator and denominator by 2]
 #v(20pt)
-#only("2-")[- Step 2: Write the result as a decimal. ✍️]
+#only("2-")[$ 3/5 = (3 × 2)/(5 × 2) = 6/10 $]
+
 #only("1")[
-#voiceover("Before we solve the exercise, a quick reminder of the steps to convert fractions to decimals. First, divide the numerator by the denominator.")
+#voiceover("Our first step is to multiply both the numerator and denominator by 2. This doesn't change the value of the fraction, but it gives us an equivalent fraction that's easier to convert to a decimal.")
 ]
 #only("2")[
-#voiceover("Next, write the result as a decimal.")
+#voiceover("Three times two is six, and five times two is ten. So, three-fifths is equal to six-tenths.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $3/5$ to a Decimal]
+#text(size: 30pt, weight: "bold")[Step 2: Identify the Decimal]
 #v(40pt)
-#only("1-")[- Step 1: ➗ Divide $3$ by $5$.]
+#only("1-")[- $6/10 = 0.6$]
 #v(20pt)
-#only("2-")[- Step 2: ✍️ Write the result as $0.6$.]
+#only("2-")[💡 The denominator 10 indicates the decimal point position]
+
 #only("1")[
-#voiceover("Now let's apply these steps to the fraction three over five. First, we divide three by five.")
+#voiceover("Now, six-tenths is a fraction that we can easily recognize as a decimal. It's equal to zero point six.")
 ]
 #only("2")[
-#voiceover("The result is zero point six. So, three over five as a decimal is zero point six.")
+#voiceover("Here's a helpful tip: when the denominator is 10, the numerator becomes the digit(s) after the decimal point.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualizing the Division]
+#text(size: 30pt, weight: "bold")[Final Answer]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
+#only("1-")[$ 3/5 = 0.6 $]
+#v(20pt)
+#only("2-")[✅ Three-fifths as a decimal is 0.6]
 
-import matplotlib.pyplot as plt
-
-# Data
-numerator = 3
-denominator = 5
-result = numerator / denominator
-
-# Plot
-fig, ax = plt.subplots()
-ax.bar(['3/5'], [result], color='skyblue')
-
-# Adding details
-ax.set_ylim(0, 1)
-ax.set_ylabel('Decimal Value')
-ax.set_title('Visualizing 3/5 as a Decimal')
-ax.text(0, result/2, '0.6', ha='center', va='center', color='black', fontsize=12)
-
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
 #only("1")[
-#voiceover("To visualize this, we can see that dividing three by five gives us zero point six. This bar graph shows the decimal value of three over five.")
+#voiceover("Therefore, we can conclude that three-fifths as a decimal is zero point six.")
+]
+#only("2")[
+#voiceover("And there you have it! We've successfully converted three-fifths to its decimal form. Remember, this method of multiplying both the numerator and denominator by the same number to get a denominator of 10 can be very useful for converting fractions to decimals.")
 ]
 ]

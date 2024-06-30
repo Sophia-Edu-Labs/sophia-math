@@ -7,18 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Oberfläche eines Würfels]
+  #v(40pt)
 
-#only("1-")[
-#align(center)[
-#box(width: 200pt, height: 200pt)[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
+  #only("1-")[
+    Betrachte einen Würfel mit einer Kantenlänge von 7 m:
+  ]
+
+  #only("2-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 ```
 
-import matplotlib.pyplot as plt
+          import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(8, 8))
@@ -26,8 +29,8 @@ ax = fig.add_subplot(111, projection='3d')
 
 # Cube vertices
 vertices = [
-    [0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
-    [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]
+    [0, 0, 0], [0, 7, 0], [7, 7, 0], [7, 0, 0],
+    [0, 0, 7], [0, 7, 7], [7, 7, 7], [7, 0, 7]
 ]
 
 # Cube edges
@@ -44,53 +47,53 @@ for edge in edges:
     z = [vertices[edge[0]][2], vertices[edge[1]][2]]
     ax.plot(x, y, z, 'b')
 
-# Label side length
-ax.text(0.5, -0.1, -0.1, '7 m', fontsize=12)
+# Set labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
 
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_zlim(0, 1)
-ax.set_axis_off()
+# Set title
+plt.title('Cube with Side Length 7 m')
 
-plt.tight_layout()
+# Show the plot
 plt.show()
+          ```,
+          width: 360pt
+        ),
+        caption: [Würfel mit einer Kantenlänge von 7 m],
+      )
+    ]
+  ]]
 
-```,
-width: 300pt),
-caption: [Würfel mit Seitenlänge 7 m],
-)
-]
-]
-]
+  #only("3-")[
+    Was ist die Oberfläche dieses Würfels?
+  ]
+
+  #only("1")[
+    #voiceover("Lass uns ein Problem über die Oberfläche eines Würfels betrachten.")
+  ]
+
+  #only("2")[
+    #voiceover("Hier haben wir einen Würfel mit einer Kantenlänge von 7 Metern.")
+  ]
+
+  #only("3")[
+    #voiceover("Deine Aufgabe ist es, die Oberfläche dieses Würfels zu berechnen. Denke daran, dass die Oberfläche eines Würfels die Gesamtfläche aller sechs Flächen ist.")
+  ]
 ]
 
-#v(20pt)
-
-#only("2-")[
-Finde die Oberfläche dieses Würfels.
-]
-
-#only("1")[
-#voiceover("Betrachten wir einen Würfel.")
-]
-
-#only("2")[
-#voiceover("Wie groß ist die Oberfläche eines Würfels mit einer Seitenlänge von sieben Metern?")
-]
-]
-
-//Type: Numeric
+//Typ: Numerisch
 #questionDef(
-questionText: "Wie groß ist die Oberfläche eines Würfels mit einer Seitenlänge von $7$ m?", 
-answerOptions: ("$\\text{Oberfläche} = 294 \\text{ m}^2$", "$\\text{Oberfläche} = -584 \\text{ m}^2$"), 
-correctAnswerIndex: 0, // always 0 
+questionText: "Was ist die Oberfläche eines Würfels mit einer Kantenlänge von $7$ m?", 
+answerOptions: ("$\text{Oberfläche} = 294$", "$\text{Oberfläche} = -584$"), 
+correctAnswerIndex: 0, // immer 0 
 freeTextDetail: ( 
-fallbackOptionIndex: 1, // always 1 
+fallbackOptionIndex: 1, // immer 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\\text{Oberfläche} = \key{a} \\text{ m}^2$"), 
+answerOptionMatcher:("$\text{Oberfläche} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

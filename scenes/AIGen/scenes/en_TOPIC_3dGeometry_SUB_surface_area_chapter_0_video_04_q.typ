@@ -7,18 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Surface Area of a Cube]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Surface Area of a Cube]
+  #v(40pt)
 
-#only("1-")[
-#align(center)[
-#box(width: 200pt, height: 200pt)[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
+  #only("1-")[
+    Consider a cube with side length 7 m:
+  ]
+
+  #only("2-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 ```
 
-import matplotlib.pyplot as plt
+          import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(8, 8))
@@ -26,8 +29,8 @@ ax = fig.add_subplot(111, projection='3d')
 
 # Cube vertices
 vertices = [
-    [0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
-    [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]
+    [0, 0, 0], [0, 7, 0], [7, 7, 0], [7, 0, 0],
+    [0, 0, 7], [0, 7, 7], [7, 7, 7], [7, 0, 7]
 ]
 
 # Cube edges
@@ -44,45 +47,45 @@ for edge in edges:
     z = [vertices[edge[0]][2], vertices[edge[1]][2]]
     ax.plot(x, y, z, 'b')
 
-# Label side length
-ax.text(0.5, -0.1, -0.1, '7 m', fontsize=12)
+# Set labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
 
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_zlim(0, 1)
-ax.set_axis_off()
+# Set title
+plt.title('Cube with Side Length 7 m')
 
-plt.tight_layout()
+# Show the plot
 plt.show()
+          ```,
+          width: 360pt
+        ),
+        caption: [Cube with side length 7 m],
+      )
+    ]
+  ]]
 
-```,
-width: 300pt),
-caption: [Cube with side length 7 m],
-)
-]
-]
-]
-]
+  #only("3-")[
+    What is the surface area of this cube?
+  ]
 
-#v(20pt)
+  #only("1")[
+    #voiceover("Let's consider a problem about the surface area of a cube.")
+  ]
 
-#only("2-")[
-Find the surface area of this cube.
-]
+  #only("2")[
+    #voiceover("Here we have a cube with a side length of 7 meters.")
+  ]
 
-#only("1")[
-#voiceover("Let's consider a cube.")
-]
-
-#only("2")[
-#voiceover("What is the surface area of a cube with side length 7 meters?")
-]
+  #only("3")[
+    #voiceover("Your task is to calculate the surface area of this cube. Remember, the surface area of a cube is the total area of all six faces.")
+  ]
 ]
 
 //Type: Numeric
 #questionDef(
 questionText: "What is the surface area of a cube with side length $7$ m?", 
-answerOptions: ("$\\text{Surface Area} = 294 \\text{ m}^2$", "$\\text{Surface Area} = -584 \\text{ m}^2$"), 
+answerOptions: ("$\text{Surface Area} = 294$", "$\text{Surface Area} = -584$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -90,7 +93,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ m}^2$"), 
+answerOptionMatcher:("$\text{Surface Area} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

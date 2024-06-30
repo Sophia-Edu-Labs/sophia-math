@@ -8,91 +8,61 @@
 
 #slide()[
 #only("1")[
-#voiceover("No worries, let's go through the correct solution step by step together.")
+#voiceover("Not quite, but no worries! Let's walk through the solution step-by-step to understand the correct decimal representation of two-fifths.")
 ]
 
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
+#text(size: 30pt, weight: "bold")[Converting 2/5 to a Decimal]
 
 #v(40pt)
 
 #only("2-")[#text()[$2/5$]]
-// The fraction 2/5 is shown from slide 2 onward
-
 #only("2")[
-#voiceover("We are given the fraction two-fifths.")
+#voiceover("We start with the fraction two-fifths.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Fractions to Decimals]
+#text(size: 30pt, weight: "bold")[Approach: Multiply by 2/2]
 #v(40pt)
-#only("1-")[- Step 1: Divide the numerator by the denominator ➗]
+#only("1-")[- Multiply numerator and denominator by 2 ✖️]
 #v(20pt)
-#only("2-")[- Step 2: Simplify if necessary ✂️]
-
+#only("2-")[- This doesn't change the fraction's value 🔄]
 #only("1")[
-#voiceover("To convert a fraction to a decimal, we follow these steps. First, we divide the numerator by the denominator.")
+#voiceover("Our approach will be to multiply both the numerator and denominator by 2.")
 ]
 #only("2")[
-#voiceover("Then, we simplify the result if necessary.")
+#voiceover("This doesn't change the value of the fraction, but it will make it easier to convert to a decimal.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $2/5$ to a Decimal]
+#text(size: 30pt, weight: "bold")[Step 1: Multiplication]
 #v(40pt)
-#only("1-")[- Step 1: Divide $2$ by $5$ ➗ $2 ÷ 5 = 0.4$]
+#only("1-")[$2/5 = (2 dot 2)/(5 dot 2)$]
 #v(20pt)
-#only("2-")[- Step 2: Simplify if necessary ✂️]
-
+#only("2-")[$= 4/10$]
 #only("1")[
-#voiceover("Let's apply these steps to the fraction two-fifths. First, we divide two by five, which equals zero point four.")
+#voiceover("Let's multiply both the numerator and denominator by 2. Two times 2 in the numerator gives us 4.")
 ]
 #only("2")[
-#voiceover("Since zero point four is already in its simplest form, we don't need to simplify further. So, the decimal equivalent of two-fifths is zero point four.")
+#voiceover("And 5 times 2 in the denominator gives us 10. So, two-fifths is equal to four-tenths.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualizing the Conversion]
+#text(size: 30pt, weight: "bold")[Step 2: Convert to Decimal]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-
-import matplotlib.pyplot as plt
-
-# Data
-fractions = [2/5]
-decimals = [0.4]
-
-# Plot
-fig, ax = plt.subplots()
-ax.plot(fractions, decimals, 'bo', label='2/5 = 0.4')
-ax.axhline(y=0.4, color='r', linestyle='--', label='0.4')
-ax.axvline(x=2/5, color='g', linestyle='--', label='2/5')
-ax.legend()
-
-# Labels and title
-ax.set_xlabel('Fraction')
-ax.set_ylabel('Decimal')
-ax.set_title('Visualizing Fraction to Decimal Conversion')
-
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
-
+#only("1-")[$4/10 = 0.4$]
+#v(20pt)
+#only("2-")[💡 The decimal point goes before the last digit]
 #only("1")[
-#voiceover("Here, we visualize the conversion of the fraction two-fifths to the decimal zero point four. The blue dot represents the fraction two-fifths, which is equivalent to the decimal zero point four. The red dashed line shows the decimal value, and the green dashed line shows the fraction value.")
+#voiceover("Now, four-tenths is easy to convert to a decimal. It's simply zero point four.")
+]
+#only("2")[
+#voiceover("Remember, when we have a fraction over 10, the decimal point goes before the last digit.")
 ]
 ]
 
@@ -100,24 +70,18 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- Given fraction: $2/5$ 📜]
+#only("1-")[- We started with $2/5$ 📊]
 #v(20pt)
-#only("2-")[- Step 1: Divide $2$ by $5$ ➗ $2 ÷ 5 = 0.4$]
+#only("2-")[- Multiplied by $2/2$ to get $4/10$ 🔢]
 #v(20pt)
-#only("3-")[- Step 2: Simplify if necessary ✂️]
-#v(20pt)
-#only("4-")[- Decimal equivalent: $0.4$ 🔢]
-
+#only("3-")[- Converted $4/10$ to $0.4$ 🎉]
 #only("1")[
 #voiceover("To summarize, we started with the fraction two-fifths.")
 ]
 #only("2")[
-#voiceover("We divided two by five, which gave us zero point four.")
+#voiceover("We multiplied both the numerator and denominator by 2 to get four-tenths.")
 ]
 #only("3")[
-#voiceover("Since zero point four is already in its simplest form, we didn't need to simplify further.")
-]
-#only("4")[
-#voiceover("So, the decimal equivalent of two-fifths is zero point four.")
+#voiceover("Finally, we converted four-tenths to its decimal form, which is zero point four. Great work on solving this problem!")
 ]
 ]

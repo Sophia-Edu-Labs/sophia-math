@@ -7,70 +7,89 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Überblick: Brüche in Dezimalzahlen umwandeln]
-#v(40pt)
-#only("1-")[- Brüche in Dezimalzahlen umzuwandeln ist in vielen Alltagssituationen wichtig. 🛒]
-#only("2-")[- Lass uns überprüfen, wie man einen einfachen Bruch in eine Dezimalzahl umwandelt. 🔄]
-#only("1")[
-#voiceover("Lass uns den Prozess der Umwandlung von Brüchen in Dezimalzahlen überprüfen. Dies ist in vielen Alltagssituationen, wie beim Einkaufen oder beim Abmessen von Zutaten, wichtig.")
-]
-#only("2")[
-#voiceover("Wir werden die Schritte durchgehen, um einen einfachen Bruch in eine Dezimalzahl umzuwandeln.")
-]
+  #text(size: 30pt, weight: "bold")[Überblick: Einfache Brüche in Dezimalzahlen umwandeln 🔢]
+  #v(40pt)
+  #only("1-")[- Brüche sind Teil unseres Alltags 🍕]
+  #only("2-")[- Manchmal brauchen wir sie als Dezimalzahlen 🧮]
+  #only("3-")[- Lass uns den Umwandlungsprozess überprüfen 🔄]
+
+  #only("1")[
+    #voiceover("Lass uns den Prozess der Umwandlung einfacher Brüche in Dezimalzahlen überprüfen. Brüche sind ein Teil unseres Alltags.")
+  ]
+  #only("2")[
+    #voiceover("Manchmal müssen wir diese Brüche jedoch als Dezimalzahlen ausdrücken, besonders wenn wir mit Taschenrechnern oder Computern arbeiten.")
+  ]
+  #only("3")[
+    #voiceover("Also, lass uns den Umwandlungsprozess Schritt für Schritt überprüfen.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritt-für-Schritt Umwandlung]
-#v(40pt)
-#only("1-")[- Schritt 1: Finde einen äquivalenten Bruch mit einer Zehnerpotenz als Nenner. 🔍]
-#v(20pt)
-#only("2-")[- Schritt 2: Teile den Zähler durch den Nenner. ➗]
-#v(20pt)
-#only("3-")[- Beispiel: $3/4$ zu $75/100$ zu $0.75$]
-#only("1")[
-#voiceover("Zuerst finde einen äquivalenten Bruch mit einer Zehnerpotenz als Nenner.")
-]
-#only("2")[
-#voiceover("Als nächstes teile den Zähler durch den Nenner.")
-]
-#only("3")[
-#voiceover("Zum Beispiel, um drei Viertel in eine Dezimalzahl umzuwandeln, finden wir einen äquivalenten Bruch mit einem Nenner von hundert, nämlich fünfundsiebzig Hundertstel. Wenn wir fünfundsiebzig durch hundert teilen, erhalten wir null Komma fünfundsiebzig.")
-]
+  #text(size: 30pt, weight: "bold")[Der Umwandlungsprozess 🔄]
+  #v(40pt)
+  #only("1-")[1. Den Bruch identifizieren ✅]
+  #only("2-")[2. Einen äquivalenten Bruch mit Nenner 10, 100, 1000, etc. finden 🔍]
+  #only("3-")[3. Die Division durchführen ➗]
+  #only("4-")[4. Als Dezimalzahl schreiben 📝]
+
+  #only("1")[
+    #voiceover("Der erste Schritt in unserem Umwandlungsprozess ist, den Bruch zu identifizieren, den wir umwandeln möchten.")
+  ]
+  #only("2")[
+    #voiceover("Als nächstes finden wir einen äquivalenten Bruch mit einem Nenner, der eine Zehnerpotenz ist - wie 10, 100 oder 1000. Dies ist der entscheidende Schritt, der die Umwandlung erleichtert.")
+  ]
+  #only("3")[
+    #voiceover("Dann führen wir die Division durch, die durch den Bruch angezeigt wird.")
+  ]
+  #only("4")[
+    #voiceover("Schließlich schreiben wir das Ergebnis als Dezimalzahl.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Beispiel: Umwandlung von $3/4$ in eine Dezimalzahl]
-#v(40pt)
-#only("1-")[- Schritt 1: Multipliziere Zähler und Nenner mit $25$, um $75/100$ zu erhalten. ➕]
-#v(20pt)
-#only("2-")[- Schritt 2: Teile $75$ durch $100$, um $0.75$ zu erhalten. ➗]
-#v(20pt)
-#only("1")[
-#voiceover("Schauen wir uns ein Beispiel an. Um drei Viertel in eine Dezimalzahl umzuwandeln, multipliziere den Zähler und den Nenner mit fünfundzwanzig, um fünfundsiebzig Hundertstel zu erhalten.")
-]
-#only("2")[
-#voiceover("Dann teile fünfundsiebzig durch hundert, um null Komma fünfundsiebzig zu erhalten.")
-]
+  #text(size: 30pt, weight: "bold")[Beispiel: $3/4$ in eine Dezimalzahl umwandeln 🧮]
+  #v(20pt)
+  #only("1-")[Schritt 1: Den Bruch identifizieren]
+  #only("1-")[$3/4$]
+  #v(10pt)
+  #only("2-")[Schritt 2: Äquivalenten Bruch finden]
+  #only("2-")[$3/4 = (3 * 25)/(4 * 25) = 75/100$]
+  #v(10pt)
+  #only("3-")[Schritt 3 & 4: Dividieren und als Dezimalzahl schreiben]
+  #only("3-")[$75/100 = 0.75$]
+
+  #only("1")[
+    #voiceover("Lass uns diesen Prozess mit einem Beispiel überprüfen. Wir werden drei Viertel in eine Dezimalzahl umwandeln. Zuerst identifizieren wir unseren Bruch: drei Viertel.")
+  ]
+  #only("2")[
+    #voiceover("Als nächstes finden wir einen äquivalenten Bruch mit einem Nenner von 100. Wir können dies tun, indem wir sowohl den Zähler als auch den Nenner mit 25 multiplizieren. Das ergibt fünfundsiebzig Hundertstel.")
+  ]
+  #only("3")[
+    #voiceover("Schließlich führen wir die Division durch und schreiben das Ergebnis als Dezimalzahl. Fünfundsiebzig geteilt durch hundert ergibt null Komma sieben fünf.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung]
-#v(40pt)
-#only("1-")[- Finde einen äquivalenten Bruch mit einer Zehnerpotenz als Nenner. 🔍]
-#v(20pt)
-#only("2-")[- Teile den Zähler durch den Nenner. ➗]
-#v(20pt)
-#only("3-")[- Beispiel: $3/4$ zu $75/100$ zu $0.75$]
-#only("1")[
-#voiceover("Zusammenfassend: Finde zuerst einen äquivalenten Bruch mit einer Zehnerpotenz als Nenner.")
-]
-#only("2")[
-#voiceover("Dann teile den Zähler durch den Nenner.")
-]
-#only("3")[
-#voiceover("Zum Beispiel wird aus drei Vierteln fünfundsiebzig Hundertstel, was null Komma fünfundsiebzig ergibt.")
-]
+  #text(size: 30pt, weight: "bold")[Zusammenfassung 📝]
+  #v(40pt)
+  #only("1-")[- Brüche in äquivalente Form mit Nenner 10, 100, 1000, etc. umwandeln 🔢]
+  #only("2-")[- Dies macht die Division einfach ➗]
+  #only("3-")[- Das Ergebnis ist eine Dezimaldarstellung 📊]
+  #only("4-")[- Übung macht den Meister! 💪]
+
+  #only("1")[
+    #voiceover("Zusammenfassend lässt sich sagen, dass wir bei der Umwandlung einfacher Brüche in Dezimalzahlen zuerst den Bruch in eine äquivalente Form mit einem Nenner, der eine Zehnerpotenz ist, umwandeln.")
+  ]
+  #only("2")[
+    #voiceover("Dieser entscheidende Schritt macht die Division einfach.")
+  ]
+  #only("3")[
+    #voiceover("Das Ergebnis dieser Division ist unsere Dezimaldarstellung des ursprünglichen Bruchs.")
+  ]
+  #only("4")[
+    #voiceover("Denke daran, Übung macht den Meister! Je mehr du mit diesen Umwandlungen arbeitest, desto einfacher werden sie.")
+  ]
 ]

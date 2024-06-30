@@ -1,21 +1,27 @@
 #import "../sophiatheme.typ": *
 #show: sophia-theme
-#show figure.caption: es => [
+#show figure.caption: it => [
 #set text(size: 20pt)
-#es.body
+#it.body
 ]
 
+
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von komplexen Brüchen in Dezimalzahlen]
-// Der Titel "Umwandlung von komplexen Brüchen in Dezimalzahlen" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $9/20$]
-// Der Bruch wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl um $square/square$!]
-// Die Anweisung, in eine Dezimalzahl umzuwandeln, wird ab Folie 2 angezeigt
-#only("1")[#voiceover("Lass uns dein Wissen über die Umwandlung von komplexen Brüchen in Dezimalzahlen testen. Betrachte den Bruch neun zwanzigstel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln, wobei wir ihn in Form einer Zahl mit einem Dezimalpunkt ausdrücken?")]
+  #text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $9/20$]
+  #v(20pt)
+
+  #only("2-")[Frage: Was ist dieser Bruch als Dezimalzahl? 🤔]
+
+  #only("1")[
+    #voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Betrachte den Bruch neun Zwanzigstel.")
+  ]
+
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, neun Zwanzigstel, in seine Dezimalform umzuwandeln. Überlege kurz, wie Du dieses Problem angehen würdest.")
+  ]
 ]
 
 //Typ: FREI 

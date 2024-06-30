@@ -7,24 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
-// The title "Converting Fractions to Decimals" is shown on all slides
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
+  #v(40pt)
 
-#only("1-")[Consider the fraction $7/10$]
-// The fraction $7/10$ is shown from slide 1 onward
-#v(40pt)
+  #only("1-")[Consider the fraction: $7/10$]
+  #v(20pt)
 
-#only("2-")[$arrow$ What is it as a decimal?]
-// The question "What is it as a decimal?" is shown from slide 2 onward
+  #only("2-")[Convert this fraction to a decimal. 🔢]
 
-#only("1")[
-#voiceover("Let's practice converting fractions to decimals. Consider the fraction seven over ten.")
-]
+  #only("1")[
+    #voiceover("Let's practice converting fractions to decimals. Here's our question for today:")
+  ]
 
-#only("2")[
-#voiceover("What is this fraction as a decimal?")
-]
+  #only("2")[
+    #voiceover("What is seven tenths as a decimal? Take a moment to think about how you might approach this problem.")
+  ]
 ]
 
 //Type: FREE 

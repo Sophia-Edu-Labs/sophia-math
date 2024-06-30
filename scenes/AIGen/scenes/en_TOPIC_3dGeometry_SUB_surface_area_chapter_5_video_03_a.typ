@@ -7,169 +7,136 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[L-Shaped Figure Surface Area]
+  #text(size: 30pt, weight: "bold")[Surface Area of Composite Figures]
   #v(40pt)
-
   #only("1-")[
-#align(center)[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
+
 ```
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
 fig = plt.figure(figsize=(10, 8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cuboid 1
-x1 = [0, 7, 7, 0, 0]
-y1 = [0, 0, 5, 5, 0]
-z1 = [0, 0, 0, 0, 0]
-ax.plot(x1, y1, z1, 'b')
-ax.plot(x1, y1, [3]*5, 'b')
-for i in range(4):
-    ax.plot([x1[i], x1[i]], [y1[i], y1[i]], [0, 3], 'b')
+# Large cube
+x, y, z = np.meshgrid(np.arange(6), np.arange(6), np.arange(6), indexing='ij')
+filled_large = (x < 5) & (y < 5) & (z < 5)
+ax.voxels(x, y, z, filled_large, edgecolors='b')
 
-# Cuboid 2
-x2 = [0, 3, 3, 0, 0]
-y2 = [0, 0, 5, 5, 0]
-z2 = [3, 3, 3, 3, 3]
-ax.plot(x2, y2, z2, 'r')
-ax.plot(x2, y2, [7]*5, 'r')
-for i in range(4):
-    ax.plot([x2[i], x2[i]], [y2[i], y2[i]], [3, 7], 'r')
+# Small cube
+x, y, z = np.meshgrid(np.arange(5, 11), np.arange(1, 7), np.arange(1, 7), indexing='ij')
+filled_small = (x < 10) & (y < 6) & (z < 6)
+ax.voxels(x, y, z, filled_small, edgecolors='r')
 
-ax.set_xlabel('Length (cm)')
-ax.set_ylabel('Width (cm)')
-ax.set_zlabel('Height (cm)')
-ax.set_title('L-Shaped Figure')
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Composite Figure: Two Cubes')
 
 plt.show()
-```,
-width: 360pt
-),
-caption: []
-)
-]
-]
-]
-]
-
-  #only("2-")[
-    - Blue cuboid: 7 cm × 5 cm × 3 cm
-    - Red cuboid: 3 cm × 5 cm × 4 cm
-  ]
-
+          ```,
+          width: 360pt
+        ),
+        caption: []
+      )
+    ]
+  ]]
   #only("1")[
-    #voiceover("Great job on solving this problem! Let's walk through the solution step-by-step. We're dealing with an L-shaped figure formed by two cuboids.")
-  ]
-
-  #only("2")[
-    #voiceover("As we can see in the diagram, we have a blue cuboid that's 7 centimeters long, 5 centimeters wide, and 3 centimeters high. On top of it, we have a red cuboid that's 3 centimeters long, 5 centimeters wide, and 4 centimeters high.")
+    #voiceover("Great job on solving this problem! Let's go through the solution step-by-step. We have a composite figure made of two cubes: a larger cube with a side length of 5 cm, and a smaller cube with a side length of 3 cm attached to one face of the larger cube.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Calculating Surface Area]
+  #text(size: 30pt, weight: "bold")[Step 1: Identify the Components]
   #v(40pt)
-
-  #only("1-")[
-    1. Calculate area of each face
-    2. Sum up all visible faces
-    3. Subtract overlapping area
-  ]
-
-  #only("2-")[
-    Blue cuboid faces:
-    - Top: $7 * 5 = 35 "cm"^2$
-    - Front: $7 * 3 = 21 "cm"^2$
-    - Back: $7 * 3 = 21 "cm"^2$
-    - Left side: $5 * 3 = 15 "cm"^2$
-    - Right side: $5 * 3 = 15 "cm"^2$
-  ]
-
+  #only("1-")[- Large cube: side length = 5 cm 📏]
+  #v(20pt)
+  #only("2-")[- Small cube: side length = 3 cm 📐]
   #only("1")[
-    #voiceover("To calculate the surface area, we'll follow these steps: First, we'll calculate the area of each face. Then, we'll sum up all the visible faces. Finally, we'll subtract any overlapping areas.")
+    #voiceover("First, let's identify our components. We have a large cube with a side length of 5 centimeters.")
   ]
-
   #only("2")[
-    #voiceover("Let's start with the blue cuboid. The top face is 7 by 5, giving us 35 square centimeters. The front and back are both 7 by 3, each 21 square centimeters. The left and right sides are both 5 by 3, each 15 square centimeters.")
+    #voiceover("And we have a smaller cube with a side length of 3 centimeters attached to one face of the larger cube.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Calculating Surface Area (Continued)]
+  #text(size: 30pt, weight: "bold")[Step 2: Calculate Surface Area of Large Cube]
   #v(40pt)
-
-  #only("1-")[
-    Red cuboid faces:
-    - Top: $3 * 5 = 15 "cm"^2$
-    - Front: $3 * 4 = 12 "cm"^2$
-    - Back: $3 * 4 = 12 "cm"^2$
-    - Right side: $5 * 4 = 20 "cm"^2$
-  ]
-
-  #only("2-")[
-    Overlapping area:
-    - Bottom of red cuboid: $3 * 5 = 15 "cm"^2$
-  ]
-
+  #only("1-")[- Formula: $"SA"_"large" = 6s^2$, where $s$ is the side length]
+  #v(20pt)
+  #only("2-")[- $"SA"_"large" = 6 × (5"cm")^2 = 6 × 25"cm"^2 = 150"cm"^2$]
   #only("1")[
-    #voiceover("Now for the red cuboid. The top is 3 by 5, so 15 square centimeters. The front and back are both 3 by 4, each 12 square centimeters. The right side is 5 by 4, so 20 square centimeters.")
+    #voiceover("Now, let's calculate the surface area of the large cube. The formula for the surface area of a cube is 6 times the square of its side length.")
   ]
-
   #only("2")[
-    #voiceover("We need to be careful not to count the bottom of the red cuboid, as it's not visible. This overlapping area is 3 by 5, or 15 square centimeters.")
+    #voiceover("Plugging in 5 centimeters for the side length, we get 6 times 5 squared, which equals 6 times 25, giving us 150 square centimeters.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Final Calculation]
+  #text(size: 30pt, weight: "bold")[Step 3: Calculate Surface Area of Small Cube]
   #v(40pt)
-
-  #only("1-")[
-    Total surface area:
-    #only("1")[= Sum of all visible faces - Overlapping area]
-    #only("2-")[= $(35 + 21 + 21 + 15 + 15) + (15 + 12 + 12 + 20) - 15$]
-    #only("3-")[= $107 + 59 - 15$]
-    #only("4-")[= $151 "cm"^2$]
-  ]
-
+  #only("1-")[- Formula: $"SA"_"small" = 6s^2$, where $s$ is the side length]
+  #v(20pt)
+  #only("2-")[- $"SA"_"small" = 6 × (3"cm")^2 = 6 × 9"cm"^2 = 54"cm"^2$]
   #only("1")[
-    #voiceover("Now, let's put it all together. The total surface area will be the sum of all visible faces minus the overlapping area.")
+    #voiceover("Next, let's calculate the surface area of the small cube. We use the same formula, but with a side length of 3 centimeters.")
   ]
-
   #only("2")[
-    #voiceover("That's 35 plus 21 plus 21 plus 15 plus 15 for the blue cuboid, plus 15 plus 12 plus 12 plus 20 for the red cuboid, minus 15 for the overlapping area.")
-  ]
-
-  #only("3")[
-    #voiceover("This simplifies to 107 plus 59 minus 15.")
-  ]
-
-  #only("4")[
-    #voiceover("And our final answer is 151 square centimeters!")
+    #voiceover("This gives us 6 times 3 squared, which equals 6 times 9, resulting in 54 square centimeters.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Key Takeaways]
+  #text(size: 30pt, weight: "bold")[Step 4: Account for Shared Face]
   #v(40pt)
-
-  #only("1-")[
-    - Break complex shapes into simpler ones 📐
-    - Calculate area of each face 🧮
-    - Remember to subtract overlapping areas ➖
-    - Double-check your calculations ✅
-  ]
-
+  #only("1-")[- Shared face area: $5"cm" × 5"cm" = 25"cm"^2$]
+  #v(20pt)
+  #only("2-")[- This area is counted twice, so we need to subtract it once]
   #only("1")[
-    #voiceover("Great job solving this problem! Remember, when dealing with composite figures, it's helpful to break them down into simpler shapes. Calculate the area of each face, but be careful not to count overlapping areas twice. Always double-check your calculations. Keep practicing, and you'll master these types of problems in no time!")
+    #voiceover("Now, we need to account for the shared face between the two cubes. This face has an area of 5 centimeters times 5 centimeters, which is 25 square centimeters.")
+  ]
+  #only("2")[
+    #voiceover("Since this area is included in both the large and small cube calculations, we've counted it twice. We need to subtract it once to avoid double-counting.")
+  ]
+]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Step 5: Calculate Total Surface Area]
+  #v(40pt)
+  #only("1-")[- $"SA"_"total" = "SA"_"large" + "SA"_"small" - "SA"_"shared"$]
+  #v(20pt)
+  #only("2-")[- $"SA"_"total" = 150"cm"^2 + 54"cm"^2 - 25"cm"^2 = 179"cm"^2$]
+  #only("1")[
+    #voiceover("Finally, let's calculate the total surface area. We add the surface areas of the large and small cubes, then subtract the area of the shared face.")
+  ]
+  #only("2")[
+    #voiceover("This gives us 150 plus 54 minus 25, which equals 179 square centimeters.")
+  ]
+]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Final Answer]
+  #v(40pt)
+  #only("1-")[#text(size: 24pt)[The total surface area is $179"cm"^2$. 🎉]]
+  #v(40pt)
+  #only("2-")[💡 Remember: In composite figures, be careful not to double-count shared surfaces!]
+  #only("1")[
+    #voiceover("So, our final answer is that the total surface area of the composite figure is 179 square centimeters.")
+  ]
+  #only("2")[
+    #voiceover("Remember, when dealing with composite figures, it's crucial to be careful not to double-count shared surfaces. This is a common mistake that can lead to incorrect answers.")
   ]
 ]

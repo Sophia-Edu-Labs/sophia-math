@@ -9,219 +9,124 @@
 #slide()[
   #text(size: 30pt, weight: "bold")[Oberfläche zusammengesetzter Figuren]
   #v(40pt)
+  #only("1-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 
-#only("1-")[
-#align(center)[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
 ```
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
 
-fig = plt.figure(figsize=(8, 6))
+fig = plt.figure(figsize=(10, 8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Rectangular prism
-l, w, h = 8, 6, 4
-x = [0, l, l, 0, 0]
-y = [0, 0, w, w, 0]
-z = [0, 0, 0, 0, 0]
-ax.plot(x, y, z, 'b')
-ax.plot(x, y, [h]*5, 'b')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [0, h], 'b')
+# Larger cube
+ax.bar3d(0, 0, 0, 4, 4, 4, color='lightblue', alpha=0.8)
 
-# Cylindrical hole
-r = 1
-theta = np.linspace(0, 2*np.pi, 100)
-x = r * np.cos(theta) + l/2
-y = r * np.sin(theta) + w/2
-ax.plot(x, y, [0]*100, 'r')
-ax.plot(x, y, [h]*100, 'r')
+# Smaller cube
+ax.bar3d(4, 1, 0, 2, 2, 2, color='lightgreen', alpha=0.8)
 
-ax.set_xlabel('Length (cm)')
-ax.set_ylabel('Width (cm)')
-ax.set_zlabel('Height (cm)')
-ax.set_title('Rectangular Prism with Cylindrical Hole')
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Composite Figure: Two Cubes')
 
 plt.show()
-```,
-width: 360pt
-),
-caption: []
-)
-]
-]
-]
-]
-
-  #only("2-")[
-    - Rechteckiges Prisma: 8 cm × 6 cm × 4 cm
-    - Zylindrisches Loch: Radius 1 cm, Höhe 4 cm
-  ]
-
+          ```,
+          width: 360pt
+        ),
+        caption: []
+      )
+    ]
+  ]]
   #only("1")[
-    #voiceover("Keine Sorge, wir werden die Lösung gemeinsam durchgehen. Lass uns Schritt für Schritt anschauen, wie man ein rechteckiges Prisma mit einem zylindrischen Loch berechnet.")
-  ]
-
-  #only("2")[
-    #voiceover("Das rechteckige Prisma misst 8 Zentimeter in der Länge, 6 Zentimeter in der Breite und 4 Zentimeter in der Höhe. Das zylindrische Loch hat einen Radius von 1 Zentimeter und geht durch die gesamte Höhe des Prismas, die 4 Zentimeter beträgt.")
+    #voiceover("Keine Sorge, das war eine knifflige Frage. Lass uns die Lösung Schritt für Schritt durchgehen. Wir haben eine zusammengesetzte Figur, die aus zwei Würfeln besteht: einem mit einer Seitenlänge von 4 cm und einem anderen mit einer Seitenlänge von 2 cm, die an einer Fläche verbunden sind.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 1: Oberfläche des rechteckigen Prismas]
+  #text(size: 30pt, weight: "bold")[Schritt 1: Identifiziere die Würfel]
   #v(40pt)
-
-  #only("1-")[
-    Oberfläche = 2(lw + lh + wh)
-  ]
-
-  #only("2-")[
-    = 2((8 × 6) + (8 × 4) + (6 × 4))
-  ]
-
-  #only("3-")[
-    = 2(48 + 32 + 24)
-  ]
-
-  #only("4-")[
-    = 2(104) = 208 cm²
-  ]
-
+  #only("1-")[- Würfel 1: Seitenlänge = 4 cm 🟦]
+  #v(20pt)
+  #only("2-")[- Würfel 2: Seitenlänge = 2 cm 🟩]
   #only("1")[
-    #voiceover("Lass uns mit der Berechnung der Oberfläche des rechteckigen Prismas ohne das Loch beginnen. Die Formel für die Oberfläche eines rechteckigen Prismas ist 2 mal die Summe aus Länge mal Breite, Länge mal Höhe und Breite mal Höhe.")
+    #voiceover("Zuerst identifizieren wir unsere beiden Würfel. Wir haben einen größeren Würfel mit einer Seitenlänge von 4 Zentimetern.")
   ]
-
   #only("2")[
-    #voiceover("Setzen wir unsere Werte ein, erhalten wir 2 mal die Summe aus 8 mal 6, 8 mal 4 und 6 mal 4.")
+    #voiceover("Und einen kleineren Würfel mit einer Seitenlänge von 2 Zentimetern.")
   ]
+]
 
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Schritt 2: Berechne die Oberflächen]
+  #v(40pt)
+  #only("1-")[- Oberfläche eines Würfels = 6 × (Seitenlänge)²]
+  #v(20pt)
+  #only("2-")[- Würfel 1: $"SA"_1 = 6 × 4^2 = 6 × 16 = 96"cm"^2$]
+  #v(20pt)
+  #only("3-")[- Würfel 2: $"SA"_2 = 6 × 2^2 = 6 × 4 = 24"cm"^2$]
+  #only("1")[
+    #voiceover("Nun berechnen wir die Oberflächen. Denke daran, dass die Oberfläche eines Würfels sechs Mal das Quadrat seiner Seitenlänge ist.")
+  ]
+  #only("2")[
+    #voiceover("Für den größeren Würfel haben wir sechs Mal vier zum Quadrat, was sechsundneunzig Quadratzentimeter ergibt.")
+  ]
   #only("3")[
-    #voiceover("Vereinfachen wir, haben wir 2 mal die Summe aus 48, 32 und 24.")
-  ]
-
-  #only("4")[
-    #voiceover("Das ergibt 2 mal 104, was 208 Quadratzentimetern entspricht.")
+    #voiceover("Für den kleineren Würfel haben wir sechs Mal zwei zum Quadrat, was vierundzwanzig Quadratzentimeter ergibt.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 2: Fläche der kreisförmigen Löcher]
+  #text(size: 30pt, weight: "bold")[Schritt 3: Berücksichtige die verbundene Fläche]
   #v(40pt)
-
-  #only("1-")[
-    Fläche einer kreisförmigen Fläche = $pi r^2$
-  ]
-
-  #only("2-")[
-    = $pi × (1 "cm")^2$ = $pi$ cm²
-  ]
-
-  #only("3-")[
-    Fläche der zwei kreisförmigen Flächen = $2pi$ cm²
-  ]
-
+  #only("1-")[- Fläche der verbundenen Fläche = Seitenlänge² = $2^2 = 4"cm"^2$]
+  #v(20pt)
+  #only("2-")[- Diese Fläche wird doppelt gezählt, also ziehen wir sie einmal ab]
   #only("1")[
-    #voiceover("Nun müssen wir das zylindrische Loch berücksichtigen. Das Loch erzeugt zwei kreisförmige Flächen, eine oben und eine unten am Prisma. Die Fläche eines Kreises ist pi mal Radius zum Quadrat.")
+    #voiceover("Jetzt müssen wir die Fläche berücksichtigen, an der die Würfel verbunden sind. Diese Fläche hat eine Fläche von zwei zum Quadrat, was vier Quadratzentimeter ergibt.")
   ]
-
   #only("2")[
-    #voiceover("Mit einem Radius von 1 Zentimeter ist die Fläche einer kreisförmigen Fläche einfach pi Quadratzentimeter.")
+    #voiceover("Da diese Fläche in den Oberflächen beider Würfel enthalten ist, müssen wir sie einmal abziehen, um sie nicht doppelt zu zählen.")
   ]
+]
 
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Schritt 4: Berechne die gesamte Oberfläche]
+  #v(40pt)
+  #only("1-")[- Gesamte Oberfläche = $"SA"_1 + "SA"_2 - "Fläche der verbundenen Fläche"$]
+  #v(20pt)
+  #only("2-")[- Gesamte Oberfläche = $96"cm"^2 + 24"cm"^2 - 4"cm"^2$]
+  #v(20pt)
+  #only("3-")[- Gesamte Oberfläche = $116"cm"^2$]
+  #only("1")[
+    #voiceover("Schließlich berechnen wir die gesamte Oberfläche. Wir addieren die Oberflächen beider Würfel und ziehen die Fläche der verbundenen Fläche ab.")
+  ]
+  #only("2")[
+    #voiceover("Das sind sechsundneunzig plus vierundzwanzig minus vier Quadratzentimeter.")
+  ]
   #only("3")[
-    #voiceover("Da wir zwei kreisförmige Flächen haben, beträgt die Gesamtfläche 2 pi Quadratzentimeter.")
+    #voiceover("Was uns eine Gesamtfläche von einhundertsechzehn Quadratzentimetern ergibt.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 3: Fläche der zylindrischen Oberfläche]
+  #text(size: 30pt, weight: "bold")[Endgültige Antwort]
   #v(40pt)
-
-  #only("1-")[
-    Fläche der zylindrischen Oberfläche = 2$pi$rh
-  ]
-
-  #only("2-")[
-    = 2$pi$ × 1 cm × 4 cm = 8$pi$ cm²
-  ]
-
-  #only("1")[
-    #voiceover("Das zylindrische Loch erzeugt auch eine gekrümmte Oberfläche im Inneren des Prismas. Die Fläche dieser Oberfläche wird durch 2 pi mal Radius mal Höhe gegeben.")
-  ]
-
-  #only("2")[
-    #voiceover("Setzen wir unsere Werte ein, erhalten wir 2 pi mal 1 Zentimeter mal 4 Zentimeter, was sich zu 8 pi Quadratzentimetern vereinfacht.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 4: Gesamtoberfläche]
+  #only("1-")[#text(size: 24pt)[Die gesamte Oberfläche beträgt $116"cm"^2$]]
   #v(40pt)
-
-  #only("1-")[
-    Gesamtoberfläche = Prisma-Oberfläche - Kreisflächen + Zylinderfläche
-  ]
-
-  #only("2-")[
-    = 208 cm² - 2$pi$ cm² + 8$pi$ cm²
-  ]
-
-  #only("3-")[
-    = 208 cm² + 6$pi$ cm²
-  ]
-
-  #only("4-")[
-    ≈ 226,85 cm² (gerundet auf 2 Dezimalstellen)
-  ]
-
+  #only("2-")[💡 Denke daran: Bei zusammengesetzten Figuren achte darauf, gemeinsame Flächen nicht doppelt zu zählen!]
   #only("1")[
-    #voiceover("Um die Gesamtoberfläche zu finden, müssen wir die Oberfläche des Prismas nehmen, die Fläche der beiden kreisförmigen Flächen abziehen und die Fläche der zylindrischen Oberfläche hinzufügen.")
+    #voiceover("Also lautet unsere endgültige Antwort, dass die Oberfläche der zusammengesetzten Figur einhundertsechzehn Quadratzentimeter beträgt.")
   ]
-
   #only("2")[
-    #voiceover("Setzen wir unsere Werte ein, erhalten wir 208 Quadratzentimeter minus 2 pi Quadratzentimeter plus 8 pi Quadratzentimeter.")
-  ]
-
-  #only("3")[
-    #voiceover("Vereinfachen wir, ergibt das 208 Quadratzentimeter plus 6 pi Quadratzentimeter.")
-  ]
-
-  #only("4")[
-    #voiceover("Mit einem Taschenrechner und auf zwei Dezimalstellen gerundet, erhalten wir ungefähr 226,85 Quadratzentimeter.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Fazit]
-  #v(40pt)
-
-  #only("1-")[
-    Die Gesamtoberfläche der zusammengesetzten Figur beträgt ungefähr 226,85 cm².
-  ]
-
-  #only("2-")[
-    Wichtige Schritte:
-    1. Berechne die Oberfläche des Prismas
-    2. Berechne die Fläche der kreisförmigen Löcher
-    3. Berechne die Fläche der zylindrischen Oberfläche
-    4. Kombiniere alle Komponenten
-  ]
-
-  #only("1")[
-    #voiceover("Also beträgt die Gesamtoberfläche unserer zusammengesetzten Figur ungefähr 226,85 Quadratzentimeter.")
-  ]
-
-  #only("2")[
-    #voiceover("Zusammenfassend haben wir dieses Problem gelöst, indem wir zuerst die Oberfläche des rechteckigen Prismas berechnet haben, dann die kreisförmigen Löcher oben und unten berücksichtigt haben und schließlich die Fläche der zylindrischen Oberfläche im Inneren des Prismas hinzugefügt haben. Diese Methode, komplexe Formen in einfachere Komponenten zu zerlegen, ist eine mächtige Technik in der Geometrie.")
+    #voiceover("Großartige Arbeit! Denke daran, bei zusammengesetzten Figuren darauf zu achten, gemeinsame Flächen nicht doppelt zu zählen. Diese Problemlösungsfähigkeit wird dir bei vielen zukünftigen Geometrieproblemen nützlich sein.")
   ]
 ]

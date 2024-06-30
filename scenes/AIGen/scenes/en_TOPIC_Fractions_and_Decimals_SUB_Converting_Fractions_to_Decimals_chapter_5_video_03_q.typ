@@ -7,15 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
-// The title "Converting Fractions to Decimals" is shown on this slide
-#v(40pt)
-#only("1-")[Consider the fraction $3/5$]
-// The question is shown from slide 1 onward
-#v(40pt)
-#only("2-")[$arrow$ Convert it to a decimal $square$!]
-#only("1")[#voiceover("Let's test your knowledge on converting fractions to decimals. Consider the fraction three-fifths.")]
-#only("2")[#voiceover("Can you convert it into a decimal number?")]
+  #text(size: 30pt, weight: "bold")[Converting 3/5 to a Decimal]
+  #v(40pt)
+
+  #only("1-")[Consider the fraction: $3/5$]
+  #v(20pt)
+
+  #only("2-")[Task: Convert this fraction to a decimal 🔢]
+
+  #only("1")[
+    #voiceover("Let's practice converting fractions to decimals. We'll focus on the fraction three-fifths.")
+  ]
+
+  #only("2")[
+    #voiceover("Your task is to convert this fraction, three-fifths, into its equivalent decimal form. Think about the steps you would take to perform this conversion.")
+  ]
 ]
 
 //Type: FREE 

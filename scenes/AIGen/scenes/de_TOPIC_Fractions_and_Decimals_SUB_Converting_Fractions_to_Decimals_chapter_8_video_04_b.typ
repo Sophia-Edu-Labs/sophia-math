@@ -8,7 +8,7 @@
 
 #slide()[
 #only("1")[
-#voiceover("Keine Sorge! Lass uns die Lösung Schritt für Schritt gemeinsam durchgehen.")
+#voiceover("Leider war das nicht korrekt. Lass uns die Lösung Schritt für Schritt durchgehen, um zu verstehen, wie wir sieben Zwanzigstel in eine Dezimalzahl umwandeln.")
 ]
 
 #text(size: 30pt, weight: "bold")[Umwandlung von $7/20$ in eine Dezimalzahl]
@@ -17,73 +17,52 @@
 
 #only("2-")[#text()[$7/20$]]
 #only("2")[
-#voiceover("Wir beginnen mit dem Bruch sieben zwanzigstel.")
+#voiceover("Wir beginnen mit dem Bruch sieben Zwanzigstel.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritte zur Umwandlung von Brüchen in Dezimalzahlen]
+#text(size: 30pt, weight: "bold")[Ansatz: Multiplizieren mit $5/5$]
 #v(40pt)
-#only("1-")[- Schritt 1: Teile den Zähler durch den Nenner. ➗]
+#only("1-")[- Zähler und Nenner mit 5 multiplizieren 📊]
 #v(20pt)
-#only("2-")[- Schritt 2: Vereinfache das Ergebnis, falls nötig. ✂️]
+#only("2-")[- Dies ändert den Wert des Bruchs nicht ✅]
 #only("1")[
-#voiceover("Bevor wir die Aufgabe lösen, lass uns schnell die Schritte zur Umwandlung von Brüchen in Dezimalzahlen durchgehen. Zuerst teilst Du den Zähler durch den Nenner.")
+#voiceover("Unser Ansatz wird sein, sowohl den Zähler als auch den Nenner mit 5 zu multiplizieren.")
 ]
 #only("2")[
-#voiceover("Als nächstes vereinfachst Du das Ergebnis, falls nötig.")
+#voiceover("Dies ändert den Wert des Bruchs nicht, da wir mit fünf Fünfteln multiplizieren, was eins ergibt.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Beispiel: Umwandlung von $7/20$ in eine Dezimalzahl]
+#text(size: 30pt, weight: "bold")[Schritt 1: Multiplikation]
 #v(40pt)
-#only("1-")[- Schritt 1: ➗ Teile $7$ durch $20$.]
+#only("1-")[$ 7/20 = (7 × 5)/(20 × 5) $]
 #v(20pt)
-#only("2-")[- Schritt 2: ✂️ Vereinfache das Ergebnis: $0.35$.]
+#only("2-")[$ = 35/100 $]
 #only("1")[
-#voiceover("Nun wenden wir diese Schritte auf den Bruch sieben zwanzigstel an. Zuerst teilen wir sieben durch zwanzig.")
+#voiceover("Lass uns sowohl den Zähler als auch den Nenner mit 5 multiplizieren. Sieben mal fünf ist fünfunddreißig, und zwanzig mal fünf ist hundert.")
 ]
 #only("2")[
-#voiceover("Das ergibt null Komma drei fünf. Und das war's, wir sind fertig! Die Lösung ist null Komma drei fünf.")
+#voiceover("Unser neuer Bruch ist also fünfunddreißig Hundertstel.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung der Division]
+#text(size: 30pt, weight: "bold")[Schritt 2: Dezimalumwandlung]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Data
-x = np.array([0, 1])
-y = np.array([0, 0.35])
-
-plt.plot(x, y, marker='o', color='b')
-plt.axhline(y=0.35, color='r', linestyle='--')
-plt.text(0.5, 0.36, '0.35', color='r')
-plt.title('Division of 7 by 20')
-plt.xlabel('Step')
-plt.ylabel('Value')
-plt.grid(True)
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
+#only("1-")[$ 35/100 = 0.35 $]
+#v(20pt)
+#only("2-")[💡 Das Dezimalkomma steht vor der zweitletzten Ziffer]
 #only("1")[
-#voiceover("Lass uns die Division von sieben durch zwanzig visualisieren. Wie Du sehen kannst, ist das Ergebnis null Komma drei fünf.")
+#voiceover("Nun, fünfunddreißig Hundertstel lassen sich leicht in eine Dezimalzahl umwandeln. Es ist einfach null Komma drei fünf.")
+]
+#only("2")[
+#voiceover("Ein hilfreicher Tipp: Wenn du einen Bruch mit Hundert hast, steht das Dezimalkomma in der Antwort vor der zweitletzten Ziffer.")
 ]
 ]
 
@@ -91,18 +70,18 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Zusammenfassung]
 #v(40pt)
-#only("1-")[- Wir haben mit dem Bruch $7/20$ begonnen. 📜]
+#only("1-")[- Wir haben mit $7/20$ begonnen 📊]
 #v(20pt)
-#only("2-")[- Wir haben $7$ durch $20$ geteilt. ➗]
+#only("2-")[- Multipliziert mit $5/5$ um $35/100$ zu erhalten ✖️]
 #v(20pt)
-#only("3-")[- Das Ergebnis ist $0.35$. 🎉]
+#only("3-")[- In Dezimalzahl umgewandelt: $0.35$ 🎉]
 #only("1")[
-#voiceover("Zusammenfassend haben wir mit dem Bruch sieben zwanzigstel begonnen.")
+#voiceover("Zusammenfassend haben wir mit sieben Zwanzigstel begonnen.")
 ]
 #only("2")[
-#voiceover("Wir haben sieben durch zwanzig geteilt.")
+#voiceover("Wir haben sowohl den Zähler als auch den Nenner mit 5 multipliziert, um fünfunddreißig Hundertstel zu erhalten.")
 ]
 #only("3")[
-#voiceover("Das Ergebnis ist null Komma drei fünf. Gut gemacht!")
+#voiceover("Schließlich haben wir dies in die Dezimalzahl null Komma drei fünf umgewandelt. Gut gemacht beim Lösen dieses Problems!")
 ]
 ]

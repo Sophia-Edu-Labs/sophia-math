@@ -8,66 +8,108 @@
 
 #slide()[
 #only("1")[
-#voiceover("Don't worry, let's go through the correct solution step by step together.")
+#voiceover("Let's review the correct solution step by step to understand how we convert 4/25 to a decimal.")
 ]
 
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
+#text(size: 30pt, weight: "bold")[Converting 4/25 to a Decimal]
 
 #v(40pt)
 
 #only("2-")[#text()[$4/25$]]
-// The fraction 4/25 is shown from slide 2 onward
-
 #only("2")[
-#voiceover("We need to convert the fraction four over twenty-five to a decimal.")
+#voiceover("We start with the fraction four over twenty-five.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Fractions to Decimals]
-
+#text(size: 30pt, weight: "bold")[Approach: Multiply by 4/4]
 #v(40pt)
-
-#only("1-")[- Step 1: Divide the numerator by the denominator. ➗]
+#only("1-")[- Multiply numerator and denominator by 4 ✖️]
 #v(20pt)
-#only("2-")[- Step 2: Simplify the result if necessary. ✂️]
-
-#only("1")[
-#voiceover("Before we solve the exercise, let's quickly review the steps to convert fractions to decimals. First, divide the numerator by the denominator.")
-]
-#only("2")[
-#voiceover("Next, simplify the result if necessary.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $4/25$ to a Decimal]
-
-#v(40pt)
-
-#only("1-")[- Step 1: ➗ Divide $4$ by $25$.]
+#only("2-")[- This doesn't change the fraction's value ⚖️]
 #v(20pt)
-#only("2-")[- Step 2: ✂️ Simplify the result: $0.16$.]
-
+#only("3-")[- Makes the denominator 100, easier to convert 💡]
 #only("1")[
-#voiceover("Now let's apply these steps to the fraction four over twenty-five. First, we divide four by twenty-five.")
+#voiceover("Our approach will be to multiply both the numerator and denominator by 4.")
 ]
 #only("2")[
-#voiceover("When we divide four by twenty-five, we get zero point one six. So, the fraction four over twenty-five as a decimal is zero point one six.")
+#voiceover("This doesn't change the value of the fraction, as we're multiplying by 4 over 4, which equals 1.")
+]
+#only("3")[
+#voiceover("But it makes the denominator 100, which is much easier to convert to a decimal.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Conclusion]
-
+#text(size: 30pt, weight: "bold")[Step-by-Step Solution]
 #v(40pt)
-
-#only("1-")[- $4/25 = 0.16$]
-
+#only("1-")[$4/25 = (4 × 4)/(25 × 4)$]
+#v(20pt)
+#only("2-")[$= 16/100$]
+#v(20pt)
+#only("3-")[$= 0.16$]
 #only("1")[
-#voiceover("In conclusion, the fraction four over twenty-five is equal to zero point one six when converted to a decimal. Well done!")
+#voiceover("Let's multiply both the numerator and denominator by 4. 4 times 4 is 16, and 25 times 4 is 100.")
+]
+#only("2")[
+#voiceover("So our fraction becomes 16 over 100.")
+]
+#only("3")[
+#voiceover("Now, 16 over 100 is easy to convert to a decimal. It's simply 0.16.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Visualizing the Fraction]
+#v(40pt)
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+
+```
+import matplotlib.pyplot as plt
+
+# Create a pie chart
+labels = '4/25', 'Remainder'
+sizes = [16, 84]
+colors = ['#ff9999', '#66b3ff']
+explode = (0.1, 0)  # explode 1st slice
+
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+plt.axis('equal')
+plt.title('Visualization of 4/25 (or 16/100)')
+plt.show()
+
+```,
+width: 360pt),
+)
+]
+]
+#only("1")[
+#voiceover("Here's a visual representation of our fraction. As you can see, 4/25, which is the same as 16/100, represents 16% of the whole.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Summary]
+#v(40pt)
+#only("1-")[- We started with $4/25$ 📊]
+#v(20pt)
+#only("2-")[- Multiplied by $4/4$ to get $16/100$ 🔢]
+#v(20pt)
+#only("3-")[- $16/100 = 0.16$ in decimal form 🎉]
+#only("1")[
+#voiceover("To summarize, we started with the fraction 4 over 25.")
+]
+#only("2")[
+#voiceover("We multiplied both the numerator and denominator by 4, giving us 16 over 100.")
+]
+#only("3")[
+#voiceover("16 over 100 is equal to 0.16 in decimal form. And that's our final answer! Well done on solving this problem.")
 ]
 ]

@@ -7,42 +7,47 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
-#v(40pt)
 #only("1")[
-#voiceover("Großartige Arbeit beim Erkennen der richtigen Antwort! Lass uns die Lösung Schritt für Schritt gemeinsam durchgehen.")
+#voiceover("Großartig! Du hast es richtig gemacht. Lass uns die Lösung Schritt für Schritt durchgehen, um zu verstehen, wie wir ein Fünftel in eine Dezimalzahl umwandeln.")
+]
+
+#text(size: 30pt, weight: "bold")[Umwandlung von $1/5$ in eine Dezimalzahl]
+
+#v(40pt)
+
+#only("2-")[#text()[$1/5$]]
+#only("2")[
+#voiceover("Wir beginnen mit dem Bruch ein Fünftel.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Umwandlung]
+#text(size: 30pt, weight: "bold")[Schritt 1: Multiplizieren mit $2/2$]
 #v(40pt)
-#only("1-")[- Schritt 1: Teile den Zähler durch den Nenner. ➗]
+#only("1-")[$ 1/5 = (1 × 2)/(5 × 2) $]
 #v(20pt)
-#only("2-")[- Schritt 2: Schreibe das Ergebnis auf. ✍️]
-
+#only("2-")[$ = 2/10 $]
 #only("1")[
-#voiceover("Um einen Bruch in eine Dezimalzahl umzuwandeln, befolgen wir zwei einfache Schritte. Zuerst teilen wir den Zähler durch den Nenner.")
+#voiceover("Der entscheidende Schritt ist, sowohl den Zähler als auch den Nenner mit 2 zu multiplizieren. Dies ändert den Wert des Bruchs nicht, aber es gibt uns einen Nenner, der eine Zehnerpotenz ist, was die Umwandlung in eine Dezimalzahl erleichtert.")
 ]
 #only("2")[
-#voiceover("Zweitens schreiben wir das Ergebnis auf.")
+#voiceover("Nach dem Multiplizieren erhalten wir zwei Zehntel.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Beispiel: Umwandlung von $1/5$ in eine Dezimalzahl]
+#text(size: 30pt, weight: "bold")[Schritt 2: Umwandlung in eine Dezimalzahl]
 #v(40pt)
-#only("1-")[- Schritt 1: 🔢 Teile $1$ durch $5$.]
+#only("1-")[$ 2/10 = 0.2 $]
 #v(20pt)
-#only("2-")[- Schritt 2: ✍️ Schreibe das Ergebnis auf: $0.2$.]
-
+#only("2-")[💡 Das Dezimalzeichen steht vor der letzten Ziffer]
 #only("1")[
-#voiceover("Nun lass uns diese Schritte auf den Bruch ein Fünftel anwenden. Zuerst teilen wir eins durch fünf.")
+#voiceover("Nun können wir zwei Zehntel leicht in eine Dezimalzahl umwandeln. In Dezimalform ist es null Komma zwei.")
 ]
 #only("2")[
-#voiceover("Das Ergebnis ist null Komma zwei. Also ist ein Fünftel als Dezimalzahl null Komma zwei.")
+#voiceover("Denke daran, dass wir beim Umwandeln eines Bruchs mit einem Nenner von 10 in eine Dezimalzahl das Dezimalzeichen einfach vor die letzte Ziffer des Zählers setzen.")
 ]
 ]
 
@@ -50,9 +55,18 @@
 #slide()[
 #text(size: 30pt, weight: "bold")[Zusammenfassung]
 #v(40pt)
-#only("1-")[- Um $1/5$ in eine Dezimalzahl umzuwandeln: ➗ Teile $1$ durch $5$ $arrow 0.2$.]
-
+#only("1-")[- Wir haben mit $1/5$ begonnen 📊]
+#v(20pt)
+#only("2-")[- Multipliziert mit $2/2$ um $2/10$ zu erhalten ✖️]
+#v(20pt)
+#only("3-")[- Umgewandelt $2/10$ in $0.2$ 🔢]
 #only("1")[
-#voiceover("Zusammenfassend: Um ein Fünftel in eine Dezimalzahl umzuwandeln, teilen wir eins durch fünf, was uns null Komma zwei ergibt. Und das war's! Du hast den Bruch erfolgreich in eine Dezimalzahl umgewandelt.")
+#voiceover("Zusammenfassend haben wir mit dem Bruch ein Fünftel begonnen.")
+]
+#only("2")[
+#voiceover("Wir haben sowohl den Zähler als auch den Nenner mit 2 multipliziert, um zwei Zehntel zu erhalten.")
+]
+#only("3")[
+#voiceover("Schließlich haben wir zwei Zehntel in null Komma zwei umgewandelt. Und das ist unsere Antwort!")
 ]
 ]

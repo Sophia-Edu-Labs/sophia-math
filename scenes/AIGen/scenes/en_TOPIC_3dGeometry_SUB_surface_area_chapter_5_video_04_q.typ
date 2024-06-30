@@ -7,91 +7,80 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Composite Figure Surface Area]
+  #text(size: 30pt, weight: "bold")[Surface Area of Composite Cubes]
   #v(40pt)
 
-#only("1-")[
-#align(center)[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection ='3d')
-
-# Rectangular prism
-l, w, h = 8, 6, 4
-x = [0, l, l, 0, 0]
-y = [0, 0, w, w, 0]
-z = [0, 0, 0, 0, 0]
-ax.plot(x, y, z, 'b')
-ax.plot(x, y, [h]*5, 'b')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [0, h], 'b')
-
-# Cylindrical hole
-r = 1
-theta = np.linspace(0, 2*np.pi, 100)
-x_c = r * np.cos(theta) + l/2
-y_c = r * np.sin(theta) + w/2
-ax.plot(x_c, y_c, [0]*100, 'r')
-ax.plot(x_c, y_c, [h]*100, 'r')
-
-ax.set_xlabel('Length (cm)')
-ax.set_ylabel('Width (cm)')
-ax.set_zlabel('Height (cm)')
-ax.set_title('Rectangular Prism with Cylindrical Hole')
-
-plt.show()
-```,
-width: 360pt
-),
-caption: []
-)
-]
-]
-]
-]
+  #only("1-")[
+    Consider two cubes:
+    - Cube A: side length 4 cm
+    - Cube B: side length 2 cm
+  ]
 
   #only("2-")[
-    - Rectangular prism: 8 cm × 6 cm × 4 cm
-    - Cylindrical hole: radius 1 cm, height 4 cm
+    Joined at one face:
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
+```
+
+          import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+
+# Cube A
+ax.bar3d(0, 0, 0, 4, 4, 4, color='lightblue', alpha=0.8)
+ax.text(2, 2, 4.5, "Cube A", ha='center', va='center')
+
+# Cube B
+ax.bar3d(1, 1, 4, 2, 2, 2, color='lightgreen', alpha=0.8)
+ax.text(2, 2, 6.5, "Cube B", ha='center', va='center')
+
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Composite Figure of Two Cubes')
+
+plt.show()
+          ```,
+          width: 360pt
+        ),
+        caption: [Composite figure of two cubes joined at one face],
+      )
+    ]
   ]
 
   #only("3-")[
-    #text(size: 24pt, weight: "bold")[Question: What is the total surface area? 🤔]
+    Calculate the total surface area of this composite figure.
   ]
 
   #only("1")[
-    #voiceover("Let's consider a composite figure.")
+    #voiceover("Let's consider a composite figure made up of two cubes.")
   ]
 
   #only("2")[
-    #voiceover("We have a rectangular prism with dimensions 8 centimeters by 6 centimeters by 4 centimeters, and it has a cylindrical hole drilled through its center with a radius of 1 centimeter and a height of 4 centimeters.")
+    #voiceover("We have Cube A with a side length of 4 centimeters, and Cube B with a side length of 2 centimeters. These cubes are joined at one face, as shown in the figure.")
   ]
 
   #only("3")[
-    #voiceover("Your task is to calculate the total surface area of this composite figure. Consider which surfaces are visible and which new surfaces are created by the cylindrical hole.")
+    #voiceover("Your task is to calculate the total surface area of this composite figure. Remember to consider which faces are exposed and which are joined together.")
   ]
-]
+]]
 
 //Type: Numeric
 #questionDef(
-questionText: "A rectangular prism ($8 \\text{ cm} \\times 6 \\text{ cm} \\times 4 \\text{ cm}$) has a cylindrical hole (radius $1 \\text{ cm}$, height $4 \\text{ cm}$) drilled through its center. Find the total surface area.", 
-answerOptions: ("Total Surface Area: 208.57 \\text{ cm}^2", "Total Surface Area: -413.14 \\text{ cm}^2"), 
+questionText: "Calculate the surface area of a figure made up of two cubes: one with side length $4 \\text{ cm}$ and another with side length $2 \\text{ cm}$, joined at one face.", 
+answerOptions: ("$\text{Surface Area} = 104 \\text{ cm}^2$", "$\text{Surface Area} = -204 \\text{ cm}^2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
-tolerance: 0.010000101),
+tolerance: 0.10000010100000001),
 ), 
-answerOptionMatcher:("Total Surface Area: \key{a} \\text{ cm}^2"), 
+answerOptionMatcher:("$\text{Surface Area} = \key{a} \\text{ cm}^2$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

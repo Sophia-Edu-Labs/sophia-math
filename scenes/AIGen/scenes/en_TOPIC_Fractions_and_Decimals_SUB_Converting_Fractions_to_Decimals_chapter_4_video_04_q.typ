@@ -7,15 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
-// The title "Converting Fractions to Decimals" is shown on this slide
-#v(40pt)
-#only("1-")[Consider the fraction $7/8$]
-// The question is shown from slide 1 onward
-#v(40pt)
-#only("2-")[$arrow$ Convert it to a decimal $square/square$!]
-#only("1")[#voiceover("Let's test your knowledge on converting fractions to decimals. Consider the fraction seven over eight.")]
-#only("2")[#voiceover("Can you convert it into a decimal, where we divide one number by another?")]
+  #text(size: 30pt, weight: "bold")[Converting Fraction to Decimal]
+  #v(40pt)
+
+  #only("1-")[Consider the fraction: $7/8$]
+  #v(20pt)
+
+  #only("2-")[Convert this fraction to a decimal. 🔢]
+
+  #only("1")[
+    #voiceover("Let's practice converting more complex fractions to decimals. Consider the fraction seven-eighths.")
+  ]
+
+  #only("2")[
+    #voiceover("Your task is to convert this fraction, seven-eighths, into its decimal representation. Remember, we're dealing with a fraction that's not over a power of ten, so this might require some additional steps. Think about how you can approach this conversion.")
+  ]
 ]
 
 //Type: FREE 

@@ -7,15 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
-// The title "Converting Fractions to Decimals" is shown on this slide
-#v(40pt)
-#only("1-")[Consider the fraction $1/5$]
-// The fraction is shown from slide 1 onward
-#v(40pt)
-#only("2-")[$arrow$ Convert it to a decimal!]
-#only("1")[#voiceover("Let's test your knowledge on converting fractions to decimals. Consider the fraction one-fifth.")]
-#only("2")[#voiceover("Can you convert it into a decimal?")]
+  #text(size: 30pt, weight: "bold")[Converting 1/5 to a Decimal]
+  #v(40pt)
+
+  #only("1-")[Consider the fraction: $1/5$]
+  #v(20pt)
+
+  #only("2-")[Question: What is $1/5$ as a decimal? 🤔]
+
+  #only("1")[
+    #voiceover("Let's look at an interesting fraction conversion problem.")
+  ]
+
+  #only("2")[
+    #voiceover("Here's our question: What is one-fifth as a decimal? Take a moment to think about it. How would you approach this conversion?")
+  ]
 ]
 
 //Type: FREE 

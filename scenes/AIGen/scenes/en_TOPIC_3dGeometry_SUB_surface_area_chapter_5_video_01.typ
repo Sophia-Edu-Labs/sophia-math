@@ -7,138 +7,147 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Advanced Surface Area of Composite Figures]
+  #text(size: 30pt, weight: "bold")[Surface Area of Composite Figures]
   #v(40pt)
-
-  #only("1-")[
-    #align(center)[
-      #box()[
-        #morphchildren(id: "plot")[
-          #figure(
-            pyimage(
-
+  
+  #only("1-")[#align(center)[
+    #box(width: 200pt, height: 150pt)[
+      #morphchildren(id: "composite_shape")[
+        #figure(
+          pyimage(
 ```
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
 
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection='3d')
+          import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle, Circle
 
-# Cuboid
-x = [0, 4, 4, 0, 0]
-y = [0, 0, 3, 3, 0]
-z = [0, 0, 0, 0, 0]
-ax.plot(x, y, z, 'b')
-ax.plot(x, y, [2]*5, 'b')
-for i in range(4):
-    ax.plot([x[i], x[i]], [y[i], y[i]], [0, 2], 'b')
-
-# Cylinder on top
-radius = 1
-height = 2
-theta = np.linspace(0, 2*np.pi, 100)
-z = np.linspace(2, 4, 100)
-theta, z = np.meshgrid(theta, z)
-x = radius*np.cos(theta) + 2
-y = radius*np.sin(theta) + 1.5
-ax.plot_surface(x, y, z, alpha=0.5)
-
-ax.set_xlabel('Length (m)')
-ax.set_ylabel('Width (m)')
-ax.set_zlabel('Height (m)')
-ax.set_title('Composite Figure: Cuboid with Cylinder')
-
+fig, ax = plt.subplots()
+ax.add_patch(Rectangle((0, 0), 4, 3, fill=False))
+ax.add_patch(Circle((4, 1.5), 1.5, fill=False))
+ax.set_xlim(-0.5, 6)
+ax.set_ylim(-0.5, 3.5)
+ax.set_aspect('equal', adjustable='box')
+ax.axis('off')
 plt.show()
-
-```,
-            width: 360pt
-          ),
-          caption: []
+          ```,
+          width: 200pt),
         )
       ]
     ]
-  ]
-  ]
-
-  #only("2-")[
-    - Cuboid: 4m × 3m × 2m
-    - Cylinder: radius 1m, height 2m
-  ]
-
-  #only("3-")[
-    #text(size: 24pt, weight: "bold")[Question: How to calculate the total surface area? 🤔]
-  ]
-
+  ]]
+  
+  #only("2-")[- Composite figure: combination of simple shapes]
+  #v(20pt)
+  #only("3-")[- Surface area = sum of individual parts' areas]
+  #v(20pt)
+  #only("4-")[- Subtract overlapping areas]
+  
   #only("1")[
-    #voiceover("Welcome to our lesson on advanced surface area of composite figures. Imagine you're an architect designing a unique building. You might encounter structures that combine different shapes, like this one.")
+    #voiceover("Imagine you're designing a new logo for your school's robotics club. You've come up with a design that combines a rectangle and a circle. How would you calculate the surface area of this logo if you needed to paint it?")
   ]
-
+  
   #only("2")[
-    #voiceover("Here we have a composite figure consisting of a cuboid base with dimensions 4 meters by 3 meters by 2 meters, and on top of it, we have a cylinder with a radius of 1 meter and a height of 2 meters.")
+    #voiceover("This is an example of a composite figure - a shape made up of two or more simple shapes combined together.")
   ]
-
+  
   #only("3")[
-    #voiceover("Our challenge today is to calculate the total surface area of this composite figure. This might seem tricky at first, but we'll break it down step by step. Are you ready to dive in?")
+    #voiceover("To find the surface area of a composite figure, we need to add up the surface areas of all the individual parts.")
   ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Approach to Solving]
-  #v(40pt)
-
-  #only("1-")[1. Identify individual shapes 🔍]
-  #v(20pt)
-  #only("2-")[2. Calculate surface areas separately 🧮]
-  #v(20pt)
-  #only("3-")[3. Identify hidden surfaces 🙈]
-  #v(20pt)
-  #only("4-")[4. Subtract hidden areas ➖]
-  #v(20pt)
-  #only("5-")[5. Sum up visible areas ➕]
-
-  #only("1")[
-    #voiceover("Let's approach this problem systematically. First, we need to identify the individual shapes that make up our composite figure.")
-  ]
-
-  #only("2")[
-    #voiceover("Next, we'll calculate the surface areas of these shapes separately.")
-  ]
-
-  #only("3")[
-    #voiceover("Then, we need to identify any surfaces that are hidden where the shapes meet.")
-  ]
-
+  
   #only("4")[
-    #voiceover("We'll subtract these hidden areas from our calculations.")
-  ]
-
-  #only("5")[
-    #voiceover("Finally, we'll sum up all the visible areas to get our total surface area.")
+    #voiceover("However, we need to be careful. If there are any overlapping areas between the shapes, we need to subtract these to avoid counting them twice.")
   ]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Recap]
+  #text(size: 30pt, weight: "bold")[Calculating Surface Area]
   #v(40pt)
+  
+  #only("1-")[#align(center)[
+    #box(width: 200pt, height: 150pt)[
+      #morphchildren(id: "composite_shape_calc")[
+        #figure(
+          pyimage(
+```
 
-  #only("1-")[- Composite figures combine multiple shapes 🏗️]
-  #v(20pt)
-  #only("2-")[- Surface area calculation requires careful analysis 🔬]
-  #v(20pt)
-  #only("3-")[- Key steps: Identify, Calculate, Adjust, Sum ✅]
+          import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle, Circle
 
+fig, ax = plt.subplots()
+rect = Rectangle((0, 0), 4, 3, fill=False)
+circ = Circle((4, 1.5), 1.5, fill=False)
+ax.add_patch(rect)
+ax.add_patch(circ)
+ax.text(2, 1.5, "A", ha='center', va='center')
+ax.text(5, 1.5, "B", ha='center', va='center')
+ax.text(3.5, 1.5, "C", ha='center', va='center')
+ax.set_xlim(-0.5, 6)
+ax.set_ylim(-0.5, 3.5)
+ax.set_aspect('equal', adjustable='box')
+ax.axis('off')
+plt.show()
+          ```,
+          width: 200pt),
+        )
+      ]
+    ]
+  ]]
+  
+  #only("2-")[$ "Total SA" = "SA"_A + "SA"_B - "SA"_C $]
+  #v(20pt)
+  #only("3-")[A: Rectangle, B: Circle, C: Overlap]
+  #v(20pt)
+  #only("4-")[Remember: $ "SA"_"rectangle" = l w $]
+  #v(20pt)
+  #only("5-")[$ "SA"_"circle" = pi r^2 $]
+  
   #only("1")[
-    #voiceover("To recap, composite figures are structures that combine multiple shapes. In our example, we have a cuboid and a cylinder.")
+    #voiceover("Let's look at our logo example more closely. We have a rectangle, which we'll call A, and a circle, which we'll call B. The area where they overlap, we'll call C.")
   ]
-
+  
   #only("2")[
-    #voiceover("Calculating the surface area of such figures requires careful analysis. We can't simply add up the surface areas of the individual shapes.")
+    #voiceover("To find the total surface area, we add the surface area of A and B, then subtract the surface area of C. This gives us the formula: Total surface area equals surface area of A plus surface area of B minus surface area of C.")
   ]
-
+  
   #only("3")[
-    #voiceover("The key steps are to identify the shapes, calculate their individual surface areas, adjust for hidden surfaces, and then sum up the visible areas. In our next lesson, we'll work through a detailed example to put these steps into practice.")
+    #voiceover("Here, A is our rectangle, B is our circle, and C is the overlapping area.")
+  ]
+  
+  #only("4")[
+    #voiceover("Remember, the surface area of a rectangle is found by multiplying its length by its width.")
+  ]
+  
+  #only("5")[
+    #voiceover("And the surface area of a circle is pi times the radius squared.")
+  ]
+]
+
+
+#slide()[
+  #text(size: 30pt, weight: "bold")[Summary]
+  #v(40pt)
+  
+  #only("1-")[- Composite figures: combination of simple shapes]
+  #v(20pt)
+  #only("2-")[- Surface area = sum of individual parts]
+  #v(20pt)
+  #only("3-")[- Subtract overlapping areas]
+  #v(20pt)
+  #only("4-")[- Formula: $ "Total SA" = "SA"_A + "SA"_B - "SA"_C $]
+  
+  #only("1")[
+    #voiceover("To summarize, composite figures are made up of a combination of simple shapes.")
+  ]
+  
+  #only("2")[
+    #voiceover("To find their surface area, we sum up the surface areas of all the individual parts.")
+  ]
+  
+  #only("3")[
+    #voiceover("But we need to be careful to subtract any overlapping areas to avoid counting them twice.")
+  ]
+  
+  #only("4")[
+    #voiceover("This gives us our general formula: Total surface area equals the sum of individual surface areas minus any overlapping areas. Remember this principle, and you'll be able to tackle even complex composite figures!")
   ]
 ]

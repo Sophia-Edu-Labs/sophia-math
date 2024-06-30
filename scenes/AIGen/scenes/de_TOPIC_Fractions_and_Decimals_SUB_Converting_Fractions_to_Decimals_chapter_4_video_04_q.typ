@@ -1,20 +1,26 @@
 #import "../sophiatheme.typ": *
 #show: sophia-theme
-#show figure.caption: es => [
+#show figure.caption: it => [
 #set text(size: 20pt)
-#es.body
+#it.body
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
-// Der Titel "Umwandlung von Brüchen in Dezimalzahlen" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $7/8$]
-// Die Frage wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl $square/square$ um!]
-#only("1")[#voiceover("Lass uns dein Wissen über die Umwandlung von Brüchen in Dezimalzahlen testen. Betrachte den Bruch sieben Achtel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln, indem wir eine Zahl durch eine andere teilen?")]
+  #text(size: 30pt, weight: "bold")[Umwandlung von Bruch in Dezimalzahl]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $7/8$]
+  #v(20pt)
+
+  #only("2-")[Wandle diesen Bruch in eine Dezimalzahl um. 🔢]
+
+  #only("1")[
+    #voiceover("Lass uns üben, komplexere Brüche in Dezimalzahlen umzuwandeln. Betrachte den Bruch sieben Achtel.")
+  ]
+
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, sieben Achtel, in seine dezimale Darstellung umzuwandeln. Denke daran, dass wir es mit einem Bruch zu tun haben, der nicht über einer Zehnerpotenz liegt, sodass dies einige zusätzliche Schritte erfordern könnte. Überlege, wie du diese Umwandlung angehen kannst.")
+  ]
 ]
 
 //Typ: FREI 

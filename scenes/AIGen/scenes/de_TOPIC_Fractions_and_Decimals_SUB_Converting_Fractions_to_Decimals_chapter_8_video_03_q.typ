@@ -7,19 +7,24 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Komplexere Brüche in Dezimalzahlen umwandeln]
-// Der Titel "Komplexere Brüche in Dezimalzahlen umwandeln" wird auf allen Folien angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $4/25$]
-// Der Bruch $4/25$ wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl um!]
-// Die Anweisung, in eine Dezimalzahl umzuwandeln, wird ab Folie 2 angezeigt
-#only("1")[#voiceover("Lass uns dein Wissen über das Umwandeln von komplexeren Brüchen in Dezimalzahlen testen. Betrachte den Bruch vier durch fünfundzwanzig.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln?")]
+  #text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $4/25$]
+  #v(20pt)
+
+  #only("2-")[Frage: Was ist dieser Bruch als Dezimalzahl? 🤔]
+
+  #only("1")[
+    #voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Betrachte den Bruch vier durch fünfundzwanzig.")
+  ]
+
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, vier durch fünfundzwanzig, in seine Dezimalform umzuwandeln. Welche Dezimalzahl stellt dieser Bruch dar?")
+  ]
 ]
 
-//Type: FREE 
+//Typ: FREI 
 #questionDef( 
 questionText: "Was ist $\frac{4}{25}$ als Dezimalzahl?", 
 answerOptions: ("$0.16$", "Die Antwort ist falsch."),

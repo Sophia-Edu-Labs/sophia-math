@@ -20,7 +20,7 @@
 //Typ: FREI 
 #questionDef( 
 questionText: "Übung 18 (FREI): Welchem Bruch entspricht $6.789$?", 
-answerOptions: ("$\\frac{6789}{1000}$", "Die Antwort ist falsch."),
+answerOptions: ("$6789/1000$", "Die Antwort ist falsch."),
 correctAnswerIndex: 0, //immer 0 
 llmCheckDetails: ( 
 fallbackOptionIndex: 1 //immer 1 

@@ -11,7 +11,7 @@
 // Der Titel "Umwandlung von Brüchen in Dezimalzahlen" wird auf allen Folien angezeigt
 #v(40pt)
 
-#only("1-")[Was ist $\dfrac{42}{1000}$ als Dezimalzahl?]
+#only("1-")[Was ist $42/1000$ als Dezimalzahl?]
 // Die Frage wird ab Folie 1 angezeigt
 
 #only("1")[

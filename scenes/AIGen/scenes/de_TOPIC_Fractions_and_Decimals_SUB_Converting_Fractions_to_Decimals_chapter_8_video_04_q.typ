@@ -5,22 +5,22 @@
 #it.body
 ]
 
-
 #slide()[
-#text(size: 30pt, weight: "bold")[Komplexere Brüche in Dezimalzahlen umwandeln]
-// Der Titel "Komplexere Brüche in Dezimalzahlen umwandeln" wird auf allen Folien angezeigt
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Einen Bruch in eine Dezimalzahl umwandeln]
+  #v(40pt)
 
-#only("1-")[Betrachte den Bruch $7/20$]
-// Der Bruch 7/20 wird ab Folie 1 angezeigt
+  #only("1-")[Betrachte den Bruch: $7/20$]
+  #v(20pt)
 
-#v(40pt)
+  #only("2-")[Frage: Was ist dieser Bruch als Dezimalzahl? 🤔]
 
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl $square$ um!]
-// Die Anweisung, in eine Dezimalzahl umzuwandeln, wird ab Folie 2 angezeigt
+  #only("1")[
+    #voiceover("Lass uns üben, komplexere Brüche in Dezimalzahlen umzuwandeln. Betrachte den Bruch sieben Zwanzigstel.")
+  ]
 
-#only("1")[#voiceover("Lass uns dein Wissen über das Umwandeln von komplexeren Brüchen in Dezimalzahlen testen. Betrachte den Bruch sieben zwanzigstel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln?")]
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, sieben Zwanzigstel, in seine Dezimalform umzuwandeln. Überlege dir, wie du dieses Problem angehen könntest.")
+  ]
 ]
 
 //Typ: FREI 

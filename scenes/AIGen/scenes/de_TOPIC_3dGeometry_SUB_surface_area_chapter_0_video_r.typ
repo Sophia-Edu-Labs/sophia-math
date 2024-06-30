@@ -5,181 +5,134 @@
 #it.body
 ]
 
+#slide()[
+  #text(size: 30pt, weight: "bold")[Überblick: Oberfläche von Würfeln 📦]
+  #v(40pt)
+  #only("1-")[- Stell dir vor, du packst ein Geschenk ein 🎁]
+  #only("2-")[- Wie viel Geschenkpapier brauchen wir? 🤔]
+  #only("3-")[- Die Oberfläche hilft uns, das zu berechnen! 📐]
+  
+  #only("1")[
+    #voiceover("Lass uns das Konzept der Oberfläche von Würfeln wiederholen. Stell dir vor, du packst ein Geschenk ein.")
+  ]
+  #only("2")[
+    #voiceover("Wie viel Geschenkpapier würdest du brauchen, um die gesamte Box zu bedecken?")
+  ]
+  #only("3")[
+    #voiceover("Hier kommt das Konzept der Oberfläche ins Spiel. Es hilft uns, die gesamte Fläche zu berechnen, die wir bedecken müssen.")
+  ]
+]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Rückblick: Oberfläche von Würfeln 📦]
-#v(40pt)
-#only("1-")[- Stell dir vor, du verpackst ein Geschenk 🎁]
-#only("2-")[- Wie viel Geschenkpapier brauchen wir? 🤔]
-#only("3-")[- Die Oberfläche hilft uns, das zu berechnen! 📏]
-
-#only("1")[
-#voiceover("Lass uns das Konzept der Oberfläche für Würfel wiederholen. Stell dir vor, du verpackst ein Geschenk.")
+  #text(size: 30pt, weight: "bold")[Berechnung der Oberfläche]
+  #v(40pt)
+  #only("1-")[1. Bestimme die Form jeder Fläche 🔲]
+  #only("2-")[2. Berechne die Fläche einer Seite 📏]
+  #only("3-")[3. Zähle die Gesamtzahl der Flächen 🔢]
+  #only("4-")[4. Multipliziere die Fläche einer Seite mit der Anzahl der Flächen ✖️]
+  
+  #only("1")[
+    #voiceover("Lass uns Schritt für Schritt durchgehen, wie wir die Oberfläche eines Würfels berechnen. Zuerst bestimmen wir die Form jeder Fläche.")
+  ]
+  #only("2")[
+    #voiceover("Als nächstes berechnen wir die Fläche einer Seite.")
+  ]
+  #only("3")[
+    #voiceover("Dann zählen wir die Gesamtzahl der Flächen des Würfels.")
+  ]
+  #only("4")[
+    #voiceover("Schließlich multiplizieren wir die Fläche einer Seite mit der Gesamtzahl der Flächen.")
+  ]
 ]
-#only("2")[
-#voiceover("Wie würdest du bestimmen, wie viel Geschenkpapier du brauchst?")
-]
-#only("3")[
-#voiceover("Hier kommt das Konzept der Oberfläche ins Spiel!")
-]
-]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Eigenschaften eines Würfels 🧊]
-#v(40pt)
-#only("1-")[- 6 quadratische Flächen 🔲]
-#only("2-")[- Alle Seiten gleich lang 📏]
-#only("3-")[- Beispiel: Seitenlänge $s$ = 3 cm]
-
-#only("1")[
-#voiceover("Erinnern wir uns an die Eigenschaften eines Würfels. Ein Würfel hat 6 quadratische Flächen.")
-]
-#only("2")[
-#voiceover("Alle Seiten eines Würfels sind gleich lang.")
-]
-#only("3")[
-#voiceover("Zum Beispiel betrachten wir einen Würfel mit einer Seitenlänge von 3 Zentimetern.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Berechnung der Oberfläche]
-#v(40pt)
-#only("1-")[1. Fläche einer Seite: $s^2$]
-#only("2-")[2. Multipliziere mit 6 Flächen]
-#only("3-")[3. Formel: $"SA" = 6s^2$]
-
-#only("1")[
-#voiceover("Um die Oberfläche zu berechnen, finden wir zuerst die Fläche einer Seite. Die Fläche eines Quadrats ist die Seitenlänge zum Quadrat.")
-]
-#only("2")[
-#voiceover("Da ein Würfel 6 identische Flächen hat, multiplizieren wir diese Fläche mit 6.")
-]
-#only("3")[
-#voiceover("Das ergibt die Formel für die Oberfläche eines Würfels: S A gleich 6 mal s zum Quadrat, wobei s die Seitenlänge ist.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Beispielrechnung]
-#v(40pt)
-#only("1-")[Seitenlänge des Würfels: $s = 3"cm"$]
-#v(10pt)
-#only("2-")[Oberfläche: $"SA" = 6s^2$]
-#v(10pt)
-#only("3-")[$"SA" = 6 dot (3"cm")^2$]
-#v(5pt)
-#only("4-")[$"SA" = 6 dot 9"cm"^2 = 54"cm"^2$]
-
-#only("1")[
-#voiceover("Nehmen wir unseren Beispielwürfel mit einer Seitenlänge von 3 Zentimetern.")
-]
-#only("2")[
-#voiceover("Wir wenden die Formel an: Oberfläche gleich 6 mal s zum Quadrat.")
-]
-#only("3")[
-#voiceover("Setzen wir 3 Zentimeter für s ein, erhalten wir 6 mal 3 Zentimeter zum Quadrat.")
-]
-#only("4")[
-#voiceover("Das ergibt 6 mal 9 Quadratzentimeter, was uns eine Gesamtoberfläche von 54 Quadratzentimetern gibt.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Visualisierung 👁️]
-#v(20pt)
-#only("1-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
+  #text(size: 30pt, weight: "bold")[Formel für die Oberfläche]
+  #v(40pt)
+  #only("1-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 ```
 
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D, art3d
+          import matplotlib.pyplot as plt
 import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
-fig = plt.figure(figsize=(8, 6))
+fig = plt.figure(figsize=(8, 8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cube vertices
-vertices = np.array([[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
-                     [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]])
+# Cube
+r = [0, 1]
+x, y = np.meshgrid(r, r)
+one = np.ones_like(x)
+zero = np.zeros_like(x)
 
-# Cube faces
-faces = [[vertices[j] for j in [0, 1, 2, 3]],
-         [vertices[j] for j in [4, 5, 6, 7]], 
-         [vertices[j] for j in [0, 3, 7, 4]],
-         [vertices[j] for j in [1, 2, 6, 5]],
-         [vertices[j] for j in [0, 1, 5, 4]],
-         [vertices[j] for j in [2, 3, 7, 6]]]
+# Plot the six faces
+ax.plot_surface(x, y, zero, alpha=0.5, color='b')
+ax.plot_surface(x, y, one, alpha=0.5, color='b')
+ax.plot_surface(x, zero, y, alpha=0.5, color='b')
+ax.plot_surface(x, one, y, alpha=0.5, color='b')
+ax.plot_surface(zero, x, y, alpha=0.5, color='b')
+ax.plot_surface(one, x, y, alpha=0.5, color='b')
 
-ax.add_collection3d(art3d.Poly3DCollection(faces, facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
+# Label
+ax.text(0.5, 0.5, -0.1, 's', fontsize=20)
+ax.text(0.5, -0.1, 0.5, 's', fontsize=20)
+ax.text(-0.1, 0.5, 0.5, 's', fontsize=20)
 
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_zlim(0, 1)
 
-# Annotate side length
-ax.text(0.5, -0.1, -0.1, 's', fontsize=14)
+ax.set_axis_off()
 
-# Annotate one face
-ax.text(0.4, 0.4, -0.1, '$s^2$', fontsize=14)
-
-plt.title("Cube Surface Area", fontsize=16)
-ax.set_box_aspect((1,1,1))
 plt.tight_layout()
 plt.show()
-
-```,
-width: 360pt),
-caption: [Würfel mit Seitenlänge $s$],
-)
+          ```,
+          width: 360pt
+        ),
+        caption: [],
+      )
+    ]
+  ]
+  ]
+  #only("2-")[Oberfläche $ = 6s^2 $]
+  #only("3-")[Wobei $s$ die Seitenlänge ist]
+  
+  #only("1")[
+    #voiceover("Lass uns die Formel für die Oberfläche eines Würfels wiederholen. Hier ist eine visuelle Darstellung eines Würfels.")
+  ]
+  #only("2")[
+    #voiceover("Die Oberfläche eines Würfels ist gleich sechs mal s Quadrat.")
+  ]
+  #only("3")[
+    #voiceover("Wobei s die Seitenlänge des Würfels ist.")
+  ]
 ]
-]
-]
-
-#only("1")[
-#voiceover("Hier ist eine visuelle Darstellung unseres Würfels. Jede Fläche hat eine Fläche von s zum Quadrat, wobei s die Seitenlänge ist. Um die Gesamtoberfläche zu erhalten, summieren wir die Flächen aller sechs Flächen.")
-]
-
-#v(20pt)
-#only("2-")[$"Gesamtoberfläche" = 6 dot "Fläche einer Seite"$]
-
-
-#only("3-")[$"SA" = 6 dot s^2$]
-
-#only("2")[
-#voiceover("Die Gesamtoberfläche ist 6 mal die Fläche einer Seite.")
-]
-#only("3")[
-#voiceover("Das ergibt unsere Formel: Oberfläche gleich 6 mal s zum Quadrat.")
-]
-]
-
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Zusammenfassung 📝]
-#v(40pt)
-#only("1-")[- Ein Würfel hat 6 identische quadratische Flächen 🔲]
-#only("2-")[- Oberfläche = Fläche einer Seite × 6]
-#only("3-")[- Formel: $"SA" = 6s^2$]
-#only("4-")[- Beispiel: Für $s = 3"cm"$, $"SA" = 54"cm"^2$]
-
-#only("1")[
-#voiceover("Zusammenfassend hat ein Würfel 6 identische quadratische Flächen.")
-]
-#only("2")[
-#voiceover("Die Oberfläche wird berechnet, indem die Fläche einer Seite gefunden und mit 6 multipliziert wird.")
-]
-#only("3")[
-#voiceover("Das ergibt die Formel: Oberfläche gleich 6 mal s zum Quadrat, wobei s die Seitenlänge ist.")
-]
-#only("4")[
-#voiceover("Für unseren Beispielwürfel mit einer Seitenlänge von 3 Zentimetern haben wir eine Oberfläche von 54 Quadratzentimetern berechnet.")
-]
+  #text(size: 30pt, weight: "bold")[Zusammenfassung 📝]
+  #v(40pt)
+  #only("1-")[- Oberfläche: Gesamtfläche aller Flächen 📦]
+  #only("2-")[- Bei Würfeln: alle Flächen sind Quadrate ⬜]
+  #only("3-")[- Fläche einer Seite: $s^2$ 🔢]
+  #only("4-")[- Anzahl der Flächen: 6 🎲]
+  #only("5-")[- Formel: $"SA" = 6s^2$ 🧮]
+  
+  #only("1")[
+    #voiceover("Lass uns zusammenfassen, was wir besprochen haben. Die Oberfläche ist die Gesamtfläche aller Flächen eines dreidimensionalen Objekts.")
+  ]
+  #only("2")[
+    #voiceover("Bei Würfeln sind alle Flächen Quadrate.")
+  ]
+  #only("3")[
+    #voiceover("Die Fläche einer Seite ist s Quadrat, wobei s die Seitenlänge ist.")
+  ]
+  #only("4")[
+    #voiceover("Ein Würfel hat 6 Flächen.")
+  ]
+  #only("5")[
+    #voiceover("Daher lautet die Formel für die Oberfläche eines Würfels S A gleich sechs mal s Quadrat.")
+  ]
 ]

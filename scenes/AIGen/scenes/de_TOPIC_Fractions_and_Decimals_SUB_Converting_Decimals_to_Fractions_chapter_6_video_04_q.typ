@@ -19,8 +19,8 @@
 
 //Typ: FREI 
 #questionDef( 
-questionText: "Übung 14 (FREI): Welchem Bruch entspricht $0.99$?", 
-answerOptions: ("$\frac{99}{100}$", "Die Antwort ist falsch."),
+questionText: "Übung 14: Welchem Bruch entspricht $0.99$?", 
+answerOptions: ("$99/100$", "Die Antwort ist falsch."),
 correctAnswerIndex: 0, //immer 0 
 llmCheckDetails: ( 
 fallbackOptionIndex: 1 //immer 1 

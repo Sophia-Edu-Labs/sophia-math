@@ -6,23 +6,29 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
-// Der Titel "Brüche in Dezimalzahlen umwandeln" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $2/5$]
-// Die Frage wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl um!]
-#only("1")[#voiceover("Lass uns dein Wissen über das Umwandeln von Brüchen in Dezimalzahlen testen. Betrachte den Bruch zwei Fünftel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln?")]
+  #text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $2/5$]
+  #v(20pt)
+
+  #only("2-")[Frage: Was ist $2/5$ als Dezimalzahl? 🤔]
+
+  #only("1")[
+    #voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Betrachte den Bruch zwei Fünftel.")
+  ]
+
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, zwei Fünftel, in seine Dezimalform umzuwandeln. Überlege kurz, wie Du dieses Problem angehen könntest.")
+  ]
 ]
 
-//Typ: FREI 
+//Type: FREE 
 #questionDef( 
 questionText: "Was ist $\frac{2}{5}$ als Dezimalzahl?", 
 answerOptions: ("$0.4$", "Die Antwort ist falsch."),
-correctAnswerIndex: 0, //immer 0 
+correctAnswerIndex: 0, //always 0 
 llmCheckDetails: ( 
-fallbackOptionIndex: 1 //immer 1 
+fallbackOptionIndex: 1 //always 1 
 ), 
 )

@@ -7,17 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Surface Area of a Cube]
-#v(40pt)
+  #text(size: 30pt, weight: "bold")[Surface Area of a Cube]
+  #v(40pt)
 
-#only("1-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
+  #only("1-")[
+    Consider a cube with side length 4 cm:
+  ]
+
+  #only("2-")[
+    #box()[
+      #morphchildren(id: "plot")[
+        #figure(
+          pyimage(
 ```
 
-import matplotlib.pyplot as plt
+          import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(8, 8))
@@ -25,8 +29,8 @@ ax = fig.add_subplot(111, projection='3d')
 
 # Cube vertices
 vertices = [
-    [0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
-    [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]
+    [0, 0, 0], [0, 4, 0], [4, 4, 0], [4, 0, 0],
+    [0, 0, 4], [0, 4, 4], [4, 4, 4], [4, 0, 4]
 ]
 
 # Cube edges
@@ -43,52 +47,58 @@ for edge in edges:
     z = [vertices[edge[0]][2], vertices[edge[1]][2]]
     ax.plot(x, y, z, 'b')
 
-# Add label
-ax.text(0.5, 0.5, -0.1, '4 cm', ha='center', va='center')
+# Set labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
 
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_zlim(0, 1)
-ax.set_axis_off()
+# Set limits
+ax.set_xlim(0, 4)
+ax.set_ylim(0, 4)
+ax.set_zlim(0, 4)
 
-plt.tight_layout()
+# Add text for side length
+ax.text(2, -0.5, 0, '4 cm', fontsize=12)
+
+plt.title('Cube with Side Length 4 cm')
 plt.show()
+          ```,
+          width: 360pt
+        ),
+        caption: []
+      )
+    ]
+  ]]
 
-```,
-width: 300pt),
-caption: [A cube with side length 4 cm],
-)
-]
-]
-]
+  #only("3-")[
+    What is the surface area of this cube? 🤔
+  ]
 
-#v(20pt)
+  #only("1")[
+    #voiceover("Let's consider a cube with a specific side length.")
+  ]
 
-#only("2-")[
-Calculate the surface area of this cube.
-]
+  #only("2")[
+    #voiceover("Here we have a cube with a side length of 4 centimeters.")
+  ]
 
-#only("1")[
-#voiceover("Let's consider a cube with a side length of 4 centimeters.")
-]
-
-#only("2")[
-#voiceover("What is the surface area of this cube?")
-]
+  #only("3")[
+    #voiceover("Now, can you calculate the surface area of this cube?")
+  ]
 ]
 
 //Type: Numeric
 #questionDef(
 questionText: "What is the surface area of a cube with side length $4$ cm?", 
-answerOptions: ("$\\text{Surface Area} = 96 \\text{ cm}^2$", "$\\text{Surface Area} = -188 \\text{ cm}^2$"), 
+answerOptions: ("$\text{Surface Area} = 96$", "$\text{Surface Area} = -188$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
-tolerance: 0.10000010100000001),
+tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\\text{Surface Area} = \key{a} \\text{ cm}^2$"), 
+answerOptionMatcher:("$\text{Surface Area} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

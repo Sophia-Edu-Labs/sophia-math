@@ -7,72 +7,86 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Introduction to Converting Complex Fractions to Decimals]
-#v(40pt)
-#only("1-")[- Imagine you have a fraction like $3/8$.]
-#v(20pt)
-#only("2-")[- How can we convert this to a decimal number?]
-#only("1")[
-#voiceover("Imagine you have a fraction like three over eight.")]
-#only("2")[
-#voiceover("How can we convert this to a decimal number? Let's find out!")]
+  #text(size: 30pt, weight: "bold")[Converting Complex Fractions to Decimals]
+  #v(40pt)
+  
+  #only("1-")[- Not all fractions have denominators that are powers of 10 🤔]
+  #v(20pt)
+  #only("2-")[- Example: $3/8$ ➡️ How to convert?]
+  #v(20pt)
+  #only("3-")[- Solution: Multiply numerator and denominator by the same value]
+  #v(20pt)
+  #only("4-")[- Goal: Get a denominator that's a power of 10]
+
+  #only("1")[
+    #voiceover("Welcome to our lesson on converting more complex fractions to decimals. We often encounter fractions in our daily lives, but not all of them are as straightforward to convert to decimals as those with denominators that are powers of ten.")
+  ]
+  #only("2")[
+    #voiceover("Let's consider an example: How would we convert the fraction three-eighths to a decimal? It's not immediately clear, is it?")
+  ]
+  #only("3")[
+    #voiceover("The key to solving this problem is to multiply both the numerator and denominator by the same value. This doesn't change the value of the fraction, but it can make it easier to convert to a decimal.")
+  ]
+  #only("4")[
+    #voiceover("Our goal is to transform the denominator into a power of ten. Once we achieve this, we can easily convert the fraction to a decimal, just like we've done before with simpler fractions.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Complex Fractions to Decimals]
-#v(40pt)
-#only("1-")[- Step 1: Find a value to multiply both numerator and denominator by. 🔢]
-#v(20pt)
-#only("2-")[- Step 2: Multiply both numerator and denominator by this value. ✖️]
-#v(20pt)
-#only("3-")[- Step 3: Ensure the denominator is a power of ten. ➗]
-#v(20pt)
-#only("4-")[- Step 4: Convert the resulting fraction to a decimal. ➡️]
-#only("1")[
-#voiceover("To convert complex fractions to decimals, we follow these steps. First, we find a value to multiply both the numerator and the denominator by.")]
-#only("2")[
-#voiceover("Next, we multiply both the numerator and the denominator by this value.")]
-#only("3")[
-#voiceover("Then, we ensure that the denominator is a power of ten.")]
-#only("4")[
-#voiceover("Finally, we convert the resulting fraction to a decimal.")]
+  #text(size: 30pt, weight: "bold")[The Process]
+  #v(40pt)
+  
+  #only("1-")[1️⃣ Identify the fraction: $3/8$]
+  #v(20pt)
+  #only("2-")[2️⃣ Find a number to multiply by: $125$]
+  #v(20pt)
+  #only("3-")[3️⃣ Multiply both parts: $(3 dot 125)/(8 dot 125) = 375/1000$]
+  #v(20pt)
+  #only("4-")[4️⃣ Convert to decimal: $375/1000 = 0.375$]
+
+  #only("1")[
+    #voiceover("Let's walk through the process step by step. We start with our fraction, three-eighths.")
+  ]
+  #only("2")[
+    #voiceover("Next, we need to find a number that, when multiplied by 8, gives us a power of 10. In this case, that number is 125, because 8 times 125 equals 1000, which is 10 to the third power.")
+  ]
+  #only("3")[
+    #voiceover("Now, we multiply both the numerator and denominator by 125. This gives us 3 times 125 over 8 times 125, which simplifies to 375 over 1000.")
+  ]
+  #only("4")[
+    #voiceover("Finally, we can easily convert this to a decimal. 375 divided by 1000 is 0.375.")
+  ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $3/8$ to a Decimal]
-#v(40pt)
-#only("1-")[- Step 1: Multiply numerator and denominator by $125$.]
-#v(20pt)
-#only("2-")[- Step 2: $3 * 125 = 375$ and $8 * 125 = 1000$.]
-#v(20pt)
-#only("3-")[- Step 3: The fraction is now $375/1000$.]
-#v(20pt)
-#only("4-")[- Step 4: Convert to decimal: $0.375$.]
-#only("1")[
-#voiceover("Let's go through an example. To convert three over eight to a decimal, we first multiply both the numerator and the denominator by one hundred twenty-five.")]
-#only("2")[
-#voiceover("So we have three times one hundred twenty-five equals three hundred seventy-five, and eight times one hundred twenty-five equals one thousand.")]
-#only("3")[
-#voiceover("The fraction is now three hundred seventy-five over one thousand.")]
-#only("4")[
-#voiceover("Finally, we convert this fraction to a decimal, which gives us zero point three seven five.")]
-]
+  #text(size: 30pt, weight: "bold")[Summary]
+  #v(40pt)
+  
+  #only("1-")[- To convert complex fractions to decimals:]
+  #v(20pt)
+  #only("2-")[  1. Multiply numerator and denominator by same value]
+  #v(20pt)
+  #only("3-")[  2. Aim for a denominator that's a power of 10]
+  #v(20pt)
+  #only("4-")[  3. Then convert as usual]
+  #v(20pt)
+  #only("5-")[- This method works for any fraction! 🎉]
 
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Summary]
-#v(40pt)
-#only("1-")[- Multiply numerator and denominator by the same value. ✖️]
-#v(20pt)
-#only("2-")[- Ensure the denominator is a power of ten. ➗]
-#v(20pt)
-#only("3-")[- Convert the resulting fraction to a decimal. ➡️]
-#only("1")[
-#voiceover("To summarize, first multiply the numerator and the denominator by the same value.")]
-#only("2")[
-#voiceover("Then, ensure that the denominator is a power of ten.")]
-#only("3")[
-#voiceover("Finally, convert the resulting fraction to a decimal. And that's how you convert complex fractions to decimals!")]
+  #only("1")[
+    #voiceover("Let's summarize what we've learned about converting more complex fractions to decimals.")
+  ]
+  #only("2")[
+    #voiceover("First, we multiply both the numerator and denominator by the same value.")
+  ]
+  #only("3")[
+    #voiceover("Our goal is to get a denominator that's a power of ten.")
+  ]
+  #only("4")[
+    #voiceover("Once we have that, we can convert the fraction to a decimal just like we do with simpler fractions.")
+  ]
+  #only("5")[
+    #voiceover("The beauty of this method is that it works for any fraction, no matter how complex it might seem at first. With practice, you'll be able to convert fractions to decimals quickly and easily!")
+  ]
 ]

@@ -8,10 +8,10 @@
 
 #slide()[
 #only("1")[
-#voiceover("Great job! Let's go through the solution step by step together.")
+#voiceover("Great job! You've got the correct answer. Let's walk through the solution step by step to understand how we convert seven twentieths to a decimal.")
 ]
 
-#text(size: 30pt, weight: "bold")[Converting $7/20$ to a Decimal]
+#text(size: 30pt, weight: "bold")[Converting 7/20 to a Decimal]
 
 #v(40pt)
 
@@ -23,67 +23,46 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Steps to Convert Fractions to Decimals]
+#text(size: 30pt, weight: "bold")[Approach: Multiply by 5/5]
 #v(40pt)
-#only("1-")[- Step 1: Divide the numerator by the denominator. ➗]
+#only("1-")[- Multiply numerator and denominator by 5 📊]
 #v(20pt)
-#only("2-")[- Step 2: Simplify the result if necessary. ✂️]
+#only("2-")[- This doesn't change the fraction's value ✅]
 #only("1")[
-#voiceover("Before we solve the exercise, let's quickly review the steps to convert fractions to decimals. First, divide the numerator by the denominator.")
+#voiceover("Our approach will be to multiply both the numerator and denominator by 5.")
 ]
 #only("2")[
-#voiceover("Next, simplify the result if necessary.")
+#voiceover("This doesn't change the value of the fraction, as we're multiplying by 5 over 5, which equals 1.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Example: Converting $7/20$ to a Decimal]
+#text(size: 30pt, weight: "bold")[Step 1: Multiplication]
 #v(40pt)
-#only("1-")[- Step 1: ➗ Divide $7$ by $20$.]
+#only("1-")[$ 7/20 = (7 × 5)/(20 × 5) $]
 #v(20pt)
-#only("2-")[- Step 2: ✂️ Simplify the result: $0.35$.]
+#only("2-")[$ = 35/100 $]
 #only("1")[
-#voiceover("Now let's apply these steps to the fraction seven over twenty. First, we divide seven by twenty.")
+#voiceover("Let's multiply both the numerator and denominator by 5. Seven times 5 is 35, and twenty times 5 is 100.")
 ]
 #only("2")[
-#voiceover("This gives us zero point three five. And that's it, we're done! The solution is zero point three five.")
+#voiceover("So our new fraction is thirty-five over one hundred.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Visualizing the Division]
+#text(size: 30pt, weight: "bold")[Step 2: Decimal Conversion]
 #v(40pt)
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(
-```
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Data
-x = np.array([0, 1])
-y = np.array([0, 0.35])
-
-plt.plot(x, y, marker='o', color='b')
-plt.axhline(y=0.35, color='r', linestyle='--')
-plt.text(0.5, 0.36, '0.35', color='r')
-plt.title('Division of 7 by 20')
-plt.xlabel('Step')
-plt.ylabel('Value')
-plt.grid(True)
-plt.show()
-
-```,
-width: 360pt),
-)
-]
-]
+#only("1-")[$ 35/100 = 0.35 $]
+#v(20pt)
+#only("2-")[💡 The decimal point goes before the second-to-last digit]
 #only("1")[
-#voiceover("Let's visualize the division of seven by twenty. As you can see, the result is zero point three five.")
+#voiceover("Now, thirty-five over one hundred is easy to convert to a decimal. It's simply zero point three five.")
+]
+#only("2")[
+#voiceover("A helpful tip: when you have a fraction over 100, the decimal point in the answer goes before the second-to-last digit.")
 ]
 ]
 
@@ -91,18 +70,18 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Summary]
 #v(40pt)
-#only("1-")[- We started with the fraction $7/20$. 📜]
+#only("1-")[- We started with $7/20$ 📊]
 #v(20pt)
-#only("2-")[- We divided $7$ by $20$. ➗]
+#only("2-")[- Multiplied by $5/5$ to get $35/100$ ✖️]
 #v(20pt)
-#only("3-")[- The result is $0.35$. 🎉]
+#only("3-")[- Converted to decimal: $0.35$ 🎉]
 #only("1")[
-#voiceover("To summarize, we started with the fraction seven over twenty.")
+#voiceover("To summarize, we started with seven twentieths.")
 ]
 #only("2")[
-#voiceover("We divided seven by twenty.")
+#voiceover("We multiplied both the numerator and denominator by 5 to get thirty-five hundredths.")
 ]
 #only("3")[
-#voiceover("The result is zero point three five. Well done!")
+#voiceover("Finally, we converted this to the decimal zero point three five. Well done on solving this problem!")
 ]
 ]

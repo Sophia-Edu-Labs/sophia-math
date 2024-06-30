@@ -7,16 +7,21 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting More Complex Fractions to Decimals]
-// The title "Converting More Complex Fractions to Decimals" is shown on all slides
-#v(40pt)
-#only("1-")[Consider the fraction $4/25$]
-// The fraction $4/25$ is shown from slide 1 onward
-#v(40pt)
-#only("2-")[$arrow$ Convert it to a decimal!]
-// The instruction to convert to a decimal is shown from slide 2 onward
-#only("1")[#voiceover("Let's test your knowledge on converting more complex fractions to decimals. Consider the fraction four over twenty-five.")]
-#only("2")[#voiceover("Can you convert it into a decimal?")]
+  #text(size: 30pt, weight: "bold")[Converting Fractions to Decimals]
+  #v(40pt)
+
+  #only("1-")[Consider the fraction: $4/25$]
+  #v(20pt)
+
+  #only("2-")[Question: What is this fraction as a decimal? 🤔]
+
+  #only("1")[
+    #voiceover("Let's practice converting fractions to decimals. Consider the fraction four over twenty-five.")
+  ]
+
+  #only("2")[
+    #voiceover("Your task is to convert this fraction, four over twenty-five, into its decimal form. What decimal number does this fraction represent?")
+  ]
 ]
 
 //Type: FREE 

@@ -19,7 +19,7 @@
 //Typ: FREI 
 #questionDef( 
 questionText: "In welchen Bruch lässt sich $3.042$ umwandeln?", 
-answerOptions: ("$\\frac{3042}{1000}$", "Die Antwort ist falsch."),
+answerOptions: ("$3042/1000$", "Die Antwort ist falsch."),
 correctAnswerIndex: 0, //immer 0 
 llmCheckDetails: ( 
 fallbackOptionIndex: 1 //immer 1 

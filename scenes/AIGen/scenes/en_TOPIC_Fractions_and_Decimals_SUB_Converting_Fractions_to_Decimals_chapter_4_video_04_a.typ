@@ -7,69 +7,81 @@
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Converting More Complex Fractions to Decimals]
-#v(40pt)
 #only("1")[
-#voiceover("Great job on attempting the question! Let's go through the solution step by step together.")
+#voiceover("Excellent work! You've got the correct answer. Let's walk through the solution step-by-step to understand how we convert seven-eighths to a decimal.")
+]
+
+#text(size: 30pt, weight: "bold")[Converting 7/8 to a Decimal]
+
+#v(40pt)
+
+#only("2-")[#text()[$7/8$]]
+#only("2")[
+#voiceover("We start with the fraction seven-eighths.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Understanding the Fraction]
+#text(size: 30pt, weight: "bold")[Strategy: Multiply by 125/125]
 #v(40pt)
-#only("1-")[- Fraction: $7/8$]
-#only("1")[
-#voiceover("We start with the fraction seven divided by eight.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Step 1: Division]
-#v(40pt)
-#only("1-")[- Perform the division $7 ÷ 8$]
-#only("1")[
-#voiceover("To convert the fraction to a decimal, we need to perform the division seven divided by eight.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Performing the Division]
-#v(40pt)
-#only("1-")[- $7 ÷ 8 = 0.875$]
-#only("1")[
-#voiceover("When we divide seven by eight, we get zero point eight seven five.")
-]
-]
-
-
-#slide()[
-#text(size: 30pt, weight: "bold")[Step-by-Step Division]
-#v(40pt)
-#only("1-")[- Step 1: $7 ÷ 8 = 0.875$]
+#only("1-")[- Multiply numerator and denominator by 125 ✖️]
 #v(20pt)
-#only("2-")[- Step 2: $7 ÷ 8 = 0.875$]
-#v(20pt)
-#only("3-")[- Step 3: $7 ÷ 8 = 0.875$]
+#only("2-")[- This makes the denominator 1000 🎯]
 #only("1")[
-#voiceover("Let's break down the division step by step. First, we see that seven divided by eight is zero point eight seven five.")
+#voiceover("Our strategy is to multiply both the numerator and denominator by 125. Why 125? Because 125 times 8 equals 1000, which will give us a fraction over 1000.")
 ]
 #only("2")[
-#voiceover("Next, we confirm that seven divided by eight is indeed zero point eight seven five.")
-]
-#only("3")[
-#voiceover("Finally, we verify that seven divided by eight equals zero point eight seven five.")
+#voiceover("This is useful because a fraction over 1000 is easy to convert to a decimal - we just need to move the decimal point three places to the left.")
 ]
 ]
 
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Conclusion]
+#text(size: 30pt, weight: "bold")[Step 1: Multiply by 125/125]
 #v(40pt)
-#only("1-")[- $7/8$ as a decimal is $0.875$]
+#only("1-")[$7/8 = (7 dot 125)/(8 dot 125)$]
+#v(20pt)
+#only("2-")[$= 875/1000$]
 #only("1")[
-#voiceover("In conclusion, the fraction seven divided by eight as a decimal is zero point eight seven five. Well done!")
+#voiceover("Let's multiply our fraction by 125 over 125. This doesn't change the value of the fraction because we're multiplying by 1.")
+]
+#only("2")[
+#voiceover("Seven times 125 is 875, and 8 times 125 is 1000. So our new fraction is 875 over 1000.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Step 2: Convert to Decimal]
+#v(40pt)
+#only("1-")[$875/1000 = 0.875$]
+#v(20pt)
+#only("2-")[Move decimal point 3 places left ⬅️]
+#only("1")[
+#voiceover("Now we have 875 over 1000. To convert this to a decimal, we simply move the decimal point three places to the left.")
+]
+#only("2")[
+#voiceover("This gives us 0.875.")
+]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Summary]
+#v(40pt)
+#only("1-")[- We started with $7/8$ 📜]
+#v(20pt)
+#only("2-")[- We multiplied by $125/125$ ✖️]
+#v(20pt)
+#only("3-")[- We got $875/1000 = 0.875$ 🎉]
+#only("1")[
+#voiceover("To summarize, we started with the fraction seven-eighths.")
+]
+#only("2")[
+#voiceover("We multiplied both the numerator and denominator by 125 to get 875 over 1000.")
+]
+#only("3")[
+#voiceover("Finally, we converted 875 over 1000 to the decimal 0.875. And that's our final answer! Well done!")
 ]
 ]

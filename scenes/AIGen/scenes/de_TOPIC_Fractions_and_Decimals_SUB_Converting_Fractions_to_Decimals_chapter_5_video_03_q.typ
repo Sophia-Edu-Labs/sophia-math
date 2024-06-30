@@ -6,18 +6,24 @@
 ]
 
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
-// Der Titel "Umwandlung von Brüchen in Dezimalzahlen" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $3/5$]
-// Die Frage wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Wandle ihn in eine Dezimalzahl $square$ um!]
-#only("1")[#voiceover("Lass uns dein Wissen über die Umwandlung von Brüchen in Dezimalzahlen testen. Betrachte den Bruch drei Fünftel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln?")]
+  #text(size: 30pt, weight: "bold")[Umwandlung von $3/5$ in eine Dezimalzahl]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $3/5$]
+  #v(20pt)
+
+  #only("2-")[Aufgabe: Wandle diesen Bruch in eine Dezimalzahl um 🔢]
+
+  #only("1")[
+    #voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Wir konzentrieren uns auf den Bruch drei Fünftel.")
+  ]
+
+  #only("2")[
+    #voiceover("Deine Aufgabe ist es, diesen Bruch, drei Fünftel, in seine äquivalente Dezimalzahl umzuwandeln. Überlege, welche Schritte Du unternehmen würdest, um diese Umwandlung durchzuführen.")
+  ]
 ]
 
-//Type: FREE 
+//Typ: FREI 
 #questionDef( 
 questionText: "Was ist $\frac{3}{5}$ als Dezimalzahl?", 
 answerOptions: ("$0.6$", "Die Antwort ist falsch."),

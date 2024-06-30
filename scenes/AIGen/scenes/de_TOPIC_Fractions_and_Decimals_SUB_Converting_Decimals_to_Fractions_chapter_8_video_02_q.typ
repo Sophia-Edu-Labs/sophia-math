@@ -20,7 +20,7 @@
 //Typ: FREI 
 #questionDef( 
 questionText: "Welchem Bruch entspricht $2.345$?", 
-answerOptions: ("$\\frac{2345}{1000}$", "Die Antwort ist falsch."),
+answerOptions: ("$2345/1000$", "Die Antwort ist falsch."),
 correctAnswerIndex: 0, //immer 0 
 llmCheckDetails: ( 
 fallbackOptionIndex: 1 //immer 1 

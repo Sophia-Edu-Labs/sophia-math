@@ -7,202 +7,143 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Oberfläche zusammengesetzter Figuren]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Oberfläche zusammengesetzter Figuren]
+#v(40pt)
+Wie berechnet man die Oberfläche einer zusammengesetzten Figur?
+#v(40pt)
+#only("-1")[a) Alle Dimensionen multiplizieren]#only("2-")[#text(fill:red)[a) Alle Dimensionen multiplizieren]]
+#v(10pt)
+#only("-2")[b) Die Volumen der einzelnen Teile addieren]#only("3-")[#text(fill:red)[b) Die Volumen der einzelnen Teile addieren]]
+#v(10pt)
+#only("-3")[c) Die Oberflächen der einzelnen Teile addieren und die überlappenden Bereiche subtrahieren]#only("4-")[#text(fill:green)[c) Die Oberflächen der einzelnen Teile addieren und die überlappenden Bereiche subtrahieren]]
+#v(10pt)
+#only("-4")[d) Die kleinere Figur von der größeren subtrahieren]#only("5-")[#text(fill:red)[d) Die kleinere Figur von der größeren subtrahieren]]
 
-#only("1-")[
-#align(center)[
+#only("1")[#voiceover("Leider war das nicht die richtige Antwort. Lass uns jede Option durchgehen, um zu verstehen, warum c die richtige Wahl ist.")]
+#only("2")[#voiceover("Option a, alle Dimensionen multiplizieren, ist falsch. Das würde uns ein Volumen und keine Oberfläche geben.")]
+#only("3")[#voiceover("Option b, die Volumen der einzelnen Teile addieren, ist ebenfalls falsch. Wir suchen die Oberfläche, nicht das Volumen.")]
+#only("4")[#voiceover("Option c ist richtig! Um die Oberfläche einer zusammengesetzten Figur zu finden, addieren wir die Oberflächen der einzelnen Teile und subtrahieren die überlappenden Bereiche.")]
+#only("5")[#voiceover("Option d, die kleinere Figur von der größeren subtrahieren, ist falsch. Diese Methode berücksichtigt nicht alle Oberflächen und würde uns nicht die gesamte Oberfläche geben.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Verständnis zusammengesetzter Figuren]
+#v(40pt)
+#only("1-")[- Zusammengesetzte Figuren = bestehen aus mehreren Grundformen 🧩]
+#v(20pt)
+#only("2-")[- Beispiel: Zylinder auf einem Würfel 🎩]
+#v(20pt)
+#only("3-")[- Jede Teilform trägt zur Gesamtoberfläche bei 📊]
+
+#only("1")[#voiceover("Lass uns zunächst verstehen, was zusammengesetzte Figuren sind. Zusammengesetzte Figuren sind Formen, die aus mehreren Grundformen zusammengesetzt sind.")]
+#only("2")[#voiceover("Zum Beispiel, stell dir einen Zylinder vor, der auf einem Würfel sitzt. Das ist eine zusammengesetzte Figur.")]
+#only("3")[#voiceover("Jede Teilform dieser zusammengesetzten Figur - der Zylinder und der Würfel - trägt zur Gesamtoberfläche bei.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Ansatz]
+#v(40pt)
+#only("1-")[1️⃣ Einzelne Formen identifizieren]
+#v(20pt)
+#only("2-")[2️⃣ Oberfläche jeder Form berechnen]
+#v(20pt)
+#only("3-")[3️⃣ Überlappende Bereiche identifizieren]
+#v(20pt)
+#only("4-")[4️⃣ Überlappende Bereiche subtrahieren]
+#v(20pt)
+#only("5-")[5️⃣ Verbleibende Oberflächen addieren]
+
+#only("1")[#voiceover("Nun lass uns den Prozess zur Berechnung der Oberfläche einer zusammengesetzten Figur aufschlüsseln. Zuerst müssen wir die einzelnen Formen identifizieren, die unsere zusammengesetzte Figur bilden.")]
+#only("2")[#voiceover("Als nächstes berechnen wir die Oberfläche jeder einzelnen Form.")]
+#only("3")[#voiceover("Dann identifizieren wir die Bereiche, in denen sich diese Formen überlappen.")]
+#only("4")[#voiceover("Wir subtrahieren diese überlappenden Bereiche, um eine doppelte Zählung zu vermeiden.")]
+#only("5")[#voiceover("Schließlich addieren wir alle verbleibenden Oberflächen, um unsere Gesamtoberfläche zu erhalten.")]
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Beispiel: Zylinder auf einem Würfel]
+#v(40pt)
 #box()[
 #morphchildren(id: "plot")[
 #figure(
 pyimage(
 ```
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-fig = plt.figure(figsize=(8, 6))
+fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Cuboid
-x = [0, 6, 6, 0, 0]
-y = [0, 0, 4, 4, 0]
-z = [0, 0, 0, 0, 0]
-ax.plot(x, y, z, 'b')
-ax.plot(x, y, [3]*5, 'b')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [0, 3], 'b')
+# Cube
+r = [0, 2]
+for s, e in zip(np.array(list(zip(r, r, r))), np.array(list(zip(r[::-1], r[::-1], r[::-1])))):
+    ax.plot3D(*zip(s, e), color="b")
 
-# Cube on top
-x = [1.5, 4.5, 4.5, 1.5, 1.5]
-y = [0.5, 0.5, 3.5, 3.5, 0.5]
-z = [3, 3, 3, 3, 3]
-ax.plot(x, y, z, 'r')
-ax.plot(x, y, [6]*5, 'r')
-for i in range(4):
-  ax.plot([x[i], x[i]], [y[i], y[i]], [3, 6], 'r')
+# Cylinder
+x = np.linspace(0, 2, 100)
+z = np.linspace(2, 4, 100)
+Xc, Zc = np.meshgrid(x, z)
+Yc = np.sqrt(1 - (Xc-1)**2)
 
-ax.set_xlabel('Length (cm)')
-ax.set_ylabel('Width (cm)')
-ax.set_zlabel('Height (cm)')
-ax.set_title('Composite Figure: Cuboid with Cube on Top')
+ax.plot_surface(Xc, Yc+1, Zc, alpha=0.5)
+ax.plot_surface(Xc, -Yc+1, Zc, alpha=0.5)
+
+ax.set_xlim(0, 2)
+ax.set_ylim(0, 2)
+ax.set_zlim(0, 4)
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Cylinder on a Cube')
 
 plt.show()
+
 ```,
-width: 360pt
-),
-caption: []
+width: 360pt),
 )
 ]
 ]
-]
-]
 
-  #only("2-")[
-    - Quader: 6 cm × 4 cm × 3 cm
-    - Würfel: 3 cm Kantenlänge
-  ]
-
-  #only("1")[
-    #voiceover("Keine Sorge, das war ein guter Versuch! Lass uns die Lösung Schritt für Schritt durchgehen. Wir haben eine zusammengesetzte Figur, die aus zwei Teilen besteht.")
-  ]
-
-  #only("2")[
-    #voiceover("Zuerst haben wir einen Quader mit den Maßen 6 Zentimeter mal 4 Zentimeter mal 3 Zentimeter. Oben drauf befindet sich ein Würfel mit einer Kantenlänge von 3 Zentimetern.")
-  ]
+#only("1")[#voiceover("Betrachten wir ein Beispiel: ein Zylinder, der auf einem Würfel sitzt. Hier ist eine visuelle Darstellung unserer zusammengesetzten Figur.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 1: Oberfläche des Quaders]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Berechnung der Oberfläche]
+#v(40pt)
+#only("1-")[1. Oberfläche des Würfels: $"SA"_"cube" = 6s^2$]
+#v(20pt)
+#only("2-")[2. Oberfläche des Zylinders: $"SA"_"cylinder" = 2pi r^2 + 2pi r h$]
+#v(20pt)
+#only("3-")[3. Überlappender Bereich: $"SA"_"overlap" = pi r^2$]
+#v(20pt)
+#only("4-")[4. Gesamtoberfläche: $"SA"_"total" = "SA"_"cube" + "SA"_"cylinder" - "SA"_"overlap"$]
 
-  #only("1-")[
-    Oberfläche = 2(Länge × Breite + Länge × Höhe + Breite × Höhe)
-  ]
-
-  #only("2-")[
-    $"SA"_"cuboid" = 2(6 × 4 + 6 × 3 + 4 × 3)$
-  ]
-
-  #only("3-")[
-    $"SA"_"cuboid" = 2(24 + 18 + 12)$
-  ]
-
-  #only("4-")[
-    $"SA"_"cuboid" = 2(54) = 108 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Lass uns mit der Berechnung der Oberfläche des Quaders beginnen. Die Formel für die Oberfläche eines Quaders ist das Doppelte der Summe der Flächen aller Seiten.")
-  ]
-
-  #only("2")[
-    #voiceover("Wenn wir unsere Werte einsetzen, erhalten wir 2 mal die Summe von 6 mal 4, 6 mal 3 und 4 mal 3.")
-  ]
-
-  #only("3")[
-    #voiceover("Vereinfacht ergibt das 2 mal die Summe von 24, 18 und 12.")
-  ]
-
-  #only("4")[
-    #voiceover("Das ergibt 2 mal 54, was 108 Quadratzentimeter entspricht.")
-  ]
+#only("1")[#voiceover("Lass uns die Oberfläche Schritt für Schritt berechnen. Zuerst berechnen wir die Oberfläche des Würfels. Sie wird durch sechs mal das Quadrat seiner Seitenlänge gegeben.")]
+#only("2")[#voiceover("Als nächstes berechnen wir die Oberfläche des Zylinders. Sie ist die Summe der Flächen seiner beiden kreisförmigen Basen und seiner gekrümmten Oberfläche.")]
+#only("3")[#voiceover("Nun identifizieren wir den überlappenden Bereich. Das ist der Boden des Zylinders, der ein Kreis ist.")]
+#only("4")[#voiceover("Schließlich addieren wir die Oberflächen des Würfels und des Zylinders und subtrahieren den überlappenden Bereich, um unsere Gesamtoberfläche zu erhalten.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 2: Oberfläche des Würfels]
-  #v(40pt)
+#text(size: 30pt, weight: "bold")[Wichtige Erkenntnisse]
+#v(40pt)
+#only("1-")[- Zerlege zusammengesetzte Figuren in Grundformen 🧩]
+#v(20pt)
+#only("2-")[- Berechne die Oberfläche jeder Form separat 🧮]
+#v(20pt)
+#only("3-")[- Denke daran, überlappende Bereiche zu subtrahieren ➖]
+#v(20pt)
+#only("4-")[- Übe mit verschiedenen Kombinationen von Formen 🏋️]
 
-  #only("1-")[
-    Oberfläche = 6 × Kantenlänge zum Quadrat
-  ]
-
-  #only("2-")[
-    $"SA"_"cube" = 6 × 3^2$
-  ]
-
-  #only("3-")[
-    $"SA"_"cube" = 6 × 9 = 54 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Nun berechnen wir die Oberfläche des Würfels. Die Formel für die Oberfläche eines Würfels ist 6 mal das Quadrat seiner Kantenlänge.")
-  ]
-
-  #only("2")[
-    #voiceover("Mit einer Kantenlänge von 3 Zentimetern haben wir 6 mal 3 zum Quadrat.")
-  ]
-
-  #only("3")[
-    #voiceover("Das ergibt 6 mal 9, was 54 Quadratzentimeter entspricht.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 3: Anpassung für gemeinsame Fläche]
-  #v(40pt)
-
-  #only("1-")[
-    - Unterseite des Würfels = Oberseite des Quaders
-    - Fläche der gemeinsamen Seite = 3 cm × 3 cm = 9 cm²
-  ]
-
-  #only("2-")[
-    Anpassung = -9 cm²
-  ]
-
-  #only("1")[
-    #voiceover("Wir müssen jedoch vorsichtig sein. Die Unterseite des Würfels ist die gleiche wie die Oberseite des Quaders, wo sie sich treffen. Wir haben diese Fläche in unseren Berechnungen doppelt gezählt.")
-  ]
-
-  #only("2")[
-    #voiceover("Diese gemeinsame Fläche hat eine Fläche von 3 mal 3, was 9 Quadratzentimeter entspricht. Wir müssen diese einmal von unserer Gesamtsumme abziehen, um eine Doppelzählung zu vermeiden.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 4: Gesamte Oberfläche]
-  #v(40pt)
-
-  #only("1-")[
-    Gesamte Oberfläche = SA_cuboid + SA_cube - gemeinsame Fläche
-  ]
-
-  #only("2-")[
-    $"Total SA" = 108 "cm"^2 + 54 "cm"^2 - 9 "cm"^2$
-  ]
-
-  #only("3-")[
-    $"Total SA" = 153 "cm"^2$
-  ]
-
-  #only("1")[
-    #voiceover("Nun fassen wir alles zusammen. Die gesamte Oberfläche ist die Summe der Oberflächen des Quaders und des Würfels, minus der Fläche der gemeinsamen Seite.")
-  ]
-
-  #only("2")[
-    #voiceover("Wenn wir unsere Werte einsetzen, haben wir 108 Quadratzentimeter plus 54 Quadratzentimeter, minus 9 Quadratzentimeter.")
-  ]
-
-  #only("3")[
-    #voiceover("Das ergibt eine gesamte Oberfläche von 153 Quadratzentimetern.")
-  ]
-]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Endgültige Antwort]
-  #v(40pt)
-
-  #only("1-")[
-    Die gesamte Oberfläche der zusammengesetzten Figur beträgt 153 cm².
-  ]
-
-  #only("1")[
-    #voiceover("Die endgültige Antwort lautet also, dass die gesamte Oberfläche unserer zusammengesetzten Figur 153 Quadratzentimeter beträgt. Großartige Arbeit bei der Lösung dieses Problems! Denke daran, bei zusammengesetzten Figuren zu berücksichtigen, wie die einzelnen Formen interagieren, und vermeide die doppelte Zählung gemeinsamer Flächen.")
-  ]
+#only("1")[#voiceover("Zusammenfassend: Wenn Du mit zusammengesetzten Figuren arbeitest, beginne immer damit, sie in Grundformen zu zerlegen.")]
+#only("2")[#voiceover("Berechne die Oberfläche jeder Form separat mit den entsprechenden Formeln.")]
+#only("3")[#voiceover("Vergiss nicht, überlappende Bereiche zu identifizieren und zu subtrahieren, um eine doppelte Zählung zu vermeiden.")]
+#only("4")[#voiceover("Je mehr Du mit verschiedenen Kombinationen von Formen übst, desto besser wirst Du darin, die Oberflächen zusammengesetzter Figuren zu berechnen. Mach weiter so!")]
 ]

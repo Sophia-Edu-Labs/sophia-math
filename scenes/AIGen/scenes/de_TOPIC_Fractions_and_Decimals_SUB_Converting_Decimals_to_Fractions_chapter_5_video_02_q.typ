@@ -20,7 +20,7 @@
 //Typ: FREI 
 #questionDef( 
 questionText: "Welchem Bruch entspricht $0.8$?", 
-answerOptions: ("$\frac{8}{10}$", "Die Antwort ist falsch."),
+answerOptions: ("$8/10$", "Die Antwort ist falsch."),
 correctAnswerIndex: 0, //immer 0 
 llmCheckDetails: ( 
 fallbackOptionIndex: 1 //immer 1 

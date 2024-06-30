@@ -5,25 +5,30 @@
 #it.body
 ]
 
-
 #slide()[
-#text(size: 30pt, weight: "bold")[Umwandlung von Brüchen in Dezimalzahlen]
-// Der Titel "Umwandlung von Brüchen in Dezimalzahlen" wird auf dieser Folie angezeigt
-#v(40pt)
-#only("1-")[Betrachte den Bruch $1/4$]
-// Die Frage wird ab Folie 1 angezeigt
-#v(40pt)
-#only("2-")[$arrow$ Was ist das als Dezimalzahl?]
-#only("1")[#voiceover("Lass uns dein Wissen über die Umwandlung von Brüchen in Dezimalzahlen testen. Betrachte den Bruch ein Viertel.")]
-#only("2")[#voiceover("Kannst du ihn in eine Dezimalzahl umwandeln?")]
+  #text(size: 30pt, weight: "bold")[Brüche in Dezimalzahlen umwandeln]
+  #v(40pt)
+
+  #only("1-")[Betrachte den Bruch: $1/4$]
+  #v(20pt)
+
+  #only("2-")[Wandle diesen Bruch in eine Dezimalzahl um. 🔢]
+
+  #only("1")[
+    #voiceover("Lass uns üben, Brüche in Dezimalzahlen umzuwandeln. Wir konzentrieren uns auf ein konkretes Beispiel.")
+  ]
+
+  #only("2")[
+    #voiceover("Hier ist deine Aufgabe: Wandle ein Viertel in eine Dezimalzahl um. Überlege, wie du dieses Problem angehen würdest.")
+  ]
 ]
 
-//Typ: FREI 
+//Type: FREE 
 #questionDef( 
 questionText: "Was ist $\frac{1}{4}$ als Dezimalzahl?", 
 answerOptions: ("$0.25$", "Die Antwort ist falsch."),
-correctAnswerIndex: 0, //immer 0 
+correctAnswerIndex: 0, //always 0 
 llmCheckDetails: ( 
-fallbackOptionIndex: 1 //immer 1 
+fallbackOptionIndex: 1 //always 1 
 ), 
 )
