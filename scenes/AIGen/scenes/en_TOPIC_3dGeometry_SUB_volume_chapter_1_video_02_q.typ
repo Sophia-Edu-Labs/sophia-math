@@ -95,7 +95,7 @@ plt.show()
 //Type: Numeric
 #questionDef(
 questionText: "What is the volume of a cube with side length $5.5$ cm?", 
-answerOptions: ("$\text{Volume} = 166.375$", "$\text{Volume} = -328.75$"), 
+answerOptions: ("$\\text{Volume} = 166.375$", "$\\text{Volume} = -328.75$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -103,7 +103,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Volume} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Volume} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

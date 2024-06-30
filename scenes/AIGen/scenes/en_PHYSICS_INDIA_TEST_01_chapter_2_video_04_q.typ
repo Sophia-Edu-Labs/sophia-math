@@ -40,7 +40,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "Calculate the total charge of free electrons in $3 	ext{ mm}^3$ of a conductor with $500$ free electrons per cubic millimeter. (Use $1.6 	imes 10^{-4} 	ext{ C}$ as the charge of $1$ million electrons)", 
-answerOptions: ("$\text{Total charge} = 0.00024 \\text{ C}$", "$\text{Total charge} = 3.99952 \\text{ C}$"), 
+answerOptions: ("$\\text{Total charge} = 0.00024 \\text{ C}$", "$\\text{Total charge} = 3.99952 \\text{ C}$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -48,7 +48,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Total charge} = \key{a} \\text{ C}$"), 
+answerOptionMatcher:("$\\text{Total charge} = \key{a} \\text{ C}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

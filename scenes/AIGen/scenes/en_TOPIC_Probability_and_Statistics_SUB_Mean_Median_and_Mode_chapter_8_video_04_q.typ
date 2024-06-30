@@ -49,7 +49,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the median of the set $(33, 47, 35, 41, 45, 43, 37, 39)$?", 
-answerOptions: ("$\text{Median} = 40$", "$\text{Median} = -76$"), 
+answerOptions: ("$\\text{Median} = 40$", "$\\text{Median} = -76$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -57,7 +57,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Median} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Median} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

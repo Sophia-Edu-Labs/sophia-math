@@ -30,7 +30,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the mode of the set $(3, 3, 6, 6, 9, 9)$?", 
-answerOptions: ("$\text{Mode} = 3$", "$\text{Mode} = -2$"), 
+answerOptions: ("$\\text{Mode} = 3$", "$\\text{Mode} = -2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -38,7 +38,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Mode} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mode} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

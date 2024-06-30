@@ -25,7 +25,7 @@ Consider the set: $ (11, 21, 13, 17, 19, 15, 23) $
 //Type: Numeric
 #questionDef(
 questionText: "What is the median of the set $(11, 21, 13, 17, 19, 15, 23)$?", 
-answerOptions: ("$\text{Median} = 17$", "$\text{Median} = -30$"), 
+answerOptions: ("$\\text{Median} = 17$", "$\\text{Median} = -30$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -33,7 +33,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Median} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Median} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

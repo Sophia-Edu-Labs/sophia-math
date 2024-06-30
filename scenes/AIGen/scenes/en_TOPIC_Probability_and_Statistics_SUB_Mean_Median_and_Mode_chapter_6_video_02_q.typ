@@ -33,7 +33,7 @@ Consider the set $ (5, 10, 15, 20, 25) $
 //Type: Numeric
 #questionDef(
 questionText: "What is the mean of the set $(5, 10, 15, 20, 25)$?", 
-answerOptions: ("$\text{Mean} = 15$", "$\text{Mean} = -26$"), 
+answerOptions: ("$\\text{Mean} = 15$", "$\\text{Mean} = -26$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -41,7 +41,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Mean} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mean} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

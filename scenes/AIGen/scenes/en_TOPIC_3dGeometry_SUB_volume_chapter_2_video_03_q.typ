@@ -102,7 +102,7 @@ plt.show()
 //Type: Numeric
 #questionDef(
 questionText: "What is the volume of a cuboid with length $5$ cm, width $3$ cm, and height $4$ cm?", 
-answerOptions: ("$\text{Volume} = 60$", "$\text{Volume} = -116$"), 
+answerOptions: ("$\\text{Volume} = 60$", "$\\text{Volume} = -116$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -110,7 +110,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Volume} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Volume} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

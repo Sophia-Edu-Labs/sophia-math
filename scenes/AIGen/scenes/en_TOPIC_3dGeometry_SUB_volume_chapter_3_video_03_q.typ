@@ -97,7 +97,7 @@ plt.show()
 //Type: Numeric
 #questionDef(
 questionText: "Calculate the volume of a cuboid with dimensions $10 	ext{ m} 	imes 4 	ext{ m} 	imes 3 	ext{ m}$.", 
-answerOptions: ("$\text{Volume} = 120 	ext{ m}^3$", "$\text{Volume} = -236 	ext{ m}^3$"), 
+answerOptions: ("$\\text{Volume} = 120 	ext{ m}^3$", "$\\text{Volume} = -236 	ext{ m}^3$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -105,7 +105,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Volume} = \key{a} 	ext{ m}^3$"), 
+answerOptionMatcher:("$\\text{Volume} = \key{a} 	ext{ m}^3$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

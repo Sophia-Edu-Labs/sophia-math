@@ -32,7 +32,7 @@ What is the mode of this set?
 //Type: Numeric
 #questionDef(
 questionText: "What is the mode of the set $(20, 10, 30, 10, 40, 20, 30)$?", 
-answerOptions: ("$\text{Mode} = 10$", "$\text{Mode} = -16$"), 
+answerOptions: ("$\\text{Mode} = 10$", "$\\text{Mode} = -16$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Mode} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mode} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

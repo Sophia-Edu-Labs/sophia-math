@@ -32,7 +32,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the median of the set $(7, 3, 9, 1, 5, 2)$?", 
-answerOptions: ("$\text{Median} = 4$", "$\text{Median} = -4$"), 
+answerOptions: ("$\\text{Median} = 4$", "$\\text{Median} = -4$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Median} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Median} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

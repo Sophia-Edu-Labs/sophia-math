@@ -28,7 +28,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the median of the set $(10, 6, 4, 8, 12, 2)$?", 
-answerOptions: ("$\text{Median} = 7$", "$\text{Median} = -10$"), 
+answerOptions: ("$\\text{Median} = 7$", "$\\text{Median} = -10$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -36,7 +36,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Median} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Median} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

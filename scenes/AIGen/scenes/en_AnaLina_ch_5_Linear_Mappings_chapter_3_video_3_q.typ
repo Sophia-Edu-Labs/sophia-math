@@ -22,7 +22,7 @@
 ]
 ]#questionDef(
 questionText: "Given $T: \mathbb{R}^2 \\rightarrow \mathbb{R}^2$ defined by $T\left(\begin{pmatrix} x \\\\ y \end{pmatrix}\\right) = \begin{pmatrix} x + y \\\\ x - y \end{pmatrix}$, find the image of $T$.",
-answerOptions: ("The image is the set of all vectors $\begin{pmatrix} a \\\\ b \end{pmatrix}$ such that $a + b = 0$, i.e., $\text{im}(T) = \left\{\begin{pmatrix} a \\\\ b \end{pmatrix} \mid a + b = 0\\right\}$.", "The answer is incorrect."),
+answerOptions: ("The image is the set of all vectors $\begin{pmatrix} a \\\\ b \end{pmatrix}$ such that $a + b = 0$, i.e., $\\text{im}(T) = \left\{\begin{pmatrix} a \\\\ b \end{pmatrix} \mid a + b = 0\\right\}$.", "The answer is incorrect."),
 correctAnswerIndex: 0,
 llmCheckDetails: (
 fallbackOptionIndex: 1

@@ -34,7 +34,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "If a conductor has $1000$ free electrons per cubic millimeter, what is the total number of free electrons in $2 	ext{ mm}^3$?", 
-answerOptions: ("$\text{Total number of free electrons} = 2000$", "$\text{Total number of free electrons} = -3996$"), 
+answerOptions: ("$\\text{Total number of free electrons} = 2000$", "$\\text{Total number of free electrons} = -3996$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -42,7 +42,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Total number of free electrons} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Total number of free electrons} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

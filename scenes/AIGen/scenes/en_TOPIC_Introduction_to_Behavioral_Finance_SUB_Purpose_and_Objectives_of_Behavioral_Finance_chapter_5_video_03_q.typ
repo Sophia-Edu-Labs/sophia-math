@@ -24,7 +24,7 @@
 #only("4")[#voiceover("or maybe it helps mitigate biases,")]
 #only("5")[#voiceover("or does it help investors follow the crowd?")]
 ]#questionDef(
-questionText: "Using decision-making frameworks can help investors $\textbf{mitigate\ biases}$.",
+questionText: "Using decision-making frameworks can help investors $\\textbf{mitigate\ biases}$.",
 answerOptions: ("increase biases", "make irrational decisions", "mitigate biases", "follow the crowd"),
 correctAnswerIndex: 2,
 )

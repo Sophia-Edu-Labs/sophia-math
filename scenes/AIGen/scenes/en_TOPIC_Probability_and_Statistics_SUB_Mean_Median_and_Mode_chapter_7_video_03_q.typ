@@ -32,7 +32,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the mean of the set $(250, 350, 450, 150, 550, 650)$?", 
-answerOptions: ("$\text{Mean} = 400$", "$\text{Mean} = -796$"), 
+answerOptions: ("$\\text{Mean} = 400$", "$\\text{Mean} = -796$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Mean} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mean} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

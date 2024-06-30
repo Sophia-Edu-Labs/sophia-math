@@ -32,7 +32,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "How far would a million electrons move in a conductor under an electric field of $5 \\text{ V/m}$ if $4 \\times 10^{-4} \\text{ J}$ of work is done on them?", 
-answerOptions: ("$\text{Distance} = 5.0 \\text{ meters}$", "$\text{Distance} = -6.0 \\text{ meters}$"), 
+answerOptions: ("$\\text{Distance} = 5.0 \\text{ meters}$", "$\\text{Distance} = -6.0 \\text{ meters}$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Distance} = \key{a} \\text{ meters}$"), 
+answerOptionMatcher:("$\\text{Distance} = \key{a} \\text{ meters}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

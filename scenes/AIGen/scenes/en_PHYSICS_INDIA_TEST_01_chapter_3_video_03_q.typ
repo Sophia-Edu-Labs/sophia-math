@@ -39,7 +39,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "If an electric field of $10 \, \\text{V/m}$ is applied to a conductor, and an electron moves $5 \, \\text{mm}$, what work is done on the electron? (Use $1.6 \\times 10^{-4} \, \\text{J}$ as the work done to move $1$ million electrons through $1 \, \\text{V}$)", 
-answerOptions: ("$\text{Work} = 8e-21 \, \\text{J}$", "$\text{Work} = 4.0 \, \\text{J}$"), 
+answerOptions: ("$\\text{Work} = 8e-21 \, \\text{J}$", "$\\text{Work} = 4.0 \, \\text{J}$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -47,7 +47,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.00010010100000000001),
 ), 
-answerOptionMatcher:("$\text{Work} = \key{a} \, \\text{J}$"), 
+answerOptionMatcher:("$\\text{Work} = \key{a} \, \\text{J}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

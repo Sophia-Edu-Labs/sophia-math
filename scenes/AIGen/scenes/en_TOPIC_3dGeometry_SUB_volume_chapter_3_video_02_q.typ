@@ -35,7 +35,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "A cuboid has a length of $9$ cm, a width of $5$ cm, and a height of $3$ cm. What is its volume?", 
-answerOptions: ("$\text{Volume} = 135$", "$\text{Volume} = -266$"), 
+answerOptions: ("$\\text{Volume} = 135$", "$\\text{Volume} = -266$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -43,7 +43,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Volume} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Volume} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

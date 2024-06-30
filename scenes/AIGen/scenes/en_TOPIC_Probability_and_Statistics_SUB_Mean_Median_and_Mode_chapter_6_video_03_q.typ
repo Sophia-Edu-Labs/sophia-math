@@ -29,7 +29,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the median of the set $(4, 8, 12, 16, 20, 24)$?", 
-answerOptions: ("$\text{Median} = 14$", "$\text{Median} = -24$"), 
+answerOptions: ("$\\text{Median} = 14$", "$\\text{Median} = -24$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -37,7 +37,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Median} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Median} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

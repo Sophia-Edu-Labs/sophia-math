@@ -63,7 +63,7 @@ ax.set_ylim(1.5, -0.5)
 ax.text(1, -0.5, r'$A$', fontsize=20, va='top', ha='center')
 ax.text(3.5, -0.5, r'$B$', fontsize=20, va='top', ha='center')
 ax.text(6, -0.5, r'$C = AB$', fontsize=20, va='top', ha='center')
-ax.text(4.5, 0.5, r'$\times$', fontsize=30, va='center', ha='center')
+ax.text(4.5, 0.5, r'$\\times$', fontsize=30, va='center', ha='center')
 ax.text(2.5, 0.5, r'$=$', fontsize=30, va='center', ha='center')
 
 plt.tight_layout()

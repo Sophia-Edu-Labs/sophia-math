@@ -23,7 +23,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the mode of the set $(50, 55, 60, 55, 65, 60, 65)$?", 
-answerOptions: ("$\text{Mode} = 55$", "$\text{Mode} = -106$"), 
+answerOptions: ("$\\text{Mode} = 55$", "$\\text{Mode} = -106$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -31,7 +31,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Mode} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mode} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

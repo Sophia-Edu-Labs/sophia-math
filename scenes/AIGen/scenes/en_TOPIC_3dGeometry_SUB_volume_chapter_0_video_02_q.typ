@@ -46,6 +46,6 @@
 //Type: MC 
 #questionDef( 
 questionText: "How do you calculate the volume of a cube?", 
-answerOptions: ("$\text{side length} \\times \\text{side length}$", "$6 \\times \\text{side length}$", "$\text{side length} \\times \\text{side length} \\times \\text{side length}$", "$\text{side length} \\times \\text{side length} \\times \\text{height}$"),
+answerOptions: ("$\\text{side length} \\times \\text{side length}$", "$6 \\times \\text{side length}$", "$\\text{side length} \\times \\text{side length} \\times \\text{side length}$", "$\\text{side length} \\times \\text{side length} \\times \\text{height}$"),
 correctAnswerIndex: 2 
 )

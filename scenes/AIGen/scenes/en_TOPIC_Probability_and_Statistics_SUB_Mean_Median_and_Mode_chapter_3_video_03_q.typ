@@ -25,7 +25,7 @@ Calculate the mean of the set $(15, 25, 65, 35, 45, 55)$
 //Type: Numeric
 #questionDef(
 questionText: "What is the mean of the set $(15, 25, 65, 35, 45, 55)$?", 
-answerOptions: ("$\text{Mean} = 40$", "$\text{Mean} = -76$"), 
+answerOptions: ("$\\text{Mean} = 40$", "$\\text{Mean} = -76$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -33,7 +33,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Mean} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mean} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

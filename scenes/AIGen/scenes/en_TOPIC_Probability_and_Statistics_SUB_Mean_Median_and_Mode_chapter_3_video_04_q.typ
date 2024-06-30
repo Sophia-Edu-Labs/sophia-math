@@ -32,7 +32,7 @@ Consider the set: $(22, 12, 24, 18, 20, 14, 16)$
 //Type: Numeric
 #questionDef(
 questionText: "What is the mean of the set $(22, 12, 24, 18, 20, 14, 16)$?", 
-answerOptions: ("$\text{Mean} = 18$", "$\text{Mean} = -32$"), 
+answerOptions: ("$\\text{Mean} = 18$", "$\\text{Mean} = -32$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Mean} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mean} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

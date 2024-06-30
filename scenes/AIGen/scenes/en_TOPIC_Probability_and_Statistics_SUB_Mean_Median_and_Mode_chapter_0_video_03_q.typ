@@ -32,7 +32,7 @@ What is the mean of this set?
 //Type: Numeric
 #questionDef(
 questionText: "What is the mean of the set $(2, 4, 6, 8, 10)$?", 
-answerOptions: ("$\text{Mean} = 6$", "$\text{Mean} = -8$"), 
+answerOptions: ("$\\text{Mean} = 6$", "$\\text{Mean} = -8$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -40,7 +40,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.010000101),
 ), 
-answerOptionMatcher:("$\text{Mean} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Mean} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

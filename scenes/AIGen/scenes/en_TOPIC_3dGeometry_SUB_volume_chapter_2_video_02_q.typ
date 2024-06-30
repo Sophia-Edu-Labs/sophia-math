@@ -90,6 +90,6 @@ plt.show()
 //Type: MC 
 #questionDef( 
 questionText: "How do you calculate the volume of a cuboid?", 
-answerOptions: ("$\text{Length} \\times \\text{Width} \\times \\text{Height}$", "$\text{Length} + \\text{Width} + \\text{Height}$", "$\text{Length} \\times \\text{Width} \\times \\text{Width}$", "$\text{Length} \\times \\text{Height} \\times \\text{Height}$"),
+answerOptions: ("$\\text{Length} \\times \\text{Width} \\times \\text{Height}$", "$\\text{Length} + \\text{Width} + \\text{Height}$", "$\\text{Length} \\times \\text{Width} \\times \\text{Width}$", "$\\text{Length} \\times \\text{Height} \\times \\text{Height}$"),
 correctAnswerIndex: 0 
 )
