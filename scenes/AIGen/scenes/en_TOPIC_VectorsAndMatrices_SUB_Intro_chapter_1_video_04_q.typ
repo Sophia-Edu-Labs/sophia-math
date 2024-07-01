@@ -1,0 +1,44 @@
+#import "../sophiatheme.typ": *
+#show: sophia-theme
+#show figure.caption: it => [
+#set text(size: 20pt)
+#it.body
+]
+
+
+#slide()[
+  #only(1)[
+    #voiceover("Let's practice scalar multiplication of vectors with a numerical exercise.")
+  ]
+  #text(size: 30pt, weight: "bold")[Scalar Multiplication]
+  #v(40pt)
+
+  #only("2-")[
+    Calculate: $7 dot (0, 5)$
+  ]
+
+  #only("2")[
+    #voiceover("Calculate the result of multiplying the vector zero, five by the scalar seven.")
+  ]
+]
+
+//Type: Numeric
+#questionDef(
+questionText: "Multiply vector $(0, 5)$ by scalar $7$.", 
+answerOptions: ("$\begin{pmatrix} 0 \\\\ 35 \end{pmatrix}$", "$\begin{pmatrix} 4 \\\\ -66 \end{pmatrix}$"), 
+correctAnswerIndex: 0, // always 0 
+freeTextDetail: ( 
+fallbackOptionIndex: 1, // always 1 
+answerOptionsEquality: (a: (
+roundingDecimalPlaces: 2,
+tolerance: 0.010000101),
+b: (
+roundingDecimalPlaces: 2,
+tolerance: 0.010000101),
+), 
+answerOptionMatcher:("$\begin{pmatrix} \key{a} \\\\ \key{b} \end{pmatrix}$"), 
+answerOptionsTypes: ("a": "number",
+"b": "number",
+) 
+), 
+)
