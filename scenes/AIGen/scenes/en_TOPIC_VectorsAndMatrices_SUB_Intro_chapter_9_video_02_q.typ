@@ -7,25 +7,24 @@
 
 
 #slide()[
-  #only("1")[
-    #voiceover("Let's practice scalar multiplication of vectors with a numerical exercise.")
-  ]
-  #text(size: 30pt, weight: "bold")[Scalar Multiplication]
+  #text(size: 30pt, weight: "bold")[Vector Addition]
   #v(40pt)
 
-  #only("2-")[
-    Calculate: $7 dot (0, 5)$
+  #only("1-")[
+    Find the sum of vectors:
+    #v(20pt)
+    $vec(a) = (5, 7)$ and $vec(b) = (2, -3)$
   ]
 
-  #only("2")[
-    #voiceover("Calculate the result of multiplying the vector zero, five by the scalar seven.")
+  #only("1")[
+    #voiceover("In this exercise, we'll practice vector addition. Find the sum of the vectors a, which equals five comma seven, and b, which equals two comma negative three.")
   ]
 ]
 
 //Type: Numeric
 #questionDef(
-questionText: "Multiply vector $(0, 5)$ by scalar $7$.", 
-answerOptions: ("$\begin{pmatrix} 0 \\\\ 35 \end{pmatrix}$", "$\begin{pmatrix} 4 \\\\ -66 \end{pmatrix}$"), 
+questionText: "Find the sum of vectors $(5, 7)$ and $(2, -3)$. What is the resulting vector?", 
+answerOptions: ("$\begin{pmatrix} 7 \\\\ 4 \end{pmatrix}$", "$\begin{pmatrix} -10 \\\\ -4 \end{pmatrix}$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 

@@ -7,7 +7,7 @@
 
 
 #slide()[
-  #only(1)[
+  #only("1")[
     #voiceover("Lass uns das Skalare Multiplikation von Vektoren mit einer numerischen Übung üben.")
   ]
   #text(size: 30pt, weight: "bold")[Skalare Multiplikation]
