@@ -33,7 +33,7 @@
   ]
   #v(20pt)
   #only("2-")[
-    💡 Denke daran: $(1/2)^2$ bedeutet $(1/2) mal (1/2)$
+    💡 Denke daran: $(1/2)^2$ bedeutet $(1/2) dot (1/2)$
   ]
   #only("1")[
     #voiceover("Unser erster Schritt ist es, x durch ein halb in unserer Funktion zu ersetzen. Das ergibt f von ein halb gleich 8 geteilt durch ein halb Quadrat.")
@@ -67,7 +67,7 @@
   #text(size: 30pt, weight: "bold")[Schritt 3: Vereinfache die Division]
   #v(40pt)
   #only("1-")[
-    $8 / (1/4) = 8 mal 4 = 32$
+    $8 / (1/4) = 8 dot 4 = 32$
   ]
   #v(20pt)
   #only("2-")[

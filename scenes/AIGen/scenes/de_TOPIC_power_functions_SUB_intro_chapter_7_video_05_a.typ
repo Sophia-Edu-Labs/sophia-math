@@ -85,11 +85,11 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Verhalten, wenn $x$ gegen unendlich geht]
 #v(40pt)
-#only("1-")[Wenn $x \rightarrow \infty$:]
+#only("1-")[Wenn $x -> oo$:]
 #v(20pt)
 #only("2-")[- $x^4$ wird sehr groß positiv 📈]
 #v(20pt)
-#only("3-")[Wenn $x \rightarrow -\infty$:]
+#only("3-")[Wenn $x -> -oo$:]
 #v(20pt)
 #only("4-")[- $x^4$ wird ebenfalls sehr groß positiv 📈]
 
@@ -103,7 +103,7 @@ width: 360pt),
 #slide()[
 #text(size: 30pt, weight: "bold")[Fazit]
 #v(40pt)
-#only("1-")[- $f(x) = x^4$ nimmt ohne Grenze zu, wenn $x \rightarrow \infty$ oder $x \rightarrow -\infty$ 🚀]
+#only("1-")[- $f(x) = x^4$ nimmt ohne Grenze zu, wenn $x -> oo$ oder $x -> -oo$ 🚀]
 #v(20pt)
 #only("2-")[- Dieses Verhalten ist charakteristisch für Funktionen mit geraden Potenzen 🔢]
 #v(20pt)

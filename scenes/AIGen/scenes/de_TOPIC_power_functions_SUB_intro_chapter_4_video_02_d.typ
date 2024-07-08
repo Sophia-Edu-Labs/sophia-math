@@ -93,9 +93,9 @@ width: 360pt),
 #v(20pt)
 #only("2-")[- Äquivalent zu $a x^(-b)$]
 #v(20pt)
-#only("3-")[- Wenn $x \rightarrow \infty$, dann $f(x) \rightarrow 0$]
+#only("3-")[- Wenn $x -> oo$, dann $f(x) -> 0$]
 #v(20pt)
-#only("4-")[- Wenn $x \rightarrow 0^+$, dann $f(x) \rightarrow \infty$]
+#only("4-")[- Wenn $x -> 0^+$, dann $f(x) -> oo$]
 
 #only("1")[#voiceover("Lass uns die wichtigsten Punkte über Potenzfunktionen mit negativen Exponenten zusammenfassen. Erstens, merke dir, dass die allgemeine Form f von x gleich a geteilt durch x hoch b ist.")]
 #only("2")[#voiceover("Dies ist äquivalent zu a mal x hoch minus b.")]
