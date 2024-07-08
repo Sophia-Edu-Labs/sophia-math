@@ -11,19 +11,19 @@
 #v(40pt)
 
 #only("1-")[
-$3/5 \times 7/8 = ?$
+$3/5 times 7/8 = ?$
 ]
 
 #v(20pt)
 
 #only("2-")[
-$3/5 \times 7/8 = (3 \cdot 7)/(5 \cdot 8)$
+$3/5 times 7/8 = (3 \cdot 7)/(5 \cdot 8)$
 ]
 
 #v(20pt)
 
 #only("3-")[
-$3/5 \times 7/8 = 21/40$
+$3/5 times 7/8 = 21/40$
 ]
 
 #v(20pt)
@@ -110,13 +110,13 @@ caption: [Visuelle Darstellung von 3/5 × 7/8 = 21/40],
 #v(40pt)
 
 #only("1-")[
-- Multiplikation von Brüchen: $(a/b) \times (c/d) = (a \times c)/(b \times d)$
+- Multiplikation von Brüchen: $(a/b) times (c/d) = (a times c)/(b times d)$
 ]
 
 #v(20pt)
 
 #only("2-")[
-- In unserem Fall: $(3/5) \times (7/8) = (3 \times 7)/(5 \times 8) = 21/40$
+- In unserem Fall: $(3/5) times (7/8) = (3 times 7)/(5 times 8) = 21/40$
 ]
 
 #v(20pt)

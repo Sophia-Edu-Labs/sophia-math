@@ -10,15 +10,15 @@
 #text(size: 30pt, weight: "bold")[Brüche Multiplizieren]
 #v(40pt)
 
-#only("1-")[- Gegeben: $2/7 \times 4/6$]
+#only("1-")[- Gegeben: $2/7 times 4/6$]
 #v(20pt)
 
 #only("2-")[- Schritt 1: Zähler multiplizieren]
-#only("3-")[  $2 \times 4 = 8$]
+#only("3-")[  $2 times 4 = 8$]
 #v(20pt)
 
 #only("4-")[- Schritt 2: Nenner multiplizieren]
-#only("5-")[  $7 \times 6 = 42$]
+#only("5-")[  $7 times 6 = 42$]
 #v(20pt)
 
 #only("6-")[- Ergebnis: $8/42$]
