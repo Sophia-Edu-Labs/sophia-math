@@ -52,7 +52,7 @@
   ]
   #v(20pt)
   #only("2-")[
-    $3^3 = 3 mal 3 mal 3 = 27$
+    $3^3 = 3 dot 3 dot 3 = 27$
   ]
   #only("1")[
     #voiceover("Nun, lass uns 3 hoch drei auswerten. 3 hoch drei ist gleich 27, also wird unser Ausdruck zu minus zwei mal 27.")
