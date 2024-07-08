@@ -24,16 +24,9 @@
 //Type: Numeric
 #questionDef(
 questionText: "Find the derivative of $f(x) = 2x^3 + 3x^2$.", 
-answerOptions: ("$f'(x) = 6x^2 + 6x$", "$f'(x) = 6x^2 + -8x$"), 
+answerOptions: ("$f'(x) = 6x^2 + 6x$", "Answer is incorrect"), 
 correctAnswerIndex: 0, // always 0 
-freeTextDetail: ( 
-fallbackOptionIndex: 1, // always 1 
-answerOptionsEquality: (a: (
-roundingDecimalPlaces: 2,
-tolerance: 0.010000101),
-), 
-answerOptionMatcher:("$f'(x) = 6x^2 + \key{a}x$"), 
-answerOptionsTypes: ("a": "number",
-) 
-), 
+llmCheckDetails: ( 
+fallbackOptionIndex: 1 //always 1 
+)
 )
