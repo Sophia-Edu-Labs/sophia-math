@@ -11,13 +11,13 @@
 #v(40pt)
 
 #only("1-")[
-$3/4 \times 5/6 = ?$
+$3/4 times 5/6 = ?$
 ]
 
 #v(20pt)
 
 #only("2-")[
-$3/4 \times 5/6 = (3 \times 5)/(4 \times 6)$
+$3/4 times 5/6 = (3 times 5)/(4 times 6)$
 ]
 
 #v(20pt)
