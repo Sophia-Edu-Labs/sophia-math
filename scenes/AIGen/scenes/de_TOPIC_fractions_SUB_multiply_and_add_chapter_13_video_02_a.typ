@@ -12,7 +12,7 @@
 
   #only("1-")[
     #align(center)[
-      $4/5 \times 3/8 = ?$
+      $4/5 times 3/8 = ?$
     ]
   ]
 
@@ -20,7 +20,7 @@
 
   #only("2-")[
     #align(center)[
-      $4/5 \times 3/8 = (4 \times 3)/(5 \times 8)$
+      $4/5 times 3/8 = (4 times 3)/(5 times 8)$
     ]
   ]
 
