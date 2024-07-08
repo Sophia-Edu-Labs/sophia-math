@@ -12,7 +12,7 @@
       #h(10pt)
       #text(size: 14pt)[5. Klasse, Luzern]
     ]
-  ], primary-color)
+  ], quaternary-color)
 )
 
 #v(5pt)
@@ -37,10 +37,10 @@
   columns: (1fr),
   gutter: 10pt,
   bento-box("App-Nutzung und Fähigkeiten", [
+    Hier werden die Daten aus der App ergänzt, sobald wir die App verbunden haben.
     #grid(
       columns: (1fr, 1fr),
       gutter: 14pt,
-    
       figure(
         pyimage(```
 import matplotlib.pyplot as plt
@@ -198,8 +198,8 @@ bento-box("Vergangene Themen", [
  3. Umrechnungen zwischen Einheiten
  ], primary-color),
 bento-box("Kommende Themen", [
- 1. Grundrechenarten (8. - 14. Juli)
- 2. Brüche (14.-21. Juli)
+ 1. Rechnen mit Brüchen (8. - 14. Juli)
+ 2. Brüche umwandeln (14.-21. Juli)
  3. Geometrie Grundlagen (22. - 28. Juli)
  4. Einheiten (29. Juli - 4. August)
  5. Textaufgaben (4. August - 11. August)
@@ -242,7 +242,7 @@ bento-box("Kommentar des Tutors", [
     #v(10pt)
   ]
 )
-  ], quaternary-color)
+  ], tertiary-color)
 )
 // Alle Zeilen kombinieren
 #stack(

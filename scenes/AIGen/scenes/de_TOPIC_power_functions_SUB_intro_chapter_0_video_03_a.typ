@@ -33,7 +33,7 @@
   ]
   #v(20pt)
   #only("2-")[
-    $f(2) = 3 mal 4 + 2 mal 2 + 1$
+    $f(2) = 3 dot 4 + 2 dot 2 + 1$
   ]
   #only("1")[
     #voiceover("Der erste Schritt ist, x durch 2 in unserer Funktion zu ersetzen. Das ergibt f von 2 gleich 3 mal 2 Quadrat, plus 2 mal 2, plus 1.")
