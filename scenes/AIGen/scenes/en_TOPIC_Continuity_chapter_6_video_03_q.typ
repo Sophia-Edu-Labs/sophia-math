@@ -38,7 +38,7 @@
 #voiceover("Find the limit as x approaches 2 of f of x plus g of x.")
 ]
 ]#questionDef(
-questionText: "What is the value of $ \lim_{x \to 2} (f(x) + g(x)) $?",
+questionText: "What is the value of $ \lim_{x \\to 2} (f(x) + g(x)) $?",
 answerOptions: ("$8$", "$6$"),
 correctAnswerIndex: 0,
 freeTextDetail: (

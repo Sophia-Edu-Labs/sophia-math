@@ -35,7 +35,7 @@
 //Typ: Numerisch
 #questionDef(
 questionText: "Bestimme die Dimensionen der Matrix $\begin{bmatrix} 3 & 6 & 9 \\\\ 2 & 4 & 8 \\\\ 1 & 5 & 7 \end{bmatrix}$.", 
-answerOptions: ("$\text{Zeilen} = 3, \\text{Spalten} = 3$", "$\text{Zeilen} = -2, \\text{Spalten} = -2$"), 
+answerOptions: ("$\\text{Zeilen} = 3, \\text{Spalten} = 3$", "$\\text{Zeilen} = -2, \\text{Spalten} = -2$"), 
 correctAnswerIndex: 0, // immer 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // immer 1 
@@ -46,7 +46,7 @@ b: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Zeilen} = \key{a}, \\text{Spalten} = \key{b}$"), 
+answerOptionMatcher:("$\\text{Zeilen} = \key{a}, \\text{Spalten} = \key{b}$"), 
 answerOptionsTypes: ("a": "number",
 "b": "number",
 ) 

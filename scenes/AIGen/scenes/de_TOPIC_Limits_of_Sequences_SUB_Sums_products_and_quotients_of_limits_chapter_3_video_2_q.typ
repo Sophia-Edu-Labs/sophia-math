@@ -29,7 +29,7 @@
 #only("4")[#voiceover("oder vielleicht L mal M,")]
 #only("5")[#voiceover("oder ist es L geteilt durch M?")]
 ]#questionDef(
-questionText: "Wenn $\lim_{n \to \infty} a_n = L$ und $\lim_{n \to \infty} b_n = M$ $(M \neq 0)$, dann ist $\lim_{n \to \infty} \left( \frac{a_n}{b_n} \\right)$ ____",
+questionText: "Wenn $\lim_{n \\to \infty} a_n = L$ und $\lim_{n \\to \infty} b_n = M$ $(M \neq 0)$, dann ist $\lim_{n \\to \infty} \left( \frac{a_n}{b_n} \\right)$ ____",
 answerOptions: ("$L + M$", "$L - M$", "$LM$", "$\frac{L}{M}$"),
 correctAnswerIndex: 3,
 )

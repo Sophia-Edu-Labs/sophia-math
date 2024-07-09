@@ -86,7 +86,7 @@ plt.axhline(y=4, color='gray', linestyle='--', linewidth=1)
 plt.grid(True)
 plt.xlabel('x')
 plt.ylabel('f(x)')
-plt.title('Left-Hand Limit of $f(x) = x^2$ as $x \to 2$')
+plt.title('Left-Hand Limit of $f(x) = x^2$ as $x \\to 2$')
 plt.legend()
 plt.show()
 ```,

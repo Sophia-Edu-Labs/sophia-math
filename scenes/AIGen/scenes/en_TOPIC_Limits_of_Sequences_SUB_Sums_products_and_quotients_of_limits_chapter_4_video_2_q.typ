@@ -33,7 +33,7 @@
 #only("6")[#voiceover("or perhaps 3,")]
 #only("7")[#voiceover("or could it be 4?")]
 ]#questionDef(
-questionText: "Given $\lim_{n \to \infty} a_n = 1$ and $\lim_{n \to \infty} b_n = 2$, what is $\lim_{n \\to \infty} (a_n + b_n) a_n$?",
+questionText: "Given $\lim_{n \\to \infty} a_n = 1$ and $\lim_{n \\to \infty} b_n = 2$, what is $\lim_{n \\to \infty} (a_n + b_n) a_n$?",
 answerOptions: ("$1$", "$2$", "$3$", "$4$"),
 correctAnswerIndex: 2
 )

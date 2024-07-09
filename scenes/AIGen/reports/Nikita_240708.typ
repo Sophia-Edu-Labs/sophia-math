@@ -1,4 +1,4 @@
-#import "../sophiareporttheme.typ": *
+#import "sophiareporttheme.typ": *
 #set page(
   margin: (x: 1.5cm, y: 1cm),
 )
@@ -6,11 +6,11 @@
 #grid(
   columns: (1fr),
   gutter: 5pt,
-  bento-box("Schülerfortschritts-Dashboard", [
+  bento-box("", [
     #align(center)[
-      #text(size: 18pt, weight: "bold")[Nikita Bogana]
-      #h(10pt)
-      #text(size: 14pt)[5. Klasse, Luzern]
+      #text(size: 18pt, weight: "bold")[Lernplan]
+      #line(length: 40%, stroke:0.4pt)
+      #text(size: 14pt)[Nikita Bogana, $5.arrow 6.$ Klasse, Luzern]
     ]
   ], quaternary-color)
 )
@@ -22,13 +22,13 @@
   columns: (1fr, 1fr),
   gutter: 10pt,
   bento-box("Letzte Sitzungen", [
-    - ***15. Mai 2024*** Üben mit Einheiten
-    - ***26. Juni 2024*** Brüche umwandeln
-    - ***3. Juli 2024*** Dezimalzahlen umwandeln
+    - *15. Mai 2024* Üben mit Einheiten
+    - *26. Juni 2024* Brüche umwandeln
+    - *3. Juli 2024* Dezimalzahlen umwandeln
   ], secondary-color),
   bento-box("Kommende Sitzungen", [
-    - ***10. Juli 2024*** Grundrechenarten
-    - ***17. Juli 2024*** Brüche
+    - *10. Juli 2024* Grundrechenarten
+    - *17. Juli 2024* Brüche
   ], tertiary-color)
 )
 
@@ -37,7 +37,6 @@
   columns: (1fr),
   gutter: 10pt,
   bento-box("App-Nutzung und Fähigkeiten", [
-    Hier werden die Daten aus der App ergänzt, sobald wir die App verbunden haben.
     #grid(
       columns: (1fr, 1fr),
       gutter: 14pt,
@@ -193,7 +192,7 @@ plot_gauge(consecutive_days, minutes_per_day, minute_goal)
 columns: (1fr, 1fr),
 gutter: 10pt,
 bento-box("Vergangene Themen", [
- 1. Einheiten (Länge, Fläche, Volumen, Masse, Zeit)
+ 1. Einheiten (Länge, Fläche, Volumen)
  2. Brüche und Bruchrechnen
  3. Umrechnungen zwischen Einheiten
  ], primary-color),
@@ -233,12 +232,12 @@ bento-box("Kommentar des Tutors", [
   [
     #text(weight: "bold")[Ziele]
     
-    Nikita hat grundsätzlich klar die Fähigkeiten, gute Leistungen in Mathematik zu erzielen. Dabei stehen ihm teilweise mangelnde Sorgfalt, sowie einige Wissenslücken im Weg. Diese wollen wir angehen.
+    Nikita hat grundsätzlich klar die Fähigkeiten, gute Leistungen in Mathematik zu erzielen. Dabei stehen ihm teilweise mangelnde Sorgfalt, sowie einige Wissenslücken im Weg. Diese wollen wir angehen, damit Nikita #text(weight:"bold")[gute Noten] in Mathematik erzielt.
   ],
   [
     #text(weight: "bold")[Plan]
     
-    In jeder der Wochen konzentrieren wir uns auf ein Kernthema, was sowohl wichtig ist, um den Stoff der 6. Klasse gut zu verstehen, als auch hilfreich ist, um allgemeines Mathematisches denken zu üben.
+    In jeder der Wochen konzentrieren wir uns auf ein #text(weight: "bold")[Kernthema], was sowohl wichtig ist, um den Stoff der 6. Klasse gut verstehen zu können, als auch hilfreich ist, um allgemeines Mathematisches denken zu üben.
     #v(10pt)
   ]
 )

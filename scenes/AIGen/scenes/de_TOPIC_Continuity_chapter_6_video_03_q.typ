@@ -29,7 +29,7 @@
 #v(40pt)
 #only("1-")[Finde den Grenzwert:]
 #v(20pt)
-#only("2-")[$\lim_{x \to 2} (f(x) + g(x)) = ?$]
+#only("2-")[$lim_(x arrow 2) (f(x) + g(x)) = ?$]
 #only("1")[
 #voiceover("Die Frage lautet:")
 ]
@@ -37,7 +37,7 @@
 #voiceover("Finde den Grenzwert, wenn x gegen 2 strebt, von f von x plus g von x.")
 ]
 ]#questionDef(
-questionText: "Was ist der Wert von $ \lim_{x \to 2} (f(x) + g(x)) $?",
+questionText: "Was ist der Wert von $ \lim_{x \\to 2} (f(x) + g(x)) $?",
 answerOptions: ("$8$", "$6$"),
 correctAnswerIndex: 0,
 freeTextDetail: (

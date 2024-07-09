@@ -24,7 +24,7 @@
 
 
 #questionDef(
-questionText: "As $x \to \infty$, what happens to $f(x) = x^6$?",
-answerOptions: ("$f(x) \to \infty$", "$f(x) \to 0$", "$f(x)$ oscillates", "$f(x)$ approaches a constant"),
+questionText: "As $x \\to \infty$, what happens to $f(x) = x^6$?",
+answerOptions: ("$f(x) \\to \infty$", "$f(x) \\to 0$", "$f(x)$ oscillates", "$f(x)$ approaches a constant"),
 correctAnswerIndex: 0,
 )

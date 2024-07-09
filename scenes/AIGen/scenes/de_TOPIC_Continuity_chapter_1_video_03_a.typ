@@ -85,7 +85,7 @@ plt.axhline(y=4, color='gray', linestyle='--', linewidth=1)
 plt.grid(True)
 plt.xlabel('x')
 plt.ylabel('f(x)')
-plt.title('Linker Grenzwert von $f(x) = x^2$ bei $x \to 2$')
+plt.title('Linker Grenzwert von $f(x) = x^2$ bei $x \\to 2$')
 plt.legend()
 plt.show()
 ```,

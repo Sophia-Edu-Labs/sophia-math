@@ -93,8 +93,8 @@ plt.show()
 
 //Type: Numeric
 #questionDef(
-questionText: "Was ist das Volumen eines Würfels mit einer Seitenlänge von $7 \text{ m}$?", 
-answerOptions: ("Das Volumen des Würfels beträgt $343 \text{ m}^3$", "Das Volumen des Würfels beträgt $-682 \text{ m}^3$"), 
+questionText: "Was ist das Volumen eines Würfels mit einer Seitenlänge von $7 \\text{ m}$?", 
+answerOptions: ("Das Volumen des Würfels beträgt $343 \\text{ m}^3$", "Das Volumen des Würfels beträgt $-682 \\text{ m}^3$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -102,7 +102,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.10000010100000001),
 ), 
-answerOptionMatcher:("Das Volumen des Würfels beträgt $\key{a} \text{ m}^3$"), 
+answerOptionMatcher:("Das Volumen des Würfels beträgt $\key{a} \\text{ m}^3$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

@@ -40,7 +40,7 @@ answerOptions: ("Verwendung der Produktregel:
 
 $f(x) = x^2 e^{3x}$ 
 
-Sei $u = x^2$ und $v = e^{3x}$. Dann ist $f(x) = u \times v$. 
+Sei $u = x^2$ und $v = e^{3x}$. Dann ist $f(x) = u \\times v$. 
 
 Die Produktregel besagt, dass $(uv)' = u'v + uv'$. 
 
@@ -48,7 +48,7 @@ Finde zuerst $u'$ und $v'$:
 
 $u' = \frac{d}{dx}(x^2) = 2x$ 
 
-$v' = \frac{d}{dx}(e^{3x}) = e^{3x} \times \frac{d}{dx}(3x) = 3e^{3x}$ 
+$v' = \frac{d}{dx}(e^{3x}) = e^{3x} \\times \frac{d}{dx}(3x) = 3e^{3x}$ 
 
 Wende nun die Produktregel an: 
 
@@ -60,11 +60,11 @@ $f'(x) = 2xe^{3x} + 3x^2 e^{3x}$
 
 Verwendung der Kettenregel: 
 
-Schreibe $f(x)$ um als $f(x) = x^2 \times e^{3x}$. 
+Schreibe $f(x)$ um als $f(x) = x^2 \\times e^{3x}$. 
 
-Sei $g(x) = x^2$ und $h(x) = e^{3x}$. Dann ist $f(x) = g(x) \times h(x)$. 
+Sei $g(x) = x^2$ und $h(x) = e^{3x}$. Dann ist $f(x) = g(x) \\times h(x)$. 
 
-Die Kettenregel besagt, dass wenn $y = g(h(x))$, dann $\frac{dy}{dx} = g'(h(x)) \times h'(x)$. 
+Die Kettenregel besagt, dass wenn $y = g(h(x))$, dann $\frac{dy}{dx} = g'(h(x)) \\times h'(x)$. 
 
 Finde zuerst $g'(x)$ und $h'(x)$: 
 
@@ -74,7 +74,7 @@ $h'(x) = \frac{d}{dx}(e^{3x}) = 3e^{3x}$
 
 Wende nun die Kettenregel an: 
 
-$f'(x) = g'(h(x)) \times h'(x) = 2x \times 3e^{3x}$ 
+$f'(x) = g'(h(x)) \\times h'(x) = 2x \\times 3e^{3x}$ 
 
 Kombiniere die Ergebnisse: 
 

@@ -40,6 +40,6 @@
 //Type: MC 
 #questionDef( 
 questionText: "What effect does a negative coefficient $a$ have on the graph of the power function $f(x) = ax^b$?", 
-answerOptions: ("$\text{Reflects across the y-axis}$", "$\text{Reflects across the x-axis}$", "$\text{Translates up}$", "$\text{Translates down}$"),
+answerOptions: ("$\\text{Reflects across the y-axis}$", "$\\text{Reflects across the x-axis}$", "$\\text{Translates up}$", "$\\text{Translates down}$"),
 correctAnswerIndex: 1 
 )

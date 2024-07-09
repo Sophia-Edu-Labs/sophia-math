@@ -34,7 +34,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "What is the dimension of the vector $(-2, 4, 3, -5)$?", 
-answerOptions: ("$\text{Dimension} = 4$", "$\text{Dimension} = -4$"), 
+answerOptions: ("$\\text{Dimension} = 4$", "$\\text{Dimension} = -4$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -42,7 +42,7 @@ answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Dimension} = \key{a}$"), 
+answerOptionMatcher:("$\\text{Dimension} = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
 ) 
 ), 

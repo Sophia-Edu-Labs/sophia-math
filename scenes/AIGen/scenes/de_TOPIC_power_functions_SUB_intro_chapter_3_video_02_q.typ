@@ -40,6 +40,6 @@
 //Typ: MC 
 #questionDef( 
 questionText: "Welche Auswirkung hat ein negativer Koeffizient $a$ auf den Graphen der Potenzfunktion $f(x) = ax^b$?", 
-answerOptions: ("$\text{Spiegelt sich an der y-Achse}$", "$\text{Spiegelt sich an der x-Achse}$", "$\text{Verschiebt sich nach oben}$", "$\text{Verschiebt sich nach unten}$"),
+answerOptions: ("$\\text{Spiegelt sich an der y-Achse}$", "$\\text{Spiegelt sich an der x-Achse}$", "$\\text{Verschiebt sich nach oben}$", "$\\text{Verschiebt sich nach unten}$"),
 correctAnswerIndex: 1 
 )

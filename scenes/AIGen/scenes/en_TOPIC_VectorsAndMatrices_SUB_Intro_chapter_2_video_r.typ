@@ -96,7 +96,7 @@ t = np.linspace(0, theta, 100)
 x = r * np.cos(t)
 y = r * np.sin(t)
 plt.plot(x, y, 'g-')
-plt.text(r/2, r/2, r'$\theta$', fontsize=16)
+plt.text(r/2, r/2, r'$\\theta$', fontsize=16)
 
 plt.title("Geometric Interpretation of Dot Product")
 plt.show()

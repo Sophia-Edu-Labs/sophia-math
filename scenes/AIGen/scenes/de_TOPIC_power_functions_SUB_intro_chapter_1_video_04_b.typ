@@ -28,20 +28,23 @@ y2 = x**2
 y3 = 1/x
 y4 = 1/(x**2)
 
-plt.figure(figsize=(10, 8))
-plt.plot(x, y1, 'pink', label='$x^3$')
-plt.plot(x, y2, 'blue', label='$x^2$')
-plt.plot(x, y3, 'green', label='$1/x$')
-plt.plot(x, y4, 'orange', label='$1/x^2$')
+plt.figure(figsize=(10, 6))
+plt.plot(x, y1, 'r', label='x^3 (Red)')
+plt.plot(x, y2, 'b', label='x^2 (Blue)')
+plt.plot(x, y3, 'g', label='1/x (Green)')
+plt.plot(x, y4, 'orange', label='1/x^2 (Orange)')
 
 plt.axhline(y=0, color='k', linestyle='--')
 plt.axvline(x=0, color='k', linestyle='--')
 
 plt.legend()
-plt.title('Comparison of Functions')
+plt.title('Function Graphs')
 plt.xlabel('x')
 plt.ylabel('y')
+plt.ylim(-10, 10)
+plt.xlim(-3, 3)
 plt.grid(True)
+
 plt.show()
 
 ```,

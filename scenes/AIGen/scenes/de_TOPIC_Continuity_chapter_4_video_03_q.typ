@@ -32,7 +32,7 @@
 
 ]#questionDef(
   questionText: "Ist die Funktion $f(x) = \frac{1}{x}$ stetig bei $x = 1$?",
-  answerOptions: ("Ja, $f(x)$ ist stetig bei $x = 1$, weil $\lim_{x \to 1} \frac{1}{x} = \frac{1}{1} = 1$ und $f(1) = 1$, oder eine gleichwertige Aussage.", "Nein, $f(x)$ ist nicht stetig bei $x = 1$, oder die Antwort ist falsch."),
+  answerOptions: ("Ja, $f(x)$ ist stetig bei $x = 1$, weil $\lim_{x \\to 1} \frac{1}{x} = \frac{1}{1} = 1$ und $f(1) = 1$, oder eine gleichwertige Aussage.", "Nein, $f(x)$ ist nicht stetig bei $x = 1$, oder die Antwort ist falsch."),
   correctAnswerIndex: 0,
   llmCheckDetails: (
     fallbackOptionIndex: 1

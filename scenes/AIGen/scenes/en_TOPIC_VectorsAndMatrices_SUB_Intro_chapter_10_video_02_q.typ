@@ -36,7 +36,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "Determine the dimensions of matrix $\begin{bmatrix} 3 & 6 & 9 \\\\ 2 & 4 & 8 \\\\ 1 & 5 & 7 \end{bmatrix}$.", 
-answerOptions: ("$\text{Rows} = 3, \\text{Columns} = 3$", "$\text{Rows} = -2, \\text{Columns} = -2$"), 
+answerOptions: ("$\\text{Rows} = 3, \\text{Columns} = 3$", "$\\text{Rows} = -2, \\text{Columns} = -2$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
@@ -47,7 +47,7 @@ b: (
 roundingDecimalPlaces: 2,
 tolerance: 1.01e-07),
 ), 
-answerOptionMatcher:("$\text{Rows} = \key{a}, \\text{Columns} = \key{b}$"), 
+answerOptionMatcher:("$\\text{Rows} = \key{a}, \\text{Columns} = \key{b}$"), 
 answerOptionsTypes: ("a": "number",
 "b": "number",
 ) 

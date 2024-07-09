@@ -32,7 +32,7 @@
 
 ]#questionDef(
   questionText: "Is the function $f(x) = \frac{1}{x}$ continuous at $x = 1$?",
-  answerOptions: ("Yes, $f(x)$ is continuous at $x = 1$, because $\lim_{x \to 1} \frac{1}{x} = \frac{1}{1} = 1$ and $f(1) = 1$, or an equivalent statement.", "No, $f(x)$ is not continuous at $x = 1$, or the answer is incorrect."),
+  answerOptions: ("Yes, $f(x)$ is continuous at $x = 1$, because $\lim_{x \\to 1} \frac{1}{x} = \frac{1}{1} = 1$ and $f(1) = 1$, or an equivalent statement.", "No, $f(x)$ is not continuous at $x = 1$, or the answer is incorrect."),
   correctAnswerIndex: 0,
   llmCheckDetails: (
     fallbackOptionIndex: 1

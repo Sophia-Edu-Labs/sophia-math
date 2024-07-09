@@ -20,25 +20,28 @@
           pyimage(
 ```
 
-          import matplotlib.pyplot as plt
+
+import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(-3, 3, 100)
+y1 = x**3
+y2 = 1/x
+y3 = x**2
+y4 = 1/(x**2)
 
-plt.figure(figsize=(10, 6))
-plt.plot(x, x**3, 'r', label='$x^3$')
-plt.plot(x, x**2, 'b', label='$x^2$')
-plt.plot(x, 1/x, 'g', label='$1/x$')
-plt.plot(x, 1/(x**2), 'orange', label='$1/x^2$')
-
+plt.figure(figsize=(10, 7))
+plt.plot(x, y1, 'r-', label='$y = x^3$')
+plt.plot(x, y2, 'g-', label='$y = 1/x$')
+plt.plot(x, y3, 'b-', label='$y = x^2$')
+plt.plot(x, y4, 'orange', label='$y = 1/x^2$')
 plt.axhline(y=0, color='k', linestyle='--')
 plt.axvline(x=0, color='k', linestyle='--')
-
-plt.legend()
-plt.title('Comparison of Functions')
 plt.xlabel('x')
 plt.ylabel('y')
-
+plt.title('Vergleich verschiedener Funktionen')
+plt.grid(True)
+plt.ylim(-5, 5)
 plt.show()
           ```,
           width: 360pt),
