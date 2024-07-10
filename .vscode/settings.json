@@ -20,5 +20,6 @@
     "typst-lsp.exportPdf": "never",
     // caching disabled to avoid issues with manim-voiceover (low quality is only supported by manim-sideview via manim.cfg, not command line args)
     "manim-sideview.commandLineArgs": "--disable_caching",
+    "explorer.autoReveal": false,
     
 }
