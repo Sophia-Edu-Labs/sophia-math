@@ -22,24 +22,16 @@
 //Type: Numeric
 #questionDef(
 questionText: "Differentiate $f(x) = (2x + 3)^4$ using the chain rule and find $f'(1)$. ", 
-answerOptions: ("$f'(x) = 8(2x + 3)^3$ and $f'(1) = 512$", "$f'(x) = -12(2x + 3)^-2$ and $f'(1) = -1020$"), 
+answerOptions: ("$f'(1) = 512$", "$f'(1) =0$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 
 answerOptionsEquality: (a: (
 roundingDecimalPlaces: 2,
 tolerance: 0.001000101),
-b: (
-roundingDecimalPlaces: 2,
-tolerance: 0.001000101),
-c: (
-roundingDecimalPlaces: 2,
-tolerance: 0.001000101),
 ), 
-answerOptionMatcher:("$f'(x) = \key{a}(2x + 3)^\key{b}$ and $f'(1) = \key{c}$"), 
+answerOptionMatcher:("$f'(1) = \key{a}$"), 
 answerOptionsTypes: ("a": "number",
-"b": "number",
-"c": "number",
 ) 
 ), 
 )

@@ -1,0 +1,11 @@
+{
+    "completed_at": 1720619143.0487864,
+    "progresses": [
+        {
+            "path": "/workspaces/sophia-math/scenes/AIGen/scenes/en_TOPIC_addition_SUB_adding_multiple_integers_chapter_0_video_04_q.typ",
+            "status": "error",
+            "error": "None Stream removed",
+            "current_stage_index": 5
+        }
+    ]
+}
