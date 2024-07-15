@@ -22,7 +22,7 @@
 //Type: Numeric
 #questionDef(
 questionText: "Differentiate $f(x) = (2x + 3)^4$ using the chain rule and find $f'(1)$. ", 
-answerOptions: ("$f'(1) = 512$", "$f'(1) =0$"), 
+answerOptions: ("$f'(1) = 1000$", "$f'(1) = 0$"), 
 correctAnswerIndex: 0, // always 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // always 1 

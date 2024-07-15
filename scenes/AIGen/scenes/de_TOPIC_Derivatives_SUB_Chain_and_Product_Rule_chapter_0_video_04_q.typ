@@ -22,7 +22,7 @@
 //Typ: Numerisch
 #questionDef(
 questionText: "Differenziere $f(x) = (2x + 3)^4$ mit der Kettenregel und finde $f'(1)$. ", 
-answerOptions: ("$f'(1) = 512$", "$f'(1) = 0$"), 
+answerOptions: ("$f'(1) = 1000$", "$f'(1) = 0$"), 
 correctAnswerIndex: 0, // immer 0 
 freeTextDetail: ( 
 fallbackOptionIndex: 1, // immer 1 
