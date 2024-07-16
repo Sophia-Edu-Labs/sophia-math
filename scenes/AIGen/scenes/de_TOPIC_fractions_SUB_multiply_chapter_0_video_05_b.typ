@@ -39,7 +39,7 @@
 
   #only("1-")[Schritt 1: Multipliziere die ganze Zahl mit dem Zähler]
   #v(20pt)
-  #only("2-")[$6 mal 5/6 = (6 mal 5)/6$]
+  #only("2-")[$6 dot 5/6 = (6 dot 5)/6$]
   #v(20pt)
   #only("3-")[Schritt 2: Vereinfache]
   #v(20pt)
@@ -61,9 +61,9 @@
 
   #only("1-")[Für jede ganze Zahl $n$ und jeden Bruch $a/b$:]
   #v(20pt)
-  #only("2-")[$n mal a/b = (n mal a)/b$]
+  #only("2-")[$n dot a/b = (n dot a)/b$]
   #v(40pt)
-  #only("3-")[Beispiel: $6 mal 5/6 = (6 mal 5)/6 = 30/6$]
+  #only("3-")[Beispiel: $6 dot 5/6 = (6 dot 5)/6 = 30/6$]
 
   #only("1")[#voiceover("Lass uns das Gelernte in eine Regel verallgemeinern.")]
 
