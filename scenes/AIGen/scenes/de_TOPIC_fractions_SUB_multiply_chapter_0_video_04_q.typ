@@ -1,44 +1,41 @@
 #import "../sophiatheme.typ": *
 #show: sophia-theme
-#show figure.caption: it => [
+#show figure.caption: es => [
 #set text(size: 20pt)
-#it.body
+#es.body
 ]
 
 
 #slide()[
-  #only("1")[
-    #voiceover("Betrachten wir das folgende Multiplikationsproblem:")
-  ]
+#text(size: 30pt, weight: "bold")[Brüche multiplizieren]
+// Der Titel "Brüche multiplizieren" wird auf allen Folien angezeigt
 
-  #text(size: 30pt, weight: "bold")[Multiplikation einer ganzen Zahl mit einem Bruch]
-  #v(40pt)
+#v(40pt)
 
-  #only("2-")[
-    #text(size: 24pt)[Multipliziere $5$ mit $3/4$]
-  ]
-
-  #only("2")[
-    #voiceover("Multipliziere 5 mit drei Vierteln.")
-  ]
-
-  #v(20pt)
-
-  #only("3-")[
-    #text(size: 20pt)[Was ist das Ergebnis? 🤔]
-  ]
-
-  #only("3")[
-    #voiceover("Was ist das Ergebnis dieser Multiplikation?")
-  ]
+#only("1")[
+#voiceover("Betrachten wir die Aufgabe.")
 ]
 
-//Typ: FREI 
-#questionDef( 
-questionText: "Multipliziere $5$ mit $\frac{3}{4}$.", 
+#only("2-")[#text()[$5 dot 3/4$]]
+// Die Aufgabe $5 dot 3/4$ wird ab Folie 2 angezeigt
+
+#v(40pt)
+
+#only("3-")[Was ist das Ergebnis der Multiplikation von $5$ mit $3/4$?]
+// Die Frage "Was ist das Ergebnis der Multiplikation von 5 mit 3/4?" wird ab Folie 3 angezeigt
+
+#only("3")[
+#voiceover("Fünf mal drei Viertel.")
+]
+
+#only("2")[
+#voiceover("Was ist das Ergebnis der Multiplikation von fünf mit drei Viertel?")
+]
+]#questionDef( 
+questionText: "Multiplizieren Sie $5$ mit $\frac{3}{4}$.", 
 answerOptions: ("$\frac{15}{4}$", "Die Antwort ist falsch."),
-correctAnswerIndex: 0, //immer 0 
+correctAnswerIndex: 0, //always 0 
 llmCheckDetails: ( 
-fallbackOptionIndex: 1 //immer 1 
+fallbackOptionIndex: 1 //always 1 
 ), 
 )

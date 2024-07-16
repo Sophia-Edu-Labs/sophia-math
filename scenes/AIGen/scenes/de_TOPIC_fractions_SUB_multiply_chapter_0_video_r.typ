@@ -45,10 +45,10 @@ $4 dot 1/5 = (4 dot 1)/5 = 4/5$
 #voiceover("Um eine ganze Zahl mit einem Bruch zu multiplizieren, befolgen wir zwei einfache Schritte. Zuerst multiplizieren wir die ganze Zahl mit dem Zähler des Bruchs. Dann bleibt der Nenner des Bruchs gleich.")
  ]
 #only("4")[
-#voiceover("Wenden wir diese Schritte auf unser Kuchenproblem an. Wir haben 4 mal ein Fünftel. Wir multiplizieren 4 mit 1, was uns 4 ergibt, und wir behalten den Nenner 5 bei. Also ergibt 4 mal ein Fünftel vier Fünftel.")
+#voiceover("Wenden wir diese Schritte auf unser Kuchenproblem an. Wir haben 4 mal ein Fünftel. Wir multiplizieren 4 mit 1, was uns 4 ergibt, und behalten den Nenner 5. Also ergibt 4 mal ein Fünftel vier Fünftel.")
  ]
 #only("5")[
-#voiceover("Das bedeutet, Du benötigst vier Fünftel eines Kuchens für Deine Freunde. Ist es nicht erstaunlich, wie uns Brüche helfen können, reale Probleme zu lösen?")
+#voiceover("Das bedeutet, Du benötigst vier Fünftel eines Kuchens für Deine Freunde. Ist es nicht erstaunlich, wie Brüche uns helfen können, reale Probleme zu lösen?")
  ]
 ]
 
@@ -116,10 +116,10 @@ width: 130pt),
 #voiceover("Lass uns visualisieren, was passiert, wenn wir 4 mit 1/5 multiplizieren. Hier haben wir vier Kreise, die jeweils ein Ganzes darstellen. In jedem Kreis haben wir 1/5 oder ein Fünftel schattiert.") 
  ] 
 #only("2")[
-#voiceover("Wenn wir 4 mit 1/5 multiplizieren, kombinieren wir im Wesentlichen diese vier ein-Fünftel-Teile.") 
+#voiceover("Wenn wir 4 mit 1/5 multiplizieren, kombinieren wir im Wesentlichen diese vier Ein-Fünftel-Teile.") 
  ] 
 #only("3")[
-#voiceover("Das Ergebnis wird in diesem einzelnen Kreis gezeigt. Wie Du sehen kannst, wenn wir vier ein-Fünftel-Teile kombinieren, erhalten wir vier Fünftel eines Ganzen oder 4/5. Diese visuelle Darstellung hilft uns zu verstehen, warum 4 mal 1/5 gleich 4/5 ist.") 
+#voiceover("Das Ergebnis wird in diesem einzelnen Kreis gezeigt. Wie Du sehen kannst, wenn wir vier Ein-Fünftel-Teile kombinieren, erhalten wir vier Fünftel eines Ganzen oder 4/5. Diese visuelle Darstellung hilft uns zu verstehen, warum 4 mal 1/5 gleich 4/5 ist.") 
  ] 
 ]
 
@@ -150,7 +150,7 @@ $a dot b/c = (a dot b)/c$
 #voiceover("Wenn wir eine ganze Zahl 'a' mit einem Bruch 'b durch c' multiplizieren, erhalten wir 'a mal b' durch 'c'. Hierbei ist 'a' eine beliebige ganze Zahl und 'b durch c' ein beliebiger Bruch.")
  ]
 #only("3")[
-#voiceover("Das Wichtigste ist, daran zu denken: Multipliziere die ganze Zahl mit dem Zähler und behalte den Nenner bei. Diese einfache Regel hilft Dir, viele Probleme mit der Bruchmultiplikation zu lösen!")
+#voiceover("Der Schlüssel ist: Multipliziere die ganze Zahl mit dem Zähler und behalte den Nenner bei. Diese einfache Regel hilft Dir, viele Multiplikationsprobleme mit Brüchen zu lösen!")
  ]
 ]
 
@@ -172,15 +172,15 @@ $a dot b/c = (a dot b)/c$
  ]
  ]
 #only("1")[
-#voiceover("Lass uns zusammenfassen, was wir gelernt haben. Beim Multiplizieren einer ganzen Zahl mit einem Bruch multiplizieren wir zuerst die ganze Zahl mit dem Zähler des Bruchs.")
+#voiceover("Lass uns zusammenfassen, was wir gelernt haben. Wenn wir eine ganze Zahl mit einem Bruch multiplizieren, multiplizieren wir zuerst die ganze Zahl mit dem Zähler des Bruchs.")
  ]
 #only("2")[
-#voiceover("Zweitens behalten wir den Nenner des Bruchs bei.")
+#voiceover("Zweitens bleibt der Nenner des Bruchs gleich.")
  ]
 #only("3")[
 #voiceover("Wir können dies als Formel ausdrücken: 'a' mal 'b durch c' ergibt 'a mal b' durch 'c'.")
  ]
 #only("4")[
-#voiceover("Denke daran, Übung ist der Schlüssel, um dieses Konzept zu meistern. Versuche, diese Regel auf verschiedene Probleme anzuwenden, und bald wirst Du ein Experte im Multiplizieren von Brüchen sein!")
+#voiceover("Denke daran, Übung ist der Schlüssel zum Beherrschen dieses Konzepts. Versuche, diese Regel auf verschiedene Probleme anzuwenden, und bald wirst Du ein Experte im Multiplizieren von Brüchen sein!")
  ]
 ]

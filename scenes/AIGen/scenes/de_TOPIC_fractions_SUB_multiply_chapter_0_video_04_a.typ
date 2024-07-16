@@ -7,78 +7,62 @@
 
 
 #slide()[
-  #only("1")[
-    #voiceover("Großartige Arbeit! Du hast dieses Problem korrekt gelöst. Lass uns die Lösung Schritt für Schritt durchgehen.")
-  ]
+#only("1")[
+#voiceover("Großartige Arbeit beim Lösen der Aufgabe! Lass uns die Lösung Schritt für Schritt gemeinsam durchgehen.")
+]
 
-  #text(size: 30pt, weight: "bold")[Multiplikation einer ganzen Zahl mit einem Bruch]
+#text(size: 30pt, weight: "bold")[Brüche multiplizieren]
 
-  #v(40pt)
+#v(40pt)
 
-  #only("2-")[#text()[Problem: $ 5 dot 3/4 $]]
+#only("2-")[#text()[$5 dot 3/4$]]
+// Der anfängliche Multiplikationsausdruck wird ab Folie 2 angezeigt
 
-  #only("2")[
-    #voiceover("Wir multiplizieren 5 mit drei Vierteln.")
-  ]
+#only("2")[
+#voiceover("Wir beginnen mit dem Ausdruck 5 mal 3 durch 4.")
+]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 1: Komponenten identifizieren]
+#text(size: 30pt, weight: "bold")[Schritt-für-Schritt Lösung]
 
-  #v(40pt)
+#v(40pt)
 
-  #only("1-")[- Ganze Zahl: 5]
-  #v(10pt)
-  #only("2-")[- Bruch: $ 3/4 $]
+#only("1-")[- Multipliziere den Zähler mit der ganzen Zahl]
+// Der erste Schritt wird ab Folie 1 angezeigt
 
-  #only("1")[
-    #voiceover("Zuerst identifizieren wir unsere Komponenten. Wir haben die ganze Zahl 5")
-  ]
+#only("2-")[- Behalte den Nenner bei]
+// Der zweite Schritt wird ab Folie 2 angezeigt
 
-  #only("2")[
-    #voiceover("und den Bruch drei Viertel.")
-  ]
+#v(20pt)
+
+#only("3-")[$5 dot 3/4 = 15/4$]
+// Das Endergebnis wird ab Folie 3 angezeigt
+
+#only("1")[
+#voiceover("Zuerst multiplizieren wir den Zähler mit der ganzen Zahl. In diesem Fall multiplizieren wir 5 mit 3.")
+]
+
+#only("2")[
+#voiceover("Als nächstes behalten wir den Nenner bei, der 4 ist.")
+]
+
+#only("3")[
+#voiceover("Also, 5 mal 3 durch 4 ergibt 15 durch 4.")
+]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt 2: Multiplizieren]
+#text(size: 30pt, weight: "bold")[Endgültige Antwort]
 
-  #v(40pt)
+#v(40pt)
 
-  #only("1-")[$ 5 dot 3/4 = (5 dot 3)/4 $]
+#only("1-")[$5 dot 3/4 = 15/4$]
+// Die endgültige Antwort wird ab Folie 1 angezeigt
 
-  #only("1")[
-    #voiceover("Jetzt multiplizieren wir. Wenn wir eine ganze Zahl mit einem Bruch multiplizieren, multiplizieren wir die ganze Zahl mit dem Zähler und behalten den Nenner bei. Also, 5 mal drei Viertel ist gleich 5 mal 3, über 4.")
-  ]
-
-  #v(20pt)
-
-  #only("2-")[$ = 15/4 $]
-
-  #only("2")[
-    #voiceover("Das vereinfacht sich zu fünfzehn Vierteln.")
-  ]
+#only("1")[
+#voiceover("Daher ist die endgültige Antwort 15 durch 4. Gut gemacht!")
 ]
-
-
-#slide()[
-  #text(size: 30pt, weight: "bold")[Endergebnis]
-
-  #v(40pt)
-
-  #only("1-")[$ 5 dot 3/4 = 15/4 $]
-
-  #only("1")[
-    #voiceover("Also, unser Endergebnis ist fünfzehn Viertel. Dies ist ein unechter Bruch, was bedeutet, dass der Zähler größer als der Nenner ist. Wir könnten dies auch als gemischte Zahl ausdrücken, aber das ist ein Thema für ein anderes Mal.")
-  ]
-
-  #v(20pt)
-
-  #only("2-")[💡 Denk daran: Wenn Du eine ganze Zahl mit einem Bruch multiplizierst, multipliziere die ganze Zahl mit dem Zähler und behalte den Nenner bei.]
-
-  #only("2")[
-    #voiceover("Denk daran, wenn Du eine ganze Zahl mit einem Bruch multiplizierst, multiplizieren wir immer die ganze Zahl mit dem Zähler und behalten den Nenner bei. Diese Regel macht diese Art von Berechnungen viel einfacher!")
-  ]
 ]

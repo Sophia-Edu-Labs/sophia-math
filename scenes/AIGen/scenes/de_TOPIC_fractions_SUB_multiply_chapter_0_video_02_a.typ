@@ -7,46 +7,83 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Multiplikation von Brüchen mit ganzen Zahlen]
-  #v(40pt)
+#only("1")[
+#voiceover("Großartige Arbeit beim Versuch der Übung! Lass uns die Lösung Schritt für Schritt gemeinsam durchgehen.")
+]
 
-  #only("1-")[
-    #align(center)[$ 3 dot 1/2 $]
-  ]
+#text(size: 30pt, weight: "bold")[Brüche Multiplizieren]
 
-  #only("2-")[
-    #align(center)[#text(fill:aqua)[⇓ Zähler mit der ganzen Zahl multiplizieren]]
-  ]
+#v(40pt)
 
-  #only("3-")[
-    #align(center)[$ 3 dot 1/2 = (3 dot 1)/2 $]
-  ]
+#only("2-")[#text()[$3 dot 1/2$]]
+#only("2")[
+#voiceover("Wir beginnen mit dem Ausdruck 3 mal ein halb.")
+]
 
-  #only("4-")[
-    #align(center)[#text(fill:aqua)[⇓ Vereinfachen]]
-  ]
+]
 
-  #only("5-")[
-    #align(center)[$ (3 dot 1)/2 = 3/2 $]
-  ]
 
-  #only("1")[
-    #voiceover("Großartig! Du hast 3 korrekt mit 1/2 multipliziert. Lass uns die Lösung Schritt für Schritt durchgehen.")
-  ]
+#slide()[
+#only("1")[
+#voiceover("Um eine ganze Zahl mit einem Bruch zu multiplizieren, multiplizieren wir die ganze Zahl mit dem Zähler des Bruchs und behalten den Nenner bei.")
+]
 
-  #only("2")[
-    #voiceover("Wenn man eine ganze Zahl mit einem Bruch multipliziert, multiplizieren wir die ganze Zahl mit dem Zähler des Bruchs.")
-  ]
+#text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Lösung]
 
-  #only("3")[
-    #voiceover("In diesem Fall multiplizieren wir 3 mit dem Zähler 1. Der Nenner bleibt unverändert.")
-  ]
+#v(40pt)
 
-  #only("4")[
-    #voiceover("Jetzt lass uns unseren Ausdruck vereinfachen.")
-  ]
+#only("1-")[- Multipliziere den Zähler mit der ganzen Zahl]
+#v(10pt)
+#only("2-")[- Behalte den Nenner bei]
 
-  #only("5")[
-    #voiceover("Drei mal eins ist drei, also ist unsere endgültige Antwort drei Halbe oder drei durch zwei.")
-  ]
+#only("2")[
+#voiceover("Zuerst multiplizieren wir den Zähler mit der ganzen Zahl.")
+]
+
+#only("3")[
+#voiceover("Als nächstes behalten wir den Nenner bei.")
+]
+
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Lösung]
+
+#v(40pt)
+
+#only("1-")[$3 dot 1/2 = 3/2$]
+#v(10pt)
+#only("2-")[#text(fill:aqua)[⇓ Vereinfachtes Ergebnis]]
+#v(10pt)
+#only("3-")[$3/2$]
+
+#only("1")[
+#voiceover("Also, multiplizieren wir 3 mit ein halb, erhalten wir 3 mal 1 geteilt durch 2.")
+]
+
+#only("2")[
+#voiceover("Das vereinfacht sich zu drei halbe.")
+]
+
+]
+
+
+#slide()[
+#text(size: 30pt, weight: "bold")[Endgültige Antwort]
+
+#v(40pt)
+
+#only("1-")[$3 dot 1/2 = 3/2$]
+#v(10pt)
+#only("2-")[#text(fill:aqua)[Gut gemacht! 🎉]]
+
+#only("1")[
+#voiceover("Daher ist die endgültige Antwort drei halbe.")
+]
+
+#only("2")[
+#voiceover("Gut gemacht! Übe weiter, und du wirst das Multiplizieren von Brüchen im Handumdrehen meistern. 🎉")
+]
+
 ]

@@ -7,80 +7,91 @@
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Brüche mit ganzen Zahlen multiplizieren]
-  #v(40pt)
-  
-  #only("1-")[Multipliziere 4 mit 2/3]
-  #v(20pt)
-  
-  #only("-1")[a) 4/3]#only("2-")[#text(fill:red)[a) 4/3]]
-  #v(10pt)
-  #only("-2")[b) 6/3]#only("3-")[#text(fill:red)[b) 6/3]]
-  #v(10pt)
-  #only("-3")[c) 8/3]#only("4-")[#text(fill:green)[c) 8/3]]
-  #v(10pt)
-  #only("-4")[d) 10/3]#only("5-")[#text(fill:red)[d) 10/3]]
-
-  #only("1")[#voiceover("Großartig! Du hast diese Frage richtig beantwortet. Lass uns jede Option durchgehen, um zu verstehen, warum c) 8/3 die richtige Antwort ist.")]
-  #only("2")[#voiceover("Option a) 4/3 ist falsch. Dies wäre das Ergebnis, wenn wir 2/3 mit 2 multiplizieren würden, nicht mit 4.")]
-  #only("3")[#voiceover("Option b) 6/3 ist ebenfalls falsch. Dies wäre das Ergebnis, wenn wir 2/3 mit 3 multiplizieren würden.")]
-  #only("4")[#voiceover("Option c) 8/3 ist korrekt! Wenn wir einen Bruch mit einer ganzen Zahl multiplizieren, multiplizieren wir den Zähler mit der ganzen Zahl und behalten den Nenner bei. Also, 4 mal 2/3 ergibt 8/3.")]
-  #only("5")[#voiceover("Option d) 10/3 ist falsch. Dies wäre das Ergebnis, wenn wir 2/3 mit 5 multiplizieren würden.")]
+#text(size: 30pt, weight: "bold")[Brüche multiplizieren]
+#v(40pt)
+#only("1-")[- Übung: Multipliziere 4 mit 2/3. Optionen: a) 4/3 b) 6/3 c) 8/3 d) 10/3]
+#v(20pt)
+#only("2-")[#text(fill:green)[- c) 8/3]]
+#v(20pt)
+#only("3-")[#text(fill:red)[- a) 4/3]]
+#v(20pt)
+#only("4-")[#text(fill:red)[- b) 6/3]]
+#v(20pt)
+#only("5-")[#text(fill:red)[- d) 10/3]]
+#only("1")[#voiceover("Großartig, dass Du die Frage richtig beantwortet hast! Lass uns die Lösung Schritt für Schritt durchgehen.")]
+#only("2")[#voiceover("Die richtige Antwort ist c) 8/3. Jetzt schauen wir uns an, warum das die richtige Antwort ist.")]
+#only("3")[#voiceover("Option a) 4/3 ist falsch. Wenn Du 4 mit 2/3 multiplizierst, multiplizierst Du den Zähler 4 mit 2, nicht mit 1.")]
+#only("4")[#voiceover("Option b) 6/3 ist auch falsch. Dies wäre das Ergebnis, wenn Du 3 mit 2/3 multiplizieren würdest, nicht 4.")]
+#only("5")[#voiceover("Option d) 10/3 ist ebenfalls falsch. Dies wäre das Ergebnis, wenn Du 5 mit 2/3 multiplizieren würdest, nicht 4.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Schritt-für-Schritt-Lösung]
-  #v(40pt)
-  
-  #only("1-")[1. Das Problem identifizieren: $4 dot 2/3$]
-  #v(20pt)
-  #only("2-")[2. Die ganze Zahl mit dem Zähler multiplizieren: $4 dot 2 = 8$]
-  #v(20pt)
-  #only("3-")[3. Den Nenner beibehalten: $3$]
-  #v(20pt)
-  #only("4-")[4. Das Ergebnis aufschreiben: $8/3$]
-
-  #only("1")[#voiceover("Lass uns die Lösung Schritt für Schritt durchgehen. Zuerst identifizieren wir unser Problem: Wir müssen 4 mit 2/3 multiplizieren.")]
-  #only("2")[#voiceover("Als nächstes multiplizieren wir die ganze Zahl 4 mit dem Zähler des Bruchs, der 2 ist. Vier mal zwei ergibt 8.")]
-  #only("3")[#voiceover("Der Schlüssel hier ist, dass wir den Nenner beibehalten. Der Nenner bleibt 3.")]
-  #only("4")[#voiceover("Schließlich schreiben wir unser Ergebnis als 8/3. Und das ist unsere Antwort!")]
+#text(size: 30pt, weight: "bold")[Schritt-für-Schritt Lösung]
+#v(40pt)
+#only("1-")[- Schritt 1: Schreibe die ganze Zahl als Bruch: $4 = 4/1$]
+#v(20pt)
+#only("2-")[- Schritt 2: Multipliziere die Zähler: $4 dot 2 = 8$]
+#v(20pt)
+#only("3-")[- Schritt 3: Multipliziere die Nenner: $1 dot 3 = 3$]
+#v(20pt)
+#only("4-")[- Schritt 4: Kombiniere die Ergebnisse: $8/3$]
+#only("1")[#voiceover("Zuerst schreiben wir die ganze Zahl 4 als Bruch, das ist 4 über 1.")]
+#only("2")[#voiceover("Als nächstes multiplizieren wir die Zähler. Vier mal zwei ergibt acht.")]
+#only("3")[#voiceover("Dann multiplizieren wir die Nenner. Eins mal drei ergibt drei.")]
+#only("4")[#voiceover("Schließlich kombinieren wir die Ergebnisse zu acht über drei.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Allgemeine Regel]
-  #v(40pt)
-  
-  #only("1-")[Wenn man eine ganze Zahl $n$ mit einem Bruch $a/b$ multipliziert:]
-  #v(20pt)
-  #only("2-")[$ n dot a/b = (n dot a)/b $]
-  #v(40pt)
-  #only("3-")[Beispiel: $ 4 dot 2/3 = (4 dot 2)/3 = 8/3 $]
+#text(size: 30pt, weight: "bold")[Visualisierung der Schritte]
+#v(40pt)
+#box()[
+#morphchildren(id: "plot")[
+#figure(
+pyimage(
+```
 
-  #only("1")[#voiceover("Lass uns dieses Konzept verallgemeinern. Wenn man eine ganze Zahl n mit einem Bruch a über b multipliziert,")]
-  #only("2")[#voiceover("multiplizieren wir n mit a und behalten b als Nenner bei. Dies gibt uns die Formel: n mal a über b ist gleich n mal a, alles über b.")]
-  #only("3")[#voiceover("Anhand unseres Beispiels sehen wir, dass 4 mal 2/3 gleich 4 mal 2, was 8 ist, über 3 ergibt, was uns 8/3 gibt.")]
+import matplotlib.pyplot as plt
+
+# Create the fractions
+fractions = ["4/1", "2/3", "8/3"]
+values = [4/1, 2/3, 8/3]
+
+# Plotting the fractions
+plt.figure(figsize=(8, 6))
+plt.bar(fractions, values, color=['blue', 'orange', 'green'])
+plt.ylabel('Value')
+plt.title('Multiplying Fractions: 4 * 2/3')
+plt.ylim(0, max(values) + 1)  # Adjust y-axis for better scaling
+plt.show()
+
+```,
+width: 360pt),
+)
+]
+]
+#v(40pt)
+#only("1-")[- Visualisiere: $4/1$, $2/3$, $8/3$]
+#only("2-")[- $4/1$ ist die ganze Zahl 4 als Bruch.]
+#only("3-")[- $2/3$ ist der Bruch, mit dem wir multiplizieren.]
+#only("4-")[- $8/3$ ist das Endergebnis.]
+#only("1")[#voiceover("Lass uns die Schritte visualisieren. Hier haben wir die Brüche vier über eins, zwei über drei und das Endergebnis acht über drei.")]
+#only("2")[#voiceover("Vier über eins repräsentiert die ganze Zahl vier als Bruch.")]
+#only("3")[#voiceover("Zwei über drei ist der Bruch, mit dem wir multiplizieren.")]
+#only("4")[#voiceover("Acht über drei ist das Endergebnis der Multiplikation.")]
 ]
 
 
 #slide()[
-  #text(size: 30pt, weight: "bold")[Warum das funktioniert]
-  #v(40pt)
-  
-  #only("1-")[Multiplikation mit einem Bruch bedeutet, Teile eines Ganzen zu nehmen]
-  #v(20pt)
-  #only("2-")[2/3 von 4 = 4 dot 2/3]
-  #v(20pt)
-  #only("3-")[Das ist gleichbedeutend mit:]
-  #v(20pt)
-  #only("4-")[1. 4 durch 3 teilen: 4/3]
-  #v(10pt)
-  #only("5-")[2. Das Ergebnis mit 2 multiplizieren: (4/3) dot 2 = 8/3]
-
-  #only("1")[#voiceover("Um zu verstehen, warum das funktioniert, erinnere dich daran, dass die Multiplikation mit einem Bruch bedeutet, Teile eines Ganzen zu nehmen.")]
-  #only("2")[#voiceover("In unserem Fall finden wir 2/3 von 4, was dasselbe ist wie 4 mal 2/3.")]
-  #only("3")[#voiceover("Wir können dies in zwei Schritten betrachten:")]
-  #only("4")[#voiceover("Zuerst teilen wir 4 durch 3, was uns 4/3 gibt.")]
-  #only("5")[#voiceover("Dann multiplizieren wir dieses Ergebnis mit 2, was uns 8/3 gibt. Deshalb funktioniert unser Trick, den Zähler mit der ganzen Zahl zu multiplizieren!")]
+#text(size: 30pt, weight: "bold")[Fazit]
+#v(40pt)
+#only("1-")[- Multiplikation einer ganzen Zahl mit einem Bruch: $a dot b/c = (a dot b)/c$]
+#v(20pt)
+#only("2-")[- Beispiel: $4 dot 2/3 = 8/3$]
+#v(20pt)
+#only("3-")[- Multipliziere immer die Zähler und behalte den Nenner bei.]
+#only("1")[#voiceover("Zusammenfassend, wenn Du eine ganze Zahl mit einem Bruch multiplizierst, multiplizierst Du den Zähler des Bruchs mit der ganzen Zahl und behältst den Nenner bei.")]
+#only("2")[#voiceover("Zum Beispiel, vier mal zwei Drittel ergibt acht Drittel.")]
+#only("3")[#voiceover("Denke immer daran, die Zähler zu multiplizieren und den Nenner beizubehalten.")]
 ]
