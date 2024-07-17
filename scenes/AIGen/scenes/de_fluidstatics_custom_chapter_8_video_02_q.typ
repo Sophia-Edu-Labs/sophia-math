@@ -43,56 +43,9 @@
 ]
 ]
 
-#slide()[
-#text(size: 30pt, weight: "bold")[Übung]
-#v(40pt)
-#only("1-")[
-#box()[
-#morphchildren(id: "plot")[
-#figure(
-pyimage(``` 
-import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots(figsize=(6, 6))
 
-ax.set_xlim(0, 10)
-ax.set_ylim(-60, 10)
-
-reservoir = plt.Rectangle((2, 0), 6, 5, linewidth=1, edgecolor='b', facecolor='lightskyblue')
-ax.add_patch(reservoir)
-
-tap = plt.Circle((5, -50), 1, linewidth=1, edgecolor='k', facecolor='w')
-ax.add_patch(tap)
-
-ax.annotate('Reservoir', xy=(5, 2.5), xytext=(6, 6), arrowprops=dict(facecolor='black', shrink=0.05))
-ax.annotate('Hahn', xy=(5, -50), xytext=(6, -45), arrowprops=dict(facecolor='black', shrink=0.05))
-
-ax.plot([5, 5], [0, -50], 'k--')
-ax.text(5.5, -25, '50 m', verticalalignment='center')
-
-ax.set_aspect('equal')
-ax.grid(True)
-
-plt.show()
-```,
-width: 360pt),
-caption: [],
-)
-]
-]
-#v(20pt)
-#only("2-")[
-Berechne den Druck an einem Hahn, der sich 50 m unterhalb eines Reservoirs befindet. 💧
-]
-#only("1")[
-#voiceover("Betrachte dieses Szenario. Ein Hahn befindet sich 50 Meter unterhalb eines Reservoirs.")
-]
-#only("2")[
-#voiceover("Deine Aufgabe ist es, den Druck an diesem Hahn zu berechnen.")
-]
-]
-
-]#questionDef(
+#questionDef(
 questionText: "Wie hoch ist der Druck an dem Hahn, der sich 50 m unterhalb des Reservoirs befindet? Verwende $ p = \rho \cdot g \cdot h $, wobei $ \rho $ für Wasser $1000 \, \\text{kg/m}^3 $ beträgt. Gib deine Antwort in Pascal an.",
 answerOptions: ("$490500$ Pa", "$0$ Pa"),
 correctAnswerIndex: 0,
